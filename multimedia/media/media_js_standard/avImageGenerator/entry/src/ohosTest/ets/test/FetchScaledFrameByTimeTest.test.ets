@@ -174,13 +174,13 @@ export default function FetchScaledFrameByTimeTest() {
             console.info(`FetchScaledFrameByTimeTest afterEach`);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0100
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as 1/4 of the original size
-         * @tc.desc      : Verify that the frame is fetched correctly with reduced dimensions.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0100
+         * @tc.desc   Verify that the frame is fetched correctly with reduced dimensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0100";
@@ -191,13 +191,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0200
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as the original size
-         * @tc.desc      : Verify that the frame is fetched correctly with original dimensions.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0200
+         * @tc.desc   Verify that the frame is fetched correctly with original dimensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0200";
@@ -208,13 +208,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0300
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as 1.5 times the original size
-         * @tc.desc      : Verify that the frame is fetched correctly with enlarged dimensions.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0300
+         * @tc.desc   Verify that the frame is fetched correctly with enlarged dimensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0300";
@@ -225,13 +225,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0400
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize width as 0 and height as 1/8 of the original
-         * @tc.desc      : Verify that the width is calculated proportionally when set to 0.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0400
+         * @tc.desc   Verify that the width is calculated proportionally when set to 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0400";
@@ -242,13 +242,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0500
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize width as -1 and height as 1/2 of the original
-         * @tc.desc      : Verify that negative width is handled correctly by resetting to default.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0500
+         * @tc.desc   Verify that negative width is handled correctly by resetting to default.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0500";
@@ -259,13 +259,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0600
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize width and height as -1 and 0 respectively
-         * @tc.desc      : Verify that invalid dimensions are handled correctly by resetting to default.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0600
+         * @tc.desc   Verify that invalid dimensions are handled correctly by resetting to default.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0600";
@@ -276,13 +276,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0700
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as maximum possible values
-         * @tc.desc      : Verify that oversized dimensions are capped to the original size.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0700
+         * @tc.desc   Verify that oversized dimensions are capped to the original size.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0700";
@@ -293,13 +293,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0800
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as 1/3 of the original size
-         * @tc.desc      : Verify that the frame is fetched correctly with reduced dimensions.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0800
+         * @tc.desc   Verify that the frame is fetched correctly with reduced dimensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0800";
@@ -310,13 +310,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0900
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as 1/3 of the original size
-         * @tc.desc      : Verify that the frame is fetched correctly with reduced dimensions.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0900
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0900
+         * @tc.desc   Verify that the frame is fetched correctly with reduced dimensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_0900";
@@ -327,13 +327,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1000
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as the original size and timeUs as 100
-         * @tc.desc      : Verify that the frame is fetched correctly with original dimensions and specific time.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1000
+         * @tc.desc   Verify that the frame is fetched correctly with original dimensions and specific time.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1000";
@@ -344,13 +344,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize, 100);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1100
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as the original size and timeUs as maximum value
-         * @tc.desc      : Verify that the frame is fetched correctly with original dimensions and maximum time.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1100
+         * @tc.desc   Verify that the frame is fetched correctly with original dimensions and maximum time.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1100";
@@ -361,13 +361,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize, MaxUint32Num);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1200
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as the original size and timeUs as a float value
-         * @tc.desc      : Verify that the frame is fetched correctly with original dimensions and float time.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1200
+         * @tc.desc   Verify that the frame is fetched correctly with original dimensions and float time.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1200";
@@ -378,13 +378,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize, 3.1415926);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1300
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as the original size and timeUs as -1
-         * @tc.desc      : Verify that the frame is fetched correctly with original dimensions and negative time.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1300
+         * @tc.desc   Verify that the frame is fetched correctly with original dimensions and negative time.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1300";
@@ -395,13 +395,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize, -1);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1400
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as the original size and queryOption as PREVIOUS_SYNC
-         * @tc.desc      : Verify that the frame is fetched correctly with original dimensions and previous sync option.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1400
+         * @tc.desc   Verify that the frame is fetched correctly with original dimensions and previous sync option.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1400";
@@ -412,13 +412,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize, 0, media.AVImageQueryOptions.AV_IMAGE_QUERY_PREVIOUS_SYNC);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1500
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as the original size and queryOption as CLOSEST_SYNC
-         * @tc.desc      : Verify that the frame is fetched correctly with original dimensions and closest sync option.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1500
+         * @tc.desc   Verify that the frame is fetched correctly with original dimensions and closest sync option.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1500";
@@ -429,13 +429,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize, 0, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1600
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as the original size and queryOption as CLOSEST
-         * @tc.desc      : Verify that the frame is fetched correctly with original dimensions and closest option.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1600
+         * @tc.desc   Verify that the frame is fetched correctly with original dimensions and closest option.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1600";
@@ -446,13 +446,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize, 0, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1700
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as 111x111 and file descriptor as SDR
-         * @tc.desc      : Verify that the frame is fetched correctly with specific dimensions and SDR file.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1700
+         * @tc.desc   Verify that the frame is fetched correctly with specific dimensions and SDR file.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1700";
@@ -471,13 +471,13 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize, 0, defaultQueryOption, sdrFd);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1800
-         * @tc.name      : Test fetchScaledFrameByTime with OutputSize as 111x111 and file descriptor as HDR
-         * @tc.desc      : Verify that the frame is fetched correctly with specific dimensions and HDR file.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1800
+         * @tc.desc   Verify that the frame is fetched correctly with specific dimensions and HDR file.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1800";
@@ -502,14 +502,14 @@ export default function FetchScaledFrameByTimeTest() {
             await fetchScaledFrameByTimeTest(testNum, done, outSize, 0, defaultQueryOption, hdrFd);
         })
 
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1900
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1900
-        * @tc.desc      : Verify that the frame is fetched correctly with specific dimensions and HDR file.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1900
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1900
+         * @tc.desc   Verify that the frame is fetched correctly with specific dimensions and HDR file.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_1900";
             let outSize: media.OutputSize = {
@@ -526,14 +526,14 @@ export default function FetchScaledFrameByTimeTest() {
             }
         })
 
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2000
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2000
-        * @tc.desc      : Verify that the frame is fetched correctly with reduced dimensions.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2000
+         * @tc.desc   Verify that the frame is fetched correctly with reduced dimensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2000";
             let outSize: media.OutputSize = {
@@ -551,14 +551,14 @@ export default function FetchScaledFrameByTimeTest() {
             }
         })
 
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2100
-        * @tc.desc      : Verify that the frame is fetched correctly with reduced dimensions.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2100
+         * @tc.desc   Verify that the frame is fetched correctly with reduced dimensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2100";
             let outSize: media.OutputSize = {
@@ -576,14 +576,14 @@ export default function FetchScaledFrameByTimeTest() {
             }
         })
 
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2200
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2200
-        * @tc.desc      : Verify that the frame is fetched correctly with reduced dimensions.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2200
+         * @tc.desc   Verify that the frame is fetched correctly with reduced dimensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2200";
             let outSize: media.OutputSize = {
@@ -601,14 +601,14 @@ export default function FetchScaledFrameByTimeTest() {
             }
         })
 
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2300
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2300
-        * @tc.desc      : Verify that the frame is fetched correctly with reduced dimensions.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2300
+         * @tc.desc   Verify that the frame is fetched correctly with reduced dimensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2300";
             let outSize: media.OutputSize = {
@@ -626,14 +626,14 @@ export default function FetchScaledFrameByTimeTest() {
             }
         })
 
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2400
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2400
-        * @tc.desc      : Verify that the frame is fetched correctly with reduced dimensions.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2400
+         * @tc.desc   Verify that the frame is fetched correctly with reduced dimensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2400";
             let outSize: media.OutputSize = {
@@ -649,14 +649,14 @@ export default function FetchScaledFrameByTimeTest() {
             }
         })
 
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2500
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2500
-        * @tc.desc      : Verify that the frame is fetched correctly with reduced dimensions.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2500
+         * @tc.desc   Verify that the frame is fetched correctly with reduced dimensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2500";
             let outSize: media.OutputSize = {
@@ -672,14 +672,14 @@ export default function FetchScaledFrameByTimeTest() {
             }
         })
 
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2600
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2600
-        * @tc.desc      : Verify that the frame is fetched incorrectly after release
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2600
+         * @tc.desc   Verify that the frame is fetched incorrectly after release
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIME_2600";
             let outSize: media.OutputSize = {

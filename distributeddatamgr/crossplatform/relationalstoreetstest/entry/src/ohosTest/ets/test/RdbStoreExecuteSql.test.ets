@@ -97,7 +97,6 @@ export default function rdbstoreStoreExcuteSqlTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreExecuteSql001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0640
      * @tc.desc   RdbStore executeSql callback test
@@ -123,7 +122,6 @@ export default function rdbstoreStoreExcuteSqlTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreExecuteSql002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0660    S
      * @tc.desc   RdbStore executeSql callback test
@@ -149,7 +147,6 @@ export default function rdbstoreStoreExcuteSqlTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreExecuteSql003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0650
      * @tc.desc   RdbStore executeSql promise test
@@ -176,7 +173,6 @@ export default function rdbstoreStoreExcuteSqlTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreExecuteSql004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0670
      * @tc.desc   RdbStore executeSql promise test

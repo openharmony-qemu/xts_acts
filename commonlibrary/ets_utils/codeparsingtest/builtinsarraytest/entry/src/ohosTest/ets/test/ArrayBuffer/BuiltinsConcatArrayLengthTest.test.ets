@@ -39,12 +39,12 @@ export default function builtinsConcatArrayLengthTest() {
     })
 
     /**
+     * @tc.name   builtinsConcatArrayLengthTest1001
      * @tc.number SUB_ConcatArray_LENGTH_TEST_0100
-     * @tc.name builtinsConcatArrayLengthTest1001
-     * @tc.desc Verify empty ConcatArray length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Verify empty ConcatArray length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsConcatArrayLengthTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr = new ConcatArrayTest<number>([]);
@@ -53,12 +53,12 @@ export default function builtinsConcatArrayLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayLengthTest1002
      * @tc.number SUB_ConcatArray_LENGTH_TEST_0200
-     * @tc.name builtinsConcatArrayLengthTest1002
-     * @tc.desc Verify single element ConcatArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify single element ConcatArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayLengthTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new ConcatArrayTest<string>(['a']);
@@ -66,12 +66,12 @@ export default function builtinsConcatArrayLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayLengthTest1003
      * @tc.number SUB_ConcatArray_LENGTH_TEST_0300
-     * @tc.name builtinsConcatArrayLengthTest1003
-     * @tc.desc Test maximum array index exceed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test maximum array index exceed
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayLengthTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       try {
@@ -83,12 +83,12 @@ export default function builtinsConcatArrayLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayLengthTest1004
      * @tc.number SUB_ConcatArray_LENGTH_TEST_0400
-     * @tc.name builtinsConcatArrayLengthTest1004
-     * @tc.desc Test valid maximum length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test valid maximum length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayLengthTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new ConcatArrayTest<string>([]);
@@ -97,12 +97,12 @@ export default function builtinsConcatArrayLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayLengthTest1005
      * @tc.number SUB_ConcatArray_LENGTH_TEST_0500
-     * @tc.name builtinsConcatArrayLengthTest1005
-     * @tc.desc Test length assignment
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test length assignment
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayLengthTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new ConcatArrayTest<string>([]);
@@ -111,12 +111,12 @@ export default function builtinsConcatArrayLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayLengthTest1006
      * @tc.number SUB_ConcatArray_LENGTH_TEST_0600
-     * @tc.name builtinsConcatArrayLengthTest1006
-     * @tc.desc Test negative length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test negative length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayLengthTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       try {
@@ -128,12 +128,12 @@ export default function builtinsConcatArrayLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayLengthTest1007
      * @tc.number SUB_ConcatArray_LENGTH_TEST_0700
-     * @tc.name builtinsConcatArrayLengthTest1007
-     * @tc.desc Test invalid length type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test invalid length type
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayLengthTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       try {

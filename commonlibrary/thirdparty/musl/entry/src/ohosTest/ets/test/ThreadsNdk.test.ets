@@ -25,12 +25,12 @@ export default function threadsNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_THREADS_CND_TIMEDWAIT_0100
-     * @tc.name       : testMuslThreadsCndTimedWait001
-     * @tc.desc       : test cnd_timedwait
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslThreadsCndTimedWait001
+     * @tc.number SUB_THIRDPARTY_MUSL_THREADS_CND_TIMEDWAIT_0100
+     * @tc.desc   test cnd_timedwait
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslThreadsCndTimedWait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(threads.cnd_timedwait()).assertEqual(1);

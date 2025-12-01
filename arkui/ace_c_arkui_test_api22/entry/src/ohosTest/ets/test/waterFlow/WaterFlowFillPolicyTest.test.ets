@@ -24,13 +24,13 @@ export default function WaterFlowFillPolicyTest(){
       done();
     })
 
-    /*
-     * @tc.number: waterFlowFillPolicyTest001
-     * @tc.name: waterFlowFillPolicyTest001
-     * @tc.desc: Normal value testing of itemFillPolicy interface
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   waterFlowFillPolicyTest001
+     * @tc.number waterFlowFillPolicyTest001
+     * @tc.desc   Normal value testing of itemFillPolicy interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('waterFlowFillPolicyTest001', Level.LEVEL1, async (done: Function) => {
       console.info('waterFlowFillPolicyTest001 START');
@@ -47,13 +47,13 @@ export default function WaterFlowFillPolicyTest(){
       done();
     });
 
-    /*
-     * @tc.number: waterFlowFillPolicyTest002
-     * @tc.name: waterFlowFillPolicyTest002
-     * @tc.desc: Normal value testing of itemFillPolicy interface
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   waterFlowFillPolicyTest002
+     * @tc.number waterFlowFillPolicyTest002
+     * @tc.desc   Normal value testing of itemFillPolicy interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('waterFlowFillPolicyTest002', Level.LEVEL1, async (done: Function) => {
       console.info('waterFlowFillPolicyTest002 START');
@@ -70,13 +70,13 @@ export default function WaterFlowFillPolicyTest(){
       done();
     });
 
-    /*
-     * @tc.number: waterFlowFillPolicyTest003
-     * @tc.name: waterFlowFillPolicyTest003
-     * @tc.desc: Normal value testing of itemFillPolicy interface
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   waterFlowFillPolicyTest003
+     * @tc.number waterFlowFillPolicyTest003
+     * @tc.desc   Normal value testing of itemFillPolicy interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('waterFlowFillPolicyTest003', Level.LEVEL1, async (done: Function) => {
       console.info('waterFlowFillPolicyTest003 START');

@@ -60,12 +60,12 @@ export default function SetConnectionTimeOut() {
     })
 
     /**
+     * @tc.name   testWebView_pause0700
      * @tc.number SUB_ACE_WEB_pause_0700
-     * @tc.name testWebView_pause0700
-     * @tc.desc test setConnectionTimeOut5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test setConnectionTimeOut5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_pause0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -81,12 +81,12 @@ export default function SetConnectionTimeOut() {
     })
 
     /**
+     * @tc.name   testWebView_pause0800
      * @tc.number SUB_ACE_WEB_pause_0800
-     * @tc.name testWebView_pause0800
-     * @tc.desc test setConnectionTimeOut5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test setConnectionTimeOut5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_pause0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -102,12 +102,12 @@ export default function SetConnectionTimeOut() {
     })
 
     /**
+     * @tc.name   testWebView_resume0600
      * @tc.number SUB_ACE_WEB_resume_0600
-     * @tc.name testWebView_resume0600
-     * @tc.desc test setConnectionTimeOut5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test setConnectionTimeOut5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_resume0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -123,12 +123,12 @@ export default function SetConnectionTimeOut() {
     })
 
     /**
+     * @tc.name   testWebView_resume0700
      * @tc.number SUB_ACE_WEB_resume_0700
-     * @tc.name testWebView_resume0700
-     * @tc.desc test setConnectionTimeOut5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test setConnectionTimeOut5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_resume0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({

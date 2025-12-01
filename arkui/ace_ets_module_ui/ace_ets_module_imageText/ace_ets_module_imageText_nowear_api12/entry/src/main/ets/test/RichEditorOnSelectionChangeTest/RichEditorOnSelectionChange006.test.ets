@@ -55,12 +55,12 @@ export default function RichEditorOnSelectionChange006() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_0200
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_0200
-     * @tc.desc  : Test RichEditor OnSelection Change by clicking on 'Cut' in the pop-up menu
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_0200
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_0200
+     * @tc.desc   Test RichEditor OnSelection Change by clicking on 'Cut' in the pop-up menu
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONSELECTIONCHANGE_0200 START');

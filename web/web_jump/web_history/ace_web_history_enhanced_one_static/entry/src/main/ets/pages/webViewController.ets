@@ -24,7 +24,7 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import webview from '@ohos.web.webview';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../hypium/index';
@@ -54,7 +54,7 @@ struct webViewController {
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;

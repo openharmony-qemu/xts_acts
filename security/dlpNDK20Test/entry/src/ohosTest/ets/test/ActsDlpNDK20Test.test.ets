@@ -21,12 +21,12 @@ const OS_ACCOUNT_ERR_OK = 0;
 export default function ActsDlpNDK20Test() {
   describe('ActsDlpNDK20Test', () => {
     /**
-     * @tc.number  : SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0100
-     * @tc.name    : testOsGetDlpPermissionInfo0100
-     * @tc.desc    : test dlp_permission_api
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOsGetDlpPermissionInfo0100
+     * @tc.number SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0100
+     * @tc.desc   test dlp_permission_api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOsGetDlpPermissionInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -42,12 +42,12 @@ export default function ActsDlpNDK20Test() {
       }
     })
     /**
-     * @tc.number  : SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0101
-     * @tc.name    : testOsGetDlpPermissionInfo0101
-     * @tc.desc    : test dlp_permission_api
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOsGetDlpPermissionInfo0101
+     * @tc.number SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0101
+     * @tc.desc   test dlp_permission_api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOsGetDlpPermissionInfo0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -63,12 +63,12 @@ export default function ActsDlpNDK20Test() {
       }
     })
     /**
-     * @tc.number  : SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0102
-     * @tc.name    : testOsGetDlpPermissionInfo0102
-     * @tc.desc    : test dlp_permission_api
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOsGetDlpPermissionInfo0102
+     * @tc.number SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0102
+     * @tc.desc   test dlp_permission_api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOsGetDlpPermissionInfo0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -84,12 +84,12 @@ export default function ActsDlpNDK20Test() {
       }
     })
     /**
-     * @tc.number  : SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0103
-     * @tc.name    : testOsGetDlpPermissionInfo0103
-     * @tc.desc    : test dlp_permission_api
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOsGetDlpPermissionInfo0103
+     * @tc.number SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0103
+     * @tc.desc   test dlp_permission_api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOsGetDlpPermissionInfo0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -105,12 +105,12 @@ export default function ActsDlpNDK20Test() {
       }
     })
     /**
-     * @tc.number  : SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0104
-     * @tc.name    : testOsGetDlpPermissionInfo0104
-     * @tc.desc    : test dlp_permission_api
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOsGetDlpPermissionInfo0104
+     * @tc.number SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0104
+     * @tc.desc   test dlp_permission_api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOsGetDlpPermissionInfo0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -126,12 +126,12 @@ export default function ActsDlpNDK20Test() {
       }
     })
     /**
-     * @tc.number  : SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0105
-     * @tc.name    : testOsGetDlpPermissionInfo0105
-     * @tc.desc    : test dlp_permission_api
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOsGetDlpPermissionInfo0105
+     * @tc.number SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0105
+     * @tc.desc   test dlp_permission_api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOsGetDlpPermissionInfo0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -147,12 +147,12 @@ export default function ActsDlpNDK20Test() {
       }
     })
     /**
-     * @tc.number  : SUB_Security_DataSecurity_OsGetOriginalFileName_0100
-     * @tc.name    : testOsGetOriginalFileName0100
-     * @tc.desc    : test dlp_permission_api
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOsGetOriginalFileName0100
+     * @tc.number SUB_Security_DataSecurity_OsGetOriginalFileName_0100
+     * @tc.desc   test dlp_permission_api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOsGetOriginalFileName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -168,12 +168,12 @@ export default function ActsDlpNDK20Test() {
       }
     })
     /**
-     * @tc.number  : SUB_Security_DataSecurity_OsSetSandboxAppConfig_0100
-     * @tc.name    : testOsSetSandboxAppConfig0100
-     * @tc.desc    : test dlp_permission_api
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOsSetSandboxAppConfig0100
+     * @tc.number SUB_Security_DataSecurity_OsSetSandboxAppConfig_0100
+     * @tc.desc   test dlp_permission_api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOsSetSandboxAppConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

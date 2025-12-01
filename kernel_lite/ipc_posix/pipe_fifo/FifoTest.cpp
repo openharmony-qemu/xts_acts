@@ -41,9 +41,12 @@ protected:
 };
 
 /**
- * @tc.number   SUB_KERNEL_IPC_FIFO_0100
- * @tc.name     basic function test : hello world
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testHelloWorld
+ * @tc.number SUB_KERNEL_IPC_FIFO_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(FifoTest, testHelloWorld, Function | MediumTest | Level0)
 {
@@ -76,9 +79,12 @@ HWTEST_F(FifoTest, testHelloWorld, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_FIFO_0700
- * @tc.name     mkfifo Duplicate creation and delete
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFifoAddDelete
+ * @tc.number SUB_KERNEL_IPC_FIFO_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(FifoTest, testFifoAddDelete, Function | MediumTest | Level0)
 {
@@ -98,9 +104,12 @@ HWTEST_F(FifoTest, testFifoAddDelete, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_FIFO_0800
- * @tc.name     test O_NONBLOCK FIFO
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFifoNonblack
+ * @tc.number SUB_KERNEL_IPC_FIFO_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FifoTest, testFifoNonblack, Function | MediumTest | Level1)
 {
@@ -162,9 +171,12 @@ HWTEST_F(FifoTest, testFifoNonblack, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_FIFO_0900
- * @tc.name     test BLOCK FIFO
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFifoBlock
+ * @tc.number SUB_KERNEL_IPC_FIFO_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FifoTest, testFifoBlock, Function | MediumTest | Level1)
 {

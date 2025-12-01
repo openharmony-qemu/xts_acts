@@ -78,9 +78,12 @@ void HwEncSetParamNdkTest::TearDown()
 }
 namespace {
 /**
- * @tc.number    : RESET_BITRATE_001
- * @tc.name      : reset bitrate use illegal value
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_001
+ * @tc.number RESET_BITRATE_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_001, TestSize.Level1)
 {
@@ -109,9 +112,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_001, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_BITRATE_002
- * @tc.name      : reset bitrate in CQ mode
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_002
+ * @tc.number RESET_BITRATE_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_002, TestSize.Level0)
 {
@@ -137,9 +143,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_002, TestSize.Level0)
 }
 
 /**
- * @tc.number    : RESET_BITRATE_003
- * @tc.name      : reset bitrate in CBR mode ,gop size -1
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_003
+ * @tc.number RESET_BITRATE_003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_003, TestSize.Level0)
 {
@@ -167,9 +176,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_003, TestSize.Level0)
 }
 
 /**
- * @tc.number    : RESET_BITRATE_004
- * @tc.name      : reset bitrate in CBR mode ,gop size 0
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_004
+ * @tc.number RESET_BITRATE_004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_004, TestSize.Level0)
 {
@@ -197,9 +209,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_004, TestSize.Level0)
 }
 
 /**
- * @tc.number    : RESET_BITRATE_005
- * @tc.name      : reset bitrate in CBR mode ,gop size 1s
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_005
+ * @tc.number RESET_BITRATE_005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_005, TestSize.Level0)
 {
@@ -226,9 +241,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_005, TestSize.Level0)
 }
 
 /**
- * @tc.number    : RESET_BITRATE_006
- * @tc.name      : reset bitrate in VBR mode
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_006
+ * @tc.number RESET_BITRATE_006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_006, TestSize.Level0)
 {
@@ -255,9 +273,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_006, TestSize.Level0)
 }
 
 /**
- * @tc.number    : RESET_BITRATE_007
- * @tc.name      : reset bitrate use illegal value, h265
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_007
+ * @tc.number RESET_BITRATE_007
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_007, TestSize.Level1)
 {
@@ -286,9 +307,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_007, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_BITRATE_008
- * @tc.name      : reset bitrate in CQ mode, h265
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_008
+ * @tc.number RESET_BITRATE_008
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_008, TestSize.Level0)
 {
@@ -314,9 +338,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_008, TestSize.Level0)
 }
 
 /**
- * @tc.number    : RESET_BITRATE_009
- * @tc.name      : reset bitrate in CBR mode ,gop size -1, h265
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_009
+ * @tc.number RESET_BITRATE_009
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_009, TestSize.Level0)
 {
@@ -344,9 +371,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_009, TestSize.Level0)
 }
 
 /**
- * @tc.number    : RESET_BITRATE_010
- * @tc.name      : reset bitrate in CBR mode ,gop size 0, h265
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_010
+ * @tc.number RESET_BITRATE_010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_010, TestSize.Level0)
 {
@@ -374,9 +404,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_010, TestSize.Level0)
 }
 
 /**
- * @tc.number    : RESET_BITRATE_011
- * @tc.name      : reset bitrate in CBR mode ,gop size 1s, h265
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_011
+ * @tc.number RESET_BITRATE_011
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_011, TestSize.Level0)
 {
@@ -403,9 +436,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_011, TestSize.Level0)
 }
 
 /**
- * @tc.number    : RESET_BITRATE_012
- * @tc.name      : reset bitrate in vbr mode h265
- * @tc.desc      : function test
+ * @tc.name   RESET_BITRATE_012
+ * @tc.number RESET_BITRATE_012
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_012, TestSize.Level0)
 {
@@ -432,9 +468,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_012, TestSize.Level0)
 }
 
 /**
- * @tc.number    : RESET_FRAMERATE_001
- * @tc.name      : reset framerate use illegal value
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_001
+ * @tc.number RESET_FRAMERATE_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_001, TestSize.Level0)
 {
@@ -458,9 +497,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_001, TestSize.Level0)
     }
 }
 /**
- * @tc.number    : RESET_FRAMERATE_012
- * @tc.name      : reset framerate use illegal value
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_012
+ * @tc.number RESET_FRAMERATE_012
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_012, TestSize.Level0)
 {
@@ -487,9 +529,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_012, TestSize.Level0)
     }
 }
 /**
- * @tc.number    : RESET_FRAMERATE_013
- * @tc.name      : reset framerate use max value
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_013
+ * @tc.number RESET_FRAMERATE_013
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_013, TestSize.Level0)
 {
@@ -516,9 +561,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_013, TestSize.Level0)
     }
 }
 /**
- * @tc.number    : RESET_FRAMERATE_014
- * @tc.name      : reset framerate use max value
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_014
+ * @tc.number RESET_FRAMERATE_014
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_014, TestSize.Level0)
 {
@@ -542,9 +590,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_014, TestSize.Level0)
     }
 }
 /**
- * @tc.number    : RESET_FRAMERATE_002
- * @tc.name      : reset framerate in CQ mode
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_002
+ * @tc.number RESET_FRAMERATE_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_002, TestSize.Level1)
 {
@@ -568,9 +619,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_002, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_FRAMERATE_003
- * @tc.name      : reset framerate in CBR mode, gop size -1
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_003
+ * @tc.number RESET_FRAMERATE_003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_003, TestSize.Level1)
 {
@@ -598,9 +652,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_003, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_FRAMERATE_004
- * @tc.name      : reset framerate in CBR mode, gop size 0
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_004
+ * @tc.number RESET_FRAMERATE_004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_004, TestSize.Level1)
 {
@@ -628,9 +685,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_004, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_FRAMERATE_005
- * @tc.name      : reset framerate in CBR mode, gop size 1s
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_005
+ * @tc.number RESET_FRAMERATE_005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_005, TestSize.Level1)
 {
@@ -657,9 +717,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_005, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_FRAMERATE_006
- * @tc.name      : reset framerate in VBR mode, gop size 1s
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_006
+ * @tc.number RESET_FRAMERATE_006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_006, TestSize.Level1)
 {
@@ -686,9 +749,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_006, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_FRAMERATE_007
- * @tc.name      : reset framerate in CQ mode hevc
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_007
+ * @tc.number RESET_FRAMERATE_007
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_007, TestSize.Level1)
 {
@@ -712,9 +778,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_007, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_FRAMERATE_008
- * @tc.name      : reset framerate in CBR mode, gop size -1 hevc
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_008
+ * @tc.number RESET_FRAMERATE_008
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_008, TestSize.Level1)
 {
@@ -742,9 +811,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_008, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_FRAMERATE_009
- * @tc.name      : reset framerate in CBR mode, gop size 0 hevc
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_009
+ * @tc.number RESET_FRAMERATE_009
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_009, TestSize.Level1)
 {
@@ -772,9 +844,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_009, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_FRAMERATE_010
- * @tc.name      : reset framerate in CBR mode, gop size 1s hevc
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_010
+ * @tc.number RESET_FRAMERATE_010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_010, TestSize.Level1)
 {
@@ -801,9 +876,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_010, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_FRAMERATE_011
- * @tc.name      : reset framerate in VBR mode, gop size 1s hevc
- * @tc.desc      : function test
+ * @tc.name   RESET_FRAMERATE_011
+ * @tc.number RESET_FRAMERATE_011
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_011, TestSize.Level1)
 {
@@ -830,9 +908,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_011, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_001
- * @tc.name      : reset QP with illegal parameter
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_001
+ * @tc.number RESET_QP_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_001, TestSize.Level1)
 {
@@ -862,9 +943,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_001, TestSize.Level1)
     }
 }
 /**
- * @tc.number    : RESET_QP_002
- * @tc.name      : reset QP with illegal parameter
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_002
+ * @tc.number RESET_QP_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_002, TestSize.Level1)
 {
@@ -895,9 +979,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_002, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_003
- * @tc.name      : reset QP in cq mode, use buffer->setparameter
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_003
+ * @tc.number RESET_QP_003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_003, TestSize.Level1)
 {
@@ -922,9 +1009,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_003, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_004
- * @tc.name      : reset QP in CQ mode, use setparameter
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_004
+ * @tc.number RESET_QP_004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_004, TestSize.Level1)
 {
@@ -949,9 +1039,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_004, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_005
- * @tc.name      : reset QP in CBR mode, use buffer->setparameter
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_005
+ * @tc.number RESET_QP_005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_005, TestSize.Level1)
 {
@@ -976,9 +1069,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_005, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_006
- * @tc.name      : reset QP in CBR mode, use setparameter
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_006
+ * @tc.number RESET_QP_006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_006, TestSize.Level1)
 {
@@ -1003,9 +1099,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_006, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_007
- * @tc.name      : reset QP in VBR mode, use buffer->setparameter
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_007
+ * @tc.number RESET_QP_007
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_007, TestSize.Level1)
 {
@@ -1030,9 +1129,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_007, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_008
- * @tc.name      : reset QP in VBR mode, use setparameter
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_008
+ * @tc.number RESET_QP_008
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_008, TestSize.Level1)
 {
@@ -1057,9 +1159,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_008, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_009
- * @tc.name      : reset QP in cq mode, use buffer->setparameter H265
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_009
+ * @tc.number RESET_QP_009
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_009, TestSize.Level1)
 {
@@ -1084,9 +1189,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_009, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_010
- * @tc.name      : reset QP in CQ mode, use setparameter H265
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_010
+ * @tc.number RESET_QP_010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_010, TestSize.Level1)
 {
@@ -1111,9 +1219,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_010, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_011
- * @tc.name      : reset QP in CBR mode, use buffer->setparameter h265
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_011
+ * @tc.number RESET_QP_011
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_011, TestSize.Level1)
 {
@@ -1138,9 +1249,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_011, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_012
- * @tc.name      : reset QP in CBR mode, use setparameter h265
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_012
+ * @tc.number RESET_QP_012
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_012, TestSize.Level1)
 {
@@ -1165,9 +1279,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_012, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_013
- * @tc.name      : reset QP in VBR mode, use buffer->setparameter h265
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_013
+ * @tc.number RESET_QP_013
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_013, TestSize.Level1)
 {
@@ -1192,9 +1309,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_013, TestSize.Level1)
 }
 
 /**
- * @tc.number    : RESET_QP_014
- * @tc.name      : reset QP in VBR mode, use setparameter h265
- * @tc.desc      : function test
+ * @tc.name   RESET_QP_014
+ * @tc.number RESET_QP_014
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, RESET_QP_014, TestSize.Level1)
 {
@@ -1219,9 +1339,12 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_QP_014, TestSize.Level1)
 }
 
 /**
- * @tc.number    : SET_PROFILE_001
- * @tc.name      : set profile main
- * @tc.desc      : function test
+ * @tc.name   SET_PROFILE_001
+ * @tc.number SET_PROFILE_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, SET_PROFILE_001, TestSize.Level1)
 {
@@ -1242,9 +1365,12 @@ HWTEST_F(HwEncSetParamNdkTest, SET_PROFILE_001, TestSize.Level1)
     }
 }
 /**
- * @tc.number    : SET_PROFILE_002
- * @tc.name      : set profile main10
- * @tc.desc      : function test
+ * @tc.name   SET_PROFILE_002
+ * @tc.number SET_PROFILE_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, SET_PROFILE_002, TestSize.Level1)
 {
@@ -1265,9 +1391,12 @@ HWTEST_F(HwEncSetParamNdkTest, SET_PROFILE_002, TestSize.Level1)
     }
 }
 /**
- * @tc.number    : SET_PROFILE_003
- * @tc.name      : set profile high
- * @tc.desc      : function test
+ * @tc.name   SET_PROFILE_003
+ * @tc.number SET_PROFILE_003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, SET_PROFILE_003, TestSize.Level1)
 {
@@ -1288,9 +1417,12 @@ HWTEST_F(HwEncSetParamNdkTest, SET_PROFILE_003, TestSize.Level1)
     }
 }
 /**
- * @tc.number    : SET_PROFILE_004
- * @tc.name      : set profile main
- * @tc.desc      : function test
+ * @tc.name   SET_PROFILE_004
+ * @tc.number SET_PROFILE_004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, SET_PROFILE_004, TestSize.Level1)
 {
@@ -1311,9 +1443,12 @@ HWTEST_F(HwEncSetParamNdkTest, SET_PROFILE_004, TestSize.Level1)
     }
 }
 /**
- * @tc.number    : SET_PROFILE_005
- * @tc.name      : set profile main
- * @tc.desc      : function test
+ * @tc.name   SET_PROFILE_005
+ * @tc.number SET_PROFILE_005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, SET_PROFILE_005, TestSize.Level1)
 {
@@ -1334,9 +1469,12 @@ HWTEST_F(HwEncSetParamNdkTest, SET_PROFILE_005, TestSize.Level1)
     }
 }
 /**
- * @tc.number    : SET_RANGE_FLAG_001
- * @tc.name      : set range flag true HEVC
- * @tc.desc      : function test
+ * @tc.name   SET_RANGE_FLAG_001
+ * @tc.number SET_RANGE_FLAG_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, SET_RANGE_FLAG_001, TestSize.Level1)
 {
@@ -1358,9 +1496,12 @@ HWTEST_F(HwEncSetParamNdkTest, SET_RANGE_FLAG_001, TestSize.Level1)
 }
 
 /**
- * @tc.number    : SET_RANGE_FLAG_002
- * @tc.name      : set range flag true
- * @tc.desc      : function test
+ * @tc.name   SET_RANGE_FLAG_002
+ * @tc.number SET_RANGE_FLAG_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, SET_RANGE_FLAG_002, TestSize.Level1)
 {
@@ -1382,9 +1523,12 @@ HWTEST_F(HwEncSetParamNdkTest, SET_RANGE_FLAG_002, TestSize.Level1)
 }
 
 /**
- * @tc.number    : SET_COLORSPACE_001
- * @tc.name      : set color space parameter
- * @tc.desc      : function test
+ * @tc.name   SET_COLORSPACE_001
+ * @tc.number SET_COLORSPACE_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, SET_COLORSPACE_001, TestSize.Level1)
 {
@@ -1407,9 +1551,12 @@ HWTEST_F(HwEncSetParamNdkTest, SET_COLORSPACE_001, TestSize.Level1)
 }
 
 /**
- * @tc.number    : SET_COLORSPACE_002
- * @tc.name      : set color space parameter HEVC
- * @tc.desc      : function test
+ * @tc.name   SET_COLORSPACE_002
+ * @tc.number SET_COLORSPACE_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, SET_COLORSPACE_002, TestSize.Level1)
 {
@@ -1432,9 +1579,12 @@ HWTEST_F(HwEncSetParamNdkTest, SET_COLORSPACE_002, TestSize.Level1)
 }
 
 /**
- * @tc.number    : SET_FORCE_IDR_001
- * @tc.name      : request i frame HEVC
- * @tc.desc      : function test
+ * @tc.name   SET_FORCE_IDR_001
+ * @tc.number SET_FORCE_IDR_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, SET_FORCE_IDR_001, TestSize.Level1)
 {
@@ -1457,9 +1607,12 @@ HWTEST_F(HwEncSetParamNdkTest, SET_FORCE_IDR_001, TestSize.Level1)
 }
 
 /**
- * @tc.number    : SET_FORCE_IDR_002
- * @tc.name      : request i frame
- * @tc.desc      : function test
+ * @tc.name   SET_FORCE_IDR_002
+ * @tc.number SET_FORCE_IDR_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, SET_FORCE_IDR_002, TestSize.Level1)
 {
@@ -1481,9 +1634,12 @@ HWTEST_F(HwEncSetParamNdkTest, SET_FORCE_IDR_002, TestSize.Level1)
     }
 }
 /**
- * @tc.number    : COLORSPACE_CONFIG_001
- * @tc.name      : COLORSPACE
- * @tc.desc      : function test
+ * @tc.name   COLORSPACE_CONFIG_001
+ * @tc.number COLORSPACE_CONFIG_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_001, TestSize.Level1)
 {
@@ -1512,9 +1668,12 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_001, TestSize.Level1)
 }
 
 /**
- * @tc.number    : COLORSPACE_CONFIG_002
- * @tc.name      : COLORSPACE 264
- * @tc.desc      : function test
+ * @tc.name   COLORSPACE_CONFIG_002
+ * @tc.number COLORSPACE_CONFIG_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_002, TestSize.Level1)
 {
@@ -1543,9 +1702,12 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_002, TestSize.Level1)
 }
 
 /**
- * @tc.number    : COLORSPACE_CONFIG_003
- * @tc.name      : COLORSPACE 265
- * @tc.desc      : function test
+ * @tc.name   COLORSPACE_CONFIG_003
+ * @tc.number COLORSPACE_CONFIG_003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_003, TestSize.Level1)
 {
@@ -1574,9 +1736,12 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_003, TestSize.Level1)
 }
 
 /**
- * @tc.number    : COLORSPACE_CONFIG_004
- * @tc.name      : COLORSPACE 265
- * @tc.desc      : function test
+ * @tc.name   COLORSPACE_CONFIG_004
+ * @tc.number COLORSPACE_CONFIG_004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_004, TestSize.Level1)
 {
@@ -1605,9 +1770,12 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_004, TestSize.Level1)
 }
 
 /**
- * @tc.number    : COLORSPACE_CONFIG_005
- * @tc.name      : COLORSPACE 265
- * @tc.desc      : function test
+ * @tc.name   COLORSPACE_CONFIG_005
+ * @tc.number COLORSPACE_CONFIG_005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_005, TestSize.Level1)
 {
@@ -1636,9 +1804,12 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_005, TestSize.Level1)
 }
 
 /**
- * @tc.number    : COLORSPACE_CONFIG_006
- * @tc.name      : COLORSPACE 265
- * @tc.desc      : function test
+ * @tc.name   COLORSPACE_CONFIG_006
+ * @tc.number COLORSPACE_CONFIG_006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_006, TestSize.Level1)
 {
@@ -1667,9 +1838,12 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_006, TestSize.Level1)
 }
 
 /**
- * @tc.number    : FRAMENUM_JUDGMENT_001
- * @tc.name      : Increase frame rate judgment
- * @tc.desc      : function test
+ * @tc.name   FRAMENUM_JUDGMENT_001
+ * @tc.number FRAMENUM_JUDGMENT_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, FRAMENUM_JUDGMENT_001, TestSize.Level0)
 {
@@ -1694,9 +1868,12 @@ HWTEST_F(HwEncSetParamNdkTest, FRAMENUM_JUDGMENT_001, TestSize.Level0)
     }
 }
 /**
- * @tc.number    : FRAMENUM_JUDGMENT_002
- * @tc.name      : Increase frame rate judgment
- * @tc.desc      : function test
+ * @tc.name   FRAMENUM_JUDGMENT_002
+ * @tc.number FRAMENUM_JUDGMENT_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncSetParamNdkTest, FRAMENUM_JUDGMENT_002, TestSize.Level0)
 {

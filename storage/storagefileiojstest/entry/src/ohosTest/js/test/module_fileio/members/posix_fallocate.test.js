@@ -23,13 +23,12 @@ export default function fileioPosixFallocate() {
 describe('fileio_posix_fallocate', function () {
 
   /**
+   * @tc.name   fileio_test_posix_fallocate_sync_000
    * @tc.number SUB_DF_FILEIO_POSIX_FALLOCATE_SYNC_0000
-   * @tc.name fileio_test_posix_fallocate_sync_000
-   * @tc.desc Test fsyncSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fsyncSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_posix_fallocate_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_posix_fallocate_sync_000');
@@ -47,13 +46,12 @@ describe('fileio_posix_fallocate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_posix_fallocate_async_000
    * @tc.number SUB_DF_FILEIO_POSIX_FALLOCATE_ASYNC_0000
-   * @tc.name fileio_test_posix_fallocate_async_000
-   * @tc.desc Test fsyncASync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fsyncASync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_posix_fallocate_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_posix_fallocate_async_000');
@@ -73,13 +71,12 @@ describe('fileio_posix_fallocate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_posix_fallocate_async_001
    * @tc.number SUB_DF_FILEIO_POSIX_FALLOCATE_ASYNC_0010
-   * @tc.name fileio_test_posix_fallocate_async_001
-   * @tc.desc Test lseekAsync()interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test lseekAsync()interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_posix_fallocate_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_posix_fallocate_async_001');

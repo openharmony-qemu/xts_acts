@@ -85,7 +85,6 @@ export default function geolocationTest_geo2() {
 
 
      /**
-      * @generated.time 2025-11-09 20:53:27
       * @tc.name   SUB_HSS_LocationSystem_systemapi_0100
       * @tc.number SUB_HSS_LocationSystem_systemapi_0100
       * @tc.desc   Obtains the geographical location of a device..
@@ -134,7 +133,6 @@ export default function geolocationTest_geo2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_systemapi_0200
      * @tc.number SUB_HSS_LocationSystem_systemapi_0200
      * @tc.desc   Test subscribe api .
@@ -160,7 +158,6 @@ export default function geolocationTest_geo2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_systemapi_0300
      * @tc.number SUB_HSS_LocationSystem_systemapi_0300
      * @tc.desc   Subscribing to geographical location information .
@@ -191,7 +188,6 @@ export default function geolocationTest_geo2() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_systemapi_0400
      * @tc.number SUB_HSS_LocationSystem_systemapi_0400
      * @tc.desc   Obtains the geographical location of a device..

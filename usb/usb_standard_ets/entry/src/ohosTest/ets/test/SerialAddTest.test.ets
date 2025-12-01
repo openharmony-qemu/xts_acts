@@ -121,7 +121,6 @@ export default function SerialAddTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute005
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0300
      * @tc.desc   getAttribute successfully.
@@ -154,7 +153,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute006
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0400
      * @tc.desc   getAttribute successfully.
@@ -187,7 +185,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute007
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0700
      * @tc.desc   getAttribute successfully.
@@ -220,7 +217,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute008
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0900
      * @tc.desc   getAttribute successfully.
@@ -253,7 +249,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute009
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1000
      * @tc.desc   getAttribute successfully.
@@ -286,7 +281,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute010
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1100
      * @tc.desc   getAttribute successfully.
@@ -319,7 +313,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute011
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1200
      * @tc.desc   getAttribute successfully.
@@ -352,7 +345,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute012
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1300
      * @tc.desc   getAttribute successfully.
@@ -385,7 +377,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute013
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1400
      * @tc.desc   getAttribute successfully.
@@ -418,7 +409,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute014
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1500
      * @tc.desc   getAttribute successfully.
@@ -451,7 +441,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute015
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1600
      * @tc.desc   getAttribute successfully.
@@ -484,7 +473,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute016
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1700
      * @tc.desc   getAttribute successfully.
@@ -517,7 +505,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute017
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1800
      * @tc.desc   getAttribute successfully.
@@ -550,7 +537,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute018
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1900
      * @tc.desc   getAttribute successfully.
@@ -583,7 +569,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute019
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2000
      * @tc.desc   getAttribute successfully.
@@ -616,7 +601,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute020
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2100
      * @tc.desc   getAttribute successfully.
@@ -649,7 +633,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute021
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2200
      * @tc.desc   getAttribute successfully.
@@ -682,7 +665,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute022
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2300
      * @tc.desc   getAttribute successfully.
@@ -715,7 +697,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute023
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2400
      * @tc.desc   getAttribute successfully.
@@ -748,7 +729,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute024
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2500
      * @tc.desc   getAttribute successfully.
@@ -781,7 +761,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute025
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2600
      * @tc.desc   getAttribute successfully.
@@ -814,7 +793,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute026
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2700
      * @tc.desc   getAttribute successfully.
@@ -847,7 +825,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute027
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3000
      * @tc.desc   getAttribute successfully.
@@ -880,7 +857,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute028
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3100
      * @tc.desc   getAttribute successfully.
@@ -913,7 +889,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute029
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3200
      * @tc.desc   getAttribute successfully.
@@ -946,7 +921,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute030
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3300
      * @tc.desc   getAttribute successfully.
@@ -979,7 +953,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute031
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3400
      * @tc.desc   getAttribute successfully.
@@ -1012,7 +985,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute032
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3500
      * @tc.desc   getAttribute successfully.
@@ -1045,7 +1017,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute033
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3600
      * @tc.desc   getAttribute successfully.
@@ -1078,7 +1049,6 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute034
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3700
      * @tc.desc   getAttribute successfully.

@@ -43,10 +43,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
     });
 
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_001
-     * @tc.name      DatePickerDialogBGBlurStyleTest_001
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.Thin
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_001
+     * @tc.number DatePickerDialogBGBlurStyleTest_001
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.Thin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -68,10 +70,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_002
-     * @tc.name      DatePickerDialogBGBlurStyleTest_002
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.Regular
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_002
+     * @tc.number DatePickerDialogBGBlurStyleTest_002
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.Regular
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -93,10 +97,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_003
-     * @tc.name      DatePickerDialogBGBlurStyleTest_003
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.Thick
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_003
+     * @tc.number DatePickerDialogBGBlurStyleTest_003
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.Thick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -118,10 +124,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_004
-     * @tc.name      DatePickerDialogBGBlurStyleTest_004
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THIN
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_004
+     * @tc.number DatePickerDialogBGBlurStyleTest_004
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -143,10 +151,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_005
-     * @tc.name      DatePickerDialogBGBlurStyleTest_005
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_REGULAR
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_005
+     * @tc.number DatePickerDialogBGBlurStyleTest_005
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_REGULAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -168,10 +178,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_006
-     * @tc.name      DatePickerDialogBGBlurStyleTest_006
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THICK
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_006
+     * @tc.number DatePickerDialogBGBlurStyleTest_006
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THICK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_006',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -193,10 +205,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_007
-     * @tc.name      DatePickerDialogBGBlurStyleTest_007
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_ULTRA_THICK
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_007
+     * @tc.number DatePickerDialogBGBlurStyleTest_007
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_ULTRA_THICK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_007',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -218,10 +232,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_008
-     * @tc.name      DatePickerDialogBGBlurStyleTest_008
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.NONE
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_008
+     * @tc.number DatePickerDialogBGBlurStyleTest_008
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_008',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -238,10 +254,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_009
-     * @tc.name      DatePickerDialogBGBlurStyleTest_009
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.COMPONENT_ULTRA_THIN
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_009
+     * @tc.number DatePickerDialogBGBlurStyleTest_009
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.COMPONENT_ULTRA_THIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_009',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -263,10 +281,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_0010
-     * @tc.name      DatePickerDialogBGBlurStyleTest_0010
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.COMPONENT_THIN
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_0010
+     * @tc.number DatePickerDialogBGBlurStyleTest_0010
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.COMPONENT_THIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_0010',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -288,10 +308,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_0011
-     * @tc.name      DatePickerDialogBGBlurStyleTest_0011
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.COMPONENT_REGULAR
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_0011
+     * @tc.number DatePickerDialogBGBlurStyleTest_0011
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.COMPONENT_REGULAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_0011',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -313,10 +335,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_0012
-     * @tc.name      DatePickerDialogBGBlurStyleTest_0012
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.COMPONENT_THICK
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_0012
+     * @tc.number DatePickerDialogBGBlurStyleTest_0012
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.COMPONENT_THICK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_0012',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -338,10 +362,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_0013
-     * @tc.name      DatePickerDialogBGBlurStyleTest_0013
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle BlurStyle.COMPONENT_ULTRA_THICK
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_0013
+     * @tc.number DatePickerDialogBGBlurStyleTest_0013
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle BlurStyle.COMPONENT_ULTRA_THICK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_0013',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -363,10 +389,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_0014
-     * @tc.name      DatePickerDialogBGBlurStyleTest_0014
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle null
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_0014
+     * @tc.number DatePickerDialogBGBlurStyleTest_0014
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_0014',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -388,10 +416,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_0015
-     * @tc.name      DatePickerDialogBGBlurStyleTest_0015
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle undefined
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_0015
+     * @tc.number DatePickerDialogBGBlurStyleTest_0015
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_0015',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -413,10 +443,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_0016
-     * @tc.name      DatePickerDialogBGBlurStyleTest_0016
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle -1
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_0016
+     * @tc.number DatePickerDialogBGBlurStyleTest_0016
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_0016',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -438,10 +470,12 @@ export default function DatePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    DatePickerDialogBGBlurStyleTest_0017
-     * @tc.name      DatePickerDialogBGBlurStyleTest_0017
-     * @tc.desc      To test the DatePickerDialog backgroundBlurStyle 100
-     * @tc.level:    Level 0
+     * @tc.name   DatePickerDialogBGBlurStyleTest_0017
+     * @tc.number DatePickerDialogBGBlurStyleTest_0017
+     * @tc.desc   To test the DatePickerDialog backgroundBlurStyle 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGBlurStyleTest_0017',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();

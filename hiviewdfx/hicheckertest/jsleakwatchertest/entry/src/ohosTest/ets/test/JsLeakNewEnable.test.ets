@@ -42,12 +42,12 @@ export default function JsLeakWatcherNewTest() {
       }
     })
     /**
+     * @tc.name   testJsLeakWatcher07
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_0700
-     * @tc.name testJsLeakWatcher07
-     * @tc.desc 验证enableLeakWatcher接口正常传参
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口正常传参
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testJsLeakWatcher07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0700 start");
@@ -85,12 +85,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher08
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_0800
-     * @tc.name testJsLeakWatcher08
-     * @tc.desc 验证enableLeakWatcher接口isEnabled参数传入undefined值返回错误码10801001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口isEnabled参数传入undefined值返回错误码10801001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0800 start");
@@ -112,12 +112,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher09
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_0900
-     * @tc.name testJsLeakWatcher09
-     * @tc.desc 验证enableLeakWatcher接口isEnabled参数传入false值返回正常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口isEnabled参数传入false值返回正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0900 start");
@@ -141,12 +141,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher10
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_1000
-     * @tc.name testJsLeakWatcher10
-     * @tc.desc 验证enableLeakWatcher接口config参数传入undefined值返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入undefined值返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_1000 start");
@@ -167,12 +167,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher11
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_1100
-     * @tc.name testJsLeakWatcher11
-     * @tc.desc 验证enableLeakWatcher接口callback参数传入undefined值返回错误码10801003
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口callback参数传入undefined值返回错误码10801003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_1100 start");
@@ -191,12 +191,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher12
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_1200
-     * @tc.name testJsLeakWatcher12
-     * @tc.desc 验证enableLeakWatcher接口config参数传入支持类型和非支持类型混合返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入支持类型和非支持类型混合返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_1200 start");
@@ -219,12 +219,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher13
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_1300
-     * @tc.name testJsLeakWatcher13
-     * @tc.desc 验证enableLeakWatcher接口config参数传入支持类型和非支持类型数组返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入支持类型和非支持类型数组返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_1300 start");
@@ -247,12 +247,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher14
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_1400
-     * @tc.name testJsLeakWatcher14
-     * @tc.desc 验证enableLeakWatcher接口isEnabled参数传入true值稳定性
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口isEnabled参数传入true值稳定性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_1400 start");
@@ -277,12 +277,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher15
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_1500
-     * @tc.name testJsLeakWatcher15
-     * @tc.desc 验证enableLeakWatcher接口isEnabled参数传入false值稳定性
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口isEnabled参数传入false值稳定性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_1500 start");
@@ -307,12 +307,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher16
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_1600
-     * @tc.name testJsLeakWatcher16
-     * @tc.desc 验证enableLeakWatcher接口config参数传入CustomComponent类型正常返回
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入CustomComponent类型正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_1600 start");
@@ -345,12 +345,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher17
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_1700
-     * @tc.name testJsLeakWatcher17
-     * @tc.desc 验证enableLeakWatcher接口config参数传入Window类型正常返回
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入Window类型正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_1700 start");
@@ -383,12 +383,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher18
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_1800
-     * @tc.name testJsLeakWatcher18
-     * @tc.desc 验证enableLeakWatcher接口config参数传入NodeContainer类型正常返回
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入NodeContainer类型正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_1800 start");
@@ -421,12 +421,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher19
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_1900
-     * @tc.name testJsLeakWatcher19
-     * @tc.desc 验证enableLeakWatcher接口config参数传入XComponent类型正常返回
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入XComponent类型正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_1900 start");
@@ -459,12 +459,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher20
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_2000
-     * @tc.name testJsLeakWatcher20
-     * @tc.desc 验证enableLeakWatcher接口config参数传入Ability类型正常返回
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入Ability类型正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_2000 start");
@@ -497,12 +497,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher21
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_2100
-     * @tc.name testJsLeakWatcher21
-     * @tc.desc 验证enableLeakWatcher接口config参数传入CustomComponent、Window、NodeContainer、XComponent、Ability类型正常返回
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入CustomComponent、Window、NodeContainer、XComponent、Ability类型正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_2100 start");
@@ -535,12 +535,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher22
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_2200
-     * @tc.name testJsLeakWatcher22
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型大写字母返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型大写字母返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_2200 start");
@@ -563,12 +563,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher23
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_2300
-     * @tc.name testJsLeakWatcher23
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型小写字母返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型小写字母返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_2300 start");
@@ -591,12 +591,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher24
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_2400
-     * @tc.name testJsLeakWatcher24
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型数字返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型数字返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_2400 start");
@@ -619,12 +619,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher25
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_2500
-     * @tc.name testJsLeakWatcher25
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型特殊字符返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型特殊字符返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_2500 start");
@@ -647,12 +647,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher26
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_2600
-     * @tc.name testJsLeakWatcher26
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型大小写字母混合返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型大小写字母混合返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_2600 start");
@@ -675,12 +675,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher27
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_2700
-     * @tc.name testJsLeakWatcher27
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型大写字母数字混合返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型大写字母数字混合返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_2700 start");
@@ -703,12 +703,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher28
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_2800
-     * @tc.name testJsLeakWatcher28
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型大写字母特殊字符混合返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型大写字母特殊字符混合返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_2800 start");
@@ -731,12 +731,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher29
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_2900
-     * @tc.name testJsLeakWatcher29
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型小写字母数字混合返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型小写字母数字混合返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_2900 start");
@@ -759,12 +759,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher30
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_3000
-     * @tc.name testJsLeakWatcher30
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型小写字母特殊字符混合返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型小写字母特殊字符混合返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_3000 start");
@@ -787,12 +787,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher31
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_3100
-     * @tc.name testJsLeakWatcher31
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型数字特殊字符混合返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型数字特殊字符混合返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_3100 start");
@@ -815,12 +815,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher32
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_3200
-     * @tc.name testJsLeakWatcher32
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型大写字母小写字母数字混合返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型大写字母小写字母数字混合返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_3200 start");
@@ -843,12 +843,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher33
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_3300
-     * @tc.name testJsLeakWatcher33
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型大写字母小写字母特殊字符混合返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型大写字母小写字母特殊字符混合返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_3300 start");
@@ -871,12 +871,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher34
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_3400
-     * @tc.name testJsLeakWatcher34
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型大写字母数字特殊字符混合返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型大写字母数字特殊字符混合返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_3400 start");
@@ -899,12 +899,12 @@ export default function JsLeakWatcherNewTest() {
     })
 
     /**
+     * @tc.name   testJsLeakWatcher35
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_3500
-     * @tc.name testJsLeakWatcher35
-     * @tc.desc 验证enableLeakWatcher接口config参数传入非支持类型小写字母数字特殊字符混合返回错误码10801002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证enableLeakWatcher接口config参数传入非支持类型小写字母数字特殊字符混合返回错误码10801002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testJsLeakWatcher35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_3500 start");

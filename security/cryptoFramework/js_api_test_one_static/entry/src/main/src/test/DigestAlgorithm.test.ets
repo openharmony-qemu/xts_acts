@@ -34,9 +34,12 @@ export default function DigestAlgorithmJsunit() {
     beforeAll(async () => {});
 
     /**
+     * @tc.name   Security_crypto_framework_MD_0100
      * @tc.number Security_crypto_framework_MD_0100
-     * @tc.name Security_crypto_framework_MD_0100
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_MD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testMDDigestPromise("MD5")
@@ -50,9 +53,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_MD_0200
      * @tc.number Security_crypto_framework_MD_0200
-     * @tc.name Security_crypto_framework_MD_0200
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_MD_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testMDDigestPromise("SHA1")
@@ -66,9 +72,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_MD_0300
      * @tc.number Security_crypto_framework_MD_0300
-     * @tc.name Security_crypto_framework_MD_0300
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_MD_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testMDDigestPromise("SHA224")
@@ -82,9 +91,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_MD_0400
      * @tc.number Security_crypto_framework_MD_0400
-     * @tc.name Security_crypto_framework_MD_0400
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_MD_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testMDDigestCallback("SHA256")
@@ -98,10 +110,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_MD_0500
      * @tc.number Security_crypto_framework_MD_0500
-     *
-     * @tc.name Security_crypto_framework_MD_0500
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_MD_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testMDDigestCallback("SHA384")
@@ -115,9 +129,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_MD_0600
      * @tc.number Security_crypto_framework_MD_0600
-     * @tc.name Security_crypto_framework_MD_0600
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_MD_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testMDDigestCallback("SHA512")
@@ -131,9 +148,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_MD_0700
      * @tc.number Security_crypto_framework_MD_0700
-     * @tc.name Security_crypto_framework_MD_0700
-     * @tc.desc Input SHA5
+     * @tc.desc   Input SHA5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_MD_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -146,9 +166,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_MD_0900
      * @tc.number Security_crypto_framework_MD_0900
-     * @tc.name Security_crypto_framework_MD_0900
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_MD_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testMDDigestCallbackLen("SHA224", 10000)
@@ -162,9 +185,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_MD_1000
      * @tc.number Security_crypto_framework_MD_1000
-     * @tc.name Security_crypto_framework_MD_1000
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_MD_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -178,9 +204,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_HMAC_0100
      * @tc.number Security_crypto_framework_HMAC_0100
-     * @tc.name Security_crypto_framework_HMAC_0100
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_HMAC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testHMACDigestCallback("SHA1", "AES128")
@@ -194,9 +223,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_HMAC_0200
      * @tc.number Security_crypto_framework_HMAC_0200
-     * @tc.name Security_crypto_framework_HMAC_0200
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_HMAC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testHMACDigestPromise("SHA224", "AES192")
@@ -210,9 +242,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_HMAC_0300
      * @tc.number Security_crypto_framework_HMAC_0300
-     * @tc.name Security_crypto_framework_HMAC_0300
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_HMAC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testHMACDigestCallback("SHA256", "AES256")
@@ -226,9 +261,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_HMAC_0400
      * @tc.number Security_crypto_framework_HMAC_0400
-     * @tc.name Security_crypto_framework_HMAC_0400
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_HMAC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testHMACDigestPromise("SHA384", "3DES192")
@@ -242,9 +280,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_HMAC_0500
      * @tc.number Security_crypto_framework_HMAC_0500
-     * @tc.name Security_crypto_framework_HMAC_0500
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_HMAC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await testHMACDigestPromise("SHA512", "3DES192")
@@ -258,9 +299,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_HMAC_0600
      * @tc.number Security_crypto_framework_HMAC_0600
-     * @tc.name Security_crypto_framework_HMAC_0600
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_HMAC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -276,9 +320,12 @@ export default function DigestAlgorithmJsunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_HMAC_0900
      * @tc.number Security_crypto_framework_HMAC_0900
-     * @tc.name Security_crypto_framework_HMAC_0900
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_crypto_framework_HMAC_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let globalText: string = "";

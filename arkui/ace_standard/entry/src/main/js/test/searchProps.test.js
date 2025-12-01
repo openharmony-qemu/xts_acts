@@ -80,9 +80,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchIdProp
-         * @tc.desc      ACE
+         * @tc.name   testsearchIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchIdProp', Level.LEVEL0, async function(done) {
             console.info('testsearchIdProp START');
@@ -98,9 +101,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchClassProp
-         * @tc.desc      ACE
+         * @tc.name   testsearchClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchClassProp', Level.LEVEL0, async function(done) {
             console.info('testsearchClassProp START');
@@ -117,9 +123,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchClassPropNone START');
@@ -137,9 +146,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchRefProp
-         * @tc.desc      ACE
+         * @tc.name   testsearchRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchRefProp', Level.LEVEL0, async function(done) {
             console.info('testsearchRefProp START');
@@ -156,9 +168,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchRefPropNone START');
@@ -176,9 +191,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testsearchDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testsearchDisabledPropTrue START');
@@ -195,9 +213,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testsearchDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testsearchDisabledPropFalse START');
@@ -214,9 +235,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchDisabledPropNone START');
@@ -233,9 +257,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testsearchFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testsearchFocusablePropTrue START');
@@ -252,9 +279,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testsearchFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testsearchFocusablePropFalse START');
@@ -271,9 +301,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchFocusablePropNone START');
@@ -290,9 +323,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchDataProp
-         * @tc.desc      ACE
+         * @tc.name   testsearchDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchDataProp', Level.LEVEL0, async function(done) {
             console.info('testsearchDataProp START');
@@ -310,9 +346,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchDataPropNone START');
@@ -330,9 +369,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testsearchClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testsearchClickEffectPropSmall START');
@@ -349,9 +391,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testsearchClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testsearchClickEffectPropMedium START');
@@ -368,9 +413,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testsearchClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testsearchClickEffectPropLarge START');
@@ -387,9 +435,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchClickEffectPropNone START');
@@ -407,9 +458,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testsearchDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testsearchDirPropRtl START');
@@ -426,9 +480,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testsearchDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testsearchDirPropLtr START');
@@ -445,9 +502,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testsearchDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testsearchDirPropAuto START');
@@ -464,9 +524,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchDirPropNone START');
@@ -483,9 +546,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testsearchForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchForPropNull', Level.LEVEL0, async function(done) {
             console.info('testsearchForPropNull START');
@@ -503,9 +569,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testsearchForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchForPropOne', Level.LEVEL0, async function(done) {
             console.info('testsearchForPropOne START');
@@ -523,9 +592,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testsearchForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchForPropThree', Level.LEVEL0, async function(done) {
             console.info('testsearchForPropThree START');
@@ -543,9 +615,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testsearchIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testsearchIfPropTrue START');
@@ -563,9 +638,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testsearchShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testsearchShowPropTrue START');
@@ -583,9 +661,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testsearchShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testsearchShowPropFalse START');
@@ -603,9 +684,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchShowPropNone START');
@@ -623,9 +707,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchValuePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchValuePropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchXsPropNone START');
@@ -643,9 +730,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchValueProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchValueProp', Level.LEVEL0, async function(done) {
             console.info('testsearchXsPropNone START');
@@ -663,9 +753,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchIconPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchIconPropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchXsPropNone START');
@@ -683,9 +776,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchIconProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchIconProp', Level.LEVEL0, async function(done) {
             console.info('testsearchXsPropNone START');
@@ -703,9 +799,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchHintPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchHintPropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchXsPropNone START');
@@ -723,9 +822,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchHintProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchHintProp', Level.LEVEL0, async function(done) {
             console.info('testsearchXsPropNone START');
@@ -743,9 +845,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchMenuoptionsPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchMenuoptionsPropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchXsPropNone START');
@@ -763,9 +868,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchMenuoptionsProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchMenuoptionsProp', Level.LEVEL0, async function(done) {
             console.info('testsearchXsPropNone START');
@@ -783,9 +891,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchSearchbuttonPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchSearchbuttonPropNone', Level.LEVEL0, async function(done) {
             console.info('testsearchXsPropNone START');
@@ -803,9 +914,12 @@ export default function searchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testsearchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testsearchSearchbuttonProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testsearchSearchbuttonProp', Level.LEVEL0, async function(done) {
             console.info('testsearchXsPropNone START');

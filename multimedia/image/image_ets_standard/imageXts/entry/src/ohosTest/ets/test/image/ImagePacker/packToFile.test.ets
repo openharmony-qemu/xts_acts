@@ -256,12 +256,12 @@ export default function imagePackerPackToFileTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_001
-     * @tc.name      : imagePacker_packToFile_promise_001
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_001
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_001
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_001';
@@ -273,12 +273,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_002
-     * @tc.name      : imagePacker_packToFile_promise_002
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_002
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_002
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_002';
@@ -290,12 +290,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_003
-     * @tc.name      : imagePacker_packToFile_promise_003
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_003
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_003
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_003';
@@ -307,12 +307,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_004  //TODO 传参 format: "image/heif" 62980115
-     * @tc.name      : imagePacker_packToFile_promise_004
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_004
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_004  //TODO 传参 format: "image/heif" 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /* it('imagePacker_packToFile_promise_004', Level.LEVEL0, async (done: Function) => {
        const testName = 'imagePacker_packToFile_promise_004';
@@ -324,12 +324,12 @@ export default function imagePackerPackToFileTest() {
      })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_005  //TODO 传参 format: "image/heif" 62980115
-     * @tc.name      : imagePacker_packToFile_promise_005
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_005
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_005  //TODO 传参 format: "image/heif" 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_005';
@@ -341,12 +341,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_006  //TODO 传参 format: "image/heif" 62980115
-     * @tc.name      : imagePacker_packToFile_promise_006
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_006
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_006  //TODO 传参 format: "image/heif" 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_006';
@@ -358,12 +358,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_007
-     * @tc.name      : imagePacker_packToFile_promise_007
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_007
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_007
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_007';
@@ -375,12 +375,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_008
-     * @tc.name      : imagePacker_packToFile_promise_008
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_008
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_008
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_008';
@@ -392,12 +392,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_009
-     * @tc.name      : imagePacker_packToFile_promise_009
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_009
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_009
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_009';
@@ -409,12 +409,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_010 //TODO 传参 format: "image/heif" 62980115
-     * @tc.name      : imagePacker_packToFile_promise_010
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_010
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_010 //TODO 传参 format: "image/heif" 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_010';
@@ -426,12 +426,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_011 //TODO 传参 format: "image/heif" 62980115
-     * @tc.name      : imagePacker_packToFile_promise_011
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_011
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_011 //TODO 传参 format: "image/heif" 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_011';
@@ -443,12 +443,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_012 //TODO 传参 format: "image/heif" 62980115
-     * @tc.name      : imagePacker_packToFile_promise_012
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_012
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_012 //TODO 传参 format: "image/heif" 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_012';
@@ -460,12 +460,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_013
-     * @tc.name      : imagePacker_packToFile_promise_013
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_013
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_013
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_013';
@@ -477,12 +477,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_014 //TODO 超时
-     * @tc.name      : imagePacker_packToFile_promise_014
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_014
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_014 //TODO 超时
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_014';
@@ -494,12 +494,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_015
-     * @tc.name      : imagePacker_packToFile_promise_015
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_015
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_015
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_015';
@@ -511,12 +511,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_016
-     * @tc.name      : imagePacker_packToFile_promise_016
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_016
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_016
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_016';
@@ -528,12 +528,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_017
-     * @tc.name      : imagePacker_packToFile_promise_017
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_017
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_017
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_017';
@@ -545,12 +545,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_018
-     * @tc.name      : imagePacker_packToFile_promise_018
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_018
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_018
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_018';
@@ -562,12 +562,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_019
-     * @tc.name      : imagePacker_packToFile_promise_019
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_019
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_019
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_019';
@@ -579,12 +579,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_020
-     * @tc.name      : imagePacker_packToFile_promise_020
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_020
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_020
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_020';
@@ -596,12 +596,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_021
-     * @tc.name      : imagePacker_packToFile_promise_021
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_021
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_021
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_021';
@@ -613,12 +613,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_022
-     * @tc.name      : imagePacker_packToFile_promise_022
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_022
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_022
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_022';
@@ -630,12 +630,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_023
-     * @tc.name      : imagePacker_packToFile_promise_023
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_023
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_023
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_023';
@@ -647,12 +647,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_024
-     * @tc.name      : imagePacker_packToFile_promise_024
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_024
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_024
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_024';
@@ -664,12 +664,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_025
-     * @tc.name      : imagePacker_packToFile_promise_025
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_025
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_025
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_025';
@@ -681,12 +681,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_026
-     * @tc.name      : imagePacker_packToFile_promise_026
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_026
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_026
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_026';
@@ -698,12 +698,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_027
-     * @tc.name      : imagePacker_packToFile_promise_027
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_027
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_027
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_027';
@@ -715,12 +715,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_028
-     * @tc.name      : imagePacker_packToFile_promise_028
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_028
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_028
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_028';
@@ -732,12 +732,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_029
-     * @tc.name      : imagePacker_packToFile_promise_029
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_029
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_029
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_029';
@@ -749,12 +749,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_030
-     * @tc.name      : imagePacker_packToFile_promise_030
-     * @tc.desc      : imagePacker_packToFile(pixelMap)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_030
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_030
+     * @tc.desc   imagePacker_packToFile(pixelMap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_030';
@@ -766,12 +766,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_031
-     * @tc.name      : imagePacker_packToFile_callback_001
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_001
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_031
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_001';
@@ -783,12 +783,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_032
-     * @tc.name      : imagePacker_packToFile_callback_002
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_002
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_032
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_002';
@@ -800,12 +800,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_033
-     * @tc.name      : imagePacker_packToFile_callback_003
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_003
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_033
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_003';
@@ -817,12 +817,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_034
-     * @tc.name      : imagePacker_packToFile_callback_004
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_004
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_034
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_004';
@@ -834,12 +834,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_035  //TODO 超时
-     * @tc.name      : imagePacker_packToFile_callback_005
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_005
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_035  //TODO 超时
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_005';
@@ -851,12 +851,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_036
-     * @tc.name      : imagePacker_packToFile_callback_006
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_006
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_036
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_006';
@@ -868,12 +868,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_037
-     * @tc.name      : imagePacker_packToFile_callback_007
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_007
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_037
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_007';
@@ -885,12 +885,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_038
-     * @tc.name      : imagePacker_packToFile_callback_008
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_008
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_038
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_008';
@@ -902,12 +902,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_039
-     * @tc.name      : imagePacker_packToFile_callback_009
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_009
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_039
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_009';
@@ -919,12 +919,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_040  //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_010
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_010
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_040  //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_010';
@@ -936,12 +936,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_041  //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_011
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_011
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_041  //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_011';
@@ -953,12 +953,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_042  //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_012
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_012
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_042  //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_012';
@@ -970,12 +970,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_043 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_013
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_013
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_043 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_013';
@@ -987,12 +987,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_044 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_014
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_014
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_044 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_014';
@@ -1004,12 +1004,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_045 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_015
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_015
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_045 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_015';
@@ -1021,12 +1021,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_046
-     * @tc.name      : imagePacker_packToFile_callback_016
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_016
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_046
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_016';
@@ -1038,12 +1038,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_047
-     * @tc.name      : imagePacker_packToFile_callback_017
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_017
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_047
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_017';
@@ -1055,12 +1055,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_048
-     * @tc.name      : imagePacker_packToFile_callback_018
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_018
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_048
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_018';
@@ -1072,12 +1072,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_049
-     * @tc.name      : imagePacker_packToFile_callback_019
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_019
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_049
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_019';
@@ -1089,12 +1089,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_050
-     * @tc.name      : imagePacker_packToFile_callback_020
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_020
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_050
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_020';
@@ -1106,12 +1106,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_051
-     * @tc.name      : imagePacker_packToFile_callback_021
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_021
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_051
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_021';
@@ -1123,12 +1123,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_052
-     * @tc.name      : imagePacker_packToFile_callback_022
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_022
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_052
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_022';
@@ -1140,12 +1140,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_053
-     * @tc.name      : imagePacker_packToFile_callback_023
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_023
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_053
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_023';
@@ -1157,12 +1157,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_054
-     * @tc.name      : imagePacker_packToFile_callback_024
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_024
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_054
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_callback_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_024';
@@ -1174,12 +1174,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_055  //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_025
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_025
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_055  //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_025';
@@ -1191,12 +1191,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_056 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_026
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_026
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_056 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_026';
@@ -1208,12 +1208,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_057 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_027
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_027
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_057 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_027';
@@ -1225,12 +1225,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_058 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_028
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_028
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_058 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_028';
@@ -1242,12 +1242,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_059 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_029
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_029
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_059 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_029';
@@ -1259,12 +1259,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_060 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_callback_030
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_callback_030
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_060 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_callback_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_callback_030';
@@ -1276,12 +1276,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_061 //TODO 62980115
-     * @tc.name      : imagePacker_packToFile_abnormal_promise_001
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_promise_001
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_061 //TODO 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_promise_001';
@@ -1293,12 +1293,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_062 //TODO 62980115
-     * @tc.name      : imagePacker_packToFile_abnormal_promise_002
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_promise_002
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_062 //TODO 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_promise_002';
@@ -1310,12 +1310,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_063  //TODO 62980115
-     * @tc.name      : imagePacker_packToFile_abnormal_promise_003
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_promise_003
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_063  //TODO 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_promise_003';
@@ -1327,12 +1327,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_064  //TODO 格式中不包含gif 但是却能通过
-     * @tc.name      : imagePacker_packToFile_abnormal_promise_004
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_promise_004
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_064  //TODO 格式中不包含gif 但是却能通过
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_promise_004';
@@ -1344,12 +1344,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_065  //TODO 62980115
-     * @tc.name      : imagePacker_packToFile_abnormal_promise_005
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_promise_005
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_065  //TODO 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_abnormal_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_promise_005';
@@ -1361,12 +1361,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_066 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_abnormal_callback_001
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_callback_001
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_066 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_callback_001';
@@ -1378,12 +1378,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_067 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_abnormal_callback_002
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_callback_002
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_067 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_callback_002';
@@ -1395,12 +1395,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_068 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_abnormal_callback_003
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_callback_003
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_068 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_callback_003';
@@ -1412,12 +1412,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_069 //TODO 格式中不包含gif 但是却能通过
-     * @tc.name      : imagePacker_packToFile_abnormal_callback_004
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_callback_004
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_069 //TODO 格式中不包含gif 但是却能通过
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_callback_004';
@@ -1429,12 +1429,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_070  //TODO 中断
-     * @tc.name      : imagePacker_packToFile_abnormal_callback_005
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_callback_005
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_070  //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_callback_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_callback_005';
@@ -1446,12 +1446,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_071 //TODO 62980115
-     * @tc.name      : imagePacker_packToFile_abnormal_promise_006
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_promise_006
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_071 //TODO 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_abnormal_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_promise_006';
@@ -1463,12 +1463,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_072 //TODO 62980115
-     * @tc.name      : imagePacker_packToFile_abnormal_promise_007
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_promise_007
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_072 //TODO 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_abnormal_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_promise_007';
@@ -1480,12 +1480,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_073 //TODO 62980115
-     * @tc.name      : imagePacker_packToFile_abnormal_promise_008
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_promise_008
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_073 //TODO 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_abnormal_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_promise_008';
@@ -1497,12 +1497,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_074 //TODO 格式中不包含gif 但是却能通过
-     * @tc.name      : imagePacker_packToFile_abnormal_promise_009
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_promise_009
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_074 //TODO 格式中不包含gif 但是却能通过
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_promise_009';
@@ -1514,12 +1514,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_075 //TODO 62980115
-     * @tc.name      : imagePacker_packToFile_abnormal_promise_010
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_promise_010
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_075 //TODO 62980115
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_abnormal_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_promise_010';
@@ -1531,12 +1531,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_076 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_abnormal_callback_006
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_callback_006
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_076 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_callback_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_callback_006';
@@ -1548,12 +1548,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_077 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_abnormal_callback_007
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_callback_007
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_077 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_callback_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_callback_007';
@@ -1565,12 +1565,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_078 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_abnormal_callback_008
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_callback_008
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_078 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_callback_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_callback_008';
@@ -1582,12 +1582,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_079 //TODO 格式中不包含gif 但是却能通过
-     * @tc.name      : imagePacker_packToFile_abnormal_callback_009
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_callback_009
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_079 //TODO 格式中不包含gif 但是却能通过
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_callback_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_callback_009';
@@ -1599,12 +1599,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_080 //TODO 中断
-     * @tc.name      : imagePacker_packToFile_abnormal_callback_010
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_abnormal_callback_010
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_080 //TODO 中断
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_abnormal_callback_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_abnormal_callback_010';
@@ -1616,12 +1616,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_081
-     * @tc.name      : imagePacker_packToFile_promise_031
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_031
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_081
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_031', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_031';
@@ -1639,12 +1639,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_082
-     * @tc.name      : imagePacker_packToFile_promise_032
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_032
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_082
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_032', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_032';
@@ -1662,12 +1662,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_083
-     * @tc.name      : imagePacker_packToFile_promise_033
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_033
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_083
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_033', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_033';
@@ -1685,12 +1685,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_084  //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_034
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_034
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_084  //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_034', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_034';
@@ -1708,12 +1708,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_085  //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_035
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_035
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_085  //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_035', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_035';
@@ -1731,12 +1731,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_086  //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_036
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_036
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_086  //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /* it('imagePacker_packToFile_promise_036', Level.LEVEL0, async (done: Function) => {
        const testName = 'imagePacker_packToFile_promise_036';
@@ -1754,12 +1754,12 @@ export default function imagePackerPackToFileTest() {
      })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_087 //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_037
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_037
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_087 //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_037', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_037';
@@ -1777,12 +1777,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_088 //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_038
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_038
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_088 //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_038', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_038';
@@ -1800,12 +1800,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_089 //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_039
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_039
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_089 //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_039', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_039';
@@ -1823,12 +1823,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_090 //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_040
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_040
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_090 //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_040', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_040';
@@ -1846,12 +1846,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_091 //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_041
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_041
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_091 //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_041', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_041';
@@ -1869,12 +1869,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_092 //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_042
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_042
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_092 //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_042', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_042';
@@ -1892,12 +1892,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_093 //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_043
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_043
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_093 //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_043', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_043';
@@ -1915,12 +1915,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_094 //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_044
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_044
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_094 //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_044', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_044';
@@ -1938,12 +1938,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_095 //TODO 401
-     * @tc.name      : imagePacker_packToFile_promise_045
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_045
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_095 //TODO 401
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToFile_promise_045', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_045';
@@ -1961,12 +1961,12 @@ export default function imagePackerPackToFileTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_096
-     * @tc.name      : imagePacker_packToFile_promise_046
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_046
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_096
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_046', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_046';
@@ -1984,12 +1984,12 @@ export default function imagePackerPackToFileTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_PACK_TO_DATA_097
-     * @tc.name      : imagePacker_packToFile_promise_047
-     * @tc.desc      : imagePacker_packToFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToFile_promise_047
+     * @tc.number IMAGE_SOURCE_PACK_TO_DATA_097
+     * @tc.desc   imagePacker_packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToFile_promise_047', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFile_promise_047';

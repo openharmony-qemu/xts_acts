@@ -29,7 +29,6 @@ export default function UtdNdkTest() {
     afterAll(() => {
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4000
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4000
      * @tc.desc   OH_Utd_Create_0001
@@ -44,7 +43,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4000 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4010
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4010
      * @tc.desc   OH_Utd_Create_0002
@@ -59,7 +57,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4010 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4020
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4020
      * @tc.desc   OH_Utd_Create_0003
@@ -74,7 +71,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4020 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4030
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4030
      * @tc.desc   OH_Utd_Create_0004
@@ -89,7 +85,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4030 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4040
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4040
      * @tc.desc   OH_Utd_Create_0005
@@ -104,7 +99,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4040 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4050
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4050
      * @tc.desc   OH_Utd_Create_0006
@@ -119,7 +113,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4050 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4060
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4060
      * @tc.desc   OH_Utd_Create_0007
@@ -134,7 +127,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4060 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4070
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4070
      * @tc.desc   OH_Utd_Create_0007
@@ -149,7 +141,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4070 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4080
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4080
      * @tc.desc   OH_Utd_Create_0009
@@ -164,7 +155,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4080 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4090
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4090
      * @tc.desc   OH_Utd_Create_0010
@@ -179,7 +169,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4090 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4100
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4100
      * @tc.desc   OH_Utd_Create_0011
@@ -194,7 +183,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4100 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4110
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4110
      * @tc.desc   OH_Utd_Create_0012
@@ -209,7 +197,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4110 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4120
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4120
      * @tc.desc   OH_Utd_Create_0013
@@ -224,7 +211,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4120 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4130
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4130
      * @tc.desc   OH_Utd_Create_0014
@@ -239,7 +225,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4130 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4140
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4140
      * @tc.desc   OH_Utd_Create_0015
@@ -254,7 +239,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4140 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4160
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4160
      * @tc.desc   OH_Utd_Create_0017
@@ -269,7 +253,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4160 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4170
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4170
      * @tc.desc   OH_Utd_Create_0018
@@ -284,7 +267,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4170 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4180
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4180
      * @tc.desc   OH_Utd_Create_0019
@@ -299,7 +281,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4180 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4190
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4190
      * @tc.desc   OH_Utd_Create_0020
@@ -314,7 +295,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4190 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4200
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4200
      * @tc.desc   OH_Utd_Create_0021
@@ -329,7 +309,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4200 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4210
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4210
      * @tc.desc   OH_Utd_Create_0022
@@ -344,7 +323,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4210 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4220
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4220
      * @tc.desc   OH_Utd_Create_0023
@@ -359,7 +337,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4220 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4230
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4230
      * @tc.desc   OH_Utd_Create_0024
@@ -374,7 +351,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4230 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4240
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4240
      * @tc.desc   OH_Utd_Create_0025
@@ -389,7 +365,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4240 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4250
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4250
      * @tc.desc   OH_Utd_Create_0026
@@ -404,7 +379,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4250 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4260
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4260
      * @tc.desc   OH_Utd_Create_0027
@@ -419,7 +393,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4260 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4290
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4290
      * @tc.desc   OH_Utd_Create_0030
@@ -434,7 +407,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4290 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4300
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4300
      * @tc.desc   OH_Utd_Create_0031
@@ -449,7 +421,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4300 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4310
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4310
      * @tc.desc   OH_Utd_Create_0032
@@ -464,7 +435,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4310 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4320
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4320
      * @tc.desc   OH_Utd_Create_0033
@@ -479,7 +449,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4320 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4330
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4330
      * @tc.desc   OH_Utd_Create_0034
@@ -494,7 +463,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4330 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4340
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4340
      * @tc.desc   OH_Utd_Create_0035
@@ -509,7 +477,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4340 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4350
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4350
      * @tc.desc   OH_Utd_Create_0036
@@ -524,7 +491,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4350 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4360
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4360
      * @tc.desc   OH_Utd_Create_0037
@@ -539,7 +505,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4360 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4370
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4370
      * @tc.desc   OH_Utd_Create_0038
@@ -554,7 +519,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4370 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4380
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4380
      * @tc.desc   OH_Utd_Create_0039
@@ -569,7 +533,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4380 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4390
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4390
      * @tc.desc   OH_Utd_Create_0040
@@ -584,7 +547,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4390 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4400
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4400
      * @tc.desc   OH_Utd_Create_0041
@@ -599,7 +561,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4400 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4410
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4410
      * @tc.desc   OH_Utd_Create_0042
@@ -614,7 +575,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4410 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4420
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4420
      * @tc.desc   OH_Utd_Create_0043
@@ -629,7 +589,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4420 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4430
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4430
      * @tc.desc   OH_Utd_Create_0044
@@ -644,7 +603,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4430 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4440
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4440
      * @tc.desc   OH_Utd_Create_0045
@@ -659,7 +617,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4440 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4450
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4450
      * @tc.desc   OH_Utd_Create_0046
@@ -674,7 +631,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4450 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4460
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4460
      * @tc.desc   OH_Utd_Create_0047
@@ -689,7 +645,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4460 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4470
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4470
      * @tc.desc   OH_Utd_Create_0048
@@ -704,7 +659,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4470 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4480
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4480
      * @tc.desc   OH_Utd_Create_0049
@@ -719,7 +673,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4480 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4490
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4490
      * @tc.desc   OH_Utd_Create_0050
@@ -734,7 +687,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4490 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4500
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4500
      * @tc.desc   OH_Utd_Create_0051
@@ -749,7 +701,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4500 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4510
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4510
      * @tc.desc   OH_Utd_Create_0052
@@ -764,7 +715,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4510 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4520
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4520
      * @tc.desc   OH_Utd_Create_0053
@@ -779,7 +729,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4520 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4540
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4540
      * @tc.desc   OH_Utd_Create_0055
@@ -794,7 +743,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4540 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4560
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4560
      * @tc.desc   OH_Utd_Create_0056
@@ -809,7 +757,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4560 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4570
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4570
      * @tc.desc   OH_Utd_Create_0058
@@ -824,7 +771,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4570 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4580
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4580
      * @tc.desc   OH_Utd_Create_0059
@@ -839,7 +785,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4580 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4590
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4590
      * @tc.desc   OH_Utd_Create_0060
@@ -854,7 +799,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4590 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4600
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4600
      * @tc.desc   OH_Utd_Create_0061
@@ -869,7 +813,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4600 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4610
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4610
      * @tc.desc   OH_Utd_Create_0062
@@ -884,7 +827,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4610 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4620
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4620
      * @tc.desc   OH_Utd_Create_0063
@@ -899,7 +841,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4620 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4630
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4630
      * @tc.desc   OH_Utd_Create_0064
@@ -914,7 +855,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4630 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4640
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4640
      * @tc.desc   OH_Utd_Create_0065
@@ -929,7 +869,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4640 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4650
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4650
      * @tc.desc   OH_Utd_Create_0066
@@ -944,7 +883,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4650 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4660
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4660
      * @tc.desc   OH_Utd_Create_0067
@@ -959,7 +897,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4660 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4670
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4670
      * @tc.desc   OH_Utd_Create_0068
@@ -974,7 +911,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4670 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4680
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4680
      * @tc.desc   OH_Utd_Create_0069
@@ -989,7 +925,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4680 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4690
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4690
      * @tc.desc   OH_Utd_Create_0070
@@ -1004,7 +939,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4690 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4700
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4700
      * @tc.desc   OH_Utd_Create_0071
@@ -1019,7 +953,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4700 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4710
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4710
      * @tc.desc   OH_Utd_Create_0072
@@ -1034,7 +967,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4710 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4720
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4720
      * @tc.desc   OH_Utd_Create_0073
@@ -1049,7 +981,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4720 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4730
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4730
      * @tc.desc   OH_Utd_Create_0074
@@ -1064,7 +995,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4730 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4740
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4740
      * @tc.desc   OH_Utd_Create_0075
@@ -1079,7 +1009,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4740 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4750
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4750
      * @tc.desc   OH_Utd_Create_0076
@@ -1094,7 +1023,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4750 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4760
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4760
      * @tc.desc   OH_Utd_Create_0077
@@ -1109,7 +1037,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4760 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4770
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4770
      * @tc.desc   OH_Utd_Create_0078
@@ -1124,7 +1051,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4770 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4780
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4780
      * @tc.desc   OH_Utd_Create_0079
@@ -1139,7 +1065,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4780 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4790
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4790
      * @tc.desc   OH_Utd_Create_0080
@@ -1154,7 +1079,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4790 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4800
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4800
      * @tc.desc   OH_Utd_Create_0081
@@ -1169,7 +1093,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4800 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4810
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4810
      * @tc.desc   OH_Utd_Create_0082
@@ -1184,7 +1107,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4810 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4820
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4820
      * @tc.desc   OH_Utd_Create_0083
@@ -1199,7 +1121,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4820 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4830
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4830
      * @tc.desc   OH_Utd_Create_0084
@@ -1214,7 +1135,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4830 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4840
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4840
      * @tc.desc   OH_Utd_Create_0085
@@ -1229,7 +1149,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4840 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4850
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4850
      * @tc.desc   OH_Utd_Create_0086
@@ -1244,7 +1163,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4850 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4860
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4860
      * @tc.desc   OH_Utd_Create_0087
@@ -1259,7 +1177,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4860 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4880
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4880
      * @tc.desc   OH_Utd_Create_0089
@@ -1274,7 +1191,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4880 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4890
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4890
      * @tc.desc   OH_Utd_Create_0090
@@ -1289,7 +1205,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4890 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4900
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4900
      * @tc.desc   OH_Utd_Create_0091
@@ -1304,7 +1219,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4900 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4910
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4910
      * @tc.desc   OH_Utd_Create_0092
@@ -1319,7 +1233,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4910 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4920
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4920
      * @tc.desc   OH_Utd_Create_0093
@@ -1334,7 +1247,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4920 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4930
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4930
      * @tc.desc   OH_Utd_Create_0094
@@ -1349,7 +1261,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4930 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4940
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4940
      * @tc.desc   OH_Utd_Create_0095
@@ -1364,7 +1275,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4940 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4950
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4950
      * @tc.desc   OH_Utd_Create_0096
@@ -1379,7 +1289,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4950 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4960
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4960
      * @tc.desc   OH_Utd_Create_0097
@@ -1394,7 +1303,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4960 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4970
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4970
      * @tc.desc   OH_Utd_Create_0098
@@ -1409,7 +1317,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4970 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4980
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4980
      * @tc.desc   OH_Utd_Create_0099
@@ -1424,7 +1331,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4980 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4990
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4990
      * @tc.desc   OH_Utd_Create_0100
@@ -1439,7 +1345,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_4990 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5000
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5000
      * @tc.desc   OH_Utd_Create_0101
@@ -1454,7 +1359,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5000 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5010
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5010
      * @tc.desc   OH_Utd_Create_0102
@@ -1469,7 +1373,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5010 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5020
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5020
      * @tc.desc   OH_Utd_Create_0103
@@ -1484,7 +1387,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5020 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5030
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5030
      * @tc.desc   OH_Utd_Create_0104
@@ -1499,7 +1401,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5030 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5040
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5040
      * @tc.desc   OH_Utd_Create_0105
@@ -1514,7 +1415,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5040 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5050
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5050
      * @tc.desc   OH_Utd_Create_0106
@@ -1529,7 +1429,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5050 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5060
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5060
      * @tc.desc   OH_Utd_Create_0107
@@ -1544,7 +1443,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5060 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5070
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5070
      * @tc.desc   OH_Utd_Create_0108
@@ -1559,7 +1457,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5070 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5080
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5080
      * @tc.desc   OH_Utd_Create_0109
@@ -1574,7 +1471,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5080 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5090
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5090
      * @tc.desc   OH_Utd_Create_0110
@@ -1589,7 +1485,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5090 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5100
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5100
      * @tc.desc   OH_Utd_Create_0111
@@ -1604,7 +1499,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5100 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5110
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5110
      * @tc.desc   OH_Utd_Create_0112
@@ -1619,7 +1513,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5110 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5120
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5120
      * @tc.desc   OH_Utd_Create_0113
@@ -1634,7 +1527,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5120 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5130
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5130
      * @tc.desc   OH_Utd_Create_0114
@@ -1649,7 +1541,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5130 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5140
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5140
      * @tc.desc   OH_Utd_Create_0115
@@ -1664,7 +1555,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5140 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5150
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5150
      * @tc.desc   OH_Utd_Create_0116
@@ -1679,7 +1569,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5150 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5160
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5160
      * @tc.desc   OH_Utd_Create_0117
@@ -1694,7 +1583,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5160 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5170
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5170
      * @tc.desc   OH_Utd_Create_0118
@@ -1709,7 +1597,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5170 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5180
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5180
      * @tc.desc   OH_Utd_Create_0119
@@ -1724,7 +1611,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5180 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5190
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5190
      * @tc.desc   OH_Utd_Create_0120
@@ -1739,7 +1625,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5190 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5200
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5200
      * @tc.desc   OH_Utd_Create_0121
@@ -1754,7 +1639,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5200 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5210
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5210
      * @tc.desc   OH_Utd_Create_0122
@@ -1769,7 +1653,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5210 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5220
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5220
      * @tc.desc   OH_Utd_Create_0123
@@ -1784,7 +1667,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5220 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5230
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5230
      * @tc.desc   OH_Utd_Create_0124
@@ -1799,7 +1681,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5230 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5240
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5240
      * @tc.desc   OH_Utd_Create_0125
@@ -1814,7 +1695,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5240 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5250
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5250
      * @tc.desc   OH_Utd_Create_0126
@@ -1829,7 +1709,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5250 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5260
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5260
      * @tc.desc   OH_Utd_Create_0127
@@ -1844,7 +1723,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5260 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5270
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5270
      * @tc.desc   OH_Utd_Create_0128
@@ -1859,7 +1737,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5270 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5280
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5280
      * @tc.desc   OH_Utd_Create_0129
@@ -1874,7 +1751,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5280 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5290
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5290
      * @tc.desc   OH_Utd_Create_0130
@@ -1889,7 +1765,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5290 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5300
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5300
      * @tc.desc   OH_Utd_Create_0131
@@ -1904,7 +1779,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5300 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5310
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5310
      * @tc.desc   OH_Utd_Create_0132
@@ -1919,7 +1793,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5310 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5320
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5320
      * @tc.desc   OH_Utd_Create_0133
@@ -1934,7 +1807,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5320 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5330
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5330
      * @tc.desc   OH_Utd_Create_0134
@@ -1949,7 +1821,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5330 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5340
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5340
      * @tc.desc   OH_Utd_Create_0135
@@ -1964,7 +1835,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5340 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5350
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5350
      * @tc.desc   OH_Utd_Create_0136
@@ -1979,7 +1849,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5350 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5360
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5360
      * @tc.desc   OH_Utd_Create_0137
@@ -1994,7 +1863,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5360 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5370
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5370
      * @tc.desc   OH_Utd_Create_0138
@@ -2009,7 +1877,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5370 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5380
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5380
      * @tc.desc   OH_Utd_Create_0139
@@ -2024,7 +1891,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5380 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5390
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5390
      * @tc.desc   OH_Utd_Create_0140
@@ -2039,7 +1905,6 @@ export default function UtdNdkTest() {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_UDMF_SDK_UtdNdkAPITest_5390 key is : ' + result, 'aa');
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0100
      * @tc.desc   OH_Utd_Create_Test0100
@@ -2054,7 +1919,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0200
      * @tc.desc   OH_Utd_Create_Test0200
@@ -2069,7 +1933,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0300
      * @tc.desc   OH_Utd_Create_Test0300
@@ -2084,7 +1947,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0400
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0400
      * @tc.desc   OH_Utd_GetTypeId0100
@@ -2099,7 +1961,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0500
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0500
      * @tc.desc   OH_Utd_GetTypeId0200
@@ -2114,7 +1975,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0600
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0600
      * @tc.desc   OH_Utd_GetDescription0100
@@ -2129,7 +1989,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0700
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0700
      * @tc.desc   OH_Utd_GetDescription0200
@@ -2144,7 +2003,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0800
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0800
      * @tc.desc   OH_Utd_GetReferenceUrl_001
@@ -2159,7 +2017,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0900
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_0900
      * @tc.desc   OH_Utd_GetReferenceUrl_002
@@ -2174,7 +2031,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1000
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1000
      * @tc.desc   OH_Utd_GetIconFile_001
@@ -2189,7 +2045,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1100
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1100
      * @tc.desc   OH_Utd_GetIconFile_002
@@ -2204,7 +2059,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1200
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1200
      * @tc.desc   OH_Utd_GetBelongingToTypes_001
@@ -2219,7 +2073,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1300
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1300
      * @tc.desc   OH_Utd_GetBelongingToTypes_002
@@ -2234,7 +2087,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1400
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1400
      * @tc.desc   OH_Utd_GetFilenameExtensions_001
@@ -2249,7 +2101,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1500
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1500
      * @tc.desc   OH_Utd_GetFilenameExtensions_002
@@ -2264,7 +2115,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1600
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1600
      * @tc.desc   OH_Utd_GetFilenameExtensions_003
@@ -2279,7 +2129,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1700
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1700
      * @tc.desc   OH_Utd_GetMimeTypes_001
@@ -2294,7 +2143,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1800
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1800
      * @tc.desc   OH_Utd_GetMimeTypes_002
@@ -2309,7 +2157,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1900
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_1900
      * @tc.desc   OH_Utd_GetMimeTypes_003
@@ -2324,7 +2171,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2000
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2000
      * @tc.desc   OH_Utd_GetMimeTypes_003
@@ -2339,7 +2185,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2100
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2100
      * @tc.desc   OH_Utd_GetTypesByFilenameExtension_002
@@ -2354,7 +2199,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2200
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2200
      * @tc.desc   OH_Utd_GetTypesByFilenameExtension_003
@@ -2369,7 +2213,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2300
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2300
      * @tc.desc   OH_Utd_GetTypesByMimeType_001
@@ -2384,7 +2227,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2400
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2400
      * @tc.desc   OH_Utd_GetTypesByMimeType_002
@@ -2399,7 +2241,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2500
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2500
      * @tc.desc   OH_Utd_GetTypesByMimeType_003
@@ -2414,7 +2255,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2600
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2600
      * @tc.desc   OH_Utd_BelongsTo_001
@@ -2429,7 +2269,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2700
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2700
      * @tc.desc   OH_Utd_BelongsTo_002
@@ -2444,7 +2283,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2800
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2800
      * @tc.desc   OH_Utd_BelongsTo_003
@@ -2459,7 +2297,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2900
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_2900
      * @tc.desc   OH_Utd_BelongsTo_004
@@ -2474,7 +2311,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3000
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3000
      * @tc.desc   OH_Utd_BelongsTo_005
@@ -2489,7 +2325,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3100
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3100
      * @tc.desc   OH_Utd_IsLower_001
@@ -2504,7 +2339,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3200
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3200
      * @tc.desc   OH_Utd_IsLower_002
@@ -2519,7 +2353,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3300
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3300
      * @tc.desc   OH_Utd_IsLower_003
@@ -2534,7 +2367,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3400
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3400
      * @tc.desc   OH_Utd_IsLower_004
@@ -2549,7 +2381,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3500
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3500
      * @tc.desc   OH_Utd_IsLower_005
@@ -2564,7 +2395,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3600
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3600
      * @tc.desc   OH_Utd_IsLower_006
@@ -2579,7 +2409,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3700
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3700
      * @tc.desc   OH_Utd_Equals_001
@@ -2594,7 +2423,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3800
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3800
      * @tc.desc   OH_Utd_Equals_002
@@ -2609,7 +2437,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3900
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_3900
      * @tc.desc   OH_Utd_Equals_003
@@ -2624,7 +2451,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_6200
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_6200
      * @tc.desc   OH_Utd_Equals_005
@@ -2639,7 +2465,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_5500
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_5500
      * @tc.desc   OH_Utd_IsHigher_001
@@ -2654,7 +2479,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_5600
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_5600
      * @tc.desc   OH_Utd_IsHigher_002
@@ -2669,7 +2493,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_5700
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_5700
      * @tc.desc   OH_Utd_IsHigher_003
@@ -2684,7 +2507,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_5900
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_5900
      * @tc.desc   OH_Utd_IsHigher_004
@@ -2699,7 +2521,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_6000
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_6000
      * @tc.desc   OH_Utd_IsHigher_005
@@ -2714,7 +2535,6 @@ export default function UtdNdkTest() {
       expect(1).assertEqual(result);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_6100
      * @tc.number SUB_DistributedData_UDMF_SDK_UTDNdkAPITest_6100
      * @tc.desc   OH_Utd_IsHigher_006

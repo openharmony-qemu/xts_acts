@@ -26,65 +26,65 @@ export default function listItemBorderRadiusTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_BORDERRADIUS_0100
-     * @tc.name       : testListItemBorderRadius001
-     * @tc.desc       : testing borderRadius for listItem with unify the border width of the four edges
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemBorderRadius001
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_BORDERRADIUS_0100
+     * @tc.desc   testing borderRadius for listItem with unify the border width of the four edges
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemBorderRadius001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemBorderRadius001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_BORDERRADIUS_0200
-     * @tc.name       : testListItemBorderRadius002
-     * @tc.desc       : testing borderRadius for listItem with set the width of the borders on each side separately
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemBorderRadius002
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_BORDERRADIUS_0200
+     * @tc.desc   testing borderRadius for listItem with set the width of the borders on each side separately
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemBorderRadius002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemBorderRadius002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_BORDERRADIUS_0300
-     * @tc.name       : testListItemBorderRadius003
-     * @tc.desc       : testing borderRadius for listItem with set the width of the borders on each side, with three values of 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemBorderRadius003
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_BORDERRADIUS_0300
+     * @tc.desc   testing borderRadius for listItem with set the width of the borders on each side, with three values of 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemBorderRadius003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemBorderRadius003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_BORDERRADIUS_0400
-     * @tc.name       : testListItemBorderRadius004
-     * @tc.desc       : testing borderRadius for listItem with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListItemBorderRadius004
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_BORDERRADIUS_0400
+     * @tc.desc   testing borderRadius for listItem with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemBorderRadius004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemBorderRadius004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_BORDERRADIUS_0500
-     * @tc.name       : testListItemBorderRadius005
-     * @tc.desc       : testing borderRadius for listItem with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListItemBorderRadius005
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_BORDERRADIUS_0500
+     * @tc.desc   testing borderRadius for listItem with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemBorderRadius005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemBorderRadius005()).assertEqual(0)

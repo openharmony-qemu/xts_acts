@@ -26,65 +26,65 @@ export default function testWaterFlower() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WaterFlower_0100
-     * @tc.name       : testWaterFlower001
-     * @tc.desc       : testing create for waterFlower with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlower001
+     * @tc.number SUB_ARKUI_CAPI_WaterFlower_0100
+     * @tc.desc   testing create for waterFlower with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlower001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testWaterFlower_001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WaterFlower_0200
-     * @tc.name       : testWaterFlower002
-     * @tc.desc       : testing create for waterFlower with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlower002
+     * @tc.number SUB_ARKUI_CAPI_WaterFlower_0200
+     * @tc.desc   testing create for waterFlower with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlower002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testWaterFlower_002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WaterFlower_0300
-     * @tc.name       : testWaterFlower003
-     * @tc.desc       : testing create for waterFlower with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlower003
+     * @tc.number SUB_ARKUI_CAPI_WaterFlower_0300
+     * @tc.desc   testing create for waterFlower with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlower003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testWaterFlower_003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WaterFlower_0400
-     * @tc.name       : testWaterFlower004
-     * @tc.desc       : testing create for waterFlower with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlower004
+     * @tc.number SUB_ARKUI_CAPI_WaterFlower_0400
+     * @tc.desc   testing create for waterFlower with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlower004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testWaterFlower_004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WaterFlower_0500
-     * @tc.name       : testWaterFlower005
-     * @tc.desc       : testing create for waterFlower with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlower005
+     * @tc.number SUB_ARKUI_CAPI_WaterFlower_0500
+     * @tc.desc   testing create for waterFlower with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlower005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testWaterFlower_005()).assertEqual(0)

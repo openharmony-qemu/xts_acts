@@ -38,10 +38,13 @@ export default function TextfieldSingleTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Text_Visual_0040
-     *@tc.name   Support modifying sets selection change of Textfield component
-     *@tc.desc   Sets the selectAll property parameter to true
+    /**
+     * @tc.name   ArkUX_Text_Visual_0040
+     * @tc.number ArkUX_Text_Visual_0040
+     * @tc.desc   Sets the selectAll property parameter to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Text_Visual_0040', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Text_Visual_0040 START');
@@ -62,10 +65,13 @@ export default function TextfieldSingleTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Text_Visual_0050
-     *@tc.name   Support modifying sets selection change of Textfield component
-     *@tc.desc   Sets the selectAll property parameter to false
+    /**
+     * @tc.name   ArkUX_Text_Visual_0050
+     * @tc.number ArkUX_Text_Visual_0050
+     * @tc.desc   Sets the selectAll property parameter to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Text_Visual_0050', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Text_Visual_0050 START');
@@ -86,10 +92,13 @@ export default function TextfieldSingleTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Text_Visual_0060
-     *@tc.name   Support modifying sets selection change of Textfield component
-     *@tc.desc   Sets the selectAll property parameter to default value
+    /**
+     * @tc.name   ArkUX_Text_Visual_0060
+     * @tc.number ArkUX_Text_Visual_0060
+     * @tc.desc   Sets the selectAll property parameter to default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Text_Visual_0060', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Text_Visual_0060 START');

@@ -46,10 +46,12 @@ export default function flex_AlignContent_SpaceAround_FlexPadTest() {
       console.info("Flex_AlignContent_SpaceAround_FlexPadTest after each called");
     });
     /**
+     * @tc.name   testFlexAlignContentSpaceAroundFlexPadOverflow
      * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEAROUND_0400
-     * @tc.name testFlexAlignContentSpaceAroundFlexPadOverflow
-     * @tc.desc The size of the parent component in the cross direction is not enough for the layout
-     *               of the child components when the padding of parent component set to 50
+     * @tc.desc   The size of the parent component in the cross direction is not enough for the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignContentSpaceAroundFlexPadOverflow',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignContentSpaceAroundFlexPadOverflow] START');
@@ -86,10 +88,12 @@ export default function flex_AlignContent_SpaceAround_FlexPadTest() {
 
     });
     /**
+     * @tc.name   testFlexAlignContentSpaceAroundFlexPadMeet
      * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEAROUND_0500
-     * @tc.name testFlexAlignContentSpaceAroundFlexPadMeet
-     * @tc.desc The size of the parent component in the cross direction meets the layout
-     *               of the child components when the padding of parent component set to 10
+     * @tc.desc   The size of the parent component in the cross direction meets the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignContentSpaceAroundFlexPadMeet',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignContentSpaceAroundFlexPadMeet] START');

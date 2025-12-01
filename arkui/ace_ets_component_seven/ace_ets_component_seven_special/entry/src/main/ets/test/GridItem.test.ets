@@ -43,12 +43,12 @@ export default function gridItemOnSelectJsunit() {
     });
     
     /**
+     * @tc.name   testGridItem_0100
      * @tc.number testGridItem_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0100] START');
@@ -63,12 +63,12 @@ export default function gridItemOnSelectJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0101
      * @tc.number testGridItem_0101
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0101', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0101] START');
@@ -82,12 +82,12 @@ export default function gridItemOnSelectJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0102
      * @tc.number testGridItem_0102
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0102', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0102] START');
@@ -101,12 +101,12 @@ export default function gridItemOnSelectJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0103
      * @tc.number testGridItem_0103
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0103', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0103] START');
@@ -120,12 +120,12 @@ export default function gridItemOnSelectJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0104
      * @tc.number testGridItem_0104
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0104', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0104] START');
@@ -139,12 +139,12 @@ export default function gridItemOnSelectJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0105
      * @tc.number testGridItem_0105
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0105', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0105] START');

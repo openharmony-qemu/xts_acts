@@ -61,10 +61,13 @@ export default function ActsNotificationWantAgentTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0100
-     * @tc.name      : function getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
-     * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0100
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0100
+     * @tc.desc   OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0100', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0100 START`)
@@ -85,10 +88,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0100 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0200
-     * @tc.name      : function getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
-     * @tc.desc      : OperationType.START_ABILITY & WantAgentFlags.NO_BUILD_FLAG
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0200
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0200
+     * @tc.desc   OperationType.START_ABILITY & WantAgentFlags.NO_BUILD_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0200', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0200 START`)
@@ -109,10 +115,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0200 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0300
-     * @tc.name      : function getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
-     * @tc.desc      : OperationType.START_ABILITIES & WantAgentFlags.CANCEL_PRESENT_FLAG
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0300
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0300
+     * @tc.desc   OperationType.START_ABILITIES & WantAgentFlags.CANCEL_PRESENT_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0300', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0300 START`)
@@ -133,10 +142,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0300 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0400
-     * @tc.name      : function getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
-     * @tc.desc      : OperationType.START_SERVICE & WantAgentFlags.UPDATE_PRESENT_FLAG
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0400
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0400
+     * @tc.desc   OperationType.START_SERVICE & WantAgentFlags.UPDATE_PRESENT_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0400', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0400 START`)
@@ -157,10 +169,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0400 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0500
-     * @tc.name      : function getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
-     * @tc.desc      : OperationType.SEND_COMMON_EVENT & WantAgentFlags.CONSTANT_FLAG
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0500
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0500
+     * @tc.desc   OperationType.SEND_COMMON_EVENT & WantAgentFlags.CONSTANT_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0500', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0500 START`)
@@ -181,10 +196,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0500 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0600
-     * @tc.name      : function getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
-     * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.REPLACE_ELEMENT
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0600
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0600
+     * @tc.desc   OperationType.UNKNOWN_TYPE & WantAgentFlags.REPLACE_ELEMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0600', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0600 START`)
@@ -205,10 +223,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0600 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0700
-     * @tc.name      : function getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
-     * @tc.desc      : OperationType.START_ABILITY & WantAgentFlags.REPLACE_ACTION
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0700
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0700
+     * @tc.desc   OperationType.START_ABILITY & WantAgentFlags.REPLACE_ACTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0700', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0700 START`)
@@ -229,10 +250,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0700 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0800
-     * @tc.name      : function getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
-     * @tc.desc      : OperationType.START_ABILITIES & WantAgentFlags.REPLACE_URI
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0800
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0800
+     * @tc.desc   OperationType.START_ABILITIES & WantAgentFlags.REPLACE_URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0800', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0800 START`)
@@ -253,10 +277,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0800 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0900
-     * @tc.name      : function getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
-     * @tc.desc      : OperationType.START_SERVICE & WantAgentFlags.REPLACE_ENTITIES
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0900
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0900
+     * @tc.desc   OperationType.START_SERVICE & WantAgentFlags.REPLACE_ENTITIES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0900', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0900 START`)
@@ -277,10 +304,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_0900 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1000
-     * @tc.name      : function getWantAgent(info: WantAgentInfo, callback: AsyncCallback<WantAgent>): void
-     * @tc.desc      : OperationType.SEND_COMMON_EVENT & WantAgentFlags.REPLACE_BUNDLE
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1000
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1000
+     * @tc.desc   OperationType.SEND_COMMON_EVENT & WantAgentFlags.REPLACE_BUNDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1000', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1000 START`)
@@ -301,10 +331,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1000 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1100
-     * @tc.name      : function getWantAgent(info: WantAgentInfo): Promise<WantAgent>
-     * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1100
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1100
+     * @tc.desc   OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1100', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1100 START`)
@@ -323,10 +356,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1100 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1200
-     * @tc.name      : function getWantAgent(info: WantAgentInfo): Promise<WantAgent>
-     * @tc.desc      : OperationType.START_ABILITY & WantAgentFlags.NO_BUILD_FLAG
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1200
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1200
+     * @tc.desc   OperationType.START_ABILITY & WantAgentFlags.NO_BUILD_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1200', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1200 START`)
@@ -345,10 +381,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1200 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1300
-     * @tc.name      : function getWantAgent(info: WantAgentInfo): Promise<WantAgent>
-     * @tc.desc      : OperationType.START_ABILITIES & WantAgentFlags.CANCEL_PRESENT_FLAG
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1300
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1300
+     * @tc.desc   OperationType.START_ABILITIES & WantAgentFlags.CANCEL_PRESENT_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1300', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1300 START`)
@@ -367,10 +406,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1300 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1400
-     * @tc.name      : function getWantAgent(info: WantAgentInfo): Promise<WantAgent>
-     * @tc.desc      : OperationType.START_SERVICE & WantAgentFlags.UPDATE_PRESENT_FLAG
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1400
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1400
+     * @tc.desc   OperationType.START_SERVICE & WantAgentFlags.UPDATE_PRESENT_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1400', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1400 START`)
@@ -389,10 +431,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1400 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1500
-     * @tc.name      : function getWantAgent(info: WantAgentInfo): Promise<WantAgent>
-     * @tc.desc      : OperationType.SEND_COMMON_EVENT & WantAgentFlags.CONSTANT_FLAG
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1500
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1500
+     * @tc.desc   OperationType.SEND_COMMON_EVENT & WantAgentFlags.CONSTANT_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1500', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1500 START`)
@@ -411,10 +456,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1500 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1600
-     * @tc.name      : function getWantAgent(info: WantAgentInfo): Promise<WantAgent>
-     * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.REPLACE_ELEMENT
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1600
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1600
+     * @tc.desc   OperationType.UNKNOWN_TYPE & WantAgentFlags.REPLACE_ELEMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1600', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1600 START`)
@@ -433,10 +481,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1600 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1700
-     * @tc.name      : function getWantAgent(info: WantAgentInfo): Promise<WantAgent>
-     * @tc.desc      : OperationType.START_ABILITY & WantAgentFlags.REPLACE_ACTION
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1700
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1700
+     * @tc.desc   OperationType.START_ABILITY & WantAgentFlags.REPLACE_ACTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1700', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1700 START`)
@@ -455,10 +506,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1700 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1800
-     * @tc.name      : function getWantAgent(info: WantAgentInfo): Promise<WantAgent>
-     * @tc.desc      : OperationType.START_ABILITIES & WantAgentFlags.REPLACE_URI
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1800
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1800
+     * @tc.desc   OperationType.START_ABILITIES & WantAgentFlags.REPLACE_URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1800', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1800 START`)
@@ -477,10 +531,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1800 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1900
-     * @tc.name      : function getWantAgent(info: WantAgentInfo): Promise<WantAgent>
-     * @tc.desc      : OperationType.START_SERVICE & WantAgentFlags.REPLACE_ENTITIES
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1900
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1900
+     * @tc.desc   OperationType.START_SERVICE & WantAgentFlags.REPLACE_ENTITIES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1900', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1900 START`)
@@ -499,10 +556,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_1900 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2000
-     * @tc.name      : function getWantAgent(info: WantAgentInfo): Promise<WantAgent>
-     * @tc.desc      : OperationType.SEND_COMMON_EVENT & WantAgentFlags.REPLACE_BUNDLE
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2000
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2000
+     * @tc.desc   OperationType.SEND_COMMON_EVENT & WantAgentFlags.REPLACE_BUNDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2000', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2000 START`)
@@ -521,10 +581,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2000 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2100
-     * @tc.name      : function cancel(agent: WantAgent, callback: AsyncCallback<void>): void
-     * @tc.desc      : Cancels a WantAgent
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2100
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2100
+     * @tc.desc   Cancels a WantAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2100', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2100 START`)
@@ -554,10 +617,13 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2100 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2200
-     * @tc.name      : function cancel(agent: WantAgent): Promise<void>
-     * @tc.desc      : Cancels a WantAgent
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2200
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2200
+     * @tc.desc   Cancels a WantAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2200', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2200 START`)
@@ -584,11 +650,14 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2200 END`)
     })
 
-    /*
-      * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2300
-      * @tc.name      : function getBundleName(agent: WantAgent, callback: AsyncCallback<string>): void
-      * @tc.desc      : Obtains the bundle name of a WantAgent.
-      */
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2300
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2300
+     * @tc.desc   Obtains the bundle name of a WantAgent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2300', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2300 START`)
       WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
@@ -617,11 +686,14 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2300 END`)
     })
 
-    /*
-      * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2400
-      * @tc.name      : function getBundleName(agent: WantAgent): Promise<string>
-      * @tc.desc      : Obtains the bundle name of a WantAgent
-      */
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2400
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2400
+     * @tc.desc   Obtains the bundle name of a WantAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2400', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2400 START`)
       WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
@@ -649,11 +721,14 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2400 END`)
     })
 
-    /*
-      * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2500
-      * @tc.name      : function getUid(agent: WantAgent, callback: AsyncCallback<number>): void
-      * @tc.desc      : Obtains the UID of a WantAgent
-      */
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2500
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2500
+     * @tc.desc   Obtains the UID of a WantAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2500', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2500 START`)
       WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
@@ -683,11 +758,14 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2500 END`)
     })
 
-    /*
-      * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2600
-      * @tc.name      : function getUid(agent: WantAgent): Promise<number>
-      * @tc.desc      : Obtains the UID of a WantAgent
-      */
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2600
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2600
+     * @tc.desc   Obtains the UID of a WantAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2600', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2600 START`)
       WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
@@ -713,11 +791,14 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2600 END`)
     })
 
-    /*
-      * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2700
-      * @tc.name      : function equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback<boolean>): void
-      * @tc.desc      : Checks whether two WantAgent objects are equal
-      */
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2700
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2700
+     * @tc.desc   Checks whether two WantAgent objects are equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2700', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2700 START`)
       WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
@@ -747,11 +828,14 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2700 END`)
     })
 
-    /*
-      * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2800
-      * @tc.name      : function equal(agent: WantAgent, otherAgent: WantAgent): Promise<boolean>
-      * @tc.desc      : Checks whether two WantAgent objects are equal
-      */
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2800
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2800
+     * @tc.desc   Checks whether two WantAgent objects are equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2800', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2800 START`)
       WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
@@ -779,11 +863,14 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2800 END`)
     })
 
-    /*
-      * @tc.number    : SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3100
-      * @tc.name      : function trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: AsyncCallback<CompleteData>): void
-      * @tc.desc      : Triggers a WantAgent
-      */
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3100
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3100
+     * @tc.desc   Triggers a WantAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3100', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3100 START`)
       WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY

@@ -21,7 +21,6 @@ export default function preferencesNdkTest() {
   describe('preferencesNdkTest', async (done: Function) => {
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_PreferencesOption_Create_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_0100
      * @tc.desc   OH_PreferencesOption_Create_0100
@@ -37,7 +36,6 @@ export default function preferencesNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_PreferencesOption_SetFilePath_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_0200
      * @tc.desc   OH_PreferencesOption_SetFilePath_0100
@@ -53,7 +51,6 @@ export default function preferencesNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_PreferencesOption_SetFilePath_0200
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_0300
      * @tc.desc   OH_PreferencesOption_SetFilePath_0200
@@ -68,7 +65,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_PreferencesOption_SetBundleName_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_0400
      * @tc.desc   OH_PreferencesOption_SetBundleName_0100
@@ -83,7 +79,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_PreferencesOption_SetBundleName_0200
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_0500
      * @tc.desc   OH_PreferencesOption_SetBundleName_0200
@@ -98,7 +93,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_PreferencesOption_SetDataGroupId_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_0600
      * @tc.desc   OH_PreferencesOption_SetDataGroupId_0100
@@ -113,7 +107,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_PreferencesOption_SetDataGroupId_0200
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_0700
      * @tc.desc   OH_PreferencesOption_SetDataGroupId_0200
@@ -128,7 +121,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_PreferencesOption_Destroy_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_0800
      * @tc.desc   OH_PreferencesOption_Destroy_0100
@@ -143,7 +135,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_PreferencesOption_Destroy_0200
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_0900
      * @tc.desc   OH_PreferencesOption_Destroy_0200
@@ -158,7 +149,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_Open_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_1000
      * @tc.desc   OH_Preferences_Open_0100
@@ -173,7 +163,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_Open_0200
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_1100
      * @tc.desc   OH_Preferences_Open_0200
@@ -188,7 +177,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_Close_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_1200
      * @tc.desc   OH_Preferences_Close_0100
@@ -203,7 +191,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_SetInt_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_1300
      * @tc.desc   OH_Preferences_SetInt_0100
@@ -218,7 +205,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_SetGetInt_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_1400
      * @tc.desc   OH_Preferences_SetGetInt_0100
@@ -233,7 +219,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_SetGetString_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_1500
      * @tc.desc   OH_Preferences_SetGetString_0100
@@ -248,7 +233,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_SetGetBool_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_1600
      * @tc.desc   OH_Preferences_SetGetBool_0100
@@ -263,7 +247,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_SetString_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_1700
      * @tc.desc   OH_Preferences_SetString_0100
@@ -278,7 +261,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_SetBool_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_1800
      * @tc.desc   OH_Preferences_SetBool_0100
@@ -293,7 +275,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_GetInt_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_1900
      * @tc.desc   OH_Preferences_GetInt_0100
@@ -308,7 +289,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_GetString_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_2000
      * @tc.desc   OH_Preferences_GetString_0100
@@ -323,7 +303,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_GetBool_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_2100
      * @tc.desc   OH_Preferences_GetBool_0100
@@ -338,7 +317,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_FreeString
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_2200
      * @tc.desc   OH_Preferences_FreeString
@@ -354,7 +332,6 @@ export default function preferencesNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_RegisterDataObserver_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_2300
      * @tc.desc   OH_Preferences_RegisterDataObserver_0100
@@ -369,7 +346,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_UnregisterDataObserver_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_2400
      * @tc.desc   OH_Preferences_UnregisterDataObserver_0100
@@ -385,7 +361,6 @@ export default function preferencesNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_PreferencesPair_0200
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_2500
      * @tc.desc   OH_PreferencesPair_0200
@@ -400,7 +375,6 @@ export default function preferencesNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_ErrCode_0100
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_2600
      * @tc.desc   OH_Preferences_ErrCode_0100
@@ -417,7 +391,6 @@ export default function preferencesNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Preferences_IsStorageTypeSupported0500
      * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_2700
      * @tc.desc   OH_Preferences_IsStorageTypeSupported0500

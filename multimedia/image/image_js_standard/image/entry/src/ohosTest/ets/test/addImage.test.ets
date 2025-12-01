@@ -203,15 +203,12 @@ export default function addImage() {
         }
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0100
-         * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 1, alphaType: 0)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -226,15 +223,12 @@ export default function addImage() {
             createPixMapPromise(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0100", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0200
-         * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 1, alphaType: 1)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0200
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -249,15 +243,12 @@ export default function addImage() {
             createPixMapPromise(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0200", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0300
-         * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 0, alphaType: 2)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0300
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -272,15 +263,12 @@ export default function addImage() {
             createPixMapPromise(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0300", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0400
-         * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 0, alphaType: 3)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0400
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0400", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -295,15 +283,12 @@ export default function addImage() {
             createPixMapPromise(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0400", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0100
-         * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 1, alphaType: 0)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0100", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -318,15 +303,12 @@ export default function addImage() {
             createPixMapSync(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0100", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0200
-         * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 1, alphaType: 1)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0200
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0200", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -341,15 +323,12 @@ export default function addImage() {
             createPixMapSync(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0200", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0300
-         * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 0, alphaType: 2)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0300
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0300", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -364,15 +343,12 @@ export default function addImage() {
             createPixMapSync(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0300", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0400
-         * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 0, alphaType: 3)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0400
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0400", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -387,13 +363,12 @@ export default function addImage() {
             createPixMapSync(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0400", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SCALE_PIXELMAP_SYNC_0100
-         * @tc.name      : Pixelmap Scale-sync
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SCALE_PIXELMAP_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SCALE_PIXELMAP_SYNC_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SCALE_PIXELMAP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -423,13 +398,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SCALE_PIXELMAP_SYNC_0200
-         * @tc.name      : Pixelmap Scale-sync
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SCALE_PIXELMAP_SYNC_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SCALE_PIXELMAP_SYNC_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SCALE_PIXELMAP_SYNC_0200', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -459,13 +433,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_SYNC_ALPHA_0100
-         * @tc.name      : opacity-sync-alpha
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.opacity-sync
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_SYNC_ALPHA_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_SYNC_ALPHA_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_SYNC_ALPHA_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -493,15 +466,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0100
-         * @tc.name      : createAlphaPixelmap-sync
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.create AlphaPixelmapsync
-         *               : 4.call getImageInfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
             let imageData: ESObject = testPng.buffer;
@@ -532,15 +502,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0200
-         * @tc.name      : createAlphaPixelmap-sync
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.create AlphaPixelmapsync
-         *               : 4.call getImageInfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0200', Level.LEVEL0, async (done: Function) => {
             let imageData: ESObject = testJpg.buffer;
@@ -571,15 +538,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0300
-         * @tc.name      : createAlphaPixelmap-sync
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.create AlphaPixelmapsync
-         *               : 4.call getImageInfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0300
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0300', Level.LEVEL0, async (done: Function) => {
             let imageData: ESObject = testBmp.buffer;
@@ -610,15 +574,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0400
-         * @tc.name      : createAlphaPixelmap-sync
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.create AlphaPixelmapsync
-         *               : 4.call getImageInfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0400
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0400', Level.LEVEL0, async (done: Function) => {
             let imageData: ESObject = testGif.buffer;
@@ -649,15 +610,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_TRANSLATE_PIXELMAP_SYNC_0100
-         * @tc.name      : Pixelmap Translate -sync
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call translatesync
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_TRANSLATE_PIXELMAP_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_TRANSLATE_PIXELMAP_SYNC_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_TRANSLATE_PIXELMAP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -687,15 +645,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_TRANSLATE_PIXELMAP_SYNC_0200
-         * @tc.name      : Pixelmap Translate -sync
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call translatesync
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_TRANSLATE_PIXELMAP_SYNC_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_TRANSLATE_PIXELMAP_SYNC_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_TRANSLATE_PIXELMAP_SYNC_0200', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -725,15 +680,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_SYNC_0100
-         * @tc.name      : Pixelmap Rotate-sync
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call rotate
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_SYNC_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_SYNC_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -761,15 +713,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_SYNC_0100
-         * @tc.name      : Pixelmap Flip-sync
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call flip
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_SYNC_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -797,16 +746,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_SYNC_0100
-         * @tc.name      : crop-promise
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.crop
-         *               : 3.getImageInfo
-         *               : 4.getPixelBytesNumber
-         *               : 5.readPixelsToBuffer
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_SYNC_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
             let region: RegionType = {
@@ -839,15 +784,12 @@ export default function addImage() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0100
-         * @tc.name      : create pixelmap-callback (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 0, alphaType: 0)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -862,15 +804,12 @@ export default function addImage() {
             createPixMapCb(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0100", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0200
-         * @tc.name      : create pixelmap-callback (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 0, alphaType: 1)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0200
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -885,15 +824,12 @@ export default function addImage() {
             createPixMapCb(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0200", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0300
-         * @tc.name      : create pixelmap-callback (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 1, alphaType: 2)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0300
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0300", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -908,15 +844,12 @@ export default function addImage() {
             createPixMapCb(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0300", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0400
-         * @tc.name      : create pixelmap-callback (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer,scaleMode: 1, alphaType: 3)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0400
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0400", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -931,14 +864,12 @@ export default function addImage() {
             createPixMapCb(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0400", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0100
-         * @tc.name      : createIncrementalSource-updateData-png-promise
-         * @tc.desc      : 1.create imagesource
-         *                 2.update data
-         *                 3.create pixelmap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
             let opts: image.SourceOptions = {
@@ -950,14 +881,12 @@ export default function addImage() {
                 "SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0100", "noSourceOpts",undefined);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0200
-         * @tc.name      : createIncrementalSource-updateData-png-promise
-         * @tc.desc      : 1.create imagesource
-         *                 2.update data
-         *                 3.create pixelmap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
             let opts: image.SourceOptions = {
@@ -969,14 +898,12 @@ export default function addImage() {
                 "SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0200", "sourceOpts", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0100
-         * @tc.name      : createIncrementalSource-updateData-png-callback
-         * @tc.desc      : 1.create imagesource
-         *                 2.update data
-         *                 3.create pixelmap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
             let opts: image.SourceOptions = {
@@ -988,14 +915,12 @@ export default function addImage() {
                 "noSourceOpts", undefined);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0200
-         * @tc.name      : createIncrementalSource-updateData-png-callback
-         * @tc.desc      : 1.create imagesource
-         *                 2.update data
-         *                 3.create pixelmap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
             let opts: image.SourceOptions = {

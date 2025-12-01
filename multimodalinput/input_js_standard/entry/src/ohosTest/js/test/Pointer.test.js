@@ -34,7 +34,6 @@ export default function Pointer_test() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_SetPointerVisibleSync_Test_001
      * @tc.number MultimodalInputPointer_Test_001
      * @tc.desc   Pointer interface SetPointerVisibleSync test
@@ -54,7 +53,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_IsPointerVisibleSync_Test_002
      * @tc.number MultimodalInputPointer_Test_002
      * @tc.desc   Pointer interface isPointerVisibleSync test
@@ -75,7 +73,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_GetPointerStyleSync_Test_003
      * @tc.number MultimodalInputPointer_Test_003
      * @tc.desc   Pointer interface getPointerStyleSync test
@@ -96,7 +93,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_PointerVisibleTest_001
      * @tc.number MultimodalInputPointer_Test_004
      * @tc.desc   Pointer interface SetPointerVisible test
@@ -141,7 +137,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_PointerVisibleTest_002
      * @tc.number MultimodalInputPointer_Test_005
      * @tc.desc   Pointer interface SetPointerVisible test
@@ -215,7 +210,6 @@ export default function Pointer_test() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_PointerVisibleTest_003
      * @tc.number Pointer_PointerVisibleTest_003
      * @tc.desc   Pointer interface SetPointerVisible test
@@ -290,7 +284,6 @@ export default function Pointer_test() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_SetPointerStyle_001
      * @tc.number MultimodalInputPointer_Test_006
      * @tc.desc   Pointer interface SetPointerStyle test
@@ -348,7 +341,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_SetPointerStyle_002
      * @tc.number MultimodalInputPointer_Test_007
      * @tc.desc   Pointer interface SetPointerStyle test
@@ -412,7 +404,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_GetPointerStyle_001
      * @tc.number MultimodalInputPointer_Test_008
      * @tc.desc   Pointer interface GetPointerStyle test
@@ -470,7 +461,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_GetPointerStyle_002
      * @tc.number MultimodalInputPointer_Test_009
      * @tc.desc   Pointer interface GetPointerStyle test
@@ -532,7 +522,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_PointerStyle_test
      * @tc.number MultimodalInputPointer_Test_010
      * @tc.desc   Pointer interface PointerStyle test
@@ -669,7 +658,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_PointerStyle_Loading_test
      * @tc.number MultimodalInputPointer_Test_011
      * @tc.desc   Pointer interface PointerStyle test
@@ -683,7 +671,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_PointerStyle_Running_test
      * @tc.number MultimodalInputPointer_Test_012
      * @tc.desc   Pointer interface PointerStyle test
@@ -697,7 +684,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Touchpad_RightClickType_test
      * @tc.number MultimodalInputPointer_Test_013
      * @tc.desc   Pointer interface PointerStyle test
@@ -717,7 +703,6 @@ export default function Pointer_test() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_PointerVisibleTest_Exception_Test_001
      * @tc.number MultimodalInputPointer_Test_014
      * @tc.desc   Pointer interface PointerVisible exception test
@@ -752,7 +737,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_PointerVisibleTest_Exception_Test_002
      * @tc.number MultimodalInputPointer_Test_015
      * @tc.desc   Pointer interface PointerVisible exception test
@@ -790,7 +774,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_PointerStyleTest_Exception_Test_001
      * @tc.number MultimodalInputPointer_Test_016
      * @tc.desc   Pointer interface PointerStyle exception test
@@ -826,7 +809,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_PointerStyleTest_Exception_Test_002
      * @tc.number MultimodalInputPointer_Test_017
      * @tc.desc   Pointer interface PointerStyle exception test
@@ -862,7 +844,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_SetPointerStyleSyncTest_Test_001
      * @tc.number MultimodalInputPointer_Test_018
      * @tc.desc   Pointer interface PointerStyle exception test
@@ -884,7 +865,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_setCustomCursorTest_Test_001
      * @tc.number MultimodalInputPointer_Test_019
      * @tc.desc   set custom cursor test
@@ -910,7 +890,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_setCustomCursorTest_Test_002
      * @tc.number MultimodalInputPointer_Test_020
      * @tc.desc   set custom cursor test
@@ -938,7 +917,6 @@ export default function Pointer_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Pointer_setCustomCursorTest_Exception_Test_001
      * @tc.number MultimodalInputPointer_Test_021
      * @tc.desc   Set custom cursor test

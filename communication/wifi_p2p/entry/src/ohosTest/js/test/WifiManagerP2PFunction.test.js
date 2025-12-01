@@ -66,7 +66,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0003
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0003
          * @tc.desc   Test createP2pGroup and getCurrentP2pGroup API Function
@@ -156,7 +155,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0004
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0004
          * @tc.desc   Test createP2pGroup-Setting a 7-bit Key Function.
@@ -239,7 +237,6 @@ export default function actsWifiManagerFunctionTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0104
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0104
          * @tc.desc   Test createP2pGroup-Key setting: Chinese, English, and characters Function.
@@ -288,7 +285,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0204
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0204
          * @tc.desc   Test createP2pGroup-Key setting 64 bit Function.
@@ -337,7 +333,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0304
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0304
          * @tc.desc   Test createP2pGroup-Key setting 65 bitsFunction.
@@ -419,7 +414,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0007
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0007
          * @tc.desc   Test createP2pGroup-2.4 GHz frequency band setting Function
@@ -468,7 +462,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0107
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0107
          * @tc.desc   Test createP2pGroup-5 GHz frequency band setting Function
@@ -520,7 +513,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0207
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0207
          * @tc.desc   Test createP2pGroup-Auto frequency band setting Function
@@ -569,7 +561,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0008
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0008
          * @tc.desc   Test createP2pGroup-SSID is an empty string Function.
@@ -617,7 +608,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0108
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0108
          * @tc.desc   Test createP2pGroup-SSID is a space Function.
@@ -665,7 +655,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0308
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0308
          * @tc.desc   Test createP2pGroup-the password must be a space.
@@ -713,7 +702,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0009
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0009
          * @tc.desc   Test p2pCancelConnect Group API functionality.
@@ -772,7 +760,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0011
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0011
          * @tc.desc   Test remove a nonexistent group.
@@ -814,7 +801,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0002
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0002
          * @tc.desc   Test get P2pLocalDevice API functionality.
@@ -869,7 +855,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0010
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0010
          * @tc.desc   Test getP2pLinkedInfo API functionality
@@ -928,7 +913,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0001
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0001
          * @tc.desc   Test getP2pPeerDevices promise API functionality
@@ -963,7 +947,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_0101
          * @tc.number SUB_Communication_WiFi_XTS_P2P_0101
          * @tc.desc   Test getP2pPeerDevices callback API functionality
@@ -1024,7 +1007,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WifiManager_XTS_P2p_CreateGroup_0100
          * @tc.number SUB_Communication_WifiManager_XTS_P2p_CreateGroup_0100
          * @tc.desc   Test createGroup Sync API functionality.
@@ -1044,7 +1026,6 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_WiFi_XTS_P2P_P2pConnectState_0100
          * @tc.number SUB_Communication_WiFi_XTS_P2P_P2pConnectState_0100
          * @tc.desc   Test P2pConnectState API functionality

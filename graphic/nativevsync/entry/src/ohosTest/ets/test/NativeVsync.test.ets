@@ -20,12 +20,12 @@ export default function nativeVsyncTest() {
   describe('NativeVsyncTest', () => {
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0100
-     * @tc.name       : testNativeVSyncCreateNull
-     * @tc.desc       : test OH_NativeVSync_Create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 4
+     * @tc.name   testNativeVSyncCreateNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0100
+     * @tc.desc   test OH_NativeVSync_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeVSyncCreateNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = vsync.oHNativeVSyncCreateNull();
@@ -34,15 +34,15 @@ export default function nativeVsyncTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0101
-     * @tc.name       : testNativeVSyncCreateNotEq
-     * @tc.desc       : test OH_NativeVSync_Create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   testNativeVSyncCreateNotEq
+     * @tc.number testNativeVSyncCreateNotEq
+     * @tc.desc   testNativeVSyncCreateNotEq
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeVSyncCreateNotEq', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = vsync.oHNativeVSyncCreateNotEq();
       console.info("testNativeVSyncCreateNotEq result:" + result)
@@ -50,15 +50,15 @@ export default function nativeVsyncTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0102
-     * @tc.name       : testNativeVSyncCreateNormal
-     * @tc.desc       : test OH_NativeVSync_Create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   testNativeVSyncCreateNormal
+     * @tc.number testNativeVSyncCreateNormal
+     * @tc.desc   testNativeVSyncCreateNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeVSyncCreateNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Array<number> = vsync.oHNativeVSyncCreateNormal();
       console.info("testNativeVSyncCreateNormal result:" + result)
@@ -68,15 +68,15 @@ export default function nativeVsyncTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0103
-     * @tc.name       : testNativeVSyncCreateAbnormal
-     * @tc.desc       : test OH_NativeVSync_Create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   testNativeVSyncCreateAbnormal
+     * @tc.number testNativeVSyncCreateAbnormal
+     * @tc.desc   testNativeVSyncCreateAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeVSyncCreateAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = vsync.oHNativeVSyncCreateAbnormal();
       console.info("testNativeVSyncCreateAbnormal result:" + result)
@@ -84,15 +84,15 @@ export default function nativeVsyncTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0104
-     * @tc.name       : testNativeVSyncCreateDifLenth
-     * @tc.desc       : test OH_NativeVSync_Create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
-     */
 
+    /**
+     * @tc.name   testNativeVSyncCreateDifLenth
+     * @tc.number testNativeVSyncCreateDifLenth
+     * @tc.desc   testNativeVSyncCreateDifLenth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeVSyncCreateDifLenth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Array<number> = vsync.oHNativeVSyncCreateDifLenth();
       console.info("testNativeVSyncCreateDifLenth result:" + result)
@@ -100,15 +100,15 @@ export default function nativeVsyncTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0105
-     * @tc.name       : testNativeVSyncCreateMuch
-     * @tc.desc       : test OH_NativeVSync_Create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   testNativeVSyncCreateMuch
+     * @tc.number testNativeVSyncCreateMuch
+     * @tc.desc   testNativeVSyncCreateMuch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeVSyncCreateMuch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = vsync.oHNativeVSyncCreateMuch();
       console.info("testNativeVSyncCreateMuch result:" + result)
@@ -116,15 +116,15 @@ export default function nativeVsyncTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0106
-     * @tc.name       : testNativeVSyncGetPeriodNullptr
-     * @tc.desc       : test OH_NativeVSync_GetPeriod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   testNativeVSyncGetPeriodNullptr
+     * @tc.number testNativeVSyncGetPeriodNullptr
+     * @tc.desc   testNativeVSyncGetPeriodNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeVSyncGetPeriodNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL00,
       async (done: Function) => {
       let result: number = vsync.oHNativeVSyncGetPeriodNullptr();
@@ -133,15 +133,15 @@ export default function nativeVsyncTest() {
       done();
     });
     
-    /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0109
-     * @tc.name       : testNativeVSyncRequestFrameNullptr
-     * @tc.desc       : test OH_NativeVSync_RequestFrame
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   testNativeVSyncRequestFrameNullptr
+     * @tc.number testNativeVSyncRequestFrameNullptr
+     * @tc.desc   testNativeVSyncRequestFrameNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeVSyncRequestFrameNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: Array<number> = vsync.oHNativeVSyncRequestFrameNullptr();
@@ -150,15 +150,15 @@ export default function nativeVsyncTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0110
-     * @tc.name       : testNativeVSyncRequestFrameNormal
-     * @tc.desc       : test OH_NativeVSync_RequestFrame
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   testNativeVSyncRequestFrameNormal
+     * @tc.number testNativeVSyncRequestFrameNormal
+     * @tc.desc   testNativeVSyncRequestFrameNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeVSyncRequestFrameNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = vsync.oHNativeVSyncRequestFrameNormal();
@@ -167,15 +167,15 @@ export default function nativeVsyncTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0111
-     * @tc.name       : testNativeVSyncRequestFrameParamErr
-     * @tc.desc       : test OH_NativeVSync_RequestFrame
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 4
-     */
 
+    /**
+     * @tc.name   testNativeVSyncRequestFrameParamErr
+     * @tc.number testNativeVSyncRequestFrameParamErr
+     * @tc.desc   testNativeVSyncRequestFrameParamErr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeVSyncRequestFrameParamErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = vsync.oHNativeVSyncRequestFrameParamErr();
@@ -184,6 +184,14 @@ export default function nativeVsyncTest() {
       done();
     });
 
+    /**
+     * @tc.name   testOHNativeVSyncCreate001
+     * @tc.number testOHNativeVSyncCreate001
+     * @tc.desc   testOHNativeVSyncCreate001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOHNativeVSyncCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = vsync.oHNativeVSyncCreate();
       expect(result).assertEqual(0);
@@ -191,12 +199,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_CREATE_0200
-     * @tc.name       : testOHNativeVSyncCreate002
-     * @tc.desc       : test OH_NativeVSync_Create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncCreate002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_CREATE_0200
+     * @tc.desc   test OH_NativeVSync_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncCreate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = vsync.oHNativeVSyncCreateFOne();
@@ -205,12 +213,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_REQUESTFRAME_0100
-     * @tc.name       : testOHNativeVSyncRequestFrame001
-     * @tc.desc       : test OH_NativeVSync_RequestFrame
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncRequestFrame001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_REQUESTFRAME_0100
+     * @tc.desc   test OH_NativeVSync_RequestFrame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncRequestFrame001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -220,12 +228,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_REQUESTFRAME_0200
-     * @tc.name       : testOHNativeVSyncRequestFrame002
-     * @tc.desc       : test OH_NativeVSync_RequestFrame
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncRequestFrame002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_REQUESTFRAME_0200
+     * @tc.desc   test OH_NativeVSync_RequestFrame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncRequestFrame002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -235,12 +243,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_REQUESTFRAME_0300
-     * @tc.name       : testOHNativeVSyncRequestFrame003
-     * @tc.desc       : test OH_NativeVSync_RequestFrame
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncRequestFrame003
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_REQUESTFRAME_0300
+     * @tc.desc   test OH_NativeVSync_RequestFrame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncRequestFrame003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -250,12 +258,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_GETPERIOD_0100
-     * @tc.name       : testOHNativeVSyncGetPeriod001
-     * @tc.desc       : test OH_NativeVSync_GetPeriod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncGetPeriod001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_GETPERIOD_0100
+     * @tc.desc   test OH_NativeVSync_GetPeriod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncGetPeriod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = vsync.oHNativeVSyncGetPeriod();
@@ -264,12 +272,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_GETPERIOD_0100
-     * @tc.name       : testOHNativeVSyncGetPeriod002
-     * @tc.desc       : test OH_NativeVSync_GetPeriod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncGetPeriod002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_GETPERIOD_0100
+     * @tc.desc   test OH_NativeVSync_GetPeriod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncGetPeriod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL00,
       async (done: Function) => {
@@ -278,13 +286,13 @@ export default function nativeVsyncTest() {
       done();
     });
 
-   /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0100
-     * @tc.name       : testOHNativeVSyncCreateForAssociatedWindowNormal
-     * @tc.desc       : test OH_NativeVSync_Create_ForAssociatedWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHNativeVSyncCreateForAssociatedWindowNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0100
+     * @tc.desc   test OH_NativeVSync_Create_ForAssociatedWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncCreateForAssociatedWindowNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -294,12 +302,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0200
-     * @tc.name       : testOHNativeVSyncCreateForAssociatedWindowAbNormal01
-     * @tc.desc       : test OH_NativeVSync_Create_ForAssociatedWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHNativeVSyncCreateForAssociatedWindowAbNormal01
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0200
+     * @tc.desc   test OH_NativeVSync_Create_ForAssociatedWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncCreateForAssociatedWindowAbNormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -311,12 +319,12 @@ export default function nativeVsyncTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0300
-     * @tc.name       : testOHNativeVSyncCreateForAssociatedWindowAbNormal02
-     * @tc.desc       : test OH_NativeVSync_Create_ForAssociatedWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHNativeVSyncCreateForAssociatedWindowAbNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0300
+     * @tc.desc   test OH_NativeVSync_Create_ForAssociatedWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncCreateForAssociatedWindowAbNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -329,12 +337,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0400
-     * @tc.name       : testOHNativeVSyncCreateForAssociatedWindowAbNormal03
-     * @tc.desc       : test OH_NativeVSync_Create_ForAssociatedWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHNativeVSyncCreateForAssociatedWindowAbNormal03
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0400
+     * @tc.desc   test OH_NativeVSync_Create_ForAssociatedWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncCreateForAssociatedWindowAbNormal03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -344,13 +352,13 @@ export default function nativeVsyncTest() {
       done();
     });
 	
-	/**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OHNativeVSyncDVSyncSwitch
-     * @tc.name       : testOHNativeVSyncDVSyncSwitch
-     * @tc.desc       : test OHNativeVSyncDVSyncSwitch
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHNativeVSyncDVSyncSwitch
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OHNativeVSyncDVSyncSwitch
+     * @tc.desc   test OHNativeVSyncDVSyncSwitch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncDVSyncSwitch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = vsync.oHNativeVSyncDVSyncSwitch();
@@ -359,12 +367,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OHNativeVSyncDVSyncSwitchNullptr
-     * @tc.name       : testOHNativeVSyncDVSyncSwitchNullptr
-     * @tc.desc       : test OHNativeVSyncDVSyncSwitchNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncDVSyncSwitchNullptr
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OHNativeVSyncDVSyncSwitchNullptr
+     * @tc.desc   test OHNativeVSyncDVSyncSwitchNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncDVSyncSwitchNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -374,12 +382,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackNormal_0100
-     * @tc.name       : testOHNativeVSyncMultiCallbackNormal
-     * @tc.desc       : test OHNativeVSyncMultiCallbackNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncRequestFrameWithMultiCallbackNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackNormal_0100
+     * @tc.desc   test OHNativeVSyncMultiCallbackNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncRequestFrameWithMultiCallbackNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -392,12 +400,12 @@ export default function nativeVsyncTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackNormal_0200
-     * @tc.name       : testOHNativeVSyncMultiCallbackNormal01
-     * @tc.desc       : test OHNativeVSyncMultiCallbackNormal01
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncRequestFrameWithMultiCallbackNormal01
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackNormal_0200
+     * @tc.desc   test OHNativeVSyncMultiCallbackNormal01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncRequestFrameWithMultiCallbackNormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -409,12 +417,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackAbNormal_0100
-     * @tc.name       : testOHNativeVSyncMultiCallbackAbNormal
-     * @tc.desc       : test testOHNativeVSyncMultiCallbackAbNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHNativeVSyncRequestFrameWithMultiCallbackAbNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackAbNormal_0100
+     * @tc.desc   test testOHNativeVSyncMultiCallbackAbNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncRequestFrameWithMultiCallbackAbNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -427,12 +435,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackAbNormal_0200
-     * @tc.name       : testOHNativeVSyncMultiCallbackAbNormal01
-     * @tc.desc       : test testOHNativeVSyncMultiCallbackAbNormal01
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHNativeVSyncRequestFrameWithMultiCallbackAbNormal01
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackAbNormal_0200
+     * @tc.desc   test testOHNativeVSyncMultiCallbackAbNormal01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncRequestFrameWithMultiCallbackAbNormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -445,12 +453,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_SetExpectedFrameRateRange001
-     * @tc.name       : testOHNativeVSyncSetExpectedFrameRateRange001
-     * @tc.desc       : test OHNativeVSyncSetExpectedFrameRateRange001
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncSetExpectedFrameRateRange001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_SetExpectedFrameRateRange001
+     * @tc.desc   test OHNativeVSyncSetExpectedFrameRateRange001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncSetExpectedFrameRateRange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -460,12 +468,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_SetExpectedFrameRateRange002
-     * @tc.name       : testOHNativeVSyncSetExpectedFrameRateRange002
-     * @tc.desc       : test OHNativeVSyncSetExpectedFrameRateRange002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncSetExpectedFrameRateRange002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_SetExpectedFrameRateRange002
+     * @tc.desc   test OHNativeVSyncSetExpectedFrameRateRange002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncSetExpectedFrameRateRange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -475,12 +483,12 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_SetExpectedFrameRateRange003
-     * @tc.name       : testOHNativeVSyncSetExpectedFrameRateRange003
-     * @tc.desc       : test OHNativeVSyncSetExpectedFrameRateRange003
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHNativeVSyncSetExpectedFrameRateRange003
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_SetExpectedFrameRateRange003
+     * @tc.desc   test OHNativeVSyncSetExpectedFrameRateRange003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNativeVSyncSetExpectedFrameRateRange003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

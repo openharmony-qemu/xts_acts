@@ -27,10 +27,12 @@ let subscriberInfo_MainAbility_ability:commonEventManager.CommonEventSubscribeIn
 export default function abilityTest() {
     describe('ActsStaticInfoMationQueryTest', () => {
         /**
-         * @tc.number: ACTS_getAbilityInfo_0100
-         * @tc.name: Application query abilityInfo Static information.
-         * @tc.desc: Verify that the application query abilityInfo static
-         *           information is the same as that in the configuration file.
+         * @tc.name   ACTS_getAbilityInfo_0100
+         * @tc.number ACTS_getAbilityInfo_0100
+         * @tc.desc   Verify that the application query abilityInfo static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_getAbilityInfo_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getAbilityInfo_0100 --- start ability=====>'+ globalThis.abilityContext.abilityInfo")
@@ -39,10 +41,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_getApplicationInfo_0100
-         * @tc.name: Application query applicationInfo Static information.
-         * @tc.desc: Verify that the application query applicationInfo static
-         *           information is the same as that in the configuration file.
+         * @tc.name   ACTS_getApplicationInfo_0100
+         * @tc.number ACTS_getApplicationInfo_0100
+         * @tc.desc   Verify that the application query applicationInfo static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_getApplicationInfo_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getApplicationInfo_0100 --- start ability=====>'+ globalThis.abilityContext.applicationInfo")
@@ -51,10 +55,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_getHapModuleInfo_0100
-         * @tc.name: Application query currentHapModuleInfo Static information.
-         * @tc.desc: Verify that the application query currentHapModuleInfo static
-         *           information is the same as that in the configuration file.
+         * @tc.name   ACTS_getHapModuleInfo_0100
+         * @tc.number ACTS_getHapModuleInfo_0100
+         * @tc.desc   Verify that the application query currentHapModuleInfo static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_getHapModuleInfo_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getHapModuleInfo_0100 --- start ability=====>'+ globalThis.abilityContext.currentHapModuleInfo")
@@ -63,13 +69,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_getAbilityInfo_0200
-         * @tc.name: Start different abilities of the application to obtain the static information of the
-         * abilityInfo、applicationInfo、currentHapModuleInfo.
-         * @tc.desc: Verify that the static information of the abilityInfo、applicationInfo、currentHapModuleInfo can be
-         * queried by different abilities to start the application, which is the same as the information of the
-         * abilityInfo、applicationInfo、currentHapModuleInfo in the configuration file,
-         * and the information obtained by starting different abilities is different
+         * @tc.name   ACTS_getAbilityInfo_0200
+         * @tc.number ACTS_getAbilityInfo_0200
+         * @tc.desc   Verify that the static information of the abilityInfo、applicationInfo、currentHapModuleInfo can be
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_getAbilityInfo_0200', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getAbilityInfo_0200 --- start")

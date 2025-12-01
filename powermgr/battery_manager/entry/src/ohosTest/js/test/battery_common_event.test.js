@@ -21,7 +21,6 @@ export default function BatteryCommonEventTest() {
     console.log("*************Battery commonEvent Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Battery_Changed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0100
      * @tc.desc   battery acquisition kit
@@ -35,7 +34,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Battery_Okay_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0110
      * @tc.desc   Battery acquisition kit
@@ -49,7 +47,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Battery_Low_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0120
      * @tc.desc   Battery acquisition kit
@@ -63,7 +60,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Power_Connected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0130
      * @tc.desc   Battery acquisition kit
@@ -77,7 +73,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Power_Disconnected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0140
      * @tc.desc   Battery acquisition kit
@@ -92,7 +87,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Battery_Charging_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0150
      * @tc.desc   Battery acquisition kit
@@ -106,7 +100,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Battery_Discharging_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0160
      * @tc.desc   Battery acquisition kit
@@ -121,7 +114,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Boot_Completed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0170
      * @tc.desc   Battery acquisition kit
@@ -135,7 +127,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Locked_Boot_Completed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0180
      * @tc.desc   Battery acquisition kit
@@ -150,7 +141,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Shutdown_Common_Event
      * @tc.number SUB_powersystem_batterymanager_jstest_0190
      * @tc.desc   Battery acquisition kit
@@ -164,7 +154,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Screen_On_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0200
      * @tc.desc   Battery acquisition kit
@@ -178,7 +167,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_User_Present_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0210
      * @tc.desc   Battery acquisition kit
@@ -192,7 +180,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Time_Tick_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0220
      * @tc.desc   Battery acquisition kit
@@ -206,7 +193,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Screen_Off_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0230
      * @tc.desc   Battery acquisition kit
@@ -220,7 +206,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Time_Changed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0240
      * @tc.desc   Battery acquisition kit
@@ -234,7 +219,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Date_Changed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0250
      * @tc.desc   Battery acquisition kit
@@ -248,7 +232,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Timezone_Changed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0260
      * @tc.desc   Battery acquisition kit
@@ -262,7 +245,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Close_System_Dialogs_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0270
      * @tc.desc   Battery acquisition kit
@@ -277,7 +259,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Package_Added_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0280
      * @tc.desc   Battery acquisition kit
@@ -291,7 +272,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Package_Replaced_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0290
      * @tc.desc   Battery acquisition kit
@@ -305,7 +285,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_My_Package_Replaced_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0300
      * @tc.desc   Battery acquisition kit
@@ -320,7 +299,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Package_Removed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0310
      * @tc.desc   Battery acquisition kit
@@ -334,7 +312,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bundle_Removed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0320
      * @tc.desc   Battery acquisition kit
@@ -348,7 +325,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Packagefullyremoved_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0330
      * @tc.desc   Battery acquisition kit
@@ -363,7 +339,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Packagechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0340
      * @tc.desc   Battery acquisition kit
@@ -377,7 +352,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Packagerestarted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0350
      * @tc.desc   Battery acquisition kit
@@ -391,7 +365,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Packagedatacleared_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0360
      * @tc.desc   Battery acquisition kit
@@ -406,7 +379,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Packagesuspended_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0370
      * @tc.desc   Battery acquisition kit
@@ -420,7 +392,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Packagesunsuspended_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0380
      * @tc.desc   Battery acquisition kit
@@ -435,7 +406,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Mypackagesuspended_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0390
      * @tc.desc   Battery acquisition kit
@@ -450,7 +420,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Mypackageunsuspended_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0400
      * @tc.desc   Battery acquisition kit
@@ -465,7 +434,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Mypackagefirstlaunch_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0410
      * @tc.desc   Battery acquisition kit
@@ -480,7 +448,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Mypackageneedsverification_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0420
      * @tc.desc   Battery acquisition kit
@@ -495,7 +462,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Externalapplicationsavailable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0430
      * @tc.desc   Battery acquisition kit
@@ -510,7 +476,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Externalapplicationsunavailable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0440
      * @tc.desc   Battery acquisition kit
@@ -525,7 +490,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Configurationchanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0450
      * @tc.desc   Battery acquisition kit
@@ -540,7 +504,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Locatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0460
      * @tc.desc   Battery acquisition kit
@@ -554,7 +517,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Managepackagestorage_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0470
      * @tc.desc   Battery acquisition kit
@@ -569,7 +531,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Drivemode_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0480
      * @tc.desc   Battery acquisition kit
@@ -583,7 +544,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Homemode_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0490
      * @tc.desc   Battery acquisition kit
@@ -597,7 +557,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Officemode_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0500
      * @tc.desc   Battery acquisition kit
@@ -611,7 +570,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Userstarted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0510
      * @tc.desc   Battery acquisition kit
@@ -625,7 +583,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Userbackground_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0520
      * @tc.desc   Battery acquisition kit
@@ -639,7 +596,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Userforground_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0530
      * @tc.desc   Battery acquisition kit
@@ -653,7 +609,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Userswitched_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0540
      * @tc.desc   Battery acquisition kit
@@ -667,7 +622,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Userstarting_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0550
      * @tc.desc   Battery acquisition kit
@@ -681,7 +635,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Userunlocked_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0560
      * @tc.desc   Battery acquisition kit
@@ -695,7 +648,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Userstopping_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0570
      * @tc.desc   Battery acquisition kit
@@ -709,7 +661,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Userstopped_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0580
      * @tc.desc   Battery acquisition kit
@@ -723,7 +674,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Hwidlogin_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0590
      * @tc.desc   Battery acquisition kit
@@ -737,7 +687,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Hwidlogout_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0600
      * @tc.desc   Battery acquisition kit
@@ -751,7 +700,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Hwidtokeninvalid_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0610
      * @tc.desc   Battery acquisition kit
@@ -765,7 +713,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Hwidlogoff_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0620
      * @tc.desc   Battery acquisition kit
@@ -779,7 +726,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifipowerstate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0630
      * @tc.desc   Battery acquisition kit
@@ -793,7 +739,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifiscanfinished_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0640
      * @tc.desc   Battery acquisition kit
@@ -807,7 +752,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifirssivalue_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0650
      * @tc.desc   Battery acquisition kit
@@ -821,7 +765,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wificonnstate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0660
      * @tc.desc   Battery acquisition kit
@@ -835,7 +778,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifihostpotstate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0670
      * @tc.desc   Battery acquisition kit
@@ -849,7 +791,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifiapstajoin_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0680
      * @tc.desc   Battery acquisition kit
@@ -863,7 +804,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifiapstaleave_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0690
      * @tc.desc   Battery acquisition kit
@@ -877,7 +817,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifimplinkstatechange_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0700
      * @tc.desc   Battery acquisition kit
@@ -892,7 +831,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifip2pconnstate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0710
      * @tc.desc   Battery acquisition kit
@@ -906,7 +844,6 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifip2pstatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0720
      * @tc.desc   Battery acquisition kit
@@ -921,7 +858,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifip2ppeersstatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0730
      * @tc.desc   Battery acquisition kit
@@ -936,7 +872,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifip2ppeersdiscoverystatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0740
      * @tc.desc   Battery acquisition kit
@@ -951,7 +886,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifip2pcurrentdevicestatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0750
      * @tc.desc   Battery acquisition kit
@@ -966,7 +900,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Wifip2pgroupstatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0760
      * @tc.desc   Battery acquisition kit
@@ -981,7 +914,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothhandsfreeagconntectstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0770
      * @tc.desc   Battery acquisition kit
@@ -996,7 +928,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothhandsfreeagconntectdeviceupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0780
      * @tc.desc   Battery acquisition kit
@@ -1011,7 +942,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothhandsfreeagaudiostateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0790
      * @tc.desc   Battery acquisition kit
@@ -1026,7 +956,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetootha2dpsourceconnectstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0800
      * @tc.desc   Battery acquisition kit
@@ -1041,7 +970,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetootha2dpsourcecurrentdeviceupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0810
      * @tc.desc   Battery acquisition kit
@@ -1056,7 +984,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetootha2dpsourceplayingstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0820
      * @tc.desc   Battery acquisition kit
@@ -1071,7 +998,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetootha2dpsourceavrcpconntectstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0830
      * @tc.desc   Battery acquisition kit
@@ -1086,7 +1012,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetootha2dpsourcecodecvalueupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0840
      * @tc.desc   Battery acquisition kit
@@ -1101,7 +1026,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedevicediscovered_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0850
      * @tc.desc   Battery acquisition kit
@@ -1116,7 +1040,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedeviceclassvalueupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0860
      * @tc.desc   Battery acquisition kit
@@ -1131,7 +1054,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedeviceaclconnected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0870
      * @tc.desc   Battery acquisition kit
@@ -1146,7 +1068,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedeviceacldisconnected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0880
      * @tc.desc   Battery acquisition kit
@@ -1161,7 +1082,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedevicenameupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0890
      * @tc.desc   Battery acquisition kit
@@ -1176,7 +1096,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedevicepairstate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0900
      * @tc.desc   Battery acquisition kit
@@ -1191,7 +1110,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedevicebateryvalueupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0910
      * @tc.desc   Battery acquisition kit
@@ -1206,7 +1124,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedevicesdpresult_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0920
      * @tc.desc   Battery acquisition kit
@@ -1221,7 +1138,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedeviceuuidvalue_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0930
      * @tc.desc   Battery acquisition kit
@@ -1236,7 +1152,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothpairingreq_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0940
      * @tc.desc   Battery acquisition kit
@@ -1251,7 +1166,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedevicepairingcancel_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0950
      * @tc.desc   Battery acquisition kit
@@ -1266,7 +1180,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedeviceconntectreq_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0960
      * @tc.desc   Battery acquisition Kit
@@ -1281,7 +1194,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedeviceconntectreply_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0970
      * @tc.desc   Battery acquisition kit
@@ -1296,7 +1208,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothremotedeviceconntectcancel_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0980
      * @tc.desc   Battery acquisition kit
@@ -1311,7 +1222,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothhandsfreeunitconntectstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0990
      * @tc.desc   Battery acquisition kit
@@ -1326,7 +1236,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothhandsfreeunitaudiostateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1010
      * @tc.desc   Battery acquisition kit
@@ -1341,7 +1250,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothhandsfreeunitagcommonevent_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1020
      * @tc.desc   Battery acquisition kit
@@ -1356,7 +1264,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothhandsfreeunitagcallstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1030
      * @tc.desc   Battery acquisition kit
@@ -1371,7 +1278,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothhoststateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1040
      * @tc.desc   Battery acquisition kit
@@ -1386,7 +1292,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Bluetoothhostreqdiscoverable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1050
      * @tc.desc   Battery acquisition kit
@@ -1401,7 +1306,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventhostreqenable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1060
      * @tc.desc   Battery acquisition kit
@@ -1416,7 +1320,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventhostreqdisable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1070
      * @tc.desc   Battery acquisition kit
@@ -1431,7 +1334,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventhostscanmodeupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1080
      * @tc.desc   Battery acquisition kit
@@ -1446,7 +1348,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventhostdiscovetystarted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1090
      * @tc.desc   Battery acquisition kit
@@ -1461,7 +1362,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventhostdiscovetyfinished_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1100
      * @tc.desc   Battery acquisition kit
@@ -1476,7 +1376,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventhostnameupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1110
      * @tc.desc   Battery acquisition kit
@@ -1491,7 +1390,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventhoststateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1120
      * @tc.desc   Battery acquisition kit
@@ -1506,7 +1404,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventa2dpsinkplayingstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1130
      * @tc.desc   Battery acquisition kit
@@ -1521,7 +1418,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventa2dpsinkaudiostateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1140
      * @tc.desc   Battery acquisition kit
@@ -1536,7 +1432,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventnfcactionadapterstatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1150
      * @tc.desc   Battery acquisition kit
@@ -1551,7 +1446,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventnfcactionrffieldondetected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1160
      * @tc.desc   Battery acquisition kit
@@ -1566,7 +1460,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventnfcactionrffieldoffdetected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1170
      * @tc.desc   Battery acquisition kit
@@ -1581,7 +1474,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventdeviceidlemodechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1180
      * @tc.desc   Battery acquisition kit
@@ -1596,7 +1488,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventpowersavemodechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1190
      * @tc.desc   Battery acquisition kit
@@ -1611,7 +1502,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventuseradded_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1200
      * @tc.desc   Battery acquisition kit
@@ -1626,7 +1516,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventuserremoved_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1210
      * @tc.desc   Battery acquisition kit
@@ -1641,7 +1530,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventabilityadded_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1220
      * @tc.desc   Battery acquisition kit
@@ -1656,7 +1544,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   subscribe_CommonEventAbilityRemoved_common_event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1230
      * @tc.desc   Battery acquisition kit
@@ -1671,7 +1558,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   subscribe_CommonEventAbilityUpdated_common_event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1240
      * @tc.desc   Battery acquisition kit
@@ -1686,7 +1572,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   subscribe_CommonEventLocationModeStateChanged_common_event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1250
      * @tc.desc   Battery acquisition kit
@@ -1701,7 +1586,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   subscribe_CommonEventIVISleep_common_event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1260
      * @tc.desc   Battery acquisition kit
@@ -1716,7 +1600,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   subscribe_CommonEventIVIPause_common_event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1270
      * @tc.desc   Battery acquisition kit
@@ -1731,7 +1614,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventivistandby_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1280
      * @tc.desc   Battery acquisition kit
@@ -1746,7 +1628,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventivilastmodesave_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1290
      * @tc.desc   Battery acquisition kit
@@ -1761,7 +1642,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventivivoltageabnormal_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1300
      * @tc.desc   Battery acquisition kit
@@ -1776,7 +1656,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventivihighttemperature_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1310
      * @tc.desc   Battery acquisition kit
@@ -1791,7 +1670,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventiviextremetemperature_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1320
      * @tc.desc   Battery acquisition kit
@@ -1806,7 +1684,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventivitemperatureabnormal_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1330
      * @tc.desc   Battery acquisition kit
@@ -1821,7 +1698,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventivivoltagerecovery_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1340
      * @tc.desc   Battery acquisition kit
@@ -1836,7 +1712,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventivitempraturerecovery_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1350
      * @tc.desc   Battery acquisition kit
@@ -1851,7 +1726,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventiviactive_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1360
      * @tc.desc   Battery acquisition kit
@@ -1866,7 +1740,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventusbdevidceattached_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1370
      * @tc.desc   Battery acquisition kit
@@ -1881,7 +1754,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventusbdevidcedetached_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1380
      * @tc.desc   Battery acquisition kit
@@ -1896,7 +1768,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventusbaccessoryattached_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1390
      * @tc.desc   Battery acquisition kit
@@ -1911,7 +1782,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventusbaccessorydetached_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1400
      * @tc.desc   Battery acquisition kit
@@ -1926,7 +1796,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventdickremoved_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1410
      * @tc.desc   Battery acquisition kit
@@ -1941,7 +1810,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventdickunmounted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1420
      * @tc.desc   Battery acquisition kit
@@ -1956,7 +1824,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventdickmounted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1430
      * @tc.desc   Battery acquisition kit
@@ -1971,7 +1838,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventdicknadremoval_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1440
      * @tc.desc   Battery acquisition kit
@@ -1986,7 +1852,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Commoneventdickunmoutable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1450
      * @tc.desc   Battery acquisition kit
@@ -2001,7 +1866,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_CommonEventDickEject_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1460
      * @tc.desc   Battery acquisition kit
@@ -2016,7 +1880,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_CommonEventVisibleAccountsUpdated_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1470
      * @tc.desc   Battery acquisition kit
@@ -2031,7 +1894,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_CommonEventAccountDeleted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1480
      * @tc.desc   Battery acquisition kit
@@ -2046,7 +1908,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_CommonEventFoundation_ReadyCommon_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1490
      * @tc.desc   Battery acquisition kit
@@ -2061,7 +1922,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_CommonEventAirplane_ModeChanged_CommonEvent
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1500
      * @tc.desc   Battery acquisition kit
@@ -2076,7 +1936,6 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Package_Installation_Started_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1510
      * @tc.desc   Battery acquisition kit

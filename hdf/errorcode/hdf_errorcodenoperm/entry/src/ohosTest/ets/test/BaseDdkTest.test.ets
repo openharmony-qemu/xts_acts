@@ -51,7 +51,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_CreateTestDeviceDdkNOPERM_0100
      * @tc.number SUB_Driver_Ext_CreateTestDeviceDdkNOPERM_0100
      * @tc.desc   Test CreateTestDeviceDdkNOPERM.
@@ -74,7 +73,6 @@ export default function ActsBaseDDkNoPermTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidEmitEventNOPERM_0200
      * @tc.number SUB_Driver_Ext_HidEmitEventNOPERM_0200
      * @tc.desc   Test HidEmitEventNOPERM.
@@ -96,7 +94,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDestroyDeviceNOPERM_0300
      * @tc.number SUB_Driver_Ext_HidDestroyDeviceNOPERM_0300
      * @tc.desc   Test HidDestroyDeviceNOPERM.
@@ -118,7 +115,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidInitNOPERM_0400
      * @tc.number SUB_Driver_Ext_HidInitNOPERM_0400
      * @tc.desc   Test HidInitNOPERM.
@@ -140,7 +136,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidReleaseNOPERM_0500
      * @tc.number SUB_Driver_Ext_HidReleaseNOPERM_0500
      * @tc.desc   Test HidReleaseNOPERM.
@@ -162,7 +157,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidOpenNOPERM_0600
      * @tc.number SUB_Driver_Ext_HidOpenNOPERM_0600
      * @tc.desc   Test HidOpenNOPERM.
@@ -184,7 +178,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCloseNOPERM_0700
      * @tc.number SUB_Driver_Ext_HidCloseNOPERM_0700
      * @tc.desc   Test HidCloseNOPERM.
@@ -206,7 +199,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidWriteNOPERM_0800
      * @tc.number SUB_Driver_Ext_HidWriteNOPERM_0800
      * @tc.desc   Test HidWriteNOPERM.
@@ -228,7 +220,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidReadTimeoutNOPERM_0900
      * @tc.number SUB_Driver_Ext_HidReadTimeoutNOPERM_0900
      * @tc.desc   Test HidReadTimeoutNOPERM.
@@ -250,7 +241,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidReadNOPERM_1000
      * @tc.number SUB_Driver_Ext_HidReadNOPERM_1000
      * @tc.desc   Test HidReadNOPERM.
@@ -272,7 +262,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeNOPERM_1100
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeNOPERM_1100
      * @tc.desc   Test HidDdkErrCodeNOPERM.
@@ -294,7 +283,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidSetNonBlockingNOPERM_1200
      * @tc.number SUB_Driver_Ext_HidSetNonBlockingNOPERM_1200
      * @tc.desc   Test HidSetNonBlockingNOPERM.
@@ -316,7 +304,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidGetRawInfoNOPERM_1300
      * @tc.number SUB_Driver_Ext_HidGetRawInfoNOPERM_1300
      * @tc.desc   Test HidGetRawInfoNOPERM.
@@ -338,7 +325,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidGetRawNameNOPERM_1400
      * @tc.number SUB_Driver_Ext_HidGetRawNameNOPERM_1400
      * @tc.desc   Test HidGetRawNameNOPERM.
@@ -360,7 +346,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidGetPhysicalAddressNOPERM_1500
      * @tc.number SUB_Driver_Ext_HidGetPhysicalAddressNOPERM_1500
      * @tc.desc   Test HidGetPhysicalAddressNOPERM.
@@ -382,7 +367,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidGetRawUniqueIdNOPERM_1600
      * @tc.number SUB_Driver_Ext_HidGetRawUniqueIdNOPERM_1600
      * @tc.desc   Test HidGetRawUniqueIdNOPERM.
@@ -404,7 +388,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidSendReportNOPERM_1700
      * @tc.number SUB_Driver_Ext_HidSendReportNOPERM_1700
      * @tc.desc   Test HidSendReportNOPERM.
@@ -426,7 +409,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidGetReportNOPERM_1800
      * @tc.number SUB_Driver_Ext_HidGetReportNOPERM_1800
      * @tc.desc   Test HidGetReportNOPERM.
@@ -448,7 +430,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidGetReportDescriptorNOPERM_1900
      * @tc.number SUB_Driver_Ext_HidGetReportDescriptorNOPERM_1900
      * @tc.desc   Test HidGetReportDescriptorNOPERM.
@@ -470,7 +451,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialReleaseNOPERM_2000
      * @tc.number SUB_Driver_Ext_UsbSerialReleaseNOPERM_2000
      * @tc.desc   Test UsbSerialReleaseNOPERM.
@@ -492,7 +472,6 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialCloseNOPERM_2100
      * @tc.number SUB_Driver_Ext_UsbSerialCloseNOPERM_2100
      * @tc.desc   Test UsbSerialCloseNOPERM.

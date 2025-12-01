@@ -66,12 +66,12 @@ export default function metadataCloneTest() {
     });
 
     /**
-     * @tc.number    : METADATA_CLONE_001
-     * @tc.name      : clone_promise_001
-     * @tc.desc      : clone
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   clone_promise_001
+     * @tc.number METADATA_CLONE_001
+     * @tc.desc   clone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('clone_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'clone_promise_001';
@@ -81,12 +81,12 @@ export default function metadataCloneTest() {
     })
 
     /**
-     * @tc.number    : METADATA_CLONE_002
-     * @tc.name      : clone_promise_002
-     * @tc.desc      : clone
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   clone_promise_002
+     * @tc.number METADATA_CLONE_002
+     * @tc.desc   clone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('clone_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'clone_promise_002';
@@ -96,12 +96,12 @@ export default function metadataCloneTest() {
     })
 
     /**
-     * @tc.number    : METADATA_CLONE_003
-     * @tc.name      : clone_promise_003
-     * @tc.desc      : clone
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   clone_promise_003
+     * @tc.number METADATA_CLONE_003
+     * @tc.desc   clone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('clone_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'clone_promise_003';

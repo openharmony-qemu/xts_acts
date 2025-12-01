@@ -21,61 +21,61 @@ export default function listScrollBarWidthTest() {
 
   describe('ListScrollBarWidthTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_WIDTH_0001
-     * @tc.name       : testListScrollBarWidth001
-     * @tc.desc       : testing scrollbarwidth for list with 10 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBarWidth001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_WIDTH_0001
+     * @tc.desc   testing scrollbarwidth for list with 10 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBarWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScrollBarWidth001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_WIDTH_0002
-     * @tc.name       : testListScrollBarWidth002
-     * @tc.desc       : testing scrollbarwidth for list with 0 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBarWidth002
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_WIDTH_0002
+     * @tc.desc   testing scrollbarwidth for list with 0 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBarWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScrollBarWidth002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_WIDTH_0003
-     * @tc.name       : testListScrollBarWidth003
-     * @tc.desc       : testing scrollbarwidth for list with -1 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBarWidth003
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_WIDTH_0003
+     * @tc.desc   testing scrollbarwidth for list with -1 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBarWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScrollBarWidth003()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_WIDTH_0004
-     * @tc.name       : testListScrollBarWidth004
-     * @tc.desc       : testing scrollbarwidth for list with 1000 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBarWidth004
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_WIDTH_0004
+     * @tc.desc   testing scrollbarwidth for list with 1000 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBarWidth004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScrollBarWidth004()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_WIDTH_0005
-     * @tc.name       : testListScrollBarWidth005
-     * @tc.desc       : testing scrollbarwidth for list with resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBarWidth005
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_WIDTH_0005
+     * @tc.desc   testing scrollbarwidth for list with resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBarWidth005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScrollBarWidth005()).assertEqual(0)

@@ -47,12 +47,12 @@ export default function OpenSLESTest() {
       console.info('afterAll case ');
     });
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_RECORD_FUNCTION_0100
      * @tc.name   SUB_MULTIMEDIA_AUDIO_RECORD_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RECORD_FUNCTION_0100
      * @tc.desc   ：Query the current output audio stream status.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_RECORD_FUNCTION_0100', 0, async (done: Function) => {
       console.log(`SUB_MULTIMEDIA_AUDIO_RECORD_FUNCTION_0100 test start `);
@@ -62,12 +62,12 @@ export default function OpenSLESTest() {
       done();
     });
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_RECORD_INVALID_FUNCTION_0100
      * @tc.name   SUB_MULTIMEDIA_AUDIO_RECORD_INVALID_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RECORD_INVALID_FUNCTION_0100
      * @tc.desc   ：Query the current output audio stream status.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_RECORD_INVALID_FUNCTION_0100', 0, async (done: Function) => {
       console.log(`SUB_MULTIMEDIA_AUDIO_RECORD_INVALID_FUNCTION_0100 test start `);

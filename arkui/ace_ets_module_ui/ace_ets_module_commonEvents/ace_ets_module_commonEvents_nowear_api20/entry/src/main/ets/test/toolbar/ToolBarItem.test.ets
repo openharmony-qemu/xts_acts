@@ -47,10 +47,12 @@ export default function ToolBarItemTest() {
     });
 
     /**
-     * @tc.number    ToolBarItemTest_0010
-     * @tc.name      ToolBarItemTest_0010
-     * @tc.desc      test ToolBarItem add button on toolbar succ
-     * @tc.level:    Level 1
+     * @tc.name   ToolBarItemTest_0010
+     * @tc.number ToolBarItemTest_0010
+     * @tc.desc   test ToolBarItem add button on toolbar succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ToolBarItemTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('ToolBarItemTest_0010 START');
@@ -70,10 +72,12 @@ export default function ToolBarItemTest() {
     });
 
     /**
-     * @tc.number    ToolBarItemTest_0020
-     * @tc.name      ToolBarItemTest_0020
-     * @tc.desc      test ToolBarItemPlacement setting succ
-     * @tc.level:    Level 1
+     * @tc.name   ToolBarItemTest_0020
+     * @tc.number ToolBarItemTest_0020
+     * @tc.desc   test ToolBarItemPlacement setting succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ToolBarItemTest_0020', Level.LEVEL1, async (done: Function) => {
       console.info('ToolBarItemTest_0020 START');

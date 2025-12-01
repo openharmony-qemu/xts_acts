@@ -26,12 +26,12 @@ import myJson from './1.json';
 export default function staticImport() {
   describe('staticImportTest', () => {
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0100
-     * @tc.name      : testSharedLibraryRes
-     * @tc.desc      : Import Shared Library
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSharedLibraryRes
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0100
+     * @tc.desc   Import Shared Library
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSharedLibraryRes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let shareLibraryRes: String = '';
@@ -44,12 +44,12 @@ export default function staticImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0200
-     * @tc.name      : testStaticLibraryRes
-     * @tc.desc      : Import Static Library
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLibraryRes
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0200
+     * @tc.desc   Import Static Library
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStaticLibraryRes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let staticLibraryRes: String = '';
@@ -62,12 +62,12 @@ export default function staticImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0300
-     * @tc.name      : testRelativePathRes
-     * @tc.desc      : Import Relative Path
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRelativePathRes
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0300
+     * @tc.desc   Import Relative Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRelativePathRes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let relativePathRes: String = '';
@@ -80,12 +80,12 @@ export default function staticImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0400
-     * @tc.name      : testOhosRes
-     * @tc.desc      : Import System Native Module
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testOhosRes
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0400
+     * @tc.desc   Import System Native Module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhosRes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let ohosRes: String = '';
@@ -97,12 +97,12 @@ export default function staticImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0500
-     * @tc.name      : testSystemRes
-     * @tc.desc      : Import Native Module
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSystemRes
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0500
+     * @tc.desc   Import Native Module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSystemRes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let systemRes: String = '';
@@ -114,12 +114,12 @@ export default function staticImport() {
     })
     
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0600
-     * @tc.name      : testNapiRes
-     * @tc.desc      : Import Hap's Native Module
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNapiRes
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0600
+     * @tc.desc   Import Hap's Native Module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNapiRes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let napiRes: String = '';
@@ -132,12 +132,12 @@ export default function staticImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0700
-     * @tc.name      : testOhpmImportOhpm
-     * @tc.desc      : Ohpm Import Ohpm
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testOhpmImportOhpm
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0700
+     * @tc.desc   Ohpm Import Ohpm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhpmImportOhpm', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let ohpmImportOhpm: String = '';
@@ -149,12 +149,12 @@ export default function staticImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0900
-     * @tc.name      : testImportJson
-     * @tc.desc      : Import Json File
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testImportJson
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0900
+     * @tc.desc   Import Json File
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testImportJson', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let importJson: String = '';

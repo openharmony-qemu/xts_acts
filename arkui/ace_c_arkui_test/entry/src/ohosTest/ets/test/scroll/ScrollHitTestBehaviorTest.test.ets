@@ -19,14 +19,14 @@ import Utils from '../common/Utils';
 export default function scrollHitTestBehaviorTest() {
 
   describe('ScrollHitTestBehaviorTest', () => {
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_HITTESTBEHAVIOR_0100
-    * @tc.name       : testScrollHitTestBehavior001
-    * @tc.desc       : test scroll hitTestBehavior with event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollHitTestBehavior001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_HITTESTBEHAVIOR_0100
+     * @tc.desc   test scroll hitTestBehavior with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollHitTestBehavior001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollHitTestBehaviorDefaultTest';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -40,14 +40,14 @@ export default function scrollHitTestBehaviorTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_HITTESTBEHAVIOR_0200
-    * @tc.name       : testScrollHitTestBehavior002
-    * @tc.desc       : test scroll hitTestBehavior with event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollHitTestBehavior002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_HITTESTBEHAVIOR_0200
+     * @tc.desc   test scroll hitTestBehavior with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollHitTestBehavior002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollHitTestBehaviorBlockTest';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -61,14 +61,14 @@ export default function scrollHitTestBehaviorTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_HITTESTBEHAVIOR_0300
-    * @tc.name       : testScrollHitTestBehavior003
-    * @tc.desc       : test scroll hitTestBehavior with event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollHitTestBehavior003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_HITTESTBEHAVIOR_0300
+     * @tc.desc   test scroll hitTestBehavior with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollHitTestBehavior003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollHitTestBehaviorTransparentTest';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -82,14 +82,14 @@ export default function scrollHitTestBehaviorTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_HITTESTBEHAVIOR_0400
-    * @tc.name       : testScrollHitTestBehavior004
-    * @tc.desc       : test scroll hitTestBehavior with event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollHitTestBehavior004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_HITTESTBEHAVIOR_0400
+     * @tc.desc   test scroll hitTestBehavior with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollHitTestBehavior004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollHitTestBehaviorNoneTest';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);

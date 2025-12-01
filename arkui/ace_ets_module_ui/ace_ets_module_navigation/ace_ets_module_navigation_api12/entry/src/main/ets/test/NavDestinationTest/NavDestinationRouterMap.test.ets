@@ -49,10 +49,12 @@ export default function NavDestinationRouterMap() {
 
 
     /**
-     * @tc.number    NavDestinationRouterMap_0100
-     * @tc.name      NavDestinationRouterMap_0100
-     * @tc.desc      Test NavDestination getConfigInRouteMap
-     * @tc.level     Level 2
+     * @tc.name   NavDestinationRouterMap_0100
+     * @tc.number NavDestinationRouterMap_0100
+     * @tc.desc   Test NavDestination getConfigInRouteMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationRouterMap_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavDestinationRouterMap_0100 START');

@@ -61,9 +61,12 @@ export default function list_SpaceChangeTest() {
       console.info("list_SpaceChangeTest after each called");
     });
     /**
+     * @tc.name   testListSpaceChangeUnfill
      * @tc.number SUB_ACE_LIST_SPACECHANGE_0100
-     * @tc.name testListSpaceChangeUnfill
-     * @tc.desc set the space of list to 20
+     * @tc.desc   set the space of list to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpaceChangeUnfill',  Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpaceChangeUnfill] START');
@@ -132,9 +135,12 @@ export default function list_SpaceChangeTest() {
       done();
     });
     /**
+     * @tc.name   testListSpaceChangeFill
      * @tc.number SUB_ACE_LIST_SPACECHANGE_0200
-     * @tc.name testListSpaceChangeFill
-     * @tc.desc set the space of list to 40
+     * @tc.desc   set the space of list to 40
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpaceChangeFill',  Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpaceChangeFill] START');
@@ -207,9 +213,12 @@ export default function list_SpaceChangeTest() {
       done();
     });
     /**
+     * @tc.name   testListSpaceChangeOverflow
      * @tc.number SUB_ACE_LIST_SPACECHANGE_0300
-     * @tc.name testListSpaceChangeOverflow
-     * @tc.desc set the space of list to 60
+     * @tc.desc   set the space of list to 60
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpaceChangeOverflow',  Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpaceChangeOverflow] START');

@@ -78,12 +78,12 @@ export default function imageSourceGetFrameCountTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_FRAME_COUNT_001
-     * @tc.name      : imageSource_getFrameCount_promise_001
-     * @tc.desc      : imageSource_getFrameCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getFrameCount_promise_001
+     * @tc.number IMAGE_SOURCE_GET_FRAME_COUNT_001
+     * @tc.desc   imageSource_getFrameCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getFrameCount_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getFrameCount_promise_001';
@@ -94,12 +94,12 @@ export default function imageSourceGetFrameCountTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_FRAME_COUNT_002
-     * @tc.name      : imageSource_getFrameCount_promise_002
-     * @tc.desc      : imageSource_getFrameCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getFrameCount_promise_002
+     * @tc.number IMAGE_SOURCE_GET_FRAME_COUNT_002
+     * @tc.desc   imageSource_getFrameCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getFrameCount_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getFrameCount_promise_002';
@@ -110,12 +110,12 @@ export default function imageSourceGetFrameCountTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_FRAME_COUNT_003
-     * @tc.name      : imageSource_getFrameCount_promise_003
-     * @tc.desc      : imageSource_getFrameCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getFrameCount_promise_003
+     * @tc.number IMAGE_SOURCE_GET_FRAME_COUNT_003
+     * @tc.desc   imageSource_getFrameCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getFrameCount_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getFrameCount_promise_003';
@@ -126,12 +126,12 @@ export default function imageSourceGetFrameCountTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_FRAME_COUNT_004
-     * @tc.name      : imageSource_getFrameCount_callback_001
-     * @tc.desc      : imageSource_getFrameCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getFrameCount_callback_001
+     * @tc.number IMAGE_SOURCE_GET_FRAME_COUNT_004
+     * @tc.desc   imageSource_getFrameCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getFrameCount_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getFrameCount_callback_001';
@@ -142,12 +142,12 @@ export default function imageSourceGetFrameCountTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_FRAME_COUNT_005
-     * @tc.name      : imageSource_getFrameCount_callback_002
-     * @tc.desc      : imageSource_getFrameCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getFrameCount_callback_002
+     * @tc.number IMAGE_SOURCE_GET_FRAME_COUNT_005
+     * @tc.desc   imageSource_getFrameCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getFrameCount_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getFrameCount_callback_002';
@@ -158,12 +158,12 @@ export default function imageSourceGetFrameCountTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_FRAME_COUNT_006
-     * @tc.name      : imageSource_getFrameCount_callback_003
-     * @tc.desc      : imageSource_getFrameCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getFrameCount_callback_003
+     * @tc.number IMAGE_SOURCE_GET_FRAME_COUNT_006
+     * @tc.desc   imageSource_getFrameCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getFrameCount_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getFrameCount_promise_003';

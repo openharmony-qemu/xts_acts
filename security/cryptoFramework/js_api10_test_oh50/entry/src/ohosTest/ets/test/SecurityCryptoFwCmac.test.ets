@@ -189,6 +189,14 @@ export default function SecurityCryptoFwCmacTestUnit() {
       // This API supports only one parameter: clear action function.
     });
 
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_0000
+     * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0000
+     * @tc.desc   SUB_Security_CryptoFramework_Cmac_Func_0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_Security_CryptoFramework_Cmac_Func_0000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let msgLen: number = 1024;
@@ -219,12 +227,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_0100
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0100
-     * @tc.name Test hmac algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is hmac
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is hmac
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -249,12 +257,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_0200
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0200
-     * @tc.name Test cmac algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is cmac
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -279,12 +287,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_0300
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0300
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is cmac
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -309,12 +317,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_0400
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0400
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is cmac, msg split test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, msg split test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -341,12 +349,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_0500
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0500
-     * @tc.name Test cmac algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is cmac, msg split test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, msg split test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -373,12 +381,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_0600
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0600
-     * @tc.name Test cmac algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is cmac, msg is empty test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, msg is empty test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -406,12 +414,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_0700
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0700
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is cmac, msg is empty test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, msg is empty test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -439,12 +447,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_0800
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0800
-     * @tc.name Test cmac algorithm traversal test. Sync and Promise style. Process success
-     * @tc.desc algorithm is cmac, msg split test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, msg split test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -473,12 +481,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_0900
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0900
-     * @tc.name Test cmac algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is cmac, update msg is empty
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, update msg is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -501,12 +509,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_1100
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1100
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is cmac, update msg is empty
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, update msg is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let cipherName: string = "AES256";
@@ -527,12 +535,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_1200
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1200
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is cmac, updateSync msg is empty
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, updateSync msg is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -555,12 +563,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_1300
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1300
-     * @tc.name Test cmac algorithm traversal test. Sync and Promise style. Process success
-     * @tc.desc algorithm is cmac, msg split test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, msg split test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -590,12 +598,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_1400
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1400
-     * @tc.name Test cmac algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is cmac, key convert with hmac test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, key convert with hmac test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -621,12 +629,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_1500
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1500
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is cmac, key convert with hmac test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, key convert with hmac test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -652,12 +660,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_1600
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1600
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is cmac, not support cipher test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, not support cipher test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -676,12 +684,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_1700
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1700
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is cmac, not support cipher test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, not support cipher test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -700,12 +708,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_1800
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1800
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is cmac, not support cipher test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, not support cipher test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -724,12 +732,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_1900
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1900
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is cmac, rfc 4493 vector test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac, rfc 4493 vector test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -756,12 +764,12 @@ export default function SecurityCryptoFwCmacTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Cmac_Func_2000
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_2000
-     * @tc.name Test cmac algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is cmac
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is cmac
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Cmac_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {

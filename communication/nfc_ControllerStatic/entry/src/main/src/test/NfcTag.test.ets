@@ -45,7 +45,6 @@ export default function nfcTagTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_NFC_Tag_static_0100
          * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0100
          * @tc.desc   SUB_COMMUNICATION_NFC_Tag_static_0100

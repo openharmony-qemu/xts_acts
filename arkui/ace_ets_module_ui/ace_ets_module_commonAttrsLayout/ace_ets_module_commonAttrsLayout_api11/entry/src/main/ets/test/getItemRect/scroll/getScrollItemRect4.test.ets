@@ -63,12 +63,14 @@ export default function getScrollItemRect4() {
       console.info("BadgeFocus after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getScrollItemRect4_0100
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set Visibility of column to Visibility.Visible
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getScrollItemRect4_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getScrollItemRect4_0100
+     * @tc.desc   set index to 0,set Visibility of column to Visibility.Visible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getScrollItemRect4_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getScrollItemRect4_0100] START');
@@ -125,12 +127,14 @@ export default function getScrollItemRect4() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getScrollItemRect4_0200
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set Visibility of column to Visibility.Hidden
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getScrollItemRect4_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getScrollItemRect4_0200
+     * @tc.desc   set index to 0,set Visibility of column to Visibility.Hidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getScrollItemRect4_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getScrollItemRect4_0200] START');
@@ -186,12 +190,14 @@ export default function getScrollItemRect4() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getScrollItemRect4_0300
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set Visibility of column to Visibility.None
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getScrollItemRect4_0300
+     * @tc.number SUB_ACE_TS_COMPONENT_getScrollItemRect4_0300
+     * @tc.desc   set index to 0,set Visibility of column to Visibility.None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getScrollItemRect4_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getScrollItemRect4_0300] START');

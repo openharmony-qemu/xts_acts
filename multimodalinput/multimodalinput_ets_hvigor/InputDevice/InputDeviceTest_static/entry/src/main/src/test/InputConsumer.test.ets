@@ -40,7 +40,6 @@ export default function InputConsumerTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_0100
      * @tc.desc   Test callback inputConsumer.on interface to subscribe Left_Alt + Z.
@@ -62,11 +61,11 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ifInputConsumerOnSuccess++;
             ExpectTrue(ifInputConsumerOnSuccess == 1);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -82,7 +81,6 @@ export default function InputConsumerTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_0200
      * @tc.desc   Test callback inputConsumer.on interface to subscribe Left_Ctrl + Left_Alt + D + C.
@@ -103,10 +101,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -121,7 +119,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_0300
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_0300
      * @tc.desc   Test callback inputConsumer.on interface to subscribe Left_Ctrl + Left_Alt + D + 9.
@@ -142,10 +139,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -160,7 +157,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_0400
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_0400
      * @tc.desc   Test callback inputConsumer.on interface to subscribe 9 + D.
@@ -181,10 +177,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -199,7 +195,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_0500
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_0500
      * @tc.desc   Test callback inputConsumer.on interface to subscribe F + D.
@@ -220,10 +215,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -238,7 +233,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_0600
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_0600
      * @tc.desc   Test callback inputConsumer.on interface to subscribe Left_Ctrl + Meta.
@@ -259,10 +253,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -277,7 +271,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_0700
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_0700
      * @tc.desc   Test callback inputConsumer.on interface to subscribe Left_Ctrl + Right_Ctrl.
@@ -298,10 +291,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -316,7 +309,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_0800
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_0800
      * @tc.desc   Test callback inputConsumer.on interface to subscribe Left_Alt + Z again.
@@ -337,11 +329,11 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -356,7 +348,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_0900
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_0900
      * @tc.desc   Test callback inputConsumer.on interface to subscribe a nonexistent preKeys.
@@ -377,10 +368,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -395,7 +386,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_1000
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_1000
      * @tc.desc   Test callback inputConsumer.on interface to subscribe a nonexistent finalKey.
@@ -417,11 +407,11 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ifInputConsumerOnSuccess++;
             ExpectTrue(ifInputConsumerOnSuccess == 1);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -436,7 +426,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_1100
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_1100
      * @tc.desc   Test callback inputConsumer.on interface to subscribe Left_Alt + Tab.
@@ -457,10 +446,10 @@ export default function InputConsumerTest() {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
             ExpectFalse(true);
-            inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -475,7 +464,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_0100
      * @tc.desc   Test callback inputConsumer.off interface to unsubscribe Left_Alt + Z.
@@ -497,8 +485,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -516,7 +504,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_0200
      * @tc.desc   Test callback inputConsumer.off interface to unsubscribe from the combination keys subscribed by all the callback functions.
@@ -538,8 +525,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -557,7 +544,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_0300
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_0300
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Ctrl + Z.
@@ -579,8 +565,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -598,7 +584,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_0400
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_0400
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Ctrl + Left_Alt + Z.
@@ -620,8 +605,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -639,7 +624,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_0500
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_0500
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Shift + Left_Alt + Z.
@@ -661,8 +645,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -680,7 +664,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_0600
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_0600
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Shift + C.
@@ -702,8 +685,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -721,7 +704,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_0700
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_0700
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Ctrl + 9.
@@ -743,8 +725,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -762,7 +744,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_0800
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_0800
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Ctrl + ↑.
@@ -784,8 +765,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -803,7 +784,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_0900
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_0900
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Ctrl + ←.
@@ -825,8 +805,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -844,7 +824,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_1000
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_1000
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Ctrl + F1.
@@ -866,8 +845,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -885,7 +864,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_1100
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_1100
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Ctrl + Home.
@@ -907,8 +885,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -926,7 +904,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_1200
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_1200
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Ctrl + Enter.
@@ -948,8 +925,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -967,7 +944,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_1300
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_1300
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Ctrl + P.
@@ -989,7 +965,7 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1007,7 +983,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_1400
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_1400
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Ctrl + Scroll Lock.
@@ -1029,8 +1004,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1048,7 +1023,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_1500
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_1500
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe Left_Ctrl + Table.
@@ -1070,8 +1044,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1089,7 +1063,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_1600
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_1600
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe a nonexistent preKeys.
@@ -1110,8 +1083,8 @@ export default function InputConsumerTest() {
             isRepeat: true
           };
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ExpectFalse(true);
             done();
@@ -1128,7 +1101,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_1700
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_1700
      * @tc.desc   Test callback inputConsumer.on and off interface to unsubscribe a nonexistent finalKey.
@@ -1150,8 +1122,8 @@ export default function InputConsumerTest() {
           };
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
-            inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+            inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
+            inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1169,7 +1141,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_1200
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_1200
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe volume+&down&repeatTrue listening.
@@ -1191,10 +1162,10 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1213,7 +1184,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_1300
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_1300
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe volume+&down&repeatFalse listening.
@@ -1235,10 +1205,10 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1257,7 +1227,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_1400
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_1400
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe volume-&down&repeatTrue listening.
@@ -1279,10 +1248,10 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1301,7 +1270,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_1500
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_1500
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe volume-&down&repeatFalse listening.
@@ -1323,10 +1291,10 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1345,7 +1313,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_1600
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_1600
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe volume+&down&repeatTrue listening again.
@@ -1370,12 +1337,12 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.on("keyPressed", options, callback2);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed", callback2);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.onKeyPressed(options, callback2);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed(callback2);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1394,7 +1361,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_1700
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_1700
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe volume-&down&repeatFalse listening again.
@@ -1419,12 +1385,12 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOnSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.on("keyPressed", options, callback2);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed", callback2);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.onKeyPressed(options, callback2);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed(callback2);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOnSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
@@ -1443,7 +1409,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_1900
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_1900
      * @tc.desc   Test callback inputConsumer.off interface to unsubscribe some listening.
@@ -1489,14 +1454,14 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.on("keyPressed", options2, callback2);
-            inputConsumer.on("keyPressed", options3, callback3);
-            inputConsumer.on("keyPressed", options4, callback4);
-            inputConsumer.off("keyPressed", callback);
-            inputConsumer.off("keyPressed", callback4);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.onKeyPressed(options2, callback2);
+            inputConsumer.onKeyPressed(options3, callback3);
+            inputConsumer.onKeyPressed(options4, callback4);
+            inputConsumer.offKeyPressed(callback);
+            inputConsumer.offKeyPressed(callback4);
+            inputConsumer.offKeyPressed();
             ifInputConsumerOffSuccess++;
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1515,7 +1480,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_2000
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_2000
      * @tc.desc   Test callback inputConsumer.off interface to unsubscribe some repeated listening.
@@ -1560,14 +1524,14 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.on("keyPressed", options2, callback2);
-            inputConsumer.on("keyPressed", options3, callback3);
-            inputConsumer.on("keyPressed", options4, callback4);
-            inputConsumer.off("keyPressed", callback3);
-            inputConsumer.off("keyPressed", callback3);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.onKeyPressed(options2, callback2);
+            inputConsumer.onKeyPressed(options3, callback3);
+            inputConsumer.onKeyPressed(options4, callback4);
+            inputConsumer.offKeyPressed(callback3);
+            inputConsumer.offKeyPressed(callback3);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1585,7 +1549,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_2100
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_2100
      * @tc.desc   Test callback inputConsumer.off interface to unsubscribe all the listening.
@@ -1631,12 +1594,12 @@ export default function InputConsumerTest() {
           }
           let ifInputConsumerOffSuccess = 0;
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.on("keyPressed", options2, callback2);
-            inputConsumer.on("keyPressed", options3, callback3);
-            inputConsumer.on("keyPressed", options4, callback4);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.onKeyPressed(options2, callback2);
+            inputConsumer.onKeyPressed(options3, callback3);
+            inputConsumer.onKeyPressed(options4, callback4);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
@@ -1655,7 +1618,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_2200
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_2200
      * @tc.desc   Test callback inputConsumer.off interface to unsubscribe.
@@ -1671,7 +1633,7 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed", callback);
+            inputConsumer.offKeyPressed(callback);
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1689,7 +1651,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_1800
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_1800
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe power&down&repeatTrue listening.
@@ -1710,9 +1671,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1730,7 +1691,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_1900
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_1900
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe 10000&down&repeatTrue listening.
@@ -1751,9 +1711,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1771,7 +1731,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_2000
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_2000
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe -1&down&repeatTrue listening.
@@ -1792,9 +1751,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1812,7 +1771,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_2100
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_2100
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe volume+&0&repeatTrue listening.
@@ -1833,9 +1791,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1853,7 +1811,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_2200
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_2200
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe volume-&2&repeatTrue listening.
@@ -1874,9 +1831,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
@@ -1894,7 +1851,6 @@ export default function InputConsumerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_2300
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_2300
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe volume-&-1&repeatTrue listening.
@@ -1915,9 +1871,9 @@ export default function InputConsumerTest() {
             console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
           }
           try {
-            inputConsumer.off("keyPressed");
-            inputConsumer.on("keyPressed", options, callback);
-            inputConsumer.off("keyPressed");
+            inputConsumer.offKeyPressed();
+            inputConsumer.onKeyPressed(options, callback);
+            inputConsumer.offKeyPressed();
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();

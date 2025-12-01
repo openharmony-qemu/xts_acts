@@ -49,10 +49,12 @@ export default function LocalizedBorderRadiuses() {
 
 
     /**
-     * @tc.number    LocalizedBorderRadiuses_0100
-     * @tc.name      LocalizedBorderRadiuses_0100
-     * @tc.desc      Test LocalizedBorderRadiuses
-     * @tc.level     Level 2
+     * @tc.name   LocalizedBorderRadiuses_0100
+     * @tc.number LocalizedBorderRadiuses_0100
+     * @tc.desc   Test LocalizedBorderRadiuses
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalizedBorderRadiuses_0100', Level.LEVEL0, async (done: Function) => {
       console.info('LocalizedBorderRadiuses_0100 START');

@@ -32,7 +32,7 @@ let mCameraSession: cameraObj.VideoSession;
 let mCameraNum: number;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let surfaceId: string = '';
 
 let isEmpty01 = (data: cameraObj.CameraManager) => {
@@ -234,7 +234,7 @@ let isEmpty08 = (data: BusinessError) => {
      console.log(TAG + 'before receiver check')
      if (receiver !== undefined) {
        console.log(TAG + 'Photo receiver is created successfully')
-       mPhotoSurface = await receiver.getReceivingSurfaceId()
+       mPhotoSurface = await receiver!.getReceivingSurfaceId()
        console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
      } else {
        console.log(TAG + 'Photo receiver is created failed')
@@ -370,12 +370,12 @@ let isEmpty08 = (data: BusinessError) => {
     });
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100
-      * @tc.desc   camera status callback on CameraInput async api for error
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100
+     * @tc.desc   camera status callback on CameraInput async api for error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100--------------");
@@ -420,12 +420,12 @@ let isEmpty08 = (data: BusinessError) => {
     });
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_STATIC_0100
-      * @tc.desc   open/close Camera with cameraInput callback api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_STATIC_0100
+     * @tc.desc   open/close Camera with cameraInput callback api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_STATIC_0100--------------");
@@ -472,12 +472,12 @@ let isEmpty08 = (data: BusinessError) => {
     });
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_STATIC_0100
-      * @tc.desc   open/close Camera with cameraInput promise api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_STATIC_0100
+     * @tc.desc   open/close Camera with cameraInput promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let functionTag = "SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_STATIC_0100";

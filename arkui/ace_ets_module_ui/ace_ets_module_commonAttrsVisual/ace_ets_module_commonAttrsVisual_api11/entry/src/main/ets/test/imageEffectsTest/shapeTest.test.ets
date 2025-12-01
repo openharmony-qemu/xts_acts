@@ -45,9 +45,12 @@ export default function shapeTest() {
     });
 
     /**
+     * @tc.name   shapeTest_0100
      * @tc.number shapeTest_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   shapeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('shapeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('shapeTest_0100 START');

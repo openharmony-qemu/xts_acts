@@ -299,14 +299,14 @@ export default function PlayerLocalTestAudioFUNC() {
       }
       console.info('afterAll case');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SETSOURCE_0100
-        * @tc.name      : 001.test setSorce ''
-        * @tc.desc      : Audio playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SETSOURCE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SETSOURCE_0100
+     * @tc.desc   Audio playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SETSOURCE_0100', Level.LEVEL0,async (done: Function) => {
       mediaTestBase.isFileOpen(fileDescriptor, done);
       let mySteps = new Array(SRC_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
@@ -316,14 +316,14 @@ export default function PlayerLocalTestAudioFUNC() {
         audioPlayer.src = "";
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SETVOLUME_0100
-        * @tc.name      : 001.test SetVolume 0/0.5/1
-        * @tc.desc      : Audio playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SETVOLUME_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SETVOLUME_0100
+     * @tc.desc   Audio playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SETVOLUME_0100', Level.LEVEL0,async (done: Function) => {
       let mySteps =
         new Array(SRC_STATE, PLAY_STATE, VOLUME_STATE, 0, VOLUME_STATE, 0.5, VOLUME_STATE, MAX_VOLUME, RESET_STATE,
@@ -334,14 +334,14 @@ export default function PlayerLocalTestAudioFUNC() {
         audioPlayer.src = fdPath;
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SEEK_0100
-        * @tc.name      : 001.test seek mode 0 / 0.5 * duration/ duration
-        * @tc.desc      : Audio playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SEEK_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SEEK_0100
+     * @tc.desc   Audio playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_SEEK_0100', Level.LEVEL0,async (done: Function) => {
       mediaTestBase.isFileOpen(fileDescriptor, done);
       let mySteps =
@@ -353,14 +353,14 @@ export default function PlayerLocalTestAudioFUNC() {
         audioPlayer.src = fdPath;
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_GETTRECKDESCRIPTION_0100
-        * @tc.name      : 001.test getTrackDescription
-        * @tc.desc      : Audio playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_GETTRECKDESCRIPTION_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_GETTRECKDESCRIPTION_0100
+     * @tc.desc   Audio playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_GETTRECKDESCRIPTION_0100', Level.LEVEL0,async (done: Function) => {
       mediaTestBase.isFileOpen(fileDescriptor, done);
       let mySteps = new Array(SRC_STATE, GETDESCRIPTION_PROMISE, GETDESCRIPTION_CALLBACK, RELEASE_STATE, END_STATE);
@@ -370,14 +370,14 @@ export default function PlayerLocalTestAudioFUNC() {
         audioPlayer.src = fdPath;
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_LOOP_0100
-        * @tc.name      : 001.test loop
-        * @tc.desc      : Audio playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_LOOP_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_LOOP_0100
+     * @tc.desc   Audio playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_LOOP_0100', Level.LEVEL0,async (done: Function) => {
       mediaTestBase.isFileOpen(fileDescriptor, done);
       let playCount = 0;
@@ -450,38 +450,38 @@ export default function PlayerLocalTestAudioFUNC() {
       });
       testAudioPlayer.src = fdPath;
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_BASE_0100
-        * @tc.name      : 001.test audio player (src)
-        * @tc.desc      : Audio playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_BASE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_BASE_0100
+     * @tc.desc   Audio playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_BASE_0100', Level.LEVEL0,async (done: Function) => {
       mediaTestBase.isFileOpen(fileDescriptor, done);
       playAudioSource(fdPath, DURATION_TIME, PLAY_TIME, true, done);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_BASE_0200
-        * @tc.name      : 002.test audio player (fdsrc)
-        * @tc.desc      : Audio playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_BASE_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_BASE_0200
+     * @tc.desc   Audio playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_BASE_0200', Level.LEVEL0,async (done: Function) => {
       mediaTestBase.isFileOpen(fileDescriptor, done);
       playAudioSource(fileDescriptor, DURATION_TIME, PLAY_TIME, true, done);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_MULTIPLE_0100
-        * @tc.name      : 001.test two audio player
-        * @tc.desc      : Audio playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_MULTIPLE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_MULTIPLE_0100
+     * @tc.desc   Audio playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FUNCTION_MULTIPLE_0100', Level.LEVEL0,async (done: Function) => {
       mediaTestBase.isFileOpen(fileDescriptor, done);
 

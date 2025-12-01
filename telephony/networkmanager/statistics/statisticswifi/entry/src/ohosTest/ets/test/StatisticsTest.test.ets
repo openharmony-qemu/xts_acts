@@ -36,12 +36,12 @@ export default function StatisticsTest() {
     const DATA_0 = 0;
 
     /**
+     * @tc.name   testNetworkManagerGetIfaceRxBytesAsync0100
      * @tc.number SUB_NetworkManager_GetIfaceRxBytes_Async_0100
-     * @tc.name testNetworkManagerGetIfaceRxBytesAsync0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceRxBytesAsync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceRxBytesAsync0100';
@@ -66,12 +66,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceRxBytesAsync0200
      * @tc.number SUB_NetworkManager_GetIfaceRxBytes_Async_0200
-     * @tc.name testNetworkManagerGetIfaceRxBytesAsync0200
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceRxBytesAsync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceRxBytesAsync0200';
@@ -96,12 +96,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceRxBytesAsync0300
      * @tc.number SUB_NetworkManager_GetIfaceRxBytes_Async_0300
-     * @tc.name testNetworkManagerGetIfaceRxBytesAsync0300
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceRxBytesAsync0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceRxBytesAsync0300';
@@ -127,12 +127,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceRxBytesAsync0400
      * @tc.number SUB_NetworkManager_GetIfaceRxBytes_Async_0400
-     * @tc.name testNetworkManagerGetIfaceRxBytesAsync0400
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceRxBytesAsync0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceRxBytesAsync0400';
@@ -158,12 +158,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceRxBytesPromise0100
      * @tc.number SUB_NetworkManager_GetIfaceRxBytes_Promise_0100
-     * @tc.name testNetworkManagerGetIfaceRxBytesPromise0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceRxBytesPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceRxBytesPromise0100';
@@ -186,12 +186,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceRxBytesPromise0200
      * @tc.number SUB_NetworkManager_GetIfaceRxBytes_Promise_0200
-     * @tc.name testNetworkManagerGetIfaceRxBytesPromise0200
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceRxBytesPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceRxBytesPromise0200';
@@ -214,12 +214,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceRxBytesPromise0300
      * @tc.number SUB_NetworkManager_GetIfaceRxBytes_Promise_0300
-     * @tc.name testNetworkManagerGetIfaceRxBytesPromise0300
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceRxBytesPromise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceRxBytesPromise0300';
@@ -242,12 +242,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceRxBytesPromise0400
      * @tc.number SUB_NetworkManager_GetIfaceRxBytes_Promise_0400
-     * @tc.name testNetworkManagerGetIfaceRxBytesPromise0400
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceRxBytesPromise0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceRxBytesPromise0400';
@@ -270,12 +270,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceTxBytesAsync0100
      * @tc.number SUB_NetworkManager_GetIfaceTxBytes_Async_0100
-     * @tc.name testNetworkManagerGetIfaceTxBytesAsync0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceTxBytesAsync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceTxBytesAsync0100';
@@ -300,12 +300,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceTxBytesAsync0200
      * @tc.number SUB_NetworkManager_GetIfaceTxBytes_Async_0200
-     * @tc.name testNetworkManagerGetIfaceTxBytesAsync0200
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceTxBytesAsync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceTxBytesAsync0200';
@@ -330,12 +330,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceTxBytesAsync0300
      * @tc.number SUB_NetworkManager_GetIfaceTxBytes_Async_0300
-     * @tc.name testNetworkManagerGetIfaceTxBytesAsync0300
-     * @tc.desc Function test
-     * @tc.level 1LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceTxBytesAsync0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceTxBytesAsync0300';
@@ -360,12 +360,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceTxBytesAsync0400
      * @tc.number SUB_NetworkManager_GetIfaceTxBytes_Async_0400
-     * @tc.name testNetworkManagerGetIfaceTxBytesAsync0400
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceTxBytesAsync0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceTxBytesAsync0400';
@@ -390,12 +390,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceTxBytesPromise0100
      * @tc.number SUB_NetworkManager_GetIfaceTxBytes_Promise_0100
-     * @tc.name testNetworkManagerGetIfaceTxBytesPromise0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceTxBytesPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceTxBytesPromise0100';
@@ -418,12 +418,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceTxBytesPromise0200
      * @tc.number SUB_NetworkManager_GetIfaceTxBytes_Promise_0200
-     * @tc.name testNetworkManagerGetIfaceTxBytesPromise0200
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceTxBytesPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceTxBytesPromise0200';
@@ -446,12 +446,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetIfaceTxBytesPromise0300
      * @tc.number SUB_NetworkManager_GetIfaceTxBytes_Promise_0300
-     * @tc.name testNetworkManagerGetIfaceTxBytesPromise0300
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceTxBytesPromise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceTxBytesPromise0300';
@@ -473,12 +473,12 @@ export default function StatisticsTest() {
       }
     });
     /**
+     * @tc.name   testNetworkManagerGetIfaceTxBytesPromise0400
      * @tc.number SUB_NetworkManager_GetIfaceTxBytes_Promise_0400
-     * @tc.name testNetworkManagerGetIfaceTxBytesPromise0400
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetIfaceTxBytesPromise0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetIfaceTxBytesPromise0400';
@@ -501,12 +501,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetAllTxBytesAsync0100
      * @tc.number SUB_NetworkManager_GetAllTxBytes_Async_0100
-     * @tc.name testNetworkManagerGetAllTxBytesAsync0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetAllTxBytesAsync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetAllTxBytesAsync0100';
@@ -530,12 +530,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetAllTxBytesPromise0100
      * @tc.number SUB_NetworkManager_GetAllTxBytes_Promise_0100
-     * @tc.name testNetworkManagerGetAllTxBytesPromise0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetAllTxBytesPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetAllTxBytesPromise0100';
@@ -557,12 +557,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetAllRxBytesAsync0100
      * @tc.number SUB_NetworkManager_GetAllRxBytes_Async_0100
-     * @tc.name testNetworkManagerGetAllRxBytesAsync0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetAllRxBytesAsync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetAllRxBytesAsync0100';
@@ -586,12 +586,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetAllRxBytesPromise0100
      * @tc.number SUB_NetworkManager_GetAllRxBytes_Promise_0100
-     * @tc.name testNetworkManagerGetAllRxBytesPromise0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetAllRxBytesPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetAllRxBytesPromise0100';
@@ -613,12 +613,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetUidRxBytesAsync0100
      * @tc.number SUB_NetworkManager_GetUidRxBytes_Async_0100
-     * @tc.name testNetworkManagerGetUidRxBytesAsync0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetUidRxBytesAsync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetUidRxBytesAsync0100';
@@ -643,12 +643,12 @@ export default function StatisticsTest() {
     });
     
     /**
+     * @tc.name   testNetworkManagerGetUidRxBytesAsync0200
      * @tc.number SUB_NetworkManager_GetUidRxBytes_Async_0200
-     * @tc.name testNetworkManagerGetUidRxBytesAsync0200
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetUidRxBytesAsync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetUidRxBytesAsync0200';
@@ -672,12 +672,12 @@ export default function StatisticsTest() {
       }
     });
     /**
+     * @tc.name   testNetworkManagerGetUidRxBytesPromise0100
      * @tc.number SUB_NetworkManager_GetUidRxBytes_Promise_0100
-     * @tc.name testNetworkManagerGetUidRxBytesPromise0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetUidRxBytesPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetUidRxBytesPromise0100';
@@ -699,12 +699,12 @@ export default function StatisticsTest() {
       }
     });
     /**
+     * @tc.name   testNetworkManagerGetUidRxBytesPromise0200
      * @tc.number SUB_NetworkManager_GetUidRxBytes_Promise_0200
-     * @tc.name testNetworkManagerGetUidRxBytesPromise0200
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetUidRxBytesPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetUidRxBytesPromise0200';
@@ -726,12 +726,12 @@ export default function StatisticsTest() {
       }
     });
     /**
+     * @tc.name   testNetworkManagerGetUidTxBytesAsync0100
      * @tc.number SUB_NetworkManager_GetUidTxBytes_Async_0100
-     * @tc.name testNetworkManagerGetUidTxBytesAsync0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetUidTxBytesAsync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetUidTxBytesAsync0100';
@@ -755,12 +755,12 @@ export default function StatisticsTest() {
       }
     });
     /**
+     * @tc.name   testNetworkManagerGetUidTxBytesAsync0200
      * @tc.number SUB_NetworkManager_GetUidTxBytes_Async_0200
-     * @tc.name testNetworkManagerGetUidTxBytesAsync0200
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetUidTxBytesAsync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetUidTxBytesAsync0200';
@@ -784,12 +784,12 @@ export default function StatisticsTest() {
       }
     });
     /**
+     * @tc.name   testNetworkManagerGetUidTxBytesPromise0100
      * @tc.number SUB_NetworkManager_GetUidTxBytes_Promise_0100
-     * @tc.name testNetworkManagerGetUidTxBytesPromise0100
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetUidTxBytesPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetUidTxBytesPromise0100';
@@ -811,12 +811,12 @@ export default function StatisticsTest() {
       }
     });
     /**
+     * @tc.name   testNetworkManagerGetUidTxBytesPromise0200
      * @tc.number SUB_NetworkManager_GetUidTxBytes_Promise_0200
-     * @tc.name testNetworkManagerGetUidTxBytesPromise0200
-     * @tc.desc Function test
-     * @tc.level LEVEL1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetUidTxBytesPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetUidTxBytesPromise0200';

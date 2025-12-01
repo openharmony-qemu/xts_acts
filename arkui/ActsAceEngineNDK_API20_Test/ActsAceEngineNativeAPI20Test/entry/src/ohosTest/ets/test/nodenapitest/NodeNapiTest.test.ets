@@ -26,14 +26,14 @@ export default function NodeNapiTest() {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`nodenapitest/nodenapiTest`, done);
     });
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeHandleFromNapiValue_0100
-       * @tc.name       : testOHArkUIGetNodeHandleFromNapiValue0100
-       * @tc.desc       : testing OH_ArkUI_GetNodeHandleFromNapiValue interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNodeHandleFromNapiValue0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeHandleFromNapiValue_0100
+     * @tc.desc   testing OH_ArkUI_GetNodeHandleFromNapiValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNodeHandleFromNapiValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -48,14 +48,14 @@ export default function NodeNapiTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeHandleFromNapiValue_0200
-       * @tc.name       : testOHArkUIGetNodeHandleFromNapiValue0200
-       * @tc.desc       : testing OH_ArkUI_GetNodeHandleFromNapiValue interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNodeHandleFromNapiValue0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeHandleFromNapiValue_0200
+     * @tc.desc   testing OH_ArkUI_GetNodeHandleFromNapiValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNodeHandleFromNapiValue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

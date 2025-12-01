@@ -57,10 +57,12 @@ export default function datapanelTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_0100
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_0100
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ["#FFFF0000", "#FF00FF00", "#FF0000FF", "#FF000000"]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_0100 START');
@@ -100,10 +102,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_0200
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_0200
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ['rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(0,0,255)', 'rgb(0,0,0)']
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_0200 START');
@@ -143,10 +147,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_0300
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_0300
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [Color.Red, Color.Green, Color.Blue, Color.Black]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_0300 START');
@@ -186,11 +192,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_0400
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_0400
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [$r("app.color.DataPanel_ValueColors1"), $r("app.color.DataPanel_ValueColors2"),
-     *               $r("app.color.DataPanel_ValueColors3"), $r("app.color.DataPanel_ValueColors4")]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_0400 START');
@@ -231,10 +238,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_0500
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_0500
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ["#FFFF0000", "#FF00FF00", "#FF0000FF", "#FF000000"]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_0500 START');
@@ -266,10 +275,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_0600
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_0600
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ["#FF000000", "#FFFF0000", "#FF00FF00"]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_0600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_0600 START');
@@ -305,12 +316,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_0700
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_0700
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ['rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(0,0,255)', 'rgb(0,0,0)']
-     *               DataPanel common components, set valueColors property once more parameter to
-     *               [Color.Red, Color.Green, Color.Blue, Color.Black]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_0700', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_0700 START');
@@ -350,11 +361,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_0800
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_0800
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ["#FFFF0000", "#FF00FF00", "#FF0000FF", "#FF000000"]
-     *               set the general attribute backgroundColor parameter to Color.Pink
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_0800', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_0800 START');
@@ -394,11 +406,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_0900
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_0900
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ['rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(0,0,255)', 'rgb(0,0,0)'],
-     *               and set the valueColors parameter to undefined
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_0900', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_0900 START');
@@ -450,12 +463,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_1000
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_1000
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [{ color: "#FFA500", offset: 0 }, { color: "#FFFFFF00", offset: 1 }];
-     *               [{ color: "#FFC0CB", offset: 0 }, { color: "#FF00FF00", offset: 1 }]
-     *               [{ color: "#FF0000FF", offset: 0 }, { color: "#FFFF0000", offset: 1 }]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_1000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_1000 START');
@@ -491,12 +504,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_1100
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_1100
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [{ color: 'rgb(255,165,0)', offset: 0 }, { color: 'rgb(255,255,0)', offset: 1 }]
-     *               [{ color: 'rgb(255,192,203)', offset: 0 }, { color: 'rgb(0,128,0)', offset: 1 }]
-     *               [{ color: 'rgb(0,0,255)', offset: 0 }, { color: 'rgb(255,0,0)', offset: 1 }]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_1100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_1100 START');
@@ -532,12 +545,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_1200
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_1200
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [{ color: Color.Orange, offset: 0 }, { color: Color.Yellow, offset: 1 }]
-     *               [{ color: Color.Pink, offset: 0 }, { color: Color.Green, offset: 1 }]
-     *               [{ color: Color.Blue, offset: 0 }, { color: Color.Red, offset: 1 }]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_1200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_1200 START');
@@ -573,12 +586,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_1300
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_1300
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [$r("app.color.DataPanel_ValueColors5"), $r("app.color.DataPanel_ValueColors6"),
-     *               $r("app.color.DataPanel_ValueColors7"), $r("app.color.DataPanel_ValueColors8"),
-     *               $r("app.color.DataPanel_ValueColors9"), $r("app.color.DataPanel_ValueColors10")]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_1300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_1300 START');
@@ -627,16 +640,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_1400
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_1400
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [{ color: 'rgb(255,165,0)', offset: 0 }, { color: 'rgb(255,255,0)', offset: 1 }]
-     *               [{ color: 'rgb(255,192,203)', offset: 0 }, { color: 'rgb(0,128,0)', offset: 1 }]
-     *               [{ color: 'rgb(0,0,255)', offset: 0 }, { color: 'rgb(255,0,0)', offset: 1 }],
-     *               and set the valueColors parameter to
-     *               [{ color: Color.Orange, offset: 0 }, { color: Color.Yellow, offset: 1 }]
-     *               [{ color: Color.Pink, offset: 0 }, { color: Color.Green, offset: 1 }]
-     *               [{ color: Color.Blue, offset: 0 }, { color: Color.Red, offset: 1 }]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_1400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_1400 START');
@@ -672,13 +681,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_1500
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_1500
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [{ color: "#FFA500", offset: 0 }, { color: "#FFFFFF00", offset: 1 }]
-     *               [{ color: "#FFC0CB", offset: 0 }, { color: "#FF00FF00", offset: 1 }]
-     *               [{ color: "#FF0000FF", offset: 0 }, { color: "#FFFF0000", offset: 1 }]
-     *               set the general attribute backgroundColor parameter to Color.Green
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_1500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_1500 START');
@@ -714,13 +722,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_1600
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_1600
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [{ color: 'rgb(255,165,0)', offset: 0 }, { color: 'rgb(255,255,0)', offset: 1 }],
-     *               [{ color: 'rgb(255,192,203)', offset: 0 }, { color: 'rgb(0,128,0)', offset: 1 }],
-     *               [{ color: 'rgb(0,0,255)', offset: 0 }, { color: 'rgb(255,0,0)', offset: 1 }]
-     *               and set the valueColors parameter to undefined
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_1600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_1600 START');
@@ -772,10 +779,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_1700
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_1700
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ["#01FFA500", "#4CFFFF00", "#9AFFC0CB", "#FF00FF00"]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_1700', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_1700 START');
@@ -815,10 +824,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_1800
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_1800
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ['rgba(255,165,0,0)', 'rgba(255,255,0,0)', 'rgba(255,192,203,0)', 'rgba(0,128,0,0)']
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_1800', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_1800 START');
@@ -858,10 +869,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_1900
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_1900
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [Color.Orange, Color.Yellow, Color.Pink, Color.Green]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_1900', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_1900 START');
@@ -901,11 +914,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_2000
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_2000
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [$r("app.color.DataPanel_ValueColors11"), $r("app.color.DataPanel_ValueColors12"),
-     *               $r("app.color.DataPanel_ValueColors13"), $r("app.color.DataPanel_ValueColors14")]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_2000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_2000 START');
@@ -946,11 +960,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_2100
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_2100
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ['rgba(255,165,0,0)', 'rgba(255,255,0,0)', 'rgba(255,192,203,0)', 'rgba(0,128,0,0)'],
-     *               and set the valueColors parameter to [Color.Orange, Color.Yellow, Color.Pink, Color.Green]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_2100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_2100 START');
@@ -990,11 +1005,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_2200
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_2200
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ["#01FFA500", "#4CFFFF00", "#9AFFC0CB", "#FF00FF00"],
-     *               set the general attribute backgroundColor parameter to Color.Green
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_2200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_2200 START');
@@ -1034,9 +1050,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_2300
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_2300
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to ''
+     * @tc.desc   DataPanel common components, set valueColors property parameter to ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_2300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_2300 START');
@@ -1088,9 +1107,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_2400
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_2400
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to null
+     * @tc.desc   DataPanel common components, set valueColors property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_2400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_2400 START');
@@ -1142,9 +1164,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_2500
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_2500
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to undefined
+     * @tc.desc   DataPanel common components, set valueColors property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_2500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_2500 START');
@@ -1196,11 +1221,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_2600
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_2600
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ['rgba(255,165,0,0)', 'rgba(0,255,255,0,0)', 'rgba(255,192,203,0)', 'rgba(0,0,128,0)'],
-     *                and set the valueColors parameter to undefined
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_2600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_2600 START');
@@ -1252,9 +1278,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_2700
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_2700
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to 'color'
+     * @tc.desc   DataPanel common components, set valueColors property parameter to 'color'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_2700', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_2700 START');
@@ -1307,10 +1336,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_2800
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_2800
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               ["#01FFA500", "#4C800080", "#9AFFFF00", "#FF00FF00"]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_2800', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_2800 START');
@@ -1350,11 +1381,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_ValueColors_2900
      * @tc.number ArkUX_Stage_DataPanel_ValueColors_2900
-     * @tc.name Tests the valueColors property of the DataPanel component
-     * @tc.desc DataPanel common components, set valueColors property parameter to
-     *               [{ color: "#01FFA500", offset: 0 }, { color: "#01FFFF00", offset: 1 }],
-     *               [{ color: "#01FFC0CB", offset: 0 }, { color: "#0100FF00", offset: 1 }]
+     * @tc.desc   DataPanel common components, set valueColors property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_ValueColors_2900', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_ValueColors_2900 START');
@@ -1386,9 +1418,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackBackgroundColor_0100
      * @tc.number ArkUX_Stage_DataPanel_TrackBackgroundColor_0100
-     * @tc.name Tests the trackBackgroundColor property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackBackgroundColor property parameter to '#FF00FF00'
+     * @tc.desc   DataPanel common components, set trackBackgroundColor property parameter to '#FF00FF00'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackBackgroundColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0100 START');
@@ -1414,9 +1449,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackBackgroundColor_0200
      * @tc.number ArkUX_Stage_DataPanel_TrackBackgroundColor_0200
-     * @tc.name Tests the trackBackgroundColor property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackBackgroundColor property parameter to 'rgb(0,255,0)'
+     * @tc.desc   DataPanel common components, set trackBackgroundColor property parameter to 'rgb(0,255,0)'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackBackgroundColor_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0200 START');
@@ -1442,9 +1480,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackBackgroundColor_0300
      * @tc.number ArkUX_Stage_DataPanel_TrackBackgroundColor_0300
-     * @tc.name Tests the trackBackgroundColor property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackBackgroundColor property parameter to Color.Green
+     * @tc.desc   DataPanel common components, set trackBackgroundColor property parameter to Color.Green
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackBackgroundColor_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0300 START');
@@ -1470,10 +1511,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackBackgroundColor_0400
      * @tc.number ArkUX_Stage_DataPanel_TrackBackgroundColor_0400
-     * @tc.name Tests the trackBackgroundColor property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackBackgroundColor property parameter to
-     *               $r("app.color.DataPanel_TrackBackgroundColor")
+     * @tc.desc   DataPanel common components, set trackBackgroundColor property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackBackgroundColor_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0400 START');
@@ -1499,10 +1542,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackBackgroundColor_0500
      * @tc.number ArkUX_Stage_DataPanel_TrackBackgroundColor_0500
-     * @tc.name Tests the trackBackgroundColor property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackBackgroundColor property parameter to "#FF00FF00"
-     *               DataPanel common components, set trackBackgroundColor property once more parameter to Color.Yellow
+     * @tc.desc   DataPanel common components, set trackBackgroundColor property parameter to "#FF00FF00"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackBackgroundColor_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0500 START');
@@ -1528,10 +1573,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackBackgroundColor_0600
      * @tc.number ArkUX_Stage_DataPanel_TrackBackgroundColor_0600
-     * @tc.name Tests the trackBackgroundColor property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackBackgroundColor property parameter to "#FF0000FF",
-     *               set the general attribute backgroundColor parameter to Color.Green
+     * @tc.desc   DataPanel common components, set trackBackgroundColor property parameter to "#FF0000FF",
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackBackgroundColor_0600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0600 START');
@@ -1557,9 +1604,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackBackgroundColor_0700
      * @tc.number ArkUX_Stage_DataPanel_TrackBackgroundColor_0700
-     * @tc.name Tests the trackBackgroundColor property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackBackgroundColor property parameter to ''
+     * @tc.desc   DataPanel common components, set trackBackgroundColor property parameter to ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackBackgroundColor_0700', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0700 START');
@@ -1585,9 +1635,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackBackgroundColor_0800
      * @tc.number ArkUX_Stage_DataPanel_TrackBackgroundColor_0800
-     * @tc.name Tests the trackBackgroundColor property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackBackgroundColor property parameter to null
+     * @tc.desc   DataPanel common components, set trackBackgroundColor property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackBackgroundColor_0800', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0800 START');
@@ -1613,9 +1666,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackBackgroundColor_0900
      * @tc.number ArkUX_Stage_DataPanel_TrackBackgroundColor_0900
-     * @tc.name Tests the trackBackgroundColor property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackBackgroundColor property parameter to undefined
+     * @tc.desc   DataPanel common components, set trackBackgroundColor property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackBackgroundColor_0900', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_0900 START');
@@ -1641,10 +1697,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackBackgroundColor_1000
      * @tc.number ArkUX_Stage_DataPanel_TrackBackgroundColor_1000
-     * @tc.name Tests the trackBackgroundColor property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackBackgroundColor property parameter to "#FF00FF00",
-     *               and set the trackBackgroundColor parameter to undefined
+     * @tc.desc   DataPanel common components, set trackBackgroundColor property parameter to "#FF00FF00",
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackBackgroundColor_1000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_1000 START');
@@ -1670,9 +1728,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackBackgroundColor_1100
      * @tc.number ArkUX_Stage_DataPanel_TrackBackgroundColor_1100
-     * @tc.name Tests the trackBackgroundColor property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackBackgroundColor property parameter to 'color'
+     * @tc.desc   DataPanel common components, set trackBackgroundColor property parameter to 'color'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackBackgroundColor_1100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackBackgroundColor_1100 START');
@@ -1698,9 +1759,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_StrokeWidth_0100
      * @tc.number ArkUX_Stage_DataPanel_StrokeWidth_0100
-     * @tc.name Tests the strokeWidth property of the DataPanel component
-     * @tc.desc DataPanel common components, set strokeWidth property parameter to 30.00
+     * @tc.desc   DataPanel common components, set strokeWidth property parameter to 30.00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_StrokeWidth_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_StrokeWidth_0100 START');
@@ -1725,9 +1789,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_StrokeWidth_0200
      * @tc.number ArkUX_Stage_DataPanel_StrokeWidth_0200
-     * @tc.name Tests the strokeWidth property of the DataPanel component
-     * @tc.desc DataPanel common components, set strokeWidth property parameter to '30.00vp'
+     * @tc.desc   DataPanel common components, set strokeWidth property parameter to '30.00vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_StrokeWidth_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_StrokeWidth_0200 START');
@@ -1752,10 +1819,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_StrokeWidth_0300
      * @tc.number ArkUX_Stage_DataPanel_StrokeWidth_0300
-     * @tc.name Tests the strokeWidth property of the DataPanel component
-     * @tc.desc DataPanel common components, set strokeWidth property parameter to
-     *               $r("app.string.DataPanel_StrokeWidth")
+     * @tc.desc   DataPanel common components, set strokeWidth property parameter to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_StrokeWidth_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_StrokeWidth_0300 START');
@@ -1780,9 +1849,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_StrokeWidth_0400
      * @tc.number ArkUX_Stage_DataPanel_StrokeWidth_0400
-     * @tc.name Tests the strokeWidth property of the DataPanel component
-     * @tc.desc DataPanel common components, set strokeWidth property parameter to ''
+     * @tc.desc   DataPanel common components, set strokeWidth property parameter to ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_StrokeWidth_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_StrokeWidth_0400 START');
@@ -1807,9 +1879,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_StrokeWidth_0500
      * @tc.number ArkUX_Stage_DataPanel_StrokeWidth_0500
-     * @tc.name Tests the strokeWidth property of the DataPanel component
-     * @tc.desc DataPanel common components, set strokeWidth property parameter to null
+     * @tc.desc   DataPanel common components, set strokeWidth property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_StrokeWidth_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_StrokeWidth_0500 START');
@@ -1834,9 +1909,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_StrokeWidth_0600
      * @tc.number ArkUX_Stage_DataPanel_StrokeWidth_0600
-     * @tc.name Tests the strokeWidth property of the DataPanel component
-     * @tc.desc DataPanel common components, set strokeWidth property parameter to undefined
+     * @tc.desc   DataPanel common components, set strokeWidth property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_StrokeWidth_0600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_StrokeWidth_0600 START');
@@ -1861,9 +1939,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_0100
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_0100
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.radius : 20
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.radius : 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_0100 START');
@@ -1890,9 +1971,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_0200
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_0200
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.radius : -1
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.radius : -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_0200 START');
@@ -1917,9 +2001,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_0300
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_0300
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.radius : ''
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.radius : ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_0300 START');
@@ -1944,9 +2031,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_0400
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_0400
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.radius : null
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.radius : null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_0400 START');
@@ -1971,9 +2061,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_0500
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_0500
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.radius : undefined
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.radius : undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_0500 START');
@@ -1998,9 +2091,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_0600
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_0600
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.offsetX : 15
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.offsetX : 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_0600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_0600 START');
@@ -2025,9 +2121,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_0700
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_0700
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.offsetX : -10
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.offsetX : -10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_0700', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_0700 START');
@@ -2052,9 +2151,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_0800
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_0800
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.offsetX : ''
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.offsetX : ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_0800', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_0800 START');
@@ -2079,9 +2181,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_0900
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_0900
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.offsetX : null
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.offsetX : null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_0900', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_0900 START');
@@ -2106,9 +2211,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_1000
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_1000
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.offsetX : undefined
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.offsetX : undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_1000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_1000 START');
@@ -2133,9 +2241,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_1100
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_1100
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.offsetY : 15
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.offsetY : 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_1100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_1100 START');
@@ -2160,9 +2271,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_1200
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_1200
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.offsetY : -10
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.offsetY : -10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_1200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_1200 START');
@@ -2187,9 +2301,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_1300
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_1300
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.offsetY : ''
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.offsetY : ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_1300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_1300 START');
@@ -2214,9 +2331,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_1400
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_1400
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.offsetY : null
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.offsetY : null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_1400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_1400 START');
@@ -2241,9 +2361,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_1500
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_1500
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.offsetY : undefined
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.offsetY : undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_1500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_1500 START');
@@ -2269,10 +2392,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_1600
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_1600
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.colors:
-     *               ["#FFFF0000", "#FFFFFF00", "#FF00FF00"]
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_1600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_1600 START');
@@ -2309,10 +2434,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_1700
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_1700
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.colors:
-     *               ['rgb(255,0,0)', 'rgb(255,255,0)', 'rgb(0,255,0)']
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_1700', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_1700 START');
@@ -2349,10 +2476,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_1800
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_1800
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.colors:
-     *               [Color.Red, Color.Yellow, Color.Green]
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_1800', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_1800 START');
@@ -2389,11 +2518,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_1900
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_1900
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to  trackShadow.colors:
-     *               [$r("app.color.DataPanel_TrackShadow1"),$r("app.color.DataPanel_TrackShadow2"),
-     *               $r("app.color.DataPanel_TrackShadow3")] }
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to  trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_1900', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_1900 START');
@@ -2431,12 +2561,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_2300
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_2300
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.colors:
-     *               [{ color: "#FFA500", offset: 0 }, { color: "#FFFFFF00", offset: 1 }],
-     *               [{ color: "#FFC0CB", offset: 0 }, { color: "#FF00FF00", offset: 1 }],
-     *               [{ color: "#FF0000FF", offset: 0 }, { color: "#FFFF0000", offset: 1 }]
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_2300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_2300 START');
@@ -2473,12 +2603,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_2400
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_2400
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.colors:
-     *               [{ color: 'rgb(255,165,0)', offset: 0 }, { color: 'rgb(255,255,0)', offset: 1 }]
-     *               [{ color: 'rgb(255,192,203)', offset: 0 }, { color: 'rgb(0,128,0)', offset: 1 }]
-     *               [{ color: 'rgb(0,0,255)', offset: 0 }, { color: 'rgb(255,0,0)', offset: 1 }]
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_2400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_2400 START');
@@ -2515,12 +2645,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_2500
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_2500
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to  trackShadow.colors:
-     *               [{ color: Color.Orange, offset: 0 }, { color: Color.Yellow, offset: 1 }]
-     *               [{ color: Color.Pink, offset: 0 }, { color: Color.Green, offset: 1 }]
-     *               [{ color: Color.Blue, offset: 0 }, { color: Color.Red, offset: 1 }]
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to  trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_2500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_2500 START');
@@ -2557,12 +2687,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_2600
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_2600
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.colors:
-     *               [$r("app.color.DataPanel_TrackShadow4"), $r("app.color.DataPanel_TrackShadow5"),
-     *               $r("app.color.DataPanel_TrackShadow6"), $r("app.color.DataPanel_TrackShadow7"),
-     *               $r("app.color.DataPanel_TrackShadow8"), $r("app.color.DataPanel_TrackShadow9")]
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_2600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_2600 START');
@@ -2611,10 +2741,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_3000
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_3000
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.colors:
-     *               ["#FF0000FF", [{ color: "#FFA500", offset: 0 }, { color: "#FFC0CB", offset: 1 }]]
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_3000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_3000 START');
@@ -2647,10 +2779,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_3100
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_3100
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.colors:
-     *               ['rgb(255,0,0)', [{ color: 'rgb(255,165,0)', offset: 0 }, { color: 'rgb(255,192,203)', offset: 1}]]
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_3100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_3100 START');
@@ -2683,10 +2817,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_3200
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_3200
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.colors:
-     *               [Color.Red, [{ color: Color.Orange, offset: 0 }, { color: Color.Pink, offset: 1 }]]
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_3200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_3200 START');
@@ -2719,11 +2855,12 @@ export default function datapanelTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_DataPanel_TrackShadow_3300
      * @tc.number ArkUX_Stage_DataPanel_TrackShadow_3300
-     * @tc.name Tests the trackShadow property of the DataPanel component
-     * @tc.desc DataPanel common components, set trackShadow property parameter to trackShadow.colors:
-     *               [$r("app.color.DataPanel_TrackShadow10"), $r("app.color.DataPanel_TrackShadow11"),
-     *               $r("app.color.DataPanel_TrackShadow12")]
+     * @tc.desc   DataPanel common components, set trackShadow property parameter to trackShadow.colors:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_DataPanel_TrackShadow_3300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_DataPanel_TrackShadow_3300 START');

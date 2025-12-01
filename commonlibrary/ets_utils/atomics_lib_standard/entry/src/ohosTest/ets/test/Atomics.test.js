@@ -34,9 +34,12 @@ export default function WaitTest() {
         }
 
         /**
-         * @tc.name: testNotify001
-         * @tc.desc: returns a string which is either "ok", "not-equal", or "timed-out".
-         * @tc.author: jiangkai
+         * @tc.name   testNotify001
+         * @tc.number testNotify001
+         * @tc.desc   returns a string which is either "ok", "not-equal", or "timed-out".
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testNotify001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             var sab = new SharedArrayBuffer(20);
@@ -122,9 +125,12 @@ export default function WaitTest() {
         })
 
         /**
-         * @tc.name: testWait001
-         * @tc.desc: returns a string which is either "ok", "not-equal", or "timed-out".
-         * @tc.author: jiangkai
+         * @tc.name   testWait001
+         * @tc.number testWait001
+         * @tc.desc   returns a string which is either "ok", "not-equal", or "timed-out".
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testWait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             var sab = new SharedArrayBuffer(20);
@@ -168,9 +174,12 @@ export default function WaitTest() {
         })
 
         /**
-         * @tc.name: testAdd001
-         * @tc.desc: returns a string which is either "ok", "not-equal", or "timed-out".
-         * @tc.author: jiangkai
+         * @tc.name   testAdd001
+         * @tc.number testAdd001
+         * @tc.desc   returns a string which is either "ok", "not-equal", or "timed-out".
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testAdd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             var sab = new SharedArrayBuffer(20);

@@ -26,26 +26,26 @@ export default function textInputPositionTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_POSITION_0100
-     * @tc.name: testTextInputPosition001
-     * @tc.desc: testing position for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputPosition001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_POSITION_0100
+     * @tc.desc   testing position for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputPosition001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputPosition001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_POSITION_0200
-     * @tc.name: testTextInputPosition002
-     * @tc.desc: testing position for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputPosition002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_POSITION_0200
+     * @tc.desc   testing position for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputPosition002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputPosition002()).assertEqual(0)

@@ -20,12 +20,6 @@
 unsigned int (*g_lpcInit)(void);
 unsigned int (*g_lpcSetType)(LpcType type);
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is wifiiot
- * @param        : module name is wifiiotlite
- * @param        : test suit name is UtilsFileFuncTestSuite
- */
 LITE_TEST_SUIT(wifiiot, wifiiotlite, IotLowPowerTestSuite);
 
 /**
@@ -48,9 +42,12 @@ static BOOL IotLowPowerTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_7000
- * @tc.name      : UART operation with LpcInit
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotLowPower001
+ * @tc.number SUB_UTILS_WIFIIOT_API_7000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower001, Function | MediumTest | Level1)
 {
@@ -58,9 +55,12 @@ LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower001, Function | MediumTest |
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_7100
- * @tc.name      : UART operation with IoTWatchDogKick
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotLowPower002
+ * @tc.number SUB_UTILS_WIFIIOT_API_7100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower002, Function | MediumTest | Level1)
 {

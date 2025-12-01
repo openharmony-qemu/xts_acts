@@ -42,12 +42,12 @@ export default function MarqueeModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_MarqueeModifierTest_0010
-     * @tc.name      MarqueeModifierTest_0010
-     * @tc.desc      test MarqueeModifier: fontSize
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   MarqueeModifierTest_0010
+     * @tc.number SUB_ACE_MarqueeModifierTest_0010
+     * @tc.desc   test MarqueeModifier: fontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MarqueeModifierTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('MarqueeModifierTest_0010 START');
@@ -61,12 +61,12 @@ export default function MarqueeModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_MarqueeModifierTest_0020
-     * @tc.name      MarqueeModifierTest_0020
-     * @tc.desc      test type of MarqueeInstance: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   MarqueeModifierTest_0020
+     * @tc.number SUB_ACE_MarqueeModifierTest_0020
+     * @tc.desc   test type of MarqueeInstance: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MarqueeModifierTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('MarqueeModifierTest_0020 START');

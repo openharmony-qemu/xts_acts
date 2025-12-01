@@ -47,9 +47,12 @@ export default function AlignEnd_AddOneWidth() {
     });
 
     /**
+     * @tc.name   testFlexAlignEndTextWidth
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_END_TEST_1300
-     * @tc.name testFlexAlignEndTextWidth
-     * @tc.desc The interface is displayed when you change the width of the first subcomponent
+     * @tc.desc   The interface is displayed when you change the width of the first subcomponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignEndTextWidth',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignEndTextWidth] START');

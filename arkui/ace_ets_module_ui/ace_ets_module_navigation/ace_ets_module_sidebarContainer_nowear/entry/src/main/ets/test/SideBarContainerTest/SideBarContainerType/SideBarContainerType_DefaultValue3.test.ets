@@ -48,9 +48,12 @@ export default function SideBarContainerType_DefaultValue3() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_DefaultValue3_0100
      * @tc.number SUB_ACE_SideBarContainerType_DefaultValue3_0100
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SideBarContainerType.AUTO， width > minSideBarWidth + minContentWidth
+     * @tc.desc   SideBarContainerType.AUTO， width > minSideBarWidth + minContentWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_DefaultValue3_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_DefaultValue3_0100] START');
@@ -81,9 +84,12 @@ export default function SideBarContainerType_DefaultValue3() {
 
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_DefaultValue3_0200
      * @tc.number SUB_ACE_SideBarContainerType_DefaultValue3_0200
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SideBarContainerType.AUTO， width > minSideBarWidth + minContentWidth
+     * @tc.desc   SideBarContainerType.AUTO， width > minSideBarWidth + minContentWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_DefaultValue3_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_DefaultValue3_0200] START');

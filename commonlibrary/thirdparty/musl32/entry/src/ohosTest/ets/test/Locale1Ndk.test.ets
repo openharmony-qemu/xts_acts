@@ -25,12 +25,12 @@ export default function locale1NdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOCALTIME64_0200
-     * @tc.name       : testMusLocaleLocalTime64002
-     * @tc.desc       : test __localtime64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMusLocaleLocalTime64002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOCALTIME64_0200
+     * @tc.desc   test __localtime64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMusLocaleLocalTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(locale.__localtime64()).assertEqual(-1);

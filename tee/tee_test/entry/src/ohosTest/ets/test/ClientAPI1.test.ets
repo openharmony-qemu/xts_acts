@@ -68,10 +68,12 @@ export default function ClientAPITest1() {
     })
 
     /**
-     * @tc.number     : InitContext_NameIsNotNULL
-     * @tc.name       : InitContext_NameIsNotNULL
-     * @tc.desc       : call TEEC_InitializeContext normal test
-     * @tc.expect     : return TEEC_SUCCESS
+     * @tc.name   InitContext_NameIsNotNULL
+     * @tc.number InitContext_NameIsNotNULL
+     * @tc.desc   call TEEC_InitializeContext normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InitContext_NameIsNotNULL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = TEETEST.InitContext_NameIsNotNULL();
@@ -80,10 +82,12 @@ export default function ClientAPITest1() {
     });
 
     /**
-     * @tc.number     : InitContext_ContextIsNULL
-     * @tc.name       : InitContext_ContextIsNULL
-     * @tc.desc       : call TEEC_InitializeContext with context is null
-     * @tc.expect     : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.name   InitContext_ContextIsNULL
+     * @tc.number InitContext_ContextIsNULL
+     * @tc.desc   call TEEC_InitializeContext with context is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InitContext_ContextIsNULL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = TEETEST.InitContext_ContextIsNULL();
@@ -92,10 +96,12 @@ export default function ClientAPITest1() {
     });
 
     /**
-     * @tc.number     : InitContext_AfterFinalizeContext
-     * @tc.name       : InitContext_AfterFinalizeContext
-     * @tc.desc       : call TEEC_InitializeContext after Finalize Context
-     * @tc.expect     : return TEEC_SUCCESS
+     * @tc.name   InitContext_AfterFinalizeContext
+     * @tc.number InitContext_AfterFinalizeContext
+     * @tc.desc   call TEEC_InitializeContext after Finalize Context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InitContext_AfterFinalizeContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -105,11 +111,12 @@ export default function ClientAPITest1() {
       });
 
     /**
-     * @tc.number     : InitContext_Use17Context
-     * @tc.name       : InitContext_Use17Context
-     * @tc.desc       : one CA call TEEC_InitializeContext use 17 different Context,
-     *                  this testcase shoud fail at init 17th context,only support 16 contexts in one CA
-     * @tc.expect     : return TEEC_FAIL
+     * @tc.name   InitContext_Use17Context
+     * @tc.number InitContext_Use17Context
+     * @tc.desc   one CA call TEEC_InitializeContext use 17 different Context,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InitContext_Use17Context', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.InitContext_Use17Context();
@@ -119,10 +126,12 @@ export default function ClientAPITest1() {
     });
 
     /**
-     * @tc.number     : Finalizecontext_WithCreatedContext
-     * @tc.name       : Finalizecontext_WithCreatedContext
-     * @tc.desc       : call TEEC_FinalizeContext With created context
-     * @tc.expect     : fd has released
+     * @tc.name   Finalizecontext_WithCreatedContext
+     * @tc.number Finalizecontext_WithCreatedContext
+     * @tc.desc   call TEEC_FinalizeContext With created context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Finalizecontext_WithCreatedContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -133,10 +142,12 @@ export default function ClientAPITest1() {
       });
 
     /**
-     * @tc.number     : Finalizecontext_WithNotCreatedContext
-     * @tc.name       : Finalizecontext_WithNotCreatedContext
-     * @tc.desc       : call TEEC_FinalizeContext With not created context
-     * @tc.expect     : fd has released
+     * @tc.name   Finalizecontext_WithNotCreatedContext
+     * @tc.number Finalizecontext_WithNotCreatedContext
+     * @tc.desc   call TEEC_FinalizeContext With not created context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Finalizecontext_WithNotCreatedContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -146,10 +157,12 @@ export default function ClientAPITest1() {
       });
 
     /**
-     * @tc.number     : Finalizecontext_WithoutContext
-     * @tc.name       : Finalizecontext_WithoutContext
-     * @tc.desc       : call TEEC_FinalizeContext Without context
-     * @tc.expect     : fd has not released
+     * @tc.name   Finalizecontext_WithoutContext
+     * @tc.number Finalizecontext_WithoutContext
+     * @tc.desc   call TEEC_FinalizeContext Without context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Finalizecontext_WithoutContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

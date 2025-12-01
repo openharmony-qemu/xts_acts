@@ -153,7 +153,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsert0100
      * @tc.number testRdbTransInsert0100
      * @tc.desc   testRdbTransInsert0100
@@ -193,7 +192,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsert0200
      * @tc.number testRdbTransInsert0200
      * @tc.desc   testRdbTransInsert0200
@@ -234,7 +232,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsert0300
      * @tc.number testRdbTransInsert0300
      * @tc.desc   testRdbTransInsert0300
@@ -275,7 +272,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsert0400
      * @tc.number testRdbTransInsert0400
      * @tc.desc   testRdbTransInsert0400
@@ -316,7 +312,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsert0500
      * @tc.number testRdbTransInsert0500
      * @tc.desc   testRdbTransInsert0500
@@ -357,7 +352,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsert0600
      * @tc.number testRdbTransInsert0600
      * @tc.desc   testRdbTransInsert0600
@@ -398,7 +392,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsertSync0100
      * @tc.number testRdbTransInsertSync0100
      * @tc.desc   testRdbTransInsertSync0100
@@ -440,7 +433,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsertSync0200
      * @tc.number testRdbTransInsertSync0200
      * @tc.desc   testRdbTransInsertSync0200
@@ -481,7 +473,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsertSync0300
      * @tc.number testRdbTransInsertSync0300
      * @tc.desc   testRdbTransInsertSync0300
@@ -523,7 +514,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsertSync0400
      * @tc.number testRdbTransInsertSync0400
      * @tc.desc   testRdbTransInsertSync0400
@@ -565,7 +555,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsertSync0500
      * @tc.number testRdbTransInsertSync0500
      * @tc.desc   testRdbTransInsertSync0500
@@ -607,7 +596,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransInsertSync0600
      * @tc.number testRdbTransInsertSync0600
      * @tc.desc   testRdbTransInsertSync0600
@@ -649,7 +637,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsert0100
      * @tc.number testRdbTransBatchInsert0100
      * @tc.desc   testRdbTransBatchInsert0100
@@ -695,7 +682,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsert0200
      * @tc.number testRdbTransBatchInsert0200
      * @tc.desc   testRdbTransBatchInsert0200
@@ -740,7 +726,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsert0300
      * @tc.number testRdbTransBatchInsert0300
      * @tc.desc   testRdbTransBatchInsert0300
@@ -785,7 +770,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsert0400
      * @tc.number testRdbTransBatchInsert0400
      * @tc.desc   testRdbTransBatchInsert0400
@@ -830,7 +814,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsert0500
      * @tc.number testRdbTransBatchInsert0500
      * @tc.desc   testRdbTransBatchInsert0500
@@ -875,7 +858,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsert0600
      * @tc.number testRdbTransBatchInsert0600
      * @tc.desc   testRdbTransBatchInsert0600
@@ -920,7 +902,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsertSync0100
      * @tc.number testRdbTransBatchInsertSync0100
      * @tc.desc   testRdbTransBatchInsertSync0100
@@ -965,7 +946,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsertSync0200
      * @tc.number testRdbTransBatchInsertSync0200
      * @tc.desc   testRdbTransBatchInsertSync0200
@@ -1010,7 +990,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsertSync0300
      * @tc.number testRdbTransBatchInsertSync0300
      * @tc.desc   testRdbTransBatchInsertSync0300
@@ -1055,7 +1034,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsertSync0400
      * @tc.number testRdbTransBatchInsertSync0400
      * @tc.desc   testRdbTransBatchInsertSync0400
@@ -1100,7 +1078,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsertSync0500
      * @tc.number testRdbTransBatchInsertSync0500
      * @tc.desc   testRdbTransBatchInsertSync0500
@@ -1145,7 +1122,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransBatchInsertSync0600
      * @tc.number testRdbTransBatchInsertSync0600
      * @tc.desc   testRdbTransBatchInsertSync0600
@@ -1189,7 +1165,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdate0100
      * @tc.number testRdbTransUpdate0100
      * @tc.desc   testRdbTransUpdate0100
@@ -1238,7 +1213,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdate0200
      * @tc.number testRdbTransUpdate0200
      * @tc.desc   testRdbTransUpdate0200
@@ -1287,7 +1261,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdate0300
      * @tc.number testRdbTransUpdate0300
      * @tc.desc   testRdbTransUpdate0300
@@ -1336,7 +1309,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdate0400
      * @tc.number testRdbTransUpdate0400
      * @tc.desc   testRdbTransUpdate0400
@@ -1385,7 +1357,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdate0500
      * @tc.number testRdbTransUpdate0500
      * @tc.desc   testRdbTransUpdate0500
@@ -1434,7 +1405,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdate0600
      * @tc.number testRdbTransUpdate0600
      * @tc.desc   testRdbTransUpdate0600
@@ -1484,7 +1454,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdateSync0100
      * @tc.number testRdbTransUpdateSync0100
      * @tc.desc   testRdbTransUpdateSync0100
@@ -1533,7 +1502,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdateSync0200
      * @tc.number testRdbTransUpdateSync0200
      * @tc.desc   testRdbTransUpdateSync0200
@@ -1582,7 +1550,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdateSync0300
      * @tc.number testRdbTransUpdateSync0300
      * @tc.desc   testRdbTransUpdateSync0300
@@ -1631,7 +1598,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdateSync0400
      * @tc.number testRdbTransUpdateSync0400
      * @tc.desc   testRdbTransUpdateSync0400
@@ -1680,7 +1646,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdateSync0500
      * @tc.number testRdbTransUpdateSync0500
      * @tc.desc   testRdbTransUpdateSync0500
@@ -1729,7 +1694,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransUpdateSync0600
      * @tc.number testRdbTransUpdateSync0600
      * @tc.desc   testRdbTransUpdateSync0600
@@ -1778,7 +1742,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDelete0100
      * @tc.number testRdbTransDelete0100
      * @tc.desc   testRdbTransDelete0100
@@ -1825,7 +1788,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDelete0200
      * @tc.number testRdbTransDelete0200
      * @tc.desc   testRdbTransDelete0200
@@ -1872,7 +1834,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDelete0300
      * @tc.number testRdbTransDelete0300
      * @tc.desc   testRdbTransDelete0300
@@ -1920,7 +1881,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDelete0400
      * @tc.number testRdbTransDelete0400
      * @tc.desc   testRdbTransDelete0400
@@ -1966,7 +1926,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDelete0500
      * @tc.number testRdbTransDelete0500
      * @tc.desc   testRdbTransDelete0500
@@ -2012,7 +1971,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDelete0600
      * @tc.number testRdbTransDelete0600
      * @tc.desc   testRdbTransDelete0600
@@ -2058,7 +2016,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDeleteSync0100
      * @tc.number testRdbTransDeleteSync0100
      * @tc.desc   testRdbTransDeleteSync0100
@@ -2105,7 +2062,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDeleteSync0200
      * @tc.number testRdbTransDeleteSync0200
      * @tc.desc   testRdbTransDeleteSync0200
@@ -2152,7 +2108,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDeleteSync0300
      * @tc.number testRdbTransDeleteSync0300
      * @tc.desc   testRdbTransDeleteSync0300
@@ -2200,7 +2155,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDeleteSync0400
      * @tc.number testRdbTransDeleteSync0400
      * @tc.desc   testRdbTransDeleteSync0400
@@ -2249,7 +2203,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDeleteSync0500
      * @tc.number testRdbTransDeleteSync0500
      * @tc.desc   testRdbTransDeleteSync0500
@@ -2297,7 +2250,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDeleteSync0600
      * @tc.number testRdbTransDeleteSync0600
      * @tc.desc   testRdbTransDeleteSync0600
@@ -2345,7 +2297,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransQuery0100
      * @tc.number testRdbTransQuery0100
      * @tc.desc   testRdbTransQuery0100
@@ -2386,7 +2337,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransQuery0200
      * @tc.number testRdbTransQuery0200
      * @tc.desc   testRdbTransQuery0200
@@ -2427,7 +2377,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransQuery0300
      * @tc.number testRdbTransQuery0300
      * @tc.desc   testRdbTransQuery0300
@@ -2468,7 +2417,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransQuery0400
      * @tc.number testRdbTransQuery0400
      * @tc.desc   testRdbTransQuery0400
@@ -2509,7 +2457,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransQuery0500
      * @tc.number testRdbTransQuery0500
      * @tc.desc   testRdbTransQuery0500
@@ -2550,7 +2497,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransQuery0600
      * @tc.number testRdbTransQuery0600
      * @tc.desc   testRdbTransQuery0600
@@ -2593,7 +2539,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadInsert0100
      * @tc.number testRdbTransSameThreadInsert0100
      * @tc.desc   testRdbTransSameThreadInsert0100
@@ -2643,7 +2588,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadInsert0200
      * @tc.number testRdbTransSameThreadInsert0200
      * @tc.desc   testRdbTransSameThreadInsert0200
@@ -2694,7 +2638,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadInsert0300
      * @tc.number testRdbTransSameThreadInsert0300
      * @tc.desc   testRdbTransSameThreadInsert0300
@@ -2745,7 +2688,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadInsert0400
      * @tc.number testRdbTransSameThreadInsert0400
      * @tc.desc   testRdbTransSameThreadInsert0400
@@ -2799,7 +2741,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadInsert0500
      * @tc.number testRdbTransSameThreadInsert0500
      * @tc.desc   testRdbTransSameThreadInsert0500
@@ -2849,7 +2790,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadInsert0600
      * @tc.number testRdbTransSameThreadInsert0600
      * @tc.desc   testRdbTransSameThreadInsert0600
@@ -2899,7 +2839,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadInsert0700
      * @tc.number testRdbTransSameThreadInsert0700
      * @tc.desc   testRdbTransSameThreadInsert0700
@@ -2949,7 +2888,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadInsert0800
      * @tc.number testRdbTransSameThreadInsert0800
      * @tc.desc   testRdbTransSameThreadInsert0800
@@ -2999,7 +2937,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadInsert0900
      * @tc.number testRdbTransSameThreadInsert0900
      * @tc.desc   testRdbTransSameThreadInsert0900
@@ -3051,7 +2988,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadInsert0100
      * @tc.number testRdbTransDiffThreadInsert0100
      * @tc.desc   testRdbTransDiffThreadInsert0100
@@ -3104,7 +3040,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadInsert0200
      * @tc.number testRdbTransDiffThreadInsert0200
      * @tc.desc   testRdbTransDiffThreadInsert0200
@@ -3155,7 +3090,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadInsert0300
      * @tc.number testRdbTransDiffThreadInsert0300
      * @tc.desc   testRdbTransDiffThreadInsert0300
@@ -3207,7 +3141,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadInsert0400
      * @tc.number testRdbTransDiffThreadInsert0400
      * @tc.desc   testRdbTransDiffThreadInsert0400
@@ -3259,7 +3192,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadInsert0500
      * @tc.number testRdbTransDiffThreadInsert0500
      * @tc.desc   testRdbTransDiffThreadInsert0500
@@ -3310,7 +3242,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadInsert0600
      * @tc.number testRdbTransDiffThreadInsert0600
      * @tc.desc   testRdbTransDiffThreadInsert0600
@@ -3362,7 +3293,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadInsert0700
      * @tc.number testRdbTransDiffThreadInsert0700
      * @tc.desc   testRdbTransDiffThreadInsert0700
@@ -3414,7 +3344,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadInsert0800
      * @tc.number testRdbTransDiffThreadInsert0800
      * @tc.desc   testRdbTransDiffThreadInsert0800
@@ -3466,7 +3395,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadInsert0900
      * @tc.number testRdbTransDiffThreadInsert0900
      * @tc.desc   testRdbTransDiffThreadInsert0900
@@ -3518,7 +3446,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadQuery0100
      * @tc.number testRdbTransSameThreadQuery0100
      * @tc.desc   testRdbTransSameThreadQuery0100
@@ -3573,7 +3500,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadQuery0200
      * @tc.number testRdbTransSameThreadQuery0200
      * @tc.desc   testRdbTransSameThreadQuery0200
@@ -3624,7 +3550,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadQuery0300
      * @tc.number testRdbTransSameThreadQuery0300
      * @tc.desc   testRdbTransSameThreadQuery0300
@@ -3678,7 +3603,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadQuery0400
      * @tc.number testRdbTransSameThreadQuery0400
      * @tc.desc   testRdbTransSameThreadQuery0400
@@ -3728,7 +3652,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadQuery0500
      * @tc.number testRdbTransSameThreadQuery0500
      * @tc.desc   testRdbTransSameThreadQuery0500
@@ -3779,7 +3702,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadQuery0600
      * @tc.number testRdbTransSameThreadQuery0600
      * @tc.desc   testRdbTransSameThreadQuery0600
@@ -3829,7 +3751,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadQuery0700
      * @tc.number testRdbTransSameThreadQuery0700
      * @tc.desc   testRdbTransSameThreadQuery0700
@@ -3880,7 +3801,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadQuery0800
      * @tc.number testRdbTransSameThreadQuery0800
      * @tc.desc   testRdbTransSameThreadQuery0800
@@ -3931,7 +3851,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransSameThreadQuery0900
      * @tc.number testRdbTransSameThreadQuery0900
      * @tc.desc   testRdbTransSameThreadQuery0900
@@ -3982,7 +3901,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadQuery0100
      * @tc.number testRdbTransDiffThreadQuery0100
      * @tc.desc   testRdbTransDiffThreadQuery0100
@@ -4034,7 +3952,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadQuery0200
      * @tc.number testRdbTransDiffThreadQuery0200
      * @tc.desc   testRdbTransDiffThreadQuery0200
@@ -4085,7 +4002,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadQuery0300
      * @tc.number testRdbTransDiffThreadQuery0300
      * @tc.desc   testRdbTransDiffThreadQuery0300
@@ -4137,7 +4053,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadQuery0400
      * @tc.number testRdbTransDiffThreadQuery0400
      * @tc.desc   testRdbTransDiffThreadQuery0400
@@ -4192,7 +4107,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadQuery0500
      * @tc.number testRdbTransDiffThreadQuery0500
      * @tc.desc   testRdbTransDiffThreadQuery0500
@@ -4244,7 +4158,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadQuery0600
      * @tc.number testRdbTransDiffThreadQuery0600
      * @tc.desc   testRdbTransDiffThreadQuery0600
@@ -4296,7 +4209,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadQuery0700
      * @tc.number testRdbTransDiffThreadQuery0700
      * @tc.desc   testRdbTransDiffThreadQuery0700
@@ -4348,7 +4260,6 @@ export default function relationalStoreMultiTransTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbTransDiffThreadQuery0800
      * @tc.number testRdbTransDiffThreadQuery0800
      * @tc.desc   testRdbTransDiffThreadQuery0800

@@ -39,7 +39,6 @@ export default function ActsGetAllAccountsNoParameterStatic() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   ActsGetAllAccountsNoParameter_0100
      * @tc.number ActsGetAllAccountsNoParameter_0100
      * @tc.desc   This application has not added an account and has not been authorized by other applications to
@@ -74,7 +73,6 @@ export default function ActsGetAllAccountsNoParameterStatic() {
         });
       });
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   ActsGetAllAccountsNoParameter_0200
      * @tc.number ActsGetAllAccountsNoParameter_0200
      * @tc.desc   This application has not added an account and has not been authorized by other applications to
@@ -100,7 +98,6 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   ActsGetAllAccountsNoParameter_0300
      * @tc.number ActsGetAllAccountsNoParameter_0300
      * @tc.desc   This application gets authorization after adding a single account, getAllAccounts callback
@@ -151,7 +148,6 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   ActsGetAllAccountsNoParameter_0400
      * @tc.number ActsGetAllAccountsNoParameter_0400
      * @tc.desc   This application gets authorization after adding a single account, getAllAccounts promise
@@ -188,7 +184,6 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   ActsGetAllAccountsNoParameter_0500
      * @tc.number ActsGetAllAccountsNoParameter_0500
      * @tc.desc   This application is added to obtain authorization after adding multiple application accounts
@@ -257,7 +252,6 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   ActsGetAllAccountsNoParameter_0600
      * @tc.number ActsGetAllAccountsNoParameter_0600
      * @tc.desc   This application is added to obtain authorization after adding multiple application accounts
@@ -307,7 +301,6 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   ActsGetAllAccountsNoParameter_0700
      * @tc.number ActsGetAllAccountsNoParameter_0700
      * @tc.desc   This application adds different application accounts three times in a row, and obtains
@@ -370,7 +363,6 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   ActsGetAllAccountsNoParameter_0800
      * @tc.number ActsGetAllAccountsNoParameter_0800
      * @tc.desc   This application adds different application accounts three times in a row, and obtains
@@ -419,7 +411,6 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   ActsGetAllAccountsNoParameter_1100
      * @tc.number ActsGetAllAccountsNoParameter_1100
      * @tc.desc   This application adds an account, other application authorizes an account to this application

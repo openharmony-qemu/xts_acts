@@ -48,9 +48,12 @@ export default function List_scrollToIndex1() {
     });
 
     /**
+     * @tc.name   List_scrollToIndex1_0100
      * @tc.number SUB_ACE_TS_COMPONENT_SR000I6TL2_014
-     * @tc.name List_scrollToIndex1_0100
-     * @tc.desc scrollToIndex align is not set
+     * @tc.desc   scrollToIndex align is not set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('List_scrollToIndex1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[List_scrollToIndex1_0100] START');

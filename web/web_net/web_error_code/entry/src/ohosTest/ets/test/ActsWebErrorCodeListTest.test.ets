@@ -20,12 +20,12 @@ import webCode from 'libweberrorcodetest.so'
 export default function ActsWebErrorCodeListTest() {
   describe('ActsWebErrorCodeListTest', () => {
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_0100
-     * @tc.name    : testArkWebErrIOPending
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_IO_PENDING
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrIOPending
+     * @tc.number SUB_WEB_NET_ERROR_0100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_IO_PENDING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrIOPending', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -40,12 +40,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_0200
-     * @tc.name    : testArkWebErrFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrFailed
+     * @tc.number SUB_WEB_NET_ERROR_0200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -60,12 +60,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_0300
-     * @tc.name    : testArkWebErrAboorted
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ABORTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrAboorted
+     * @tc.number SUB_WEB_NET_ERROR_0300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ABORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrAboorted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -80,12 +80,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_0400
-     * @tc.name    : testArkWebErrInvaliedHandle
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INVALID_HANDLE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrInvaliedHandle
+     * @tc.number SUB_WEB_NET_ERROR_0400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INVALID_HANDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrInvaliedHandle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -100,12 +100,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_0500
-     * @tc.name    : testArkWebErrTimedOut
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_TIMED_OUT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrTimedOut
+     * @tc.number SUB_WEB_NET_ERROR_0500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_TIMED_OUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrTimedOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -120,12 +120,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_0600
-     * @tc.name    : testArkWebErrFileTooLarge
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FILE_TOO_LARGE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrFileTooLarge
+     * @tc.number SUB_WEB_NET_ERROR_0600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FILE_TOO_LARGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrFileTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -140,12 +140,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_0700
-     * @tc.name    : testArkWebErrUnexpected
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UNEXPECTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrUnexpected
+     * @tc.number SUB_WEB_NET_ERROR_0700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UNEXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrUnexpected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -160,12 +160,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_0800
-     * @tc.name    : testArkWebErrAccessDenied
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ACCESS_DENIED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrAccessDenied
+     * @tc.number SUB_WEB_NET_ERROR_0800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ACCESS_DENIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrAccessDenied', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -180,12 +180,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_0900
-     * @tc.name    : testArkWebErrNotImplemented
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_NOT_IMPLEMENTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrNotImplemented
+     * @tc.number SUB_WEB_NET_ERROR_0900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_NOT_IMPLEMENTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrNotImplemented', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -200,12 +200,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_1000
-     * @tc.name    : testArkWebErrInsufficientResources
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INSUFFICIENT_RESOURCES
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrInsufficientResources
+     * @tc.number SUB_WEB_NET_ERROR_1000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INSUFFICIENT_RESOURCES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrInsufficientResources', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -220,12 +220,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_1100
-     * @tc.name    : testArkWebErrOutofMemory
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_OUT_OF_MEMORY
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrOutofMemory
+     * @tc.number SUB_WEB_NET_ERROR_1100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_OUT_OF_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrOutofMemory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -240,12 +240,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_1200
-     * @tc.name    : testArkWebErrUploadFileChanged
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UPLOAD_FILE_CHANGED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrUploadFileChanged
+     * @tc.number SUB_WEB_NET_ERROR_1200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UPLOAD_FILE_CHANGED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrUploadFileChanged', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -260,12 +260,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_1300
-     * @tc.name    : testArkWebErrSocketNotConnected
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_NOT_CONNECTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSocketNotConnected
+     * @tc.number SUB_WEB_NET_ERROR_1300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_NOT_CONNECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSocketNotConnected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -281,12 +281,12 @@ export default function ActsWebErrorCodeListTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_1400
-     * @tc.name    : testArkWebErrFileExists
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FILE_EXISTS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrFileExists
+     * @tc.number SUB_WEB_NET_ERROR_1400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FILE_EXISTS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrFileExists', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -301,12 +301,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_1500
-     * @tc.name    : testArkWebErrFilePathTooLong
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FILE_PATH_TOO_LONG
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrFilePathTooLong
+     * @tc.number SUB_WEB_NET_ERROR_1500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FILE_PATH_TOO_LONG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrFilePathTooLong', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -321,12 +321,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_1600
-     * @tc.name    : testArkWebErrFileNoSpace
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FILE_NO_SPACE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrFileNoSpace
+     * @tc.number SUB_WEB_NET_ERROR_1600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FILE_NO_SPACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrFileNoSpace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -341,12 +341,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_1700
-     * @tc.name    : testArkWebErrFileVirusInfected
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FILE_VIRUS_INFECTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrFileVirusInfected
+     * @tc.number SUB_WEB_NET_ERROR_1700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FILE_VIRUS_INFECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrFileVirusInfected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -361,12 +361,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_1800
-     * @tc.name    : testArkWebErrBlockedByClient
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_BLOCKED_BY_CLIENT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrBlockedByClient
+     * @tc.number SUB_WEB_NET_ERROR_1800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_BLOCKED_BY_CLIENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrBlockedByClient', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -381,12 +381,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_1900
-     * @tc.name    : testArkWebErrNetWorkChanged
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_NETWORK_CHANGED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrNetWorkChanged
+     * @tc.number SUB_WEB_NET_ERROR_1900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_NETWORK_CHANGED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrNetWorkChanged', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -401,12 +401,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_2000
-     * @tc.name    : testArkWebErrBlockedByAdministarator
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_BLOCKED_BY_ADMINISTRATOR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrBlockedByAdministarator
+     * @tc.number SUB_WEB_NET_ERROR_2000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_BLOCKED_BY_ADMINISTRATOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrBlockedByAdministarator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -422,13 +422,13 @@ export default function ActsWebErrorCodeListTest() {
       })
 
     /**
-    * @tc.number  : SUB_WEB_NET_ERROR_2100
-    * @tc.name    : testArkWebErrSocketConnected
-    * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_CONNECTED
-    * @tc.level   : Level1
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+     * @tc.name   testArkWebErrSocketConnected
+     * @tc.number SUB_WEB_NET_ERROR_2100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_CONNECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArkWebErrSocketConnected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>testArkWebErrBlockedByAdministarator start====");
@@ -442,12 +442,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_2200
-     * @tc.name    : testArkWebErrUploadStreamRewindNotSupported
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UPLOAD_STREAM_REWIND_NOT_SUPPORTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrUploadStreamRewindNotSupported
+     * @tc.number SUB_WEB_NET_ERROR_2200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UPLOAD_STREAM_REWIND_NOT_SUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrUploadStreamRewindNotSupported', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -463,12 +463,12 @@ export default function ActsWebErrorCodeListTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_2300
-     * @tc.name    : testArkWebErrContextShutDown
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CONTEXT_SHUT_DOWN
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrContextShutDown
+     * @tc.number SUB_WEB_NET_ERROR_2300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CONTEXT_SHUT_DOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrContextShutDown', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
@@ -483,12 +483,12 @@ export default function ActsWebErrorCodeListTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_2400
-     * @tc.name    : testArkWebErrBlockByResponse
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_BLOCKED_BY_RESPONSE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrBlockByResponse
+     * @tc.number SUB_WEB_NET_ERROR_2400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_BLOCKED_BY_RESPONSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrBlockByResponse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -503,12 +503,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_2500
-     * @tc.name    : testArkWebErrCleartextNotPermitted
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CLEARTEXT_NOT_PERMITTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrCleartextNotPermitted
+     * @tc.number SUB_WEB_NET_ERROR_2500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CLEARTEXT_NOT_PERMITTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrCleartextNotPermitted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -523,12 +523,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_2600
-     * @tc.name    : testArkWebErrBlockedByCSP
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_BLOCKED_BY_CSP
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrBlockedByCSP
+     * @tc.number SUB_WEB_NET_ERROR_2600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_BLOCKED_BY_CSP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrBlockedByCSP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -543,12 +543,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_2700
-     * @tc.name    : testArkWebErrH2orQUICRequired
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_H2_OR_QUIC_REQUIRED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrH2orQUICRequired
+     * @tc.number SUB_WEB_NET_ERROR_2700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_H2_OR_QUIC_REQUIRED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrH2orQUICRequired', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -563,12 +563,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_2800
-     * @tc.name    : testArkWebErrBlockedByORB
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_BLOCKED_BY_ORB
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrBlockedByORB
+     * @tc.number SUB_WEB_NET_ERROR_2800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_BLOCKED_BY_ORB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrBlockedByORB', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -583,12 +583,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_2900
-     * @tc.name    : testArkWebErrConnectionClosed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_CLOSED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrConnectionClosed
+     * @tc.number SUB_WEB_NET_ERROR_2900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_CLOSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrConnectionClosed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -603,12 +603,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_3000
-     * @tc.name    : testArkWebErrConnectionReset
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_RESET
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrConnectionReset
+     * @tc.number SUB_WEB_NET_ERROR_3000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_RESET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrConnectionReset', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -623,12 +623,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_3100
-     * @tc.name    : testArkWebErrConnectionRefused
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_REFUSED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrConnectionRefused
+     * @tc.number SUB_WEB_NET_ERROR_3100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_REFUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrConnectionRefused', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -643,12 +643,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_3200
-     * @tc.name    : testArkWebErrConnectionAborted
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_ABORTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrConnectionAborted
+     * @tc.number SUB_WEB_NET_ERROR_3200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_ABORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrConnectionAborted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -663,12 +663,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_3300
-     * @tc.name    : testArkWebErrConnectionFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrConnectionFailed
+     * @tc.number SUB_WEB_NET_ERROR_3300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrConnectionFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -683,12 +683,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_3400
-     * @tc.name    : testArkWebErrNameNotResolved
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_NAME_NOT_RESOLVED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrNameNotResolved
+     * @tc.number SUB_WEB_NET_ERROR_3400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_NAME_NOT_RESOLVED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrNameNotResolved', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -703,12 +703,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_3500
-     * @tc.name    : testArkWebErrInternetDisconnected
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INTERNET_DISCONNECTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrInternetDisconnected
+     * @tc.number SUB_WEB_NET_ERROR_3500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INTERNET_DISCONNECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrInternetDisconnected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -723,12 +723,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_3600
-     * @tc.name    : testArkWebErrSSLProtocolError
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_PROTOCOL_ERROR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSSLProtocolError
+     * @tc.number SUB_WEB_NET_ERROR_3600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_PROTOCOL_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSSLProtocolError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -743,12 +743,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_3700
-     * @tc.name    : testArkWebErrAddressInvalid
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ADDRESS_INVALID
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrAddressInvalid
+     * @tc.number SUB_WEB_NET_ERROR_3700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ADDRESS_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrAddressInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -763,12 +763,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_3800
-     * @tc.name    : testArkWebErrAddressUnreachable
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ADDRESS_UNREACHABLE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrAddressUnreachable
+     * @tc.number SUB_WEB_NET_ERROR_3800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ADDRESS_UNREACHABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrAddressUnreachable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -783,12 +783,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_3900
-     * @tc.name    : testArkWebErrSSLClientAuthCertNeeded
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_CERT_NEEDED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSSLClientAuthCertNeeded
+     * @tc.number SUB_WEB_NET_ERROR_3900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_CERT_NEEDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSSLClientAuthCertNeeded', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -803,12 +803,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_4000
-     * @tc.name    : testArkWebErrTunnelConnectionFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_TUNNEL_CONNECTION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrTunnelConnectionFailed
+     * @tc.number SUB_WEB_NET_ERROR_4000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_TUNNEL_CONNECTION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrTunnelConnectionFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -823,12 +823,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_4100
-     * @tc.name    : testArkWebErrNoSSLVersionsEnabled
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_NO_SSL_VERSIONS_ENABLED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrNoSSLVersionsEnabled
+     * @tc.number SUB_WEB_NET_ERROR_4100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_NO_SSL_VERSIONS_ENABLED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrNoSSLVersionsEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
@@ -843,12 +843,12 @@ export default function ActsWebErrorCodeListTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_4200
-     * @tc.name    : testArkWebErrSSLVersionOrCIPHERMismatch
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_VERSION_OR_CIPHER_MISMATCH
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSSLVersionOrCIPHERMismatch
+     * @tc.number SUB_WEB_NET_ERROR_4200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_VERSION_OR_CIPHER_MISMATCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSSLVersionOrCIPHERMismatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -863,12 +863,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_4300
-     * @tc.name    : testArkWebErrSSLRenegotiationRequested
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_RENEGOTIATION_REQUESTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSSLRenegotiationRequested
+     * @tc.number SUB_WEB_NET_ERROR_4300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_RENEGOTIATION_REQUESTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSSLRenegotiationRequested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -883,12 +883,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_4400
-     * @tc.name    : testArkWebErrProxyAuthUnsupported
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PROXY_AUTH_UNSUPPORTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrProxyAuthUnsupported
+     * @tc.number SUB_WEB_NET_ERROR_4400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PROXY_AUTH_UNSUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrProxyAuthUnsupported', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -903,12 +903,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_4500
-     * @tc.name    : testArkWebErrBadSSLClientAuthCert
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_BAD_SSL_CLIENT_AUTH_CERT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrBadSSLClientAuthCert
+     * @tc.number SUB_WEB_NET_ERROR_4500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_BAD_SSL_CLIENT_AUTH_CERT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrBadSSLClientAuthCert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -923,12 +923,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_4600
-     * @tc.name    : testArkWebErrConnectionTimedOut
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_TIMED_OUT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrConnectionTimedOut
+     * @tc.number SUB_WEB_NET_ERROR_4600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CONNECTION_TIMED_OUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrConnectionTimedOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -943,12 +943,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_4700
-     * @tc.name    : testArkWebErrHostResolverQueueTooLarge
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_HOST_RESOLVER_QUEUE_TOO_LARGE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrHostResolverQueueTooLarge
+     * @tc.number SUB_WEB_NET_ERROR_4700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HOST_RESOLVER_QUEUE_TOO_LARGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrHostResolverQueueTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -963,12 +963,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_4800
-     * @tc.name    : testArkWebErrSocksConnectionFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SOCKS_CONNECTION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSocksConnectionFailed
+     * @tc.number SUB_WEB_NET_ERROR_4800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SOCKS_CONNECTION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSocksConnectionFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -983,12 +983,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_4900
-     * @tc.name    : testArkWebErrSocksConnectionHostUnreachable
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SOCKS_CONNECTION_HOST_UNREACHABLE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSocksConnectionHostUnreachable
+     * @tc.number SUB_WEB_NET_ERROR_4900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SOCKS_CONNECTION_HOST_UNREACHABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSocksConnectionHostUnreachable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1003,12 +1003,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_5000
-     * @tc.name    : testArkWebErrAlpnNegotiationFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ALPN_NEGOTIATION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrAlpnNegotiationFailed
+     * @tc.number SUB_WEB_NET_ERROR_5000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ALPN_NEGOTIATION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrAlpnNegotiationFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1023,12 +1023,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_5100
-     * @tc.name    : testArkWebErrSSLNoRenegotiation
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_NO_RENEGOTIATION
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSSLNoRenegotiation
+     * @tc.number SUB_WEB_NET_ERROR_5100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_NO_RENEGOTIATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSSLNoRenegotiation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1043,12 +1043,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_5200
-     * @tc.name    : testArkWebErrWinsockUnexpectedWrittenBytes
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_WINSOCK_UNEXPECTED_WRITTEN_BYTES
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrWinsockUnexpectedWrittenBytes
+     * @tc.number SUB_WEB_NET_ERROR_5200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_WINSOCK_UNEXPECTED_WRITTEN_BYTES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrWinsockUnexpectedWrittenBytes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1063,12 +1063,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_5300
-     * @tc.name    : testArkWebErrSSLDecompressionFailureAlert
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_DECOMPRESSION_FAILURE_ALERT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSSLDecompressionFailureAlert
+     * @tc.number SUB_WEB_NET_ERROR_5300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_DECOMPRESSION_FAILURE_ALERT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSSLDecompressionFailureAlert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1083,12 +1083,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_5400
-     * @tc.name    : testArkWebErrSSLBadRecordMacAlert
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_BAD_RECORD_MAC_ALERT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSSLBadRecordMacAlert
+     * @tc.number SUB_WEB_NET_ERROR_5400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_BAD_RECORD_MAC_ALERT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSSLBadRecordMacAlert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1103,12 +1103,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_5500
-     * @tc.name    : testArkWebErrProxyAuthRequested
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PROXY_AUTH_REQUESTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrProxyAuthRequested
+     * @tc.number SUB_WEB_NET_ERROR_5500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PROXY_AUTH_REQUESTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrProxyAuthRequested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1123,12 +1123,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_5600
-     * @tc.name    : testArkWebErrProxyConnectionFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PROXY_CONNECTION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrProxyConnectionFailed
+     * @tc.number SUB_WEB_NET_ERROR_5600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PROXY_CONNECTION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrProxyConnectionFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1143,12 +1143,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_5700
-     * @tc.name    : testArkWebErrProxyConfigurationFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_MANDATORY_PROXY_CONFIGURATION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrProxyConfigurationFailed
+     * @tc.number SUB_WEB_NET_ERROR_5700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_MANDATORY_PROXY_CONFIGURATION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrProxyConfigurationFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1163,12 +1163,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_5800
-     * @tc.name    : testArkWebErrPreconnectMaxSocketLimit
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PRECONNECT_MAX_SOCKET_LIMIT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrPreconnectMaxSocketLimit
+     * @tc.number SUB_WEB_NET_ERROR_5800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PRECONNECT_MAX_SOCKET_LIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrPreconnectMaxSocketLimit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1183,12 +1183,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_5900
-     * @tc.name    : testArkWebErrSSLClientAuthPrivateKeyAccessDenied
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_PRIVATE_KEY_ACCESS_DENIED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSSLClientAuthPrivateKeyAccessDenied
+     * @tc.number SUB_WEB_NET_ERROR_5900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_PRIVATE_KEY_ACCESS_DENIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSSLClientAuthPrivateKeyAccessDenied', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1203,12 +1203,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_6000
-     * @tc.name    : testArkWebErrSSLClientAuthCertNoPrivateKey
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_CERT_NO_PRIVATE_KEY
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrSSLClientAuthCertNoPrivateKey
+     * @tc.number SUB_WEB_NET_ERROR_6000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_CERT_NO_PRIVATE_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrSSLClientAuthCertNoPrivateKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1223,12 +1223,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_6100
-     * @tc.name    : testArkWebErrProxyCertificateInvalid
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PROXY_CERTIFICATE_INVALID
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrProxyCertificateInvalid
+     * @tc.number SUB_WEB_NET_ERROR_6100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PROXY_CERTIFICATE_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrProxyCertificateInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1243,12 +1243,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_6200
-     * @tc.name    : testArkWebErrNameResolutionFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_NAME_RESOLUTION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrNameResolutionFailed
+     * @tc.number SUB_WEB_NET_ERROR_6200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_NAME_RESOLUTION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrNameResolutionFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1263,12 +1263,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_6300
-     * @tc.name    : testArkWebErrNetworkAccessDenied
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_NETWORK_ACCESS_DENIED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrNetworkAccessDenied
+     * @tc.number SUB_WEB_NET_ERROR_6300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_NETWORK_ACCESS_DENIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrNetworkAccessDenied', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1283,12 +1283,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_6400
-     * @tc.name    : testArkWebErrTemporarilyThrottled
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_TEMPORARILY_THROTTLED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrTemporarilyThrottled
+     * @tc.number SUB_WEB_NET_ERROR_6400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_TEMPORARILY_THROTTLED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrTemporarilyThrottled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1303,12 +1303,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_6500
-     * @tc.name    : testArkWebHttpsProxyTunnelResponseRedirect
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_HTTPS_PROXY_TUNNEL_RESPONSE_REDIRECT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebHttpsProxyTunnelResponseRedirect
+     * @tc.number SUB_WEB_NET_ERROR_6500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTPS_PROXY_TUNNEL_RESPONSE_REDIRECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttpsProxyTunnelResponseRedirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1323,12 +1323,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_6600
-     * @tc.name    : testArkWebSSLClientAuthSignatureFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_SIGNATURE_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLClientAuthSignatureFailed
+     * @tc.number SUB_WEB_NET_ERROR_6600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_SIGNATURE_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLClientAuthSignatureFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1343,12 +1343,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_6700
-     * @tc.name    : testArkWebMsgTooBig
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_MSG_TOO_BIG
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebMsgTooBig
+     * @tc.number SUB_WEB_NET_ERROR_6700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_MSG_TOO_BIG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebMsgTooBig', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1363,12 +1363,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_6800
-     * @tc.name    : testArkWebWSProtocolError
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_WS_PROTOCOL_ERROR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebWSProtocolError
+     * @tc.number SUB_WEB_NET_ERROR_6800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_WS_PROTOCOL_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebWSProtocolError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1383,12 +1383,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_6900
-     * @tc.name    : testArkWebAddressInUse
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ADDRESS_IN_USE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebAddressInUse
+     * @tc.number SUB_WEB_NET_ERROR_6900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ADDRESS_IN_USE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebAddressInUse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1403,12 +1403,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_7000
-     * @tc.name    : testArkWebSSLHandshakeNotCompleted
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_HANDSHAKE_NOT_COMPLETED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLHandshakeNotCompleted
+     * @tc.number SUB_WEB_NET_ERROR_7000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_HANDSHAKE_NOT_COMPLETED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLHandshakeNotCompleted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1423,12 +1423,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_7100
-     * @tc.name    : testArkWebSSLBadPeerPublicKey
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_BAD_PEER_PUBLIC_KEY
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLBadPeerPublicKey
+     * @tc.number SUB_WEB_NET_ERROR_7100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_BAD_PEER_PUBLIC_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLBadPeerPublicKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1443,12 +1443,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_7200
-     * @tc.name    : testArkWebSSLPinnedKeyNotInCERTChain
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_PINNED_KEY_NOT_IN_CERT_CHAIN
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLPinnedKeyNotInCERTChain
+     * @tc.number SUB_WEB_NET_ERROR_7200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_PINNED_KEY_NOT_IN_CERT_CHAIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLPinnedKeyNotInCERTChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1463,12 +1463,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_7300
-     * @tc.name    : testArkWebClientAuthCERTTypeUnsupported
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CLIENT_AUTH_CERT_TYPE_UNSUPPORTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebClientAuthCERTTypeUnsupported
+     * @tc.number SUB_WEB_NET_ERROR_7300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CLIENT_AUTH_CERT_TYPE_UNSUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebClientAuthCERTTypeUnsupported', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1483,12 +1483,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_7400
-     * @tc.name    : testArkWebSSLDecryptErrorAlert
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_DECRYPT_ERROR_ALERT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLDecryptErrorAlert
+     * @tc.number SUB_WEB_NET_ERROR_7400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_DECRYPT_ERROR_ALERT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLDecryptErrorAlert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1503,12 +1503,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_7500
-     * @tc.name    : testArkWebWSThrottleQueueTooLarge
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_WS_THROTTLE_QUEUE_TOO_LARGE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebWSThrottleQueueTooLarge
+     * @tc.number SUB_WEB_NET_ERROR_7500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_WS_THROTTLE_QUEUE_TOO_LARGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebWSThrottleQueueTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1523,12 +1523,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_7600
-     * @tc.name    : testArkWebSSLServerCertChanged
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_SERVER_CERT_CHANGED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLServerCertChanged
+     * @tc.number SUB_WEB_NET_ERROR_7600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_SERVER_CERT_CHANGED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLServerCertChanged', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1543,12 +1543,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_7700
-     * @tc.name    : testArkWebSSLUnrecognizedNameAlert
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_UNRECOGNIZED_NAME_ALERT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLUnrecognizedNameAlert
+     * @tc.number SUB_WEB_NET_ERROR_7700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_UNRECOGNIZED_NAME_ALERT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLUnrecognizedNameAlert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1563,12 +1563,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_7800
-     * @tc.name    : testArkWebSocketSetReceiveBufferSizeError
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_SET_RECEIVE_BUFFER_SIZE_ERROR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSocketSetReceiveBufferSizeError
+     * @tc.number SUB_WEB_NET_ERROR_7800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_SET_RECEIVE_BUFFER_SIZE_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSocketSetReceiveBufferSizeError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1583,12 +1583,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_7900
-     * @tc.name    : testArkWebSetSendBufferSizeError
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_SET_SEND_BUFFER_SIZE_ERROR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSetSendBufferSizeError
+     * @tc.number SUB_WEB_NET_ERROR_7900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_SET_SEND_BUFFER_SIZE_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSetSendBufferSizeError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1603,12 +1603,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_8000
-     * @tc.name    : testArkWebSocketReceiveBufferSizeUnchangeable
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_RECEIVE_BUFFER_SIZE_UNCHANGEABLE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSocketReceiveBufferSizeUnchangeable
+     * @tc.number SUB_WEB_NET_ERROR_8000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_RECEIVE_BUFFER_SIZE_UNCHANGEABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSocketReceiveBufferSizeUnchangeable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1623,12 +1623,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_8100
-     * @tc.name    : testArkWebSocketSendBufferSizeUnchangeable
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_SEND_BUFFER_SIZE_UNCHANGEABLE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSocketSendBufferSizeUnchangeable
+     * @tc.number SUB_WEB_NET_ERROR_8100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SOCKET_SEND_BUFFER_SIZE_UNCHANGEABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSocketSendBufferSizeUnchangeable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1643,12 +1643,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_8200
-     * @tc.name    : testArkWebSSLClientAuthCertBadFormat
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_CERT_BAD_FORMAT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLClientAuthCertBadFormat
+     * @tc.number SUB_WEB_NET_ERROR_8200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_CERT_BAD_FORMAT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLClientAuthCertBadFormat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1663,12 +1663,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_8300
-     * @tc.name    : testArkWebICANNNameCollision
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ICANN_NAME_COLLISION
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebICANNNameCollision
+     * @tc.number SUB_WEB_NET_ERROR_8300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ICANN_NAME_COLLISION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebICANNNameCollision', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1683,12 +1683,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_8400
-     * @tc.name    : testArkWebSSLServerCertBadFormat
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_SERVER_CERT_BAD_FORMAT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLServerCertBadFormat
+     * @tc.number SUB_WEB_NET_ERROR_8400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_SERVER_CERT_BAD_FORMAT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLServerCertBadFormat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1703,12 +1703,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_8500
-     * @tc.name    : testArkWebCTSthParsingFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CT_STH_PARSING_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCTSthParsingFailed
+     * @tc.number SUB_WEB_NET_ERROR_8500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CT_STH_PARSING_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCTSthParsingFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1723,12 +1723,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_8600
-     * @tc.name    : testArkWebCTSthIncomplete
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CT_STH_INCOMPLETE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCTSthIncomplete
+     * @tc.number SUB_WEB_NET_ERROR_8600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CT_STH_INCOMPLETE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCTSthIncomplete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1743,12 +1743,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_8700
-     * @tc.name    : testArkWebUnableToReuseConnectionForProxyAuth
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UNABLE_TO_REUSE_CONNECTION_FOR_PROXY_AUTH
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebUnableToReuseConnectionForProxyAuth
+     * @tc.number SUB_WEB_NET_ERROR_8700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UNABLE_TO_REUSE_CONNECTION_FOR_PROXY_AUTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebUnableToReuseConnectionForProxyAuth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1763,12 +1763,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_8800
-     * @tc.name    : testArkWebCTConsistencyProofParsingFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CT_CONSISTENCY_PROOF_PARSING_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCTConsistencyProofParsingFailed
+     * @tc.number SUB_WEB_NET_ERROR_8800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CT_CONSISTENCY_PROOF_PARSING_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCTConsistencyProofParsingFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1783,12 +1783,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_8900
-     * @tc.name    : testArkWebSSLObsoleteCipher
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_OBSOLETE_CIPHER
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLObsoleteCipher
+     * @tc.number SUB_WEB_NET_ERROR_8900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_OBSOLETE_CIPHER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLObsoleteCipher', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1803,12 +1803,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_9000
-     * @tc.name    : testArkWebWSUpgrade
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_WS_UPGRADE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebWSUpgrade
+     * @tc.number SUB_WEB_NET_ERROR_9000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_WS_UPGRADE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebWSUpgrade', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1823,12 +1823,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_9100
-     * @tc.name    : testArkWebReadIfReadyNotImplemented
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_READ_IF_READY_NOT_IMPLEMENTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebReadIfReadyNotImplemented
+     * @tc.number SUB_WEB_NET_ERROR_9100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_READ_IF_READY_NOT_IMPLEMENTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebReadIfReadyNotImplemented', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1843,12 +1843,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_9200
-     * @tc.name    : testArkWebNoBufferSpace
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_NO_BUFFER_SPACE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebNoBufferSpace
+     * @tc.number SUB_WEB_NET_ERROR_9200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_NO_BUFFER_SPACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebNoBufferSpace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1863,12 +1863,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_9300
-     * @tc.name    : testArkWebSSLClientAuthNoCommonAlgorithms
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_NO_COMMON_ALGORITHMS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLClientAuthNoCommonAlgorithms
+     * @tc.number SUB_WEB_NET_ERROR_9300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_CLIENT_AUTH_NO_COMMON_ALGORITHMS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLClientAuthNoCommonAlgorithms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1883,12 +1883,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_9400
-     * @tc.name    : testArkWebEarlyDataRejected
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_EARLY_DATA_REJECTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebEarlyDataRejected
+     * @tc.number SUB_WEB_NET_ERROR_9400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_EARLY_DATA_REJECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebEarlyDataRejected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1903,12 +1903,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_9500
-     * @tc.name    : testArkWebWrongVersionOnEarlyData
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_WRONG_VERSION_ON_EARLY_DATA
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebWrongVersionOnEarlyData
+     * @tc.number SUB_WEB_NET_ERROR_9500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_WRONG_VERSION_ON_EARLY_DATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebWrongVersionOnEarlyData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1923,12 +1923,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_9600
-     * @tc.name    : testArkWebTLS13DowngradeDetected
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_TLS13_DOWNGRADE_DETECTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebTLS13DowngradeDetected
+     * @tc.number SUB_WEB_NET_ERROR_9600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_TLS13_DOWNGRADE_DETECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebTLS13DowngradeDetected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1942,12 +1942,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_9700
-     * @tc.name    : testArkWebSSLKeyUsageIncompatible
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_KEY_USAGE_INCOMPATIBLE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSSLKeyUsageIncompatible
+     * @tc.number SUB_WEB_NET_ERROR_9700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_KEY_USAGE_INCOMPATIBLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLKeyUsageIncompatible', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1961,12 +1961,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_9800
-     * @tc.name    : testArkWebInvaliedECHConfigList
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INVALID_ECH_CONFIG_LIST
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebInvaliedECHConfigList
+     * @tc.number SUB_WEB_NET_ERROR_9800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INVALID_ECH_CONFIG_LIST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebInvaliedECHConfigList', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1980,12 +1980,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_9900
-     * @tc.name    : testArkWebECHNotNegotiated
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ECH_NOT_NEGOTIATED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebECHNotNegotiated
+     * @tc.number SUB_WEB_NET_ERROR_9900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ECH_NOT_NEGOTIATED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebECHNotNegotiated', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1999,12 +1999,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_10000
-     * @tc.name    : testArkWebECHFallbackCertificateInvalid
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ECH_FALLBACK_CERTIFICATE_INVALID
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebECHFallbackCertificateInvalid
+     * @tc.number SUB_WEB_NET_ERROR_10000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ECH_FALLBACK_CERTIFICATE_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebECHFallbackCertificateInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2018,12 +2018,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_10100
-     * @tc.name    : testArkWebCERTCommonNameInvalid
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_COMMON_NAME_INVALID
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCERTCommonNameInvalid
+     * @tc.number SUB_WEB_NET_ERROR_10100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_COMMON_NAME_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTCommonNameInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2037,12 +2037,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_10200
-     * @tc.name    : testArkWebCERTDateInvalid
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_DATE_INVALID
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCERTDateInvalid
+     * @tc.number SUB_WEB_NET_ERROR_10200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_DATE_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTDateInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2056,12 +2056,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_10300
-     * @tc.name    : testArkWebCERTAuthorityInvalid
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_AUTHORITY_INVALID
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCERTAuthorityInvalid
+     * @tc.number SUB_WEB_NET_ERROR_10300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_AUTHORITY_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTAuthorityInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2075,12 +2075,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_10400
-     * @tc.name    : testArkWebCERTContainsErrors
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_CONTAINS_ERRORS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCERTContainsErrors
+     * @tc.number SUB_WEB_NET_ERROR_10400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_CONTAINS_ERRORS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTContainsErrors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2094,12 +2094,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_10500
-     * @tc.name    : testArkWebCERTNoRevocationMechanism
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_NO_REVOCATION_MECHANISM
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCERTNoRevocationMechanism
+     * @tc.number SUB_WEB_NET_ERROR_10500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_NO_REVOCATION_MECHANISM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTNoRevocationMechanism', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2113,12 +2113,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_10600
-     * @tc.name    : testArkWebCERTUnableToCheckRevocation
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_UNABLE_TO_CHECK_REVOCATION
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCERTUnableToCheckRevocation
+     * @tc.number SUB_WEB_NET_ERROR_10600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_UNABLE_TO_CHECK_REVOCATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTUnableToCheckRevocation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2131,13 +2131,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_10700
-     * @tc.name    : testArkWebCERTRevoked
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_REVOKED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebCERTRevoked
+     * @tc.number SUB_WEB_NET_ERROR_10700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_REVOKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTRevoked', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2150,13 +2150,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_10800
-     * @tc.name    : testArkWebCERTInvalid
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_INVALID
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebCERTInvalid
+     * @tc.number SUB_WEB_NET_ERROR_10800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2169,13 +2169,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_10900
-     * @tc.name    : testArkWebCERTWeakSignatureAlgorithm
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_WEAK_SIGNATURE_ALGORITHM
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebCERTWeakSignatureAlgorithm
+     * @tc.number SUB_WEB_NET_ERROR_10900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_WEAK_SIGNATURE_ALGORITHM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTWeakSignatureAlgorithm', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2188,13 +2188,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_11000
-     * @tc.name    : testArkWebCERTNonUniqueName
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_NON_UNIQUE_NAME
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebCERTNonUniqueName
+     * @tc.number SUB_WEB_NET_ERROR_11000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_NON_UNIQUE_NAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTNonUniqueName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2207,13 +2207,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_11100
-     * @tc.name    : testArkWebCERTWeakKey
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_WEAK_KEY
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebCERTWeakKey
+     * @tc.number SUB_WEB_NET_ERROR_11100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_WEAK_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTWeakKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2226,13 +2226,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_11200
-     * @tc.name    : testArkWebCERTNameConstraintViolation
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_NAME_CONSTRAINT_VIOLATION
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebCERTNameConstraintViolation
+     * @tc.number SUB_WEB_NET_ERROR_11200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_NAME_CONSTRAINT_VIOLATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTNameConstraintViolation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2245,13 +2245,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_11300
-     * @tc.name    : testArkWebCERTValidityTooLong
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_VALIDITY_TOO_LONG
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebCERTValidityTooLong
+     * @tc.number SUB_WEB_NET_ERROR_11300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_VALIDITY_TOO_LONG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTValidityTooLong', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2264,13 +2264,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_11400
-     * @tc.name    : testArkWebCeritificateTransparencyRequired
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERTIFICATE_TRANSPARENCY_REQUIRED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebCeritificateTransparencyRequired
+     * @tc.number SUB_WEB_NET_ERROR_11400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERTIFICATE_TRANSPARENCY_REQUIRED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCeritificateTransparencyRequired', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2283,13 +2283,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_11500
-     * @tc.name    : testArkWebCERTSymantecLegacy
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_SYMANTEC_LEGACY
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebCERTSymantecLegacy
+     * @tc.number SUB_WEB_NET_ERROR_11500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_SYMANTEC_LEGACY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTSymantecLegacy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2302,13 +2302,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_11600
-     * @tc.name    : testArkWebCERTKnowInterceptionBlocked
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_KNOWN_INTERCEPTION_BLOCKED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebCERTKnowInterceptionBlocked
+     * @tc.number SUB_WEB_NET_ERROR_11600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_KNOWN_INTERCEPTION_BLOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCERTKnowInterceptionBlocked', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2321,13 +2321,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_11700
-     * @tc.name    : testArkWebSSLObsoleteVersionOrCipher
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SSL_OBSOLETE_VERSION_OR_CIPHER
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebSSLObsoleteVersionOrCipher
+     * @tc.number SUB_WEB_NET_ERROR_11700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SSL_OBSOLETE_VERSION_OR_CIPHER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSSLObsoleteVersionOrCipher', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2340,13 +2340,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_11800
-     * @tc.name    : testArkWebErrCERTEnd
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_END
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebErrCERTEnd
+     * @tc.number SUB_WEB_NET_ERROR_11800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_END
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrCERTEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2359,13 +2359,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_11900
-     * @tc.name    : testArkWebInvalidURL
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INVALID_URL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebInvalidURL
+     * @tc.number SUB_WEB_NET_ERROR_11900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INVALID_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebInvalidURL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2378,13 +2378,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_12000
-     * @tc.name    : testArkWebDisallowedUrlScheme
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DISALLOWED_URL_SCHEME
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebDisallowedUrlScheme
+     * @tc.number SUB_WEB_NET_ERROR_12000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DISALLOWED_URL_SCHEME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDisallowedUrlScheme', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2397,13 +2397,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_12100
-     * @tc.name    : testArkWebUnknownUrlScheme
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UNKNOWN_URL_SCHEME
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebUnknownUrlScheme
+     * @tc.number SUB_WEB_NET_ERROR_12100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UNKNOWN_URL_SCHEME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebUnknownUrlScheme', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2416,13 +2416,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_12200
-     * @tc.name    : testArkWebInvalidRedirect
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INVALID_REDIRECT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebInvalidRedirect
+     * @tc.number SUB_WEB_NET_ERROR_12200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INVALID_REDIRECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebInvalidRedirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2435,13 +2435,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_12300
-     * @tc.name    : testArkWebTooManyRedirects
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_TOO_MANY_REDIRECTS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebTooManyRedirects
+     * @tc.number SUB_WEB_NET_ERROR_12300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_TOO_MANY_REDIRECTS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebTooManyRedirects', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2454,13 +2454,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_12400
-     * @tc.name    : testArkWebUnsafeRedirect
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UNSAFE_REDIRECT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebUnsafeRedirect
+     * @tc.number SUB_WEB_NET_ERROR_12400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UNSAFE_REDIRECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebUnsafeRedirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2473,13 +2473,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_12500
-     * @tc.name    : testArkWebUnsafePort
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UNSAFE_PORT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebUnsafePort
+     * @tc.number SUB_WEB_NET_ERROR_12500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UNSAFE_PORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebUnsafePort', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2492,13 +2492,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_12600
-     * @tc.name    : testArkWebInvalidResponse
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INVALID_RESPONSE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebInvalidResponse
+     * @tc.number SUB_WEB_NET_ERROR_12600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INVALID_RESPONSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebInvalidResponse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2511,13 +2511,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_12700
-     * @tc.name    : testArkWebInvalidChunkedEncoding
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INVALID_CHUNKED_ENCODING
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebInvalidChunkedEncoding
+     * @tc.number SUB_WEB_NET_ERROR_12700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INVALID_CHUNKED_ENCODING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebInvalidChunkedEncoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2530,13 +2530,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_12800
-     * @tc.name    : testArkWebMethodUnsupported
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_METHOD_UNSUPPORTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebMethodUnsupported
+     * @tc.number SUB_WEB_NET_ERROR_12800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_METHOD_UNSUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebMethodUnsupported', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2549,13 +2549,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_12900
-     * @tc.name    : testArkWebUnexpectedProxyAuth
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UNEXPECTED_PROXY_AUTH
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebUnexpectedProxyAuth
+     * @tc.number SUB_WEB_NET_ERROR_12900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UNEXPECTED_PROXY_AUTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebUnexpectedProxyAuth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2568,13 +2568,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_13000
-     * @tc.name    : testArkWebEmptyResponse
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_EMPTY_RESPONSE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebEmptyResponse
+     * @tc.number SUB_WEB_NET_ERROR_13000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_EMPTY_RESPONSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebEmptyResponse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2587,13 +2587,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_13100
-     * @tc.name    : testArkWebResponseHeadersTooBig
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_HEADERS_TOO_BIG
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebResponseHeadersTooBig
+     * @tc.number SUB_WEB_NET_ERROR_13100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_HEADERS_TOO_BIG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseHeadersTooBig', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2606,13 +2606,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_13200
-     * @tc.name    : testArkWebPacScriptFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PAC_SCRIPT_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebPacScriptFailed
+     * @tc.number SUB_WEB_NET_ERROR_13200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PAC_SCRIPT_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebPacScriptFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2625,13 +2625,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_13300
-     * @tc.name    : testArkWebRequestRangeNotSatisfiable
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_REQUEST_RANGE_NOT_SATISFIABLE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebRequestRangeNotSatisfiable
+     * @tc.number SUB_WEB_NET_ERROR_13300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_REQUEST_RANGE_NOT_SATISFIABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebRequestRangeNotSatisfiable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2644,13 +2644,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_13400
-     * @tc.name    : testArkWebMalformedIdentity
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_MALFORMED_IDENTITY
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebMalformedIdentity
+     * @tc.number SUB_WEB_NET_ERROR_13400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_MALFORMED_IDENTITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebMalformedIdentity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2664,12 +2664,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_13500
-     * @tc.name    : testArkWebContentDecodingFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CONTENT_DECODING_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebContentDecodingFailed
+     * @tc.number SUB_WEB_NET_ERROR_13500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CONTENT_DECODING_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebContentDecodingFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2682,13 +2682,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_13600
-     * @tc.name    : testArkWebNetworkIoSuspended
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_NETWORK_IO_SUSPENDED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebNetworkIoSuspended
+     * @tc.number SUB_WEB_NET_ERROR_13600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_NETWORK_IO_SUSPENDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebNetworkIoSuspended', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2701,13 +2701,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_13700
-     * @tc.name    : testArkWebSynReplyNotReceived
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SYN_REPLY_NOT_RECEIVED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebSynReplyNotReceived
+     * @tc.number SUB_WEB_NET_ERROR_13700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SYN_REPLY_NOT_RECEIVED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSynReplyNotReceived', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2720,13 +2720,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_13800
-     * @tc.name    : testArkWebEncodingConversionFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ENCODING_CONVERSION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebEncodingConversionFailed
+     * @tc.number SUB_WEB_NET_ERROR_13800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ENCODING_CONVERSION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebEncodingConversionFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2739,13 +2739,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_13900
-     * @tc.name    : testArkWebUnrecognizedFtpDirectoryListingFormat
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UNRECOGNIZED_FTP_DIRECTORY_LISTING_FORMAT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebUnrecognizedFtpDirectoryListingFormat
+     * @tc.number SUB_WEB_NET_ERROR_13900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UNRECOGNIZED_FTP_DIRECTORY_LISTING_FORMAT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebUnrecognizedFtpDirectoryListingFormat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2758,13 +2758,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_14000
-     * @tc.name    : testArkWebNoSupportedProxies
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_NO_SUPPORTED_PROXIES
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebNoSupportedProxies
+     * @tc.number SUB_WEB_NET_ERROR_14000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_NO_SUPPORTED_PROXIES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebNoSupportedProxies', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2777,13 +2777,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_14100
-     * @tc.name    : testArkWebHttp2ProtocolError
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_PROTOCOL_ERROR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebHttp2ProtocolError
+     * @tc.number SUB_WEB_NET_ERROR_14100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_PROTOCOL_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2ProtocolError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2796,13 +2796,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_14200
-     * @tc.name    : testArkWebInvalidAuthCredentials
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INVALID_AUTH_CREDENTIALS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebInvalidAuthCredentials
+     * @tc.number SUB_WEB_NET_ERROR_14200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INVALID_AUTH_CREDENTIALS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebInvalidAuthCredentials', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2815,13 +2815,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_14300
-     * @tc.name    : testArkWebUnsupportedAuthScheme
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UNSUPPORTED_AUTH_SCHEME
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebUnsupportedAuthScheme
+     * @tc.number SUB_WEB_NET_ERROR_14300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UNSUPPORTED_AUTH_SCHEME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebUnsupportedAuthScheme', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2834,13 +2834,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_14400
-     * @tc.name    : testArkWebEncodingDetectionFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ENCODING_DETECTION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebEncodingDetectionFailed
+     * @tc.number SUB_WEB_NET_ERROR_14400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ENCODING_DETECTION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebEncodingDetectionFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2853,13 +2853,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_14500
-     * @tc.name    : testArkWebMissingAuthCredentials
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_MISSING_AUTH_CREDENTIALS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebMissingAuthCredentials
+     * @tc.number SUB_WEB_NET_ERROR_14500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_MISSING_AUTH_CREDENTIALS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebMissingAuthCredentials', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2872,13 +2872,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_14600
-     * @tc.name    : testArkWebUnexpectedSecurityLibraryStatus
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UNEXPECTED_SECURITY_LIBRARY_STATUS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebUnexpectedSecurityLibraryStatus
+     * @tc.number SUB_WEB_NET_ERROR_14600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UNEXPECTED_SECURITY_LIBRARY_STATUS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebUnexpectedSecurityLibraryStatus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2891,13 +2891,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_14700
-     * @tc.name    : testArkWebMisconfiguredAuthEnvironment
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_MISCONFIGURED_AUTH_ENVIRONMENT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebMisconfiguredAuthEnvironment
+     * @tc.number SUB_WEB_NET_ERROR_14700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_MISCONFIGURED_AUTH_ENVIRONMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebMisconfiguredAuthEnvironment', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2910,13 +2910,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_14800
-     * @tc.name    : testArkWebUndocumentedSecurityLibraryStatus
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_UNDOCUMENTED_SECURITY_LIBRARY_STATUS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebUndocumentedSecurityLibraryStatus
+     * @tc.number SUB_WEB_NET_ERROR_14800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_UNDOCUMENTED_SECURITY_LIBRARY_STATUS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebUndocumentedSecurityLibraryStatus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2929,13 +2929,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_14900
-     * @tc.name    : testArkWebResponseBodyTooBigToDrain
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_BODY_TOO_BIG_TO_DRAIN
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebResponseBodyTooBigToDrain
+     * @tc.number SUB_WEB_NET_ERROR_14900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_BODY_TOO_BIG_TO_DRAIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseBodyTooBigToDrain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2948,13 +2948,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_15000
-     * @tc.name    : testArkWebResponseHeadersMultipleContentLength
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_HEADERS_MULTIPLE_CONTENT_LENGTH
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebResponseHeadersMultipleContentLength
+     * @tc.number SUB_WEB_NET_ERROR_15000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_HEADERS_MULTIPLE_CONTENT_LENGTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseHeadersMultipleContentLength', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2967,13 +2967,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_15100
-     * @tc.name    : testArkWebIncompleteHttp2Headers
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INCOMPLETE_HTTP2_HEADERS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebIncompleteHttp2Headers
+     * @tc.number SUB_WEB_NET_ERROR_15100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INCOMPLETE_HTTP2_HEADERS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebIncompleteHttp2Headers', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2986,13 +2986,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_15200
-     * @tc.name    : testArkWebPacNotInDhcp
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PAC_NOT_IN_DHCP
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebPacNotInDhcp
+     * @tc.number SUB_WEB_NET_ERROR_15200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PAC_NOT_IN_DHCP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebPacNotInDhcp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3005,13 +3005,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_15300
-     * @tc.name    : testArkWebResponseHeadersMultipleContentDisposition
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_HEADERS_MULTIPLE_CONTENT_DISPOSITION
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebResponseHeadersMultipleContentDisposition
+     * @tc.number SUB_WEB_NET_ERROR_15300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_HEADERS_MULTIPLE_CONTENT_DISPOSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseHeadersMultipleContentDisposition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3024,13 +3024,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_15400
-     * @tc.name    : testArkWebResponseHeadersMultipleLocation
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_HEADERS_MULTIPLE_LOCATION
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebResponseHeadersMultipleLocation
+     * @tc.number SUB_WEB_NET_ERROR_15400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_HEADERS_MULTIPLE_LOCATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseHeadersMultipleLocation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3043,13 +3043,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_15500
-     * @tc.name    : testArkWebHttp2ServerRefusedStream
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_SERVER_REFUSED_STREAM
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebHttp2ServerRefusedStream
+     * @tc.number SUB_WEB_NET_ERROR_15500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_SERVER_REFUSED_STREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2ServerRefusedStream', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3062,13 +3062,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_15600
-     * @tc.name    : testArkWebHttp2PingFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_PING_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebHttp2PingFailed
+     * @tc.number SUB_WEB_NET_ERROR_15600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_PING_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2PingFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3081,13 +3081,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_15700
-     * @tc.name    : testArkWebContentLengthMismatch
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CONTENT_LENGTH_MISMATCH
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebContentLengthMismatch
+     * @tc.number SUB_WEB_NET_ERROR_15700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CONTENT_LENGTH_MISMATCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebContentLengthMismatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3100,13 +3100,13 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
-    /** 
-     * @tc.number  : SUB_WEB_NET_ERROR_15800
-     * @tc.name    : testArkWebIncompleteChunkedEncoding
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INCOMPLETE_CHUNKED_ENCODING
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testArkWebIncompleteChunkedEncoding
+     * @tc.number SUB_WEB_NET_ERROR_15800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INCOMPLETE_CHUNKED_ENCODING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebIncompleteChunkedEncoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3120,12 +3120,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number : SUB_WEB_NET_ERROR_15900
-     * @tc.name : testArkWebQuicProtocolError
-     * @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_QUIC_PROTOCOL_ERROR
-     * @tc.level : Level1
-     * @tc.size : MediumTest
-     * @tc.type : Function
+     * @tc.name   testArkWebQuicProtocolError
+     * @tc.number SUB_WEB_NET_ERROR_15900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_QUIC_PROTOCOL_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebQuicProtocolError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3139,12 +3139,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_16000
-     @tc.name : testArkWebResponseHeadersTruncated
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_HEADERS_TRUNCATED
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebResponseHeadersTruncated
+     * @tc.number SUB_WEB_NET_ERROR_16000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_RESPONSE_HEADERS_TRUNCATED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseHeadersTruncated', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3158,12 +3158,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_16100
-     @tc.name : testArkWebQuicHandshakeFailed
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_QUIC_HANDSHAKE_FAILED
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebQuicHandshakeFailed
+     * @tc.number SUB_WEB_NET_ERROR_16100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_QUIC_HANDSHAKE_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebQuicHandshakeFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3177,12 +3177,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_16200
-     @tc.name : testArkWebHttp2InadequateTransportSecurity
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttp2InadequateTransportSecurity
+     * @tc.number SUB_WEB_NET_ERROR_16200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2InadequateTransportSecurity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3196,12 +3196,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_16300
-     @tc.name : testArkWebHttp2FlowControlError
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_FLOW_CONTROL_ERROR
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttp2FlowControlError
+     * @tc.number SUB_WEB_NET_ERROR_16300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_FLOW_CONTROL_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2FlowControlError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3215,12 +3215,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_16400
-     @tc.name : testArkWebHttp2FrameSizeError
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_FRAME_SIZE_ERROR
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttp2FrameSizeError
+     * @tc.number SUB_WEB_NET_ERROR_16400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_FRAME_SIZE_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2FrameSizeError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3234,12 +3234,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_16500
-     @tc.name : testArkWebHttp2CompressionError
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_COMPRESSION_ERROR
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttp2CompressionError
+     * @tc.number SUB_WEB_NET_ERROR_16500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_COMPRESSION_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2CompressionError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3253,12 +3253,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_16600
-     @tc.name : testArkWebProxyAuthRequestedWithNoConnection
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_PROXY_AUTH_REQUESTED_WITH_NO_CONNECTION
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebProxyAuthRequestedWithNoConnection
+     * @tc.number SUB_WEB_NET_ERROR_16600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PROXY_AUTH_REQUESTED_WITH_NO_CONNECTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebProxyAuthRequestedWithNoConnection', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3272,12 +3272,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_16700
-     @tc.name : testArkWebHttp11Required
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP_1_1_REQUIRED
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttp11Required
+     * @tc.number SUB_WEB_NET_ERROR_16700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP_1_1_REQUIRED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp11Required', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3291,12 +3291,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_16800
-     @tc.name : testArkWebProxyHttp11Required
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_PROXY_HTTP_1_1_REQUIRED
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebProxyHttp11Required
+     * @tc.number SUB_WEB_NET_ERROR_16800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PROXY_HTTP_1_1_REQUIRED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebProxyHttp11Required', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3310,12 +3310,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_16900
-     @tc.name : testArkWebPacScriptTerminated
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_PAC_SCRIPT_TERMINATED
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebPacScriptTerminated
+     * @tc.number SUB_WEB_NET_ERROR_16900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PAC_SCRIPT_TERMINATED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebPacScriptTerminated', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3329,12 +3329,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_17000
-     @tc.name : testArkWebInvalidHttpResponse
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_INVALID_HTTP_RESPONSE
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebInvalidHttpResponse
+     * @tc.number SUB_WEB_NET_ERROR_17000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INVALID_HTTP_RESPONSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebInvalidHttpResponse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3348,12 +3348,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_17100
-     @tc.name : testArkWebContentDecodingInitFailed
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_CONTENT_DECODING_INIT_FAILED
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebContentDecodingInitFailed
+     * @tc.number SUB_WEB_NET_ERROR_17100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CONTENT_DECODING_INIT_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebContentDecodingInitFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3367,12 +3367,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_17200
-     @tc.name : testArkWebHttp2RstStreamNoErrorReceived
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_RST_STREAM_NO_ERROR_RECEIVED
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttp2RstStreamNoErrorReceived
+     * @tc.number SUB_WEB_NET_ERROR_17200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_RST_STREAM_NO_ERROR_RECEIVED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2RstStreamNoErrorReceived', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3386,12 +3386,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_17300
-     @tc.name : testArkWebHttp2PushedStreamNotAvailable
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_PUSHED_STREAM_NOT_AVAILABLE
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttp2PushedStreamNotAvailable
+     * @tc.number SUB_WEB_NET_ERROR_17300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_PUSHED_STREAM_NOT_AVAILABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2PushedStreamNotAvailable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3405,12 +3405,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_17400
-     @tc.name : testArkWebHttp2ClaimedPushedStreamResetByServer
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_CLAIMED_PUSHED_STREAM_RESET_BY_SERVER
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttp2ClaimedPushedStreamResetByServer
+     * @tc.number SUB_WEB_NET_ERROR_17400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_CLAIMED_PUSHED_STREAM_RESET_BY_SERVER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2ClaimedPushedStreamResetByServer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3424,12 +3424,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_17500
-     @tc.name : testArkWebTooManyRetries
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_TOO_MANY_RETRIES
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebTooManyRetries
+     * @tc.number SUB_WEB_NET_ERROR_17500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_TOO_MANY_RETRIES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebTooManyRetries', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3443,12 +3443,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_17600
-     @tc.name : testArkWebHttp2StreamClosed
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_STREAM_CLOSED
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttp2StreamClosed
+     * @tc.number SUB_WEB_NET_ERROR_17600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_STREAM_CLOSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2StreamClosed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3462,12 +3462,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_17700
-     @tc.name : testArkWebHttp2ClientRefusedStream
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_CLIENT_REFUSED_STREAM
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttp2ClientRefusedStream
+     * @tc.number SUB_WEB_NET_ERROR_17700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_CLIENT_REFUSED_STREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2ClientRefusedStream', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3481,12 +3481,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_17800
-     @tc.name : testArkWebHttp2PushedResponseDoesNotMatch
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_PUSHED_RESPONSE_DOES_NOT_MATCH
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttp2PushedResponseDoesNotMatch
+     * @tc.number SUB_WEB_NET_ERROR_17800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP2_PUSHED_RESPONSE_DOES_NOT_MATCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttp2PushedResponseDoesNotMatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3500,12 +3500,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_17900
-     @tc.name : testArkWebHttpResponseCodeFailure
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_HTTP_RESPONSE_CODE_FAILURE
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebHttpResponseCodeFailure
+     * @tc.number SUB_WEB_NET_ERROR_17900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_HTTP_RESPONSE_CODE_FAILURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebHttpResponseCodeFailure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3519,12 +3519,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_18000
-     @tc.name : testArkWebQuicUnknownCertRoot
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_QUIC_UNKNOWN_CERT_ROOT
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebQuicUnknownCertRoot
+     * @tc.number SUB_WEB_NET_ERROR_18000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_QUIC_UNKNOWN_CERT_ROOT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebQuicUnknownCertRoot', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3538,12 +3538,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_18100
-     @tc.name : testArkWebQuicGoawayRequestCanBeRetried
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_QUIC_GOAWAY_REQUEST_CAN_BE_RETRIED
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebQuicGoawayRequestCanBeRetried
+     * @tc.number SUB_WEB_NET_ERROR_18100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_QUIC_GOAWAY_REQUEST_CAN_BE_RETRIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebQuicGoawayRequestCanBeRetried', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3557,12 +3557,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_18200
-     @tc.name : testArkWebTooManyAcceptChRestarts
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_TOO_MANY_ACCEPT_CH_RESTARTS
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebTooManyAcceptChRestarts
+     * @tc.number SUB_WEB_NET_ERROR_18200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_TOO_MANY_ACCEPT_CH_RESTARTS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebTooManyAcceptChRestarts', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3576,12 +3576,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_18300
-     @tc.name : testArkWebInconsistentIpAddressSpace
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_INCONSISTENT_IP_ADDRESS_SPACE
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebInconsistentIpAddressSpace
+     * @tc.number SUB_WEB_NET_ERROR_18300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INCONSISTENT_IP_ADDRESS_SPACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebInconsistentIpAddressSpace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3595,12 +3595,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_18400
-     @tc.name : testArkWebCachedIpAddressSpaceBlockedByLocalNetworkAccessPolicy
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_CACHED_IP_ADDRESS_SPACE_BLOCKED_BY_LOCAL_NETWORK_ACCESS_POLICY
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebCachedIpAddressSpaceBlockedByLocalNetworkAccessPolicy
+     * @tc.number SUB_WEB_NET_ERROR_18400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHED_IP_ADDRESS_SPACE_BLOCKED_BY_LOCAL_NETWORK_ACCESS_POLICY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCachedIpAddressSpaceBlockedByLocalNetworkAccessPolicy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3614,12 +3614,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     @tc.number : SUB_WEB_NET_ERROR_18500
-     @tc.name : testArkWebCacheMiss
-     @tc.desc : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_MISS
-     @tc.level : Level1
-     @tc.size : MediumTest
-     @tc.type : Function
+     * @tc.name   testArkWebCacheMiss
+     * @tc.number SUB_WEB_NET_ERROR_18500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_MISS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheMiss', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3633,12 +3633,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_18600
-     * @tc.name    : testArkWebCacheWriteFailure
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_WRITE_FAILURE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheWriteFailure
+     * @tc.number SUB_WEB_NET_ERROR_18600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_WRITE_FAILURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheWriteFailure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3652,12 +3652,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_18700
-     * @tc.name    : testArkWebCacheOperationUnsupported
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_OPERATION_UNSUPPORTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheOperationUnsupported
+     * @tc.number SUB_WEB_NET_ERROR_18700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_OPERATION_UNSUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheOperationUnsupported', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3671,12 +3671,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_18800
-     * @tc.name    : testArkWebCacheOpenFailure
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_OPEN_FAILURE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheOpenFailure
+     * @tc.number SUB_WEB_NET_ERROR_18800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_OPEN_FAILURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheOpenFailure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3690,12 +3690,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_18900
-     * @tc.name    : testArkWebCacheCreateFailure
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_CREATE_FAILURE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheCreateFailure
+     * @tc.number SUB_WEB_NET_ERROR_18900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_CREATE_FAILURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheCreateFailure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3709,12 +3709,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_19000
-     * @tc.name    : testArkWebCacheRace
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_RACE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheRace
+     * @tc.number SUB_WEB_NET_ERROR_19000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_RACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheRace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3728,12 +3728,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_19100
-     * @tc.name    : testArkWebCacheChecksumReadFailure
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_CHECKSUM_READ_FAILURE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheChecksumReadFailure
+     * @tc.number SUB_WEB_NET_ERROR_19100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_CHECKSUM_READ_FAILURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheChecksumReadFailure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3747,12 +3747,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_19200
-     * @tc.name    : testArkWebCacheChecksumMismatch
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_CHECKSUM_MISMATCH
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheChecksumMismatch
+     * @tc.number SUB_WEB_NET_ERROR_19200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_CHECKSUM_MISMATCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheChecksumMismatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3766,12 +3766,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_19300
-     * @tc.name    : testArkWebCacheLockTimeout
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_LOCK_TIMEOUT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheLockTimeout
+     * @tc.number SUB_WEB_NET_ERROR_19300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_LOCK_TIMEOUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheLockTimeout', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3785,12 +3785,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_19400
-     * @tc.name    : testArkWebCacheAuthFailureAfterRead
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_AUTH_FAILURE_AFTER_READ
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheAuthFailureAfterRead
+     * @tc.number SUB_WEB_NET_ERROR_19400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_AUTH_FAILURE_AFTER_READ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheAuthFailureAfterRead', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3804,12 +3804,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_19500
-     * @tc.name    : testArkWebCacheEntryNotSuitable
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_ENTRY_NOT_SUITABLE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheEntryNotSuitable
+     * @tc.number SUB_WEB_NET_ERROR_19500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_ENTRY_NOT_SUITABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheEntryNotSuitable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3823,12 +3823,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_19600
-     * @tc.name    : testArkWebCacheDoomFailure
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_DOOM_FAILURE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheDoomFailure
+     * @tc.number SUB_WEB_NET_ERROR_19600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_DOOM_FAILURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheDoomFailure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3842,12 +3842,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_19700
-     * @tc.name    : testArkWebCacheOpenOrCreateFailure
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CACHE_OPEN_OR_CREATE_FAILURE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCacheOpenOrCreateFailure
+     * @tc.number SUB_WEB_NET_ERROR_19700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CACHE_OPEN_OR_CREATE_FAILURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCacheOpenOrCreateFailure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3861,12 +3861,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_19800
-     * @tc.name    : testArkWebInsecureResponse
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INSECURE_RESPONSE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebInsecureResponse
+     * @tc.number SUB_WEB_NET_ERROR_19800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INSECURE_RESPONSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebInsecureResponse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3880,12 +3880,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_19900
-     * @tc.name    : testArkWebNoPrivateKeyForCert
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_NO_PRIVATE_KEY_FOR_CERT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebNoPrivateKeyForCert
+     * @tc.number SUB_WEB_NET_ERROR_19900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_NO_PRIVATE_KEY_FOR_CERT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebNoPrivateKeyForCert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3899,12 +3899,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_20000
-     * @tc.name    : testArkWebAddUserCertFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_ADD_USER_CERT_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebAddUserCertFailed
+     * @tc.number SUB_WEB_NET_ERROR_20000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_ADD_USER_CERT_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebAddUserCertFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3918,12 +3918,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_20100
-     * @tc.name    : testArkWebInvalidSignedExchange
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INVALID_SIGNED_EXCHANGE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebInvalidSignedExchange
+     * @tc.number SUB_WEB_NET_ERROR_20100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INVALID_SIGNED_EXCHANGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebInvalidSignedExchange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3937,12 +3937,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_20200
-     * @tc.name    : testArkWebInvalidWebBundle
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_INVALID_WEB_BUNDLE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebInvalidWebBundle
+     * @tc.number SUB_WEB_NET_ERROR_20200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_INVALID_WEB_BUNDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebInvalidWebBundle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3956,12 +3956,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_20300
-     * @tc.name    : testArkWebTrustTokenOperationFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_TRUST_TOKEN_OPERATION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebTrustTokenOperationFailed
+     * @tc.number SUB_WEB_NET_ERROR_20300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_TRUST_TOKEN_OPERATION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebTrustTokenOperationFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3975,12 +3975,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_20400
-     * @tc.name    : testArkWebTrustTokenOperationSuccessWithoutSendingRequest
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_TRUST_TOKEN_OPERATION_SUCCESS_WITHOUT_SENDING_REQUEST
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebTrustTokenOperationSuccessWithoutSendingRequest
+     * @tc.number SUB_WEB_NET_ERROR_20400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_TRUST_TOKEN_OPERATION_SUCCESS_WITHOUT_SENDING_REQUEST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebTrustTokenOperationSuccessWithoutSendingRequest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -3994,12 +3994,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_20500
-     * @tc.name    : testArkWebFtpFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FTP_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebFtpFailed
+     * @tc.number SUB_WEB_NET_ERROR_20500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FTP_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebFtpFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4013,12 +4013,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_20600
-     * @tc.name    : testArkWebFtpServiceUnavailable
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FTP_SERVICE_UNAVAILABLE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebFtpServiceUnavailable
+     * @tc.number SUB_WEB_NET_ERROR_20600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FTP_SERVICE_UNAVAILABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebFtpServiceUnavailable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4032,12 +4032,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_20700
-     * @tc.name    : testArkWebFtpTransferAborted
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FTP_TRANSFER_ABORTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebFtpTransferAborted
+     * @tc.number SUB_WEB_NET_ERROR_20700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FTP_TRANSFER_ABORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebFtpTransferAborted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4051,12 +4051,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_20800
-     * @tc.name    : testArkWebFtpFileBusy
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FTP_FILE_BUSY
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebFtpFileBusy
+     * @tc.number SUB_WEB_NET_ERROR_20800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FTP_FILE_BUSY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebFtpFileBusy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4070,12 +4070,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_20900
-     * @tc.name    : testArkWebFtpSyntaxError
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FTP_SYNTAX_ERROR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebFtpSyntaxError
+     * @tc.number SUB_WEB_NET_ERROR_20900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FTP_SYNTAX_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebFtpSyntaxError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4089,12 +4089,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_21000
-     * @tc.name    : testArkWebFtpCommandUnsupported
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FTP_COMMAND_UNSUPPORTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebFtpCommandUnsupported
+     * @tc.number SUB_WEB_NET_ERROR_21000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FTP_COMMAND_UNSUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebFtpCommandUnsupported', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4108,12 +4108,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_21100
-     * @tc.name    : testArkWebFtpBadCommandSequence
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_FTP_BAD_COMMAND_SEQUENCE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebFtpBadCommandSequence
+     * @tc.number SUB_WEB_NET_ERROR_21100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_FTP_BAD_COMMAND_SEQUENCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebFtpBadCommandSequence', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4127,12 +4127,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_21200
-     * @tc.name    : testArkWebPkcs12ImportBadPassword
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PKCS12_IMPORT_BAD_PASSWORD
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebPkcs12ImportBadPassword
+     * @tc.number SUB_WEB_NET_ERROR_21200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PKCS12_IMPORT_BAD_PASSWORD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebPkcs12ImportBadPassword', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4146,12 +4146,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_21300
-     * @tc.name    : testArkWebPkcs12ImportFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PKCS12_IMPORT_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebPkcs12ImportFailed
+     * @tc.number SUB_WEB_NET_ERROR_21300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PKCS12_IMPORT_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebPkcs12ImportFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4165,12 +4165,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_21400
-     * @tc.name    : testArkWebImportCaCertNotCa
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_IMPORT_CA_CERT_NOT_CA
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebImportCaCertNotCa
+     * @tc.number SUB_WEB_NET_ERROR_21400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_IMPORT_CA_CERT_NOT_CA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebImportCaCertNotCa', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4184,12 +4184,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_21500
-     * @tc.name    : testArkWebImportCertAlreadyExists
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_IMPORT_CERT_ALREADY_EXISTS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebImportCertAlreadyExists
+     * @tc.number SUB_WEB_NET_ERROR_21500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_IMPORT_CERT_ALREADY_EXISTS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebImportCertAlreadyExists', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4203,12 +4203,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_21600
-     * @tc.name    : testArkWebImportCaCertFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_IMPORT_CA_CERT_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebImportCaCertFailed
+     * @tc.number SUB_WEB_NET_ERROR_21600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_IMPORT_CA_CERT_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebImportCaCertFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4222,12 +4222,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_21700
-     * @tc.name    : testArkWebImportServerCertFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_IMPORT_SERVER_CERT_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebImportServerCertFailed
+     * @tc.number SUB_WEB_NET_ERROR_21700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_IMPORT_SERVER_CERT_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebImportServerCertFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4241,12 +4241,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_21800
-     * @tc.name    : testArkWebPkcs12ImportInvalidMac
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PKCS12_IMPORT_INVALID_MAC
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebPkcs12ImportInvalidMac
+     * @tc.number SUB_WEB_NET_ERROR_21800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PKCS12_IMPORT_INVALID_MAC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebPkcs12ImportInvalidMac', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4260,12 +4260,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_21900
-     * @tc.name    : testArkWebPkcs12ImportInvalidFile
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PKCS12_IMPORT_INVALID_FILE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebPkcs12ImportInvalidFile
+     * @tc.number SUB_WEB_NET_ERROR_21900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PKCS12_IMPORT_INVALID_FILE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebPkcs12ImportInvalidFile', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4279,12 +4279,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_22000
-     * @tc.name    : testArkWebPkcs12ImportUnsupported
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PKCS12_IMPORT_UNSUPPORTED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebPkcs12ImportUnsupported
+     * @tc.number SUB_WEB_NET_ERROR_22000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PKCS12_IMPORT_UNSUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebPkcs12ImportUnsupported', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4298,12 +4298,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_22100
-     * @tc.name    : testArkWebKeyGenerationFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_KEY_GENERATION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebKeyGenerationFailed
+     * @tc.number SUB_WEB_NET_ERROR_22100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_KEY_GENERATION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebKeyGenerationFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4317,12 +4317,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_22200
-     * @tc.name    : testArkWebPrivateKeyExportFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_PRIVATE_KEY_EXPORT_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebPrivateKeyExportFailed
+     * @tc.number SUB_WEB_NET_ERROR_22200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_PRIVATE_KEY_EXPORT_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebPrivateKeyExportFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4336,12 +4336,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_22300
-     * @tc.name    : testArkWebSelfSignedCertGenerationFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_SELF_SIGNED_CERT_GENERATION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSelfSignedCertGenerationFailed
+     * @tc.number SUB_WEB_NET_ERROR_22300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_SELF_SIGNED_CERT_GENERATION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSelfSignedCertGenerationFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4355,12 +4355,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_22400
-     * @tc.name    : testArkWebCertDatabaseChanged
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_DATABASE_CHANGED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCertDatabaseChanged
+     * @tc.number SUB_WEB_NET_ERROR_22400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_DATABASE_CHANGED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCertDatabaseChanged', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4374,12 +4374,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_22500
-     * @tc.name    : testArkWebCertVerifierChanged
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_CERT_VERIFIER_CHANGED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebCertVerifierChanged
+     * @tc.number SUB_WEB_NET_ERROR_22500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_CERT_VERIFIER_CHANGED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebCertVerifierChanged', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4393,12 +4393,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_22600
-     * @tc.name    : testArkWebDnsMalformedResponse
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DNS_MALFORMED_RESPONSE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebDnsMalformedResponse
+     * @tc.number SUB_WEB_NET_ERROR_22600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DNS_MALFORMED_RESPONSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDnsMalformedResponse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4412,12 +4412,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_22700
-     * @tc.name    : testArkWebDnsServerRequiresTcp
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DNS_SERVER_REQUIRES_TCP
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebDnsServerRequiresTcp
+     * @tc.number SUB_WEB_NET_ERROR_22700
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DNS_SERVER_REQUIRES_TCP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDnsServerRequiresTcp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4431,12 +4431,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_22800
-     * @tc.name    : testArkWebDnsServerFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DNS_SERVER_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebDnsServerFailed
+     * @tc.number SUB_WEB_NET_ERROR_22800
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DNS_SERVER_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDnsServerFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4450,12 +4450,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_22900
-     * @tc.name    : testArkWebDnsTimedOut
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DNS_TIMED_OUT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebDnsTimedOut
+     * @tc.number SUB_WEB_NET_ERROR_22900
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DNS_TIMED_OUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDnsTimedOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4469,12 +4469,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_23000
-     * @tc.name    : testArkWebDnsCacheMiss
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DNS_CACHE_MISS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebDnsCacheMiss
+     * @tc.number SUB_WEB_NET_ERROR_23000
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DNS_CACHE_MISS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDnsCacheMiss', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4488,12 +4488,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_23100
-     * @tc.name    : testArkWebDnsSearchEmpty
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DNS_SEARCH_EMPTY
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebDnsSearchEmpty
+     * @tc.number SUB_WEB_NET_ERROR_23100
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DNS_SEARCH_EMPTY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDnsSearchEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4507,12 +4507,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_23200
-     * @tc.name    : testArkWebDnsSortError
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DNS_SORT_ERROR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebDnsSortError
+     * @tc.number SUB_WEB_NET_ERROR_23200
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DNS_SORT_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDnsSortError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4526,12 +4526,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_23300
-     * @tc.name    : testArkWebDnsSecureResolverHostnameResolutionFailed
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DNS_SECURE_RESOLVER_HOSTNAME_RESOLUTION_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebDnsSecureResolverHostnameResolutionFailed
+     * @tc.number SUB_WEB_NET_ERROR_23300
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DNS_SECURE_RESOLVER_HOSTNAME_RESOLUTION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDnsSecureResolverHostnameResolutionFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4545,12 +4545,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_23400
-     * @tc.name    : testArkWebDnsNameHttpsOnly
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DNS_NAME_HTTPS_ONLY
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebDnsNameHttpsOnly
+     * @tc.number SUB_WEB_NET_ERROR_23400
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DNS_NAME_HTTPS_ONLY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDnsNameHttpsOnly', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4564,12 +4564,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_23500
-     * @tc.name    : testArkWebDnsRequestCanceled
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DNS_REQUEST_CANCELED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebDnsRequestCanceled
+     * @tc.number SUB_WEB_NET_ERROR_23500
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DNS_REQUEST_CANCELED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDnsRequestCanceled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -4583,12 +4583,12 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_ERROR_23600
-     * @tc.name    : testArkWebDnsNoMatchingSupportedAlpn
-     * @tc.desc    : test ArkWeb_NetError Test ARKWEB_ERR_DNS_NO_MATCHING_SUPPORTED_ALPN
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebDnsNoMatchingSupportedAlpn
+     * @tc.number SUB_WEB_NET_ERROR_23600
+     * @tc.desc   test ArkWeb_NetError Test ARKWEB_ERR_DNS_NO_MATCHING_SUPPORTED_ALPN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebDnsNoMatchingSupportedAlpn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

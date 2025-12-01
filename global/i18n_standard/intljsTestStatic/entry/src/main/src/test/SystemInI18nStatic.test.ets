@@ -54,7 +54,6 @@ export default function SystemIni18nTest() {
       console.info("afterAll case");
     });
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_0100
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0100
      * @tc.desc   getDisplayCountry with zh-Hans-CN and en-US and true param
@@ -69,7 +68,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_0200
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0200
      * @tc.desc   getDisplayCountry with zh-Hans-CN and en-US and undefined param
@@ -84,7 +82,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_0400
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0400
      * @tc.desc   getDisplayCountry with zh and en-US and true param
@@ -106,7 +103,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_0500
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0500
      * @tc.desc   getDisplayCountry with zh-CN and en-US and true param
@@ -121,7 +117,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_0600
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0600
      * @tc.desc   getDisplayCountry with zh-Hans and en-US and true param
@@ -143,7 +138,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_0700
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0700
      * @tc.desc   getDisplayCountry with zh-Hans-CN and en-US and false param
@@ -158,7 +152,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_0800
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0800
      * @tc.desc   getDisplayCountry with zh-Hans-CN and en-US param
@@ -173,7 +166,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_1100
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1100
      * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-US and true param
@@ -188,7 +180,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_1200
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1200
      * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-US and undefined param
@@ -203,7 +194,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_1300
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1300
      * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-US and null param
@@ -218,7 +208,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_1400
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1400
      * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-GB and true param
@@ -233,7 +222,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_1500
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1500
      * @tc.desc   check the language, getDisplayLanguage with zh and en-US and true param
@@ -248,7 +236,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_1600
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1600
      * @tc.desc   check the language, getDisplayLanguage with zh-CN and en-US and true param
@@ -263,7 +250,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_1700
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1700
      * @tc.desc   check the language, getDisplayLanguage with zh-Hans and en-US and true param
@@ -278,7 +264,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_1800
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1800
      * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-US and false param
@@ -293,7 +278,6 @@ export default function SystemIni18nTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_1900
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1900
      * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-US param
@@ -308,7 +292,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_2200
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2200
      * @tc.desc   getSystemLanguages test
@@ -324,7 +307,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_2300
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2300
      * @tc.desc   getSystemCountries with en param
@@ -340,7 +322,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_2600
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2600
      * @tc.desc   isSuggested with zh param
@@ -355,7 +336,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_2700
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2700
      * @tc.desc   isSuggested with en param
@@ -370,7 +350,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_2800
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2800
      * @tc.desc   isSuggested with zh-CN param
@@ -385,7 +364,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_2900
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2900
      * @tc.desc   isSuggested with en-US param
@@ -400,7 +378,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_3200
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3200
      * @tc.desc   getSystemLanguage
@@ -415,7 +392,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_3300
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3300
      * @tc.desc   check the getSystemRegion
@@ -430,7 +406,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_3400
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3400
      * @tc.desc   check the getSystemLocaleInstance
@@ -444,7 +419,6 @@ export default function SystemIni18nTest() {
       expect(locale).assertInstanceOf('String');
     })
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_3500
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3500
      * @tc.desc   check the is24HourClock
@@ -459,7 +433,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_3600
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3600
      * @tc.desc   test the getPreferredLanguageList interface with default value
@@ -475,7 +448,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_3700
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3700
      * @tc.desc   test the getFirstPreferredLanguage interface
@@ -498,7 +470,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_3800
      * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3800
      * @tc.desc   test the getAppPreferredLanguage interface
@@ -514,7 +485,6 @@ export default function SystemIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_static_3900
      * @tc.number i18n_system_test_static_3900
      * @tc.desc   get the getUsingLocalDigit value,test getUsingLocalDigit method

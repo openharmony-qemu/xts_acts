@@ -41,9 +41,12 @@ void HuksMiscTest::SetUp() {}
 void HuksMiscTest::TearDown() {}
 
 /**
- * @tc.name: HuksMiscTest.Security_HUKS_NAPI_Misc_0100
- * @tc.desc: misc test
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_Misc_0100
+ * @tc.number Security_HUKS_NAPI_Misc_0100
+ * @tc.desc   misc test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HuksMiscTest, Security_HUKS_NAPI_Misc_0100, TestSize.Level0)
 {

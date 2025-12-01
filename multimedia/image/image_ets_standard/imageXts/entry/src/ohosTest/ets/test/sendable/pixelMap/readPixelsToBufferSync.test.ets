@@ -55,12 +55,12 @@ export default function sendableReadPixelsToBufferSyncTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_001
-     * @tc.name      : readPixelsToBufferSync_sendable_promise_001
-     * @tc.desc      : readPixelsToBufferSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   readPixelsToBufferSync_sendable_promise_001
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_001
+     * @tc.desc   readPixelsToBufferSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('readPixelsToBufferSync_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'readPixelsToBufferSync_sendable_promise_001';
@@ -71,12 +71,12 @@ export default function sendableReadPixelsToBufferSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_002
-     * @tc.name      : readPixelsToBufferSync_sendable_promise_002
-     * @tc.desc      : readPixelsToBufferSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   readPixelsToBufferSync_sendable_promise_002
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_002
+     * @tc.desc   readPixelsToBufferSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('readPixelsToBufferSync_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'readPixelsToBufferSync_sendable_promise_002';
@@ -87,12 +87,12 @@ export default function sendableReadPixelsToBufferSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_003  //TODO 同样传参 在readPixelsToBuffer就会报错 然后超时
-     * @tc.name      : readPixelsToBufferSync_sendable_promise_003
-     * @tc.desc      : readPixelsToBufferSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   readPixelsToBufferSync_sendable_promise_003
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_003  //TODO 同样传参 在readPixelsToBuffer就会报错 然后超时
+     * @tc.desc   readPixelsToBufferSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('readPixelsToBufferSync_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'readPixelsToBufferSync_sendable_promise_003';

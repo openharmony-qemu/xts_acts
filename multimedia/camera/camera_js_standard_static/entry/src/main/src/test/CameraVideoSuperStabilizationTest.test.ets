@@ -30,7 +30,7 @@ const TAG = "CameraVideoSuperStabilizationTest: ";
 let mCameraManager: cameraObj.CameraManager;
 let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
 let mCameraSession: cameraObj.VideoSession;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
 let mPhotoOutput: cameraObj.PhotoOutput;
@@ -107,7 +107,7 @@ export default function cameraVideoSuperStabilizationTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')
@@ -473,12 +473,12 @@ export default function cameraVideoSuperStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0200
-      * @tc.desc   Check video session set quality prioritization high quality with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0200
+     * @tc.desc   Check video session set quality prioritization high quality with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0200--------------");
@@ -524,12 +524,12 @@ export default function cameraVideoSuperStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0300
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0300
-      * @tc.desc   Check video session set quality prioritization low mode with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0300
+     * @tc.desc   Check video session set quality prioritization low mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0300--------------");

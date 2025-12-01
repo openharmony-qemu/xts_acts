@@ -57,7 +57,6 @@ export default function webTwoJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testBackOrForward_static_002
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0200
      * @tc.desc   test backOrForward
@@ -75,7 +74,6 @@ export default function webTwoJsunit() {
       done()
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testBackOrForward_static_003
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0300
      * @tc.desc   test backOrForward
@@ -94,7 +92,6 @@ export default function webTwoJsunit() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testBackOrForward_static_004
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0400
      * @tc.desc   test backOrForward

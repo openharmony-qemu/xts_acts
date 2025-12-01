@@ -25,12 +25,12 @@ export default function addProcessorTest() {
         hilog.info(domain, tag, 'describe start');
 
         /**
+         * @tc.name   testHiAppEvent008
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0100
-         * @tc.name testHiAppEvent008
-         * @tc.desc 验证添加数据处理者addProcessor无对应so，返回-1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证添加数据处理者addProcessor无对应so，返回-1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiAppEvent008', Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, 'testHiAppEvent008 start');
@@ -53,12 +53,12 @@ export default function addProcessorTest() {
         });
 
         /**
+         * @tc.name   testHiAppEvent009
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0200
-         * @tc.name testHiAppEvent009
-         * @tc.desc 验证添加数据处理者addProcessor为空字符串空，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证添加数据处理者addProcessor为空字符串空，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiAppEvent009', Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, 'testHiAppEvent009 start');
@@ -79,12 +79,12 @@ export default function addProcessorTest() {
         });
 
         /**
+         * @tc.name   testHiAppEvent010
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0300
-         * @tc.name testHiAppEvent010
-         * @tc.desc 验证添加数据处理者addProcessor，Processor可选参数非法，调用成功，有日志打印Parameter error
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证添加数据处理者addProcessor，Processor可选参数非法，调用成功，有日志打印Parameter error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiAppEvent010', Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, 'testHiAppEvent010 start');

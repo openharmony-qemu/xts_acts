@@ -27,13 +27,13 @@ export default function customComponentIdTest() {
       await Utils.pushPage(`customcomponent/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ID_0100
-     * @tc.name       : testCustomComponentId001
-     * @tc.desc       : test customComponent id with event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentId001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ID_0100
+     * @tc.desc   test customComponent id with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentId001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('onTouchFirst')

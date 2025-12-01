@@ -70,7 +70,6 @@ export default function dragPerssionNormalTest() {
       });
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0100
      * @tc.desc   setAppShareOptions
@@ -88,7 +87,6 @@ export default function dragPerssionNormalTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0200
      * @tc.desc   setAppShareOptions
@@ -107,7 +105,6 @@ export default function dragPerssionNormalTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0300
      * @tc.desc   setAppShareOptions
@@ -128,7 +125,6 @@ export default function dragPerssionNormalTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0400
      * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0400
      * @tc.desc   setAppShareOptions
@@ -148,7 +144,6 @@ export default function dragPerssionNormalTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0500
      * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0500
      * @tc.desc   setAppShareOptions
@@ -171,7 +166,6 @@ export default function dragPerssionNormalTest() {
 
     
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0600
      * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0600
      * @tc.desc   setAppShareOptions
@@ -189,7 +183,6 @@ export default function dragPerssionNormalTest() {
       }
     })   
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0700
      * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0700
      * @tc.desc   setAppShareOptions
@@ -209,7 +202,6 @@ export default function dragPerssionNormalTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0800
      * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0800
      * @tc.desc   setAppShareOptions
@@ -227,7 +219,6 @@ export default function dragPerssionNormalTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0900
      * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0900
      * @tc.desc   setAppShareOptions
@@ -247,7 +238,6 @@ export default function dragPerssionNormalTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000
      * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000
      * @tc.desc   setAppShareOptions

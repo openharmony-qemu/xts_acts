@@ -20,12 +20,12 @@ export default function abilityTest() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
 
     /**
-     * @tc.number    : CollectionsTestClass001
-     * @tc.name      : ArkTS Collections Array
-     * @tc.desc      : ArkTS Collections Array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestClass001
+     * @tc.number CollectionsTestClass001
+     * @tc.desc   ArkTS Collections Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let arkTsEmpty: collections.Array<number> = new collections.Array<number>();
@@ -38,12 +38,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass002
-     * @tc.name      : ArkTS Collections Int8Array
-     * @tc.desc      : ArkTS Collections Int8Array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestClass002
+     * @tc.number CollectionsTestClass002
+     * @tc.desc   ArkTS Collections Int8Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestClass002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let test: collections.Int8Array = new collections.Int8Array(5);
@@ -57,12 +57,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass003
-     * @tc.name      : ArkTS Collections Int16Array
-     * @tc.desc      : ArkTS Collections Int16Array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestClass003
+     * @tc.number CollectionsTestClass003
+     * @tc.desc   ArkTS Collections Int16Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestClass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let test: collections.Int16Array = new collections.Int16Array(5);
@@ -76,12 +76,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass004
-     * @tc.name      : ArkTS Collections Int32Array
-     * @tc.desc      : ArkTS Collections Int32Array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestClass004
+     * @tc.number CollectionsTestClass004
+     * @tc.desc   ArkTS Collections Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestClass004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let test: collections.Int32Array = new collections.Int32Array(5);
@@ -95,12 +95,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass005
-     * @tc.name      : ArkTS Collections Set
-     * @tc.desc      : ArkTS Collections Set
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestClass005
+     * @tc.number CollectionsTestClass005
+     * @tc.desc   ArkTS Collections Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestClass005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let set1: collections.Set<number> = new collections.Set();
@@ -113,12 +113,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass006
-     * @tc.name      : ArkTS Collections Uint8Array
-     * @tc.desc      : ArkTS Collections Uint8Array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestClass006
+     * @tc.number CollectionsTestClass006
+     * @tc.desc   ArkTS Collections Uint8Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestClass006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let test: collections.Uint8Array = new collections.Uint8Array(5);
@@ -132,12 +132,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass007
-     * @tc.name      : ArkTS Collections Uint16Array
-     * @tc.desc      : ArkTS Collections Uint16Array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestClass007
+     * @tc.number CollectionsTestClass007
+     * @tc.desc   ArkTS Collections Uint16Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestClass007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let test: collections.Uint16Array = new collections.Uint16Array(5);
@@ -151,12 +151,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass008
-     * @tc.name      : ArkTS Collections Uint32Array
-     * @tc.desc      : ArkTS Collections Uint32Array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestClass008
+     * @tc.number CollectionsTestClass008
+     * @tc.desc   ArkTS Collections Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestClass008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let test: collections.Uint32Array = new collections.Uint32Array(5);
@@ -170,12 +170,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass009
-     * @tc.name      : ArkTS Collections Map
-     * @tc.desc      : ArkTS Collections Map
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   CollectionsTestClass009
+     * @tc.number CollectionsTestClass009
+     * @tc.desc   ArkTS Collections Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CollectionsTestClass009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let map1: collections.Map<number, number> = new collections.Map();
@@ -188,12 +188,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass010
-     * @tc.name      : ArkTS Collections Json
-     * @tc.desc      : ArkTS Collections Json
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   CollectionsTestClass010
+     * @tc.number CollectionsTestClass010
+     * @tc.desc   ArkTS Collections Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CollectionsTestClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       @Sendable
@@ -222,12 +222,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass011
-     * @tc.name      : ArkTS Collections Uint8ClampedArray
-     * @tc.desc      : ArkTS Collections Uint8ClampedArray
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   CollectionsTestClass011
+     * @tc.number CollectionsTestClass011
+     * @tc.desc   ArkTS Collections Uint8ClampedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CollectionsTestClass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let arkTSTest : collections.Uint8ClampedArray = new collections.Uint8ClampedArray(5);
@@ -241,12 +241,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass012
-     * @tc.name      : ArkTS Collections BigInt
-     * @tc.desc      : ArkTS Collections BigInt
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   CollectionsTestClass012
+     * @tc.number CollectionsTestClass012
+     * @tc.desc   ArkTS Collections BigInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("CollectionsTestClass012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let options : ArkTSUtils.ASON.ParseOptions = {
@@ -260,12 +260,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass013
-     * @tc.name      : ArkTS Collections Float32Array
-     * @tc.desc      : ArkTS Collections Float32Array
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   CollectionsTestClass013
+     * @tc.number CollectionsTestClass013
+     * @tc.desc   ArkTS Collections Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CollectionsTestClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let arkTSTest : collections.Float32Array = new collections.Float32Array(3);
@@ -279,12 +279,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass014
-     * @tc.name      : ArkTS Sendable class implement interface
-     * @tc.desc      : ArkTS Sendable class implement interface
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   CollectionsTestClass014
+     * @tc.number CollectionsTestClass014
+     * @tc.desc   ArkTS Sendable class implement interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CollectionsTestClass014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       interface I {

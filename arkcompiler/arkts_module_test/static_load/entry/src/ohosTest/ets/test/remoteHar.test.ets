@@ -21,12 +21,12 @@ import validator2 from 'validator/validator';
 export default function staticLoadRemoteHar() {
   describe('StaticLoadRemoteHarTest', () => {
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_Remote_HAR_0100
-     * @tc.name      : testRemoteHar01
-     * @tc.desc      : Remote har, package name xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRemoteHar01
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_Remote_HAR_0100
+     * @tc.desc   Remote har, package name xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testRemoteHar01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testRemoteHar01";
@@ -39,12 +39,12 @@ export default function staticLoadRemoteHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_Remote_HAR_0200
-     * @tc.name      : testRemoteHar02
-     * @tc.desc      : Remote har, two-level package name @xxx/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRemoteHar02
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_Remote_HAR_0200
+     * @tc.desc   Remote har, two-level package name @xxx/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testRemoteHar02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testRemoteHar02";
@@ -57,12 +57,12 @@ export default function staticLoadRemoteHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_Remote_HAR_0300
-     * @tc.name      : testRemoteHar03
-     * @tc.desc      : Remote har, package name + path xxx/file/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRemoteHar03
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_Remote_HAR_0300
+     * @tc.desc   Remote har, package name + path xxx/file/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testRemoteHar03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testRemoteHar03";
@@ -75,12 +75,12 @@ export default function staticLoadRemoteHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_Remote_HAR_0400
-     * @tc.name      : testRemoteHar04
-     * @tc.desc      : Remote har, two-level package name + path @xxx/xxx/file/xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRemoteHar04
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_Remote_HAR_0400
+     * @tc.desc   Remote har, two-level package name + path @xxx/xxx/file/xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testRemoteHar04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testRemoteHar04";

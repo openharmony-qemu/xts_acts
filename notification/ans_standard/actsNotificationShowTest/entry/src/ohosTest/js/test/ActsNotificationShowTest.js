@@ -20,11 +20,14 @@ export default function ActsNotificationShowTest() {
     const TAG = 'SUB_NOTIFICATION_ANS_SHOW_TEST ===> '
     console.info(TAG + "SUB_NOTIFICATION_ANS_SHOW_TEST START")
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Distributed_Enable_5300
-    * @tc.name: show()
-    * @tc.desc: verify the function of show
-    */
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_5300
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_5300
+     * @tc.desc   verify the function of show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Distributed_Enable_5300', Level.LEVEL2, async function (done) {
       console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_5300 START ')
       let ShowNotificationOptions = {
@@ -54,10 +57,13 @@ export default function ActsNotificationShowTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_5400
-     * @tc.name: show()
-     * @tc.desc: verify the function of show
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_5400
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_5400
+     * @tc.desc   verify the function of show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Enable_5400', Level.LEVEL2, async function (done) {
       console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_5400 START ')
@@ -82,10 +88,13 @@ export default function ActsNotificationShowTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_5500
-     * @tc.name: show()
-     * @tc.desc: verify the function of show
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_5500
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_5500
+     * @tc.desc   verify the function of show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Enable_5500', Level.LEVEL2, async function (done) {
       console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_5500 START ')
@@ -102,10 +111,13 @@ export default function ActsNotificationShowTest() {
     
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_5600
-     * @tc.name: show()
-     * @tc.desc: verify the function of show
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_5600
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_5600
+     * @tc.desc   verify the function of show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Enable_5600', Level.LEVEL2, async function (done) {
       console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_5600 START ')
@@ -139,10 +151,13 @@ export default function ActsNotificationShowTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_5700
-     * @tc.name: show()
-     * @tc.desc: verify the function of show
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_5700
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_5700
+     * @tc.desc   verify the function of show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Enable_5700', Level.LEVEL2, async function (done) {
       console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_5700 START ')
@@ -177,10 +192,13 @@ export default function ActsNotificationShowTest() {
     
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_5800
-     * @tc.name: show()
-     * @tc.desc: verify the function of show
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_5800
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_5800
+     * @tc.desc   verify the function of show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Enable_5800', Level.LEVEL2, async function (done) {
       console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_5800 START ')
@@ -214,10 +232,13 @@ export default function ActsNotificationShowTest() {
       
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_5900
-     * @tc.name: show()
-     * @tc.desc: verify the function of show
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_5900
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_5900
+     * @tc.desc   verify the function of show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Enable_5900', Level.LEVEL2, async function (done) {
       console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_5900 START ')
@@ -251,10 +272,13 @@ export default function ActsNotificationShowTest() {
       
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_6000
-     * @tc.name: show()
-     * @tc.desc: verify the function of show
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_6000
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_6000
+     * @tc.desc   verify the function of show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Enable_6000', Level.LEVEL2, async function (done) {
       console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_6000 START ')
@@ -288,10 +312,13 @@ export default function ActsNotificationShowTest() {
       
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_6100
-     * @tc.name: show()
-     * @tc.desc: verify the function of show
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_6100
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_6100
+     * @tc.desc   verify the function of show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Enable_6100', Level.LEVEL2, async function (done) {
       console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_6100 START ')
@@ -323,10 +350,13 @@ export default function ActsNotificationShowTest() {
       
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_6200
-     * @tc.name: show()
-     * @tc.desc: verify the function of show
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Enable_6200
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_6200
+     * @tc.desc   verify the function of show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Enable_6200', Level.LEVEL2, async function (done) {
       console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_6200 START ')

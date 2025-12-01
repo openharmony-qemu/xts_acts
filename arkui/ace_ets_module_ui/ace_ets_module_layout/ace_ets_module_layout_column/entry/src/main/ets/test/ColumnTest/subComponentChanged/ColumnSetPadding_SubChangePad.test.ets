@@ -46,9 +46,12 @@ export default function ColumnSetPadding_SubChangePad() {
     });
 
     /**
+     * @tc.name   testColumnParentPaddingSubPadding
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_0300
-     * @tc.name testColumnParentPaddingSubPadding
-     * @tc.desc Parent component and subcomponent both set paddding.
+     * @tc.desc   Parent component and subcomponent both set paddding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnParentPaddingSubPadding',  Level.LEVEL0, async () => {
       console.info('new testColumnParentPaddingSubPadding START');

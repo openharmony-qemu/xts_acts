@@ -45,9 +45,12 @@ export default function requestFocus2() {
     });
 
     /**
+     * @tc.name   requestFocus2_0100
      * @tc.number requestFocus2_0100
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   requestFocus2_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('requestFocus2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('requestFocus2_0100 START');

@@ -48,12 +48,12 @@ export default function PanGestureHandlerTest() {
     });
 
     /**
-     * @tc.number    PanGestureHandler_0010
-     * @tc.name      PanGestureHandlerOptions
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PanGestureHandler_0010
+     * @tc.number PanGestureHandler_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanGestureHandler_0010', Level.LEVEL0, async (done: Function) => {
       console.info('PanGestureHandler_0010 START');

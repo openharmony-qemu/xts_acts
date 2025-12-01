@@ -27,13 +27,13 @@ export default function HasAxisTest(){
       await Utils.pushPage(`hasAxisTest/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_HasAxisTest_001
-     * @tc.name       : HasAxisTest_001
-     * @tc.desc       : Test RegisterCommonEvent.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   HasAxisTest_001
+     * @tc.number SUB_ARKUI_CAPI_HasAxisTest_001
+     * @tc.desc   Test RegisterCommonEvent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('HasAxisTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[HasAxisTest_001] START'); 

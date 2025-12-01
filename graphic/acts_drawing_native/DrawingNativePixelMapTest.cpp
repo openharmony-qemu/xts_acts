@@ -63,13 +63,13 @@ class DrawingNativePixelMapTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0100
- * @tc.name: testPixelMapGetFromNativePixelMapNormal
- * @tc.desc: test for testPixelMapGetFromNativePixelMapNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPixelMapGetFromNativePixelMapNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0100
+ * @tc.desc   test for testPixelMapGetFromNativePixelMapNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromNativePixelMapNormal, Function | SmallTest | Level0) {
     // todo: how to get NativePixelMap_?
@@ -79,26 +79,26 @@ HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromNativePixelMapNormal, Fun
     EXPECT_EQ(drPixelMap, nullptr);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0101
- * @tc.name: testPixelMapGetFromNativePixelMapNull
- * @tc.desc: test for testPixelMapGetFromNativePixelMapNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPixelMapGetFromNativePixelMapNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0101
+ * @tc.desc   test for testPixelMapGetFromNativePixelMapNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromNativePixelMapNull, Function | SmallTest | Level3) {
     OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromNativePixelMap(nullptr);
     EXPECT_EQ(drPixelMap, nullptr);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0102
- * @tc.name: testPixelMapGetFromNativePixelMapMultipleCalls
- * @tc.desc: test for testPixelMapGetFromNativePixelMapMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPixelMapGetFromNativePixelMapMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0102
+ * @tc.desc   test for testPixelMapGetFromNativePixelMapMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromNativePixelMapMultipleCalls, Function | SmallTest | Level3) {
     // todo: how to get NativePixelMap_?
@@ -110,13 +110,13 @@ HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromNativePixelMapMultipleCal
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0102
- * @tc.name: testPixelMapGetFromNativePixelMapBoundary
- * @tc.desc: test for testPixelMapGetFromNativePixelMapBoundary.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPixelMapGetFromNativePixelMapBoundary
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0102
+ * @tc.desc   test for testPixelMapGetFromNativePixelMapBoundary.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromNativePixelMapBoundary, Function | SmallTest | Level0) {
     // todo: how to get NativePixelMap_?
@@ -126,13 +126,13 @@ HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromNativePixelMapBoundary, F
     EXPECT_EQ(drPixelMap, nullptr);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0200
- * @tc.name: testPixelMapGetFromOhPixelMapNativeNormal
- * @tc.desc: test for testPixelMapGetFromOhPixelMapNativeNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPixelMapGetFromOhPixelMapNativeNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0200
+ * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromOhPixelMapNativeNormal, Function | SmallTest | Level0) {
     OH_PixelmapNative *pixelMap = GET_OH_PixelmapNative();
@@ -145,13 +145,13 @@ HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromOhPixelMapNativeNormal, F
     OH_PixelmapNative_Release(pixelMap);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0201
- * @tc.name: testPixelMapGetFromOhPixelMapNativeNull
- * @tc.desc: test for testPixelMapGetFromOhPixelMapNativeNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPixelMapGetFromOhPixelMapNativeNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0201
+ * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromOhPixelMapNativeNull, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_PixelMapGetFromOhPixelMapNative with nullptr as parameter and check the error code using
@@ -160,13 +160,13 @@ HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromOhPixelMapNativeNull, Fun
     EXPECT_EQ(drPixelMap, nullptr);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0202
- * @tc.name: testPixelMapGetFromOhPixelMapNativeMultipleCalls
- * @tc.desc: test for testPixelMapGetFromOhPixelMapNativeMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPixelMapGetFromOhPixelMapNativeMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0202
+ * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromOhPixelMapNativeMultipleCalls, Function | SmallTest | Level3) {
     OH_PixelmapNative *pixelMap = GET_OH_PixelmapNative();
@@ -180,13 +180,13 @@ HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromOhPixelMapNativeMultipleC
     OH_PixelmapNative_Release(pixelMap);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0203
- * @tc.name: testPixelMapGetFromOhPixelMapNativeBoundary
- * @tc.desc: test for testPixelMapGetFromOhPixelMapNativeBoundary.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPixelMapGetFromOhPixelMapNativeBoundary
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0203
+ * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeBoundary.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromOhPixelMapNativeBoundary, Function | SmallTest | Level0) {
     uint32_t width = 4096;
@@ -204,13 +204,13 @@ HWTEST_F(DrawingNativePixelMapTest, testPixelMapGetFromOhPixelMapNativeBoundary,
     EXPECT_EQ(pixelMap, nullptr);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0300
- * @tc.name: testPixelMapDissolveNormal
- * @tc.desc: test for testPixelMapDissolveNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPixelMapDissolveNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0300
+ * @tc.desc   test for testPixelMapDissolveNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePixelMapTest, testPixelMapDissolveNormal, Function | SmallTest | Level0) {
     OH_PixelmapNative *pixelMap = GET_OH_PixelmapNative();
@@ -225,13 +225,13 @@ HWTEST_F(DrawingNativePixelMapTest, testPixelMapDissolveNormal, Function | Small
     OH_PixelmapNative_Release(pixelMap);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0301
- * @tc.name: testPixelMapDissolveNull
- * @tc.desc: test for testPixelMapDissolveNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPixelMapDissolveNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0301
+ * @tc.desc   test for testPixelMapDissolveNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePixelMapTest, testPixelMapDissolveNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_PixelMapDissolve parameter is null

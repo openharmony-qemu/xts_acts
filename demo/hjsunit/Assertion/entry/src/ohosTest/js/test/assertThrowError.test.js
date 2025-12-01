@@ -16,7 +16,6 @@ import {describe, it, expect, expect, Level, Size, TestType } from 'deccjsunit/i
 
 describe('assertThrowError', function () {
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertThrowErrorFail001
      * @tc.number assertThrowErrorFail001
      * @tc.desc   assertThrowErrorFail001
@@ -29,7 +28,6 @@ describe('assertThrowError', function () {
         expect(a).assertThrowError()
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertThrowErrorSuccess
      * @tc.number assertThrowErrorSuccess
      * @tc.desc   assertThrowErrorSuccess
@@ -45,7 +43,6 @@ describe('assertThrowError', function () {
         expect(a).assertThrowError("exception");
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertThrowErrorFail002
      * @tc.number assertThrowErrorFail002
      * @tc.desc   assertThrowErrorFail002

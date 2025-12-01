@@ -45,6 +45,14 @@ export default function StackChildAlignmentTest() {
     afterEach(async () => {
     });
 
+     /**
+      * @tc.name   StackChildAlignmentTest_0100
+      * @tc.number StackChildAlignmentTest_0100
+      * @tc.desc   StackChildAlignmentTest_0100
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('StackChildAlignmentTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[StackChildAlignmentTest_0100] START');
       let driver = await Driver.create()

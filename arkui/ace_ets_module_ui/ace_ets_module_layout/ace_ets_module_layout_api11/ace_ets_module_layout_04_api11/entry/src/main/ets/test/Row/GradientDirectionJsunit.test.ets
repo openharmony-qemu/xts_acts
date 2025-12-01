@@ -45,6 +45,14 @@ export default function gradientDirectionJsunit() {
       console.info('[ afterEach ] ===================GradientDirection test after each called===================');
     });
 
+    /**
+     * @tc.name   GradientDirectionTest_0100
+     * @tc.number GradientDirectionTest_0100
+     * @tc.desc   GradientDirectionTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GradientDirectionTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('GradientDirectionTest_0100 START');
       let strJson = getInspectorByKey('GradientDirection');
@@ -56,6 +64,14 @@ export default function gradientDirectionJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GradientDirectionTest_0200
+     * @tc.number GradientDirectionTest_0200
+     * @tc.desc   GradientDirectionTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GradientDirectionTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('GradientDirectionTest_0200 START');
       try {
@@ -83,6 +99,14 @@ export default function gradientDirectionJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GradientDirectionTest_0300
+     * @tc.number GradientDirectionTest_0300
+     * @tc.desc   GradientDirectionTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GradientDirectionTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('GradientDirectionTest_0300 START');
       try {
@@ -110,6 +134,14 @@ export default function gradientDirectionJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GradientDirectionTest_0400
+     * @tc.number GradientDirectionTest_0400
+     * @tc.desc   GradientDirectionTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GradientDirectionTest_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('GradientDirectionTest_0400 START');
       try {

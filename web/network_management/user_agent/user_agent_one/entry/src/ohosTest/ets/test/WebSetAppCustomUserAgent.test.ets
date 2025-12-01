@@ -64,14 +64,14 @@ export default function webSetAppCustomUserAgent() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETAPPCUSTOMUSERAGENT_API_0100
-    * @tc.name       : testSetAppCustomUserAgent
-    * @tc.desc       : test setAppCustomUserAgent
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSetAppCustomUserAgent
+     * @tc.number SUB_ACE_WEB_SETAPPCUSTOMUSERAGENT_API_0100
+     * @tc.desc   test setAppCustomUserAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetAppCustomUserAgent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetAppCustomUserAgent', 174010);
       Utils.registerBaseEvent('testSetAppCustomUserAgent', true, 174020, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -79,14 +79,14 @@ export default function webSetAppCustomUserAgent() {
       });
       sendEventByKey('WebSetAppCustomUserAgentButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETAPPCUSTOMUSERAGENT_ERROR_0100
-    * @tc.name       : testSetAppCustomUserAgentNull
-    * @tc.desc       : test setAppCustomUserAgent null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSetAppCustomUserAgentNull
+     * @tc.number SUB_ACE_WEB_SETAPPCUSTOMUSERAGENT_ERROR_0100
+     * @tc.desc   test setAppCustomUserAgent null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetAppCustomUserAgentNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetAppCustomUserAgentNull', 174010);
       Utils.registerBaseEvent('testSetAppCustomUserAgentNull', '401', 174030, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -94,14 +94,14 @@ export default function webSetAppCustomUserAgent() {
       });
       sendEventByKey('WebSetAppCustomUserAgentButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETAPPCUSTOMUSERAGENT_ERROR_0200
-    * @tc.name       : testSetAppCustomUserAgentUndefined
-    * @tc.desc       : test setAppCustomUserAgent undefined
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSetAppCustomUserAgentUndefined
+     * @tc.number SUB_ACE_WEB_SETAPPCUSTOMUSERAGENT_ERROR_0200
+     * @tc.desc   test setAppCustomUserAgent undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetAppCustomUserAgentUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetAppCustomUserAgentUndefined', 174010);
       Utils.registerBaseEvent('testSetAppCustomUserAgentUndefined', '401', 174040, done, (backData: events_emitter.EventData, expected: Object) => {

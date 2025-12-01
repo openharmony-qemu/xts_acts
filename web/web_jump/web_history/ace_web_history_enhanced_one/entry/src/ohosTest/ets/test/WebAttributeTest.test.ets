@@ -62,14 +62,14 @@ export default function webAttributeTest() {
     })
 
 
-    /*
-    * @tc.number      : SUB_WEB_ONREFRESHACCESSEDHISTORY_0100
-    * @tc.name        : testOnRefreshAccessedHistory001
-    * @tc.desc        : test onRefreshAccessedHistory when loadUrl
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testOnRefreshAccessedHistory001
+     * @tc.number SUB_WEB_ONREFRESHACCESSEDHISTORY_0100
+     * @tc.desc   test onRefreshAccessedHistory when loadUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnRefreshAccessedHistory001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnRefreshAccessedHistory001", 133000)
       Utils.registerEvent("testOnRefreshAccessedHistory001", "resource://rawfile/second.html", 133010, done);
@@ -77,14 +77,14 @@ export default function webAttributeTest() {
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONREFRESHACCESSEDHISTORY_0200
-    * @tc.name        : testOnRefreshAccessedHistory002
-    * @tc.desc        : test onRefreshAccessedHistory when refresh
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnRefreshAccessedHistory002
+     * @tc.number SUB_WEB_ONREFRESHACCESSEDHISTORY_0200
+     * @tc.desc   test onRefreshAccessedHistory when refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnRefreshAccessedHistory002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnRefreshAccessedHistory002", 133000)
       Utils.registerEvent("testOnRefreshAccessedHistory002", "resource://rawfile/second.html", 133030, done);

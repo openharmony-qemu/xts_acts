@@ -205,6 +205,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         })
         // HKS_SUPPORT_SM4_CBC_NOPADDING
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_10148
+         * @tc.number Security_HUKS_Cipher_API9_SM4_10148
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_10148
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_10148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODECBCKeyAlias101';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -241,6 +249,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_101240
+         * @tc.number Security_HUKS_Cipher_API9_SM4_101240
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_101240
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_101240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODECBCKeyAlias101';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -277,6 +293,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_10248
+         * @tc.number Security_HUKS_Cipher_API9_SM4_10248
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_10248
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_10248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODECBCKeyAlias102';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -299,6 +323,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_102240
+         * @tc.number Security_HUKS_Cipher_API9_SM4_102240
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_102240
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_102240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODECBCKeyAlias102';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -322,6 +354,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
         });
 
         // HKS_SUPPORT_SM4_CBC_PKCS7
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_10348
+         * @tc.number Security_HUKS_Cipher_API9_SM4_10348
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_10348
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_10348', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGPKCS7MODECBCKeyAlias103';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -360,6 +400,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_103240
+         * @tc.number Security_HUKS_Cipher_API9_SM4_103240
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_103240
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_103240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGPKCS7MODECBCKeyAlias103';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -398,6 +446,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_10448
+         * @tc.number Security_HUKS_Cipher_API9_SM4_10448
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_10448
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_10448', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGPKCS7MODECBCKeyAlias104';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -422,6 +478,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_104240
+         * @tc.number Security_HUKS_Cipher_API9_SM4_104240
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_104240
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_104240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGPKCS7MODECBCKeyAlias104';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -447,6 +511,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
         });
 
         // HKS_SUPPORT_SM4_CTR_NOPADDING
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_10548
+         * @tc.number Security_HUKS_Cipher_API9_SM4_10548
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_10548
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_10548', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODECTRKeyAlias105';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -483,6 +555,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_105240
+         * @tc.number Security_HUKS_Cipher_API9_SM4_105240
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_105240
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_105240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODECTRKeyAlias105';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -519,6 +599,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_10648
+         * @tc.number Security_HUKS_Cipher_API9_SM4_10648
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_10648
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_10648', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODECTRKeyAlias106';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -541,6 +629,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_106240
+         * @tc.number Security_HUKS_Cipher_API9_SM4_106240
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_106240
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_106240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODECTRKeyAlias106';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -564,6 +660,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
         });
 
         // HKS_SUPPORT_SM4_ECB_NOPADDING
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_10748
+         * @tc.number Security_HUKS_Cipher_API9_SM4_10748
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_10748
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_10748', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODEECBKeyAlias107';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -602,6 +706,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_107240
+         * @tc.number Security_HUKS_Cipher_API9_SM4_107240
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_107240
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_107240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODEECBKeyAlias107';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -640,6 +752,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_10848
+         * @tc.number Security_HUKS_Cipher_API9_SM4_10848
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_10848
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_10848', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODEECBKeyAlias108';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -664,6 +784,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_108240
+         * @tc.number Security_HUKS_Cipher_API9_SM4_108240
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_108240
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_108240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGNONEMODEECBKeyAlias108';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -689,6 +817,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
         });
 
         // HKS_SUPPORT_SM4_ECB_PKCS7
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_10948
+         * @tc.number Security_HUKS_Cipher_API9_SM4_10948
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_10948
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_10948', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGPKCS7MODEECBKeyAlias109';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -727,6 +863,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_109240
+         * @tc.number Security_HUKS_Cipher_API9_SM4_109240
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_109240
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_109240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGPKCS7MODEECBKeyAlias109';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -765,6 +909,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_11048
+         * @tc.number Security_HUKS_Cipher_API9_SM4_11048
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_11048
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_11048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGPKCS7MODEECBKeyAlias110';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);
@@ -789,6 +941,14 @@ export default function SecurityHuksCipherSM4PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM4_110240
+         * @tc.number Security_HUKS_Cipher_API9_SM4_110240
+         * @tc.desc   Security_HUKS_Cipher_API9_SM4_110240
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM4_110240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testCipherSM4Size128PADDINGPKCS7MODEECBKeyAlias110';
             genHuksOptions.properties.splice(2, 1, HuksCipherSM4.HuksKeySM4Size128);

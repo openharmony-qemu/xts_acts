@@ -26,6 +26,8 @@ group("cryptoFramework") {
       "js_api_test_oh41_static:ActsCryptoFrameworkThreeJSFuncStaticTest",
       "js_api_test_one:ActsCryptoFrameworkJSNormalTest",
       "js_api_test_one_static:ActsCryptoFrameworkJSNormalStaticTest",
+      "cryptoFramework_test_oh61:ActsCryptoFrameworkArkTsAPI23FuncTest",
+      "cryptoFramework_test_oh61_static:ActsCryptoFrameworkArkTsAPI23FuncStaticTest"
     ]
   }
 }

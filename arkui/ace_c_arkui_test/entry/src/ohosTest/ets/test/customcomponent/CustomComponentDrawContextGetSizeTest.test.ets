@@ -26,15 +26,14 @@ export default function customComponentDrawContextGetSizeTest() {
       await Utils.pushPage(`customcomponent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DRAW_CONTEXT_GET_SIZE_001
-    * @tc.name       : testCustomComponentDrawContextGetSize001
-    * @tc.desc       : test custom event callback
-    * @tc.size       : MediumTest
-    
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentDrawContextGetSize001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DRAW_CONTEXT_GET_SIZE_001
+     * @tc.desc   test custom event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentDrawContextGetSize001', Level.LEVEL1, async (done: Function) => {
       await Utils.sleep(1000)
       expect(Utils.getComponentInfoByKey('OnDrawTest').$attrs.backgroundColor).assertEqual('#FF00FF00')

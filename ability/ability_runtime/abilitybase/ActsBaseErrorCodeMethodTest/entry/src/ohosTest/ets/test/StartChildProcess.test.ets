@@ -33,13 +33,13 @@ export default function ndkTest() {
     afterEach(() => {})
     afterAll(() => {})
     
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_0100
-     * @tc.name   : To verify that the input parameter startMode of startChildProcess is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_0100
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_0100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_AA_ChildProcessManager_startChildProcess_0100`;
@@ -70,13 +70,13 @@ export default function ndkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_0200
-     * @tc.name   : To verify that the input parameter startMode of startChildProcess is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_0200
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_0200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_0200', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_0200`;
@@ -103,13 +103,13 @@ export default function ndkTest() {
 
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_0300
-     * @tc.name   : To verify that the input parameter srcEntry of startChildProcess is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_0300
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_0300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_0300', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_AA_ChildProcessManager_startChildProcess_0300`;
@@ -140,13 +140,13 @@ export default function ndkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_0400
-     * @tc.name   : To verify that the input parameter srcEntry of startChildProcess is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_0400
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_0400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_0400', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_0400`;
@@ -174,13 +174,13 @@ export default function ndkTest() {
     });
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_0500
-     * @tc.name   : To verify that the input parameter srcEntry of startChildProcess is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_0500
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_0500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_0500', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_0500`;
@@ -212,13 +212,13 @@ export default function ndkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_0600
-     * @tc.name   : To verify that the input parameter srcEntry of startChildProcess is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_0600
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_0600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_0600', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_0600`;
@@ -245,13 +245,13 @@ export default function ndkTest() {
     });
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_0700
-     * @tc.name   : To verify that the input parameter startMode of startChildProcess is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_0700
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_0700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_0700', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_0700`;
@@ -282,13 +282,13 @@ export default function ndkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_0800
-     * @tc.name   : To verify that the input parameter startMode of startChildProcess is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_0800
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_0800
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_0800', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_0800`;
@@ -315,13 +315,13 @@ export default function ndkTest() {
 
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_0900
-     * @tc.name   : To verify that the input parameter srcEntry of startChildProcess is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_0900
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_0900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_0900', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_0900`;
@@ -352,13 +352,13 @@ export default function ndkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_1000
-     * @tc.name   : To verify that the input parameter srcEntry of startChildProcess is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_1000
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_1000
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_1000', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_1000`;
@@ -386,13 +386,13 @@ export default function ndkTest() {
     });
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_1100
-     * @tc.name   : To verify that the input parameter srcEntry of startChildProcess is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_1100
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_1100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_1100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_1100`;
@@ -424,13 +424,13 @@ export default function ndkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_startChildProcess_1200
-     * @tc.name   : To verify that the input parameter srcEntry of startChildProcess is undefined(callback).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_startChildProcess_1200
+     * @tc.number SUB_Ability_AbilityBase_startChildProcess_1200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_startChildProcess_1200', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_1200`;

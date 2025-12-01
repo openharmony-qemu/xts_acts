@@ -49,10 +49,12 @@ export default function flexAlign_SpaceBetween_fixedChildParentMarPad() {
     });
 
     /**
+     * @tc.name   testAlignSpaceBetweenRowNoWrapMarPadOutRange
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEBETWEEN_TEST_0600
-     * @tc.name testAlignSpaceBetweenRowNoWrapMarPadOutRange
-     * @tc.desc The child component is fixed, and parent component is bound with padding and margin attributes,
-     *               the layout space of parent is insufficient to meet the spindle layout requirements of child
+     * @tc.desc   The child component is fixed, and parent component is bound with padding and margin attributes,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceBetweenRowNoWrapMarPadOutRange',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapMarPadOutRange START');
@@ -94,10 +96,12 @@ export default function flexAlign_SpaceBetween_fixedChildParentMarPad() {
     });
 
     /**
+     * @tc.name   testAlignSpaceBetweenRowNoWrapMarPadInRange
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEBETWEEN_TEST_0700
-     * @tc.name testAlignSpaceBetweenRowNoWrapMarPadInRange
-     * @tc.desc The child component is fixed, and parent component is bound with padding and margin attributes,
-     *               the layout space of parent component meets the spindle layout requirements of child component
+     * @tc.desc   The child component is fixed, and parent component is bound with padding and margin attributes,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceBetweenRowNoWrapMarPadInRange',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapMarPadInRange START');

@@ -26,78 +26,78 @@ export default function spanTextBackgroundStyleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0100
-     * @tc.name       : testSpanTextBackgroundStyle001
-     * @tc.desc       : testing content for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanTextBackgroundStyle001
+     * @tc.number SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0100
+     * @tc.desc   testing content for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanTextBackgroundStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanTextBackgroundStyle001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0200
-     * @tc.name       : testSpanTextBackgroundStyle002
-     * @tc.desc       : testing content for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanTextBackgroundStyle002
+     * @tc.number SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0200
+     * @tc.desc   testing content for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanTextBackgroundStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanTextBackgroundStyle002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0300
-     * @tc.name       : testSpanTextBackgroundStyle003
-     * @tc.desc       : testing content for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanTextBackgroundStyle003
+     * @tc.number SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0300
+     * @tc.desc   testing content for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanTextBackgroundStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanTextBackgroundStyle003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0400
-     * @tc.name       : testSpanTextBackgroundStyle004
-     * @tc.desc       : testing content for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanTextBackgroundStyle004
+     * @tc.number SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0400
+     * @tc.desc   testing content for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanTextBackgroundStyle004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanTextBackgroundStyle004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0500
-     * @tc.name       : testSpanTextBackgroundStyle005
-     * @tc.desc       : testing content for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanTextBackgroundStyle005
+     * @tc.number SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0500
+     * @tc.desc   testing content for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanTextBackgroundStyle005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanTextBackgroundStyle005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0600
-     * @tc.name       : testSpanTextBackgroundStyle006
-     * @tc.desc       : testing content for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanTextBackgroundStyle006
+     * @tc.number SUB_ARKUI_CAPI_SPAN_TEXT_BACKGROUND_STYLE_0600
+     * @tc.desc   testing content for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanTextBackgroundStyle006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanTextBackgroundStyle006()).assertEqual(0)

@@ -51,13 +51,15 @@ export default function AlignContent_FlexAlign_Center_Margin() {
       console.info("AlignContent_FlexAlign_Center_Margin after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_0500
-     * @tc.name testAlignContentCenterFlexMarginSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.Center, and set the margin for
-     *               the flex component to meet the size requirements of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexMarginSatisfy
+     * @tc.number testAlignContentCenterFlexMarginSatisfy
+     * @tc.desc   testAlignContentCenterFlexMarginSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexMarginSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexMarginSatisfy START');
       let strJson = getInspectorByKey('AlignContentFlexCenterMargin_flex');

@@ -46,12 +46,12 @@ export default function SubMenuExpandingModeTest_EMBEDDED() {
     });
 
     /**
-     * @tc.number    SubMenuExpandingModeTest_EMBEDDED_001
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   SubMenuExpandingModeTest_EMBEDDED_001
+     * @tc.number SubMenuExpandingModeTest_EMBEDDED_001
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SubMenuExpandingModeTest_EMBEDDED_001', Level.LEVEL2, async (done: Function) => {
       console.info('[SubMenuExpandingModeTest_EMBEDDED_001] START');

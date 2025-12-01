@@ -26,65 +26,65 @@ export default function textSweepGradientTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SWEEPGRADIENT_0100
-     * @tc.name       : testTextSweepGradient001
-     * @tc.desc       : testing sweepGradient for text with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextSweepGradient001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SWEEPGRADIENT_0100
+     * @tc.desc   testing sweepGradient for text with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextSweepGradient001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextSweepGradient001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SWEEPGRADIENT_0200
-     * @tc.name       : testTextSweepGradient002
-     * @tc.desc       : testing sweepGradient for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextSweepGradient002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SWEEPGRADIENT_0200
+     * @tc.desc   testing sweepGradient for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextSweepGradient002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextSweepGradient002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SWEEPGRADIENT_0300
-     * @tc.name       : testTextSweepGradient003
-     * @tc.desc       : testing sweepGradient for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextSweepGradient003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SWEEPGRADIENT_0300
+     * @tc.desc   testing sweepGradient for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextSweepGradient003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextSweepGradient003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SWEEPGRADIENT_0400
-     * @tc.name       : testTextSweepGradient004
-     * @tc.desc       : testing sweepGradient for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextSweepGradient004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SWEEPGRADIENT_0400
+     * @tc.desc   testing sweepGradient for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextSweepGradient004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextSweepGradient004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SWEEPGRADIENT_0500
-     * @tc.name       : testTextSweepGradient005
-     * @tc.desc       : testing sweepGradient for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextSweepGradient005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SWEEPGRADIENT_0500
+     * @tc.desc   testing sweepGradient for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextSweepGradient005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextSweepGradient005()).assertEqual(0)

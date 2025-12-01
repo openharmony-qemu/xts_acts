@@ -28,13 +28,13 @@ export default function DragEventGetDropOperationTest() {
       await Utils.pushPage(`drag/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragEvent_GetDropOperation_0100
-     * @tc.name       : DragEventGetDropOperationTest001
-     * @tc.desc       : testing DisableDefaultDropAnimation DragEvent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragEventGetDropOperationTest001
+     * @tc.number SUB_ARKUI_CAPI_DragEvent_GetDropOperation_0100
+     * @tc.desc   testing DisableDefaultDropAnimation DragEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragEventGetDropOperationTest001', Level.LEVEL1, async (done: Function) => {
       console.info('DragEventGetDropOperationTest001 START');

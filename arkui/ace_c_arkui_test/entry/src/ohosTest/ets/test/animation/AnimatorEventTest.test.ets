@@ -27,13 +27,13 @@ export default function animatorEventTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATOR_EVENT_0100
-     * @tc.name       : testKeyframeRegisterOnFinish_001
-     * @tc.desc       : testing Animator Event
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeRegisterOnFinish_001
+     * @tc.number SUB_ARKUI_CAPI_ANIMATOR_EVENT_0100
+     * @tc.desc   testing Animator Event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeRegisterOnFinish_001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestKeyframeRegisterOnFinish';
@@ -48,13 +48,13 @@ export default function animatorEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATOR_EVENT_0200
-     * @tc.name       : testKeyframeRegisterOnEvent_002
-     * @tc.desc       : testing Animator Event
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeRegisterOnEvent_002
+     * @tc.number SUB_ARKUI_CAPI_ANIMATOR_EVENT_0200
+     * @tc.desc   testing Animator Event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeRegisterOnEvent_002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestKeyframeRegisterOnEvent';
@@ -69,13 +69,13 @@ export default function animatorEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATOR_EVENT_0300
-     * @tc.name       : testAnimatorRegisterOnFrame_003
-     * @tc.desc       : testing Animator Event
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimatorRegisterOnFrame_003
+     * @tc.number SUB_ARKUI_CAPI_ANIMATOR_EVENT_0300
+     * @tc.desc   testing Animator Event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimatorRegisterOnFrame_003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestAnimatorRegisterOnFrame';
@@ -90,13 +90,13 @@ export default function animatorEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATOR_EVENT_0400
-     * @tc.name       : testAnimatorRegisterOnFinish_004
-     * @tc.desc       : testing Animator Event
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimatorRegisterOnFinish_004
+     * @tc.number SUB_ARKUI_CAPI_ANIMATOR_EVENT_0400
+     * @tc.desc   testing Animator Event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimatorRegisterOnFinish_004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestAnimatorRegisterOnFinish';
@@ -114,13 +114,13 @@ export default function animatorEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATOR_EVENT_0500
-     * @tc.name       : testAnimatorRegisterOnCancel_005
-     * @tc.desc       : testing Animator Event
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimatorRegisterOnCancel_005
+     * @tc.number SUB_ARKUI_CAPI_ANIMATOR_EVENT_0500
+     * @tc.desc   testing Animator Event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimatorRegisterOnCancel_005', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestAnimatorRegisterOnCancel';
@@ -138,13 +138,13 @@ export default function animatorEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATOR_EVENT_0600
-     * @tc.name       : testAnimatorRegisterOnRepeat_006
-     * @tc.desc       : testing Animator Event
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimatorRegisterOnRepeat_006
+     * @tc.number SUB_ARKUI_CAPI_ANIMATOR_EVENT_0600
+     * @tc.desc   testing Animator Event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimatorRegisterOnRepeat_006', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestAnimatorRegisterOnRepeat';

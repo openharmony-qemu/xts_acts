@@ -26,26 +26,26 @@ export default function  () {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_SHOWUNDERLINE_0100
-     * @tc.name       : testTextInputShowUnderLine001
-     * @tc.desc       : testing showUnderLine for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputShowUnderLine001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SHOWUNDERLINE_0100
+     * @tc.desc   testing showUnderLine for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputShowUnderLine001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputShowUnderLine001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_SHOWUNDERLINE_0200
-     * @tc.name       : testTextInputShowUnderLine002
-     * @tc.desc       : testing showUnderLine for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputShowUnderLine002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SHOWUNDERLINE_0200
+     * @tc.desc   testing showUnderLine for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputShowUnderLine002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputShowUnderLine002()).assertEqual(0)

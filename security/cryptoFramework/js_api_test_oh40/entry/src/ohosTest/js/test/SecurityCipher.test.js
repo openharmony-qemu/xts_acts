@@ -43,9 +43,12 @@ export default function SecurityCipherJsunit() {
         });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_0100
      * @tc.number Security_CryptoFramework_Cipher_Func_0100
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA1", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1|SHA1", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyPromise
@@ -63,9 +66,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_0200
      * @tc.number Security_CryptoFramework_Cipher_Func_0200
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA224", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1|SHA224", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyPromise
@@ -83,9 +89,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_0300
      * @tc.number Security_CryptoFramework_Cipher_Func_0300
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA256", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1|SHA256", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyCallback
@@ -103,9 +112,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_0400
      * @tc.number Security_CryptoFramework_Cipher_Func_0400
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA384", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1|SHA384", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyPromise
@@ -123,9 +135,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_0500
      * @tc.number Security_CryptoFramework_Cipher_Func_0500
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA512", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1|SHA512", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyCallback
@@ -143,9 +158,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_0600
      * @tc.number Security_CryptoFramework_Cipher_Func_0600
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1|MD5", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1|MD5", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyPromise
@@ -163,9 +181,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_0700
      * @tc.number Security_CryptoFramework_Cipher_Func_0700
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA1", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA1", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyCallback
@@ -186,9 +207,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_0800
      * @tc.number Security_CryptoFramework_Cipher_Func_0800
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA224", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA224", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyPromise
@@ -209,9 +233,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_0900
      * @tc.number Encrypt_And_Decrypt_Test_0900
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA256", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA256", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyCallback
@@ -232,9 +259,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_1000
      * @tc.number Security_CryptoFramework_Cipher_Func_1000
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA384", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA384", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyPromise
@@ -255,9 +285,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_1100
      * @tc.number Security_CryptoFramework_Cipher_Func_1100
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA512", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA512", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyCallback
@@ -278,9 +311,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_1200
      * @tc.number Security_CryptoFramework_Cipher_Func_1200
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_MD5", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_MD5", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyPromise
@@ -301,9 +337,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_1300
      * @tc.number Security_CryptoFramework_Cipher_Func_1300
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA256", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1|SHA256", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyCallback
@@ -321,9 +360,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_1400
      * @tc.number Security_CryptoFramework_Cipher_Func_1400
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "AES|ECB|PKCS7", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "AES|ECB|PKCS7", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await symPromise
@@ -341,9 +383,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_1500
      * @tc.number Security_CryptoFramework_Cipher_Func_1500
-     * @tc.name Encryption and decryption scenario testing
-     * @tc.desc the asyAlgoName is "3DES|ECB|PKCS5", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "3DES|ECB|PKCS5", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await symPromise
@@ -361,10 +406,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_1600
      * @tc.number Security_CryptoFramework_Cipher_Func_1600
-     * @tc.name create cipher failed
-     * @tc.desc Pass in an exception parameter null and call it as a async
-     * @tc.desc Pass in an exception parameter "ECC128|GCM|PKCS7" and call it as a async
+     * @tc.desc   Pass in an exception parameter "ECC128|GCM|PKCS7" and call it as a async
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {
@@ -385,11 +432,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_1700
      * @tc.number Security_CryptoFramework_Cipher_Func_1700
-     * @tc.name test Cipher.init with invalid parameters
-     * @tc.desc First input invalid opMode for Promise interface
-     * @tc.desc Second input null opMode For AsyncCallback interface
-     * @tc.desc Third input null key and null params for Promise interface
+     * @tc.desc   Third input null key and null params for Promise interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let asyGenerator = cryptoFramework.createAsyKeyGenerator("RSA1024");
@@ -428,11 +476,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_1800
      * @tc.number Security_CryptoFramework_Cipher_Func_1800
-     * @tc.name test Cipher.update with invalid parameters
-     * @tc.desc First do not Cipher.init with AsyncCallback interface
-     * @tc.desc Second input null with Promise interface
-     * @tc.desc Third input empty parameter with  AsyncCallback interface
+     * @tc.desc   Third input empty parameter with  AsyncCallback interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let symKeyGenerator = cryptoFramework.createSymKeyGenerator("3DES192");
@@ -486,11 +535,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_1900
      * @tc.number Security_CryptoFramework_Cipher_Func_1900
-     * @tc.name test Cipher.doFinal with invalid parameters
-     * @tc.desc First do not Cipher.init with AsyncCallback interface
-     * @tc.desc Second input null with Promise interface
-     * @tc.desc Third input empty parameter with  AsyncCallback interface
+     * @tc.desc   Third input empty parameter with  AsyncCallback interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let cipherGenerator = cryptoFramework.createCipher(
@@ -544,9 +594,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_2000
      * @tc.number Security_CryptoFramework_Cipher_Func_2000
-     * @tc.name set and get fill mode before init
-     * @tc.desc the itemType is OAEP_MGF1_PSRC_UINT8ARR, Use the Callback Style of Interface
+     * @tc.desc   the itemType is OAEP_MGF1_PSRC_UINT8ARR, Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyCallback
@@ -567,9 +620,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_2100
      * @tc.number Security_CryptoFramework_Cipher_Func_2100
-     * @tc.name set and get fill mode after init
-     * @tc.desc the itemType is OAEP_MGF1_PSRC_UINT8ARR, Use the Promise Style of Interface
+     * @tc.desc   the itemType is OAEP_MGF1_PSRC_UINT8ARR, Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await asyPromise
@@ -590,14 +646,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_2200
      * @tc.number Security_CryptoFramework_Cipher_Func_2200
-     * @tc.name set fill mode failed
-     * @tc.desc Pass in exception parameter mode cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR,
-     * parameter null, and call it synchronously
-     * @tc.desc Pass in exception parameter mode cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR,
-     * parameter 12456, and call it synchronously
-     * @tc.desc Pass in exception parameter mode cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR,
-     * parameter "asdfr", and call it synchronously
+     * @tc.desc   Pass in exception parameter mode cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let cipherGenerator = cryptoFramework.createCipher(
@@ -639,9 +693,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_2300
      * @tc.number Security_CryptoFramework_Cipher_Func_2300
-     * @tc.name get fill mode failed
-     * @tc.desc Pass in exception parameter mode 303, and call it synchronously
+     * @tc.desc   Pass in exception parameter mode 303, and call it synchronously
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let cipherGeneratorEncrypt =
@@ -659,9 +716,12 @@ export default function SecurityCipherJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Cipher_Func_2400
      * @tc.number Security_CryptoFramework_Cipher_Func_2400
-     * @tc.name Obtain the encryption and decryption algorithm name
-     * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA256|MGF1_SHA1", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "RSA|PKCS1_OAEP|SHA256|MGF1_SHA1", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {

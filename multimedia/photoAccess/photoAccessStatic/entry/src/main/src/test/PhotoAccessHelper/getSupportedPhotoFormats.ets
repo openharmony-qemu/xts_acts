@@ -42,12 +42,12 @@ export default function getSupportedPhotoFormatsTest() {
     });
 
     /**
-      * @tc.number  GET_SUPPOTTED_PHOTO_FORMATS_STATIC_0000
-      * @tc.name    get_supported_photo_formats_static_000
-      * @tc.desc    get supported photo formats
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   get_supported_photo_formats_static_000
+     * @tc.number GET_SUPPOTTED_PHOTO_FORMATS_STATIC_0000
+     * @tc.desc   get supported photo formats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_supported_photo_formats_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -67,12 +67,12 @@ export default function getSupportedPhotoFormatsTest() {
       })
 
     /**
-      * @tc.number  GET_SUPPOTTED_PHOTO_FORMATS_STATIC_1000
-      * @tc.name    get_supported_photo_formats_static_001
-      * @tc.desc    get supported photo formats
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   get_supported_photo_formats_static_001
+     * @tc.number GET_SUPPOTTED_PHOTO_FORMATS_STATIC_1000
+     * @tc.desc   get supported photo formats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_supported_photo_formats_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -92,12 +92,12 @@ export default function getSupportedPhotoFormatsTest() {
       })
 
     /**
-      * @tc.number  GET_SUPPOTTED_PHOTO_FORMATS_STATIC_2000
-      * @tc.name    get_supported_photo_formats_static_002
-      * @tc.desc    get supported photo formats
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   get_supported_photo_formats_static_002
+     * @tc.number GET_SUPPOTTED_PHOTO_FORMATS_STATIC_2000
+     * @tc.desc   get supported photo formats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_supported_photo_formats_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

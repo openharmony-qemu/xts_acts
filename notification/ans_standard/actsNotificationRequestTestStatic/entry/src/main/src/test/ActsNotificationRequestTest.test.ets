@@ -45,9 +45,12 @@ export default function ActsNotificationRequestTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_0900
-     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_0900
-     * @tc.desc       requestEnableNotification click allowed
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_0900
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_0900
+     * @tc.desc   requestEnableNotification click allowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

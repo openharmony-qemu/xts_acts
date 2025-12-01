@@ -23,13 +23,12 @@ export default function fileioFtruncate() {
 describe('fileio_ftruncate', function () {
 
   /**
+   * @tc.name   fileio_test_ftruncate_async_000
    * @tc.number SUB_DF_FILEIO_FTRUNCATE_ASYNC_0000
-   * @tc.name fileio_test_ftruncate_async_000
-   * @tc.desc Test ftruncateAsync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test ftruncateAsync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_ftruncate_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_ftruncate_async_000');
@@ -52,13 +51,12 @@ describe('fileio_ftruncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_ftruncate_async_001
    * @tc.number SUB_DF_FILEIO_FTRUNCATE_ASYNC_0100
-   * @tc.name fileio_test_ftruncate_async_001
-   * @tc.desc Test ftruncateAsync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test ftruncateAsync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_ftruncate_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_ftruncate_async_001');
@@ -86,13 +84,12 @@ describe('fileio_ftruncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_ftruncate_async_002
    * @tc.number SUB_DF_FILEIO_FTRUNCATE_ASYNC_0200
-   * @tc.name fileio_test_ftruncate_async_002
-   * @tc.desc Test ftruncateAsync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test ftruncateAsync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_ftruncate_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_ftruncate_async_002');
@@ -109,14 +106,12 @@ describe('fileio_ftruncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_ftruncate_async_003
    * @tc.number SUB_DF_FILEIO_FTRUNCATE_ASYNC_0300
-   * @tc.name fileio_test_ftruncate_async_003
-   * @tc.desc Test ftruncate() interfaces. Promise.
-   * Undefined option arguments, use default length = 0.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test ftruncate() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_ftruncate_async_003', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_ftruncate_async_003');
@@ -138,14 +133,12 @@ describe('fileio_ftruncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_ftruncate_async_004
    * @tc.number SUB_DF_FILEIO_FTRUNCATE_ASYNC_0400
-   * @tc.name fileio_test_ftruncate_async_004
-   * @tc.desc Test ftruncate() interfaces. Callback.
-   * Undefined option arguments, use default length = 0.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test ftruncate() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_ftruncate_async_004', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_ftruncate_async_004');
@@ -173,14 +166,12 @@ describe('fileio_ftruncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_ftruncate_async_004
    * @tc.number SUB_DF_FILEIO_FTRUNCATE_ASYNC_0400
-   * @tc.name fileio_test_ftruncate_async_004
-   * @tc.desc Test ftruncate() interfaces. Promise.
-   * Undefined option arguments
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test ftruncate() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_ftruncate_async_004', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_ftruncate_async_004');
@@ -201,15 +192,14 @@ describe('fileio_ftruncate', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_FTRUNCATE_SYNC_0000
-   * @tc.name fileio_test_ftruncate_sync_000
-   * @tc.desc Test ftruncateSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileio_test_ftruncate_sync_000
+    * @tc.number SUB_DF_FILEIO_FTRUNCATE_SYNC_0000
+    * @tc.desc   Test ftruncateSync() interfaces.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileio_test_ftruncate_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_ftruncate_sync_000');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -229,13 +219,12 @@ describe('fileio_ftruncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_ftruncate_sync_001
    * @tc.number SUB_DF_FILEIO_FTRUNCATE_SYNC_0100
-   * @tc.name fileio_test_ftruncate_sync_001
-   * @tc.desc Test ftruncateSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test ftruncateSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_ftruncate_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_ftruncate_sync_001');
@@ -256,13 +245,12 @@ describe('fileio_ftruncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_ftruncate_sync_002
    * @tc.number SUB_DF_FILEIO_FTRUNCATE_SYNC_0200
-   * @tc.name fileio_test_ftruncate_sync_002
-   * @tc.desc Test ftruncateSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test ftruncateSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_ftruncate_sync_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_ftruncate_sync_002');
@@ -276,14 +264,12 @@ describe('fileio_ftruncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_ftruncate_sync_003
    * @tc.number SUB_DF_FILEIO_FTRUNCATE_SYNC_0300
-   * @tc.name fileio_test_ftruncate_sync_003
-   * @tc.desc Test ftruncateSync() interfaces.
-   * Undefined option arguments, use default length = 0.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test ftruncateSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_ftruncate_sync_003', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_ftruncate_sync_003');

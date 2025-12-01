@@ -49,10 +49,12 @@ export default function HideToolBarNavPage() {
 
 
     /**
-     * @tc.number    HideToolBarNavPage_0100
-     * @tc.name      HideToolBarNavPage_0100
-     * @tc.desc      Test NavDestination hideToolBar
-     * @tc.level     Level 0
+     * @tc.name   HideToolBarNavPage_0100
+     * @tc.number HideToolBarNavPage_0100
+     * @tc.desc   Test NavDestination hideToolBar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('HideToolBarNavPage_0100', Level.LEVEL0, async (done: Function) => {
       console.info('HideToolBarNavPage_0100 START');

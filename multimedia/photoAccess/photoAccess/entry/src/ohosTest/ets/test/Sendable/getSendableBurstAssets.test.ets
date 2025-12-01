@@ -68,12 +68,12 @@ export default function getSendableBurstAssetsTest () {
     }
 
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Get_BurstAssets_001
-     * @tc.name      : get_image_burst_assets_001
-     * @tc.desc      : getBurstAssets image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_burst_assets_image_001
+     * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_001
+     * @tc.desc   getBurstAssets image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_burst_assets_image_001", Level.LEVEL0, async (done: Function) => {
       const testNum = "get_burst_assets_image_001";
@@ -101,12 +101,12 @@ export default function getSendableBurstAssetsTest () {
     })
 
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Get_BurstAssets_002
-     * @tc.name      : get_burst_assets_video_001
-     * @tc.desc      : getBurstAssets video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_burst_assets_video_001
+     * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_002
+     * @tc.desc   getBurstAssets video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_burst_assets_video_001", Level.LEVEL0, async (done: Function) => {
       const testNum = "get_burst_assets_video_001";
@@ -134,12 +134,12 @@ export default function getSendableBurstAssetsTest () {
     })
 
     /**
-     * @tc.number    : Sub_PhotoAccess_Helper_Get_BurstAssets_003
-     * @tc.name      : get_image_burst_assets_003
-     * @tc.desc      : getBurstAssets by burstKey not exist
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_image_burst_assets_003
+     * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_003
+     * @tc.desc   getBurstAssets by burstKey not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_image_burst_assets_003", Level.LEVEL0, async (done: Function) => {
       const testNum = "get_burst_assets_image_003";

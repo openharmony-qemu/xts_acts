@@ -41,12 +41,12 @@ export default function Provider4Test() {
       done();
     });
     /**
-     * @tc.number    Provider4Test_0100
-     * @tc.name      Provider4Test_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Provider4Test_0100
+     * @tc.number Provider4Test_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider4Test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Provider4Test_0100 START');
@@ -74,12 +74,12 @@ export default function Provider4Test() {
       done();
     });
     /**
-     * @tc.number    Provider4Test_0200
-     * @tc.name      Provider4Test_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Provider4Test_0200
+     * @tc.number Provider4Test_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider4Test_0200', Level.LEVEL0, async (done: Function) => {
       console.info('Provider4Test_0200 START');

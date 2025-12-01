@@ -37,7 +37,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesCallbackWithError001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_JSAPITest_0300
      * @tc.desc   Clear、Put、Has、Delete、Get、Flush String callback interface test
@@ -86,7 +85,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesGet0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_4000
      * @tc.desc   mPreference.get callback test
@@ -111,7 +109,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesGet0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3900
      * @tc.desc   mPreference.get callback test
@@ -141,7 +138,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesGet0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_4100
      * @tc.desc   mPreference.get callback test
@@ -171,7 +167,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesGetALL001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1600
      * @tc.desc   mPreference.getAll callback test
@@ -198,7 +193,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesHas0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1800
      * @tc.desc   mPreference.has callback test
@@ -224,7 +218,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesHas0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1900
      * @tc.desc   mPreference.has callback test
@@ -251,7 +244,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPut0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3900
      * @tc.desc   mPreference.put callback test
@@ -277,7 +269,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPut0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3700
      * @tc.desc   mPreference.put callback test
@@ -307,7 +298,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPut0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3600
      * @tc.desc   mPreference.put callback test
@@ -337,7 +327,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPut0004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3400
      * @tc.desc   mPreference.put callback test
@@ -368,7 +357,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPut0005
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3800
      * @tc.desc   mPreference.put callback test
@@ -399,7 +387,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesDelete0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_2100
      * @tc.desc   mPreference.delete callback test
@@ -425,7 +412,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesDelete0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_2300
      * @tc.desc   mPreference.delete callback test
@@ -454,7 +440,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesClear0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_ClearJSAPITest_0400
      * @tc.desc   mPreference.clear callback test
@@ -482,7 +467,6 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesFlush0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_FlushJSAPITest_0300
      * @tc.desc   mPreference.flush callback test

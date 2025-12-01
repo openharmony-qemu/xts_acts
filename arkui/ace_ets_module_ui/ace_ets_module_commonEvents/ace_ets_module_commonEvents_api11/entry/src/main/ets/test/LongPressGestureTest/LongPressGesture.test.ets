@@ -57,6 +57,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("longPressGesture after each called");
     });
 
+    /**
+     * @tc.name   testLongPressGesture01
+     * @tc.number testLongPressGesture01
+     * @tc.desc   testLongPressGesture01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLongPressGesture01', Level.LEVEL0, async (done: Function) => {
       console.info('[testLongPressGesture01] START');
       await CommonFunc.sleep(1000);
@@ -81,6 +89,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
 
+    /**
+     * @tc.name   testLongPressGesture02
+     * @tc.number testLongPressGesture02
+     * @tc.desc   testLongPressGesture02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLongPressGesture02', Level.LEVEL0, async (done: Function) => {
       console.info('[testLongPressGesture02] START');
       await CommonFunc.sleep(1000);

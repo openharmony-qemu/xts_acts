@@ -59,14 +59,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONALERT_0100
-    * @tc.name        : testOnAlert001
-    * @tc.desc        : test onAlert callback
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnAlert001
+     * @tc.number SUB_WEB_ONALERT_0100
+     * @tc.desc   test onAlert callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnAlert001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnAlert001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -76,14 +76,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONCONFIRM_0100
-    * @tc.name        : testOnConfirm001
-    * @tc.desc        : test onConfirm normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnConfirm001
+     * @tc.number SUB_WEB_ONCONFIRM_0100
+     * @tc.desc   test onConfirm normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnConfirm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnConfirm001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -93,14 +93,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONPROMPT_0100
-    * @tc.name        : testOnPrompt001
-    * @tc.desc        : test onPrompt normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnPrompt001
+     * @tc.number SUB_WEB_ONPROMPT_0100
+     * @tc.desc   test onPrompt normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnPrompt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnPrompt001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -110,14 +110,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_JSRESULT_HANDLECANCEL_0100
-    * @tc.name        : testJsResultHandleCancel001
-    * @tc.desc        : test JsResultHandle.cancel()
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testJsResultHandleCancel001
+     * @tc.number SUB_WEB_JSRESULT_HANDLECANCEL_0100
+     * @tc.desc   test JsResultHandle.cancel()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testJsResultHandleCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitJsResultHandleCancel001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -127,14 +127,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_JSRESULT_HANDLECONFIRM_0100
-    * @tc.name        : testJsResultHandleConfirm001
-    * @tc.desc        : test JsResultHandle.confirm()
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testJsResultHandleConfirm001
+     * @tc.number SUB_WEB_JSRESULT_HANDLECONFIRM_0100
+     * @tc.desc   test JsResultHandle.confirm()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testJsResultHandleConfirm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitJsResultHandleConfirm001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -144,14 +144,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_JSRESULT_HANDLEPROMPTCONFIRM_0100
-    * @tc.name        : testJsResultHandlePromptConfirm001
-    * @tc.desc        : test JsResultHandle.promptConfirm()
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testJsResultHandlePromptConfirm001
+     * @tc.number SUB_WEB_JSRESULT_HANDLEPROMPTCONFIRM_0100
+     * @tc.desc   test JsResultHandle.promptConfirm()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testJsResultHandlePromptConfirm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitJsResultHandlePromptConfirm001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;

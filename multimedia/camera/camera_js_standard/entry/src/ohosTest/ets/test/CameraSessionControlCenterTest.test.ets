@@ -175,12 +175,12 @@ export default function cameraSessionControlCenterTest() {
         })
  
         /**
-         * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_ON_0100
-         * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_ON_0100
-         * @tc.desc      : Check whether register control center effect status callback is successful.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_ON_0100
+         * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_ON_0100
+         * @tc.desc   Check whether register control center effect status callback is successful.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_ON_0100', Level.LEVEL2, async (done: Function) => {
             console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_ON_0100--------------");
@@ -237,12 +237,12 @@ export default function cameraSessionControlCenterTest() {
         })
  
         /**
-         * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_OFF_0100
-         * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_OFF_0100
-         * @tc.desc      : Check whether unregister control center effect status callback is successful.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_OFF_0100
+         * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_OFF_0100
+         * @tc.desc   Check whether unregister control center effect status callback is successful.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_OFF_0100', Level.LEVEL2, async (done: Function) => {
             console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_CONTROL_CENTER_EFFECT_STATUS_OFF_0100--------------");

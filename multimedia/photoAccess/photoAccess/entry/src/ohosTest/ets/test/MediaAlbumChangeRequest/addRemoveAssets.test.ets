@@ -31,12 +31,12 @@ export default function addRemoveAssetsChangeRequestTest() {
     let helper:ESObject  = photoAccessHelper.getPhotoAccessHelper(testContext);
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_REMOVE_ASSETS_CHANGE_REQUEST_0000
-     * @tc.name      : add_remove_assets_change_request_000
-     * @tc.desc      : add assets into album
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   add_remove_assets_change_request_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_ADD_REMOVE_ASSETS_CHANGE_REQUEST_0000
+     * @tc.desc   add assets into album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('add_remove_assets_change_request_000', Level.LEVEL0, async (done: Function) => {
       let testNum = 'add_remove_assets_change_request_000';
@@ -60,12 +60,12 @@ export default function addRemoveAssetsChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_REMOVE_ASSETS_CHANGE_REQUEST_0100
-     * @tc.name      : add_remove_assets_change_request_001
-     * @tc.desc      : add and remove assets into album
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   add_remove_assets_change_request_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_ADD_REMOVE_ASSETS_CHANGE_REQUEST_0100
+     * @tc.desc   add and remove assets into album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('add_remove_assets_change_request_001', Level.LEVEL1, async (done: Function) => {
       let testNum:ESObject = 'add_remove_assets_change_request_001';
@@ -96,12 +96,12 @@ export default function addRemoveAssetsChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_REMOVE_ASSETS_CHANGE_REQUEST_0200
-     * @tc.name      : add_remove_assets_change_request_002
-     * @tc.desc      : remove null assets, error code 401 or 13900020
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   add_remove_assets_change_request_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_ADD_REMOVE_ASSETS_CHANGE_REQUEST_0200
+     * @tc.desc   remove null assets, error code 401 or 13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('add_remove_assets_change_request_002', Level.LEVEL2, async (done: Function) => {
       let testNum:string = 'add_remove_assets_change_request_002';
@@ -124,12 +124,12 @@ export default function addRemoveAssetsChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_APPLY_CHANGES_0100
-     * @tc.name      : apply_Changes_001
-     * @tc.desc      : applyChanges undefined error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   apply_Changes_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_APPLY_CHANGES_0100
+     * @tc.desc   applyChanges undefined error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('apply_Changes_001', Level.LEVEL2, async (done: Function) => {
       let testNum:string = 'apply_Changes_001';
@@ -146,12 +146,12 @@ export default function addRemoveAssetsChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_APPLY_CHANGES_0200
-     * @tc.name      : apply_Changes_002
-     * @tc.desc      : applyChanges array<string> error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   apply_Changes_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_APPLY_CHANGES_0200
+     * @tc.desc   applyChanges array<string> error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('apply_Changes_002', Level.LEVEL2, async (done: Function) => {
       let testNum:string = 'apply_Changes_002';

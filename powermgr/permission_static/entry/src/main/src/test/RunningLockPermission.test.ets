@@ -28,7 +28,6 @@ export default function RunningLockPermissionTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockPermissionTest_static_0100
      * @tc.number RunningLockPermissionETSTest_0100
      * @tc.desc   Function test
@@ -60,7 +59,6 @@ export default function RunningLockPermissionTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockPermissionTest_static_0200
      * @tc.number RunningLockPermissionETSTest_0200
      * @tc.desc   Function test

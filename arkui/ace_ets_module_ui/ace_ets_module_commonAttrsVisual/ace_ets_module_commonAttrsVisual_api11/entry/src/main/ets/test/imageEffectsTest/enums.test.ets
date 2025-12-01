@@ -45,10 +45,13 @@ export default function enumsCancelJsunit() {
       console.info("enumsCancel after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testenumsCancel0001
-     * @tc.desic         aceenumsCancelEtsTest0001
+    /**
+     * @tc.name   testenumsCancel0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testenumsCancel0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testenumsCancel0001', Level.LEVEL2, async (done: Function) => {
       console.info('enumsCancel testenumsCancel0001 START');

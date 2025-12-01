@@ -46,10 +46,12 @@ export default function flex_NoWrap_FlexSizeTest() {
       console.info("flex_NoWrap_FlexSizeTest after each called");
     });
     /**
+     * @tc.name   testWrapNoWrapFlexSizeMeet
      * @tc.number SUB_ACE_FLEXWRAP_NOWRAP_1100
-     * @tc.name testWrapNoWrapFlexSizeMeet
-     * @tc.desc The size of the parent component in the main axis direction
-     *               meets the layout of the child components
+     * @tc.desc   The size of the parent component in the main axis direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapNoWrapFlexSizeMeet',  Level.LEVEL0, async () => {
       console.info('[testWrapNoWrapFlexSizeMeet] START');
@@ -94,10 +96,12 @@ export default function flex_NoWrap_FlexSizeTest() {
 
     });
     /**
+     * @tc.name   testWrapNoWrapFlexSizeMainAxisOverflow
      * @tc.number SUB_ACE_FLEXWRAP_NOWRAP_1200
-     * @tc.name testWrapNoWrapFlexSizeMainAxisOverflow
-     * @tc.desc The size of the parent component in the main axis direction
-     *               is not enough for the layout of the child components,and the cross axis meets
+     * @tc.desc   The size of the parent component in the main axis direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapNoWrapFlexSizeMainAxisOverflow',  Level.LEVEL0, async () => {
       console.info('[testWrapNoWrapFlexSizeMainAxisOverflow] START');
@@ -142,10 +146,12 @@ export default function flex_NoWrap_FlexSizeTest() {
 
     });
     /**
+     * @tc.name   testWrapNoWrapFlexSizeAllAxisOverflow
      * @tc.number SUB_ACE_FLEXWRAP_NOWRAP_1300
-     * @tc.name testWrapNoWrapFlexSizeAllAxisOverflow
-     * @tc.desc The size of the parent component in the main axis directionmeets the layout of
-     *               the child components,and the cross axis is not enough for the layout of the child components
+     * @tc.desc   The size of the parent component in the main axis directionmeets the layout of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapNoWrapFlexSizeAllAxisOverflow',  Level.LEVEL0, async () => {
       console.info('[testWrapNoWrapFlexSizeAllAxisOverflow] START');

@@ -26,78 +26,78 @@ export default function customDialogSetCornerRadiusTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0100
-     * @tc.name       : testCustomDialogSetCornerRadius001
-     * @tc.desc       : testing setCornerRadius for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetCornerRadius001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0100
+     * @tc.desc   testing setCornerRadius for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetCornerRadius001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetCornerRadius001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0200
-     * @tc.name       : testCustomDialogSetCornerRadius002
-     * @tc.desc       : testing setCornerRadius for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetCornerRadius002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0200
+     * @tc.desc   testing setCornerRadius for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetCornerRadius002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetCornerRadius002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0300
-     * @tc.name       : testCustomDialogSetCornerRadius003
-     * @tc.desc       : testing setCornerRadius for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetCornerRadius003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0300
+     * @tc.desc   testing setCornerRadius for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetCornerRadius003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetCornerRadius003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0400
-     * @tc.name       : testCustomDialogSetCornerRadius004
-     * @tc.desc       : testing setCornerRadius for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetCornerRadius004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0400
+     * @tc.desc   testing setCornerRadius for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetCornerRadius004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetCornerRadius004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0500
-     * @tc.name       : testCustomDialogSetCornerRadius005
-     * @tc.desc       : testing setCornerRadius for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetCornerRadius005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0500
+     * @tc.desc   testing setCornerRadius for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetCornerRadius005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetCornerRadius005()).assertEqual(0)
       done()
     })
 
-        /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0600
-     * @tc.name       : testCustomDialogSetCornerRadius006
-     * @tc.desc       : testing setCornerRadius for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetCornerRadius006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCORNERRADIUS_0600
+     * @tc.desc   testing setCornerRadius for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetCornerRadius006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetCornerRadius006()).assertEqual(0)

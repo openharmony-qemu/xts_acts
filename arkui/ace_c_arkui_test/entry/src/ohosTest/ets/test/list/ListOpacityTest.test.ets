@@ -26,52 +26,52 @@ export default function listOpacityTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_OPACITY_0100
-     * @tc.name       : testListOpacity001
-     * @tc.desc       : testing opacity for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListOpacity001
+     * @tc.number SUB_ARKUI_CAPI_LIST_OPACITY_0100
+     * @tc.desc   testing opacity for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListOpacity001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListOpacity001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_OPACITY_0200
-     * @tc.name       : testListOpacity002
-     * @tc.desc       : testing opacity for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListOpacity002
+     * @tc.number SUB_ARKUI_CAPI_LIST_OPACITY_0200
+     * @tc.desc   testing opacity for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListOpacity002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListOpacity002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_OPACITY_0300
-     * @tc.name       : testListOpacity003
-     * @tc.desc       : testing opacity for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListOpacity003
+     * @tc.number SUB_ARKUI_CAPI_LIST_OPACITY_0300
+     * @tc.desc   testing opacity for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListOpacity003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListOpacity003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_OPACITY_0400
-     * @tc.name       : testListOpacity004
-     * @tc.desc       : testing opacity for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListOpacity004
+     * @tc.number SUB_ARKUI_CAPI_LIST_OPACITY_0400
+     * @tc.desc   testing opacity for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListOpacity004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListOpacity004()).assertEqual(0)

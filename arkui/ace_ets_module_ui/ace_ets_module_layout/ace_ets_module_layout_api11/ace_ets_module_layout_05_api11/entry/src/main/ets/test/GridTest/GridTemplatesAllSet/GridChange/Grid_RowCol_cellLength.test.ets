@@ -46,9 +46,12 @@ export default function Grid_RowCol_cellLength() {
       console.info("Grid_RowCol_cellLength after each called")
     });
     /**
+     * @tc.name   testGridRowColGridCellLength
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDCHANGE_1100
-     * @tc.name testGridRowColGridCellLength
-     * @tc.desc The Grid layout cellLength property does not take effect
+     * @tc.desc   The Grid layout cellLength property does not take effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColGridCellLength',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColGridCellLength] START');

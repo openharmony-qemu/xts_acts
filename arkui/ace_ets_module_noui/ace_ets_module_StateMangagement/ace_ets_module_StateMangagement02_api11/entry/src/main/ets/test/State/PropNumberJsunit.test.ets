@@ -61,6 +61,14 @@ export default function PropNumberJsunit() {
     //   await driver.pressBack();
     // });
 
+    /**
+     * @tc.name   PropNumberJsunit_0200
+     * @tc.number PropNumberJsunit_0200
+     * @tc.desc   PropNumberJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropNumberJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropNumberJsunit_0200 START');
@@ -83,6 +91,14 @@ export default function PropNumberJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropNumberJsunit_0300
+     * @tc.number PropNumberJsunit_0300
+     * @tc.desc   PropNumberJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropNumberJsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('PropNumberJsunit_0300 START');
       let driver = await UiDriver.create()

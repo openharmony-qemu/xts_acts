@@ -72,12 +72,12 @@ export default function windowNdk() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0100
-     * @tc.name      : test_OH_NativeWindowManager_RegisterKeyEventFilter
-     * @tc.desc      : test_OH_NativeWindowManager_RegisterKeyEventFilter
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_OH_NativeWindowManager_RegisterKeyEventFilter
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0100
+     * @tc.desc   test_OH_NativeWindowManager_RegisterKeyEventFilter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeWindowManager_RegisterKeyEventFilter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
         console.info(`${Tag}: test_OH_NativeWindowManager_RegisterKeyEventFilter RegisterKeyEventFilter windowId: ${windowId}`);
@@ -98,12 +98,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0200
-     * @tc.name      : test_OH_NativeWindowManager_UnregisterKeyEventFilter
-     * @tc.desc      : test_OH_NativeWindowManager_UnregisterKeyEventFilter
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_OH_NativeWindowManager_UnregisterKeyEventFilter
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0200
+     * @tc.desc   test_OH_NativeWindowManager_UnregisterKeyEventFilter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeWindowManager_UnregisterKeyEventFilter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let a = windowNdkTest.unFilterKeyCode(windowId);
@@ -123,13 +123,13 @@ export default function windowNdk() {
 
     })
 
-     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0300
-     * @tc.name      : test_OH_WindowManager_ShowWindow
-     * @tc.desc      : test_OH_WindowManager_ShowWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+    /**
+     * @tc.name   test_OH_WindowManager_ShowWindow
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0300
+     * @tc.desc   test_OH_WindowManager_ShowWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_WindowManager_ShowWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let result1 = windowNdkTest.showWindow(windowId);
@@ -143,12 +143,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0400
-     * @tc.name      : test_NDK_show_subWindow
-     * @tc.desc      : test_NDK_show_subWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_NDK_show_subWindow
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0400
+     * @tc.desc   test_NDK_show_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NDK_show_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_NDK_show_subWindow";
@@ -188,12 +188,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0500
-     * @tc.name      : test_NDK_show_subWindow_JS_isShowWindow
-     * @tc.desc      : test_NDK_show_subWindow_JS_isShowWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_NDK_show_subWindow_JS_isShowWindow
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0500
+     * @tc.desc   test_NDK_show_subWindow_JS_isShowWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NDK_show_subWindow_JS_isShowWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_NDK_show_subWindow_JS_isShowWindow";
@@ -231,12 +231,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0600
-     * @tc.name      : test_NDK_show_subWindow_Minimize_window
-     * @tc.desc      : test_NDK_show_subWindow_Minimize_window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_NDK_show_subWindow_Minimize_window
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0600
+     * @tc.desc   test_NDK_show_subWindow_Minimize_window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NDK_show_subWindow_Minimize_window', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_NDK_show_subWindow_Minimize_window";
@@ -300,12 +300,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0700
-     * @tc.name      : test_NDK_Show_DialogWindow
-     * @tc.desc      : test_NDK_Show_DialogWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_NDK_Show_DialogWindow
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0700
+     * @tc.desc   test_NDK_Show_DialogWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NDK_Show_DialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_NDK_Show_DialogWindow";
@@ -350,12 +350,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0800
-     * @tc.name      : test_OH_WindowManager_ShowWindow_1300002
-     * @tc.desc      : test_OH_WindowManager_ShowWindow_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_OH_WindowManager_ShowWindow_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0800
+     * @tc.desc   test_OH_WindowManager_ShowWindow_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_WindowManager_ShowWindow_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let result = windowNdkTest.showWindow(-1);
@@ -365,12 +365,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0900
-     * @tc.name      : test_OH_WindowManager_IsShowWindown_1300002
-     * @tc.desc      : test_OH_WindowManager_IsShowWindown_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_OH_WindowManager_IsShowWindown_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0900
+     * @tc.desc   test_OH_WindowManager_IsShowWindown_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_WindowManager_IsShowWindown_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let result = windowNdkTest.isWindowShown(-1);
@@ -380,12 +380,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1000
-     * @tc.name      : test_SetWindowStatusBarEnabled_1300002
-     * @tc.desc      : test_SetWindowStatusBarEnabled_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetWindowStatusBarEnabled_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1000
+     * @tc.desc   test_SetWindowStatusBarEnabled_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowStatusBarEnabled_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetWindowStatusBarEnabled_1300002";
@@ -396,12 +396,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1100
-     * @tc.name      : test_mainWindow_SetWindowStatusBarEnabled
-     * @tc.desc      : test_mainWindow_SetWindowStatusBarEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   test_mainWindow_SetWindowStatusBarEnabled
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1100
+     * @tc.desc   test_mainWindow_SetWindowStatusBarEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_mainWindow_SetWindowStatusBarEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled";
@@ -418,12 +418,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1200
-     * @tc.name      : test_mainWindow_SetWindowStatusBarEnabled_false
-     * @tc.desc      : test_mainWindow_SetWindowStatusBarEnabled_false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   test_mainWindow_SetWindowStatusBarEnabled_false
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1200
+     * @tc.desc   test_mainWindow_SetWindowStatusBarEnabled_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_mainWindow_SetWindowStatusBarEnabled_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false";
@@ -439,12 +439,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1300
-     * @tc.name      : test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true
-     * @tc.desc      : test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1300
+     * @tc.desc   test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true";
@@ -460,13 +460,13 @@ export default function windowNdk() {
     })
 
      /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1400
-     * @tc.name      : test_subWindow_SetWindowStatusBarEnabled
-     * @tc.desc      : test_subWindow_SetWindowStatusBarEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
-     */
+      * @tc.name   test_subWindow_SetWindowStatusBarEnabled
+      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1400
+      * @tc.desc   test_subWindow_SetWindowStatusBarEnabled
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('test_subWindow_SetWindowStatusBarEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_subWindow_SetWindowStatusBarEnabled";
       try {
@@ -504,13 +504,13 @@ export default function windowNdk() {
     })
 
      /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1500
-     * @tc.name      : test_dialogWindow_SetWindowStatusBarEnabled_1300002
-     * @tc.desc      : test_dialogWindow_SetWindowStatusBarEnabled_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
-     */
+      * @tc.name   test_dialogWindow_SetWindowStatusBarEnabled_1300002
+      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1500
+      * @tc.desc   test_dialogWindow_SetWindowStatusBarEnabled_1300002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('test_dialogWindow_SetWindowStatusBarEnabled_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_dialogWindow_SetWindowStatusBarEnabled_1300002";
       try {
@@ -553,12 +553,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1600
-     * @tc.name      : test_SetWindowNavigationBarEnabled_1300002
-     * @tc.desc      : test_SetWindowNavigationBarEnabled_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetWindowNavigationBarEnabled_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1600
+     * @tc.desc   test_SetWindowNavigationBarEnabled_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowNavigationBarEnabled_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetWindowNavigationBarEnabled_1300002";
@@ -570,12 +570,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1700
-     * @tc.name      : test_mainWindow_setWindowNavigationBarEnabled
-     * @tc.desc      : test_mainWindow_setWindowNavigationBarEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   test_mainWindow_setWindowNavigationBarEnabled
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1700
+     * @tc.desc   test_mainWindow_setWindowNavigationBarEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_mainWindow_setWindowNavigationBarEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled";
@@ -591,12 +591,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1800
-     * @tc.name      : test_mainWindow_setWindowNavigationBarEnabled_false
-     * @tc.desc      : test_mainWindow_setWindowNavigationBarEnabled_false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   test_mainWindow_setWindowNavigationBarEnabled_false
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1800
+     * @tc.desc   test_mainWindow_setWindowNavigationBarEnabled_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_mainWindow_setWindowNavigationBarEnabled_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled_false";
@@ -612,12 +612,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1900
-     * @tc.name      : test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true
-     * @tc.desc      : test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   test_mainWindow_setWindowNavigationBarEnabled_false_enableAnimation_true
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_1900
+     * @tc.desc   test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_mainWindow_setWindowNavigationBarEnabled_false_enableAnimation_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled_false_enableAnimation_true";
@@ -633,12 +633,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2000
-     * @tc.name      : test_subWindow_SetWindowNavigationBarEnabled
-     * @tc.desc      : test_subWindow_SetWindowNavigationBarEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_subWindow_SetWindowNavigationBarEnabled
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2000
+     * @tc.desc   test_subWindow_SetWindowNavigationBarEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_subWindow_SetWindowNavigationBarEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_subWindow_SetWindowNavigationBarEnabled";
@@ -677,13 +677,13 @@ export default function windowNdk() {
     })
 
      /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2100
-     * @tc.name      : test_dialogWindow_SetWindowNavigationBarEnabled_1300002
-     * @tc.desc      : test_dialogWindow_SetWindowNavigationBarEnabled_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
-     */
+      * @tc.name   test_dialogWindow_SetWindowNavigationBarEnabled_1300002
+      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2100
+      * @tc.desc   test_dialogWindow_SetWindowNavigationBarEnabled_1300002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('test_dialogWindow_SetWindowNavigationBarEnabled_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_dialogWindow_SetWindowNavigationBarEnabled_1300002";
       try {
@@ -726,12 +726,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2200
-     * @tc.name      : test_SetWindowStatusBarColor_1300002
-     * @tc.desc      : test_SetWindowStatusBarColor_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetWindowStatusBarColor_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2200
+     * @tc.desc   test_SetWindowStatusBarColor_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowStatusBarColor_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetWindowStatusBarColor_1300002";
@@ -743,12 +743,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2300
-     * @tc.name      : test_SetWindowStatusBarColor_0xFF00FF00
-     * @tc.desc      : test_SetWindowStatusBarColor_0xFF00FF00
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetWindowStatusBarColor_0xFF00FF00
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2300
+     * @tc.desc   test_SetWindowStatusBarColor_0xFF00FF00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowStatusBarColor_0xFF00FF00', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetWindowStatusBarColor_0xFF00FF00";
@@ -767,12 +767,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2400
-     * @tc.name      : test_SetWindowStatusBarColor_0xFF000000
-     * @tc.desc      : test_SetWindowStatusBarColor_0xFF000000
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetWindowStatusBarColor_0xFF000000
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2400
+     * @tc.desc   test_SetWindowStatusBarColor_0xFF000000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowStatusBarColor_0xFF000000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetWindowStatusBarColor_0xFF000000";
@@ -796,12 +796,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2500
-     * @tc.name      : test_getAvoidAreaByType_1300002
-     * @tc.desc      : test_getAvoidAreaByType_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_getAvoidAreaByType_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2500
+     * @tc.desc   test_getAvoidAreaByType_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getAvoidAreaByType_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_getAvoidAreaByType_1300002";
@@ -812,12 +812,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2600
-     * @tc.name      : test_getAvoidAreaByType_statusBar_show
-     * @tc.desc      : test_getAvoidAreaByType_statusBar_show
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_getAvoidAreaByType_statusBar_show
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2600
+     * @tc.desc   test_getAvoidAreaByType_statusBar_show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getAvoidAreaByType_statusBar_show', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_getAvoidAreaByType_statusBar_show";
@@ -837,12 +837,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2700
-     * @tc.name      : test_getAvoidAreaByType_statusBar_hide
-     * @tc.desc      : test_getAvoidAreaByType_statusBar_hide
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_getAvoidAreaByType_statusBar_hide
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2700
+     * @tc.desc   test_getAvoidAreaByType_statusBar_hide
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getAvoidAreaByType_statusBar_hide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_getAvoidAreaByType_statusBar_hide";
@@ -862,12 +862,12 @@ export default function windowNdk() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2800
-     * @tc.name      : test_getAvoidAreaByType_setLayoutFullScreen
-     * @tc.desc      : test_getAvoidAreaByType_setLayoutFullScreen
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_getAvoidAreaByType_setLayoutFullScreen
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2800
+     * @tc.desc   test_getAvoidAreaByType_setLayoutFullScreen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getAvoidAreaByType_setLayoutFullScreen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_getAvoidAreaByType_setLayoutFullScreen";
@@ -889,12 +889,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2900
-     * @tc.name      : test_getAvoidAreaByType_setPreferredOrientation
-     * @tc.desc      : test_getAvoidAreaByType_setPreferredOrientation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_getAvoidAreaByType_setPreferredOrientation
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_2900
+     * @tc.desc   test_getAvoidAreaByType_setPreferredOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getAvoidAreaByType_setPreferredOrientation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_getAvoidAreaByType_setPreferredOrientation";
@@ -910,12 +910,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3000
-     * @tc.name      : test_setBackgroundColor_401
-     * @tc.desc      : test_setBackgroundColor_401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_setBackgroundColor_401
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3000
+     * @tc.desc   test_setBackgroundColor_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setBackgroundColor_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_setBackgroundColor_401";
@@ -926,12 +926,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3100
-     * @tc.name      : test_setBackgroundColor_#FF00FF00
-     * @tc.desc      : test_setBackgroundColor_#FF00FF00
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   test_setBackgroundColor_#FF00FF00
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3100
+     * @tc.desc   test_setBackgroundColor_#FF00FF00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setBackgroundColor_#FF00FF00', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_setBackgroundColor_#FF00FF00";
@@ -942,12 +942,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3200
-     * @tc.name      : test_setBackgroundColor_1300002
-     * @tc.desc      : test_setBackgroundColor_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_setBackgroundColor_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3200
+     * @tc.desc   test_setBackgroundColor_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setBackgroundColor_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_setBackgroundColor_1300002";
@@ -958,12 +958,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3300
-     * @tc.name      : test_SetBrightness_401
-     * @tc.desc      : test_SetBrightness_401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetBrightness_401
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3300
+     * @tc.desc   test_SetBrightness_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetBrightness_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetBrightness_401";
@@ -974,12 +974,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3400
-     * @tc.name      : test_SetBrightness_1300002
-     * @tc.desc      : test_SetBrightness_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetBrightness_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3400
+     * @tc.desc   test_SetBrightness_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetBrightness_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetBrightness_1300002";
@@ -990,12 +990,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3500
-     * @tc.name      : test_SetBrightness_-2
-     * @tc.desc      : test_SetBrightness_-2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetBrightness_-2
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3500
+     * @tc.desc   test_SetBrightness_-2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetBrightness_-2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetBrightness_-2";
@@ -1006,12 +1006,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3600
-     * @tc.name      : test_SetBrightness_2
-     * @tc.desc      : test_SetBrightness_2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetBrightness_2
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3600
+     * @tc.desc   test_SetBrightness_2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetBrightness_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetBrightness_2";
@@ -1022,12 +1022,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3700
-     * @tc.name      : test_SetBrightness_1
-     * @tc.desc      : test_SetBrightness_1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   test_SetBrightness_1
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3700
+     * @tc.desc   test_SetBrightness_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SetBrightness_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_SetBrightness_1";
@@ -1041,12 +1041,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3800
-     * @tc.name      : test_SetBrightness_0.0
-     * @tc.desc      : test_SetBrightness_0.0
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   test_SetBrightness_0.0
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3800
+     * @tc.desc   test_SetBrightness_0.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SetBrightness_0.0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_SetBrightness_0.0";
@@ -1060,12 +1060,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3900
-     * @tc.name      : test_SetBrightness_-1
-     * @tc.desc      : test_SetBrightness_-1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   test_SetBrightness_-1
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3900
+     * @tc.desc   test_SetBrightness_-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SetBrightness_-1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_SetBrightness_-1";
@@ -1080,12 +1080,12 @@ export default function windowNdk() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4000
-     * @tc.name      : test_SetKeepScreenOn_1300002
-     * @tc.desc      : test_SetKeepScreenOn_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetKeepScreenOn_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4000
+     * @tc.desc   test_SetKeepScreenOn_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetKeepScreenOn_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetKeepScreenOn_1300002";
@@ -1096,12 +1096,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4100
-     * @tc.name      : test_SetKeepScreenOn_false
-     * @tc.desc      : test_SetKeepScreenOn_false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   test_SetKeepScreenOn_false
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4100
+     * @tc.desc   test_SetKeepScreenOn_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SetKeepScreenOn_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_SetKeepScreenOn_false";
@@ -1115,12 +1115,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4200
-     * @tc.name      : test_SetKeepScreenOn_true
-     * @tc.desc      : test_SetKeepScreenOn_true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   test_SetKeepScreenOn_true
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4200
+     * @tc.desc   test_SetKeepScreenOn_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SetKeepScreenOn_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_SetKeepScreenOn_true";
@@ -1135,12 +1135,12 @@ export default function windowNdk() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4300
-     * @tc.name      : test_SetWindowPrivacyMode_1300002
-     * @tc.desc      : test_SetWindowPrivacyMode_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetWindowPrivacyMode_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4300
+     * @tc.desc   test_SetWindowPrivacyMode_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowPrivacyMode_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetWindowPrivacyMode_1300002";
@@ -1150,13 +1150,13 @@ export default function windowNdk() {
       done();
     })
 
-/**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4400
-     * @tc.name      : test_SetWindowPrivacyMode_true
-     * @tc.desc      : test_SetWindowPrivacyMode_true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+    /**
+     * @tc.name   test_SetWindowPrivacyMode_true
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4400
+     * @tc.desc   test_SetWindowPrivacyMode_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowPrivacyMode_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetWindowPrivacyMode_true";
@@ -1185,12 +1185,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4500
-     * @tc.name      : test_SetWindowPrivacyMode_false
-     * @tc.desc      : test_SetWindowPrivacyMode_false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetWindowPrivacyMode_false
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4500
+     * @tc.desc   test_SetWindowPrivacyMode_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowPrivacyMode_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetWindowPrivacyMode_false";
@@ -1219,13 +1219,13 @@ export default function windowNdk() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4600
-         * @tc.name      : test_snapshot_1300002
-         * @tc.desc      : test_snapshot_1300002
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_snapshot_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4600
+     * @tc.desc   test_snapshot_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_snapshot_1300002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_snapshot_1300002";
       let PixelMap = windowNdkTest.snapshot(-1);
@@ -1239,14 +1239,14 @@ export default function windowNdk() {
         }
     })
 
-     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4700
-         * @tc.name      : test_SetWindowFocusable_1300002
-         * @tc.desc      : test_SetWindowFocusable_1300002
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+    /**
+     * @tc.name   test_SetWindowFocusable_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4700
+     * @tc.desc   test_SetWindowFocusable_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_SetWindowFocusable_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetWindowFocusable_1300002";
       let result = windowNdkTest.setWindowFocusable(-1,true);
@@ -1254,14 +1254,14 @@ export default function windowNdk() {
         expect(result).assertEqual(1300002);
         done();
     })
-/**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4800
-         * @tc.name      : test_SetWindowFocusable_false
-         * @tc.desc      : test_SetWindowFocusable_false
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+    /**
+     * @tc.name   test_SetWindowFocusable_true
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4800
+     * @tc.desc   test_SetWindowFocusable_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('test_SetWindowFocusable_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_SetWindowFocusable_true";
       let result = windowNdkTest.setWindowFocusable(windowId,false);
@@ -1273,13 +1273,13 @@ export default function windowNdk() {
         done();
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4900
-         * @tc.name      : test_SetWindowFocusable_true
-         * @tc.desc      : test_SetWindowFocusable_true
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+     * @tc.name   test_SetWindowFocusable_true
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4900
+     * @tc.desc   test_SetWindowFocusable_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('test_SetWindowFocusable_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_SetWindowFocusable_true";
       let result = windowNdkTest.setWindowFocusable(windowId,true);
@@ -1292,13 +1292,13 @@ export default function windowNdk() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5000
-         * @tc.name      : test_SetWindowTouchable_1300002
-         * @tc.desc      : test_SetWindowTouchable_1300002
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_SetWindowTouchable_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5000
+     * @tc.desc   test_SetWindowTouchable_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_SetWindowTouchable_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_SetWindowTouchable_1300002";
       let result = windowNdkTest.setWindowTouchable(-1,true);
@@ -1306,14 +1306,14 @@ export default function windowNdk() {
         expect(result).assertEqual(1300002);
         done();
     })
-/**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5100
-         * @tc.name      : test_SetWindowTouchable_false
-         * @tc.desc      : test_SetWindowTouchable_false
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+    /**
+     * @tc.name   test_SetWindowTouchable_false
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5100
+     * @tc.desc   test_SetWindowTouchable_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('test_SetWindowTouchable_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_SetWindowTouchable_false";
       let result = windowNdkTest.setWindowTouchable(windowId,false);
@@ -1325,13 +1325,13 @@ export default function windowNdk() {
         done();
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5200
-         * @tc.name      : test_SetWindowTouchable_true
-         * @tc.desc      : test_SetWindowTouchable_true
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+     * @tc.name   test_SetWindowTouchable_true
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5200
+     * @tc.desc   test_SetWindowTouchable_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('test_SetWindowTouchable_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_SetWindowTouchable_true";
       let result = windowNdkTest.setWindowTouchable(windowId,true);
@@ -1344,13 +1344,13 @@ export default function windowNdk() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5300
-         * @tc.name      : test_GetWindowPorperties_1300002
-         * @tc.desc      : test_GetWindowPorperties_1300002
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_GetWindowPorperties_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5300
+     * @tc.desc   test_GetWindowPorperties_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_GetWindowPorperties_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_GetWindowPorperties_1300002";
       let result = windowNdkTest.getWindowPorperties(-1);
@@ -1360,13 +1360,13 @@ export default function windowNdk() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5400
-         * @tc.name      : test_GetWindowPorperties
-         * @tc.desc      : test_GetWindowPorperties
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+     * @tc.name   test_GetWindowPorperties
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5400
+     * @tc.desc   test_GetWindowPorperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('test_GetWindowPorperties', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_GetWindowPorperties";
       let windowProperties = windowNdkTest.getWindowPorperties(windowId);
@@ -1377,13 +1377,13 @@ export default function windowNdk() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5500
-         * @tc.name      : test_registerMouseFilter_1300002
-         * @tc.desc      : test_registerMouseFilter_1300002
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_registerMouseFilter_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5500
+     * @tc.desc   test_registerMouseFilter_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_registerMouseFilter_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_registerMouseFilter_1300002";
       let result = windowNdkTest.registerMouseFilter(-1);
@@ -1393,13 +1393,13 @@ export default function windowNdk() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5600
-         * @tc.name      : test_registerMouseFilter_MouseRightButton
-         * @tc.desc      : test_registerMouseFilter_MouseRightButton
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_registerMouseFilter_MouseRightButton
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5600
+     * @tc.desc   test_registerMouseFilter_MouseRightButton
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_registerMouseFilter_MouseRightButton', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_registerMouseFilter_MouseRightButton";
       let result = windowNdkTest.registerMouseFilter(windowId);
@@ -1419,13 +1419,13 @@ export default function windowNdk() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5600
-         * @tc.name      : test_unRegisterMouseFilter_1300002
-         * @tc.desc      : test_unRegisterMouseFilter_1300002
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_unRegisterMouseFilter_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5600
+     * @tc.desc   test_unRegisterMouseFilter_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_unRegisterMouseFilter_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_unRegisterMouseFilter_1300002";
       let result = windowNdkTest.clearMouseFilter(-1);
@@ -1436,13 +1436,13 @@ export default function windowNdk() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5700
-         * @tc.name      : test_UnRegisterMouseFilter_MouseRightButton
-         * @tc.desc      : test_UnRegisterMouseFilter_MouseRightButton
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_UnRegisterMouseFilter_MouseRightButton
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5700
+     * @tc.desc   test_UnRegisterMouseFilter_MouseRightButton
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UnRegisterMouseFilter_MouseRightButton', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_UnRegisterMouseFilter_MouseRightButton";
       let result = windowNdkTest.clearMouseFilter(windowId);
@@ -1460,14 +1460,14 @@ export default function windowNdk() {
           done();
         }
     })
-/**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5800
-         * @tc.name      : test_registerTouchFilter_1300002
-         * @tc.desc      : test_registerTouchFilter_1300002
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+    /**
+     * @tc.name   test_registerTouchFilter_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5800
+     * @tc.desc   test_registerTouchFilter_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_registerTouchFilter_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_registerTouchFilter_1300002";
       let result = windowNdkTest.registerTouchFilter(-1);
@@ -1477,13 +1477,13 @@ export default function windowNdk() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5900
-         * @tc.name      : test_registerTouchFilter_TouchMove
-         * @tc.desc      : test_registerTouchFilter_TouchMove
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_registerTouchFilter_TouchMove
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_5900
+     * @tc.desc   test_registerTouchFilter_TouchMove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_registerTouchFilter_TouchMove', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_registerTouchFilter_TouchMove";
       let result = windowNdkTest.registerTouchFilter(windowId);
@@ -1503,13 +1503,13 @@ export default function windowNdk() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6000
-         * @tc.name      : test_unRegisterTouchFilter_1300002
-         * @tc.desc      : test_unRegisterTouchFilter_1300002
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_unRegisterTouchFilter_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6000
+     * @tc.desc   test_unRegisterTouchFilter_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_unRegisterTouchFilter_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_unRegisterTouchFilter_1300002";
       let result = windowNdkTest.clearTouchFilter(-1);
@@ -1519,13 +1519,13 @@ export default function windowNdk() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6100
-         * @tc.name      : test_unRegisterTouchFilter_TouchMove
-         * @tc.desc      : test_unRegisterTouchFilter_TouchMove
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_unRegisterTouchFilter_TouchMove
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6100
+     * @tc.desc   test_unRegisterTouchFilter_TouchMove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_unRegisterTouchFilter_TouchMove', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_unRegisterTouchFilter_TouchMove";
       let result = windowNdkTest.clearTouchFilter(windowId);
@@ -1544,13 +1544,13 @@ export default function windowNdk() {
         }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6200
-         * @tc.name      : test_getAllWIndowLayOutInfo_401
-         * @tc.desc      : test_getAllWIndowLayOutInfo_401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_getAllWIndowLayOutInfo_401
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6200
+     * @tc.desc   test_getAllWIndowLayOutInfo_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getAllWIndowLayOutInfo_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_getAllWIndowLayOutInfo_401";
       console.log(caseName + '  start');
@@ -1565,13 +1565,13 @@ export default function windowNdk() {
         }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6300
-         * @tc.name      : test_getAllWIndowLayOutInfo_mainWIndow
-         * @tc.desc      : test_getAllWIndowLayOutInfo_mainWIndow
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+     * @tc.name   test_getAllWIndowLayOutInfo
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6300
+     * @tc.desc   test_getAllWIndowLayOutInfo_mainWIndow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('test_getAllWIndowLayOutInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_getAllWIndowLayOutInfo";
       console.log(caseName + '  start');
@@ -1589,13 +1589,13 @@ export default function windowNdk() {
         }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6400
-         * @tc.name      : test_getAllWIndowLayOutInfo_subWIndow
-         * @tc.desc      : test_getAllWIndowLayOutInfo_subWIndow
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_getAllWIndowLayOutInfo_subWIndow
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6400
+     * @tc.desc   test_getAllWIndowLayOutInfo_subWIndow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getAllWIndowLayOutInfo_subWIndow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = "test_getAllWIndowLayOutInfo_subWIndow";
       console.log(caseName + '  start');
@@ -1634,12 +1634,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0100
-     * @tc.name    : test_OH_WindowManager_GetAllMainWindowInfo_0100
-     * @tc.desc    : OH_WindowManager_GetAllMainWindowInfo测试错误码校验201
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   test_OH_WindowManager_GetAllMainWindowInfo_0100
+     * @tc.number SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0100
+     * @tc.desc   OH_WindowManager_GetAllMainWindowInfo测试错误码校验201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_WindowManager_GetAllMainWindowInfo_0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -1661,12 +1661,12 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0100
-     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0100
-     * @tc.desc    : OH_WindowManager_GetMainWindowSnapshot测试错误码校验801、201
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   test_OH_WindowManager_GetMainWindowSnapshot_0100
+     * @tc.number SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0100
+     * @tc.desc   OH_WindowManager_GetMainWindowSnapshot测试错误码校验801、201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {

@@ -26,65 +26,65 @@ export default function textCopyOptionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_COPYOPTION_0100
-     * @tc.name       : testTextCopyOption001
-     * @tc.desc       : testing copyOption for text with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextCopyOption001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_COPYOPTION_0100
+     * @tc.desc   testing copyOption for text with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextCopyOption001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextCopyOption001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_COPYOPTION_0200
-     * @tc.name       : testTextCopyOption002
-     * @tc.desc       : testing copyOption for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextCopyOption002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_COPYOPTION_0200
+     * @tc.desc   testing copyOption for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextCopyOption002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextCopyOption002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_COPYOPTION_0300
-     * @tc.name       : testTextCopyOption003
-     * @tc.desc       : testing copyOption for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextCopyOption003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_COPYOPTION_0300
+     * @tc.desc   testing copyOption for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextCopyOption003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextCopyOption003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_COPYOPTION_0400
-     * @tc.name       : testTextCopyOption004
-     * @tc.desc       : testing copyOption for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextCopyOption004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_COPYOPTION_0400
+     * @tc.desc   testing copyOption for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextCopyOption004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextCopyOption004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_COPYOPTION_0500
-     * @tc.name       : testTextCopyOption005
-     * @tc.desc       : testing copyOption for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextCopyOption005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_COPYOPTION_0500
+     * @tc.desc   testing copyOption for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextCopyOption005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextCopyOption005()).assertEqual(0)

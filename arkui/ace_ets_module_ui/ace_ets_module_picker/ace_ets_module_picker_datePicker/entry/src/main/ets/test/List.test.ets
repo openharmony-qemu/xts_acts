@@ -18,12 +18,11 @@ import datePickerMode from './datePickerTest/DatePickerMode.test';
 import EnableHapticFeedbackTest from './datePickerTest/datePickerEnableHapticFeedback.test';
 import EnableHapticFeedbackModifierTest from './datePickerTest/datePickerEnableHapticFeedbackModifier.test';
 import datePickerOnChangeModifierTest from './datePickerTest/datePickerOnChangeModifier.test';
-import datepicker from './datePickerTest/DatePicker';
-import ActsDatePickerTest from './datePickerTest/DatePicker.test';
+import datePickerTextStyleTest from './datePickerTest/DatePickerTextStyle.test';
 import datePickerLunarJsunit from './datePickerTest/datePicker3.test';
 import datePickerJsunit from './datePickerTest/DatePickerJsunit.test';
 import datePickerUIJsunit from './datePickerTest/datePickerUIJsunit.test';
-import stageDatePickerDialog from './datePickerTest/stageDatePickerDialog.test';
+import datePickerPropertiesModifierTest from './datePickerTest/datePickerPropertiesModifier.test';
 
 export default function testsuite() {
   DatePickerCanLoopTest();
@@ -31,10 +30,9 @@ export default function testsuite() {
   EnableHapticFeedbackTest();
   EnableHapticFeedbackModifierTest();
   datePickerOnChangeModifierTest();
-  datepicker();
-  ActsDatePickerTest();
+  datePickerTextStyleTest();
   datePickerLunarJsunit();
   datePickerJsunit();
   datePickerUIJsunit();
-  stageDatePickerDialog();
+  datePickerPropertiesModifierTest();
 }

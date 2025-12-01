@@ -9,6 +9,8 @@
     "MainAbility/pages/list/coastingAxisTest",
     "MainAbility/pages/waterFlow/WaterFlowFillPolicyTest",
     "MainAbility/pages/image/imageDrawableDescriptorTest",
-    "MainAbility/pages/image/imageErrorTest"
+    "MainAbility/pages/image/imageErrorTest",
+    "MainAbility/pages/textLineHeight/TextLineHeightTest",
+    "MainAbility/pages/textArea/TextAreaBarStateTest"
   ]
 }

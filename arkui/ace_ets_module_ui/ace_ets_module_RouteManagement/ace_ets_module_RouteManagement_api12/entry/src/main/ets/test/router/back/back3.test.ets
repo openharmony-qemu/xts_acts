@@ -48,10 +48,12 @@ export default function back3() {
     });
 
     /**
-     * @tc.number    back3_0100
-     * @tc.name      back3_0100
-     * @tc.desc      Test back
-     * @tc.level     Level 2
+     * @tc.name   back3_0100
+     * @tc.number back3_0100
+     * @tc.desc   Test back
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('back3_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[back3_0100] START');

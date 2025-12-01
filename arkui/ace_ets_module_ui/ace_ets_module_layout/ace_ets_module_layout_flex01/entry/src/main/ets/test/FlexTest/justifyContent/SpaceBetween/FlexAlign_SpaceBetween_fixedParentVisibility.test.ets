@@ -49,9 +49,12 @@ export default function flexAlign_SpaceBetween_fixedParentVisibility() {
     });
 
     /**
+     * @tc.name   testAlignSpaceBetweenRowNoWrapVisibilityNone
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEBETWEEN_TEST_1000
-     * @tc.name testAlignSpaceBetweenRowNoWrapVisibilityNone
-     * @tc.desc Parent component fixed, child component binding visibility none properties
+     * @tc.desc   Parent component fixed, child component binding visibility none properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceBetweenRowNoWrapVisibilityNone',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapVisibilityNone START');
@@ -94,9 +97,12 @@ export default function flexAlign_SpaceBetween_fixedParentVisibility() {
     });
 
     /**
+     * @tc.name   testAlignSpaceBetweenRowNoWrapVisibilityHidden
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEBETWEEN_TEST_1100
-     * @tc.name testAlignSpaceBetweenRowNoWrapVisibilityHidden
-     * @tc.desc Parent component fixed, child component binding visibility hidden properties
+     * @tc.desc   Parent component fixed, child component binding visibility hidden properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceBetweenRowNoWrapVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapVisibilityHidden START');

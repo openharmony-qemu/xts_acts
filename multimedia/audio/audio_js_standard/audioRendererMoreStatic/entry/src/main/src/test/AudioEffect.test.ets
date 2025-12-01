@@ -181,12 +181,12 @@ export default function AudioEffectTest() {
     }
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0100
-     * @tc.desc        GET_AUDIOEFFECTINFOARRYSYNC - MEDIA - Sync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0100
+     * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - MEDIA - Sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -204,12 +204,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0100
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - UNKNOWN
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0100
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -231,12 +231,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0200
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - MEDIA
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0200
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -258,12 +258,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0300
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - VOICE_CALL
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0300
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - VOICE_CALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -285,12 +285,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0400
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - RING
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0400
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - RING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -312,12 +312,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0500
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - MOVIE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0500
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -339,12 +339,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0600
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - MUSIC
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0600
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -369,12 +369,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0700
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - ALARM
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0700
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -398,12 +398,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0800
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - VOICE_ASSISTANT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0800
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -427,12 +427,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0900
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - ACCESSIBILITY
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0900
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -456,12 +456,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1000
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - VOICE_MESSAGE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1000
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -485,12 +485,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1100
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - RINGTONE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1100
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -514,12 +514,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1200
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - NOTIFICATION
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1200
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -543,12 +543,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1300
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - GAME
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1300
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -572,12 +572,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1400
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - AUDIOBOOK
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1400
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - AUDIOBOOK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -599,12 +599,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1500
-     * @tc.desc        GET_AUDIOEFFECTINFOARRY - NAVIGATION
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1500
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -626,12 +626,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0100
-     * @tc.desc        GET_SET_AudioEffectMode-UNKNOWN & UNKNOWN
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0100
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0100 come in')
@@ -687,12 +687,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0200
-     * @tc.desc        GET_SET_AudioEffectMode-UNKNOWN & MEDIA
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0200
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0200 come in')
@@ -748,12 +748,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0300
-     * @tc.desc        GET_SET_AudioEffectMode-UNKNOWN & COMMUNICATION
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0300
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0300 come in')
@@ -816,12 +816,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0400
-     * @tc.desc        GET_SET_AudioEffectMode-UNKNOWN & ASSISTANT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0400
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0400 come in')
@@ -883,12 +883,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0500
-     * @tc.desc        GET_SET_AudioEffectMode-UNKNOWN & ALARM
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0500
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0500 come in')
@@ -950,12 +950,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0600
-     * @tc.desc        GET_SET_AudioEffectMode-UNKNOWN & RINGTONE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0600
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0600 come in')
@@ -1017,12 +1017,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0700
-     * @tc.desc        GET_SET_AudioEffectMode-UNKNOWN & ACCESSIBILITY
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0700
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0700 come in')
@@ -1084,12 +1084,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0800
-     * @tc.desc        GET_SET_AudioEffectMode-SPEECH & UNKNOWN
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0800
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0800 come in')
@@ -1151,12 +1151,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0900
-     * @tc.desc        GET_SET_AudioEffectMode-SPEECH & MEDIA
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0900
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0900 come in')
@@ -1218,12 +1218,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1000
-     * @tc.desc        GET_SET_AudioEffectMode-SPEECH & COMMUNICATION
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1000
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1000 come in')
@@ -1285,12 +1285,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1100
-     * @tc.desc        GET_SET_AudioEffectMode-SPEECH & ASSISTANT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1100
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1100 come in')
@@ -1352,12 +1352,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1200
-     * @tc.desc        GET_SET_AudioEffectMode-SPEECH & ALARM
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1200
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1200 come in')
@@ -1419,12 +1419,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1300
-     * @tc.desc        GET_SET_AudioEffectMode-SPEECH & RINGTONE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1300
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1300 come in')
@@ -1486,12 +1486,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1400
-     * @tc.desc        GET_SET_AudioEffectMode-SPEECH & ACCESSIBILITY
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1400
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1400 come in')
@@ -1553,12 +1553,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1500
-     * @tc.desc        GET_SET_AudioEffectMode-MUSIC & UNKNOWN
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1500
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1500 come in')
@@ -1620,12 +1620,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1600
-     * @tc.desc        GET_SET_AudioEffectMode-MUSIC & MEDIA
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1600
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1600 come in')
@@ -1687,12 +1687,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1700
-     * @tc.desc        GET_SET_AudioEffectMode-MUSIC & COMMUNICATION
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1700
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1700 come in')
@@ -1754,12 +1754,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1800
-     * @tc.desc        GET_SET_AudioEffectMode-MUSIC & ASSISTANT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1800
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1800 come in')
@@ -1821,12 +1821,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1900
-     * @tc.desc        GET_SET_AudioEffectMode-MUSIC & ALARM
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1900
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1900 come in')
@@ -1889,12 +1889,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2000
-     * @tc.desc        GET_SET_AudioEffectMode-MUSIC & RINGTONE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2000
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2000 come in')
@@ -1956,12 +1956,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2100
-     * @tc.desc        GET_SET_AudioEffectMode-MUSIC & ACCESSIBILITY
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2100
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2100 come in')
@@ -2023,12 +2023,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2200
-     * @tc.desc        GET_SET_AudioEffectMode-MOVIE & UNKNOWN
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2200
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2200 come in')
@@ -2090,12 +2090,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2300
-     * @tc.desc        GET_SET_AudioEffectMode-MOVIE & MEDIA
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2300
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2300 come in')
@@ -2157,12 +2157,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2400
-     * @tc.desc        GET_SET_AudioEffectMode-MOVIE & COMMUNICATION
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2400
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2400 come in')
@@ -2225,12 +2225,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2500
-     * @tc.desc        GET_SET_AudioEffectMode-MOVIE & ASSISTANT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2500
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2500 come in')
@@ -2293,12 +2293,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2600
-     * @tc.desc        GET_SET_AudioEffectMode-MOVIE & ALARM
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2600
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2600 come in')
@@ -2360,12 +2360,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2700
-     * @tc.desc        GET_SET_AudioEffectMode-MOVIE & RINGTONE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2700
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2700 come in')
@@ -2427,12 +2427,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2800
-     * @tc.desc        GET_SET_AudioEffectMode-MOVIE & ACCESSIBILITY
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2800
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2800 come in')
@@ -2494,12 +2494,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2900
-     * @tc.desc        GET_SET_AudioEffectMode-SONIFICATION & UNKNOWN
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2900
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2900 come in')
@@ -2561,12 +2561,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3000
-     * @tc.desc        GET_SET_AudioEffectMode-SONIFICATION & MEDIA
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3000
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3000 come in')
@@ -2628,12 +2628,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3100
-     * @tc.desc        GET_SET_AudioEffectMode-SONIFICATION & COMMUNICATION
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3100
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3100 come in')
@@ -2695,12 +2695,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3200
-     * @tc.desc        GET_SET_AudioEffectMode-SONIFICATION & ASSISTANT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3200
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3200 come in')
@@ -2762,12 +2762,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3300
-     * @tc.desc        GET_SET_AudioEffectMode-SONIFICATION & ALARM
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3300
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3300 come in')
@@ -2829,12 +2829,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3400
-     * @tc.desc        GET_SET_AudioEffectMode-SONIFICATION & RINGTONE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3400
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3400 come in')
@@ -2896,12 +2896,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3500
-     * @tc.desc        GET_SET_AudioEffectMode-SONIFICATION & ACCESSIBILITY
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3500
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3500 come in')
@@ -2962,12 +2962,12 @@ export default function AudioEffectTest() {
       });
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3600
-     * @tc.desc        GET_SET_AudioEffectMode-RINGTONE & UNKNOWN
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3600
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3600 come in')
@@ -3029,12 +3029,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3700
-     * @tc.desc        GET_SET_AudioEffectMode-RINGTONE & MEDIA
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3700
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3700 come in')
@@ -3096,12 +3096,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3800
-     * @tc.desc        GET_SET_AudioEffectMode-RINGTONE & COMMUNICATION
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3800
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3800 come in')
@@ -3163,12 +3163,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3900
-     * @tc.desc        GET_SET_AudioEffectMode-RINGTONE & ASSISTANT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3900
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3900 come in')
@@ -3230,12 +3230,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4000
-     * @tc.desc        GET_SET_AudioEffectMode-RINGTONE & ALARM
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4000
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4000 come in')
@@ -3297,12 +3297,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4100
-     * @tc.desc        GET_SET_AudioEffectMode-RINGTONE & RINGTONE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4100
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4100 come in')
@@ -3364,12 +3364,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4200
-     * @tc.desc        GET_SET_AudioEffectMode-RINGTONE & ACCESSIBILITY
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4200
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_STATIC_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4200 come in')
@@ -3430,11 +3430,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0100
-     * @tc.desc        AudioEffect_Play_MUSIC
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0100
+     * @tc.desc   AudioEffect_Play_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0100]'
@@ -3473,11 +3474,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0200
-     * @tc.desc        AudioEffect_Play_MUSIC
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0200
+     * @tc.desc   AudioEffect_Play_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0200]'
@@ -3516,11 +3518,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0300
-     * @tc.desc        AudioEffect_Play_VOICE_CALL
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0300
+     * @tc.desc   AudioEffect_Play_VOICE_CALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0300]'
@@ -3559,11 +3562,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0400
-     * @tc.desc        AudioEffect_Play_RING
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0400
+     * @tc.desc   AudioEffect_Play_RING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0400]'
@@ -3602,11 +3606,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0500
-     * @tc.desc        AudioEffect_Play_MOVIE
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0500
+     * @tc.desc   AudioEffect_Play_MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0500]'
@@ -3645,11 +3650,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0600
-     * @tc.desc        AudioEffect_Play_SPEECH
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0600
+     * @tc.desc   AudioEffect_Play_SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0600]'
@@ -3688,11 +3694,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0700
-     * @tc.desc        AudioEffect_Play_ALARM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0700
+     * @tc.desc   AudioEffect_Play_ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0700]'
@@ -3731,11 +3738,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0800
-     * @tc.desc        AudioEffect_Play_VOICE_ASSISTANT
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0800
+     * @tc.desc   AudioEffect_Play_VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0800]'
@@ -3774,11 +3782,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0900
-     * @tc.desc        AudioEffect_Play_ACCESSIBILITY
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0900
+     * @tc.desc   AudioEffect_Play_ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0900]'
@@ -3817,11 +3826,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1000
-     * @tc.desc        AudioEffect_Play_SameStreams_DiffAudioEffectMode
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1000
+     * @tc.desc   AudioEffect_Play_SameStreams_DiffAudioEffectMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1000]'
@@ -3874,11 +3884,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1100
-     * @tc.desc        AudioEffect_Play_SameStreams_SameAudioEffectMode_EFFECT_NONE
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1100
+     * @tc.desc   AudioEffect_Play_SameStreams_SameAudioEffectMode_EFFECT_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1100]'
@@ -3931,11 +3942,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1200
-     * @tc.desc        AudioEffect_Play_SameStreams_SameAudioEffectMode_EFFECT_DEFAULT
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1200
+     * @tc.desc   AudioEffect_Play_SameStreams_SameAudioEffectMode_EFFECT_DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1200]'
@@ -3989,11 +4001,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1300
-     * @tc.desc        AudioEffect_Play_DiffStreams_DiffAudioEffectMode
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1300
+     * @tc.desc   AudioEffect_Play_DiffStreams_DiffAudioEffectMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1300]'

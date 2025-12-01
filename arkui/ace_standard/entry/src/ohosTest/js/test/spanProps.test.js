@@ -79,9 +79,12 @@ export default function undo() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanIdProp
-         * @tc.desc      ACE
+         * @tc.name   testSpanIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanIdProp', Level.LEVEL0, async function(done) {
             console.info('testSpanIdProp START');
@@ -96,6 +99,14 @@ export default function undo() {
             done();
         });
 
+        /**
+         * @tc.name   testSpanClassProp
+         * @tc.number testSpanClassProp
+         * @tc.desc   testSpanClassProp
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testSpanClassProp', Level.LEVEL0, async function(done) {
             console.info('testSpanClassProp START');
             console.info("[spanProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -110,9 +121,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSpanClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testSpanClassPropNone START');
@@ -130,9 +144,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanRefProp
-         * @tc.desc      ACE
+         * @tc.name   testSpanRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanRefProp', Level.LEVEL0, async function(done) {
             console.info('testSpanRefProp START');
@@ -149,9 +166,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSpanRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testSpanRefPropNone START');
@@ -169,9 +189,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanDataProp
-         * @tc.desc      ACE
+         * @tc.name   testSpanDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanDataProp', Level.LEVEL0, async function(done) {
             console.info('testSpanDataProp START');
@@ -189,9 +212,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSpanDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testSpanDataPropNone START');
@@ -209,9 +235,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testSpanClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testSpanClickEffectPropSmall START');
@@ -228,9 +257,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testSpanClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testSpanClickEffectPropMedium START');
@@ -247,9 +279,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testSpanClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testSpanClickEffectPropLarge START');
@@ -266,9 +301,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSpanClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testSpanClickEffectPropNone START');
@@ -286,9 +324,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testSpanDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testSpanDirPropRtl START');
@@ -305,9 +346,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testSpanDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testSpanDirPropLtr START');
@@ -324,9 +368,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testSpanDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testSpanDirPropAuto START');
@@ -343,9 +390,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSpanDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testSpanDirPropNone START');
@@ -362,9 +412,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testSpanForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanForPropNull', Level.LEVEL0, async function(done) {
             console.info('testSpanForPropNull START');
@@ -382,9 +435,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testSpanForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanForPropOne', Level.LEVEL0, async function(done) {
             console.info('testSpanForPropOne START');
@@ -402,9 +458,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testSpanForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanForPropThree', Level.LEVEL0, async function(done) {
             console.info('testSpanForPropThree START');
@@ -422,9 +481,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSpanIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSpanIfPropTrue START');
@@ -442,9 +504,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSpanShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSpanShowPropTrue START');
@@ -462,9 +527,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSpanShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSpanShowPropFalse START');
@@ -482,9 +550,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSpanShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testSpanShowPropNone START');

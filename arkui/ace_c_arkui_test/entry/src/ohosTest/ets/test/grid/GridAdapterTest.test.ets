@@ -25,15 +25,15 @@ export default function gridAdapterTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_GRID_NODE_ADAPTER_0100
-     * @tc.name: testGridAdapter001
-     * @tc.desc: testing adapter for grid
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
 
+    /**
+     * @tc.name   testGridAdapter001
+     * @tc.number testGridAdapter001
+     * @tc.desc   testGridAdapter001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGridAdapter001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GridAdapterTest';
       await Utils.pushPage(`grid/${PAGE_TAG}`);

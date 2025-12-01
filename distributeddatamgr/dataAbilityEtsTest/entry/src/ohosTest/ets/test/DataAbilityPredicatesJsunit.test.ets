@@ -126,7 +126,6 @@ describe('dataAbilityPredicatesTest', () => {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEqualTo0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_3100
      * @tc.desc   predicates equalTo normal test
@@ -149,7 +148,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEqualTo0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_3000
      * @tc.desc   predicates equalTo normal test
@@ -173,7 +171,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEqualTo0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_3700
      * @tc.desc   predicates equalTo normal test
@@ -197,7 +194,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEqualTo0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_3200
      * @tc.desc   predicates equalTo normal test
@@ -221,7 +217,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEqualTo0005
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_3600
      * @tc.desc   predicates equalTo normal test
@@ -245,7 +240,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEqualTo0006
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_3400
      * @tc.desc   predicates equalTo normal test
@@ -269,7 +263,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEqualTo0007
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_3500
      * @tc.desc   predicates equalTo normal test
@@ -293,7 +286,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEqualTo0008
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_3300
      * @tc.desc   predicates equalTo normal test
@@ -318,7 +310,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotEqualTo0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_9900
      * @tc.desc   predicates notEqualTo normal test
@@ -342,7 +333,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotEqualTo0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_9800
      * @tc.desc   predicates notEqualTo normal test
@@ -367,7 +357,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotEqualTo0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0160
      * @tc.desc   predicates notEqualTo normal test
@@ -391,7 +380,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotEqualTo0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0110
      * @tc.desc   predicates notEqualTo normal test
@@ -415,7 +403,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotEqualTo0005
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0150
      * @tc.desc   predicates notEqualTo normal test
@@ -439,7 +426,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotEqualTo0006
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0130
      * @tc.desc   predicates notEqualTo normal test
@@ -463,7 +449,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotEqualTo0007
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0140
      * @tc.desc   predicates notEqualTo normal test
@@ -487,7 +472,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotEqualTo0008
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0120
      * @tc.desc   predicates notEqualTo normal test
@@ -511,7 +495,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIsNull0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_6900
      * @tc.desc   resultSet isNull normal test
@@ -533,7 +516,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIsNull0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_6800
      * @tc.desc   predicates isNull normal test
@@ -555,7 +537,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIsNull0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_7100
      * @tc.desc   predicates isNull normal test
@@ -577,7 +558,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIsNull0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_7000
      * @tc.desc   predicates isNull normal test
@@ -599,7 +579,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIsNotNull0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_6500
      * @tc.desc   predicates isNotNull normal test
@@ -621,7 +600,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIsNotNull0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_6400
      * @tc.desc   predicates isNotNull normal test
@@ -643,7 +621,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIsNotNull0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_6700
      * @tc.desc   predicates isNotNull normal test
@@ -665,7 +642,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIsNotNull0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_6600
      * @tc.desc   predicates isNotNull normal test
@@ -687,7 +663,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThan0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_5400
      * @tc.desc   predicates greaterThan normal test
@@ -711,7 +686,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThan0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_4800
      * @tc.desc   predicates greaterThan normal test
@@ -735,7 +709,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThan0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_5000
      * @tc.desc   predicates greaterThan normal test
@@ -759,7 +732,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThan0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_5200
      * @tc.desc   predicates greaterThan normal test
@@ -784,7 +756,6 @@ describe('dataAbilityPredicatesTest', () => {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThan0005
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_5500
      * @tc.desc   predicates greaterThan normal test
@@ -808,7 +779,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThan0006
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_4900
      * @tc.desc   predicates greaterThan normal test
@@ -832,7 +802,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThan0007
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_5100
      * @tc.desc   predicates greaterThan normal test
@@ -856,7 +825,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThan0008
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_5300
      * @tc.desc   predicates greaterThan normal test
@@ -880,7 +848,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThanOrEqualTo0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_4700
      * @tc.desc   predicates greaterThanOrEqualTo normal test
@@ -904,7 +871,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThanOrEqualTo0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_4400
      * @tc.desc   predicates greaterThanOrEqualTo normal test
@@ -928,7 +894,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThanOrEqualTo0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_4500
      * @tc.desc   predicates greaterThanOrEqualTo normal test
@@ -952,7 +917,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGreaterThanOrEqualTo0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_4600
      * @tc.desc   predicates greaterThanOrEqualTo normal test
@@ -976,7 +940,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThan0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_8200
      * @tc.desc   predicates lessThan normal test
@@ -1000,7 +963,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThan0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_7600
      * @tc.desc   predicates lessThan normal test
@@ -1024,7 +986,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThan0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_7800
      * @tc.desc   predicates lessThan normal test
@@ -1048,7 +1009,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThan0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_8000
      * @tc.desc   predicates lessThan normal test
@@ -1073,7 +1033,6 @@ describe('dataAbilityPredicatesTest', () => {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThan0005
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_8300
      * @tc.desc   predicates lessThan normal test
@@ -1097,7 +1056,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThan0006
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_7700
      * @tc.desc   predicates lessThan normal test
@@ -1121,7 +1079,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThan0007
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_7900
      * @tc.desc   predicates lessThan normal test
@@ -1145,7 +1102,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThan0008
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_8100
      * @tc.desc   predicates lessThan normal test
@@ -1170,7 +1126,6 @@ describe('dataAbilityPredicatesTest', () => {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThanOrEqualTo0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_7500
      * @tc.desc   predicates lessThanOrEqualTo normal test
@@ -1194,7 +1149,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThanOrEqualTo0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_7200
      * @tc.desc   predicates lessThanOrEqualTo normal test
@@ -1218,7 +1172,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThanOrEqualTo0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_7300
      * @tc.desc   predicates lessThanOrEqualTo normal test
@@ -1242,7 +1195,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLessThanOrEqualTo0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_7400
      * @tc.desc   predicates lessThanOrEqualTo normal test
@@ -1266,7 +1218,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBetween0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_1800
      * @tc.desc   predicates between normal test
@@ -1290,7 +1241,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBetween0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_1200
      * @tc.desc   predicates between normal test
@@ -1314,7 +1264,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBetween0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_1400
      * @tc.desc   predicates between normal test
@@ -1338,7 +1287,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBetween0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_1600
      * @tc.desc   predicates between normal test
@@ -1362,7 +1310,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBetween0005
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_1900
      * @tc.desc   predicates between normal test
@@ -1386,7 +1333,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBetween0006
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_1300
      * @tc.desc   predicates between normal test
@@ -1410,7 +1356,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBetween0007
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_1500
      * @tc.desc   predicates between normal test
@@ -1434,7 +1379,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBetween0008
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_1700
      * @tc.desc   predicates between normal test
@@ -1458,7 +1402,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotBetween0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_9700
      * @tc.desc   test string value with notBetween.
@@ -1483,7 +1426,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotBetween0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_9400
      * @tc.desc   test double value with notBetween.
@@ -1508,7 +1450,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotBetween0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_9500
      * @tc.desc   test integer value with notBetween.
@@ -1533,7 +1474,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotBetween0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_9600
      * @tc.desc   test long value with notBetween.
@@ -1558,7 +1498,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGlob0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_4000
      * @tc.desc   end with ? by glob.
@@ -1583,7 +1522,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGlob0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_3900
      * @tc.desc   begin with * by glob.
@@ -1608,7 +1546,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGlob0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_4200
      * @tc.desc   end with ? by glob.
@@ -1633,7 +1570,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGlob0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_4300
      * @tc.desc   begin with ? by glob.
@@ -1658,7 +1594,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGlob0005
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_3800
      * @tc.desc   begin and end with * by glob.
@@ -1683,7 +1618,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGlob0006
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_4100
      * @tc.desc   begin and end with ? by glob.
@@ -1708,7 +1642,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testContains0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_2300
      * @tc.desc   predicates contains normal test
@@ -1730,7 +1663,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testContains0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_2400
      * @tc.desc   predicates contains normal test
@@ -1752,7 +1684,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testContains0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_2500
      * @tc.desc   predicates contains normal test
@@ -1774,7 +1705,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testContains0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_2200
      * @tc.desc   predicates contains normal test
@@ -1796,7 +1726,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBeginsWith0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0400
      * @tc.desc   predicates beginsWith normal test
@@ -1818,7 +1747,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBeginsWith0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0500
      * @tc.desc   predicates beginsWith normal test
@@ -1840,7 +1768,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBeginsWith0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0600
      * @tc.desc   predicates beginsWith normal test
@@ -1862,7 +1789,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBeginsWith0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0300
      * @tc.desc   predicates beginsWith normal test
@@ -1884,7 +1810,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEndsWith0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_2700
      * @tc.desc   predicates endsWith normal test
@@ -1906,7 +1831,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEndsWith0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_2800
      * @tc.desc   predicates endsWith normal test
@@ -1928,7 +1852,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEndsWith0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_2900
      * @tc.desc   predicates endsWith normal test
@@ -1950,7 +1873,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testEndsWith0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_2600
      * @tc.desc   predicates endsWith normal test
@@ -1972,7 +1894,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLike0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_8500
      * @tc.desc   predicates like normal test
@@ -1994,7 +1915,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLike0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_8600
      * @tc.desc   predicates like normal test
@@ -2016,7 +1936,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLike0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_8700
      * @tc.desc   predicates like normal test
@@ -2038,7 +1957,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLike0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_8400
      * @tc.desc   predicates like normal test
@@ -2060,7 +1978,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBeginWrap0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_1000
      * @tc.desc   predicates beginWrap normal test
@@ -2089,7 +2006,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBeginWrap0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0900
      * @tc.desc   predicates beginWrap normal test
@@ -2116,7 +2032,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBeginWrap0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0700
      * @tc.desc   predicates beginWrap normal test
@@ -2143,7 +2058,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBeginWrap0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_1100
      * @tc.desc   predicates beginWrap normal test
@@ -2169,7 +2083,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testBeginWrap0005
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0800
      * @tc.desc   predicates beginWrap normal test
@@ -2195,7 +2108,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testAnd0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0100
      * @tc.desc   predicates and normal test
@@ -2221,7 +2133,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testAnd0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0290
      * @tc.desc   predicates or normal test
@@ -2250,7 +2161,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testAnd0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0200
      * @tc.desc   predicates and normal test
@@ -2274,7 +2184,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testAnd0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0310
      * @tc.desc   predicates and normal test
@@ -2298,7 +2207,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testOrder0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0250
      * @tc.desc   predicates order normal test
@@ -2328,7 +2236,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testOrder0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0270
      * @tc.desc   predicates order normal test
@@ -2358,7 +2265,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testOrder0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0280
      * @tc.desc   predicates order normal test
@@ -2382,7 +2288,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testOrder0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0260
      * @tc.desc   predicates order normal test
@@ -2406,7 +2311,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLimit0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_9200
      * @tc.desc   predicates limit normal test
@@ -2428,7 +2332,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLimit0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_9300
      * @tc.desc   predicates limit normal test
@@ -2450,7 +2353,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLimit0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_9100
      * @tc.desc   predicates limit normal test
@@ -2472,7 +2374,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLimit0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_8800
      * @tc.desc   predicates limit normal test
@@ -2494,7 +2395,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLimit0005
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_9000
      * @tc.desc   predicates limit normal test
@@ -2516,7 +2416,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testLimit0006
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_8900
      * @tc.desc   predicates limit normal test
@@ -2538,7 +2437,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testOffset0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0230
      * @tc.desc   predicates offset normal test
@@ -2560,7 +2458,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testOffset0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0220
      * @tc.desc   predicates offset normal test
@@ -2582,7 +2479,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testOffset0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0240
      * @tc.desc   predicates offset normal test
@@ -2604,7 +2500,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testOffset0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0210
      * @tc.desc   predicates offset normal test
@@ -2626,7 +2521,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testCreate0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_2000
      * @tc.desc   predicates constructor test
@@ -2645,7 +2539,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testCreate0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_2100
      * @tc.desc   predicates constructor test
@@ -2665,7 +2558,6 @@ describe('dataAbilityPredicatesTest', () => {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGroupBy0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_5600
      * @tc.desc   predicates groupBy test
@@ -2687,7 +2579,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testGroupBy0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_5700
      * @tc.desc   predicates groupBy test
@@ -2709,7 +2600,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIndexedBy0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_5800
      * @tc.desc   predicates indexedBy test
@@ -2732,7 +2622,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIndexedBy0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_5900
      * @tc.desc   predicates indexedBy test
@@ -2752,7 +2641,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotIn0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0180
      * @tc.desc   the common and min value test with notin.
@@ -2775,7 +2663,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotIn0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0190
      * @tc.desc   the common and max value test with notin.
@@ -2798,7 +2685,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testNotIn0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_0170
      * @tc.desc   the min and max value test with notin.
@@ -2821,7 +2707,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIn0001
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_6300
      * @tc.desc   predicates in normal test
@@ -2842,7 +2727,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIn0002
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_6000
      * @tc.desc   predicates in normal test
@@ -2863,7 +2747,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIn0003
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_6100
      * @tc.desc   predicates in normal test
@@ -2884,7 +2767,6 @@ describe('dataAbilityPredicatesTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testIn0004
      * @tc.number SUB_DistributedData_DataAbility_SDK_PredicatesEtsAPITest_6200
      * @tc.desc   predicates in normal test

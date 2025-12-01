@@ -70,10 +70,12 @@ export default function flex_Wrap_FlexMarPad_TextMarPadTest() {
       console.info("Flex_Wrap_FlexMarPad_TextMarPadText after each called");
     });
     /**
+     * @tc.name   testWrapWrapFlexMarPadTextPad
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_0500
-     * @tc.name testWrapWrapFlexMarPadTextPad
-     * @tc.desc The size of the parent component in the main axis direction is not enough for the layout
-     *   of the child components when the parent components set padding and margin,and the child components set padding
+     * @tc.desc   The size of the parent component in the main axis direction is not enough for the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapFlexMarPadTextPad',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapFlexMarPadTextPad] START');
@@ -135,10 +137,12 @@ export default function flex_Wrap_FlexMarPad_TextMarPadTest() {
 
     });
     /**
+     * @tc.name   testWrapWrapFlexMarPadTextMar
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_0600
-     * @tc.name testWrapWrapFlexMarPadTextMar
-     * @tc.desc The size of the parent component in the main axis direction is not enough for the layout
-     *   of the child components when the parent components set padding and margin,and the child components set margin
+     * @tc.desc   The size of the parent component in the main axis direction is not enough for the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapFlexMarPadTextMar',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapFlexMarPadTextMar] START');
@@ -199,10 +203,12 @@ export default function flex_Wrap_FlexMarPad_TextMarPadTest() {
 
     });
     /**
+     * @tc.name   testWrapWrapFlexMarPadTextMarPad
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_0700
-     * @tc.name testWrapWrapFlexMarPadTextMarPad
-     * @tc.desc The size of the parent component in the main axis direction is not enough for the layout
-     *   of the child components when all of components set padding and margin
+     * @tc.desc   The size of the parent component in the main axis direction is not enough for the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapFlexMarPadTextMarPad',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapFlexMarPadTextMarPad] START');

@@ -119,13 +119,13 @@ export default function windowTitleBarTest() {
     })
     afterAll(() => {
     });
-/**
-     * @tc.number     : SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0100
-     * @tc.name       : test_setStatusBarColor_401
-     * @tc.desc       : setStatusBarColor接口验证401
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   test_setStatusBarColor_401
+     * @tc.number SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0100
+     * @tc.desc   setStatusBarColor接口验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setStatusBarColor_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_setStatusBarColor_401!'
@@ -149,12 +149,12 @@ export default function windowTitleBarTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0200
-     * @tc.name       : test_setStatusBarColor_801
-     * @tc.desc       : setStatusBarColor接口验证801
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setStatusBarColor_801
+     * @tc.number SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0200
+     * @tc.desc   setStatusBarColor接口验证801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setStatusBarColor_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_setStatusBarColor_801!'
@@ -177,12 +177,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0100
-     * @tc.name      : test_setDecorButtonStyle_null
-     * @tc.desc      : test_setDecorButtonStyle_null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setDecorButtonStyle_null
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0100
+     * @tc.desc   test_setDecorButtonStyle_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setDecorButtonStyle_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_null';
@@ -208,12 +208,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0200
-     * @tc.name      : test_getDecorButtonStyle_undifined
-     * @tc.desc      : test_getDecorButtonStyle_undifined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_getDecorButtonStyle_undifined
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0200
+     * @tc.desc   test_getDecorButtonStyle_undifined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getDecorButtonStyle_undifined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_getDecorButtonStyle_undifined';
@@ -239,12 +239,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0300
-     * @tc.name      : test_setDecorButtonStyle_colorMode_-2
-     * @tc.desc      : test_setDecorButtonStyle_colorMode_-2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_colorMode_-2
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0300
+     * @tc.desc   test_setDecorButtonStyle_colorMode_-2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_colorMode_-2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_colorMode_-2';
@@ -274,12 +274,12 @@ export default function windowTitleBarTest() {
         }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0400
-     * @tc.name      : test_setDecorButtonStyle_colorMode_-1
-     * @tc.desc      : test_setDecorButtonStyle_colorMode_-1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_colorMode_-1
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0400
+     * @tc.desc   test_setDecorButtonStyle_colorMode_-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_colorMode_-1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_colorMode_-1';
@@ -308,12 +308,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0500
-     * @tc.name      : test_setDecorButtonStyle_colorMode_1
-     * @tc.desc      : test_setDecorButtonStyle_colorMode_1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_colorMode_1
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0500
+     * @tc.desc   test_setDecorButtonStyle_colorMode_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_colorMode_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_colorMode_1';
@@ -342,12 +342,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0600
-     * @tc.name      : test_setDecorButtonStyle_colorMode_0
-     * @tc.desc      : test_setDecorButtonStyle_colorMode_0
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_colorMode_0
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0600
+     * @tc.desc   test_setDecorButtonStyle_colorMode_0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_colorMode_0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_colorMode_0';
@@ -376,12 +376,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0700
-     * @tc.name      : test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_10
-     * @tc.desc      : test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_10
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0700
+     * @tc.desc   test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_10';
@@ -410,12 +410,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0800
-     * @tc.name      : test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_50
-     * @tc.desc      : test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_50
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_50
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0800
+     * @tc.desc   test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_50';
@@ -444,12 +444,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0900
-     * @tc.name      : test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_20
-     * @tc.desc      : test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_20
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_20
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0900
+     * @tc.desc   test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_buttonBackgroundSize_20vp_40vp_20';
@@ -478,12 +478,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1000
-     * @tc.name      : test_setDecorButtonStyle
-     * @tc.desc      : test_setDecorButtonStyle
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1000
+     * @tc.desc   test_setDecorButtonStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle';
@@ -518,12 +518,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1100
-     * @tc.name      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_12
-     * @tc.desc      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_12
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_12
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1100
+     * @tc.desc   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_12';
@@ -551,12 +551,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1200
-     * @tc.name      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_24
-     * @tc.desc      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_24
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_24
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1200
+     * @tc.desc   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_24';
@@ -584,12 +584,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1300
-     * @tc.name      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_7
-     * @tc.desc      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_7
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_7
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1300
+     * @tc.desc   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_7';
@@ -618,12 +618,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1400
-     * @tc.name      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_25
-     * @tc.desc      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_25
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_25
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1400
+     * @tc.desc   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_25
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_25';
@@ -652,12 +652,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1500
-     * @tc.name      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_20
-     * @tc.desc      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_20
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_20
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1500
+     * @tc.desc   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_20';
@@ -685,12 +685,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1600
-     * @tc.name      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_18.5
-     * @tc.desc      : test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_18.5
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_18.5
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1600
+     * @tc.desc   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_18.5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_18.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_18.5';
@@ -718,12 +718,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1700
-     * @tc.name      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_8
-     * @tc.desc      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_8
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_8
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1700
+     * @tc.desc   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_8';
@@ -751,12 +751,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1800
-     * @tc.name      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_22
-     * @tc.desc      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_22
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_22
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1800
+     * @tc.desc   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_22';
@@ -784,12 +784,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1900
-     * @tc.name      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_5
-     * @tc.desc      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_5
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_5
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1900
+     * @tc.desc   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_5';
@@ -818,12 +818,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2000
-     * @tc.name      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_23
-     * @tc.desc      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_23
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_23
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2000
+     * @tc.desc   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_23';
@@ -852,12 +852,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2100
-     * @tc.name      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_20
-     * @tc.desc      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_20
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_20
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2100
+     * @tc.desc   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_20';
@@ -885,12 +885,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2200
-     * @tc.name      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_18.5
-     * @tc.desc      : test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_18.5
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_18.5
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2200
+     * @tc.desc   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_18.5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_18.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_18.5';
@@ -918,12 +918,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2300
-     * @tc.name      : test_setDecorButtonStyle_spacingBetweenButtons_closeButtonRightMargin
-     * @tc.desc      : test_setDecorButtonStyle_spacingBetweenButtons_closeButtonRightMargin
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_spacingBetweenButtons_closeButtonRightMargin
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2300
+     * @tc.desc   test_setDecorButtonStyle_spacingBetweenButtons_closeButtonRightMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_spacingBetweenButtons_closeButtonRightMargin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_spacingBetweenButtons_closeButtonRightMargin';
@@ -953,12 +953,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2400
-     * @tc.name      : test_setDecorButtonStyle_colorMode_spacingBetweenButtons_closeButtonRightMargin
-     * @tc.desc      : test_setDecorButtonStyle_colorMode_spacingBetweenButtons_closeButtonRightMargin
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setDecorButtonStyle_colorMode_spacingBetweenButtons_closeButtonRightMargin
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2400
+     * @tc.desc   test_setDecorButtonStyle_colorMode_spacingBetweenButtons_closeButtonRightMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setDecorButtonStyle_colorMode_spacingBetweenButtons_closeButtonRightMargin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_colorMode_spacingBetweenButtons_closeButtonRightMargin';
@@ -991,12 +991,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2500
-     * @tc.name      : test_setDecorButtonStyle_stylenull
-     * @tc.desc      : test_setDecorButtonStyle_stylenull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setDecorButtonStyle_stylenull
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2500
+     * @tc.desc   test_setDecorButtonStyle_stylenull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setDecorButtonStyle_stylenull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_stylenull';
@@ -1041,12 +1041,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2600
-     * @tc.name      : test_setDecorButtonStyle_setTitleAndDockHoverShown_hide
-     * @tc.desc      : test_setDecorButtonStyle_setTitleAndDockHoverShown_hide
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setDecorButtonStyle_setTitleAndDockHoverShown_hide
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2600
+     * @tc.desc   test_setDecorButtonStyle_setTitleAndDockHoverShown_hide
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setDecorButtonStyle_setTitleAndDockHoverShown_hide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_setTitleAndDockHoverShown_hide';
@@ -1088,12 +1088,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2700
-     * @tc.name      : test_setDecorButtonStyle_setTitleAndDockHoverShown_show
-     * @tc.desc      : test_setDecorButtonStyle_setTitleAndDockHoverShown_show
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setDecorButtonStyle_setTitleAndDockHoverShown_show
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2700
+     * @tc.desc   test_setDecorButtonStyle_setTitleAndDockHoverShown_show
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setDecorButtonStyle_setTitleAndDockHoverShown_show', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_setTitleAndDockHoverShown_show';
@@ -1135,12 +1135,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2800
-     * @tc.name      : test_setDecorButtonStyle_on_windowTitleButtonRectChange
-     * @tc.desc      : test_setDecorButtonStyle_on_windowTitleButtonRectChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setDecorButtonStyle_on_windowTitleButtonRectChange
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2800
+     * @tc.desc   test_setDecorButtonStyle_on_windowTitleButtonRectChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setDecorButtonStyle_on_windowTitleButtonRectChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_on_windowTitleButtonRectChange';
@@ -1172,12 +1172,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2900
-     * @tc.name      : test_setDecorButtonStyle_setWindowTitleButtonVisible_true_true
-     * @tc.desc      : test_setDecorButtonStyle_setWindowTitleButtonVisible_true_true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setDecorButtonStyle_setWindowTitleButtonVisible_true_true
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2900
+     * @tc.desc   test_setDecorButtonStyle_setWindowTitleButtonVisible_true_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setDecorButtonStyle_setWindowTitleButtonVisible_true_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_setWindowTitleButtonVisible_true_true';
@@ -1215,12 +1215,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3000
-     * @tc.name      : test_setDecorButtonStyle_setWindowTitleButtonVisible_false_false
-     * @tc.desc      : test_setDecorButtonStyle_setWindowTitleButtonVisible_false_false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setDecorButtonStyle_setWindowTitleButtonVisible_false_false
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3000
+     * @tc.desc   test_setDecorButtonStyle_setWindowTitleButtonVisible_false_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setDecorButtonStyle_setWindowTitleButtonVisible_false_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_setWindowTitleButtonVisible_false_false';
@@ -1258,12 +1258,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3100
-     * @tc.name      : test_setDecorButtonStyle_setWindowTitleButtonVisible_true_false
-     * @tc.desc      : test_setDecorButtonStyle_setWindowTitleButtonVisible_true_false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setDecorButtonStyle_setWindowTitleButtonVisible_true_false
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3100
+     * @tc.desc   test_setDecorButtonStyle_setWindowTitleButtonVisible_true_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setDecorButtonStyle_setWindowTitleButtonVisible_true_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_setWindowTitleButtonVisible_true_false';
@@ -1301,12 +1301,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3200
-     * @tc.name      : test_setWindowDecorHeight_setDecorButtonStyle
-     * @tc.desc      : test_setWindowDecorHeight_setDecorButtonStyle
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setWindowDecorHeight_setDecorButtonStyle
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3200
+     * @tc.desc   test_setWindowDecorHeight_setDecorButtonStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowDecorHeight_setDecorButtonStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setWindowDecorHeight_setDecorButtonStyle';
@@ -1346,12 +1346,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3300
-     * @tc.name      : test_setDecorButtonStyle_setWindowDecorHeight
-     * @tc.desc      : test_setDecorButtonStyle_setWindowDecorHeight
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setDecorButtonStyle_setWindowDecorHeight
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3300
+     * @tc.desc   test_setDecorButtonStyle_setWindowDecorHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setDecorButtonStyle_setWindowDecorHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_setWindowDecorHeight';
@@ -1391,12 +1391,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3400
-     * @tc.name      : test_setDecorButtonStyle_30_setWindowDecorHeight_20
-     * @tc.desc      : test_setDecorButtonStyle_30_setWindowDecorHeight_20
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setDecorButtonStyle_30_setWindowDecorHeight_20
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3400
+     * @tc.desc   test_setDecorButtonStyle_30_setWindowDecorHeight_20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setDecorButtonStyle_30_setWindowDecorHeight_20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_30_setWindowDecorHeight_20';
@@ -1437,12 +1437,12 @@ export default function windowTitleBarTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_TITLE_0100
-     * @tc.name      : test_setWindowTitle_null
-     * @tc.desc      : test_setWindowTitle_null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setWindowTitle_null
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_TITLE_0100
+     * @tc.desc   test_setWindowTitle_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowTitle_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setWindowTitle_null';
@@ -1472,12 +1472,12 @@ export default function windowTitleBarTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_TITLE_0200
-     * @tc.name      : test_setWindowTitle_no_title
-     * @tc.desc      : test_setWindowTitle_no_title
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setWindowTitle_no_title
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_TITLE_0200
+     * @tc.desc   test_setWindowTitle_no_title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowTitle_no_title', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setWindowTitle_no_title';
@@ -1525,12 +1525,12 @@ export default function windowTitleBarTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_TITLE_0300
-     * @tc.name      : test_setWindowTitle_window_destroy
-     * @tc.desc      : test_setWindowTitle_window_destroy
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setWindowTitle_window_destroy
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_TITLE_0300
+     * @tc.desc   test_setWindowTitle_window_destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowTitle_window_destroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setWindowTitle_window_destroy';
@@ -1570,12 +1570,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_TITLE_0400
-     * @tc.name      : test_setWindowTitle_mainWindow
-     * @tc.desc      : test_setWindowTitle_mainWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setWindowTitle_mainWindow
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_TITLE_0400
+     * @tc.desc   test_setWindowTitle_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setWindowTitle_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setWindowTitle_mainWindow';
@@ -1607,12 +1607,12 @@ export default function windowTitleBarTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_TITLE_0500
-     * @tc.name      : test_setWindowTitle_subWindow_title
-     * @tc.desc      : test_setWindowTitle_subWindow_title
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setWindowTitle_subWindow_title
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_TITLE_0500
+     * @tc.desc   test_setWindowTitle_subWindow_title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowTitle_subWindow_title', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setWindowTitle_subWindow_title';
@@ -1665,12 +1665,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_TITLE_0600
-     * @tc.name      : test_setWindowTitle_dialogWindow_title
-     * @tc.desc      : test_setWindowTitle_dialogWindow_title
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setWindowTitle_dialogWindow_title
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_TITLE_0600
+     * @tc.desc   test_setWindowTitle_dialogWindow_title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowTitle_dialogWindow_title', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setWindowTitle_dialogWindow_title';
@@ -1718,12 +1718,12 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_TITLE_0700
-     * @tc.name      : test_setWindowTitle_mainWindow_hide_titlebar
-     * @tc.desc      : test_setWindowTitle_mainWindow_hide_titlebar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setWindowTitle_mainWindow_hide_titlebar
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_TITLE_0700
+     * @tc.desc   test_setWindowTitle_mainWindow_hide_titlebar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setWindowTitle_mainWindow_hide_titlebar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setWindowTitle_mainWindow_hide_titlebar';
@@ -1760,12 +1760,12 @@ export default function windowTitleBarTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_TITLE_0800
-     * @tc.name      : test_setWindowTitle_mainWindow_Too_long_parameter
-     * @tc.desc      : test_setWindowTitle_mainWindow_Too_long_parameter
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setWindowTitle_mainWindow_Too_long_parameter
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_TITLE_0800
+     * @tc.desc   test_setWindowTitle_mainWindow_Too_long_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setWindowTitle_mainWindow_Too_long_parameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setWindowTitle_mainWindow_Too_long_parameter';
@@ -1801,12 +1801,12 @@ export default function windowTitleBarTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_getWindowDecorVisible_0100
-     * @tc.name      : test_getWindowDecorVisible_1300002
-     * @tc.desc      :  test_getWindowDecorVisible_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_getWindowDecorVisible_1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_getWindowDecorVisible_0100
+     * @tc.desc   test_getWindowDecorVisible_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_getWindowDecorVisible_1300002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_getWindowDecorVisible_1300002";
@@ -1843,12 +1843,12 @@ export default function windowTitleBarTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_getWindowDecorVisible_0200
-     * @tc.name      : test_getWindowDecorVisible_subWindow
-     * @tc.desc      :  test_getWindowDecorVisible_subWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_getWindowDecorVisible_subWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_getWindowDecorVisible_0200
+     * @tc.desc   test_getWindowDecorVisible_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_getWindowDecorVisible_subWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "test_getWindowDecorVisible_subWindow";
@@ -1897,12 +1897,12 @@ export default function windowTitleBarTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3500
-     * @tc.name      : testSetDecorButtonStyle_buttonIconSize_0100
-     * @tc.desc      : testSetDecorButtonStyle_buttonIconSize_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetDecorButtonStyle_buttonIconSize_0100
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3500
+     * @tc.desc   testSetDecorButtonStyle_buttonIconSize_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testSetDecorButtonStyle_buttonIconSize_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testSetDecorButtonStyle_buttonIconSize_0100";
@@ -1929,12 +1929,12 @@ export default function windowTitleBarTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3600
-     * @tc.name      : testSetDecorButtonStyle_buttonIconSize_0200
-     * @tc.desc      : testSetDecorButtonStyle_buttonIconSize_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetDecorButtonStyle_buttonIconSize_0200
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3600
+     * @tc.desc   testSetDecorButtonStyle_buttonIconSize_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testSetDecorButtonStyle_buttonIconSize_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testSetDecorButtonStyle_buttonIconSize_0200";
@@ -1961,12 +1961,12 @@ export default function windowTitleBarTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3700
-     * @tc.name      : testSetDecorButtonStyle_buttonIconSize_0300
-     * @tc.desc      : testSetDecorButtonStyle_buttonIconSize_0300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetDecorButtonStyle_buttonIconSize_0300
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3700
+     * @tc.desc   testSetDecorButtonStyle_buttonIconSize_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetDecorButtonStyle_buttonIconSize_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testSetDecorButtonStyle_buttonIconSize_0300";
@@ -1994,12 +1994,12 @@ export default function windowTitleBarTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3800
-     * @tc.name      : testSetDecorButtonStyle_buttonIconSize_0400
-     * @tc.desc      : testSetDecorButtonStyle_buttonIconSize_0400
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetDecorButtonStyle_buttonIconSize_0400
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3800
+     * @tc.desc   testSetDecorButtonStyle_buttonIconSize_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetDecorButtonStyle_buttonIconSize_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testSetDecorButtonStyle_buttonIconSize_0400";
@@ -2027,12 +2027,12 @@ export default function windowTitleBarTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3900
-     * @tc.name      : testSetDecorButtonStyle_buttonBackgroundCornerRadius_0100
-     * @tc.desc      : testSetDecorButtonStyle_buttonBackgroundCornerRadius_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetDecorButtonStyle_buttonBackgroundCornerRadius_0100
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3900
+     * @tc.desc   testSetDecorButtonStyle_buttonBackgroundCornerRadius_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testSetDecorButtonStyle_buttonBackgroundCornerRadius_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testSetDecorButtonStyle_buttonBackgroundCornerRadius_0100";
@@ -2059,12 +2059,12 @@ export default function windowTitleBarTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_4000
-     * @tc.name      : testSetDecorButtonStyle_buttonBackgroundCornerRadius_0200
-     * @tc.desc      : testSetDecorButtonStyle_buttonBackgroundCornerRadius_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetDecorButtonStyle_buttonBackgroundCornerRadius_0200
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_4000
+     * @tc.desc   testSetDecorButtonStyle_buttonBackgroundCornerRadius_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testSetDecorButtonStyle_buttonBackgroundCornerRadius_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testSetDecorButtonStyle_buttonBackgroundCornerRadius_0200";
@@ -2091,12 +2091,12 @@ export default function windowTitleBarTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_4100
-     * @tc.name      : testSetDecorButtonStyle_buttonBackgroundCornerRadius_0300
-     * @tc.desc      : testSetDecorButtonStyle_buttonBackgroundCornerRadius_0300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetDecorButtonStyle_buttonBackgroundCornerRadius_0300
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_4100
+     * @tc.desc   testSetDecorButtonStyle_buttonBackgroundCornerRadius_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetDecorButtonStyle_buttonBackgroundCornerRadius_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testSetDecorButtonStyle_buttonBackgroundCornerRadius_0300";
@@ -2124,12 +2124,12 @@ export default function windowTitleBarTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_4200
-     * @tc.name      : testSetDecorButtonStyle_buttonBackgroundCornerRadius_0400
-     * @tc.desc      : testSetDecorButtonStyle_buttonBackgroundCornerRadius_0400
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetDecorButtonStyle_buttonBackgroundCornerRadius_0400
+     * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_4200
+     * @tc.desc   testSetDecorButtonStyle_buttonBackgroundCornerRadius_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetDecorButtonStyle_buttonBackgroundCornerRadius_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testSetDecorButtonStyle_buttonBackgroundCornerRadius_0400";
@@ -2157,12 +2157,12 @@ export default function windowTitleBarTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0100
-     * @tc.name      : testSetSupportedWindowModeswithIncorrectParameters
-     * @tc.desc      : 验证setSupportedWindowModes接口传入错误入参抛1300016错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetSupportedWindowModeswithIncorrectParameters
+     * @tc.number SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0100
+     * @tc.desc   验证setSupportedWindowModes接口传入错误入参抛1300016错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testSetSupportedWindowModeswithIncorrectParameters", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "testSetSupportedWindowModeswithIncorrectParameters";
@@ -2233,12 +2233,12 @@ export default function windowTitleBarTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0200
-     * @tc.name      : testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreen
-     * @tc.desc      : 验证setSupportedWindowModes接口传入错误入参抛1300016错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreen
+     * @tc.number SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0200
+     * @tc.desc   验证setSupportedWindowModes接口传入错误入参抛1300016错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreen", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreen";
@@ -2279,12 +2279,12 @@ export default function windowTitleBarTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0300
-     * @tc.name      : testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreenandSplit
-     * @tc.desc      : 验证setSupportedWindowModes接口配置([FLOATING], true)，最大化按钮灰显
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreenandSplit
+     * @tc.number SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0300
+     * @tc.desc   验证setSupportedWindowModes接口配置([FLOATING], true)，最大化按钮灰显
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreenandSplit", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreenandSplit";
@@ -2341,12 +2341,12 @@ export default function windowTitleBarTest() {
       }
     })
     /**
-     * @tc.number : SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0400
-     * @tc.name : testSetSupportedWindowModeswithGrayOutMaximizeButtonFalseNotSupportFullScreen
-     * @tc.desc : 验证setSupportedWindowModes接口配置([FLOATING，SPLIT], false)，最大化按钮不显示
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 0
+     * @tc.name   testSetSupportedWindowModeswithGrayOutMaximizeButtonFalseNotSupportFullScreen
+     * @tc.number SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0400
+     * @tc.desc   验证setSupportedWindowModes接口配置([FLOATING，SPLIT], false)，最大化按钮不显示
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetSupportedWindowModeswithGrayOutMaximizeButtonFalseNotSupportFullScreen", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testSetSupportedWindowModeswithGrayOutMaximizeButtonFalseNotSupportFullScreen";
@@ -2393,10 +2393,10 @@ export default function windowTitleBarTest() {
         }
       } catch (error) {
         console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
-        mainWindow.setWindowTitleButtonVisible(true,true,true);
         await terminateAbility(caseName);
         if (isFreeWindowMode == true) {
           expect(error.code).assertEqual(1300002)
+          mainWindow.setWindowTitleButtonVisible(true,true,true);
         } else {
           expect(error.code).assertEqual(801)
         }
@@ -2405,12 +2405,12 @@ export default function windowTitleBarTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0500
-     * @tc.name      : testSetSupportedWindowModeswithInvisibleMaximizeButtonhGrayOutMaximizeButtonTrueNotSupportFullScreen
-     * @tc.desc      : 验证隐藏最大化按钮后，最大化按钮依然可以灰显成功
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testSetSupportedWindowModeswithInvisibleMaximizeButtonhGrayOutMaximizeButtonTrueNotSupportFullScreen
+     * @tc.number SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0500
+     * @tc.desc   验证隐藏最大化按钮后，最大化按钮依然可以灰显成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSetSupportedWindowModeswithInvisibleMaximizeButtonhGrayOutMaximizeButtonTrueNotSupportFullScreen", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testSetSupportedWindowModeswithInvisibleMaximizeButtonhGrayOutMaximizeButtonTrueNotSupportFullScreen";
@@ -2471,10 +2471,10 @@ export default function windowTitleBarTest() {
         }
       } catch (error) {
         console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
-        mainWindow.setWindowTitleButtonVisible(true,true,true);
         await terminateAbility(caseName);
         if (isFreeWindowMode == true) {
           expect(error.code).assertEqual(1300002)
+          mainWindow.setWindowTitleButtonVisible(true,true,true);
         } else {
           expect(error.code).assertEqual(801)
         }

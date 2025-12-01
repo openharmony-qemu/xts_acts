@@ -39,13 +39,13 @@ namespace OHOS {
     {
     }
 
-    /*
-     * @tc.number: TestVulkanMonolithicTestCase002
-     * @tc.name  : TestVulkanMonolithicTestCase002
-     * @tc.desc  : test vulkan xts
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   TestVulkanMonolithicTestCase002
+     * @tc.number TestVulkanMonolithicTestCase002
+     * @tc.desc   test vulkan xts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     HWTEST_F(ActsVulkanMonolithic2Test, TestVulkanMonolithicTestCase002, Function | MediumTest | Level2)
     {

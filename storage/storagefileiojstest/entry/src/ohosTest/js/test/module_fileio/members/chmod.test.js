@@ -23,13 +23,12 @@ export default function fileioChmod() {
 describe('fileio_chmod', function () {
 
   /**
+   * @tc.name   fileio_test_chmod_sync_000
    * @tc.number SUB_DF_FILEIO_CHMODSYNC_0000
-   * @tc.name fileio_test_chmod_sync_000
-   * @tc.desc Test chmodSync() interfaces, mode = 0o660. Test file permissions modified successfully.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test chmodSync() interfaces, mode = 0o660. Test file permissions modified successfully.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_chmod_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_chmod_sync_000');
@@ -46,13 +45,12 @@ describe('fileio_chmod', function () {
   });
 
   /**
+   * @tc.name   fileio_test_chmod_async_000
    * @tc.number SUB_DF_FILEIO_CHMODASYNC_0000
-   * @tc.name fileio_test_chmod_async_000
-   * @tc.desc Test the chmodAsync() interface with promise, mode = 0o660. Test file permissions modified successfully.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the chmodAsync() interface with promise, mode = 0o660. Test file permissions modified successfully.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_chmod_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_chmod_async_000');
@@ -71,13 +69,12 @@ describe('fileio_chmod', function () {
   });
 
   /**
+   * @tc.name   fileio_test_chmod_async_001
    * @tc.number SUB_DF_FILEIO_CHMODASYNC_0100
-   * @tc.name fileio_test_chmod_async_001
-   * @tc.desc Test the chmodAsync() interface with callback, mode = 0o660. Test file permissions modified successfully.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the chmodAsync() interface with callback, mode = 0o660. Test file permissions modified successfully.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_chmod_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_chmod_async_001');

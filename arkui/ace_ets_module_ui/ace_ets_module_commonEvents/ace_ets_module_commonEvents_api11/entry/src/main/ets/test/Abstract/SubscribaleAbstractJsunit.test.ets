@@ -18,10 +18,13 @@ export default function SubscribaleAbstractJsunit() {
   describe('SubscribaleAbstract', () =>{
 
     /**
-    * @tc.number  stateManagement_SubscribaleAbstract_setOrCreate_0100
-    * @tc.name    stateManagement SubscribaleAbstract  setOrCreate validation
-    * @tc.desc    Function test
-    */
+     * @tc.name   stateManagement_SubscribaleAbstract_addOwningProperty_0100
+     * @tc.number stateManagement_SubscribaleAbstract_setOrCreate_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('stateManagement_SubscribaleAbstract_addOwningProperty_0100', Level.LEVEL0, (done:Function) =>{
       done();
       return;
@@ -41,10 +44,13 @@ export default function SubscribaleAbstractJsunit() {
     });
 
     /**
-    * @tc.number  stateManagement_ISinglePropertyChangeSubscriber_hasChanged_0100
-    * @tc.name    stateManagement ISinglePropertyChangeSubscriber  hasChanged validation
-    * @tc.desc    Function test
-    */
+     * @tc.name   stateManagement_ISinglePropertyChangeSubscriber_hasChanged_0100
+     * @tc.number stateManagement_ISinglePropertyChangeSubscriber_hasChanged_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('stateManagement_ISinglePropertyChangeSubscriber_hasChanged_0100', Level.LEVEL0, (done:Function) =>{
       done();
       return;
@@ -62,10 +68,13 @@ export default function SubscribaleAbstractJsunit() {
     });
 
     /**
-    * @tc.number  stateManagement_PersistentStorage_0100
-    * @tc.name    stateManagement PersistentStorage   validation
-    * @tc.desc    Function test
-    */
+     * @tc.name   stateManagement_PersistentStorage_0100
+     * @tc.number stateManagement_PersistentStorage_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('stateManagement_PersistentStorage_0100', Level.LEVEL0, (done:Function) =>{
       done();
       return;
@@ -89,10 +98,13 @@ export default function SubscribaleAbstractJsunit() {
     });
 
     /**
-    * @tc.number  stateManagement_IPropertySubscriber_0100
-    * @tc.name    stateManagement IPropertySubscriber   validation
-    * @tc.desc    Function test
-    */
+     * @tc.name   stateManagement_IPropertySubscriber_0100
+     * @tc.number stateManagement_IPropertySubscriber_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('stateManagement_IPropertySubscriber_0100', Level.LEVEL0, (done:Function) =>{
       done();
       return;
@@ -108,10 +120,13 @@ export default function SubscribaleAbstractJsunit() {
     });
     
     /**
-    * @tc.number  stateManagement_SyncedPropertyOneWay_0100
-    * @tc.name    stateManagement stateManagement_SyncedPropertyOneWay_0100   validation
-    * @tc.desc    Function test
-    */
+     * @tc.name   stateManagement_SyncedPropertyOneWay_0100
+     * @tc.number stateManagement_SyncedPropertyOneWay_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('stateManagement_SyncedPropertyOneWay_0100', Level.LEVEL0, (done:Function) =>{
       done();
       return;
@@ -131,10 +146,13 @@ export default function SubscribaleAbstractJsunit() {
     });
 
     /**
-    * @tc.number  stateManagement_SyncedPropertyTwoWay_0100
-    * @tc.name    stateManagement SyncedPropertyTwoWay   validation
-    * @tc.desc    Function test
-    */
+     * @tc.name   stateManagement_SyncedPropertyTwoWay_0100
+     * @tc.number stateManagement_SyncedPropertyTwoWay_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('stateManagement_SyncedPropertyTwoWay_0100', Level.LEVEL0, (done:Function) =>{
       done();
       return;

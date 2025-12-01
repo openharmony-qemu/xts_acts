@@ -59,14 +59,14 @@ export default function webViewApiOne() {
     })
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_getLastJavascriptProxyCallingFrameUrl_API_GROUP_0200
-    * @tc.name        : testJsBridgeGetLastJavascriptProxyCallingFrameUrlGroup
-    * @tc.desc        : test GetLastJavascriptProxyCallingFrameUrl
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testJsBridgeGetLastJavascriptProxyCallingFrameUrlGroup
+     * @tc.number SUB_ACE_WEB_getLastJavascriptProxyCallingFrameUrl_API_GROUP_0200
+     * @tc.desc   test GetLastJavascriptProxyCallingFrameUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testJsBridgeGetLastJavascriptProxyCallingFrameUrlGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitJsBridgeGetLastJavascriptProxyCallingFrameUrl", 172290)
       Utils.registerBaseEvent("testJsBridgeGetLastJavascriptProxyCallingFrameUrl", "success", 172300,

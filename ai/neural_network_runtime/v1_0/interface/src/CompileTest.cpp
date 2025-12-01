@@ -81,9 +81,12 @@ void CompileModel(OH_NNCompilation *compilation, const OHNNCompileParam &compile
 } // namespace
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_Create_0100
- * @tc.name   : 创建编译实例，model为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Create_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_Create_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Create_0100, Function | MediumTest | Level3)
 {
@@ -92,9 +95,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Create_0100, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_Create_0200
- * @tc.name   : 创建编译实例，model未完成构图
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Create_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_Create_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Create_0200, Function | MediumTest | Level3)
 {
@@ -108,9 +114,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Create_0200, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_Create_0300
- * @tc.name   : 创建编译实例，model已完成构图，存在算子不支持
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Create_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_Create_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Create_0300, Function | MediumTest | Level2)
 {
@@ -146,9 +155,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Create_0300, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100
- * @tc.name   : 设置device，compilation为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100, Function | MediumTest | Level3)
 {
@@ -161,9 +173,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100, Functio
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetDevice_0200
- * @tc.name   : 设置device，deviceID不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetDevice_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetDevice_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetDevice_0200, Function | MediumTest | Level3)
 {
@@ -178,9 +193,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetDevice_0200, Functio
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetDevice_0300
- * @tc.name   : 设置device，deviceID存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetDevice_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetDevice_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetDevice_0300, Function | MediumTest | Level3)
 {
@@ -195,9 +213,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetDevice_0300, Functio
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetCache_0100
- * @tc.name   : 设置cache路径及版本，compilation为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0100, Function | MediumTest | Level3)
 {
@@ -205,9 +226,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0100, Function
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetCache_0200
- * @tc.name   : 设置cache路径及版本，cacheDir为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0200, Function | MediumTest | Level3)
 {
@@ -221,9 +245,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0200, Function
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetCache_0300
- * @tc.name   : device不支持，设置cache路径及版本
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0300, Function | MediumTest | Level3)
 {
@@ -245,9 +272,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0300, Function
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetCache_0400
- * @tc.name   : 设置不存在cache路径
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0400, Function | MediumTest | Level3)
 {
@@ -264,9 +294,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0400, Function
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetCache_0500
- * @tc.name   : 设置cache路径，cache破坏，重新生成cache
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0500, Function | MediumTest | Level2)
 {
@@ -292,9 +325,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0500, Function
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetCache_0600
- * @tc.name   : 设置version，小于cache版本号
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0600
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0600, Function | MediumTest | Level2)
 {
@@ -317,9 +353,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0600, Function
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetCache_0700
- * @tc.name   : 设置version，等于cache版本号
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0700
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0700, Function | MediumTest | Level2)
 {
@@ -342,9 +381,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0700, Function
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetCache_0800
- * @tc.name   : 设置version，大于cache版本号
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0800
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0800, Function | MediumTest | Level2)
 {
@@ -367,9 +409,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetCache_0800, Function
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0100
- * @tc.name   : 设置priority，compilation为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0100, Function | MediumTest | Level3)
 {
@@ -377,9 +422,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0100
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0200
- * @tc.name   : device不支持，设置performance
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_Mock_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_Mock_0200, Function | MediumTest | Level3)
 {
@@ -400,9 +448,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_Mock
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300
- * @tc.name   : 设置performanceMode为NONE
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300, Function | MediumTest | Level2)
 {
@@ -417,9 +468,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400
- * @tc.name   : 设置performanceMode为LOW
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400, Function | MediumTest | Level2)
 {
@@ -434,9 +488,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500
- * @tc.name   : 设置performanceMode为MEDIUM
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500, Function | MediumTest | Level2)
 {
@@ -451,9 +508,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600
- * @tc.name   : 设置performanceMode为HIGH
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600, Function | MediumTest | Level2)
 {
@@ -468,9 +528,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700
- * @tc.name   : 设置performanceMode为EXTREME
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700, Function | MediumTest | Level2)
 {
@@ -485,9 +548,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800
- * @tc.name   : 设置performanceMode为NONE-1
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800, Function | MediumTest | Level3)
 {
@@ -505,9 +571,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900
- * @tc.name   : 设置performanceMode为EXTREME+1
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900, Function | MediumTest | Level3)
 {
@@ -525,9 +594,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPriority_0100
- * @tc.name   : 设置priority，compilation为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0100, Function | MediumTest | Level3)
 {
@@ -535,9 +607,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0100, Funct
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPriority_0200
- * @tc.name   : device不支持，设置priority
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0200, Function | MediumTest | Level3)
 {
@@ -557,9 +632,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0200, Funct
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300
- * @tc.name   : 设置priority为NONE
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300, Function | MediumTest | Level2)
 {
@@ -574,9 +652,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300, Funct
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400
- * @tc.name   : 设置priority为LOW
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400, Function | MediumTest | Level2)
 {
@@ -591,9 +672,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400, Funct
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500
- * @tc.name   : 设置priority为MEDIUM
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500, Function | MediumTest | Level2)
 {
@@ -608,9 +692,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500, Funct
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600
- * @tc.name   : 设置priority为LOW
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600, Function | MediumTest | Level2)
 {
@@ -625,9 +712,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600, Funct
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700
- * @tc.name   : 设置priority为NONE-1
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700, Function | MediumTest | Level3)
 {
@@ -644,9 +734,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700, Funct
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800
- * @tc.name   : 设置priority为HIGH+1
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800, Function | MediumTest | Level3)
 {
@@ -664,9 +757,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800, Funct
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0100
- * @tc.name   : 设置enableFloat16，compilation为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0100, Function | MediumTest | Level3)
 {
@@ -674,9 +770,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0100, Fun
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200
- * @tc.name   : device支持，设置fp16推理为false
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200, Function | MediumTest | Level3)
 {
@@ -691,9 +790,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200, Fun
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0300
- * @tc.name   : device不支持，设置fp16推理为false
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0300, Function | MediumTest | Level2)
 {
@@ -714,9 +816,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0300, Fun
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0400
- * @tc.name   : device不支持，设置fp16推理为true
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0400, Function | MediumTest | Level3)
 {
@@ -737,9 +842,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0400, Fun
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_Build_0100
- * @tc.name   : 编译模型，compilation为空指针
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Build_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_Build_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Build_0100, Function | MediumTest | Level3)
 {
@@ -747,9 +855,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Build_0100, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_Build_0200
- * @tc.name   : 编译模型，未设置device，默认设备，返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Build_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_Build_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Build_0200, Function | MediumTest | Level2)
 {
@@ -763,9 +874,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Build_0200, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_Build_0300
- * @tc.name   : 编译模型，仅设置device，默认配置测试
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Build_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_Build_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Build_0300, Function | MediumTest | Level1)
 {
@@ -780,9 +894,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Build_0300, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_Build_0400
- * @tc.name   : 设置缓存路径及版本，编译模型导出缓存
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Build_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_Build_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Build_0400, Function | MediumTest | Level2)
 {
@@ -804,9 +921,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Build_0400, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_Destroy_0100
- * @tc.name   : 释放编译实例，compilation为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Destroy_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_Destroy_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Destroy_0100, Function | MediumTest | Level3)
 {
@@ -816,9 +936,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Destroy_0100, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_Destroy_0200
- * @tc.name   : 释放编译实例，未调用模型编译
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Destroy_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_Destroy_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Destroy_0200, Function | MediumTest | Level2)
 {
@@ -834,9 +957,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Destroy_0200, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_Destroy_0300
- * @tc.name   : 模型已编译，释放编译实例
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Destroy_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_Destroy_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Destroy_0300, Function | MediumTest | Level0)
 {
@@ -851,9 +977,12 @@ HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Destroy_0300, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNR_Func_North_Compilation_Combine_0100
- * @tc.name   : 多线程并发模型编译，编译成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNR_Func_North_Compilation_Combine_0100
+ * @tc.number SUB_AI_NNR_Func_North_Compilation_Combine_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNR_Func_North_Compilation_Combine_0100, Function | MediumTest | Level2)
 {
@@ -879,9 +1008,12 @@ HWTEST_F(CompileTest, SUB_AI_NNR_Func_North_Compilation_Combine_0100, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Compilation_Combine_0200
- * @tc.name   : 已编译模型，重复编译
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Combine_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_Combine_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(CompileTest, SUB_AI_NNRt_Func_North_Compilation_Combine_0200, Function | MediumTest | Level2)
 {

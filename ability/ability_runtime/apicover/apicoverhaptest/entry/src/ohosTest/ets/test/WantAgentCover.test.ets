@@ -24,11 +24,13 @@ let TAG: string;
 
 export default function wantAgentCoverTest() {
   describe('WantAgentTest', () => {
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_WantAgentCover_0100
-     * @tc.name    Verify stageMode properties and getOperationType interface.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_WantAgentCover_0100
+     * @tc.number SUB_AA_OpenHarmony_WantAgentCover_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_WantAgentCover_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_WantAgentCover_0100 ==>';

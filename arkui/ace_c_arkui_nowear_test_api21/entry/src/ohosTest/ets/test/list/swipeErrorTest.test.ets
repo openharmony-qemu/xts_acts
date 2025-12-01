@@ -32,13 +32,12 @@ export default function SwipeErrorTest(){
     })
 
     /**
-     * @tc.number    swipeActionErrorTest001
-     * @tc.name      swipeActionErrorTest001
-     * @tc.desc      test listItem0 is not on the Component tree,
-     *               return errorCode 106203
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   swipeActionErrorTest001
+     * @tc.number swipeActionErrorTest001
+     * @tc.desc   test listItem0 is not on the Component tree,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swipeActionErrorTest001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'swipeErrorTest';
@@ -78,13 +77,12 @@ export default function SwipeErrorTest(){
     });
 
     /**
-     * @tc.number    swipeActionErrorTest002
-     * @tc.name      swipeActionErrorTest002
-     * @tc.desc      test ListItemSwipeActionManager node is nullptr,
-     *               return error code is 401
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   swipeActionErrorTest002
+     * @tc.number swipeActionErrorTest002
+     * @tc.desc   test ListItemSwipeActionManager node is nullptr,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swipeActionErrorTest002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('swipeActionErrorTest002 START');
@@ -106,13 +104,12 @@ export default function SwipeErrorTest(){
     });
 
     /**
-     * @tc.number    swipeActionErrorTest003
-     * @tc.name      swipeActionErrorTest003
-     * @tc.desc      test ListItemSwipeActionManager node is inCorrect node,
-     *               return error code is 100023
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   swipeActionErrorTest003
+     * @tc.number swipeActionErrorTest003
+     * @tc.desc   test ListItemSwipeActionManager node is inCorrect node,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swipeActionErrorTest003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('swipeActionErrorTest003 START');

@@ -49,13 +49,15 @@ export default function AlignContent_End_FlexP_Fixed_Offset() {
       console.info("AlignContent_End_FlexP_Fixed_Offset after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_End_1000
-     * @tc.name testAlignContentEndFlexPfixedOffset
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.End, and set the offsize
-     *               property of the sub component.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexPfixedOffset
+     * @tc.number testAlignContentEndFlexPfixedOffset
+     * @tc.desc   testAlignContentEndFlexPfixedOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexPfixedOffset',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexPfixedOffset START');
       let strJson = getInspectorByKey('AlignContent_End_FlexP_Fixed_Offset_flex001');

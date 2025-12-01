@@ -25,13 +25,13 @@ export default function ProgressLinearStyleTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_LINRAT_STYLE_0100
-     * @tc.name       : testProgressLinearStyle001
-     * @tc.desc       : testing progress linear style
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressLinearStyle001
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_LINRAT_STYLE_0100
+     * @tc.desc   testing progress linear style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressLinearStyle001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestProgressLinearStyle';
@@ -50,13 +50,13 @@ export default function ProgressLinearStyleTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_LINRAT_STYLE_0200
-     * @tc.name       : testProgressLinearStyle002
-     * @tc.desc       : testing progress linear style
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressLinearStyle002
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_LINRAT_STYLE_0200
+     * @tc.desc   testing progress linear style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressLinearStyle002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestProgressLinearStyle';
@@ -73,13 +73,13 @@ export default function ProgressLinearStyleTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_LINRAT_STYLE_0100
-     * @tc.name       : testProgressLinearStyle003
-     * @tc.desc       : testing progress linear style
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressLinearStyle003
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_LINRAT_STYLE_0100
+     * @tc.desc   testing progress linear style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressLinearStyle003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestProgressLinearStyle';
@@ -101,13 +101,13 @@ export default function ProgressLinearStyleTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_LINRAT_STYLE_0100
-     * @tc.name       : testProgressLinearStyle004
-     * @tc.desc       : testing progress linear style
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressLinearStyle004
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_LINRAT_STYLE_0100
+     * @tc.desc   testing progress linear style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressLinearStyle004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestProgressLinearStyle';

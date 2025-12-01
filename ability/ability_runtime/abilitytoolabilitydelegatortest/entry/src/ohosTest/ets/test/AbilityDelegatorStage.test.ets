@@ -49,12 +49,12 @@ function isEmpty(info: string): boolean {
 export default function AbilityDelegatorStageTest() {
   describe('ActsAbilityTest', () => {
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_23500
-     * @tc.name      : Call the doAbilityBackground API to schedule ability from  foreground to background by promise
-     * @tc.desc      : testing doAbilityBackground by promise
-     * @tc.size      : MediumTest
-     * @tc.level     : Level 3
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_23500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_23500
+     * @tc.desc   testing doAbilityBackground by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_23500', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_23500';
@@ -127,12 +127,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_23600
-     * @tc.name      : Call the doAbilityBackground API to schedule ability from  foreground to background by AsyncCallback
-     * @tc.desc      : testing doAbilityBackground by AsyncCallback
-     * @tc.size      : MediumTest
-     * @tc.level     : Level 3
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_23600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_23600
+     * @tc.desc   testing doAbilityBackground by AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_23600', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_23600';
@@ -205,12 +205,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_14800
-     * @tc.name      : Deleting the listen to  State of the Ability's Window Stage by promise
-     * @tc.desc      : Delete the window stage destruction status listening (Promise) of Ability
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_14800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_14800
+     * @tc.desc   Delete the window stage destruction status listening (Promise) of Ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_14800', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_14800';
@@ -256,12 +256,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_16300
-     * @tc.name      : Invalid timeout parameter for shell command execution (AsyncCallback)
-     * @tc.desc      : Invalid timeout parameter for executing shell command (AsyncCallback)  timeout = -1
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16300
+     * @tc.desc   Invalid timeout parameter for executing shell command (AsyncCallback)  timeout = -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16300', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16300';
@@ -285,12 +285,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_16400
-     * @tc.name      : Invalid timeout parameter for shell command execution (Promise)
-     * @tc.desc      : Invalid timeout parameter for executing shell command (Promise)  timeout = -1
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16400
+     * @tc.desc   Invalid timeout parameter for executing shell command (Promise)  timeout = -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16400', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16400';
@@ -318,12 +318,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_16500
-     * @tc.name      : Shell Command Timeout (AsyncCallback)
-     * @tc.desc      : Invalid timeout parameter for executing shell command (AsyncCallback)  timeout = 0
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16500
+     * @tc.desc   Invalid timeout parameter for executing shell command (AsyncCallback)  timeout = 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16500', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16500';
@@ -347,12 +347,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_16600
-     * @tc.name      : Shell command execution timeout (Promise)
-     * @tc.desc      : Invalid timeout parameter for executing shell command (Promise)  timeout = 0
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16600
+     * @tc.desc   Invalid timeout parameter for executing shell command (Promise)  timeout = 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16600', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16600';
@@ -380,12 +380,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_16700
-     * @tc.name      : Execute a non-existent shell command (AsyncCallback)
-     * @tc.desc      : for executing shell command (AsyncCallback)  with un-exist shell parameter  shell命令参数：ppwd -L  timeout = 1
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16700
+     * @tc.desc   for executing shell command (AsyncCallback)  with un-exist shell parameter  shell命令参数：ppwd -L  timeout = 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16700', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16700';
@@ -409,12 +409,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_16800
-     * @tc.name      : Execute a non-existent shell command (Promise)
-     * @tc.desc      : for executing shell command (Promise)  with un-exist shell parameter ppwd -L  timeout = 1
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16800
+     * @tc.desc   for executing shell command (Promise)  with un-exist shell parameter ppwd -L  timeout = 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16800', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16800';
@@ -442,12 +442,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_16900
-     * @tc.name      : Execute a shell command without a timeout parameter (AsyncCallback)
-     * @tc.desc      : for executing shell command (AsyncCallback)  without timeout parameter ,aa help
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16900
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16900
+     * @tc.desc   for executing shell command (AsyncCallback)  without timeout parameter ,aa help
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16900', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16900';
@@ -470,12 +470,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_17000
-     * @tc.name      : Execute a Shell Command (Promise) with No Timeout Parameter
-     * @tc.desc      : for executing shell command (Promise)  without timeout parameter, aa help
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17000
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17000
+     * @tc.desc   for executing shell command (Promise)  without timeout parameter, aa help
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17000', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17000';
@@ -502,12 +502,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_17100
-     * @tc.name      : Execute an Abnormal Shell Command (AsyncCallback) with No Timeout Parameter
-     * @tc.desc      : for executing exception shell command (AsyncCallback),xx - help
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17100
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17100
+     * @tc.desc   for executing exception shell command (AsyncCallback),xx - help
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17100', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17100';
@@ -529,12 +529,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_17200
-     * @tc.name      : Execute Unexpected Shell Commands (Promises) with No Timeout Parameters
-     * @tc.desc      : for executing exception shell command (Promise) ,xx - help
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17200
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17200
+     * @tc.desc   for executing exception shell command (Promise) ,xx - help
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17200', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17200';
@@ -559,13 +559,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_17300
-     * @tc.name      : Execute a shell command with a timeout parameter (AsyncCallback)
-     * @tc.desc      : for executing shell command (AsyncCallback) with timeout parameter
-     *                 shell command：aa start [-d <device>] -a <ability-name> -b <bundle-name> timeout 1
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17300
+     * @tc.desc   for executing shell command (AsyncCallback) with timeout parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17300', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17300';
@@ -590,13 +589,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_17400
-     * @tc.name      : Execute a shell command with a timeout parameter (Promise)
-     * @tc.desc      : for executing shell command (Promise) with timeout parameter
-     *                 shell command ：aa start [-d <device>] -a <ability-name> -b <bundle-name> timeout 1
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17400
+     * @tc.desc   for executing shell command (Promise) with timeout parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17400', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17400';
@@ -624,13 +622,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_17500
-     * @tc.name      : Execute an Abnormal Shell Command (AsyncCallback) with a Timeout Parameter
-     * @tc.desc      : for executing exception shell command (AsyncCallback) with timeout parameter
-     *                 shell command：xx start  timeout 1
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17500
+     * @tc.desc   for executing exception shell command (AsyncCallback) with timeout parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17500', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17500'
@@ -653,13 +650,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_17600
-     * @tc.name      : The shell command parameter is null(AsyncCallback)
-     * @tc.desc      : for executing exception shell command (AsyncCallback)
-     *                 shell parameter：null  timeout = 1
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17600
+     * @tc.desc   for executing exception shell command (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17600', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17600';
@@ -682,13 +678,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_17700
-     * @tc.name      : The shell command parameter is null(Promise)
-     * @tc.desc      : for executing exception shell command (Promise)
-     *                 shell command：null timeout = 1
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17700
+     * @tc.desc   for executing exception shell command (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17700', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17700';
@@ -715,13 +710,12 @@ export default function AbilityDelegatorStageTest() {
 
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_17800
-     * @tc.name      : The timeout parameter is null(AsyncCallback)
-     * @tc.desc      : for executing  shell command (AsyncCallback) with timeout parameter is null
-     *                 shell command：aa help
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17800
+     * @tc.desc   for executing  shell command (AsyncCallback) with timeout parameter is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17800', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17800';
@@ -744,12 +738,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_18700
-     * @tc.name      : The -b, -s, -w and other parameters of the test command are valid, and the invalid -z parameter is added
-     * @tc.desc      : for testing command -b -s -w are valid but adding an invalid parameter -z
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_18700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_18700
+     * @tc.desc   for testing command -b -s -w are valid but adding an invalid parameter -z
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_18700', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_18700';
@@ -775,12 +769,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_18800
-     * @tc.name      : The -b argument of the test command is invalid, and the other parameters such as -s and -w are valid
-     * @tc.desc      : for testing command -s -w are valid but -b invalid
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_18800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_18800
+     * @tc.desc   for testing command -s -w are valid but -b invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_18800', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_18800';
@@ -812,16 +806,15 @@ export default function AbilityDelegatorStageTest() {
     })
 
 
-    /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300
-     * @tc.name      : The parameters of the test command, such as -b, -p, -s, and -w, are valid, and the print API is called in Promise mode,
-     *                 and the print information is null
-     * @tc.desc      : for testing command -b -s -w are valid  print msg is null
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     */
 
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300
+     * @tc.desc   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300';
       try {
@@ -847,13 +840,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_19400
-     * @tc.name      : The -b, -p, -s, -w and other parameters of the test command are valid, and the print interface is called in Promise mode,
-     *                 and the print information contains Chinese, special characters, etc.
-     * @tc.desc      : for testing command -b -s -w are valid and call print by promise
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_19400
+     * @tc.desc   for testing command -b -s -w are valid and call print by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_19400', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_19400';
@@ -890,13 +882,12 @@ export default function AbilityDelegatorStageTest() {
       '9aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae'
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_19500
-     * @tc.name      : The -b, -p, -s, -w and other parameters of the test command are valid, and the print API is called in Promise mode,
-     *                 and the print message is 1000 characters in length
-     * @tc.desc      : for testing command is valid and call print by promise
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_19500
+     * @tc.desc   for testing command is valid and call print by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_19500', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_19500';
@@ -923,13 +914,12 @@ export default function AbilityDelegatorStageTest() {
 
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_19600
-     * @tc.name      : The parameters of the test command, such as -b, -p, -s, and -w, are valid, and the print API is called in Promise mode,
-     *                 and the length of the print message is greater than 1000 characters
-     * @tc.desc      : for testing command is valid and call print by promise
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_19600
+     * @tc.desc   for testing command is valid and call print by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_19600', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_19600';
@@ -957,13 +947,12 @@ export default function AbilityDelegatorStageTest() {
 
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_19700
-     * @tc.name      : The -b, -s unittest, -p, -D, -s class, -s level, -s size, -s testType, -s timeout, -s, -w
-     *                 and other parameters of the test command <any-key> <any-value>are valid (-s class specifies the correct test set and test case)
-     * @tc.desc      : for testing getArguments()
-     * @tc.level     : Level 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_19700
+     * @tc.desc   for testing getArguments()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_19700', Level.LEVEL1, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_19700';
@@ -985,12 +974,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200
-     * @tc.name      : The -w parameter of the test command is invalid, and the other parameters such as -b and -s are valid
-     * @tc.desc      : for testing shell command
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200
+     * @tc.desc   for testing shell command
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200';
@@ -1022,13 +1011,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_20300
-     * @tc.name      : The parameters of the test command are valid, call the finishTest API in AsyncCallback mode,
-     *                 and the msg parameter is invalid (null) and the code parameter is valid (1)
-     * @tc.desc      : for testing finishTest by AsyncCallback
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_20300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_20300
+     * @tc.desc   for testing finishTest by AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_20300', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_20300';
@@ -1049,13 +1037,12 @@ export default function AbilityDelegatorStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_20400
-     * @tc.name      : The parameters of the test command are valid, call the finishTest API in AsyncCallback mode,
-     *                 and the msg parameter is invalid (Undefined) and the code parameter is valid (1)
-     * @tc.desc      : for testing finishTest by AsyncCallback
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_20400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_20400
+     * @tc.desc   for testing finishTest by AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_20400', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_20400';

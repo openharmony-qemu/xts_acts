@@ -47,13 +47,13 @@ export default function drawingTsCanvasPart3Test() {
       // This API supports only one parameter: clear action function.
     })
 
-      /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2000
-     * @tc.name      : testCanvasRestoreToCountNormal
-     * @tc.desc      : testCanvasRestoreToCountNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+    /**
+     * @tc.name   testCanvasRestoreToCountNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2000
+     * @tc.desc   testCanvasRestoreToCountNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasRestoreToCountNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasRestoreToCountNormal';
@@ -94,12 +94,12 @@ export default function drawingTsCanvasPart3Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2001
-     * @tc.name      : testCanvasRestoreToCountNull
-     * @tc.desc      : testCanvasRestoreToCountNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasRestoreToCountNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2001
+     * @tc.desc   testCanvasRestoreToCountNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasRestoreToCountNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreToCountNull';
@@ -122,12 +122,12 @@ export default function drawingTsCanvasPart3Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2003
-     * @tc.name      : testCanvasRestoreToCountMultipleCalls
-     * @tc.desc      : testCanvasRestoreToCountMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasRestoreToCountMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2003
+     * @tc.desc   testCanvasRestoreToCountMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasRestoreToCountMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreToCountMultipleCalls';
@@ -145,12 +145,12 @@ export default function drawingTsCanvasPart3Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2100
-     * @tc.name      : testCanvasRestoreNormal
-     * @tc.desc      : testCanvasRestoreNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasRestoreNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2100
+     * @tc.desc   testCanvasRestoreNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasRestoreNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasRestoreNormal';
@@ -167,12 +167,12 @@ export default function drawingTsCanvasPart3Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2102
-     * @tc.name      : testCanvasRestoreMultipleCalls
-     * @tc.desc      : testCanvasRestoreMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasRestoreMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2102
+     * @tc.desc   testCanvasRestoreMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasRestoreMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreMultipleCalls';
@@ -198,12 +198,12 @@ export default function drawingTsCanvasPart3Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2103
-     * @tc.name      : testCanvasRestoreWhenNoSave
-     * @tc.desc      : testCanvasRestoreWhenNoSave
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasRestoreWhenNoSave
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2103
+     * @tc.desc   testCanvasRestoreWhenNoSave
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasRestoreWhenNoSave', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreWhenNoSave';

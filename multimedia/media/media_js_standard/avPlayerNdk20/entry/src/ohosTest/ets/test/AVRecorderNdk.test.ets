@@ -45,12 +45,12 @@ export default function AVRecorderNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_Prepare0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_Prepare0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_Prepare0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_Prepare0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_Prepare0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -67,12 +67,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_GetAVRecorderConfig0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_GetAVRecorderConfig0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_GetAVRecorderConfig0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_GetAVRecorderConfig0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_GetAVRecorderConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -89,12 +89,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_GetInputSurface0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_GetInputSurface0101
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_GetInputSurface0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_GetInputSurface0101
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_GetInputSurface0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -111,12 +111,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -133,12 +133,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_Start0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_Start0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_Start0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_Start0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_Start0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -155,12 +155,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_Pause0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_Pause0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_Pause0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_Pause0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_Pause0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -177,12 +177,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_Resume0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_Resume0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_Resume0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_Resume0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_Resume0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -199,12 +199,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_Stop0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_Stop0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_Stop0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_Stop0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_Stop0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -221,12 +221,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_Reset0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_Reset0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_Reset0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_Reset0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_Reset0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -243,12 +243,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_Release0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_Release0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_Release0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_Release0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_Release0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -265,12 +265,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_GetAvailableEncoder0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_GetAvailableEncoder0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_GetAvailableEncoder0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_GetAvailableEncoder0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_GetAvailableEncoder0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -287,12 +287,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_SetStateCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_SetStateCallback0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_SetStateCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_SetStateCallback0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_SetStateCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -309,12 +309,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_SetStateCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_SetStateCallback0101
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_SetStateCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_SetStateCallback0101
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_SetStateCallback0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -331,12 +331,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_SetErrorCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_SetErrorCallback0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_SetErrorCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_SetErrorCallback0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_SetErrorCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -353,12 +353,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_SetErrorCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_SetErrorCallback0101
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_SetErrorCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_SetErrorCallback0101
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_SetErrorCallback0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -375,12 +375,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_SetUriCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_SetUriCallback0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_SetUriCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_SetUriCallback0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_SetUriCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -397,12 +397,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_SetUriCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_SetUriCallback0101
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_SetUriCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_SetUriCallback0101
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_SetUriCallback0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -419,12 +419,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_SetWillMuteWhenInterrupted0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_SetWillMuteWhenInterrupted0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_SetWillMuteWhenInterrupted0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_SetWillMuteWhenInterrupted0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_SetWillMuteWhenInterrupted0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -446,12 +446,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_ContainerFormatType0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_ContainerFormatType0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_ContainerFormatType0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_ContainerFormatType0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_ContainerFormatType0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -473,12 +473,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -500,12 +500,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0101
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0101
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -527,12 +527,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0102
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0102
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0102
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0102
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_MetadataTemplate0102',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -554,12 +554,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_Metadata0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_Metadata0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_Metadata0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_Metadata0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_Metadata0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -581,12 +581,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_Metadata0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_Metadata0101
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_Metadata0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_Metadata0101
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_Metadata0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -608,12 +608,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_Metadata0102
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_Metadata0102
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_Metadata0102
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_Metadata0102
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_Metadata0102',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -635,12 +635,12 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVRecorder_Config0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVRecorder_Config0100
-     * @tc.desc       : test OH_AVRecorder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_Config0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_Config0100
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVRecorder_Config0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,

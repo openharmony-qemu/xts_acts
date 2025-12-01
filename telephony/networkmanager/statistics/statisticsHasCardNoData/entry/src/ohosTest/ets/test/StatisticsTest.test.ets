@@ -37,12 +37,12 @@ export default function StatisticsTestHasCard() {
   describe("StatisticsTestHasCard", () => {
 
     /**
+     * @tc.name   testNetworkManagerGetCellularRxBytesAsync0200
      * @tc.number SUB_NetworkManager_GetCellularRxBytes_Async_0200
-     * @tc.name testNetworkManagerGetCellularRxBytesAsync0200
-     * @tc.desc Function test
-     * @tc.level 1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetCellularRxBytesAsync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetCellularRxBytesAsync0200';
@@ -81,12 +81,12 @@ export default function StatisticsTestHasCard() {
 
     });
     /**
+     * @tc.name   testNetworkManagerGetCellularRxBytesPromise0200
      * @tc.number SUB_NetworkManager_GetCellularRxBytes_Promise_0200
-     * @tc.name testNetworkManagerGetCellularRxBytesPromise0200
-     * @tc.desc Function test
-     * @tc.level 1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetCellularRxBytesPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetCellularRxBytesPromise0200';
@@ -124,12 +124,12 @@ export default function StatisticsTestHasCard() {
     });
 
     /**
+     * @tc.name   testNetworkManagerGetCellularTxBytesAsync0200
      * @tc.number SUB_NetworkManager_GetCellularTxBytes_Async_0200
-     * @tc.name testNetworkManagerGetCellularTxBytesAsync0200
-     * @tc.desc Function test
-     * @tc.level 1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetCellularTxBytesAsync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetCellularTxBytesAsync0200';
@@ -167,12 +167,12 @@ export default function StatisticsTestHasCard() {
       }
     });
     /**
+     * @tc.name   testNetworkManagerGetCellularTxBytesPromise0200
      * @tc.number SUB_NetworkManager_GetCellularTxBytes_Promise_0200
-     * @tc.name testNetworkManagerGetCellularTxBytesPromise0200
-     * @tc.desc Function test
-     * @tc.level 1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkManagerGetCellularTxBytesPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testNetworkManagerGetCellularTxBytesPromise0200';

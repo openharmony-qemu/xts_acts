@@ -34,7 +34,6 @@ export default function styledNumberFormatTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:56
          * @tc.name   SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100
          * @tc.number SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100
          * @tc.desc   Check start ability by bundl

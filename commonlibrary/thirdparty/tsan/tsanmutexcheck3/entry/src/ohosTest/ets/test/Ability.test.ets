@@ -21,12 +21,12 @@ export default function abilityTest() {
   describe('ActsThirdPartyTsanMutexCheck3Test', () => {
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_TSAN_MUTEXCHECK_0300
-     * @tc.name       : testTsanMutexCheck003
-     * @tc.desc       : test mutexCheck read lock of a write locked mutex
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTsanMutexCheck003
+     * @tc.number SUB_THIRDPARTY_TSAN_MUTEXCHECK_0300
+     * @tc.desc   test mutexCheck read lock of a write locked mutex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTsanMutexCheck003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result: number = tsan.rwMutexErrorLockedSequence();

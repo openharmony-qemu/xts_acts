@@ -47,12 +47,12 @@ export default function getDisplayId() {
     });
 
     /**
-     * @tc.number    getDisplayIdTest_0010
-     * @tc.name      getDisplayIdTest_0010
-     * @tc.desc      api getDisplayId
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getDisplayIdTest_0010
+     * @tc.number getDisplayIdTest_0010
+     * @tc.desc   api getDisplayId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getDisplayIdTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('getDisplayIdTest_0010 START');

@@ -43,7 +43,6 @@ export default function wifiEapTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_js_0100
          * @tc.number SUB_Communication_Netmanager_Eap_js_0100
          * @tc.desc   Test eap register api functionality.
@@ -111,7 +110,6 @@ export default function wifiEapTest(){
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_js_0200
          * @tc.number SUB_Communication_Netmanager_Eap_js_0200
          * @tc.desc   Test eap register api functionality.
@@ -189,7 +187,6 @@ export default function wifiEapTest(){
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_js_0300
          * @tc.number SUB_Communication_Netmanager_Eap_js_0300
          * @tc.desc   Test eap register api functionality.
@@ -241,7 +238,6 @@ export default function wifiEapTest(){
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_js_0400
          * @tc.number SUB_Communication_Netmanager_Eap_js_0400
          * @tc.desc   Test eap unregister api functionality.
@@ -372,7 +368,6 @@ export default function wifiEapTest(){
           done();
         });
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_js_0500
          * @tc.number SUB_Communication_Netmanager_Eap_js_0500
          * @tc.desc   Test eap startEthEap api functionality.
@@ -443,7 +438,6 @@ export default function wifiEapTest(){
             done();
         })
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_js_0600
          * @tc.number SUB_Communication_Netmanager_Eap_js_0600
          * @tc.desc   Test eap logOffEthEap api functionality.

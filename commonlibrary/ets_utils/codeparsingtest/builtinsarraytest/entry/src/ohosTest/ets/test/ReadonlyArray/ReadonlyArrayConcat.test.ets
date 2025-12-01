@@ -41,12 +41,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest0100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_0100
-     * @tc.name builtinsReadonlyArrayConcatTest0100
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsReadonlyArrayConcatTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -70,12 +70,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest0200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_0200
-     * @tc.name builtinsReadonlyArrayConcatTest0200
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -99,12 +99,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest0300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_0300
-     * @tc.name builtinsReadonlyArrayConcatTest0300
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -128,12 +128,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest0400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_0400
-     * @tc.name builtinsReadonlyArrayConcatTest0400
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -157,12 +157,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest0500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_0500
-     * @tc.name builtinsReadonlyArrayConcatTest0500
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -186,12 +186,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest0600
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_0600
-     * @tc.name builtinsReadonlyArrayConcatTest0600
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -215,12 +215,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest0700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_0700
-     * @tc.name builtinsReadonlyArrayConcatTest0700
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -244,12 +244,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest0800
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_0800
-     * @tc.name builtinsReadonlyArrayConcatTest0800
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -273,12 +273,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest0900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_0900
-     * @tc.name builtinsReadonlyArrayConcatTest0900
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -302,12 +302,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest1000
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_1000
-     * @tc.name builtinsReadonlyArrayConcatTest1000
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -333,12 +333,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest1100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_1100
-     * @tc.name builtinsReadonlyArrayConcatTest1100
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -365,12 +365,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest1200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_1200
-     * @tc.name builtinsReadonlyArrayConcatTest1200
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -394,12 +394,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest1300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_1300
-     * @tc.name builtinsReadonlyArrayConcatTest1300
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -423,12 +423,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest1400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_1400
-     * @tc.name builtinsReadonlyArrayConcatTest1400
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -452,12 +452,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest1500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_1500
-     * @tc.name builtinsReadonlyArrayConcatTest1500
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -481,12 +481,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest1600
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_1600
-     * @tc.name builtinsReadonlyArrayConcatTest1600
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -510,12 +510,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest1700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_1700
-     * @tc.name builtinsReadonlyArrayConcatTest1700
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -539,12 +539,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest1800
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_1800
-     * @tc.name builtinsReadonlyArrayConcatTest1800
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -568,12 +568,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest1900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_1900
-     * @tc.name builtinsReadonlyArrayConcatTest1900
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -597,12 +597,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest2000
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_2000
-     * @tc.name builtinsReadonlyArrayConcatTest2000
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -626,12 +626,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest2100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_2100
-     * @tc.name builtinsReadonlyArrayConcatTest2100
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -655,12 +655,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest2200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_2200
-     * @tc.name builtinsReadonlyArrayConcatTest2200
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -684,12 +684,12 @@ export default function builtinsReadonlyArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayConcatTest2300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_CONCAT_TEST_2300
-     * @tc.name builtinsReadonlyArrayConcatTest2300
-     * @tc.desc readonlyArray concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray concat
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayConcatTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

@@ -22,7 +22,6 @@ const KEY_CODE_EVENT_ERROR = 1
 export default function DeviceManagerTest() {
   describe('DeviceManagerTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   testDistributedServiceKitGetLocalDeviceName0100
      * @tc.number SUB_DistributedServiceKit_Get_Local_Device_Name_0100
      * @tc.desc   testing ERR_OK interface

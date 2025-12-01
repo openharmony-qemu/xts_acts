@@ -25,12 +25,12 @@ export default function syslogNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SYSLOG_SETLOMASK_0100
-     * @tc.name       : testMuslSyslogSetlogmask001
-     * @tc.desc       : test setlogmask
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSyslogSetlogmask001
+     * @tc.number SUB_THIRDPARTY_MUSL_SYSLOG_SETLOMASK_0100
+     * @tc.desc   test setlogmask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSyslogSetlogmask001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = syslog.setlogmask();
@@ -38,12 +38,12 @@ export default function syslogNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SYSLOG_OPENLOG_0100
-     * @tc.name       : testMuslSyslogOpenlog001
-     * @tc.desc       : test openlog
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSyslogOpenlog001
+     * @tc.number SUB_THIRDPARTY_MUSL_SYSLOG_OPENLOG_0100
+     * @tc.desc   test openlog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSyslogOpenlog001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = syslog.openlog();

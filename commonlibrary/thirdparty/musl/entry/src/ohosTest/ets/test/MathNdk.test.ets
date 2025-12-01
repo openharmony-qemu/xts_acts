@@ -25,12 +25,12 @@ export default function mathNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUND_0100
-     * @tc.name       : testMuslMathLLround001
-     * @tc.desc       : test llround
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLround001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUND_0100
+     * @tc.desc   test llround
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLround001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llround(0);
@@ -39,12 +39,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUND_0200
-     * @tc.name       : testMuslMathLLround002
-     * @tc.desc       : test llround
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLround002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUND_0200
+     * @tc.desc   test llround
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLround002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llround(0.5);
@@ -53,12 +53,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUND_0300
-     * @tc.name       : testMuslMathLLround003
-     * @tc.desc       : test llround
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLround003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUND_0300
+     * @tc.desc   test llround
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLround003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llround(0.4);
@@ -67,12 +67,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUND_0400
-     * @tc.name       : testMuslMathLLround004
-     * @tc.desc       : test llround
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLround004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUND_0400
+     * @tc.desc   test llround
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLround004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llround(-0.5);
@@ -81,12 +81,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUND_0500
-     * @tc.name       : testMuslMathLLround005
-     * @tc.desc       : test llround
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLround005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUND_0500
+     * @tc.desc   test llround
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLround005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llround(-0.4);
@@ -96,12 +96,12 @@ export default function mathNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUNDF_0100
-     * @tc.name       : testMuslMathLLroundF001
-     * @tc.desc       : test llroundf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLroundF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUNDF_0100
+     * @tc.desc   test llroundf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLroundF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llroundF(0);
@@ -110,12 +110,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUNDF_0200
-     * @tc.name       : testMuslMathLLroundF002
-     * @tc.desc       : test llroundf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLroundF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUNDF_0200
+     * @tc.desc   test llroundf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLroundF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llroundF(0.5);
@@ -124,12 +124,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUNDF_0300
-     * @tc.name       : testMuslMathLLroundF003
-     * @tc.desc       : test llroundf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLroundF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUNDF_0300
+     * @tc.desc   test llroundf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLroundF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llroundF(0.4);
@@ -138,12 +138,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUNDF_0400
-     * @tc.name       : testMuslMathLLroundF004
-     * @tc.desc       : test llroundf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLroundF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUNDF_0400
+     * @tc.desc   test llroundf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLroundF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llroundF(-0.5);
@@ -152,12 +152,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUNDF_0500
-     * @tc.name       : testMuslMathLLroundF005
-     * @tc.desc       : test llroundf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLroundF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUNDF_0500
+     * @tc.desc   test llroundf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLroundF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llroundF(-0.4);
@@ -166,12 +166,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUNDL_0100
-     * @tc.name       : testMuslMathLLroundL001
-     * @tc.desc       : test llroundl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLroundL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUNDL_0100
+     * @tc.desc   test llroundl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLroundL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llroundL(0);
@@ -180,12 +180,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUNDL_0200
-     * @tc.name       : testMuslMathLLroundL002
-     * @tc.desc       : test llroundl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLroundL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUNDL_0200
+     * @tc.desc   test llroundl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLroundL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llroundL(0.5);
@@ -194,12 +194,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUNDL_0300
-     * @tc.name       : testMuslMathLLroundL003
-     * @tc.desc       : test llroundl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLroundL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUNDL_0300
+     * @tc.desc   test llroundl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLroundL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llroundL(0.4);
@@ -208,12 +208,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUNDL_0400
-     * @tc.name       : testMuslMathLLroundL004
-     * @tc.desc       : test llroundl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLroundL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUNDL_0400
+     * @tc.desc   test llroundl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLroundL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llroundL(-0.5);
@@ -222,12 +222,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLROUNDL_0500
-     * @tc.name       : testMuslMathLLroundL005
-     * @tc.desc       : test llroundl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLroundL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLROUNDL_0500
+     * @tc.desc   test llroundl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLroundL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llroundL(-0.4);
@@ -236,12 +236,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLRINT_0100
-     * @tc.name       : testMuslMathLLrint001
-     * @tc.desc       : test llrint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLrint001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLRINT_0100
+     * @tc.desc   test llrint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLrint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llrint(0);
@@ -250,12 +250,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLRINT_0200
-     * @tc.name       : testMuslMathLLrint002
-     * @tc.desc       : test llrint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLrint002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLRINT_0200
+     * @tc.desc   test llrint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLrint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llrint(0.5);
@@ -264,12 +264,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLRINT_0300
-     * @tc.name       : testMuslMathLLrint003
-     * @tc.desc       : test llrint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLrint003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLRINT_0300
+     * @tc.desc   test llrint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLrint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llrint(0.4);
@@ -279,12 +279,12 @@ export default function mathNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLRINTF_0100
-     * @tc.name       : testMuslMathLLrintF001
-     * @tc.desc       : test llrintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLrintF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLRINTF_0100
+     * @tc.desc   test llrintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLrintF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llrintF(0);
@@ -293,12 +293,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLRINTF_0200
-     * @tc.name       : testMuslMathLLrintF002
-     * @tc.desc       : test llrintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLrintF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLRINTF_0200
+     * @tc.desc   test llrintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLrintF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llrintF(0.5);
@@ -307,12 +307,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLRINTF_0300
-     * @tc.name       : testMuslMathLLrintF003
-     * @tc.desc       : test llrintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLrintF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLRINTF_0300
+     * @tc.desc   test llrintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLrintF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llrintF(0.4);
@@ -321,12 +321,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLRINTL_0100
-     * @tc.name       : testMuslMathLLrintL001
-     * @tc.desc       : test llrintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLrintL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLRINTL_0100
+     * @tc.desc   test llrintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLrintL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llrintL(0);
@@ -335,12 +335,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLRINTL_0200
-     * @tc.name       : testMuslMathLLrintL002
-     * @tc.desc       : test llrintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLrintL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLRINTL_0200
+     * @tc.desc   test llrintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLrintL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llrintL(0.5);
@@ -349,12 +349,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LLRINTL_0300
-     * @tc.name       : testMuslMathLLrintL003
-     * @tc.desc       : test llrintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLLrintL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LLRINTL_0300
+     * @tc.desc   test llrintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLLrintL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.llrintL(0.4);
@@ -363,12 +363,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMA_R_0200
-     * @tc.name       : testMuslMathLgammaR002
-     * @tc.desc       : test lgamma_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammaR002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMA_R_0200
+     * @tc.desc   test lgamma_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammaR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammaR(math.sqrt(-1));
@@ -376,12 +376,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMA_R_0300
-     * @tc.name       : testMuslMathLgammaR003
-     * @tc.desc       : test lgamma_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammaR003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMA_R_0300
+     * @tc.desc   test lgamma_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammaR003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammaR(1);
@@ -389,12 +389,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMA_R_0400
-     * @tc.name       : testMuslMathLgammaR004
-     * @tc.desc       : test lgamma_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammaR004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMA_R_0400
+     * @tc.desc   test lgamma_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammaR004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammaR(2);
@@ -403,12 +403,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_R_0200
-     * @tc.name       : testMuslMathLgammafR002
-     * @tc.desc       : test lgammaf_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammafR002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_R_0200
+     * @tc.desc   test lgammaf_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammafR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammafR(math.sqrt(-1));
@@ -416,12 +416,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_R_0300
-     * @tc.name       : testMuslMathLgammafR003
-     * @tc.desc       : test lgammaf_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammafR003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_R_0300
+     * @tc.desc   test lgammaf_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammafR003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammafR(1);
@@ -429,12 +429,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_R_0400
-     * @tc.name       : testMuslMathLgammafR004
-     * @tc.desc       : test lgammaf_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammafR004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_R_0400
+     * @tc.desc   test lgammaf_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammafR004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammafR(2);
@@ -443,12 +443,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_R_0200
-     * @tc.name       : testMuslMathLgammalR002
-     * @tc.desc       : test lgammal_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammalR002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_R_0200
+     * @tc.desc   test lgammal_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammalR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammalR(math.sqrt(-1));
@@ -456,12 +456,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_R_0300
-     * @tc.name       : testMuslMathLgammalR003
-     * @tc.desc       : test lgammal_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammalR003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_R_0300
+     * @tc.desc   test lgammal_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammalR003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammalR(1);
@@ -469,12 +469,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_R_0400
-     * @tc.name       : testMuslMathLgammalR004
-     * @tc.desc       : test lgammal_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammalR004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_R_0400
+     * @tc.desc   test lgammal_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammalR004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammalR(2);
@@ -483,12 +483,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     :  SUB_THIRDPARTY_MUSL_MATH_LGAMMA_0200
-     * @tc.name       : testMuslMathLgamma002
-     * @tc.desc       : test lgamma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgamma002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMA_0200
+     * @tc.desc   test lgamma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgamma002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgamma(math.sqrt(-1));
@@ -496,12 +496,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMA_0300
-     * @tc.name       : testMuslMathLgamma003
-     * @tc.desc       : test lgamma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgamma003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMA_0300
+     * @tc.desc   test lgamma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgamma003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgamma(1);
@@ -509,12 +509,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMA_0400
-     * @tc.name       : testMuslMathLgamma004
-     * @tc.desc       : test lgamma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgamma004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMA_0400
+     * @tc.desc   test lgamma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgamma004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgamma(2);
@@ -523,12 +523,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_0200
-     * @tc.name       : testMuslMathLgammaf002
-     * @tc.desc       : test lgammaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammaf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_0200
+     * @tc.desc   test lgammaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammaf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammaf(math.sqrt(-1));
@@ -537,12 +537,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_0300
-     * @tc.name       : testMuslMathLgammaf003
-     * @tc.desc       : test lgammaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammaf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_0300
+     * @tc.desc   test lgammaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammaf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammaf(1);
@@ -550,12 +550,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_0400
-     * @tc.name       : testMuslMathLgammaf004
-     * @tc.desc       : test lgammaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammaf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAF_0400
+     * @tc.desc   test lgammaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammaf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammaf(2);
@@ -564,12 +564,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_0200
-     * @tc.name       : testMuslMathLgammal002
-     * @tc.desc       : test lgammal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammal002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_0200
+     * @tc.desc   test lgammal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammal(math.sqrt(-1));
@@ -577,12 +577,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_0300
-     * @tc.name       : testMuslMathLgammal003
-     * @tc.desc       : test lgammal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammal003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_0300
+     * @tc.desc   test lgammal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammal(1);
@@ -590,12 +590,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_0400
-     * @tc.name       : testMuslMathLgammal004
-     * @tc.desc       : test lgammal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLgammal004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LGAMMAL_0400
+     * @tc.desc   test lgammal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLgammal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.lgammal(2);
@@ -604,12 +604,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LDEXP_0100
-     * @tc.name       : testMuslMathLdexp001
-     * @tc.desc       : test ldexp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathLdexp001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LDEXP_0100
+     * @tc.desc   test ldexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLdexp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.ldexp(2.3, 3);
@@ -618,12 +618,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LDEXP_0200
-     * @tc.name       : testMuslMathLdexp002
-     * @tc.desc       : test Ldexp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLdexp002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LDEXP_0200
+     * @tc.desc   test Ldexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLdexp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.ldexp(Math.sqrt(-1), 2);
@@ -632,12 +632,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LDEXP_0300
-     * @tc.name       : testMuslMathLdexp003
-     * @tc.desc       : test Ldexp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLdexp003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LDEXP_0300
+     * @tc.desc   test Ldexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLdexp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.ldexp(2.3, 0);
@@ -645,12 +645,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LDEXPF_0200
-     * @tc.name       : testMuslMathLdexpf002
-     * @tc.desc       : test Ldexpf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLdexpf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LDEXPF_0200
+     * @tc.desc   test Ldexpf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLdexpf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.ldexpf(Math.sqrt(-1), 2);
@@ -659,12 +659,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LDEXPL_0100
-     * @tc.name       : testMuslMathLdexpl001
-     * @tc.desc       : test Ldexpl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLdexpl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LDEXPL_0100
+     * @tc.desc   test Ldexpl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLdexpl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.ldexpl(2.3, 3);
@@ -673,12 +673,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LDEXPL_0200
-     * @tc.name       : testMuslMathLdexpl002
-     * @tc.desc       : test Ldexpl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLdexpl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LDEXPL_0200
+     * @tc.desc   test Ldexpl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLdexpl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.ldexpl(Math.sqrt(-1), 2);
@@ -687,12 +687,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LDEXPL_0300
-     * @tc.name       : testMuslMathLdexpl003
-     * @tc.desc       : test Ldexpl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLdexpl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LDEXPL_0300
+     * @tc.desc   test Ldexpl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLdexpl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.ldexpl(2.3, 0);
@@ -701,12 +701,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_J0_0200
-     * @tc.name       : testMuslMathJ0002
-     * @tc.desc       : test J0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJ0002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_J0_0200
+     * @tc.desc   test J0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJ0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.j0(Math.sqrt(-1));
@@ -715,12 +715,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_J0_0300
-     * @tc.name       : testMuslMathJ0003
-     * @tc.desc       : test J0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJ0003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_J0_0300
+     * @tc.desc   test J0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJ0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.j0(1.7976931348623157e+309);
@@ -729,12 +729,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_J0F_0200
-     * @tc.name       : testMuslMathJ0f002
-     * @tc.desc       : test J0f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJ0f002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_J0F_0200
+     * @tc.desc   test J0f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJ0f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.j0f(Math.sqrt(-1));
@@ -743,12 +743,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_J0F_0300
-     * @tc.name       : testMuslMathJ0f003
-     * @tc.desc       : test J0f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJ0f003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_J0F_0300
+     * @tc.desc   test J0f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJ0f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.j0f(1.7976931348623157e+309);
@@ -757,12 +757,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_J1_0100
-     * @tc.name       : testMuslMathJ1001
-     * @tc.desc       : test J1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJ1001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_J1_0100
+     * @tc.desc   test J1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJ1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.j1(1);
@@ -771,12 +771,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_J1_0200
-     * @tc.name       : testMuslMathJ1002
-     * @tc.desc       : test J1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJ1002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_J1_0200
+     * @tc.desc   test J1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJ1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.j1(Math.sqrt(-1));
@@ -785,12 +785,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_J1_0300
-     * @tc.name       : testMuslMathJ1003
-     * @tc.desc       : test J1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJ1003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_J1_0300
+     * @tc.desc   test J1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJ1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.j1(1.7976931348623157e+309);
@@ -799,12 +799,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_J1F_0100
-     * @tc.name       : testMuslMathJ1f001
-     * @tc.desc       : test J1f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJ1f001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_J1F_0100
+     * @tc.desc   test J1f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJ1f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.j1f(1);
@@ -813,12 +813,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_J1F_0200
-     * @tc.name       : testMuslMathJ1f002
-     * @tc.desc       : test J1f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJ1f002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_J1F_0200
+     * @tc.desc   test J1f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJ1f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.j1f(Math.sqrt(-1));
@@ -827,12 +827,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_J1F_0300
-     * @tc.name       : testMuslMathJ1f003
-     * @tc.desc       : test J1f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJ1f003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_J1F_0300
+     * @tc.desc   test J1f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJ1f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.j1f(1.7976931348623157e+309);
@@ -841,12 +841,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_JN_0100
-     * @tc.name       : testMuslMathJn001
-     * @tc.desc       : test Jn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJn001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_JN_0100
+     * @tc.desc   test Jn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.jn(2, 1);
@@ -855,12 +855,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_JN_0200
-     * @tc.name       : testMuslMathJn002
-     * @tc.desc       : test Jn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJn002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_JN_0200
+     * @tc.desc   test Jn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.jn(2, Math.sqrt(-1));
@@ -869,12 +869,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_JN_0300
-     * @tc.name       : testMuslMathJn003
-     * @tc.desc       : test Jn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJn003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_JN_0300
+     * @tc.desc   test Jn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJn003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.jn(2, 1.7976931348623157e+309);
@@ -883,12 +883,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_JNF_0100
-     * @tc.name       : testMuslMathJnf001
-     * @tc.desc       : test Jnf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJnf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_JNF_0100
+     * @tc.desc   test Jnf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.jnf(2, 1);
@@ -897,12 +897,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_JNF_0200
-     * @tc.name       : testMuslMathJnf002
-     * @tc.desc       : test Jnf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJnf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_JNF_0200
+     * @tc.desc   test Jnf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJnf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.jnf(2, Math.sqrt(-1));
@@ -911,12 +911,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_JNF_0300
-     * @tc.name       : testMuslMathJnf003
-     * @tc.desc       : test Jnf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathJnf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_JNF_0300
+     * @tc.desc   test Jnf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathJnf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.jnf(2, 1.7976931348623157e+309);
@@ -925,12 +925,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMAINDER_0100
-     * @tc.name       : testMuslMathRemainder001
-     * @tc.desc       : test remainder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemainder001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMAINDER_0100
+     * @tc.desc   test remainder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemainder001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 6.0;
@@ -942,12 +942,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMAINDER_0200
-     * @tc.name       : testMuslMathRemainder002
-     * @tc.desc       : test rmainder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemainder002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMAINDER_0200
+     * @tc.desc   test rmainder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemainder002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 5.0;
@@ -959,12 +959,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMAINDER_0300
-     * @tc.name       : testMuslMathRemainder003
-     * @tc.desc       : text remainder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemainder003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMAINDER_0300
+     * @tc.desc   text remainder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemainder003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 18;
@@ -976,12 +976,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMAINDERF_0100
-     * @tc.name       : testMuslMathRemainderf001
-     * @tc.desc       : test remainderf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemainderf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMAINDERF_0100
+     * @tc.desc   test remainderf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemainderf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 6;
@@ -993,12 +993,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMAINDERF_0200
-     * @tc.name       : testMuslMathRemainderf002
-     * @tc.desc       : test remainderf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemainderf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMAINDERF_0200
+     * @tc.desc   test remainderf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemainderf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 5;
@@ -1010,12 +1010,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMAINDERF_0300
-     * @tc.name       : testMuslMathRemainderf003
-     * @tc.desc       : test remainderf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemainderf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMAINDERF_0300
+     * @tc.desc   test remainderf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemainderf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 18;
@@ -1027,12 +1027,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMAINDERL_0100
-     * @tc.name       : testMuslMathRemainderl001
-     * @tc.desc       : test remainderl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemainderl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMAINDERL_0100
+     * @tc.desc   test remainderl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemainderl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 12.0;
@@ -1044,12 +1044,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMAINDERL_0200
-     * @tc.name       : testMuslMathRemainderl002
-     * @tc.desc       : test remainderl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemainderl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMAINDERL_0200
+     * @tc.desc   test remainderl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemainderl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1061,12 +1061,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMAINDERL_0300
-     * @tc.name       : testMuslMathRemainderl003
-     * @tc.desc       : test remainderl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemainderl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMAINDERL_0300
+     * @tc.desc   test remainderl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemainderl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 18;
@@ -1078,12 +1078,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMQUO_0100
-     * @tc.name       : testMuslMathRemquo001
-     * @tc.desc       : test remquo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemquo001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMQUO_0100
+     * @tc.desc   test remquo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemquo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 12.5;
@@ -1096,12 +1096,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMQUO_0200
-     * @tc.name       : testMuslMathRemquo002
-     * @tc.desc       : test remquo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemquo002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMQUO_0200
+     * @tc.desc   test remquo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemquo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 12;
@@ -1114,12 +1114,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMQUO_0300
-     * @tc.name       : testMuslMathRemquo003
-     * @tc.desc       : test remquo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemquo003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMQUO_0300
+     * @tc.desc   test remquo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemquo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -12.5;
@@ -1132,12 +1132,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMQUOF_0100
-     * @tc.name       : testMuslMathRemquof001
-     * @tc.desc       : test remquof
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemquof001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMQUOF_0100
+     * @tc.desc   test remquof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemquof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 14.5;
@@ -1150,12 +1150,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMQUOF_0200
-     * @tc.name       : testMuslMathRemquof002
-     * @tc.desc       : test remquof
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemquof002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMQUOF_0200
+     * @tc.desc   test remquof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemquof002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 16.0;
@@ -1168,12 +1168,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMQUOF_0300
-     * @tc.name       : testMuslMathRemquof003
-     * @tc.desc       : test remquof
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemquof003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMQUOF_0300
+     * @tc.desc   test remquof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemquof003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -16.5;
@@ -1186,12 +1186,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMQUOL_0100
-     * @tc.name       : testMuslMathRemquol001
-     * @tc.desc       : test remquol
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemquol001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMQUOL_0100
+     * @tc.desc   test remquol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemquol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 16.5;
@@ -1204,12 +1204,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMQUOL_0200
-     * @tc.name       : testMuslMathRemquol002
-     * @tc.desc       : test remquol
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemquol002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMQUOL_0200
+     * @tc.desc   test remquol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemquol002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 12.5;
@@ -1222,12 +1222,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_REMQUOL_0300
-     * @tc.name       : testMuslMathRemquol003
-     * @tc.desc       : test remquol
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRemquol003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_REMQUOL_0300
+     * @tc.desc   test remquol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRemquol003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -12.5;
@@ -1240,12 +1240,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_RINT_0100
-     * @tc.name       : testMuslMathRint001
-     * @tc.desc       : test rint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRint001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_RINT_0100
+     * @tc.desc   test rint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.87;
@@ -1256,12 +1256,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_RINT_0200
-     * @tc.name       : testMuslMathRint002
-     * @tc.desc       : test rint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRint002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_RINT_0200
+     * @tc.desc   test rint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -11.87;
@@ -1272,12 +1272,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_RINT_0300
-     * @tc.name       : testMuslMathRint003
-     * @tc.desc       : test rint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRint003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_RINT_0300
+     * @tc.desc   test rint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.2;
@@ -1288,12 +1288,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_RINTF_0100
-     * @tc.name       : testMuslMathRintf001
-     * @tc.desc       : test rintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRintf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_RINTF_0100
+     * @tc.desc   test rintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.87;
@@ -1304,12 +1304,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_RINTF_0200
-     * @tc.name       : testMuslMathRintf002
-     * @tc.desc       : test rintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRintf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_RINTF_0200
+     * @tc.desc   test rintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -11.87;
@@ -1320,12 +1320,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_RINTF_0300
-     * @tc.name       : testMuslMathRintf003
-     * @tc.desc       : test rintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRintf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_RINTF_0300
+     * @tc.desc   test rintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRintf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.2;
@@ -1336,12 +1336,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_RINTL_0100
-     * @tc.name       : testMuslMathRintl001
-     * @tc.desc       : test rintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRintl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_RINTL_0100
+     * @tc.desc   test rintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRintl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.87;
@@ -1352,12 +1352,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_RINTL_0200
-     * @tc.name       : testMuslMathRintl002
-     * @tc.desc       : test rintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRintl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_RINTL_0200
+     * @tc.desc   test rintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRintl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -11.87;
@@ -1368,12 +1368,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_RINTL_0300
-     * @tc.name       : testMuslMathRintl003
-     * @tc.desc       : test rintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRintl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_RINTL_0300
+     * @tc.desc   test rintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRintl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.2;
@@ -1384,12 +1384,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ROUND_0100
-     * @tc.name       : testMuslMathRound001
-     * @tc.desc       : test round
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRound001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ROUND_0100
+     * @tc.desc   test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRound001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.87;
@@ -1400,12 +1400,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ROUND_0200
-     * @tc.name       : testMuslMathRound002
-     * @tc.desc       : test round
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRound002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ROUND_0200
+     * @tc.desc   test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRound002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -11.87;
@@ -1416,12 +1416,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ROUND_0300
-     * @tc.name       : testMuslMathRound003
-     * @tc.desc       : test round
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRound003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ROUND_0300
+     * @tc.desc   test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRound003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.2;
@@ -1432,12 +1432,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ROUNDF_0100
-     * @tc.name       : testMuslMathRoundf001
-     * @tc.desc       : test roundf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRoundf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ROUNDF_0100
+     * @tc.desc   test roundf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRoundf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.87;
@@ -1448,12 +1448,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ROUNDF_0200
-     * @tc.name       : testMuslMathRoundf002
-     * @tc.desc       : test roundf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRoundf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ROUNDF_0200
+     * @tc.desc   test roundf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRoundf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -11.87;
@@ -1464,12 +1464,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ROUNDF_0300
-     * @tc.name       : testMuslMathRoundf003
-     * @tc.desc       : test roundf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRoundf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ROUNDF_0300
+     * @tc.desc   test roundf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRoundf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.2;
@@ -1480,12 +1480,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ROUNDL_0100
-     * @tc.name       : testMuslMathRoundl001
-     * @tc.desc       : test roundl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRoundl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ROUNDL_0100
+     * @tc.desc   test roundl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRoundl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.87;
@@ -1496,12 +1496,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ROUNDL_0200
-     * @tc.name       : testMuslMathRoundl002
-     * @tc.desc       : test roundl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRoundl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ROUNDL_0200
+     * @tc.desc   test roundl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRoundl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -11.87;
@@ -1512,12 +1512,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ROUNDL_0300
-     * @tc.name       : testMuslMathRoundl003
-     * @tc.desc       : test roundl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathRoundl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ROUNDL_0300
+     * @tc.desc   test roundl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathRoundl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.2;
@@ -1528,12 +1528,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBLN_0100
-     * @tc.name       : testMuslMathScalbln001
-     * @tc.desc       : test scalbln
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbln001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBLN_0100
+     * @tc.desc   test scalbln
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbln001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 12;
@@ -1545,12 +1545,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBLN_0200
-     * @tc.name       : testMuslMathScalbln002
-     * @tc.desc       : test scalbln
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbln002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBLN_0200
+     * @tc.desc   test scalbln
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbln002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 200 / 0;
@@ -1562,12 +1562,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBLN_0300
-     * @tc.name       : testMuslMathScalbln003
-     * @tc.desc       : test scalbln
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbln003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBLN_0300
+     * @tc.desc   test scalbln
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbln003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 200 / -0;
@@ -1579,12 +1579,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TAN_0100
-     * @tc.name       : testMuslMathTan001
-     * @tc.desc       : test tan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTan001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TAN_0100
+     * @tc.desc   test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = Math.sqrt(-1);
@@ -1595,12 +1595,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TAN_0200
-     * @tc.name       : testMuslMathTan002
-     * @tc.desc       : test tan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTan002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TAN_0200
+     * @tc.desc   test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -1611,12 +1611,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TAN_0300
-     * @tc.name       : testMuslMathTan003
-     * @tc.desc       : test tan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTan003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TAN_0300
+     * @tc.desc   test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / -0;
@@ -1627,12 +1627,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TAN_0400
-     * @tc.name       : testMuslMathTan004
-     * @tc.desc       : test tan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTan004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TAN_0400
+     * @tc.desc   test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTan004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / 0;
@@ -1643,12 +1643,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANF_0100
-     * @tc.name       : testMuslMathTanf001
-     * @tc.desc       : test tanf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANF_0100
+     * @tc.desc   test tanf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = Math.sqrt(-1);
@@ -1659,12 +1659,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANF_0200
-     * @tc.name       : testMuslMathTanf002
-     * @tc.desc       : test tanf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANF_0200
+     * @tc.desc   test tanf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -1675,12 +1675,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANF_0300
-     * @tc.name       : testMuslMathTanf003
-     * @tc.desc       : test tanf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANF_0300
+     * @tc.desc   test tanf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / -0;
@@ -1691,12 +1691,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANF_0400
-     * @tc.name       : testMuslMathTanf004
-     * @tc.desc       : test tanf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANF_0400
+     * @tc.desc   test tanf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / 0;
@@ -1707,12 +1707,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANH_0100
-     * @tc.name       : testMuslMathTanh001
-     * @tc.desc       : test tanh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanh001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANH_0100
+     * @tc.desc   test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -1723,12 +1723,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANH_0200
-     * @tc.name       : testMuslMathTanh002
-     * @tc.desc       : test tanh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanh002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANH_0200
+     * @tc.desc   test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = Math.sqrt(-1);
@@ -1740,12 +1740,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANH_0300
-     * @tc.name       : testMuslMathTanh003
-     * @tc.desc       : test tanh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanh003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANH_0300
+     * @tc.desc   test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / 0;
@@ -1756,12 +1756,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANH_0400
-     * @tc.name       : testMuslMathTanh004
-     * @tc.desc       : test tanh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanh004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANH_0400
+     * @tc.desc   test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanh004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / -0;
@@ -1772,12 +1772,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANHF_0100
-     * @tc.name       : testMuslMathTanhf001
-     * @tc.desc       : test tanhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanhf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANHF_0100
+     * @tc.desc   test tanhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -1788,12 +1788,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANHF_0200
-     * @tc.name       : testMuslMathTanhf002
-     * @tc.desc       : test tanhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanhf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANHF_0200
+     * @tc.desc   test tanhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = Math.sqrt(-1);
@@ -1804,12 +1804,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANHF_0300
-     * @tc.name       : testMuslMathTanhf003
-     * @tc.desc       : test tanhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanhf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANHF_0300
+     * @tc.desc   test tanhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanhf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / 0;
@@ -1820,12 +1820,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANHF_0400
-     * @tc.name       : testMuslMathTanhf004
-     * @tc.desc       : test tanhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanhf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANHF_0400
+     * @tc.desc   test tanhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanhf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / -0;
@@ -1836,12 +1836,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANHL_0100
-     * @tc.name       : testMuslMathTanhl001
-     * @tc.desc       : test tanhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanhl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANHL_0100
+     * @tc.desc   test tanhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -1852,12 +1852,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANHL_0200
-     * @tc.name       : testMuslMathTanhl002
-     * @tc.desc       : test tanhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanhl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANHL_0200
+     * @tc.desc   test tanhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = Math.sqrt(-1);
@@ -1868,12 +1868,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANHL_0300
-     * @tc.name       : testMuslMathTanhl003
-     * @tc.desc       : test tanhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanhl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANHL_0300
+     * @tc.desc   test tanhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanhl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / 0;
@@ -1884,12 +1884,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANHL_0400
-     * @tc.name       : testMuslMathTanhl004
-     * @tc.desc       : test tanhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanhl004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANHL_0400
+     * @tc.desc   test tanhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanhl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / -0;
@@ -1900,12 +1900,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANL_0100
-     * @tc.name       : testMuslMathTanl001
-     * @tc.desc       : test tanl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANL_0100
+     * @tc.desc   test tanl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -1916,12 +1916,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANL_0200
-     * @tc.name       : testMuslMathTanl002
-     * @tc.desc       : test tanl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANL_0200
+     * @tc.desc   test tanl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = Math.sqrt(-1);
@@ -1932,12 +1932,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANL_0300
-     * @tc.name       : testMuslMathTanl003
-     * @tc.desc       : test tanl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANL_0300
+     * @tc.desc   test tanl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / 0;
@@ -1948,12 +1948,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TANL_0400
-     * @tc.name       : testMuslMathTanl004
-     * @tc.desc       : test tanl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTanl004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TANL_0400
+     * @tc.desc   test tanl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTanl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / -0;
@@ -1964,12 +1964,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TGAMMA_0100
-     * @tc.name       : testMuslMathTgamma001
-     * @tc.desc       : test tgamma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTgamma001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TGAMMA_0100
+     * @tc.desc   test tgamma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTgamma001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1;
@@ -1980,12 +1980,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TGAMMA_0200
-     * @tc.name       : testMuslMathTgamma002
-     * @tc.desc       : test tgamma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTgamma002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TGAMMA_0200
+     * @tc.desc   test tgamma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTgamma002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / 0;
@@ -1996,12 +1996,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TGAMMA_0300
-     * @tc.name       : testMuslMathTgamma003
-     * @tc.desc       : test tgamma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTgamma003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TGAMMA_0300
+     * @tc.desc   test tgamma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTgamma003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / -0;
@@ -2012,12 +2012,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TGAMMAF_0100
-     * @tc.name       : testMuslMathTgammaf001
-     * @tc.desc       : test tgammaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTgammaf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TGAMMAF_0100
+     * @tc.desc   test tgammaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTgammaf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1;
@@ -2028,12 +2028,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TGAMMAF_0200
-     * @tc.name       : testMuslMathTgammaf002
-     * @tc.desc       : test tgammaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTgammaf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TGAMMAF_0200
+     * @tc.desc   test tgammaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTgammaf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / 0;
@@ -2044,12 +2044,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TGAMMAF_0300
-     * @tc.name       : testMuslMathTgammaf003
-     * @tc.desc       : test tgammaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTgammaf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TGAMMAF_0300
+     * @tc.desc   test tgammaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTgammaf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / -0;
@@ -2060,12 +2060,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TGAMMAL_0100
-     * @tc.name       : testMuslMathTgammal001
-     * @tc.desc       : test tgammal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTgammal001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TGAMMAL_0100
+     * @tc.desc   test tgammal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTgammal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1;
@@ -2076,12 +2076,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TGAMMAL_0200
-     * @tc.name       : testMuslMathTgammal002
-     * @tc.desc       : test tgammal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTgammal002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TGAMMAL_0200
+     * @tc.desc   test tgammal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTgammal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / 0;
@@ -2092,12 +2092,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TGAMMAL_0300
-     * @tc.name       : testMuslMathTgammal003
-     * @tc.desc       : test tgammal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTgammal003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TGAMMAL_0300
+     * @tc.desc   test tgammal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTgammal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 200 / -0;
@@ -2108,12 +2108,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBN_0100
-     * @tc.name       : testMuslMathScalbn001
-     * @tc.desc       : test scalbn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbn001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBN_0100
+     * @tc.desc   test scalbn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 7
@@ -2124,12 +2124,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBN_0200
-     * @tc.name       : testMuslMathScalbn002
-     * @tc.desc       : test scalbn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbn002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBN_0200
+     * @tc.desc   test scalbn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = -1 / 0
@@ -2140,12 +2140,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBN_0300
-     * @tc.name       : testMuslMathScalbn003
-     * @tc.desc       : test scalbn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbn003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBN_0300
+     * @tc.desc   test scalbn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbn003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1
@@ -2157,12 +2157,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBN_0400
-     * @tc.name       : testMuslMathScalbn004
-     * @tc.desc       : test scalbn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbn004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBN_0400
+     * @tc.desc   test scalbn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbn004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1
@@ -2173,12 +2173,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBLNL_0100
-     * @tc.name       : testMuslMathScalblnl001
-     * @tc.desc       : test scalblnl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalblnl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBLNL_0100
+     * @tc.desc   test scalblnl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalblnl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 7
@@ -2189,12 +2189,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBLNL_0200
-     * @tc.name       : testMuslMathScalblnl002
-     * @tc.desc       : test scalblnl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalblnl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBLNL_0200
+     * @tc.desc   test scalblnl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalblnl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = -1 / 0
@@ -2205,12 +2205,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBLNL_0300
-     * @tc.name       : testMuslMathScalblnl003
-     * @tc.desc       : test scalblnl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalblnl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBLNL_0300
+     * @tc.desc   test scalblnl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalblnl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1
@@ -2221,12 +2221,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBLNL_0400
-     * @tc.name       : testMuslMathScalblnl004
-     * @tc.desc       : test scalblnl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalblnl004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBLNL_0400
+     * @tc.desc   test scalblnl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalblnl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1
@@ -2237,12 +2237,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBLNF_0100
-     * @tc.name       : testMuslMathScalblnf001
-     * @tc.desc       : test scalblnf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalblnf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBLNF_0100
+     * @tc.desc   test scalblnf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalblnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 7
@@ -2253,12 +2253,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBLNF_0200
-     * @tc.name       : testMuslMathScalblnf002
-     * @tc.desc       : test scalblnf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalblnf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBLNF_0200
+     * @tc.desc   test scalblnf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalblnf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = -1 / 0
@@ -2269,12 +2269,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBLNF_0300
-     * @tc.name       : testMuslMathScalblnf003
-     * @tc.desc       : test  scalblnf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalblnf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBLNF_0300
+     * @tc.desc   test  scalblnf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalblnf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1
@@ -2285,12 +2285,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBLNF_0400
-     * @tc.name       : testMuslMathScalblnf004
-     * @tc.desc       : test scalblnf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalblnf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBLNF_0400
+     * @tc.desc   test scalblnf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalblnf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1
@@ -2301,12 +2301,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBNF_0100
-     * @tc.name       : testMuslMathScalbnf001
-     * @tc.desc       : test scalbnf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbnf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBNF_0100
+     * @tc.desc   test scalbnf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 7
@@ -2317,12 +2317,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBNF_0200
-     * @tc.name       : testMuslMathScalbnf002
-     * @tc.desc       : test scalbnf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbnf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBNF_0200
+     * @tc.desc   test scalbnf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbnf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = -1 / 0
@@ -2333,12 +2333,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBNF_0300
-     * @tc.name       : testMuslMathScalbnf003
-     * @tc.desc       : test scalbnf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbnf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBNF_0300
+     * @tc.desc   test scalbnf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbnf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1
@@ -2349,12 +2349,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBNF_0400
-     * @tc.name       : testMuslMathScalbnf004
-     * @tc.desc       : test scalbnf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbnf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBNF_0400
+     * @tc.desc   test scalbnf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbnf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1
@@ -2365,12 +2365,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBNL_0100
-     * @tc.name       : testMuslMathScalbnl001
-     * @tc.desc       : test scalbnl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbnl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBNL_0100
+     * @tc.desc   test scalbnl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbnl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 7
@@ -2381,12 +2381,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBNL_0200
-     * @tc.name       : testMuslMathScalbnl002
-     * @tc.desc       : test scalbnl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbnl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBNL_0200
+     * @tc.desc   test scalbnl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbnl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = -1 / 0
@@ -2397,12 +2397,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBNL_0300
-     * @tc.name       : testMuslMathScalbnl003
-     * @tc.desc       : test scalbnl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbnl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBNL_0300
+     * @tc.desc   test scalbnl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbnl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1
@@ -2413,12 +2413,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBNL_0400
-     * @tc.name       : testMuslMathScalbnl004
-     * @tc.desc       : test scalbnl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbnl004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBNL_0400
+     * @tc.desc   test scalbnl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbnl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1
@@ -2429,12 +2429,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASIN_0100
-     * @tc.name       : testMuslMathASin001
-     * @tc.desc       : test ASin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASin001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASIN_0100
+     * @tc.desc   test ASin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -2445,12 +2445,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASIN_0200
-     * @tc.name       : testMuslMathASin002
-     * @tc.desc       : test ASin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASin002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASIN_0200
+     * @tc.desc   test ASin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -2461,12 +2461,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASIN_0300
-     * @tc.name       : testMuslMathASin003
-     * @tc.desc       : test ASin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASin003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASIN_0300
+     * @tc.desc   test ASin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -2477,12 +2477,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASIN_0400
-     * @tc.name       : testMuslMathASin004
-     * @tc.desc       : test ASin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASin004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASIN_0400
+     * @tc.desc   test ASin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 3;
@@ -2492,12 +2492,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINF_0100
-     * @tc.name       : testMuslMathASinF001
-     * @tc.desc       : test ASinF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINF_0100
+     * @tc.desc   test ASinF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -2508,12 +2508,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINF_0200
-     * @tc.name       : testMuslMathASinF002
-     * @tc.desc       : test ASinF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINF_0200
+     * @tc.desc   test ASinF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -2524,12 +2524,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINF_0300
-     * @tc.name       : testMuslMathASinF003
-     * @tc.desc       : test ASinF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINF_0300
+     * @tc.desc   test ASinF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -2540,12 +2540,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINF_0400
-     * @tc.name       : testMuslMathASinF004
-     * @tc.desc       : test ASinF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINF_0400
+     * @tc.desc   test ASinF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 3;
@@ -2555,12 +2555,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINL_0100
-     * @tc.name       : testMuslMathASinL001
-     * @tc.desc       : test ASinL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINL_0100
+     * @tc.desc   test ASinL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -2571,12 +2571,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINL_0200
-     * @tc.name       : testMuslMathASinL002
-     * @tc.desc       : test ASinL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINL_0200
+     * @tc.desc   test ASinL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -2587,12 +2587,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINL_0300
-     * @tc.name       : testMuslMathASinL003
-     * @tc.desc       : test ASinL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINL_0300
+     * @tc.desc   test ASinL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -2603,12 +2603,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINL_0400
-     * @tc.name       : testMuslMathASinL004
-     * @tc.desc       : test ASinL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINL_0400
+     * @tc.desc   test ASinL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 3;
@@ -2618,12 +2618,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINH_0100
-     * @tc.name       : testMuslMathASinH001
-     * @tc.desc       : test ASinH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinH001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINH_0100
+     * @tc.desc   test ASinH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultless: number = 0.881;
@@ -2636,12 +2636,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINH_0200
-     * @tc.name       : testMuslMathASinH002
-     * @tc.desc       : test ASinH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinH002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINH_0200
+     * @tc.desc   test ASinH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinH002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -2652,12 +2652,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINH_0300
-     * @tc.name       : testMuslMathASinH003
-     * @tc.desc       : test ASinH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinH003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINH_0300
+     * @tc.desc   test ASinH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinH003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = -0.89;
@@ -2668,12 +2668,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINH_0400
-     * @tc.name       : testMuslMathASinH004
-     * @tc.desc       : test ASinH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinH004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINH_0400
+     * @tc.desc   test ASinH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinH004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.aSinH(Math.sqrt(-1));
@@ -2682,12 +2682,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINHF_0100
-     * @tc.name       : testMuslMathASinHF001
-     * @tc.desc       : test ASinHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinHF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINHF_0100
+     * @tc.desc   test ASinHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinHF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultless: number = 0.881;
@@ -2700,12 +2700,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINHF_0200
-     * @tc.name       : testMuslMathASinHF002
-     * @tc.desc       : test ASinHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinHF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINHF_0200
+     * @tc.desc   test ASinHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinHF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -2716,12 +2716,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINHF_0300
-     * @tc.name       : testMuslMathASinHF003
-     * @tc.desc       : test ASinHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinHF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINHF_0300
+     * @tc.desc   test ASinHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinHF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = -0.89;
@@ -2732,12 +2732,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINHF_0400
-     * @tc.name       : testMuslMathASinHF004
-     * @tc.desc       : test ASinHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinHF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINHF_0400
+     * @tc.desc   test ASinHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinHF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.aSinHF(Math.sqrt(-1));
@@ -2746,12 +2746,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINHL_0100
-     * @tc.name       : testMuslMathASinHL001
-     * @tc.desc       : test ASinHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinHL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINHL_0100
+     * @tc.desc   test ASinHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinHL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultless: number = 0.881;
@@ -2764,12 +2764,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINHL_0200
-     * @tc.name       : testMuslMathASinHL002
-     * @tc.desc       : test ASinHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinHL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINHL_0200
+     * @tc.desc   test ASinHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinHL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -2780,12 +2780,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINHL_0300
-     * @tc.name       : testMuslMathASinHL003
-     * @tc.desc       : test ASinHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinHL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINHL_0300
+     * @tc.desc   test ASinHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinHL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = -0.89;
@@ -2796,12 +2796,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ASINHL_0400
-     * @tc.name       : testMuslMathASinHL004
-     * @tc.desc       : test ASinHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathASinHL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ASINHL_0400
+     * @tc.desc   test ASinHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathASinHL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.aSinHL(Math.sqrt(-1));
@@ -2810,12 +2810,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOS_0100
-     * @tc.name       : testMuslMathACos001
-     * @tc.desc       : test ACos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACos001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOS_0100
+     * @tc.desc   test ACos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = Math.PI;
@@ -2826,12 +2826,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOS_0200
-     * @tc.name       : testMuslMathACos002
-     * @tc.desc       : test ACos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACos002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOS_0200
+     * @tc.desc   test ACos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = Math.PI / 2;
@@ -2842,12 +2842,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOS_0300
-     * @tc.name       : testMuslMathACos003
-     * @tc.desc       : test ACos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACos003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOS_0300
+     * @tc.desc   test ACos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACos003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -2858,12 +2858,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOS_0400
-     * @tc.name       : testMuslMathACos004
-     * @tc.desc       : test ACos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACos004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOS_0400
+     * @tc.desc   test ACos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACos004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 3;
@@ -2873,12 +2873,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOS_0500
-     * @tc.name       : testMuslMathACos005
-     * @tc.desc       : test ACos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACos005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOS_0500
+     * @tc.desc   test ACos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACos005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = Math.sqrt(-1);
@@ -2888,12 +2888,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOS_0600
-     * @tc.name       : testMuslMathACos006
-     * @tc.desc       : test ACos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACos006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOS_0600
+     * @tc.desc   test ACos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACos006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 1.0 / 0.0;
@@ -2903,12 +2903,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSF_0100
-     * @tc.name       : testMuslMathACosF001
-     * @tc.desc       : test ACosF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSF_0100
+     * @tc.desc   test ACosF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultless: number = 3.141;
@@ -2921,12 +2921,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSF_0200
-     * @tc.name       : testMuslMathACosF002
-     * @tc.desc       : test ACosF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSF_0200
+     * @tc.desc   test ACosF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
@@ -2937,12 +2937,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSF_0300
-     * @tc.name       : testMuslMathACosF003
-     * @tc.desc       : test ACosF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSF_0300
+     * @tc.desc   test ACosF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -2953,12 +2953,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSF_0400
-     * @tc.name       : testMuslMathACosF004
-     * @tc.desc       : test ACosF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSF_0400
+     * @tc.desc   test ACosF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 3;
@@ -2968,12 +2968,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSF_0500
-     * @tc.name       : testMuslMathACosF005
-     * @tc.desc       : test ACosF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSF_0500
+     * @tc.desc   test ACosF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = Math.sqrt(-1);
@@ -2983,12 +2983,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSF_0600
-     * @tc.name       : testMuslMathACosF006
-     * @tc.desc       : test ACosF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosF006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSF_0600
+     * @tc.desc   test ACosF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 1.0 / 0.0;
@@ -2998,12 +2998,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSL_0100
-     * @tc.name       : testMuslMathACosL001
-     * @tc.desc       : test ACosL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSL_0100
+     * @tc.desc   test ACosL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = Math.PI;
@@ -3014,12 +3014,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSL_0200
-     * @tc.name       : testMuslMathACosL002
-     * @tc.desc       : test ACosL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSL_0200
+     * @tc.desc   test ACosL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = Math.PI / 2;
@@ -3030,12 +3030,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSL_0300
-     * @tc.name       : testMuslMathACosL003
-     * @tc.desc       : test ACosL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSL_0300
+     * @tc.desc   test ACosL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -3046,12 +3046,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSL_0400
-     * @tc.name       : testMuslMathACosL004
-     * @tc.desc       : test ACosL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSL_0400
+     * @tc.desc   test ACosL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 3;
@@ -3061,12 +3061,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSL_0500
-     * @tc.name       : testMuslMathACosL005
-     * @tc.desc       : test ACosL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSL_0500
+     * @tc.desc   test ACosL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = Math.sqrt(-1);
@@ -3076,12 +3076,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSL_0600
-     * @tc.name       : testMuslMathACosL006
-     * @tc.desc       : test ACosL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosL006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSL_0600
+     * @tc.desc   test ACosL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 1.0 / 0.0;
@@ -3091,12 +3091,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSH_0100
-     * @tc.name       : testMuslMathACosH001
-     * @tc.desc       : test ACosH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosH001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSH_0100
+     * @tc.desc   test ACosH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = -1;
@@ -3106,12 +3106,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSH_0200
-     * @tc.name       : testMuslMathACosH002
-     * @tc.desc       : test ACosH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosH002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSH_0200
+     * @tc.desc   test ACosH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosH002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 0;
@@ -3121,12 +3121,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSH_0300
-     * @tc.name       : testMuslMathACosH003
-     * @tc.desc       : test ACosH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosH003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSH_0300
+     * @tc.desc   test ACosH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosH003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -3137,12 +3137,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSH_0400
-     * @tc.name       : testMuslMathACosH004
-     * @tc.desc       : test ACosH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosH004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSH_0400
+     * @tc.desc   test ACosH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosH004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = -3;
@@ -3152,12 +3152,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSH_0500
-     * @tc.name       : testMuslMathACosH005
-     * @tc.desc       : test ACosH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosH005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSH_0500
+     * @tc.desc   test ACosH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosH005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = Math.sqrt(-1);
@@ -3167,12 +3167,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSH_0600
-     * @tc.name       : testMuslMathACosH006
-     * @tc.desc       : test ACosH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosH006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSH_0600
+     * @tc.desc   test ACosH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosH006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 1.0 / 0.0;
@@ -3182,12 +3182,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0100
-     * @tc.name       : testMuslMathACosHF001
-     * @tc.desc       : test ACosHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0100
+     * @tc.desc   test ACosHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = -1;
@@ -3197,12 +3197,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0200
-     * @tc.name       : testMuslMathACosHF002
-     * @tc.desc       : test ACosHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0200
+     * @tc.desc   test ACosHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 0;
@@ -3212,12 +3212,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0300
-     * @tc.name       : testMuslMathACosHF003
-     * @tc.desc       : test ACosHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0300
+     * @tc.desc   test ACosHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -3228,12 +3228,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0400
-     * @tc.name       : testMuslMathACosHF004
-     * @tc.desc       : test ACosHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0400
+     * @tc.desc   test ACosHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = -3;
@@ -3243,12 +3243,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0500
-     * @tc.name       : testMuslMathACosHF005
-     * @tc.desc       : test ACosHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0500
+     * @tc.desc   test ACosHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = Math.sqrt(-1);
@@ -3258,12 +3258,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0600
-     * @tc.name       : testMuslMathACosHF006
-     * @tc.desc       : test ACosHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHF006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHF_0600
+     * @tc.desc   test ACosHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 1.0 / 0.0;
@@ -3273,12 +3273,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0100
-     * @tc.name       : testMuslMathACosHL001
-     * @tc.desc       : test ACosHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0100
+     * @tc.desc   test ACosHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = -1;
@@ -3288,12 +3288,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0200
-     * @tc.name       : testMuslMathACosHL002
-     * @tc.desc       : test ACosHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0200
+     * @tc.desc   test ACosHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 0;
@@ -3303,12 +3303,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0300
-     * @tc.name       : testMuslMathACosHL003
-     * @tc.desc       : test ACosHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0300
+     * @tc.desc   test ACosHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -3319,12 +3319,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0400
-     * @tc.name       : testMuslMathACosHL004
-     * @tc.desc       : test ACosHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0400
+     * @tc.desc   test ACosHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = -3;
@@ -3334,12 +3334,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0500
-     * @tc.name       : testMuslMathACosHL005
-     * @tc.desc       : test ACosHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0500
+     * @tc.desc   test ACosHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = Math.sqrt(-1);
@@ -3349,12 +3349,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0600
-     * @tc.name       : testMuslMathACosHL006
-     * @tc.desc       : test ACosHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathACosHL006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ACOSHL_0600
+     * @tc.desc   test ACosHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathACosHL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param = 1.0 / 0.0;
@@ -3364,12 +3364,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN_0100
-     * @tc.name       : testMuslMathATan001
-     * @tc.desc       : test ATan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN_0100
+     * @tc.desc   test ATan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -3380,12 +3380,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN_0200
-     * @tc.name       : testMuslMathATan002
-     * @tc.desc       : test ATan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN_0200
+     * @tc.desc   test ATan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -3396,12 +3396,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN_0300
-     * @tc.name       : testMuslMathATan003
-     * @tc.desc       : test ATan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN_0300
+     * @tc.desc   test ATan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -3412,12 +3412,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN_0400
-     * @tc.name       : testMuslMathATan004
-     * @tc.desc       : test ATan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN_0400
+     * @tc.desc   test ATan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = Math.PI / 2;
@@ -3428,12 +3428,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN_0500
-     * @tc.name       : testMuslMathATan005
-     * @tc.desc       : test ATan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN_0500
+     * @tc.desc   test ATan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = Math.sqrt(-1);
@@ -3443,12 +3443,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN_0600
-     * @tc.name       : testMuslMathATan006
-     * @tc.desc       : test ATan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN_0600
+     * @tc.desc   test ATan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = -Math.PI / 2;
@@ -3459,12 +3459,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANF_0100
-     * @tc.name       : testMuslMathATanF001
-     * @tc.desc       : test ATanF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANF_0100
+     * @tc.desc   test ATanF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -3475,12 +3475,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANF_0200
-     * @tc.name       : testMuslMathATanF002
-     * @tc.desc       : test ATanF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANF_0200
+     * @tc.desc   test ATanF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -3491,12 +3491,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANF_0300
-     * @tc.name       : testMuslMathATanF003
-     * @tc.desc       : test ATanF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANF_0300
+     * @tc.desc   test ATanF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -3507,12 +3507,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANF_0400
-     * @tc.name       : testMuslMathATanF004
-     * @tc.desc       : test ATanF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANF_0400
+     * @tc.desc   test ATanF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
@@ -3523,12 +3523,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANF_0500
-     * @tc.name       : testMuslMathATanF005
-     * @tc.desc       : test ATanF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANF_0500
+     * @tc.desc   test ATanF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = Math.sqrt(-1);
@@ -3538,12 +3538,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANF_0600
-     * @tc.name       : testMuslMathATanF006
-     * @tc.desc       : test ATanF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanF006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANF_0600
+     * @tc.desc   test ATanF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
@@ -3554,12 +3554,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANL_0100
-     * @tc.name       : testMuslMathATanL001
-     * @tc.desc       : test ATanL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANL_0100
+     * @tc.desc   test ATanL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -3570,12 +3570,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANL_0200
-     * @tc.name       : testMuslMathATanL002
-     * @tc.desc       : test ATanL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANL_0200
+     * @tc.desc   test ATanL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -3586,12 +3586,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANL_0300
-     * @tc.name       : testMuslMathATanL003
-     * @tc.desc       : test ATanL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANL_0300
+     * @tc.desc   test ATanL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 1;
@@ -3602,12 +3602,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANL_0400
-     * @tc.name       : testMuslMathATanL004
-     * @tc.desc       : test ATanL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANL_0400
+     * @tc.desc   test ATanL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
@@ -3618,12 +3618,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANL_0500
-     * @tc.name       : testMuslMathATanL005
-     * @tc.desc       : test ATanL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANL_0500
+     * @tc.desc   test ATanL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = Math.sqrt(-1);
@@ -3633,12 +3633,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANL_0600
-     * @tc.name       : testMuslMathATanL006
-     * @tc.desc       : test ATanL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanL006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANL_0600
+     * @tc.desc   test ATanL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
@@ -3649,12 +3649,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_0100
-     * @tc.name       : testMuslMathATan2001
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_0100
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
@@ -3666,12 +3666,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_0200
-     * @tc.name       : testMuslMathATan2002
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_0200
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -3683,12 +3683,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_0300
-     * @tc.name       : testMuslMathATan2003
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_0300
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
@@ -3700,12 +3700,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_0400
-     * @tc.name       : testMuslMathATan2004
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_0400
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
@@ -3717,12 +3717,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_0500
-     * @tc.name       : testMuslMathATan2005
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_0500
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
@@ -3733,12 +3733,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_0600
-     * @tc.name       : testMuslMathATan2006
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_0600
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 0;
@@ -3749,12 +3749,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_0700
-     * @tc.name       : testMuslMathATan2007
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_0700
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = Math.PI / 4;
@@ -3766,12 +3766,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_0800
-     * @tc.name       : testMuslMathATan2008
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2008
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_0800
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI * 3 / 4).toFixed(2);
@@ -3783,12 +3783,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_0900
-     * @tc.name       : testMuslMathATan2009
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2009
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_0900
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 4).toFixed(2);
@@ -3800,12 +3800,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_1000
-     * @tc.name       : testMuslMathATan2010
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2010
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_1000
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = -3 * Math.PI / 4;
@@ -3817,12 +3817,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0100
-     * @tc.name       : testMuslMathATan2F001
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0100
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
@@ -3834,12 +3834,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0200
-     * @tc.name       : testMuslMathATan2F002
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0200
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -3851,12 +3851,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0300
-     * @tc.name       : testMuslMathATan2F003
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0300
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
@@ -3868,12 +3868,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0400
-     * @tc.name       : testMuslMathATan2F004
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0400
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
@@ -3885,15 +3885,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0500
-     * @tc.name       : testMuslMathATan2F005
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0500
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
@@ -3904,12 +3901,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0600
-     * @tc.name       : testMuslMathATan2F006
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0600
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -3921,12 +3918,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0700
-     * @tc.name       : testMuslMathATan2F007
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0700
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI / 4).toFixed(2);
@@ -3938,12 +3935,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0800
-     * @tc.name       : testMuslMathATan2F008
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F008
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0800
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI * 3 / 4).toFixed(2);
@@ -3955,12 +3952,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0900
-     * @tc.name       : testMuslMathATan2F009
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F009
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_0900
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 4).toFixed(2);
@@ -3972,12 +3969,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1000
-     * @tc.name       : testMuslMathATan2F010
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F010
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1000
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-3 * Math.PI / 4).toFixed(2);
@@ -3989,12 +3986,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0100
-     * @tc.name       : testMuslMathATan2L001
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0100
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
@@ -4006,12 +4003,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0200
-     * @tc.name       : testMuslMathATan2L002
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0200
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -4023,12 +4020,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0300
-     * @tc.name       : testMuslMathATan2L003
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0300
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
@@ -4040,12 +4037,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0400
-     * @tc.name       : testMuslMathATan2L004
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0400
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
@@ -4057,12 +4054,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COS_0100
-     * @tc.name       : testMuslMathCos001
-     * @tc.desc       : test cos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCos001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COS_0100
+     * @tc.desc   test cos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 60;
@@ -4073,12 +4070,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COS_0200
-     * @tc.name       : testMuslMathCos002
-     * @tc.desc       : test cos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCos002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COS_0200
+     * @tc.desc   test cos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -4089,12 +4086,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COS_0300
-     * @tc.name       : testMuslMathCos003
-     * @tc.desc       : test cos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCos003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COS_0300
+     * @tc.desc   test cos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCos003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 90;
@@ -4105,12 +4102,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERF_0100
-     * @tc.name       : testMuslMathErf001
-     * @tc.desc       : test erf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathErf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERF_0100
+     * @tc.desc   test erf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 10;
@@ -4124,12 +4121,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERF_0200
-     * @tc.name       : testMuslMathErf002
-     * @tc.desc       : test erf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathErf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERF_0200
+     * @tc.desc   test erf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -10;
@@ -4143,12 +4140,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERF_0300
-     * @tc.name       : testMuslMathErf003
-     * @tc.desc       : test erf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathErf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERF_0300
+     * @tc.desc   test erf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -4162,12 +4159,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERF_0400
-     * @tc.name       : testMuslMathErf004
-     * @tc.desc       : test erf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathErf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERF_0400
+     * @tc.desc   test erf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -4177,12 +4174,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0100
-     * @tc.name       : testMuslMathCopySign001
-     * @tc.desc       : test copysign
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCopySign001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0100
+     * @tc.desc   test copysign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySign001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 11;
@@ -4193,12 +4190,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0200
-     * @tc.name       : testMuslMathCopySign002
-     * @tc.desc       : test copysign
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCopySign002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0200
+     * @tc.desc   test copysign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySign002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -11;
@@ -4209,12 +4206,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0300
-     * @tc.name       : testMuslMathCopySign003
-     * @tc.desc       : test copysign
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCopySign003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0300
+     * @tc.desc   test copysign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySign003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -11;
@@ -4225,12 +4222,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP_0100
-     * @tc.name       : testMuslMathExp001
-     * @tc.desc       : test exp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP_0100
+     * @tc.desc   test exp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1;
@@ -4241,12 +4238,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP_0200
-     * @tc.name       : testMuslMathExp002
-     * @tc.desc       : test exp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP_0200
+     * @tc.desc   test exp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -4256,12 +4253,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABS_0100
-     * @tc.name       : testMuslMathFabs001
-     * @tc.desc       : test fabs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFabs001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABS_0100
+     * @tc.desc   test fabs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFabs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 7.5;
@@ -4271,12 +4268,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIM_0100
-     * @tc.name       : testMuslMathFDim001
-     * @tc.desc       : test fdim
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDim001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIM_0100
+     * @tc.desc   test fdim
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDim001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 7.5;
@@ -4287,12 +4284,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIM_0200
-     * @tc.name       : testMuslMathFDim002
-     * @tc.desc       : test fdim
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDim002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIM_0200
+     * @tc.desc   test fdim
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDim002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -4303,12 +4300,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIM_0300
-     * @tc.name       : testMuslMathFDim003
-     * @tc.desc       : test fdim
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDim003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIM_0300
+     * @tc.desc   test fdim
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDim003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -4319,12 +4316,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOOR_0100
-     * @tc.name       : testMuslMathFloor001
-     * @tc.desc       : test floor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloor001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOOR_0100
+     * @tc.desc   test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -4334,12 +4331,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOOR_0200
-     * @tc.name       : testMuslMathFloor002
-     * @tc.desc       : test floor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloor002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOOR_0200
+     * @tc.desc   test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -10.5;
@@ -4349,12 +4346,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMA_0100
-     * @tc.name       : testMuslMathFma001
-     * @tc.desc       : test fma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFma001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMA_0100
+     * @tc.desc   test fma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFma001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -4366,12 +4363,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMA_0200
-     * @tc.name       : testMuslMathFma002
-     * @tc.desc       : test fma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFma002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMA_0200
+     * @tc.desc   test fma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFma002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1.5;
@@ -4383,12 +4380,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAX_0100
-     * @tc.name       : testMuslMathFMax001
-     * @tc.desc       : test fmax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMax001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAX_0100
+     * @tc.desc   test fmax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1.5;
@@ -4399,12 +4396,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAX_0200
-     * @tc.name       : testMuslMathFMax002
-     * @tc.desc       : test fmax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMax002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAX_0200
+     * @tc.desc   test fmax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -4415,12 +4412,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAX_0300
-     * @tc.name       : testMuslMathFMax003
-     * @tc.desc       : test fmax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMax003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAX_0300
+     * @tc.desc   test fmax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMax003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -4431,12 +4428,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMIN_0100
-     * @tc.name       : testMuslMathFmin001
-     * @tc.desc       : test fmin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmin001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMIN_0100
+     * @tc.desc   test fmin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1.5;
@@ -4447,12 +4444,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMIN_0200
-     * @tc.name       : testMuslMathFmin002
-     * @tc.desc       : test fmin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmin002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMIN_0200
+     * @tc.desc   test fmin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -4463,12 +4460,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMIN_0300
-     * @tc.name       : testMuslMathFmin003
-     * @tc.desc       : test fmin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmin003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMIN_0300
+     * @tc.desc   test fmin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.56;
@@ -4479,12 +4476,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMOD_0100
-     * @tc.name       : testMuslMathFmod001
-     * @tc.desc       : test fmod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmod001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMOD_0100
+     * @tc.desc   test fmod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 7.5;
@@ -4501,12 +4498,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMOD_0200
-     * @tc.name       : testMuslMathFmod002
-     * @tc.desc       : test fmod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmod002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMOD_0200
+     * @tc.desc   test fmod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -4523,12 +4520,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMOD_0300
-     * @tc.name       : testMuslMathFmod003
-     * @tc.desc       : test fmod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmod003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMOD_0300
+     * @tc.desc   test fmod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmod003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 2.5;
@@ -4545,12 +4542,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMOD_0400
-     * @tc.name       : testMuslMathFmod004
-     * @tc.desc       : test fmod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmod004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMOD_0400
+     * @tc.desc   test fmod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmod004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 12.19;
@@ -4567,12 +4564,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABSF_0100
-     * @tc.name       : testMuslMathFAbsF001
-     * @tc.desc       : test fabsf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFAbsF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABSF_0100
+     * @tc.desc   test fabsf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFAbsF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -7.5;
@@ -4582,12 +4579,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSH_0100
-     * @tc.name       : testMuslMathCosh001
-     * @tc.desc       : test cosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCosh001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSH_0100
+     * @tc.desc   test cosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 90;
@@ -4598,12 +4595,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSH_0200
-     * @tc.name       : testMuslMathCosh002
-     * @tc.desc       : test cosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCosh002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSH_0200
+     * @tc.desc   test cosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -4614,12 +4611,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSH_0300
-     * @tc.name       : testMuslMathCosh003
-     * @tc.desc       : test cosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCosh003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSH_0300
+     * @tc.desc   test cosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -30;
@@ -4630,12 +4627,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2_0100
-     * @tc.name       : testMuslMathExp2001
-     * @tc.desc       : test exp2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp2001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2_0100
+     * @tc.desc   test exp2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1;
@@ -4649,12 +4646,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2_0200
-     * @tc.name       : testMuslMathExp2002
-     * @tc.desc       : test exp2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp2002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2_0200
+     * @tc.desc   test exp2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.0 / 0.0;
@@ -4664,12 +4661,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2_0300
-     * @tc.name       : testMuslMathExp2003
-     * @tc.desc       : test exp2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp2003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2_0300
+     * @tc.desc   test exp2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 4.7;
@@ -4683,12 +4680,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1_0100
-     * @tc.name       : testMuslMathExpM1001
-     * @tc.desc       : test expm1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1_0100
+     * @tc.desc   test expm1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 4;
@@ -4702,12 +4699,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1_0200
-     * @tc.name       : testMuslMathExpM1002
-     * @tc.desc       : test expm1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1_0200
+     * @tc.desc   test expm1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.0 / 0.0;
@@ -4717,12 +4714,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1_0300
-     * @tc.name       : testMuslMathExpM1003
-     * @tc.desc       : test expm1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1_0300
+     * @tc.desc   test expm1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1;
@@ -4736,12 +4733,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODF_0100
-     * @tc.name       : testMuslMathFmodF001
-     * @tc.desc       : test fmodf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODF_0100
+     * @tc.desc   test fmodf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 9.6;
@@ -4766,12 +4763,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODF_0200
-     * @tc.name       : testMuslMathFmodF002
-     * @tc.desc       : test fmodf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODF_0200
+     * @tc.desc   test fmodf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 4.7;
@@ -4796,12 +4793,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODF_0300
-     * @tc.name       : testMuslMathFmodF003
-     * @tc.desc       : test fmodf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODF_0300
+     * @tc.desc   test fmodf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 4.7;
@@ -4827,12 +4824,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODL_0100
-     * @tc.name       : testMuslMathFmodL001
-     * @tc.desc       : test fmodl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODL_0100
+     * @tc.desc   test fmodl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 9.6;
@@ -4844,12 +4841,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODL_0200
-     * @tc.name       : testMuslMathFmodL002
-     * @tc.desc       : test fmodl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODL_0200
+     * @tc.desc   test fmodl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 4.7;
@@ -4874,12 +4871,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODL_0300
-     * @tc.name       : testMuslMathFmodL003
-     * @tc.desc       : test fmodl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODL_0300
+     * @tc.desc   test fmodl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 4.7;
@@ -4905,12 +4902,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMINF_0100
-     * @tc.name       : testMuslMathFMinF001
-     * @tc.desc       : test fminf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMinF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMINF_0100
+     * @tc.desc   test fminf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMinF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1.5;
@@ -4921,12 +4918,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMINF_0200
-     * @tc.name       : testMuslMathFMinF002
-     * @tc.desc       : test fminf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMinF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMINF_0200
+     * @tc.desc   test fminf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMinF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -4937,12 +4934,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMINF_0300
-     * @tc.name       : testMuslMathFMinF003
-     * @tc.desc       : test fminf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMinF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMINF_0300
+     * @tc.desc   test fminf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMinF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.56;
@@ -4953,12 +4950,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMINL_0100
-     * @tc.name       : testMuslMathFMinL001
-     * @tc.desc       : test fminl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMinL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMINL_0100
+     * @tc.desc   test fminl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMinL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1.5;
@@ -4969,12 +4966,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMINL_0200
-     * @tc.name       : testMuslMathFMinL002
-     * @tc.desc       : test fminl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMinL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMINL_0200
+     * @tc.desc   test fminl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMinL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -4985,12 +4982,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMINL_0300
-     * @tc.name       : testMuslMathFMinL003
-     * @tc.desc       : test fminl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMinL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMINL_0300
+     * @tc.desc   test fminl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMinL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.56;
@@ -5001,12 +4998,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAXF_0100
-     * @tc.name       : testMuslMathFMaxF001
-     * @tc.desc       : test fmaxf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMaxF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAXF_0100
+     * @tc.desc   test fmaxf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMaxF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1.5;
@@ -5017,12 +5014,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAXF_0200
-     * @tc.name       : testMuslMathFMaxF002
-     * @tc.desc       : test fmaxf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMaxF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAXF_0200
+     * @tc.desc   test fmaxf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMaxF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5033,12 +5030,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAXF_0300
-     * @tc.name       : testMuslMathFMaxF003
-     * @tc.desc       : test fmaxf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMaxF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAXF_0300
+     * @tc.desc   test fmaxf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMaxF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5049,12 +5046,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAXL_0100
-     * @tc.name       : testMuslMathFMaxL001
-     * @tc.desc       : test fmaxl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMaxL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAXL_0100
+     * @tc.desc   test fmaxl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMaxL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1.5;
@@ -5065,12 +5062,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAXL_0200
-     * @tc.name       : testMuslMathFMaxL002
-     * @tc.desc       : test fmaxl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMaxL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAXL_0200
+     * @tc.desc   test fmaxl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMaxL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5081,12 +5078,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAXL_0300
-     * @tc.name       : testMuslMathFMaxL003
-     * @tc.desc       : test fmaxl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMaxL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAXL_0300
+     * @tc.desc   test fmaxl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMaxL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5097,12 +5094,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAF_0100
-     * @tc.name       : testMuslMathFmaF001
-     * @tc.desc       : test fmaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAF_0100
+     * @tc.desc   test fmaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5114,12 +5111,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAF_0200
-     * @tc.name       : testMuslMathFmaF002
-     * @tc.desc       : test fmaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAF_0200
+     * @tc.desc   test fmaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1.5;
@@ -5131,12 +5128,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAL_0100
-     * @tc.name       : testMuslMathFmaL001
-     * @tc.desc       : test fmal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAL_0100
+     * @tc.desc   test fmal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5148,12 +5145,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAL_0200
-     * @tc.name       : testMuslMathFmaL002
-     * @tc.desc       : test fmal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAL_0200
+     * @tc.desc   test fmal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1.5;
@@ -5165,12 +5162,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOORF_0100
-     * @tc.name       : testMuslMathFloorF001
-     * @tc.desc       : test floorf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloorF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOORF_0100
+     * @tc.desc   test floorf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloorF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5181,12 +5178,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOORF_0200
-     * @tc.name       : testMuslMathFloorF002
-     * @tc.desc       : test floorf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloorF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOORF_0200
+     * @tc.desc   test floorf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloorF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -10.5;
@@ -5197,12 +5194,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOORL_0100
-     * @tc.name       : testMuslMathFloorL001
-     * @tc.desc       : test floorl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloorL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOORL_0100
+     * @tc.desc   test floorl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloorL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5213,12 +5210,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOORL_0200
-     * @tc.name       : testMuslMathFloorL002
-     * @tc.desc       : test floorl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloorL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOORL_0200
+     * @tc.desc   test floorl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloorL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -10.5;
@@ -5229,12 +5226,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIMF_0100
-     * @tc.name       : testMuslMathFDimF001
-     * @tc.desc       : test fdimf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDimF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIMF_0100
+     * @tc.desc   test fdimf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDimF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 7.5;
@@ -5246,12 +5243,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIMF_0200
-     * @tc.name       : testMuslMathFDimF002
-     * @tc.desc       : test fdimf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDimF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIMF_0200
+     * @tc.desc   test fdimf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDimF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5263,12 +5260,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIMF_0300
-     * @tc.name       : testMuslMathFDimF003
-     * @tc.desc       : test fdimf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDimF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIMF_0300
+     * @tc.desc   test fdimf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDimF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5280,12 +5277,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIML_0100
-     * @tc.name       : testMuslMathFDimL001
-     * @tc.desc       : test fdiml
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDimL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIML_0100
+     * @tc.desc   test fdiml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDimL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 7.5;
@@ -5296,12 +5293,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIML_0200
-     * @tc.name       : testMuslMathFDimL002
-     * @tc.desc       : test fdiml
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDimL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIML_0200
+     * @tc.desc   test fdiml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDimL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5312,12 +5309,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIML_0300
-     * @tc.name       : testMuslMathFDimL003
-     * @tc.desc       : test fdiml
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDimL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIML_0300
+     * @tc.desc   test fdiml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDimL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.5;
@@ -5328,12 +5325,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABSL_0100
-     * @tc.name       : testMuslMathFAbsL001
-     * @tc.desc       : test fabsl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFAbsL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABSL_0100
+     * @tc.desc   test fabsl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFAbsL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 7.5;
@@ -5343,12 +5340,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEIL_0100
-     * @tc.name       : testMuslMathCeil001
-     * @tc.desc       : test ceil
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeil001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEIL_0100
+     * @tc.desc   test ceil
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeil001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -7.5;
@@ -5358,12 +5355,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEIL_0200
-     * @tc.name       : testMuslMathCeil002
-     * @tc.desc       : test ceil
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeil002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEIL_0200
+     * @tc.desc   test ceil
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeil002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.1;
@@ -5373,12 +5370,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEILF_0100
-     * @tc.name       : testMuslMathCeilF001
-     * @tc.desc       : test ceilf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeilF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEILF_0100
+     * @tc.desc   test ceilf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeilF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -7.5;
@@ -5388,12 +5385,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEILF_0200
-     * @tc.name       : testMuslMathCeilF002
-     * @tc.desc       : test ceilf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeilF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEILF_0200
+     * @tc.desc   test ceilf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeilF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.1;
@@ -5403,12 +5400,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEILL_0100
-     * @tc.name       : testMuslMathCeilL001
-     * @tc.desc       : test ceill
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeilL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEILL_0100
+     * @tc.desc   test ceill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeilL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -7.5;
@@ -5418,12 +5415,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEILL_0200
-     * @tc.name       : testMuslMathCeilL002
-     * @tc.desc       : test ceill
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeilL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEILL_0200
+     * @tc.desc   test ceill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeilL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.1;
@@ -5433,12 +5430,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0100
-     * @tc.name       : testMuslMathExpM1f001
-     * @tc.desc       : test expm1f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1f001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0100
+     * @tc.desc   test expm1f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 4;
@@ -5452,12 +5449,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0200
-     * @tc.name       : testMuslMathExpM1f002
-     * @tc.desc       : test expm1f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1f002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0200
+     * @tc.desc   test expm1f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1.0 / 0.0;
@@ -5467,12 +5464,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0300
-     * @tc.name       : testMuslMathExpM1f003
-     * @tc.desc       : test expm1f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1f003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0300
+     * @tc.desc   test expm1f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1;
@@ -5486,12 +5483,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOG_0100
-     * @tc.name       : testMuslMathLog001
-     * @tc.desc       : test Log
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLog001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOG_0100
+     * @tc.desc   test Log
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLog001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.log(10);
@@ -5501,12 +5498,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOG10_0100
-     * @tc.name       : testMuslMathLog10001
-     * @tc.desc       : test Log10
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLog10001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOG10_0100
+     * @tc.desc   test Log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLog10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.log10(10);
@@ -5516,12 +5513,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOG10F_0100
-     * @tc.name       : testMuslMathLog10f001
-     * @tc.desc       : test Log10f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLog10f001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOG10F_0100
+     * @tc.desc   test Log10f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLog10f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.log10f(10);
@@ -5531,12 +5528,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOG10L_0100
-     * @tc.name       : testMuslMathLog10l001
-     * @tc.desc       : test Log10l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLog10l001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOG10L_0100
+     * @tc.desc   test Log10l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLog10l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.log10l(10);
@@ -5546,12 +5543,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOG1P_0100
-     * @tc.name       : testMuslMathLog1p001
-     * @tc.desc       : test Log1p
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLog1p001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOG1P_0100
+     * @tc.desc   test Log1p
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLog1p001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.log1p(1.0);
@@ -5561,12 +5558,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOG1PF_0100
-     * @tc.name       : testMuslMathLog1pf001
-     * @tc.desc       : test Log1pf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLog1pf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOG1PF_0100
+     * @tc.desc   test Log1pf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLog1pf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.log1pf(1.0);
@@ -5576,12 +5573,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOG1PL_0100
-     * @tc.name       : testMuslMathLog1pl001
-     * @tc.desc       : test Log1pl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLog1pl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOG1PL_0100
+     * @tc.desc   test Log1pl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLog1pl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.log1pl(1.0);
@@ -5591,12 +5588,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOG2_0100
-     * @tc.name       : testMuslMathLog2001
-     * @tc.desc       : test Log2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLog2001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOG2_0100
+     * @tc.desc   test Log2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLog2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.log2(4);
@@ -5606,12 +5603,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOG2F_0100
-     * @tc.name       : testMuslMathLog2f001
-     * @tc.desc       : test Log2f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLog2f001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOG2F_0100
+     * @tc.desc   test Log2f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLog2f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.log2f(4);
@@ -5621,12 +5618,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOG2L_0100
-     * @tc.name       : testMuslMathLog2l001
-     * @tc.desc       : test Log2l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLog2l001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOG2L_0100
+     * @tc.desc   test Log2l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLog2l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.log2l(4);
@@ -5636,12 +5633,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOGB_0100
-     * @tc.name       : testMuslMathLogB001
-     * @tc.desc       : test LogB
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLogB001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOGB_0100
+     * @tc.desc   test LogB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLogB001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.logB(8);
@@ -5651,12 +5648,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOGBF_0100
-     * @tc.name       : testMuslMathLogBf001
-     * @tc.desc       : test LogBf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLogBf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOGBF_0100
+     * @tc.desc   test LogBf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLogBf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.logBf(8);
@@ -5666,12 +5663,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOGBL_0100
-     * @tc.name       : testMuslMathLogBl001
-     * @tc.desc       : test LogBl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLogBl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOGBL_0100
+     * @tc.desc   test LogBl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLogBl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.logBl(8);
@@ -5681,12 +5678,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOGF_0100
-     * @tc.name       : testMuslMathLogF001
-     * @tc.desc       : test LogF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLogF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOGF_0100
+     * @tc.desc   test LogF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLogF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.logF(8);
@@ -5696,12 +5693,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_LOGL_0100
-     * @tc.name       : testMuslMathLogL001
-     * @tc.desc       : test LogL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathLogL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LOGL_0100
+     * @tc.desc   test LogL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLogL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.logL(8);
@@ -5711,12 +5708,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIN_0100
-     * @tc.name       : testMuslMathSin001
-     * @tc.desc       : test sin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSin001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIN_0100
+     * @tc.desc   test sin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 90;
@@ -5727,12 +5724,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIN_0200
-     * @tc.name       : testMuslMathSin002
-     * @tc.desc       : test sin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSin002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIN_0200
+     * @tc.desc   test sin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 100 / 0;
@@ -5742,12 +5739,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIN_0300
-     * @tc.name       : testMuslMathSin003
-     * @tc.desc       : test sin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSin003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIN_0300
+     * @tc.desc   test sin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -5757,12 +5754,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINF_0100
-     * @tc.name       : testMuslMathSinf001
-     * @tc.desc       : test sinf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINF_0100
+     * @tc.desc   test sinf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 90;
@@ -5773,12 +5770,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINF_0200
-     * @tc.name       : testMuslMathSinf002
-     * @tc.desc       : test sinf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINF_0200
+     * @tc.desc   test sinf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 100 / 0;
@@ -5788,12 +5785,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINF_0300
-     * @tc.name       : testMuslMathSinf003
-     * @tc.desc       : test sinf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINF_0300
+     * @tc.desc   test sinf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -5803,12 +5800,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINL_0100
-     * @tc.name       : testMuslMathSinl001
-     * @tc.desc       : test sinl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINL_0100
+     * @tc.desc   test sinl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 90;
@@ -5819,12 +5816,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINL_0200
-     * @tc.name       : testMuslMathSinl002
-     * @tc.desc       : test sinl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINL_0200
+     * @tc.desc   test sinl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 100 / 0;
@@ -5834,12 +5831,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINL_0300
-     * @tc.name       : testMuslMathSinl003
-     * @tc.desc       : test sinl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINL_0300
+     * @tc.desc   test sinl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -5849,12 +5846,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINH_0100
-     * @tc.name       : testMuslMathSinh001
-     * @tc.desc       : test sinh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinh001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINH_0100
+     * @tc.desc   test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 0;
@@ -5865,12 +5862,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINH_0200
-     * @tc.name       : testMuslMathSinh002
-     * @tc.desc       : test sinh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinh002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINH_0200
+     * @tc.desc   test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -5880,12 +5877,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINH_0300
-     * @tc.name       : testMuslMathSinh003
-     * @tc.desc       : test sinh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinh003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINH_0300
+     * @tc.desc   test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c = 0;
@@ -5896,12 +5893,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINHF_0100
-     * @tc.name       : testMuslMathSinhf001
-     * @tc.desc       : test sinhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinhf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINHF_0100
+     * @tc.desc   test sinhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 0;
@@ -5912,12 +5909,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINHF_0200
-     * @tc.name       : testMuslMathSinhf002
-     * @tc.desc       : test sinhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinhf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINHF_0200
+     * @tc.desc   test sinhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -5927,12 +5924,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINHF_0300
-     * @tc.name       : testMuslMathSinhf003
-     * @tc.desc       : test sinhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinhf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINHF_0300
+     * @tc.desc   test sinhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinhf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 180;
@@ -5942,12 +5939,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINHL_0100
-     * @tc.name       : testMuslMathSinhl001
-     * @tc.desc       : test sinhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinhl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINHL_0100
+     * @tc.desc   test sinhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 0;
@@ -5958,12 +5955,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINHL_0200
-     * @tc.name       : testMuslMathSinhl002
-     * @tc.desc       : test sinhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinhl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINHL_0200
+     * @tc.desc   test sinhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -5973,12 +5970,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINHL_0300
-     * @tc.name       : testMuslMathSinhl003
-     * @tc.desc       : test sinhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSinhl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINHL_0300
+     * @tc.desc   test sinhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSinhl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 100 / 0;
@@ -5988,12 +5985,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRT_0100
-     * @tc.name       : testMuslMathSqrt001
-     * @tc.desc       : test sqrt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrt001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRT_0100
+     * @tc.desc   test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 9;
@@ -6004,12 +6001,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRT_0200
-     * @tc.name       : testMuslMathSqrt002
-     * @tc.desc       : test sqrt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrt002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRT_0200
+     * @tc.desc   test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 100 / 0;
@@ -6019,12 +6016,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRT_0300
-     * @tc.name       : testMuslMathSqrt003
-     * @tc.desc       : test sqrt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrt003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRT_0300
+     * @tc.desc   test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -6034,12 +6031,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRT_0400
-     * @tc.name       : testMuslMathSqrt004
-     * @tc.desc       : test sqrt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrt004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRT_0400
+     * @tc.desc   test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = -1;
@@ -6049,12 +6046,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRTF_0100
-     * @tc.name       : testMuslMathSqrtf001
-     * @tc.desc       : test sqrtf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrtf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRTF_0100
+     * @tc.desc   test sqrtf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrtf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 25.00;
@@ -6065,12 +6062,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRTF_0200
-     * @tc.name       : testMuslMathSqrtf002
-     * @tc.desc       : test sqrtf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrtf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRTF_0200
+     * @tc.desc   test sqrtf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrtf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 100 / 0;
@@ -6080,12 +6077,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRTF_0300
-     * @tc.name       : testMuslMathSqrtf003
-     * @tc.desc       : test sqrtf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrtf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRTF_0300
+     * @tc.desc   test sqrtf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrtf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -6095,12 +6092,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRTF_0400
-     * @tc.name       : testMuslMathSqrtf004
-     * @tc.desc       : test sqrtf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrtf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRTF_0400
+     * @tc.desc   test sqrtf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrtf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = -1;
@@ -6110,12 +6107,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRTL_0100
-     * @tc.name       : testMuslMathSqrtl001
-     * @tc.desc       : test sqrtl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrtl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRTL_0100
+     * @tc.desc   test sqrtl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrtl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 900;
@@ -6126,12 +6123,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRTL_0200
-     * @tc.name       : testMuslMathSqrtl002
-     * @tc.desc       : test sqrtl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrtl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRTL_0200
+     * @tc.desc   test sqrtl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrtl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = +100 / 0;
@@ -6141,12 +6138,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRTL_0300
-     * @tc.name       : testMuslMathSqrtl003
-     * @tc.desc       : test sqrtl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrtl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRTL_0300
+     * @tc.desc   test sqrtl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrtl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -6156,12 +6153,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SQRTL_0400
-     * @tc.name       : testMuslMathSqrtl004
-     * @tc.desc       : test sqrtl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSqrtl004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SQRTL_0400
+     * @tc.desc   test sqrtl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSqrtl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = -1;
@@ -6171,12 +6168,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COS_0400
-     * @tc.name       : testMuslMathCos004
-     * @tc.desc       : test cos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCos004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COS_0400
+     * @tc.desc   test cos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCos004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -30;
@@ -6187,12 +6184,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COS_0500
-     * @tc.name       : testMuslMathCos005
-     * @tc.desc       : test cos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCos005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COS_0500
+     * @tc.desc   test cos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCos005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0.99;
@@ -6203,12 +6200,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COS_0600
-     * @tc.name       : testMuslMathCos006
-     * @tc.desc       : test cos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCos006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COS_0600
+     * @tc.desc   test cos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCos006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 179.99;
@@ -6219,12 +6216,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COS_0700
-     * @tc.name       : testMuslMathCos007
-     * @tc.desc       : test cos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCos007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COS_0700
+     * @tc.desc   test cos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCos007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6234,12 +6231,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COS_0800
-     * @tc.name       : testMuslMathCos008
-     * @tc.desc       : test cos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCos008
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COS_0800
+     * @tc.desc   test cos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCos008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6249,12 +6246,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERF_0500
-     * @tc.name       : testMuslMathErf005
-     * @tc.desc       : test erf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathErf005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERF_0500
+     * @tc.desc   test erf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1;
@@ -6265,12 +6262,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERF_0600
-     * @tc.name       : testMuslMathErf006
-     * @tc.desc       : test erf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathErf006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERF_0600
+     * @tc.desc   test erf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6281,12 +6278,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERF_0700
-     * @tc.name       : testMuslMathErf007
-     * @tc.desc       : test erf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathErf007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERF_0700
+     * @tc.desc   test erf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErf007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6297,12 +6294,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0400
-     * @tc.name       : testMuslMathCopySign004
-     * @tc.desc       : test copysign
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCopySign004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0400
+     * @tc.desc   test copysign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySign004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 11;
@@ -6313,12 +6310,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0500
-     * @tc.name       : testMuslMathCopySign005
-     * @tc.desc       : test copysign
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCopySign005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0500
+     * @tc.desc   test copysign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySign005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6329,12 +6326,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0600
-     * @tc.name       : testMuslMathCopySign006
-     * @tc.desc       : test copysign
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCopySign006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGN_0600
+     * @tc.desc   test copysign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySign006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 11;
@@ -6345,12 +6342,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP_0300
-     * @tc.name       : testMuslMathExp003
-     * @tc.desc       : test exp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP_0300
+     * @tc.desc   test exp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1;
@@ -6361,12 +6358,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP_0400
-     * @tc.name       : testMuslMathExp004
-     * @tc.desc       : test exp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP_0400
+     * @tc.desc   test exp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.19;
@@ -6377,12 +6374,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP_0500
-     * @tc.name       : testMuslMathExp005
-     * @tc.desc       : test exp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP_0500
+     * @tc.desc   test exp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.19;
@@ -6393,12 +6390,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP_0600
-     * @tc.name       : testMuslMathExp006
-     * @tc.desc       : test exp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP_0600
+     * @tc.desc   test exp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6409,12 +6406,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP_0700
-     * @tc.name       : testMuslMathExp007
-     * @tc.desc       : test exp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP_0700
+     * @tc.desc   test exp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6424,12 +6421,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABS_0200
-     * @tc.name       : testMuslMathFabs002
-     * @tc.desc       : test fabs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFabs002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABS_0200
+     * @tc.desc   test fabs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFabs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -7.5;
@@ -6439,12 +6436,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABS_0300
-     * @tc.name       : testMuslMathFabs003
-     * @tc.desc       : test fabs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFabs003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABS_0300
+     * @tc.desc   test fabs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFabs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6454,12 +6451,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABS_0400
-     * @tc.name       : testMuslMathFabs004
-     * @tc.desc       : test fabs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFabs004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABS_0400
+     * @tc.desc   test fabs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFabs004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -0;
@@ -6469,12 +6466,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIM_0400
-     * @tc.name       : testMuslMathFDim004
-     * @tc.desc       : test fdim
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDim004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIM_0400
+     * @tc.desc   test fdim
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDim004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -6485,12 +6482,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIM_0500
-     * @tc.name       : testMuslMathFDim005
-     * @tc.desc       : test fdim
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDim005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIM_0500
+     * @tc.desc   test fdim
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDim005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6501,12 +6498,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOOR_0300
-     * @tc.name       : testMuslMathFloor003
-     * @tc.desc       : test floor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloor003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOOR_0300
+     * @tc.desc   test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -6516,12 +6513,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOOR_0400
-     * @tc.name       : testMuslMathFloor004
-     * @tc.desc       : test floor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloor004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOOR_0400
+     * @tc.desc   test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6531,12 +6528,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOOR_0500
-     * @tc.name       : testMuslMathFloor005
-     * @tc.desc       : test floor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloor005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOOR_0500
+     * @tc.desc   test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6546,12 +6543,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMA_0300
-     * @tc.name       : testMuslMathFma003
-     * @tc.desc       : test fma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFma003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMA_0300
+     * @tc.desc   test fma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFma003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -6563,12 +6560,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMA_0400
-     * @tc.name       : testMuslMathFma004
-     * @tc.desc       : test fma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFma004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMA_0400
+     * @tc.desc   test fma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFma004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6580,12 +6577,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMA_0500
-     * @tc.name       : testMuslMathFma005
-     * @tc.desc       : test fma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFma005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMA_0500
+     * @tc.desc   test fma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFma005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6597,12 +6594,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMA_0600
-     * @tc.name       : testMuslMathFma006
-     * @tc.desc       : test fma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFma006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMA_0600
+     * @tc.desc   test fma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFma006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2.5;
@@ -6614,12 +6611,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMA_0700
-     * @tc.name       : testMuslMathFma007
-     * @tc.desc       : test fma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFma007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMA_0700
+     * @tc.desc   test fma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFma007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2.5;
@@ -6631,12 +6628,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAX_0400
-     * @tc.name       : testMuslMathFMax004
-     * @tc.desc       : test fmax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMax004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAX_0400
+     * @tc.desc   test fmax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMax004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6647,12 +6644,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAX_0500
-     * @tc.name       : testMuslMathFMax005
-     * @tc.desc       : test fmax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMax005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAX_0500
+     * @tc.desc   test fmax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMax005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6663,12 +6660,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMIN_0400
-     * @tc.name       : testMuslMathFmin004
-     * @tc.desc       : test fmin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmin004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMIN_0400
+     * @tc.desc   test fmin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6679,12 +6676,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMIN_0500
-     * @tc.name       : testMuslMathFmin005
-     * @tc.desc       : test fmin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmin005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMIN_0500
+     * @tc.desc   test fmin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmin005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6695,12 +6692,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMOD_0500
-     * @tc.name       : testMuslMathFmod005
-     * @tc.desc       : test fmod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmod005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMOD_0500
+     * @tc.desc   test fmod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmod005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6711,12 +6708,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMOD_0600
-     * @tc.name       : testMuslMathFmod006
-     * @tc.desc       : test fmod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmod006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMOD_0600
+     * @tc.desc   test fmod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmod006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6727,12 +6724,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMOD_0700
-     * @tc.name       : testMuslMathFmod007
-     * @tc.desc       : test fmod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmod007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMOD_0700
+     * @tc.desc   test fmod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmod007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 12.19;
@@ -6744,12 +6741,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABSF_0200
-     * @tc.name       : testMuslMathFAbsF002
-     * @tc.desc       : test fabsf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFAbsF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABSF_0200
+     * @tc.desc   test fabsf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFAbsF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 7.5;
@@ -6759,12 +6756,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABSF_0300
-     * @tc.name       : testMuslMathFAbsF003
-     * @tc.desc       : test fabsf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFAbsF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABSF_0300
+     * @tc.desc   test fabsf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFAbsF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -0;
@@ -6774,12 +6771,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABSF_0400
-     * @tc.name       : testMuslMathFAbsF004
-     * @tc.desc       : test fabsf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFAbsF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABSF_0400
+     * @tc.desc   test fabsf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFAbsF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6789,12 +6786,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSH_0400
-     * @tc.name       : testMuslMathCosh004
-     * @tc.desc       : test cosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCosh004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSH_0400
+     * @tc.desc   test cosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosh004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -60;
@@ -6805,12 +6802,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSH_0500
-     * @tc.name       : testMuslMathCosh005
-     * @tc.desc       : test cosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCosh005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSH_0500
+     * @tc.desc   test cosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosh005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0.99;
@@ -6821,12 +6818,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSH_0600
-     * @tc.name       : testMuslMathCosh006
-     * @tc.desc       : test cosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCosh006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSH_0600
+     * @tc.desc   test cosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosh006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 179.99;
@@ -6837,12 +6834,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSH_0700
-     * @tc.name       : testMuslMathCosh007
-     * @tc.desc       : test cosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCosh007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSH_0700
+     * @tc.desc   test cosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosh007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6852,12 +6849,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSH_0800
-     * @tc.name       : testMuslMathCosh008
-     * @tc.desc       : test cosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCosh008
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSH_0800
+     * @tc.desc   test cosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosh008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6867,12 +6864,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2_0400
-     * @tc.name       : testMuslMathExp2004
-     * @tc.desc       : test exp2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp2004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2_0400
+     * @tc.desc   test exp2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -6886,12 +6883,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2_0500
-     * @tc.name       : testMuslMathExp2005
-     * @tc.desc       : test exp2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExp2005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2_0500
+     * @tc.desc   test exp2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6905,12 +6902,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1_0400
-     * @tc.name       : testMuslMathExpM1004
-     * @tc.desc       : test expm1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1_0400
+     * @tc.desc   test expm1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -6924,12 +6921,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1_0500
-     * @tc.name       : testMuslMathExpM1005
-     * @tc.desc       : test expm1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1_0500
+     * @tc.desc   test expm1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -6943,12 +6940,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1_0600
-     * @tc.name       : testMuslMathExpM1006
-     * @tc.desc       : test expm1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1_0600
+     * @tc.desc   test expm1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.9;
@@ -6962,12 +6959,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1_0700
-     * @tc.name       : testMuslMathExpM1007
-     * @tc.desc       : test expm1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1_0700
+     * @tc.desc   test expm1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.9;
@@ -6981,12 +6978,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODF_0400
-     * @tc.name       : testMuslMathFmodF004
-     * @tc.desc       : test fmodf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODF_0400
+     * @tc.desc   test fmodf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -6997,12 +6994,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODF_0500
-     * @tc.name       : testMuslMathFmodF005
-     * @tc.desc       : test fmodf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODF_0500
+     * @tc.desc   test fmodf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -4.7;
@@ -7014,12 +7011,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODF_0600
-     * @tc.name       : testMuslMathFmodF006
-     * @tc.desc       : test fmodf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodF006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODF_0600
+     * @tc.desc   test fmodf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -4.7;
@@ -7045,12 +7042,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODF_0700
-     * @tc.name       : testMuslMathFmodF007
-     * @tc.desc       : test fmodf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodF007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODF_0700
+     * @tc.desc   test fmodf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 4.7;
@@ -7062,12 +7059,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODL_0400
-     * @tc.name       : testMuslMathFmodL004
-     * @tc.desc       : test fmodl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODL_0400
+     * @tc.desc   test fmodl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7078,12 +7075,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODL_0500
-     * @tc.name       : testMuslMathFmodL005
-     * @tc.desc       : test fmodl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODL_0500
+     * @tc.desc   test fmodl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -4.7;
@@ -7095,12 +7092,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODL_0600
-     * @tc.name       : testMuslMathFmodL006
-     * @tc.desc       : test fmodl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodL006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODL_0600
+     * @tc.desc   test fmodl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -4.7;
@@ -7126,12 +7123,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMODL_0700
-     * @tc.name       : testMuslMathFmodL007
-     * @tc.desc       : test fmodl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmodL007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMODL_0700
+     * @tc.desc   test fmodl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmodL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 4.7;
@@ -7143,12 +7140,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMINF_0400
-     * @tc.name       : testMuslMathFMinF004
-     * @tc.desc       : test fminf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMinF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMINF_0400
+     * @tc.desc   test fminf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMinF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7159,12 +7156,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMINF_0500
-     * @tc.name       : testMuslMathFMinF005
-     * @tc.desc       : test fminf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMinF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMINF_0500
+     * @tc.desc   test fminf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMinF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7175,12 +7172,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMINL_0400
-     * @tc.name       : testMuslMathFMinL004
-     * @tc.desc       : test fminl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMinL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMINL_0400
+     * @tc.desc   test fminl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMinL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7191,12 +7188,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMINL_0500
-     * @tc.name       : testMuslMathFMinL005
-     * @tc.desc       : test fminl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMinL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMINL_0500
+     * @tc.desc   test fminl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMinL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7207,12 +7204,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAXF_0400
-     * @tc.name       : testMuslMathFMaxF004
-     * @tc.desc       : test fmaxf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMaxF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAXF_0400
+     * @tc.desc   test fmaxf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMaxF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7223,12 +7220,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAXF_0500
-     * @tc.name       : testMuslMathFMaxF005
-     * @tc.desc       : test fmaxf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMaxF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAXF_0500
+     * @tc.desc   test fmaxf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMaxF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7239,12 +7236,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAXL_0400
-     * @tc.name       : testMuslMathFMaxL004
-     * @tc.desc       : test fmaxl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMaxL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAXL_0400
+     * @tc.desc   test fmaxl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMaxL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7255,12 +7252,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAXL_0500
-     * @tc.name       : testMuslMathFMaxL005
-     * @tc.desc       : test fmaxl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFMaxL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAXL_0500
+     * @tc.desc   test fmaxl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFMaxL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7271,12 +7268,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAF_0300
-     * @tc.name       : testMuslMathFmaF003
-     * @tc.desc       : test fmaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAF_0300
+     * @tc.desc   test fmaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -7288,12 +7285,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAF_0400
-     * @tc.name       : testMuslMathFmaF004
-     * @tc.desc       : test fmaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAF_0400
+     * @tc.desc   test fmaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7305,12 +7302,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAF_0500
-     * @tc.name       : testMuslMathFmaF005
-     * @tc.desc       : test fmaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAF_0500
+     * @tc.desc   test fmaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7322,12 +7319,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAF_0600
-     * @tc.name       : testMuslMathFmaF006
-     * @tc.desc       : test fmaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaF006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAF_0600
+     * @tc.desc   test fmaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2.5;
@@ -7339,12 +7336,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAF_0700
-     * @tc.name       : testMuslMathFmaF007
-     * @tc.desc       : test fmaf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaF007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAF_0700
+     * @tc.desc   test fmaf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2.5;
@@ -7356,12 +7353,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAL_0300
-     * @tc.name       : testMuslMathFmaL003
-     * @tc.desc       : test fmal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAL_0300
+     * @tc.desc   test fmal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -7373,12 +7370,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAL_0400
-     * @tc.name       : testMuslMathFmaL004
-     * @tc.desc       : test fmal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAL_0400
+     * @tc.desc   test fmal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7390,12 +7387,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAL_0500
-     * @tc.name       : testMuslMathFmaL005
-     * @tc.desc       : test fmal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAL_0500
+     * @tc.desc   test fmal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7407,12 +7404,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAL_0600
-     * @tc.name       : testMuslMathFmaL006
-     * @tc.desc       : test fmal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaL006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAL_0600
+     * @tc.desc   test fmal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2.5;
@@ -7424,12 +7421,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FMAL_0700
-     * @tc.name       : testMuslMathFmaL007
-     * @tc.desc       : test fmal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFmaL007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FMAL_0700
+     * @tc.desc   test fmal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFmaL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2.5;
@@ -7441,12 +7438,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOORF_0300
-     * @tc.name       : testMuslMathFloorF003
-     * @tc.desc       : test floorf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloorF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOORF_0300
+     * @tc.desc   test floorf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloorF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -7457,12 +7454,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOORF_0400
-     * @tc.name       : testMuslMathFloorF004
-     * @tc.desc       : test floorf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloorF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOORF_0400
+     * @tc.desc   test floorf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloorF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7472,12 +7469,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOORF_0500
-     * @tc.name       : testMuslMathFloorF005
-     * @tc.desc       : test floorf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloorF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOORF_0500
+     * @tc.desc   test floorf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloorF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7487,12 +7484,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOORL_0300
-     * @tc.name       : testMuslMathFloorL003
-     * @tc.desc       : test floorl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloorL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOORL_0300
+     * @tc.desc   test floorl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloorL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -7503,12 +7500,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOORL_0400
-     * @tc.name       : testMuslMathFloorL004
-     * @tc.desc       : test floorl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloorL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOORL_0400
+     * @tc.desc   test floorl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloorL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7518,12 +7515,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FLOORL_0500
-     * @tc.name       : testMuslMathFloorL005
-     * @tc.desc       : test floorl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFloorL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FLOORL_0500
+     * @tc.desc   test floorl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFloorL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7533,12 +7530,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIMF_0400
-     * @tc.name       : testMuslMathFDimF004
-     * @tc.desc       : test fdimf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDimF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIMF_0400
+     * @tc.desc   test fdimf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDimF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -7549,12 +7546,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIMF_0500
-     * @tc.name       : testMuslMathFDimF005
-     * @tc.desc       : test fdimf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDimF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIMF_0500
+     * @tc.desc   test fdimf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDimF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7565,12 +7562,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIML_0400
-     * @tc.name       : testMuslMathFDimL004
-     * @tc.desc       : test fdiml
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDimL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIML_0400
+     * @tc.desc   test fdiml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDimL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -7581,12 +7578,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FDIML_0500
-     * @tc.name       : testMuslMathFDimL005
-     * @tc.desc       : test fdiml
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFDimL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FDIML_0500
+     * @tc.desc   test fdiml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFDimL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7597,12 +7594,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABSL_0200
-     * @tc.name       : testMuslMathFAbsL002
-     * @tc.desc       : test fabsl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFAbsL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABSL_0200
+     * @tc.desc   test fabsl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFAbsL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -7.5;
@@ -7612,12 +7609,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABSL_0300
-     * @tc.name       : testMuslMathFAbsL003
-     * @tc.desc       : test fabsl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFAbsL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABSL_0300
+     * @tc.desc   test fabsl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFAbsL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -0;
@@ -7627,12 +7624,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FABSL_0400
-     * @tc.name       : testMuslMathFAbsL004
-     * @tc.desc       : test fabsl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathFAbsL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FABSL_0400
+     * @tc.desc   test fabsl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFAbsL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7642,12 +7639,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEIL_0300
-     * @tc.name       : testMuslMathCeil003
-     * @tc.desc       : test ceil
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeil003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEIL_0300
+     * @tc.desc   test ceil
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeil003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -7657,12 +7654,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEIL_0400
-     * @tc.name       : testMuslMathCeil004
-     * @tc.desc       : test ceil
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeil004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEIL_0400
+     * @tc.desc   test ceil
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeil004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7672,12 +7669,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEIL_0500
-     * @tc.name       : testMuslMathCeil005
-     * @tc.desc       : test ceil
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeil005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEIL_0500
+     * @tc.desc   test ceil
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeil005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7687,12 +7684,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEILF_0300
-     * @tc.name       : testMuslMathCeilF003
-     * @tc.desc       : test ceilf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeilF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEILF_0300
+     * @tc.desc   test ceilf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeilF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -7702,12 +7699,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEILF_0400
-     * @tc.name       : testMuslMathCeilF004
-     * @tc.desc       : test ceilf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeilF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEILF_0400
+     * @tc.desc   test ceilf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeilF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7717,12 +7714,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEILF_0500
-     * @tc.name       : testMuslMathCeilF005
-     * @tc.desc       : test ceilf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeilF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEILF_0500
+     * @tc.desc   test ceilf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeilF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7732,12 +7729,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEILL_0300
-     * @tc.name       : testMuslMathCeilL003
-     * @tc.desc       : test ceill
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeilL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEILL_0300
+     * @tc.desc   test ceill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeilL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -7747,12 +7744,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEILL_0400
-     * @tc.name       : testMuslMathCeilL004
-     * @tc.desc       : test ceill
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeilL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEILL_0400
+     * @tc.desc   test ceill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeilL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -7762,12 +7759,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CEILL_0500
-     * @tc.name       : testMuslMathCeilL005
-     * @tc.desc       : test ceill
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathCeilL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CEILL_0500
+     * @tc.desc   test ceill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCeilL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7777,12 +7774,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0400
-     * @tc.name       : testMuslMathExpM1f004
-     * @tc.desc       : test expm1f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1f004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0400
+     * @tc.desc   test expm1f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1f004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -7796,12 +7793,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0500
-     * @tc.name       : testMuslMathExpM1f005
-     * @tc.desc       : test expm1f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1f005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0500
+     * @tc.desc   test expm1f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1f005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -7815,12 +7812,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0600
-     * @tc.name       : testMuslMathExpM1f006
-     * @tc.desc       : test expm1f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1f006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0600
+     * @tc.desc   test expm1f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1f006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.9;
@@ -7834,12 +7831,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0700
-     * @tc.name       : testMuslMathExpM1f007
-     * @tc.desc       : test expm1f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathExpM1f007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1F_0700
+     * @tc.desc   test expm1f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1f007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.9;
@@ -7853,12 +7850,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0500
-     * @tc.name       : testMuslMathATan2L005
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0500
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
@@ -7869,12 +7866,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0600
-     * @tc.name       : testMuslMathATan2L006
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0600
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -7886,12 +7883,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0700
-     * @tc.name       : testMuslMathATan2L007
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0700
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI / 4).toFixed(2);
@@ -7903,12 +7900,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0800
-     * @tc.name       : testMuslMathATan2L008
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L008
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0800
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI * 3 / 4).toFixed(2);
@@ -7920,12 +7917,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0900
-     * @tc.name       : testMuslMathATan2L009
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L009
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_0900
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 4).toFixed(2);
@@ -7937,12 +7934,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1000
-     * @tc.name       : testMuslMathATan2L010
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L010
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1000
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-3 * Math.PI / 4).toFixed(2);
@@ -7954,12 +7951,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1100
-     * @tc.name       : testMuslMathATan2L011
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L011
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1100
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
@@ -7971,12 +7968,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1200
-     * @tc.name       : testMuslMathATan2L012
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L012
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1200
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
@@ -7988,12 +7985,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1300
-     * @tc.name       : testMuslMathATan2L013
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L013
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1300
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
@@ -8005,12 +8002,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1400
-     * @tc.name       : testMuslMathATan2L014
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L014
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1400
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI).toFixed(2);
@@ -8022,12 +8019,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1500
-     * @tc.name       : testMuslMathATan2L015
-     * @tc.desc       : test ATan2L
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2L015
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2L_1500
+     * @tc.desc   test ATan2L
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2L015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -8039,12 +8036,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1100
-     * @tc.name       : testMuslMathATan2F011
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F011
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1100
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
@@ -8056,12 +8053,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1200
-     * @tc.name       : testMuslMathATan2F012
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F012
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1200
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
@@ -8073,12 +8070,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1300
-     * @tc.name       : testMuslMathATan2F013
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F013
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1300
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
@@ -8090,12 +8087,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1400
-     * @tc.name       : testMuslMathATan2F014
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F014
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1400
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI).toFixed(2);
@@ -8107,12 +8104,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1500
-     * @tc.name       : testMuslMathATan2F015
-     * @tc.desc       : test ATan2F
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2F015
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2F_1500
+     * @tc.desc   test ATan2F
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2F015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -8124,12 +8121,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_1100
-     * @tc.name       : testMuslMathATan2011
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2011
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_1100
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
@@ -8141,12 +8138,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_1200
-     * @tc.name       : testMuslMathATan2012
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2012
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_1200
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
@@ -8158,12 +8155,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_1300
-     * @tc.name       : testMuslMathATan2013
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2013
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_1300
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
@@ -8175,12 +8172,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_1400
-     * @tc.name       : testMuslMathATan2014
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2014
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_1400
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = (-Math.PI).toFixed(2);
@@ -8192,12 +8189,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATAN2_1500
-     * @tc.name       : testMuslMathATan2015
-     * @tc.desc       : test ATan2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATan2015
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATAN2_1500
+     * @tc.desc   test ATan2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATan2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -8209,12 +8206,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANH_0100
-     * @tc.name       : testMuslMathATanH001
-     * @tc.desc       : test ATanH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanH001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANH_0100
+     * @tc.desc   test ATanH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1;
@@ -8224,12 +8221,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANH_0200
-     * @tc.name       : testMuslMathATanH002
-     * @tc.desc       : test ATanH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanH002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANH_0200
+     * @tc.desc   test ATanH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanH002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -8240,12 +8237,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANH_0300
-     * @tc.name       : testMuslMathATanH003
-     * @tc.desc       : test ATanH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanH003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANH_0300
+     * @tc.desc   test ATanH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanH003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 3;
@@ -8255,12 +8252,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANH_0400
-     * @tc.name       : testMuslMathATanH004
-     * @tc.desc       : test ATanH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanH004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANH_0400
+     * @tc.desc   test ATanH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanH004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = -1;
@@ -8270,12 +8267,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANH_0500
-     * @tc.name       : testMuslMathATanH005
-     * @tc.desc       : test ATanH
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanH005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANH_0500
+     * @tc.desc   test ATanH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanH005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = Number(0.55).toFixed(2);
@@ -8286,12 +8283,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANHF_0100
-     * @tc.name       : testMuslMathATanHF001
-     * @tc.desc       : test ATanHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanHF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANHF_0100
+     * @tc.desc   test ATanHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanHF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1;
@@ -8301,12 +8298,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANHF_0200
-     * @tc.name       : testMuslMathATanHF002
-     * @tc.desc       : test ATanHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanHF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANHF_0200
+     * @tc.desc   test ATanHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanHF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -8317,12 +8314,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANHF_0300
-     * @tc.name       : testMuslMathATanHF003
-     * @tc.desc       : test ATanHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanHF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANHF_0300
+     * @tc.desc   test ATanHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanHF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 3;
@@ -8332,12 +8329,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANHF_0400
-     * @tc.name       : testMuslMathATanHF004
-     * @tc.desc       : test ATanHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanHF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANHF_0400
+     * @tc.desc   test ATanHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanHF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = -1;
@@ -8347,12 +8344,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANHF_0500
-     * @tc.name       : testMuslMathATanHF005
-     * @tc.desc       : test ATanHF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanHF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANHF_0500
+     * @tc.desc   test ATanHF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanHF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = Number(0.55).toFixed(2);
@@ -8363,12 +8360,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANHL_0100
-     * @tc.name       : testMuslMathATanHL001
-     * @tc.desc       : test ATanHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanHL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANHL_0100
+     * @tc.desc   test ATanHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanHL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1;
@@ -8378,12 +8375,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANHL_0200
-     * @tc.name       : testMuslMathATanHL002
-     * @tc.desc       : test ATanHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanHL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANHL_0200
+     * @tc.desc   test ATanHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanHL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -8394,12 +8391,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANHL_0300
-     * @tc.name       : testMuslMathATanHL003
-     * @tc.desc       : test ATanHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanHL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANHL_0300
+     * @tc.desc   test ATanHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanHL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 3;
@@ -8409,12 +8406,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANHL_0400
-     * @tc.name       : testMuslMathATanHL004
-     * @tc.desc       : test ATanHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanHL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANHL_0400
+     * @tc.desc   test ATanHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanHL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = -1;
@@ -8424,12 +8421,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ATANHL_0500
-     * @tc.name       : testMuslMathATanHL005
-     * @tc.desc       : test ATanHL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathATanHL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ATANHL_0500
+     * @tc.desc   test ATanHL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathATanHL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = Number(0.55).toFixed(2);
@@ -8439,12 +8436,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_MODF_0100
-     * @tc.name       : testMuslMathMODF001
-     * @tc.desc       : test modF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathMODF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_MODF_0100
+     * @tc.desc   test modF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathMODF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1.59;
@@ -8453,12 +8450,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_MODFF_0100
-     * @tc.name       : testMuslMathModFf001
-     * @tc.desc       : test modFf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathModFf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_MODFF_0100
+     * @tc.desc   test modFf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathModFf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1.59;
@@ -8467,12 +8464,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_MODFL_0100
-     * @tc.name       : testMuslMathMODFl001
-     * @tc.desc       : test modFl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathMODFl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_MODFL_0100
+     * @tc.desc   test modFl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathMODFl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1.59;
@@ -8481,12 +8478,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_MRAND48_0100
-     * @tc.name       : testMuslMathMRand48001
-     * @tc.desc       : test mrand48
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathMRand48001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_MRAND48_0100
+     * @tc.desc   test mrand48
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathMRand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.mRand48();
@@ -8495,12 +8492,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_POW_0100
-     * @tc.name       : testMuslMathPow001
-     * @tc.desc       : test pow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathPow001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_POW_0100
+     * @tc.desc   test pow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathPow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 2;
@@ -8512,12 +8509,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_POW_0200
-     * @tc.name       : testMuslMathPow002
-     * @tc.desc       : test pow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathPow002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_POW_0200
+     * @tc.desc   test pow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathPow002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -8529,12 +8526,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_POW_0300
-     * @tc.name       : testMuslMathPow003
-     * @tc.desc       : test pow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathPow003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_POW_0300
+     * @tc.desc   test pow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathPow003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0, b = 0;
@@ -8545,12 +8542,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_POWF_0100
-     * @tc.name       : testMuslMathPowf001
-     * @tc.desc       : test powf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathPowf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_POWF_0100
+     * @tc.desc   test powf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathPowf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -1, b = -2;
@@ -8561,12 +8558,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_POWF_0200
-     * @tc.name       : testMuslMathPowf002
-     * @tc.desc       : test powf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathPowf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_POWF_0200
+     * @tc.desc   test powf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathPowf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -8578,12 +8575,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_POWF_0300
-     * @tc.name       : testMuslMathPowf003
-     * @tc.desc       : test powf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathPowf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_POWF_0300
+     * @tc.desc   test powf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathPowf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -8595,12 +8592,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_POWL_0100
-     * @tc.name       : testMuslMathPowl001
-     * @tc.desc       : test powl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathPowl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_POWL_0100
+     * @tc.desc   test powl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathPowl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -8612,12 +8609,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_POWL_0200
-     * @tc.name       : testMuslMathPowl002
-     * @tc.desc       : test powl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathPowl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_POWL_0200
+     * @tc.desc   test powl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathPowl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -8629,12 +8626,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_POWL_0300
-     * @tc.name       : testMuslMathPowl003
-     * @tc.desc       : test powl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathPowl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_POWL_0300
+     * @tc.desc   test powl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathPowl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -2, b = 3;
@@ -8645,12 +8642,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTAFTER_0100
-     * @tc.name       : testMuslMathNextafter001
-     * @tc.desc       : test nextafter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNextafter001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTAFTER_0100
+     * @tc.desc   test nextafter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNextafter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1, b = 1;
@@ -8661,12 +8658,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTAFTER_0200
-     * @tc.name       : testMuslMathNextafter002
-     * @tc.desc       : test nextafter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNextafter002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTAFTER_0200
+     * @tc.desc   test nextafter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNextafter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1, b = Math.sqrt(-1);
@@ -8677,12 +8674,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTAFTER_0300
-     * @tc.name       : testMuslMathNextafter003
-     * @tc.desc       : test nextafter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNextafter003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTAFTER_0300
+     * @tc.desc   test nextafter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNextafter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0.0, b = 0.1;
@@ -8693,12 +8690,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERF_0100
-     * @tc.name       : testMuslMathNextafterf001
-     * @tc.desc       : test nextafterf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNextafterf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERF_0100
+     * @tc.desc   test nextafterf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNextafterf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1, b = 1;
@@ -8709,12 +8706,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERF_0200
-     * @tc.name       : testMuslMathNextafterf002
-     * @tc.desc       : test nextafterf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNextafterf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERF_0200
+     * @tc.desc   test nextafterf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNextafterf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1, b = Math.sqrt(-1);
@@ -8725,12 +8722,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERF_0300
-     * @tc.name       : testMuslMathNextafterf003
-     * @tc.desc       : test nextafterf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNextafterf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERF_0300
+     * @tc.desc   test nextafterf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNextafterf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0.0, b = 0.1;
@@ -8741,12 +8738,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERL_0100
-     * @tc.name       : testMuslMathNextafterl001
-     * @tc.desc       : test nextafterl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNextafterl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERL_0100
+     * @tc.desc   test nextafterl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNextafterl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1, b = 1;
@@ -8757,12 +8754,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERL_0200
-     * @tc.name       : testMuslMathNextafterl002
-     * @tc.desc       : test nextafterl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNextafterl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERL_0200
+     * @tc.desc   test nextafterl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNextafterl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1, b = Math.sqrt(-1);
@@ -8773,12 +8770,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERL_0300
-     * @tc.name       : testMuslMathNextafterl003
-     * @tc.desc       : test nextafterl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNextafterl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTAFTERL_0300
+     * @tc.desc   test nextafterl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNextafterl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0.0, b = 0.1;
@@ -8789,12 +8786,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINT_0100
-     * @tc.name       : testMuslMathNearbyint001
-     * @tc.desc       : test nearbyint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyint001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINT_0100
+     * @tc.desc   test nearbyint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 2.2;
@@ -8805,12 +8802,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINT_0200
-     * @tc.name       : testMuslMathNearbyint002
-     * @tc.desc       : test nearbyint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyint002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINT_0200
+     * @tc.desc   test nearbyint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 2.6;
@@ -8821,12 +8818,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINT_0300
-     * @tc.name       : testMuslMathNearbyint003
-     * @tc.desc       : test nearbyint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyint003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINT_0300
+     * @tc.desc   test nearbyint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -2.2;
@@ -8837,12 +8834,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINT_0400
-     * @tc.name       : testMuslMathNearbyint004
-     * @tc.desc       : test nearbyint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyint004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINT_0400
+     * @tc.desc   test nearbyint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyint004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -2.6;
@@ -8853,12 +8850,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINT_0500
-     * @tc.name       : testMuslMathNearbyint005
-     * @tc.desc       : test nearbyint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyint005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINT_0500
+     * @tc.desc   test nearbyint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyint005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = Math.sqrt(-1);
@@ -8869,12 +8866,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINTF_0100
-     * @tc.name       : testMuslMathNearbyintf001
-     * @tc.desc       : test nearbyintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyintf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINTF_0100
+     * @tc.desc   test nearbyintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 2.26;
@@ -8885,12 +8882,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINTF_0200
-     * @tc.name       : testMuslMathNearbyintf002
-     * @tc.desc       : test nearbyintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyintf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINTF_0200
+     * @tc.desc   test nearbyintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 2.66;
@@ -8901,12 +8898,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINTF_0300
-     * @tc.name       : testMuslMathNearbyintf003
-     * @tc.desc       : test nearbyintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyintf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINTF_0300
+     * @tc.desc   test nearbyintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyintf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -2.29;
@@ -8917,12 +8914,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINTF_0400
-     * @tc.name       : testMuslMathNearbyintf004
-     * @tc.desc       : test nearbyintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyintf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINTF_0400
+     * @tc.desc   test nearbyintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyintf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -2.62;
@@ -8933,12 +8930,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINTF_0500
-     * @tc.name       : testMuslMathNearbyintf005
-     * @tc.desc       : test nearbyintf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyintf005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINTF_0500
+     * @tc.desc   test nearbyintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyintf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = Math.sqrt(-1);
@@ -8949,12 +8946,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINTL_0100
-     * @tc.name       : testMuslMathNearbyintl001
-     * @tc.desc       : test nearbyintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyintl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINTL_0100
+     * @tc.desc   test nearbyintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyintl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 2.26;
@@ -8965,12 +8962,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINTL_0200
-     * @tc.name       : testMuslMathNearbyintl002
-     * @tc.desc       : test nearbyintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyintl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINTL_0200
+     * @tc.desc   test nearbyintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyintl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 2.66;
@@ -8981,12 +8978,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINTL_0300
-     * @tc.name       : testMuslMathNearbyintl003
-     * @tc.desc       : test nearbyintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyintl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINTL_0300
+     * @tc.desc   test nearbyintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyintl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -2.29;
@@ -8997,12 +8994,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINTL_0400
-     * @tc.name       : testMuslMathNearbyintl004
-     * @tc.desc       : test nearbyintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyintl004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINTL_0400
+     * @tc.desc   test nearbyintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyintl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = -2.62;
@@ -9013,12 +9010,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEARBYINTL_0500
-     * @tc.name       : testMuslMathNearbyintl005
-     * @tc.desc       : test nearbyintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNearbyintl005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEARBYINTL_0500
+     * @tc.desc   test nearbyintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNearbyintl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = Math.sqrt(-1);
@@ -9029,12 +9026,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NAN_0100
-     * @tc.name       : testMuslMathNan001
-     * @tc.desc       : test nan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNan001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NAN_0100
+     * @tc.desc   test nan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: string = "adc";
@@ -9045,12 +9042,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NAN_0200
-     * @tc.name       : testMuslMathNan002
-     * @tc.desc       : test nan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNan002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NAN_0200
+     * @tc.desc   test nan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: string = "123";
@@ -9061,12 +9058,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NAN_0300
-     * @tc.name       : testMuslMathNan003
-     * @tc.desc       : test nan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNan003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NAN_0300
+     * @tc.desc   test nan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: string = "abc123";
@@ -9077,12 +9074,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NANF_0100
-     * @tc.name       : testMuslMathNanf001
-     * @tc.desc       : test nanf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNanf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NANF_0100
+     * @tc.desc   test nanf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: string = "123";
@@ -9093,12 +9090,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NANF_0200
-     * @tc.name       : testMuslMathNanf002
-     * @tc.desc       : test nanf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNanf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NANF_0200
+     * @tc.desc   test nanf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: string = "abc";
@@ -9109,12 +9106,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NANF_0300
-     * @tc.name       : testMuslMathNanf003
-     * @tc.desc       : test nanf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNanf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NANF_0300
+     * @tc.desc   test nanf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNanf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: string = "abc123";
@@ -9125,12 +9122,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NANL_0100
-     * @tc.name       : testMuslMathNanl001
-     * @tc.desc       : test nanl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNanl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NANL_0100
+     * @tc.desc   test nanl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNanl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: string = "abc";
@@ -9141,12 +9138,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NANL_0200
-     * @tc.name       : testMuslMathNanl002
-     * @tc.desc       : test nanl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNanl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NANL_0200
+     * @tc.desc   test nanl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNanl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: string = "123";
@@ -9157,12 +9154,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NANL_0300
-     * @tc.name       : testMuslMathNanl003
-     * @tc.desc       : test nanl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNanl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NANL_0300
+     * @tc.desc   test nanl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNanl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: string = "abc123";
@@ -9173,12 +9170,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARD_0100
-     * @tc.name       : testMuslMathNexttoward001
-     * @tc.desc       : test nexttoward
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNexttoward001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARD_0100
+     * @tc.desc   test nexttoward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNexttoward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1;
@@ -9190,12 +9187,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARD_0200
-     * @tc.name       : testMuslMathNexttoward002
-     * @tc.desc       : test nexttoward
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNexttoward002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARD_0200
+     * @tc.desc   test nexttoward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNexttoward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1;
@@ -9207,12 +9204,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARD_0300
-     * @tc.name       : testMuslMathNexttoward003
-     * @tc.desc       : test nexttoward
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNexttoward003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARD_0300
+     * @tc.desc   test nexttoward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNexttoward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -9224,12 +9221,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDF_0100
-     * @tc.name       : testMuslMathNexttowardF001
-     * @tc.desc       : test nexttowarf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNexttowardF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDF_0100
+     * @tc.desc   test nexttowarf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNexttowardF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1;
@@ -9241,12 +9238,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDF_0200
-     * @tc.name       : testMuslMathNexttowardF002
-     * @tc.desc       : test nexttowarf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNexttowardF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDF_0200
+     * @tc.desc   test nexttowarf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNexttowardF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1;
@@ -9258,12 +9255,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDF_0300
-     * @tc.name       : testMuslMathNexttowardF003
-     * @tc.desc       : test nexttowarf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNexttowardF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDF_0300
+     * @tc.desc   test nexttowarf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNexttowardF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -9275,12 +9272,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDL_0100
-     * @tc.name       : testMuslMathNexttowardL001
-     * @tc.desc       : test nexttowarl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNexttowardL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDL_0100
+     * @tc.desc   test nexttowarl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNexttowardL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1;
@@ -9292,12 +9289,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDL_0200
-     * @tc.name       : testMuslMathNexttowardL002
-     * @tc.desc       : test nexttowarl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNexttowardL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDL_0200
+     * @tc.desc   test nexttowarl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNexttowardL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1;
@@ -9309,12 +9306,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDL_0300
-     * @tc.name       : testMuslMathNexttowardL003
-     * @tc.desc       : test nexttowarl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathNexttowardL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_NEXTTOWARDL_0300
+     * @tc.desc   test nexttowarl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathNexttowardL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0;
@@ -9327,12 +9324,12 @@ export default function mathNdkTest() {
 
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LRINT_0100
-     * @tc.name     : testMuslMathLRint001
-     * @tc.desc     : test lRint
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRint001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LRINT_0100
+     * @tc.desc   test lRint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 3.7;
@@ -9343,12 +9340,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_ MUSL_MATH_LRINT_0200
-     * @tc.name     : testMuslMathLRint002
-     * @tc.desc     : test lRint
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRint002
+     * @tc.number SUB_THIRDPARTY_ MUSL_MATH_LRINT_0200
+     * @tc.desc   test lRint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1.1;
@@ -9359,12 +9356,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LRINT_0300
-     * @tc.name     : testMuslMathLRint003
-     * @tc.desc     : test lRint
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRint003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LRINT_0300
+     * @tc.desc   test lRint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0.3;
@@ -9375,12 +9372,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LRINTF_0100
-     * @tc.name     : testMuslMathLRintf001
-     * @tc.desc     : test lRintf
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRintf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LRINTF_0100
+     * @tc.desc   test lRintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.8;
@@ -9391,12 +9388,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LRINTF_0200
-     * @tc.name     : testMuslMathLRintf002
-     * @tc.desc     : test lRintf
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRintf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LRINTF_0200
+     * @tc.desc   test lRintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -5.1;
@@ -9407,12 +9404,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LRINTF_0300
-     * @tc.name     : testMuslMathLRintf003
-     * @tc.desc     : test lRintf
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRintf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LRINTF_0300
+     * @tc.desc   test lRintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRintf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0.6;
@@ -9423,12 +9420,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LRINTL_0100
-     * @tc.name     : testMuslMathLRintl001
-     * @tc.desc     : test lRintl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRintl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LRINTL_0100
+     * @tc.desc   test lRintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRintl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 5.1;
@@ -9439,12 +9436,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LRINTL_0200
-     * @tc.name     : testMuslMathLRintl002
-     * @tc.desc     : test lRintl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRintl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LRINTL_0200
+     * @tc.desc   test lRintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRintl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -0.6;
@@ -9455,12 +9452,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   :SUB_THIRDPARTY_MUSL_MATH_LRINTL_0300
-     * @tc.name     : testMuslMathLRintl003
-     * @tc.desc     : test lRintl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRintl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LRINTL_0300
+     * @tc.desc   test lRintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRintl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = (4.6);
@@ -9472,12 +9469,12 @@ export default function mathNdkTest() {
 
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LROUND_0100
-     * @tc.name     : testMuslMathLRound001
-     * @tc.desc     : test lround
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRound001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LROUND_0100
+     * @tc.desc   test lround
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRound001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 5.1;
@@ -9487,12 +9484,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LROUND_0200
-     * @tc.name     : testMuslMathLRound002
-     * @tc.desc     : test lRound
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRound002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LROUND_0200
+     * @tc.desc   test lRound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRound002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1.1;
@@ -9503,12 +9500,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LROUND_0300
-     * @tc.name     : testMuslMathLRound003
-     * @tc.desc     : test lRound
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRound003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LROUND_0300
+     * @tc.desc   test lRound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRound003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.2;
@@ -9519,12 +9516,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LROUNDF_0100
-     * @tc.name     : testMuslMathLRoundf001
-     * @tc.desc     : test lRoundf
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRoundf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LROUNDF_0100
+     * @tc.desc   test lRoundf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRoundf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.87;
@@ -9535,12 +9532,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LROUNDF_0200
-     * @tc.name     : testMuslMathLRoundf002
-     * @tc.desc     : test lRoundf
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRoundf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LROUNDF_0200
+     * @tc.desc   test lRoundf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRoundf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -11.1;
@@ -9551,12 +9548,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LROUNDF_0300
-     * @tc.name     : testMuslMathLRoundF003
-     * @tc.desc     : test lRoundf
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRoundF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LROUNDF_0300
+     * @tc.desc   test lRoundf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRoundF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.5;
@@ -9567,12 +9564,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LROUNDL_0100
-     * @tc.name     : testMuslMathLRoundl001
-     * @tc.desc     : test lRoundl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRoundl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LROUNDL_0100
+     * @tc.desc   test lRoundl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRoundl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.87;
@@ -9583,12 +9580,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LROUNDL_0200
-     * @tc.name     : testMuslMathLRoundl002
-     * @tc.desc     : test lRoundl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRoundl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LROUNDL_0200
+     * @tc.desc   test lRoundl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRoundl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1.1;
@@ -9599,12 +9596,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_LROUNDL_0300
-     * @tc.name     : testMuslMathLRoundl003
-     * @tc.desc     : test lRoundl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathLRoundl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_LROUNDL_0300
+     * @tc.desc   test lRoundl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathLRoundl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 11.2;
@@ -9615,12 +9612,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_ILOGB_0100
-     * @tc.name     : testMuslMathILogb001
-     * @tc.desc     : test ilogb
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathILogb001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ILOGB_0100
+     * @tc.desc   test ilogb
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathILogb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 16.81;
@@ -9629,12 +9626,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_ILOGB_0200
-     * @tc.name     : testMuslMathILogb002
-     * @tc.desc     : test ilogb
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathILogb002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ILOGB_0200
+     * @tc.desc   test ilogb
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathILogb002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0.19;
@@ -9645,12 +9642,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_ILOGBF_0100
-     * @tc.name     : testMuslMathILogbf001
-     * @tc.desc     : test ilogbf
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathILogbf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ILOGBF_0100
+     * @tc.desc   test ilogbf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathILogbf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 8.00;
@@ -9661,12 +9658,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_ILOGBF_0200
-     * @tc.name     : testMuslMathILogbf002
-     * @tc.desc     : test ilogbf
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathILogbf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ILOGBF_0200
+     * @tc.desc   test ilogbf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathILogbf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0.19;
@@ -9677,12 +9674,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_ILOGBL_0100
-     * @tc.name     : testMuslMathILogbl001
-     * @tc.desc     : test ilogbl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathILogbl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ILOGBL_0100
+     * @tc.desc   test ilogbl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathILogbl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 17.0;
@@ -9693,12 +9690,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_ILOGBL_0200
-     * @tc.name     : testMuslMathILogbl002
-     * @tc.desc     : test ilogbl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathILogbl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ILOGBL_0200
+     * @tc.desc   test ilogbl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathILogbl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0.19;
@@ -9710,12 +9707,12 @@ export default function mathNdkTest() {
 
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_HYPOT_0100
-     * @tc.name     : testMuslMathHYpot001
-     * @tc.desc     : test hypot
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathHYpot001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_HYPOT_0100
+     * @tc.desc   test hypot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathHYpot001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let x = 3;
@@ -9726,12 +9723,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_HYPOT_0200
-     * @tc.name     : testMuslMathHYpot002
-     * @tc.desc     : test hypot
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathHYpot002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_HYPOT_0200
+     * @tc.desc   test hypot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathHYpot002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let x = 9;
@@ -9743,12 +9740,12 @@ export default function mathNdkTest() {
 
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_HYPOTF_0100
-     * @tc.name     : testMuslMathhypotf001
-     * @tc.desc     : test hypotf
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathhypotf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_HYPOTF_0100
+     * @tc.desc   test hypotf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathhypotf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let x = 6;
@@ -9759,12 +9756,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_HYPOTF_0200
-     * @tc.name     : testMuslMathhypotf002
-     * @tc.desc     : test hypotf
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathhypotf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_HYPOTF_0200
+     * @tc.desc   test hypotf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathhypotf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let x = 8;
@@ -9774,12 +9771,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_HYPOTL_0100
-     * @tc.name     : testMuslMathHYpotl001
-     * @tc.desc     : test hypotl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathHYpotl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_HYPOTL_0100
+     * @tc.desc   test hypotl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathHYpotl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let x = 7;
@@ -9790,12 +9787,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_HYPOTL_0200
-     * @tc.name     : testMuslMathHYpotl002
-     * @tc.desc     : test hypotl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathHYpotl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_HYPOTL_0200
+     * @tc.desc   test hypotl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathHYpotl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let x = 65;
@@ -9805,12 +9802,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MATH_SIGNGAM_0100
-     * @tc.name     : testMuslMathSignGam001
-     * @tc.desc     : test signgam
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslMathSignGam001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIGNGAM_0100
+     * @tc.desc   test signgam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSignGam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let x = 0.5;
@@ -9821,12 +9818,12 @@ export default function mathNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_YN_0100
-     * @tc.name       : testMuslMathYn001
-     * @tc.desc       : test yn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathYn001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_YN_0100
+     * @tc.desc   test yn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathYn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.yn();
@@ -9835,12 +9832,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_YNF_0100
-     * @tc.name       : testMuslMathYnf001
-     * @tc.desc       : test ynf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathYnf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_YNF_0100
+     * @tc.desc   test ynf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathYnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.ynf();
@@ -9848,12 +9845,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOSL_0100
-     * @tc.name       : testMuslMathSincosl001
-     * @tc.desc       : test sincosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincosl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOSL_0100
+     * @tc.desc   test sincosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincosl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 90;
@@ -9863,12 +9860,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOSL_0200
-     * @tc.name       : testMuslMathSincosl002
-     * @tc.desc       : test sincosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincosl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOSL_0200
+     * @tc.desc   test sincosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincosl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -9877,12 +9874,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOSL_0300
-     * @tc.name       : testMuslMathSincosl003
-     * @tc.desc       : test sincosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincosl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOSL_0300
+     * @tc.desc   test sincosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincosl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 90;
@@ -9892,12 +9889,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOSL_0400
-     * @tc.name       : testMuslMathSincosl004
-     * @tc.desc       : test sincosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincosl004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOSL_0400
+     * @tc.desc   test sincosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincosl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -9906,12 +9903,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOS_0100
-     * @tc.name       : testMuslMathSincos001
-     * @tc.desc       : test sincos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincos001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOS_0100
+     * @tc.desc   test sincos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 90;
@@ -9921,12 +9918,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOS_0200
-     * @tc.name       : testMuslMathSincos002
-     * @tc.desc       : test sincos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincos002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOS_0200
+     * @tc.desc   test sincos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -9935,12 +9932,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOS_0300
-     * @tc.name       : testMuslMathSincos003
-     * @tc.desc       : test sincos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincos003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOS_0300
+     * @tc.desc   test sincos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincos003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 90;
@@ -9950,12 +9947,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOS_0400
-     * @tc.name       : testMuslMathSincos004
-     * @tc.desc       : test sincos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincos004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOS_0400
+     * @tc.desc   test sincos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincos004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -9965,12 +9962,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOSF_0100
-     * @tc.name       : testMuslMathSincosf001
-     * @tc.desc       : test sincosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincosf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOSF_0100
+     * @tc.desc   test sincosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincosf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 90;
@@ -9980,12 +9977,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOSF_0200
-     * @tc.name       : testMuslMathSincosf002
-     * @tc.desc       : test sincosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincosf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOSF_0200
+     * @tc.desc   test sincosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincosf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -9994,12 +9991,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOSF_0300
-     * @tc.name       : testMuslMathSincosf003
-     * @tc.desc       : test sincosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincosf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOSF_0300
+     * @tc.desc   test sincosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincosf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 90;
@@ -10009,12 +10006,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SINCOSF_0400
-     * @tc.name       : testMuslMathSincosf004
-     * @tc.desc       : test sincosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSincosf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SINCOSF_0400
+     * @tc.desc   test sincosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSincosf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = Math.sqrt(-1);
@@ -10024,12 +10021,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIGNIFICAND_0100
-     * @tc.name       : testMuslMathSignificand001
-     * @tc.desc       : test significand
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSignificand001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIGNIFICAND_0100
+     * @tc.desc   test significand
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSignificand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 0.0
@@ -10039,12 +10036,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIGNIFICAND_0200
-     * @tc.name       : testMuslMathSignificand002
-     * @tc.desc       : test significand
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSignificand002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIGNIFICAND_0200
+     * @tc.desc   test significand
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSignificand002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1 / 0
@@ -10054,12 +10051,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIGNIFICAND_0300
-     * @tc.name       : testMuslMathSignificand003
-     * @tc.desc       : test significand
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSignificand003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIGNIFICAND_0300
+     * @tc.desc   test significand
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSignificand003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 12.25
@@ -10069,12 +10066,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIGNIFICANDF_0100
-     * @tc.name       : testMuslMathSignificandf001
-     * @tc.desc       : test significandf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSignificandf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIGNIFICANDF_0100
+     * @tc.desc   test significandf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSignificandf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 0.0
@@ -10084,12 +10081,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIGNIFICANDF_0200
-     * @tc.name       : testMuslMathSignificandf002
-     * @tc.desc       : test significandf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSignificandf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIGNIFICANDF_0200
+     * @tc.desc   test significandf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSignificandf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1 / 0
@@ -10099,12 +10096,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIGNIFICANDF_0300
-     * @tc.name       : testMuslMathSignificandf003
-     * @tc.desc       : test significandf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathSignificandf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIGNIFICANDF_0300
+     * @tc.desc   test significandf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSignificandf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 12.25
@@ -10114,12 +10111,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALB_0100
-     * @tc.name       : testMuslMathScalb001
-     * @tc.desc       : test scalb
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalb001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALB_0100
+     * @tc.desc   test scalb
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 12;
@@ -10131,12 +10128,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALB_0200
-     * @tc.name       : testMuslMathScalb002
-     * @tc.desc       : test scalb
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalb002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALB_0200
+     * @tc.desc   test scalb
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalb002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 200 / 0;
@@ -10148,12 +10145,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALB_0300
-     * @tc.name       : testMuslMathScalb003
-     * @tc.desc       : test scalb
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalb003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALB_0300
+     * @tc.desc   test scalb
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalb003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 200 / -0;
@@ -10165,12 +10162,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBF_0100
-     * @tc.name       : testMuslMathScalbf001
-     * @tc.desc       : test scalbf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBF_0100
+     * @tc.desc   test scalbf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 12;
@@ -10182,12 +10179,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBF_0200
-     * @tc.name       : testMuslMathScalbf002
-     * @tc.desc       : test scalbf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBF_0200
+     * @tc.desc   test scalbf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 200 / 0;
@@ -10199,12 +10196,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SCALBF_0300
-     * @tc.name       : testMuslMathScalbf003
-     * @tc.desc       : test scalbf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathScalbf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SCALBF_0300
+     * @tc.desc   test scalbf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathScalbf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 200 / -0;
@@ -10216,12 +10213,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNC_0100
-     * @tc.name       : testMuslMathTrunc001
-     * @tc.desc       : test trunc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTrunc001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNC_0100
+     * @tc.desc   test trunc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTrunc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 12;
@@ -10232,12 +10229,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNC_0200
-     * @tc.name       : testMuslMathTrunc002
-     * @tc.desc       : test trunc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTrunc002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNC_0200
+     * @tc.desc   test trunc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTrunc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 10.25;
@@ -10248,12 +10245,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNC_0300
-     * @tc.name       : testMuslMathTrunc003
-     * @tc.desc       : test trunc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTrunc003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNC_0300
+     * @tc.desc   test trunc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTrunc003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 200 / 0;
@@ -10264,12 +10261,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNC_0400
-     * @tc.name       : testMuslMathTrunc004
-     * @tc.desc       : test trunc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTrunc004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNC_0400
+     * @tc.desc   test trunc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTrunc004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = Math.sqrt(-1);
@@ -10280,12 +10277,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNCF_0100
-     * @tc.name       : testMuslMathTruncf001
-     * @tc.desc       : test truncf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTruncf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNCF_0100
+     * @tc.desc   test truncf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTruncf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 12;
@@ -10296,12 +10293,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNCF_0200
-     * @tc.name       : testMuslMathTruncf002
-     * @tc.desc       : test truncf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTruncf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNCF_0200
+     * @tc.desc   test truncf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTruncf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 10.25;
@@ -10312,12 +10309,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNCF_0300
-     * @tc.name       : testMuslMathTruncf003
-     * @tc.desc       : test truncf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTruncf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNCF_0300
+     * @tc.desc   test truncf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTruncf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 200 / 0;
@@ -10328,12 +10325,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNCF_0400
-     * @tc.name       : testMuslMathTruncf004
-     * @tc.desc       : test truncf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTruncf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNCF_0400
+     * @tc.desc   test truncf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTruncf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = Math.sqrt(-1);
@@ -10344,12 +10341,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNCL_0100
-     * @tc.name       : testMuslMathTruncl001
-     * @tc.desc       : test truncl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTruncl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNCL_0100
+     * @tc.desc   test truncl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTruncl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 12;
@@ -10360,12 +10357,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNCL_0200
-     * @tc.name       : testMuslMathTruncl002
-     * @tc.desc       : test truncl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTruncl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNCL_0200
+     * @tc.desc   test truncl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTruncl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 10.25;
@@ -10376,12 +10373,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNCL_0300
-     * @tc.name       : testMuslMathTruncl003
-     * @tc.desc       : test truncl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTruncl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNCL_0300
+     * @tc.desc   test truncl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTruncl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 200 / 0;
@@ -10392,12 +10389,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_TRUNCL_0400
-     * @tc.name       : testMuslMathTruncl004
-     * @tc.desc       : test truncl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathTruncl004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_TRUNCL_0400
+     * @tc.desc   test truncl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathTruncl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = Math.sqrt(-1);
@@ -10408,12 +10405,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_Y0_0100
-     * @tc.name       : testMuslMathY0001
-     * @tc.desc       : test y0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathY0001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_Y0_0100
+     * @tc.desc   test y0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathY0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = Math.sqrt(-1);
@@ -10424,12 +10421,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_Y0F_0100
-     * @tc.name       : testMuslMathY0f001
-     * @tc.desc       : test y0f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathY0f001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_Y0F_0100
+     * @tc.desc   test y0f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathY0f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = Math.sqrt(-1);
@@ -10440,12 +10437,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_Y1_0100
-     * @tc.name       : testMuslMathY1001
-     * @tc.desc       : test y1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathY1001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_Y1_0100
+     * @tc.desc   test y1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathY1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = Math.sqrt(-1);
@@ -10456,12 +10453,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_Y1F_0100
-     * @tc.name       : testMuslMathY1f001
-     * @tc.desc       : test y1f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathY1f001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_Y1F_0100
+     * @tc.desc   test y1f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathY1f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = Math.sqrt(-1);
@@ -10472,12 +10469,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRT_0100
-     * @tc.name       : testMuslMathCbrt001
-     * @tc.desc       : test cbrt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrt001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRT_0100
+     * @tc.desc   test cbrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = Number(-1.00).toFixed(2);
@@ -10488,12 +10485,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRT_0200
-     * @tc.name       : testMuslMathCbrt002
-     * @tc.desc       : test cbrt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrt002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRT_0200
+     * @tc.desc   test cbrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -10504,12 +10501,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRT_0300
-     * @tc.name       : testMuslMathCbrt003
-     * @tc.desc       : test cbrt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrt003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRT_0300
+     * @tc.desc   test cbrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = Number(1.00).toFixed(2);
@@ -10519,12 +10516,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRT_0400
-     * @tc.name       : testMuslMathCbrt004
-     * @tc.desc       : test cbrt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrt004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRT_0400
+     * @tc.desc   test cbrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.cbrt(Math.sqrt(-1));
@@ -10533,12 +10530,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRT_0500
-     * @tc.name       : testMuslMathCbrt005
-     * @tc.desc       : test cbrt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrt005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRT_0500
+     * @tc.desc   test cbrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
@@ -10548,12 +10545,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRT_0600
-     * @tc.name       : testMuslMathCbrt006
-     * @tc.desc       : test cbrt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrt006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRT_0600
+     * @tc.desc   test cbrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrt006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
@@ -10563,12 +10560,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTF_0100
-     * @tc.name       : testMuslMathCbrtF001
-     * @tc.desc       : test cbrtF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTF_0100
+     * @tc.desc   test cbrtF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = Number(-1.00).toFixed(2);
@@ -10579,12 +10576,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTF_0200
-     * @tc.name       : testMuslMathCbrtF002
-     * @tc.desc       : test cbrtF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTF_0200
+     * @tc.desc   test cbrtF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -10595,12 +10592,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTF_0300
-     * @tc.name       : testMuslMathCbrtF003
-     * @tc.desc       : test cbrtF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTF_0300
+     * @tc.desc   test cbrtF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = Number(1.00).toFixed(2);
@@ -10610,12 +10607,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTF_0400
-     * @tc.name       : testMuslMathCbrtF004
-     * @tc.desc       : test cbrtF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTF_0400
+     * @tc.desc   test cbrtF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.cbrtf(Math.sqrt(-1));
@@ -10624,12 +10621,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTF_0500
-     * @tc.name       : testMuslMathCbrtF005
-     * @tc.desc       : test cbrtF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTF_0500
+     * @tc.desc   test cbrtF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
@@ -10639,12 +10636,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTF_0600
-     * @tc.name       : testMuslMathCbrtF006
-     * @tc.desc       : test cbrtF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtF006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTF_0600
+     * @tc.desc   test cbrtF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
@@ -10654,12 +10651,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTL_0100
-     * @tc.name       : testMuslMathCbrtL001
-     * @tc.desc       : test cbrtL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTL_0100
+     * @tc.desc   test cbrtL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = Number(-1.00).toFixed(2);
@@ -10670,12 +10667,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTL_0200
-     * @tc.name       : testMuslMathCbrtL002
-     * @tc.desc       : test cbrtL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTL_0200
+     * @tc.desc   test cbrtL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -10686,12 +10683,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTL_0300
-     * @tc.name       : testMuslMathCbrtL003
-     * @tc.desc       : test cbrtL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTL_0300
+     * @tc.desc   test cbrtL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: string = Number(1.00).toFixed(2);
@@ -10701,12 +10698,12 @@ export default function mathNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTL_0400
-     * @tc.name       : testMuslMathCbrtL004
-     * @tc.desc       : test cbrtL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTL_0400
+     * @tc.desc   test cbrtL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.cbrtl(Math.sqrt(-1));
@@ -10715,12 +10712,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTL_0500
-     * @tc.name       : testMuslMathCbrtL005
-     * @tc.desc       : test cbrtL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTL_0500
+     * @tc.desc   test cbrtL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
@@ -10730,12 +10727,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_CBRTL_0600
-     * @tc.name       : testMuslMathCbrtL006
-     * @tc.desc       : test cbrtL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCbrtL006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_CBRTL_0600
+     * @tc.desc   test cbrtL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCbrtL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
@@ -10745,12 +10742,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXP_0100
-     * @tc.name       : testMuslMathFrexp001
-     * @tc.desc       : test frexp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexp001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXP_0100
+     * @tc.desc   test frexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = -0.5;
@@ -10761,12 +10758,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXP_0200
-     * @tc.name       : testMuslMathFrexp002
-     * @tc.desc       : test frexp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexp002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXP_0200
+     * @tc.desc   test frexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
@@ -10776,12 +10773,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXP_0300
-     * @tc.name       : testMuslMathFrexp003
-     * @tc.desc       : test frexp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexp003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXP_0300
+     * @tc.desc   test frexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0.5;
@@ -10792,12 +10789,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXP_0400
-     * @tc.name       : testMuslMathFrexp004
-     * @tc.desc       : test frexp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexp004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXP_0400
+     * @tc.desc   test frexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.frexp(Math.sqrt(-1));
@@ -10806,12 +10803,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXP_0500
-     * @tc.name       : testMuslMathFrexp005
-     * @tc.desc       : test frexp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexp005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXP_0500
+     * @tc.desc   test frexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexp005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
@@ -10821,12 +10818,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXP_0600
-     * @tc.name       : testMuslMathFrexp006
-     * @tc.desc       : test frexp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexp006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXP_0600
+     * @tc.desc   test frexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexp006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
@@ -10836,12 +10833,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPL_0100
-     * @tc.name       : testMuslMathFrexpl001
-     * @tc.desc       : test frexpl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPL_0100
+     * @tc.desc   test frexpl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = -0.5;
@@ -10852,12 +10849,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPL_0200
-     * @tc.name       : testMuslMathFrexpl002
-     * @tc.desc       : test frexpl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPL_0200
+     * @tc.desc   test frexpl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
@@ -10867,12 +10864,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPL_0300
-     * @tc.name       : testMuslMathFrexpl003
-     * @tc.desc       : test frexpl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPL_0300
+     * @tc.desc   test frexpl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0.5;
@@ -10883,12 +10880,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPL_0400
-     * @tc.name       : testMuslMathFrexpl004
-     * @tc.desc       : test frexpl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpl004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPL_0400
+     * @tc.desc   test frexpl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.frexpl(Math.sqrt(-1));
@@ -10897,12 +10894,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPL_0500
-     * @tc.name       : testMuslMathFrexpl005
-     * @tc.desc       : test frexpl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpl005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPL_0500
+     * @tc.desc   test frexpl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
@@ -10912,12 +10909,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPL_0600
-     * @tc.name       : testMuslMathFrexpl006
-     * @tc.desc       : test frexpl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpl006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPL_0600
+     * @tc.desc   test frexpl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpl006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
@@ -10927,12 +10924,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPF_0100
-     * @tc.name       : testMuslMathFrexpf001
-     * @tc.desc       : test frexpf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPF_0100
+     * @tc.desc   test frexpf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = -0.5;
@@ -10943,12 +10940,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPF_0200
-     * @tc.name       : testMuslMathFrexpf002
-     * @tc.desc       : test frexpf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPF_0200
+     * @tc.desc   test frexpf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
@@ -10958,12 +10955,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPF_0300
-     * @tc.name       : testMuslMathFrexpf003
-     * @tc.desc       : test frexpf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPF_0300
+     * @tc.desc   test frexpf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0.5;
@@ -10974,12 +10971,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPF_0400
-     * @tc.name       : testMuslMathFrexpf004
-     * @tc.desc       : test frexpf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPF_0400
+     * @tc.desc   test frexpf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = math.frexpf(Math.sqrt(-1));
@@ -10988,12 +10985,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPF_0500
-     * @tc.name       : testMuslMathFrexpf005
-     * @tc.desc       : test frexpf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpf005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPF_0500
+     * @tc.desc   test frexpf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
@@ -11003,12 +11000,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FREXPF_0600
-     * @tc.name       : testMuslMathFrexpf006
-     * @tc.desc       : test frexpf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFrexpf006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FREXPF_0600
+     * @tc.desc   test frexpf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFrexpf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
@@ -11018,12 +11015,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FPCLASSIFYL_0100
-     * @tc.name       : testMuslMathFpclassifyl001
-     * @tc.desc       : test __fpclassifyl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFpclassifyl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FPCLASSIFYL_0100
+     * @tc.desc   test __fpclassifyl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFpclassifyl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 2;
@@ -11034,12 +11031,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FPCLASSIFYF_0100
-     * @tc.name       : testMuslMathFpclassifyf001
-     * @tc.desc       : test __fpclassifyf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFpclassifyf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FPCLASSIFYF_0100
+     * @tc.desc   test __fpclassifyf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFpclassifyf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 2;
@@ -11050,12 +11047,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_FPCLASSIFY_0100
-     * @tc.name       : testMuslMathFpclassify001
-     * @tc.desc       : test __fpclassify
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathFpclassify001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_FPCLASSIFY_0100
+     * @tc.desc   test __fpclassify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathFpclassify001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 2;
@@ -11066,12 +11063,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIGNBIT_0100
-     * @tc.name       : testMuslMathSignbit001
-     * @tc.desc       : test __signbit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathSignbit001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIGNBIT_0100
+     * @tc.desc   test __signbit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSignbit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -11082,12 +11079,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIGNBITF_0100
-     * @tc.name       : testMuslMathSignbitf001
-     * @tc.desc       : test __signbitf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathSignbitf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIGNBITF_0100
+     * @tc.desc   test __signbitf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSignbitf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -11098,12 +11095,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_SIGNBITL_0100
-     * @tc.name       : testMuslMathSignbitl001
-     * @tc.desc       : test __signbitl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathSignbitl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_SIGNBITL_0100
+     * @tc.desc   test __signbitl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathSignbitl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue: number = 0;
@@ -11114,12 +11111,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0700
-     * @tc.name       : testMuslMathExpM1l007
-     * @tc.desc       : test expm1l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpM1l007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0700
+     * @tc.desc   test expm1l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1l007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.9;
@@ -11133,12 +11130,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0100
-     * @tc.name       : testMuslMathExpM1l001
-     * @tc.desc       : test expm1l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpM1l001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0100
+     * @tc.desc   test expm1l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 4;
@@ -11152,12 +11149,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0200
-     * @tc.name       : testMuslMathExpM1l002
-     * @tc.desc       : test expm1l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpM1l002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0200
+     * @tc.desc   test expm1l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1l002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -11167,12 +11164,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0300
-     * @tc.name       : testMuslMathExpM1l003
-     * @tc.desc       : test expm1l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpM1l003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0300
+     * @tc.desc   test expm1l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1l003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = -1;
@@ -11186,12 +11183,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0400
-     * @tc.name       : testMuslMathExpM1l004
-     * @tc.desc       : test expm1l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpM1l004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0400
+     * @tc.desc   test expm1l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1l004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -11205,12 +11202,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0500
-     * @tc.name       : testMuslMathExpM1l005
-     * @tc.desc       : test expm1l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpM1l005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0500
+     * @tc.desc   test expm1l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1l005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 0;
@@ -11224,12 +11221,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPL_0100
-     * @tc.name       : testMuslMathExpL001
-     * @tc.desc       : test expl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPL_0100
+     * @tc.desc   test expl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = -1;
@@ -11240,12 +11237,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPL_0200
-     * @tc.name       : testMuslMathExpL002
-     * @tc.desc       : test expl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPL_0200
+     * @tc.desc   test expl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 0;
@@ -11255,12 +11252,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPL_0300
-     * @tc.name       : testMuslMathExpL003
-     * @tc.desc       : test expl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPL_0300
+     * @tc.desc   test expl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 1;
@@ -11271,12 +11268,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPL_0400
-     * @tc.name       : testMuslMathExpL004
-     * @tc.desc       : test expl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPL_0400
+     * @tc.desc   test expl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 1.19;
@@ -11287,12 +11284,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPL_0500
-     * @tc.name       : testMuslMathExpL005
-     * @tc.desc       : test expl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPL_0500
+     * @tc.desc   test expl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = -1.19;
@@ -11303,12 +11300,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPL_0600
-     * @tc.name       : testMuslMathExpL006
-     * @tc.desc       : test expl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpL006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPL_0600
+     * @tc.desc   test expl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -11318,12 +11315,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPL_0700
-     * @tc.name       : testMuslMathExpL007
-     * @tc.desc       : test expl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpL007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPL_0700
+     * @tc.desc   test expl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -11333,12 +11330,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPF_0100
-     * @tc.name       : testMuslMathExpF001
-     * @tc.desc       : test expf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPF_0100
+     * @tc.desc   test expf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = -1;
@@ -11349,12 +11346,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPF_0200
-     * @tc.name       : testMuslMathExpF002
-     * @tc.desc       : test expf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPF_0200
+     * @tc.desc   test expf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 0;
@@ -11364,12 +11361,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPF_0300
-     * @tc.name       : testMuslMathExpF003
-     * @tc.desc       : test expf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPF_0300
+     * @tc.desc   test expf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 1;
@@ -11380,12 +11377,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPF_0400
-     * @tc.name       : testMuslMathExpF004
-     * @tc.desc       : test expf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPF_0400
+     * @tc.desc   test expf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 1.19;
@@ -11396,12 +11393,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPF_0500
-     * @tc.name       : testMuslMathExpF005
-     * @tc.desc       : test expf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPF_0500
+     * @tc.desc   test expf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = -1.19;
@@ -11412,12 +11409,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPF_0600
-     * @tc.name       : testMuslMathExpF006
-     * @tc.desc       : test expf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpF006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPF_0600
+     * @tc.desc   test expf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -11427,12 +11424,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPF_0700
-     * @tc.name       : testMuslMathExpF007
-     * @tc.desc       : test expf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpF007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPF_0700
+     * @tc.desc   test expf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -11442,12 +11439,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2L_0100
-     * @tc.name       : testMuslMathExp2l001
-     * @tc.desc       : test exp2l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExp2l001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2L_0100
+     * @tc.desc   test exp2l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = -1;
@@ -11461,12 +11458,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2L_0200
-     * @tc.name       : testMuslMathExp2l002
-     * @tc.desc       : test exp2l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExp2l002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2L_0200
+     * @tc.desc   test exp2l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2l002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -11476,12 +11473,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2L_0300
-     * @tc.name       : testMuslMathExp2l003
-     * @tc.desc       : test exp2l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExp2l003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2L_0300
+     * @tc.desc   test exp2l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2l003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 4.7;
@@ -11495,12 +11492,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2L_0400
-     * @tc.name       : testMuslMathExp2l004
-     * @tc.desc       : test exp2l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExp2l004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2L_0400
+     * @tc.desc   test exp2l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2l004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 0;
@@ -11514,12 +11511,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2L_0500
-     * @tc.name       : testMuslMathExp2l005
-     * @tc.desc       : test exp2l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExp2l005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2L_0500
+     * @tc.desc   test exp2l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2l005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -11533,12 +11530,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2F_0100
-     * @tc.name       : testMuslMathExp2f001
-     * @tc.desc       : test exp2f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExp2f001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2F_0100
+     * @tc.desc   test exp2f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = -1;
@@ -11552,12 +11549,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2F_0200
-     * @tc.name       : testMuslMathExp2f002
-     * @tc.desc       : test exp2f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExp2f002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2F_0200
+     * @tc.desc   test exp2f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -11567,12 +11564,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2F_0300
-     * @tc.name       : testMuslMathExp2f003
-     * @tc.desc       : test exp2f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExp2f003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2F_0300
+     * @tc.desc   test exp2f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 4.7;
@@ -11586,12 +11583,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2F_0400
-     * @tc.name       : testMuslMathExp2f004
-     * @tc.desc       : test exp2f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExp2f004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2F_0400
+     * @tc.desc   test exp2f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2f004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 0;
@@ -11605,12 +11602,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXP2F_0500
-     * @tc.name       : testMuslMathExp2f005
-     * @tc.desc       : test exp2f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExp2f005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXP2F_0500
+     * @tc.desc   test exp2f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExp2f005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -11624,12 +11621,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFF_0100
-     * @tc.name       : testMuslMathErfF001
-     * @tc.desc       : test erff
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathErfF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFF_0100
+     * @tc.desc   test erff
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 1;
@@ -11643,12 +11640,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFL_0100
-     * @tc.name       : testMuslMathErfL001
-     * @tc.desc       : test erfl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMathErfL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFL_0100
+     * @tc.desc   test erfl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 1;
@@ -11662,12 +11659,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFCL_0100
-     * @tc.name       : testMuslMathErfCl001
-     * @tc.desc       : test erfcl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfCl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFCL_0100
+     * @tc.desc   test erfcl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfCl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -11678,12 +11675,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFCL_0200
-     * @tc.name       : testMuslMathErfCl002
-     * @tc.desc       : test erfcl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfCl002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFCL_0200
+     * @tc.desc   test erfcl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfCl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -11694,12 +11691,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFCL_0300
-     * @tc.name       : testMuslMathErfCl003
-     * @tc.desc       : test erfcl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfCl003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFCL_0300
+     * @tc.desc   test erfcl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfCl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 1.0;
@@ -11710,12 +11707,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFCL_0400
-     * @tc.name       : testMuslMathErfCl004
-     * @tc.desc       : test erfcl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfCl004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFCL_0400
+     * @tc.desc   test erfcl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfCl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = 0;
@@ -11725,12 +11722,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFCL_0500
-     * @tc.name       : testMuslMathErfCl005
-     * @tc.desc       : test erfcl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfCl005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFCL_0500
+     * @tc.desc   test erfcl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfCl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = -1.9;
@@ -11741,12 +11738,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFCF_0100
-     * @tc.name       : testMuslMathErfCf001
-     * @tc.desc       : test erfcf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfCf001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFCF_0100
+     * @tc.desc   test erfcf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfCf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -11757,12 +11754,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFCF_0200
-     * @tc.name       : testMuslMathErfCf002
-     * @tc.desc       : test erfcf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfCf002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFCF_0200
+     * @tc.desc   test erfcf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfCf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -11772,13 +11769,13 @@ export default function mathNdkTest() {
       done()
     });
 
-/**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0100
-     * @tc.name       : testMuslMathCopySignF001
-     * @tc.desc       : test copysignf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testMuslMathCopySignF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0100
+     * @tc.desc   test copysignf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 11;
@@ -11789,12 +11786,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0200
-     * @tc.name       : testMuslMathCopySignF002
-     * @tc.desc       : test copysignf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCopySignF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0200
+     * @tc.desc   test copysignf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -11;
@@ -11805,12 +11802,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0300
-     * @tc.name       : testMuslMathCopySignF003
-     * @tc.desc       : test copysignf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCopySignF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0300
+     * @tc.desc   test copysignf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -11;
@@ -11821,12 +11818,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0400
-     * @tc.name       : testMuslMathCopySignF004
-     * @tc.desc       : test copysignf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCopySignF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0400
+     * @tc.desc   test copysignf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 11;
@@ -11837,12 +11834,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0500
-     * @tc.name       : testMuslMathCopySignF005
-     * @tc.desc       : test copysignf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCopySignF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0500
+     * @tc.desc   test copysignf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -11853,12 +11850,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0600
-     * @tc.name       : testMuslMathCopySignF006
-     * @tc.desc       : test copysignf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCopySignF006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNF_0600
+     * @tc.desc   test copysignf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 11;
@@ -11869,12 +11866,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0100
-     * @tc.name       : testMuslMathCopySignL001
-     * @tc.desc       : test copysignl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCopySignL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0100
+     * @tc.desc   test copysignl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 11;
@@ -11885,12 +11882,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0200
-     * @tc.name       : testMuslMathCopySignL002
-     * @tc.desc       : test copysignl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCopySignL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0200
+     * @tc.desc   test copysignl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -11;
@@ -11901,12 +11898,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0300
-     * @tc.name       : testMuslMathCopySignL003
-     * @tc.desc       : test copysignl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCopySignL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0300
+     * @tc.desc   test copysignl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -11;
@@ -11917,12 +11914,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0400
-     * @tc.name       : testMuslMathCopySignL004
-     * @tc.desc       : test copysignl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCopySignL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0400
+     * @tc.desc   test copysignl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 11;
@@ -11933,12 +11930,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0500
-     * @tc.name       : testMuslMathCopySignL005
-     * @tc.desc       : test copysignl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCopySignL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0500
+     * @tc.desc   test copysignl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -11949,12 +11946,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0600
-     * @tc.name       : testMuslMathCopySignL006
-     * @tc.desc       : test copysignl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCopySignL006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COPYSIGNL_0600
+     * @tc.desc   test copysignl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCopySignL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 11;
@@ -11965,12 +11962,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSF_0100
-     * @tc.name       : testMuslMathCosF001
-     * @tc.desc       : test cosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSF_0100
+     * @tc.desc   test cosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 60;
@@ -11981,12 +11978,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSF_0200
-     * @tc.name       : testMuslMathCosF002
-     * @tc.desc       : test cosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSF_0200
+     * @tc.desc   test cosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -11997,12 +11994,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSF_0300
-     * @tc.name       : testMuslMathCosF003
-     * @tc.desc       : test cosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSF_0300
+     * @tc.desc   test cosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 90;
@@ -12013,12 +12010,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSF_0400
-     * @tc.name       : testMuslMathCosF004
-     * @tc.desc       : test cosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSF_0400
+     * @tc.desc   test cosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -30;
@@ -12029,12 +12026,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSF_0500
-     * @tc.name       : testMuslMathCosF005
-     * @tc.desc       : test cosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSF_0500
+     * @tc.desc   test cosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0.99;
@@ -12045,12 +12042,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSF_0600
-     * @tc.name       : testMuslMathCosF006
-     * @tc.desc       : test cosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosF006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSF_0600
+     * @tc.desc   test cosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 179.99;
@@ -12061,12 +12058,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSF_0700
-     * @tc.name       : testMuslMathCosF007
-     * @tc.desc       : test cosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosF007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSF_0700
+     * @tc.desc   test cosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -12076,12 +12073,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSF_0800
-     * @tc.name       : testMuslMathCosF008
-     * @tc.desc       : test cosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosF008
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSF_0800
+     * @tc.desc   test cosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosF008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -12091,12 +12088,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSL_0100
-     * @tc.name       : testMuslMathCosL001
-     * @tc.desc       : test cosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSL_0100
+     * @tc.desc   test cosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 60;
@@ -12107,12 +12104,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSL_0200
-     * @tc.name       : testMuslMathCosL002
-     * @tc.desc       : test cosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSL_0200
+     * @tc.desc   test cosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -12123,12 +12120,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSL_0300
-     * @tc.name       : testMuslMathCosL003
-     * @tc.desc       : test cosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSL_0300
+     * @tc.desc   test cosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 90;
@@ -12139,12 +12136,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSL_0400
-     * @tc.name       : testMuslMathCosL004
-     * @tc.desc       : test cosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSL_0400
+     * @tc.desc   test cosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -30;
@@ -12155,12 +12152,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSL_0500
-     * @tc.name       : testMuslMathCosL005
-     * @tc.desc       : test cosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSL_0500
+     * @tc.desc   test cosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0.99;
@@ -12171,12 +12168,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSL_0600
-     * @tc.name       : testMuslMathCosL006
-     * @tc.desc       : test cosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosL006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSL_0600
+     * @tc.desc   test cosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 179.99;
@@ -12187,12 +12184,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSL_0700
-     * @tc.name       : testMuslMathCosL007
-     * @tc.desc       : test cosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosL007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSL_0700
+     * @tc.desc   test cosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -12202,12 +12199,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSL_0800
-     * @tc.name       : testMuslMathCosL008
-     * @tc.desc       : test cosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCosL008
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSL_0800
+     * @tc.desc   test cosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCosL008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -12217,12 +12214,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHF_0100
-     * @tc.name       : testMuslMathCoshF001
-     * @tc.desc       : test coshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshF001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHF_0100
+     * @tc.desc   test coshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 90;
@@ -12233,12 +12230,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHF_0200
-     * @tc.name       : testMuslMathCoshF002
-     * @tc.desc       : test coshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshF002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHF_0200
+     * @tc.desc   test coshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -12249,12 +12246,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHF_0300
-     * @tc.name       : testMuslMathCoshF003
-     * @tc.desc       : test coshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshF003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHF_0300
+     * @tc.desc   test coshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -30;
@@ -12265,12 +12262,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHF_0400
-     * @tc.name       : testMuslMathCoshF004
-     * @tc.desc       : test coshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshF004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHF_0400
+     * @tc.desc   test coshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -60;
@@ -12281,12 +12278,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHF_0500
-     * @tc.name       : testMuslMathCoshF005
-     * @tc.desc       : test coshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshF005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHF_0500
+     * @tc.desc   test coshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0.99;
@@ -12297,12 +12294,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHF_0600
-     * @tc.name       : testMuslMathCoshF006
-     * @tc.desc       : test coshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshF006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHF_0600
+     * @tc.desc   test coshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 179.99;
@@ -12313,12 +12310,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHF_0700
-     * @tc.name       : testMuslMathCoshF007
-     * @tc.desc       : test coshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshF007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHF_0700
+     * @tc.desc   test coshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -12328,12 +12325,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHF_0800
-     * @tc.name       : testMuslMathCoshF008
-     * @tc.desc       : test coshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshF008
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHF_0800
+     * @tc.desc   test coshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshF008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -12343,12 +12340,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHL_0100
-     * @tc.name       : testMuslMathCoshL001
-     * @tc.desc       : test coshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshL001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHL_0100
+     * @tc.desc   test coshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 90;
@@ -12359,12 +12356,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHL_0200
-     * @tc.name       : testMuslMathCoshL002
-     * @tc.desc       : test coshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshL002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHL_0200
+     * @tc.desc   test coshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -12375,12 +12372,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHL_0300
-     * @tc.name       : testMuslMathCoshL003
-     * @tc.desc       : test coshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshL003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHL_0300
+     * @tc.desc   test coshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -30;
@@ -12391,12 +12388,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHL_0400
-     * @tc.name       : testMuslMathCoshL004
-     * @tc.desc       : test coshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshL004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHL_0400
+     * @tc.desc   test coshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -60;
@@ -12407,12 +12404,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHL_0500
-     * @tc.name       : testMuslMathCoshL005
-     * @tc.desc       : test coshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshL005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHL_0500
+     * @tc.desc   test coshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0.99;
@@ -12423,12 +12420,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHL_0600
-     * @tc.name       : testMuslMathCoshL006
-     * @tc.desc       : test coshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshL006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHL_0600
+     * @tc.desc   test coshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 179.99;
@@ -12439,12 +12436,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHL_0700
-     * @tc.name       : testMuslMathCoshL007
-     * @tc.desc       : test coshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshL007
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHL_0700
+     * @tc.desc   test coshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -12454,12 +12451,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_COSHL_0800
-     * @tc.name       : testMuslMathCoshL008
-     * @tc.desc       : test coshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathCoshL008
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_COSHL_0800
+     * @tc.desc   test coshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathCoshL008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -12469,12 +12466,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFC_0100
-     * @tc.name       : testMuslMathErfC001
-     * @tc.desc       : test erfc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfC001
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFC_0100
+     * @tc.desc   test erfc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfC001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
@@ -12485,12 +12482,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFC_0200
-     * @tc.name       : testMuslMathErfC002
-     * @tc.desc       : test erfc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfC002
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFC_0200
+     * @tc.desc   test erfc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfC002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
@@ -12501,12 +12498,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFC_0300
-     * @tc.name       : testMuslMathErfC003
-     * @tc.desc       : test erfc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfC003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFC_0300
+     * @tc.desc   test erfc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfC003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0;
@@ -12517,12 +12514,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFC_0400
-     * @tc.name       : testMuslMathErfC004
-     * @tc.desc       : test erfc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfC004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFC_0400
+     * @tc.desc   test erfc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfC004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -12532,12 +12529,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFC_0500
-     * @tc.name       : testMuslMathErfC005
-     * @tc.desc       : test erfc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfC005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFC_0500
+     * @tc.desc   test erfc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfC005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.9;
@@ -12548,12 +12545,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFCF_0300
-     * @tc.name       : testMuslMathErfCf003
-     * @tc.desc       : test erfcf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfCf003
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFCF_0300
+     * @tc.desc   test erfcf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfCf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1.0;
@@ -12564,12 +12561,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFCF_0400
-     * @tc.name       : testMuslMathErfCf004
-     * @tc.desc       : test erfcf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfCf004
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFCF_0400
+     * @tc.desc   test erfcf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfCf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -12579,12 +12576,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_ERFCF_0500
-     * @tc.name       : testMuslMathErfCf005
-     * @tc.desc       : test erfcf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathErfCf005
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_ERFCF_0500
+     * @tc.desc   test erfcf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathErfCf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.9;
@@ -12595,12 +12592,12 @@ export default function mathNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0600
-     * @tc.name       : testMuslMathExpM1l006
-     * @tc.desc       : test expm1l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMathExpM1l006
+     * @tc.number SUB_THIRDPARTY_MUSL_MATH_EXPM1L_0600
+     * @tc.desc   test expm1l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMathExpM1l006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = -1.9;

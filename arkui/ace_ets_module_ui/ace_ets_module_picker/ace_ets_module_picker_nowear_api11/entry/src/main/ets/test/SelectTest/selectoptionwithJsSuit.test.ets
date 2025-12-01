@@ -46,15 +46,15 @@ export default function selectoptionwithJsSuit() {
       console.info("overlay after each called");
     });
 
-    /**
-     * @tc.number	SUB_ACE_TS_COMPONENTselectoptionwith_01
-     * @tc.name		selectoptionwithJsSuit_0100
-     * @tc.desc		Confirm if there is a callback01
-	 * @tc.level     Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   selectoptionwithJsSuit_0100
+     * @tc.number selectoptionwithJsSuit_0100
+     * @tc.desc   selectoptionwithJsSuit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectoptionwithJsSuit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[selectoptionwithJsSuit_0100] START');
       let driver = await Driver.create()
@@ -71,15 +71,15 @@ export default function selectoptionwithJsSuit() {
       done();
     });
 	
-    /**
-     * @tc.number    SUB_ACE_TS_COMPONENTselectoptionwith_02
-     * @tc.name      selectoptionwithJsSuit_0200
-     * @tc.desc      Confirm if there is a callback02
-     * @tc.level     Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 	 
+    /**
+     * @tc.name   selectoptionwithJsSuit_0200
+     * @tc.number selectoptionwithJsSuit_0200
+     * @tc.desc   selectoptionwithJsSuit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectoptionwithJsSuit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[selectoptionwithJsSuit_0200] START');
       let driver = await Driver.create()

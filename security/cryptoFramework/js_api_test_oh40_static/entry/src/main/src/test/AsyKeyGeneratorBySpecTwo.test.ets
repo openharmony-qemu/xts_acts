@@ -106,9 +106,12 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_GeneratorBySpec_Func_0900
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_0900
-     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_0900
-     * @tc.desc the asyKeySpec is eccPrikeySpec, Use the promise Style of Interface
+     * @tc.desc   the asyKeySpec is eccPrikeySpec, Use the promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_GeneratorBySpec_Func_0900",
@@ -136,9 +139,12 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_GeneratorBySpec_Func_1000
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1000
-     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1000
-     * @tc.desc the asyKeySpec is eccPubkeySpec, Use the callback Style of Interface
+     * @tc.desc   the asyKeySpec is eccPubkeySpec, Use the callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_GeneratorBySpec_Func_1000",
@@ -166,9 +172,12 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_GeneratorBySpec_Func_1100
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1100
-     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1100
-     * @tc.desc the asyKeySpec is genRsa2048CommonSpec, Use the callback Style of Interface
+     * @tc.desc   the asyKeySpec is genRsa2048CommonSpec, Use the callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_GeneratorBySpec_Func_1100",
@@ -192,9 +201,12 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_GeneratorBySpec_Func_1200
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1200
-     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1200
-     * @tc.desc the asyKeySpec is genRsa2048PubKetSpec, Use the promise Style of Interface
+     * @tc.desc   the asyKeySpec is genRsa2048PubKetSpec, Use the promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_GeneratorBySpec_Func_1200",
@@ -217,9 +229,12 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_GeneratorBySpec_Func_1300
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1300
-     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1300
-     * @tc.desc the asyKeySpec is genRsa2048KeyPairSpec, Use the promise Style of Interface
+     * @tc.desc   the asyKeySpec is genRsa2048KeyPairSpec, Use the promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_GeneratorBySpec_Func_1300",
@@ -242,9 +257,12 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_GeneratorBySpec_Func_1400
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1400
-     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1400
-     * @tc.desc the asyKeySpec is genRsa2048PubKetSpec, Use the callback Style of Interface
+     * @tc.desc   the asyKeySpec is genRsa2048PubKetSpec, Use the callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_GeneratorBySpec_Func_1400",
@@ -271,11 +289,12 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_GeneratorBySpec_Func_1500
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1500
-     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1500
-     * @tc.desc Pass in an exception parameter error EccCommonStruct and call it as a async
-     * @tc.desc Pass in an exception parameter error RsaKeyPairStruct and call it as a async
-     * @tc.desc Pass in an exception parameter error DsaKeyPairStruct and call it as a async
+     * @tc.desc   Pass in an exception parameter error DsaKeyPairStruct and call it as a async
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_GeneratorBySpec_Func_1500",
@@ -296,9 +315,12 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_GeneratorBySpec_Func_1600
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1600
-     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1600
-     * @tc.desc the asyKeySpec is genDsaKeyPairSpecErr, Use the promise Style of Interface
+     * @tc.desc   the asyKeySpec is genDsaKeyPairSpecErr, Use the promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_GeneratorBySpec_Func_1600",
@@ -321,9 +343,12 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_GeneratorBySpec_Func_1700
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1700
-     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1700
-     * @tc.desc the asyKeySpec is "DSA", Use the callback Style of Interface
+     * @tc.desc   the asyKeySpec is "DSA", Use the callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_GeneratorBySpec_Func_1700",

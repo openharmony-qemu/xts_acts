@@ -26,39 +26,39 @@ export default function spanLineHeightTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_LINEHEIGHT_0100
-     * @tc.name       : testSpanLineHeight001
-     * @tc.desc       : testing lineHeight for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanLineHeight001
+     * @tc.number SUB_ARKUI_CAPI_SPAN_LINEHEIGHT_0100
+     * @tc.desc   testing lineHeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanLineHeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanLineHeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_LINEHEIGHT_0200
-     * @tc.name       : testSpanLineHeight002
-     * @tc.desc       : testing lineHeight for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanLineHeight002
+     * @tc.number SUB_ARKUI_CAPI_SPAN_LINEHEIGHT_0200
+     * @tc.desc   testing lineHeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanLineHeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanLineHeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_LINEHEIGHT_0300
-     * @tc.name       : testSpanLineHeight003
-     * @tc.desc       : testing lineHeight for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanLineHeight003
+     * @tc.number SUB_ARKUI_CAPI_SPAN_LINEHEIGHT_0300
+     * @tc.desc   testing lineHeight for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanLineHeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanLineHeight003()).assertEqual(0)

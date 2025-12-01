@@ -75,9 +75,12 @@ export default function ActsNotificationWantAgentStaticTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4600
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4600
-     * @tc.desc       function cancel(agent: WantAgent, callback: AsyncCallback<void>): void
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_static_4600
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_static_4600
+     * @tc.desc   function cancel(agent: WantAgent, callback: AsyncCallback<void>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -113,9 +116,12 @@ export default function ActsNotificationWantAgentStaticTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4650
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4650
-     * @tc.desc       function cancel(agent: WantAgent): Promise<void>
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_static_4650
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_static_4650
+     * @tc.desc   function cancel(agent: WantAgent): Promise<void>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -143,9 +149,12 @@ export default function ActsNotificationWantAgentStaticTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4700
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4700
-     * @tc.desc       function getBundleName(agent: WantAgent, callback: AsyncCallback<string>): void
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_static_4700
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_static_4700
+     * @tc.desc   function getBundleName(agent: WantAgent, callback: AsyncCallback<string>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -183,9 +192,12 @@ export default function ActsNotificationWantAgentStaticTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4750
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4750
-     * @tc.desc       function getBundleName(agent: WantAgent): Promise<string>
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_static_4750
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_static_4750
+     * @tc.desc   function getBundleName(agent: WantAgent): Promise<string>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -215,9 +227,12 @@ export default function ActsNotificationWantAgentStaticTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4800
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4800
-     * @tc.desc       function getUid(agent: WantAgent, callback: AsyncCallback<number>): void
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_static_4800
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_static_4800
+     * @tc.desc   function getUid(agent: WantAgent, callback: AsyncCallback<number>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -253,9 +268,12 @@ export default function ActsNotificationWantAgentStaticTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4850
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4850
-     * @tc.desc       function getUid(agent: WantAgent): Promise<number>
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_static_4850
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_static_4850
+     * @tc.desc   function getUid(agent: WantAgent): Promise<number>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -283,9 +301,12 @@ export default function ActsNotificationWantAgentStaticTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4900
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4900
-     * @tc.desc       function equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback<boolean>): void,Checks whether two WantAgent objects are equal
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_static_4900
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_static_4900
+     * @tc.desc   function equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback<boolean>): void,Checks whether two WantAgent objects are equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -327,9 +348,12 @@ export default function ActsNotificationWantAgentStaticTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_4950
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_4950
-     * @tc.desc       function equal(agent: WantAgent, otherAgent: WantAgent): Promise<boolean>,Checks whether two WantAgent objects are equal
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_static_4950
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_static_4950
+     * @tc.desc   function equal(agent: WantAgent, otherAgent: WantAgent): Promise<boolean>,Checks whether two WantAgent objects are equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_WantAgent_Create_static_4950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -364,9 +388,12 @@ export default function ActsNotificationWantAgentStaticTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_5000
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_5000
-     * @tc.desc       function getOperationType(agent: WantAgent, callback: AsyncCallback<number>): void
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_static_5000
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_static_5000
+     * @tc.desc   function getOperationType(agent: WantAgent, callback: AsyncCallback<number>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Notification_Ans_WantAgent_Create_static_5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -402,9 +429,12 @@ export default function ActsNotificationWantAgentStaticTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_static_5050
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_static_5050
-     * @tc.desc       function getOperationType(agent: WantAgent): Promise<number>,Obtains the {@link OperationType} of a {@link WantAgent}
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_static_5050
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_static_5050
+     * @tc.desc   function getOperationType(agent: WantAgent): Promise<number>,Obtains the {@link OperationType} of a {@link WantAgent}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Notification_Ans_WantAgent_Create_static_5050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -432,9 +462,12 @@ export default function ActsNotificationWantAgentStaticTest() {
       })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_Static_5100
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_Static_5100
-     * @tc.desc       function trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: AsyncCallback<CompleteData>): void,Triggers a WantAgent
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_Static_5100
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_Static_5100
+     * @tc.desc   function trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: AsyncCallback<CompleteData>): void,Triggers a WantAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_WantAgent_Create_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `Sub_Notification_Ans_WantAgent_Create_Static_5100 START`)
@@ -487,9 +520,12 @@ export default function ActsNotificationWantAgentStaticTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_WantAgent_Create_Static_5150
-     * @tc.name       Sub_Notification_Ans_WantAgent_Create_Static_5150
-     * @tc.desc       function trigger(agent: WantAgent, triggerInfo: TriggerInfo): void,Triggers a WantAgent
+     * @tc.name   Sub_Notification_Ans_WantAgent_Create_Static_5150
+     * @tc.number Sub_Notification_Ans_WantAgent_Create_Static_5150
+     * @tc.desc   function trigger(agent: WantAgent, triggerInfo: TriggerInfo): void,Triggers a WantAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_WantAgent_Create_Static_5150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `Sub_Notification_Ans_WantAgent_Create_Static_5150 START`)

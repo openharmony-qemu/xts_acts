@@ -26,7 +26,6 @@ export default function BatteryStatisticsTest() {
   describe("BatteryStatisticsTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'BatteryStatisticsTest start');
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_0100
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0010
      * @tc.desc   Test the third-party application call getBatteryStats will be blocked
@@ -58,7 +57,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_0200
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0020
      * @tc.desc   Test the third-party application call getBatteryStats will be blocked
@@ -91,7 +89,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_0300
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0030
      * @tc.desc   Test the third-party application call getAppPowerValue will be blocked
@@ -114,7 +111,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_0400
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0040
      * @tc.desc   Test the third-party application call getAppPowerPercent will be blocked
@@ -137,7 +133,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_0500
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0050
      * @tc.desc   Test the third-party application call getHardwareUnitPowerValue will be blocked
@@ -161,7 +156,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_0600
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0060
      * @tc.desc   Test the third-party application call getHardwareUnitPowerPercent will be blocked
@@ -185,7 +179,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_0700
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0070
      * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_INVALID
@@ -210,7 +203,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_0800
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0080
      * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_APP
@@ -235,7 +227,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_0900
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0090
      * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_BLUETOOTH
@@ -260,7 +251,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_1000
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0100
      * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_IDLE
@@ -285,7 +275,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_1100
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0110
      * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_PHONE
@@ -310,7 +299,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_1200
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0120
      * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_RADIO
@@ -335,7 +323,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_1300
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0130
      * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_SCREEN
@@ -360,7 +347,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_1400
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0140
      * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_USER
@@ -385,7 +371,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBatteryStatisticsTest_static_1500
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0150
      * @tc.desc   batteryStats ConsumptionType type CONSUMPTION_TYPE_WIFI

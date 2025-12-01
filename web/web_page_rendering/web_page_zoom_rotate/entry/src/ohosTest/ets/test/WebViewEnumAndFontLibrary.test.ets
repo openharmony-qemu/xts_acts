@@ -55,13 +55,13 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_WEB_TEXTZOOMRATIO_0100
-     * @tc.name       : testTextZoomRatio001
-     * @tc.desc       : test textZoomRatio
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextZoomRatio001
+     * @tc.number SUB_WEB_TEXTZOOMRATIO_0100
+     * @tc.desc   test textZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextZoomRatio001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitTextZoomRatio", 153230)

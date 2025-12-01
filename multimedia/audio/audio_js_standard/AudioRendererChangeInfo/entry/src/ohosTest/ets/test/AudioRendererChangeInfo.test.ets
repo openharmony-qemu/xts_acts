@@ -104,12 +104,12 @@ export default function audioRendererChange() {
       console.info(`${Tag} : afterAll: Test suite-level cleanup condition`);
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0100
-     * @tc.name      : AudioRendererChange - ON_STATE_PREPARED
-     * @tc.desc      : AudioRendererChange - ON_STATE_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0100
+     * @tc.desc   AudioRendererChange - ON_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -193,12 +193,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0200
-     * @tc.name      : AudioRendererChange - ON_STATE_RUNNING
-     * @tc.desc      : AudioRendererChange - ON_STATE_RUNNING
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0200
+     * @tc.desc   AudioRendererChange - ON_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -280,12 +280,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0300
-     * @tc.name      : AudioRendererChange - ON_STATE_STOPPED
-     * @tc.desc      : AudioRendererChange - ON_STATE_STOPPED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0300
+     * @tc.desc   AudioRendererChange - ON_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -364,12 +364,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0400
-     * @tc.name      : AudioRendererChange - ON_STATE_RELEASED
-     * @tc.desc      : AudioRendererChange - ON_STATE_RELEASED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0400
+     * @tc.desc   AudioRendererChange - ON_STATE_RELEASED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -449,12 +449,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0500
-     * @tc.name      : AudioRendererChange - ON_STATE_PAUSED
-     * @tc.desc      : AudioRendererChange - ON_STATE_PAUSED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0500
+     * @tc.desc   AudioRendererChange - ON_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -539,12 +539,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0600
-     * @tc.name      : AudioRendererChange - ON_CONTENT_TYPE_RINGTONE
-     * @tc.desc      : AudioRendererChange - ON_CONTENT_TYPE_RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0600
+     * @tc.desc   AudioRendererChange - ON_CONTENT_TYPE_RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -606,12 +606,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0700
-     * @tc.name      : AudioRendererChange - ON_CONTENT_TYPE_UNKNOWN
-     * @tc.desc      : AudioRendererChange - ON_CONTENT_TYPE_UNKNOWN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0700
+     * @tc.desc   AudioRendererChange - ON_CONTENT_TYPE_UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -673,12 +673,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0800
-     * @tc.name      : AudioRendererChange - ON_CONTENT_TYPE_SPEECH
-     * @tc.desc      : AudioRendererChange - ON_CONTENT_TYPE_SPEECH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0800
+     * @tc.desc   AudioRendererChange - ON_CONTENT_TYPE_SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -740,12 +740,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0900
-     * @tc.name      : AudioRendererChange - ON_CONTENT_TYPE_MUSIC
-     * @tc.desc      : AudioRendererChange - ON_CONTENT_TYPE_MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0900
+     * @tc.desc   AudioRendererChange - ON_CONTENT_TYPE_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -807,12 +807,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1000
-     * @tc.name      : AudioRendererChange - ON_CONTENT_TYPE_MOVIES
-     * @tc.desc      : AudioRendererChange - ON_CONTENT_TYPE_MOVIES
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1000
+     * @tc.desc   AudioRendererChange - ON_CONTENT_TYPE_MOVIES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -875,12 +875,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1100
-     * @tc.name      : AudioRendererChange - ON_CONTENT_TYPE_SONIFICATION
-     * @tc.desc      : AudioRendererChange - ON_CONTENT_TYPE_SONIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1100
+     * @tc.desc   AudioRendererChange - ON_CONTENT_TYPE_SONIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -943,12 +943,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1200
-     * @tc.name      : AudioRendererChange - ON_STREAM_USAGE_UNKNOWN
-     * @tc.desc      : AudioRendererChange - ON_STREAM_USAGE_UNKNOWN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1200
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -1011,12 +1011,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1300
-     * @tc.name      : AudioRendererChange - ON_STREAM_USAGE_MEDIA
-     * @tc.desc      : AudioRendererChange - ON_STREAM_USAGE_MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1300
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -1079,12 +1079,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1400
-     * @tc.name      : AudioRendererChange - ON_STREAM_USAGE_MEDIA
-     * @tc.desc      : AudioRendererChange - ON_STREAM_USAGE_MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1400
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -1147,12 +1147,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1500
-     * @tc.name      : AudioRendererChange - ON_STREAM_USAGE_MEDIA
-     * @tc.desc      : AudioRendererChange - ON_STREAM_USAGE_MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1500
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -1214,12 +1214,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1600
-     * @tc.name      : AudioRendererChange - STREAMID
-     * @tc.desc      : AudioRendererChange - STREAMID
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1600
+     * @tc.desc   AudioRendererChange - STREAMID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -1281,12 +1281,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1700
-     * @tc.name      : AudioRendererChange - CLIENTUID & RENDERERFLAG
-     * @tc.desc      : AudioRendererChange - CLIENTUID & RENDERERFLAG
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1700
+     * @tc.desc   AudioRendererChange - CLIENTUID & RENDERERFLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -1351,12 +1351,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1800
-     * @tc.name      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.desc      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1800
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -1429,12 +1429,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0100
-     * @tc.name      : AudioRendererChange - OFF_STATE_PREPARED
-     * @tc.desc      : AudioRendererChange - OFF_STATE_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0100
+     * @tc.desc   AudioRendererChange - OFF_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -1493,12 +1493,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0200
-     * @tc.name      : AudioRendererChange - OFF_STATE_RUNNING
-     * @tc.desc      : AudioRendererChange - OFF_STATE_RUNNING
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0200
+     * @tc.desc   AudioRendererChange - OFF_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -1564,12 +1564,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0300
-     * @tc.name      : AudioRenderer - OFF_STATE_STOPPED
-     * @tc.desc      : AudioRenderer - OFF_STATE_STOPPED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0300
+     * @tc.desc   AudioRenderer - OFF_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -1640,12 +1640,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0400
-     * @tc.name      : AudioRendererChange - OFF_STATE_RELEASED
-     * @tc.desc      : AudioRendererChange - OFF_STATE_RELEASED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0400
+     * @tc.desc   AudioRendererChange - OFF_STATE_RELEASED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -1718,12 +1718,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0500
-     * @tc.name      : AudioRendererChange - OFF_STATE_PAUSED
-     * @tc.desc      : AudioRendererChange - OFF_STATE_PAUSED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0500
+     * @tc.desc   AudioRendererChange - OFF_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -1803,12 +1803,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0600
-     * @tc.name      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.desc      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0600
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -1875,12 +1875,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_0100
-     * @tc.name      : getCurrentAudioRendererInfoArraySync - GET_STATE_PREPARED
-     * @tc.desc      : getCurrentAudioRendererInfoArraySync - GET_STATE_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_0100
+     * @tc.desc   getCurrentAudioRendererInfoArraySync - GET_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioCap: ESObject;
@@ -1958,12 +1958,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0100
-     * @tc.name      : AudioRendererChange - GET_STATE_PREPARED
-     * @tc.desc      : AudioRendererChange - GET_STATE_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0100
+     * @tc.desc   AudioRendererChange - GET_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioCap: ESObject;
@@ -2040,12 +2040,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0200
-     * @tc.name      : AudioRendererChange - GET_STATE_RUNNING
-     * @tc.desc      : AudioRendererChange - GET_STATE_RUNNING
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0200
+     * @tc.desc   AudioRendererChange - GET_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -2134,12 +2134,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0300
-     * @tc.name      : AudioRendererChange - GET_STATE_STOPPED
-     * @tc.desc      : AudioRendererChange - GET_STATE_STOPPED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0300
+     * @tc.desc   AudioRendererChange - GET_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -2235,12 +2235,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0400
-     * @tc.name      : AudioRendererChange - GET_STATE_PAUSED
-     * @tc.desc      : AudioRendererChange - GET_STATE_PAUSED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0400
+     * @tc.desc   AudioRendererChange - GET_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -2340,12 +2340,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0500
-     * @tc.name      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.desc      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0500
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioCap: ESObject;
@@ -2426,12 +2426,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0100
-     * @tc.name      : AudioRendererChange - GET_STATE_PREPARED
-     * @tc.desc      : AudioRendererChange - GET_STATE_PREPARED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0100
+     * @tc.desc   AudioRendererChange - GET_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioCap: ESObject;
@@ -2514,12 +2514,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0200
-     * @tc.name      : AudioRendererChange - GET_STATE_RUNNING
-     * @tc.desc      : AudioRendererChange - GET_STATE_RUNNING
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0200
+     * @tc.desc   AudioRendererChange - GET_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -2614,12 +2614,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0300
-     * @tc.name      : AudioRendererChange - GET_STATE_STOPPED
-     * @tc.desc      : AudioRendererChange - GET_STATE_STOPPED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0300
+     * @tc.desc   AudioRendererChange - GET_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -2720,12 +2720,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0400
-     * @tc.name      : AudioRendererChange - GET_STATE_PAUSED
-     * @tc.desc      : AudioRendererChange - GET_STATE_PAUSED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0400
+     * @tc.desc   AudioRendererChange - GET_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -2829,12 +2829,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0500
-     * @tc.name      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.desc      : AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0500
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioCap: ESObject;
@@ -2920,12 +2920,12 @@ export default function audioRendererChange() {
     })
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_AUDIORENDERCHANGE_0100
-     * @tc.name      : AudioRendererChange - ON_AUDIORENDERCHANGE 401
-     * @tc.desc      : AudioRendererChange - ON_AUDIORENDERCHANGE 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_AUDIORENDERCHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_AUDIORENDERCHANGE_0100
+     * @tc.desc   AudioRendererChange - ON_AUDIORENDERCHANGE 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_AUDIORENDERCHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`-------SUB_MULTIMEDIA_AUDIO_ON_AUDIORENDERCHANGE_0100------begin`)
@@ -2944,12 +2944,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_AUDIORENDERCHANGE_0200
-     * @tc.name      : AudioRendererChange - ON_AUDIORENDERCHANGE 6800101
-     * @tc.desc      : AudioRendererChange - ON_AUDIORENDERCHANGE 6800101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_AUDIORENDERCHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_AUDIORENDERCHANGE_0200
+     * @tc.desc   AudioRendererChange - ON_AUDIORENDERCHANGE 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_AUDIORENDERCHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(`-------SUB_MULTIMEDIA_AUDIO_ON_AUDIORENDERCHANGE_0200------begin`)
@@ -2972,12 +2972,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_AUDIORENDERCHANGE_0100
-     * @tc.name      : AudioRendererChange
-     * @tc.desc      : OFF_AUDIORENDERCHANGE 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_AUDIORENDERCHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_AUDIORENDERCHANGE_0100
+     * @tc.desc   OFF_AUDIORENDERCHANGE 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_AUDIORENDERCHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       console.info(`-------SUB_MULTIMEDIA_AUDIO_OFF_AUDIORENDERCHANGE_0100------begin`)
@@ -3000,12 +3000,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_AUDIORENDERCHANGE_0200
-     * @tc.name      : AudioRendererChange
-     * @tc.desc      : OFF_AUDIORENDERCHANGE 6800101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_AUDIORENDERCHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_AUDIORENDERCHANGE_0200
+     * @tc.desc   OFF_AUDIORENDERCHANGE 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_AUDIORENDERCHANGE_0200', 2, (done: Function) => {
       console.info(`-------SUB_MULTIMEDIA_AUDIO_OFF_AUDIORENDERCHANGE_0200------begin`)
@@ -3027,12 +3027,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_AUDIOCAPTURECHANGE_0100
-     * @tc.name      : AudioRendererChange - ON_AUDIOCAPTURERCHANGE 401
-     * @tc.desc      : AudioRendererChange - ON_AUDIOCAPTURERCHANGE 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_AUDIOCAPTURERCHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_AUDIOCAPTURECHANGE_0100
+     * @tc.desc   AudioRendererChange - ON_AUDIOCAPTURERCHANGE 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_AUDIOCAPTURERCHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       console.info(`-------SUB_MULTIMEDIA_AUDIO_ON_AUDIOCAPTURERCHANGE_0100------begin`)
@@ -3051,12 +3051,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_AUDIOCAPTURERCHANGE_0200
-     * @tc.name      : AudioRendererChange - ON_AUDIOCAPTURERCHANGE 6800101
-     * @tc.desc      : AudioRendererChange - ON_AUDIOCAPTURERCHANGE 6800101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_AUDIOCAPTURERCHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_AUDIOCAPTURERCHANGE_0200
+     * @tc.desc   AudioRendererChange - ON_AUDIOCAPTURERCHANGE 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_AUDIOCAPTURERCHANGE_0200', 2, (done: Function) => {
       console.info(`-------SUB_MULTIMEDIA_AUDIO_ON_AUDIOCAPTURERCHANGE_0200------begin`)
@@ -3079,12 +3079,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_AUDIOCAPTURERCHANGE_0100
-     * @tc.name      : AudioCaptruerChange
-     * @tc.desc      : OFF_AUDIOCAPTURERCHANGE 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_AUDIOCAPTURECHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_AUDIOCAPTURERCHANGE_0100
+     * @tc.desc   OFF_AUDIOCAPTURERCHANGE 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_AUDIOCAPTURECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       console.info(`-------SUB_MULTIMEDIA_AUDIO_OFF_AUDIOCAPTURECHANGE_0100------begin`)
@@ -3107,12 +3107,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_OFF_AUDIOCAPTURERCHANGE_0200
-     * @tc.name      : AudioCapturerChange
-     * @tc.desc      : OFF_AUDIORENDERCHANGE 6800101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_AUDIOCAPTURERCHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_AUDIOCAPTURERCHANGE_0200
+     * @tc.desc   OFF_AUDIORENDERCHANGE 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_AUDIOCAPTURERCHANGE_0200', 2, (done: Function) => {
       console.info(`-------SUB_MULTIMEDIA_AUDIO_OFF_AUDIOCAPTURERCHANGE_0200------begin`)
@@ -3134,12 +3134,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIORENDERECHANGE_AUDIODEVICEDESCRIPTOR_0100
-     * @tc.name      : AUDIODEVICEDESCRIPTOR
-     * @tc.desc      : AUDIODEVICEDESCRIPTOR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIORENDERECHANGE_AUDIODEVICEDESCRIPTOR_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIORENDERECHANGE_AUDIODEVICEDESCRIPTOR_0100
+     * @tc.desc   AUDIODEVICEDESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIORENDERECHANGE_AUDIODEVICEDESCRIPTOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -3195,12 +3195,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0100
-     * @tc.name      : on_audioInterrupt 401
-     * @tc.desc      : on_audioInterrupt 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0100
+     * @tc.number SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0100
+     * @tc.desc   on_audioInterrupt 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -3234,12 +3234,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0200
-     * @tc.name      : off_audioInterrupt 401
-     * @tc.desc      : off_audioInterrupt 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0200
+     * @tc.number SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0200
+     * @tc.desc   off_audioInterrupt 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -3276,12 +3276,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0300
-     * @tc.name      : off_audioInterrupt 401
-     * @tc.desc      : off_audioInterrupt 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0300
+     * @tc.number SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0300
+     * @tc.desc   off_audioInterrupt 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -3318,12 +3318,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0400
-     * @tc.name      : on_outputDeviceChange 401
-     * @tc.desc      : on_outputDeviceChange 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0400
+     * @tc.number SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0400
+     * @tc.desc   on_outputDeviceChange 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -3357,12 +3357,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0500
-     * @tc.name      : off_outputDeviceChange 401
-     * @tc.desc      : off_outputDeviceChange 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0500
+     * @tc.number SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0500
+     * @tc.desc   off_outputDeviceChange 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -3399,12 +3399,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0600
-     * @tc.name      : on_outputDeviceChange 401
-     * @tc.desc      : on_outputDeviceChange 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0600
+     * @tc.number SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0600
+     * @tc.desc   on_outputDeviceChange 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -3438,12 +3438,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0700
-     * @tc.name      : off_outputDeviceChangeWithInfo 401
-     * @tc.desc      : off_outputDeviceChangeWithInfo 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0700
+     * @tc.number SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0700
+     * @tc.desc   off_outputDeviceChangeWithInfo 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -3480,12 +3480,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0800
-     * @tc.name      : on_writeData 401
-     * @tc.desc      : on_writeData 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0800
+     * @tc.number SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0800
+     * @tc.desc   on_writeData 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -3519,12 +3519,12 @@ export default function audioRendererChange() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0900
-     * @tc.name      : off_outputDeviceChangeWithInfo 401
-     * @tc.desc      : off_outputDeviceChangeWithInfo 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0900
+     * @tc.number SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0900
+     * @tc.desc   off_outputDeviceChangeWithInfo 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {

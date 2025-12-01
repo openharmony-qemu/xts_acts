@@ -42,12 +42,12 @@ export default function SymbolGlyphFontWeightTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SymbolGlyphFontWeightTest_0010
-     * @tc.name      SymbolGlyphFontWeightTest_0010
-     * @tc.desc      test SymbolGlyph fontWeight: default
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SymbolGlyphFontWeightTest_0010
+     * @tc.number SUB_ACE_SymbolGlyphFontWeightTest_0010
+     * @tc.desc   test SymbolGlyph fontWeight: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SymbolGlyphFontWeightTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('SymbolGlyphFontWeightTest_0010 START');
@@ -61,12 +61,12 @@ export default function SymbolGlyphFontWeightTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SymbolGlyphFontWeightTest_0020
-     * @tc.name      SymbolGlyphFontWeightTest_0020
-     * @tc.desc      test SymbolGlyph fontWeight: undefined
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SymbolGlyphFontWeightTest_0020
+     * @tc.number SUB_ACE_SymbolGlyphFontWeightTest_0020
+     * @tc.desc   test SymbolGlyph fontWeight: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SymbolGlyphFontWeightTest_0020', Level.LEVEL1, async (done: Function) => {
       console.info('SymbolGlyphFontWeightTest_0020 START');
@@ -80,12 +80,12 @@ export default function SymbolGlyphFontWeightTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SymbolGlyphFontWeightTest_0030
-     * @tc.name      SymbolGlyphFontWeightTest_0030
-     * @tc.desc      test SymbolGlyph fontWeight: 500
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SymbolGlyphFontWeightTest_0030
+     * @tc.number SUB_ACE_SymbolGlyphFontWeightTest_0030
+     * @tc.desc   test SymbolGlyph fontWeight: 500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SymbolGlyphFontWeightTest_0030', Level.LEVEL1, async (done: Function) => {
       console.info('SymbolGlyphFontWeightTest_0030 START');
@@ -99,12 +99,12 @@ export default function SymbolGlyphFontWeightTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SymbolGlyphFontWeightTest_0040
-     * @tc.name      SymbolGlyphFontWeightTest_0040
-     * @tc.desc      test SymbolGlyph fontWeight: Lighter
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SymbolGlyphFontWeightTest_0040
+     * @tc.number SUB_ACE_SymbolGlyphFontWeightTest_0040
+     * @tc.desc   test SymbolGlyph fontWeight: Lighter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SymbolGlyphFontWeightTest_0040', Level.LEVEL1, async (done: Function) => {
       console.info('SymbolGlyphFontWeightTest_0040 START');
@@ -117,13 +117,13 @@ export default function SymbolGlyphFontWeightTest() {
       done();
     });
 
-        /**
-     * @tc.number    SUB_ACE_SymbolGlyphFontWeightTest_0050
-     * @tc.name      SymbolGlyphFontWeightTest_0050
-     * @tc.desc      test SymbolGlyph fontWeight: Normal
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   SymbolGlyphFontWeightTest_0050
+     * @tc.number SUB_ACE_SymbolGlyphFontWeightTest_0050
+     * @tc.desc   test SymbolGlyph fontWeight: Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SymbolGlyphFontWeightTest_0050', Level.LEVEL1, async (done: Function) => {
       console.info('SymbolGlyphFontWeightTest_0050 START');
@@ -137,12 +137,12 @@ export default function SymbolGlyphFontWeightTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SymbolGlyphFontWeightTest_0060
-     * @tc.name      SymbolGlyphFontWeightTest_0060
-     * @tc.desc      test SymbolGlyph fontWeight: Regular
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SymbolGlyphFontWeightTest_0060
+     * @tc.number SUB_ACE_SymbolGlyphFontWeightTest_0060
+     * @tc.desc   test SymbolGlyph fontWeight: Regular
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SymbolGlyphFontWeightTest_0060', Level.LEVEL1, async (done: Function) => {
       console.info('SymbolGlyphFontWeightTest_0060 START');
@@ -155,13 +155,13 @@ export default function SymbolGlyphFontWeightTest() {
       done();
     });
 
-        /**
-     * @tc.number    SUB_ACE_SymbolGlyphFontWeightTest_0070
-     * @tc.name      SymbolGlyphFontWeightTest_0070
-     * @tc.desc      test SymbolGlyph fontWeight: Medium
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   SymbolGlyphFontWeightTest_0070
+     * @tc.number SUB_ACE_SymbolGlyphFontWeightTest_0070
+     * @tc.desc   test SymbolGlyph fontWeight: Medium
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SymbolGlyphFontWeightTest_0070', Level.LEVEL1, async (done: Function) => {
       console.info('SymbolGlyphFontWeightTest_0070 START');
@@ -175,12 +175,12 @@ export default function SymbolGlyphFontWeightTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SymbolGlyphFontWeightTest_0080
-     * @tc.name      SymbolGlyphFontWeightTest_0080
-     * @tc.desc      test SymbolGlyph fontWeight: Bold
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SymbolGlyphFontWeightTest_0080
+     * @tc.number SUB_ACE_SymbolGlyphFontWeightTest_0080
+     * @tc.desc   test SymbolGlyph fontWeight: Bold
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SymbolGlyphFontWeightTest_0080', Level.LEVEL1, async (done: Function) => {
       console.info('SymbolGlyphFontWeightTest_0080 START');
@@ -193,13 +193,13 @@ export default function SymbolGlyphFontWeightTest() {
       done();
     });
 
-        /**
-     * @tc.number    SUB_ACE_SymbolGlyphFontWeightTest_0090
-     * @tc.name      SymbolGlyphFontWeightTest_0090
-     * @tc.desc      test SymbolGlyph fontWeight: Bolder
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   SymbolGlyphFontWeightTest_0090
+     * @tc.number SUB_ACE_SymbolGlyphFontWeightTest_0090
+     * @tc.desc   test SymbolGlyph fontWeight: Bolder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SymbolGlyphFontWeightTest_0090', Level.LEVEL1, async (done: Function) => {
       console.info('SymbolGlyphFontWeightTest_0090 START');
@@ -213,12 +213,12 @@ export default function SymbolGlyphFontWeightTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SymbolGlyphFontWeightTest_0100
-     * @tc.name      SymbolGlyphFontWeightTest_0100
-     * @tc.desc      test SymbolGlyph fontWeight: '30'
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SymbolGlyphFontWeightTest_0100
+     * @tc.number SUB_ACE_SymbolGlyphFontWeightTest_0100
+     * @tc.desc   test SymbolGlyph fontWeight: '30'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SymbolGlyphFontWeightTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('SymbolGlyphFontWeightTest_0100 START');

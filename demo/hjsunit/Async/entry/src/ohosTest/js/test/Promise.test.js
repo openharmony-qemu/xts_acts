@@ -16,7 +16,6 @@ import {describe, it, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('promise', function () {
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   promiseDemo
      * @tc.number promiseDemo
      * @tc.desc   promiseDemo

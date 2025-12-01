@@ -46,9 +46,12 @@ export default function flexHeightModify_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoTextHeiCheck
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_0800
-     * @tc.name testFlexItemAlignAutoTextHeiCheck
-     * @tc.desc Check the the default height of the first subcomponent.
+     * @tc.desc   Check the the default height of the first subcomponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoTextHeiCheck',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoTextHeiCheck START');
@@ -79,9 +82,12 @@ export default function flexHeightModify_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoTextHei
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_0900
-     * @tc.name testFlexItemAlignAutoTextHei
-     * @tc.desc Modify the first subcomponent's height.
+     * @tc.desc   Modify the first subcomponent's height.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoTextHei',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoTextHei START');

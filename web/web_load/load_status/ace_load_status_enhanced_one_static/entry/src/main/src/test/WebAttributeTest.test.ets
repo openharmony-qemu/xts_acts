@@ -53,14 +53,14 @@ export default function WebAttributeTest() {
       console.info("web beforeEach start");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONPROGRESSCHANGE_0100
-    * @tc.name        : testOnProgressChangeStatic001
-    * @tc.desc        : test onProgressChange normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnProgressChangeStatic001
+     * @tc.number SUB_WEB_ONPROGRESSCHANGE_0100
+     * @tc.desc   test onProgressChange normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnProgressChangeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(6000);
       Utils.emitEvent("emitOnProgressChange001", 10)

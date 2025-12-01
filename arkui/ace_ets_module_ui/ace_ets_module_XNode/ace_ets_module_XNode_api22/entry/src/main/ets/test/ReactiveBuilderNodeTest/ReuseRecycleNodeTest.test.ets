@@ -48,12 +48,12 @@ export default function ReuseRecycleNodeTest() {
     });
 
     /**
-     * @tc.number    ReuseRecycleNodeTest_0100
-     * @tc.name      ReuseRecycleNodeTest_0100
-     * @tc.desc      ReuseRecycleNodeTest
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ReuseRecycleNodeTest_0100
+     * @tc.number ReuseRecycleNodeTest_0100
+     * @tc.desc   ReuseRecycleNodeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ReuseRecycleNodeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ReuseRecycleNodeTest_0100 START');

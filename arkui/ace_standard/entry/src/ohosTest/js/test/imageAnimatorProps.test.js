@@ -80,9 +80,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorIdProp
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorIdProp', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorIdProp START');
@@ -98,9 +101,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorClassProp
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorClassProp', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorClassProp START');
@@ -116,9 +122,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorClassPropNone START');
@@ -136,9 +145,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorRefProp
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorRefProp', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorRefProp START');
@@ -155,9 +167,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorRefPropNone START');
@@ -175,9 +190,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorDisabledPropTrue START');
@@ -194,9 +212,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorDisabledPropFalse START');
@@ -213,9 +234,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorDisabledPropNone START');
@@ -232,9 +256,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorFocusablePropTrue START');
@@ -251,9 +278,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorFocusablePropFalse START');
@@ -270,9 +300,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorFocusablePropNone START');
@@ -289,9 +322,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorDataProp
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDataProp', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorDataProp START');
@@ -309,9 +345,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorDataPropNone START');
@@ -329,9 +368,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorClickEffectPropSmall START');
@@ -348,9 +390,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorClickEffectPropMedium START');
@@ -367,9 +412,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorClickEffectPropLarge START');
@@ -386,9 +434,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorClickEffectPropNone START');
@@ -406,9 +457,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorDirPropRtl START');
@@ -425,9 +479,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorDirPropLtr START');
@@ -444,9 +501,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorDirPropAuto START');
@@ -463,9 +523,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorDirPropNone START');
@@ -482,9 +545,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorForPropNull', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorForPropNull START');
@@ -502,9 +568,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorForPropOne', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorForPropOne START');
@@ -522,9 +591,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorForPropThree', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorForPropThree START');
@@ -542,9 +614,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorIfPropTrue START');
@@ -562,9 +637,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorShowPropTrue START');
@@ -582,9 +660,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorShowPropFalse START');
@@ -602,9 +683,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorShowPropNone START');
@@ -622,9 +706,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorImagePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorImagePropNone', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsPropNone START');
@@ -642,9 +729,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorImageProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorImageProp', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsPropNone START');
@@ -662,9 +752,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorPredecodeProp2
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorPredecodeProp2', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsProp1 START');
@@ -682,9 +775,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorIterationPropInfi
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorIterationPropInfi', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsPropObject START');
@@ -702,9 +798,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorIterationProp3
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorIterationProp3', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsPropObject START');
@@ -722,9 +821,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorReversePropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorReversePropNull', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsProp1 START');
@@ -742,9 +844,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorReversePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorReversePropFalse', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsProp1 START');
@@ -762,9 +867,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorReversePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorReversePropTrue', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsProp1 START');
@@ -782,9 +890,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorFixedsizePropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorFixedsizePropNull', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsProp1 START');
@@ -802,9 +913,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorFixedsizePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorFixedsizePropFalse', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsProp1 START');
@@ -822,9 +936,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorFixedsizePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorFixedsizePropTrue', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsProp1 START');
@@ -842,9 +959,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorFillmodePropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorFillmodePropNull', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsPropObject START');
@@ -862,9 +982,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorFillmodePropForwards
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorFillmodePropForwards', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsPropObject START');
@@ -882,9 +1005,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorFillmodePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorFillmodePropNone', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsPropObject START');
@@ -902,9 +1028,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDurationPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDurationPropNull', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsPropObject START');
@@ -922,9 +1051,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDurationProp3
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDurationProp3', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsPropObject START');
@@ -942,9 +1074,12 @@ export default function imageAnimatorPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testimageAnimatorShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testimageAnimatorDurationProp6
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testimageAnimatorDurationProp6', Level.LEVEL0, async function(done) {
             console.info('testimageAnimatorXsPropObject START');

@@ -45,10 +45,13 @@ export default function stateManagementGetSharedJsunit() {
       console.info("stateManagementGetShared after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         teststateManagementGetShared0001
-     * @tc.desic         acestateManagementGetSharedEtsTest0001
+    /**
+     * @tc.name   teststateManagementGetShared0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   teststateManagementGetShared0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('teststateManagementGetShared0001', Level.LEVEL0, async () => {
       console.info('stateManagementGetShared teststateManagementGetShared0001 START');
@@ -71,10 +74,13 @@ export default function stateManagementGetSharedJsunit() {
       console.info('teststateManagementGetShared0001 END');
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         teststateManagementsetAndLink0001
-     * @tc.desic         acestateManagementsetAndLinkEtsTest0001
+    /**
+     * @tc.name   teststateManagementsetAndLink0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   teststateManagementsetAndLink0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('teststateManagementsetAndLink0001', Level.LEVEL0, async () => {
       console.info('stateManagementsetAndLink teststateManagementsetAndLink0001 START');
@@ -97,10 +103,13 @@ export default function stateManagementGetSharedJsunit() {
       console.info('teststateManagementsetAndLink0001 END');
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         teststateManagementsetOrCreate0001
-     * @tc.desic         acestateManagementsetOrCreateEtsTest0001
+    /**
+     * @tc.name   teststateManagementsetOrCreate0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   teststateManagementsetOrCreate0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('teststateManagementsetOrCreate0001', Level.LEVEL0, async () => {
       console.info('stateManagementsetOrCreate teststateManagementsetOrCreate0001 START');
@@ -124,10 +133,13 @@ export default function stateManagementGetSharedJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         teststateManagementsetAndProp0001
-     * @tc.desic         acestateManagementsetAndPropEtsTest0001
+    /**
+     * @tc.name   teststateManagementsetAndProp0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   teststateManagementsetAndProp0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('teststateManagementsetAndProp0001', Level.LEVEL0, async () => {
       console.info('stateManagementsetAndProp teststateManagementsetAndProp0001 START');
@@ -150,10 +162,13 @@ export default function stateManagementGetSharedJsunit() {
       console.info('teststateManagementsetAndProp0001 END');
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         test_staticClear_0001
-     * @tc.desc         delete the property
+    /**
+     * @tc.name   test_staticClear_0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   delete the property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_staticClear_0001', Level.LEVEL0, async () => {
       console.info('test_staticClear_0001 Register a customized font in the FontManagerSTART');
@@ -169,11 +184,14 @@ export default function stateManagementGetSharedJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         test_setAndLink_0001
-     * @tc.desc         bind localStorage
-    */
+    /**
+     * @tc.name   test_setAndLink_0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   bind localStorage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_setAndLink_0001', Level.LEVEL0, async () => {
       console.info('test_setAndLink_0001 START');
       await CommonFunc.sleep(2000);
@@ -190,10 +208,13 @@ export default function stateManagementGetSharedJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0008
-     * @tc.name         test_setAndProp_0002
-     * @tc.desc         bind localStorage
+    /**
+     * @tc.name   test_setAndProp_0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0008
+     * @tc.desc   bind localStorage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setAndProp_0002', Level.LEVEL0, async () => {
       console.info('test_setAndProp_0002 START');

@@ -35,12 +35,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_STATIC_0000
-      * @tc.name    album_getAssets_callback_static_000
-      * @tc.desc    Video album getAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_getAssets_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_STATIC_0000
+     * @tc.desc   Video album getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -70,12 +70,12 @@ export default function albumGetAssetsTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_STATIC_0000
-      * @tc.name    album_getAssets_promise_static_000
-      * @tc.desc    Video album getAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_getAssets_promise_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_STATIC_0000
+     * @tc.desc   Video album getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

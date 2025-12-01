@@ -55,7 +55,6 @@ export default function LangTest() {
       console.info("afterAll case");
     });
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   lang_test_static_8900
      * @tc.number lang_test_static_8900
      * @tc.desc   test isRTL interface with en-US param
@@ -71,7 +70,6 @@ export default function LangTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_9000
      * @tc.number i18n_test_9000
      * @tc.desc   test isRTL interface with ar param
@@ -88,7 +86,6 @@ export default function LangTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_0100
      * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_0100
      * @tc.desc   findEntityInfo - Identifying Entity Information in Text
@@ -109,7 +106,6 @@ export default function LangTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transfer_test_static_0100
      * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_static_0100
      * @tc.desc   check the transfer result, transfer from lower to upper
@@ -125,7 +121,6 @@ export default function LangTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transfer_test_static_0200
      * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_static_0200
      * @tc.desc   check the transfer result, transfer from upper to lower
@@ -141,7 +136,6 @@ export default function LangTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transfer_test_static_0300
      * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_static_0300
      * @tc.desc   check the transfer result,transfer to upper
@@ -157,7 +151,6 @@ export default function LangTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transfer_test_static_0400
      * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_static_0400
      * @tc.desc   check the transfer result, transfer to lower

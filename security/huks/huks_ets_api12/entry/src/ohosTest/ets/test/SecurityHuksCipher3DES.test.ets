@@ -14,11 +14,11 @@
  */
 import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
-import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
-import { Cipher, CipherData, GetEcbNoPaddingOptions } from './utils/huks/CipherUtils';
-import { Logger } from './utils/common/Logger';
-import { Get3DesGenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils.ets';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils.ets';
+import { Cipher, CipherData, GetEcbNoPaddingOptions } from './utils/huks/CipherUtils.ets';
+import { Logger } from './utils/common/Logger.ets';
+import { Get3DesGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
 
 
 export default function SecurityHuksCipher3DESTest() {
@@ -33,12 +33,12 @@ export default function SecurityHuksCipher3DESTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_3DES_API16_Func_0100
-     * @tc.name   : test 3des ecb mode cipher by three steps, 64B data, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_3DES_API16_Func_0100
+     * @tc.number SUB_Security_HUKS_Cipher_3DES_API16_Func_0100
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_3DES_API16_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_3DES_API16_Func_0100";
@@ -57,12 +57,12 @@ export default function SecurityHuksCipher3DESTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_3DES_API16_Func_0200
-     * @tc.name   : test 3des cbc mode cipher by three steps, 64B data, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_3DES_API16_Func_0200
+     * @tc.number SUB_Security_HUKS_Cipher_3DES_API16_Func_0200
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_3DES_API16_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_3DES_API16_Func_0200";
@@ -83,12 +83,12 @@ export default function SecurityHuksCipher3DESTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_3DES_API16_Func_0300
-     * @tc.name   : test 3des ecb mode cipher by three steps, 64B data, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_3DES_API16_Func_0300
+     * @tc.number SUB_Security_HUKS_Cipher_3DES_API16_Func_0300
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_3DES_API16_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_3DES_API16_Func_0300";
@@ -110,12 +110,12 @@ export default function SecurityHuksCipher3DESTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_3DES_API16_Func_0400
-     * @tc.name   : test 3des cbc mode cipher by three steps, 64B data, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_3DES_API16_Func_0400
+     * @tc.number SUB_Security_HUKS_Cipher_3DES_API16_Func_0400
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_3DES_API16_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_3DES_API16_Func_0400";
@@ -138,12 +138,12 @@ export default function SecurityHuksCipher3DESTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_3DES_API16_Func_0500
-     * @tc.name   : test 3des cbc mode cipher without iv, 64B data, process fail
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_3DES_API16_Func_0500
+     * @tc.number SUB_Security_HUKS_Cipher_3DES_API16_Func_0500
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_3DES_API16_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_3DES_API16_Func_0500";
@@ -165,12 +165,12 @@ export default function SecurityHuksCipher3DESTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_3DES_API16_Func_0600
-     * @tc.name   : test 3des cbc mode cipher with 65B data, process fail
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_3DES_API16_Func_0600
+     * @tc.number SUB_Security_HUKS_Cipher_3DES_API16_Func_0600
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_3DES_API16_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_3DES_API16_Func_0600";
@@ -193,12 +193,12 @@ export default function SecurityHuksCipher3DESTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_3DES_API16_Func_0700
-     * @tc.name   : test 3des cipher with unsupported ctr mode, 64B data, process fail
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_3DES_API16_Func_0700
+     * @tc.number SUB_Security_HUKS_Cipher_3DES_API16_Func_0700
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_3DES_API16_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_3DES_API16_Func_0700";
@@ -221,12 +221,12 @@ export default function SecurityHuksCipher3DESTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_3DES_API16_Func_0800
-     * @tc.name   : test 3des cbc mode cipher with wrong iv, 64B data, process fail
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_3DES_API16_Func_0800
+     * @tc.number SUB_Security_HUKS_Cipher_3DES_API16_Func_0800
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_3DES_API16_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_3DES_API16_Func_0800";
@@ -249,12 +249,12 @@ export default function SecurityHuksCipher3DESTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_3DES_API16_Func_0900
-     * @tc.name   : test 3des cbc mode cipher with wrong key size, 64B data, process fail
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_3DES_API16_Func_0900
+     * @tc.number SUB_Security_HUKS_Cipher_3DES_API16_Func_0900
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_3DES_API16_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_3DES_API16_Func_0900";
@@ -269,12 +269,12 @@ export default function SecurityHuksCipher3DESTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_3DES_API16_Func_1000
-     * @tc.name   : test 3des cbc mode cipher with wrong key size, 64B data, process fail
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_3DES_API16_Func_1000
+     * @tc.number SUB_Security_HUKS_Cipher_3DES_API16_Func_1000
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_3DES_API16_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_3DES_API16_Func_1000";

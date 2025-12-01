@@ -38,12 +38,12 @@ export default function EscapeFastBufferTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0100
-     * @tc.name       : testBufferAllocEscape0001
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAllocEscape0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0100
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocEscape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferAllocEscape0001";
@@ -57,12 +57,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0200
-     * @tc.name       : testBufferAllocEscape0002
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAllocEscape0002
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0200
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocEscape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferAllocEscape0002";
@@ -76,12 +76,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0300
-     * @tc.name       : testBufferAllocEscape0003
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAllocEscape0003
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0300
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocEscape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferAllocEscape0003";
@@ -95,12 +95,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0400
-     * @tc.name       : testBufferAllocEscape0004
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAllocEscape0004
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0400
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocEscape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferAllocEscape0004";
@@ -114,12 +114,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0500
-     * @tc.name       : testBufferAllocEscape0005
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAllocEscape0005
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0500
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocEscape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferAllocEscape0005";
@@ -133,12 +133,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0600
-     * @tc.name       : testBufferAllocEscape0006
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \v
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAllocEscape0006
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0600
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \v
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocEscape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferAllocEscape0006";
@@ -152,12 +152,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0700
-     * @tc.name       : testBufferAllocEscape0007
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \x24
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAllocEscape0007
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0700
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \x24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocEscape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferAllocEscape0007";
@@ -171,12 +171,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0800
-     * @tc.name       : testBufferAllocEscape0008
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAllocEscape0008
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0800
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \开
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocEscape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferAllocEscape0008";
@@ -190,12 +190,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0900
-     * @tc.name       : testBufferAllocEscape0009
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \😊
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAllocEscape0009
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0900
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \😊
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocEscape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferAllocEscape0009";
@@ -210,12 +210,12 @@ export default function EscapeFastBufferTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1000
-     * @tc.name       : testBufferAllocEscape0010
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAllocEscape0010
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1000
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocEscape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferAllocEscape0010";
@@ -229,12 +229,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1100
-     * @tc.name       : testBufferAllocEscape0011
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \\b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferAllocEscape0011
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1100
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \\b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferAllocEscape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0011";
@@ -248,12 +248,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1200
-     * @tc.name       : testBufferbyteLengthEscape0001
-     * @tc.desc       : Testing the Buffer interface byteLength with input escape \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferbyteLengthEscape0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1200
+     * @tc.desc   Testing the Buffer interface byteLength with input escape \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferbyteLengthEscape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0001";
@@ -268,12 +268,12 @@ export default function EscapeFastBufferTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1300
-     * @tc.name       : testBufferbyteLengthEscape0002
-     * @tc.desc       : Testing the Buffer interface byteLength with input escape \f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferbyteLengthEscape0002
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1300
+     * @tc.desc   Testing the Buffer interface byteLength with input escape \f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferbyteLengthEscape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0002";
@@ -287,12 +287,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1400
-     * @tc.name       : testBufferbyteLengthEscape0003
-     * @tc.desc       : Testing the Buffer interface byteLength with input escape \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferbyteLengthEscape0003
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1400
+     * @tc.desc   Testing the Buffer interface byteLength with input escape \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferbyteLengthEscape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0003";
@@ -306,12 +306,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1500
-     * @tc.name       : testBufferbyteLengthEscape0004
-     * @tc.desc       : Testing the Buffer interface byteLength with input escape \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferbyteLengthEscape0004
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1500
+     * @tc.desc   Testing the Buffer interface byteLength with input escape \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferbyteLengthEscape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0004";
@@ -325,12 +325,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1600
-     * @tc.name       : testBufferbyteLengthEscape0005
-     * @tc.desc       : Testing the Buffer interface byteLength with input escape \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferbyteLengthEscape0005
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1600
+     * @tc.desc   Testing the Buffer interface byteLength with input escape \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferbyteLengthEscape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0005";
@@ -344,12 +344,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1700
-     * @tc.name       : testBufferbyteLengthEscape0006
-     * @tc.desc       : Testing the Buffer interface byteLength with input escape \v
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferbyteLengthEscape0006
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1700
+     * @tc.desc   Testing the Buffer interface byteLength with input escape \v
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferbyteLengthEscape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0006";
@@ -363,12 +363,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1800
-     * @tc.name       : testBufferbyteLengthEscape0007
-     * @tc.desc       : Testing the Buffer interface byteLength with input escape \x24
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferbyteLengthEscape0007
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1800
+     * @tc.desc   Testing the Buffer interface byteLength with input escape \x24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferbyteLengthEscape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0007";
@@ -382,12 +382,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1900
-     * @tc.name       : testBufferbyteLengthEscape0008
-     * @tc.desc       : Testing the Buffer interface byteLength with input escape \开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferbyteLengthEscape0008
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1900
+     * @tc.desc   Testing the Buffer interface byteLength with input escape \开
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferbyteLengthEscape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0008";
@@ -401,12 +401,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2000
-     * @tc.name       : testBufferbyteLengthEscape0009
-     * @tc.desc       : Testing the Buffer interface byteLength with input escape \😊
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferbyteLengthEscape0009
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2000
+     * @tc.desc   Testing the Buffer interface byteLength with input escape \😊
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferbyteLengthEscape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0009";
@@ -420,12 +420,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2100
-     * @tc.name       : testBufferbyteLengthEscape0010
-     * @tc.desc       : Testing the Buffer interface byteLength with input escape \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferbyteLengthEscape0010
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2100
+     * @tc.desc   Testing the Buffer interface byteLength with input escape \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferbyteLengthEscape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0010";
@@ -439,12 +439,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2200
-     * @tc.name       : testBufferbyteLengthEscape0011
-     * @tc.desc       : Testing the Buffer interface byteLength with input escape \\b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferbyteLengthEscape0011
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2200
+     * @tc.desc   Testing the Buffer interface byteLength with input escape \\b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferbyteLengthEscape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferAllocEscape0011";
@@ -458,12 +458,12 @@ export default function EscapeFastBufferTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2300
-     * @tc.name       : testBufferCompareEscape0001
-     * @tc.desc       : Testing the Buffer interface Compare with input escape \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompareEscape0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2300
+     * @tc.desc   Testing the Buffer interface Compare with input escape \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompareEscape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferCompareEscape0001";
@@ -480,12 +480,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2400
-     * @tc.name       : testBufferCompareEscape0002
-     * @tc.desc       : Testing the Buffer interface Compare with input escape \f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompareEscape0002
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2400
+     * @tc.desc   Testing the Buffer interface Compare with input escape \f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompareEscape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferCompareEscape0002";
@@ -502,12 +502,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2500
-     * @tc.name       : testBufferCompareEscape0003
-     * @tc.desc       : Testing the Buffer interface Compare with input escape \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompareEscape0003
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2500
+     * @tc.desc   Testing the Buffer interface Compare with input escape \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompareEscape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferCompareEscape0003";
@@ -524,12 +524,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2600
-     * @tc.name       : testBufferCompareEscape0004
-     * @tc.desc       : Testing the Buffer interface Compare with input escape \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompareEscape0004
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2600
+     * @tc.desc   Testing the Buffer interface Compare with input escape \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompareEscape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferCompareEscape0004";
@@ -546,12 +546,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2700
-     * @tc.name       : testBufferCompareEscape0005
-     * @tc.desc       : Testing the Buffer interface Compare with input escape \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompareEscape0005
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2700
+     * @tc.desc   Testing the Buffer interface Compare with input escape \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompareEscape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferCompareEscape0005";
@@ -568,12 +568,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2800
-     * @tc.name       : testBufferCompareEscape0006
-     * @tc.desc       : Testing the Buffer interface Compare with input escape \v
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompareEscape0006
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2800
+     * @tc.desc   Testing the Buffer interface Compare with input escape \v
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompareEscape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferCompareEscape0006";
@@ -591,12 +591,12 @@ export default function EscapeFastBufferTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2900
-     * @tc.name       : testBufferCompareEscape0007
-     * @tc.desc       : Testing the Buffer interface Compare with input escape \x24
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompareEscape0007
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2900
+     * @tc.desc   Testing the Buffer interface Compare with input escape \x24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompareEscape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferCompareEscape0007";
@@ -613,12 +613,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3000
-     * @tc.name       : testBufferCompareEscape0008
-     * @tc.desc       : Testing the Buffer interface Compare with input escape \开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompareEscape0008
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3000
+     * @tc.desc   Testing the Buffer interface Compare with input escape \开
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompareEscape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferCompareEscape0008";
@@ -635,12 +635,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3100
-     * @tc.name       : testBufferCompareEscape0009
-     * @tc.desc       : Testing the Buffer interface Compare with input escape \😊
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompareEscape0009
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3100
+     * @tc.desc   Testing the Buffer interface Compare with input escape \😊
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompareEscape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferCompareEscape0009";
@@ -657,12 +657,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3200
-     * @tc.name       : testBufferCompareEscape0010
-     * @tc.desc       : Testing the Buffer interface Compare with input escape \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompareEscape0010
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3200
+     * @tc.desc   Testing the Buffer interface Compare with input escape \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompareEscape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferCompareEscape0010";
@@ -679,12 +679,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3300
-     * @tc.name       : testBufferCompareEscape0011
-     * @tc.desc       : Testing the Buffer interface Compare with input escape \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompareEscape0011
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3300
+     * @tc.desc   Testing the Buffer interface Compare with input escape \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompareEscape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferCompareEscape0011";
@@ -701,12 +701,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3400
-     * @tc.name       : testBufferFromEscape0001
-     * @tc.desc       : Testing the Buffer interface From with input escape \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFromEscape0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3400
+     * @tc.desc   Testing the Buffer interface From with input escape \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFromEscape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferFromEscape0001";
@@ -720,12 +720,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3500
-     * @tc.name       : testBufferFromEscape0002
-     * @tc.desc       : Testing the Buffer interface From with input escape \f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFromEscape0002
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3500
+     * @tc.desc   Testing the Buffer interface From with input escape \f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFromEscape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferFromEscape0002";
@@ -739,12 +739,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3600
-     * @tc.name       : testBufferFromEscape0003
-     * @tc.desc       : Testing the Buffer interface From with input escape \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFromEscape0003
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3600
+     * @tc.desc   Testing the Buffer interface From with input escape \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFromEscape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferFromEscape0003";
@@ -758,12 +758,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3700
-     * @tc.name       : testBufferFromEscape0004
-     * @tc.desc       : Testing the Buffer interface From with input escape \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFromEscape0004
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3700
+     * @tc.desc   Testing the Buffer interface From with input escape \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFromEscape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferFromEscape0004";
@@ -777,12 +777,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3800
-     * @tc.name       : testBufferFromEscape0005
-     * @tc.desc       : Testing the Buffer interface From with input escape \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFromEscape0005
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3800
+     * @tc.desc   Testing the Buffer interface From with input escape \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFromEscape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferFromEscape0005";
@@ -796,12 +796,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3900
-     * @tc.name       : testBufferFromEscape0006
-     * @tc.desc       : Testing the Buffer interface From with input escape \v
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFromEscape0006
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3900
+     * @tc.desc   Testing the Buffer interface From with input escape \v
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFromEscape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferFromEscape0006";
@@ -815,12 +815,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4000
-     * @tc.name       : testBufferFromEscape0007
-     * @tc.desc       : Testing the Buffer interface From with input escape \x24
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFromEscape0007
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4000
+     * @tc.desc   Testing the Buffer interface From with input escape \x24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFromEscape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferFromEscape0007";
@@ -834,12 +834,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4100
-     * @tc.name       : testBufferFromEscape0008
-     * @tc.desc       : Testing the Buffer interface From with input escape \开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFromEscape0008
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4100
+     * @tc.desc   Testing the Buffer interface From with input escape \开
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFromEscape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferFromEscape0008";
@@ -853,12 +853,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4200
-     * @tc.name       : testBufferFromEscape0009
-     * @tc.desc       : Testing the Buffer interface From with input escape \😊
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFromEscape0009
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4200
+     * @tc.desc   Testing the Buffer interface From with input escape \😊
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFromEscape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferFromEscape0009";
@@ -872,12 +872,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4300
-     * @tc.name       : testBufferFromEscape0010
-     * @tc.desc       : Testing the Buffer interface Alloc with input escape \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFromEscape0010
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4300
+     * @tc.desc   Testing the Buffer interface Alloc with input escape \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFromEscape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferFromEscape0010";
@@ -891,12 +891,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4400
-     * @tc.name       : testBufferFromEscape0011
-     * @tc.desc       : Testing the Buffer interface From with input escape \\b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFromEscape0011
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4400
+     * @tc.desc   Testing the Buffer interface From with input escape \\b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFromEscape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferFromEscape0011";
@@ -910,12 +910,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4500
-     * @tc.name       : testBufferIsEncodingEscape0001
-     * @tc.desc       : Testing the Buffer interface IsEncoding with input escape \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIsEncodingEscape0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4500
+     * @tc.desc   Testing the Buffer interface IsEncoding with input escape \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIsEncodingEscape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIsEncodingEscape0001";
@@ -929,12 +929,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4600
-     * @tc.name       : testBufferIsEncodingEscape0002
-     * @tc.desc       : Testing the Buffer interface IsEncoding with input escape \f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIsEncodingEscape0002
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4600
+     * @tc.desc   Testing the Buffer interface IsEncoding with input escape \f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIsEncodingEscape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIsEncodingEscape0002";
@@ -948,12 +948,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4700
-     * @tc.name       : testBufferIsEncodingEscape0003
-     * @tc.desc       : Testing the Buffer interface IsEncoding with input escape \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIsEncodingEscape0003
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4700
+     * @tc.desc   Testing the Buffer interface IsEncoding with input escape \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIsEncodingEscape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIsEncodingEscape0003";
@@ -967,12 +967,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4800
-     * @tc.name       : testBufferIsEncodingEscape0004
-     * @tc.desc       : Testing the Buffer interface IsEncoding with input escape \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIsEncodingEscape0004
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4800
+     * @tc.desc   Testing the Buffer interface IsEncoding with input escape \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIsEncodingEscape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIsEncodingEscape0004";
@@ -986,12 +986,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4900
-     * @tc.name       : testBufferIsEncodingEscape0005
-     * @tc.desc       : Testing the Buffer interface IsEncoding with input escape \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIsEncodingEscape0005
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4900
+     * @tc.desc   Testing the Buffer interface IsEncoding with input escape \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIsEncodingEscape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIsEncodingEscape0005";
@@ -1005,12 +1005,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5000
-     * @tc.name       : testBufferIsEncodingEscape0006
-     * @tc.desc       : Testing the Buffer interface IsEncoding with input escape \v
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIsEncodingEscape0006
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5000
+     * @tc.desc   Testing the Buffer interface IsEncoding with input escape \v
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIsEncodingEscape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIsEncodingEscape0006";
@@ -1024,12 +1024,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5100
-     * @tc.name       : testBufferIsEncodingEscape0007
-     * @tc.desc       : Testing the Buffer interface IsEncoding with input escape \x24
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIsEncodingEscape0007
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5100
+     * @tc.desc   Testing the Buffer interface IsEncoding with input escape \x24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIsEncodingEscape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIsEncodingEscape0007";
@@ -1043,12 +1043,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5200
-     * @tc.name       : testBufferIsEncodingEscape0008
-     * @tc.desc       : Testing the Buffer interface IsEncoding with input escape \开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIsEncodingEscape0008
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5200
+     * @tc.desc   Testing the Buffer interface IsEncoding with input escape \开
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIsEncodingEscape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIsEncodingEscape0008";
@@ -1062,12 +1062,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5300
-     * @tc.name       : testBufferIsEncodingEscape0009
-     * @tc.desc       : Testing the Buffer interface IsEncoding with input escape \😊
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIsEncodingEscape0009
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5300
+     * @tc.desc   Testing the Buffer interface IsEncoding with input escape \😊
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIsEncodingEscape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIsEncodingEscape0009";
@@ -1081,12 +1081,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5400
-     * @tc.name       : testBufferIsEncodingEscape0010
-     * @tc.desc       : Testing the Buffer interface IsEncoding with input escape \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIsEncodingEscape0010
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5400
+     * @tc.desc   Testing the Buffer interface IsEncoding with input escape \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIsEncodingEscape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIsEncodingEscape0010";
@@ -1100,12 +1100,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5500
-     * @tc.name       : testBufferIsEncodingEscape0011
-     * @tc.desc       : Testing the Buffer interface IsEncoding with input escape \\b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIsEncodingEscape0011
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5500
+     * @tc.desc   Testing the Buffer interface IsEncoding with input escape \\b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIsEncodingEscape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIsEncodingEscape0011";
@@ -1119,12 +1119,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5600
-     * @tc.name       : testfillEscape0001
-     * @tc.desc       : Testing the Buffer interface fill with input escape \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testfillEscape0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5600
+     * @tc.desc   Testing the Buffer interface fill with input escape \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testfillEscape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testfillEscape0001";
@@ -1139,12 +1139,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5700
-     * @tc.name       : testfillEscape0002
-     * @tc.desc       : Testing the Buffer interface fill with input escape \f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testfillEscape0002
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5700
+     * @tc.desc   Testing the Buffer interface fill with input escape \f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testfillEscape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testfillEscape0002";
@@ -1159,12 +1159,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5800
-     * @tc.name       : testfillEscape0003
-     * @tc.desc       : Testing the Buffer interface fill with input escape \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testfillEscape0003
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5800
+     * @tc.desc   Testing the Buffer interface fill with input escape \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testfillEscape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testfillEscape0003";
@@ -1179,12 +1179,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5900
-     * @tc.name       : testfillEscape0004
-     * @tc.desc       : Testing the Buffer interface fill with input escape \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testfillEscape0004
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5900
+     * @tc.desc   Testing the Buffer interface fill with input escape \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testfillEscape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testfillEscape0004";
@@ -1199,12 +1199,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6000
-     * @tc.name       : testfillEscape0005
-     * @tc.desc       : Testing the Buffer interface fill with input escape \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testfillEscape0005
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6000
+     * @tc.desc   Testing the Buffer interface fill with input escape \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testfillEscape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testfillEscape0005";
@@ -1219,12 +1219,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6100
-     * @tc.name       : testfillEscape0006
-     * @tc.desc       : Testing the Buffer interface fill with input escape \v
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testfillEscape0006
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6100
+     * @tc.desc   Testing the Buffer interface fill with input escape \v
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testfillEscape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testfillEscape0006";
@@ -1239,12 +1239,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6200
-     * @tc.name       : testfillEscape0007
-     * @tc.desc       : Testing the Buffer interface fill with input escape \x24
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testfillEscape0007
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6200
+     * @tc.desc   Testing the Buffer interface fill with input escape \x24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testfillEscape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testfillEscape0007";
@@ -1259,12 +1259,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6300
-     * @tc.name       : testfillEscape0008
-     * @tc.desc       : Testing the Buffer interface fill with input escape \开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testfillEscape0008
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6300
+     * @tc.desc   Testing the Buffer interface fill with input escape \开
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testfillEscape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testfillEscape0008";
@@ -1279,12 +1279,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6400
-     * @tc.name       : testfillEscape0009
-     * @tc.desc       : Testing the Buffer interface fill with input escape \😊
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testfillEscape0009
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6400
+     * @tc.desc   Testing the Buffer interface fill with input escape \😊
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testfillEscape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testfillEscape0009";
@@ -1299,12 +1299,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6500
-     * @tc.name       : testfillEscape0010
-     * @tc.desc       : Testing the Buffer interface fill with input escape \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testfillEscape0010
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6500
+     * @tc.desc   Testing the Buffer interface fill with input escape \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testfillEscape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testfillEscape0010";
@@ -1319,12 +1319,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6600
-     * @tc.name       : testfillEscape0011
-     * @tc.desc       : Testing the Buffer interface fill with input escape \\b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testfillEscape0011
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6600
+     * @tc.desc   Testing the Buffer interface fill with input escape \\b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testfillEscape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testfillEscape0011";
@@ -1339,12 +1339,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6700
-     * @tc.name       : testincludesEscape0001
-     * @tc.desc       : Testing the Buffer interface fill with input escape \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testincludesEscape0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6700
+     * @tc.desc   Testing the Buffer interface fill with input escape \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testincludesEscape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testincludesEscape0001";
@@ -1360,12 +1360,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6800
-     * @tc.name       : testincludesEscape0002
-     * @tc.desc       : Testing the Buffer interface fill with input escape \f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testincludesEscape0002
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6800
+     * @tc.desc   Testing the Buffer interface fill with input escape \f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testincludesEscape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testincludesEscape0002";
@@ -1381,12 +1381,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6900
-     * @tc.name       : testincludesEscape0003
-     * @tc.desc       : Testing the Buffer interface fill with input escape \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testincludesEscape0003
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6900
+     * @tc.desc   Testing the Buffer interface fill with input escape \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testincludesEscape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testincludesEscape0003";
@@ -1402,12 +1402,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7000
-     * @tc.name       : testincludesEscape0004
-     * @tc.desc       : Testing the Buffer interface fill with input escape \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testincludesEscape0004
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7000
+     * @tc.desc   Testing the Buffer interface fill with input escape \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testincludesEscape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testincludesEscape0004";
@@ -1423,12 +1423,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7100
-     * @tc.name       : testincludesEscape0005
-     * @tc.desc       : Testing the Buffer interface fill with input escape \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testincludesEscape0005
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7100
+     * @tc.desc   Testing the Buffer interface fill with input escape \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testincludesEscape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testincludesEscape0005";
@@ -1444,12 +1444,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7200
-     * @tc.name       : testincludesEscape0006
-     * @tc.desc       : Testing the Buffer interface fill with input escape \v
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testincludesEscape0006
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7200
+     * @tc.desc   Testing the Buffer interface fill with input escape \v
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testincludesEscape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testincludesEscape0006";
@@ -1465,12 +1465,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7300
-     * @tc.name       : testincludesEscape0007
-     * @tc.desc       : Testing the Buffer interface fill with input escape \x24
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testincludesEscape0007
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7300
+     * @tc.desc   Testing the Buffer interface fill with input escape \x24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testincludesEscape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testincludesEscape0007";
@@ -1486,12 +1486,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7400
-     * @tc.name       : testincludesEscape0008
-     * @tc.desc       : Testing the Buffer interface fill with input escape \开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testincludesEscape0008
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7400
+     * @tc.desc   Testing the Buffer interface fill with input escape \开
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testincludesEscape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testincludesEscape0008";
@@ -1507,12 +1507,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7500
-     * @tc.name       : testincludesEscape0009
-     * @tc.desc       : Testing the Buffer interface fill with input escape \😊
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testincludesEscape0009
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7500
+     * @tc.desc   Testing the Buffer interface fill with input escape \😊
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testincludesEscape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testincludesEscape0009";
@@ -1528,12 +1528,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7600
-     * @tc.name       : testincludesEscape0010
-     * @tc.desc       : Testing the Buffer interface fill with input escape \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testincludesEscape0010
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7600
+     * @tc.desc   Testing the Buffer interface fill with input escape \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testincludesEscape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testincludesEscape0010";
@@ -1549,12 +1549,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7700
-     * @tc.name       : testincludesEscape0011
-     * @tc.desc       : Testing the Buffer interface fill with input escape \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testincludesEscape0011
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7700
+     * @tc.desc   Testing the Buffer interface fill with input escape \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testincludesEscape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testincludesEscape0011";
@@ -1571,12 +1571,12 @@ export default function EscapeFastBufferTest() {
     });
     
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10000
-     * @tc.name       : testBuffertoStringEscape0001
-     * @tc.desc       : Testing the Buffer interface toString with input escape \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffertoStringEscape0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10000
+     * @tc.desc   Testing the Buffer interface toString with input escape \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffertoStringEscape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuffertoStringEscape0001";
@@ -1591,12 +1591,12 @@ export default function EscapeFastBufferTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10100
-     * @tc.name       : testBuffertoStringEscape0002
-     * @tc.desc       : Testing the Buffer interface toString with input escape \f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffertoStringEscape0002
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10100
+     * @tc.desc   Testing the Buffer interface toString with input escape \f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffertoStringEscape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuffertoStringEscape0002";
@@ -1610,12 +1610,12 @@ export default function EscapeFastBufferTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10200
-     * @tc.name       : testBuffertoStringEscape0003
-     * @tc.desc       : Testing the Buffer interface toString with input escape \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffertoStringEscape0003
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10200
+     * @tc.desc   Testing the Buffer interface toString with input escape \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffertoStringEscape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuffertoStringEscape0003";
@@ -1629,12 +1629,12 @@ export default function EscapeFastBufferTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10300
-     * @tc.name       : testBuffertoStringEscape0004
-     * @tc.desc       : Testing the Buffer interface toString with input escape \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffertoStringEscape0004
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10300
+     * @tc.desc   Testing the Buffer interface toString with input escape \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffertoStringEscape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuffertoStringEscape0004";
@@ -1648,12 +1648,12 @@ export default function EscapeFastBufferTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_104000
-     * @tc.name       : testBuffertoStringEscape0005
-     * @tc.desc       : Testing the Buffer interface toString with input escape \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffertoStringEscape0005
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_104000
+     * @tc.desc   Testing the Buffer interface toString with input escape \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffertoStringEscape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuffertoStringEscape0005";
@@ -1667,12 +1667,12 @@ export default function EscapeFastBufferTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10500
-     * @tc.name       : testBuffertoStringEscape0006
-     * @tc.desc       : Testing the Buffer interface toString with input escape \v
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffertoStringEscape0006
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10500
+     * @tc.desc   Testing the Buffer interface toString with input escape \v
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffertoStringEscape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuffertoStringEscape0006";
@@ -1686,12 +1686,12 @@ export default function EscapeFastBufferTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10600
-     * @tc.name       : testBuffertoStringEscape0007
-     * @tc.desc       : Testing the Buffer interface toString with input escape \x24
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffertoStringEscape0007
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10600
+     * @tc.desc   Testing the Buffer interface toString with input escape \x24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffertoStringEscape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuffertoStringEscape0007";
@@ -1705,12 +1705,12 @@ export default function EscapeFastBufferTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10700
-     * @tc.name       : testBuffertoStringEscape0008
-     * @tc.desc       : Testing the Buffer interface toString with input escape \开 == 开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffertoStringEscape0008
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10700
+     * @tc.desc   Testing the Buffer interface toString with input escape \开 == 开
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffertoStringEscape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuffertoStringEscape0008";
@@ -1724,12 +1724,12 @@ export default function EscapeFastBufferTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10800
-     * @tc.name       : testBuffertoStringEscape0009
-     * @tc.desc       : Testing the Buffer interface toString with input escape \😊 == 😊
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffertoStringEscape0009
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10800
+     * @tc.desc   Testing the Buffer interface toString with input escape \😊 == 😊
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffertoStringEscape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuffertoStringEscape0009";
@@ -1743,12 +1743,12 @@ export default function EscapeFastBufferTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10900
-     * @tc.name       : testBuffertoStringEscape0010
-     * @tc.desc       : Testing the Buffer interface toString with input escape \0 == null
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffertoStringEscape0010
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10900
+     * @tc.desc   Testing the Buffer interface toString with input escape \0 == null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffertoStringEscape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuffertoStringEscape0010";
@@ -1762,12 +1762,12 @@ export default function EscapeFastBufferTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_11000
-     * @tc.name       : testBuffertoStringEscape0011
-     * @tc.desc       : Testing the Buffer interface toString with input escape \\b == \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuffertoStringEscape0011
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_11000
+     * @tc.desc   Testing the Buffer interface toString with input escape \\b == \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuffertoStringEscape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuffertoStringEscape0011";
@@ -1780,12 +1780,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11100
-     * @tc.name       : testBufferwriteESCAPE0001
-     * @tc.desc       : Testing the Buffer interface write with input ESCAPE \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferwriteESCAPE0001
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11100
+     * @tc.desc   Testing the Buffer interface write with input ESCAPE \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferwriteESCAPE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferwriteESCAPE0001";
@@ -1800,12 +1800,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11200
-     * @tc.name       : testBufferwriteESCAPE0002
-     * @tc.desc       : Testing the Buffer interface write with input ESCAPE \f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferwriteESCAPE0002
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11200
+     * @tc.desc   Testing the Buffer interface write with input ESCAPE \f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferwriteESCAPE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferwriteESCAPE0002";
@@ -1820,12 +1820,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11300
-     * @tc.name       : testBufferwriteESCAPE0003
-     * @tc.desc       : Testing the Buffer interface write with input ESCAPE 换行
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferwriteESCAPE0003
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11300
+     * @tc.desc   Testing the Buffer interface write with input ESCAPE 换行
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferwriteESCAPE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferwriteESCAPE0003";
@@ -1840,12 +1840,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11400
-     * @tc.name       : testBufferwriteESCAPE0004
-     * @tc.desc       : Testing the Buffer interface write with input ESCAPE \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferwriteESCAPE0004
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11400
+     * @tc.desc   Testing the Buffer interface write with input ESCAPE \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferwriteESCAPE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferwriteESCAPE0004";
@@ -1860,12 +1860,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11500
-     * @tc.name       : testBufferwriteESCAPE0005
-     * @tc.desc       : Testing the Buffer interface write with input ESCAPE \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferwriteESCAPE0005
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11500
+     * @tc.desc   Testing the Buffer interface write with input ESCAPE \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferwriteESCAPE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferwriteESCAPE0005";
@@ -1880,12 +1880,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11600
-     * @tc.name       : testBufferwriteESCAPE0006
-     * @tc.desc       : Testing the Buffer interface write with input ESCAPE \v
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferwriteESCAPE0006
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11600
+     * @tc.desc   Testing the Buffer interface write with input ESCAPE \v
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferwriteESCAPE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferwriteESCAPE0006";
@@ -1900,12 +1900,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11700
-     * @tc.name       : testBufferwriteESCAPE0007
-     * @tc.desc       : Testing the Buffer interface write with input ESCAPE \x24
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferwriteESCAPE0007
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11700
+     * @tc.desc   Testing the Buffer interface write with input ESCAPE \x24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferwriteESCAPE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferwriteESCAPE0007";
@@ -1920,12 +1920,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11800
-     * @tc.name       : testBufferwriteESCAPE0008
-     * @tc.desc       : Testing the Buffer interface write with input ESCAPE \开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferwriteESCAPE0008
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11800
+     * @tc.desc   Testing the Buffer interface write with input ESCAPE \开
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferwriteESCAPE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferwriteESCAPE0008";
@@ -1940,12 +1940,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11900
-     * @tc.name       : testBufferwriteESCAPE0009
-     * @tc.desc       : Testing the Buffer interface write with input ESCAPE \😊
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferwriteESCAPE0009
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11900
+     * @tc.desc   Testing the Buffer interface write with input ESCAPE \😊
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferwriteESCAPE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferwriteESCAPE0009";
@@ -1960,12 +1960,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_12000
-     * @tc.name       : testBufferwriteESCAPE0010
-     * @tc.desc       : Testing the Buffer interface write with input ESCAPE null
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferwriteESCAPE0010
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_12000
+     * @tc.desc   Testing the Buffer interface write with input ESCAPE null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferwriteESCAPE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferwriteESCAPE0010";
@@ -1980,12 +1980,12 @@ export default function EscapeFastBufferTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_12100
-     * @tc.name       : testBufferwriteESCAPE0011
-     * @tc.desc       : Testing the Buffer interface write with input ESCAPE \\b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferwriteESCAPE0011
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_12100
+     * @tc.desc   Testing the Buffer interface write with input ESCAPE \\b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferwriteESCAPE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferwriteESCAPE0011";

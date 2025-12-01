@@ -62,13 +62,13 @@ class DrawingRecordCmdUtilsFinishRecordingTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0300
- * @tc.name: testRecordCmdUtilsFinishRecordingNormal
- * @tc.desc: test for testRecordCmdUtilsFinishRecordingNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRecordCmdUtilsFinishRecordingNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0300
+ * @tc.desc   test for testRecordCmdUtilsFinishRecordingNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingRecordCmdUtilsFinishRecordingTest, testRecordCmdUtilsFinishRecordingNormal, Function | SmallTest | Level0) {
     // 1. None of the OH_Drawing_RecordCmdUtilsFinishRecording parameters are empty
@@ -85,13 +85,13 @@ HWTEST_F(DrawingRecordCmdUtilsFinishRecordingTest, testRecordCmdUtilsFinishRecor
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0301
- * @tc.name: testRecordCmdUtilsFinishRecordingNull
- * @tc.desc: test for testRecordCmdUtilsFinishRecordingNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRecordCmdUtilsFinishRecordingNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0301
+ * @tc.desc   test for testRecordCmdUtilsFinishRecordingNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingRecordCmdUtilsFinishRecordingTest, testRecordCmdUtilsFinishRecordingNull, Function | SmallTest | Level3) {
     // 1. OH-Drawing-RecordCmdUtelsFinishRecording, RecordCmd or RecordCmdUtils parameter is empty

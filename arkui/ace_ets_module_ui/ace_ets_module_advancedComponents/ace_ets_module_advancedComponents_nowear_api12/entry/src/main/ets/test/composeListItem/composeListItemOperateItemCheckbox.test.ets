@@ -50,12 +50,12 @@ export default function composeListItemOperateItemCheckbox() {
     })
 
     /**
-     * @tc.number composeListItemOperateItemCheckbox
      * @tc.name   composeListItemOperateItemCheckbox_0100
+     * @tc.number composeListItemOperateItemCheckbox
      * @tc.desc   Test composeListItemOperateItemCheckbox
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('composeListItemOperateItemCheckbox_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

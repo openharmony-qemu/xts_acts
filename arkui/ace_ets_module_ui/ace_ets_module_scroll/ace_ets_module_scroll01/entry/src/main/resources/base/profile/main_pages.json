@@ -1,7 +1,0 @@
-{
-    "src": [
-        "MainAbility/pages/index/index",
-        "MainAbility/pages/OnScrollBegin",
-        "MainAbility/pages/Scroll_add"
-    ]
-}

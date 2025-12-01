@@ -23,12 +23,12 @@ const ARKUI_ERROR_CODE_NO_ERROR = 0
 export default function ActsOsAccountNdkTest() {
   describe('ActsOsAccountNdkTest', () => {
     /**
-     * @tc.number  :  : SUB_ArkUI_NATIVEDISPLAYMANAGERROTATION_0100
-     * @tc.name    :  : NativeDisplayManagerRotation001
-     * @tc.desc    :  : testing ArkUI_NATIVEDISPLAYMANAGER_ROTATION
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NativeDisplayManagerRotation001
+     * @tc.number : SUB_ArkUI_NATIVEDISPLAYMANAGERROTATION_0100
+     * @tc.desc   : testing ArkUI_NATIVEDISPLAYMANAGER_ROTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NativeDisplayManagerRotation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -43,12 +43,12 @@ export default function ActsOsAccountNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_NATIVEDISPLAYMANAGERROTATION_0200
-     * @tc.name    : NativeDisplayManagerRotation002
-     * @tc.desc    : testing ArkUI_NATIVEDISPLAYMANAGER_ROTATION
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NativeDisplayManagerRotation002
+     * @tc.number SUB_ArkUI_NATIVEDISPLAYMANAGERROTATION_0200
+     * @tc.desc   testing ArkUI_NATIVEDISPLAYMANAGER_ROTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NativeDisplayManagerRotation002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -63,12 +63,12 @@ export default function ActsOsAccountNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_NATIVEDISPLAYMANAGERROTATION_0300
-     * @tc.name    : NativeDisplayManagerRotation003
-     * @tc.desc    : testing ArkUI_NATIVEDISPLAYMANAGER_ROTATION
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NativeDisplayManagerRotation003
+     * @tc.number SUB_ArkUI_NATIVEDISPLAYMANAGERROTATION_0300
+     * @tc.desc   testing ArkUI_NATIVEDISPLAYMANAGER_ROTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NativeDisplayManagerRotation003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -83,12 +83,12 @@ export default function ActsOsAccountNdkTest() {
         }
       })
     /**
-     * @tc.number  :  SUB_ArkUI_NATIVEDISPLAYMANAGERROTATION_0400
-     * @tc.name    :  NativeDisplayManagerRotation004
-     * @tc.desc    :  testing ArkUI_NATIVEDISPLAYMANAGER_ROTATION
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NativeDisplayManagerRotation004
+     * @tc.number SUB_ArkUI_NATIVEDISPLAYMANAGERROTATION_0400
+     * @tc.desc   testing ArkUI_NATIVEDISPLAYMANAGER_ROTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NativeDisplayManagerRotation004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -103,12 +103,12 @@ export default function ActsOsAccountNdkTest() {
         }
       })
     /**
-     * @tc.number  :  SUB_ArkUI_NATIVEDISPLAYMANAGERORIENTATION_0100
-     * @tc.name    :  NativeDisplayManagerOrientation001
-     * @tc.desc    :  testing ArkUI_NATIVEDISPLAYMANAGERORIENTATION
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NativeDisplayManagerOrientation001
+     * @tc.number SUB_ArkUI_NATIVEDISPLAYMANAGERORIENTATION_0100
+     * @tc.desc   testing ArkUI_NATIVEDISPLAYMANAGERORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NativeDisplayManagerOrientation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -123,12 +123,12 @@ export default function ActsOsAccountNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_NATIVEDISPLAYMANAGERORIENTATION_0200
-     * @tc.name    : NativeDisplayManagerOrientation002
-     * @tc.desc    : testing ArkUI_NATIVEDISPLAYMANAGERORIENTATION
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NativeDisplayManagerOrientation002
+     * @tc.number SUB_ArkUI_NATIVEDISPLAYMANAGERORIENTATION_0200
+     * @tc.desc   testing ArkUI_NATIVEDISPLAYMANAGERORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NativeDisplayManagerOrientation002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -143,12 +143,12 @@ export default function ActsOsAccountNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_NATIVEDISPLAYMANAGERORIENTATION_0300
-     * @tc.name    : NativeDisplayManagerOrientation003
-     * @tc.desc    : testing ArkUI_NATIVEDISPLAYMANAGERORIENTATION
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NativeDisplayManagerOrientation003
+     * @tc.number SUB_ArkUI_NATIVEDISPLAYMANAGERORIENTATION_0300
+     * @tc.desc   testing ArkUI_NATIVEDISPLAYMANAGERORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NativeDisplayManagerOrientation003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -163,12 +163,12 @@ export default function ActsOsAccountNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_NATIVEDISPLAYMANAGERORIENTATION_0400
-     * @tc.name    : NativeDisplayManagerOrientation004
-     * @tc.desc    : testing ArkUI_NATIVEDISPLAYMANAGERORIENTATION
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NativeDisplayManagerOrientation004
+     * @tc.number SUB_ArkUI_NATIVEDISPLAYMANAGERORIENTATION_0400
+     * @tc.desc   testing ArkUI_NATIVEDISPLAYMANAGERORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NativeDisplayManagerOrientation004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -183,12 +183,12 @@ export default function ActsOsAccountNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_NATIVEDISPLAYMANAGERORIENTATION_0500
-     * @tc.name    : NativeDisplayManagerOrientation005
-     * @tc.desc    : testing ArkUI_NATIVEDISPLAYMANAGERORIENTATION
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NativeDisplayManagerOrientation005
+     * @tc.number SUB_ArkUI_NATIVEDISPLAYMANAGERORIENTATION_0500
+     * @tc.desc   testing ArkUI_NATIVEDISPLAYMANAGERORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NativeDisplayManagerOrientation005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

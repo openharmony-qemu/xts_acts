@@ -47,9 +47,12 @@ export default function Column_Space_Default() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Column_Space_Default_TEST_0200
      * @tc.number SUB_ACE_Column_Space_Default_TEST_0200
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to undefined
+     * @tc.desc   The value of space is set to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_Default_TEST_0200',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_Default_TEST_0200] START');
@@ -89,9 +92,12 @@ export default function Column_Space_Default() {
       console.info('[SUB_ACE_Column_Space_Default_TEST_0200] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_Default_TEST_0300
      * @tc.number SUB_ACE_Column_Space_Default_TEST_0200
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to -10
+     * @tc.desc   The value of space is set to -10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_Default_TEST_0300',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_Default_TEST_0300] START');
@@ -130,9 +136,12 @@ export default function Column_Space_Default() {
       console.info('[SUB_ACE_Column_Space_Default_TEST_0300] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_Default_TEST_0400
      * @tc.number SUB_ACE_Column_Space_Default_TEST_0400
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to 'abc'
+     * @tc.desc   The value of space is set to 'abc'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_Default_TEST_0400',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_Default_TEST_0400] START');
@@ -172,9 +181,12 @@ export default function Column_Space_Default() {
       console.info('[SUB_ACE_Column_Space_Default_TEST_0400] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_Default_TEST_0500
      * @tc.number SUB_ACE_Column_Space_Default_TEST_0500
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to '80%'
+     * @tc.desc   The value of space is set to '80%'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_Default_TEST_0500',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_Default_TEST_0500] START');
@@ -214,9 +226,12 @@ export default function Column_Space_Default() {
       console.info('[SUB_ACE_Column_Space_Default_TEST_0500] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_Default_TEST_0100
      * @tc.number SUB_ACE_Column_Space_Default_TEST_0100
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to null
+     * @tc.desc   The value of space is set to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_Default_TEST_0100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_Default_TEST_0100] START');

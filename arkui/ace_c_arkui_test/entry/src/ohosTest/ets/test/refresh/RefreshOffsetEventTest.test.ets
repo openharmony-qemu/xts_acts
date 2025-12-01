@@ -26,13 +26,13 @@ export default function refreshOffsetEventTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_REFRESH_REFRESHOFFSET_0500
-     * @tc.name: testRefreshOffset005
-     * @tc.desc: testing Offset for Refresh with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRefreshOffset005
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_REFRESHOFFSET_0500
+     * @tc.desc   testing Offset for Refresh with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshOffset005', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'RefreshLessOffsetTest';
@@ -49,13 +49,13 @@ export default function refreshOffsetEventTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_REFRESH_REFRESHOFFSET_0600
-     * @tc.name: testRefreshOffset006
-     * @tc.desc: testing Offset for Refresh with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRefreshOffset006
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_REFRESHOFFSET_0600
+     * @tc.desc   testing Offset for Refresh with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshOffset006', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'RefreshOverOffsetTest';

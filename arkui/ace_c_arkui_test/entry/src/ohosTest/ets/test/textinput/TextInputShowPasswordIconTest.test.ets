@@ -26,39 +26,39 @@ export default function textInputShowPasswordIconTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SHOWPASSWORDICON_0100
-     * @tc.name: testTextInputShowPasswordIcon001
-     * @tc.desc: testing showPasswordIcon for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputShowPasswordIcon001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SHOWPASSWORDICON_0100
+     * @tc.desc   testing showPasswordIcon for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputShowPasswordIcon001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputShowPasswordIcon001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SHOWPASSWORDICON_0200
-     * @tc.name: testTextInputShowPasswordIcon002
-     * @tc.desc: testing showPasswordIcon for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputShowPasswordIcon002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SHOWPASSWORDICON_0200
+     * @tc.desc   testing showPasswordIcon for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputShowPasswordIcon002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputShowPasswordIcon002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SHOWPASSWORDICON_0300
-     * @tc.name: testTextInputShowPasswordIcon003
-     * @tc.desc: testing showPasswordIcon for textInput with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputShowPasswordIcon003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SHOWPASSWORDICON_0300
+     * @tc.desc   testing showPasswordIcon for textInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputShowPasswordIcon003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputShowPasswordIcon003()).assertEqual(0)

@@ -42,12 +42,12 @@ export default function TextInputModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputModifierTest_0010
-     * @tc.name      TextInputModifierTest_0010
-     * @tc.desc      test TextInputModifier: fontSize
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputModifierTest_0010
+     * @tc.number SUB_ACE_TextInputModifierTest_0010
+     * @tc.desc   test TextInputModifier: fontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputModifierTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('TextInputModifierTest_0010 START');
@@ -61,12 +61,12 @@ export default function TextInputModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputModifierTest_0020
-     * @tc.name      TextInputModifierTest_0020
-     * @tc.desc      test type of TextInputInstance: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputModifierTest_0020
+     * @tc.number SUB_ACE_TextInputModifierTest_0020
+     * @tc.desc   test type of TextInputInstance: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputModifierTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('TextInputModifierTest_0020 START');

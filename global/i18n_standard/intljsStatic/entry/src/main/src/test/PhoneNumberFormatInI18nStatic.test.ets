@@ -53,7 +53,6 @@ export default function PhoneNumberFormatInI18nTest() {
       console.info("afterAll case");
     });
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_0100
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_0100
      * @tc.desc   test isValidNumber interface with 13510574676 param
@@ -72,7 +71,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_0200
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_0200
      * @tc.desc   test isValidNumber interface with 13510574676 and undefined param
@@ -91,7 +89,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_0300
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_0300
      * @tc.desc   test isValidNumber interface with 13510574676 and null param
@@ -110,7 +107,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_0400
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_0400
      * @tc.desc   test isValidNumber interface with 0755-6100088X param
@@ -130,7 +126,6 @@ export default function PhoneNumberFormatInI18nTest() {
 
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_0500
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_0500
      * @tc.desc   get the isValidNumber value, test isValidNumber interface with 110 param
@@ -147,7 +142,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_0600
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_0600
      * @tc.desc   test isValidNumber interface with 135 1057 4676 param
@@ -166,7 +160,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_0700
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_0700
      * @tc.desc   test isValidNumber interface with +86 135 1057 4676 param
@@ -185,7 +178,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_0800
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_0800
      * @tc.desc   test isValidNumber interface with 135-1057-4676 param
@@ -204,7 +196,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_0900
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_0900
      * @tc.desc   test isValidNumber interface with tel:+86-135-1057-4676 param
@@ -223,7 +214,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_1000
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_1000
      * @tc.desc   test isValidNumber interface with 86-135-1057-4676 param
@@ -242,7 +232,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_1100
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_1100
      * @tc.desc   test isValidNumber interface with +8613510574676 param
@@ -261,7 +250,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_1200
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_1200
      * @tc.desc   test isValidNumber interface with 8613510574676 param
@@ -280,7 +268,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_1300
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_1300
      * @tc.desc   test isValidNumber interface with 1351057467 param
@@ -299,7 +286,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_1400
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_1400
      * @tc.desc   test isValidNumber interface with 135105746761 param
@@ -318,7 +304,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_1500
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_1500
      * @tc.desc   test isValidNumber interface with 1351057467a param
@@ -337,7 +322,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_1600
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_1600
      * @tc.desc   get the isValidNumber value
@@ -356,7 +340,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_1700
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_1700
      * @tc.desc   test isValidNumber interface with 626202337 param
@@ -375,7 +358,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_1800
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_1800
      * @tc.desc   test isValidNumber interface with 62620233791 param
@@ -394,7 +376,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_1900
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_1900
      * @tc.desc   test isValidNumber interface with 626202337a param
@@ -413,7 +394,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_2000
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_2000
      * @tc.desc   test format interface with 13510574676 param
@@ -432,7 +412,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_2100
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_2100
      * @tc.desc   test format interface with 6262023379 param
@@ -451,7 +430,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_2200
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_2200
      * @tc.desc   test format interface with 13510574676 and NATIONAL type param
@@ -472,7 +450,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_2300
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_2300
      * @tc.desc   test format interface with 1351057467 and NATIONAL type param
@@ -493,7 +470,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_2400
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_2400
      * @tc.desc   test format interface with 135105746761 and NATIONAL type param
@@ -514,7 +490,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_2500
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_2500
      * @tc.desc   test format interface with 135 1057 4676 and NATIONAL type param
@@ -535,7 +510,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_2600
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_2600
      * @tc.desc   test format interface with 13510574676 and INTERNATIONAL type param
@@ -556,7 +530,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_2700
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_2700
      * @tc.desc   test format interface with 13510574676 and RFC3966 type param
@@ -577,7 +550,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_2800
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_2800
      * @tc.desc   test format interface with 13510574676 and E164 type param
@@ -598,7 +570,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_2900
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_2900
      * @tc.desc   test format interface with 6262023379 and NATIONAL type param
@@ -619,7 +590,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_3000
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3000
      * @tc.desc   test format interface with 6262023379 and INTERNATIONAL type param
@@ -640,7 +610,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_3100
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3100
      * @tc.desc   test format interface with 6262023379 and RFC3966 type param
@@ -661,7 +630,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_3200
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3200
      * @tc.desc   test format interface with 6262023379 and E164 type param
@@ -682,7 +650,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_3300
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3300
      * @tc.desc   get the getLocationName value, test getLocationName method with 135... num in zh-CN locale
@@ -701,7 +668,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_3400
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3400
      * @tc.desc   get the getLocationName value, test getLocationName method with 135... num in en-US locale
@@ -723,7 +689,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_3500
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3500
      * @tc.desc   get the getLocationName value,test getLocationName method with 158... num in en-US locale
@@ -745,7 +710,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
    
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_3600
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3600
      * @tc.desc   get the getLocationName value,test getLocationName method with 027... num in zh-CN locale
@@ -764,7 +728,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_3700
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3700
      * @tc.desc   get the getLocationName value, test getLocationName method with 0728... num in zh-CN locale
@@ -783,7 +746,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_3800
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3800
      * @tc.desc   get the getLocationName value, test getLocationName method with +34... num in en-US locale
@@ -805,7 +767,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_3900
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3900
      * @tc.desc   get the getLocationName value, test getLocationName method with +39... num in en-US locale
@@ -826,7 +787,6 @@ export default function PhoneNumberFormatInI18nTest() {
       expect(value2).assertEqual('Italy');
     })
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_4000
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_4000
      * @tc.desc   test getLocationName method with +39... num in zh-CN locale,get the getLocationName value
@@ -848,7 +808,6 @@ export default function PhoneNumberFormatInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_phonenumberformat_test_static_4100
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_4100
      * @tc.desc   test getLocationName method with +34... num in zh-CN locale,get the getLocationName value

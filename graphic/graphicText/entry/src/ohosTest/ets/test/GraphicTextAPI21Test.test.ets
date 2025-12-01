@@ -26,12 +26,12 @@ export default function GraphicTextAPI21Test() {
     });
 
     /**
-     * @tc.number    graphicTextAPI21Test_0100
-     * @tc.name      graphicTextAPI21Test_0100
-     * @tc.desc      runMetrics and LineMetrics
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level0
+     * @tc.name   graphicTextAPI21Test_0100
+     * @tc.number graphicTextAPI21Test_0100
+     * @tc.desc   runMetrics and LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicTextAPI21Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testLineMetricsTest_0100===="

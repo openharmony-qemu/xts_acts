@@ -42,10 +42,13 @@ protected:
 };
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_MATH_DRAND48_0100
-* @tc.name       test drand48 api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testDrand480100
+ * @tc.number SUB_KERNEL_UTIL_MATH_DRAND48_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilMathApiTest, testDrand480100, Function | MediumTest | Level1) {
     double returnVal;
     long seedVal;
@@ -58,10 +61,13 @@ HWTEST_F(ActsUtilMathApiTest, testDrand480100, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_MATH_ERAND48_0200
-* @tc.name       test erand48 api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testErand480200
+ * @tc.number SUB_KERNEL_UTIL_MATH_ERAND48_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilMathApiTest, testErand480200, Function | MediumTest | Level1) {
     double returnVal;
     unsigned short xsubi[3] = {0, 1, 2};
@@ -72,10 +78,13 @@ HWTEST_F(ActsUtilMathApiTest, testErand480200, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_MATH_JRAND48_0300
-* @tc.name       test jrand48 api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testJrand480300
+ * @tc.number SUB_KERNEL_UTIL_MATH_JRAND48_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilMathApiTest, testJrand480300, Function | MediumTest | Level1) {
     long long returnVal;
     unsigned short xsubi[3] = {0, 1, 2};
@@ -87,10 +96,13 @@ HWTEST_F(ActsUtilMathApiTest, testJrand480300, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_MATH_MRAND48_0400
-* @tc.name       test mrand48 api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testMrand480400
+ * @tc.number SUB_KERNEL_UTIL_MATH_MRAND48_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilMathApiTest, testMrand480400, Function | MediumTest | Level1) {
     long long returnVal;
     unsigned short paraVal[7] = {0, 1, 2, 3, 4, 5, 6};
@@ -103,10 +115,13 @@ HWTEST_F(ActsUtilMathApiTest, testMrand480400, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_MATH_LRAND48_0500
-* @tc.name       test lrand48 api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testLrand480500
+ * @tc.number SUB_KERNEL_UTIL_MATH_LRAND48_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilMathApiTest, testLrand480500, Function | MediumTest | Level1) {
     long long returnVal;
     unsigned short paraVal[3] = {0, 1, 2};
@@ -118,10 +133,13 @@ HWTEST_F(ActsUtilMathApiTest, testLrand480500, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_MATH_SRANDOM_0600
-* @tc.name       test srandom api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testSrandom0600
+ * @tc.number SUB_KERNEL_UTIL_MATH_SRANDOM_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilMathApiTest, testSrandom0600, Function | MediumTest | Level1) {
     char *returnVal = nullptr;
     unsigned int seedVal;
@@ -140,10 +158,13 @@ HWTEST_F(ActsUtilMathApiTest, testSrandom0600, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_MATH_NRAND48_0700
-* @tc.name       test nrand48 api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testNrand480700
+ * @tc.number SUB_KERNEL_UTIL_MATH_NRAND48_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilMathApiTest, testNrand480700, Function | MediumTest | Level1) {
     long long returnVal;
     unsigned short paraVal[3] = {0, 1, 2};
@@ -154,10 +175,13 @@ HWTEST_F(ActsUtilMathApiTest, testNrand480700, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_MATH_RAND_R_0800
-* @tc.name       test rand_r api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testNrand480800
+ * @tc.number SUB_KERNEL_UTIL_MATH_RAND_R_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilMathApiTest, testNrand480800, Function | MediumTest | Level1) {
     int returnVal;
     unsigned int paraVal;

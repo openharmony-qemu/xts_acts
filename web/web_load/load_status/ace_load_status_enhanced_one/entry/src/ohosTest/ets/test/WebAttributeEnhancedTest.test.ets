@@ -63,14 +63,14 @@ export default function WebAttributeEnhancedTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_ONLOADSTARTED_API_0100
-    * @tc.name       : testOnLoadStarted001
-    * @tc.desc       : test onLoadStarted rawfile
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOnLoadStarted001
+     * @tc.number SUB_ACE_WEB_ONLOADSTARTED_API_0100
+     * @tc.desc   test onLoadStarted rawfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnLoadStarted001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnLoadStarted001', 133);
       Utils.registerBaseEvent('testOnLoadStarted001', 1, 2025071701, done,
@@ -79,14 +79,14 @@ export default function WebAttributeEnhancedTest() {
         });
       sendEventByKey('WebAttributeEnhancedTestButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_ONLOADSTARTED_API_0200
-    * @tc.name       : testOnLoadStarted002
-    * @tc.desc       : test onLoadStarted https url
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOnLoadStarted002
+     * @tc.number SUB_ACE_WEB_ONLOADSTARTED_API_0200
+     * @tc.desc   test onLoadStarted https url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnLoadStarted002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnLoadStarted002', 133);
       Utils.registerBaseEvent('testOnLoadStarted002', 1, 2025071702, done,
@@ -95,14 +95,14 @@ export default function WebAttributeEnhancedTest() {
         });
       sendEventByKey('WebAttributeEnhancedTestButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_ONLOADSTARTED_API_0300
-    * @tc.name       : testOnLoadStarted003
-    * @tc.desc       : test onLoadStarted anchor page
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOnLoadStarted003
+     * @tc.number SUB_ACE_WEB_ONLOADSTARTED_API_0300
+     * @tc.desc   test onLoadStarted anchor page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnLoadStarted003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnLoadStarted003', 133);
       Utils.registerBaseEvent('testOnLoadStarted003', -1, 2025071703, done,
@@ -111,14 +111,14 @@ export default function WebAttributeEnhancedTest() {
         });
       sendEventByKey('WebAttributeEnhancedTestButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_ONLOADFINISHED_API_0100
-    * @tc.name       : testOnLoadFinished001
-    * @tc.desc       : test onLoadFinished rawfile
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOnLoadFinished001
+     * @tc.number SUB_ACE_WEB_ONLOADFINISHED_API_0100
+     * @tc.desc   test onLoadFinished rawfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnLoadFinished001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnLoadFinished001', 133);
       Utils.registerBaseEvent('testOnLoadFinished001', 1, 2025071704, done,
@@ -127,14 +127,14 @@ export default function WebAttributeEnhancedTest() {
         });
       sendEventByKey('WebAttributeEnhancedTestButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_ONLOADFINISHED_API_0200
-    * @tc.name       : testOnLoadFinished002
-    * @tc.desc       : test onLoadFinished https url
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOnLoadFinished002
+     * @tc.number SUB_ACE_WEB_ONLOADFINISHED_API_0200
+     * @tc.desc   test onLoadFinished https url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnLoadFinished002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnLoadFinished002', 133);
       Utils.registerBaseEvent('testOnLoadFinished002', 1, 2025071705, done,
@@ -143,14 +143,14 @@ export default function WebAttributeEnhancedTest() {
         });
       sendEventByKey('WebAttributeEnhancedTestButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_ONLOADFINISHED_API_0300
-    * @tc.name       : testOnLoadFinished003
-    * @tc.desc       : test onLoadFinished anchor page
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOnLoadFinished003
+     * @tc.number SUB_ACE_WEB_ONLOADFINISHED_API_0300
+     * @tc.desc   test onLoadFinished anchor page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnLoadFinished003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnLoadFinished003', 133);
       Utils.registerBaseEvent('testOnLoadFinished003', 1, 2025071706, done,

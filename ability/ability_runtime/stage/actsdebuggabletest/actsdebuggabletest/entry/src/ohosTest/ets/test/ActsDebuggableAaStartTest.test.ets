@@ -63,11 +63,13 @@ export default function actsDebuggableAaStartTest() {
       await cancelSuspendDelay();
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Debuggable_0300
-     * @tc.name    aa start -b com.example.timeout -a EntryAbility
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Debuggable_0300
+     * @tc.number SUB_AA_AMS_Debuggable_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_AMS_Debuggable_0300', Level.LEVEL1, async (done: Function) => {
       let res = '';
@@ -81,11 +83,13 @@ export default function actsDebuggableAaStartTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Debuggable_0400
-     * @tc.name    aa start -b com.example.timeout -a EntryAbility -S -p
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Debuggable_0400
+     * @tc.number SUB_AA_AMS_Debuggable_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_AMS_Debuggable_0400', Level.LEVEL1, async (done: Function) => {
       let res = '';
@@ -103,11 +107,13 @@ export default function actsDebuggableAaStartTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Debuggable_2600
-     * @tc.name    aa start -h
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Debuggable_2600
+     * @tc.number SUB_AA_AMS_Debuggable_2600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_AMS_Debuggable_2600', Level.LEVEL1, async (done: Function) => {
       let res = '';

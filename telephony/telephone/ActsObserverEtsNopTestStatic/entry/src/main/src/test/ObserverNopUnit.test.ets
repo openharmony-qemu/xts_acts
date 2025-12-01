@@ -39,13 +39,13 @@ export default function ObserverNopTest() {
   describe("ObserverNopTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-    /*
-     * @tc.number:SUB_Telephony_Observer_NetworkStateChangeOn_NoP_0100
-     * @tc.name: testTelephonyObserverNetworkStateChangeOnNoP0100
-     * @tc.desc:Using the observer on ('networkStateChange',options,callback) method without permission
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOnNoP0100
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOn_NoP_0100
+     * @tc.desc   Using the observer on ('networkStateChange',options,callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyObserverNetworkStateChangeOnNoP0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverNetworkStateChangeOnNoP0100';
@@ -68,13 +68,13 @@ export default function ObserverNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_Telephony_Observer_NetworkStateChangeOn_NoP_0200
-     * @tc.name: testTelephonyObserverNetworkStateChangeOnNoP0200
-     * @tc.desc:Using the observer on ('networkStateChange',callback) method without permission
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOnNoP0200
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOn_NoP_0200
+     * @tc.desc   Using the observer on ('networkStateChange',callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyObserverNetworkStateChangeOnNoP0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverNetworkStateChangeOnNoP0200';

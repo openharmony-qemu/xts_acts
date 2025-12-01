@@ -42,12 +42,12 @@ export default function nextFocus() {
     });
 
     /**
-     * @tc.number Button_0100
      * @tc.name   Button_0100
+     * @tc.number Button_0100
      * @tc.desc   test whether the nextFocus is effective
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Button_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[Button_0100] START');

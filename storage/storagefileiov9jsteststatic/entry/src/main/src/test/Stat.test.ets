@@ -31,14 +31,12 @@ export default function fileIOStat() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_stat start');
 
     /**
+     * @tc.name   fileIO_stat_sync_static_001
      * @tc.number SUB_DF_fileIO_stat_sync_static_0100
-     * @tc.name fileIO_stat_sync_static_001
-     * @tc.desc Test statSync() interfaces.
-     * Enter the path or fd parameter to get the file stat.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test statSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_static_001 start');
@@ -61,14 +59,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_static_002
      * @tc.number SUB_DF_fileIO_stat_sync_static_0200
-     * @tc.name fileIO_stat_sync_static_002
-     * @tc.desc Test statSync() interfaces.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test statSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_static_002 start');
@@ -84,14 +80,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_static_003
      * @tc.number SUB_DF_fileIO_stat_sync_static_0300
-     * @tc.name fileIO_stat_sync_static_003
-     * @tc.desc Test statSync() interfaces.
-     * Bad file descriptor.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test statSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_static_003 start');
@@ -111,14 +105,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_ino_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_ino_static_0000
-     * @tc.name fileIO_stat_sync_ino_static_000
-     * @tc.desc Test the ino member of class Stat.
-     * Enter the path or fd parameter to get stat.ino of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the ino member of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_ino_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_ino_static_000 start');
@@ -142,14 +134,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_mode_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_mode_static_0000
-     * @tc.name fileIO_stat_sync_mode_static_000
-     * @tc.desc Test the mode member of class Stat.
-     * Enter the path or fd parameter to get stat.mode of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the mode member of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_mode_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_mode_static_000 start');
@@ -173,14 +163,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_uid_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_uid_static_0000
-     * @tc.name fileIO_stat_sync_uid_static_000
-     * @tc.desc Test the uid member of class Stat.
-     * Enter the path or fd parameter to get stat.uid of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the uid member of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_uid_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_uid_static_000 start');
@@ -204,14 +192,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_gid_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_gid_static_0000
-     * @tc.name fileIO_stat_sync_gid_static_000
-     * @tc.desc Test the gid member of class Stat.
-     * Enter the path or fd parameter to get stat.gid of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the gid member of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_gid_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_gid_static_000 start');
@@ -234,14 +220,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_size_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_size_static_0000
-     * @tc.name fileIO_stat_sync_size_static_000
-     * @tc.desc Test the size member of class Stat.
-     * Enter the path or fd parameter to get stat.size of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the size member of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_size_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_size_static_000 start');
@@ -265,14 +249,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_atime_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_atime_static_0000
-     * @tc.name fileIO_stat_sync_atime_static_000
-     * @tc.desc Test the atime member of class Stat.
-     * Enter the path or fd parameter to get stat.atime of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the atime member of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_atime_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_atime_static_000 start');
@@ -296,14 +278,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_mtime_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_mtime_static_0000
-     * @tc.name fileIO_stat_sync_mtime_static_000
-     * @tc.desc Test the mtime member of class Stat.
-     * Enter the path or fd parameter to get stat.mtime of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the mtime member of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_mtime_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_mtime_static_000 start');
@@ -327,14 +307,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_ctime_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_ctime_static_0000
-     * @tc.name fileIO_stat_sync_ctime_static_000
-     * @tc.desc Test the ctime member of class Stat.
-     * Enter the path or fd parameter to get stat.ctime of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the ctime member of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_ctime_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_ctime_static_000 start');
@@ -358,14 +336,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_is_block_device_static_000
      * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISBLOCKDEVICE_0000
-     * @tc.name fileIO_stat_sync_is_block_device_static_000
-     * @tc.desc Test the isBlockDevice() method of class Stat.
-     * This interface shall not treat a normal file as a block special device.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isBlockDevice() method of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_is_block_device_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_block_device_static_000 start');
@@ -388,14 +364,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_is_character_device_static_000
      * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISCHARACTER_DEVICE_0000
-     * @tc.name fileIO_stat_sync_is_character_device_static_000
-     * @tc.desc Test the isCharacterDevice() method of class Stat.
-     * This interface shall not treat a normal file as a character special device.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isCharacterDevice() method of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_is_character_device_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_character_device_static_000 start');
@@ -418,14 +392,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_is_directory_static_000
      * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISDIRECTORY_0000
-     * @tc.name fileIO_stat_sync_is_directory_static_000
-     * @tc.desc Test the isDirectory() method of class Stat.
-     * This interface shall not treat a normal file as a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isDirectory() method of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_is_directory_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_directory_static_000 start');
@@ -448,14 +420,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_is_directory_static_001
      * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISDIRECTORY_0100
-     * @tc.name fileIO_stat_sync_is_directory_static_001
-     * @tc.desc Test the isDirectory() method of class Stat.
-     * This interface shall treat a directory as a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isDirectory() method of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_is_directory_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_directory_static_001 start');
@@ -478,14 +448,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_is_fifo_static_000
      * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISFIFO_0000
-     * @tc.name fileIO_stat_sync_is_fifo_static_000
-     * @tc.desc Test the isFIFO() method of class Stat.
-     * This interface shall not treat a normal file as a FIFO.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isFIFO() method of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_is_fifo_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_fifo_static_000 start');
@@ -507,14 +475,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_is_file_static_000
      * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISFILE_0000
-     * @tc.name fileIO_stat_sync_is_file_static_000
-     * @tc.desc Test the isFile() method of class Stat.
-     * This interface shall treat a normal file as a normal file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isFile() method of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_is_file_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_file_static_000 start');
@@ -536,14 +502,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_is_file_static_001
      * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISFILE_0100
-     * @tc.name fileIO_stat_sync_is_file_static_001
-     * @tc.desc Test the isFile() method of class Stat.
-     * This interface shall not treat a directory as a normal file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isFile() method of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_is_file_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_file_static_001 start');
@@ -565,14 +529,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_is_socket_static_000
      * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISSOCKET_0000
-     * @tc.name fileIO_stat_sync_is_socket_static_000
-     * @tc.desc Test the isSocket() method of class Stat.
-     * This interface shall not treat a file as a socket.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isSocket() method of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_is_socket_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_socket_static_000 start');
@@ -594,14 +556,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_is_symbolic_link_static_000
      * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISSYMBOLICLINK_0000
-     * @tc.name fileIO_stat_sync_is_symbolic_link_static_000
-     * @tc.desc Test the isSymbolicLink() method of class Stat.
-     * This interface shall not treat a normal file as a symbolic link.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isSymbolicLink() method of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_is_symbolic_link_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_symbolic_link_static_000 start');
@@ -623,14 +583,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_static_000
      * @tc.number SUB_DF_fileIO_stat_async_static_0000
-     * @tc.name fileIO_stat_async_static_000
-     * @tc.desc Test stat() interface. Promise.then().catch()
-     * Enter the path or fd parameter to get the file stat.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test stat() interface. Promise.then().catch()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 start');
@@ -660,14 +618,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_static_001
      * @tc.number SUB_DF_fileIO_stat_async_static_0100
-     * @tc.name fileIO_stat_async_static_001
-     * @tc.desc Test stat() interface. Promise.
-     * Enter the path or fd parameter to get the file stat.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test stat() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_001 start');
@@ -690,14 +646,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_static_002
      * @tc.number SUB_DF_fileIO_stat_async_static_0200
-     * @tc.name fileIO_stat_async_static_002
-     * @tc.desc Test stat() interface. Callback.
-     * Enter the path or fd parameter to get the file stat.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test stat() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_002 start');
@@ -721,14 +675,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_static_003
      * @tc.number SUB_DF_fileIO_stat_async_static_0300
-     * @tc.name fileIO_stat_async_static_003
-     * @tc.desc Test stat() interface. Promise.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test stat() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_003 start');
@@ -744,14 +696,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_static_004
      * @tc.number SUB_DF_fileIO_stat_async_static_0400
-     * @tc.name fileIO_stat_async_static_004
-     * @tc.desc Test stat() interface. Callback.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test stat() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_004 start');
@@ -771,14 +721,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_static_005
      * @tc.number SUB_DF_fileIO_stat_async_static_0500
-     * @tc.name fileIO_stat_async_static_005
-     * @tc.desc Test stat() interface. Promise.
-     * Invalid path or fd parameter.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test stat() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_005 start');
@@ -793,14 +741,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_static_006
      * @tc.number SUB_DF_fileIO_stat_async_static_0600
-     * @tc.name fileIO_stat_async_static_006
-     * @tc.desc Test stat() interface. Callback.
-     * Invalid path or fd parameter.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test stat() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_004 start');
@@ -819,14 +765,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_static_007
      * @tc.number SUB_DF_fileIO_stat_async_static_0700
-     * @tc.name fileIO_stat_async_static_007
-     * @tc.desc Test stat() interface. Promise.then().catch()
-     * Bad file descriptor.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test stat() interface. Promise.then().catch()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_007 start');
@@ -846,14 +790,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_static_008
      * @tc.number SUB_DF_fileIO_stat_async_static_0800
-     * @tc.name fileIO_stat_async_static_008
-     * @tc.desc Test stat() interface. Callback.
-     * Bad file descriptor.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test stat() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_008 start');
@@ -877,14 +819,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_ino_static_000
      * @tc.number SUB_DF_fileIO_stat_async_ino_static_0000
-     * @tc.name fileIO_stat_async_ino_static_000
-     * @tc.desc Test the ino member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.ino of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the ino member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_ino_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ino_static_000 start');
@@ -907,14 +847,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_ino_static_001
      * @tc.number SUB_DF_fileIO_stat_async_ino_static_0100
-     * @tc.name fileIO_stat_async_ino_static_001
-     * @tc.desc Test the ino member of class Stat. Callback.
-     * Enter the path or fd parameter to get stat.atime of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the ino member of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_ino_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ino_static_001 start');
@@ -938,14 +876,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_mode_static_000
      * @tc.number SUB_DF_fileIO_stat_async_mode_static_0000
-     * @tc.name fileIO_stat_async_mode_static_000
-     * @tc.desc Test the mode member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.mode of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the mode member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_mode_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mode_static_000 start');
@@ -968,14 +904,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_mode_static_001
      * @tc.number SUB_DF_fileIO_stat_async_mode_static_0100
-     * @tc.name fileIO_stat_async_mode_static_001
-     * @tc.desc Test the mode member of class Stat. Callback.
-     * Enter the path or fd parameter to get stat.mode of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the mode member of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_mode_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mode_static_001 start');
@@ -999,14 +933,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_uid_static_000
      * @tc.number SUB_DF_fileIO_stat_async_uid_static_0000
-     * @tc.name fileIO_stat_async_uid_static_000
-     * @tc.desc Test the uid member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.uid of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the uid member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_uid_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_uid_static_000 start');
@@ -1029,14 +961,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_uid_static_001
      * @tc.number SUB_DF_fileIO_stat_async_uid_static_0100
-     * @tc.name fileIO_stat_async_uid_static_001
-     * @tc.desc Test the uid member of class Stat. Callback.
-     * Enter the path or fd parameter to get stat.uid of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the uid member of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_uid_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_uid_static_001 start');
@@ -1060,14 +990,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_gid_static_000
      * @tc.number SUB_DF_fileIO_stat_async_gid_static_0000
-     * @tc.name fileIO_stat_async_gid_static_000
-     * @tc.desc Test the gid member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.gid of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the gid member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_gid_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_gid_static_000 start');
@@ -1090,14 +1018,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_gid_static_001
      * @tc.number SUB_DF_fileIO_stat_async_gid_static_0100
-     * @tc.name fileIO_stat_async_gid_static_001
-     * @tc.desc Test the gid member of class Stat. Callback.
-     * Enter the path or fd parameter to get stat.gid of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the gid member of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_gid_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_gid_static_001 start');
@@ -1121,14 +1047,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_size_static_000
      * @tc.number SUB_DF_fileIO_stat_async_size_static_0000
-     * @tc.name fileIO_stat_async_size_static_000
-     * @tc.desc Test the size member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.size of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the size member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_size_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_size_static_000 start');
@@ -1151,14 +1075,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_size_static_001
      * @tc.number SUB_DF_fileIO_stat_async_size_static_0100
-     * @tc.name fileIO_stat_async_size_static_001
-     * @tc.desc Test the size member of class Stat. Callback.
-     * Enter the path or fd parameter to get stat.size of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the size member of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_size_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_size_static_001 start');
@@ -1182,14 +1104,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_atime_static_000
      * @tc.number SUB_DF_fileIO_stat_async_atime_static_0000
-     * @tc.name fileIO_stat_async_atime_static_000
-     * @tc.desc Test the atime member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.atime of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the atime member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_atime_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_atime_static_000 start');
@@ -1212,14 +1132,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_atime_static_001
      * @tc.number SUB_DF_fileIO_stat_async_atime_static_0100
-     * @tc.name fileIO_stat_async_atime_static_001
-     * @tc.desc Test the atime member of class Stat. Callback.
-     * Enter the path or fd parameter to get stat.atime of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the atime member of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_atime_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_atime_static_001 start');
@@ -1243,14 +1161,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_mtime_static_000
      * @tc.number SUB_DF_fileIO_stat_async_mtime_static_0000
-     * @tc.name fileIO_stat_async_mtime_static_000
-     * @tc.desc Test the mtime member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.mtime of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the mtime member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_mtime_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mtime_static_000 start');
@@ -1273,14 +1189,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_mtime_static_001
      * @tc.number SUB_DF_fileIO_stat_async_mtime_static_0100
-     * @tc.name fileIO_stat_async_mtime_static_001
-     * @tc.desc Test the mtime member of class Stat. Callback.
-     * Enter the path or fd parameter to get stat.mtime of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the mtime member of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_mtime_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mtime_static_001 start');
@@ -1304,14 +1218,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_ctime_static_000
      * @tc.number SUB_DF_fileIO_stat_async_ctime_static_0000
-     * @tc.name fileIO_stat_async_ctime_static_000
-     * @tc.desc Test the ctime member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.ctime of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the ctime member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_ctime_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ctime_static_000 start');
@@ -1334,14 +1246,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_ctime_static_001
      * @tc.number SUB_DF_fileIO_stat_async_ctime_static_0100
-     * @tc.name fileIO_stat_async_ctime_static_001
-     * @tc.desc Test the ctime member of class Stat. Callback.
-     * Enter the path or fd parameter to get stat.ctime of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the ctime member of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_ctime_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ctime_static_001 start');
@@ -1365,14 +1275,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_block_device_static_000
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISBLOCKDEVICE_0000
-     * @tc.name fileIO_stat_async_is_block_device_static_000
-     * @tc.desc Test the isBlockDevice() method of class Stat. Promise.
-     * This interface shall not treat a normal file as a block special device.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isBlockDevice() method of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_block_device_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_block_device_static_000 start');
@@ -1395,14 +1303,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_block_device_static_001
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISBLOCKDEVICE_0100
-     * @tc.name fileIO_stat_async_is_block_device_static_001
-     * @tc.desc Test the isBlockDevice() method of class Stat. Callback.
-     * This interface shall not treat a normal file as a block special device.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isBlockDevice() method of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_block_device_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_block_device_static_001 start');
@@ -1434,14 +1340,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_character_device_static_000
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISCHARACTERDEVICE_0000
-     * @tc.name fileIO_stat_async_is_character_device_static_000
-     * @tc.desc Test the isCharacterDevice() method of class Stat. Promise.
-     * This interface shall not treat a normal file as a character special device.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isCharacterDevice() method of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_character_device_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_character_device_static_000 start');
@@ -1464,14 +1368,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_character_device_static_001
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISCHARACTERDEVICE_0100
-     * @tc.name fileIO_stat_async_is_character_device_static_001
-     * @tc.desc Test the isCharacterDevice() method of class Stat. Callback.
-     * This interface shall not treat a normal file as a character special device.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isCharacterDevice() method of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_character_device_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_character_device_static_001 start');
@@ -1503,14 +1405,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_directory_static_000
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISDIRECTORY_0000
-     * @tc.name fileIO_stat_async_is_directory_static_000
-     * @tc.desc Test the isDirectory() method of class Stat. Promise.
-     * This interface shall not treat a normal file as a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isDirectory() method of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_directory_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_directory_static_000 start');
@@ -1533,14 +1433,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_directory_static_001
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISDIRECTORY_0100
-     * @tc.name fileIO_stat_async_is_directory_static_001
-     * @tc.desc Test the isDirectory() method of class Stat. Promise.
-     * This interface shall not treat a directory as a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isDirectory() method of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_directory_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_directory_static_001 start');
@@ -1563,14 +1461,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_directory_static_002
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISDIRECTORY_0200
-     * @tc.name fileIO_stat_async_is_directory_static_002
-     * @tc.desc Test the isDirectory() method of class Stat. Callback.
-     * This interface shall not treat a directory as a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isDirectory() method of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_directory_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_directory_static_002 start');
@@ -1602,14 +1498,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_fifo_static_000
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISFIFO_0000
-     * @tc.name fileIO_stat_async_is_fifo_static_000
-     * @tc.desc Test the isFIFO() method of class Stat. Promise.
-     * This interface shall not treat a normal file as a FIFO.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isFIFO() method of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_fifo_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_fifo_static_000 start');
@@ -1632,14 +1526,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_fifo_static_001
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISFIFO_0100
-     * @tc.name fileIO_stat_async_is_fifo_static_001
-     * @tc.desc Test the isFIFO() method of class Stat. Callback.
-     * This interface shall not treat a normal file as a FIFO.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isFIFO() method of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_fifo_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_fifo_static_001 start');
@@ -1671,14 +1563,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_file_static_000
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISFILE_0000
-     * @tc.name fileIO_stat_async_is_file_static_000
-     * @tc.desc Test the isFile() method of class Stat. Promise.
-     * This interface shall treat a normal file as a normal file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isFile() method of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_file_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_file_static_000 start');
@@ -1701,14 +1591,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_file_static_001
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISFILE_0100
-     * @tc.name fileIO_stat_async_is_file_static_001
-     * @tc.desc Test the isFile() method of class Stat. Callback.
-     * This interface shall treat a normal file as a normal file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isFile() method of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_file_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_file_static_001 start');
@@ -1740,14 +1628,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_file_static_002
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISFILE_0200
-     * @tc.name fileIO_stat_async_is_file_static_002
-     * @tc.desc Test the isFile() method of class Stat. Promise.
-     * This interface shall not treat a directory as a normal file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isFile() method of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_file_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_file_static_002 start');
@@ -1770,14 +1656,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_socket_static_000
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISSOCKET_0000
-     * @tc.name fileIO_stat_async_is_socket_static_000
-     * @tc.desc Test the isSocket() method of class Stat. Promise.
-     * This interface shall not treat a file as a socket.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isSocket() method of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_socket_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_socket_static_000 start');
@@ -1800,14 +1684,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_socket_static_001
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISSOCKET_0100
-     * @tc.name fileIO_stat_async_is_socket_static_001
-     * @tc.desc Test the isSocket() method of class Stat. Callback.
-     * This interface shall not treat a file as a socket.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isSocket() method of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_socket_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_socket_static_001 start');
@@ -1839,14 +1721,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_symbolic_link_static_000
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISSYMBOLICLINK_0000
-     * @tc.name fileIO_stat_async_is_symbolic_link_static_000
-     * @tc.desc Test the isSymbolicLink() method of class Stat. Promise.
-     * This interface shall not treat a normal file as a symbolic link.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isSymbolicLink() method of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_symbolic_link_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_000 start');
@@ -1869,14 +1749,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_is_symbolic_link_static_001
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISSYMBOLICLINK_0100
-     * @tc.name fileIO_stat_async_is_symbolic_link_static_001
-     * @tc.desc Test the isSymbolicLink() method of class Stat. Callback.
-     * This interface shall not treat a normal file as a symbolic link.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the isSymbolicLink() method of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_is_symbolic_link_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_001 start');
@@ -1908,14 +1786,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_test_append_file_sync_static_000
      * @tc.number SUB_DF_FILEIO_STAT_SYNC_APPEND_FILE_SYNC_0000
-     * @tc.name fileIO_test_append_file_sync_static_000
-     * @tc.desc Test statSync() interface.
-     * Modify the file, view the file status changes by path.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test statSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_append_file_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_append_file_sync_static_000 start');
@@ -1941,14 +1817,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_test_append_file_sync_static_001
      * @tc.number SUB_DF_FILEIO_STAT_SYNC_APPEND_FILE_SYNC_0100
-     * @tc.name fileIO_test_append_file_sync_static_001
-     * @tc.desc Test statSync() interface.
-     * Modify the file, view the file status changes by fd.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test statSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_append_file_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_append_file_sync_static_001 start');
@@ -1975,14 +1849,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_location_static_000
      * @tc.number SUB_DF_FILEIO_STAT_ASYNC_LOCATION_0000
-     * @tc.name fileIO_stat_async_location_static_000
-     * @tc.desc Test the location member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.location is LOCAl.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the location member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_stat_async_location_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_stat_async_location_static_000');
@@ -2007,14 +1879,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_atimeNs_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_atimeNs_static_0000
-     * @tc.name fileIO_stat_sync_atimeNs_static_000
-     * @tc.desc Test the atimeNs of class statSync.
-     * Enter the path or fd parameter to get stat.atimeNs of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the atimeNs of class statSync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_atimeNs_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_atimeNs_static_000 start');
@@ -2036,14 +1906,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_atimeNs_static_001
      * @tc.number SUB_DF_fileIO_stat_async_atimeNs_static_0100
-     * @tc.name fileIO_stat_async_atimeNs_static_001
-     * @tc.desc Test the atimeNs member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.atimeNs of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the atimeNs member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_atimeNs_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_atimeNs_static_001 start');
@@ -2066,14 +1934,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_atimeNs_static_002
      * @tc.number SUB_DF_fileIO_stat_async_atimeNs_static_0200
-     * @tc.name fileIO_stat_async_atimeNs_static_002
-     * @tc.desc Test the atimeNs member of class Stat. Callback.
-     * Enter the path or fd parameter to get stat.atimeNs of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the atimeNs member of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_atimeNs_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_atimeNs_static_002 start');
@@ -2105,14 +1971,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_mtimeNs_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_mtimeNs_static_0000
-     * @tc.name fileIO_stat_sync_mtimeNs_static_000
-     * @tc.desc Test the mtimeNs of class Stat.
-     * Enter the path or fd parameter to get stat.mtimeNs of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the mtimeNs of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_mtimeNs_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_mtimeNs_static_000 start');
@@ -2134,14 +1998,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_mtimeNs_static_001
      * @tc.number SUB_DF_fileIO_stat_async_mtimeNs_static_0100
-     * @tc.name fileIO_stat_async_mtimeNs_static_001
-     * @tc.desc Test the mtimeNs member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.mtimeNs of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the mtimeNs member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_mtimeNs_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mtimeNs_static_001 start');
@@ -2164,14 +2026,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_mtimeNs_static_002
      * @tc.number SUB_DF_fileIO_stat_async_mtimeNs_static_0200
-     * @tc.name fileIO_stat_async_mtimeNs_static_002
-     * @tc.desc Test the mtimeNs member of class Stat. Callback.
-     * Enter the path or fd parameter to get stat.mtimeNs of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the mtimeNs member of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_mtimeNs_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mtimeNs_static_002 start');
@@ -2203,14 +2063,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_ctimeNs_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_ctimeNs_static_0000
-     * @tc.name fileIO_stat_sync_ctimeNs_static_000
-     * @tc.desc Test the ctimeNs of class Stat.
-     * Enter the path or fd parameter to get stat.ctimeNs of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the ctimeNs of class Stat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_sync_ctimeNs_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_ctimeNs_static_000 start');
@@ -2232,14 +2090,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_ctimeNs_static_001
      * @tc.number SUB_DF_fileIO_stat_async_ctimeNs_static_0100
-     * @tc.name fileIO_stat_async_ctimeNs_static_001
-     * @tc.desc Test the ctimeNs member of class Stat. Promise.
-     * Enter the path or fd parameter to get stat.ctimeNs of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the ctimeNs member of class Stat. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_ctimeNs_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ctimeNs_static_001 start');
@@ -2262,14 +2118,12 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_async_ctimeNs_static_002
      * @tc.number SUB_DF_fileIO_stat_async_ctimeNs_static_0200
-     * @tc.name fileIO_stat_async_ctimeNs_static_002
-     * @tc.desc Test the ctimeNs member of class Stat. Callback.
-     * Enter the path or fd parameter to get stat.ctimeNs of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the ctimeNs member of class Stat. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_stat_async_ctimeNs_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ctimeNs_static_002 start');

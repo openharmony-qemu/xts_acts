@@ -37,8 +37,12 @@ void CencInfoCapiUnitTest::SetUp() {}
 void CencInfoCapiUnitTest::TearDown() {}
 
 /**
- * @tc.name: CencInfo_Create_001
- * @tc.desc: Create a cencInfo object
+ * @tc.name   CencInfo_Create_001
+ * @tc.number CencInfo_Create_001
+ * @tc.desc   Create a cencInfo object
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_Create_001, TestSize.Level0)
 {
@@ -47,8 +51,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_Create_001, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_Destroy_001
- * @tc.desc: Destroy a cencInfo object
+ * @tc.name   CencInfo_Destroy_001
+ * @tc.number CencInfo_Destroy_001
+ * @tc.desc   Destroy a cencInfo object
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_Destroy_001, TestSize.Level0)
 {
@@ -60,8 +68,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_Destroy_001, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_Destroy_002
- * @tc.desc: Destroy a cencInfo null object
+ * @tc.name   CencInfo_Destroy_002
+ * @tc.number CencInfo_Destroy_002
+ * @tc.desc   Destroy a cencInfo null object
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_Destroy_002, TestSize.Level0)
 {
@@ -71,8 +83,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_Destroy_002, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetAlgorithm_001
- * @tc.desc: Set Algorithm
+ * @tc.name   CencInfo_SetAlgorithm_001
+ * @tc.number CencInfo_SetAlgorithm_001
+ * @tc.desc   Set Algorithm
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetAlgorithm_001, TestSize.Level0)
 {
@@ -106,8 +122,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetAlgorithm_001, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetAlgorithm_002
- * @tc.desc: Set cencInfo null object
+ * @tc.name   CencInfo_SetAlgorithm_002
+ * @tc.number CencInfo_SetAlgorithm_002
+ * @tc.desc   Set cencInfo null object
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetAlgorithm_002, TestSize.Level0)
 {
@@ -117,8 +137,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetAlgorithm_002, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetKeyIdAndIv_001
- * @tc.desc: Set keyId and iv
+ * @tc.name   CencInfo_SetKeyIdAndIv_001
+ * @tc.number CencInfo_SetKeyIdAndIv_001
+ * @tc.desc   Set keyId and iv
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_001, TestSize.Level0)
 {
@@ -141,8 +165,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_001, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetKeyIdAndIv_002
- * @tc.desc: Set cencInfo null object
+ * @tc.name   CencInfo_SetKeyIdAndIv_002
+ * @tc.number CencInfo_SetKeyIdAndIv_002
+ * @tc.desc   Set cencInfo null object
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_002, TestSize.Level0)
 {
@@ -160,8 +188,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_002, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetKeyIdAndIv_003
- * @tc.desc: Set the null keyId
+ * @tc.name   CencInfo_SetKeyIdAndIv_003
+ * @tc.number CencInfo_SetKeyIdAndIv_003
+ * @tc.desc   Set the null keyId
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_003, TestSize.Level0)
 {
@@ -181,8 +213,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_003, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetKeyIdAndIv_004
- * @tc.desc: Set an invalid keyIdLen
+ * @tc.name   CencInfo_SetKeyIdAndIv_004
+ * @tc.number CencInfo_SetKeyIdAndIv_004
+ * @tc.desc   Set an invalid keyIdLen
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_004, TestSize.Level0)
 {
@@ -205,8 +241,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_004, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetKeyIdAndIv_005
- * @tc.desc: Set the null iv
+ * @tc.name   CencInfo_SetKeyIdAndIv_005
+ * @tc.number CencInfo_SetKeyIdAndIv_005
+ * @tc.desc   Set the null iv
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_005, TestSize.Level0)
 {
@@ -226,8 +266,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_005, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetKeyIdAndIv_006
- * @tc.desc: Set an invalid ivLen
+ * @tc.name   CencInfo_SetKeyIdAndIv_006
+ * @tc.number CencInfo_SetKeyIdAndIv_006
+ * @tc.desc   Set an invalid ivLen
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_006, TestSize.Level0)
 {
@@ -250,8 +294,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetKeyIdAndIv_006, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetSubsampleInfo_001
- * @tc.desc: Set subsample info
+ * @tc.name   CencInfo_SetSubsampleInfo_001
+ * @tc.number CencInfo_SetSubsampleInfo_001
+ * @tc.desc   Set subsample info
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetSubsampleInfo_001, TestSize.Level0)
 {
@@ -272,8 +320,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetSubsampleInfo_001, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetSubsampleInfo_002
- * @tc.desc: Set cencInfo null object
+ * @tc.name   CencInfo_SetSubsampleInfo_002
+ * @tc.number CencInfo_SetSubsampleInfo_002
+ * @tc.desc   Set cencInfo null object
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetSubsampleInfo_002, TestSize.Level0)
 {
@@ -290,8 +342,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetSubsampleInfo_002, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetSubsampleInfo_003
- * @tc.desc: Set an invalid subsampleCount
+ * @tc.name   CencInfo_SetSubsampleInfo_003
+ * @tc.number CencInfo_SetSubsampleInfo_003
+ * @tc.desc   Set an invalid subsampleCount
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetSubsampleInfo_003, TestSize.Level0)
 {
@@ -312,8 +368,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetSubsampleInfo_003, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetSubsampleInfo_004
- * @tc.desc: Set the null subsamples
+ * @tc.name   CencInfo_SetSubsampleInfo_004
+ * @tc.number CencInfo_SetSubsampleInfo_004
+ * @tc.desc   Set the null subsamples
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetSubsampleInfo_004, TestSize.Level0)
 {
@@ -333,8 +393,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetSubsampleInfo_004, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetMode_001
- * @tc.desc: Set mode
+ * @tc.name   CencInfo_SetMode_001
+ * @tc.number CencInfo_SetMode_001
+ * @tc.desc   Set mode
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetMode_001, TestSize.Level0)
 {
@@ -358,8 +422,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetMode_001, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetMode_002
- * @tc.desc: Set cencInfo null object
+ * @tc.name   CencInfo_SetMode_002
+ * @tc.number CencInfo_SetMode_002
+ * @tc.desc   Set cencInfo null object
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetMode_002, TestSize.Level0)
 {
@@ -370,8 +438,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetMode_002, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetAVBuffer_001
- * @tc.desc: Set avBuffer
+ * @tc.name   CencInfo_SetAVBuffer_001
+ * @tc.number CencInfo_SetAVBuffer_001
+ * @tc.desc   Set avBuffer
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetAVBuffer_001, TestSize.Level0)
 {
@@ -427,8 +499,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetAVBuffer_001, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetAVBuffer_002
- * @tc.desc: Set cencInfo null object
+ * @tc.name   CencInfo_SetAVBuffer_002
+ * @tc.number CencInfo_SetAVBuffer_002
+ * @tc.desc   Set cencInfo null object
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetAVBuffer_002, TestSize.Level0)
 {
@@ -453,8 +529,12 @@ HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetAVBuffer_002, TestSize.Level0)
 }
 
 /**
- * @tc.name: CencInfo_SetAVBuffer_003
- * @tc.desc: Set buffer null
+ * @tc.name   CencInfo_SetAVBuffer_003
+ * @tc.number CencInfo_SetAVBuffer_003
+ * @tc.desc   Set buffer null
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(CencInfoCapiUnitTest, CencInfo_SetAVBuffer_003, TestSize.Level0)
 {

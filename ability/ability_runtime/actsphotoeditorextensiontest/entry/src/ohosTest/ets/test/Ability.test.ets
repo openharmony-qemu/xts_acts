@@ -61,14 +61,14 @@ export default function abilityTest() {
             // This API supports only one parameter: clear action function.
         })
 
-       /**
-        * @tc.number SUB_ABILITY_ABILITYRUNTIME_PHOTOEDITOREXTENSION_0100
-        * @tc.name test PhotoEditorExtension interface
-        * @tc.desc Start the PhotoEditorExtensionAbility, and the test is successful.
-        * @tc.size MediumTest
-        * @tc.level Level0
-        * @tc.type Function
-        */
+        /**
+         * @tc.name   ACTS_PhotoEditorExtension_0100
+         * @tc.number SUB_ABILITY_ABILITYRUNTIME_PHOTOEDITOREXTENSION_0100
+         * @tc.desc   Start the PhotoEditorExtensionAbility, and the test is successful.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_PhotoEditorExtension_0100', Level.LEVEL0, async () => {
             // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
             const newTag = 'ACTS_PhotoEditorExtension_0100 == ';

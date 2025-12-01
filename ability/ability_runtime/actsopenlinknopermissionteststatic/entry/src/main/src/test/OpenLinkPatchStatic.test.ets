@@ -45,14 +45,14 @@ export default function openLinkPatchStaticTest() {
       hilog.info(domain, tag, "beforeAll end");
     });
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_Static_1100
-    * @tc.name   : AbilityRuntime_OpenLink_Static_1100
-    * @tc.desc   : The input parameter 'link' is legal uri string and target app set permissions,Call the openLink interface through context, open target app failed
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_Static_1100
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_Static_1100
+     * @tc.desc   The input parameter 'link' is legal uri string and target app set permissions,Call the openLink interface through context, open target app failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('AbilityRuntime_OpenLink_Static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1100`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1100 begin');
@@ -75,14 +75,14 @@ export default function openLinkPatchStaticTest() {
       }
     });
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_Static_1200
-    * @tc.name   : AbilityRuntime_OpenLink_Static_1200
-    * @tc.desc   : The input parameter 'link' is legal uri string and target app set permissions,Call the openLink interface through context, open target app failed
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_Static_1200
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_Static_1200
+     * @tc.desc   The input parameter 'link' is legal uri string and target app set permissions,Call the openLink interface through context, open target app failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('AbilityRuntime_OpenLink_Static_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1200`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1200 begin');
@@ -105,14 +105,14 @@ export default function openLinkPatchStaticTest() {
       }
     });
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_Static_1300
-    * @tc.name   : AbilityRuntime_OpenLink_Static_1300
-    * @tc.desc   : The input parameter 'link' is legal uri string and target app set permissions,Call the openLink interface through context, open target app failed
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_Static_1300
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_Static_1300
+     * @tc.desc   The input parameter 'link' is legal uri string and target app set permissions,Call the openLink interface through context, open target app failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('AbilityRuntime_OpenLink_Static_1300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1300`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1300 begin');
@@ -140,14 +140,14 @@ export default function openLinkPatchStaticTest() {
       }
     });
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_Static_1400
-    * @tc.name   : AbilityRuntime_OpenLink_Static_1400
-    * @tc.desc   : The input parameter 'link' is legal uri string and target app exist,Call the openLink interface through backgroud context, open target app failed
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_Static_1400
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_Static_1400
+     * @tc.desc   The input parameter 'link' is legal uri string and target app exist,Call the openLink interface through backgroud context, open target app failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('AbilityRuntime_OpenLink_Static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1400`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1400 begin');
@@ -171,14 +171,14 @@ export default function openLinkPatchStaticTest() {
       }
     });
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_Static_1500
-    * @tc.name   : AbilityRuntime_OpenLink_Static_1500
-    * @tc.desc   : The input parameter 'link' is legal uri string and target app exist,Call the openLink interface through backgroud context, open target app failed
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_Static_1500
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_Static_1500
+     * @tc.desc   The input parameter 'link' is legal uri string and target app exist,Call the openLink interface through backgroud context, open target app failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('AbilityRuntime_OpenLink_Static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1500`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1500 begin');
@@ -202,14 +202,14 @@ export default function openLinkPatchStaticTest() {
       }
     });
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_Static_1600
-    * @tc.name   : AbilityRuntime_OpenLink_Static_1600
-    * @tc.desc   : The input parameter 'link' is legal uri string and target app exist,Call the openLink interface through backgroud context, open target app failed
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_Static_1600
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_Static_1600
+     * @tc.desc   The input parameter 'link' is legal uri string and target app exist,Call the openLink interface through backgroud context, open target app failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('AbilityRuntime_OpenLink_Static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1600`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1600 begin');

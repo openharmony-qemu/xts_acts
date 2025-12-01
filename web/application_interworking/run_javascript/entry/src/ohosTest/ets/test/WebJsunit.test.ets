@@ -41,52 +41,65 @@ export default function webJsunit() {
       console.info("web afterEach start:");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_002
-     *tc.name javaScriptProxy                                                                                                                                                                                                                     *tc.desic Injects the JavaScript object into window and invoke the function in window
+    /**
+     * @tc.name   javaScriptProxy
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_002
+     * @tc.desc   javaScriptProxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('javaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJavaScriptProxy", 171250)
       Utils.registerEvent("javaScriptProxy", "backToEts", 171260, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_007
-     *tc.name runJavaScript
-     *tc.desic Loads a piece of code and execute JS code in the context of the currently displayed page
+    /**
+     * @tc.name   runJavaScript
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_007
+     * @tc.desc   runJavaScript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('runJavaScript', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRunJavaScript", 171250)
       Utils.registerEvent("runJavaScript", "\"testRunJavaScript\"", 171270, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_040
-     *tc.name onConsole
-     *tc.desic Triggered when the web page receives a JavaScript console message
+    /**
+     * @tc.name   onConsole
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_040
+     * @tc.desc   onConsole
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onConsole', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnConsole", 171250)
       Utils.registerEvent("onConsole", "console test", 171280, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_060
-     *tc.name javaScriptAccess
-     *tc.desic Sets whether the Web allows JavaScript scripts to execute
+    /**
+     * @tc.name   javaScriptAccess
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_060
+     * @tc.desc   javaScriptAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('javaScriptAccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJavaScriptAccess", 171250)
       Utils.registerEvent("javaScriptAccess", true, 171290, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_RUNJAVASCRIPT_0100
-     * @tc.name       : testRunJavaScript001
-     * @tc.desc       : test runJavaScript
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRunJavaScript001
+     * @tc.number SUB_WEB_RUNJAVASCRIPT_0100
+     * @tc.desc   test runJavaScript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRunJavaScript001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testRunJavaScript001", 171250)

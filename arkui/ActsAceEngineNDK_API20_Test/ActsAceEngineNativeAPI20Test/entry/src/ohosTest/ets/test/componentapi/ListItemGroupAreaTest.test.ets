@@ -29,12 +29,12 @@ export default function ListItemGroupAreaTest() {
       done();
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_GROUP_AREA_OUTSIDE_0100
-     * @tc.name    : testListItemGroupArea0100
-     * @tc.desc    : Test the ListItemGroup component area.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testListItemGroupArea0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_GROUP_AREA_OUTSIDE_0100
+     * @tc.desc   Test the ListItemGroup component area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupArea0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -57,12 +57,12 @@ export default function ListItemGroupAreaTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_NONE_0200
-     * @tc.name    : testListItemGroupArea0200
-     * @tc.desc    : Test the ListItemGroup component area.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testListItemGroupArea0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_NONE_0200
+     * @tc.desc   Test the ListItemGroup component area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupArea0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -85,12 +85,12 @@ export default function ListItemGroupAreaTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_ITEM_0300
-     * @tc.name    : testListItemGroupArea0300
-     * @tc.desc    : Test the ListItemGroup component area.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testListItemGroupArea0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_ITEM_0300
+     * @tc.desc   Test the ListItemGroup component area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupArea0300', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -113,12 +113,12 @@ export default function ListItemGroupAreaTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_HEADER_0400
-     * @tc.name    : testListItemGroupArea0400
-     * @tc.desc    : Test the ListItemGroup component area.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testListItemGroupArea0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_HEADER_0400
+     * @tc.desc   Test the ListItemGroup component area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupArea0400', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -141,12 +141,12 @@ export default function ListItemGroupAreaTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_FOOTER_0500
-     * @tc.name    : testListItemGroupArea0500
-     * @tc.desc    : Test the ListItemGroup component area.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testListItemGroupArea0500
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_FOOTER_0500
+     * @tc.desc   Test the ListItemGroup component area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupArea0500', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

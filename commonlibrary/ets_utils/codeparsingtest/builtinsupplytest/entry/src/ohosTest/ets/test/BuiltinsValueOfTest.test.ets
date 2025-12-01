@@ -40,12 +40,12 @@ export default function BuiltinsValueOfTest() {
     })
 
     /**
+     * @tc.name   BuiltinsValueOfTest0100
      * @tc.number SUB_BUILTINS_VALUEOF_TEST_0100
-     * @tc.name BuiltinsValueOfTest0100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsValueOfTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'BuiltinsValueOfTest0100';
@@ -64,12 +64,12 @@ export default function BuiltinsValueOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsValueOfTest0200
      * @tc.number SUB_BUILTINS_VALUEOF_TEST_0200
-     * @tc.name BuiltinsValueOfTest0200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsValueOfTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'BuiltinsValueOfTest0200';
@@ -88,12 +88,12 @@ export default function BuiltinsValueOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsValueOfTest0300
      * @tc.number SUB_BUILTINS_VALUEOF_TEST_0300
-     * @tc.name BuiltinsValueOfTest0300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsValueOfTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'BuiltinsValueOfTest0300';
@@ -112,12 +112,12 @@ export default function BuiltinsValueOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsValueOfTest0400
      * @tc.number SUB_BUILTINS_VALUEOF_TEST_0400
-     * @tc.name BuiltinsValueOfTest0400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsValueOfTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'BuiltinsValueOfTest0400';
@@ -136,12 +136,12 @@ export default function BuiltinsValueOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsValueOfTest0500
      * @tc.number SUB_BUILTINS_VALUEOF_TEST_0500
-     * @tc.name BuiltinsValueOfTest0500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsValueOfTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'BuiltinsValueOfTest0500';

@@ -51,12 +51,12 @@ export default function extensionWindowPropertiesTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_WINDOW_JS_API_0100
-     * @tc.name      : testUIExtensionHostWindowProxyRect
-     * @tc.desc      : Obtain the area that the window rect
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testUIExtensionHostWindowProxyRect
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_WINDOW_JS_API_0100
+     * @tc.desc   Obtain the area that the window rect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUIExtensionHostWindowProxyRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testUIExtensionHostWindowProxyRectTest';
@@ -85,12 +85,12 @@ export default function extensionWindowPropertiesTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_WINDOW_JS_API_0200
-     * @tc.name      : testUIExtensionHostRectChange
-     * @tc.desc      : Listen the change of rect
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testUIExtensionHostRectChange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_WINDOW_JS_API_0200
+     * @tc.desc   Listen the change of rect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUIExtensionHostRectChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testUIExtensionHostRectChange';
@@ -150,12 +150,12 @@ export default function extensionWindowPropertiesTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_OFFRECTCHANGE_JS_API_0100
-     * @tc.name      : testUIExtensionHostOffRectChange01
-     * @tc.desc      : testUIExtensionHostOffRectChange01 Register twice and unregister one
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testUIExtensionHostOffRectChange01
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_OFFRECTCHANGE_JS_API_0100
+     * @tc.desc   testUIExtensionHostOffRectChange01 Register twice and unregister one
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUIExtensionHostOffRectChange01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testUIExtensionHostOffRectChange01 ';
@@ -215,12 +215,12 @@ export default function extensionWindowPropertiesTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_OFFRECTCHANGE_JS_API_0200
-     * @tc.name      : testUIExtensionHostOffRectChange02
-     * @tc.desc      : testUIExtensionHostOffRectChange02 register twice and unregister all of them
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testUIExtensionHostOffRectChange02
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_OFFRECTCHANGE_JS_API_0200
+     * @tc.desc   testUIExtensionHostOffRectChange02 register twice and unregister all of them
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUIExtensionHostOffRectChange02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testUIExtensionHostOffRectChange02 ';
@@ -280,12 +280,12 @@ export default function extensionWindowPropertiesTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_RECTCHANGE_JS_API_0200
-     * @tc.name      : testUIExtensionHostRectChangeErrorCode401
-     * @tc.desc      : testUIExtensionHostRectChangeErrorCode401 when got a callback with null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testUIExtensionHostRectChangeErrorCode401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_RECTCHANGE_JS_API_0200
+     * @tc.desc   testUIExtensionHostRectChangeErrorCode401 when got a callback with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUIExtensionHostRectChangeErrorCode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testUIExtensionHostRectChangeErrorCode401 ';
@@ -346,12 +346,12 @@ export default function extensionWindowPropertiesTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_OCCUPYEVENTS_JS_API_0100
-     * @tc.name      : testUIExtensionHostOccupyEvents
-     * @tc.desc      : testUIExtensionHostOccupyEvents with click and longPress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testUIExtensionHostOccupyEvents
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_OCCUPYEVENTS_JS_API_0100
+     * @tc.desc   testUIExtensionHostOccupyEvents with click and longPress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUIExtensionHostOccupyEvents', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testUIExtensionHostOccupyEvents ';
@@ -441,12 +441,12 @@ export default function extensionWindowPropertiesTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_OCCUPYEVENTS_ERRORCODE_JS_API_0100
-     * @tc.name      : testUIExtensionHostOccupyEvents_ErrorCode401
-     * @tc.desc      : testUIExtensionHostOccupyEvents_ErrorCode401 when got arguments null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testUIExtensionHostOccupyEvents_ErrorCode401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_OCCUPYEVENTS_ERRORCODE_JS_API_0100
+     * @tc.desc   testUIExtensionHostOccupyEvents_ErrorCode401 when got arguments null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUIExtensionHostOccupyEvents_ErrorCode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testUIExtensionHostOccupyEvents_ErrorCode401 ';
@@ -505,12 +505,12 @@ export default function extensionWindowPropertiesTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_AVOIDAREA_ERRORCODE_JS_API_0100
-     * @tc.name      : testUIExtensionHostGetAvoidArea_ErrorCode401
-     * @tc.desc      : testUIExtensionHostGetAvoidArea_ErrorCode401 when got argument -1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testUIExtensionHostGetAvoidArea_ErrorCode401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_AVOIDAREA_ERRORCODE_JS_API_0100
+     * @tc.desc   testUIExtensionHostGetAvoidArea_ErrorCode401 when got argument -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUIExtensionHostGetAvoidArea_ErrorCode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testUIExtensionHostGetAvoidArea_ErrorCode401 ';
@@ -568,12 +568,12 @@ export default function extensionWindowPropertiesTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_AVOIDAREA_ERRORCODE_JS_API_0200
-     * @tc.name      : testUIExtensionHostOnAvoidAreaChange_ErrorCode401
-     * @tc.desc      : testUIExtensionHostOnAvoidAreaChange_ErrorCode401 when got callback with null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testUIExtensionHostOnAvoidAreaChange_ErrorCode401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_AVOIDAREA_ERRORCODE_JS_API_0200
+     * @tc.desc   testUIExtensionHostOnAvoidAreaChange_ErrorCode401 when got callback with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUIExtensionHostOnAvoidAreaChange_ErrorCode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testUIExtensionHostOnAvoidAreaChange_ErrorCode401 ';
@@ -631,12 +631,12 @@ export default function extensionWindowPropertiesTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_WINDOWSIZECHANGE_ERRORCODE_JS_API_0100
-     * @tc.name      : testUIExtensionHostOnWindowSizeChange_ErrorCode401
-     * @tc.desc      : testUIExtensionHostOnWindowSizeChange_ErrorCode401 when got callback with null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testUIExtensionHostOnWindowSizeChange_ErrorCode401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_WINDOWSIZECHANGE_ERRORCODE_JS_API_0100
+     * @tc.desc   testUIExtensionHostOnWindowSizeChange_ErrorCode401 when got callback with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUIExtensionHostOnWindowSizeChange_ErrorCode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testUIExtensionHostOnWindowSizeChange_ErrorCode401 ';
@@ -694,12 +694,12 @@ export default function extensionWindowPropertiesTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS_ERRORCODE_JS_API_0100
-     * @tc.name      : testUIExtensionHostOnWindowSizeChange_ErrorCode401
-     * @tc.desc      : testUIExtensionHostOnWindowSizeChange_ErrorCode401 when got callback with null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testUIExtensionHostCreateSubWindowWithOptions_ErrorCode401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS_ERRORCODE_JS_API_0100
+     * @tc.desc   testUIExtensionHostOnWindowSizeChange_ErrorCode401 when got callback with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUIExtensionHostCreateSubWindowWithOptions_ErrorCode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testUIExtensionHostCreateSubWindowWithOptions_ErrorCode401 ';
@@ -758,12 +758,12 @@ export default function extensionWindowPropertiesTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ON_UIEXTENSION_SECURElIMITCHANGE_ERROECODE_0100
-     * @tc.name      : testOnuiExtensionLimitChange_DestoryedSubWindow
-     * @tc.desc      : testOnuiExtensionLimitChange_DestoryedSubWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testOnuiExtensionLimitChange_DestoryedSubWindow
+     * @tc.number SUB_BASIC_WMS_WINDOW_ON_UIEXTENSION_SECURElIMITCHANGE_ERROECODE_0100
+     * @tc.desc   testOnuiExtensionLimitChange_DestoryedSubWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOnuiExtensionLimitChange_DestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done: Function) => {
       let caseName = 'testOnuiExtensionLimitChange_DestoryedSubWindow';
@@ -785,12 +785,12 @@ export default function extensionWindowPropertiesTest() {
       }
     })
     /**
-     * @tc.number : SUB_BASIC_WMS_WINDOW_ON_UIEXTENSION_SECURElIMITCHANGE_ERROECODE_0200
-     * @tc.name : testOffuiExtensionLimitChange_DestoryedSubWindow
-     * @tc.desc : testOffuiExtensionLimitChange_DestoryedSubWindow
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level2
+     * @tc.name   testOffuiExtensionLimitChange_DestoryedSubWindow
+     * @tc.number SUB_BASIC_WMS_WINDOW_ON_UIEXTENSION_SECURElIMITCHANGE_ERROECODE_0200
+     * @tc.desc   testOffuiExtensionLimitChange_DestoryedSubWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOffuiExtensionLimitChange_DestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done: Function) => {
       let caseName = 'testOffuiExtensionLimitChange_DestoryedSubWindow';

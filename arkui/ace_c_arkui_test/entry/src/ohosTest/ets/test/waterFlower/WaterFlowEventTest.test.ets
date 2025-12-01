@@ -60,14 +60,14 @@ export default function waterFlowEventTest() {
 
   describe('WaterFlowEventTest', () => {
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_ONREACHSTART_0100
-    * @tc.name       : testWaterFlowOnReachStart001
-    * @tc.desc       : test onReachStart event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowOnReachStart001
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_ONREACHSTART_0100
+     * @tc.desc   test onReachStart event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowOnReachStart001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowOnReachStartTest`);
       await Utils.clickComponent('btn')
@@ -76,14 +76,14 @@ export default function waterFlowEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_ONREACHEND_0100
-    * @tc.name       : testWaterFlowOnReachEnd001
-    * @tc.desc       : test onReachEndTest event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowOnReachEnd001
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_ONREACHEND_0100
+     * @tc.desc   test onReachEndTest event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowOnReachEnd001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowOnReachEndTest`);
       await Utils.clickComponent('btn')
@@ -92,14 +92,14 @@ export default function waterFlowEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_ONSCROLLSTOP_0100
-    * @tc.name       : testWaterFlowOnScrollStop001
-    * @tc.desc       : test onScrollStop event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowOnScrollStop001
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_ONSCROLLSTOP_0100
+     * @tc.desc   test onScrollStop event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowOnScrollStop001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowOnScrollStopTest`);
       await Utils.clickComponent('btn')
@@ -108,14 +108,14 @@ export default function waterFlowEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_ONWILLDIDSCROLL_0300
-    * @tc.name       : testWaterFlowOnWillDidScroll003
-    * @tc.desc       : test Scroll the mouse backwards
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowOnWillDidScroll003
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_ONWILLDIDSCROLL_0300
+     * @tc.desc   test Scroll the mouse backwards
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowOnWillDidScroll003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowEmptyTest`)
       await Utils.sleep(2000)
@@ -142,14 +142,14 @@ export default function waterFlowEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_ONWILLDIDSCROLL_0500
-    * @tc.name       : testWaterFlowOnWillDidScroll005
-    * @tc.desc       : test Page flipping and scrolling
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowOnWillDidScroll005
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_ONWILLDIDSCROLL_0500
+     * @tc.desc   test Page flipping and scrolling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowOnWillDidScroll005', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowOnWillDidScrollTest`);
       {
@@ -190,14 +190,14 @@ export default function waterFlowEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_ONWILLDIDSCROLL_0600
-    * @tc.name       : testWaterFlowOnWillDidScroll006
-    * @tc.desc       : test Interrupt animation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowOnWillDidScroll006
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_ONWILLDIDSCROLL_0600
+     * @tc.desc   test Interrupt animation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowOnWillDidScroll006', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowOnWillDidScrollTest`);
       await flingComponentV('waterFlow', true)
@@ -223,14 +223,14 @@ export default function waterFlowEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_ON_SCROLL_FRAME_BEGIN_0400
-    * @tc.name       : testWaterFlowOnScrollFrameBegin004
-    * @tc.desc       : test OnScrollFrameBegin event use scroll controller when upForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowOnScrollFrameBegin004
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_ON_SCROLL_FRAME_BEGIN_0400
+     * @tc.desc   test OnScrollFrameBegin event use scroll controller when upForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowOnScrollFrameBegin004', Level.LEVEL1, async (done: Function) => {
       let option: WaterFlowScrollFrameBeginData =
         new WaterFlowScrollFrameBeginData('WaterFlowOnScrollFrameBeginTest004', 10)

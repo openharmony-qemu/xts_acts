@@ -87,7 +87,6 @@ export default function inputMethodAbility() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_001
      * @tc.number inputMethodEngine_test_001
      * @tc.desc   Function test
@@ -103,7 +102,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_002
      * @tc.number inputMethodEngine_test_002
      * @tc.desc   Function test
@@ -119,7 +117,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_003
      * @tc.number inputMethodEngine_test_003
      * @tc.desc   Function test
@@ -135,7 +132,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_004
      * @tc.number inputMethodEngine_test_004
      * @tc.desc   Function test
@@ -151,7 +147,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_005
      * @tc.number inputMethodEngine_test_005
      * @tc.desc   Function test
@@ -167,7 +162,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_006
      * @tc.number inputMethodEngine_test_006
      * @tc.desc   Function test
@@ -183,7 +177,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_007
      * @tc.number inputMethodEngine_test_007
      * @tc.desc   Function test
@@ -199,7 +192,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_008
      * @tc.number inputMethodEngine_test_008
      * @tc.desc   Function test
@@ -215,7 +207,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_009
      * @tc.number inputMethodEngine_test_009
      * @tc.desc   Function test
@@ -231,7 +222,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_010
      * @tc.number inputMethodEngine_test_010
      * @tc.desc   Function test
@@ -247,7 +237,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_011
      * @tc.number inputMethodEngine_test_011
      * @tc.desc   Function test
@@ -263,7 +252,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_012
      * @tc.number inputMethodEngine_test_012
      * @tc.desc   Function test
@@ -279,7 +267,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_013
      * @tc.number inputMethodEngine_test_013
      * @tc.desc   Function test
@@ -295,7 +282,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_014
      * @tc.number inputMethodEngine_test_014
      * @tc.desc   Function test
@@ -311,7 +297,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_015
      * @tc.number inputMethodEngine_test_015
      * @tc.desc   Function test
@@ -327,7 +312,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_016
      * @tc.number inputMethodEngine_test_016
      * @tc.desc   Function test
@@ -343,7 +327,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_017
      * @tc.number inputMethodEngine_test_017
      * @tc.desc   Function test
@@ -359,7 +342,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_018
      * @tc.number inputMethodEngine_test_018
      * @tc.desc   Function test
@@ -375,7 +357,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_019
      * @tc.number inputMethodEngine_test_019
      * @tc.desc   Function test
@@ -391,7 +372,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_020
      * @tc.number inputMethodEngine_test_020
      * @tc.desc   Function test
@@ -407,7 +387,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_021
      * @tc.number inputMethodEngine_test_021
      * @tc.desc   Function test
@@ -423,7 +402,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_022
      * @tc.number inputMethodEngine_test_022
      * @tc.desc   Function test
@@ -439,7 +417,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_023
      * @tc.number inputMethodEngine_test_023
      * @tc.desc   Function test
@@ -455,7 +432,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_024
      * @tc.number inputMethodEngine_test_024
      * @tc.desc   Function test
@@ -471,7 +447,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_025
      * @tc.number inputMethodEngine_test_025
      * @tc.desc   Function test
@@ -487,7 +462,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_026
      * @tc.number inputMethodEngine_test_026
      * @tc.desc   Function test
@@ -503,7 +477,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_027
      * @tc.number inputMethodEngine_test_027
      * @tc.desc   Function test
@@ -531,7 +504,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_028
      * @tc.number inputMethodEngine_test_028
      * @tc.desc   Function test
@@ -547,7 +519,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_029
      * @tc.number inputMethodEngine_test_029
      * @tc.desc   Function test
@@ -563,7 +534,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethodEngine_ExtendAction_0100
      * @tc.number Sub_Misc_inputMethodEngine_ExtendAction_0100
      * @tc.desc   Function test
@@ -597,7 +567,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_getInputMethodAbility_001
      * @tc.number Sub_Misc_inputMethodEngine_ExtendAction_0101
      * @tc.desc   Function test
@@ -672,7 +641,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_getKeyboardDelegate_001
      * @tc.number inputMethodAbility_test_getKeyboardDelegate_001
      * @tc.desc   Function test
@@ -746,7 +714,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_028
      * @tc.number inputMethodAbility_test_028
      * @tc.desc   Function test
@@ -819,7 +786,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_029
      * @tc.number inputMethodAbility_test_029
      * @tc.desc   Function test
@@ -892,7 +858,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_030
      * @tc.number inputMethodAbility_test_030
      * @tc.desc   Function test
@@ -965,7 +930,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_031
      * @tc.number inputMethodAbility_test_031
      * @tc.desc   Function test
@@ -1038,7 +1002,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_032
      * @tc.number inputMethodAbility_test_032
      * @tc.desc   Function test
@@ -1111,7 +1074,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_033
      * @tc.number inputMethodAbility_test_033
      * @tc.desc   Function test
@@ -1184,7 +1146,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_034
      * @tc.number inputMethodAbility_test_034
      * @tc.desc   Function test
@@ -1257,7 +1218,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_035
      * @tc.number inputMethodAbility_test_035
      * @tc.desc   Function test
@@ -1330,7 +1290,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_036
      * @tc.number inputMethodAbility_test_036
      * @tc.desc   Function test
@@ -1403,7 +1362,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_037
      * @tc.number inputMethodAbility_test_037
      * @tc.desc   Function test
@@ -1476,7 +1434,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_038
      * @tc.number inputMethodAbility_test_038
      * @tc.desc   Function test
@@ -1549,7 +1506,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_039
      * @tc.number inputMethodAbility_test_039
      * @tc.desc   Function test
@@ -1622,7 +1578,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_040
      * @tc.number inputMethodAbility_test_040
      * @tc.desc   Function test
@@ -1695,7 +1650,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_041
      * @tc.number inputMethodAbility_test_041
      * @tc.desc   Function test
@@ -1768,7 +1722,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_042
      * @tc.number inputMethodAbility_test_042
      * @tc.desc   Function test
@@ -1841,7 +1794,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_043
      * @tc.number inputMethodAbility_test_043
      * @tc.desc   Function test
@@ -1914,7 +1866,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_044
      * @tc.number inputMethodAbility_test_044
      * @tc.desc   Function test
@@ -1930,7 +1881,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_045
      * @tc.number inputMethodAbility_test_045
      * @tc.desc   Function test
@@ -2003,7 +1953,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_046
      * @tc.number inputMethodAbility_test_046
      * @tc.desc   Function test
@@ -2076,7 +2025,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_047
      * @tc.number inputMethodAbility_test_047
      * @tc.desc   Function test
@@ -2149,7 +2097,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_048
      * @tc.number inputMethodAbility_test_048
      * @tc.desc   Function test
@@ -2222,7 +2169,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_049
      * @tc.number inputMethodAbility_test_049
      * @tc.desc   Function test
@@ -2295,7 +2241,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_050
      * @tc.number inputMethodAbility_test_050
      * @tc.desc   Function test
@@ -2368,7 +2313,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_070
      * @tc.number inputMethodAbility_test_070
      * @tc.desc   Function test
@@ -2446,7 +2390,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_071
      * @tc.number inputMethodAbility_test_071
      * @tc.desc   Function test
@@ -2524,7 +2467,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_072
      * @tc.number inputMethodAbility_test_072
      * @tc.desc   Function test
@@ -2602,7 +2544,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_073
      * @tc.number inputMethodAbility_test_073
      * @tc.desc   Function test
@@ -2681,7 +2622,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_074
      * @tc.number inputMethodAbility_test_074
      * @tc.desc   Function test
@@ -2761,7 +2701,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_101
      * @tc.number inputMethodAbility_test_101
      * @tc.desc   Function test
@@ -2834,7 +2773,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_102
      * @tc.number inputMethodAbility_test_102
      * @tc.desc   Function test
@@ -2907,7 +2845,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_103
      * @tc.number inputMethodAbility_test_103
      * @tc.desc   Function test
@@ -2980,7 +2917,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_104
      * @tc.number inputMethodAbility_test_104
      * @tc.desc   Function test
@@ -3053,7 +2989,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_105
      * @tc.number inputMethodAbility_test_105
      * @tc.desc   Function test
@@ -3126,7 +3061,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_106
      * @tc.number inputMethodAbility_test_106
      * @tc.desc   Function test
@@ -3199,7 +3133,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_onSelectByRange_0110
      * @tc.number Sub_Misc_inputMethod_onSelectByRange_0110
      * @tc.desc   Function test
@@ -3238,7 +3171,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_onSelectByMovement_0120
      * @tc.number Sub_Misc_inputMethod_onSelectByMovement_0120
      * @tc.desc   Function test
@@ -3278,7 +3210,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_offSelectByRange_0130
      * @tc.number Sub_Misc_inputMethod_offSelectByRange_0130
      * @tc.desc   Function test
@@ -3325,7 +3256,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_offSelectByMovement_0140
      * @tc.number Sub_Misc_inputMethod_offSelectByMovement_0140
      * @tc.desc   Function test
@@ -3374,7 +3304,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_onImeChange_0150
      * @tc.number Sub_Misc_inputMethod_onImeChange_0150
      * @tc.desc   Function test
@@ -3427,7 +3356,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_offImeChange_0160
      * @tc.number Sub_Misc_inputMethod_offImeChange_0160
      * @tc.desc   Function test
@@ -3490,7 +3418,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodAbility_test_091
      * @tc.number inputMethodAbility_test_091
      * @tc.desc   Function test
@@ -3570,7 +3497,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_sendExtendAction_0170
      * @tc.number Sub_Misc_inputMethod_sendExtendAction_0170
      * @tc.desc   Function test
@@ -3642,7 +3568,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_sendExtendAction_0180
      * @tc.number Sub_Misc_inputMethod_sendExtendAction_0180
      * @tc.desc   Function test
@@ -3715,7 +3640,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_getForward_sync_0200
      * @tc.number Sub_Misc_inputMethod_getForward_sync_0200
      * @tc.desc   Function test
@@ -3788,7 +3712,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_getForward_sync_0201
      * @tc.number Sub_Misc_inputMethod_getForward_sync_0201
      * @tc.desc   Function test
@@ -3861,7 +3784,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_getBackward_sync_0210
      * @tc.number Sub_Misc_inputMethod_getBackward_sync_0210
      * @tc.desc   Function test
@@ -3934,7 +3856,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_getBackward_sync_0211
      * @tc.number Sub_Misc_inputMethod_getBackward_sync_0211
      * @tc.desc   Function test
@@ -4007,7 +3928,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_getTextIndexAtCursor_sync_0220
      * @tc.number Sub_Misc_inputMethod_getTextIndexAtCursor_sync_0220
      * @tc.desc   Function test
@@ -4082,7 +4002,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_getTextIndexAtCursor_sync_0221
      * @tc.number Sub_Misc_inputMethod_getTextIndexAtCursor_sync_0221
      * @tc.desc   Function test
@@ -4157,7 +4076,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_getEditorAttribute_sync_0230
      * @tc.number Sub_Misc_inputMethod_getEditorAttribute_sync_0230
      * @tc.desc   Function test
@@ -4232,7 +4150,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_getEditorAttribute_sync_0231
      * @tc.number Sub_Misc_inputMethod_getEditorAttribute_sync_0231
      * @tc.desc   Function test
@@ -4307,7 +4224,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_getEditorAttribute_sync_0233
      * @tc.number Sub_Misc_inputMethod_getEditorAttribute_sync_0233
      * @tc.desc   Function test
@@ -4381,7 +4297,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_moveCursor_sync_0240
      * @tc.number Sub_Misc_inputMethod_moveCursor_sync_0240
      * @tc.desc   Function test
@@ -4454,7 +4369,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_moveCursor_sync_0241
      * @tc.number Sub_Misc_inputMethod_moveCursor_sync_0241
      * @tc.desc   Function test
@@ -4527,7 +4441,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_deleteForward_sync_0250
      * @tc.number Sub_Misc_inputMethod_deleteForward_sync_0250
      * @tc.desc   Function test
@@ -4601,7 +4514,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_deleteForward_sync_0251
      * @tc.number Sub_Misc_inputMethod_deleteForward_sync_0251
      * @tc.desc   Function test
@@ -4675,7 +4587,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_deleteBackward_sync_0260
      * @tc.number Sub_Misc_inputMethod_deleteBackward_sync_0260
      * @tc.desc   Function test
@@ -4749,7 +4660,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_deleteBackward_sync_0261
      * @tc.number Sub_Misc_inputMethod_deleteBackward_sync_0261
      * @tc.desc   Function test
@@ -4823,7 +4733,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_insertText_sync_0270
      * @tc.number Sub_Misc_inputMethod_insertText_sync_0270
      * @tc.desc   Function test
@@ -4897,7 +4806,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_insertText_sync_0271
      * @tc.number Sub_Misc_inputMethod_insertText_sync_0271
      * @tc.desc   Function test
@@ -4970,7 +4878,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_selectByRange_sync_0280
      * @tc.number Sub_Misc_inputMethod_selectByRange_sync_0280
      * @tc.desc   Function test
@@ -5044,7 +4951,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_selectByRange_sync_0281
      * @tc.number Sub_Misc_inputMethod_selectByRange_sync_0281
      * @tc.desc   Function test
@@ -5118,7 +5024,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_selectByMovement_sync_0290
      * @tc.number Sub_Misc_inputMethod_selectByMovement_sync_0290
      * @tc.desc   Function test
@@ -5192,7 +5097,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_inputMethod_selectByMovement_sync_0291
      * @tc.number Sub_Misc_inputMethod_selectByMovement_sync_0291
      * @tc.desc   Function test
@@ -5266,7 +5170,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_Request_InputMethod_selectContext_0400
      * @tc.number Sub_Misc_Request_InputMethod_selectContext_0400
      * @tc.desc   Function test
@@ -5342,7 +5245,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_Request_InputMethod_selectContext_0500
      * @tc.number Sub_Misc_Request_InputMethod_selectContext_0500
      * @tc.desc   Function test
@@ -5417,7 +5319,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   Sub_Misc_Request_InputMethod_selectContext_0600
      * @tc.number Sub_Misc_Request_InputMethod_selectContext_0600
      * @tc.desc   Function test
@@ -5493,7 +5394,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0100
      * @tc.number SUB_InputMethod_IsTextPreviewSupport_0100
      * @tc.desc   Function test
@@ -5570,7 +5470,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0200
      * @tc.number SUB_InputMethod_IsTextPreviewSupport_0200
      * @tc.desc   Function test
@@ -5643,7 +5542,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0300
      * @tc.number SUB_InputMethod_IsTextPreviewSupport_0300
      * @tc.desc   Function test
@@ -5716,7 +5614,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IsTextPreviewSupport_0400
      * @tc.number SUB_InputMethod_IsTextPreviewSupport_0400
      * @tc.desc   Function test
@@ -5789,7 +5686,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IME_PrivateDateTransferred_0500
      * @tc.number SUB_InputMethod_IME_PrivateDateTransferred_0500
      * @tc.desc   Function test
@@ -5863,7 +5759,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IME_PrivateDateTransferred_0600
      * @tc.number SUB_InputMethod_IME_PrivateDateTransferred_0600
      * @tc.desc   Function test
@@ -5937,7 +5832,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IME_PrivateDateTransferred_1100
      * @tc.number SUB_InputMethod_IME_PrivateDateTransferred_1100
      * @tc.desc   Function test
@@ -6011,7 +5905,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IME_onoffsecurityModeChanged_0100
      * @tc.number SUB_InputMethod_IME_onoffsecurityModeChanged_0100
      * @tc.desc   Function test
@@ -6085,7 +5978,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IME_onoffsecurityModeChanged_0200
      * @tc.number SUB_InputMethod_IME_onoffsecurityModeChanged_0200
      * @tc.desc   Function test

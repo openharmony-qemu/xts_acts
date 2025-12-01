@@ -49,12 +49,12 @@ export default function RichEditorFontFeatureJsunit() {
     });
 
     /**
-     * @tc.number RichEditorFontFeatureJsunit_0100
      * @tc.name   RichEditorFontFeatureJsunit_0100
+     * @tc.number RichEditorFontFeatureJsunit_0100
      * @tc.desc   Test setting properties for a single fontFeature.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorFontFeatureJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Test stop
@@ -81,12 +81,12 @@ export default function RichEditorFontFeatureJsunit() {
     });
 
     /**
-     * @tc.number RichEditorFontFeatureJsunit_0200
      * @tc.name   RichEditorFontFeatureJsunit_0200
+     * @tc.number RichEditorFontFeatureJsunit_0200
      * @tc.desc   Test setting properties for a Multiple fontFeature.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorFontFeatureJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       // Test stop

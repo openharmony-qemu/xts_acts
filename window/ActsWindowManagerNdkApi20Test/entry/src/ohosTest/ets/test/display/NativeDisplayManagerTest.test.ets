@@ -34,12 +34,12 @@ export default function NativeDisplayManagerTest() {
   describe('NativeDisplayManagerTest', () => {
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_SOURCE_MODE_NONE_0100
-     * @tc.name    : testNativeDisplaySourceMode0100
-     * @tc.desc    : Test the NativeDisplayManager_SourceMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNativeDisplaySourceMode0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_SOURCE_MODE_NONE_0100
+     * @tc.desc   Test the NativeDisplayManager_SourceMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeDisplaySourceMode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -71,12 +71,12 @@ export default function NativeDisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_SOURCE_MODE_MAIN_0100
-     * @tc.name    : testNativeDisplaySourceMode0200
-     * @tc.desc    : Test the NativeDisplayManager_SourceMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNativeDisplaySourceMode0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_SOURCE_MODE_MAIN_0100
+     * @tc.desc   Test the NativeDisplayManager_SourceMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeDisplaySourceMode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -97,12 +97,12 @@ export default function NativeDisplayManagerTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_SOURCE_MODE_MIRROR_0100
-     * @tc.name    : testNativeDisplaySourceMode0300
-     * @tc.desc    : Test the NativeDisplayManager_SourceMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNativeDisplaySourceMode0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_SOURCE_MODE_MIRROR_0100
+     * @tc.desc   Test the NativeDisplayManager_SourceMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeDisplaySourceMode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -123,12 +123,12 @@ export default function NativeDisplayManagerTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_SOURCE_MODE_EXTEND_0100
-     * @tc.name    : testNativeDisplaySourceMode0400
-     * @tc.desc    : Test the NativeDisplayManager_SourceMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNativeDisplaySourceMode0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_SOURCE_MODE_EXTEND_0100
+     * @tc.desc   Test the NativeDisplayManager_SourceMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeDisplaySourceMode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_ARKUI_ACE_ENGINE_DISPLAY_SOURCE_MODE_EXTEND_0100';
@@ -148,12 +148,12 @@ export default function NativeDisplayManagerTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_SOURCE_MODE_ALONE_0100
-     * @tc.name    : testNativeDisplaySourceMode0500
-     * @tc.desc    : Test the NativeDisplayManager_SourceMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNativeDisplaySourceMode0500
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_SOURCE_MODE_ALONE_0100
+     * @tc.desc   Test the NativeDisplayManager_SourceMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeDisplaySourceMode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -184,12 +184,12 @@ export default function NativeDisplayManagerTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_UNKNOWN_0100
-     * @tc.name    : testFoldDisplayMode0100
-     * @tc.desc    : Test the NativeDisplayManager_FoldDisplayMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testFoldDisplayMode0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_UNKNOWN_0100
+     * @tc.desc   Test the NativeDisplayManager_FoldDisplayMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFoldDisplayMode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_UNKNOWN_0100';
@@ -210,12 +210,12 @@ export default function NativeDisplayManagerTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_FULL_0100
-     * @tc.name    : testFoldDisplayMode0200
-     * @tc.desc    : Test the NativeDisplayManager_FoldDisplayMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testFoldDisplayMode0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_FULL_0100
+     * @tc.desc   Test the NativeDisplayManager_FoldDisplayMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFoldDisplayMode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_FULL_0100';
@@ -236,12 +236,12 @@ export default function NativeDisplayManagerTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_MAIN_0100
-     * @tc.name    : testFoldDisplayMode0300
-     * @tc.desc    : Test the NativeDisplayManager_FoldDisplayMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testFoldDisplayMode0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_MAIN_0100
+     * @tc.desc   Test the NativeDisplayManager_FoldDisplayMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFoldDisplayMode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_MAIN_0100';
@@ -262,12 +262,12 @@ export default function NativeDisplayManagerTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_SUB_0100
-     * @tc.name    : testFoldDisplayMode0400
-     * @tc.desc    : Test the NativeDisplayManager_FoldDisplayMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testFoldDisplayMode0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_SUB_0100
+     * @tc.desc   Test the NativeDisplayManager_FoldDisplayMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFoldDisplayMode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_SUB_0100';
@@ -288,12 +288,12 @@ export default function NativeDisplayManagerTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_COORDINATION_0100
-     * @tc.name    : testFoldDisplayMode0500
-     * @tc.desc    : Test the NativeDisplayManager_FoldDisplayMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testFoldDisplayMode0500
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_COORDINATION_0100
+     * @tc.desc   Test the NativeDisplayManager_FoldDisplayMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFoldDisplayMode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_COORDINATION_0100';

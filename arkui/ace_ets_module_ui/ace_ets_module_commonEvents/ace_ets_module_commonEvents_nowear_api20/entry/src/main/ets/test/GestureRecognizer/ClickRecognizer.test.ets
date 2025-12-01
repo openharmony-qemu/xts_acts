@@ -60,10 +60,12 @@ export default function ClickRecognizerTest() {
     });
 
     /**
+     * @tc.name   ClickRecognizer_0100
      * @tc.number ClickRecognizer_0100
-     * @tc.name  : ClickRecognizer_0100
-     * @tc.desc  : To test whether ClickRecognizer is effective.
-     * @tc.level : Level 0
+     * @tc.desc   To test whether ClickRecognizer is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ClickRecognizer_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ClickRecognizer_0100 START');

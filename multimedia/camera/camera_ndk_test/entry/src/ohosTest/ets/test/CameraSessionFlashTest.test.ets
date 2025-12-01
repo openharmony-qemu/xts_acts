@@ -253,12 +253,12 @@ export default function cameraSessionFlashTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_HAS_FLASH_PROMISE_001
-     * @tc.name      : Check capture session has flash with promise or not
-     * @tc.desc      : Check capture session has flash with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_HAS_FLASH_PROMISE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_HAS_FLASH_PROMISE_001
+     * @tc.desc   Check capture session has flash with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_HAS_FLASH_PROMISE_001', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_HAS_FLASH_PROMISE_001--------------");
@@ -274,12 +274,12 @@ export default function cameraSessionFlashTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_HAS_FLASH_PROMISE_001 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_002
-     * @tc.name      : Check capture session support flash close mode with promise or not
-     * @tc.desc      : Check capture session support flash close mode with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_002
+     * @tc.desc   Check capture session support flash close mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_002', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_002--------------");
@@ -295,12 +295,12 @@ export default function cameraSessionFlashTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_002 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_003
-     * @tc.name      : Check capture session set flash close mode with promise
-     * @tc.desc      : Check capture session set flash close mode with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_003
+     * @tc.desc   Check capture session set flash close mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_003', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_003--------------");
@@ -313,12 +313,12 @@ export default function cameraSessionFlashTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_003 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_004
-     * @tc.name      : Check capture session support flash open mode with promise or not
-     * @tc.desc      : Check capture session support flash open mode with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_004
+     * @tc.desc   Check capture session support flash open mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_004', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_004--------------");
@@ -334,12 +334,12 @@ export default function cameraSessionFlashTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_004 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_005
-     * @tc.name      : Check capture session set flash open mode with promise
-     * @tc.desc      : Check capture session set flash open mode with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_005
+     * @tc.desc   Check capture session set flash open mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_005', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_005--------------");
@@ -358,12 +358,12 @@ export default function cameraSessionFlashTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_005 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_006
-     * @tc.name      : Check capture session support flash auto mode with promise or not
-     * @tc.desc      : Check capture session support flash auto mode with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_006
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_006
+     * @tc.desc   Check capture session support flash auto mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_006', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_006--------------");
@@ -384,12 +384,12 @@ export default function cameraSessionFlashTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_006 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_007
-     * @tc.name      : Check capture session set flash auto mode with promise
-     * @tc.desc      : Check capture session set flash auto mode with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_007
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_007
+     * @tc.desc   Check capture session set flash auto mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_007', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_007--------------");
@@ -413,12 +413,12 @@ export default function cameraSessionFlashTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_007 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_008
-     * @tc.name      : Check capture session support flash always open mode with promise or not
-     * @tc.desc      : Check capture session support flash always open mode with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_008
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_008
+     * @tc.desc   Check capture session support flash always open mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_008', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_008--------------");
@@ -439,12 +439,12 @@ export default function cameraSessionFlashTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_008 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_009
-     * @tc.name      : Check capture session set flash always open mode with promise
-     * @tc.desc      : Check capture session set flash always open mode with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_009
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_009
+     * @tc.desc   Check capture session set flash always open mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_009', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_FLASH_MODE_PROMISE_009--------------");

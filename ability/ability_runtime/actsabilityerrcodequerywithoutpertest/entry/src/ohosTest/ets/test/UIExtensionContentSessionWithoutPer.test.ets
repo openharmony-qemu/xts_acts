@@ -49,13 +49,13 @@ export default function UIExtensionContentSessionWithoutPerTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : Sub_UIExtensionContentSession_errorCode_0900
-     * @tc.name   : session.startAbilityByType promise without permission
-     * @tc.desc   : Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 3
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_0900
+     * @tc.number Sub_UIExtensionContentSession_errorCode_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_UIExtensionContentSession_errorCode_0900', Level.LEVEL0, (done: Function) => {
       let tag:string = `Sub_UIExtensionContentSession_errorCode_0900`;
@@ -92,13 +92,13 @@ export default function UIExtensionContentSessionWithoutPerTest() {
         })
     })
 
-    /*
-     * @tc.number : Sub_UIExtensionContentSession_errorCode_1000
-     * @tc.name   : session.startAbilityByType callback without permission
-     * @tc.desc   : Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 3
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_1000
+     * @tc.number Sub_UIExtensionContentSession_errorCode_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_UIExtensionContentSession_errorCode_1000', Level.LEVEL0, (done: Function) => {
       let tag:string = `Sub_UIExtensionContentSession_errorCode_1000`;

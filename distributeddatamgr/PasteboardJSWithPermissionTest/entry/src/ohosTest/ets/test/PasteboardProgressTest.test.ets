@@ -90,7 +90,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0100
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0100
      * @tc.desc   Test pasteBoard progress single level path and no fileConflictOption
@@ -134,7 +133,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0200
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0200
      * @tc.desc   Test pasteBoard progress multi level path with digit
@@ -181,7 +179,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0300
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0300
      * @tc.desc   Test pasteBoard progress path not exist
@@ -218,7 +215,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0500
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0500
      * @tc.desc   Test pasteBoard progress path with special characters and Chinese
@@ -265,7 +261,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0600
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0600
      * @tc.desc   Test pasteBoard progress path greater than 250
@@ -305,7 +300,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0700
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0700
      * @tc.desc   Test pasteBoard progress path equal to 250
@@ -352,7 +346,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0800
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0800
      * @tc.desc   Test pasteBoard progress fileConflictOptions OVERWRITE
@@ -397,7 +390,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0900
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0900
      * @tc.desc   Test pasteBoard progress fileConflictOptions SKIP
@@ -442,7 +434,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1000
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1000
      * @tc.desc   Test pasteBoard progress fileConflictOptions invalid value
@@ -487,7 +478,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1100
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1100
      * @tc.desc   Test pasteBoard progress progressIndicator invalid value
@@ -531,7 +521,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1200
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1200
      * @tc.desc   Test pasteBoard progress progressIndicator None
@@ -575,7 +564,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1300
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1300
      * @tc.desc   Test pasteBoard progress progressIndicator default
@@ -619,7 +607,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1400
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1400
      * @tc.desc   Test pasteBoard progress progressIndicator INVALID
@@ -663,7 +650,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1500
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1500
      * @tc.desc   Test pasteBoard progress with progressListener
@@ -711,7 +697,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1600
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1600
      * @tc.desc   Test pasteBoard progress progressSignal UNDEFINED
@@ -756,7 +741,6 @@ export default function PasteboardProgressTest() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:54
       * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1700
       * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1700
       * @tc.desc   Test pasteBoard progress progressSignal
@@ -832,7 +816,6 @@ export default function PasteboardProgressTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1800
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1800
      * @tc.desc   Test pasteBoard file size less than 1K

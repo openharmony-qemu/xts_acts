@@ -40,13 +40,13 @@ export default function webviewApi() {
 
 
     
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0510
-     * @tc.name       : testWebSchemeHandler_SetOnRequestStart
-     * @tc.desc       : test WebSchemeHandler_SetOnRequestStart
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebSchemeHandler_SetOnRequestStart
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0510
+     * @tc.desc   test WebSchemeHandler_SetOnRequestStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebSchemeHandler_SetOnRequestStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
@@ -57,13 +57,13 @@ export default function webviewApi() {
         Utils.waitAndClickComponent(driver, "webHostingButton");
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0520
-     * @tc.name       : testWebSchemeHandler_SetOnRequestStop
-     * @tc.desc       : test WebSchemeHandler_SetOnRequestStop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebSchemeHandler_SetOnRequestStop
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0520
+     * @tc.desc   test WebSchemeHandler_SetOnRequestStop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebSchemeHandler_SetOnRequestStop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
@@ -74,13 +74,13 @@ export default function webviewApi() {
         Utils.waitAndClickComponent(driver, "webHostingButton");
     })
     
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0530
-     * @tc.name       : testWeb_ReleaseByteArray
-     * @tc.desc       : test Web_ReleaseByteArray
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWeb_ReleaseByteArray
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0530
+     * @tc.desc   test Web_ReleaseByteArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWeb_ReleaseByteArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
@@ -92,13 +92,13 @@ export default function webviewApi() {
     })
     
     
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0540
-     * @tc.name       : testWeb_ReleaseString
-     * @tc.desc       : test Web_ReleaseString
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWeb_ReleaseString
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0540
+     * @tc.desc   test Web_ReleaseString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWeb_ReleaseString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
@@ -109,13 +109,13 @@ export default function webviewApi() {
         Utils.waitAndClickComponent(driver, "webHostingButton");
     })
     
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0550
-     * @tc.name       : testWeb_DestroyResponse
-     * @tc.desc       : test Web_DestroyResponse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWeb_DestroyResponse
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0550
+     * @tc.desc   test Web_DestroyResponse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWeb_DestroyResponse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
@@ -126,13 +126,13 @@ export default function webviewApi() {
         Utils.waitAndClickComponent(driver, "webHostingButton");
     })
     
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0560
-     * @tc.name       : testWeb_CreateSchemeHandler
-     * @tc.desc       : test Web_CreateSchemeHandler
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWeb_CreateSchemeHandler
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0560
+     * @tc.desc   test Web_CreateSchemeHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWeb_CreateSchemeHandler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
@@ -143,13 +143,13 @@ export default function webviewApi() {
         Utils.waitAndClickComponent(driver, "webHostingButton");
     })
     
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0570
-     * @tc.name       : testWebResourceRequest_GetRequestHeaders
-     * @tc.desc       : test WebResourceRequest_GetRequestHeaders
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebResourceRequest_GetRequestHeaders
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0570
+     * @tc.desc   test WebResourceRequest_GetRequestHeaders
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebResourceRequest_GetRequestHeaders', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         

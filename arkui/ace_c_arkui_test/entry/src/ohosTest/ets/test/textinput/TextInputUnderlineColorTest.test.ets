@@ -26,25 +26,25 @@ export default function textInputUnderlineColorTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_UNDERLINE_COLOR_0001
-     * @tc.name: testTextInputUnderlineColor001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputUnderlineColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_UNDERLINE_COLOR_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputUnderlineColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputUnderlineColor001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_UNDERLINE_COLOR_0002
-     * @tc.name: testTextInputUnderlineColor002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputUnderlineColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_UNDERLINE_COLOR_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputUnderlineColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputUnderlineColor002()).assertEqual(0)

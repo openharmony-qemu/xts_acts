@@ -55,12 +55,12 @@ export default function RichEditorLineLetter003() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEHEIGHT_LETTERSPACING_0018
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEHEIGHT_LETTERSPACING_0018
-     * @tc.desc  : Test RichEditor LineHeight and LetterSpacing by pasting text of the same height and character spacing in the Rich Text component
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 4
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEHEIGHT_LETTERSPACING_0018
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEHEIGHT_LETTERSPACING_0018
+     * @tc.desc   Test RichEditor LineHeight and LetterSpacing by pasting text of the same height and character spacing in the Rich Text component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEHEIGHT_LETTERSPACING_0018',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEHEIGHT_LETTERSPACING_0018 START');

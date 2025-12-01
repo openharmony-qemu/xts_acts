@@ -26,26 +26,26 @@ export default function buttonAccessibilityTextTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYTEXT_0100
-     * @tc.name       : testButtonAccessibilityText001
-     * @tc.desc       : testing accessibilityText for Button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testButtonAccessibilityText001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYTEXT_0100
+     * @tc.desc   testing accessibilityText for Button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityText001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityText001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYTEXT_0200
-     * @tc.name       : testButtonAccessibilityText002
-     * @tc.desc       : testing accessibilityText for Button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testButtonAccessibilityText002
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYTEXT_0200
+     * @tc.desc   testing accessibilityText for Button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityText002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityText002()).assertEqual(0)

@@ -37,9 +37,12 @@ export default function abilityTest() {
       done()
     });
     /**
-     * @tc.number    ArkUX_Stage_Popup_0100
-     * @tc.name      Popup added enableArrow and placement interface coverage
-     * @tc.desc      Popup added enableArrow and placement interface coverage
+     * @tc.name   ArkUX_Stage_Popup_0100
+     * @tc.number ArkUX_Stage_Popup_0100
+     * @tc.desc   Popup added enableArrow and placement interface coverage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Popup_0100', Level.LEVEL0, async (done:Function) =>{
       console.info('ArkUX_Stage_Popup_0100 START');

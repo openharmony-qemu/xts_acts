@@ -35,14 +35,14 @@ export default function webFantasyFont() {
       console.info('web beforeEach start');
     })
 
-    /*
-    * @tc.number     : emitWebFantasyFont001
-    * @tc.name       : emitWebFantasyFontStatic001
-    * @tc.desc       : test minLogicalFontSize
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   emitWebFantasyFontStatic001
+     * @tc.number emitWebFantasyFont001
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitWebFantasyFontStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:() => void): Promise<void> => {
       Utils.emitEvent('emitWebFantasyFont001', 10)

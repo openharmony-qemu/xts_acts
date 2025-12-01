@@ -23,7 +23,7 @@ struct EnableShowHideWithContentCoverPage {
   @Builder
   pageMap(name: string) {
     if (name == 'pageOne') {
-      PageOne1()
+      PageOne22()
     }
   }
 
@@ -46,7 +46,7 @@ struct EnableShowHideWithContentCoverPage {
 }
 
 @Component
-struct PageOne1 {
+struct PageOne22 {
   private stack: NavPathStack | undefined = undefined;
   @State isShow: boolean = false;
   @State testModal: boolean = false;

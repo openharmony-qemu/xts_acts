@@ -22,13 +22,12 @@ export default function FileManagementFileIO(){
   describe('FileManagementFileIO', async () => {
 
     /**
+     * @tc.name   FileIOErrCodeErrOK001
      * @tc.number SUB_FILEIO_ERRCODE_ERR_OK_0100
-     * @tc.name FileIOErrCodeErrOK001
-     * @tc.desc test ERR_OK
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileIOErrCodeErrOK001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -43,13 +42,12 @@ export default function FileManagementFileIO(){
     });
 
     /**
+     * @tc.name   FileIOErrCodeErrEnoent001
      * @tc.number SUB_FILEIO_ERRCODE_ERR_ENOENT_0100
-     * @tc.name FileIOErrCodeErrEnoent001
-     * @tc.desc test ERR_ENOENT
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_ENOENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileIOErrCodeErrEnoent001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -64,13 +62,12 @@ export default function FileManagementFileIO(){
     });
 
     /**
+     * @tc.name   FileIOErrCodeErrInvalidParameter001
      * @tc.number SUB_FILEIO_ERRCODE_ERR_INVALIDPARAMETER_0100
-     * @tc.name FileIOErrCodeErrInvalidParameter001
-     * @tc.desc test ERR_INVALID_PARAMETER
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileIOErrCodeErrInvalidParameter001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -85,13 +82,12 @@ export default function FileManagementFileIO(){
     });
 
     /**
+     * @tc.name   FileIOFileLocationLocal001
      * @tc.number SUB_FILEIO_GETFILELOCATION_LOCAL_0100
-     * @tc.name FileIOFileLocationLocal001
-     * @tc.desc test OH_FileIO_GetFileLocation
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileIO_GetFileLocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileIOFileLocationLocal001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -106,13 +102,12 @@ export default function FileManagementFileIO(){
     });
 
     /**
+     * @tc.name   FileIOFileLocationCloud001
      * @tc.number SUB_FILEIO_GETFILELOCATION_CLOUD_0100
-     * @tc.name FileIOFileLocationCloud001
-     * @tc.desc test OH_FileIO_GetFileLocation
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileIO_GetFileLocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileIOFileLocationCloud001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -127,13 +122,12 @@ export default function FileManagementFileIO(){
     });
 
     /**
+     * @tc.name   FileIOFileLocationLocalAndCloud001
      * @tc.number SUB_FILEIO_GETFILELOCATION_LOCALANDCLOUD_0100
-     * @tc.name FileIOFileLocationLocalAndCloud001
-     * @tc.desc test OH_FileIO_GetFileLocation
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileIO_GetFileLocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileIOFileLocationLocalAndCloud001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -148,13 +142,12 @@ export default function FileManagementFileIO(){
     });
 
     /**
+     * @tc.name   FileIOGetFileLocation001
      * @tc.number SUB_FILEIO_GETFILELOCATION_0100
-     * @tc.name FileIOGetFileLocation001
-     * @tc.desc test OH_FileIO_GetFileLocation
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileIO_GetFileLocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileIOGetFileLocation001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -169,13 +162,12 @@ export default function FileManagementFileIO(){
     });
 
     /**
+     * @tc.name   FileIOGetFileLocation002
      * @tc.number SUB_FILEIO_GETFILELOCATION_0200
-     * @tc.name FileIOGetFileLocation002
-     * @tc.desc test OH_FileIO_GetFileLocation
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileIO_GetFileLocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileIOGetFileLocation002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -190,13 +182,12 @@ export default function FileManagementFileIO(){
     });
 
     /**
+     * @tc.name   FileIOGetFileLocation003
      * @tc.number SUB_FILEIO_GETFILELOCATION_0300
-     * @tc.name FileIOGetFileLocation003
-     * @tc.desc test OH_FileIO_GetFileLocation
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test OH_FileIO_GetFileLocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FileIOGetFileLocation003', Level.LEVEL1, async (done: Function) => {
       try {

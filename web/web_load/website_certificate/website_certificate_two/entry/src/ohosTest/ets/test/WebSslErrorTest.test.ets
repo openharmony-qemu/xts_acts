@@ -57,14 +57,14 @@ export default function webSslErrorTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SSLERRORDATEINVALID_0100
-    * @tc.name       : testSslErrorDateInvalid001
-    * @tc.desc       : test SslError DateInvalid
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSslErrorDateInvalid001
+     * @tc.number SUB_WEB_SSLERRORDATEINVALID_0100
+     * @tc.desc   test SslError DateInvalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSslErrorDateInvalid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitSslErrorDateInvalid", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -75,14 +75,14 @@ export default function webSslErrorTest() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SSLERRORUNTRUSTED_0100
-    * @tc.name       : testSslErrorUntrusted001
-    * @tc.desc       : test SslError Untrusted
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSslErrorUntrusted001
+     * @tc.number SUB_WEB_SSLERRORUNTRUSTED_0100
+     * @tc.desc   test SslError Untrusted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSslErrorUntrusted001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitSslErrorUntrusted", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

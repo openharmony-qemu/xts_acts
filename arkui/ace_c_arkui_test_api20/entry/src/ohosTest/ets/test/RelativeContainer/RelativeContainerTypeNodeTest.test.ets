@@ -48,10 +48,12 @@ export default function RelativeContainerTypeNodeTest() {
     });
 
     /**
-     * @tc.number    RelativeContainerTypeNodeTest_0100
-     * @tc.name      RelativeContainerTypeNodeTest_0100
-     * @tc.desc      Test RelativeContainerTypeNode
-     * @tc.level     Level 1
+     * @tc.name   RelativeContainerTypeNodeTest_0100
+     * @tc.number RelativeContainerTypeNodeTest_0100
+     * @tc.desc   Test RelativeContainerTypeNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RelativeContainerTypeNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[RelativeContainerTypeNodeTest_0100] START');
@@ -87,12 +89,12 @@ export default function RelativeContainerTypeNodeTest() {
       done();
     });
     /**
-     * @tc.number    RelativeContainerTypeNodeTest_0200
-     * @tc.name      RelativeContainerTypeNodeTest_0200
-     * @tc.desc      Test RelativeContainerTypeNodePage undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   RelativeContainerTypeNodeTest_0200
+     * @tc.number RelativeContainerTypeNodeTest_0200
+     * @tc.desc   Test RelativeContainerTypeNodePage undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RelativeContainerTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeContainerTypeNodeTest_0200] START');

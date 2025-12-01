@@ -51,13 +51,15 @@ export default function swiperAnimationJsunit() {
 
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPJ_0024
-    * @tc.name  : swiperAnimationJsunit_0024
-    * @tc.desc  : test whether the onAnimationEnd function triggered
-    * @tc.level : Level 2
-    */
 
+    /**
+     * @tc.name   swiperAnimationJsunit_0024
+     * @tc.number swiperAnimationJsunit_0024
+     * @tc.desc   swiperAnimationJsunit_0024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperAnimationJsunit_0024', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationJsunit_0024');
       try {
@@ -109,13 +111,15 @@ export default function swiperAnimationJsunit() {
     });
    
     
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPJ_0012
-    * @tc.name  : swiperAnimationJsunit_0012
-    * @tc.desc  : test whether the onAnimationStart function triggered when swipe
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationJsunit_0012
+    * @tc.number swiperAnimationJsunit_0012
+    * @tc.desc   swiperAnimationJsunit_0012
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationJsunit_0012', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationJsunit_0012 START');
       await CommonFunc.sleep(1000);
@@ -169,13 +173,15 @@ export default function swiperAnimationJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPJ_0027
-    * @tc.name  : swiperAnimationJsunit_0027
-    * @tc.desc  : test whether the onAnimationEnd function triggered when autoplay
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationJsunit_0027
+    * @tc.number swiperAnimationJsunit_0027
+    * @tc.desc   swiperAnimationJsunit_0027
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationJsunit_0027', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationJsunit_0027 START');
       await CommonFunc.sleep(1000);
@@ -232,13 +238,15 @@ export default function swiperAnimationJsunit() {
       done();
     });
      
-     /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPJ_0019
-    * @tc.name  : swiperAnimationJsunit_0019
-    * @tc.desc  : test whether the onAnimationStart function triggered when autoplay
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationJsunit_0019
+    * @tc.number swiperAnimationJsunit_0019
+    * @tc.desc   swiperAnimationJsunit_0019
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationJsunit_0019', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationJsunit_0019 START');
       await CommonFunc.sleep(1000);
@@ -301,13 +309,15 @@ export default function swiperAnimationJsunit() {
       done();
     });
 
-     /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPJ_0022
-    * @tc.name  : swiperAnimationJsunit_0022
-    * @tc.desc  : test whether the onAnimationEnd function triggered when autoplay
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationJsunit_0022
+    * @tc.number swiperAnimationJsunit_0022
+    * @tc.desc   swiperAnimationJsunit_0022
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationJsunit_0022', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationJsunit_0019 START');
       await CommonFunc.sleep(1000);
@@ -357,13 +367,15 @@ export default function swiperAnimationJsunit() {
       done();
     });
 
-     /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPJ_0023
-    * @tc.name  : swiperAnimationJsunit_0023
-    * @tc.desc  : test whether the onAnimationEnd function triggered 
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationJsunit_0023
+    * @tc.number swiperAnimationJsunit_0023
+    * @tc.desc   swiperAnimationJsunit_0023
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationJsunit_0023', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationJsunit_0023 START');
       await CommonFunc.sleep(1000);
@@ -423,13 +435,15 @@ export default function swiperAnimationJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPJ_0011
-    * @tc.name  : swiperAnimationJsunit_0011
-    * @tc.desc  : test whether the onAnimationStart function triggered 
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationJsunit_0011
+    * @tc.number swiperAnimationJsunit_0011
+    * @tc.desc   swiperAnimationJsunit_0011
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationJsunit_0011', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationJsunit_0011 START');
       await CommonFunc.sleep(1000);
@@ -491,13 +505,15 @@ export default function swiperAnimationJsunit() {
       done();
     });
 
-     /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPJ_0028
-    * @tc.name  : swiperAnimationJsunit_0028
-    * @tc.desc  : test whether the onAnimationEnd function triggered
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationJsunit_0028
+    * @tc.number swiperAnimationJsunit_0028
+    * @tc.desc   swiperAnimationJsunit_0028
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationJsunit_0028', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationJsunit_0011 START');
       await CommonFunc.sleep(1000);
@@ -563,13 +579,15 @@ export default function swiperAnimationJsunit() {
       done();
     });
 
-     /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPJ_0020
-    * @tc.name  : swiperAnimationJsunit_0020
-    * @tc.desc  : test whether the onAnimationStart function triggered
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationJsunit_0020
+    * @tc.number swiperAnimationJsunit_0020
+    * @tc.desc   swiperAnimationJsunit_0020
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationJsunit_0020', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationJsunit_0011 START');
       await CommonFunc.sleep(1000);
@@ -640,13 +658,15 @@ export default function swiperAnimationJsunit() {
       done();
     });
 
-    /**
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPL_0016
-    * @tc.name  : swiperAnimationGestureJsunit_0016
-    * @tc.desc  : test whether the onGestureSwipe function triggered when swipe
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationGestureJsunit_0016
+    * @tc.number swiperAnimationGestureJsunit_0016
+    * @tc.desc   swiperAnimationGestureJsunit_0016
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationGestureJsunit_0016', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationGestureJsunit_0016 START');
       await CommonFunc.sleep(1000);
@@ -702,13 +722,15 @@ export default function swiperAnimationJsunit() {
       done();
     });
 
-    /**
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPL_0017
-    * @tc.name  : swiperAnimationGestureJsunit_0017
-    * @tc.desc  : test whether the onGestureSwipe function triggered when swipe
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationGestureJsunit_0017
+    * @tc.number swiperAnimationGestureJsunit_0017
+    * @tc.desc   swiperAnimationGestureJsunit_0017
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationGestureJsunit_0017', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationGestureJsunit_0017 START');
       await CommonFunc.sleep(1000);
@@ -767,13 +789,15 @@ export default function swiperAnimationJsunit() {
       done();
     });
     
-    /**
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPL_0019
-    * @tc.name  : swiperAnimationGestureJsunit_0019
-    * @tc.desc  : test whether the onGestureSwipe function triggered when swipe
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationGestureJsunit_0019
+    * @tc.number swiperAnimationGestureJsunit_0019
+    * @tc.desc   swiperAnimationGestureJsunit_0019
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationGestureJsunit_0019', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationGestureJsunit_0019 START');
       await CommonFunc.sleep(1000);
@@ -835,13 +859,15 @@ export default function swiperAnimationJsunit() {
       done();
     });
 
-     /**
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IAHPL_0020
-    * @tc.name  : swiperAnimationGestureJsunit_0020
-    * @tc.desc  : test whether the onGestureSwipe function triggered when swipe
-    * @tc.level : Level 2
-    */
 
+   /**
+    * @tc.name   swiperAnimationGestureJsunit_0020
+    * @tc.number swiperAnimationGestureJsunit_0020
+    * @tc.desc   swiperAnimationGestureJsunit_0020
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('swiperAnimationGestureJsunit_0020', Level.LEVEL1, async (done: Function) => {
       console.info('swiperAnimationGestureJsunit_0020 START');
       await CommonFunc.sleep(1000);

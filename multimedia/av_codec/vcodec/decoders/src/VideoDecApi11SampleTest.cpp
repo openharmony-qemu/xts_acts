@@ -376,7 +376,7 @@ int32_t VDecAPI11Sample::RunVideoDec(string codeName)
 
 int32_t VDecAPI11Sample::SetVideoDecoderCallback()
 {
-    signal_ = new VDecAPI11Signal();
+    signal_ = new (std::nothrow) VDecAPI11Signal();
     if (signal_ == nullptr) {
         cout << "Failed to new VDecAPI11Signal" << endl;
         return AV_ERR_UNKNOWN;

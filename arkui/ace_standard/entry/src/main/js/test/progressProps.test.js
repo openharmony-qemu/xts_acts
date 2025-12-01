@@ -80,9 +80,12 @@ export default function progressPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressIdProp
-         * @tc.desc      ACE
+         * @tc.name   testProgressIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressIdProp', Level.LEVEL0, async function(done) {
             console.info('testProgressIdProp START');
@@ -98,9 +101,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressClassProp
-         * @tc.desc      ACE
+         * @tc.name   testProgressClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressClassProp', Level.LEVEL0, async function(done) {
             console.info('testProgressClassProp START');
@@ -117,9 +123,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testProgressClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testProgressClassPropNone START');
@@ -137,9 +146,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressRefProp
-         * @tc.desc      ACE
+         * @tc.name   testProgressRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressRefProp', Level.LEVEL0, async function(done) {
             console.info('testProgressRefProp START');
@@ -156,9 +168,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testProgressRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testProgressRefPropNone START');
@@ -176,9 +191,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testProgressDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testProgressDisabledPropTrue START');
@@ -195,9 +213,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testProgressDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testProgressDisabledPropFalse START');
@@ -214,9 +235,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testProgressDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testProgressDisabledPropNone START');
@@ -233,9 +257,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testProgressFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testProgressFocusablePropTrue START');
@@ -252,9 +279,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testProgressFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testProgressFocusablePropFalse START');
@@ -271,9 +301,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testProgressFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testProgressFocusablePropNone START');
@@ -290,9 +323,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressDataProp
-         * @tc.desc      ACE
+         * @tc.name   testProgressDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressDataProp', Level.LEVEL0, async function(done) {
             console.info('testProgressDataProp START');
@@ -310,9 +346,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testProgressDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testProgressDataPropNone START');
@@ -330,9 +369,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testProgressClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testProgressClickEffectPropSmall START');
@@ -349,9 +391,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testProgressClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testProgressClickEffectPropMedium START');
@@ -368,9 +413,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testProgressClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testProgressClickEffectPropLarge START');
@@ -387,9 +435,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testProgressClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testProgressClickEffectPropNone START');
@@ -407,9 +458,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testProgressDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testProgressDirPropRtl START');
@@ -426,9 +480,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testProgressDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testProgressDirPropLtr START');
@@ -445,9 +502,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testProgressDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testProgressDirPropAuto START');
@@ -464,9 +524,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testProgressDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testProgressDirPropNone START');
@@ -483,9 +546,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testProgressForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressForPropNull', Level.LEVEL0, async function(done) {
             console.info('testProgressForPropNull START');
@@ -503,9 +569,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testProgressForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressForPropOne', Level.LEVEL0, async function(done) {
             console.info('testProgressForPropOne START');
@@ -523,9 +592,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testProgressForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressForPropThree', Level.LEVEL0, async function(done) {
             console.info('testProgressForPropThree START');
@@ -543,9 +615,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testProgressIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testProgressIfPropTrue START');
@@ -563,9 +638,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testProgressShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testProgressShowPropTrue START');
@@ -583,9 +661,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testProgressShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testProgressShowPropFalse START');
@@ -603,9 +684,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testProgressShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testProgressShowPropNone START');
@@ -623,9 +707,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressTypeHorizontal
-         * @tc.desc      ACE
+         * @tc.name   testProgressTypeHorizontal
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressTypeHorizontal', Level.LEVEL0, async function(done) {
             console.info('testProgressTypeHorizontal START');
@@ -643,9 +730,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressTypeCircular
-         * @tc.desc      ACE
+         * @tc.name   testProgressTypeCircular
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressTypeCircular', Level.LEVEL0, async function(done) {
             console.info('testProgressTypeCircular START');
@@ -663,9 +753,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressTypeRing
-         * @tc.desc      ACE
+         * @tc.name   testProgressTypeRing
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressTypeRing', Level.LEVEL0, async function(done) {
             console.info('testProgressTypeRing START');
@@ -683,9 +776,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressTypeScaleRing
-         * @tc.desc      ACE
+         * @tc.name   testProgressTypeScaleRing
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressTypeScaleRing', Level.LEVEL0, async function(done) {
             console.info('testProgressTypeScaleRing START');
@@ -703,9 +799,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressTypeArc
-         * @tc.desc      ACE
+         * @tc.name   testProgressTypeArc
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressTypeArc', Level.LEVEL0, async function(done) {
             console.info('testProgressTypeArc START');
@@ -723,9 +822,12 @@ export default function progressPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressTypeEclipse
-         * @tc.desc      ACE
+         * @tc.name   testProgressTypeEclipse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressTypeEclipse', Level.LEVEL0, async function(done) {
             console.info('testProgressTypeEclipse START');

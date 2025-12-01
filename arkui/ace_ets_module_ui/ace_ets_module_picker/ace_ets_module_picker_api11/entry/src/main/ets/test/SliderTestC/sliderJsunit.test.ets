@@ -76,12 +76,12 @@ export default function sliderJsunitSliderTest() {
             done()
         })
         /**
-         * @tc.number    sliderJsunitSliderTest_0100
-         * @tc.name      Test the api of slider
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   sliderJsunitSliderTest_0100
+         * @tc.number sliderJsunitSliderTest_0100
+         * @tc.desc   api
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "sliderJsunitSliderTest_0100",
@@ -101,12 +101,12 @@ export default function sliderJsunitSliderTest() {
             }
         )
         /**
-         * @tc.number    sliderJsunitSliderTest_0200
-         * @tc.name      Test the api of slider
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   sliderJsunitSliderTest_0200
+         * @tc.number sliderJsunitSliderTest_0200
+         * @tc.desc   api
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "sliderJsunitSliderTest_0200",
@@ -147,12 +147,12 @@ export default function sliderJsunitSliderTest() {
             }
         )
         /**
-         * @tc.number    sliderJsunitSliderTest_0300
-         * @tc.name      Test the api of slider
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   sliderJsunitSliderTest_0300
+         * @tc.number sliderJsunitSliderTest_0300
+         * @tc.desc   api
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "sliderJsunitSliderTest_0300",
@@ -189,12 +189,12 @@ export default function sliderJsunitSliderTest() {
             }
         )
         /**
-         * @tc.number    sliderJsunitSliderTest_0400
-         * @tc.name      Test the api of slider
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   sliderJsunitSliderTest_0400
+         * @tc.number sliderJsunitSliderTest_0400
+         * @tc.desc   api
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "sliderJsunitSliderTest_0400",
@@ -243,12 +243,12 @@ export default function sliderJsunitSliderTest() {
             }
         )
         /**
-         * @tc.number    sliderJsunitSliderTest_0500
-         * @tc.name      Test the api of slider
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   sliderJsunitSliderTest_0500
+         * @tc.number sliderJsunitSliderTest_0500
+         * @tc.desc   api
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "sliderJsunitSliderTest_0500",
@@ -290,12 +290,12 @@ export default function sliderJsunitSliderTest() {
             }
         )
         /**
-         * @tc.number    sliderJsunitSliderTest_0600
-         * @tc.name      Test the api of slider
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   sliderJsunitSliderTest_0600
+         * @tc.number sliderJsunitSliderTest_0600
+         * @tc.desc   api
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "sliderJsunitSliderTest_0600",
@@ -344,12 +344,12 @@ export default function sliderJsunitSliderTest() {
             }
         )
         /**
-         * @tc.number    sliderJsunitSliderTest_0700
-         * @tc.name      Test the api of slider
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   sliderJsunitSliderTest_0700
+         * @tc.number sliderJsunitSliderTest_0700
+         * @tc.desc   api
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "sliderJsunitSliderTest_0700",
@@ -415,12 +415,12 @@ export default function sliderJsunitSliderTest() {
             }
         )
         /**
-         * @tc.number    sliderJsunitSliderTest_0800
-         * @tc.name      Test the api of slider
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   sliderJsunitSliderTest_0800
+         * @tc.number sliderJsunitSliderTest_0800
+         * @tc.desc   api
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "sliderJsunitSliderTest_0800",
@@ -489,12 +489,12 @@ export default function sliderJsunitSliderTest() {
             }
         )
         /**
-         * @tc.number    sliderJsunitSliderTest_0900
-         * @tc.name      Test the api of slider
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   sliderJsunitSliderTest_0900
+         * @tc.number sliderJsunitSliderTest_0900
+         * @tc.desc   api
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "sliderJsunitSliderTest_0900",
@@ -555,12 +555,12 @@ export default function sliderJsunitSliderTest() {
             }
         )
         /**
-         * @tc.number    sliderJsunitSliderTest_1000
-         * @tc.name      sliderJsunitSliderTest_1000
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   sliderJsunitSliderTest_1000
+         * @tc.number sliderJsunitSliderTest_1000
+         * @tc.desc   api
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "sliderJsunitSliderTest_1000",

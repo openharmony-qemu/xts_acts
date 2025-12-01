@@ -26,66 +26,66 @@ export default function sliderReverseTest() {
       done();
     });
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_REVERSE_0100
-    * @tc.name: testSliderReverse001
-    * @tc.desc: testing reverse for slider with default value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderReverse001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_REVERSE_0100
+     * @tc.desc   testing reverse for slider with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderReverse001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderReverse001()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_REVERSE_0200
-    * @tc.name: testSliderReverse002
-    * @tc.desc: testing reverse for slider with normal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderReverse002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_REVERSE_0200
+     * @tc.desc   testing reverse for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderReverse002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderReverse002()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_REVERSE_0300
-    * @tc.name: testSliderReverse003
-    * @tc.desc: testing reverse for slider with normal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderReverse003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_REVERSE_0300
+     * @tc.desc   testing reverse for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderReverse003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderReverse003()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_REVERSE_0400
-    * @tc.name: testSliderReverse004
-    * @tc.desc: testing reverse for slider with abnormal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   testSliderReverse004
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_REVERSE_0400
+     * @tc.desc   testing reverse for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderReverse004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderReverse004()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_REVERSE_0500
-    * @tc.name: testSliderReverse005
-    * @tc.desc: testing reverse for slider with abnormal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   testSliderReverse005
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_REVERSE_0500
+     * @tc.desc   testing reverse for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderReverse005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderReverse005()).assertEqual(0)
       done()

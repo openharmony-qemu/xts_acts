@@ -74,12 +74,12 @@ export default function MediaAssetManagerRequestImageTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_IMAGE_001
-     * @tc.name      : MediaAssetManager_requestImage_promise_001
-     * @tc.desc      : requestImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetManager_requestImage_promise_001
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_IMAGE_001
+     * @tc.desc   requestImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetManager_requestImage_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetManager_requestImage_promise_001';
@@ -91,12 +91,12 @@ export default function MediaAssetManagerRequestImageTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_IMAGE_002
-     * @tc.name      : MediaAssetManager_requestImage_promise_002
-     * @tc.desc      : requestImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetManager_requestImage_promise_002
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_IMAGE_002
+     * @tc.desc   requestImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetManager_requestImage_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetManager_requestImage_promise_002';
@@ -108,12 +108,12 @@ export default function MediaAssetManagerRequestImageTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_IMAGE_003
-     * @tc.name      : MediaAssetManager_requestImage_promise_003
-     * @tc.desc      : requestImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetManager_requestImage_promise_003
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_IMAGE_003
+     * @tc.desc   requestImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetManager_requestImage_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetManager_requestImage_promise_003';

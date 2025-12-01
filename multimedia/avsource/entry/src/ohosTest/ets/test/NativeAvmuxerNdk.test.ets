@@ -20,12 +20,12 @@ export default function nativeavmuxerNdkTest() {
   describe('MuslNativeAvmuxerNdkTest', () => {
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_CREATE_0100
-     * @tc.name       : testOHAVMuxerCreate001
-     * @tc.desc       : test OH_AVMuxer_Create
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerCreate001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_CREATE_0100
+     * @tc.desc   test OH_AVMuxer_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerCreate001', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerCreate();
@@ -34,12 +34,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_SETROTATION_0100
-     * @tc.name       : testOHAVMuxerSetRotation001
-     * @tc.desc       : test OH_AVMuxer_SetRotation
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerSetRotation001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_SETROTATION_0100
+     * @tc.desc   test OH_AVMuxer_SetRotation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerSetRotation001', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerSetRotation();
@@ -48,12 +48,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_SETFORMAT_0100
-     * @tc.name       : testOHAVMuxerSetFormat001
-     * @tc.desc       : test OH_AVMuxer_SetFormat
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerSetFormat001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_SETFORMAT_0100
+     * @tc.desc   test OH_AVMuxer_SetFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerSetFormat001', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerSetFormat();
@@ -62,12 +62,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_START_0100
-     * @tc.name       : testOHAVMuxerStart001
-     * @tc.desc       : test OH_AVMuxer_Start
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerStart001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_START_0100
+     * @tc.desc   test OH_AVMuxer_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerStart001', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerStart();
@@ -76,12 +76,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_STOP_0100
-     * @tc.name       : testOHAVMuxerStop001
-     * @tc.desc       : test OH_AVMuxer_Stop
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerStop001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_STOP_0100
+     * @tc.desc   test OH_AVMuxer_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerStop001', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerStop();
@@ -90,12 +90,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_WRITESAMPLE_0100
-     * @tc.name       : testOHAVMuxerWriteSample001
-     * @tc.desc       : test OH_AVMuxer_WriteSample
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerWriteSample001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_WRITESAMPLE_0100
+     * @tc.desc   test OH_AVMuxer_WriteSample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerWriteSample001', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerWriteSample();
@@ -104,12 +104,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_WRITESAMPLEBUFFER_0100
-     * @tc.name       : testOHAVMuxerWriteSampleBuffer001
-     * @tc.desc       : test OH_AVMuxer_WriteSampleBuffer
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerWriteSampleBuffer001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_WRITESAMPLEBUFFER_0100
+     * @tc.desc   test OH_AVMuxer_WriteSampleBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerWriteSampleBuffer001', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.OHAVMuxerWriteSampleBuffer();
@@ -118,12 +118,12 @@ export default function nativeavmuxerNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_ADDTRACK_0100
-     * @tc.name       : testOHAVMuxerAddTrack001
-     * @tc.desc       : test OH_AVMuxer_AddTrack
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerAddTrack001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_ADDTRACK_0100
+     * @tc.desc   test OH_AVMuxer_AddTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerAddTrack001', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerAddTrack();
@@ -132,12 +132,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_DESTROY_0100
-     * @tc.name       : testOHAVMuxerDestroy001
-     * @tc.desc       : test OH_AVMuxer_Destroy
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerDestroy001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_DESTROY_0100
+     * @tc.desc   test OH_AVMuxer_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerDestroy001', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerDestroy();
@@ -146,12 +146,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_CREATE_0200
-     * @tc.name       : testOHAVMuxerCreate002
-     * @tc.desc       : test OH_AVMuxer_Create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerCreate002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_CREATE_0200
+     * @tc.desc   test OH_AVMuxer_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerCreate002', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerCreateAbnormal();
@@ -160,12 +160,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_SETROTATION_0200
-     * @tc.name       : testOHAVMuxerSetRotation002
-     * @tc.desc       : test OH_AVMuxer_SetRotation
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerSetRotation002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_SETROTATION_0200
+     * @tc.desc   test OH_AVMuxer_SetRotation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerSetRotation002', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerSetRotationAbnormal();
@@ -174,12 +174,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_SETFORMAT_0200
-     * @tc.name       : testOHAVMuxerSetFormat002
-     * @tc.desc       : test OH_AVMuxer_SetFormat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerSetFormat002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_SETFORMAT_0200
+     * @tc.desc   test OH_AVMuxer_SetFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerSetFormat002', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerSetFormatAbnormal();
@@ -188,12 +188,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_START_0200
-     * @tc.name       : testOHAVMuxerStart002
-     * @tc.desc       : test OH_AVMuxer_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerStart002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_START_0200
+     * @tc.desc   test OH_AVMuxer_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerStart002', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerStartAbnormal();
@@ -202,12 +202,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_STOP_0200
-     * @tc.name       : testOHAVMuxerStop002
-     * @tc.desc       : test OH_AVMuxer_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerStop002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_STOP_0200
+     * @tc.desc   test OH_AVMuxer_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerStop002', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerStopAbnormal();
@@ -216,12 +216,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_WRITESAMPLE_0200
-     * @tc.name       : testOHAVMuxerWriteSample002
-     * @tc.desc       : test OH_AVMuxer_WriteSample
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerWriteSample002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_WRITESAMPLE_0200
+     * @tc.desc   test OH_AVMuxer_WriteSample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerWriteSample002', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerWriteSampleAbnormal();
@@ -230,12 +230,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_ADDTRACK_0200
-     * @tc.name       : testOHAVMuxerAddTrack002
-     * @tc.desc       : test OH_AVMuxer_AddTrack
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerAddTrack002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_ADDTRACK_0200
+     * @tc.desc   test OH_AVMuxer_AddTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerAddTrack002', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerAddTrackAbnormal();
@@ -244,12 +244,12 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_DESTROY_0200
-     * @tc.name       : testOHAVMuxerDestroy002
-     * @tc.desc       : test OH_AVMuxer_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVMuxerDestroy002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AVMUXER_OH_AVMUXER_DESTROY_0200
+     * @tc.desc   test OH_AVMuxer_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVMuxerDestroy002', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerDestroyAbnormal();

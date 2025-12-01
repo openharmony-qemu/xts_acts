@@ -52,12 +52,12 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
         done();
     })
     /**
-     *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4400
-     *@tc.name testWebViewNativeMediaPlayerSetMutedTrue
-     *@tc.desc test NativeMediaPlayerSetVolume0_SetMutedTrue
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+     * @tc.name   testWebViewNativeMediaPlayerSetMutedTrue
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4400
+     * @tc.desc   test NativeMediaPlayerSetVolume0_SetMutedTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetMutedTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerSetMutedTrue"
@@ -67,12 +67,12 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
       await StartModel.click();
     })
     /**
-     *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4600
-     *@tc.name testWebViewNativeMediaPlayerSetMutedTrue_handleMutedChange
-     *@tc.desc test NativeMediaPlayerSetMutedTrue_handleMutedChanged
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+     * @tc.name   testWebViewNativeMediaPlayerSetMutedTrue_handleMutedChange
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4600
+     * @tc.desc   test NativeMediaPlayerSetMutedTrue_handleMutedChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetMutedTrue_handleMutedChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerSetMutedTrue_handleMutedChange"
@@ -83,12 +83,12 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /**
-     *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4500
-     *@tc.name testWebViewNativeMediaPlayerSetMutedFalse
-     *@tc.desc test NativeMediaPlayerSetMutedFalse_handleVolumeChange
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+     * @tc.name   testWebViewNativeMediaPlayerSetMutedFalse
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4500
+     * @tc.desc   test NativeMediaPlayerSetMutedFalse_handleVolumeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetMutedFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerSetMutedFalse"
@@ -99,12 +99,12 @@ export default function webViewNativeMediaPlayerHandlerEnhancedSetMuted() {
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /**
-     *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4700
-     *@tc.name testWebViewNativeMediaPlayerSetMutedFalse_handleMutedChange
-     *@tc.desc test NativeMediaPlayerSetMutedFalse_handleVolumeChange
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+     * @tc.name   testWebViewNativeMediaPlayerSetMutedFalse_handleMutedChange
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_4700
+     * @tc.desc   test NativeMediaPlayerSetMutedFalse_handleVolumeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetMutedFalse_handleMutedChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerSetMutedFalse_handleMutedChange"

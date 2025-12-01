@@ -81,12 +81,12 @@ export default function AbilityMonitor2Test() {
 
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0100
      * @tc.number ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0100
-     * @tc.name ACTS_AddAbilityMonitor_Callback_2_0100
-     * @tc.desc Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the callback function (onAbilityForeground) CallBack when the ability status becomes foreground
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the callback function (onAbilityForeground) CallBack when the ability status becomes foreground
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0100", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0100";
@@ -131,12 +131,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0200
      * @tc.number ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0200
-     * @tc.name ACTS_AddAbilityMonitor_Callback_2_0200
-     * @tc.desc Verify that addAbilityMonitor enters the normal value of the monitor parameter and executes the callback function (onWindowStageCreate) CallBack when the window stage is created
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that addAbilityMonitor enters the normal value of the monitor parameter and executes the callback function (onWindowStageCreate) CallBack when the window stage is created
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0200", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0200";
@@ -184,12 +184,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0300
      * @tc.number ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0300
-     * @tc.name ACTS_AddAbilityMonitor_Callback_2_0300
-     * @tc.desc Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the callback function (onWindowStageCreate) Promise when the window stage is created
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the callback function (onWindowStageCreate) Promise when the window stage is created
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0300", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0300";
@@ -233,12 +233,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0400
      * @tc.number ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0400
-     * @tc.name ACTS_AddAbilityMonitor_Callback_2_0400
-     * @tc.desc Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the onAbilityBackground Promise when the ability status becomes background
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the onAbilityBackground Promise when the ability status becomes background
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0400", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0400";
@@ -274,12 +274,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0500
      * @tc.number ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0500
-     * @tc.name ACTS_AddAbilityMonitor_Callback_2_0500
-     * @tc.desc Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the onAbilityDestroy callBack function before the ability is destroyed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the onAbilityDestroy callBack function before the ability is destroyed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0500", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_CALLBACK_2_0500";
@@ -318,12 +318,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0100
      * @tc.number ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0100
-     * @tc.name ACTS_AddAbilityMonitor_Promise_2_0100
-     * @tc.desc Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the onAbilityForeground Promise when the ability status becomes foreground
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the onAbilityForeground Promise when the ability status becomes foreground
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0100", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0100";
@@ -370,12 +370,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0200
      * @tc.number ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0200
-     * @tc.name ACTS_AddAbilityMonitor_Promise_2_0200
-     * @tc.desc Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the callback function (onWindowStageCreate) Promise when the window stage is created
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the callback function (onWindowStageCreate) Promise when the window stage is created
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0200", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0200";
@@ -429,12 +429,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0300
      * @tc.number ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0300
-     * @tc.name ACTS_AddAbilityMonitor_Promise_2_0300
-     * @tc.desc Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the onAbilityBackground Promise when the ability status becomes background     * @tc.size MediumTest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the onAbilityBackground Promise when the ability status becomes background     * @tc.size MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0300", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0300";
@@ -493,12 +493,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0400
      * @tc.number ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0400
-     * @tc.name ACTS_AddAbilityMonitor_Promise_2_0400
-     * @tc.desc Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the callback function (onWindowStageDestroy) Promise before the window stage is destroyed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that addAbilityMonitor enters the parameter monitor to pass in the normal value, and executes the callback function (onWindowStageDestroy) Promise before the window stage is destroyed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0400", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0400";
@@ -540,12 +540,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0500
      * @tc.number ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0500
-     * @tc.name ACTS_AddAbilityMonitor_Promise_2_0500
-     * @tc.desc Verify that the addAbilityMonitor parameter monitor passes in the normal value, and execute the onAbilityDestroy Promise before the ability is destroyed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that the addAbilityMonitor parameter monitor passes in the normal value, and execute the onAbilityDestroy Promise before the ability is destroyed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0500", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_PROMISE_2_0500";
@@ -586,12 +586,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0100
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0100
-     * @tc.name ACTS_RemoveABILITY_MONITOR_CALLBACK_2_0100
-     * @tc.desc After verifying removeAbilityMonitor, you cannot listen to the onAbilityForeground callback CallBack
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying removeAbilityMonitor, you cannot listen to the onAbilityForeground callback CallBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0100", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0100";
@@ -660,12 +660,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0200
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0200
-     * @tc.name ACTS_RemoveABILITY_MONITOR_CALLBACK_2_0200
-     * @tc.desc After validating removeAbilityMonitor, you cannot listen to the onWindowStageCreate callback CallBack
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After validating removeAbilityMonitor, you cannot listen to the onWindowStageCreate callback CallBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0200", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0200";
@@ -737,12 +737,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0300
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0300
-     * @tc.name ACTS_RemoveABILITY_MONITOR_CALLBACK_2_0300
-     * @tc.desc After verifying removeAbilityMonitor, you cannot listen to the onAbilityBackground callback callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying removeAbilityMonitor, you cannot listen to the onAbilityBackground callback callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0300", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0300";
@@ -795,12 +795,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0400
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0400
-     * @tc.name ACTS_RemoveABILITY_MONITOR_CALLBACK_2_0400
-     * @tc.desc After verifying removeAbilityMonitor, you cannot listen to the onAbilityDestroy callback CallBack
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying removeAbilityMonitor, you cannot listen to the onAbilityDestroy callback CallBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0400", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0400";
@@ -849,12 +849,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0500
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0500
-     * @tc.name ACTS_RemoveABILITY_MONITOR_CALLBACK_2_0500
-     * @tc.desc After verifying removeAbilityMonitor, you cannot listen to the onWindowStageDestroy callback CallBack
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying removeAbilityMonitor, you cannot listen to the onWindowStageDestroy callback CallBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0500", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0500";
@@ -902,12 +902,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0100
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0100
-     * @tc.name Acts_RemoveAbility_Monitor_Promise_2_0100
-     * @tc.desc After verifying removeAbilityMonitor, you cannot listen to onAbilityForeground callback promises
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying removeAbilityMonitor, you cannot listen to onAbilityForeground callback promises
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0100", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0100";
@@ -982,12 +982,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0200
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0200
-     * @tc.name Acts_RemoveAbility_Monitor_Promise_2_0200
-     * @tc.desc After verifying removeAbilityMonitor, you cannot listen to the onWindowStageCreate callback Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying removeAbilityMonitor, you cannot listen to the onWindowStageCreate callback Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0200", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0200";
@@ -1052,12 +1052,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0300
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0300
-     * @tc.name Acts_RemoveAbility_Monitor_Promise_2_0300
-     * @tc.desc After validating removeAbilityMonitor, you cannot listen to the onAbilityBackground callback Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After validating removeAbilityMonitor, you cannot listen to the onAbilityBackground callback Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0300", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0300";
@@ -1117,12 +1117,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0400
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0400
-     * @tc.name Acts_RemoveAbility_Monitor_Promise_2_0400
-     * @tc.desc After verifying removeAbilityMonitor, you cannot listen to onAbilityDestroy callback promises
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying removeAbilityMonitor, you cannot listen to onAbilityDestroy callback promises
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0400", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0400";
@@ -1182,12 +1182,12 @@ export default function AbilityMonitor2Test() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0500
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0500
-     * @tc.name Acts_RemoveAbility_Monitor_Promise_2_0500
-     * @tc.desc After verifying removeAbilityMonitor, you cannot listen to the onWindowStageDestroy callback Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying removeAbilityMonitor, you cannot listen to the onWindowStageDestroy callback Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0500", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0500";

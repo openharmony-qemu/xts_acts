@@ -56,10 +56,13 @@ export default function webViewDefaultFontSizeNoMinFontSize() {
       done();
     })
    
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR6_API_0400
-     *tc.name testDefaultFontSize7AndNoMinFontSize
-     *tc.desc test with defaultfontsize 7 and no set minfontsize
+    /**
+     * @tc.name   testDefaultFontSize7AndNoMinFontSize
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR6_API_0400
+     * @tc.desc   test with defaultfontsize 7 and no set minfontsize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDefaultFontSize7AndNoMinFontSize',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
       Utils.emitEvent("emitdefaultFontSize7AndNominFontSize", 150300);
@@ -67,10 +70,13 @@ export default function webViewDefaultFontSizeNoMinFontSize() {
       let StartModel = await driver.findComponent(ON.id("webViewDefaultFontSizeNoMinFontSize"));
       await StartModel.click();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR6_API_0500
-     *tc.name testDefaultFontSize17AndCssFontSize9
-     *tc.desc test with defaultfontsize 17 and css font-size 9
+    /**
+     * @tc.name   testDefaultFontSize17AndCssFontSize9
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR6_API_0500
+     * @tc.desc   test with defaultfontsize 17 and css font-size 9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDefaultFontSize17AndCssFontSize9',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
       Utils.emitEvent("emitdefaultFontSize17AndCssFontSize9", 150300);

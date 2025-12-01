@@ -25,12 +25,12 @@ export default function statvfsNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATVFS_STATVFS_0100
-     * @tc.name       : testMuslStatvfsStatvfs001
-     * @tc.desc       : test statvfs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStatvfsStatvfs001
+     * @tc.number SUB_THIRDPARTY_MUSL_STATVFS_STATVFS_0100
+     * @tc.desc   test statvfs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatvfsStatvfs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1
@@ -40,12 +40,12 @@ export default function statvfsNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATVFS_STATVFS_0200
-     * @tc.name       : testMuslStatvfsStatvfs002
-     * @tc.desc       : test statvfs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStatvfsStatvfs002
+     * @tc.number SUB_THIRDPARTY_MUSL_STATVFS_STATVFS_0200
+     * @tc.desc   test statvfs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatvfsStatvfs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 2
@@ -56,12 +56,12 @@ export default function statvfsNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATVFS_STATVFS64_0100
-     * @tc.name       : testMuslStatvfsStatvfs64001
-     * @tc.desc       : test statvfs64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStatvfsStatvfs64001
+     * @tc.number SUB_THIRDPARTY_MUSL_STATVFS_STATVFS64_0100
+     * @tc.desc   test statvfs64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatvfsStatvfs64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1
@@ -71,12 +71,12 @@ export default function statvfsNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STATVFS_STATVFS64_0200
-     * @tc.name       : testMuslStatvfsStatvfs64002
-     * @tc.desc       : test statvfs64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStatvfsStatvfs64002
+     * @tc.number SUB_THIRDPARTY_MUSL_STATVFS_STATVFS64_0200
+     * @tc.desc   test statvfs64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatvfsStatvfs64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 2

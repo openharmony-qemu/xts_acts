@@ -45,9 +45,12 @@ export default function GridItemJsunit() {
       done();
     });
     /**
-     * @tc.number     SUB_ARKUI_GRIDITEM_JSAPI_001
-     * @tc.name       Test GridItemJsunit_0100
-     * @tc.desc       Test Get GridItem attribute
+     * @tc.name   GridItemJsunit_0100
+     * @tc.number SUB_ARKUI_GRIDITEM_JSAPI_001
+     * @tc.desc   Test Get GridItem attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridItemJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get the information of the GridItem component
@@ -75,9 +78,12 @@ export default function GridItemJsunit() {
     });
 
     /**
-     * @tc.number     SUB_ARKUI_GRIDITEM_JSAPI_002
-     * @tc.name       Test GridItemJsunit_0200
-     * @tc.desc       Test Modify GridItem attribute value
+     * @tc.name   GridItemJsunit_0200
+     * @tc.number SUB_ARKUI_GRIDITEM_JSAPI_002
+     * @tc.desc   Test Modify GridItem attribute value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridItemJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       // Modify the properties of component GridItem
@@ -113,6 +119,14 @@ export default function GridItemJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridItemJsunit_0300
+     * @tc.number GridItemJsunit_0300
+     * @tc.desc   GridItemJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridItemJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       // Illegal modification of properties of component gridItem
       console.info('[GridItemJsunit_0300] START');
@@ -147,6 +161,14 @@ export default function GridItemJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridItemJsunit_0400
+     * @tc.number GridItemJsunit_0400
+     * @tc.desc   GridItemJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridItemJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Verify the function of onSelect of GridItem component 
       console.info('[GridItemJsunit_0400] START');
@@ -164,6 +186,14 @@ export default function GridItemJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridItemJsunit_0500
+     * @tc.number GridItemJsunit_0500
+     * @tc.desc   GridItemJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridItemJsunit_0500',  Level.LEVEL0, async (done: Function) => {
       // Verify the columnsTemplate of Grid component
       console.info('[GridItemJsunit_0500] START');
@@ -177,6 +207,14 @@ export default function GridItemJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridItemJsunit_0600
+     * @tc.number GridItemJsunit_0600
+     * @tc.desc   GridItemJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridItemJsunit_0600',  Level.LEVEL0, async (done: Function) => {
       // Verify the rowsTemplate of Grid component 
       console.info('[GridItemJsunit_0600] START');
@@ -190,6 +228,14 @@ export default function GridItemJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridItemJsunit_0700
+     * @tc.number GridItemJsunit_0700
+     * @tc.desc   GridItemJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridItemJsunit_0700',  Level.LEVEL0, async (done: Function) => {
       // Verify the columnsGap of Grid component 
       console.info('[GridItemJsunit_0700] START');
@@ -204,6 +250,14 @@ export default function GridItemJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridItemJsunit_0800
+     * @tc.number GridItemJsunit_0800
+     * @tc.desc   GridItemJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridItemJsunit_0800',  Level.LEVEL0, async (done: Function) => {
       // Verify the rowsGap of Grid component 
       console.info('[GridItemJsunit_0800] START');

@@ -26,49 +26,49 @@ export default function textAreaTextSelectionTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_TEXT_SELECTION_0001
-     * @tc.name: testTextAreaTextSelection001
-     * @tc.desc: testing textSelection for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaTextSelection001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_TEXT_SELECTION_0001
+     * @tc.desc   testing textSelection for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaTextSelection001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaTextSelection001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_TEXT_SELECTION_0002
-     * @tc.name: testTextAreaTextSelection002
-     * @tc.desc: testing textSelection for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaTextSelection002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_TEXT_SELECTION_0002
+     * @tc.desc   testing textSelection for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaTextSelection002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaTextSelection002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_TEXT_SELECTION_0003
-     * @tc.name: testTextAreaTextSelection003
-     * @tc.desc: testing textSelection for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaTextSelection003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_TEXT_SELECTION_0003
+     * @tc.desc   testing textSelection for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaTextSelection003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaTextSelection003()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_TEXT_SELECTION_0004
-     * @tc.name: testTextAreaTextSelection004
-     * @tc.desc: testing textSelection for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaTextSelection004
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_TEXT_SELECTION_0004
+     * @tc.desc   testing textSelection for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaTextSelection004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaTextSelection004()).assertEqual(0)

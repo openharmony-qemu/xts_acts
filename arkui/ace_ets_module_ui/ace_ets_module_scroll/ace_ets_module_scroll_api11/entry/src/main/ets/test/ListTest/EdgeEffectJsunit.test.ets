@@ -44,6 +44,14 @@ export default function edgeEffectJsunit() {
       console.info("edgeEffect after each called");
     });
 
+    /**
+     * @tc.name   edgeEffectTest_0100
+     * @tc.number edgeEffectTest_0100
+     * @tc.desc   edgeEffectTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('edgeEffectTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('edgeEffectTest_0100 START');
       let strJson: string = getInspectorByKey('list');
@@ -53,6 +61,14 @@ export default function edgeEffectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   edgeEffectTest_0200
+     * @tc.number edgeEffectTest_0200
+     * @tc.desc   edgeEffectTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('edgeEffectTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('edgeEffectTest_0200 START');
       try {

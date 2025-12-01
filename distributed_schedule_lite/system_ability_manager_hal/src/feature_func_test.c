@@ -147,9 +147,12 @@ static BOOL FeatureTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeature_0010
- * @tc.name      : Valid feature can be registered
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testRegisterFeature0010
+ * @tc.number DMSLite_SAMGR_RegisterFeature_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0010, Function | MediumTest | Level1)
 {
@@ -160,9 +163,12 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0010, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeature_0020
- * @tc.name      : If the specified service is null feature can not be registered
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testRegisterFeature0020
+ * @tc.number DMSLite_SAMGR_RegisterFeature_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0020, Function | MediumTest | Level2)
 {
@@ -171,9 +177,12 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0020, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeature_0030
- * @tc.name      : If the specified feature is null feature can not be registered
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testRegisterFeature0030
+ * @tc.number DMSLite_SAMGR_RegisterFeature_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0030, Function | MediumTest | Level2)
 {
@@ -182,9 +191,12 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0030, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeature_0040
- * @tc.name      : Feature can not be registered if the specified service does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testRegisterFeature0040
+ * @tc.number DMSLite_SAMGR_RegisterFeature_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0040, Function | MediumTest | Level2)
 {
@@ -193,9 +205,12 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0040, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeature_0050
- * @tc.name      : Feature failed to register if the same feature name already exist in samgr 
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testRegisterFeature0050
+ * @tc.number DMSLite_SAMGR_RegisterFeature_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0050, Function | MediumTest | Level2)
 {
@@ -208,9 +223,12 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0050, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeature_0060
- * @tc.name      : Multi features can be registered under one service 
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testRegisterFeature0060
+ * @tc.number DMSLite_SAMGR_RegisterFeature_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0060, Function | MediumTest | Level2)
 {
@@ -224,9 +242,12 @@ LITE_TEST_CASE(FeatureTestSuite, testRegisterFeature0060, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeature_0010
- * @tc.name      : Feature can be unregistered
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testUnregisterFeature0010
+ * @tc.number DMSLite_SAMGR_UnregisterFeature_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0010, Function | MediumTest | Level2)
 {
@@ -237,9 +258,12 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0010, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeature_0020
- * @tc.name      : Feature can not be unregistered if the specified service is null or space
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testUnregisterFeature0020
+ * @tc.number DMSLite_SAMGR_UnregisterFeature_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0020, Function | MediumTest | Level2)
 {
@@ -255,9 +279,12 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0020, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeature_0030
- * @tc.name      : Feature can not be unregistered if the specified feature is null or space
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testUnregisterFeature0030
+ * @tc.number DMSLite_SAMGR_UnregisterFeature_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0030, Function | MediumTest | Level2)
 {
@@ -273,9 +300,12 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0030, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeature_0040
- * @tc.name      : Feature failed to unregister if the specified service not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testUnregisterFeature0040
+ * @tc.number DMSLite_SAMGR_UnregisterFeature_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0040, Function | MediumTest | Level2)
 {
@@ -288,9 +318,12 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0040, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeature_0050
- * @tc.name      : Feature failed to unregister if the specified feature not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testUnregisterFeature0050
+ * @tc.number DMSLite_SAMGR_UnregisterFeature_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0050, Function | MediumTest | Level2)
 {
@@ -303,9 +336,12 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0050, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeature_0060
- * @tc.name      : Feature can not be unregistered if there is api under the feature
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testUnregisterFeature0060
+ * @tc.number DMSLite_SAMGR_UnregisterFeature_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0060, Function | MediumTest | Level2)
 {
@@ -320,9 +356,12 @@ LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0060, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeature_0070
- * @tc.name      : Register and unregister feature repeatedly, no memory leak
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testUnregisterFeature0070
+ * @tc.number DMSLite_SAMGR_UnregisterFeature_0070
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureTestSuite, testUnregisterFeature0070, Function | MediumTest | Level2)
 {

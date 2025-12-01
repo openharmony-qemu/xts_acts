@@ -161,7 +161,6 @@ export default function rdbStoreAttachEtsunitTest() {
         console.log(TAG + "*************Ets Test Begin*************");
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0001
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0010
          * @tc.desc   non encrypted database attach non encrypted database
@@ -184,7 +183,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0002
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0020
          * @tc.desc   non encrypted database attach encrypted database
@@ -207,7 +205,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0003
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0030
          * @tc.desc   encrypted database attach encrypted database
@@ -230,7 +227,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0004
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0040
          * @tc.desc   encrypted databases are not supported for attaching non encrypted databases
@@ -252,7 +248,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0005
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0050
          * @tc.desc   non encrypted database attach non encrypted database
@@ -278,7 +273,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0006
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0060
          * @tc.desc   path error for non encrypted database
@@ -307,7 +301,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0007
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0070
          * @tc.desc   non encrypted database attach non encrypted database with same table name
@@ -343,7 +336,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0008
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0080
          * @tc.desc   resultSet occupies connection, attach failed
@@ -373,7 +365,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0009
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0090
          * @tc.desc   repeat attach using the same alias
@@ -406,7 +397,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach00010
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0100
          * @tc.desc   WaitTime exceeds maximum limit
@@ -439,7 +429,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach00011
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0110
          * @tc.desc   WaitTime exceeds the minimum limit
@@ -473,7 +462,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach00012
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0120
          * @tc.desc   the alias cannot be empty
@@ -497,7 +485,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach00013
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0130
          * @tc.desc   input error path
@@ -521,7 +508,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach00014
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0140
          * @tc.desc   input empty path
@@ -545,7 +531,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0015
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0010
          * @tc.desc   non encrypted database attach non encrypted database
@@ -571,7 +556,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0016
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0010
          * @tc.desc   non encrypted database attach non encrypted database
@@ -597,7 +581,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0017
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0010
          * @tc.desc   non encrypted database attach non encrypted database
@@ -623,7 +606,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0018
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0050
          * @tc.desc   non encrypted database attach non encrypted database
@@ -649,7 +631,6 @@ export default function rdbStoreAttachEtsunitTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0018
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0050
          * @tc.desc   non encrypted database attach non encrypted database
@@ -674,7 +655,6 @@ export default function rdbStoreAttachEtsunitTest() {
             console.log(TAG + "************* testRdbStoreAttach0018 end *************");
         })
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreAttach0019
          * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_2000
          * @tc.desc   non encrypted database attach non encrypted database

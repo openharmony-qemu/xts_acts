@@ -80,9 +80,12 @@ export default function labelPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelIdProp
-         * @tc.desc      ACE
+         * @tc.name   testLabelIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelIdProp', Level.LEVEL0, async function(done) {
             console.info('testLabelIdProp START');
@@ -98,9 +101,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelClassProp
-         * @tc.desc      ACE
+         * @tc.name   testLabelClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelClassProp', Level.LEVEL0, async function(done) {
             console.info('testLabelClassProp START');
@@ -117,9 +123,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testLabelClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testLabelClassPropNone START');
@@ -137,9 +146,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelRefProp
-         * @tc.desc      ACE
+         * @tc.name   testLabelRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelRefProp', Level.LEVEL0, async function(done) {
             console.info('testLabelRefProp START');
@@ -156,9 +168,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testLabelRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testLabelRefPropNone START');
@@ -176,9 +191,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testLabelDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testLabelDisabledPropTrue START');
@@ -195,9 +213,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testLabelDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testLabelDisabledPropFalse START');
@@ -214,9 +235,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testLabelDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testLabelDisabledPropNone START');
@@ -233,9 +257,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testLabelFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testLabelFocusablePropTrue START');
@@ -252,9 +279,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testLabelFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testLabelFocusablePropFalse START');
@@ -271,9 +301,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testLabelFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testLabelFocusablePropNone START');
@@ -290,9 +323,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelDataProp
-         * @tc.desc      ACE
+         * @tc.name   testLabelDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelDataProp', Level.LEVEL0, async function(done) {
             console.info('testLabelDataProp START');
@@ -310,9 +346,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testLabelDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testLabelDataPropNone START');
@@ -330,9 +369,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testLabelClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testLabelClickEffectPropSmall START');
@@ -349,9 +391,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testLabelClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testLabelClickEffectPropMedium START');
@@ -368,9 +413,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testLabelClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testLabelClickEffectPropLarge START');
@@ -387,9 +435,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testLabelClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testLabelClickEffectPropNone START');
@@ -407,9 +458,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testLabelDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testLabelDirPropRtl START');
@@ -426,9 +480,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testLabelDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testLabelDirPropLtr START');
@@ -445,9 +502,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testLabelDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testLabelDirPropAuto START');
@@ -464,9 +524,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testLabelDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testLabelDirPropNone START');
@@ -483,9 +546,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testLabelForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelForPropNull', Level.LEVEL0, async function(done) {
             console.info('testLabelForPropNull START');
@@ -503,9 +569,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testLabelForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelForPropOne', Level.LEVEL0, async function(done) {
             console.info('testLabelForPropOne START');
@@ -523,9 +592,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testLabelForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelForPropThree', Level.LEVEL0, async function(done) {
             console.info('testLabelForPropThree START');
@@ -543,9 +615,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testLabelIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testLabelIfPropTrue START');
@@ -563,9 +638,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testLabelShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testLabelShowPropTrue START');
@@ -583,9 +661,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testLabelShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testLabelShowPropFalse START');
@@ -603,9 +684,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testLabelShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testLabelShowPropNone START');
@@ -623,9 +707,12 @@ export default function labelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLabelLabelTarget
-         * @tc.desc      ACE
+         * @tc.name   testLabelLabelTarget
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelLabelTarget', Level.LEVEL0, async function(done) {
             console.info('testLabelLabelTarget START');

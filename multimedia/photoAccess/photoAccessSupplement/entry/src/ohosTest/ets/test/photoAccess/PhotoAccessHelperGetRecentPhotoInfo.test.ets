@@ -30,12 +30,12 @@ const TAG = "PhotoGetRecentPhotoInfo";
           console.info(TAG, 'afterAll case.');
         });
         /**
-         * @tc.number    : SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_001
-         * @tc.name      : SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_001
-         * @tc.desc      : saveCameraPhoto(imageFileType: ImageFileType): void
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_001
+         * @tc.number SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_001
+         * @tc.desc   saveCameraPhoto(imageFileType: ImageFileType): void
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_001', Level.LEVEL0, async (done: Function) => {
           const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_001';
@@ -57,12 +57,12 @@ const TAG = "PhotoGetRecentPhotoInfo";
         )
 
         /**
-         * @tc.number    : SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_002
-         * @tc.name      : SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_002
-         * @tc.desc      : getRecentPhotoInfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_002
+         * @tc.number SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_002
+         * @tc.desc   getRecentPhotoInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_002', Level.LEVEL0, async (done: Function) => {
           const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_002';
@@ -83,12 +83,12 @@ const TAG = "PhotoGetRecentPhotoInfo";
         }
         )
         /**
-         * @tc.number    : SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_003
-         * @tc.name      : SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_003
-         * @tc.desc      : saveCameraPhoto(imageFileType: ImageFileType): void
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_003
+         * @tc.number SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_003
+         * @tc.desc   saveCameraPhoto(imageFileType: ImageFileType): void
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_003', Level.LEVEL0, async (done: Function) => {
           const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_RECENT_PHOTO_INFO_003';

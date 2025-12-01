@@ -81,7 +81,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0100
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0100
          * @tc.desc   Obtains the history bytes of a label.
@@ -106,7 +105,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0101
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0101
          * @tc.desc   Obtains the history bytes of a label.
@@ -131,7 +129,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0200
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0200
          * @tc.desc   HiLayer response byte for obtaining the tag.
@@ -156,7 +153,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0201
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0201
          * @tc.desc   HiLayer response byte for obtaining the tag.
@@ -181,7 +177,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0300
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0300
          * @tc.desc   Check whether extended APDUs are supported.Promise
@@ -228,7 +223,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0400
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0400
          * @tc.desc   Check whether extended APDUs are supported.callback
@@ -270,7 +264,6 @@ export default function nfcIsoDepTagTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:45
           * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0500
           * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0500
           * @tc.desc   Whether to support a certain type of card emulation.
@@ -300,7 +293,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0600
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0600
          * @tc.desc   hasHceCapability to support a certain type of card emulation.
@@ -325,7 +317,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0700
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0700
          * @tc.desc   Whether to support a certain type of card isDefaultService.
@@ -368,7 +359,6 @@ export default function nfcIsoDepTagTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:45
           * @tc.name   SUB_Communication_NFC_Enumerated_js_0800
           * @tc.number SUB_Communication_NFC_Enumerated_js_0800
           * @tc.desc   Enumeration return value test
@@ -466,7 +456,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0900
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0900
          * @tc.desc   Whether to support a certain type of card HceService on/off
@@ -519,7 +508,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1000
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1000
          * @tc.desc   Whether to support a certain type of card HceService transmit
@@ -542,7 +530,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1100
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1100
          * @tc.desc   Whether to support a certain type of card HceService transmit
@@ -567,7 +554,6 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1200
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1200
          * @tc.desc   Whether to support a certain type of card HceService on/off
@@ -606,7 +592,6 @@ export default function nfcIsoDepTagTest() {
         })      
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1400
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1400
          * @tc.desc   Whether to support a certain type of card HceService startHCE/stopHCE/sendResponse

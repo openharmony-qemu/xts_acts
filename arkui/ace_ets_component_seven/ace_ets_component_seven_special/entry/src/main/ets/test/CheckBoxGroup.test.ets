@@ -41,12 +41,12 @@ export default function checkBoxGroupTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_CheckboxGroup_1000
      * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1000
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_1000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -67,12 +67,12 @@ export default function checkBoxGroupTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1001
      * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1001
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -91,12 +91,12 @@ export default function checkBoxGroupTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002
      * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002', Level.LEVEL0, async (done: Function) => {
       try {
@@ -115,12 +115,12 @@ export default function checkBoxGroupTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003
      * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003', Level.LEVEL0, async (done: Function) => {
       try {

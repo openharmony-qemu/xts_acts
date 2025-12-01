@@ -50,12 +50,12 @@ export default function toolBarV2PageTest() {
     })
 
     /**
-     * @tc.number toolBarV2PageTest
      * @tc.name   toolBarV2PageTest_0100
+     * @tc.number toolBarV2PageTest
      * @tc.desc   Test toolBarV2Page
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('toolBarV2PageTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[toolBarV2PageTest_0100] START');

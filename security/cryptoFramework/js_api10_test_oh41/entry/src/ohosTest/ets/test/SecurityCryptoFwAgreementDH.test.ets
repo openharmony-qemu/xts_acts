@@ -44,12 +44,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_0100
      * @tc.number Security_CryptoFramework_Agreement_DH_Func_0100
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_modp1536
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   AsyKeyGenerator with algName DH_modp1536
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_0100";
@@ -68,12 +68,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_0200
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0200
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_modp2048
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_modp2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_0200";
@@ -92,12 +92,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_0300
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0300
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_modp3072
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_modp3072
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_0300";
@@ -116,12 +116,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_0400
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0400
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_modp4096
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_modp4096
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_0400";
@@ -140,12 +140,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_0500
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0500
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_modp6144
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_modp6144
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_0500";
@@ -164,12 +164,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_0600
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0600
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_modp8192
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_modp8192
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_0600";
@@ -188,12 +188,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_0700
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0700
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_ffdhe2048
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_ffdhe2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_0700";
@@ -212,12 +212,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_0800
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0800
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_ffdhe3072
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_ffdhe3072
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_0800";
@@ -236,12 +236,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_0900
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0900
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_ffdhe4096
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_ffdhe4096
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_0900";
@@ -260,12 +260,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_1000
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1000
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_ffdhe6144
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_ffdhe6144
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_1000";
@@ -284,12 +284,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_1100
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1100
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_ffdhe8192
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName DH_ffdhe8192
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_1100";
@@ -308,12 +308,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_1200
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1200
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGeneratorBySpec with algName DH
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   AsyKeyGeneratorBySpec with algName DH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_1300";
@@ -333,12 +333,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_1300
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1300
-     * @tc.name Test agreement with dh, Promise style, process success
-     * @tc.desc AsyKeyGeneratorByCommonSpec with algName DH
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   AsyKeyGeneratorByCommonSpec with algName DH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_1300";
@@ -358,12 +358,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_1400
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1400
-     * @tc.name Test agreement with dh, Callback style, process success
-     * @tc.desc AsyKeyGeneratorBySpec with algName DH_modp1536
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   AsyKeyGeneratorBySpec with algName DH_modp1536
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_1400";
@@ -382,12 +382,12 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Agreement_DH_Func_1500
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1500
-     * @tc.name Test Agreement algName with dh. Process success
-     * @tc.desc create Agreement by DH_modp1536
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   create Agreement by DH_modp1536
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Agreement_DH_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_Agreement_DH_Func_1500";

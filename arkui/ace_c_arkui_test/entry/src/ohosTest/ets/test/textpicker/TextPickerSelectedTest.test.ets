@@ -26,39 +26,39 @@ export default function textPickerSelectedTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_SELECTED_0100
-     * @tc.name       : testTextPickerSelected001
-     * @tc.desc       : testing selected for textPicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPickerSelected001
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_SELECTED_0100
+     * @tc.desc   testing selected for textPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerSelected001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerSelected001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_SELECTED_0200
-     * @tc.name       : testTextPickerSelected002
-     * @tc.desc       : testing selected for textPicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPickerSelected002
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_SELECTED_0200
+     * @tc.desc   testing selected for textPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerSelected002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerSelected002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_SELECTED_0300
-     * @tc.name       : testTextPickerSelected003
-     * @tc.desc       : testing selected for textPicker with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextPickerSelected003
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_SELECTED_0300
+     * @tc.desc   testing selected for textPicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerSelected003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerSelected003()).assertEqual(0)

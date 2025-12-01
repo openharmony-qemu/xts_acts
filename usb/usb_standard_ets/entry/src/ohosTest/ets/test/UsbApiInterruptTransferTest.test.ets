@@ -118,7 +118,6 @@ export default function UsbApiInterruptTransferTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer001
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0100
      * @tc.desc   interrupt transfer error endpoint.
@@ -152,7 +151,6 @@ export default function UsbApiInterruptTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer002
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0200
      * @tc.desc   interrupt transfer. claimInterface no call. IO error.
@@ -186,7 +184,6 @@ export default function UsbApiInterruptTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer003
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0100
      * @tc.desc   interrupt transfer read successfully.
@@ -225,7 +222,6 @@ export default function UsbApiInterruptTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbCancelTransfer001
      * @tc.number SUB_USB_Host_JS_usbCancelTransfer_Func_0100
      * @tc.desc   interrupt transfer cancel successfully.
@@ -260,7 +256,6 @@ export default function UsbApiInterruptTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbCancelTransfer002
      * @tc.number SUB_USB_Host_JS_usbCancelTransfer_ErrCode_0100
      * @tc.desc   interrupt transfer cancel failed.

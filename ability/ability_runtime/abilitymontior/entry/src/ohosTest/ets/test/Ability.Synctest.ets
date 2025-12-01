@@ -47,9 +47,12 @@ export default function abilityTestSync() {
     });
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitorSync_0100
-     * @tc.name: Verify that the addAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add a monitor then use startAbility to trigger onAbilityCreate (Callback).
+     * @tc.name   ACTS_AddAbilityMonitorSync_0100
+     * @tc.number ACTS_AddAbilityMonitorSync_0100
+     * @tc.desc   Use addAbilityMonitorSync to add a monitor then use startAbility to trigger onAbilityCreate (Callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitorSync_0100', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0
@@ -93,10 +96,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitorSync_0200
-     * @tc.name: Verify that the addAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add a monitor then use startAbility to
-     * trigger onAbilityForeground (Callback).
+     * @tc.name   ACTS_AddAbilityMonitorSync_0200
+     * @tc.number ACTS_AddAbilityMonitorSync_0200
+     * @tc.desc   Use addAbilityMonitorSync to add a monitor then use startAbility to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitorSync_0200', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0;
@@ -135,10 +140,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitorSync_0300
-     * @tc.name: Verify that the addAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add a monitor then use startAbility to trigger
-     * onAbilityBackground (Callback).
+     * @tc.name   ACTS_AddAbilityMonitorSync_0300
+     * @tc.number ACTS_AddAbilityMonitorSync_0300
+     * @tc.desc   Use addAbilityMonitorSync to add a monitor then use startAbility to trigger
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitorSync_0300', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0;
@@ -174,10 +181,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitorSync_0400
-     * @tc.name: Verify that the addAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add a monitor then use startAbility
-     * to trigger onAbilityDestroy (Callback).
+     * @tc.name   ACTS_AddAbilityMonitorSync_0400
+     * @tc.number ACTS_AddAbilityMonitorSync_0400
+     * @tc.desc   Use addAbilityMonitorSync to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitorSync_0400', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0;
@@ -211,10 +220,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitorSync_0500
-     * @tc.name: Verify that the addAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add a monitor then use startAbility
-     * to trigger onWindowStageCreate (Callback).
+     * @tc.name   ACTS_AddAbilityMonitorSync_0500
+     * @tc.number ACTS_AddAbilityMonitorSync_0500
+     * @tc.desc   Use addAbilityMonitorSync to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitorSync_0500', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0;
@@ -250,10 +261,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitorSync_0600
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onWindowStageDestroy (Callback).
+     * @tc.name   ACTS_AddAbilityMonitorSync_0600
+     * @tc.number ACTS_AddAbilityMonitorSync_0600
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitorSync_0600', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0;
@@ -290,11 +303,12 @@ export default function abilityTestSync() {
 
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitorSync_0100
-     * @tc.name: Verify that the removeAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
-     * to remove monitor then trigger
-     *           onAbilityCreate (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitorSync_0100
+     * @tc.number ACTS_RemoveAbilityMonitorSync_0100
+     * @tc.desc   Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitorSync_0100', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0;
@@ -334,11 +348,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitorSync_0200
-     * @tc.name: Verify that the removeAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
-     * to remove monitor then trigger
-     *           onAbilityForeground (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitorSync_0200
+     * @tc.number ACTS_RemoveAbilityMonitorSync_0200
+     * @tc.desc   Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitorSync_0200', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0
@@ -387,11 +402,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitorSync_0300
-     * @tc.name: Verify that the removeAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
-     * to remove monitor then trigger
-     *           onAbilityBackground (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitorSync_0300
+     * @tc.number ACTS_RemoveAbilityMonitorSync_0300
+     * @tc.desc   Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitorSync_0300', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0;
@@ -430,11 +446,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitorSync_0400
-     * @tc.name: Verify that the removeAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
-     * to remove monitor then trigger
-     *           onAbilityDestroy (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitorSync_0400
+     * @tc.number ACTS_RemoveAbilityMonitorSync_0400
+     * @tc.desc   Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitorSync_0400', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0;
@@ -473,11 +490,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitorSync_0500
-     * @tc.name: Verify that the removeAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
-     * to remove monitor then trigger
-     *           onWindowStageCreate (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitorSync_0500
+     * @tc.number ACTS_RemoveAbilityMonitorSync_0500
+     * @tc.desc   Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitorSync_0500', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0;
@@ -516,11 +534,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitorSync_0600
-     * @tc.name: Verify that the removeAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
-     * to remove monitor then trigger
-     *           onWindowStageDestroy (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitorSync_0600
+     * @tc.number ACTS_RemoveAbilityMonitorSync_0600
+     * @tc.desc   Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitorSync_0600', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0;
@@ -559,11 +578,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitorSync_0700
-     * @tc.name: Verify that the removeAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
-     * to remove monitor then trigger
-     *           onAbilityCreate (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitorSync_0700
+     * @tc.number ACTS_RemoveAbilityMonitorSync_0700
+     * @tc.desc   Use addAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitorSync_0700', Level.LEVEL0, async (done: Function) => {
 
@@ -587,11 +607,12 @@ export default function abilityTestSync() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitorSync_0800
-     * @tc.name: Verify that the removeAbilityMonitorSync interface functions normally.
-     * @tc.desc: Use waitAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
-     * to remove monitor then trigger
-     *           onAbilityCreate (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitorSync_0800
+     * @tc.number ACTS_RemoveAbilityMonitorSync_0800
+     * @tc.desc   Use waitAbilityMonitorSync to add monitor and use removeAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitorSync_0800', Level.LEVEL0, async (done: Function) => {
       let CallbackFlag = 0;

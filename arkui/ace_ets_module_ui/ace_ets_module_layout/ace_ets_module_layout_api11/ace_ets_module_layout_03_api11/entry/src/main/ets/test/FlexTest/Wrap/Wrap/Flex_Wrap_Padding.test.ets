@@ -52,10 +52,12 @@ export default function flex_Wrap_PaddingTest() {
       console.info("Flex_Wrap_Padding after each called");
     });
     /**
+     * @tc.name   testWrapWrapFlexPaddingMeet
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_1500
-     * @tc.name testWrapWrapFlexPaddingMeet
-     * @tc.desc The size of the parent component in the main axis direction
-     *               meets the layout of the child components when the parent component set padding
+     * @tc.desc   The size of the parent component in the main axis direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapFlexPaddingMeet',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapFlexPaddingMeet] START');
@@ -93,10 +95,12 @@ export default function flex_Wrap_PaddingTest() {
 
     });
     /**
+     * @tc.name   testWrapWrapFlexPaddingOverflow
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_1600
-     * @tc.name testWrapWrapFlexPaddingOverflow
-     * @tc.desc The size of the parent component in the main axis direction
-     *               is not enough for the layout of the child components when the parent component set padding
+     * @tc.desc   The size of the parent component in the main axis direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapFlexPaddingOverflow',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapFlexPaddingOverflow] START');
@@ -133,10 +137,12 @@ export default function flex_Wrap_PaddingTest() {
 
     });
     /**
+     * @tc.name   testWrapWrapFlexMargin
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_1700
-     * @tc.name testWrapWrapFlexMargin
-     * @tc.desc The size of the parent component in the main axis direction
-     *               meets the layout of the child components when the parent component set margin
+     * @tc.desc   The size of the parent component in the main axis direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapFlexMargin',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapFlexMargin] START');
@@ -178,10 +184,12 @@ export default function flex_Wrap_PaddingTest() {
 
     });
     /**
+     * @tc.name   testWrapWrapFlexMarPad
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_1800
-     * @tc.name testWrapWrapFlexMarPad
-     * @tc.desc The size of the parent component in the main axis direction is not enough for
-     *               the layout of the child components when the parent component set margin and padding
+     * @tc.desc   The size of the parent component in the main axis direction is not enough for
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapFlexMarPad',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapFlexMarPad] START');

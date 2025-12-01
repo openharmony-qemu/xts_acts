@@ -26,65 +26,65 @@ export default function textTextOverflowTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTOVERFLOW_0100
-     * @tc.name       : testTextTextOverflow001
-     * @tc.desc       : testing textOverflow for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextOverflow001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTOVERFLOW_0100
+     * @tc.desc   testing textOverflow for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextOverflow001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextOverflow001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTOVERFLOW_0200
-     * @tc.name       : testTextTextOverflow002
-     * @tc.desc       : testing textOverflow for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextOverflow002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTOVERFLOW_0200
+     * @tc.desc   testing textOverflow for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextOverflow002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextOverflow002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTOVERFLOW_0300
-     * @tc.name       : testTextTextOverflow003
-     * @tc.desc       : testing textOverflow for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextOverflow003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTOVERFLOW_0300
+     * @tc.desc   testing textOverflow for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextOverflow003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextOverflow003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTOVERFLOW_0400
-     * @tc.name       : testTextTextOverflow004
-     * @tc.desc       : testing textOverflow for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextOverflow004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTOVERFLOW_0400
+     * @tc.desc   testing textOverflow for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextOverflow004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextOverflow004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTOVERFLOW_0500
-     * @tc.name       : testTextTextOverflow005
-     * @tc.desc       : testing textOverflow for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextTextOverflow005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTOVERFLOW_0500
+     * @tc.desc   testing textOverflow for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextOverflow005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextOverflow005()).assertEqual(0)

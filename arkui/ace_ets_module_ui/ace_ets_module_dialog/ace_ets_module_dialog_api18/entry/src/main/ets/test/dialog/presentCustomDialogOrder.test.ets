@@ -63,13 +63,13 @@ export default function presentCustomDialogOrder() {
     });
 
     /**
+     * @tc.name   presentCustomDialogOrder_0100
      * @tc.number SUB_ACE_presentCustomDialogOrder_0100
-     * @tc.name presentCustomDialogOrder_0100
-     * @tc.desc To test the LevelOrder attribute of presentCustomDialog,LevelOrder.clamp(100)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the LevelOrder attribute of presentCustomDialog,LevelOrder.clamp(100)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('presentCustomDialogOrder_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1 , async (done: Function) => {
       console.info('presentCustomDialogOrder_0100 START');
       let driver = await Driver.create()
@@ -91,13 +91,13 @@ export default function presentCustomDialogOrder() {
     });
 
     /**
+     * @tc.name   presentCustomDialogOrder_0200
      * @tc.number SUB_ACE_presentCustomDialogOrder_0200
-     * @tc.name presentCustomDialogOrder_0200
-     * @tc.desc To test the LevelOrder attribute of presentCustomDialog,LevelOrder.clamp(100001)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the LevelOrder attribute of presentCustomDialog,LevelOrder.clamp(100001)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('presentCustomDialogOrder_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1 , async (done: Function) => {
       console.info('presentCustomDialogOrder_0200 START');
       let driver = await Driver.create()
@@ -119,13 +119,13 @@ export default function presentCustomDialogOrder() {
     });
 
     /**
+     * @tc.name   presentCustomDialogOrder_0300
      * @tc.number SUB_ACE_presentCustomDialogOrder_0300
-     * @tc.name presentCustomDialogOrder_0300
-     * @tc.desc To test the LevelOrder attribute of presentCustomDialog,LevelOrder.clamp(-100001)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the LevelOrder attribute of presentCustomDialog,LevelOrder.clamp(-100001)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('presentCustomDialogOrder_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1 , async (done: Function) => {
       console.info('presentCustomDialogOrder_0300 START');
       let driver = await Driver.create()
@@ -146,13 +146,13 @@ export default function presentCustomDialogOrder() {
       done();
     });
     /**
+     * @tc.name   presentCustomDialogOrder_0400
      * @tc.number SUB_ACE_presentCustomDialogOrder_0400
-     * @tc.name presentCustomDialogOrder_0400
-     * @tc.desc To test the LevelOrder attribute of presentCustomDialog,LevelOrder.clamp(undefined)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the LevelOrder attribute of presentCustomDialog,LevelOrder.clamp(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('presentCustomDialogOrder_0400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1 , async (done: Function) => {
       console.info('presentCustomDialogOrder_0400 START');
       let driver = await Driver.create()

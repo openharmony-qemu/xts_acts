@@ -58,13 +58,13 @@ export default function webControllerBackOrForwardTest() {
 
 
     /**
-    * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_FALSE_0100
-    * @tc.name   testAccessBackwardFalse
-    * @tc.desc   test accessBackward false
-    * @tc.size   MediumTest
-    * @tc.type   Function
-    * @tc.level  Level 0
-    */
+     * @tc.name   testAccessBackwardFalse
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_FALSE_0100
+     * @tc.desc   test accessBackward false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAccessBackwardFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAccessBackwardFalse", 121)
       Utils.registerBaseEvent("testAccessBackwardFalse", false, 2025102103,
@@ -74,12 +74,12 @@ export default function webControllerBackOrForwardTest() {
       sendEventByKey('webControllerBackOrForwardButton', 10, '');
     })
     /**
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_FALSE_0100
      * @tc.name   testAccessForwardFalse
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_FALSE_0100
      * @tc.desc   test accessForward false
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAccessForwardFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAccessForwardFalse", 121)
@@ -90,12 +90,12 @@ export default function webControllerBackOrForwardTest() {
       sendEventByKey('webControllerBackOrForwardButton', 10, '');
     })
     /**
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_FALSE_0100
      * @tc.name   testAccessStepFalse
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_FALSE_0100
      * @tc.desc   test accessStep false
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAccessStepFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAccessStepFalse", 121)
@@ -106,12 +106,12 @@ export default function webControllerBackOrForwardTest() {
       sendEventByKey('webControllerBackOrForwardButton', 10, '');
     })
     /**
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_TRUE_0100
      * @tc.name   testAccessBackwardTrue
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_TRUE_0100
      * @tc.desc   test accessBackward true
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAccessBackwardTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAccessBackwardTrue", 121)
@@ -122,12 +122,12 @@ export default function webControllerBackOrForwardTest() {
       sendEventByKey('webControllerBackOrForwardButton', 10, '');
     })
     /**
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_TRUE_0100
      * @tc.name   testAccessForwardTrue
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSFORWARD_TRUE_0100
      * @tc.desc   test accessForward true
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAccessForwardTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAccessForwardTrue", 121)
@@ -138,12 +138,12 @@ export default function webControllerBackOrForwardTest() {
       sendEventByKey('webControllerBackOrForwardButton', 10, '');
     })
     /**
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_TRUE_0100
      * @tc.name   testAccessStepTrue
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_TRUE_0100
      * @tc.desc   test accessStep true
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAccessStepTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAccessStepTrue", 121)

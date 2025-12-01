@@ -154,8 +154,8 @@ struct WebIndex {
   @State heightMap: Map<string, number> = new Map();
   @State emitKey: string = '';
   @State isReceive: number = -1;
-  @State str:string = 'emitOnNativeEmbedMouseEvent001'
   @State isComplete: number = -1;
+  @State str:string = 'emitOnNativeEmbedMouseEvent001'
   aboutToAppear() {
     // 配置Web开启调试模式
     webview.WebviewController.setWebDebuggingAccess(true);
@@ -167,9 +167,10 @@ struct WebIndex {
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-  onPageHide() {
+  onPageHide() {	
     events_emitter.off(153530)
   }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
@@ -199,7 +200,6 @@ struct WebIndex {
                 let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
                 let driver: Driver = Driver.create();
                 await driver.mouseClick({x:downX, y:downY}, MouseButton.MOUSE_BUTTON_LEFT);
-                await Utils.sleep(2000);
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }

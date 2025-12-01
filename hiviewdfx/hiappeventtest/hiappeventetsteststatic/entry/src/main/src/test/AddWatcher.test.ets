@@ -25,12 +25,12 @@ export default function addWatcherTest() {
     hilog.info(logDomain, tag, 'describe start');
 
     /**
+     * @tc.name   testHiAppEventSub70
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_7000
-     * @tc.name testHiAppEventSub70
-     * @tc.desc 验证hiappevent订阅setRow接口默认设置取出的应用事件包的数据条数为1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证hiappevent订阅setRow接口默认设置取出的应用事件包的数据条数为1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSub70', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub70 start');
@@ -89,12 +89,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSub71
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_7100
-     * @tc.name testHiAppEventSub71
-     * @tc.desc 验证hiappevent订阅setRow接口设置可取出的应用事件包的数据条数
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证hiappevent订阅setRow接口设置可取出的应用事件包的数据条数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSub71', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub71 start');
@@ -154,12 +154,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSub72
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_7200
-     * @tc.name testHiAppEventSub72
-     * @tc.desc 验证setRow接口设置条数为0，返回错误码11104001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setRow接口设置条数为0，返回错误码11104001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSub72', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub72 start');
@@ -185,12 +185,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSub73
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_7300
-     * @tc.name testHiAppEventSub73
-     * @tc.desc 验证hiappevent订阅setRow接口默认设置取出的应用事件包的数据条数为1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证hiappevent订阅setRow接口默认设置取出的应用事件包的数据条数为1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSub73', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub73 start');
@@ -250,12 +250,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam22
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2200
-     * @tc.name testHiAppEventSetPam22
-     * @tc.desc 验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam22', Level.LEVEL3, async (done: () => void): Promise<void> => {
         hilog.info(logDomain, tag, 'testHiAppEventSetPam22 start');
@@ -295,12 +295,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam23
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2300
-     * @tc.name testHiAppEventSetPam23
-     * @tc.desc 验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam23', Level.LEVEL3, async (done: () => void): Promise<void> => {
         hilog.info(logDomain, tag, 'testHiAppEventSetPam23 start');
@@ -334,12 +334,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub67
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_6700
-     * @tc.name HiAppEventSub67
-     * @tc.desc 验证应用事件订阅可通过onReceive回调获取各种类型订阅事件信息
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用事件订阅可通过onReceive回调获取各种类型订阅事件信息
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub67', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'HiAppEventSub67 start');
@@ -432,12 +432,12 @@ export default function addWatcherTest() {
     });
 
     /**
+     * @tc.name   HiAppEventSub68
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_6800
-     * @tc.name HiAppEventSub68
-     * @tc.desc 验证应用事件订阅优先通过onReceive回调获取订阅事件信息
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用事件订阅优先通过onReceive回调获取订阅事件信息
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub68', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'HiAppEventSub68 start');
@@ -501,12 +501,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub69
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_6900
-     * @tc.name HiAppEventSub69
-     * @tc.desc 验证新增filter-name订阅事件过滤条件
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证新增filter-name订阅事件过滤条件
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub69', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'HiAppEventSub69 start');
@@ -572,12 +572,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub01
      * @tc.number DFX_DFT_HiAppEvent_Sub_0100
-     * @tc.name HiAppEventSub01
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub01', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub01 start')
@@ -676,12 +676,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub02
      * @tc.number DFX_DFT_HiAppEvent_Sub_0200
-     * @tc.name HiAppEventSub02
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub02', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub02 start')
@@ -762,12 +762,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub06
      * @tc.number DFX_DFT_HiAppEvent_Sub_0600
-     * @tc.name HiAppEventSub06
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub06', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub06 start')
@@ -859,12 +859,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub07
      * @tc.number DFX_DFT_HiAppEvent_Sub_0700
-     * @tc.name HiAppEventSub07
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub07', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub07 start')
@@ -925,12 +925,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub08
      * @tc.number DFX_DFT_HiAppEvent_Sub_0800
-     * @tc.name HiAppEventSub08
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub08', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub08 start')
@@ -986,12 +986,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub09
      * @tc.number DFX_DFT_HiAppEvent_Sub_0900
-     * @tc.name HiAppEventSub09
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub09', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub09 start')
@@ -1084,12 +1084,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub10
      * @tc.number DFX_DFT_HiAppEvent_Sub_1000
-     * @tc.name HiAppEventSub10
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub10', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub11 start')
@@ -1182,12 +1182,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub11
      * @tc.number DFX_DFT_HiAppEvent_Sub_1100
-     * @tc.name HiAppEventSub11
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub11', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub11 start')
@@ -1280,12 +1280,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub12
      * @tc.number DFX_DFT_HiAppEvent_Sub_1200
-     * @tc.name HiAppEventSub12
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub12', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub12 start')
@@ -1378,12 +1378,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub13
      * @tc.number DFX_DFT_HiAppEvent_Sub_1300
-     * @tc.name HiAppEventSub13
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub13', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub13 start')
@@ -1476,12 +1476,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub16
      * @tc.number DFX_DFT_HiAppEvent_Sub_1600
-     * @tc.name HiAppEventSub16
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub16', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub16 start')
@@ -1558,12 +1558,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub17
      * @tc.number DFX_DFT_HiAppEvent_Sub_1700
-     * @tc.name HiAppEventSub17
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub17', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub17 start')
@@ -1640,12 +1640,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub18
      * @tc.number DFX_DFT_HiAppEvent_Sub_1800
-     * @tc.name HiAppEventSub18
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub18', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub18 start')
@@ -1701,12 +1701,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub19
      * @tc.number DFX_DFT_HiAppEvent_Sub_1900
-     * @tc.name HiAppEventSub19
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub19', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub19 start')
@@ -1759,12 +1759,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub20
      * @tc.number DFX_DFT_HiAppEvent_Sub_2000
-     * @tc.name HiAppEventSub20
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub20', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub20 start')
@@ -1817,12 +1817,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub21
      * @tc.number DFX_DFT_HiAppEvent_Sub_2100
-     * @tc.name HiAppEventSub21
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub21', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub21 start')
@@ -1878,12 +1878,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub22
      * @tc.number DFX_DFT_HiAppEvent_Sub_2200
-     * @tc.name HiAppEventSub22
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub22', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub22 start')
@@ -1937,12 +1937,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub23
      * @tc.number DFX_DFT_HiAppEvent_Sub_2300
-     * @tc.name HiAppEventSub23
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub23', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub23 start')
@@ -1996,12 +1996,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub24
      * @tc.number DFX_DFT_HiAppEvent_Sub_2400
-     * @tc.name HiAppEventSub24
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub24', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub24 start')
@@ -2051,12 +2051,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub28
      * @tc.number DFX_DFT_HiAppEvent_Sub_2800
-     * @tc.name HiAppEventSub28
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub28', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub28 start')
@@ -2112,12 +2112,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub29
      * @tc.number DFX_DFT_HiAppEvent_Sub_2900
-     * @tc.name HiAppEventSub29
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub29', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub29 start')
@@ -2170,12 +2170,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub25
      * @tc.number DFX_DFT_HiAppEvent_Sub_2500
-     * @tc.name HiAppEventSub25
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub25', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub25 start')
@@ -2207,12 +2207,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub26
      * @tc.number DFX_DFT_HiAppEvent_Sub_2600
-     * @tc.name HiAppEventSub26
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub26', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub26 start')
@@ -2244,12 +2244,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub27
      * @tc.number DFX_DFT_HiAppEvent_Sub_2700
-     * @tc.name HiAppEventSub27
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub27', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub27 start')
@@ -2260,12 +2260,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub30
      * @tc.number DFX_DFT_HiAppEvent_Sub_3000
-     * @tc.name HiAppEventSub30
-     * @tc.desc 验证调用removeWatcher失败返回值11102001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证调用removeWatcher失败返回值11102001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub30', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSub30 start')
@@ -2281,12 +2281,12 @@ export default function addWatcherTest() {
     })
 
     /**
+     * @tc.name   HiAppEventSub31
      * @tc.number DFX_DFT_HiAppEvent_Sub_3100
-     * @tc.name HiAppEventSub31
-     * @tc.desc 验证调用AppEventPackageHolder.constructor().
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证调用AppEventPackageHolder.constructor().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub31', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'HiAppEventSub31 start')

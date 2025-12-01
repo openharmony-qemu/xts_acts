@@ -40,6 +40,14 @@ export default function FolderStack3ApiJsunit() {
       }
       done();
     });
+    /**
+     * @tc.name   FolderStack3ApiJsunit_0100
+     * @tc.number FolderStack3ApiJsunit_0100
+     * @tc.desc   FolderStack3ApiJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('FolderStack3ApiJsunit_0100',  Level.LEVEL0, async (done: Function) => {
         await CommonFunc.sleep(1000);
         console.info('FolderStack3ApiJsunit_0100 START');
@@ -51,6 +59,14 @@ export default function FolderStack3ApiJsunit() {
         console.info('FolderStack3ApiJsunit_0100 END')
         done();
       });
+    /**
+     * @tc.name   FolderStack3ApiJsunit_0200
+     * @tc.number FolderStack3ApiJsunit_0200
+     * @tc.desc   FolderStack3ApiJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('FolderStack3ApiJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('FolderStack3ApiJsunit_0200 START');
@@ -62,6 +78,14 @@ export default function FolderStack3ApiJsunit() {
       console.info('FolderStack3ApiJsunit_0200 END')
       done();
     });
+    /**
+     * @tc.name   FolderStack3ApiJsunit_0300
+     * @tc.number FolderStack3ApiJsunit_0300
+     * @tc.desc   FolderStack3ApiJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('FolderStack3ApiJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('FolderStack3ApiJsunit_0300 START');

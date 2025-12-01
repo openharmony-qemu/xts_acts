@@ -148,7 +148,7 @@ export default function imagePicture() {
         imageSourceApi = image.createImageSource(rawFileDescriptor);
       } else if (type === "incremental") {
         const picBuffer = getBuffer(fileName);
-        imageSourceApi = image.CreateIncrementalSource(picBuffer);
+        imageSourceApi = image.createIncrementalSource(picBuffer);
       } else {
         const filePath = filesDir + "/" + fileName;
         const file = fs.openSync(filePath);
@@ -401,7 +401,6 @@ export default function imagePicture() {
       let picture: image.Picture | undefined;
       let result = true;
       picture = await createPicImageSourceWithAuxPics(fileName, type);
-
       if (picture == undefined) {
         logger.log("create Pictrue failed.");
         expect(false).assertTrue();
@@ -496,7 +495,6 @@ export default function imagePicture() {
     ) => {
       let picture: image.Picture | undefined;
       picture = await createPictureImageSourcePic(fileName, type);
-
       if (picture == undefined) {
         logger.log("create Pictrue failed.");
         expect(false).assertTrue();
@@ -923,19 +921,59 @@ export default function imagePicture() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100
+     * @tc.desc   test ImageSource createPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        expect(!isSupportHdr).assertTrue();
+        done();
+      } else {
+        let typeList = [GAINMAP]; 
+        let undefinedTypeList = [DEPTH_MAP, UNREFOCUS_MAP, LINEAR_MAP, FRAGMENT_MAP];
+        testImageSourceCreatePicture(done, logger, "JPEGISOSingle.jpg", "buffer", typeList, undefinedTypeList);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100
+     * @tc.desc   test Image createPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100");
+      let undefinedTypeList = [GAINMAP, DEPTH_MAP, UNREFOCUS_MAP, LINEAR_MAP, FRAGMENT_MAP];
+      let picture = await createPictureOnlyMainPic("testExif.jpg", "fd");
+      if (picture == undefined) {
+        logger.log("createPictureImageSourcePic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      for (let i = 0; i < undefinedTypeList.length; i++) {
+        let ret = picture.getAuxiliaryPicture(undefinedTypeList[i]) == undefined;
+        logger.log("ret = " + ret)
+        expect(ret).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100");
@@ -957,25 +995,18 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0200");
       if (!isSupportHEIFDecode) {
         logger.log("device is not support heif decode");
-        
+        expect(!isSupportHEIFDecode).assertTrue();
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
@@ -991,25 +1022,18 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0300");
       if (!isSupportHEIFDecode) {
         logger.log("device is not support heif decode");
-        
+        expect(!isSupportHEIFDecode).assertTrue();
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
@@ -1025,19 +1049,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0400");
@@ -1059,19 +1076,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0500");
@@ -1093,19 +1103,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0100");
@@ -1127,17 +1130,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0200");
@@ -1160,17 +1158,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0300");
@@ -1193,17 +1186,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0400");
@@ -1226,17 +1214,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_JPEG_STATIC_0500");
@@ -1258,15 +1241,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_JPEG_STATIC_0100
-      * @tc.desc    test auxiliary picture get type
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary images and store them in the picture
-      *                 3.test auxiliary picture type
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_JPEG_STATIC_0100
+     * @tc.desc   test auxiliary picture get type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_JPEG_STATIC_0100");
@@ -1275,14 +1255,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_JPEG_STATIC_0100
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_JPEG_STATIC_0100
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_JPEG_STATIC_0100");
@@ -1290,14 +1268,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_STATIC_0100
-      * @tc.desc    test picture getHdrComposedPixelmap
-      *                 1.create picture object by decode image source
-      *                 2.test get HdrComposed pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_STATIC_0100
+     * @tc.desc   test picture getHdrComposedPixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_STATIC_0100");
@@ -1311,14 +1287,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_STATIC_0100
-      * @tc.desc    test picture getGainmapPixelmap
-      *                 1.create picture object by decode image source
-      *                 2.test get gainmap pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_STATIC_0100
+     * @tc.desc   test picture getGainmapPixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_STATIC_0100");
@@ -1326,15 +1300,25 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100
-      * @tc.desc    test picture marshalling createPictureFromParcel
-      *                 1.create picture object by decode image source
-      *                 2.test marshalling and create Picture From Parcel
-      *                 3.compare deserialize before and after main pixel map info and metadata
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100
+     * @tc.desc   test picture marshalling createPictureFromParcel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100");
+        testPictureApiError(done, logger, "testExif.jpg", "buffer", "gainMapPixelMap");
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100
+     * @tc.desc   test picture marshalling createPictureFromParcel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100");
@@ -1355,15 +1339,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0200
-      * @tc.desc    test picture marshalling createPictureFromParcel
-      *                 1.create picture object by decode image source
-      *                 2.test marshalling and create Picture From Parcel
-      *                 3.compare deserialize before and after gainmap pixel map info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0200
+     * @tc.desc   test picture marshalling createPictureFromParcel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0200");
@@ -1384,15 +1365,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0300
-      * @tc.desc    test picture marshalling createPictureFromParcel
-      *                 1.create picture object by decode image source
-      *                 2.test marshalling and create Picture From Parcel
-      *                 3.compare deserialize before and after metadata
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0300
+     * @tc.desc   test picture marshalling createPictureFromParcel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0300");
@@ -1413,15 +1391,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0100
-      * @tc.desc    test picture marshalling createPictureFromParcel
-      *                 1.create picture object by decode image source
-      *                 2.test marshalling and create Picture From Parcel
-      *                 3.compare deserialize before and after main pixel map info and metadata
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0100
+     * @tc.desc   test picture marshalling createPictureFromParcel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_0100");
@@ -1442,15 +1417,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0200
-      * @tc.desc    test picture marshalling createPictureFromParcel
-      *                 1.create picture object by decode image source
-      *                 2.test marshalling and create Picture From Parcel
-      *                 3.compare deserialize before and after gainmap pixel map info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0200
+     * @tc.desc   test picture marshalling createPictureFromParcel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0200");
@@ -1471,15 +1443,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0300
-      * @tc.desc    test picture marshalling createPictureFromParcel
-      *                 1.create picture object by decode image source
-      *                 2.test marshalling and create Picture From Parcel
-      *                 3.compare deserialize before and after metadata
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0300
+     * @tc.desc   test picture marshalling createPictureFromParcel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_HEIF_STATIC_0300");
@@ -1500,19 +1469,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_AUXILIARYPICTURE_FRAGMENT_MAP_METADATA_API_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_AUXILIARYPICTURE_FRAGMENT_MAP_METADATA_API_JPEG_STATIC_0100
-      * @tc.desc    test picture metadata API
-      *                 1.create picture object by decode image source
-      *                 2.set exif message of metadata
-      *                 3.get exif message of metadata
-      *                 4.check exif message info
-      *                 5.get all message of metadata
-      *                 6.clone metadata
-      *                 7.check that all information after cloning is consistent
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_AUXILIARYPICTURE_FRAGMENT_MAP_METADATA_API_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_AUXILIARYPICTURE_FRAGMENT_MAP_METADATA_API_JPEG_STATIC_0100
+     * @tc.desc   test picture metadata API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_AUXILIARYPICTURE_FRAGMENT_MAP_METADATA_API_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_AUXILIARYPICTURE_FRAGMENT_MAP_METADATA_API_JPEG_STATIC_0100");
@@ -1533,19 +1495,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100");
@@ -1575,19 +1530,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_STATIC_0100
-      * @tc.desc    test picture metadata API
-      *                 1.create picture object by decode image source
-      *                 2.set exif message of metadata
-      *                 3.get exif message of metadata
-      *                 4.check exif message info
-      *                 5.get all message of metadata
-      *                 6.clone metadata
-      *                 7.check that all information after cloning is consistent
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_STATIC_0100
+     * @tc.desc   test picture metadata API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_STATIC_0100");
@@ -1608,19 +1556,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_STATIC_0100
-      * @tc.desc    test picture metadata API
-      *                 1.create picture object by decode image source
-      *                 2.set exif message of metadata
-      *                 3.get exif message of metadata
-      *                 4.check exif message info
-      *                 5.get all message of metadata
-      *                 6.clone metadata
-      *                 7.check that all information after cloning is consistent
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_STATIC_0100
+     * @tc.desc   test picture metadata API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_STATIC_0100");
@@ -1641,20 +1582,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0100
-      * @tc.desc    test auxiliary picture metadata API
-      *                 1.create picture object by decode image source
-      *                 2.get auxiliary picture
-      *                 3.set fragment message of metadata
-      *                 4.get fragment message of metadata
-      *                 5.check fragment message info
-      *                 6.get all message of metadata
-      *                 7.clone metadata
-      *                 8.check that all information after cloning is consistent
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0100
+     * @tc.desc   test auxiliary picture metadata API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0100");
@@ -1685,20 +1618,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0200
-      * @tc.desc    test auxiliary picture metadata API
-      *                 1.create picture object by decode image source
-      *                 2.get auxiliary picture
-      *                 3.set fragment message of metadata
-      *                 4.get fragment message of metadata
-      *                 5.check fragment message info
-      *                 6.get all message of metadata
-      *                 7.clone metadata
-      *                 8.check that all information after cloning is consistent
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0200
+     * @tc.desc   test auxiliary picture metadata API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_METADATA_API_JPEG_STATIC_0200");
@@ -1732,16 +1657,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0100
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0100
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0100");
@@ -1768,16 +1689,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0200
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0200
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0200");
@@ -1804,16 +1721,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0300
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0300
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0300");
@@ -1840,16 +1753,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0400
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0400
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0400");
@@ -1876,16 +1785,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0500
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0500
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_JPEG_STATIC_0500");
@@ -1910,16 +1815,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0100
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0100");
@@ -1947,16 +1848,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0200
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0200");
@@ -1984,16 +1881,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0300
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0300
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0300");
@@ -2021,16 +1914,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0400
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0400
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0400");
@@ -2058,16 +1947,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0500
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0500
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_JPEG_STATIC_0500");
@@ -2093,16 +1978,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0100
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0100
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0100");
@@ -2133,16 +2014,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0200
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0200
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0200");
@@ -2173,16 +2050,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0300
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0300
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0300");
@@ -2213,16 +2086,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0400
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0400
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0400");
@@ -2253,16 +2122,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0500
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0500
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_HEIF_STATIC_0500");
@@ -2291,16 +2156,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0100
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0100
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0100");
@@ -2332,16 +2193,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0200
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0200
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0200");
@@ -2373,16 +2230,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0300
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0300
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0300");
@@ -2414,16 +2267,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0400
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0400
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0400");
@@ -2455,16 +2304,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0500
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create ImagePacker
-      *                 3.set packingOption
-      *                 4.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0500
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_HEIF_STATIC_0500");
@@ -2494,14 +2339,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_JPEG_STATIC_0100
-      * @tc.desc    test picture release
-      *                 1.create picture object by decode image source
-      *                 2.test release picture
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_JPEG_STATIC_0100
+     * @tc.desc   test picture release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_JPEG_STATIC_0100");
@@ -2521,14 +2364,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0100
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0100
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0100");
@@ -2558,14 +2399,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0200
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0200
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0200");
@@ -2595,14 +2434,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0300
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0300
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0300");
@@ -2632,14 +2469,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0400
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0400
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0400");
@@ -2669,14 +2504,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0600
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0600
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0600");
@@ -2706,14 +2539,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0700
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0700
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0700");
@@ -2743,14 +2574,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0800
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0800
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0800");
@@ -2780,14 +2609,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0900
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0900
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_0900");
@@ -2817,14 +2644,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1000
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1000
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1000");
@@ -2854,14 +2679,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1100
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1100
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_JPEG_STATIC_1100");
@@ -2891,22 +2714,18 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200");
       if (!isSupportHdr) {
         logger.log("device is not support hdr");
+        expect(!isSupportHdr).assertTrue();
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
@@ -2939,17 +2758,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300");
@@ -2988,17 +2802,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400");
@@ -3037,17 +2846,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500");
@@ -3086,17 +2890,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600");
@@ -3135,17 +2934,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700");
@@ -3184,17 +2978,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800");
@@ -3233,17 +3022,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900");
@@ -3282,17 +3066,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000");
@@ -3331,17 +3110,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100");
@@ -3380,17 +3154,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200");
@@ -3429,17 +3198,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300");
@@ -3478,17 +3242,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400");
@@ -3527,17 +3286,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500");
@@ -3576,17 +3330,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600");
@@ -3626,17 +3375,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700");
@@ -3675,17 +3419,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800");
@@ -3724,17 +3463,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900");
@@ -3773,17 +3507,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000");
@@ -3822,17 +3551,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100");
@@ -3871,17 +3595,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100");
@@ -3920,17 +3639,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200");
@@ -3969,17 +3683,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300");
@@ -4018,17 +3727,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400");
@@ -4067,17 +3771,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500");
@@ -4116,17 +3815,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600");
@@ -4165,17 +3859,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700");
@@ -4214,17 +3903,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800");
@@ -4263,17 +3947,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900");
@@ -4312,17 +3991,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000");
@@ -4361,17 +4035,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100");
@@ -4410,17 +4079,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200");
@@ -4459,17 +4123,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300");
@@ -4508,17 +4167,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400");
@@ -4557,17 +4211,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500");
@@ -4606,17 +4255,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600");
@@ -4656,17 +4300,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700");
@@ -4705,17 +4344,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800");
@@ -4754,17 +4388,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900");
@@ -4803,17 +4432,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000");
@@ -4852,17 +4476,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1100");
@@ -4901,17 +4520,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0100");
@@ -4950,17 +4564,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200");
@@ -4999,17 +4608,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0300");
@@ -5048,17 +4652,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0400");
@@ -5097,17 +4696,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0500");
@@ -5146,17 +4740,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0600");
@@ -5195,17 +4784,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0700");
@@ -5244,17 +4828,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0800");
@@ -5293,17 +4872,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0900");
@@ -5342,17 +4916,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_1000");
@@ -5391,14 +4960,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_JPEG_STATIC_0100
-      * @tc.desc    test ImageSource createPicture
-      *                 1.create picture object by decode image source
-      *                 2.test auxiliaryPicture have all auxiliary picture type
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_JPEG_STATIC_0100
+     * @tc.desc   test ImageSource createPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_JPEG_STATIC_0100");
@@ -5414,15 +4981,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_CREATEAUXILIARYPICTURE_ERROR_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_CREATEAUXILIARYPICTURE_ERROR_JPEG_STATIC_0100
-      * @tc.desc    test auxiliary picture get type
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary images and store them in the picture
-      *                 3.test auxiliary picture type
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_CREATEAUXILIARYPICTURE_ERROR_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_CREATEAUXILIARYPICTURE_ERROR_JPEG_STATIC_0100
+     * @tc.desc   test auxiliary picture get type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_CREATEAUXILIARYPICTURE_ERROR_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_CREATEAUXILIARYPICTURE_ERROR_JPEG_STATIC_0100");
@@ -5440,15 +5004,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0200
-      * @tc.desc    test auxiliary picture get type
-      *                 1.create picture object by decode image source
-      *                 2.test set auxiliaryPicture info
-      *                 3.throwing error code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0200
+     * @tc.desc   test auxiliary picture get type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0200");
@@ -5471,15 +5032,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0300
-      * @tc.desc    test auxiliary picture get type
-      *                 1.create picture object by decode image source
-      *                 2.test set auxiliaryPicture info
-      *                 3.throwing error code
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0300
+     * @tc.desc   test auxiliary picture get type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_SET_AUXILIARY_PICTURE_INFO_ERROR_STATIC_0300");
@@ -5502,14 +5060,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_ERROR_STATIC_0100
-      * @tc.desc    test picture getHdrComposedPixelmap error
-      *                 1.create picture object by decode image source
-      *                 2.test get HdrComposed pixelMap failed
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_ERROR_STATIC_0100
+     * @tc.desc   test picture getHdrComposedPixelmap error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_ERROR_STATIC_0100");
@@ -5517,14 +5073,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_ERROR_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_ERROR_STATIC_0300
-      * @tc.desc    test picture metadata API error
-      *                 1.create picture object by decode image source
-      *                 2.test get metadata error
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_ERROR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_ERROR_STATIC_0300
+     * @tc.desc   test picture metadata API error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_ERROR_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_JPEG_ERROR_STATIC_0300");
@@ -5539,17 +5093,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_ERROR_STATIC_0100
-      * @tc.desc    test picture packing error
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing failed
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_ERROR_STATIC_0100
+     * @tc.desc   test picture packing error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_ERROR_STATIC_0100");
@@ -5565,17 +5114,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_ERROR_STATIC_0100
-      * @tc.desc    test picture packToFile error
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile failed
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_ERROR_STATIC_0100
+     * @tc.desc   test picture packToFile error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_ERROR_STATIC_0100");
@@ -5592,14 +5136,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DECODE_PNG_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DECODE_PNG_ERROR_STATIC_0100
-      * @tc.desc    test picture packToFile error
-      *                 1.create picture object by decode image source
-      *                 2.create picture use image format is png
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DECODE_PNG_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DECODE_PNG_ERROR_STATIC_0100
+     * @tc.desc   test picture packToFile error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DECODE_PNG_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DECODE_PNG_ERROR_STATIC_0100");
@@ -5624,15 +5166,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_HEIF_STATIC_0100
-      * @tc.desc    test auxiliary picture get type
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary images and store them in the picture
-      *                 3.test auxiliary picture type
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_HEIF_STATIC_0100
+     * @tc.desc   test auxiliary picture get type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_TYPE_HEIF_STATIC_0100");
@@ -5647,14 +5186,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_HEIF_STATIC_0100
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_HEIF_STATIC_0100
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_MAIN_PIXELMAP_HEIF_STATIC_0100");
@@ -5668,14 +5205,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_HEIF_STATIC_0100
-      * @tc.desc    test picture getHdrComposedPixelmap
-      *                 1.create picture object by decode image source
-      *                 2.test get HdrComposed pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_HEIF_STATIC_0100
+     * @tc.desc   test picture getHdrComposedPixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_HEIF_STATIC_0100");
@@ -5689,14 +5224,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_HEIF_STATIC_0100
-      * @tc.desc    test picture getGainmapPixelmap
-      *                 1.create picture object by decode image source
-      *                 2.test get gainmap pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_HEIF_STATIC_0100
+     * @tc.desc   test picture getGainmapPixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_HEIF_STATIC_0100");
@@ -5710,19 +5243,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100");
@@ -5761,19 +5287,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200");
@@ -5812,19 +5331,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300");
@@ -5863,19 +5375,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400");
@@ -5914,19 +5419,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500");
@@ -5965,19 +5463,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600");
@@ -6016,19 +5507,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700");
@@ -6067,19 +5551,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800");
@@ -6118,19 +5595,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900");
@@ -6169,19 +5639,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000");
@@ -6220,19 +5683,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100");
@@ -6271,19 +5727,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200");
@@ -6322,19 +5771,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300");
@@ -6373,19 +5815,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400");
@@ -6424,19 +5859,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500");
@@ -6475,19 +5903,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600");
@@ -6526,19 +5947,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700");
@@ -6577,19 +5991,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800");
@@ -6628,19 +6035,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900");
@@ -6679,19 +6079,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000");
@@ -6730,19 +6123,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTH_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100");
@@ -6781,19 +6167,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100");
@@ -6832,19 +6211,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200");
@@ -6883,19 +6255,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300");
@@ -6934,19 +6299,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400");
@@ -6985,19 +6343,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500");
@@ -7036,19 +6387,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600");
@@ -7087,19 +6431,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700");
@@ -7138,19 +6475,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800");
@@ -7189,19 +6519,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900");
@@ -7240,19 +6563,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUS_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000");
@@ -7291,19 +6607,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100");
@@ -7342,19 +6651,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200");
@@ -7393,19 +6695,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300");
@@ -7444,19 +6739,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400");
@@ -7495,19 +6783,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500");
@@ -7546,19 +6827,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600");
@@ -7597,19 +6871,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700");
@@ -7648,19 +6915,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800");
@@ -7699,19 +6959,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900");
@@ -7750,19 +7003,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000");
@@ -7801,19 +7047,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEAR_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1100");
@@ -7852,19 +7091,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0100");
@@ -7903,19 +7135,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0200");
@@ -7954,19 +7179,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0300");
@@ -8005,19 +7223,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0400");
@@ -8056,19 +7267,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0500");
@@ -8107,19 +7311,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0600");
@@ -8158,19 +7355,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0700");
@@ -8209,19 +7399,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0800");
@@ -8260,19 +7443,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_0900");
@@ -8311,19 +7487,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000
+     * @tc.desc   test AuxiliaryPicture API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENT_MAP_AUXILIARY_PICTURE_INFO_HEIF_STATIC_1000");
@@ -8362,14 +7531,40 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100
+     * @tc.desc   test picture release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        expect(!isSupportHEIFDecode).assertTrue();
+        done();
+      } else {
+        let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        picture.release();
+        expect(picture.getMainPixelmap() == undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100");
@@ -8405,14 +7600,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0200
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0200
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0200");
@@ -8448,14 +7641,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0300
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0300
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0300");
@@ -8491,14 +7682,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0400
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0400
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0400");
@@ -8534,14 +7723,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0500
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0500
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0500");
@@ -8577,14 +7764,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0600
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0600
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0600");
@@ -8620,14 +7805,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0700
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0700
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0700");
@@ -8663,14 +7846,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0800
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0800
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0800");
@@ -8706,14 +7887,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0900
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0900
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0900");
@@ -8749,14 +7928,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_1000
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_1000
+     * @tc.desc   test picture getMainPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_1000");
@@ -8792,14 +7969,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_HEIF_STATIC_0100
-      * @tc.desc    test ImageSource createPicture
-      *                 1.create picture object by decode image source
-      *                 2.test auxiliaryPicture have all auxiliary picture type
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_HEIF_STATIC_0100
+     * @tc.desc   test ImageSource createPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_DECODE_OPTION_HEIF_STATIC_0100");
@@ -8815,14 +7990,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_ERROR_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_ERROR_STATIC_0300
-      * @tc.desc    test picture metadata API error
-      *                 1.create picture object by decode image source
-      *                 2.test get metadata error
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_ERROR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_ERROR_STATIC_0300
+     * @tc.desc   test picture metadata API error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_ERROR_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_METADATA_API_HEIF_ERROR_STATIC_0300");
@@ -8843,17 +8016,12 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_HEIF_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_HEIF_ERROR_STATIC_0100
-      * @tc.desc    test picture packing error
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing failed
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_HEIF_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_HEIF_ERROR_STATIC_0100
+     * @tc.desc   test picture packing error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_HEIF_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKING_PNG_HEIF_ERROR_STATIC_0100");
@@ -8875,17 +8043,12 @@ export default function imagePicture() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_HEIF_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_HEIF_ERROR_STATIC_0100
-      * @tc.desc    test picture packToFile error
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile failed
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_HEIF_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_HEIF_ERROR_STATIC_0100
+     * @tc.desc   test picture packToFile error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_HEIF_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PACKTOFILE_PNG_HEIF_ERROR_STATIC_0100");

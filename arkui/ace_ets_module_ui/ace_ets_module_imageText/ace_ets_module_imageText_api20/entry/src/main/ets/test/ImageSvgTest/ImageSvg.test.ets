@@ -26,12 +26,12 @@ export default function ImageSupportSvg2Test() {
     });
 
     /**
-     * @tc.name     ImageSupportSvg2Test0100
-     * @tc.number   Image_SupportSvg2_Test_0100
-     * @tc.desc     To test the supportSvg2 true
-     * @tc.level:   0
-     * @tc.type:    Function
-     * @tc.size:    MEDIUMTEST
+     * @tc.name   ImageSupportSvg2Test0100
+     * @tc.number Image_SupportSvg2_Test_0100
+     * @tc.desc   To test the supportSvg2 true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSupportSvg2Test0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageSupportSvg2Test0100 START');
@@ -43,12 +43,12 @@ export default function ImageSupportSvg2Test() {
     });
 
     /**
-     * @tc.name     ImageSupportSvg2Test0200
-     * @tc.number   Image_SupportSvg2_Test_0200
-     * @tc.desc     To test the supportSvg2 false
-     * @tc.level:   0
-     * @tc.type:    Function
-     * @tc.size:    MEDIUMTEST
+     * @tc.name   ImageSupportSvg2Test0200
+     * @tc.number Image_SupportSvg2_Test_0200
+     * @tc.desc   To test the supportSvg2 false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSupportSvg2Test0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageSupportSvg2Test0200 START');
@@ -60,12 +60,12 @@ export default function ImageSupportSvg2Test() {
     });
 
     /**
-     * @tc.name     ImageSupportSvg2Test0300
-     * @tc.number   Image_SupportSvg2_Test_0300
-     * @tc.desc     To test the supportSvg2 null
-     * @tc.level:   0
-     * @tc.type:    Function
-     * @tc.size:    MEDIUMTEST
+     * @tc.name   ImageSupportSvg2Test0300
+     * @tc.number Image_SupportSvg2_Test_0300
+     * @tc.desc   To test the supportSvg2 null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSupportSvg2Test0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageSupportSvg2Test0300 START');
@@ -77,12 +77,12 @@ export default function ImageSupportSvg2Test() {
     });
 
     /**
-     * @tc.name     ImageSupportSvg2Test0400
-     * @tc.number   Image_SupportSvg2_Test_0400
-     * @tc.desc     To test the supportSvg2 undefined
-     * @tc.level:   0
-     * @tc.type:    Function
-     * @tc.size:    MEDIUMTEST
+     * @tc.name   ImageSupportSvg2Test0400
+     * @tc.number Image_SupportSvg2_Test_0400
+     * @tc.desc   To test the supportSvg2 undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSupportSvg2Test0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageSupportSvg2Test0400 START');
@@ -94,12 +94,12 @@ export default function ImageSupportSvg2Test() {
     });
 
     /**
-     * @tc.name     ImageSupportSvg2Test0500
-     * @tc.number   Image_SupportSvg2_Test_0500
-     * @tc.desc     To test the supportSvg2 default
-     * @tc.level:   0
-     * @tc.type:    Function
-     * @tc.size:    MEDIUMTEST
+     * @tc.name   ImageSupportSvg2Test0500
+     * @tc.number Image_SupportSvg2_Test_0500
+     * @tc.desc   To test the supportSvg2 default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSupportSvg2Test0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageSupportSvg2Test0500 START');

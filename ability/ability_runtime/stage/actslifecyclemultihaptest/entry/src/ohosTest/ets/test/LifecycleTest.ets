@@ -160,11 +160,13 @@ export default function abilityTest() {
 
 
 
-    /*
-     * @tc.number  Multihap_LifecycleTest_001
-     * @tc.name    The ability of HAP A listens to the ability lifecycle callback of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Multihap_LifecycleTest_001
+     * @tc.number Multihap_LifecycleTest_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Multihap_LifecycleTest_001", Level.LEVEL0, async (done:Function) => {
       console.info("---------------Multihap_LifecycleTest_001 is start---------------")
@@ -214,11 +216,13 @@ export default function abilityTest() {
       console.info("---------------Multihap_LifecycleTest_001 is end---------------")
     });
 
-    /*
-     * @tc.number  Multihap_LifecycleTest_002
-     * @tc.name    The ability of HAP A listens to the ability lifecycle callback of HAP B (single instance)
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Multihap_LifecycleTest_002
+     * @tc.number Multihap_LifecycleTest_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Multihap_LifecycleTest_002", Level.LEVEL0, async (done:Function) => {
       console.log("------------Multihap_LifecycleTest_002 start-------------");
@@ -272,11 +276,13 @@ export default function abilityTest() {
       console.log("------------Multihap_LifecycleTest_002 end-------------");
     });
 
-    /*
-     * @tc.number  Multihap_LifecycleTest_003
-     * @tc.name    The ability of HAP A listens to the ability lifecycle callback of HAP B (multiple cases)
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Multihap_LifecycleTest_003
+     * @tc.number Multihap_LifecycleTest_003
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Multihap_LifecycleTest_003", Level.LEVEL0, async (done:Function) => {
       console.log("------------Multihap_LifecycleTest_003 start-------------");
@@ -335,11 +341,13 @@ export default function abilityTest() {
       console.log("------------Multihap_LifecycleTest_003 end-------------");
     });
 
-    /*
-     * @tc.number  Multihap_LifecycleTest_004
-     * @tc.name    The ability of HAP A monitors the ability life cycle callback of HAP B and HAP C
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Multihap_LifecycleTest_004
+     * @tc.number Multihap_LifecycleTest_004
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Multihap_LifecycleTest_004", Level.LEVEL0, async (done:Function) => {
       console.log("------------Multihap_LifecycleTest_004 start-------------");
@@ -406,11 +414,13 @@ export default function abilityTest() {
       console.log("------------Multihap_LifecycleTest_004 end-------------");
     });
 
-    /*
-     * @tc.number  Multihap_LifecycleTest_005
-     * @tc.name    The ability of HAP A listens to two ability life cycle callbacks in HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Multihap_LifecycleTest_005
+     * @tc.number Multihap_LifecycleTest_005
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Multihap_LifecycleTest_005", Level.LEVEL0, async (done:Function) => {
       console.log("------------Multihap_LifecycleTest_005 start-------------");
@@ -478,12 +488,13 @@ export default function abilityTest() {
       console.log("------------end Multihap_LifecycleTest_005-------------");
     });
 
-    /*
-     * @tc.number  Multihap_LifecycleTest_006
-     * @tc.name    Repeat the registration. The ability of HAP A listens to the life
-                    cycle callback of the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Multihap_LifecycleTest_006
+     * @tc.number Multihap_LifecycleTest_006
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Multihap_LifecycleTest_006", Level.LEVEL0, async (done:Function) => {
       console.log("------------Multihap_LifecycleTest_006 start-------------");
@@ -549,12 +560,13 @@ export default function abilityTest() {
       console.log("------------Multihap_LifecycleTest_006 end-------------");
     });
 
-    /*
-     * @tc.number  Multihap_LifecycleTest_007
-     * @tc.name    Repeat registration and deregistration. The ability of HAP A listens to the life
-                    cycle callback of the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Multihap_LifecycleTest_007
+     * @tc.number Multihap_LifecycleTest_007
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Multihap_LifecycleTest_007", Level.LEVEL0, async (done:Function) => {
       console.log("------------Multihap_LifecycleTest_007 start-------------");
@@ -643,12 +655,13 @@ export default function abilityTest() {
       console.log("------------Multihap_LifecycleTest_007 end-------------");
     });
 
-    /*
-     * @tc.number  Multihap_LifecycleTest_008
-     * @tc.name    Repeat deregistration. The ability of HAP A listens to the life
-                    cycle callback of the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Multihap_LifecycleTest_008
+     * @tc.number Multihap_LifecycleTest_008
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Multihap_LifecycleTest_008", Level.LEVEL0, async (done:Function) => {
       console.log("------------Multihap_LifecycleTest_008 start-------------");
@@ -707,11 +720,13 @@ export default function abilityTest() {
       console.log("------------Multihap_LifecycleTest_008 end-------------");
     });
 
-    /*
-     * @tc.number  Multihap_LifecycleTest_010
-     * @tc.name    Switch the front and background for many times to monitor the life cycle
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Multihap_LifecycleTest_010
+     * @tc.number Multihap_LifecycleTest_010
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Multihap_LifecycleTest_010', Level.LEVEL0, async (done:Function) => {
       console.info("---------------Multihap_LifecycleTest_010 is start---------------")
@@ -798,12 +813,13 @@ export default function abilityTest() {
       console.info("---------------Multihap_LifecycleTest_010 is end---------------")
     })
 
-    /*
-     * @tc.number  Multihap_LifecycleTest_011
-     * @tc.name    The ability of HAP A listens to the life cycle callback
-                    of the ability of HAP B in different processes
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Multihap_LifecycleTest_011
+     * @tc.number Multihap_LifecycleTest_011
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Multihap_LifecycleTest_011', Level.LEVEL0, async (done:Function) => {
       console.info("---------------Multihap_LifecycleTest_011 is start---------------")

@@ -47,13 +47,13 @@ export default function StyledStringVerticalAlignTest() {
       console.info("StyledStringVerticalAlignTest after each called");
     });
  
-    /*
-    * @tc.number       SUB_ACE_BASIC_STYLED_STRING_VERTICAL_ALIGN_ETS_API_0001
-    * @tc.name         StyledStringVerticalAlignTest0001
-    * @tc.desc         test StyledStringVerticalAlign
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   StyledStringVerticalAlignTest0001
+     * @tc.number SUB_ACE_BASIC_STYLED_STRING_VERTICAL_ALIGN_ETS_API_0001
+     * @tc.desc   test StyledStringVerticalAlign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('StyledStringVerticalAlignTest0001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

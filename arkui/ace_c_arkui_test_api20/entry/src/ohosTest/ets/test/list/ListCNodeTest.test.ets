@@ -46,11 +46,13 @@ export default function ListCNodeTest() {
       console.info("ListCNode after each called");
     });
 
-    /*
-     * @tc.number    ListCNodeTest_0100
-     * @tc.name      ListCNodeTest_0100
-     * @tc.desc      Test ListCNode
-     * @tc.level     Level 1
+    /**
+     * @tc.name   ListCNodeTest_0100
+     * @tc.number ListCNodeTest_0100
+     * @tc.desc   Test ListCNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ListCNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ListCNodeTest_0100] START');

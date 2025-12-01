@@ -61,42 +61,42 @@ export default function webCookieManagerErrorCode() {
 
 
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_FETCHCOOKIESYNC_INCOGNITO_0100
-    * @tc.name       : testFetchCookieSyncIncognitoError001
-    * @tc.desc       : test fetchCookieSync incognito error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testFetchCookieSyncIncognitoError001
+     * @tc.number SUB_WEB_ERRORCODE_FETCHCOOKIESYNC_INCOGNITO_0100
+     * @tc.desc   test fetchCookieSync incognito error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFetchCookieSyncIncognitoError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testFetchCookieSyncIncognitoError001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testFetchCookieSyncIncognitoError001", '17100002', 123210, done);
       Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_CONFIGCOOKIESYNC_INCOGNITO_0100
-    * @tc.name       : testConfigCookieSyncIncognitoError001
-    * @tc.desc       : test configCookieSync incognito error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testConfigCookieSyncIncognitoError001
+     * @tc.number SUB_WEB_ERRORCODE_CONFIGCOOKIESYNC_INCOGNITO_0100
+     * @tc.desc   test configCookieSync incognito error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConfigCookieSyncIncognitoError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testConfigCookieSyncIncognitoError001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testConfigCookieSyncIncognitoError001", '17100002', 123220, done);
       Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_CONFIGCOOKIESYNC_INCOGNITO_0200
-    * @tc.name       : testConfigCookieSyncIncognitoError002
-    * @tc.desc       : test configCookieSync incognito error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testConfigCookieSyncIncognitoError002
+     * @tc.number SUB_WEB_ERRORCODE_CONFIGCOOKIESYNC_INCOGNITO_0200
+     * @tc.desc   test configCookieSync incognito error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConfigCookieSyncIncognitoError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testConfigCookieSyncIncognitoError002", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testConfigCookieSyncIncognitoError002", '17100005', 123230, done);

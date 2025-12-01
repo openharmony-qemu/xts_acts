@@ -35,13 +35,13 @@ export default function EventInfoTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_EVENT_INFO_CASE_001
-     * @tc.name       : EventInfoCaseTest001
-     * @tc.desc       : testing List lanes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   EventInfoCaseTest001
+     * @tc.number SUB_ARKUI_EVENT_INFO_CASE_001
+     * @tc.desc   testing List lanes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EventInfoCaseTest001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventInfoCaseTest1'
@@ -57,13 +57,13 @@ export default function EventInfoTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_EVENT_INFO_CASE_002
-     * @tc.name       : EventInfoCaseTest002
-     * @tc.desc       : testing List contentStartOffset And contentAndOffset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   EventInfoCaseTest002
+     * @tc.number SUB_ARKUI_EVENT_INFO_CASE_002
+     * @tc.desc   testing List contentStartOffset And contentAndOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EventInfoCaseTest002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventInfoCaseTest1'

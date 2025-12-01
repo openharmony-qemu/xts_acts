@@ -34,10 +34,13 @@ export default function webJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_027
-     *tc.name imageAccessFalse
-     *tc.desic Sets Web can not automatically load image resources
+    /**
+     * @tc.name   imageAccessFalse
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_027
+     * @tc.desc   imageAccessFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageAccessFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitImageAccessFalse", EVENT_ID_SET_EMIT_KEY);
@@ -48,10 +51,13 @@ export default function webJsunit() {
         done();
       }
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_028
-     *tc.name imageAccessTrue
-     *tc.desic Sets Web can  automatically load image resources
+    /**
+     * @tc.name   imageAccessTrue
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_028
+     * @tc.desc   imageAccessTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitImageAccessTrue", EVENT_ID_SET_EMIT_KEY);
@@ -62,10 +68,13 @@ export default function webJsunit() {
         done();
       }
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_029
-     *tc.name onlineImageAccessFalse
-     *tc.desic Sets not to allow image resources to be loaded from the network
+    /**
+     * @tc.name   onlineImageAccessFalse
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_029
+     * @tc.desc   onlineImageAccessFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onlineImageAccessFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnlineImageAccessFalse", EVENT_ID_SET_EMIT_KEY);
@@ -76,10 +85,13 @@ export default function webJsunit() {
         done();
       }
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_030
-     *tc.name onlineImageAccessTrue
-     *tc.desic Sets  allow image resources to be loaded from the network
+    /**
+     * @tc.name   onlineImageAccessTrue
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_030
+     * @tc.desc   onlineImageAccessTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onlineImageAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnlineImageAccessTrue", EVENT_ID_SET_EMIT_KEY);
@@ -91,10 +103,13 @@ export default function webJsunit() {
       }
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_033
-     *tc.name cacheModeOnly
-     *tc.desic load cache and not online
+    /**
+     * @tc.name   cacheModeOnly
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_033
+     * @tc.desc   cacheModeOnly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cacheModeOnly', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCacheModeOnly", EVENT_ID_SET_EMIT_KEY);
@@ -105,10 +120,13 @@ export default function webJsunit() {
         done();
       }
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_034
-     *tc.name cacheModeDefault
-     *tc.desic load cache when they are available and not expired, otherwise load online
+    /**
+     * @tc.name   cacheModeDefault
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_034
+     * @tc.desc   cacheModeDefault
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cacheModeDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCacheModeDefault", EVENT_ID_SET_EMIT_KEY);
@@ -119,10 +137,13 @@ export default function webJsunit() {
         done();
       }
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_035
-     *tc.name mixedModeNone
-     *tc.desic Sets Don't allow unsecure sources from a secure origin
+    /**
+     * @tc.name   mixedModeNone
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_035
+     * @tc.desc   mixedModeNone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mixedModeNone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitMixedModeNone", EVENT_ID_SET_EMIT_KEY);
@@ -133,10 +154,13 @@ export default function webJsunit() {
         done();
       }
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_036
-     *tc.name mixedModeAll
-     *tc.desic Sets Allows  all HTTP and HTTPS content can be loaded
+    /**
+     * @tc.name   mixedModeAll
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_036
+     * @tc.desc   mixedModeAll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mixedModeAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitMixedModeAll", EVENT_ID_SET_EMIT_KEY);

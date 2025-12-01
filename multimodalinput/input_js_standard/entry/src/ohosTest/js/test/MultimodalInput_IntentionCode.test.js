@@ -19,7 +19,6 @@ export default function MultimodalInput_IntentionCode_test() {
   describe('MultimodalInput_IntentionCode_test', function () {
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_001
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_001
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_001
@@ -36,7 +35,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_002
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_002
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_002
@@ -53,7 +51,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_003
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_003
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_003
@@ -70,7 +67,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_004
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_004
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_004
@@ -87,7 +83,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_005
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_005
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_005
@@ -104,7 +99,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_006
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_006
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_006
@@ -121,7 +115,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_007
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_007
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_007
@@ -138,7 +131,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_008
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_008
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_008
@@ -155,7 +147,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_009
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_009
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_009
@@ -172,7 +163,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_010
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_010
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_010
@@ -189,7 +179,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_011
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_011
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_011
@@ -206,7 +195,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_012
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_012
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_012
@@ -223,7 +211,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_013
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_013
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_013
@@ -240,7 +227,6 @@ export default function MultimodalInput_IntentionCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_014
      * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_014
      * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_014

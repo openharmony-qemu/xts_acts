@@ -26,9 +26,12 @@ export default function abilityTestStatic() {
   describe('ACTS_ExecuteShellCommandTest_Static', () => {
 
     /**
-     * @tc.number: ACTS_ExecuteShellCommand_Callback_Static_0100
-     * @tc.name: ACTS_ExecuteShellCommand_Callback_Static_0100
-     * @tc.desc: Execute a shell command without arguments (AsyncCallback).,Verify that the interface executes the Shell command successfully.
+     * @tc.name   ACTS_ExecuteShellCommand_Callback_Static_0100
+     * @tc.number ACTS_ExecuteShellCommand_Callback_Static_0100
+     * @tc.desc   Execute a shell command without arguments (AsyncCallback).,Verify that the interface executes the Shell command successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteShellCommand_Callback_Static_0100', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "ACTS_ExecuteShellCommand_Callback_Static_0100 --- start")
@@ -48,9 +51,12 @@ export default function abilityTestStatic() {
     })
 
     /**
-     * @tc.number: ACTS_ExecuteShellCommand_Callback_Static_0300
-     * @tc.name: ACTS_ExecuteShellCommand_Callback_Static_0300
-     * @tc.desc: Execute non-existing shell command (AsyncCallback).,Failed to execute shell command on authentication interface.
+     * @tc.name   ACTS_ExecuteShellCommand_Callback_Static_0300
+     * @tc.number ACTS_ExecuteShellCommand_Callback_Static_0300
+     * @tc.desc   Execute non-existing shell command (AsyncCallback).,Failed to execute shell command on authentication interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteShellCommand_Callback_Static_0300', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "ACTS_ExecuteShellCommand_Callback_Static_0300 --- start")
@@ -69,9 +75,12 @@ export default function abilityTestStatic() {
     })
 
     /**
-     * @tc.number: ACTS_ExecuteShellCommand_Callback_Static_0400
-     * @tc.name: ACTS_ExecuteShellCommand_Callback_Static_0400
-     * @tc.desc: Execute shell command timeout (AsyncCallback),The authentication interface executes the shell command timed out.
+     * @tc.name   ACTS_ExecuteShellCommand_Callback_Static_0400
+     * @tc.number ACTS_ExecuteShellCommand_Callback_Static_0400
+     * @tc.desc   Execute shell command timeout (AsyncCallback),The authentication interface executes the shell command timed out.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteShellCommand_Callback_Static_0400', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "ACTS_ExecuteShellCommand_Callback_Static_0400 --- start")
@@ -91,9 +100,12 @@ export default function abilityTestStatic() {
     })
 
     /**
-     * @tc.number: ACTS_ExecuteShellCommand_Callback_Static_0500
-     * @tc.name: ACTS_ExecuteShellCommand_Callback_Static_0500
-     * @tc.desc: Invalid timeout parameter for executing shell command (AsyncCallback),The timeout parameter for executing shell commands on the authentication interface is invalid.
+     * @tc.name   ACTS_ExecuteShellCommand_Callback_Static_0500
+     * @tc.number ACTS_ExecuteShellCommand_Callback_Static_0500
+     * @tc.desc   Invalid timeout parameter for executing shell command (AsyncCallback),The timeout parameter for executing shell commands on the authentication interface is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteShellCommand_Callback_Static_0500', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "ACTS_ExecuteShellCommand_Callback_Static_0500 --- start")
@@ -113,9 +125,12 @@ export default function abilityTestStatic() {
     })
 
     /**
-     * @tc.number: ACTS_ExecuteShellCommand_Promise_Static_0100
-     * @tc.name: ACTS_ExecuteShellCommand_Promise_Static_0100
-     * @tc.desc: Execute a shell command without arguments (Promise).,Verify that the interface executes the Shell command successfully.
+     * @tc.name   ACTS_ExecuteShellCommand_Promise_Static_0100
+     * @tc.number ACTS_ExecuteShellCommand_Promise_Static_0100
+     * @tc.desc   Execute a shell command without arguments (Promise).,Verify that the interface executes the Shell command successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteShellCommand_Promise_Static_0100', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "ACTS_ExecuteShellCommand_Promise_Static_0100 --- start")
@@ -134,9 +149,12 @@ export default function abilityTestStatic() {
     })
 
     /**
-     * @tc.number: ACTS_ExecuteShellCommand_Promise_Static_0300
-     * @tc.name: ACTS_ExecuteShellCommand_Promise_Static_0300
-     * @tc.desc: Execute non-existing shell command (Promise).,Failed to execute shell command on authentication interface.
+     * @tc.name   ACTS_ExecuteShellCommand_Promise_Static_0300
+     * @tc.number ACTS_ExecuteShellCommand_Promise_Static_0300
+     * @tc.desc   Execute non-existing shell command (Promise).,Failed to execute shell command on authentication interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteShellCommand_Promise_Static_0300', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "ACTS_ExecuteShellCommand_Promise_Static_0300 --- start")
@@ -155,9 +173,12 @@ export default function abilityTestStatic() {
     })
 
     /**
-     * @tc.number: ACTS_ExecuteShellCommand_Promise_Static_0400
-     * @tc.name: ACTS_ExecuteShellCommand_Promise_Static_0400
-     * @tc.desc: Execute shell command timeout (Promise),The authentication interface executes the shell command timed out.
+     * @tc.name   ACTS_ExecuteShellCommand_Promise_Static_0400
+     * @tc.number ACTS_ExecuteShellCommand_Promise_Static_0400
+     * @tc.desc   Execute shell command timeout (Promise),The authentication interface executes the shell command timed out.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteShellCommand_Promise_Static_0400', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "ACTS_ExecuteShellCommand_Promise_Static_0400 --- start")
@@ -175,9 +196,12 @@ export default function abilityTestStatic() {
     })
 
     /**
-     * @tc.number: ACTS_ExecuteShellCommand_Promise_Static_0500
-     * @tc.name: ACTS_ExecuteShellCommand_Promise_Static_0500
-     * @tc.desc: Invalid timeout parameter for executing shell command (Promise),The timeout parameter for executing shell commands on the authentication interface is invalid.
+     * @tc.name   ACTS_ExecuteShellCommand_Promise_Static_0500
+     * @tc.number ACTS_ExecuteShellCommand_Promise_Static_0500
+     * @tc.desc   Invalid timeout parameter for executing shell command (Promise),The timeout parameter for executing shell commands on the authentication interface is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_ExecuteShellCommand_Promise_Static_0500', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "ACTS_ExecuteShellCommand_Promise_Static_0500 --- start")

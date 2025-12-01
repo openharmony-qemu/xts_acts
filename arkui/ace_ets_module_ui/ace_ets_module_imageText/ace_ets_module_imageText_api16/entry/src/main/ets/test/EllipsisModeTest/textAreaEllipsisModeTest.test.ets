@@ -45,13 +45,13 @@ export default function textAreaEllipsisModeTest() {
       console.info("textAreaEllipsisModeTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         textAreaEllipsisModeTest0001
-     * @tc.desic        Test textAreaEllipsisModeTest Normal value :EllipsisMode.END
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaEllipsisModeTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   textAreaEllipsisModeTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaEllipsisModeTest0001', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -64,13 +64,13 @@ export default function textAreaEllipsisModeTest() {
         console.info("[textAreaEllipsisModeTest0001] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         textAreaEllipsisModeTest0002
-     * @tc.desic        Test textAreaEllipsisModeTest Normal value :EllipsisMode.START
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaEllipsisModeTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   textAreaEllipsisModeTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaEllipsisModeTest0002', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -83,13 +83,13 @@ export default function textAreaEllipsisModeTest() {
         console.info("[textAreaEllipsisModeTest0002] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         textAreaEllipsisModeTest0003
-     * @tc.desic        Test textAreaEllipsisModeTest Normal value :EllipsisMode.CENTER
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaEllipsisModeTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   textAreaEllipsisModeTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaEllipsisModeTest0003', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -102,13 +102,13 @@ export default function textAreaEllipsisModeTest() {
         console.info("[textAreaEllipsisModeTest0003] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         textAreaEllipsisModeTest0004
-     * @tc.desic        Test textAreaEllipsisModeTest abnormal value :undefined
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaEllipsisModeTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   textAreaEllipsisModeTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaEllipsisModeTest0004', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -121,13 +121,13 @@ export default function textAreaEllipsisModeTest() {
         console.info("[textAreaEllipsisModeTest0004] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         textAreaEllipsisModeTest0005
-     * @tc.desic        Test textAreaEllipsisModeTest abnormal value :null
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaEllipsisModeTest0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   textAreaEllipsisModeTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaEllipsisModeTest0005', Level.LEVEL1, async () => {
         let driver = Driver.create();

@@ -50,12 +50,12 @@ export default function drawingTsCanvasPart6Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4500
-     * @tc.name      : testCanvasDrawShadowNormal
-     * @tc.desc      : testCanvasDrawShadowNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasDrawShadowNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4500
+     * @tc.desc   testCanvasDrawShadowNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasDrawShadowNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawShadowNormal';
@@ -123,12 +123,12 @@ export default function drawingTsCanvasPart6Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4501
-     * @tc.name      : testCanvasDrawShadowMultipleCalls
-     * @tc.desc      : testCanvasDrawShadowMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasDrawShadowMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4501
+     * @tc.desc   testCanvasDrawShadowMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasDrawShadowMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawShadowMultipleCalls';
@@ -157,12 +157,12 @@ export default function drawingTsCanvasPart6Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4502
-     * @tc.name      : testCanvasDrawShadowToNull
-     * @tc.desc      : testCanvasDrawShadowToNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasDrawShadowToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4502
+     * @tc.desc   testCanvasDrawShadowToNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasDrawShadowToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawShadowToNull';
@@ -456,12 +456,12 @@ export default function drawingTsCanvasPart6Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4504
-     * @tc.name      : testCanvasDrawShadowAbnormal
-     * @tc.desc      : testCanvasDrawShadowAbnormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasDrawShadowAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4504
+     * @tc.desc   testCanvasDrawShadowAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasDrawShadowAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawShadowAbnormal';
@@ -763,12 +763,12 @@ export default function drawingTsCanvasPart6Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4600
-     * @tc.name      : testCanvasDrawBackgroundNormal
-     * @tc.desc      : testCanvasDrawBackgroundNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasDrawBackgroundNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4600
+     * @tc.desc   testCanvasDrawBackgroundNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasDrawBackgroundNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawBackgroundNormal';
@@ -791,12 +791,12 @@ export default function drawingTsCanvasPart6Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_XXXX
-     * @tc.name      : testAAAA
-     * @tc.desc      : testAAAA
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testAAAA
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_XXXX
+     * @tc.desc   testAAAA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAAAA', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testAAAA';
@@ -822,12 +822,12 @@ export default function drawingTsCanvasPart6Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4602
-     * @tc.name      : testCanvasDrawBackgroundToNull
-     * @tc.desc      : testCanvasDrawBackgroundToNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasDrawBackgroundToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4602
+     * @tc.desc   testCanvasDrawBackgroundToNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasDrawBackgroundToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawBackgroundToNull';
@@ -854,12 +854,12 @@ export default function drawingTsCanvasPart6Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4700
-     * @tc.name      : testCanvadrawNestedRoundRectNormal
-     * @tc.desc      : testCanvadrawNestedRoundRectNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvadrawNestedRoundRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4700
+     * @tc.desc   testCanvadrawNestedRoundRectNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvadrawNestedRoundRectNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvadrawNestedRoundRectNormal';
@@ -891,12 +891,12 @@ export default function drawingTsCanvasPart6Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4701
-     * @tc.name      : testCanvadrawNestedRoundRectMultipleCalls
-     * @tc.desc      : testCanvadrawNestedRoundRectMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvadrawNestedRoundRectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4701
+     * @tc.desc   testCanvadrawNestedRoundRectMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvadrawNestedRoundRectMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvadrawNestedRoundRectMultipleCalls';
@@ -923,12 +923,12 @@ export default function drawingTsCanvasPart6Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4702
-     * @tc.name      : testCanvadrawNestedRoundRectToNull
-     * @tc.desc      : testCanvadrawNestedRoundRectToNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvadrawNestedRoundRectToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4702
+     * @tc.desc   testCanvadrawNestedRoundRectToNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvadrawNestedRoundRectToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvadrawNestedRoundRectToNull';

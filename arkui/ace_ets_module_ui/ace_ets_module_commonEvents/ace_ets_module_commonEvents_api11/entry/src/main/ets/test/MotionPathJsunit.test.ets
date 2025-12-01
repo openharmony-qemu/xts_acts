@@ -57,6 +57,14 @@ export default function motionPathJsunit() {
       console.info("motionPath after each called");
     });
 
+    /**
+     * @tc.name   motionPathTest_0100
+     * @tc.number motionPathTest_0100
+     * @tc.desc   motionPathTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('motionPathTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('motionPathTest_0100 START');
       let strJson = getInspectorByKey('motionPath');
@@ -66,6 +74,14 @@ export default function motionPathJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   motionPathTest_0200
+     * @tc.number motionPathTest_0200
+     * @tc.desc   motionPathTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('motionPathTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('motionPathTest_0200 START');
       let callback = (indexEventOne: events_emitter.EventData) => {
@@ -89,6 +105,14 @@ export default function motionPathJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   motionPathTest_0300
+     * @tc.number motionPathTest_0300
+     * @tc.desc   motionPathTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('motionPathTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('motionPathTest_0300 START');
       await CommonFunc.sleep(1500);

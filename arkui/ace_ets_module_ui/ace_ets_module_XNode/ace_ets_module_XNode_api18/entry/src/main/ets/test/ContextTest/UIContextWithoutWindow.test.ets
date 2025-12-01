@@ -47,12 +47,12 @@ export default function UIContextWithoutWindowTest() {
     });
 
     /**
-     * @tc.number    UIContextWithoutWindowTest_0100
-     * @tc.name      UIContextWithoutWindowTest_0100
-     * @tc.desc      frameNode: UIContext Without Window Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIContextWithoutWindowTest_0100
+     * @tc.number UIContextWithoutWindowTest_0100
+     * @tc.desc   frameNode: UIContext Without Window Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIContextWithoutWindowTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('UIContextWithoutWindowTest_0100 START');

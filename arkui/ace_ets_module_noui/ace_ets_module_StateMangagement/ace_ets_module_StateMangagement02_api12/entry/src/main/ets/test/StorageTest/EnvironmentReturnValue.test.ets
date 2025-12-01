@@ -46,12 +46,12 @@ export default function EnvironmentReturnValue() {
     });
 
     /**
-     * @tc.number    EnvironmentReturnValue_001
-     * @tc.name      EnvironmentReturnValue_001
-     * @tc.desc      all keys in Environment.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   EnvironmentReturnValue_001
+     * @tc.number EnvironmentReturnValue_001
+     * @tc.desc   all keys in Environment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnvironmentReturnValue_001', Level.LEVEL0, async (done: Function) => {
       console.info('[EnvironmentReturnValue_001] START');
@@ -80,12 +80,12 @@ export default function EnvironmentReturnValue() {
     });
 
     /**
-     * @tc.number    EnvironmentReturnValue_002
-     * @tc.name      EnvironmentReturnValue_002
-     * @tc.desc      all keys in Environment.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   EnvironmentReturnValue_002
+     * @tc.number EnvironmentReturnValue_002
+     * @tc.desc   all keys in Environment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnvironmentReturnValue_002', Level.LEVEL0, async (done: Function) => {
       console.info('[EnvironmentReturnValue_002] START');

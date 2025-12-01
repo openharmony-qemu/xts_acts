@@ -148,15 +148,12 @@ export default function ImageGetMimeTypeTest() {
         }
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0100
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> test.png
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0100
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -165,15 +162,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0200
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> test.jpeg
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0200
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -182,15 +176,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0300
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> test.jpg
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0300
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -199,15 +190,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0400
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> test.bmp
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0400
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -216,15 +204,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0500
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0500
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> test.gif
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0500
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -233,15 +218,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0600
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0600
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> test.webp
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0600
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -250,15 +232,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0700
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0700
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> test.ico
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0700
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -267,15 +246,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0800
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0800
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> test.dng
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0800
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -284,15 +260,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0900
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0900
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> HDRVividSingleLayer.heic
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0900
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -306,15 +279,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1000
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1000
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> mimeType_test.cr2
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1000
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -323,15 +293,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1100
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> mimeType_test.raf
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1100
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -340,15 +307,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1200
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> mimeType_test.nef
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1200
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -357,15 +321,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1300
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> mimeType_test.nrw
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1300
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -374,15 +335,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1400
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> mimeType_test.orf
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1400
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -391,15 +349,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1500
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1500
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> mimeType_test.rw2
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1500
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -408,15 +363,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1600
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1600
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> mimeType_test.pef
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1600
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -425,15 +377,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1700
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1700
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> mimeType_test.srw
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1700
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -442,15 +391,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1800
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1800
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> mimeType_test.arw
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1800
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -459,15 +405,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1900
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1900
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> test.wbmp
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1900
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -476,15 +419,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0100
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> wrong_suffix_png.gif
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0100
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -494,15 +434,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0200
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> wrong_suffix_jpeg.png
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0200
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -512,15 +449,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0300
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> wrong_suffix_jpg.jpeg
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0300
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -530,15 +464,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0400
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> wrong_suffix_bmp.dng
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0400
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -548,15 +479,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0500
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0500
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> wrong_suffix_gif.tiff
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0500
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -566,15 +494,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0600
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0600
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> wrong_suffix_webp.ico
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0600
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -584,15 +509,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0700
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0700
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> wrong_suffix_ico.svg
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0700
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -602,15 +524,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0800
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0800
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> wrong_suffix_dng.jpg
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0800
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -620,15 +539,12 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0900
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0900
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture -> wrong_suffix_heic.png
-         *                 3.return mimetype
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0900
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -643,29 +559,24 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0100
-         * @tc.name      : SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0100
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.return 7700204
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0100
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             await getMimeTypeTestError(done, "SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0100", true);
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0200
-         * @tc.name      : SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0200
-         * @tc.desc      : imageSourceGetMimeType
-         *                 1.create ImageSource
-         *                 2.set picture 
-         *                 3.return 7700204
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0200
+         * @tc.number SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0200
+         * @tc.desc   imageSourceGetMimeType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             await getMimeTypeTestError(done, "SUB_MULTIMEDIA_GETMIMETYPE_ERROR_0200", false);

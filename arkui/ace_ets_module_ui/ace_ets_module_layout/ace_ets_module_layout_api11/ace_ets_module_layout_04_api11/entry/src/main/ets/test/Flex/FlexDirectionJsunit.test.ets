@@ -45,6 +45,14 @@ export default function flexDirectionJsunit(){
       console.info("flexDirection after each called");
     });
 
+    /**
+     * @tc.name   flexDirection_0100
+     * @tc.number flexDirection_0100
+     * @tc.desc   flexDirection_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('flexDirection_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('flexDirection_0100 START');
       let strJson = getInspectorByKey('flexDirection');
@@ -57,6 +65,14 @@ export default function flexDirectionJsunit(){
       done();
     });
 
+    /**
+     * @tc.name   flexDirection_0200
+     * @tc.number flexDirection_0200
+     * @tc.desc   flexDirection_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('flexDirection_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('flexDirection_0200 START');
       let strJson = getInspectorByKey('flexDirection');
@@ -69,6 +85,14 @@ export default function flexDirectionJsunit(){
       done();
     });
 
+    /**
+     * @tc.name   flexDirection_0300
+     * @tc.number flexDirection_0300
+     * @tc.desc   flexDirection_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('flexDirection_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('flexDirection_0300 START');
       let strJson = getInspectorByKey('ColumnReverse');
@@ -81,6 +105,14 @@ export default function flexDirectionJsunit(){
       done();
     });
 
+    /**
+     * @tc.name   flexDirection_0400
+     * @tc.number flexDirection_0400
+     * @tc.desc   flexDirection_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('flexDirection_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('flexDirection_0400 START');
       let strJson = getInspectorByKey('ColumnReverse');
@@ -93,6 +125,14 @@ export default function flexDirectionJsunit(){
       done();
     });
 
+    /**
+     * @tc.name   flexDirection_0500
+     * @tc.number flexDirection_0500
+     * @tc.desc   flexDirection_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('flexDirection_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('flexDirection_0500 START');
       let strJson = getInspectorByKey('Column');
@@ -105,6 +145,14 @@ export default function flexDirectionJsunit(){
       done();
     });
 
+    /**
+     * @tc.name   flexDirection_0600
+     * @tc.number flexDirection_0600
+     * @tc.desc   flexDirection_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('flexDirection_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('flexDirection_0600 START');
       let strJson = getInspectorByKey('Column');
@@ -117,6 +165,14 @@ export default function flexDirectionJsunit(){
       done();
     });
 
+    /**
+     * @tc.name   flexDirection_0700
+     * @tc.number flexDirection_0700
+     * @tc.desc   flexDirection_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('flexDirection_0700',  Level.LEVEL0, async (done: Function) => {
       console.info('flexDirection_0700 START');
       try {
@@ -147,6 +203,14 @@ export default function flexDirectionJsunit(){
       done();
       });
 
+    /**
+     * @tc.name   flexDirection_0800
+     * @tc.number flexDirection_0800
+     * @tc.desc   flexDirection_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('flexDirection_0800',  Level.LEVEL0, async (done: Function) => {
       console.info('flexDirection_0800 START');
       try {
@@ -177,6 +241,14 @@ export default function flexDirectionJsunit(){
       done();
     });
 
+    /**
+     * @tc.name   flexDirection_0900
+     * @tc.number flexDirection_0900
+     * @tc.desc   flexDirection_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('flexDirection_0900',  Level.LEVEL0, async (done: Function) => {
       console.info('flexDirection_0900 START');
       try {

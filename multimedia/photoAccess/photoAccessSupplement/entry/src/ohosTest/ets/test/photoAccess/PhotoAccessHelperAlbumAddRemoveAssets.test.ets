@@ -207,12 +207,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
 
 
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_001
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_001
-     * @tc.desc      addAssets addAssets asset  undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_001
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_001
+     * @tc.desc   addAssets addAssets asset  undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_001';
@@ -226,12 +226,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_002
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_002
-     * @tc.desc      addAssets asset  null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_002
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_002
+     * @tc.desc   addAssets asset  null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_002';
@@ -245,12 +245,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_003
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_003
-     * @tc.desc      addAssets asset  ''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_003
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_003
+     * @tc.desc   addAssets asset  ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_003';
@@ -264,12 +264,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_004
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_004
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_004
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_004
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_004';
@@ -283,12 +283,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_005
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_005
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_005
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_005
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_005';
@@ -302,12 +302,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_006
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_006
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_006
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_006
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_006';
@@ -321,12 +321,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_007
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_007
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_007
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_007
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_007';
@@ -341,12 +341,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
     })
 
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_008
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_008
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_008
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_008
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_008';
@@ -360,12 +360,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_009
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_009
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_009
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_009
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_009';
@@ -379,12 +379,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_010
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_010
-     * @tc.desc      addAssets addAssets SYSTEM,VIDEO；asset：undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_010
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_010
+     * @tc.desc   addAssets addAssets SYSTEM,VIDEO；asset：undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_010';
@@ -398,12 +398,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_011
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_011
-     * @tc.desc      addAssets addAssets SYSTEM,VIDEO；asset：null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_011
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_011
+     * @tc.desc   addAssets addAssets SYSTEM,VIDEO；asset：null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_011';
@@ -417,12 +417,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_012
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_012
-     * @tc.desc      addAssets asset  ''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_012
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_012
+     * @tc.desc   addAssets asset  ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_012';
@@ -437,12 +437,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
     })
 
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_001
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_001
-     * @tc.desc      addAssets addAssets asset  undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_001
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_001
+     * @tc.desc   addAssets addAssets asset  undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_001';
@@ -456,12 +456,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_002
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_002
-     * @tc.desc      addAssets asset  null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_002
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_002
+     * @tc.desc   addAssets asset  null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_002';
@@ -475,12 +475,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_003
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_003
-     * @tc.desc      addAssets asset  ''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_003
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_003
+     * @tc.desc   addAssets asset  ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_003';
@@ -494,12 +494,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_004
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_004
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_004
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_004
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_004';
@@ -513,12 +513,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_005
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_005
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_005
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_005
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_005';
@@ -532,12 +532,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_006
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_006
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_006
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_006
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_006';
@@ -551,12 +551,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_007
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_007
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_007
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_007
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_007';
@@ -571,12 +571,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
     })
 
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_008
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_008
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_008
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_008
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_008';
@@ -590,12 +590,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_009
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_009
-     * @tc.desc      addAssets asset USER USER_GENERIC,asset:''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_009
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_009
+     * @tc.desc   addAssets asset USER USER_GENERIC,asset:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_009';
@@ -609,12 +609,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_010
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_010
-     * @tc.desc      addAssets addAssets SYSTEM,VIDEO；asset：undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_010
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_010
+     * @tc.desc   addAssets addAssets SYSTEM,VIDEO；asset：undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_010';
@@ -628,12 +628,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_011
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_011
-     * @tc.desc      addAssets addAssets SYSTEM,VIDEO；asset：null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_011
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_011
+     * @tc.desc   addAssets addAssets SYSTEM,VIDEO；asset：null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_011';
@@ -647,12 +647,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_addAssets_ForFirstParameter_CallBack_012
-     * @tc.name      Photo_Album_addAssets_ForFirstParameter_CallBack_012
-     * @tc.desc      addAssets asset  ''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_addAssets_ForFirstParameter_CallBack_012
+     * @tc.number Photo_Album_addAssets_ForFirstParameter_CallBack_012
+     * @tc.desc   addAssets asset  ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_addAssets_ForFirstParameter_CallBack_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_addAssets_ForFirstParameter_CallBack_012';
@@ -668,12 +668,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
 
 
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_001
-     * @tc.name      Photo_Album_removeAssets_Callback_001
-     * @tc.desc      removeAssets asset is undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_001
+     * @tc.number Photo_Album_removeAssets_Callback_001
+     * @tc.desc   removeAssets asset is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_001';
@@ -687,12 +687,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_002
-     * @tc.name      Photo_Album_removeAssets_Callback_002
-     * @tc.desc      removeAssets asset is null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_002
+     * @tc.number Photo_Album_removeAssets_Callback_002
+     * @tc.desc   removeAssets asset is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_002';
@@ -706,12 +706,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_003
-     * @tc.name      Photo_Album_removeAssets_Callback_003
-     * @tc.desc      removeAssets asset is ''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_003
+     * @tc.number Photo_Album_removeAssets_Callback_003
+     * @tc.desc   removeAssets asset is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_003';
@@ -725,12 +725,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_004
-     * @tc.name      Photo_Album_removeAssets_Callback_004
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_004
+     * @tc.number Photo_Album_removeAssets_Callback_004
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_004';
@@ -744,12 +744,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_005
-     * @tc.name      Photo_Album_removeAssets_Callback_005
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_005
+     * @tc.number Photo_Album_removeAssets_Callback_005
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_005';
@@ -763,12 +763,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_006
-     * @tc.name      Photo_Album_removeAssets_Callback_006
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_006
+     * @tc.number Photo_Album_removeAssets_Callback_006
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_006';
@@ -782,12 +782,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_007
-     * @tc.name      Photo_Album_removeAssets_Callback_007
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_007
+     * @tc.number Photo_Album_removeAssets_Callback_007
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_007';
@@ -802,12 +802,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
     })
 
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_008
-     * @tc.name      Photo_Album_removeAssets_Callback_008
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_008
+     * @tc.number Photo_Album_removeAssets_Callback_008
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_008';
@@ -821,12 +821,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_009
-     * @tc.name      Photo_Album_removeAssets_Callback_009
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_009
+     * @tc.number Photo_Album_removeAssets_Callback_009
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_009';
@@ -840,12 +840,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_010
-     * @tc.name      Photo_Album_removeAssets_Callback_010
-     * @tc.desc      removeAssets addAssets SYSTEM,VIDEO；asset：undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_010
+     * @tc.number Photo_Album_removeAssets_Callback_010
+     * @tc.desc   removeAssets addAssets SYSTEM,VIDEO；asset：undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_010';
@@ -859,12 +859,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_011
-     * @tc.name      Photo_Album_removeAssets_Callback_011
-     * @tc.desc      removeAssets addAssets SYSTEM,VIDEO；asset：null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_011
+     * @tc.number Photo_Album_removeAssets_Callback_011
+     * @tc.desc   removeAssets addAssets SYSTEM,VIDEO；asset：null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_011';
@@ -878,12 +878,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Callback_012
-     * @tc.name      Photo_Album_removeAssets_Callback_012
-     * @tc.desc      removeAssets asset  ''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Callback_012
+     * @tc.number Photo_Album_removeAssets_Callback_012
+     * @tc.desc   removeAssets asset  ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Callback_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Callback_012';
@@ -900,12 +900,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
 
 
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_001
-     * @tc.name      Photo_Album_removeAssets_Promise_001
-     * @tc.desc      removeAssets asset is undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_001
+     * @tc.number Photo_Album_removeAssets_Promise_001
+     * @tc.desc   removeAssets asset is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_001';
@@ -919,12 +919,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_002
-     * @tc.name      Photo_Album_removeAssets_Promise_002
-     * @tc.desc      removeAssets asset is null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_002
+     * @tc.number Photo_Album_removeAssets_Promise_002
+     * @tc.desc   removeAssets asset is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_002';
@@ -938,12 +938,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_003
-     * @tc.name      Photo_Album_removeAssets_Promise_003
-     * @tc.desc      removeAssets asset is ''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_003
+     * @tc.number Photo_Album_removeAssets_Promise_003
+     * @tc.desc   removeAssets asset is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_003';
@@ -957,12 +957,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_004
-     * @tc.name      Photo_Album_removeAssets_Promise_004
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_004
+     * @tc.number Photo_Album_removeAssets_Promise_004
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_004';
@@ -976,12 +976,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_005
-     * @tc.name      Photo_Album_removeAssets_Promise_005
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_005
+     * @tc.number Photo_Album_removeAssets_Promise_005
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_005';
@@ -995,12 +995,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_006
-     * @tc.name      Photo_Album_removeAssets_Promise_006
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_006
+     * @tc.number Photo_Album_removeAssets_Promise_006
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_006';
@@ -1014,12 +1014,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_007
-     * @tc.name      Photo_Album_removeAssets_Promise_007
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_007
+     * @tc.number Photo_Album_removeAssets_Promise_007
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_007';
@@ -1034,12 +1034,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
     })
 
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_008
-     * @tc.name      Photo_Album_removeAssets_Promise_008
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_008
+     * @tc.number Photo_Album_removeAssets_Promise_008
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_008';
@@ -1053,12 +1053,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_009
-     * @tc.name      Photo_Album_removeAssets_Promise_009
-     * @tc.desc      removeAssets asset USER USER_GENERIC,asset:''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_009
+     * @tc.number Photo_Album_removeAssets_Promise_009
+     * @tc.desc   removeAssets asset USER USER_GENERIC,asset:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_009';
@@ -1072,12 +1072,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_010
-     * @tc.name      Photo_Album_removeAssets_Promise_010
-     * @tc.desc      removeAssets addAssets SYSTEM,VIDEO；asset：undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_010
+     * @tc.number Photo_Album_removeAssets_Promise_010
+     * @tc.desc   removeAssets addAssets SYSTEM,VIDEO；asset：undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_010';
@@ -1091,12 +1091,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_011
-     * @tc.name      Photo_Album_removeAssets_Promise_011
-     * @tc.desc      removeAssets addAssets SYSTEM,VIDEO；asset：null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_011
+     * @tc.number Photo_Album_removeAssets_Promise_011
+     * @tc.desc   removeAssets addAssets SYSTEM,VIDEO；asset：null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_011';
@@ -1110,12 +1110,12 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       done();
     })
     /**
-     * @tc.number    Photo_Album_removeAssets_Promise_012
-     * @tc.name      Photo_Album_removeAssets_Promise_012
-     * @tc.desc      removeAssets asset  ''
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   Photo_Album_removeAssets_Promise_012
+     * @tc.number Photo_Album_removeAssets_Promise_012
+     * @tc.desc   removeAssets asset  ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Photo_Album_removeAssets_Promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'Photo_Album_removeAssets_Promise_012';

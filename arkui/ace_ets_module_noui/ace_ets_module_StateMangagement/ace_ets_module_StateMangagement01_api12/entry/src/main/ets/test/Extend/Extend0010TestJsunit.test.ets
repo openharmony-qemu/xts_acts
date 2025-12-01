@@ -59,12 +59,12 @@ export default function Extend0010TestJsunit() {
     });
 
     /**
+     * @tc.name   Extend0010TestJsunit_001
      * @tc.number Extend0010TestJsunit_001
-     * @tc.name Extend0010TestJsunit_001
-     * @tc.desc Frequently updating and modifying the values of parent components
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Extend0010TestJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Extend0010TestJsunit_001] START');

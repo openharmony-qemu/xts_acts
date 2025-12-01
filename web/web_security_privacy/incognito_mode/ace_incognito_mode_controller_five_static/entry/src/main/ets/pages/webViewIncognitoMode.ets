@@ -17,7 +17,7 @@ import { Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.ar
 import Utils from '../../src/test/Util.test';
 import webview from '@ohos.web.webview'
 import emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base'
+import { Callback, RecordData } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement'
 import { BusinessError } from '@ohos.base'
 import { Driver } from '@ohos.UiTest';
@@ -57,7 +57,7 @@ struct webViewIncognitoMode {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

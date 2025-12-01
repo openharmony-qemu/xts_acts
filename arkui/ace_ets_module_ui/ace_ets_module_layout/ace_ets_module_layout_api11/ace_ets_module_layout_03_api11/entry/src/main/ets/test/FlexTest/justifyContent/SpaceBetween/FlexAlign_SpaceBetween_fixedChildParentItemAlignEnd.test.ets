@@ -49,9 +49,12 @@ export default function flexAlign_SpaceBetween_fixedChildParentItemAlignEnd() {
     });
 
     /**
+     * @tc.name   testAlignSpaceBetweenRowNoWrapAlignmentBottomEnd
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEBETWEEN_TEST_0800
-     * @tc.name testAlignSpaceBetweenRowNoWrapAlignmentBottomEnd
-     * @tc.desc The child component is fixed, and the parent component is bound with Alignment.BottomEnd attributes
+     * @tc.desc   The child component is fixed, and the parent component is bound with Alignment.BottomEnd attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceBetweenRowNoWrapAlignmentBottomEnd',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapAlignmentBottomEnd START');

@@ -37,10 +37,13 @@ describe('ActsBmsJsUnPermissionTest', function () {
           })
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_0560
-     * @tc.name: getApplicationInfoUnPermissionUserId
-     * @tc.desc: test getApplicationInfo
+    /**
+     * @tc.name   getApplicationInfoUnPermissionUserId
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_0560
+     * @tc.desc   test getApplicationInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getApplicationInfoUnPermissionUserId', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         await bundle.getApplicationInfo(LAUNCHER_BUNDLE_NAME, DEFAULT_FLAG, userId).then(data => {
@@ -55,10 +58,13 @@ describe('ActsBmsJsUnPermissionTest', function () {
         });
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_1120
-     * @tc.name: getApplicationInfosUnPermissionUserId
-     * @tc.desc: test getAllApplicationInfo
+    /**
+     * @tc.name   getApplicationInfosUnPermissionUserId
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_1120
+     * @tc.desc   test getAllApplicationInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getApplicationInfosUnPermissionUserId', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         await bundle.getAllApplicationInfo(DEFAULT_FLAG, userId).then(data => {
@@ -73,10 +79,13 @@ describe('ActsBmsJsUnPermissionTest', function () {
         });
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_2400
-     * @tc.name: getBundleInfoUnPermissionUserId
-     * @tc.desc: test getBundleInfo
+    /**
+     * @tc.name   getBundleInfoUnPermissionUserId
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2400
+     * @tc.desc   test getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoUnPermissionUserId', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
         await bundle.getBundleInfo(LAUNCHER_BUNDLE_NAME, userId).then(data => {
@@ -91,10 +100,13 @@ describe('ActsBmsJsUnPermissionTest', function () {
         });
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_2640
-     * @tc.name: getAllBundleInfoUnPermission
-     * @tc.desc: test getAllBundleInfo
+    /**
+     * @tc.name   getAllBundleInfoUnPermission
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_2640
+     * @tc.desc   test getAllBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getAllBundleInfoUnPermission', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
         await bundle.getAllBundleInfo(DEFAULT_FLAG).then(data => {
@@ -109,10 +121,13 @@ describe('ActsBmsJsUnPermissionTest', function () {
         });
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2780
-     * @tc.name: queryAbilityByWantUnPermission
-     * @tc.desc: test queryAbilityByWant
+    /**
+     * @tc.name   queryAbilityByWantUnPermission
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2780
+     * @tc.desc   test queryAbilityByWant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('queryAbilityByWantUnPermission', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await bundle.queryAbilityByWant({
@@ -134,10 +149,13 @@ describe('ActsBmsJsUnPermissionTest', function () {
         });
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2680
-     * @tc.name: getLaunchWantForBundleUnPermission
-     * @tc.desc: test getLaunchWantForBundle
+    /**
+     * @tc.name   getLaunchWantForBundleUnPermission
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2680
+     * @tc.desc   test getLaunchWantForBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getLaunchWantForBundleUnPermission', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await bundle.getLaunchWantForBundle(LAUNCHER_BUNDLE_NAME).then(data => {
@@ -152,12 +170,14 @@ describe('ActsBmsJsUnPermissionTest', function () {
         });
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_Label_4400
-    * @tc.name: getAbilityLabelUnPermission
-    * @tc.desc: Check the return value of the interface
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   getAbilityLabelUnPermission
+     * @tc.number Sub_Bms_Framework_Query_Label_4400
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getAbilityLabelUnPermission', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await bundle.getAbilityLabel(LAUNCHER_BUNDLE_NAME, LAUNCHER_MAIN_ABILITY)
             .then((data) => {
@@ -173,10 +193,13 @@ describe('ActsBmsJsUnPermissionTest', function () {
         });
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2540
-     * @tc.name: getAbilityInfoUnPermission
-     * @tc.desc: test getAbilityInfo
+    /**
+     * @tc.name   getAbilityInfo_100
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2540
+     * @tc.desc   test getAbilityInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAbilityInfo_100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await bundle.getAbilityInfo(LAUNCHER_BUNDLE_NAME, LAUNCHER_MAIN_ABILITY).then(data => {

@@ -45,6 +45,14 @@ export default function gridJsunit() {
       console.info('[ afterEach ] ===================grid test after each called===================');
     });
 
+    /**
+     * @tc.name   gridTest01
+     * @tc.number gridTest01
+     * @tc.desc   gridTest01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridTest01', Level.LEVEL1, async (done: Function) => {
       console.info('gridTest01==================== start');
       await CommonFunc.sleep(1000)
@@ -79,6 +87,14 @@ export default function gridJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   gridTest02
+     * @tc.number gridTest02
+     * @tc.desc   gridTest02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridTest02', Level.LEVEL1, async (done: Function) => {
       console.info('[ gridTest02 ] ==================== start');
       await CommonFunc.sleep(1000)
@@ -113,6 +129,14 @@ export default function gridJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   gridTest03
+     * @tc.number gridTest03
+     * @tc.desc   gridTest03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridTest03', Level.LEVEL1, async (done: Function) => {
       console.info('[ gridTest03 ] ==================== start');
       await CommonFunc.sleep(1000)
@@ -147,6 +171,14 @@ export default function gridJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   gridTest04
+     * @tc.number gridTest04
+     * @tc.desc   gridTest04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('gridTest04', Level.LEVEL1, async (done: Function) => {
       console.info('[ gridTest04 ] ==================== start');
       await CommonFunc.sleep(1000)

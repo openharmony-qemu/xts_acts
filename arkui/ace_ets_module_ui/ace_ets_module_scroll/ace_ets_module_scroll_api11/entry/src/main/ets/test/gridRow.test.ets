@@ -45,10 +45,13 @@ export default function gridRowXlJsunit() {
       console.info("gridRowXl after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testgridRowXl0001
-     * @tc.desic         acegridRowXlEtsTest0001
+    /**
+     * @tc.name   testgridRowXl0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testgridRowXl0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testgridRowXl0001', Level.LEVEL1, async (done: Function) => {
       console.info('gridRowXl testgridRowXl0001 START');

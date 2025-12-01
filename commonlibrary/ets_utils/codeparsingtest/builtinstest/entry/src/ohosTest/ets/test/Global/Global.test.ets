@@ -64,12 +64,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0100
-     * @tc.name       : test_Global_test_001
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_001
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0100
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -83,12 +83,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0200
-     * @tc.name       : test_Global_test_002
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_002
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0200
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -101,12 +101,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0300
-     * @tc.name       : test_Global_test_003
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_003
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0300
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -118,12 +118,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0400
-     * @tc.name       : test_Global_test_004
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_004
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0400
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -135,12 +135,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0500
-     * @tc.name       : test_Global_test_005
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_005
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0500
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -154,12 +154,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0600
-     * @tc.name       : test_Global_test_006
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_006
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0600
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -172,12 +172,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0700
-     * @tc.name       : test_Global_test_007
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_007
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0700
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -190,12 +190,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0800
-     * @tc.name       : test_Global_test_008
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_008
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0800
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -208,12 +208,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0900
-     * @tc.name       : test_Global_test_009
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_009
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0900
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -228,12 +228,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1000
-     * @tc.name       : test_Global_test_010
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_010
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1000
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -247,12 +247,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1100
-     * @tc.name       : test_Global_test_011
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_011
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1100
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -264,12 +264,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1200
-     * @tc.name       : test_Global_test_012
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_012
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1200
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -281,12 +281,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1300
-     * @tc.name       : test_Global_test_013
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_013
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1300
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -300,12 +300,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1400
-     * @tc.name       : test_Global_test_014
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_014
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1400
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -318,12 +318,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1500
-     * @tc.name       : test_Global_test_015
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_015
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1500
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -336,12 +336,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1600
-     * @tc.name       : test_Global_test_016
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_016
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1600
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -354,12 +354,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1700
-     * @tc.name       : test_Global_test_017
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_017
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1700
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -374,12 +374,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1800
-     * @tc.name       : test_Global_test_018
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_018
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1800
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -394,12 +394,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1900
-     * @tc.name       : test_Global_test_019
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_019
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_1900
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -411,12 +411,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2000
-     * @tc.name       : test_Global_test_020
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_020
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2000
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -427,12 +427,12 @@ export default function globalTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2100
-     * @tc.name       : test_Global_test_021
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_021
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2100
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -446,12 +446,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2200
-     * @tc.name       : test_Global_test_022
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_022
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2200
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -464,12 +464,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2300
-     * @tc.name       : test_Global_test_023
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_023
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2300
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -481,12 +481,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2400
-     * @tc.name       : test_Global_test_024
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_024
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2400
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -498,12 +498,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2500
-     * @tc.name       : test_Global_test_025
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_025
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2500
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -515,12 +515,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2600
-     * @tc.name       : test_Global_test_026
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_026
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2600
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -532,12 +532,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2700
-     * @tc.name       : test_Global_test_027
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_027
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2700
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -549,12 +549,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2800
-     * @tc.name       : test_Global_test_028
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_028
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2800
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -566,12 +566,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2900
-     * @tc.name       : test_Global_test_029
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_029
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_2900
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -583,12 +583,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3000
-     * @tc.name       : test_Global_test_030
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_030
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3000
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -600,12 +600,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3100
-     * @tc.name       : test_Global_test_031
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_031
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3100
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -617,12 +617,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3200
-     * @tc.name       : test_Global_test_032
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_032
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3200
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -634,12 +634,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3300
-     * @tc.name       : test_Global_test_033
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_033
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3300
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -651,12 +651,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3400
-     * @tc.name       : test_Global_test_034
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_034
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3400
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -670,12 +670,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3500
-     * @tc.name       : test_Global_test_035
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_035
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3500
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -688,12 +688,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3600
-     * @tc.name       : test_Global_test_036
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_036
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3600
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -705,12 +705,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3700
-     * @tc.name       : test_Global_test_037
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_037
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3700
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -722,12 +722,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3800
-     * @tc.name       : test_Global_test_038
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_038
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3800
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -739,12 +739,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3900
-     * @tc.name       : test_Global_test_039
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_039
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_3900
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -756,12 +756,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4000
-     * @tc.name       : test_Global_test_040
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_040
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4000
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -773,12 +773,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4100
-     * @tc.name       : test_Global_test_041
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_041
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4100
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -790,12 +790,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4200
-     * @tc.name       : test_Global_test_042
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_042
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4200
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -807,12 +807,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4300
-     * @tc.name       : test_Global_test_043
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_043
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4300
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -824,12 +824,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4400
-     * @tc.name       : test_Global_test_044
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_044
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4400
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -841,12 +841,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4500
-     * @tc.name       : test_Global_test_045
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_045
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4500
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -858,12 +858,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4600
-     * @tc.name       : test_Global_test_046
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_046
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4600
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -875,12 +875,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4700
-     * @tc.name       : test_Global_test_047
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_047
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4700
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -892,12 +892,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4800
-     * @tc.name       : test_Global_test_048
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_048
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4800
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -909,12 +909,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4900
-     * @tc.name       : test_Global_test_049
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_049
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_4900
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -926,12 +926,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_5000
-     * @tc.name       : test_Global_test_050
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_050
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_5000
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -943,12 +943,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_5100
-     * @tc.name       : test_Global_test_051
-     * @tc.desc       : Testing the global
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   test_Global_test_051
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_5100
+     * @tc.desc   Testing the global
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_Global_test_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {

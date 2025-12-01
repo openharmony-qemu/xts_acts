@@ -44,6 +44,14 @@ export default function triggerChange() {
       console.info("triggerChange after each called");
     });
 
+    /**
+     * @tc.name   triggerChangeTest_0100
+     * @tc.number triggerChangeTest_0100
+     * @tc.desc   triggerChangeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('triggerChangeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('triggerChangeText_0100 START');
       let strJson = getInspectorByKey('triggerChangeMessage');

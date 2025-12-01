@@ -30,14 +30,14 @@ export default function callingInstanceMethodsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Double_0100
-    * @tc.name      : test_Object_CallMethod_Double_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Double_0100
+     * @tc.number test_Object_CallMethod_Double_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Double_0100 start');
@@ -49,14 +49,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Double_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Double_A_0100
-    * @tc.name      : test_Object_CallMethod_Double_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Double_A_0100
+     * @tc.number test_Object_CallMethod_Double_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Double_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Double_A_0100 start');
@@ -68,14 +68,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Double_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Double_V_0100
-    * @tc.name      : test_Object_CallMethod_Double_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Double_V_0100
+     * @tc.number test_Object_CallMethod_Double_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Double_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Double_V_0100 start');
@@ -87,14 +87,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Double_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Int_0100
-    * @tc.name      : test_Object_CallMethod_Int_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Int_0100
+     * @tc.number test_Object_CallMethod_Int_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Int_0100 start');
@@ -106,14 +106,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Int_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Int_A_0100
-    * @tc.name      : test_Object_CallMethod_Int_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Int_A_0100
+     * @tc.number test_Object_CallMethod_Int_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Int_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Int_A_0100 start');
@@ -125,14 +125,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Int_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Int_V_0100
-    * @tc.name      : test_Object_CallMethod_Int_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Int_V_0100
+     * @tc.number test_Object_CallMethod_Int_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Int_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Int_V_0100 start');
@@ -144,14 +144,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Int_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Boolean_0100
-    * @tc.name      : test_Object_CallMethod_Boolean_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Boolean_0100
+     * @tc.number test_Object_CallMethod_Boolean_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Boolean_0100 start');
@@ -163,14 +163,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Boolean_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Boolean_A_0100
-    * @tc.name      : test_Object_CallMethod_Boolean_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Boolean_A_0100
+     * @tc.number test_Object_CallMethod_Boolean_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Boolean_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Boolean_A_0100 start');
@@ -182,14 +182,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Boolean_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Boolean_V_0100
-    * @tc.name      : test_Object_CallMethod_Boolean_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Boolean_V_0100
+     * @tc.number test_Object_CallMethod_Boolean_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Boolean_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Boolean_V_0100 start');
@@ -201,14 +201,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Boolean_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Void_0100
-    * @tc.name      : test_Object_CallMethod_Void_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Void_0100
+     * @tc.number test_Object_CallMethod_Void_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Void_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Void_0100 start');
@@ -220,14 +220,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Void_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Void_A_0100
-    * @tc.name      : test_Object_CallMethod_Void_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Void_A_0100
+     * @tc.number test_Object_CallMethod_Void_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Void_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Void_A_0100 start');
@@ -239,14 +239,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Void_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Void_V_0100
-    * @tc.name      : test_Object_CallMethod_Void_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Void_V_0100
+     * @tc.number test_Object_CallMethod_Void_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Void_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Void_V_0100 start');
@@ -258,14 +258,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Void_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Long_0100
-    * @tc.name      : test_Object_CallMethod_Long_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Long_0100
+     * @tc.number test_Object_CallMethod_Long_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Long_0100 start');
@@ -277,14 +277,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Long_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Long_A_0100
-    * @tc.name      : test_Object_CallMethod_Long_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Long_A_0100
+     * @tc.number test_Object_CallMethod_Long_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Long_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Long_A_0100 start');
@@ -296,14 +296,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Long_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Long_V_0100
-    * @tc.name      : test_Object_CallMethod_Long_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Long_V_0100
+     * @tc.number test_Object_CallMethod_Long_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Long_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Long_V_0100 start');
@@ -315,14 +315,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Long_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Char_0100
-    * @tc.name      : test_Object_CallMethod_Char_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Char_0100
+     * @tc.number test_Object_CallMethod_Char_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Char_0100 start');
@@ -334,14 +334,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Char_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Char_A_0100
-    * @tc.name      : test_Object_CallMethod_Char_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Char_A_0100
+     * @tc.number test_Object_CallMethod_Char_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Char_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Char_A_0100 start');
@@ -353,14 +353,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Char_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Char_V_0100
-    * @tc.name      : test_Object_CallMethod_Char_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Char_V_0100
+     * @tc.number test_Object_CallMethod_Char_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Char_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Char_V_0100 start');
@@ -372,14 +372,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Char_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Byte_0100
-    * @tc.name      : test_Object_CallMethod_Byte_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Byte_0100
+     * @tc.number test_Object_CallMethod_Byte_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Byte_0100 start');
@@ -391,14 +391,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Byte_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Byte_A_0100
-    * @tc.name      : test_Object_CallMethod_Byte_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Byte_A_0100
+     * @tc.number test_Object_CallMethod_Byte_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Byte_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Byte_A_0100 start');
@@ -410,14 +410,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Byte_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Byte_V_0100
-    * @tc.name      : test_Object_CallMethod_Byte_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Byte_V_0100
+     * @tc.number test_Object_CallMethod_Byte_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Byte_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Byte_V_0100 start');
@@ -429,14 +429,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Byte_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Short_0100
-    * @tc.name      : test_Object_CallMethod_Short_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Short_0100
+     * @tc.number test_Object_CallMethod_Short_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Short_0100 start');
@@ -448,14 +448,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Short_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Short_A_0100
-    * @tc.name      : test_Object_CallMethod_Short_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Short_A_0100
+     * @tc.number test_Object_CallMethod_Short_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Short_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Short_A_0100 start');
@@ -467,14 +467,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Short_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Short_V_0100
-    * @tc.name      : test_Object_CallMethod_Short_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Short_V_0100
+     * @tc.number test_Object_CallMethod_Short_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Short_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Short_V_0100 start');
@@ -486,14 +486,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Short_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Float_0100
-    * @tc.name      : test_Object_CallMethod_Float_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Float_0100
+     * @tc.number test_Object_CallMethod_Float_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Float_0100 start');
@@ -505,14 +505,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Float_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Float_A_0100
-    * @tc.name      : test_Object_CallMethod_Float_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Float_A_0100
+     * @tc.number test_Object_CallMethod_Float_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Float_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Float_A_0100 start');
@@ -524,14 +524,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Float_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Float_V_0100
-    * @tc.name      : test_Object_CallMethod_Float_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Float_V_0100
+     * @tc.number test_Object_CallMethod_Float_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Float_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Float_V_0100 start');
@@ -543,14 +543,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Float_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Ref_0100
-    * @tc.name      : test_Object_CallMethod_Ref_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Ref_0100
+     * @tc.number test_Object_CallMethod_Ref_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Ref_0100 start');
@@ -562,14 +562,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Ref_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Ref_A_0100
-    * @tc.name      : test_Object_CallMethod_Ref_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Ref_A_0100
+     * @tc.number test_Object_CallMethod_Ref_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Ref_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Ref_A_0100 start');
@@ -581,14 +581,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Ref_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethod_Ref_V_0100
-    * @tc.name      : test_Object_CallMethod_Ref_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethod_Ref_V_0100
+     * @tc.number test_Object_CallMethod_Ref_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethod_Ref_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethod_Ref_V_0100 start');
@@ -600,14 +600,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethod_Ref_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Boolean_0100
-    * @tc.name      : test_Object_CallMethodByName_Boolean_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Boolean_0100
+     * @tc.number test_Object_CallMethodByName_Boolean_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Boolean_0100 start');
@@ -619,14 +619,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Boolean_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Boolean_A_0100
-    * @tc.name      : test_Object_CallMethodByName_Boolean_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Boolean_A_0100
+     * @tc.number test_Object_CallMethodByName_Boolean_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Boolean_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Boolean_A_0100 start');
@@ -638,14 +638,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Boolean_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Boolean_V_0100
-    * @tc.name      : test_Object_CallMethodByName_Boolean_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Boolean_V_0100
+     * @tc.number test_Object_CallMethodByName_Boolean_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Boolean_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Boolean_V_0100 start');
@@ -657,14 +657,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Boolean_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Char_0100
-    * @tc.name      : test_Object_CallMethodByName_Char_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Char_0100
+     * @tc.number test_Object_CallMethodByName_Char_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Char_0100 start');
@@ -676,14 +676,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Char_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Char_A_0100
-    * @tc.name      : test_Object_CallMethodByName_Char_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Char_A_0100
+     * @tc.number test_Object_CallMethodByName_Char_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Char_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Char_A_0100 start');
@@ -695,14 +695,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Char_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Char_V_0100
-    * @tc.name      : test_Object_CallMethodByName_Char_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Char_V_0100
+     * @tc.number test_Object_CallMethodByName_Char_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Char_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Char_V_0100 start');
@@ -714,14 +714,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Char_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Byte_0100
-    * @tc.name      : test_Object_CallMethodByName_Byte_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Byte_0100
+     * @tc.number test_Object_CallMethodByName_Byte_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Byte_0100 start');
@@ -733,14 +733,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Byte_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Byte_A_0100
-    * @tc.name      : test_Object_CallMethodByName_Byte_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Byte_A_0100
+     * @tc.number test_Object_CallMethodByName_Byte_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Byte_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Byte_A_0100 start');
@@ -752,14 +752,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Byte_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Byte_V_0100
-    * @tc.name      : test_Object_CallMethodByName_Byte_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Byte_V_0100
+     * @tc.number test_Object_CallMethodByName_Byte_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Byte_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Byte_V_0100 start');
@@ -771,14 +771,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Byte_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Short_0100
-    * @tc.name      : test_Object_CallMethodByName_Short_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Short_0100
+     * @tc.number test_Object_CallMethodByName_Short_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Short_0100 start');
@@ -790,14 +790,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Short_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Short_A_0100
-    * @tc.name      : test_Object_CallMethodByName_Short_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Short_A_0100
+     * @tc.number test_Object_CallMethodByName_Short_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Short_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Short_A_0100 start');
@@ -809,14 +809,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Short_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Short_V_0100
-    * @tc.name      : test_Object_CallMethodByName_Short_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Short_V_0100
+     * @tc.number test_Object_CallMethodByName_Short_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Short_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Short_V_0100 start');
@@ -828,14 +828,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Short_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Int_0100
-    * @tc.name      : test_Object_CallMethodByName_Int_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Int_0100
+     * @tc.number test_Object_CallMethodByName_Int_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Int_0100 start');
@@ -847,14 +847,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Int_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Int_A_0100
-    * @tc.name      : test_Object_CallMethodByName_Int_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Int_A_0100
+     * @tc.number test_Object_CallMethodByName_Int_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Int_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Int_A_0100 start');
@@ -866,14 +866,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Int_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Int_V_0100
-    * @tc.name      : test_Object_CallMethodByName_Int_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Int_V_0100
+     * @tc.number test_Object_CallMethodByName_Int_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Int_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Int_V_0100 start');
@@ -885,14 +885,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Int_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Long_0100
-    * @tc.name      : test_Object_CallMethodByName_Long_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Long_0100
+     * @tc.number test_Object_CallMethodByName_Long_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Long_0100 start');
@@ -904,14 +904,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Long_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Long_A_0100
-    * @tc.name      : test_Object_CallMethodByName_Long_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Long_A_0100
+     * @tc.number test_Object_CallMethodByName_Long_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Long_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Long_A_0100 start');
@@ -923,14 +923,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Long_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Long_V_0100
-    * @tc.name      : test_Object_CallMethodByName_Long_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Long_V_0100
+     * @tc.number test_Object_CallMethodByName_Long_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Long_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Long_V_0100 start');
@@ -942,14 +942,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Long_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Float_0100
-    * @tc.name      : test_Object_CallMethodByName_Float_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Float_0100
+     * @tc.number test_Object_CallMethodByName_Float_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Float_0100 start');
@@ -961,14 +961,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Float_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Float_A_0100
-    * @tc.name      : test_Object_CallMethodByName_Float_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Float_A_0100
+     * @tc.number test_Object_CallMethodByName_Float_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Float_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Float_A_0100 start');
@@ -980,14 +980,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Float_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Float_V_0100
-    * @tc.name      : test_Object_CallMethodByName_Float_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Float_V_0100
+     * @tc.number test_Object_CallMethodByName_Float_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Float_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Float_V_0100 start');
@@ -999,14 +999,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Float_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Double_0100
-    * @tc.name      : test_Object_CallMethodByName_Double_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Double_0100
+     * @tc.number test_Object_CallMethodByName_Double_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Double_0100 start');
@@ -1018,14 +1018,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Double_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Double_A_0100
-    * @tc.name      : test_Object_CallMethodByName_Double_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Double_A_0100
+     * @tc.number test_Object_CallMethodByName_Double_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Double_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Double_A_0100 start');
@@ -1037,14 +1037,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Double_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Double_V_0100
-    * @tc.name      : test_Object_CallMethodByName_Double_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Double_V_0100
+     * @tc.number test_Object_CallMethodByName_Double_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Double_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Double_V_0100 start');
@@ -1056,14 +1056,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Double_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Ref_0100
-    * @tc.name      : test_Object_CallMethodByName_Ref_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Ref_0100
+     * @tc.number test_Object_CallMethodByName_Ref_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Ref_0100 start');
@@ -1075,14 +1075,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Ref_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Ref_A_0100
-    * @tc.name      : test_Object_CallMethodByName_Ref_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Ref_A_0100
+     * @tc.number test_Object_CallMethodByName_Ref_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Ref_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Ref_A_0100 start');
@@ -1094,14 +1094,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Ref_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Ref_V_0100
-    * @tc.name      : test_Object_CallMethodByName_Ref_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Ref_V_0100
+     * @tc.number test_Object_CallMethodByName_Ref_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Ref_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Ref_V_0100 start');
@@ -1113,14 +1113,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Ref_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Void_0100
-    * @tc.name      : test_Object_CallMethodByName_Void_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Void_0100
+     * @tc.number test_Object_CallMethodByName_Void_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Void_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Void_0100 start');
@@ -1132,14 +1132,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Void_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Void_A_0100
-    * @tc.name      : test_Object_CallMethodByName_Void_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Void_A_0100
+     * @tc.number test_Object_CallMethodByName_Void_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Void_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Void_A_0100 start');
@@ -1151,14 +1151,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Void_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Object_CallMethodByName_Void_V_0100
-    * @tc.name      : test_Object_CallMethodByName_Void_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Object_CallMethodByName_Void_V_0100
+     * @tc.number test_Object_CallMethodByName_Void_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Object_CallMethodByName_Void_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Object_CallMethodByName_Void_V_0100 start');
@@ -1170,14 +1170,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Object_CallMethodByName_Void_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Boolean_0100
-    * @tc.name      : test_Function_Call_Boolean_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Boolean_0100
+     * @tc.number test_Function_Call_Boolean_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Boolean_0100 start');
@@ -1189,14 +1189,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Boolean_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Boolean_A_0100
-    * @tc.name      : test_Function_Call_Boolean_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Boolean_A_0100
+     * @tc.number test_Function_Call_Boolean_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Boolean_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Boolean_A_0100 start');
@@ -1208,14 +1208,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Boolean_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Boolean_V_0100
-    * @tc.name      : test_Function_Call_Boolean_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Boolean_V_0100
+     * @tc.number test_Function_Call_Boolean_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Boolean_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Boolean_V_0100 start');
@@ -1227,14 +1227,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Boolean_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Char_0100
-    * @tc.name      : test_Function_Call_Char_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Char_0100
+     * @tc.number test_Function_Call_Char_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Char_0100 start');
@@ -1246,14 +1246,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Char_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Char_A_0100
-    * @tc.name      : test_Function_Call_Char_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Char_A_0100
+     * @tc.number test_Function_Call_Char_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Char_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Char_A_0100 start');
@@ -1265,14 +1265,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Char_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Char_V_0100
-    * @tc.name      : test_Function_Call_Char_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Char_V_0100
+     * @tc.number test_Function_Call_Char_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Char_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Char_V_0100 start');
@@ -1284,14 +1284,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Char_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Byte_0100
-    * @tc.name      : test_Function_Call_Byte_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Byte_0100
+     * @tc.number test_Function_Call_Byte_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Byte_0100 start');
@@ -1303,14 +1303,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Byte_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Byte_A_0100
-    * @tc.name      : test_Function_Call_Byte_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Byte_A_0100
+     * @tc.number test_Function_Call_Byte_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Byte_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Byte_A_0100 start');
@@ -1322,14 +1322,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Byte_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Byte_V_0100
-    * @tc.name      : test_Function_Call_Byte_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Byte_V_0100
+     * @tc.number test_Function_Call_Byte_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Byte_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Byte_V_0100 start');
@@ -1341,14 +1341,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Byte_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Short_0100
-    * @tc.name      : test_Function_Call_Short_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Short_0100
+     * @tc.number test_Function_Call_Short_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Short_0100 start');
@@ -1360,14 +1360,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Short_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Short_A_0100
-    * @tc.name      : test_Function_Call_Short_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Short_A_0100
+     * @tc.number test_Function_Call_Short_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Short_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Short_A_0100 start');
@@ -1379,14 +1379,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Short_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Short_V_0100
-    * @tc.name      : test_Function_Call_Short_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Short_V_0100
+     * @tc.number test_Function_Call_Short_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Short_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Short_V_0100 start');
@@ -1398,14 +1398,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Short_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Int_0100
-    * @tc.name      : test_Function_Call_Int_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Int_0100
+     * @tc.number test_Function_Call_Int_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Int_0100 start');
@@ -1417,14 +1417,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Int_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Int_A_0100
-    * @tc.name      : test_Function_Call_Int_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Int_A_0100
+     * @tc.number test_Function_Call_Int_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Int_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Int_A_0100 start');
@@ -1436,14 +1436,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Int_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Int_V_0100
-    * @tc.name      : test_Function_Call_Int_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Int_V_0100
+     * @tc.number test_Function_Call_Int_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Int_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Int_V_0100 start');
@@ -1455,14 +1455,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Int_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Long_0100
-    * @tc.name      : test_Function_Call_Long_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Long_0100
+     * @tc.number test_Function_Call_Long_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Long_0100 start');
@@ -1474,14 +1474,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Long_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Long_A_0100
-    * @tc.name      : test_Function_Call_Long_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Long_A_0100
+     * @tc.number test_Function_Call_Long_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Long_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Long_A_0100 start');
@@ -1493,14 +1493,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Long_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Long_V_0100
-    * @tc.name      : test_Function_Call_Long_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Long_V_0100
+     * @tc.number test_Function_Call_Long_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Long_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Long_V_0100 start');
@@ -1512,14 +1512,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Long_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Float_0100
-    * @tc.name      : test_Function_Call_Float_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Float_0100
+     * @tc.number test_Function_Call_Float_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Float_0100 start');
@@ -1531,14 +1531,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Float_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Float_A_0100
-    * @tc.name      : test_Function_Call_Float_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Float_A_0100
+     * @tc.number test_Function_Call_Float_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Float_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Float_A_0100 start');
@@ -1550,14 +1550,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Float_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Float_V_0100
-    * @tc.name      : test_Function_Call_Float_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Float_V_0100
+     * @tc.number test_Function_Call_Float_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Float_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Float_V_0100 start');
@@ -1569,14 +1569,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Float_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Double_0100
-    * @tc.name      : test_Function_Call_Double_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Double_0100
+     * @tc.number test_Function_Call_Double_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Double_0100 start');
@@ -1588,14 +1588,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Double_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Double_A_0100
-    * @tc.name      : test_Function_Call_Double_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Double_A_0100
+     * @tc.number test_Function_Call_Double_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Double_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Double_A_0100 start');
@@ -1607,14 +1607,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Double_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Double_V_0100
-    * @tc.name      : test_Function_Call_Double_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Double_V_0100
+     * @tc.number test_Function_Call_Double_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Double_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Double_V_0100 start');
@@ -1626,14 +1626,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Double_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Ref_0100
-    * @tc.name      : test_Function_Call_Ref_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Ref_0100
+     * @tc.number test_Function_Call_Ref_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Ref_0100 start');
@@ -1645,14 +1645,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Ref_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Ref_A_0100
-    * @tc.name      : test_Function_Call_Ref_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Ref_A_0100
+     * @tc.number test_Function_Call_Ref_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Ref_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Ref_A_0100 start');
@@ -1664,14 +1664,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Ref_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Ref_V_0100
-    * @tc.name      : test_Function_Call_Ref_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Ref_V_0100
+     * @tc.number test_Function_Call_Ref_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Ref_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Ref_V_0100 start');
@@ -1683,14 +1683,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Ref_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Void_0100
-    * @tc.name      : test_Function_Call_Void_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Void_0100
+     * @tc.number test_Function_Call_Void_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Void_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Void_0100 start');
@@ -1702,14 +1702,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Void_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Void_A_0100
-    * @tc.name      : test_Function_Call_Void_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Void_A_0100
+     * @tc.number test_Function_Call_Void_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Void_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Void_A_0100 start');
@@ -1721,14 +1721,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Void_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Function_Call_Void_V_0100
-    * @tc.name      : test_Function_Call_Void_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Function_Call_Void_V_0100
+     * @tc.number test_Function_Call_Void_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Function_Call_Void_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Function_Call_Void_V_0100 start');
@@ -1740,14 +1740,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Function_Call_Void_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_FunctionalObject_Call_0100
-    * @tc.name      : test_FunctionalObject_Call_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_FunctionalObject_Call_0100
+     * @tc.number test_FunctionalObject_Call_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_FunctionalObject_Call_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_FunctionalObject_Call_0100 start');
@@ -1759,14 +1759,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_FunctionalObject_Call_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Module_BindNativeFunctions_0100
-    * @tc.name      : test_Module_BindNativeFunctions_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Module_BindNativeFunctions_0100
+     * @tc.number test_Module_BindNativeFunctions_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Module_BindNativeFunctions_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Module_BindNativeFunctions_0100 start');
@@ -1778,14 +1778,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Module_BindNativeFunctions_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Namespace_BindNativeFunctions_0100
-    * @tc.name      : test_Namespace_BindNativeFunctions_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Namespace_BindNativeFunctions_0100
+     * @tc.number test_Namespace_BindNativeFunctions_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Namespace_BindNativeFunctions_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Namespace_BindNativeFunctions_0100 start');
@@ -1797,14 +1797,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Namespace_BindNativeFunctions_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Class_CallStaticMethod_Char_0100
-    * @tc.name      : test_Class_CallStaticMethod_Char_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Class_CallStaticMethod_Char_0100
+     * @tc.number test_Class_CallStaticMethod_Char_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Class_CallStaticMethod_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Class_CallStaticMethod_Char_0100 start');
@@ -1816,14 +1816,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Class_CallStaticMethod_Char_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Class_CallStaticMethod_Char_A_0100
-    * @tc.name      : test_Class_CallStaticMethod_Char_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Class_CallStaticMethod_Char_A_0100
+     * @tc.number test_Class_CallStaticMethod_Char_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Class_CallStaticMethod_Char_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Class_CallStaticMethod_Char_A_0100 start');
@@ -1835,14 +1835,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Class_CallStaticMethod_Char_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Class_CallStaticMethod_Char_V_0100
-    * @tc.name      : test_Class_CallStaticMethod_Char_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Class_CallStaticMethod_Char_V_0100
+     * @tc.number test_Class_CallStaticMethod_Char_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Class_CallStaticMethod_Char_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Class_CallStaticMethod_Char_V_0100 start');
@@ -1854,14 +1854,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Class_CallStaticMethod_Char_V_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Class_CallStaticMethod_Byte_0100
-    * @tc.name      : test_Class_CallStaticMethod_Byte_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Class_CallStaticMethod_Byte_0100
+     * @tc.number test_Class_CallStaticMethod_Byte_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Class_CallStaticMethod_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Class_CallStaticMethod_Byte_0100 start');
@@ -1873,14 +1873,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Class_CallStaticMethod_Byte_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Class_CallStaticMethod_Byte_A_0100
-    * @tc.name      : test_Class_CallStaticMethod_Byte_A_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Class_CallStaticMethod_Byte_A_0100
+     * @tc.number test_Class_CallStaticMethod_Byte_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Class_CallStaticMethod_Byte_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Class_CallStaticMethod_Byte_A_0100 start');
@@ -1892,14 +1892,14 @@ export default function callingInstanceMethodsTest() {
         console.log('test_Class_CallStaticMethod_Byte_A_0100 end');
       })
 
-    /*
-    * @tc.number    : test_Class_CallStaticMethod_Byte_V_0100
-    * @tc.name      : test_Class_CallStaticMethod_Byte_V_0100
-    * @tc.desc      : MediumTest
-    * @tc.size      : Function
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   test_Class_CallStaticMethod_Byte_V_0100
+     * @tc.number test_Class_CallStaticMethod_Byte_V_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_Class_CallStaticMethod_Byte_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('test_Class_CallStaticMethod_Byte_V_0100 start');

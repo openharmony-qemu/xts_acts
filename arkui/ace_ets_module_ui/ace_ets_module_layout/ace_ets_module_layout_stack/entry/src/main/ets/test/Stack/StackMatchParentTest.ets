@@ -46,6 +46,14 @@ export default function StackMatchParentTest() {
     });
 
 
+    /**
+     * @tc.name   StackMatchParentTest_0100
+     * @tc.number StackMatchParentTest_0100
+     * @tc.desc   StackMatchParentTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('StackMatchParentTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[StackMatchParentTest_0100] START');
       let driver = await Driver.create()

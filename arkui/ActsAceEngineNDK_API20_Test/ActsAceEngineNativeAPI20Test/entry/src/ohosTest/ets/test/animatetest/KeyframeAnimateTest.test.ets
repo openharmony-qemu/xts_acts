@@ -23,13 +23,12 @@ export default function KeyframeAnimateTest() {
   describe('KeyframeAnimateTest', () => {
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDELAY_0100
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetDelay0100
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetDelay0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDELAY_0100
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetDelay0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -47,13 +46,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDELAY_0200
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetDelay0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetDelay0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDELAY_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetDelay0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -71,13 +69,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETITERATIONS_0100
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetIterations0100
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetIterations0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETITERATIONS_0100
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetIterations0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -95,13 +92,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETITERATIONS_0200
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetIterations0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetIterations0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETITERATIONS_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetIterations0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -119,13 +115,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETITERATIONS_0300
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetIterations0300
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetIterations0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETITERATIONS_0300
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetIterations0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -144,13 +139,12 @@ export default function KeyframeAnimateTest() {
 
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONFINISHCALLBACK_0100
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionRegisterOnFinishCallback0100
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionRegisterOnFinishCallback0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONFINISHCALLBACK_0100
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionRegisterOnFinishCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -168,13 +162,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONFINISHCALLBACK_0200
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionRegisterOnFinishCallback0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionRegisterOnFinishCallback0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONFINISHCALLBACK_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionRegisterOnFinishCallback0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -192,13 +185,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETEXPECTEDFRAMERATE_0100
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetExpectedFrameRate0100
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetExpectedFrameRate0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETEXPECTEDFRAMERATE_0100
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetExpectedFrameRate0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -216,13 +208,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETEXPECTEDFRAMERATE_0200
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetExpectedFrameRate0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetExpectedFrameRate0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETEXPECTEDFRAMERATE_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetExpectedFrameRate0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -240,13 +231,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETEXPECTEDFRAMERATE_0300
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetExpectedFrameRate0300
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetExpectedFrameRate0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETEXPECTEDFRAMERATE_0300
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetExpectedFrameRate0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -264,13 +254,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDURATION_0100
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetDuration0100
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetDuration0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDURATION_0100
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetDuration0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -288,13 +277,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDURATION_0200
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetDuration0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetDuration0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDURATION_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetDuration0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -312,13 +300,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDURATION_0300
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetDuration0300
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetDuration0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDURATION_0300
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetDuration0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -336,13 +323,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDURATION_0400
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetDuration0400
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetDuration0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDURATION_0400
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetDuration0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -360,13 +346,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDURATION_0500
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetDuration0500
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetDuration0500
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETDURATION_0500
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetDuration0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -384,13 +369,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETCURVE_0100
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetCurve0100
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetCurve0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETCURVE_0100
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetCurve0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -410,13 +394,12 @@ export default function KeyframeAnimateTest() {
 
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETCURVE_0200
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetCurve0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetCurve0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETCURVE_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetCurve0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -434,13 +417,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETCURVE_0300
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetCurve0300
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetCurve0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETCURVE_0300
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetCurve0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -458,13 +440,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETCURVE_0400
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionSetCurve0400
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionSetCurve0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_SETCURVE_0400
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionSetCurve0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -482,13 +463,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONEVENTCALLBACK_0100
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0100
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONEVENTCALLBACK_0100
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -506,13 +486,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONEVENTCALLBACK_0200
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONEVENTCALLBACK_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -530,13 +509,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONEVENTCALLBACK_0300
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0300
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONEVENTCALLBACK_0300
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -554,13 +532,12 @@ export default function KeyframeAnimateTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONEVENTCALLBACK_0400
-     * @tc.name    : testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0400
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_KEYFRAMEANIMATEOPTION_REGISTERONEVENTCALLBACK_0400
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyframeAnimateOptionRegisterOnEventCallback0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

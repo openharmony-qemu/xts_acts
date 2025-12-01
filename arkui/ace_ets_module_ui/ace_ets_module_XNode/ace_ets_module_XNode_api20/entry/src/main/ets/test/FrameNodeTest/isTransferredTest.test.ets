@@ -42,12 +42,12 @@ export default function isTransferredTest() {
     });
 
     /**
-     * @tc.number    isTransferredTest_0100
-     * @tc.name      isTransferredTest_0100
-     * @tc.desc      frameNode: test bindController error code for Grid
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   isTransferredTest_0100
+     * @tc.number isTransferredTest_0100
+     * @tc.desc   frameNode: test bindController error code for Grid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('isTransferredTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('isTransferredTest_0100 START');

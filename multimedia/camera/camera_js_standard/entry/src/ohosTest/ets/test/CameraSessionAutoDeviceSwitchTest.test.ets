@@ -176,12 +176,12 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_0100
-     * @tc.name      : Checks if the automatic switchover device is supported.
-     * @tc.desc      : Checks if the automatic switchover device is supported.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_0100
+     * @tc.desc   Checks if the automatic switchover device is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_0100--------------");
@@ -234,12 +234,12 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_0100
-     * @tc.name      : Enables or disables the automatic switchover device.
-     * @tc.desc      : Enables or disables the automatic switchover device.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_0100
+     * @tc.desc   Enables or disables the automatic switchover device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_0100--------------");
@@ -297,12 +297,12 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_0100
-     * @tc.name      : Check whether the interception switchover is successful.
-     * @tc.desc      : CCheck whether the interception switchover is successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_0100
+     * @tc.desc   CCheck whether the interception switchover is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_0100--------------");
@@ -368,12 +368,12 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_0100
-     * @tc.name      : Check whether the interception switchover is successful.
-     * @tc.desc      : CCheck whether the interception switchover is successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_0100
+     * @tc.desc   CCheck whether the interception switchover is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_0100--------------");
@@ -434,12 +434,12 @@ export default function cameraSessionAutoDeviceSwitchTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_ERRORCODE_0100
-     * @tc.name      : Check enableAutoDeviceSwitch method errorcode 7400102
-     * @tc.desc      : Check enableAutoDeviceSwitch method errorcode 7400102
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_ERRORCODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_ERRORCODE_0100
+     * @tc.desc   Check enableAutoDeviceSwitch method errorcode 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_ERRORCODE_0100--------------");

@@ -51,12 +51,12 @@ export default function AsyncLocktest() {
     })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_ASYNCLOCK_0100
-     * @tc.name      : AsyncLocktest0100
-     * @tc.desc      : AsyncLock query 10200030
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   AsyncLocktest0100
+     * @tc.number SUB_COOLLECTION_ASYNCLOCK_0100
+     * @tc.desc   AsyncLock query 10200030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AsyncLocktest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -79,15 +79,15 @@ export default function AsyncLocktest() {
       })
 
 
-    /**
-     * @tc.number    : SUB_COOLLECTION_ASYNCLOCK_0200
-     * @tc.name      : AsyncLocktest0200
-     * @tc.desc      : AsyncLock lockAsync 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
 
+    /**
+     * @tc.name   AsyncLocktest0200
+     * @tc.number AsyncLocktest0200
+     * @tc.desc   AsyncLocktest0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('AsyncLocktest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const caseName = 'AsyncLocktest0200';
@@ -109,12 +109,12 @@ export default function AsyncLocktest() {
 
 
     /**
-     * @tc.number    : SUB_COOLLECTION_ASYNCLOCK_0300
-     * @tc.name      : AsyncLocktest0300
-     * @tc.desc      : AsyncLock lockAsync 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   AsyncLocktest0300
+     * @tc.number SUB_COOLLECTION_ASYNCLOCK_0300
+     * @tc.desc   AsyncLock lockAsync 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AsyncLocktest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -139,12 +139,12 @@ export default function AsyncLocktest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_ASYNCLOCK_0400
-     * @tc.name      : AsyncLocktest0400
-     * @tc.desc      : AsyncLock lockAsync 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   AsyncLocktest0400
+     * @tc.number SUB_COOLLECTION_ASYNCLOCK_0400
+     * @tc.desc   AsyncLock lockAsync 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AsyncLocktest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -173,12 +173,12 @@ export default function AsyncLocktest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_ASYNCLOCK_0500
-     * @tc.name      : AsyncLocktest0500
-     * @tc.desc      : AsyncLock lockAsync 10200031
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   AsyncLocktest0500
+     * @tc.number SUB_COOLLECTION_ASYNCLOCK_0500
+     * @tc.desc   AsyncLock lockAsync 10200031
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AsyncLocktest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -80,9 +80,12 @@ export default function pickerViewPropsJsTest42() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewForPropNull', Level.LEVEL0, async function(done) {
             console.info('testPickerViewForPropNull START');

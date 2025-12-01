@@ -50,10 +50,13 @@ export default function WorkSchedulerMgrApiTest() {
              console.info('afterEach caled')
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_072
-         * @tc.name      testStartWorkFun001
-         * @tc.desc      test workScheduler workInfo networkType is MOBILE.
+        /**
+         * @tc.name   testStartWorkFun001
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_072
+         * @tc.desc   test workScheduler workInfo networkType is MOBILE.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun001", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun001---------------------------');
@@ -72,10 +75,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_073
-         * @tc.name      testStartWorkFun002
-         * @tc.desc      test workScheduler workInfo networkType is WIFI.
+        /**
+         * @tc.name   testStartWorkFun002
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_073
+         * @tc.desc   test workScheduler workInfo networkType is WIFI.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun002", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun002---------------------------');
@@ -94,10 +100,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_074
-         * @tc.name      testStartWorkFun003
-         * @tc.desc      test workScheduler workInfo networkType is BLUETOOTH.
+        /**
+         * @tc.name   testStartWorkFun003
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_074
+         * @tc.desc   test workScheduler workInfo networkType is BLUETOOTH.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun003", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun003---------------------------');
@@ -116,10 +125,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_075
-         * @tc.name      testStartWorkFun004
-         * @tc.desc      test workScheduler workInfo networkType is WIFI_P2P.
+        /**
+         * @tc.name   testStartWorkFun004
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_075
+         * @tc.desc   test workScheduler workInfo networkType is WIFI_P2P.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun004", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun004---------------------------');
@@ -138,10 +150,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_076
-         * @tc.name      testStartWorkFun005
-         * @tc.desc      test workScheduler workInfo networkType is ETHERNET.
+        /**
+         * @tc.name   testStartWorkFun005
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_076
+         * @tc.desc   test workScheduler workInfo networkType is ETHERNET.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun005", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun005---------------------------');
@@ -160,10 +175,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_077
-         * @tc.name      testStartWorkFun006
-         * @tc.desc      test workScheduler workInfo chargerType is ANY.
+        /**
+         * @tc.name   testStartWorkFun006
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_077
+         * @tc.desc   test workScheduler workInfo chargerType is ANY.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun006", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun006---------------------------');
@@ -183,10 +201,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_078
-         * @tc.name      testStartWorkFun007
-         * @tc.desc      test workScheduler workInfo chargerType is USB.
+        /**
+         * @tc.name   testStartWorkFun007
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_078
+         * @tc.desc   test workScheduler workInfo chargerType is USB.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun007", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun007---------------------------');
@@ -206,10 +227,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_079
-         * @tc.name      testStartWorkFun008
-         * @tc.desc      test workScheduler workInfo chargerType is WIRELESS.
+        /**
+         * @tc.name   testStartWorkFun008
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_079
+         * @tc.desc   test workScheduler workInfo chargerType is WIRELESS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun008", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun008---------------------------');
@@ -229,10 +253,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_080
-         * @tc.name      testStartWorkFun009
-         * @tc.desc      test workScheduler workInfo BatteryStatus OKAY.
+        /**
+         * @tc.name   testStartWorkFun009
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_080
+         * @tc.desc   test workScheduler workInfo BatteryStatus OKAY.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun009", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun009---------------------------');
@@ -251,10 +278,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_081
-         * @tc.name      testStartWorkFun010
-         * @tc.desc      test workScheduler workInfo BatteryStatus LOW_OR_OKAY.
+        /**
+         * @tc.name   testStartWorkFun010
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_081
+         * @tc.desc   test workScheduler workInfo BatteryStatus LOW_OR_OKAY.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun010", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun010---------------------------');
@@ -273,10 +303,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_082
-         * @tc.name      testStartWorkFun011
-         * @tc.desc      test workScheduler workInfo storageRequest LOW.
+        /**
+         * @tc.name   testStartWorkFun011
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_082
+         * @tc.desc   test workScheduler workInfo storageRequest LOW.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun011", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun011---------------------------');
@@ -295,10 +328,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_083
-         * @tc.name      testStartWorkFun012
-         * @tc.desc      test workScheduler workInfo storageRequest OKAY.
+        /**
+         * @tc.name   testStartWorkFun012
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_083
+         * @tc.desc   test workScheduler workInfo storageRequest OKAY.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun012", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun012---------------------------');
@@ -317,10 +353,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_084
-         * @tc.name      testStartWorkFun013
-         * @tc.desc      test workScheduler workInfo storageRequest LOW_OR_OKAY.
+        /**
+         * @tc.name   testStartWorkFun013
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_084
+         * @tc.desc   test workScheduler workInfo storageRequest LOW_OR_OKAY.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun013", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun013---------------------------');
@@ -339,10 +378,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_085
-         * @tc.name      testStartWorkFun014
-         * @tc.desc      test workScheduler workInfo select all parameter.
+        /**
+         * @tc.name   testStartWorkFun014
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_085
+         * @tc.desc   test workScheduler workInfo select all parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun014", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun014---------------------------');
@@ -372,10 +414,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_086
-         * @tc.name      testStartWorkFun015
-         * @tc.desc      test workScheduler workInfo select networkType,batteryLevel,batteryStatus,storageRequest.
+        /**
+         * @tc.name   testStartWorkFun015
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_086
+         * @tc.desc   test workScheduler workInfo select networkType,batteryLevel,batteryStatus,storageRequest.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun015", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun015---------------------------');
@@ -401,10 +446,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_087
-         * @tc.name      testStartWorkFun016
-         * @tc.desc      test start workScheduler workId is StringType. 
+        /**
+         * @tc.name   testStartWorkFun016
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_087
+         * @tc.desc   test start workScheduler workId is StringType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun016", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun016---------------------------');
@@ -424,10 +472,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_088
-         * @tc.name      testStartWorkFun017
-         * @tc.desc      test start workScheduler workId is NullType. 
+        /**
+         * @tc.name   testStartWorkFun017
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_088
+         * @tc.desc   test start workScheduler workId is NullType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun017", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun017---------------------------');
@@ -447,10 +498,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_089
-         * @tc.name      testStartWorkFun018
-         * @tc.desc      test start workScheduler without workId. 
+        /**
+         * @tc.name   testStartWorkFun018
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_089
+         * @tc.desc   test start workScheduler without workId.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun018", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun018---------------------------');
@@ -469,10 +523,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_090
-         * @tc.name      testStartWorkFun019
-         * @tc.desc      test start workScheduler bundleName is NumberType. 
+        /**
+         * @tc.name   testStartWorkFun019
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_090
+         * @tc.desc   test start workScheduler bundleName is NumberType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun019", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun019---------------------------');
@@ -492,10 +549,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_091
-         * @tc.name      testStartWorkFun020
-         * @tc.desc      test start workScheduler bundleName error. 
+        /**
+         * @tc.name   testStartWorkFun020
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_091
+         * @tc.desc   test start workScheduler bundleName error.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun020", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun020---------------------------');
@@ -515,10 +575,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_092
-         * @tc.name      testStartWorkFun021
-         * @tc.desc      test start workScheduler bundleName is NullType. 
+        /**
+         * @tc.name   testStartWorkFun021
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_092
+         * @tc.desc   test start workScheduler bundleName is NullType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun021", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun021---------------------------');
@@ -538,10 +601,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_093
-         * @tc.name      testStartWorkFun022
-         * @tc.desc      test start workScheduler abilityName is NumberType. 
+        /**
+         * @tc.name   testStartWorkFun022
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_093
+         * @tc.desc   test start workScheduler abilityName is NumberType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun022", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun022---------------------------');
@@ -561,10 +627,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_094
-         * @tc.name      testStartWorkFun023
-         * @tc.desc      test start workScheduler abilityName is EmptyString. 
+        /**
+         * @tc.name   testStartWorkFun023
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_094
+         * @tc.desc   test start workScheduler abilityName is EmptyString.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun023", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun023---------------------------');
@@ -584,10 +653,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_095
-         * @tc.name      testStartWorkFun024
-         * @tc.desc      test start workScheduler abilityName is a space. 
+        /**
+         * @tc.name   testStartWorkFun024
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_095
+         * @tc.desc   test start workScheduler abilityName is a space.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun024", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun024---------------------------');
@@ -606,10 +678,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_096
-         * @tc.name      testStartWorkFun025
-         * @tc.desc      test start workScheduler abilityName is NullType. 
+        /**
+         * @tc.name   testStartWorkFun025
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_096
+         * @tc.desc   test start workScheduler abilityName is NullType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun025", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun025---------------------------');
@@ -629,10 +704,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_097
-         * @tc.name      testStartWorkFun026
-         * @tc.desc      test start workScheduler networkType < 0. 
+        /**
+         * @tc.name   testStartWorkFun026
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_097
+         * @tc.desc   test start workScheduler networkType < 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun026", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun026---------------------------');
@@ -652,10 +730,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_098
-         * @tc.name      testStartWorkFun027
-         * @tc.desc      test start workScheduler networkType > 5. 
+        /**
+         * @tc.name   testStartWorkFun027
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_098
+         * @tc.desc   test start workScheduler networkType > 5.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun027", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun027---------------------------');
@@ -675,10 +756,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_099
-         * @tc.name      testStartWorkFun028
-         * @tc.desc      test start workScheduler chargerType < 0. 
+        /**
+         * @tc.name   testStartWorkFun028
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_099
+         * @tc.desc   test start workScheduler chargerType < 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun028", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun028---------------------------');
@@ -698,10 +782,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_100
-         * @tc.name      testStartWorkFun029
-         * @tc.desc      test start workScheduler chargerType > 3. 
+        /**
+         * @tc.name   testStartWorkFun029
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_100
+         * @tc.desc   test start workScheduler chargerType > 3.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun029", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun029---------------------------');
@@ -721,10 +808,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_101
-         * @tc.name      testStartWorkFun030
-         * @tc.desc      test start workScheduler isCharging is NumberType. 
+        /**
+         * @tc.name   testStartWorkFun030
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_101
+         * @tc.desc   test start workScheduler isCharging is NumberType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun030", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun030---------------------------');
@@ -745,10 +835,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_102
-         * @tc.name      testStartWorkFun031
-         * @tc.desc      test start workScheduler isCharging is StringType. 
+        /**
+         * @tc.name   testStartWorkFun031
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_102
+         * @tc.desc   test start workScheduler isCharging is StringType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun031", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun031---------------------------');
@@ -769,10 +862,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_103
-         * @tc.name      testStartWorkFun032
-         * @tc.desc      test start workScheduler without isCharging. 
+        /**
+         * @tc.name   testStartWorkFun032
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_103
+         * @tc.desc   test start workScheduler without isCharging.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun032", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun032---------------------------');
@@ -792,10 +888,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_104
-         * @tc.name      testStartWorkFun033
-         * @tc.desc      test start workScheduler batteryLevel < 0. 
+        /**
+         * @tc.name   testStartWorkFun033
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_104
+         * @tc.desc   test start workScheduler batteryLevel < 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun033", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun033---------------------------');
@@ -815,10 +914,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_105
-         * @tc.name      testStartWorkFun034
-         * @tc.desc      test start workScheduler batteryLevel = 0. 
+        /**
+         * @tc.name   testStartWorkFun034
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_105
+         * @tc.desc   test start workScheduler batteryLevel = 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun034", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun034---------------------------');
@@ -837,10 +939,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_106
-         * @tc.name      testStartWorkFun035
-         * @tc.desc      test start workScheduler batteryLevel = 100. 
+        /**
+         * @tc.name   testStartWorkFun035
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_106
+         * @tc.desc   test start workScheduler batteryLevel = 100.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun035", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun035---------------------------');
@@ -859,10 +964,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_107
-         * @tc.name      testStartWorkFun036
-         * @tc.desc      test start workScheduler batteryLevel > 100. 
+        /**
+         * @tc.name   testStartWorkFun036
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_107
+         * @tc.desc   test start workScheduler batteryLevel > 100.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun036", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun036---------------------------');
@@ -882,10 +990,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_108
-         * @tc.name      testStartWorkFun037
-         * @tc.desc      test start workScheduler batteryStatus < 0. 
+        /**
+         * @tc.name   testStartWorkFun037
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_108
+         * @tc.desc   test start workScheduler batteryStatus < 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun037", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun037---------------------------');
@@ -905,10 +1016,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_109
-         * @tc.name      testStartWorkFun038
-         * @tc.desc      test start workScheduler batteryStatus > 2. 
+        /**
+         * @tc.name   testStartWorkFun038
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_109
+         * @tc.desc   test start workScheduler batteryStatus > 2.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun038", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun038---------------------------');
@@ -928,10 +1042,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_110
-         * @tc.name      testStartWorkFun039
-         * @tc.desc      test start workScheduler storageRequest < 0. 
+        /**
+         * @tc.name   testStartWorkFun039
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_110
+         * @tc.desc   test start workScheduler storageRequest < 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun039", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun039---------------------------');
@@ -951,10 +1068,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_111
-         * @tc.name      testStartWorkFun040
-         * @tc.desc      test start workScheduler storageRequest > 2. 
+        /**
+         * @tc.name   testStartWorkFun040
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_111
+         * @tc.desc   test start workScheduler storageRequest > 2.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun040", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun040---------------------------');
@@ -974,10 +1094,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_112
-         * @tc.name      testStartWorkFun041
-         * @tc.desc      test start workScheduler repeatCycleTime < 0. 
+        /**
+         * @tc.name   testStartWorkFun041
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_112
+         * @tc.desc   test start workScheduler repeatCycleTime < 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun041", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun041---------------------------');
@@ -998,10 +1121,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_113
-         * @tc.name      testStartWorkFun042
-         * @tc.desc      test start workScheduler repeatCycleTime < 20min. 
+        /**
+         * @tc.name   testStartWorkFun042
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_113
+         * @tc.desc   test start workScheduler repeatCycleTime < 20min.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun042", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun042---------------------------');
@@ -1022,10 +1148,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_114
-         * @tc.name      testStartWorkFun043
-         * @tc.desc      test start workScheduler condition only repeatCycleTime. 
+        /**
+         * @tc.name   testStartWorkFun043
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_114
+         * @tc.desc   test start workScheduler condition only repeatCycleTime.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun043", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun043---------------------------');
@@ -1045,10 +1174,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_115
-         * @tc.name      testStartWorkFun044
-         * @tc.desc      test start workScheduler without repeatCycleTime. 
+        /**
+         * @tc.name   testStartWorkFun044
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_115
+         * @tc.desc   test start workScheduler without repeatCycleTime.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun044", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun044---------------------------');
@@ -1069,10 +1201,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_116
-         * @tc.name      testStartWorkFun045
-         * @tc.desc      test start workScheduler isRepeat is StringType. 
+        /**
+         * @tc.name   testStartWorkFun045
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_116
+         * @tc.desc   test start workScheduler isRepeat is StringType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun045", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun045---------------------------');
@@ -1093,10 +1228,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_117
-         * @tc.name      testStartWorkFun046
-         * @tc.desc      test start workScheduler repeatCount = 0. 
+        /**
+         * @tc.name   testStartWorkFun046
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_117
+         * @tc.desc   test start workScheduler repeatCount = 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun046", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun046---------------------------');
@@ -1116,10 +1254,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_118
-         * @tc.name      testStartWorkFun047
-         * @tc.desc      test start workScheduler repeatCount < 0. 
+        /**
+         * @tc.name   testStartWorkFun047
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_118
+         * @tc.desc   test start workScheduler repeatCount < 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun047", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun047---------------------------');
@@ -1140,10 +1281,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_119
-         * @tc.name      testStartWorkFun048
-         * @tc.desc      test start workScheduler isRepeat = false and repeatCount < 0. 
+        /**
+         * @tc.name   testStartWorkFun048
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_119
+         * @tc.desc   test start workScheduler isRepeat = false and repeatCount < 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun048", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun048---------------------------');
@@ -1165,10 +1309,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_120
-         * @tc.name      testStartWorkFun049
-         * @tc.desc      test start workScheduler condition only repeatCount. 
+        /**
+         * @tc.name   testStartWorkFun049
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_120
+         * @tc.desc   test start workScheduler condition only repeatCount.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun049", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun049---------------------------');
@@ -1188,10 +1335,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_121
-         * @tc.name      testStartWorkFun050
-         * @tc.desc      test start workScheduler isPersisted is StringType. 
+        /**
+         * @tc.name   testStartWorkFun050
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_121
+         * @tc.desc   test start workScheduler isPersisted is StringType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun050", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun050---------------------------');
@@ -1211,10 +1361,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_122
-         * @tc.name      testStartWorkFun051
-         * @tc.desc      test start workScheduler isPersisted is NumberType. 
+        /**
+         * @tc.name   testStartWorkFun051
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_122
+         * @tc.desc   test start workScheduler isPersisted is NumberType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun051", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun051---------------------------');
@@ -1234,10 +1387,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_123
-         * @tc.name      testStartWorkFun052
-         * @tc.desc      test start workScheduler isDeepIdle is StringType. 
+        /**
+         * @tc.name   testStartWorkFun052
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_123
+         * @tc.desc   test start workScheduler isDeepIdle is StringType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun052", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun052---------------------------');
@@ -1257,10 +1413,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_124
-         * @tc.name      testStartWorkFun053
-         * @tc.desc      test start workScheduler isDeepIdle is NumberType. 
+        /**
+         * @tc.name   testStartWorkFun053
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_124
+         * @tc.desc   test start workScheduler isDeepIdle is NumberType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun053", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun053---------------------------');
@@ -1280,10 +1439,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_125
-         * @tc.name      testStopWorkFun001
-         * @tc.desc      test stop workScheduler needCancel is StringType. 
+        /**
+         * @tc.name   testStopWorkFun001
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_125
+         * @tc.desc   test stop workScheduler needCancel is StringType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun001", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun001---------------------------');
@@ -1304,10 +1466,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_126
-         * @tc.name      testStopWorkFun002
-         * @tc.desc      test stop workScheduler needCancel is NumberType. 
+        /**
+         * @tc.name   testStopWorkFun002
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_126
+         * @tc.desc   test stop workScheduler needCancel is NumberType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun002", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun002---------------------------');
@@ -1328,10 +1493,13 @@ export default function WorkSchedulerMgrApiTest() {
             };
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_127
-         * @tc.name      testStopWorkFun003
-         * @tc.desc      test stop workScheduler needCancel is NullType. 
+        /**
+         * @tc.name   testStopWorkFun003
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_127
+         * @tc.desc   test stop workScheduler needCancel is NullType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun003", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun003---------------------------');
@@ -1352,10 +1520,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_128
-         * @tc.name      testStopWorkFun004
-         * @tc.desc      test stop workScheduler missing parameter needCancel. 
+        /**
+         * @tc.name   testStopWorkFun004
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_128
+         * @tc.desc   test stop workScheduler missing parameter needCancel.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun004", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun004---------------------------');
@@ -1376,10 +1547,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_129
-         * @tc.name      testStopWorkFun005
-         * @tc.desc      test stop workScheduler workId error ,needCancel true. 
+        /**
+         * @tc.name   testStopWorkFun005
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_129
+         * @tc.desc   test stop workScheduler workId error ,needCancel true.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun005", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun005---------------------------');
@@ -1406,10 +1580,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_130
-         * @tc.name      testStopWorkFun006
-         * @tc.desc      test stop workScheduler workId error ,needCancel false. 
+        /**
+         * @tc.name   testStopWorkFun006
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_130
+         * @tc.desc   test stop workScheduler workId error ,needCancel false.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun006", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun006---------------------------');
@@ -1436,10 +1613,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_131
-         * @tc.name      testStopWorkFun007
-         * @tc.desc      test stop workScheduler bundleName error,needCancel true. 
+        /**
+         * @tc.name   testStopWorkFun007
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_131
+         * @tc.desc   test stop workScheduler bundleName error,needCancel true.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun007", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun007---------------------------');
@@ -1466,10 +1646,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_132
-         * @tc.name      testStopWorkFun008
-         * @tc.desc      test stop workScheduler bundleName error,needCancel false. 
+        /**
+         * @tc.name   testStopWorkFun008
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_132
+         * @tc.desc   test stop workScheduler bundleName error,needCancel false.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun008", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun008---------------------------');
@@ -1496,10 +1679,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_133
-         * @tc.name      testStopWorkFun009
-         * @tc.desc      test stop workScheduler abilityName error,needCancel true. 
+        /**
+         * @tc.name   testStopWorkFun009
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_133
+         * @tc.desc   test stop workScheduler abilityName error,needCancel true.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun009", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun009---------------------------');
@@ -1525,10 +1711,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_134
-         * @tc.name      testStopWorkFun010
-         * @tc.desc      test stop workScheduler abilityName error,needCancel false. 
+        /**
+         * @tc.name   testStopWorkFun010
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_134
+         * @tc.desc   test stop workScheduler abilityName error,needCancel false.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun010", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun010---------------------------');
@@ -1554,10 +1743,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_135
-         * @tc.name      testStopWorkFun011
-         * @tc.desc      test stop workScheduler networkType different. 
+        /**
+         * @tc.name   testStopWorkFun011
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_135
+         * @tc.desc   test stop workScheduler networkType different.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun011", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun011---------------------------');
@@ -1583,10 +1775,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_136
-         * @tc.name      testStopWorkFun012
-         * @tc.desc      test stop workScheduler chargerType different. 
+        /**
+         * @tc.name   testStopWorkFun012
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_136
+         * @tc.desc   test stop workScheduler chargerType different.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun012", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun012---------------------------');
@@ -1614,10 +1809,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_137
-         * @tc.name      test stopWorkFun013
-         * @tc.desc      test stop workScheduler batteryStatus different. 
+        /**
+         * @tc.name   testStopWorkFun013
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_137
+         * @tc.desc   test stop workScheduler batteryStatus different.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun013", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun013---------------------------');
@@ -1643,10 +1841,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_138
-         * @tc.name      test stopWorkFun014
-         * @tc.desc      test stop workScheduler storageRequest different. 
+        /**
+         * @tc.name   testStopWorkFun014
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_138
+         * @tc.desc   test stop workScheduler storageRequest different.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun014", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun014---------------------------');
@@ -1672,10 +1873,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_139
-         * @tc.name      testStopWorkFun015
-         * @tc.desc      test stop workScheduler isPersisted different. 
+        /**
+         * @tc.name   testStopWorkFun015
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_139
+         * @tc.desc   test stop workScheduler isPersisted different.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun015", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun015---------------------------');
@@ -1703,10 +1907,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_140
-         * @tc.name      testStopWorkFun016
-         * @tc.desc      test stop workScheduler repeatCycleTime different. 
+        /**
+         * @tc.name   testStopWorkFun016
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_140
+         * @tc.desc   test stop workScheduler repeatCycleTime different.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopWorkFun016", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopWorkFun016---------------------------');
@@ -1734,10 +1941,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_141
-         * @tc.name      testGetWorkStatusFun001
-         * @tc.desc      test getWorkStatus Callback workId error. 
+        /**
+         * @tc.name   testGetWorkStatusFun001
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_141
+         * @tc.desc   test getWorkStatus Callback workId error.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetWorkStatusFun001", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetWorkStatusFun001---------------------------');
@@ -1771,10 +1981,13 @@ export default function WorkSchedulerMgrApiTest() {
             }, 500);
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_142
-         * @tc.name      testGetWorkStatusFun002
-         * @tc.desc      test getWorkStatus Promise workId error. 
+        /**
+         * @tc.name   testGetWorkStatusFun002
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_142
+         * @tc.desc   test getWorkStatus Promise workId error.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetWorkStatusFun002", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetWorkStatusFun002---------------------------');
@@ -1807,10 +2020,13 @@ export default function WorkSchedulerMgrApiTest() {
             }, 500);
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_143
-         * @tc.name      testGetWorkStatusFun003
-         * @tc.desc      test getWorkStatus Promise parameter undefined. 
+        /**
+         * @tc.name   testGetWorkStatusFun003
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_143
+         * @tc.desc   test getWorkStatus Promise parameter undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetWorkStatusFun003", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetWorkStatusFun003---------------------------');
@@ -1847,11 +2063,14 @@ export default function WorkSchedulerMgrApiTest() {
             }, 500);
         })
     
-       /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_144
-         * @tc.name      testGetWorkStatusFun004
-         * @tc.desc      test getWorkStatus Promise parameter StringType. 
-         */
+       /**
+        * @tc.name   testGetWorkStatusFun004
+        * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_144
+        * @tc.desc   test getWorkStatus Promise parameter StringType.
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
        it("testGetWorkStatusFun004", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetWorkStatusFun004---------------------------');
             workScheduler.stopAndClearWorks();
@@ -1887,10 +2106,13 @@ export default function WorkSchedulerMgrApiTest() {
             }, 500);
     })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_145
-         * @tc.name      testObtainAllWorksFun001
-         * @tc.desc      test obtainAllWorks Callback. 
+        /**
+         * @tc.name   testObtainAllWorksFun001
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_145
+         * @tc.desc   test obtainAllWorks Callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testObtainAllWorksFun001", Level.LEVEL0, async function (done) {
             console.info('----------------------testObtainAllWorksFun001---------------------------');
@@ -1922,10 +2144,13 @@ export default function WorkSchedulerMgrApiTest() {
             }, 500);   
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_146
-         * @tc.name      testObtainAllWorksFun002
-         * @tc.desc      test first stop work then obtainAllWorks Promise. 
+        /**
+         * @tc.name   testObtainAllWorksFun002
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_146
+         * @tc.desc   test first stop work then obtainAllWorks Promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testObtainAllWorksFun002", Level.LEVEL0, async function (done) {
             console.info('----------------------testObtainAllWorksFun002---------------------------');
@@ -1954,10 +2179,13 @@ export default function WorkSchedulerMgrApiTest() {
             }, 500);
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_147
-         * @tc.name      testStopAndClearWorksFun001
-         * @tc.desc      test repeat stopAndClearWorks. 
+        /**
+         * @tc.name   testStopAndClearWorksFun001
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_147
+         * @tc.desc   test repeat stopAndClearWorks.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStopAndClearWorksFun001", Level.LEVEL0, async function (done) {
             console.info('----------------------testStopAndClearWorksFun001---------------------------');
@@ -1982,10 +2210,13 @@ export default function WorkSchedulerMgrApiTest() {
             done();
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_148
-         * @tc.name      testIsLastWorkTimeOutFun001
-         * @tc.desc      test isLastWorkTimeOut callback parameter workId < 0. 
+        /**
+         * @tc.name   testIsLastWorkTimeOutFun001
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_148
+         * @tc.desc   test isLastWorkTimeOut callback parameter workId < 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testIsLastWorkTimeOutFun001", Level.LEVEL0, async function (done) {
             console.info('----------------------testIsLastWorkTimeOutFun001---------------------------');
@@ -2000,10 +2231,13 @@ export default function WorkSchedulerMgrApiTest() {
             });
         })
     
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_150
-         * @tc.name      testIsLastWorkTimeOutFun003
-         * @tc.desc      test isLastWorkTimeOut promise parameter workId is StringType. 
+        /**
+         * @tc.name   testIsLastWorkTimeOutFun003
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_150
+         * @tc.desc   test isLastWorkTimeOut promise parameter workId is StringType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testIsLastWorkTimeOutFun003", Level.LEVEL0, async function (done) {
             console.info('----------------------testIsLastWorkTimeOutFun003---------------------------');
@@ -2021,10 +2255,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
     
-        /*testStartWorkFun020
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_151
-         * @tc.name      testIsLastWorkTimeOutFun004
-         * @tc.desc      test isLastWorkTimeOut promise parameter workId is NullType. 
+        /**
+         * @tc.name   testIsLastWorkTimeOutFun004
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_151
+         * @tc.desc   test isLastWorkTimeOut promise parameter workId is NullType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testIsLastWorkTimeOutFun004", Level.LEVEL0, async function (done) {
             console.info('----------------------testIsLastWorkTimeOutFun004---------------------------');
@@ -2042,10 +2279,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
 
-        /*testStartWorkFun020
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_152
-         * @tc.name      testGetWorkStatusFun005
-         * @tc.desc      test getWorkStatus promise errorcode is 9700004. 
+        /**
+         * @tc.name   testGetWorkStatusFun005
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_152
+         * @tc.desc   test getWorkStatus promise errorcode is 9700004.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetWorkStatusFun005", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetWorkStatusFun006---------------------------');
@@ -2063,11 +2303,14 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
 
-        /*testStartWorkFun021
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_153
-         * @tc.name      testGetWorkStatusFun005
-         * @tc.desc      test getWorkStatus callback errorcode is 9700004. 
-         */
+         /**
+          * @tc.name   testGetWorkStatusFun006
+          * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_153
+          * @tc.desc   test getWorkStatus callback errorcode is 9700004.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it("testGetWorkStatusFun006", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetWorkStatusFun006---------------------------');
             try{
@@ -2085,10 +2328,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
 
-        /*
-         * @tc.number    SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0154
-         * @tc.name      testStartWorkFun015
-         * @tc.desc      test workScheduler workInfo parameter.
+        /**
+         * @tc.name   testStartWorkFun054
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0154
+         * @tc.desc   test workScheduler workInfo parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun054", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun054---------------------------');
@@ -2120,13 +2366,13 @@ export default function WorkSchedulerMgrApiTest() {
             }
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0155
-         * @tc.name:testStartWorkFun015
-         * @tc.desc:test workScheduler workInfo earliestStartTime.
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.name   testStartWorkFun055
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0155
+         * @tc.desc   test workScheduler workInfo earliestStartTime.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testStartWorkFun055", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun055---------------------------');

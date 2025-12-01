@@ -59,9 +59,12 @@ export default function notificationRequestTest() {
 
 
     /**
-     * @tc.number: Acts_NotificationRequest_0100
-     * @tc.name: Test the notificationSlotType property.
-     * @tc.desc: Set notificationSlotType attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
+     * @tc.name   Acts_NotificationRequest_0100
+     * @tc.number Acts_NotificationRequest_0100
+     * @tc.desc   Set notificationSlotType attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationRequest_0100', Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationRequest_0100';
@@ -164,9 +167,12 @@ export default function notificationRequestTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationRequest_0200
-     * @tc.name: Test the notificationSlotType property.
-     * @tc.desc: Set notificationSlotType attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
+     * @tc.name   Acts_NotificationRequest_0200
+     * @tc.number Acts_NotificationRequest_0200
+     * @tc.desc   Set notificationSlotType attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationRequest_0200', Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationRequest_0200';
@@ -203,9 +209,12 @@ export default function notificationRequestTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationRequest_0300
-     * @tc.name: Test the notificationSlotType property.
-     * @tc.desc: Set notificationSlotType attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
+     * @tc.name   Acts_NotificationRequest_0300
+     * @tc.number Acts_NotificationRequest_0300
+     * @tc.desc   Set notificationSlotType attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationRequest_0300', Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationRequest_0300';
@@ -266,9 +275,12 @@ export default function notificationRequestTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationRequest_0400
-     * @tc.name: Test the notificationSlotType property.
-     * @tc.desc: Set notificationSlotType attribute parameters notificationManager.SlotType.OTHER_TYPES.
+     * @tc.name    Acts_NotificationRequest_0400
+     * @tc.number Acts_NotificationRequest_0400
+     * @tc.desc   Set notificationSlotType attribute parameters notificationManager.SlotType.OTHER_TYPES.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it(" Acts_NotificationRequest_0400", Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationRequest_0400';
@@ -306,9 +318,12 @@ export default function notificationRequestTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationRequest_0600
-     * @tc.name: Test the notificationRequest property.
-     * @tc.desc: Construct the notificationRequest.
+     * @tc.name    Acts_NotificationRequest_0600
+     * @tc.number Acts_NotificationRequest_0600
+     * @tc.desc   Construct the notificationRequest.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it(" Acts_NotificationRequest_0600", Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationRequest_0600';

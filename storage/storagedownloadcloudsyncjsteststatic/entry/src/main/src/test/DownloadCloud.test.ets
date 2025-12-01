@@ -30,13 +30,12 @@ export default function cloudFileDownloadTest() {
   describe('cloud_file_download_test', (): void => {
 
     /**
+     * @tc.name   test_Download_State_static_001
      * @tc.number SUB_STORAGE_DOWNLOAD_STATE_TEST_0100
-     * @tc.name test_Download_State_static_001
-     * @tc.desc function of API, Test State RUNNING
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test State RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Download_State_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Download_State_static_001 start');
@@ -44,7 +43,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_State_static_001 new download success.');
         let RUNNING = 0;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -63,13 +62,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Download_State_static_002
      * @tc.number SUB_STORAGE_DOWNLOAD_STATE_TEST_0200
-     * @tc.name test_Download_State_static_002
-     * @tc.desc function of API, Test State FAILED
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test State FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Download_State_static_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Download_State_static_002 start');
@@ -77,7 +75,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_State_static_002 new download success.');
         let FAILED = 2;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -96,13 +94,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Uploading_State_static_003
      * @tc.number SUB_STORAGE_UPLOADING_STATE_TEST_0300
-     * @tc.name test_Uploading_State_static_003
-     * @tc.desc function of API, Test State Uploading
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test State Uploading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Uploading_State_static_003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Uploading_State_static_003 start');
@@ -110,7 +107,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Uploading_State_static_003 new download success.');
         let UPLOADING = 0;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -129,13 +126,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Uploading_Failed_State_static_004
      * @tc.number SUB_STORAGE_DOWNLOAD_STATE_TEST_0400
-     * @tc.name test_Uploading_Failed_State_static_004
-     * @tc.desc function of API, Test State Uploading_Failed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test State Uploading_Failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Uploading_Failed_State_static_004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Uploading_Failed_State_static_004 start');
@@ -143,7 +139,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Uploading_Failed_State_static_004 new download success.');
         let UPLOAD_FAILED = 1;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -162,13 +158,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_CloudSync_SyncState_static_005
      * @tc.number SUB_STORAGE_GALLERYSYNC_STATE_TEST_0500
-     * @tc.name test_CloudSync_SyncState_static_005
-     * @tc.desc function of API, Test State DOWNLOAD_FAILED
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test State DOWNLOAD_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_CloudSync_SyncState_static_005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_SyncState_static_005 start');
@@ -176,7 +171,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_SyncState_static_005 new gallerySync success.');
         let DOWNLOAD_FAILED = 3;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'gallerySync_on:callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -195,13 +190,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Downloading_State_static_006
      * @tc.number SUB_STORAGE_DOWNLOADING_STATE_TEST_0600
-     * @tc.name test_Downloading_State_static_006
-     * @tc.desc function of API, Test State Downloading
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test State Downloading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Downloading_State_static_006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Downloading_State_static_006 start');
@@ -209,7 +203,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Downloading_State_static_006 new download success.');
         let DOWNLOADING = 2;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -228,13 +222,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Download_Processed_static_001
      * @tc.number SUB_STORAGE_DOWNLOAD_PROCESSED_TEST_0100
-     * @tc.name test_Download_Processed_static_001
-     * @tc.desc function of API, Test State processed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test State processed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Download_Processed_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Download_Processed_static_001 start');
@@ -242,7 +235,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Processed_static_001 new download success.');
         let FAILED = 2;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -261,13 +254,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Download_Error_static_001
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0100
-     * @tc.name test_Download_Error_static_001
-     * @tc.desc function of API, Test DownloadErrorType NO_ERROR
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test DownloadErrorType NO_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Download_Error_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_001 start');
@@ -275,7 +267,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_001 new download success.');
         let NO_ERROR = 0;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -294,13 +286,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Download_Error_static_002
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0200
-     * @tc.name test_Download_Error_static_002
-     * @tc.desc function of API, Test DownloadErrorType UNKNOWN_ERROR
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test DownloadErrorType UNKNOWN_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Download_Error_static_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_002 start');
@@ -308,7 +299,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_002 new download success.');
         let UNKNOWN_ERROR = 1;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -327,13 +318,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Download_Error_static_003
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0300
-     * @tc.name test_Download_Error_static_003
-     * @tc.desc function of API, Test DownloadErrorType NETWORK_UNAVAILABLE
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test DownloadErrorType NETWORK_UNAVAILABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Download_Error_static_003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_003 start');
@@ -341,7 +331,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_003 new download success.');
         let NETWORK_UNAVAILABLE = 2;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -360,13 +350,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Download_Error_static_004
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0400
-     * @tc.name test_Download_Error_static_004
-     * @tc.desc function of API, Test DownloadErrorType LOCAL_STORAGE_FULL
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test DownloadErrorType LOCAL_STORAGE_FULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Download_Error_static_004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_004 start');
@@ -374,7 +363,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_004 new download success.');
         let LOCAL_STORAGE_FULL = 3;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -393,13 +382,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Download_Error_static_005
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0500
-     * @tc.name test_Download_Error_static_005
-     * @tc.desc function of API, Test DownloadErrorType CONTENT_NOT_FOUND
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test DownloadErrorType CONTENT_NOT_FOUND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Download_Error_static_005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_005 start');
@@ -407,7 +395,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_005 new download success.');
         let CONTENT_NOT_FOUND = 4;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -426,13 +414,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Download_Error_static_006
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0600
-     * @tc.name test_Download_Error_static_006
-     * @tc.desc function of API, Test DownloadErrorType FREQUENT_USER_REQUESTS
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test DownloadErrorType FREQUENT_USER_REQUESTS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Download_Error_static_006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_006 start');
@@ -440,7 +427,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_006 new download success.');
         let FREQUENT_USER_REQUESTS = 5;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -459,20 +446,19 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Download_Error_static_007
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0700
-     * @tc.name test_Download_Error_static_007
-     * @tc.desc function of API, Test Test_error on() interfaces.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test Test_error on() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Download_Error_static_007", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_007 start');
       try {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_007 new download success.');
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -488,13 +474,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_CloudSync_ErrorType_static_008
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0800
-     * @tc.name test_CloudSync_ErrorType_static_008
-     * @tc.desc function of API, Test ErrorType WIFI_UNAVAILABLE
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test ErrorType WIFI_UNAVAILABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_CloudSync_ErrorType_static_008", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_008 start');
@@ -502,7 +487,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_008 new gallerySync success.');
         let WIFI_UNAVAILABLE = 2;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'gallerySync_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.error = " + pg.error);
@@ -521,13 +506,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_CloudSync_ErrorType_static_009
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0900
-     * @tc.name test_CloudSync_ErrorType_static_009
-     * @tc.desc function of API, Test ErrorType BATTERY_LEVEL_LOW
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test ErrorType BATTERY_LEVEL_LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_CloudSync_ErrorType_static_009", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_009 start');
@@ -535,7 +519,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_009 new gallerySync success.');
         let BATTERY_LEVEL_LOW = 3;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.error = " + pg.error);
@@ -554,13 +538,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_CloudSync_ErrorType_static_010
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_1000
-     * @tc.name test_CloudSync_ErrorType_static_010
-     * @tc.desc function of API, Test ErrorType BATTERY_LEVEL_WARNING
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test ErrorType BATTERY_LEVEL_WARNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_CloudSync_ErrorType_static_010", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_010 start');
@@ -568,7 +551,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_010 new gallerySync success.');
         let BATTERY_LEVEL_WARNING = 4;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.error = " + pg.error);
@@ -587,13 +570,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_CloudSync_ErrorType_static_011
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_1100
-     * @tc.name test_CloudSync_ErrorType_static_011
-     * @tc.desc function of API, Test ErrorType CLOUD_STORAGE_FULL
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test ErrorType CLOUD_STORAGE_FULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_CloudSync_ErrorType_static_011", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_011 start');
@@ -601,7 +583,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_011 new gallerySync success.');
         let CLOUD_STORAGE_FULL = 5;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.error = " + pg.error);
@@ -620,13 +602,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_CloudSync_ErrorType_static_012
      * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_1200
-     * @tc.name test_CloudSync_ErrorType_static_012
-     * @tc.desc function of API, Test ErrorType DEVICE_TEMPERATURE_TOO_HIGH
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test ErrorType DEVICE_TEMPERATURE_TOO_HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_CloudSync_ErrorType_static_012", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_012 start');
@@ -634,7 +615,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_012 new gallerySync success.');
         let DEVICE_TEMPERATURE_TOO_HIGH = 7;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.error = " + pg.error);
@@ -653,13 +634,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_CloudSync_NotifyType_static_001
      * @tc.number SUB_STORAGE_ NOTIFYTYPE_TEST_0100
-     * @tc.name test_CloudSync_NotifyType_static_001
-     * @tc.desc function of API, Test  NotifyType NOTIFY_ADDED.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test  NotifyType NOTIFY_ADDED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_CloudSync_NotifyType_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_NotifyType_static_001 start');
@@ -675,13 +655,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_CloudSync_NotifyType_static_002
      * @tc.number SUB_STORAGE_ NOTIFYTYPE_TEST_0200
-     * @tc.name test_CloudSync_NotifyType_static_002
-     * @tc.desc function of API, Test  NotifyType NOTIFY_MODIFIED.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test  NotifyType NOTIFY_MODIFIED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_CloudSync_NotifyType_static_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_NotifyType_static_002 start');
@@ -697,13 +676,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_CloudSync_NotifyType_static_003
      * @tc.number SUB_STORAGE_ NOTIFYTYPE_TEST_0300
-     * @tc.name test_CloudSync_NotifyType_static_003
-     * @tc.desc function of API, Test  NotifyType NOTIFY_MODIFIED.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test  NotifyType NOTIFY_MODIFIED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_CloudSync_NotifyType_static_003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_NotifyType_static_003 start');
@@ -719,13 +697,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_CloudSync_NotifyType_static_004
      * @tc.number SUB_STORAGE_ NOTIFYTYPE_TEST_0400
-     * @tc.name test_CloudSync_NotifyType_static_004
-     * @tc.desc function of API, Test  NotifyType NOTIFY_RENAMED.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test  NotifyType NOTIFY_RENAMED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_CloudSync_NotifyType_static_004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_NotifyType_static_004 start');
@@ -741,13 +718,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Getlastsynctime_static_001
      * @tc.number SUB_STORAGE_GETLASTAYNCTIME_TEST_0100
-     * @tc.name test_Getlastsynctime_static_001
-     * @tc.desc function of API, Test getLastsynctime interfaces.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test getLastsynctime interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Getlastsynctime_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Getlastsynctime_static_001 start');
@@ -770,13 +746,12 @@ export default function cloudFileDownloadTest() {
     })
 
     /**
+     * @tc.name   test_Getlastsynctime_static_002
      * @tc.number SUB_STORAGE_GETLASTAYNCTIME_TEST_0200
-     * @tc.name test_Getlastsynctime_static_002
-     * @tc.desc function of API, Test getLastsynctime interfaces.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, Test getLastsynctime interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_Getlastsynctime_static_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'test_Getlastsynctime_static_002 start');

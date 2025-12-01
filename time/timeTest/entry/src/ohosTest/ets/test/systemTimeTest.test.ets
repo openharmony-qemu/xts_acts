@@ -22,7 +22,6 @@ export default function systemTimeJsunit() {
     console.info('====>---------------systemTimeTest start-----------------------');
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getCurrentTime_JS_API_0001
      * @tc.number SUB_systemTime_getCurrentTime_JS_API_0001
      * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
@@ -51,7 +50,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getCurrentTime_JS_API_0002
      * @tc.number SUB_systemTime_getCurrentTime_JS_API_0002
      * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
@@ -74,7 +72,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getCurrentTime_JS_API_0003
      * @tc.number SUB_systemTime_getCurrentTime_JS_API_0003
      * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
@@ -103,7 +100,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getCurrentTime_JS_API_0004
      * @tc.number SUB_systemTime_getCurrentTime_JS_API_0004
      * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
@@ -126,7 +122,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getRealActiveTime_JS_API_0001
      * @tc.number SUB_systemTime_getRealActiveTime_JS_API_0001
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -155,7 +150,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getRealActiveTime_JS_API_0002
      * @tc.number SUB_systemTime_getRealActiveTime_JS_API_0002
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -178,7 +172,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getRealActiveTime_JS_API_0003
      * @tc.number SUB_systemTime_getRealActiveTime_JS_API_0003
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -207,7 +200,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getRealActiveTime_JS_API_0004
      * @tc.number SUB_systemTime_getRealActiveTime_JS_API_0004
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -230,7 +222,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getRealTime_JS_API_0001
      * @tc.number SUB_systemTime_getRealTime_JS_API_0001
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, including deep sleep time.
@@ -259,7 +250,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getRealTime_JS_API_0002
      * @tc.number SUB_systemTime_getRealTime_JS_API_0002
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -282,7 +272,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getRealTime_JS_API_0003
      * @tc.number SUB_systemTime_getRealTime_JS_API_0003
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, including deep sleep time.
@@ -311,7 +300,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getRealTime_JS_API_0004
      * @tc.number SUB_systemTime_getRealTime_JS_API_0004
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -334,7 +322,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getDate_JS_API_0100
      * @tc.number SUB_systemTime_getDate_JS_API_0100
      * @tc.desc   Test systemTime_getDate API functionality.
@@ -363,7 +350,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getDate_JS_API_0200
      * @tc.number SUB_systemTime_getDate_JS_API_0200
      * @tc.desc   Test systemTime_getDate API functionality.
@@ -387,7 +373,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getTimezone_JS_API_0100
      * @tc.number SUB_systemTime_getTimezone_JS_API_0100
      * @tc.desc   Test systemTime_getTimezone API functionality.
@@ -416,7 +401,6 @@ export default function systemTimeJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_getTimezone_JS_API_0200
      * @tc.number SUB_systemTime_getTimezone_JS_API_0200
      * @tc.desc   Test systemTime_getTimezone API functionality.
