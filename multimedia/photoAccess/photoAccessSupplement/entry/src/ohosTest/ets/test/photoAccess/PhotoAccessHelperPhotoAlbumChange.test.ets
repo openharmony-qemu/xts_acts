@@ -30,12 +30,12 @@ export default function PhotoAccessHelperPhotoAlbumChange() {
       console.info(TAG, 'afterAll case.');
     });
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_001
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_001
-     * @tc.desc      : TEST ON
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_001
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_001
+     * @tc.desc   TEST ON
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_001';
@@ -55,12 +55,12 @@ export default function PhotoAccessHelperPhotoAlbumChange() {
     )
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_002
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_002
-     * @tc.desc      : TEST ON
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_002
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_002
+     * @tc.desc   TEST ON
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_ON_PHOTO_ALBUM_CHANGE_002';
@@ -80,12 +80,12 @@ export default function PhotoAccessHelperPhotoAlbumChange() {
     )
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_PHOTO_ALBUM_CHANGE_003
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_PHOTO_ALBUM_CHANGE_003
-     * @tc.desc      : TEST ON
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_PHOTO_ALBUM_CHANGE_003
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_PHOTO_ALBUM_CHANGE_003
+     * @tc.desc   TEST ON
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ALBUM_CHANGE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ALBUM_CHANGE_003';
@@ -104,12 +104,12 @@ export default function PhotoAccessHelperPhotoAlbumChange() {
     }
     )
     /**
-     * @tc.number    : SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_001
-     * @tc.name      : SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_001
-     * @tc.desc      : TEST OFF
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_001
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_001
+     * @tc.desc   TEST OFF
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
 
     it('SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_001', Level.LEVEL0, async (done: Function) => {
@@ -130,12 +130,12 @@ export default function PhotoAccessHelperPhotoAlbumChange() {
     )
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_002
-     * @tc.name      : SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_002
-     * @tc.desc      : TEST OFF
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_002
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_002
+     * @tc.desc   TEST OFF
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_002';
@@ -155,12 +155,12 @@ export default function PhotoAccessHelperPhotoAlbumChange() {
     )
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_003
-     * @tc.name      : SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_003
-     * @tc.desc      : TEST OFF
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_003
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_003
+     * @tc.desc   TEST OFF
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_003';

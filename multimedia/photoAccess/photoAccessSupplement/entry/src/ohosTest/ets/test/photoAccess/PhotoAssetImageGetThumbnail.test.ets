@@ -60,7 +60,6 @@ export default function PhotoAssetImageGetThumbnail() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_001';
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
@@ -85,6 +84,7 @@ export default function PhotoAssetImageGetThumbnail() {
         done();
       }
     })
+
     /**
      * @tc.number     SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_002
      * @tc.name       SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_002
@@ -93,7 +93,6 @@ export default function PhotoAssetImageGetThumbnail() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_002';
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
@@ -126,7 +125,6 @@ export default function PhotoAssetImageGetThumbnail() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_003';
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
@@ -161,7 +159,6 @@ export default function PhotoAssetImageGetThumbnail() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_004';
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
@@ -200,7 +197,6 @@ export default function PhotoAssetImageGetThumbnail() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_005', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_005';
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
@@ -230,6 +226,7 @@ export default function PhotoAssetImageGetThumbnail() {
         done();
       }
     })
+
     /**
      * @tc.number     SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_006
      * @tc.name       SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_006
@@ -238,7 +235,6 @@ export default function PhotoAssetImageGetThumbnail() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-
     it('SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_006', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_PHOTO_ASSET_IMAGE_GET_THUMBNAIL_006';
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);

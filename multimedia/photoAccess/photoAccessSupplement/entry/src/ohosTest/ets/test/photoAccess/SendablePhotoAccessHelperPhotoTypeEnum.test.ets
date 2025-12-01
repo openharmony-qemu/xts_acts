@@ -77,7 +77,7 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
 
 
     /**
-     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_001
+     * @tc.number createAsset_sendable_promise_image_001
      * @tc.name   createAsset_sendable_promise_image_001
      * @tc.desc   promise, PhotoType->IMAGE
      * @tc.size   MEDIUM
@@ -94,7 +94,7 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
       });
     })
     /**
-     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_002
+     * @tc.number createAsset_sendable_promise_video_001
      * @tc.name   createAsset_sendable_promise_video_001
      * @tc.desc   promise, PhotoType->VIDEO
      * @tc.size   MEDIUM
@@ -115,7 +115,7 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
 
 
     /**
-     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_001
+     * @tc.number createAsset_sendable_promise_photoSubtype_001
      * @tc.name   createAsset_sendable_promise_photoSubtype_001
      * @tc.desc   promise, image, with options, extension->jpg, subtype->BURST
      * @tc.size   MEDIUM
@@ -136,7 +136,7 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
       });
     })
     /**
-     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_002
+     * @tc.number createAsset_sendable_promise_photoSubtype_002
      * @tc.name   createAsset_sendable_promise_photoSubtype_002
      * @tc.desc   promise, video, with options, extension->mp4, subtype->BURST
      * @tc.size   MEDIUM

@@ -51,7 +51,6 @@ export default function MediaAlbumChangeRequestSetAlbumName() {
      * @tc.type    Function
      * @tc.level   Level 0
      */
-
     it('SUB_PHOTOACCESS_HELPER_Request_Set_Album_Name_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTOACCESS_HELPER_Request_Set_Album_Name_001';
       let newAlbumName: string = '';

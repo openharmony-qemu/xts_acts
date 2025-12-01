@@ -44,12 +44,12 @@ export default function MediaAssetChangeRequestSaveCameraPhoto() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_001
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_001
-     * @tc.desc      : saveCameraPhoto(imageFileType: ImageFileType): void
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_001
+     * @tc.name    SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_001
+     * @tc.desc    saveCameraPhoto(imageFileType: ImageFileType): void
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_001';
@@ -88,12 +88,12 @@ export default function MediaAssetChangeRequestSaveCameraPhoto() {
       }
     })
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_002
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_002
-     * @tc.desc      : saveCameraPhoto(imageFileType: ImageFileType): void
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_002
+     * @tc.name    SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_002
+     * @tc.desc    saveCameraPhoto(imageFileType: ImageFileType): void
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_SAVE_CAMERA_PHOTO_002';
