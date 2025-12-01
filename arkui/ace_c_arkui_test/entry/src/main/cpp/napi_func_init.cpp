@@ -239,6 +239,7 @@
 #include "image/image_position_test.cpp"
 #include "image/image_radialgradient_test.cpp"
 #include "image/image_rotate_test.cpp"
+#include "image/ImageRotateorientationTest.cpp"
 #include "image/image_saturate_test.cpp"
 #include "image/image_scale_test.cpp"
 #include "image/image_shadow_test.cpp"
