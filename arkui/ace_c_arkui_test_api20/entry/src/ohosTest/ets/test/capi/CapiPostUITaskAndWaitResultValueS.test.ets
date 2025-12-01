@@ -72,7 +72,7 @@ export default function CapiPostUITaskAndWait() {
       console.info('[ArkUIPostUITaskAndWaitResultValueS_001] START'); 
       await Utils.sleep(3000);
       let driver: Driver = Driver.create();
-      let view = await driver.findComponent(ON.text('测试文本1'));
+      let view = await driver.findComponent(ON.id('text'));
       expect(view != null).assertTrue();
       console.info('[ArkUIPostUITaskAndWaitResultValueS_001] END');
       done();

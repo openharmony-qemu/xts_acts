@@ -72,6 +72,10 @@ export default function CapiPostUITask() {
      */
     it('ArkUIPostUITaskResultValueF_001', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUIPostUITaskResultValueF_001] START'); 
+      await Utils.sleep(3000);
+      let driver: Driver = Driver.create();
+      let view = await driver.findComponent(ON.id('text'));
+      expect(view != null).assertTrue();
       console.info('[ArkUIPostUITaskResultValueF_001] END');
       done();
     });
