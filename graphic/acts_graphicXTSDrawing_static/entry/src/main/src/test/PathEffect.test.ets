@@ -51,12 +51,12 @@ export default function pathEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0100
-     * @tc.name      : testCreateDashPathEffectNormalStatic
-     * @tc.desc      : Test for testCreateDashPathEffectNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCreateDashPathEffectNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0100
+     * @tc.desc   Test for testCreateDashPathEffectNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateDashPathEffectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testCreateDashPathEffectNormalStatic';
@@ -98,12 +98,12 @@ export default function pathEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0101
-     * @tc.name      : testCreateDashPathEffectNullStatic
-     * @tc.desc      : Test for testCreateDashPathEffectNullStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreateDashPathEffectNullStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0101
+     * @tc.desc   Test for testCreateDashPathEffectNullStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateDashPathEffectNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testCreateDashPathEffectNullStatic';
@@ -117,12 +117,12 @@ export default function pathEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0103
-     * @tc.name      : testCreateDashPathEffectMultipleCallsStatic
-     * @tc.desc      : Test for testCreateDashPathEffectMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreateDashPathEffectMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0103
+     * @tc.desc   Test for testCreateDashPathEffectMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateDashPathEffectMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testCreateDashPathEffectMultipleCallsStatic';
@@ -142,12 +142,12 @@ export default function pathEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0200
-     * @tc.name      : testcreateCornerPathEffectNormalStatic
-     * @tc.desc      : Test for testcreateCornerPathEffectNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testcreateCornerPathEffectNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0200
+     * @tc.desc   Test for testcreateCornerPathEffectNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcreateCornerPathEffectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testcreateCornerPathEffectNormalStatic';
@@ -169,12 +169,12 @@ export default function pathEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0202
-     * @tc.name      : testcreateCornerPathEffectAbnormalStatic
-     * @tc.desc      : Test for testcreateCornerPathEffectAbnormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testcreateCornerPathEffectAbnormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0202
+     * @tc.desc   Test for testcreateCornerPathEffectAbnormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testcreateCornerPathEffectAbnormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testcreateCornerPathEffectAbnormalStatic';
@@ -196,12 +196,12 @@ export default function pathEffectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0203
-     * @tc.name      : testcreateCornerPathEffectMultipleCallsStatic
-     * @tc.desc      : Test for testcreateCornerPathEffectMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testcreateCornerPathEffectMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATHEFFECT_STATIC_0203
+     * @tc.desc   Test for testcreateCornerPathEffectMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testcreateCornerPathEffectMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testcreateCornerPathEffectMultipleCallsStatic';

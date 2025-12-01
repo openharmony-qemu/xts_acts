@@ -1,15 +1,15 @@
-import PhotoAccessMediaAssetChangeRequestSuppTest from './photoAccess/PhotoAccessMediaAssetChangeRequestSupp.test.ets';
-import MediaAssetManagerRequestImageTest from './photoAccess/PhotoAccessHelperRequestImage.test.ets';
-import MediaAssetManagerRequestImageDataTest from './photoAccess/PhotoAccessHelperRequestImageData.test.ets';
-import mediaAssetManagerGetAssetsTest from './photoAccess/PhotoAccessHelperGetAssetsTest.test.ets';
-import PhotoAccessHelperLoadMovingPhoto from './photoAccess/PhotoAccessHelperLoadMovingPhoto.test.ets';
-import PhotoCreateAssetSuppTest from './photoAccess/PhotoCreateAssetSupp.test.ets';
-import GetObjectByPositionTest from './photoAccess/GetObjectByPositionSupp.test.ets';
-import AddResourceChangeRequestSuppTest from './photoAccess/AddResourceSupp.test.ets';
-import GetAlbumsSuppTest from './photoAccess/GetAlbumsSuppTest.test.ets';
-import AddResourceChangeRequestUrlSuppTest from './photoAccess/AddResourceUrl.test.ets';
-import ApplyChangesSuppTest from './photoAccess/ApplyChangesSupp.test.ets';
-import getThumbnailTest from './photoAccess/PhotoAssetGetThumbnail.test.ets';
+import PhotoAccessMediaAssetChangeRequestSuppTest from './photoAccess/PhotoAccessMediaAssetChangeRequestSupp.test';
+import MediaAssetManagerRequestImageTest from './photoAccess/PhotoAccessHelperRequestImage.test';
+import MediaAssetManagerRequestImageDataTest from './photoAccess/PhotoAccessHelperRequestImageData.test';
+import mediaAssetManagerGetAssetsTest from './photoAccess/PhotoAccessHelperGetAssetsTest.test';
+import PhotoAccessHelperLoadMovingPhoto from './photoAccess/PhotoAccessHelperLoadMovingPhoto.test';
+import PhotoCreateAssetSuppTest from './photoAccess/PhotoCreateAssetSupp.test';
+import GetObjectByPositionTest from './photoAccess/GetObjectByPositionSupp.test';
+import AddResourceChangeRequestSuppTest from './photoAccess/AddResourceSupp.test';
+import GetAlbumsSuppTest from './photoAccess/GetAlbumsSuppTest.test';
+import AddResourceChangeRequestUrlSuppTest from './photoAccess/AddResourceUrl.test';
+import ApplyChangesSuppTest from './photoAccess/ApplyChangesSupp.test';
+import getThumbnailTest from './photoAccess/PhotoAssetGetThumbnail.test';
 import PhotoAccessHelperAssetsTest from './photoAccess/PhotoAccessHelperAssets.test';
 import DiscardCameraPhotoTest from './photoAccess/PhotoAccessHelperDiscardCameraPhoto.test';
 import SaveCameraPhoto from './photoAccess/PhotoAccessHelperSaveCameraPhoto.test';
@@ -20,7 +20,23 @@ import getAllObjectsTest from './photoAccess/getAllObjects.test';
 import getSupportedPhotoFormatsTest from './photoAccess/getSupportedPhotoFormats.test';
 import IsAfterLastTest from './photoAccess/isAfterLast.test';
 import PhotoAccessHelperAssetsCloseTest from "./photoAccess/PhotoAccessHelperAssetsClose.test";
-
+import MediaAssetManagerCancelRequestTest from './photoAccess/cancelRequest.test';
+import MediaAssetDataHandlerOnDataPreparedTest from './photoAccess/onDataPrepared.test';
+import setTest from './photoAccess/PhotoAssetSet.test';
+import sendAbleSetTest from './photoAccess/SendAblePhotoAssetSet.test';
+import PhotoAccessMediaAlbumChangeRequestAddAssetsTest
+  from './photoAccess/PhotoAccessMediaAlbumChangeRequestAddAssetsTest.test';
+import sendableGetThumbnailTest from './photoAccess/PhotoAccessHelperPhotoAssetGetThumbnailTest.test';
+import PhotoAccessHelperOn_PhotoChangeTest from './photoAccess/PhotoAccessHelperOn_PhotoChangeTest.test';
+import photoAccessHelperGetObjectByPositionTest from './photoAccess/PhotoAccessHelperGetObjectByPosition.test';
+import PhotoAccessHelperAlbumAssetsTest from './photoAccess/PhotoAccessHelperAlbumAddRemoveAssets.test';
+import sendablePhotoAccessHelperGetObjectByPositionTest
+  from './photoAccess/SendablePhotoAccessHelperGetObjectByPosition.test';
+import getThumbnailTestSupp from './photoAccess/PhotoAssetGetThumbnailSupp.test';
+import PhotoAccessHelperGetRecentPhotoInfo
+  from './photoAccess/PhotoAccessHelperGetRecentPhotoInfo.test';
+import PhotoAccessHelperGetPhotoAccessHelper
+  from './photoAccess/PhotoAccessHelperGetPhotoAccessHelper.test';
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
   MediaAssetManagerRequestImageTest();
@@ -44,4 +60,17 @@ export default function testsuite() {
   getSupportedPhotoFormatsTest();
   IsAfterLastTest ();
   PhotoAccessHelperAssetsCloseTest();
+  MediaAssetManagerCancelRequestTest();
+  MediaAssetDataHandlerOnDataPreparedTest();
+  setTest();
+  sendAbleSetTest();
+  PhotoAccessMediaAlbumChangeRequestAddAssetsTest();
+  sendableGetThumbnailTest();
+  PhotoAccessHelperOn_PhotoChangeTest();
+  photoAccessHelperGetObjectByPositionTest();
+  PhotoAccessHelperAlbumAssetsTest();
+  sendablePhotoAccessHelperGetObjectByPositionTest();
+  getThumbnailTestSupp();
+  PhotoAccessHelperGetPhotoAccessHelper();
+  PhotoAccessHelperGetRecentPhotoInfo();
 }

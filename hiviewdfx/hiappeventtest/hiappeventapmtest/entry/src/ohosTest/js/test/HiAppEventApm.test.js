@@ -19,12 +19,12 @@ export default function HiAppEventJSTest() {
     describe('HiAppEventJSTest', () => {
 
         /**
+         * @tc.name   testHiAppEventJs02
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0200
-         * @tc.name testHiAppEventJs02
-         * @tc.desc 验证添加数据处理者addProcessor无对应so，返回-1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证添加数据处理者addProcessor无对应so，返回-1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs02 start');
@@ -47,12 +47,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs03
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0300
-         * @tc.name testHiAppEventJs03
-         * @tc.desc 验证添加数据处理者addProcessor为空字符串空，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证添加数据处理者addProcessor为空字符串空，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs03 start');
@@ -73,12 +73,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs04
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0400
-         * @tc.name testHiAppEventJs04
-         * @tc.desc 验证removeProcessor接口移除数据处理者，processor已存在，删除成功，不存在、非法，删除失败
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证removeProcessor接口移除数据处理者，processor已存在，删除成功，不存在、非法，删除失败
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs04 start');
@@ -103,12 +103,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs05
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0500
-         * @tc.name testHiAppEventJs05
-         * @tc.desc 验证添加数据处理者addProcessor，Processor可选参数非法，调用成功，有日志打印Parameter error
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证添加数据处理者addProcessor，Processor可选参数非法，调用成功，有日志打印Parameter error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs05 start');
@@ -151,12 +151,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs06
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0600
-         * @tc.name testHiAppEventJs06
-         * @tc.desc 验证多次setUserId，用户id名与值合法，getUserId获取userid值与设置一致
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证多次setUserId，用户id名与值合法，getUserId获取userid值与设置一致
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs06 start');
@@ -189,12 +189,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs07
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0700
-         * @tc.name testHiAppEventJs07
-         * @tc.desc 验证setUserId，用户id名重复，用户id值更新
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证setUserId，用户id名重复，用户id值更新
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs07 start');
@@ -216,12 +216,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs08
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0800
-         * @tc.name testHiAppEventJs08
-         * @tc.desc 验证setUserId，用户id值为空字符，清除用户id
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证setUserId，用户id值为空字符，清除用户id
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs08 start');
@@ -243,12 +243,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs09
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0900
-         * @tc.name testHiAppEventJs09
-         * @tc.desc 验证多次setUserProperty，userproperty名与值合法，getUserProperty获取userproperty值与设置一致
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证多次setUserProperty，userproperty名与值合法，getUserProperty获取userproperty值与设置一致
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs09 start');
@@ -281,12 +281,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs10
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_1000
-         * @tc.name testHiAppEventJs10
-         * @tc.desc 验证多次setUserProperty，userproperty名重复，userproperty值更新
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证多次setUserProperty，userproperty名重复，userproperty值更新
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs10 start');
@@ -308,12 +308,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs11
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_1100
-         * @tc.name testHiAppEventJs11
-         * @tc.desc 验证setUserProperty，userproperty值为空字符，清除userproperty
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证setUserProperty，userproperty值为空字符，清除userproperty
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs11 start');
@@ -335,12 +335,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs12
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_1200
-         * @tc.name testHiAppEventJs12
-         * @tc.desc 验证setUserId，用户id名为空字符串，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证setUserId，用户id名为空字符串，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs12 start');
@@ -357,12 +357,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs13
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_1300
-         * @tc.name testHiAppEventJs13
-         * @tc.desc 验证setUserId，用户id名257字节，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证setUserId，用户id名257字节，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs13 start');
@@ -383,12 +383,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs14
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_1400
-         * @tc.name testHiAppEventJs14
-         * @tc.desc 验证setUserId，用户id名数字开头，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证setUserId，用户id名数字开头，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs14 start');
@@ -406,12 +406,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs15
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_1500
-         * @tc.name testHiAppEventJs15
-         * @tc.desc 验证setUserId，用户id值长度为257字节，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证setUserId，用户id值长度为257字节，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs15 start');
@@ -432,12 +432,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs16
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_1600
-         * @tc.name testHiAppEventJs16
-         * @tc.desc 验证setUserProperty，userproperty名为空，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证setUserProperty，userproperty名为空，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs16 start');
@@ -454,12 +454,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs17
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_1700
-         * @tc.name testHiAppEventJs17
-         * @tc.desc 验证setUserProperty，userproperty名257字节，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证setUserProperty，userproperty名257字节，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs17 start');
@@ -480,12 +480,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs18
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_1800
-         * @tc.name testHiAppEventJs18
-         * @tc.desc 验证setUserProperty，userproperty名数字开头，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证setUserProperty，userproperty名数字开头，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs18 start');
@@ -503,12 +503,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs19
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_1900
-         * @tc.name testHiAppEventJs19
-         * @tc.desc 验证setUserProperty，userproperty值长度为1025字节，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证setUserProperty，userproperty值长度为1025字节，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs19 start');
@@ -528,12 +528,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs20
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2000
-         * @tc.name testHiAppEventJs20
-         * @tc.desc 验证getUserId，用户id名为空，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证getUserId，用户id名为空，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs20 start');
@@ -550,12 +550,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs21
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2100
-         * @tc.name testHiAppEventJs21
-         * @tc.desc 验证getUserId，用户id名257字节，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证getUserId，用户id名257字节，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs21 start');
@@ -576,12 +576,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs22
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2200
-         * @tc.name testHiAppEventJs22
-         * @tc.desc 验证getUserId，用户id名数字开头，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证getUserId，用户id名数字开头，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs22 start');
@@ -599,12 +599,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs23
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2300
-         * @tc.name testHiAppEventJs23
-         * @tc.desc 验证getUserProperty，userproperty名为空，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证getUserProperty，userproperty名为空，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs23 start');
@@ -621,12 +621,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs24
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2400
-         * @tc.name testHiAppEventJs24
-         * @tc.desc 验证getUserProperty，userproperty名长度为257字节，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证getUserProperty，userproperty名长度为257字节，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs24 start');
@@ -647,12 +647,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   testHiAppEventJs25
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2500
-         * @tc.name testHiAppEventJs25
-         * @tc.desc 验证getUserProperty，userproperty名数字开头，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证getUserProperty，userproperty名数字开头，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHiAppEventJs25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testHiAppEventJs25 start');
@@ -670,12 +670,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_2901
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2901
-         * @tc.name SUB_DFX_DFT_HiAppEvent_Js_2901
-         * @tc.desc 验证添加数据处理者addProcessor-configName为异常字符串，返回-1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证添加数据处理者addProcessor-configName为异常字符串，返回-1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_DFX_DFT_HiAppEvent_Js_2901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('SUB_DFX_DFT_HiAppEvent_Js_2901 start');
@@ -697,12 +697,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_2902
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2902
-         * @tc.name SUB_DFX_DFT_HiAppEvent_Js_2902
-         * @tc.desc 验证添加数据处理者addProcessor-configName为异常字符串，返回-1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证添加数据处理者addProcessor-configName为异常字符串，返回-1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_DFX_DFT_HiAppEvent_Js_2902', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('SUB_DFX_DFT_HiAppEvent_Js_2902 start');
@@ -724,12 +724,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_2903
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2903
-         * @tc.name SUB_DFX_DFT_HiAppEvent_Js_2903
-         * @tc.desc 验证添加数据处理者addProcessor-configName为特殊符号，返回-1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证添加数据处理者addProcessor-configName为特殊符号，返回-1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_DFX_DFT_HiAppEvent_Js_2903', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('SUB_DFX_DFT_HiAppEvent_Js_2903 start');
@@ -751,12 +751,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_2904
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2904
-         * @tc.name SUB_DFX_DFT_HiAppEvent_Js_2904
-         * @tc.desc 验证添加数据处理者addProcessor-configName为数字开头，返回-1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证添加数据处理者addProcessor-configName为数字开头，返回-1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_DFX_DFT_HiAppEvent_Js_2904', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('SUB_DFX_DFT_HiAppEvent_Js_2904 start');
@@ -778,12 +778,12 @@ export default function HiAppEventJSTest() {
         });
 
         /**
+         * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_2905
          * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2905
-         * @tc.name SUB_DFX_DFT_HiAppEvent_Js_2905
-         * @tc.desc 验证添加数据处理者addProcessor-configName为257字节，返回-1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证添加数据处理者addProcessor-configName为257字节，返回-1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_DFX_DFT_HiAppEvent_Js_2905', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('SUB_DFX_DFT_HiAppEvent_Js_2905 start');

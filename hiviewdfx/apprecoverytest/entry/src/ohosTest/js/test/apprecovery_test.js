@@ -32,10 +32,13 @@ export default function ActsAppRecoveryTest() {
 describe("ActsAppRecoveryTest", function () {
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_0100
-    * @tc.name: 故障发生时总是重启应用
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_0100
+     * @tc.number DFX_DFR_AppRecovery_Interface_0100
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_0100 start-------------------------");
         try{
@@ -48,10 +51,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_0200
-    * @tc.name: 当发生JS_CRASH时重启应用
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_0200
+     * @tc.number DFX_DFR_AppRecovery_Interface_0200
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_0200 start-------------------------");
         try{
@@ -64,10 +70,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_0300
-    * @tc.name: APP_FREEZE故障发生时重启应用
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_0300
+     * @tc.number DFX_DFR_AppRecovery_Interface_0300
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_0300 start-------------------------");
         try{
@@ -80,10 +89,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_0400
-    * @tc.name: JS_CRASH或APP_FREEZE故障发生时重启应用
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_0400
+     * @tc.number DFX_DFR_AppRecovery_Interface_0400
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_0400 start-------------------------");
         try{
@@ -96,10 +108,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_0500
-    * @tc.name: 任何情况下不重启应用
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_0500
+     * @tc.number DFX_DFR_AppRecovery_Interface_0500
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_0500 start-------------------------");
         try{
@@ -112,10 +127,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_0600
-    * @tc.name: 当error时保存数据
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_0600
+     * @tc.number DFX_DFR_AppRecovery_Interface_0600
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_0600 start-------------------------");
         try{
@@ -128,10 +146,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_0700
-    * @tc.name: 当切换到后台时保存数据
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_0700
+     * @tc.number DFX_DFR_AppRecovery_Interface_0700
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_0700 start-------------------------");
         try{
@@ -144,10 +165,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_0800
-    * @tc.name: 以文件保存数据
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_0800
+     * @tc.number DFX_DFR_AppRecovery_Interface_0800
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_0800 start-------------------------");
         try{
@@ -160,10 +184,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_0900
-    * @tc.name: 以共享内存保存数据
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_0900
+     * @tc.number DFX_DFR_AppRecovery_Interface_0900
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_0900 start-------------------------");
         try{
@@ -176,10 +203,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_1000
-    * @tc.name: 调用restartApp接口
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_1000
+     * @tc.number DFX_DFR_AppRecovery_Interface_1000
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_1000 start-------------------------");
         try{
@@ -192,10 +222,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_1100
-    * @tc.name: 调用saveAppState接口(不传参)
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_1100
+     * @tc.number DFX_DFR_AppRecovery_Interface_1100
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_1100 start-------------------------");
         try{
@@ -208,10 +241,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_1200
-    * @tc.name: enableAppRecovery接口不传参使用默认值
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_1200
+     * @tc.number DFX_DFR_AppRecovery_Interface_1200
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_1200 start-------------------------");
         try{
@@ -224,10 +260,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_1300
-    * @tc.name: enableAppRecovery接口传1个参数
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_1300
+     * @tc.number DFX_DFR_AppRecovery_Interface_1300
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_1300 start-------------------------");
         try{
@@ -240,10 +279,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_1400
-    * @tc.name: enableAppRecovery接口传2个参数
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_1400
+     * @tc.number DFX_DFR_AppRecovery_Interface_1400
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_1400 start-------------------------");
         try{
@@ -256,10 +298,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_1500
-    * @tc.name: enableAppRecovery接口传3个参数
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_1500
+     * @tc.number DFX_DFR_AppRecovery_Interface_1500
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_1500 start-------------------------");
         try{
@@ -272,10 +317,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_1600
-    * @tc.name: enableAppRecovery接口关键字传参
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_1600
+     * @tc.number DFX_DFR_AppRecovery_Interface_1600
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_1600 start-------------------------");
         try{
@@ -288,10 +336,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_1700
-    * @tc.name: enableAppRecovery接口关键字传多个参数
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_1700
+     * @tc.number DFX_DFR_AppRecovery_Interface_1700
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_1700 start-------------------------");
         try{
@@ -305,10 +356,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_1800
-    * @tc.name: enableAppRecovery接口关键字传多个组合参数
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_1800
+     * @tc.number DFX_DFR_AppRecovery_Interface_1800
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_1800 start-------------------------");
         try{
@@ -324,10 +378,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_1900
-    * @tc.name: onSaveState接口测试
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_1900
+     * @tc.number DFX_DFR_AppRecovery_Interface_1900
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_1900 start-------------------------");
         try{
@@ -349,10 +406,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_2000
-    * @tc.name: 检验appRecovery属性返回值是否符合预期
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_2000
+     * @tc.number DFX_DFR_AppRecovery_Interface_2000
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_2000 start-------------------------");
         try{
@@ -372,10 +432,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_2100
-    * @tc.name: 检验AbilityConstant属性返回值是否符合预期
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_2100
+     * @tc.number DFX_DFR_AppRecovery_Interface_2100
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_2100 start-------------------------");
         try{
@@ -393,10 +456,13 @@ describe("ActsAppRecoveryTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_2200
-    * @tc.name: 调用saveAppState接口(传参Ability)
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AppRecovery_Interface_2200
+     * @tc.number DFX_DFR_AppRecovery_Interface_2200
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AppRecovery_Interface_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_2200 start-------------------------");
         try{
@@ -408,11 +474,14 @@ describe("ActsAppRecoveryTest", function () {
         console.info("DFX_DFR_AppRecovery_Interface_2200 end");
     })
 
-    /**
-    * @tc.number: DFX_DFR_AppRecovery_Interface_2300
-    * @tc.name: 调用setRestartWant接口
-    * @tc.desc: appRecovery interface test.
-    */
+     /**
+      * @tc.name   DFX_DFR_AppRecovery_Interface_2300
+      * @tc.number DFX_DFR_AppRecovery_Interface_2300
+      * @tc.desc   appRecovery interface test.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it("DFX_DFR_AppRecovery_Interface_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_2300 start-------------------------");
         try{

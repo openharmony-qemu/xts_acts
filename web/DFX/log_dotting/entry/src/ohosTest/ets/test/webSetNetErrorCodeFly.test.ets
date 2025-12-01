@@ -58,13 +58,13 @@ export default function ActsAceWebSetNetErrorCodeFly() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0001
-     *@tc.name testWebSetNetErrorCode_ERR_UNKNOWN_URL_SCHEME
-     *@tc.desc test WebSetNetErrorCode_ERR_UNKNOWN_URL_SCHEME (-302)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_UNKNOWN_URL_SCHEME
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0001
+     * @tc.desc   test WebSetNetErrorCode_ERR_UNKNOWN_URL_SCHEME (-302)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_UNKNOWN_URL_SCHEME', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_UNKNOWN_URL_SCHEME"
@@ -73,13 +73,13 @@ export default function ActsAceWebSetNetErrorCodeFly() {
       Utils.waitAndClickComponent(driver, "webSetNetErrorCodeFly");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0002
-     *@tc.name testWebSetNetErrorCode_ERR_INVALID_REDIRECT
-     *@tc.desc test WebSetNetErrorCode_ERR_INVALID_REDIRECT (-303)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_INVALID_REDIRECT
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0002
+     * @tc.desc   test WebSetNetErrorCode_ERR_INVALID_REDIRECT (-303)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_INVALID_REDIRECT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_INVALID_REDIRECT"
@@ -88,13 +88,13 @@ export default function ActsAceWebSetNetErrorCodeFly() {
       Utils.waitAndClickComponent(driver, "webSetNetErrorCodeFly");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0003
-     *@tc.name testWebSetNetErrorCode_ERR_TOO_MANY_REDIRECTS
-     *@tc.desc test WebSetNetErrorCode_ERR_TOO_MANY_REDIRECTS (-310)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_TOO_MANY_REDIRECTS
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0003
+     * @tc.desc   test WebSetNetErrorCode_ERR_TOO_MANY_REDIRECTS (-310)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_TOO_MANY_REDIRECTS', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_TOO_MANY_REDIRECTS"
@@ -103,13 +103,13 @@ export default function ActsAceWebSetNetErrorCodeFly() {
       Utils.waitAndClickComponent(driver, "webSetNetErrorCodeFly");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0004
-     *@tc.name testWebSetNetErrorCode_ERR_ERR_UNSAFE_REDIRECT
-     *@tc.desc test WebSetNetErrorCode_ERR_UNSAFE_REDIRECT (-311)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_ERR_UNSAFE_REDIRECT
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0004
+     * @tc.desc   test WebSetNetErrorCode_ERR_UNSAFE_REDIRECT (-311)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_ERR_UNSAFE_REDIRECT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_UNSAFE_REDIRECT"
@@ -118,13 +118,13 @@ export default function ActsAceWebSetNetErrorCodeFly() {
       Utils.waitAndClickComponent(driver, "webSetNetErrorCodeFly");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0005
-     *@tc.name testWebSetNetErrorCode_ERR_UNSAFE_PORT
-     *@tc.desc test WebSetNetErrorCode_ERR_UNSAFE_PORT (-312)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_UNSAFE_PORT
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0005
+     * @tc.desc   test WebSetNetErrorCode_ERR_UNSAFE_PORT (-312)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_UNSAFE_PORT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_UNSAFE_PORT"
@@ -133,13 +133,13 @@ export default function ActsAceWebSetNetErrorCodeFly() {
       Utils.waitAndClickComponent(driver, "webSetNetErrorCodeFly");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0006
-     *@tc.name testWebSetNetErrorCode_ERR_INVALID_RESPONSE
-     *@tc.desc test WebSetNetErrorCode_ERR_INVALID_RESPONSE (-320)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_INVALID_RESPONSE
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0006
+     * @tc.desc   test WebSetNetErrorCode_ERR_INVALID_RESPONSE (-320)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_INVALID_RESPONSE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_INVALID_RESPONSE"
@@ -148,13 +148,13 @@ export default function ActsAceWebSetNetErrorCodeFly() {
       Utils.waitAndClickComponent(driver, "webSetNetErrorCodeFly");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0007
-     *@tc.name testWebSetNetErrorCode_ERR_INVALID_CHUNKED_ENCODING
-     *@tc.desc test WebSetNetErrorCode_ERR_INVALID_CHUNKED_ENCODING (-321)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_INVALID_CHUNKED_ENCODING
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0007
+     * @tc.desc   test WebSetNetErrorCode_ERR_INVALID_CHUNKED_ENCODING (-321)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_INVALID_CHUNKED_ENCODING', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_INVALID_CHUNKED_ENCODING"
@@ -163,13 +163,13 @@ export default function ActsAceWebSetNetErrorCodeFly() {
       Utils.waitAndClickComponent(driver, "webSetNetErrorCodeFly");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0008
-     *@tc.name testWebSetNetErrorCode_ERR_METHOD_UNSUPPORTED
-     *@tc.desc test WebSetNetErrorCode_ERR_METHOD_UNSUPPORTED (-322)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_METHOD_UNSUPPORTED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0008
+     * @tc.desc   test WebSetNetErrorCode_ERR_METHOD_UNSUPPORTED (-322)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_METHOD_UNSUPPORTED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_METHOD_UNSUPPORTED"
@@ -178,13 +178,13 @@ export default function ActsAceWebSetNetErrorCodeFly() {
       Utils.waitAndClickComponent(driver, "webSetNetErrorCodeFly");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0009
-     *@tc.name testWebSetNetErrorCode_ERR_UNEXPECTED_PROXY_AUTH
-     *@tc.desc test WebSetNetErrorCode_ERR_UNEXPECTED_PROXY_AUTH (-323)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_UNEXPECTED_PROXY_AUTH
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_TWO_API_0009
+     * @tc.desc   test WebSetNetErrorCode_ERR_UNEXPECTED_PROXY_AUTH (-323)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_UNEXPECTED_PROXY_AUTH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_UNEXPECTED_PROXY_AUTH"

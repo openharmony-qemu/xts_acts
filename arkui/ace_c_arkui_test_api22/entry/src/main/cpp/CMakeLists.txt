@@ -26,6 +26,8 @@ add_library(nativerender SHARED
     waterFlow/WaterFlowFillPolicyTest.cpp
     image/ImageDrawableDescriptorTest.cpp
     image/ImageErrorTest.cpp
+    textLineHeight/LineHeightTest.cpp
+    textArea/TextAreaBarStateTest.cpp
 )
 
 add_library(nativefunc SHARED

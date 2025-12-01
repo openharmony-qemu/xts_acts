@@ -104,13 +104,13 @@ OH_Drawing_RecordCmd *threadFunctionTest1()
 }
 
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0400
- * @tc.name: testRecordCmdDestroyNormal
- * @tc.desc: test for testRecordCmdDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRecordCmdDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0400
+ * @tc.desc   test for testRecordCmdDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingRecordCmdDestroyTest, testRecordCmdDestroyNormal, Function | SmallTest | Level0) {
     // 1. The OH-Drawing-RecordCmdDestroy parameter is not empty
@@ -122,13 +122,13 @@ HWTEST_F(DrawingRecordCmdDestroyTest, testRecordCmdDestroyNormal, Function | Sma
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0400
- * @tc.name: testRecordCmdDestroyNULL
- * @tc.desc: test for testRecordCmdDestroyNULL.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRecordCmdDestroyNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0400
+ * @tc.desc   test for testRecordCmdDestroyNULL.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingRecordCmdDestroyTest, testRecordCmdDestroyNULL, Function | SmallTest | Level0) {
     // 1. The OH-Drawing-RecordCmdDestroy parameter is not empty

@@ -69,10 +69,10 @@ import barBackground from './TabsTest/barBackground.test';
 import barHeightNoMinHeightLimit from './TabsTest/barHeightNoMinHeightLimit.test';
 import curvesTabs from './TabsTest/curvesTabs.test';
 import animationCurve from './TabsTest/animationCurve.test';
-import tabsOnContentWillChangeIndex10JsunitTest from './TabsTest/tabs_api12/tabsOnContentWillChangeIndex10.test';
-import tabsOnContentWillChangeIndex11JsunitTest from './TabsTest/tabs_api12/tabsOnContentWillChangeIndex11.test';
 import tabsDemo from './textTest/TextApi/tabsDemo.test';
 
+import tabs_onContentDidScrollTest from './TabsTest/Tabs_onContentDidScroll/tabs_onContentDidScroll.test';
+import tabs_undefinedTest from './TabsTest/Tabs_onContentDidScroll/tabs_undefined.test';
 
 export default function testsuite() {
   tabsBarPositionJsunit();
@@ -125,8 +125,8 @@ export default function testsuite() {
   barHeightNoMinHeightLimit();
   curvesTabs();
   animationCurve();
-  tabsOnContentWillChangeIndex10JsunitTest();
-  tabsOnContentWillChangeIndex11JsunitTest();
   tabsBarPositionJsunit1();
   tabsDemo();
+  tabs_onContentDidScrollTest();
+  tabs_undefinedTest();
   } 

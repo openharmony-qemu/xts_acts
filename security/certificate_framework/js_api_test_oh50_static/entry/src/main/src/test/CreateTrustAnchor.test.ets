@@ -31,12 +31,12 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
   describe("certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit", () => {
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0100
      * @tc.number SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0100
-     * @tc.name SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0100
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName = "SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0100";
@@ -58,12 +58,12 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0200
      * @tc.number SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0200
-     * @tc.name SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0200
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName = "SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0200";
@@ -89,12 +89,12 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0300
      * @tc.number SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0300
-     * @tc.name SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0300
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName = "SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0300";
@@ -118,12 +118,12 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0400
      * @tc.number SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0400
-     * @tc.name SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0400
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName = "SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0400";
@@ -149,12 +149,12 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0500
      * @tc.number SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0500
-     * @tc.name SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0500
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName = "SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0500";

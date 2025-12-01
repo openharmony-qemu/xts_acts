@@ -57,13 +57,13 @@ export default function webCookieManagerFetchCookieSyncTwo() {
     })
 
     /**
-    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIESYNC_3100
-    * @tc.name         testFetchCookieSync031
-    * @tc.desc         test fetchCookieSync
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testFetchCookieSync031
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIESYNC_3100
+     * @tc.desc   test fetchCookieSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFetchCookieSync031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookieSync031', 137100)
       Utils.registerBaseEvent('testFetchCookieSync031', true, 137110, done,
@@ -74,13 +74,13 @@ export default function webCookieManagerFetchCookieSyncTwo() {
     })
 
     /**
-    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIESYNC_3200
-    * @tc.name         testFetchCookieSync032
-    * @tc.desc         test fetchCookieSync
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testFetchCookieSync032
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIESYNC_3200
+     * @tc.desc   test fetchCookieSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFetchCookieSync032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookieSync032', 137100)
       Utils.registerBaseEvent('testFetchCookieSync032', true, 137120, done,

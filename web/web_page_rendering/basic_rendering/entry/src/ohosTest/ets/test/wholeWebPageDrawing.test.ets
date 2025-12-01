@@ -76,10 +76,13 @@ export default function wholeWebPageDrawing() {
       }
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0100
-     *tc.name testWholeWebPageDrawing
-     *tc.desc wholeWebPageDrawing
+    /**
+     * @tc.name   wholeWebPageDrawing0100
+     * @tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0100
+     * @tc.desc   wholeWebPageDrawing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('wholeWebPageDrawing0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("wholeWebPageDrawing0100",152180)
@@ -87,10 +90,13 @@ export default function wholeWebPageDrawing() {
       waitAndClickComponent('wholeWebPageDrawingButton',driver);
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0200
-     *tc.name testWholeWebPageDrawing
-     *tc.desc wholeWebPageDrawing
+    /**
+     * @tc.name   wholeWebPageDrawing0200
+     * @tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0200
+     * @tc.desc   wholeWebPageDrawing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('wholeWebPageDrawing0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("wholeWebPageDrawing0200",152180)
@@ -98,10 +104,13 @@ export default function wholeWebPageDrawing() {
       waitAndClickComponent('wholeWebPageDrawingButton',driver);
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0300
-     *tc.name testWholeWebPageDrawing
-     *tc.desc wholeWebPageDrawing
+    /**
+     * @tc.name   wholeWebPageDrawing0300
+     * @tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0300
+     * @tc.desc   wholeWebPageDrawing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('wholeWebPageDrawing0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("wholeWebPageDrawing0300",152180)
@@ -109,10 +118,13 @@ export default function wholeWebPageDrawing() {
       waitAndClickComponent('wholeWebPageDrawingButton',driver);
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0400
-     *tc.name testWholeWebPageDrawing
-     *tc.desc wholeWebPageDrawing
+    /**
+     * @tc.name   wholeWebPageDrawing0400
+     * @tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0400
+     * @tc.desc   wholeWebPageDrawing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('wholeWebPageDrawing0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("wholeWebPageDrawing0400",152180)
@@ -120,10 +132,13 @@ export default function wholeWebPageDrawing() {
       waitAndClickComponent('wholeWebPageDrawingButton',driver);
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0500
-     *tc.name testWholeWebPageDrawing
-     *tc.desc wholeWebPageDrawing
+    /**
+     * @tc.name   wholeWebPageDrawing0500
+     * @tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0500
+     * @tc.desc   wholeWebPageDrawing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('wholeWebPageDrawing0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("wholeWebPageDrawing0500",152180)
@@ -131,10 +146,13 @@ export default function wholeWebPageDrawing() {
       waitAndClickComponent('wholeWebPageDrawingButton',driver);
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0600
-     *tc.name testWholeWebPageDrawing
-     *tc.desc wholeWebPageDrawing
+    /**
+     * @tc.name   wholeWebPageDrawing0600
+     * @tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0600
+     * @tc.desc   wholeWebPageDrawing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('wholeWebPageDrawing0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("wholeWebPageDrawing0600",152180)

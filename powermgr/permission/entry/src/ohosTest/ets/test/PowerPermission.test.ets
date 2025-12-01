@@ -40,7 +40,6 @@ export default function PowerPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerPermissionTest_0100
      * @tc.number PowerPermissionTest_0100
      * @tc.desc   Function test

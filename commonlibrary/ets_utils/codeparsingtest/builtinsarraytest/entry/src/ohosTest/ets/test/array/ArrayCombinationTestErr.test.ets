@@ -42,12 +42,12 @@ export default function ArrayConstructorTestErr() {
     })
 
     /**
+     * @tc.name   ArrayConstructor1Test059
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5900
-     * @tc.name ArrayConstructor1Test059
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const d1 = new Date('2020-01-01');
@@ -63,12 +63,12 @@ export default function ArrayConstructorTestErr() {
     });
 
     /**
+     * @tc.name   ArrayConstructor1Test242
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST24200
-     * @tc.name ArrayConstructor1Test242
-     * @tc.desc Test Method Combination in Array/TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const d1 = new Date('2020-01-01');

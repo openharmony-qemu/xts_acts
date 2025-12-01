@@ -69,6 +69,11 @@ export default function textAreaInputTest() {
         await button1?.click();
         await CommonFunc.sleep(500);
 
+        let button2 = await driver.findComponent(ON.text('完成'));
+        await CommonFunc.sleep(500);
+        await button2?.click();
+        await CommonFunc.sleep(500);
+
         await textArea1.longClick();
         await CommonFunc.sleep(500);
         let button3 = await driver.findComponent(ON.text('全选'));

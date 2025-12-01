@@ -27,7 +27,6 @@ export default function RunningLockTest() {
   describe("RunningLockTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockTest_static_0100
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0010
      * @tc.desc   Create lock promise
@@ -61,7 +60,6 @@ export default function RunningLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockTest_static_0200
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0020
      * @tc.desc   Create lock promise
@@ -106,7 +104,6 @@ export default function RunningLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockTest_static_0300
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0030
      * @tc.desc   Create lock callback
@@ -141,7 +138,6 @@ export default function RunningLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockTest_static_0400
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0040
      * @tc.desc   Create lock callback
@@ -187,7 +183,6 @@ export default function RunningLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockTest_static_0500
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0050
      * @tc.desc   The lock type is PROXIMITY_SCREEN_CONTROL
@@ -216,7 +211,6 @@ export default function RunningLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockTest_static_0600
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0060
      * @tc.desc   RunningLock isSupported
@@ -243,7 +237,6 @@ export default function RunningLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockTest_static_0700
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0070
      * @tc.desc   RunningLock isSupported
@@ -269,7 +262,6 @@ export default function RunningLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockTest_static_0800
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0080
      * @tc.desc   RunningLock isSupported
@@ -296,7 +288,6 @@ export default function RunningLockTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockTest_static_0900
      * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0090
      * @tc.desc   RunningLock isSupported

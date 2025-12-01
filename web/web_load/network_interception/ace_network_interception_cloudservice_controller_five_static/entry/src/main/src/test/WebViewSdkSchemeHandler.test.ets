@@ -56,13 +56,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       console.info("web beforeEach start");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_getHeader_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_getHeader
-     *@tc.desc test SdkSchemeHandler_getHeader
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_getHeader
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_getHeader_API_0001
+     * @tc.desc   test SdkSchemeHandler_getHeader
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSdkSchemeHandler_getHeader', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -75,13 +75,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_getRequestUrl_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_getRequestUrl
-     *@tc.desc test SdkSchemeHandler_getRequestUrl
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_getRequestUrl
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_getRequestUrl_API_0001
+     * @tc.desc   test SdkSchemeHandler_getRequestUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSdkSchemeHandler_getRequestUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -93,13 +93,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       await Utils.msSleep(4000);
       done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_getRequestMethod_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_getRequestMethod
-     *@tc.desc test SdkSchemeHandler_getRequestMethod
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_getRequestMethod
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_getRequestMethod_API_0001
+     * @tc.desc   test SdkSchemeHandler_getRequestMethod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSdkSchemeHandler_getRequestMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -113,13 +113,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
     })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_getReferrer_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_getReferrer
-     *@tc.desc test SdkSchemeHandler_getReferrer
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_getReferrer
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_getReferrer_API_0001
+     * @tc.desc   test SdkSchemeHandler_getReferrer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSdkSchemeHandler_getReferrer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -131,13 +131,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       await Utils.msSleep(4000);
       done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_isMainFrame_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_isMainFrame
-     *@tc.desc test isMainFrame
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isMainFrame
+     * @tc.number SUB_ACE_WEB_isMainFrame_API_0001
+     * @tc.desc   test isMainFrame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSdkSchemeHandler_isMainFrame', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -149,13 +149,13 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       await Utils.msSleep(4000);
       done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_hasGesture_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_hasGesture
-     *@tc.desc test hasGesture
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_hasGesture
+     * @tc.number SUB_ACE_WEB_hasGesture_API_0001
+     * @tc.desc   test hasGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewSdkSchemeHandler_hasGesture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -168,6 +168,14 @@ export default function ActsAceWebViewSdkSchemeHandler() {
       done();
     })
 
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SwitchNextPageStatic
+     * @tc.desc   SwitchNextPageStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

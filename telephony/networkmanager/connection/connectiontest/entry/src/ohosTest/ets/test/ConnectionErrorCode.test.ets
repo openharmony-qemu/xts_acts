@@ -23,12 +23,12 @@ export default function ConnextionErrorCode() {
   describe('ConnextionErrorCode',  () => {
 
     /**
-     * @tc.number : SUB_Telephony_Connection_getAddressesByName_ErrCo_0100
-     * @tc.name   : testConnectionGetAddressesByNameErrCo0100
-     * @tc.desc   : AddressesByName  Parameter error
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionGetAddressesByNameErrCo0100
+     * @tc.number SUB_Telephony_Connection_getAddressesByName_ErrCo_0100
+     * @tc.desc   AddressesByName  Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testConnectionGetAddressesByNameErrCo0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testConnectionGetAddressesByNameErrCo0100';
@@ -53,12 +53,12 @@ export default function ConnextionErrorCode() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Connection_getAddressesByName_ErrCo_0200
-     * @tc.name   : testConnectionGetAddressesByNameErrCo0200
-     * @tc.desc   : AddressesByName  Parameter error
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionGetAddressesByNameErrCo0200
+     * @tc.number SUB_Telephony_Connection_getAddressesByName_ErrCo_0200
+     * @tc.desc   AddressesByName  Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testConnectionGetAddressesByNameErrCo0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testConnectionGetAddressesByNameErrCo0200';
@@ -83,12 +83,12 @@ export default function ConnextionErrorCode() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Connection_SocketLocal_Bind_ErrCo_0300
-     * @tc.name   : testNetworkMgrSocketLocalBindErrCo0300
-     * @tc.desc   : SocketLocal  Parameter error
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrSocketLocalBindErrCo0300
+     * @tc.number SUB_Telephony_Connection_SocketLocal_Bind_ErrCo_0300
+     * @tc.desc   SocketLocal  Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketLocalBindErrCo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalBindErrCo0300';
@@ -117,12 +117,12 @@ export default function ConnextionErrorCode() {
 
 
     /**
-     * @tc.number : SUB_Telephony_Connection_getAddressesByName_ErrCo_0400
-     * @tc.name   : testConnectionGetAddressesByNameErrCo0400
-     * @tc.desc   : AddressesByName  Cannot connect to service
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionGetAddressesByNameErrCo0400
+     * @tc.number SUB_Telephony_Connection_getAddressesByName_ErrCo_0400
+     * @tc.desc   AddressesByName  Cannot connect to service
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testConnectionGetAddressesByNameErrCo0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testConnectionGetAddressesByNameErrCo0400';
@@ -147,12 +147,12 @@ export default function ConnextionErrorCode() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Connection_getAddressesByName_ErrCo_0500
-     * @tc.name   : testConnectionGetAddressesByNameErrCo0500
-     * @tc.desc   : AddressesByName  Cannot connect to service
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionGetAddressesByNameErrCo0500
+     * @tc.number SUB_Telephony_Connection_getAddressesByName_ErrCo_0500
+     * @tc.desc   AddressesByName  Cannot connect to service
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testConnectionGetAddressesByNameErrCo0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testConnectionGetAddressesByNameErrCo0500';
@@ -177,12 +177,12 @@ export default function ConnextionErrorCode() {
     })
 
     /**
-     * @tc.number : SUB_Connection_GetAddressByName_ErrCo_0600
-     * @tc.name   : testConnectionGetAddressByNameErrC0600
-     * @tc.desc   : getAddressByName Invalid parameter value
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionGetAddressByNameErrC0600
+     * @tc.number SUB_Connection_GetAddressByName_ErrCo_0600
+     * @tc.desc   getAddressByName Invalid parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionGetAddressByNameErrC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testConnectionGetAddressByNameErrC0600';
@@ -213,12 +213,12 @@ export default function ConnextionErrorCode() {
     });
 
     /**
-     * @tc.number : SUB_Connection_GetAddressByName_ErrC_0700
-     * @tc.name   : testConnectionGetAddressByNameErrC0700
-     * @tc.desc   : getAddressByName Invalid parameter value
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionGetAddressByNameErrC0700
+     * @tc.number SUB_Connection_GetAddressByName_ErrC_0700
+     * @tc.desc   getAddressByName Invalid parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionGetAddressByNameErrC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testConnectionGetAddressByNameErrC0700';
@@ -247,12 +247,12 @@ export default function ConnextionErrorCode() {
     });
 
     /**
-     * @tc.number : SUB_NetHandle_GetAddressesByName_ErrCo_0800
-     * @tc.name   : testNetHandleGetAddressesByNameErrCo0800
-     * @tc.desc   : getAddressesByName Invalid parameter value
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetHandleGetAddressesByNameErrCo0800
+     * @tc.number SUB_NetHandle_GetAddressesByName_ErrCo_0800
+     * @tc.desc   getAddressesByName Invalid parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetHandleGetAddressesByNameErrCo0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetHandleGetAddressesByNameErrCo0800';
@@ -283,12 +283,12 @@ export default function ConnextionErrorCode() {
     });
 
     /**
-     * @tc.number : SUB_NetHandle_GetAddressesByName_ErrCo_0900
-     * @tc.name   : testNetHandleGetAddressesByNameErrCo0900
-     * @tc.desc   : getAddressesByName Invalid parameter value
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetHandleGetAddressesByNameErrCo0900
+     * @tc.number SUB_NetHandle_GetAddressesByName_ErrCo_0900
+     * @tc.desc   getAddressesByName Invalid parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetHandleGetAddressesByNameErrCo0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = 'testNetHandleGetAddressesByNameErrCo0900';
@@ -317,12 +317,12 @@ export default function ConnextionErrorCode() {
     });
     
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_RegisterErC_1000
-     * @tc.name       : testNetworkMgrConnectionRegisterErC_1000
-     * @tc.desc       : test the same callback exists
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionRegisterErC_1000
+     * @tc.number SUB_NetworkMgr_Connection_RegisterErC_1000
+     * @tc.desc   test the same callback exists
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRegisterErC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionRegisterErC_1000";
@@ -351,12 +351,12 @@ export default function ConnextionErrorCode() {
 
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_On_NetCap_0100
-     * @tc.name       : testNetworkMgrConnectionOnNetCap0100
-     * @tc.desc       : Subscription to network capability change events.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionOnNetCap0100
+     * @tc.number SUB_NetworkMgr_Connection_On_NetCap_0100
+     * @tc.desc   Subscription to network capability change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionOnNetCap0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionOnNetCap0100";

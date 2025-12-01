@@ -37,7 +37,6 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001
      * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001
      * @tc.desc   Test that the requestSuspendDelay callback function error call and errocode is 9900002
@@ -111,7 +110,6 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_002
      * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_002
      * @tc.desc   Test that the getRemainingDelayTime promise function error call and errocode is 9900001
@@ -144,7 +142,6 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_003
      * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_003
      * @tc.desc   Test that the getRemainingDelayTime callback function error call and errocode is 9900001
@@ -177,7 +174,6 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_004
      * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_004
      * @tc.desc   Test that the cancelSuspendDelay callback function error call and errocode is 9900001

@@ -45,10 +45,13 @@ export default function PerfTestTest() {
       done()
     })
 
-    /*
-     * @tc.number: perfTest_20001
-     * @tc.name: testPerfTestCalculate
-     * @tc.desc: Test the performance of computing scenarios
+    /**
+     * @tc.name   testPerfTestCalculate
+     * @tc.number perfTest_20001
+     * @tc.desc   Test the performance of computing scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPerfTestCalculate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.CPU_LOAD, PerfMetric.CPU_USAGE, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
@@ -82,10 +85,13 @@ export default function PerfTestTest() {
       done()
     })
 
-    /*
-     * @tc.number: perfTest_20002
-     * @tc.name: testPerfTestPageSwitch
-     * @tc.desc: Test the performance of page swipe scenarios
+    /**
+     * @tc.name   testPerfTestPageSwitch
+     * @tc.number perfTest_20002
+     * @tc.desc   Test the performance of page swipe scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPerfTestPageSwitch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await startAbility('com.perftestScene.acts', 'EntryAbility');
@@ -120,10 +126,13 @@ export default function PerfTestTest() {
       done()
     })
 
-    /*
-     * @tc.number: perfTest_20003
-     * @tc.name: testPerfTestListSwipe
-     * @tc.desc: Test the performance of list swipe scenarios
+    /**
+     * @tc.name   testPerfTestListSwipe
+     * @tc.number perfTest_20003
+     * @tc.desc   Test the performance of list swipe scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPerfTestListSwipe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await startAbility('com.perftest.acts', 'EntryAbility');
@@ -165,10 +174,13 @@ export default function PerfTestTest() {
       done()
     })
 
-    /*
-     * @tc.number: perfTest_20004
-     * @tc.name: testPerfTest_Keep
-     * @tc.desc: Test the performance of Page keep
+    /**
+     * @tc.name   testPerfTest_Keep
+     * @tc.number perfTest_20004
+     * @tc.desc   Test the performance of Page keep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPerfTest_Keep', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await startAbility('com.perftestScene.acts', 'EntryAbility');
@@ -201,10 +213,13 @@ export default function PerfTestTest() {
       done()
     })
 
-    /*
-     * @tc.number: perfTest_20005
-     * @tc.name: testPerfTest_Navigationchange
-     * @tc.desc: Test the performance of Page switching(Navigation)
+    /**
+     * @tc.name   testPerfTest_Navigationchange
+     * @tc.number perfTest_20005
+     * @tc.desc   Test the performance of Page switching(Navigation)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPerfTest_Navigationchange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await startAbility('com.perftestScene.acts', 'EntryAbility');
@@ -260,10 +275,13 @@ export default function PerfTestTest() {
       done()
     })
 
-    /*
-     * @tc.number: perfTest_20007
-     * @tc.name: testPerfTest_Start
-     * @tc.desc: Test the performance of App launch
+    /**
+     * @tc.name   testPerfTest_Start
+     * @tc.number perfTest_20007
+     * @tc.desc   Test the performance of App launch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPerfTest_Start', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(`caniuse perftest = ${canIUse("SystemCapability.Test.PerfTest")}`)
@@ -319,10 +337,13 @@ export default function PerfTestTest() {
       done()
     })
 
-    /*
-     * @tc.number: perfTest_20009
-     * @tc.name: testPerfTest_ActionCodenull
-     * @tc.desc: Test the performance of the ActionCodenull
+    /**
+     * @tc.name   testPerfTest_ActionCodenull
+     * @tc.number perfTest_20009
+     * @tc.desc   Test the performance of the ActionCodenull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPerfTest_ActionCodenull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(`caniuse perftest = ${canIUse("SystemCapability.Test.PerfTest")}`)

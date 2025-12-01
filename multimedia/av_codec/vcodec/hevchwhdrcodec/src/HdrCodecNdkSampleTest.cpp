@@ -328,7 +328,6 @@ int32_t HDRCodecNdkSample::SendDataHdr(OH_AVCodec *codec, uint32_t index, OH_AVM
     uint32_t bufferSize = 0;
     OH_AVCodecBufferAttr attr;
     static bool isFirstFrame = true;
-    std::lock_guard<std::mutex> lock01(fileMutex);
     (void)inFile_->read(reinterpret_cast<char *>(&bufferSize), sizeof(uint32_t));
     if (!inFile_->good()) {
         return 0;
@@ -354,7 +353,6 @@ int32_t HDRCodecNdkSample::SendDataHdr(OH_AVCodec *codec, uint32_t index, OH_AVM
         fileBuffer = nullptr;
         return 0;
     }
-    std::lock_guard<std::mutex> lock02(fileMutex);
     (void)inFile_->read(reinterpret_cast<char *>(fileBuffer), bufferSize);
     if (!inFile_->good()) {
         return 0;
@@ -375,7 +373,6 @@ int32_t HDRCodecNdkSample::SendDataH263(OH_AVCodec *codec, uint32_t index, OH_AV
 {
     OH_AVCodecBufferAttr attr;
     char ch[4] = {};
-    std::lock_guard<std::mutex> lock03(fileMutex);
     (void)inFile_->read(ch, START_CODE_SIZE);
     if (!inFile_->good()) {
         return 0;
@@ -405,7 +402,6 @@ int32_t HDRCodecNdkSample::SendDataH263(OH_AVCodec *codec, uint32_t index, OH_AV
         delete[] fileBuffer;
         return 0;
     }
-    std::lock_guard<std::mutex> lock04(fileMutex);
     (void)inFile_->read(reinterpret_cast<char *>(fileBuffer), bufferSize);
     if (!inFile_->good()) {
         return 0;

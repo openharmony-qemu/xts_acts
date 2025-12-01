@@ -81,7 +81,6 @@ export default function relationalStoreInterfaceErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_isNotNull_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_isNotNull_ErrTest_0100
      * @tc.desc   Test isNotNull
@@ -104,7 +103,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_orderByAsc_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_isNotNull_ErrTest_0100
      * @tc.desc   Test orderByAsc
@@ -127,7 +125,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_limitAs_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_limitAs_ErrTest_0100
      * @tc.desc   Test limitAs
@@ -150,7 +147,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_offsetAs_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_offsetAs_ErrTest_0100
      * @tc.desc   Test offsetAs
@@ -173,7 +169,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_getColumnName_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getColumnName_ErrTest_0100
      * @tc.desc   Test getColumnName
@@ -201,7 +196,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_getAsset_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getAsset_ErrTest_0100
      * @tc.desc   Test getAsset
@@ -229,7 +223,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_getAssets_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getAssets_ErrTest_0100
      * @tc.desc   Test getAssets
@@ -257,7 +250,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_getValue_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getValue_ErrTest_0100
      * @tc.desc   Test getValue
@@ -286,7 +278,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_getRows_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getRows_ErrTest_0100
      * @tc.desc   Test getRows
@@ -315,7 +306,6 @@ export default function relationalStoreInterfaceErrTest() {
     // })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_querySql_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_querySql_ErrTest_0100
      * @tc.desc   Test querySql
@@ -341,7 +331,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_querySql_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_querySql_ErrTest_0200
      * @tc.desc   Test querySql
@@ -367,7 +356,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_querySql_ErrTest_0300
      * @tc.number SUB_DistributedData_RelationalStore_querySql_ErrTest_0300
      * @tc.desc   Test querySql
@@ -393,7 +381,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0100
      * @tc.desc   Test getModifyTime
@@ -427,7 +414,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0200
      * @tc.desc   Test getModifyTime
@@ -470,7 +456,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100
      * @tc.desc   Test cleanDirtyData
@@ -496,7 +481,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0200
      * @tc.desc   Test cleanDirtyData
@@ -522,7 +506,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0300
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0200
      * @tc.desc   Test cleanDirtyData
@@ -549,7 +532,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_execute_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_execute_ErrTest_0100
      * @tc.desc   Test execute
@@ -577,7 +559,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_beginTransaction_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_beginTransaction_ErrTest_0100
      * @tc.desc   Test beginTransaction
@@ -603,7 +584,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_beginTrans_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_beginTrans_ErrTest_0100
      * @tc.desc   Test beginTrans
@@ -631,7 +611,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_commit_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_commit_ErrTest_0100
      * @tc.desc   Test commit
@@ -669,7 +648,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_rollBack_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_rollBack_ErrTest_0100
      * @tc.desc   Test rollBack
@@ -704,7 +682,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0100
      * @tc.desc   Test obtainDistributedTableName
@@ -744,7 +721,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0200
      * @tc.desc   Test obtainDistributedTableName
@@ -786,7 +762,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0100
      * @tc.desc   Test sync
@@ -833,7 +808,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0200
      * @tc.desc   Test sync
@@ -880,7 +854,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0100
      * @tc.desc   Test cloudSync
@@ -909,7 +882,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0200
      * @tc.desc   Test cloudSync
@@ -938,7 +910,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0300
      * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0300
      * @tc.desc   Test cloudSync
@@ -970,7 +941,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0400
      * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0400
      * @tc.desc   Test cloudSync
@@ -1001,7 +971,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0100
      * @tc.desc   Test remoteQuery
@@ -1044,7 +1013,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0200
      * @tc.desc   Test remoteQuery
@@ -1087,7 +1055,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0100
      * @tc.desc   Test on
@@ -1121,7 +1088,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0200
      * @tc.desc   Test on
@@ -1153,7 +1119,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0300
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0300
      * @tc.desc   Test on
@@ -1182,7 +1147,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0400
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0400
      * @tc.desc   Test on
@@ -1213,7 +1177,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0500
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0500
      * @tc.desc   Test on
@@ -1244,7 +1207,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0600
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0600
      * @tc.desc   Test on
@@ -1273,7 +1235,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0700
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0700
      * @tc.desc   Test on
@@ -1299,7 +1260,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0800
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0800
      * @tc.desc   Test on
@@ -1333,7 +1293,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0100
      * @tc.desc   Test off
@@ -1367,7 +1326,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0200
      * @tc.desc   Test off
@@ -1394,7 +1352,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0300
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0300
      * @tc.desc   Test off
@@ -1420,7 +1377,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0400
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0400
      * @tc.desc   Test off
@@ -1449,7 +1405,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0500
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0500
      * @tc.desc   Test off
@@ -1475,7 +1430,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0600
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0600
      * @tc.desc   Test off
@@ -1504,7 +1458,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0700
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0700
      * @tc.desc   Test off
@@ -1530,7 +1483,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0800
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0800
      * @tc.desc   Test off
@@ -1556,7 +1508,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_emit_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_emit_ErrTest_0100
      * @tc.desc   Test emit
@@ -1582,7 +1533,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_emit_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_emit_ErrTest_0200
      * @tc.desc   Test emit
@@ -1608,7 +1558,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_queryLockedRow_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_queryLockedRow_ErrTest_0100
      * @tc.desc   Test queryLockedRow
@@ -1637,7 +1586,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_insert_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_insert_ErrTest_0100
      * @tc.desc   Test insert
@@ -1671,7 +1619,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_insertSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_insertSync_ErrTest_0100
      * @tc.desc   Test insertSync
@@ -1706,7 +1653,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_batchInsert_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_batchInsert_ErrTest_0100
      * @tc.desc   Test batchInsert
@@ -1738,7 +1684,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_batchInsertSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_batchInsertSync_ErrTest_0100
      * @tc.desc   Test batchInsertSync
@@ -1772,7 +1717,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_update_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_update_ErrTest_0100
      * @tc.desc   Test update
@@ -1809,7 +1753,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_updateSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_updateSync_ErrTest_0100
      * @tc.desc   Test updateSync
@@ -1844,7 +1787,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_delete_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_delete_ErrTest_0100
      * @tc.desc   Test delete
@@ -1876,7 +1818,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_deleteSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_deleteSync_ErrTest_0100
      * @tc.desc   Test deleteSync
@@ -1910,7 +1851,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_query_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_query_ErrTest_0100
      * @tc.desc   Test query
@@ -1944,7 +1884,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_querySync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_querySync_ErrTest_0100
      * @tc.desc   Test querySync
@@ -1979,7 +1918,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_querySqlSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_querySqlSync_ErrTest_0100
      * @tc.desc   Test querySqlSync
@@ -2013,7 +1951,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_execute_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_execute_ErrTest_0200
      * @tc.desc   Test execute
@@ -2039,7 +1976,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_executeSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_executeSync_ErrTest_0100
      * @tc.desc   Test executeSync
@@ -2065,7 +2001,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_isTokenizerSupported_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_isTokenizerSupported_ErrTest_0100
      * @tc.desc   Test isTokenizerSupported
@@ -2086,7 +2021,6 @@ export default function relationalStoreInterfaceErrTest() {
      })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_toSendableValuesBucket_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_toSendableValuesBucket_ErrTest_0100
      * @tc.desc   Test toSendableValuesBucket
@@ -2140,7 +2074,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_fromSendableValuesBucket_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_fromSendableValuesBucket_ErrTest_0100
      * @tc.desc   Test fromSendableValuesBucket
@@ -2195,7 +2128,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_toSendableAsset_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_toSendableAsset_ErrTest_0100
      * @tc.desc   Test toSendableAsset
@@ -2226,7 +2158,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_fromSendableAsset_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_fromSendableAsset_ErrTest_0100
      * @tc.desc   Test fromSendableAsset
@@ -2259,7 +2190,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0400
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100
      * @tc.desc   Test cleanDirtyData
@@ -2286,7 +2216,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0500
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0500
      * @tc.desc   Test cleanDirtyData
@@ -2313,7 +2242,6 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0600
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0600
      * @tc.desc   Test cleanDirtyData

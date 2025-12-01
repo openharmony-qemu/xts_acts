@@ -106,6 +106,19 @@ async function clickResultButton(driver: Driver) {
   await CommonFunc.sleep(1000);
 }
 
+async function clickUpdatablePickerButton(driver: Driver) {
+  console.info("testPicker create");
+  let btn = await driver.findComponent(ON.id('updatePickerOptions'));
+  console.info("testPicker findComponent updatePickerOptions succsess");
+  if (btn === null) {
+    console.info('no button');
+    return;
+  }
+  await btn.click();
+  console.info("testPicker btn click finish");
+  await CommonFunc.sleep(1000);
+}
+
 async function clickAlbumButton(driver: Driver) {
   console.info("testpicker create");
   let btn = await driver.findComponent(ON.id('albumButton'));
@@ -2685,6 +2698,65 @@ export default function TextPicker() {
 
       router.back();
       console.info('testPicker55 finish');
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker56
+     * @tc.name      : testPicker56
+     * @tc.desc      : Testing UpdatablePickerConfigs
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker56', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let callback = (event: events_emitter.EventData) => {
+        let expectedMaxSelectNumber: number = 10;
+        let expectedMaxSelectPhotoNumber: number = 5;
+        let expectedMaxSelectVideoNumber: number = 5;
+        let expectedCheckBoxColor: String = '#ff38ff00';
+        let expectedCheckBoxTextColor: String = '#ffffdc00';
+        let expectedBackgroundColor: String = '#f00000';
+        let expectedBrowserColorMode: PickerColorMode = PickerColorMode.DARK;
+        let expectedUiComponentColorMode: PickerColorMode = PickerColorMode.DARK;
+
+        let msg: PhotoPickerResult = event?.data?.msg;
+        console.info('testPicker56 result msg ' + JSON.stringify(msg));
+        expect(expectedMaxSelectNumber).assertEqual(msg.maxSelectCount);
+        expect(expectedMaxSelectPhotoNumber).assertEqual(msg.maxPhotoSelectNumber);
+        expect(expectedMaxSelectVideoNumber).assertEqual(msg.maxVideoSelectNumber);
+        expect(expectedCheckBoxColor).assertEqual(msg.checkBoxColor);
+        expect(expectedCheckBoxTextColor).assertEqual(msg.checkboxTextColor);
+        expect(expectedBackgroundColor).assertEqual(msg.backgroundColor);
+        expect(expectedBrowserColorMode).assertEqual(msg.photoBrowserBackgroundColorMode);
+        expect(expectedUiComponentColorMode).assertEqual(msg.uiComponentColorMode);
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker56 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await clickUpdatablePickerButton(driver);
+      router.back();
+      events_emitter.off(event.eventId);
+      console.info("testPicker56 finish");
       done();
     });
   })

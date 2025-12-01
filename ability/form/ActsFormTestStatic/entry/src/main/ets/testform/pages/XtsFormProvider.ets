@@ -42,24 +42,24 @@ struct XtsFormProvider {
     try {
       formProvider.setFormNextRefreshTime(this.formId, 2, (error: BusinessError<void> | null) => {
         if (error?.code) {
-          hilog.info(DOMAIN, TAG, `XtsFormProvider callback error, code:${error?.code}`);
+          hilog.info(DOMAIN, TAG, `XtsFormProvider callback code: ${error?.code}, message: ${error?.message}`);
         }
         hilog.info(DOMAIN, TAG, 'XtsFormProvider setFormNextRefreshTime callback success');
       });
       hilog.info(DOMAIN, TAG, 'XtsFormProvider setFormNextRefreshTime register success');
-    } catch (error) {
-      hilog.info(DOMAIN, TAG, 'XtsFormProvider catch error');
+    } catch (error: Error) {
+      hilog.error(DOMAIN, TAG, `XtsFormProvider catch error, code: ${error?.code}, message: ${error?.message}`);
     }
 
     try {
       formProvider.setFormNextRefreshTime(this.formId2, 3).then(() => {
         hilog.info(DOMAIN, TAG, `XtsFormProvider setFormNextRefreshTime success`);
-      }).catch((error) => {
-        hilog.info(DOMAIN, TAG, `XtsFormProvider promise error, code:`);
+      }).catch((error: Error) => {
+        hilog.error(DOMAIN, TAG, `XtsFormProvider promise error, code: ${error?.code}, message: ${error?.message}`);
       });
       hilog.info(DOMAIN, TAG, 'XtsFormProvider setFormNextRefreshTime register success');
-    } catch (error) {
-      hilog.info(DOMAIN, TAG, `XtsFormProvider catch error, code: `);
+    } catch (error: Error) {
+      hilog.error(DOMAIN, TAG, `XtsFormProvider catch error, code: ${error?.code}, message: ${error?.message}`);
     }
   }
 
@@ -84,7 +84,7 @@ struct XtsFormProvider {
                 formProvider.openFormManagerCrossBundle(want)
                 hilog.info(DOMAIN, TAG, '%{public}s', `formProvider openFormManagerCrossBundle success`);
               } catch (error: BusinessError) {
-                hilog.info(DOMAIN, TAG, '%{public}s',
+                hilog.error(DOMAIN, TAG, '%{public}s',
                   `openFormManagerCrossBundle error: ${error.code}, ${error.message}`);
               }
             })
@@ -97,8 +97,8 @@ struct XtsFormProvider {
                 formProvider.openFormManagerCrossBundle(want)
                 hilog.info(DOMAIN, TAG, '%{public}s', `formProvider openFormManagerCrossBundle success`);
               } catch (error: BusinessError) {
-                hilog.info(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error: ${JSON.stringify(error)}`);
-                hilog.info(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error.code: ${error.code}`);
+                hilog.error(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error: ${JSON.stringify(error)}`);
+                hilog.error(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error.code: ${error.code}`);
               }
             })
 
@@ -238,7 +238,7 @@ struct XtsFormProvider {
                   `formProvider updateForm promise error, code: ${error?.code}, message: ${error?.message}`);
               });
             } catch (error: Error) {
-              hilog.error(DOMAIN, TAG, `formProvider updateForm catch error, code:` + error);
+              hilog.error(DOMAIN, TAG, `formProvider updateForm catch error, code: ${error.code} message: ${error.message}`);
             }
           })
 
@@ -287,7 +287,7 @@ struct XtsFormProvider {
                   `formProvider IsRequestPublishFormSupported error, code: ${error?.code}, message: ${error?.message}`);
               });
             } catch (error: Error) {
-              hilog.error(DOMAIN, TAG, `formProvider IsRequestPublishFormSupported catch error, code:` + error);
+              hilog.error(DOMAIN, TAG, `formProvider IsRequestPublishFormSupported catch error, code: ${error.code} message: ${error.message}`);
             }
 
             try {
@@ -380,7 +380,7 @@ struct XtsFormProvider {
               .onAcquired((formInfo: FormCallbackInfo) => {
                 hilog.info(DOMAIN, TAG, `form info: ${JSON.stringify(formInfo)}`);
                 // Invalid-form-id
-                if (formInfo.id == -1) {
+                if (formInfo.id === -1) {
                   this.formComponentId = formInfo.idString;
                 } else {
                   this.formComponentId = formInfo.id.toString();

@@ -125,7 +125,6 @@ export default function relationalStorePredicatesTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEqualTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0010
      * @tc.desc   predicates equalTo normal test
@@ -147,7 +146,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEqualTo0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0020
      * @tc.desc   predicates equalTo normal test
@@ -169,7 +167,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEqualTo0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0030
      * @tc.desc   predicates equalTo normal test
@@ -191,7 +188,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEqualTo0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0040
      * @tc.desc   predicates equalTo normal test
@@ -213,7 +209,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEqualTo0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0050
      * @tc.desc   predicates equalTo normal test
@@ -235,7 +230,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEqualTo0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0060
      * @tc.desc   predicates equalTo normal test
@@ -258,7 +252,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEqualTo0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0070
      * @tc.desc   predicates equalTo normal test
@@ -281,7 +274,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEqualTo0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0080
      * @tc.desc   predicates equalTo normal test
@@ -304,7 +296,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotEqualTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0090
      * @tc.desc   predicates notEqualTo normal test
@@ -326,7 +317,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotEqualTo0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0100
      * @tc.desc   predicates notEqualTo normal test
@@ -349,7 +339,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotEqualTo0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0110
      * @tc.desc   predicates notEqualTo normal test
@@ -371,7 +360,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotEqualTo0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0120
      * @tc.desc   predicates notEqualTo normal test
@@ -393,7 +381,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotEqualTo0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0130
      * @tc.desc   predicates notEqualTo normal test
@@ -415,7 +402,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotEqualTo0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0140
      * @tc.desc   predicates notEqualTo normal test
@@ -437,7 +423,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotEqualTo0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0150
      * @tc.desc   predicates notEqualTo normal test
@@ -459,7 +444,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotEqualTo0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0160
      * @tc.desc   predicates notEqualTo normal test
@@ -481,7 +465,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIsNull0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0170
      * @tc.desc   predicates isNull normal test
@@ -501,7 +484,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIsNull0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0180
      * @tc.desc   predicates isNull normal test
@@ -521,7 +503,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIsNull0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0190
      * @tc.desc   predicates isNull normal test
@@ -541,7 +522,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIsNull0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0200
      * @tc.desc   predicates isNull normal test
@@ -561,7 +541,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIsNotNull0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0210
      * @tc.desc   predicates isNotNull normal test
@@ -581,7 +560,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIsNotNull0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0220
      * @tc.desc   predicates isNotNull normal test
@@ -601,7 +579,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIsNotNull0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0230
      * @tc.desc   predicates isNotNull normal test
@@ -621,7 +598,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIsNotNull0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0240
      * @tc.desc   predicates isNotNull normal test
@@ -641,7 +617,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThan0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0250
      * @tc.desc   predicates greaterThan normal test
@@ -663,7 +638,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThan0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0260
      * @tc.desc   predicates greaterThan normal test
@@ -685,7 +659,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThan0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0270
      * @tc.desc   predicates greaterThan normal test
@@ -707,7 +680,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThan0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0280
      * @tc.desc   predicates greaterThan normal test
@@ -729,7 +701,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThan0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0290
      * @tc.desc   predicates greaterThan normal test
@@ -751,7 +722,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThan0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0300
      * @tc.desc   predicates greaterThan normal test
@@ -773,7 +743,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThan0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0310
      * @tc.desc   predicates greaterThan normal test
@@ -795,7 +764,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThan0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0320
      * @tc.desc   predicates greaterThan normal test
@@ -817,7 +785,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThanOrEqualTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0330
      * @tc.desc   predicates greaterThanOrEqualTo normal test
@@ -839,7 +806,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThanOrEqualTo0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0340
      * @tc.desc   predicates greaterThanOrEqualTo normal test
@@ -861,7 +827,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThanOrEqualTo0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0350
      * @tc.desc   predicates greaterThanOrEqualTo normal test
@@ -883,7 +848,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGreaterThanOrEqualTo0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0360
      * @tc.desc   predicates greaterThanOrEqualTo normal test
@@ -905,7 +869,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThan0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0370
      * @tc.desc   predicates lessThan normal test
@@ -927,7 +890,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThan0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0380
      * @tc.desc   predicates lessThan normal test
@@ -949,7 +911,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThan0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0390
      * @tc.desc   predicates lessThan normal test
@@ -971,7 +932,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThan0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0400
      * @tc.desc   predicates lessThan normal test
@@ -993,7 +953,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThan0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0410
      * @tc.desc   predicates lessThan normal test
@@ -1015,7 +974,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThan0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0420
      * @tc.desc   predicates lessThan normal test
@@ -1037,7 +995,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThan0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0430
      * @tc.desc   predicates lessThan normal test
@@ -1059,7 +1016,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThan0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0440
      * @tc.desc   predicates lessThan normal test
@@ -1081,7 +1037,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThanOrEqualTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0450
      * @tc.desc   predicates lessThanOrEqualTo normal test
@@ -1103,7 +1058,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThanOrEqualTo0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0460
      * @tc.desc   predicates lessThanOrEqualTo normal test
@@ -1125,7 +1079,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThanOrEqualTo0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0470
      * @tc.desc   predicates lessThanOrEqualTo normal test
@@ -1147,7 +1100,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLessThanOrEqualTo0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0480
      * @tc.desc   predicates lessThanOrEqualTo normal test
@@ -1169,7 +1121,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBetween0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0490
      * @tc.desc   predicates between normal test
@@ -1191,7 +1142,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBetween0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0500
      * @tc.desc   predicates between normal test
@@ -1213,7 +1163,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBetween0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0510
      * @tc.desc   predicates between normal test
@@ -1235,7 +1184,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBetween0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0520
      * @tc.desc   predicates between normal test
@@ -1257,7 +1205,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBetween0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0530
      * @tc.desc   predicates between normal test
@@ -1279,7 +1226,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBetween0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0540
      * @tc.desc   predicates between normal test
@@ -1301,7 +1247,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBetween0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0550
      * @tc.desc   predicates between normal test
@@ -1323,7 +1268,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBetween0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0560
      * @tc.desc   predicates between normal test
@@ -1345,7 +1289,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotBetween0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0570
      * @tc.desc   test string value with notBetween.
@@ -1367,7 +1310,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotBetween0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0580
      * @tc.desc   test double value with notBetween.
@@ -1389,7 +1331,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotBetween0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0590
      * @tc.desc   test integer value with notBetween.
@@ -1411,7 +1352,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotBetween0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0600
      * @tc.desc   test long value with notBetween.
@@ -1433,7 +1373,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGlob0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0610
      * @tc.desc   end with ? by glob.
@@ -1455,7 +1394,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGlob0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0620
      * @tc.desc   begin with * by glob.
@@ -1477,7 +1415,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGlob0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0630
      * @tc.desc   end with ? by glob.
@@ -1499,7 +1436,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGlob0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0640
      * @tc.desc   begin with ? by glob.
@@ -1521,7 +1457,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGlob0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0650
      * @tc.desc   begin and end with * by glob.
@@ -1543,7 +1478,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGlob0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0660
      * @tc.desc   begin and end with ? by glob.
@@ -1565,7 +1499,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testContains0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0670
      * @tc.desc   predicates contains normal test
@@ -1585,7 +1518,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testContains0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0680
      * @tc.desc   predicates contains normal test
@@ -1605,7 +1537,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testContains0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0690
      * @tc.desc   predicates contains normal test
@@ -1625,7 +1556,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testContains0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0700
      * @tc.desc   predicates contains normal test
@@ -1645,7 +1575,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBeginsWith0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0710
      * @tc.desc   predicates beginsWith normal test
@@ -1665,7 +1594,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBeginsWith0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0720
      * @tc.desc   predicates beginsWith normal test
@@ -1685,7 +1613,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBeginsWith0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0730
      * @tc.desc   predicates beginsWith normal test
@@ -1705,7 +1632,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBeginsWith0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0740
      * @tc.desc   predicates beginsWith normal test
@@ -1725,7 +1651,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEndsWith0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0750
      * @tc.desc   predicates endsWith normal test
@@ -1745,7 +1670,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEndsWith0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0760
      * @tc.desc   predicates endsWith normal test
@@ -1765,7 +1689,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEndsWith0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0770
      * @tc.desc   predicates endsWith normal test
@@ -1785,7 +1708,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testEndsWith0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0780
      * @tc.desc   predicates endsWith normal test
@@ -1805,7 +1727,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLike0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0790
      * @tc.desc   predicates like normal test
@@ -1825,7 +1746,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLike0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0800
      * @tc.desc   predicates like normal test
@@ -1845,7 +1765,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLike0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0810
      * @tc.desc   predicates like normal test
@@ -1865,7 +1784,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLike0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0820
      * @tc.desc   predicates like normal test
@@ -1885,7 +1803,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBeginWrap0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0830
      * @tc.desc   predicates beginWrap normal test
@@ -1912,7 +1829,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBeginWrap0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0840
      * @tc.desc   predicates beginWrap normal test
@@ -1937,7 +1853,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBeginWrap0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0850
      * @tc.desc   predicates beginWrap normal test
@@ -1962,7 +1877,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBeginWrap0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0860
      * @tc.desc   predicates beginWrap normal test
@@ -1986,7 +1900,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testBeginWrap0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0870
      * @tc.desc   predicates beginWrap normal test
@@ -2010,7 +1923,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testAnd0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0880
      * @tc.desc   predicates and normal test
@@ -2033,7 +1945,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testAnd0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0890
      * @tc.desc   predicates or normal test
@@ -2059,7 +1970,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testAnd0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0900
      * @tc.desc   predicates and normal test
@@ -2080,7 +1990,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testAnd0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0910
      * @tc.desc   predicates and normal test
@@ -2102,7 +2011,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testOrder0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0920
      * @tc.desc   predicates order normal test
@@ -2129,7 +2037,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testOrder0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0930
      * @tc.desc   predicates order normal test
@@ -2156,7 +2063,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testOrder0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0940
      * @tc.desc   predicates order normal test
@@ -2175,7 +2081,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testOrder0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0950
      * @tc.desc   predicates order normal test
@@ -2194,7 +2099,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLimit0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0960
      * @tc.desc   predicates limit normal test
@@ -2213,7 +2117,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLimit0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0970
      * @tc.desc   predicates limit normal test
@@ -2232,7 +2135,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLimit0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0980
      * @tc.desc   predicates limit normal test
@@ -2251,7 +2153,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLimit0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0990
      * @tc.desc   predicates limit normal test
@@ -2270,7 +2171,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLimit0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1000
      * @tc.desc   predicates limit normal test
@@ -2289,7 +2189,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testLimit0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1010
      * @tc.desc   predicates limit normal test
@@ -2308,7 +2207,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testOffset0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1020
      * @tc.desc   predicates offset normal test
@@ -2327,7 +2225,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testOffset0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1030
      * @tc.desc   predicates offset normal test
@@ -2346,7 +2243,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testOffset0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1040
      * @tc.desc   predicates offset normal test
@@ -2365,7 +2261,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testOffset0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1050
      * @tc.desc   predicates offset normal test
@@ -2384,7 +2279,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIn0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1060
      * @tc.desc   predicates in normal test
@@ -2404,7 +2298,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIn0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1070
      * @tc.desc   predicates in normal test
@@ -2424,7 +2317,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIn0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1080
      * @tc.desc   predicates in normal test
@@ -2444,7 +2336,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIn0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1090
      * @tc.desc   predicates in normal test
@@ -2464,7 +2355,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotIn0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1100
      * @tc.desc   the common and min value test with notin.
@@ -2484,7 +2374,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotIn0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1110
      * @tc.desc   the common and max value test with notin.
@@ -2504,7 +2393,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotIn0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1120
      * @tc.desc   the min and max value test with notin.
@@ -2524,7 +2412,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testCreate0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1130
      * @tc.desc   predicates constructor test
@@ -2542,7 +2429,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testCreate0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1140
      * @tc.desc   predicates constructor test
@@ -2560,7 +2446,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGroupBy0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1150
      * @tc.desc   predicates groupBy test
@@ -2579,7 +2464,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGroupBy0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1160
      * @tc.desc   predicates groupBy test
@@ -2598,7 +2482,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIndexedBy0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1170
      * @tc.desc   predicates indexedBy test
@@ -2621,7 +2504,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIndexedBy0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1180
      * @tc.desc   predicates indexedBy test
@@ -2644,7 +2526,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIndexedBy0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1190
      * @tc.desc   predicates indexedBy test
@@ -2669,7 +2550,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testIndexedBy0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1200
      * @tc.desc   predicates indexedBy test
@@ -2696,7 +2576,6 @@ export default function relationalStorePredicatesTest() {
     console.info(TAG + "*************Unit Test End*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0001
      * @tc.desc   1.Execute notLike ("stringValue", "ABCDEFGHIJKLMN")
@@ -2717,7 +2596,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0002
      * @tc.desc   1.Execute notLike ("stringValue", "LMNX")
@@ -2738,7 +2616,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0003
      * @tc.desc   1.Execute notLike ("characterValue", "中")
@@ -2759,7 +2636,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0004
      * @tc.desc   1.Execute notLike ("characterValue", "#")
@@ -2780,7 +2656,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0006
      * @tc.desc   1.Execute notLike ("characterValue", "#")
@@ -2828,7 +2703,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0007
      * @tc.desc   1.Execute notLike ("characterValue", "#")
@@ -2876,7 +2750,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0008
      * @tc.desc   1.Execute notLike ("characterValue", "#")
@@ -2933,7 +2806,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0009
      * @tc.desc   1.Execute notLike ("characterValue", "#")
@@ -2990,7 +2862,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0010
      * @tc.desc   1.Execute notLike ("characterValue", "#")
@@ -3033,7 +2904,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0011
      * @tc.desc   1.Execute notLike ("characterValue", "#")
@@ -3077,7 +2947,6 @@ export default function relationalStorePredicatesTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0012
      * @tc.desc   1.Execute notLike ("characterValue", null)
@@ -3101,7 +2970,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0013
      * @tc.desc   1.Execute notLike ("characterValue", undefined)
@@ -3125,7 +2993,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotLike0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0014
      * @tc.desc   1.Execute notLike ("", "#")
@@ -3149,7 +3016,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0001
      * @tc.desc   1.Execute notContains ("stringValue", "ABC")
@@ -3170,7 +3036,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0002
      * @tc.desc   1.Execute notContains ("stringValue", "ABCX")
@@ -3191,7 +3056,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0003
      * @tc.desc   1.Execute notContains ("characterValue", "中")
@@ -3212,7 +3076,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0004
      * @tc.desc   1.Execute notContains ("characterValue", "#")
@@ -3233,7 +3096,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0006
      * @tc.desc   1.Execute notContains ("characterValue", "#")
@@ -3277,7 +3139,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0007
      * @tc.desc   1.Execute notContains ("characterValue", "#")
@@ -3321,7 +3182,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0008
      * @tc.desc   1.Execute notContains ("characterValue", "#")
@@ -3378,7 +3238,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0009
      * @tc.desc   1.Execute notContains ("characterValue", "#")
@@ -3435,7 +3294,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0010
      * @tc.desc   1.Execute notContains ("characterValue", "#")
@@ -3478,7 +3336,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0011
      * @tc.desc   1.Execute notContains ("characterValue", "#")
@@ -3521,7 +3378,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0012
      * @tc.desc   1.Execute notContains ("characterValue", null)
@@ -3545,7 +3401,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0013
      * @tc.desc   1.Execute notContains ("characterValue", undefined)
@@ -3569,7 +3424,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testNotContains0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0014
      * @tc.desc   1.Execute notContains ("characterValue", undefined)

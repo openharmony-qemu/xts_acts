@@ -29,13 +29,12 @@ export default function fileIORandomAccessFileSetFilePointer() {
   describe('fileIO_randomAccessFile_setFilePointer', (): void => {
 
     /**
+     * @tc.name   fileIO_randomaccessfile_set_file_pointer_sync_static_000
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_set_file_pointer_sync_static_0000
-     * @tc.name fileIO_randomaccessfile_set_file_pointer_sync_static_000
-     * @tc.desc Test setFilePointer() interface. Set file offset pointer position and read will start from filePointer + offset
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test setFilePointer() interface. Set file offset pointer position and read will start from filePointer + offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_set_file_pointer_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_set_file_pointer_sync_static_000');

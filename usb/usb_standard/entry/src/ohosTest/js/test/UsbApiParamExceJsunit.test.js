@@ -135,7 +135,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     }
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasRightParamEx001
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0100
      * @tc.desc   Negative test: Param is null string
@@ -160,7 +159,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasRightParamEx002
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0200
      * @tc.desc   Negative test: Param add number '123'
@@ -189,7 +187,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestRightParamEx001
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0300
      * @tc.desc   Negative test: Param is null string
@@ -214,7 +211,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestRightParamEx002
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0400
      * @tc.desc   Negative test: Param add number 'abc'
@@ -243,7 +239,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRemoveRightParamEx001
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0500
      * @tc.desc   Negative test: Param is null string
@@ -268,7 +263,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRemoveRightParamEx002
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0600
      * @tc.desc   Negative test: Param add letter 'abc'
@@ -297,7 +291,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRemoveRightParamEx003
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0700
      * @tc.desc   Negative test: Param add special characters '@#'
@@ -326,7 +319,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRemoveRightParamEx004
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0800
      * @tc.desc   Negative test: Param add number '123'
@@ -355,7 +347,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx001
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0900
      * @tc.desc   Negative test: Param add number '123'
@@ -383,7 +374,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx002
      * @tc.number SUB_USB_HostManager_JS_ParamEx_1000
      * @tc.desc   Negative test: Param add letter 'abc'
@@ -410,7 +400,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx003
      * @tc.number SUB_USB_HostManager_JS_ParamEx_1100
      * @tc.desc   Negative test: Param add special characters '@#'
@@ -437,7 +426,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx004
      * @tc.number SUB_USB_HostManager_JS_ParamEx_1200
      * @tc.desc   Negative test: devices name is null string ""
@@ -463,7 +451,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx005
      * @tc.number SUB_USB_HostManager_JS_ParamEx_1300
      * @tc.desc   Negative test: devices serial is null string ""
@@ -489,7 +476,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx006
      * @tc.number SUB_USB_HostManager_JS_ParamEx_1400
      * @tc.desc   Negative test: devices serial add letter abc
@@ -516,7 +502,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx007
      * @tc.number SUB_USB_HostManager_JS_ParamEx_1500
      * @tc.desc   Negative test: devices serial add number 123
@@ -543,7 +528,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx008
      * @tc.number SUB_USB_HostManager_JS_ParamEx_1600
      * @tc.desc   Negative test: devices serial add special characters '@#'
@@ -570,7 +554,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx009
      * @tc.number SUB_USB_HostManager_JS_ParamEx_1700
      * @tc.desc   Negative test: devices manufacturerName add special characters '@#'
@@ -597,7 +580,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx010
      * @tc.number SUB_USB_HostManager_JS_ParamEx_1800
      * @tc.desc   Negative test: devices manufacturerName add special characters 'abc'
@@ -624,7 +606,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx011
      * @tc.number SUB_USB_HostManager_JS_ParamEx_1900
      * @tc.desc   Negative test: devices manufacturerName add special characters '123'
@@ -651,7 +632,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx012
      * @tc.number SUB_USB_HostManager_JS_ParamEx_2000
      * @tc.desc   Negative test: devices manufacturerName add special characters ""
@@ -677,7 +657,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
     
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx013
      * @tc.number SUB_USB_HostManager_JS_ParamEx_2100
      * @tc.desc   Negative test: devices productName add special characters '@#'
@@ -704,7 +683,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx014
      * @tc.number SUB_USB_HostManager_JS_ParamEx_2200
      * @tc.desc   Negative test: devices productName add special characters 'abc'
@@ -731,7 +709,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx015
      * @tc.number SUB_USB_HostManager_JS_ParamEx_2300
      * @tc.desc   Negative test: devices productName add special characters '123'
@@ -758,7 +735,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx016
      * @tc.number SUB_USB_HostManager_JS_ParamEx_2400
      * @tc.desc   Negative test: devices productName is null string ""
@@ -784,7 +760,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx017
      * @tc.number SUB_USB_HostManager_JS_ParamEx_2500
      * @tc.desc   Negative test: devices version add special characters '@#'
@@ -811,7 +786,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx018
      * @tc.number SUB_USB_HostManager_JS_ParamEx_2600
      * @tc.desc   Negative test: devices version add special characters 'abc'
@@ -838,7 +812,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx019
      * @tc.number SUB_USB_HostManager_JS_ParamEx_2700
      * @tc.desc   Negative test: devices version add special characters '123'
@@ -865,7 +838,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx020
      * @tc.number SUB_USB_HostManager_JS_ParamEx_2800
      * @tc.desc   Negative test: devices version is null string ""
@@ -891,7 +863,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx021
      * @tc.number SUB_USB_HostManager_JS_ParamEx_2900
      * @tc.desc   Negative test: devices vendorId is add number 1000
@@ -918,7 +889,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx022
      * @tc.number SUB_USB_HostManager_JS_ParamEx_3000
      * @tc.desc   Negative test: devices productId is add number 1000
@@ -945,7 +915,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx023
      * @tc.number SUB_USB_HostManager_JS_ParamEx_3100
      * @tc.desc   Negative test: devices clazz is add number 1000
@@ -972,7 +941,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx024
      * @tc.number SUB_USB_HostManager_JS_ParamEx_3200
      * @tc.desc   Negative test: devices subClass is add number 1000
@@ -999,7 +967,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx025
      * @tc.number SUB_USB_HostManager_JS_ParamEx_3300
      * @tc.desc   Negative test: devices protocol is add number 1000
@@ -1026,7 +993,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx026
      * @tc.number SUB_USB_HostManager_JS_ParamEx_3400
      * @tc.desc   Negative test: devices busNum is add number 1000
@@ -1053,7 +1019,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamEx027
      * @tc.number SUB_USB_HostManager_JS_ParamEx_3500
      * @tc.desc   Negative test: devices devAddress is add number 10000
@@ -1080,7 +1045,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamEx001
      * @tc.number SUB_USB_HostManager_JS_ParamEx_3600
      * @tc.desc   Negative test: pipe busNum add number 1000
@@ -1108,7 +1072,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamEx002
      * @tc.number SUB_USB_HostManager_JS_ParamEx_3700
      * @tc.desc   Negative test: pipe devAddress add number 10000
@@ -1137,7 +1100,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamEx001
      * @tc.number SUB_USB_HostManager_JS_ParamEx_3800
      * @tc.desc   Negative test: pipe busNum add number 1000
@@ -1166,7 +1128,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamEx002
      * @tc.number SUB_USB_HostManager_JS_ParamEx_3900
      * @tc.desc   Negative test: pipe devAddress add number 10000
@@ -1195,7 +1156,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamEx003
      * @tc.number SUB_USB_HostManager_JS_ParamEx_4000
      * @tc.desc   Negative test: pipe busNum -23
@@ -1223,7 +1183,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamEx004
      * @tc.number SUB_USB_HostManager_JS_ParamEx_4100
      * @tc.desc   Negative test: pipe devAddress -23
@@ -1251,7 +1210,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamEx005
      * @tc.number SUB_USB_HostManager_JS_ParamEx_4200
      * @tc.desc   Negative test: pipe busNum -23, devAddress -23
@@ -1280,7 +1238,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamEx001
      * @tc.number SUB_USB_HostManager_JS_ParamEx_4300
      * @tc.desc   Negative test: pipe busNum add number 1000
@@ -1309,7 +1266,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamEx002
      * @tc.number SUB_USB_HostManager_JS_ParamEx_4400
      * @tc.desc   Negative test: pipe devAddress add number 10000
@@ -1338,7 +1294,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamEx003
      * @tc.number SUB_USB_HostManager_JS_ParamEx_4500
      * @tc.desc   Negative test: pipe busNum -23
@@ -1366,7 +1321,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamEx004
      * @tc.number SUB_USB_HostManager_JS_ParamEx_4600
      * @tc.desc   Negative test: pipe devAddress -23
@@ -1394,7 +1348,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamEx005
      * @tc.number SUB_USB_HostManager_JS_ParamEx_4700
      * @tc.desc   Negative test: pipe busNum -23, devAddress -23
@@ -1423,7 +1376,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx001
      * @tc.number SUB_USB_HostManager_JS_ParamEx_4800
      * @tc.desc   Negative test: interfaces id add 123
@@ -1452,7 +1404,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx002
      * @tc.number SUB_USB_HostManager_JS_ParamEx_4900
      * @tc.desc   Negative test: interfaces id -1
@@ -1481,7 +1432,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx003
      * @tc.number SUB_USB_HostManager_JS_ParamEx_5000
      * @tc.desc   Negative test: pipe busNum add 1000
@@ -1510,7 +1460,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx004
      * @tc.number SUB_USB_HostManager_JS_ParamEx_5100
      * @tc.desc   Negative test: pipe busNum -1
@@ -1539,7 +1488,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx005
      * @tc.number SUB_USB_HostManager_JS_ParamEx_5200
      * @tc.desc   Negative test: pipe devAddress add 10000
@@ -1568,7 +1516,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx006
      * @tc.number SUB_USB_HostManager_JS_ParamEx_5300
      * @tc.desc   Negative test: pipe devAddress -1
@@ -1597,7 +1544,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx007
      * @tc.number SUB_USB_HostManager_JS_ParamEx_5400
      * @tc.desc   Negative test: pipe devAddress -1, busNum -1
@@ -1627,7 +1573,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx008
      * @tc.number SUB_USB_HostManager_JS_ParamEx_5500
      * @tc.desc   Negative test: interfaces protocol add 100
@@ -1656,7 +1601,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx009
      * @tc.number SUB_USB_HostManager_JS_ParamEx_5600
      * @tc.desc   Negative test: interfaces clazz add 100
@@ -1685,7 +1629,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx010
      * @tc.number SUB_USB_HostManager_JS_ParamEx_5700
      * @tc.desc   Negative test: interfaces name add 123
@@ -1714,7 +1657,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx011
      * @tc.number SUB_USB_HostManager_JS_ParamEx_5800
      * @tc.desc   Negative test: interfaces name add @#
@@ -1743,7 +1685,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx012
      * @tc.number SUB_USB_HostManager_JS_ParamEx_5900
      * @tc.desc   Negative test: interfaces name add abc
@@ -1772,7 +1713,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx013
      * @tc.number SUB_USB_HostManager_JS_ParamEx_6000
      * @tc.desc   Negative test: interfaces name is ""
@@ -1801,7 +1741,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx014
      * @tc.number SUB_USB_HostManager_JS_ParamEx_6100
      * @tc.desc   Negative test: interfaces alternateSetting add 100
@@ -1830,7 +1769,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamEx015
      * @tc.number SUB_USB_HostManager_JS_ParamEx_6200
      * @tc.desc   Negative test: interfaces subClass add 100
@@ -1859,7 +1797,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamEx001
      * @tc.number SUB_USB_HostManager_JS_ParamEx_6300
      * @tc.desc   Negative test: configs id add 100
@@ -1888,7 +1825,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamEx002
      * @tc.number SUB_USB_HostManager_JS_ParamEx_6400
      * @tc.desc   Negative test: configs id is -1
@@ -1917,7 +1853,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParam801Err002
      * @tc.number SUB_USB_HostManager_JS_ParamExCon_6300
      * @tc.desc   Negative test: configs id add 100
@@ -1946,7 +1881,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamEx003
      * @tc.number SUB_USB_HostManager_JS_ParamEx_6500
      * @tc.desc   Negative test: configs name is ""
@@ -1975,7 +1909,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamEx004
      * @tc.number SUB_USB_HostManager_JS_ParamEx_6600
      * @tc.desc   Negative test: configs name add "123"
@@ -2004,7 +1937,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamEx005
      * @tc.number SUB_USB_HostManager_JS_ParamEx_6700
      * @tc.desc   Negative test: configs name add "abc"
@@ -2033,7 +1965,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamEx006
      * @tc.number SUB_USB_HostManager_JS_ParamEx_6800
      * @tc.desc   Negative test: configs name add "@#"
@@ -2062,7 +1993,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamEx007
      * @tc.number SUB_USB_HostManager_JS_ParamEx_6900
      * @tc.desc   Negative test: configs maxPower add 100
@@ -2091,7 +2021,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamEx008
      * @tc.number SUB_USB_HostManager_JS_ParamEx_7000
      * @tc.desc   Negative test: configs isRemoteWakeup is true
@@ -2120,7 +2049,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamEx009
      * @tc.number SUB_USB_HostManager_JS_ParamEx_7100
      * @tc.desc   Negative test: configs isRemoteWakeup is false
@@ -2149,7 +2077,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamEx010
      * @tc.number SUB_USB_HostManager_JS_ParamEx_7200
      * @tc.desc   Negative test: configs isSelfPowered is true
@@ -2178,7 +2105,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamEx011
      * @tc.number SUB_USB_HostManager_JS_ParamEx_7300
      * @tc.desc   Negative test: configs isSelfPowered is false
@@ -2207,7 +2133,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx001
      * @tc.number SUB_USB_HostManager_JS_ParamEx_7400
      * @tc.desc   Negative test: pipe busNum add 1000
@@ -2239,7 +2164,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx002
      * @tc.number SUB_USB_HostManager_JS_ParamEx_7500
      * @tc.desc   Negative test: pipe devAddress add 10000
@@ -2271,7 +2195,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx003
      * @tc.number SUB_USB_HostManager_JS_ParamEx_7600
      * @tc.desc   Negative test: pipe busNum is -1
@@ -2303,7 +2226,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx004
      * @tc.number SUB_USB_HostManager_JS_ParamEx_7700
      * @tc.desc   Negative test: pipe devAddress is -1
@@ -2335,7 +2257,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx005
      * @tc.number SUB_USB_HostManager_JS_ParamEx_7800
      * @tc.desc   Negative test: pipe devAddress -1, busNum -1
@@ -2368,7 +2289,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx006
      * @tc.number SUB_USB_HostManager_JS_ParamEx_7900
      * @tc.desc   Negative test: interface id +100
@@ -2402,7 +2322,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx007
      * @tc.number SUB_USB_HostManager_JS_ParamEx_8000
      * @tc.desc   Negative test: interface id -1
@@ -2436,7 +2355,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx008
      * @tc.number SUB_USB_HostManager_JS_ParamEx_8100
      * @tc.desc   Negative test: interface protocol +100
@@ -2470,7 +2388,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx009
      * @tc.number SUB_USB_HostManager_JS_ParamEx_8200
      * @tc.desc   Negative test: interface protocol +100
@@ -2504,7 +2421,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx010
      * @tc.number SUB_USB_HostManager_JS_ParamEx_8300
      * @tc.desc   Negative test: interface clazz +100
@@ -2538,7 +2454,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx011
      * @tc.number SUB_USB_HostManager_JS_ParamEx_8400
      * @tc.desc   Negative test: interface subClass +100
@@ -2572,7 +2487,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx012
      * @tc.number SUB_USB_HostManager_JS_ParamEx_8500
      * @tc.desc   Negative test: interface alternateSetting +100
@@ -2606,7 +2520,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx013
      * @tc.number SUB_USB_HostManager_JS_ParamEx_8600
      * @tc.desc   Negative test: interface name ""
@@ -2640,7 +2553,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx014
      * @tc.number SUB_USB_HostManager_JS_ParamEx_8700
      * @tc.desc   Negative test: interface name +@#
@@ -2674,7 +2586,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx015
      * @tc.number SUB_USB_HostManager_JS_ParamEx_8800
      * @tc.desc   Negative test: interface name +123
@@ -2708,7 +2619,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamEx016
      * @tc.number SUB_USB_HostManager_JS_ParamEx_8900
      * @tc.desc   Negative test: interface name +abc
@@ -2742,7 +2652,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx001
      * @tc.number SUB_USB_HostManager_JS_ParamEx_9000
      * @tc.desc   Negative test: pipe busNum +1000
@@ -2774,7 +2683,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx801Err001
      * @tc.number SUB_USB_HostManager_JS_ParamExRel_0100
      * @tc.desc   Negative test: pipe busNum +1000
@@ -2806,7 +2714,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx002
      * @tc.number SUB_USB_HostManager_JS_ParamEx_9100
      * @tc.desc   Negative test: pipe devAddress +10000
@@ -2838,7 +2745,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx003
      * @tc.number SUB_USB_HostManager_JS_ParamEx_9200
      * @tc.desc   Negative test: pipe busNum -1
@@ -2870,7 +2776,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx004
      * @tc.number SUB_USB_HostManager_JS_ParamEx_9300
      * @tc.desc   Negative test: pipe devAddress +10000
@@ -2902,7 +2807,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx005
      * @tc.number SUB_USB_HostManager_JS_ParamEx_9400
      * @tc.desc   Negative test: interface id +100
@@ -2936,7 +2840,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx006
      * @tc.number SUB_USB_HostManager_JS_ParamEx_9500
      * @tc.desc   Negative test: interface id -1
@@ -2970,7 +2873,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx007
      * @tc.number SUB_USB_HostManager_JS_ParamEx_9600
      * @tc.desc   Negative test: interface name ""
@@ -3001,7 +2903,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx008
      * @tc.number SUB_USB_HostManager_JS_ParamEx_9700
      * @tc.desc   Negative test: interface name +123
@@ -3032,7 +2933,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx009
      * @tc.number SUB_USB_HostManager_JS_ParamEx_9800
      * @tc.desc   Negative test: interface name +abc
@@ -3063,7 +2963,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx010
      * @tc.number SUB_USB_HostManager_JS_ParamEx_9900
      * @tc.desc   Negative test: interface name +@#
@@ -3094,7 +2993,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx011
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0110
      * @tc.desc   Negative test: interface clazz +100
@@ -3125,7 +3023,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx012
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0120
      * @tc.desc   Negative test: interface protocol +100
@@ -3156,7 +3053,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx013
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0130
      * @tc.desc   Negative test: interface subClass +100
@@ -3187,7 +3083,6 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamEx014
      * @tc.number SUB_USB_HostManager_JS_ParamEx_0140
      * @tc.desc   Negative test: interface alternateSetting +100

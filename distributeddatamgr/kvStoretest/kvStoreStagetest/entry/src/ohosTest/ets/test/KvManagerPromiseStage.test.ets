@@ -93,7 +93,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore001
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1800
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 001
@@ -118,7 +117,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore002
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1900
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 002
@@ -142,7 +140,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore003
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2000
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 003
@@ -175,7 +172,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore004
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2100
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 004
@@ -204,7 +200,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore005
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2200
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 005
@@ -236,7 +231,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore006
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2300
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 006
@@ -269,7 +263,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore007
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2400
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 007
@@ -301,7 +294,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore008
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2500
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 008
@@ -332,7 +324,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore009
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2600
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 009
@@ -363,7 +354,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore010
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2700
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 010
@@ -396,7 +386,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore011
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2800
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 011
@@ -429,7 +418,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore012
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2900
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 012
@@ -462,7 +450,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore013
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3000
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 013
@@ -498,7 +485,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore014
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3100
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 014
@@ -528,7 +514,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore015
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3200
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 015
@@ -558,7 +543,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore016
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3300
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 016
@@ -588,7 +572,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore017
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3400
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 017
@@ -618,7 +601,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore018
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3500
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 018
@@ -648,7 +630,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetKVStore019
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3600
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 019
@@ -680,7 +661,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerCloseKVStore001
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0400
      * @tc.desc   Test Js Api KVManager.CloseKVStore testcase 001
@@ -709,7 +689,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerDeleteKVStore001
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0900
      * @tc.desc   Test Js Api KVManager.DeleteKVStore testcase 001
@@ -732,7 +711,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetAllKVStoreId001
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1400
      * @tc.desc   Test Js Api KVManager.GetAllKVStoreId testcase 001
@@ -756,7 +734,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerGetAllKVStoreId002
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1500
      * @tc.desc   Test Js Api KVManager.GetAllKVStoreId testcase 002
@@ -790,7 +767,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerOn001
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6100
      * @tc.desc   Test Js Api KVManager.On testcase 001
@@ -814,7 +790,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerOn002
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6100
      * @tc.desc   Test Js Api KVManager.On testcase 002
@@ -843,7 +818,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerOn003
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6300
      * @tc.desc   Test Js Api KVManager.On testcase 003
@@ -868,7 +842,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerOff001
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6300
      * @tc.desc   Test Js Api KVManager.Off testcase 001
@@ -891,7 +864,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerOff002
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_5700
      * @tc.desc   Test Js Api KVManager.Off testcase 002
@@ -915,7 +887,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerOff003
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_5800
      * @tc.desc   Test Js Api KVManager.Off testcase 003
@@ -944,7 +915,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerOff004
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_5900
      * @tc.desc   Test Js Api KVManager.Off testcase 004
@@ -969,7 +939,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVManagerOff005
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6000
      * @tc.desc   Test Js Api KVManager.Off testcase 005
@@ -993,7 +962,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVStorePut001
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0200
      * @tc.desc   Test Js Api KVManager.Put testcase 001
@@ -1018,7 +986,6 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKVStoreDelete001
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0300
      * @tc.desc   Test Js Api KVManager.Delete testcase 001

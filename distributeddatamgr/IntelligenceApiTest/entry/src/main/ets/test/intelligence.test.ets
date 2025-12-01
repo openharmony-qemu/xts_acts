@@ -64,7 +64,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest0100
      * @tc.number intelligenceApiTest0100
      * @tc.desc   intelligenceApiTest0100
@@ -107,7 +106,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest0200
      * @tc.number intelligenceApiTest0200
      * @tc.desc   intelligenceApiTest0200
@@ -146,7 +144,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest0300
      * @tc.number intelligenceApiTest0300
      * @tc.desc   intelligenceApiTest0300
@@ -186,7 +183,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest0400
      * @tc.number intelligenceApiTest0400
      * @tc.desc   intelligenceApiTest0400
@@ -223,7 +219,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest0500
      * @tc.number intelligenceApiTest0500
      * @tc.desc   intelligenceApiTest0500
@@ -269,7 +264,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest0600
      * @tc.number intelligenceApiTest0600
      * @tc.desc   intelligenceApiTest0600
@@ -313,7 +307,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest0700
      * @tc.number intelligenceApiTest0700
      * @tc.desc   intelligenceApiTest0700
@@ -360,7 +353,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest0800
      * @tc.number intelligenceApiTest0800
      * @tc.desc   intelligenceApiTest0800
@@ -404,7 +396,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest0900
      * @tc.number intelligenceApiTest0900
      * @tc.desc   intelligenceApiTest0900
@@ -448,7 +439,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest1000
      * @tc.number intelligenceApiTest1000
      * @tc.desc   intelligenceApiTest1000
@@ -494,7 +484,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest1100
      * @tc.number intelligenceApiTest1100
      * @tc.desc   intelligenceApiTest1100
@@ -539,7 +528,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest1200
      * @tc.number intelligenceApiTest1200
      * @tc.desc   intelligenceApiTest1200
@@ -586,7 +574,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest2600
      * @tc.number intelligenceApiTest2600
      * @tc.desc   intelligenceApiTest2600
@@ -627,7 +614,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest2700
      * @tc.number intelligenceApiTest2700
      * @tc.desc   intelligenceApiTest2700
@@ -668,7 +654,6 @@ export default function intelligenceTest() {
 
 
      /**
-      * @generated.time 2025-11-09 20:49:54
       * @tc.name   intelligenceApiTest2800
       * @tc.number intelligenceApiTest2800
       * @tc.desc   intelligenceApiTest2800
@@ -719,7 +704,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest2900
      * @tc.number intelligenceApiTest2900
      * @tc.desc   intelligenceApiTest2900
@@ -763,7 +747,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest3000
      * @tc.number intelligenceApiTest3000
      * @tc.desc   intelligenceApiTest3000
@@ -814,7 +797,6 @@ export default function intelligenceTest() {
 	
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest3100
      * @tc.number intelligenceApiTest3100
      * @tc.desc   intelligenceApiTest3100
@@ -869,7 +851,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest3200
      * @tc.number intelligenceApiTest3200
      * @tc.desc   intelligenceApiTest3200
@@ -929,7 +910,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest3300
      * @tc.number intelligenceApiTest3300
      * @tc.desc   intelligenceApiTest3300
@@ -990,7 +970,6 @@ export default function intelligenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   intelligenceApiTest3400
      * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_3400
      * @tc.desc   getImageEmbeddingModel releaseModel abnormal interface test

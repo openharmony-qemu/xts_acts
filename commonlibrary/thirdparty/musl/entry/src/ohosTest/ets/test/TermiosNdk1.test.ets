@@ -25,12 +25,12 @@ export default function termiosNdk1Test() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TERMIOS_CFGETOSPEDD_0100
-     * @tc.name       : testMuslTermiosCfgetospeed001
-     * @tc.desc       : test cfgetospeed
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTermiosCfgetospeed001
+     * @tc.number SUB_THIRDPARTY_MUSL_TERMIOS_CFGETOSPEDD_0100
+     * @tc.desc   test cfgetospeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTermiosCfgetospeed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = termios.cfgetospeed();

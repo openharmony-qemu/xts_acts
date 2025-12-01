@@ -92,7 +92,6 @@ export default function RdbResultSetTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetColumnIndex0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0100
      * @tc.desc   getColumnIndex normal test
@@ -111,7 +110,6 @@ export default function RdbResultSetTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetColumnIndex0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0200
      * @tc.desc   getColumnIndex errcode test
@@ -133,7 +131,6 @@ export default function RdbResultSetTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetColumnIndex0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0300
      * @tc.desc   getColumnIndex errcode test
@@ -155,7 +152,6 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0003 end *************');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetColumnIndex0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0400
      * @tc.desc   getColumnIndex errcode test
@@ -178,7 +174,6 @@ export default function RdbResultSetTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetString0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0600
      * @tc.desc   getString normal test
@@ -196,7 +191,6 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* testGetString0001 end *************');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetString0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0700
      * @tc.desc   getString normal test
@@ -215,7 +209,6 @@ export default function RdbResultSetTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   errcode006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1600
      * @tc.desc   goToFirstRow 14800021 test
@@ -239,7 +232,6 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode006 end *************');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   errcode008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1700
      * @tc.desc   getRdbStore promise 14800017 test
@@ -270,7 +262,6 @@ export default function RdbResultSetTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   errcode020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2000
      * @tc.desc   executeSql callback 14800021 test
@@ -293,7 +284,6 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode020 end *************');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   errcode022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2100
      * @tc.desc   executeSql promise 14800021 test
@@ -315,7 +305,6 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode022 end *************');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   errcode028
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2200
      * @tc.desc   executeSql promise 14800032 test
@@ -339,7 +328,6 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode028 end *************');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   errcode031
      * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2300
      * @tc.desc   executeSql promise 14800033 test
@@ -364,7 +352,6 @@ export default function RdbResultSetTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testInsert0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbAPITest_0200
      * @tc.desc   getColumnIndex normal test

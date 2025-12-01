@@ -325,12 +325,12 @@ export default function TextRunTest() {
     })
 
     /**
-     * @tc.number     testGetGlyphRunsStatic
-     * @tc.name       testGetGlyphRunsStatic
-     * @tc.desc       To test method getGlyphRuns desc.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      LEVEL1
+     * @tc.name   testGetGlyphRunsStatic
+     * @tc.number testGetGlyphRunsStatic
+     * @tc.desc   To test method getGlyphRuns desc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGlyphRunsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -359,6 +359,9 @@ export default function TextRunTest() {
                 JSON.stringify(run.getPositions(range)));
               hilog.info(domain, tag, 'TEXT_LOG run [%{public}d %{public}d] getOffsets :%{public}s', i, j,
                 JSON.stringify(run.getOffsets()));
+              hilog.info(domain, tag, 'TEXT_LOG run [%{public}d %{public}d] getFont :%{public}s', i, j,
+                JSON.stringify(run.getFont()));
+              run.paint(globalCanvas, 0, 0);
               let indices: Array<int> | undefined = run.getStringIndices(range);
               if (indices) {
                 hilog.info(domain, tag, 'TEXT_LOG indices size: %{public}d ', indices.length);

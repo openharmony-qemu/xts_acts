@@ -45,13 +45,13 @@ export default function httpRequestProtocolTest() {
     describe("HttpRequestProtocolTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0100
-         * @tc.name  :  testHttpProtocolHTTP_static_0100
-         * @tc.desc  :  test HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpProtocolHTTP_static_0100
+         * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0100
+         * @tc.desc   test HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpProtocolHTTP_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpProtocolHTTP_static_0100';
@@ -93,13 +93,13 @@ export default function httpRequestProtocolTest() {
             }
         })
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0200
-         * @tc.name  :  testHttpProtocolHTTP_static_0200
-         * @tc.desc  :  test HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpProtocolHTTP_static_0200
+         * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0200
+         * @tc.desc   test HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpProtocolHTTP_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpProtocolHTTP_static_0200';
@@ -139,13 +139,13 @@ export default function httpRequestProtocolTest() {
             }
         })
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0300
-         * @tc.name  :  testHttpProtocolHTTP_static_0300
-         * @tc.desc  :  test HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpProtocolHTTP_static_0300
+         * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0300
+         * @tc.desc   test HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpProtocolHTTP_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpProtocolHTTP_static_0300';
@@ -186,13 +186,13 @@ export default function httpRequestProtocolTest() {
             }
         })
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0400
-         * @tc.name  :  testHttpProtocolHTTP_static_0400
-         * @tc.desc  :  test HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpProtocolHTTP_static_0400
+         * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0400
+         * @tc.desc   test HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpProtocolHTTP_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpProtocolHTTP_static_0400';
@@ -232,13 +232,13 @@ export default function httpRequestProtocolTest() {
             }
         })
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0500
-         * @tc.name  :  testHttpProtocolHTTP_static_0500
-         * @tc.desc  :  test HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpProtocolHTTP_static_0500
+         * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0500
+         * @tc.desc   test HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpProtocolHTTP_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpProtocolHTTP_static_0500';
@@ -280,13 +280,13 @@ export default function httpRequestProtocolTest() {
             }
         })
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0600
-         * @tc.name  :  testHttpProtocolHTTP_static_0600
-         * @tc.desc  :  test HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpProtocolHTTP_static_0600
+         * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0600
+         * @tc.desc   test HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpProtocolHTTP_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpProtocolHTTP_static_0600';

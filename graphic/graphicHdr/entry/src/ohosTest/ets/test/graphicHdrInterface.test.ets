@@ -23,12 +23,12 @@ export default function graphicHdrInterfaceTest() {
     beforeAll(async ()=> {
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICHDR_JS_API_001
-     * @tc.name      : testHDRFormat
-     * @tc.desc      : HDR format enum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testHDRFormat
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICHDR_JS_API_001
+     * @tc.desc   HDR format enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHDRFormat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function)=> {
       let msg = "====testHDRFormat===="

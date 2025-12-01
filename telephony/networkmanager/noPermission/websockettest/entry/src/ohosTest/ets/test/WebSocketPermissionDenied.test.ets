@@ -31,13 +31,13 @@ let ws: webSocket.WebSocket = webSocket.createWebSocket();
 export default function WebSocketPermissionDeniedTest() {
   describe('webSocketPermissionDeniedTest', () => {
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_ConnectCode201Callback_0100
-     * @tc.name  : testNetworkMgrWebSocketConnectCode201Callback0100
-     * @tc.desc  : Test code 201 of connect api with callback type
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectCode201Callback0100
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectCode201Callback_0100
+     * @tc.desc   Test code 201 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketConnectCode201Callback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketConnectCode201Callback0100';
@@ -58,13 +58,13 @@ export default function WebSocketPermissionDeniedTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_ConnectOptionsCode201Callback_0200
-     * @tc.name  : testNetworkMgrWebSocketConnectOptionsCode201Callback0200
-     * @tc.desc  : Test code 201 of connect api with callback type
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectOptionsCode201Callback0200
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectOptionsCode201Callback_0200
+     * @tc.desc   Test code 201 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketConnectOptionsCode201Callback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketConnectOptionsCode201Callback0200';
@@ -90,13 +90,13 @@ export default function WebSocketPermissionDeniedTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_ConnectOptionsCode201Promise_0300
-     * @tc.name  : testNetworkMgrWebSocketConnectOptionsCode201Promise0300
-     * @tc.desc  : Test code 201 of connect api with callback type
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectOptionsCode201Promise0300
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectOptionsCode201Promise_0300
+     * @tc.desc   Test code 201 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketConnectOptionsCode201Promise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketConnectOptionsCode201Promise0300';
@@ -122,13 +122,13 @@ export default function WebSocketPermissionDeniedTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_SendCode201Callback_0100
-     * @tc.name  : testNetworkMgrWebSocketSendCode201Callback0100
-     * @tc.desc  : Test code 201 of connect api with callback type
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketSendCode201Callback0100
+     * @tc.number SUB_NetworkMgr_WebSocket_SendCode201Callback_0100
+     * @tc.desc   Test code 201 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketSendCode201Callback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketSendCode201Callback0100';
@@ -148,13 +148,13 @@ export default function WebSocketPermissionDeniedTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_SendCode201Promise_0200
-     * @tc.name  : testNetworkMgrWebSocketSendCode201Promise0200
-     * @tc.desc  : Test code 201 of connect api with callback type
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketSendCode201Promise0200
+     * @tc.number SUB_NetworkMgr_WebSocket_SendCode201Promise_0200
+     * @tc.desc   Test code 201 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketSendCode201Promise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketSendCode201Promise0200';
@@ -174,14 +174,14 @@ export default function WebSocketPermissionDeniedTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_NetworkMgr_WebSocket_CloseCode201Callback_0100
-    * @tc.name  : testNetworkMgrWebSocketCloseCode201Callback0100
-    * @tc.desc  : Test code 201 of connect api with callback type
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrWebSocketCloseCode201Callback0100
+     * @tc.number SUB_NetworkMgr_WebSocket_CloseCode201Callback_0100
+     * @tc.desc   Test code 201 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrWebSocketCloseCode201Callback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketCloseCode201Callback0100';
       console.info(`${caseName} test start`);
@@ -200,13 +200,13 @@ export default function WebSocketPermissionDeniedTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_CloseOptionsCode201Callback_0200
-     * @tc.name  : testNetworkMgrWebSocketCloseOptionsCode201Callback0200
-     * @tc.desc  : Test code 201 of connect api with callback type
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketCloseOptionsCode201Callback0200
+     * @tc.number SUB_NetworkMgr_WebSocket_CloseOptionsCode201Callback_0200
+     * @tc.desc   Test code 201 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketCloseOptionsCode201Callback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketCloseOptionsCode201Callback0200';
@@ -230,13 +230,13 @@ export default function WebSocketPermissionDeniedTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_CloseOptionsCode201Promise_0300
-     * @tc.name  : testNetworkMgrWebSocketCloseOptionsCode201Promise0300
-     * @tc.desc  : Test code 201 of connect api with callback type
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketCloseOptionsCode201Promise0300
+     * @tc.number SUB_NetworkMgr_WebSocket_CloseOptionsCode201Promise_0300
+     * @tc.desc   Test code 201 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketCloseOptionsCode201Promise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketCloseOptionsCode201Promise0300';

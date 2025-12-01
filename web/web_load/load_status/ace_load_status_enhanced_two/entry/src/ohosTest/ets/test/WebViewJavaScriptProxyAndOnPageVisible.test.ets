@@ -56,14 +56,14 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_ONPAGEVISIBLE_0100
-    * @tc.name       : testOnPageVisible001
-    * @tc.desc       : test onPageVisible
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnPageVisible001
+     * @tc.number SUB_WEB_ONPAGEVISIBLE_0100
+     * @tc.desc   test onPageVisible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnPageVisible001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnPageVisible", 141721)
       let isReturn = false;

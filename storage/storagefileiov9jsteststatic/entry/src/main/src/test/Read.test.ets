@@ -30,14 +30,12 @@ export default function fileIORead() {
   describe("fileIO_fs_read", (): void => {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_read start');
     /**
+     * @tc.name   fileIO_test_read_sync_static_000
      * @tc.number SUB_DF_FILEIO_READ_SYNC_0000
-     * @tc.name fileIO_test_read_sync_static_000
-     * @tc.desc Test readSync() interfaces.
-     * Open the file in read-only mode, default read from current offset.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_read_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_000 start');
@@ -62,14 +60,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_sync_static_001
      * @tc.number SUB_DF_FILEIO_READ_SYNC_0100
-     * @tc.name fileIO_test_read_sync_static_001
-     * @tc.desc Test readSync() interfaces.
-     * Open the file in read-only mode, reading the file with length = 1.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_read_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_001 start');
@@ -94,14 +90,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_sync_static_002
      * @tc.number SUB_DF_FILEIO_READ_SYNC_0200
-     * @tc.name fileIO_test_read_sync_static_002
-     * @tc.desc Test readSync() interfaces.
-     * Open the file in read-only mode, reading the file with length = -1((0 < length < buffer.size)).
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_read_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_002 start');
@@ -125,14 +119,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_sync_static_003
      * @tc.number SUB_DF_FILEIO_READ_SYNC_0300
-     * @tc.name fileIO_test_read_sync_static_003
-     * @tc.desc Test readSync() interfaces.
-     * Open the file in read-only mode, reading the file with length > the content of file(Read normal).
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_read_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_003 start');
@@ -156,14 +148,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_sync_static_004
      * @tc.number SUB_DF_FILEIO_READ_SYNC_0400
-     * @tc.name fileIO_test_read_sync_static_004
-     * @tc.desc Test readSync() interfaces.
-     * Read the file with invalid length > size of ArrayBuffer.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_read_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_004 start');
@@ -187,14 +177,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_sync_static_005
      * @tc.number SUB_DF_FILEIO_READ_SYNC_0500
-     * @tc.name fileIO_test_read_sync_static_005
-     * @tc.desc Test readSync() interfaces.
-     * Open the file in read-only mode, reading the file with offset(position) = 1.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_read_sync_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_005 start');
@@ -218,14 +206,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_sync_static_006
      * @tc.number SUB_DF_FILEIO_READ_SYNC_0600
-     * @tc.name fileIO_test_read_sync_static_006
-     * @tc.desc Test readSync() interfaces.
-     * Read the file with invalid offset = -1.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_read_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_006 start');
@@ -250,14 +236,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_sync_static_007
      * @tc.number SUB_DF_FILEIO_READ_SYNC_0700
-     * @tc.name fileIO_test_read_sync_static_007
-     * @tc.desc Test readSync() interfaces.
-     * Open the file in read-only mode, reading the file with offset(position) > the content of file(Read normal).
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_read_sync_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_007 start');
@@ -281,14 +265,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_sync_static_008
      * @tc.number SUB_DF_FILEIO_READ_SYNC_0800
-     * @tc.name fileIO_test_read_sync_static_008
-     * @tc.desc Test readSync() interfaces.
-     * Open the file in read-only mode, reading the file with offset(position) = 1, length = 10.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_read_sync_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_008 start');
@@ -313,14 +295,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_sync_static_009
      * @tc.number SUB_DF_FILEIO_READ_SYNC_0900
-     * @tc.name fileIO_test_read_sync_static_009
-     * @tc.desc Test readSync() interfaces.
-     * Read the file with invalid fd.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_read_sync_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_009 start');
@@ -334,14 +314,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_sync_static_011
      * @tc.number SUB_DF_FILEIO_READ_SYNC_1100
-     * @tc.name fileIO_test_read_sync_static_011
-     * @tc.desc Test readSync() interfaces.
-     * Undefined option arguments, use default options.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_read_sync_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_011 start');
@@ -366,14 +344,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_sync_static_012
      * @tc.number SUB_DF_FILEIO_READ_SYNC_1200
-     * @tc.name fileIO_test_read_sync_static_012
-     * @tc.desc Test readSync() interfaces.
-     * Undefined option arguments, use default options.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_sync_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_012 start');
@@ -404,14 +380,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_000
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_0000
-     * @tc.name fileIO_test_read_async_static_000
-     * @tc.desc Test read() interfaces. Promise.
-     * Open the file in read-only mode, default read from current offset.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_000 start');
@@ -436,14 +410,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_001
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_0100
-     * @tc.name fileIO_test_read_async_static_001
-     * @tc.desc Test read() interfaces. Callback.
-     * Open the file in read-only mode, default read from current offset.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_001 start');
@@ -473,14 +445,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_002
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_0200
-     * @tc.name fileIO_test_read_async_static_002
-     * @tc.desc Test read() interfaces. Promise.
-     * Open the file in write-only mode, verifying it is not readable.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_002 start');
@@ -502,14 +472,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_003
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_0300
-     * @tc.name fileIO_test_read_async_static_003
-     * @tc.desc Test read() interfaces. Callback.
-     * Open the file in write-only mode, verifying it is not readable.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_003 start');
@@ -538,14 +506,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_004
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_0400
-     * @tc.name fileIO_test_read_async_static_004
-     * @tc.desc Test read() interfaces. Promise.
-     * Open the file in read-only mode, reading the file with offset(position) = 1.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_004 start');
@@ -571,14 +537,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_005
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_0500
-     * @tc.name fileIO_test_read_async_static_005
-     * @tc.desc Test read() interfaces. Callback.
-     * Open the file in read-only mode, reading the file with offset(position) = 1.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_005 start');
@@ -606,14 +570,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_006
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_0600
-     * @tc.name fileIO_test_read_async_static_006
-     * @tc.desc Test read() interface. Promise.
-     * Open the file in read-only mode, reading the file with length = 3.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_006 start');
@@ -640,14 +602,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_007
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_0700
-     * @tc.name fileIO_test_read_async_static_007
-     * @tc.desc Test read() interface. Callback.
-     * Open the file in read-only mode, reading the file with length = 3.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_007 start');
@@ -675,14 +635,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_008
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_0800
-     * @tc.name fileIO_test_read_async_static_008
-     * @tc.desc Test read() interfaces. Promise.
-     * Open the file in read-only mode, reading the file with offset > the content of file(Read normal).
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_008 start');
@@ -708,14 +666,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_009
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_0900
-     * @tc.name fileIO_test_read_async_static_009
-     * @tc.desc Test read() interfaces. Callback.
-     * Open the file in read-only mode, reading the file with offset > the content of file(Read normal).
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_009 start');
@@ -742,14 +698,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_010
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_1000
-     * @tc.name fileIO_test_read_async_static_010
-     * @tc.desc Test read() interfaces.
-     * Open the file in read-only mode, reading the file with offset(position) = 1, length = 11.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_010 start');
@@ -776,14 +730,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_011
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_1100
-     * @tc.name fileIO_test_read_async_static_011
-     * @tc.desc Test read() interfaces. Callback.
-     * Open the file in read-only mode, reading the file with offset(position) = 1, length = 11.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_011 start');
@@ -811,14 +763,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_012
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_1200
-     * @tc.name fileIO_test_read_async_static_012
-     * @tc.desc Test read() interfaces. Promise.
-     * Read with invalid fd parameters.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_012 start');
@@ -833,14 +783,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_013
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_1300
-     * @tc.name fileIO_test_read_async_static_013
-     * @tc.desc Test read() interfaces. Callback.
-     * Read with invalid fd parameters.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_013 start');
@@ -859,14 +807,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_014
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_1400
-     * @tc.name fileIO_test_read_async_static_014
-     * @tc.desc Test read() interfaces. Callback.
-     * Read with invalid offset < 0.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_014 start');
@@ -894,14 +840,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_015
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_1500
-     * @tc.name fileIO_test_read_async_static_015
-     * @tc.desc Test read() interfaces. Callback.
-     * Read with invalid length > size of ArrayBuffer(4096).
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_015 start');
@@ -927,14 +871,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_016
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_1600
-     * @tc.name fileIO_test_read_async_static_016
-     * @tc.desc Test read() interfaces. Promise.
-     * Open the file in read-only mode, reading the file with empty option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_016 start');
@@ -957,14 +899,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_017
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_1700
-     * @tc.name fileIO_test_read_async_static_017
-     * @tc.desc Test read() interfaces. Callback.
-     * Open the file in read-only mode, reading the file with empty option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_017 start');
@@ -989,14 +929,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_018
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_1800
-     * @tc.name fileIO_test_read_async_static_018
-     * @tc.desc Test read() interfaces.
-     * Open the file in read-only mode, reading the file with length = -1(0 < length < buffer.size).
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_018 start');
@@ -1022,14 +960,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_019
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_1900
-     * @tc.name fileIO_test_read_async_static_019
-     * @tc.desc Test read() interfaces. Promise.
-     * Undefined option arguments, use default options.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_019 start');
@@ -1056,14 +992,12 @@ export default function fileIORead() {
     });
 
     /**
+     * @tc.name   fileIO_test_read_async_static_020
      * @tc.number SUB_DF_FILEIO_READ_ASYNC_2000
-     * @tc.name fileIO_test_read_async_static_020
-     * @tc.desc Test read() interfaces. Promise.
-     * Undefined option arguments, use default options.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_read_async_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_020 start');

@@ -56,12 +56,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0100
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0100
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_0100
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -89,12 +89,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0200
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0200
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_0200
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -125,12 +125,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0300
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0300
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_0300
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -162,12 +162,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0400
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0400
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_0400
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -198,12 +198,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0500
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0500
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_0500
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -233,12 +233,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0600
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0600
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_0600
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -268,12 +268,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0700
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0700
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_0700
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -306,12 +306,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0800
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0800
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_0800
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -341,12 +341,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0900
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0900
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_0900
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -374,12 +374,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_1000
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_1000
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_1000
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -407,12 +407,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_1100
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_1100
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_1100
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -440,12 +440,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_1200
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_1200
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_1200
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -475,12 +475,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_1300
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_1300
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_1300
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -510,12 +510,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_1400
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_1400
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_1400
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -546,12 +546,12 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_1500
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_1500
-     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_1500
-     * @tc.desc The Online CRL, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {

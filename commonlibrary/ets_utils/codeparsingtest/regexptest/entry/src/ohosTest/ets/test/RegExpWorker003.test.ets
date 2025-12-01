@@ -39,12 +39,12 @@ export default function RegExpWorkerTest003() {
     })
 
     /**
+     * @tc.name   testRegReplace0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WORKER_0001
-     * @tc.name testRegReplace0001
-     * @tc.desc Replace the first occurrence of a substring
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace the first occurrence of a substring
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let workerInstance = new worker.ThreadWorker('../workers/Worker003.ets');
@@ -60,12 +60,12 @@ export default function RegExpWorkerTest003() {
     
 
     /**
+     * @tc.name   testRegReplace0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WORKER_0002
-     * @tc.name testRegReplace0002
-     * @tc.desc Replace all occurrences using global regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace all occurrences using global regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let workerInstance = new worker.ThreadWorker('../workers/Worker003.ets');

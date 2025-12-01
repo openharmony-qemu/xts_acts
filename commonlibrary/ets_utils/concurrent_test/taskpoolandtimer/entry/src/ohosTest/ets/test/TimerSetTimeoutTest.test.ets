@@ -44,12 +44,12 @@ export default function setTimeoutTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   setTimeoutTest0100
      * @tc.number SUB_TIMER_SETTIMEOUT_TEST_0100
-     * @tc.name setTimeoutTest0100
-     * @tc.desc test Handler passes string, delay:-1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Handler passes string, delay:-1
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('setTimeoutTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'setTimeoutTest0100';
@@ -63,12 +63,12 @@ export default function setTimeoutTest() {
     })
 
     /**
+     * @tc.name   setTimeoutTest0200
      * @tc.number SUB_TIMER_SETTIMEOUT_TEST_0200
-     * @tc.name setTimeoutTest0200
-     * @tc.desc test Handler passes func, delay:0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Handler passes func, delay:0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('setTimeoutTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'setTimeoutTest0200';
@@ -84,12 +84,12 @@ export default function setTimeoutTest() {
       Done();
     })
     /**
+     * @tc.name   setTimeoutTest0300
      * @tc.number SUB_TIMER_SETTIMEOUT_TEST_0300
-     * @tc.name setTimeoutTest0300
-     * @tc.desc test Handler passes func，delay：100，args：string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Handler passes func，delay：100，args：string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('setTimeoutTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'setTimeoutTest0300';
@@ -114,12 +114,12 @@ export default function setTimeoutTest() {
     })
 
     /**
+     * @tc.name   setTimeoutTest0400
      * @tc.number SUB_TIMER_SETTIMEOUT_TEST_0400
-     * @tc.name setTimeoutTest0400
-     * @tc.desc test Handler passes null，delay：200.1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Handler passes null，delay：200.1
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('setTimeoutTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'setTimeoutTest0400';
@@ -133,12 +133,12 @@ export default function setTimeoutTest() {
     })
 
     /**
+     * @tc.name   setTimeoutTest0500
      * @tc.number SUB_TIMER_SETTIMEOUT_TEST_0500
-     * @tc.name setTimeoutTest0500
-     * @tc.desc test Handler passes func，delay：2147483647
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Handler passes func，delay：2147483647
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('setTimeoutTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'setTimeoutTest0500';
@@ -155,12 +155,12 @@ export default function setTimeoutTest() {
     })
 
     /**
+     * @tc.name   setTimeoutTest0600
      * @tc.number SUB_TIMER_SETTIMEOUT_TEST_0600
-     * @tc.name setTimeoutTest0600
-     * @tc.desc test Handler passes string，delay：null/undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Handler passes string，delay：null/undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('setTimeoutTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'setTimeoutTest0600';

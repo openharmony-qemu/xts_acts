@@ -25,12 +25,12 @@ export default function msgNdkTest() {
     })
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MSG_MSGGET_0100
-     * @tc.name     : testMuslMsgMsgget001
-     * @tc.desc     : test msgget
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslMsgMsgget001
+     * @tc.number SUB_THIRDPARTY_MUSL_MSG_MSGGET_0100
+     * @tc.desc   test msgget
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMsgMsgget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = msg.msgget();
@@ -38,12 +38,12 @@ export default function msgNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MSG_MSGSND_0100
-     * @tc.name     : testMuslMsgMsgsnd001
-     * @tc.desc     : test msgsnd
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslMsgMsgsnd001
+     * @tc.number SUB_THIRDPARTY_MUSL_MSG_MSGSND_0100
+     * @tc.desc   test msgsnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMsgMsgsnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = msg.msgsnd();
@@ -51,12 +51,12 @@ export default function msgNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MSG_MSGRCV_0100
-     * @tc.name     : testMuslMsgMsgrcv001
-     * @tc.desc     : test msgrcv
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslMsgMsgrcv001
+     * @tc.number SUB_THIRDPARTY_MUSL_MSG_MSGRCV_0100
+     * @tc.desc   test msgrcv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMsgMsgrcv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = msg.msgrcv();
@@ -64,12 +64,12 @@ export default function msgNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MSG_MSGCTL_0100
-     * @tc.name     : testMuslMsgMsgctl001
-     * @tc.desc     : test msgctl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslMsgMsgctl001
+     * @tc.number SUB_THIRDPARTY_MUSL_MSG_MSGCTL_0100
+     * @tc.desc   test msgctl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMsgMsgctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = msg.msgctl();

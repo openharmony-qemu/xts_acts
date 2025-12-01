@@ -196,7 +196,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_Get_Did_ErrCode_0001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0001
      * @tc.desc   getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
@@ -224,7 +223,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_Get_Did_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0100
      * @tc.desc   getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
@@ -253,7 +251,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_Get_Did_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0200
      * @tc.desc   getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
@@ -284,7 +281,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_Get_Did_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0300
      * @tc.desc   getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
@@ -313,7 +309,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_Get_Did_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0400
      * @tc.desc   getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
@@ -343,7 +338,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_Get_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0100
      * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
@@ -373,7 +367,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_Get_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0200
      * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
@@ -402,7 +395,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_Get_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0300
      * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
@@ -431,7 +423,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_Get_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0400
      * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
@@ -462,7 +453,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0001
      * @tc.desc   Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 0
@@ -494,7 +484,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0100
      * @tc.desc   Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 401
@@ -522,7 +511,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0200
      * @tc.desc   Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100003
@@ -552,7 +540,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0300
      * @tc.desc   Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100005
@@ -582,7 +569,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
       /**
-       * @generated.time 2025-11-09 20:49:48
        * @tc.name   SUB_DDM_DKV_GetEntries_Key_ErrCode_0100
        * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Key_ErrCode_0100
        * @tc.desc   Test Js Api DeviceKvStore.getEntries() ErrCode 401
@@ -610,7 +596,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Key_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Key_ErrCode_0200
      * @tc.desc   Test Js Api DeviceKvStore.getEntries() ErrCode 15100003
@@ -640,7 +625,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Key_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Key_ErrCode_0300
      * @tc.desc   Test Js Api DeviceKvStore.getEntries() ErrCode 15100005
@@ -670,7 +654,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0001
      * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
@@ -701,7 +684,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0100
      * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
@@ -730,7 +712,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0200
      * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
@@ -761,7 +742,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0300
      * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
@@ -792,7 +772,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Query_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Query_ErrCode_0100
      * @tc.desc   getEntries(query: Query): Promise<Entry[]>
@@ -821,7 +800,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Query_ErrCode_0200
      * @tc.desc   getEntries(query: Query): Promise<Entry[]>
@@ -851,7 +829,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetEntries_Query_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Query_ErrCode_0300
      * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
@@ -882,7 +859,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0001
      * @tc.desc   getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
@@ -918,7 +894,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0100
      * @tc.desc   getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
@@ -952,7 +927,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0200
      * @tc.desc   getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
@@ -1001,7 +975,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0400
      * @tc.desc   getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
@@ -1030,7 +1003,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Key_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Key_ErrCode_0100
      * @tc.desc   getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
@@ -1064,7 +1036,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Key_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Key_ErrCode_0200
      * @tc.desc   getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
@@ -1113,7 +1084,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Key_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Key_ErrCode_0400
      * @tc.desc   getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
@@ -1141,7 +1111,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0001
      * @tc.desc   getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
@@ -1180,7 +1149,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0100
      * @tc.desc   getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
@@ -1216,7 +1184,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0200
      * @tc.desc   getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
@@ -1267,7 +1234,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0400
      * @tc.desc   getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
@@ -1299,7 +1265,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Query_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Query_ErrCode_0100
      * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>;
@@ -1335,7 +1300,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Query_ErrCode_0200
      * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>;
@@ -1386,7 +1350,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSet_Query_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Query_ErrCode_0400
      * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>;
@@ -1417,7 +1380,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Did_Query_ErrCode_0100
      * @tc.desc   getResultSize(deviceId: string, query: Query): Promise<number>
@@ -1442,7 +1404,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Did_Query_ErrCode_0200
      * @tc.desc   getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
@@ -1467,7 +1428,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Did_Query_ErrCode_0400
      * @tc.desc   getResultSize(deviceId: string, query: Query): Promise<number>  ErrCode 15100004
@@ -1498,7 +1458,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSize_Query_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Query_ErrCode_0100
      * @tc.desc   getResultSize(query: Query): Promise<number>
@@ -1523,7 +1482,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_GetResultSize_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Query_ErrCode_0200
      * @tc.desc   getResultSize(query: Query): Promise<number>

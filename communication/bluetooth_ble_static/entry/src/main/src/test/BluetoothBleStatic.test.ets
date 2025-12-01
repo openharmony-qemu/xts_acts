@@ -69,7 +69,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   clientCloseTest
          * @tc.number clientCloseTest
          * @tc.desc   Test clientCloseTest API functionality
@@ -109,7 +108,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   serverCloseTest
          * @tc.number serverCloseTest
          * @tc.desc   Test serverCloseTest API functionality
@@ -144,7 +142,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   setBLEMtuSizeTest
          * @tc.number setBLEMtuSizeTest
          * @tc.desc   Test setBLEMtuSizeTest API functionality
@@ -171,7 +168,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   clientConnectDisconnectTest
          * @tc.number clientConnectDisconnectTest
          * @tc.desc   Test clientConnectDisconnectTest API functionality
@@ -208,7 +204,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   bleConstantTest
          * @tc.number bleConstantTest
          * @tc.desc   Test bleConstantTest API functionality
@@ -254,7 +249,6 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   bleStopBLEScanTest
          * @tc.number bleStopBLEScanTest
          * @tc.desc   Test bleStopBLEScanTest API functionality

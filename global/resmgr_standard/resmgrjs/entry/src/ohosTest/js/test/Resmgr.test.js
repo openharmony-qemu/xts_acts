@@ -20,7 +20,6 @@ describe('resMgrTest', function () {
     console.log('*************start ResmgrTest*************');
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getResourceManager_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_0100
      * @tc.desc   get the resource manager in callback mode
@@ -36,7 +35,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getResourceManager_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_0200
      * @tc.desc   get the resource manager in callback mode with bundlename
@@ -54,7 +52,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getResourceManager_test_003
      * @tc.number SUB_GLOBAL_RESMGR_JS_0300
      * @tc.desc   get the resource manager in promise mode
@@ -70,7 +67,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getResourceManager_test_004
      * @tc.number SUB_GLOBAL_RESMGR_JS_0400
      * @tc.desc   get the resource manager in promise mode with bundlename
@@ -88,7 +84,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getString_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_0500
      * @tc.desc   get the string in callback mode
@@ -108,7 +103,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getString_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_0600
      * @tc.desc   get the string in promise mode
@@ -128,7 +122,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getString_test_003
      * @tc.number SUB_GLOBAL_RESMGR_JS_1900
      * @tc.desc   get the string in callback mode
@@ -148,7 +141,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringValue_test_003
      * @tc.number SUB_GLOBAL_RESMGR_JS_0500
      * @tc.desc   get the string in callback mode
@@ -168,7 +160,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringValue_test_004
      * @tc.number SUB_GLOBAL_RESMGR_JS_0600
      * @tc.desc   get the string in promise mode
@@ -188,7 +179,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringValue_test_005
      * @tc.number SUB_GLOBAL_RESMGR_JS_0500
      * @tc.desc   get the string in callback mode
@@ -221,7 +211,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringValue_test_006
      * @tc.number SUB_GLOBAL_RESMGR_JS_0500
      * @tc.desc   get the string in callback mode
@@ -253,7 +242,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringValue_test_007
      * @tc.number SUB_GLOBAL_RESMGR_JS_0500
      * @tc.desc   get the string in callback mode
@@ -285,7 +273,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringValue_test_008
      * @tc.number SUB_GLOBAL_RESMGR_JS_0500
      * @tc.desc   get the string in callback mode
@@ -318,7 +305,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringValue_test_009
      * @tc.number SUB_GLOBAL_RESMGR_JS_0600
      * @tc.desc   get the string in promise mode
@@ -350,7 +336,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringValue_test_010
      * @tc.number SUB_GLOBAL_RESMGR_JS_0600
      * @tc.desc   get the string in promise mode
@@ -386,7 +371,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringValue_test_011
      * @tc.number SUB_GLOBAL_RESMGR_JS_0600
      * @tc.desc   get the string in promise mode
@@ -418,7 +402,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringValue_test_012
      * @tc.number SUB_GLOBAL_RESMGR_JS_0600
      * @tc.desc   get the string in promise mode
@@ -450,7 +433,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArray_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_0700
      * @tc.desc   get the string array in callback mode
@@ -476,7 +458,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArray_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_0800
      * @tc.desc   get the string array in promise mode
@@ -502,7 +483,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_test_003
      * @tc.number SUB_GLOBAL_RESMGR_JS_0700
      * @tc.desc   get the string array in callback mode
@@ -528,7 +508,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_test_004
      * @tc.number SUB_GLOBAL_RESMGR_JS_0800
      * @tc.desc   get the string array in promise mode
@@ -554,7 +533,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMedia_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_0900
      * @tc.desc   get the media in callback mode
@@ -574,7 +552,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMedia_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_1000
      * @tc.desc   get the media in promise mode
@@ -593,7 +570,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_test_003
      * @tc.number SUB_GLOBAL_RESMGR_JS_0900
      * @tc.desc   get the media in callback mode
@@ -612,7 +588,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_test_004
      * @tc.number SUB_GLOBAL_RESMGR_JS_1000
      * @tc.desc   get the media in promise mode
@@ -631,7 +606,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_1100
      * @tc.desc   get the media base64 in callback mode
@@ -650,7 +624,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_1200
      * @tc.desc   get the media base64 in promise mode
@@ -669,7 +642,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_test_003
      * @tc.number SUB_GLOBAL_RESMGR_JS_1100
      * @tc.desc   get the media base64 in callback mode
@@ -688,7 +660,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_test_004
      * @tc.number SUB_GLOBAL_RESMGR_JS_1200
      * @tc.desc   get the media base64 in promise mode
@@ -707,7 +678,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getConfiguration_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_1300
      * @tc.desc   get the configuration in callback mode
@@ -736,7 +706,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getConfiguration_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_1400
      * @tc.desc   get the configuration in promise mode
@@ -752,7 +721,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getConfiguration_test_003
      * @tc.number SUB_GLOBAL_RESMGR_JS_1400
      * @tc.desc   get the configuration in promise mode
@@ -768,7 +736,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getConfiguration_test_004
      * @tc.number SUB_GLOBAL_RESMGR_JS_1300
      * @tc.desc   get the configuration in promise mode
@@ -793,7 +760,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDeviceCapability_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_1500
      * @tc.desc   get the device capability in callback mode
@@ -825,7 +791,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDeviceCapability_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -841,7 +806,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDeviceCapability_test_003
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -857,7 +821,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDeviceCapability_test_004
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -873,7 +836,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDeviceCapability_test_005
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -889,7 +851,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDeviceCapability_test_006
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -905,7 +866,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDeviceCapability_test_007
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -921,7 +881,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDeviceCapability_test_017
      * @tc.number SUB_GLOBAL_RESMGR_JS_1601
      * @tc.desc   get the device capability in promise mode
@@ -937,7 +896,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDeviceCapability_test_008
      * @tc.number SUB_GLOBAL_RESMGR_JS_1500
      * @tc.desc   get the device capability in callback mode
@@ -962,7 +920,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getScreenDensity_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_1500
      * @tc.desc   get the device capability in callback mode
@@ -994,7 +951,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getScreenDensity_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -1010,7 +966,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getScreenDensity_test_003
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -1026,7 +981,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getScreenDensity_test_004
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -1042,7 +996,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getScreenDensity_test_005
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -1058,7 +1011,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getScreenDensity_test_006
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -1074,7 +1026,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getScreenDensity_test_007
      * @tc.number SUB_GLOBAL_RESMGR_JS_1600
      * @tc.desc   get the device capability in promise mode
@@ -1090,7 +1041,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getPluralString_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_1700
      * @tc.desc   get the plural string in callback mode
@@ -1110,7 +1060,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getPluralString_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_1800
      * @tc.desc   get the plural string in promise mode
@@ -1130,7 +1079,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getPluralStringValue_test_003
      * @tc.number SUB_GLOBAL_RESMGR_JS_1700
      * @tc.desc   get the plural string in callback mode
@@ -1150,7 +1098,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getPluralStringValue_test_004
      * @tc.number SUB_GLOBAL_RESMGR_JS_1800
      * @tc.desc   get the plural string in promise mode
@@ -1170,7 +1117,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFile_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_1700
      * @tc.desc   get the getRawFile in callback mode
@@ -1189,7 +1135,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFile_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_1800
      * @tc.desc   get the getRawFile in promise mode
@@ -1208,7 +1153,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileContent_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_1700
      * @tc.desc   get the getRawFile in callback mode
@@ -1227,7 +1171,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileContent_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_1800
      * @tc.desc   get the getRawFile in promise mode
@@ -1246,7 +1189,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   release_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_1900
      * @tc.desc   get the release function
@@ -1265,7 +1207,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileDescriptor_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_2000
      * @tc.desc   get the RawFileDescriptor in callback mode
@@ -1296,7 +1237,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileDescriptor_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_2100
      * @tc.desc   get the RawFileDescriptor in promise mode
@@ -1328,7 +1268,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   closeRawFileDescriptor_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_2200
      * @tc.desc   get the closeRawFileDescriptor in callback mode
@@ -1347,7 +1286,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFd_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_2000
      * @tc.desc   get the RawFileDescriptor in callback mode
@@ -1372,7 +1310,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFd_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_2100
      * @tc.desc   get the RawFileDescriptor in promise mode
@@ -1398,7 +1335,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   closeRawFd_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_2200
      * @tc.desc   get the closeRawFileDescriptor in callback mode
@@ -1429,7 +1365,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   closeRawFd_test_005
      * @tc.number SUB_GLOBAL_RESMGR_JS_2300
      * @tc.desc   get the closeRawFd in promise mode
@@ -1459,7 +1394,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   closeRawFd_test_006
      * @tc.number SUB_GLOBAL_RESMGR_JS_2300
      * @tc.desc   get the closeRawFd in promise mode
@@ -1489,7 +1423,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByName_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_2400
      * @tc.desc   get the string in callback mode
@@ -1509,7 +1442,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByName_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_2500
      * @tc.desc   get the string in promise mode
@@ -1529,7 +1461,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayByName_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_2600
      * @tc.desc   get the string array in callback mode
@@ -1555,7 +1486,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayByName_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_2700
      * @tc.desc   get the string array in promise mode
@@ -1581,7 +1511,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByName_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_2800
      * @tc.desc   get the media in callback mode
@@ -1599,7 +1528,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByName_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_2900
      * @tc.desc   get the media in promise mode
@@ -1617,7 +1545,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64ByName_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_3000
      * @tc.desc   get the media base64 in callback mode
@@ -1636,7 +1563,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64ByName_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_3100
      * @tc.desc   get the media base64 in promise mode
@@ -1655,7 +1581,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getPluralStringByName_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_3200
      * @tc.desc   get the plural string in callback mode
@@ -1675,7 +1600,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getPluralStringByName_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_3300
      * @tc.desc   get the plural string in promise mode
@@ -1695,7 +1619,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringSync_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_3400
      * @tc.desc   get the string in sync mode
@@ -1714,7 +1637,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByNameSync_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_3500
      * @tc.desc   get the string in sync mode
@@ -1740,7 +1662,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByNameSync_test_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_3500
      * @tc.desc   get the string in sync mode
@@ -1759,7 +1680,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getBoolean_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_3600
      * @tc.desc   get the boolean value
@@ -1777,7 +1697,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getBooleanByName_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_3700
      * @tc.desc   get the boolean value
@@ -1795,7 +1714,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getinteger_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_3800
      * @tc.desc   get the interger value
@@ -1815,7 +1733,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getintegerByName_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_3900
      * @tc.desc   get the interger value
@@ -1833,7 +1750,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getfloat_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_4000
      * @tc.desc   get the float value
@@ -1851,7 +1767,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getfloatByName_test_001
      * @tc.number SUB_GLOBAL_RESMGR_JS_4100
      * @tc.desc   get the float value
@@ -1869,7 +1784,6 @@ describe('resMgrTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:56
       * @tc.name   getDrawableDescriptor_test_0100
       * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0100
       * @tc.desc   test the getDrawableDescriptor method
@@ -1892,7 +1806,6 @@ describe('resMgrTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:56
       * @tc.name   getDrawableDescriptor_test_0120
       * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0120
       * @tc.desc   test the getDrawableDescriptor method
@@ -1915,7 +1828,6 @@ describe('resMgrTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:56
       * @tc.name   getDrawableDescriptor_test_0140
       * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0140
       * @tc.desc   test the getDrawableDescriptor method
@@ -1938,7 +1850,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_0200
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0200
      * @tc.desc   test the getDrawableDescriptor method
@@ -1961,7 +1872,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_0300
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0300
      * @tc.desc   test the getDrawableDescriptor method
@@ -1984,7 +1894,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_0400
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0400
      * @tc.desc   test the getDrawableDescriptor method
@@ -2007,7 +1916,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_0500
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0500
      * @tc.desc   test the getDrawableDescriptor method return 401
@@ -2031,7 +1939,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_0600
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0600
      * @tc.desc   test the getDrawableDescriptor method return 9001001
@@ -2055,7 +1962,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_0700
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0700
      * @tc.desc   test the getDrawableDescriptor method return 9001002
@@ -2079,7 +1985,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_0800
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0800
      * @tc.desc   test the getDrawableDescriptor method return 401
@@ -2103,7 +2008,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_0900
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0900
      * @tc.desc   test the getDrawableDescriptor method return 401
@@ -2127,7 +2031,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_1000
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1000
      * @tc.desc   test the getDrawableDescriptor method
@@ -2150,7 +2053,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_1100
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1100
      * @tc.desc   test the getDrawableDescriptorByName method
@@ -2173,7 +2075,6 @@ describe('resMgrTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:56
       * @tc.name   getDrawableDescriptor_test_1120
       * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1120
       * @tc.desc   test the getDrawableDescriptorByName method
@@ -2196,7 +2097,6 @@ describe('resMgrTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:56
       * @tc.name   getDrawableDescriptor_test_1140
       * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1140
       * @tc.desc   test the getDrawableDescriptorByName method
@@ -2219,7 +2119,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_1200
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1200
      * @tc.desc   test the getDrawableDescriptorByName method
@@ -2242,7 +2141,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_1300
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1300
      * @tc.desc   test the getDrawableDescriptorByName method
@@ -2265,7 +2163,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_1400
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1400
      * @tc.desc   test the getDrawableDescriptorByName method
@@ -2288,7 +2185,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_1500
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1500
      * @tc.desc   test the getDrawableDescriptorByName method return 401
@@ -2312,7 +2208,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_1600
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1600
      * @tc.desc   test the getDrawableDescriptorByName method return 9001003
@@ -2336,7 +2231,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_1800
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1800
      * @tc.desc   test the getDrawableDescriptorByName method return 401
@@ -2360,7 +2254,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_1900
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1900
      * @tc.desc   test the getDrawableDescriptorByName method return 401
@@ -2384,7 +2277,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_test_2000
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_2000
      * @tc.desc   test the getDrawableDescriptorByName method
@@ -2407,7 +2299,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileList_test_0100
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0100
      * @tc.desc   test the getRawFileList method
@@ -2437,7 +2328,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileList_test_0110
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0110
      * @tc.desc   test the getRawFileList method
@@ -2468,7 +2358,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileList_test_0120
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0120
      * @tc.desc   test the getRawFileList method
@@ -2499,7 +2388,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileList_test_0200
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0200
      * @tc.desc   test the getRawFileList method
@@ -2528,7 +2416,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileList_test_0210
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0210
      * @tc.desc   test the getRawFileList method
@@ -2558,7 +2445,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileList_test_0220
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0220
      * @tc.desc   test the getRawFileList method
@@ -2588,7 +2474,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByName_test_0100
      * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0100
      * @tc.desc   get the media in callback mode
@@ -2607,7 +2492,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByName_test_0200
      * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0200
      * @tc.desc   get the media in promise mode
@@ -2626,7 +2510,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64ByName_test_0100
      * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0300
      * @tc.desc   get the media in callback mode
@@ -2645,7 +2528,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64ByName_test_0200
      * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0400
      * @tc.desc   get the media in promise mode
@@ -2664,7 +2546,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_test_0100
      * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0500
      * @tc.desc   get the media in callback mode
@@ -2683,7 +2564,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_test_0200
      * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0600
      * @tc.desc   get the media in promise mode
@@ -2702,7 +2582,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_test_0100
      * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0700
      * @tc.desc   get the media in callback mode
@@ -2721,7 +2600,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_test_0200
      * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0800
      * @tc.desc   get the media in promise mode
@@ -2740,7 +2618,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getSystemResourceManager_test_0100
      * @tc.number SUB_GLOBAL_RESMGR_GETSYSTEMRESOURCEMANAGER_JS_0100
      * @tc.desc   get the SystemResourceManager
@@ -2756,7 +2633,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0100
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0100
      * @tc.desc   get the color in callback mode
@@ -2776,7 +2652,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0110
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0110
      * @tc.desc   get the color in callback mode
@@ -2801,7 +2676,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0120
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0120
      * @tc.desc   get the color in callback mode
@@ -2827,7 +2701,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0130
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0130
      * @tc.desc   get the color in callback mode
@@ -2853,7 +2726,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0140
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0140
      * @tc.desc   get the color in callback mode
@@ -2879,7 +2751,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0150
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0150
      * @tc.desc   get the color in callback mode
@@ -2905,7 +2776,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0200
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0200
      * @tc.desc   get the color in promise mode
@@ -2925,7 +2795,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0210
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0210
      * @tc.desc   get the color in promise mode
@@ -2950,7 +2819,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0220
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0220
      * @tc.desc   get the color in promise mode
@@ -2977,7 +2845,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0230
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0230
      * @tc.desc   get the color in promise mode
@@ -3004,7 +2871,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0240
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0240
      * @tc.desc   get the color in promise mode
@@ -3031,7 +2897,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColor_test_0250
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0250
      * @tc.desc   get the color in promise mode
@@ -3058,7 +2923,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorSync_test_001
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0100
      * @tc.desc   get the sync color
@@ -3077,7 +2941,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorSync_test_002
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0200
      * @tc.desc   get the sync color
@@ -3100,7 +2963,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorSync_test_003
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0300
      * @tc.desc   get the sync color
@@ -3122,7 +2984,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorSync_test_004
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0400
      * @tc.desc   get the sync color
@@ -3145,7 +3006,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorSync_test_005
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0500
      * @tc.desc   get the sync color
@@ -3168,7 +3028,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorSync_test_006
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0600
      * @tc.desc   get the sync color
@@ -3191,7 +3050,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0100
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0100
      * @tc.desc   get the color by name in callback mode
@@ -3211,7 +3069,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0110
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0110
      * @tc.desc   get the color by name in callback mode
@@ -3236,7 +3093,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0120
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0120
      * @tc.desc   get the color by name in callback mode
@@ -3262,7 +3118,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0130
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0130
      * @tc.desc   get the color by name in callback mode
@@ -3288,7 +3143,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0140
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0140
      * @tc.desc   get the color by name in callback mode
@@ -3314,7 +3168,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0150
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0150
      * @tc.desc   get the color by name in callback mode
@@ -3340,7 +3193,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0200
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0200
      * @tc.desc   get the color by name in promise mode
@@ -3360,7 +3212,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0210
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0210
      * @tc.desc   get the color by name in promise mode
@@ -3385,7 +3236,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0220
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0220
      * @tc.desc   get the color by name in promise mode
@@ -3412,7 +3262,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0230
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0230
      * @tc.desc   get the color by name in promise mode
@@ -3439,7 +3288,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0240
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0240
      * @tc.desc   get the color by name in promise mode
@@ -3466,7 +3314,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByName_test_0250
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0250
      * @tc.desc   get the color by name in promise mode
@@ -3493,7 +3340,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByNameSync_test_001
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0100
      * @tc.desc   get the sync color by name
@@ -3512,7 +3358,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByNameSync_test_002
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0200
      * @tc.desc   get the sync color by name
@@ -3535,7 +3380,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByNameSync_test_003
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0300
      * @tc.desc   get the sync color by name
@@ -3558,7 +3402,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByNameSync_test_004
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0400
      * @tc.desc   get the sync color by name
@@ -3581,7 +3424,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByNameSync_test_005
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0500
      * @tc.desc   get the sync color by name
@@ -3604,7 +3446,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getColorByNameSync_test_006
      * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0600
      * @tc.desc   get the sync color by name
@@ -3627,7 +3468,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   addResource_test_001
      * @tc.number SUB_GLOBAL_RESMGR_ADDRESOURCE_JS_0100
      * @tc.desc   addResource
@@ -3650,7 +3490,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   addResource_test_002
      * @tc.number SUB_GLOBAL_RESMGR_ADDRESOURCE_JS_0200
      * @tc.desc   addResource
@@ -3673,7 +3512,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   removeResource_test_001
      * @tc.number SUB_GLOBAL_RESMGR_REMOVERESOURCE_JS_0100
      * @tc.desc   removeResource
@@ -3696,7 +3534,6 @@ describe('resMgrTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   removeResource_test_002
      * @tc.number SUB_GLOBAL_RESMGR_REMOVERESOURCE_JS_0200
      * @tc.desc   removeResource

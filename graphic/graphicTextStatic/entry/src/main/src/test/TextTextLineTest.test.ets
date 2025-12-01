@@ -286,12 +286,12 @@ export default function TextTextLineTest() {
     })
 
     /**
-     * @tc.number     testGetTextLinesStatic
-     * @tc.name       testGetTextLinesStatic
-     * @tc.desc       To test method getTextLine font paragraph.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      LEVEL1
+     * @tc.name   testGetTextLinesStatic
+     * @tc.number testGetTextLinesStatic
+     * @tc.desc   To test method getTextLine font paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTextLinesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -347,6 +347,7 @@ export default function TextTextLineTest() {
             let textRange: text.Range = textLine.getTextRange();
             expect(textRange.start).assertEqual(textLineExpectData[i].textRange.start);
             expect(textRange.end).assertEqual(textLineExpectData[i].textRange.end);
+            textLine.paint(globalCanvas, 0, 0);
             textLine.createTruncatedLine(4, text.EllipsisMode.START, "...");
             let bounds: text.TypographicBounds = textLine.getTypographicBounds();
             expect(Math.round(bounds.ascent * 100) / 100).assertEqual(textLineExpectData[i].typographicBounds.ascent);

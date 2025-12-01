@@ -29,12 +29,12 @@ export default function SecurityHuksWrapKeyTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100
-     * @tc.name   : SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100
-     * @tc.desc   : test wrapKeyItem, process success
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100
+     * @tc.number SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100
+     * @tc.desc   test wrapKeyItem, process success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100";
@@ -53,12 +53,12 @@ export default function SecurityHuksWrapKeyTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100
-     * @tc.name   : SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100
-     * @tc.desc   : test unwrapKeyItem, process success
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100
+     * @tc.number SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100
+     * @tc.desc   test unwrapKeyItem, process success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100";

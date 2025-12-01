@@ -26,12 +26,12 @@ export default function muslNetdbNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETPROTOENT_0100
-     * @tc.name       : testMuslNetDbGetProtoEnt001
-     * @tc.desc       : test getprotoent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbGetProtoEnt001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETPROTOENT_0100
+     * @tc.desc   test getprotoent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetProtoEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getProtoEnt();
@@ -40,12 +40,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETPROTOBYNAME_0100
-     * @tc.name       : testMuslNetDbGetProtoByName001
-     * @tc.desc       : test getprotobyname
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbGetProtoByName001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETPROTOBYNAME_0100
+     * @tc.desc   test getprotobyname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetProtoByName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: string = netdb.getProtoByName("tcp");
@@ -54,12 +54,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETPROTOBYNAME_0200
-     * @tc.name       : testMuslNetDbGetProtoByName002
-     * @tc.desc       : test getprotobynumber
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbGetProtoByName002
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETPROTOBYNAME_0200
+     * @tc.desc   test getprotobynumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetProtoByName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: string = netdb.getProtoByName("ipv6");
@@ -68,12 +68,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETPROTOBYNAME_0300
-     * @tc.name       : testMuslNetDbGetProtoByName003
-     * @tc.desc       : test getprotobyname
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbGetProtoByName003
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETPROTOBYNAME_0300
+     * @tc.desc   test getprotobyname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetProtoByName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: string = netdb.getProtoByName("esp");
@@ -82,12 +82,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETPROTOBYNUMBER_0100
-     * @tc.name       : testMuslNetDbGetProtoByNumber001
-     * @tc.desc       : test getprotobynumber
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbGetProtoByNumber001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETPROTOBYNUMBER_0100
+     * @tc.desc   test getprotobynumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetProtoByNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: string = netdb.getProtoByNumber(6);
@@ -96,12 +96,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETPROTOBYNUMBER_0200
-     * @tc.name       : testMuslNetDbGetProtoByNumber002
-     * @tc.desc       : test getprotobynumber
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbGetProtoByNumber002
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETPROTOBYNUMBER_0200
+     * @tc.desc   test getprotobynumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetProtoByNumber002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: string = netdb.getProtoByNumber(17);
@@ -110,12 +110,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETSERVBYNAME_0100
-     * @tc.name       : testMuslNetDbGetServByName001
-     * @tc.desc       : test getservbyname
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbGetServByName001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETSERVBYNAME_0100
+     * @tc.desc   test getservbyname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetServByName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getServByName();
@@ -124,12 +124,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETSERVBYPORT_0100
-     * @tc.name       : testMuslNetDbGetServByPort001
-     * @tc.desc       : test getservbyport
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbGetServByPort001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETSERVBYPORT_0100
+     * @tc.desc   test getservbyport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetServByPort001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getServByPort();
@@ -138,12 +138,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYADDR_R_0100
-     * @tc.name       : testMuslNetDbGetHostByAddrR001
-     * @tc.desc       : test gethostbyaddr_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbGetHostByAddrR001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYADDR_R_0100
+     * @tc.desc   test gethostbyaddr_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetHostByAddrR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getHostByAddrR();
@@ -152,12 +152,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETNAMEINFO_0100
-     * @tc.name       : testMuslNetDbGetNameInfo001
-     * @tc.desc       : test getnameinfo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetDbGetNameInfo001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETNAMEINFO_0100
+     * @tc.desc   test getnameinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetNameInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getNameInfo();
@@ -166,12 +166,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETHOSTENT_0100
-     * @tc.name       : testMuslNetDbGetHostEnt001
-     * @tc.desc       : test gethostent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetDbGetHostEnt001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETHOSTENT_0100
+     * @tc.desc   test gethostent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetHostEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getHostEnt();
@@ -180,12 +180,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETSERVENT_0100
-     * @tc.name       : testMuslNetDbGetServEnt001
-     * @tc.desc       : test getservent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetDbGetServEnt001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETSERVENT_0100
+     * @tc.desc   test getservent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetServEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getServEnt();
@@ -194,12 +194,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETNETENT_0100
-     * @tc.name       : testMuslNetDbGetNetEnt001
-     * @tc.desc       : test getnetent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetDbGetNetEnt001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETNETENT_0100
+     * @tc.desc   test getnetent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetNetEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getNetEnt();
@@ -208,12 +208,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYADDR_0100
-     * @tc.name       : testMuslNetDbGetHostByAddr001
-     * @tc.desc       : test gethostbyaddr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetDbGetHostByAddr001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYADDR_0100
+     * @tc.desc   test gethostbyaddr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetHostByAddr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getHostByAddr();
@@ -222,12 +222,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYNAMER_0100
-     * @tc.name       : testMuslNetDbGetHostByNameR001
-     * @tc.desc       : test gethostbyname_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetDbGetHostByNameR001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYNAMER_0100
+     * @tc.desc   test gethostbyname_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetHostByNameR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getHostByNameR();
@@ -236,12 +236,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYNAME2_0100
-     * @tc.name       : testMuslNetDbGetHostByName2001
-     * @tc.desc       : test gethostbyname2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetDbGetHostByName2001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYNAME2_0100
+     * @tc.desc   test gethostbyname2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetHostByName2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getHostByName2();
@@ -250,12 +250,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYNAME2_R_0100
-     * @tc.name       : testMuslNetDbGetHostByName2R001
-     * @tc.desc       : test gethostbyname2_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetDbGetHostByName2R001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYNAME2_R_0100
+     * @tc.desc   test gethostbyname2_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetHostByName2R001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getHostByName2R();
@@ -264,12 +264,12 @@ export default function muslNetdbNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_HSTRERROR_0100
-     * @tc.name       : testMuslNetDbHstrerror001
-     * @tc.desc       : test hstrerror
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbHstrerror001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_HSTRERROR_0100
+     * @tc.desc   test hstrerror
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbHstrerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.hstrerror();
@@ -278,12 +278,12 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_HERROR_0100
-     * @tc.name       : testMuslNetDbHerror001
-     * @tc.desc       : test herror
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbHerror001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_HERROR_0100
+     * @tc.desc   test herror
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbHerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.herror();
@@ -292,12 +292,12 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYNAME_0100
-     * @tc.name       : testMuslNetDbGetHostByName001
-     * @tc.desc       : test getservbyport
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbGetHostByName001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETHOSTBYNAME_0100
+     * @tc.desc   test getservbyport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGetHostByName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = netdb.getHostByName();
@@ -307,12 +307,12 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_SETHOSTENT_0100
-     * @tc.name       : testMuslNetdbSethostent001
-     * @tc.desc       : test sethostent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetdbSethostent001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_SETHOSTENT_0100
+     * @tc.desc   test sethostent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetdbSethostent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = netdb.sethostent();
@@ -321,12 +321,12 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_SETNETENT_0100
-     * @tc.name       : testMuslNetdbSetnetent001
-     * @tc.desc       : test setnetent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetdbSetnetent001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_SETNETENT_0100
+     * @tc.desc   test setnetent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetdbSetnetent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = netdb.setnetent();
@@ -335,12 +335,12 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_SETPROTOENT_0100
-     * @tc.name       : testMuslNetdbSetprotoent001
-     * @tc.desc       : test setprotoent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetdbSetprotoent001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_SETPROTOENT_0100
+     * @tc.desc   test setprotoent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetdbSetprotoent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = netdb.setprotoent();
@@ -349,12 +349,12 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_SETSERVENT_0100
-     * @tc.name       : testMuslNetdbSetservent001
-     * @tc.desc       : test setservent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetdbSetservent001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_SETSERVENT_0100
+     * @tc.desc   test setservent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetdbSetservent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = netdb.setservent();
@@ -363,12 +363,12 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_ENDSERVENT_0100
-     * @tc.name       : testMuslNetdbEndServEnt001
-     * @tc.desc       : test endservent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetdbEndServEnt001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_ENDSERVENT_0100
+     * @tc.desc   test endservent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetdbEndServEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(netdb.endservent()).assertEqual(0);
@@ -376,12 +376,12 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_ENDPROTOENT_0100
-     * @tc.name       : testMuslNetdbEndProToEnt001
-     * @tc.desc       : test endprotoent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetdbEndProToEnt001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_ENDPROTOENT_0100
+     * @tc.desc   test endprotoent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetdbEndProToEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(netdb.endprotoent()).assertEqual(0);
@@ -389,12 +389,12 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_ENDNETENT_0100
-     * @tc.name       : testMuslNetdbEndNetEnt001
-     * @tc.desc       : test endnetent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetdbEndNetEnt001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_ENDNETENT_0100
+     * @tc.desc   test endnetent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetdbEndNetEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(netdb.endnetent()).assertEqual(0);
@@ -402,12 +402,12 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_ENDHOSTENT_0100
-     * @tc.name       : testMuslNetdbEndHostEnt001
-     * @tc.desc       : test endhostent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslNetdbEndHostEnt001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_ENDHOSTENT_0100
+     * @tc.desc   test endhostent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetdbEndHostEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(netdb.endhostent()).assertEqual(0);
@@ -415,12 +415,12 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GAI_STRERROR_0100
-     * @tc.name       : testMuslNetDbGaiStrerror001
-     * @tc.desc       : test gai_strerror
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNetDbGaiStrerror001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GAI_STRERROR_0100
+     * @tc.desc   test gai_strerror
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNetDbGaiStrerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = 1;
@@ -430,13 +430,13 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-    * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_FREEADDRINFO_0100
-    * @tc.name       : testMuslNetdbFreeaddrinfo001
-    * @tc.desc       : test freeaddrinfo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+     * @tc.name   testMuslNetdbFreeaddrinfo001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_FREEADDRINFO_0100
+     * @tc.desc   test freeaddrinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMuslNetdbFreeaddrinfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data : number = netdb.freeaddrinfo();
       expect(data).assertEqual(0);
@@ -444,13 +444,13 @@ export default function muslNetdbNdkTest() {
     });
 
     /**
-    * @tc.number     : SUB_THIRDPARTY_MUSL_NETDB_GETADDRINFO_0100
-    * @tc.name       : testMuslNetdbGetaddrinfo001
-    * @tc.desc       : test getaddrinfo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+     * @tc.name   testMuslNetdbGetaddrinfo001
+     * @tc.number SUB_THIRDPARTY_MUSL_NETDB_GETADDRINFO_0100
+     * @tc.desc   test getaddrinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMuslNetdbGetaddrinfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data:number = netdb.getaddrinfo();
       expect(data).assertEqual(0);

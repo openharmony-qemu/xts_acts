@@ -59,8 +59,8 @@ export function testProxyDateTimeTimezone2() {
     const proxy = new Proxy(formatter, handler);
 
     const date = new Date('2023-01-01T12:00:00Z'); // UTC 12:00
-    console.log(proxy.format(date).includes('7:00 AM'), "302.1：时区转换生效（UTC→纽约）");
-    return proxy.format(date).includes('7:00 AM');
+    console.log(proxy.format(date).includes('7:00 AM'), "302.1：时区转换生效（UTC→纽约）");
+    return proxy.format(date).includes('7:00 AM');
 }
 
 export function testProxyXssProtection9() {

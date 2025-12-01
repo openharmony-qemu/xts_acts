@@ -39,7 +39,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbDdkAshmemAshmemFd_0100
      * @tc.number SUB_Driver_Ext_UsbDdkAshmemAshmemFd_0100
      * @tc.desc   Test UsbDdkAshmemAshmemFd.
@@ -61,7 +60,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbDdkAshmemSize_0200
      * @tc.number SUB_Driver_Ext_UsbDdkAshmemSize_0200
      * @tc.desc   Test UsbDdkAshmemSize.
@@ -83,7 +81,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbDdkAshmemAddress_0300
      * @tc.number SUB_Driver_Ext_UsbDdkAshmemAddress_0300
      * @tc.desc   Test UsbDdkAshmemAddress.
@@ -105,7 +102,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbDdkAshmemOffset_0400
      * @tc.number SUB_Driver_Ext_UsbDdkAshmemOffset_0400
      * @tc.desc   Test UsbDdkAshmemOffset.
@@ -127,7 +123,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbDdkAshmemBufferLength_0500
      * @tc.number SUB_Driver_Ext_UsbDdkAshmemBufferLength_0500
      * @tc.desc   Test UsbDdkAshmemBufferLength.
@@ -149,7 +144,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbDdkAshmemTransferredLength_0600
      * @tc.number SUB_Driver_Ext_UsbDdkAshmemTransferredLength_0600
      * @tc.desc   Test UsbDdkAshmemTransferredLength.
@@ -171,7 +165,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbDdkSuccess_0700
      * @tc.number SUB_Driver_Ext_UsbDdkSuccess_0700
      * @tc.desc   Test UsbDdkSuccess.
@@ -193,7 +186,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbDdkFailure_0800
      * @tc.number SUB_Driver_Ext_UsbDdkFailure_0800
      * @tc.desc   Test UsbDdkFailure.
@@ -215,7 +207,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbDdkInvalidParameter_0900
      * @tc.number SUB_Driver_Ext_UsbDdkInvalidParameter_0900
      * @tc.desc   Test UsbDdkInvalidParameter.
@@ -237,7 +228,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbDdkInvalidOperation_1000
      * @tc.number SUB_Driver_Ext_UsbDdkInvalidOperation_1000
      * @tc.desc   Test UsbDdkInvalidOperation.
@@ -259,7 +249,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbDdkNullPTR_1100
      * @tc.number SUB_Driver_Ext_UsbDdkNullPTR_1100
      * @tc.desc   Test UsbDdkNullPTR.
@@ -281,7 +270,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralDdkInit_1200
      * @tc.number SUB_Driver_Ext_ScsiPeripheralDdkInit_1200
      * @tc.desc   Test ScsiPeripheralDdkInit.
@@ -303,7 +291,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralRelease_1300
      * @tc.number SUB_Driver_Ext_ScsiPeripheralRelease_1300
      * @tc.desc   Test ScsiPeripheralRelease.
@@ -325,7 +312,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralOpen_1400
      * @tc.number SUB_Driver_Ext_ScsiPeripheralOpen_1400
      * @tc.desc   Test ScsiPeripheralOpen.
@@ -347,7 +333,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralClose_1500
      * @tc.number SUB_Driver_Ext_ScsiPeripheralClose_1500
      * @tc.desc   Test ScsiPeripheralClose.
@@ -369,7 +354,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralTestUnitReady_1600
      * @tc.number SUB_Driver_Ext_ScsiPeripheralTestUnitReady_1600
      * @tc.desc   Test ScsiPeripheralTestUnitReady.
@@ -391,7 +375,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralInquiry_1700
      * @tc.number SUB_Driver_Ext_ScsiPeripheralInquiry_1700
      * @tc.desc   Test ScsiPeripheralClose.
@@ -413,7 +396,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralReadCapacity10_1800
      * @tc.number SUB_Driver_Ext_ScsiPeripheralReadCapacity10_1800
      * @tc.desc   Test ScsiPeripheralReadCapacity10.
@@ -435,7 +417,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralRequestSense_1900
      * @tc.number SUB_Driver_Ext_ScsiPeripheralRequestSense_1900
      * @tc.desc   Test ScsiPeripheralRequestSense.
@@ -457,7 +438,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralRead_2000
      * @tc.number SUB_Driver_Ext_ScsiPeripheralRead_2000
      * @tc.desc   Test ScsiPeripheralRead.
@@ -479,7 +459,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralWrite_2100
      * @tc.number SUB_Driver_Ext_ScsiPeripheralWrite_2100
      * @tc.desc   Test ScsiPeripheralWrite.
@@ -501,7 +480,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralSendRequestByCDB_2300
      * @tc.number SUB_Driver_Ext_ScsiPeripheralSendRequestByCDB_2300
      * @tc.desc   Test ScsiPeripheralSendRequestByCDB.
@@ -523,7 +501,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10CONDITIONMET_2500
      * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10CONDITIONMET_2500
      * @tc.desc   Test ScsiPeripheralVerify10CONDITIONMET.
@@ -545,7 +522,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10BUSY_2600
      * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10BUSY_2600
      * @tc.desc   Test ScsiPeripheralVerify10BUSY.
@@ -567,7 +543,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10RESERVATIONCONFLICT_2700
      * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10RESERVATIONCONFLICT_2700
      * @tc.desc   Test ScsiPeripheralVerify10RESERVATIONCONFLICT.
@@ -589,7 +564,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10TASKSETFULL_2800
      * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10TASKSETFULL_2800
      * @tc.desc   Test ScsiPeripheralVerify10TASKSETFULL.
@@ -611,7 +585,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10ACAACTIVE_2900
      * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10ACAACTIVE_2900
      * @tc.desc   Test ScsiPeripheralVerify10ACAACTIVE.
@@ -633,7 +606,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10TASKABORTED_3000
      * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10TASKABORTED_3000
      * @tc.desc   Test ScsiPeripheralVerify10TASKABORTED.
@@ -655,7 +627,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialInit_3100
      * @tc.number SUB_Driver_Ext_UsbSerialInit_3100
      * @tc.desc   Test UsbSerialInit.
@@ -677,7 +648,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialReleaseInitError_3200
      * @tc.number SUB_Driver_Ext_UsbSerialReleaseInitError_3200
      * @tc.desc   Test UsbSerialReleaseInitError.
@@ -699,7 +669,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialCloseInitError_3300
      * @tc.number SUB_Driver_Ext_UsbSerialCloseInitError_3300
      * @tc.desc   Test UsbSerialCloseInitError.
@@ -721,7 +690,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialOpen_3400
      * @tc.number SUB_Driver_Ext_UsbSerialOpen_3400
      * @tc.desc   Test UsbSerialOpen.
@@ -743,7 +711,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialRead_3600
      * @tc.number SUB_Driver_Ext_UsbSerialRead_3600
      * @tc.desc   Test UsbSerialRead.
@@ -765,7 +732,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialWrite_3700
      * @tc.number SUB_Driver_Ext_UsbSerialWrite_3700
      * @tc.desc   Test UsbSerialWrite.
@@ -787,7 +753,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialSetBaudRate_3800
      * @tc.number SUB_Driver_Ext_UsbSerialSetBaudRate_3800
      * @tc.desc   Test UsbSerialSetBaudRate.
@@ -809,7 +774,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialSetParams_3900
      * @tc.number SUB_Driver_Ext_UsbSerialSetParams_3900
      * @tc.desc   Test UsbSerialSetParams.
@@ -831,7 +795,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialSetTimeout_4000
      * @tc.number SUB_Driver_Ext_UsbSerialSetTimeout_4000
      * @tc.desc   Test UsbSerialSetTimeout.
@@ -853,7 +816,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialSetFlowControl_4100
      * @tc.number SUB_Driver_Ext_UsbSerialSetFlowControl_4100
      * @tc.desc   Test UsbSerialSetFlowControl.
@@ -875,7 +837,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialFlush_4200
      * @tc.number SUB_Driver_Ext_UsbSerialFlush_4200
      * @tc.desc   Test UsbSerialFlush.
@@ -897,7 +858,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialFlushInput_4300
      * @tc.number SUB_Driver_Ext_UsbSerialFlushInput_4300
      * @tc.desc   Test UsbSerialFlushInput.
@@ -919,7 +879,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialFlushOutput_4400
      * @tc.number SUB_Driver_Ext_UsbSerialFlushOutput_4400
      * @tc.desc   Test UsbSerialFlushOutput.
@@ -941,7 +900,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialNoFlowControl_4500
      * @tc.number SUB_Driver_Ext_UsbSerialNoFlowControl_4500
      * @tc.desc   Test UsbSerialNoFlowControl.
@@ -963,7 +921,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialHardwareFlowControl_4600
      * @tc.number SUB_Driver_Ext_UsbSerialHardwareFlowControl_4600
      * @tc.desc   Test UsbSerialHardwareFlowControl.
@@ -985,7 +942,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialParityNone_4700
      * @tc.number SUB_Driver_Ext_UsbSerialParityNone_4700
      * @tc.desc   Test UsbSerialParityNone.
@@ -1007,7 +963,6 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_UsbSerialParityEven_4800
      * @tc.number SUB_Driver_Ext_UsbSerialParityEven_4800
      * @tc.desc   Test UsbSerialParityEven.

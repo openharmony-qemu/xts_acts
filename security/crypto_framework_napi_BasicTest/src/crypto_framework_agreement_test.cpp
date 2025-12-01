@@ -145,14 +145,6 @@ AgreementSpec g_agreementSpec[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkAgreementNapiTest, AGREEMENT_TEST, ::testing::ValuesIn(g_agreementSpec));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Test_0100
-* @tc.name OHCryptoFrameworkAgreementNapiTest/AGREEMENT_TEST.SUB_Security_CryptoFramework_NAPI_Agreement_Test_0100/x
-* @tc.desc algorithm is Agreement
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(AGREEMENT_TEST, SUB_Security_CryptoFramework_NAPI_Agreement_Test_0100, TestSize.Level0)
 {
     AgreementSpec infoSpec = GetParam();
@@ -185,13 +177,13 @@ HWTEST_P(AGREEMENT_TEST, SUB_Security_CryptoFramework_NAPI_Agreement_Test_0100, 
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Test_0200
-* @tc.name OHCryptoFrameworkAgreementNapiTest.SUB_Security_CryptoFramework_NAPI_Agreement_Test_0200
-* @tc.desc algorithm is Agreement
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Agreement_Test_0200
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Test_0200
+ * @tc.desc   algorithm is Agreement
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAgreementNapiTest, SUB_Security_CryptoFramework_NAPI_Agreement_Test_0200, TestSize.Level0)
 {
     const char *algoNameA = "ECC224";
@@ -221,13 +213,13 @@ HWTEST_F(OHCryptoFrameworkAgreementNapiTest, SUB_Security_CryptoFramework_NAPI_A
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Test_0300
-* @tc.name OHCryptoFrameworkAgreementNapiTest.SUB_Security_CryptoFramework_NAPI_Agreement_Test_0300
-* @tc.desc algorithm is Agreement
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Agreement_Test_0300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Test_0300
+ * @tc.desc   algorithm is Agreement
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAgreementNapiTest, SUB_Security_CryptoFramework_NAPI_Agreement_Test_0300, TestSize.Level0)
 {
     const char *algoNameA = "X25519";
@@ -257,13 +249,13 @@ HWTEST_F(OHCryptoFrameworkAgreementNapiTest, SUB_Security_CryptoFramework_NAPI_A
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Test_0400
-* @tc.name OHCryptoFrameworkAgreementNapiTest.SUB_Security_CryptoFramework_NAPI_Agreement_Test_0400
-* @tc.desc algorithm is Agreement
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Agreement_Test_0400
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Test_0400
+ * @tc.desc   algorithm is Agreement
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAgreementNapiTest, SUB_Security_CryptoFramework_NAPI_Agreement_Test_0400, TestSize.Level0)
 {
     const char *algoNameA = "DH_modp2048";
@@ -293,13 +285,13 @@ HWTEST_F(OHCryptoFrameworkAgreementNapiTest, SUB_Security_CryptoFramework_NAPI_A
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Test_0500
-* @tc.name OHCryptoFrameworkAgreementNapiTest.SUB_Security_CryptoFramework_NAPI_Agreement_Test_0500
-* @tc.desc algorithm is Agreement
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Agreement_Test_0500
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Test_0500
+ * @tc.desc   algorithm is Agreement
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAgreementNapiTest, SUB_Security_CryptoFramework_NAPI_Agreement_Test_0500, TestSize.Level0)
 {
     const char *algoName = "SM2";
@@ -386,14 +378,6 @@ EXIT:
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkAgreementNapiTest, AGREEMENT_VECTOR_TEST, ::testing::ValuesIn(g_vec));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Vector_Test_0100
-* @tc.name OHCryptoFrameworkAgreementNapiTest/AGREEMENT_VECTOR_TEST.SUB_Security_CryptoFramework_NAPI_Agreement_Vector_Test_0100/x
-* @tc.desc algorithm is Agreement
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(AGREEMENT_VECTOR_TEST, SUB_Security_CryptoFramework_NAPI_Agreement_Vector_Test_0100, TestSize.Level0)
 {
     VectorAgreementSpec vecInfo = GetParam();
@@ -541,14 +525,6 @@ static VectorEccAgreementSpec g_vectors[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkAgreementNapiTest, AGREEMENT_VECTOR_ECC_TEST, ::testing::ValuesIn(g_vectors));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Vector_Test_0200
-* @tc.name OHCryptoFrameworkAgreementNapiTest/AGREEMENT_VECTOR_ECC_TEST.SUB_Security_CryptoFramework_NAPI_Agreement_Vector_Test_0200/x
-* @tc.desc algorithm is Agreement
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(AGREEMENT_VECTOR_ECC_TEST, SUB_Security_CryptoFramework_NAPI_Agreement_Vector_Test_0200, TestSize.Level0)
 {
     VectorEccAgreementSpec vecInfo = GetParam();
@@ -715,14 +691,6 @@ static VectorDhAgreementSpec g_dh_vectors[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkAgreementNapiTest, AGREEMENT_VECTOR_DH_TEST, ::testing::ValuesIn(g_dh_vectors));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Agreement_Vector_Test_0300
-* @tc.name OHCryptoFrameworkAgreementNapiTest/AGREEMENT_VECTOR_DH_TEST.SUB_Security_CryptoFramework_NAPI_Agreement_Vector_Test_0300/x
-* @tc.desc algorithm is Agreement
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(AGREEMENT_VECTOR_DH_TEST, SUB_Security_CryptoFramework_NAPI_Agreement_Vector_Test_0300, TestSize.Level0)
 {
     VectorDhAgreementSpec vecInfo = GetParam();

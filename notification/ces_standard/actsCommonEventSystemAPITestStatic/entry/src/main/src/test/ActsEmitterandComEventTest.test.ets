@@ -43,12 +43,12 @@ export default function ActsEmitterandComEventTest() {
   describe('actsEmitterandComEventTest', ():void => {
 
     /**
-     * @tc.number     : Sub_NotificationAns_Emitter_Basic_Static_0001
-     * @tc.name       : Sub_NotificationAns_Emitter_Basic_Static_0001
-     * @tc.desc       : 事件基本功能用例
-     * @tc.size       : MediumTest
-     * @tc.type       : Function test
-     * @tc.level      : Level 0
+     * @tc.name   Sub_NotificationAns_Emitter_Basic_Static_0001
+     * @tc.number Sub_NotificationAns_Emitter_Basic_Static_0001
+     * @tc.desc   事件基本功能用例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_Emitter_Basic_Static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_NotificationAns_Emitter_Basic_Static_0001==>'
@@ -82,12 +82,12 @@ export default function ActsEmitterandComEventTest() {
     })
 
     /**
-     * @tc.number     : Sub_NotificationAns_Emitter_Basic_Static_0002
-     * @tc.name       : Sub_NotificationAns_Emitter_Basic_Static_0002
-     * @tc.desc       : 事件基本功能用例
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 0
+     * @tc.name   Sub_NotificationAns_Emitter_Basic_Static_0002
+     * @tc.number Sub_NotificationAns_Emitter_Basic_Static_0002
+     * @tc.desc   事件基本功能用例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_Emitter_Basic_Static_0002',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_NotificationAns_Emitter_Basic_Static_0002==>'
@@ -123,12 +123,12 @@ export default function ActsEmitterandComEventTest() {
     })
 
     /**
-     * @tc.number     : Sub_NotificationAns_CommonEvent_Basic_Static_0001
-     * @tc.name       : Sub_NotificationAns_CommonEvent_Basic_Static_0001
-     * @tc.desc       : 公共事件基础用例验证
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 0
+     * @tc.name   Sub_NotificationAns_CommonEvent_Basic_Static_0001
+     * @tc.number Sub_NotificationAns_CommonEvent_Basic_Static_0001
+     * @tc.desc   公共事件基础用例验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_CommonEvent_Basic_Static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -221,12 +221,12 @@ export default function ActsEmitterandComEventTest() {
       })
 
     /**
-     * @tc.number     : Sub_NotificationAns_CommonEvent_Basic_Static_0002
-     * @tc.name       : Sub_NotificationAns_CommonEvent_Basic_Static_0002
-     * @tc.desc       : 公共事件基础用例验证
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 0
+     * @tc.name   Sub_NotificationAns_CommonEvent_Basic_Static_0002
+     * @tc.number Sub_NotificationAns_CommonEvent_Basic_Static_0002
+     * @tc.desc   公共事件基础用例验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_CommonEvent_Basic_Static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -399,12 +399,12 @@ export default function ActsEmitterandComEventTest() {
       })
 
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Emit_Static_0100
-     * @tc.name       : Sub_Notification_Emitter_Publish_Emit_Static_0100
-     * @tc.desc       : Function test
-     * @tc.size       : Large-scale test
-     * @tc.type       : Function test
-     * @tc.level      : Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_Static_0100
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_Static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0100',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0100==>'
@@ -444,12 +444,12 @@ export default function ActsEmitterandComEventTest() {
       done();
     })
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Emit_Static_0200
-     * @tc.name       : Sub_Notification_Emitter_Publish_Emit_Static_0200
-     * @tc.desc       : Function test
-     * @tc.size       : Large-scale test
-     * @tc.type       : Function test
-     * @tc.level      : Level 3
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_Static_0200
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_Static_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0200==>'
@@ -480,12 +480,12 @@ export default function ActsEmitterandComEventTest() {
     })
 
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Emit_Static_0300
-     * @tc.name       : Sub_Notification_Emitter_Publish_Emit_Static_0300
-     * @tc.desc       : Function test
-     * @tc.size       : Large-scale test
-     * @tc.type       : Function test
-     * @tc.level      : Level 3
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_Static_0300
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_Static_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0300==>'
@@ -529,12 +529,12 @@ export default function ActsEmitterandComEventTest() {
       done();
     })
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Emit_Static_0400
-     * @tc.name       : Sub_Notification_Emitter_Publish_Emit_Static_0400
-     * @tc.desc       : Function test
-     * @tc.size       : Large-scale test
-     * @tc.type       : Function test
-     * @tc.level      : Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_Static_0400
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_Static_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0400==>'
@@ -572,12 +572,12 @@ export default function ActsEmitterandComEventTest() {
     })
     
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_Static_0001
-     * @tc.name       : Sub_Notification_Emitter_Publish_Sendable_Static_0001
-     * @tc.desc       : Function test
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_Static_0001
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_Static_0001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Emitter_Publish_Sendable_Static_0001',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0001==>'
@@ -623,12 +623,12 @@ export default function ActsEmitterandComEventTest() {
 
 
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_Static_0002
-     * @tc.name       : Sub_Notification_Emitter_Publish_Sendable_Static_0002
-     * @tc.desc       : Function test
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_Static_0002
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_Static_0002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Emitter_Publish_Sendable_Static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0002==>'
@@ -651,12 +651,12 @@ export default function ActsEmitterandComEventTest() {
     })
 
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_Static_0003
-     * @tc.name       : Sub_Notification_Emitter_Publish_Sendable_Static_0003
-     * @tc.desc       : Function test
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_Static_0003
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_Static_0003
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Emitter_Publish_Sendable_Static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0003==>'
@@ -683,12 +683,12 @@ export default function ActsEmitterandComEventTest() {
     })
 
     /**
-     * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_Static_0004
-     * @tc.name       : Sub_Notification_Emitter_Publish_Sendable_Static_0004
-     * @tc.desc       : Function test
-     * @tc.size       : Medium-sized test
-     * @tc.type       : Function test
-     * @tc.level      : Level 0
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_Static_0004
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_Static_0004
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Emitter_Publish_Sendable_Static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0004==>'

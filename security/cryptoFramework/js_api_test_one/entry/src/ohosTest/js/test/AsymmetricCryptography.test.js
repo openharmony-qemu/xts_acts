@@ -27,9 +27,12 @@ export default function AsymmetricCryptographyJsunit() {
         });
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_0100
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_0100
-         * @tc.name Test RSA1024|PRIMES_2 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_0100",
@@ -55,9 +58,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_0200
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_0200
-         * @tc.name Test RSA2048|PRIMES_2 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_0200",
@@ -83,9 +89,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_0300
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_0300
-         * @tc.name Test RSA3072 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_0300",
@@ -111,9 +120,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_0400
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_0400
-         * @tc.name Test RSA4096 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_0400",
@@ -139,9 +151,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_0500
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_0500
-         * @tc.name Test RSA3072 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_0500",
@@ -167,9 +182,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_0600
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_0600
-         * @tc.name Test RSA3072|PKCS1|SHA256 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_0600",
@@ -195,9 +213,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_0700
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_0700
-         * @tc.name Test RSA3072|PKCS1|SHA512 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_0700",
@@ -223,9 +244,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_0800
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_0800
-         * @tc.name Test RSA3072|PKCS1_OAEP|SHA224|MGF1_SHA256 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_0800",
@@ -251,9 +275,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_0900
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_0900
-         * @tc.name Test RSA512|PKCS1_OAEP|SHA256|MGF1_SHA224 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_0900",
@@ -279,9 +306,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_1000
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_1000
-         * @tc.name Test RSA3072|PKCS1_OAEP|SHA384|MGF1_SHA1 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_1000",
@@ -307,9 +337,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_1100
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_1100
-         * @tc.name Test RSA3072|PKCS1_OAEP|SHA512|MGF1_MD5 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_1100",
@@ -335,9 +368,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_1200
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_1200
-         * @tc.name Test RSA3072|PKCS1 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_1200",
@@ -363,9 +399,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_1300
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_1300
-         * @tc.name Test RSA4096|PKCS1 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_1300",
@@ -391,9 +430,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_1400
          * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_1400
-         * @tc.name Test RSA4096|PKCS1 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_Encryption_RSA_1400",
@@ -414,9 +456,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_0100
          * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_0100
-         * @tc.name Test RSA1024|PKCS1|MD5 normal sign and verify
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_SignVerify_RSA_0100",
@@ -439,9 +484,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_0200
          * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_0200
-         * @tc.name Test RSA2048|PKCS1|SHA1 normal sign and verify
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_SignVerify_RSA_0200",
@@ -464,9 +512,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_0300
          * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_0300
-         * @tc.name Test RSA3072|PKCS1|SHA224 normal sign and verify
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_SignVerify_RSA_0300",
@@ -489,9 +540,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_0400
          * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_0400
-         * @tc.name Test RSA2048|PKCS1|SHA1 normal sign and verify
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_SignVerify_RSA_0400",
@@ -514,9 +568,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_0500
          * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_0500
-         * @tc.name Test RSA8192|PKCS1|SHA384 normal sign and verify
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_SignVerify_RSA_0500",
@@ -539,9 +596,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_0600
          * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_0600
-         * @tc.name Test RSA512|PKCS1|SHA512 normal sign and verify
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_SignVerify_RSA_0600",
@@ -564,9 +624,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_0700
          * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_0700
-         * @tc.name Test RSA1024|PKCS1|MD5|MGF1_MD5 normal sign and verify
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_SignVerify_RSA_0700",
@@ -589,9 +652,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_0800
          * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_0800
-         * @tc.name Test RSA2048|PSS|SHA1|MGF1_SHA1 normal sign and verify
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_SignVerify_RSA_0800",
@@ -614,9 +680,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_0900
          * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_0900
-         * @tc.name Test RSA3072|PSS|SHA224|MGF1_SHA224 normal sign and verify
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_SignVerify_RSA_0900",
@@ -639,9 +708,12 @@ export default function AsymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_1000
          * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_1000
-         * @tc.name Test RSA4096|PSS|SHA256|MGF1_SHA256 normal sign and verify
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_ASymmetric_SignVerify_RSA_1000",

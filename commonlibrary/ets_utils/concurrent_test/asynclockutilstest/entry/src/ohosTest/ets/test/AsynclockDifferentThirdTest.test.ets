@@ -70,12 +70,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest0100
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_0100
-     * @tc.name AsynclockDifferentThirdTest0100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -108,12 +108,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest0200
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_0200
-     * @tc.name AsynclockDifferentThirdTest0200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -144,12 +144,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest0300
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_0300
-     * @tc.name AsynclockDifferentThirdTest0300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -182,12 +182,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest0400
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_0400
-     * @tc.name AsynclockDifferentThirdTest0400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -218,12 +218,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest0500
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_0500
-     * @tc.name AsynclockDifferentThirdTest0500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -267,12 +267,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest0600
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_0600
-     * @tc.name AsynclockDifferentThirdTest0600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -307,12 +307,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest0700
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_0700
-     * @tc.name AsynclockDifferentThirdTest0700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -343,12 +343,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest0800
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_0800
-     * @tc.name AsynclockDifferentThirdTest0800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -375,12 +375,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest0900
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_0900
-     * @tc.name AsynclockDifferentThirdTest0900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -427,12 +427,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest1000
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_1000
-     * @tc.name AsynclockDifferentThirdTest1000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -463,12 +463,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest1100
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_1100
-     * @tc.name AsynclockDifferentThirdTest1100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -521,12 +521,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest1200
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_1200
-     * @tc.name AsynclockDifferentThirdTest1200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -557,12 +557,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest1300
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_1300
-     * @tc.name AsynclockDifferentThirdTest1300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -589,12 +589,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest1400
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_1400
-     * @tc.name AsynclockDifferentThirdTest1400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -636,12 +636,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest1500
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_1500
-     * @tc.name AsynclockDifferentThirdTest1500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -672,12 +672,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest1600
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_1600
-     * @tc.name AsynclockDifferentThirdTest1600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -708,12 +708,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest1700
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_1700
-     * @tc.name AsynclockDifferentThirdTest1700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -755,12 +755,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest1800
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_1800
-     * @tc.name AsynclockDifferentThirdTest1800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -791,12 +791,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest1900
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_1900
-     * @tc.name AsynclockDifferentThirdTest1900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -823,12 +823,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest2000
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_2000
-     * @tc.name AsynclockDifferentThirdTest2000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -880,12 +880,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest2100
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_2100
-     * @tc.name AsynclockDifferentThirdTest2100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -916,12 +916,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest2200
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_2200
-     * @tc.name AsynclockDifferentThirdTest2200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -955,12 +955,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest2300
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_2300
-     * @tc.name AsynclockDifferentThirdTest2300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1003,12 +1003,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest2400
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_2400
-     * @tc.name AsynclockDifferentThirdTest2400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1039,12 +1039,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest2500
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_2500
-     * @tc.name AsynclockDifferentThirdTest2500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1071,12 +1071,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest2600
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_2600
-     * @tc.name AsynclockDifferentThirdTest2600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1118,12 +1118,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest2700
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_2700
-     * @tc.name AsynclockDifferentThirdTest2700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1154,12 +1154,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest2800
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_2800
-     * @tc.name AsynclockDifferentThirdTest2800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1186,12 +1186,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest2900
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_2900
-     * @tc.name AsynclockDifferentThirdTest2900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1236,12 +1236,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest3000
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_3000
-     * @tc.name AsynclockDifferentThirdTest3000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1273,12 +1273,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest3100
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_3100
-     * @tc.name AsynclockDifferentThirdTest3100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1305,12 +1305,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest3200
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_3200
-     * @tc.name AsynclockDifferentThirdTest3200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1355,12 +1355,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest3300
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_3300
-     * @tc.name AsynclockDifferentThirdTest3300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1392,12 +1392,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest3400
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_3400
-     * @tc.name AsynclockDifferentThirdTest3400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1436,12 +1436,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest3500
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_3500
-     * @tc.name AsynclockDifferentThirdTest3500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1492,12 +1492,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest3600
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_3600
-     * @tc.name AsynclockDifferentThirdTest3600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1529,12 +1529,12 @@ export default function AsynclockDifferentThirdTest() {
 
 
     /**
+     * @tc.name   AsynclockDifferentThirdTest3700
      * @tc.number SUB_ASYNCLOCK_DIFFERENT_THIRD_TEST_3700
-     * @tc.name AsynclockDifferentThirdTest3700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockDifferentThirdTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

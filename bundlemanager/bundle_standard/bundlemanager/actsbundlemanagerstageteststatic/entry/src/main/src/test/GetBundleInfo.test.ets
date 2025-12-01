@@ -43,6 +43,7 @@ export default function getBundleInfo() {
             if (err) {
               hilog.info(domain, tag, 'getBundleInfoCallbackDefault  ====> err' + JSON.stringify(err));
               expect().assertFail();
+              done();
             } else if (data !== undefined) {
               hilog.info(domain, tag, 'getBundleInfoCallbackDefault  ====> data' + JSON.stringify(data));
               expect(data!.name).assertEqual(BUNDLE_NAME);
@@ -58,9 +59,11 @@ export default function getBundleInfo() {
               expect(data!.hapModulesInfo.length + '').assertEqual('0');
               expect(data!.reqPermissionDetails.length + '').assertEqual('0');
               expect(data!.permissionGrantStates.length + '').assertEqual('0');
+              done();
             } else {
               hilog.info(domain, tag, 'getBundleInfoCallbackDefault  ====> Fail');
               expect().assertFail();
+              done();
             }
             hilog.info(domain, tag, 'getBundleInfoCallbackDefault  ====> end');
             done();
@@ -83,6 +86,7 @@ export default function getBundleInfo() {
             if (err) {
               hilog.info(domain, tag, 'getBundleInfoCallbackDefaultUserID   ====> err' + JSON.stringify(err));
               expect().assertFail();
+              done();
             } else if (data !== undefined) {
               hilog.info(domain, tag, 'getBundleInfoCallbackDefaultUserID  ====> data' + JSON.stringify(data));
               expect(data!.name).assertEqual(BUNDLE_NAME);
@@ -98,9 +102,11 @@ export default function getBundleInfo() {
               expect(data!.hapModulesInfo.length + '').assertEqual('0');
               expect(data!.reqPermissionDetails.length + '').assertEqual('0');
               expect(data!.permissionGrantStates.length + '').assertEqual('0');
+              done();
             } else {
               hilog.info(domain, tag, 'getBundleInfoCallbackDefaultUserID  ====> Fail');
               expect().assertFail();
+              done();
             }
             hilog.info(domain, tag, 'getBundleInfoCallbackDefaultUserID  ====> end');
             done();
@@ -170,8 +176,8 @@ export default function getBundleInfo() {
         expect(data.hapModulesInfo.length + '').assertEqual('0');
         expect(data.reqPermissionDetails.length + '').assertEqual('0');
         expect(data.permissionGrantStates.length + '').assertEqual('0');
-        done();
         hilog.info(domain, tag, 'getBundleInfoSyncDefault end');
+        done();
       })
 
     /**
@@ -201,8 +207,8 @@ export default function getBundleInfo() {
         expect(data.hapModulesInfo.length + '').assertEqual('0');
         expect(data.reqPermissionDetails.length + '').assertEqual('0');
         expect(data.permissionGrantStates.length + '').assertEqual('0');
-        done();
         hilog.info(domain, tag, 'getBundleInfoSyncDefaultUserID end');
+        done();
       })
   })
 }

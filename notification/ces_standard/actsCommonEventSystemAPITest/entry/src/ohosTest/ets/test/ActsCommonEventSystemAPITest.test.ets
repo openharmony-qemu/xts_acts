@@ -33,10 +33,13 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
     let TAG = 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST ===>'
     console.info(TAG + 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST START')
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_5000
-     * @tc.name: publishAsUser 
-     * @tc.desc: test function publishAsBundle
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_5000
+     * @tc.number Sub_Notification_Ans_Publish_Publish_5000
+     * @tc.desc   test function publishAsBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Publish_Publish_5000', Level.LEVEL3, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_5000 START`);
@@ -56,10 +59,13 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_5000 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_5100
-     * @tc.name: publishAsUser
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_5100
+     * @tc.number Sub_Notification_Ans_Publish_Publish_5100
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Publish_Publish_5100', Level.LEVEL3, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_5100 START`);
@@ -84,10 +90,13 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_5100 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ces_StaticEvent_Config_1200
-     * @tc.name: removeStickyCommonEvent
-     * @tc.desc: test function removeStickyCommonEvent
+    /**
+     * @tc.name   Sub_Notification_Ces_StaticEvent_Config_1200
+     * @tc.number Sub_Notification_Ces_StaticEvent_Config_1200
+     * @tc.desc   test function removeStickyCommonEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ces_StaticEvent_Config_1200', Level.LEVEL3, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ces_StaticEvent_Config_1200 START`);
@@ -107,10 +116,13 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ces_StaticEvent_Config_1200 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ces_StaticEvent_Config_1300
-     * @tc.name: removeStickyCommonEvent
-     * @tc.desc: test function removeStickyCommonEvent
+    /**
+     * @tc.name   Sub_Notification_Ces_StaticEvent_Config_1300
+     * @tc.number Sub_Notification_Ces_StaticEvent_Config_1300
+     * @tc.desc   test function removeStickyCommonEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ces_StaticEvent_Config_1300', Level.LEVEL3, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ces_StaticEvent_Config_1300 START`);
@@ -128,10 +140,13 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ces_StaticEvent_Config_1300 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_7900_278
-     * @tc.name: commonEventManager.publish
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_7900_278
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_7900_278
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_278', Level.LEVEL2, (done: Function) => {
       //构造commonEventManager.publish401错误码
@@ -199,11 +214,14 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_7900_279
-     * @tc.name: commonEventManager.publish
-     * @tc.desc: test function publishAsUser
-     */
+     /**
+      * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_7900_279
+      * @tc.number Sub_Notification_Ces_Publish_CommonEvent_7900_279
+      * @tc.desc   test function publishAsUser
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('Sub_Notification_Ces_Publish_CommonEvent_7900_279', Level.LEVEL2, async (done: Function) => {
       //构造notificationManager.publish 1600004错误码
       let basicContent: notificationManager.NotificationBasicContent = {
@@ -351,10 +369,13 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
 
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_7900_280
-     * @tc.name: commonEventManager.publish
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_7900_280
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_7900_280
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_280', Level.LEVEL2, async (done: Function) => {
       let id = 1
@@ -409,10 +430,13 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
 
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_7900_281
-     * @tc.name: commonEventManager.publish
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_7900_281
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_7900_281
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_281', Level.LEVEL2, async (done: Function) => {
 
@@ -490,10 +514,13 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
 
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_7900_284
-     * @tc.name: commonEventManager.publish
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_7900_284
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_7900_284
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_284', Level.LEVEL2, async (done: () => void) => {
       try {
@@ -657,11 +684,14 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
       })
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_7900_282
-     * @tc.name: commonEventManager.publish
-     * @tc.desc: test function publishAsUser
-     */
+/**
+ * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_7900_282
+ * @tc.number Sub_Notification_Ces_Publish_CommonEvent_7900_282
+ * @tc.desc   test function publishAsUser
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (done: Function) => {
   notificationManager.requestEnableNotification(CustomGlobal.context)
 
@@ -771,10 +801,13 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
 
 })
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_7900_283
-     * @tc.name: commonEventManager.publish
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_7900_283
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_7900_283
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_283', Level.LEVEL2, async (done: () => void) => {
       notificationManager.openNotificationSettings(CustomGlobal.context).then(async () => {
@@ -806,10 +839,13 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
     })
 
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_7900_287
-     * @tc.name: commonEventManager.publish
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_7900_287
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_7900_287
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_287', Level.LEVEL2, async (done: Function) => {
 
@@ -847,10 +883,13 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
       notification.remove(bundle, notificationKey, reason, removeCallback);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_7900_288
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_7900_288
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_7900_288
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_7900_288
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_288', Level.LEVEL2, async (done: Function) => {
 

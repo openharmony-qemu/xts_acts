@@ -61,9 +61,12 @@ export default function webViewExistCookie() {
     })
 
     /**
+     * @tc.name   testExistCookie
      * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCOOKIE_API_0100
-     * @tc.name testExistCookie
-     * @tc.desc test interface of existCookie after setcookie
+     * @tc.desc   test interface of existCookie after setcookie
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testExistCookie', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitExistCookie', 137400);

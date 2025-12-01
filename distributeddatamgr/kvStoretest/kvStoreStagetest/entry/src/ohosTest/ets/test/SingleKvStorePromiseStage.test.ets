@@ -121,7 +121,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutString001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0670
      * @tc.desc   Test Js Api SingleKvStore.Put(String)  testcase 001
@@ -146,7 +145,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutString002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0680
      * @tc.desc   Test Js Api SingleKvStore.Put(String)  testcase 002
@@ -172,7 +170,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutString003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0690
      * @tc.desc   Test Js Api SingleKvStore.Put(String)  testcase 003
@@ -198,7 +195,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutString004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0700
      * @tc.desc   Test Js Api SingleKvStore.Put(String)  testcase 004
@@ -235,7 +231,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetString001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0390
      * @tc.desc   Test Js Api SingleKvStoreGetString testcase 001
@@ -268,7 +263,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetString002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0400
      * @tc.desc   Test Js Api SingleKvStoreGetString testcase 002
@@ -292,7 +286,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutInt001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0630
      * @tc.desc   Test Js Api SingleKvStore.Put(Int)  testcase 001
@@ -318,7 +311,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutInt002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0640
      * @tc.desc   Test Js Api SingleKvStore.Put(Int)  testcase 002
@@ -352,7 +344,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutInt003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0650
      * @tc.desc   Test Js Api SingleKvStore.Put(Int)  testcase 003
@@ -386,7 +377,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutInt004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0660
      * @tc.desc   Test Js Api SingleKvStore.Put(Int)  testcase 004
@@ -420,7 +410,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetInt001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0270
      * @tc.desc   Test Js Api SingleKvStoreGetInt testcase 001
@@ -453,7 +442,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutBool001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0610
      * @tc.desc   Test Js Api SingleKvStore.Put(Bool)  testcase 001
@@ -479,7 +467,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetBool001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0210
      * @tc.desc   Test Js Api SingleKvStoreGetBool testcase 001
@@ -513,7 +500,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutFloat001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0620
      * @tc.desc   Test Js Api SingleKvStore.Put(Float)  testcase 001
@@ -542,7 +528,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetFloat001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0240
      * @tc.desc   Test Js Api SingleKvStoreGetFloat testcase 001
@@ -580,7 +565,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetFloat002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0250
      * @tc.desc   Test Js Api SingleKvStoreGetFloat testcase 002
@@ -617,7 +601,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetFloat003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0260
      * @tc.desc   Test Js Api SingleKvStoreGetFloat testcase 003
@@ -655,7 +638,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreDeleteString001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0140
      * @tc.desc   Test Js Api SingleKvStoreDeleteString testcase 001
@@ -693,7 +675,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreDeleteString002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0150
      * @tc.desc   Test Js Api SingleKvStoreDeleteString testcase 002
@@ -734,7 +715,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreDeleteString003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0160
      * @tc.desc   Test Js Api SingleKvStoreDeleteString testcase 003
@@ -763,7 +743,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreDeleteInt001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0130
      * @tc.desc   Test Js Api SingleKvStoreDeleteInt testcase 001
@@ -800,7 +779,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreDeleteFloat001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0120
      * @tc.desc   Test Js Api SingleKvStoreDeleteFloat testcase 001
@@ -837,7 +815,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreDeleteBool001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0110
      * @tc.desc   Test Js Api SingleKvStoreDeleteBool testcase 001
@@ -874,7 +851,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOnChange001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0490
      * @tc.desc   Test Js Api SingleKvStoreOnChange testcase 001
@@ -906,7 +882,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOnChange002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0500
      * @tc.desc   Test Js Api SingleKvStoreOnChange testcase 002
@@ -938,7 +913,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOnChange003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0510
      * @tc.desc   Test Js Api SingleKvStoreOnChange testcase 003
@@ -970,7 +944,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOnSyncComplete001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0520
      * @tc.desc   Test Js Api SingleKvStoreOnSyncComplete testcase 001
@@ -1006,7 +979,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOnSyncComplete002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0530
      * @tc.desc   Test Js Api SingleKvStoreOnSyncComplete testcase 002
@@ -1042,7 +1014,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOnSyncComplete003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0540
      * @tc.desc   Test Js Api SingleKvStoreOnSyncComplete testcase 003
@@ -1078,7 +1049,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOffChange001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0410
      * @tc.desc   Test Js Api SingleKvStoreOffChange testcase 001
@@ -1102,7 +1072,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOffChange002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0420
      * @tc.desc   Test Js Api SingleKvStoreOffChange testcase 002
@@ -1131,7 +1100,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOffChange003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0430
      * @tc.desc   Test Js Api SingleKvStoreOffChange testcase 003
@@ -1160,7 +1128,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOffChange004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0440
      * @tc.desc   Test Js Api SingleKvStoreOffChange testcase 004
@@ -1184,7 +1151,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOffSyncComplete001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0450
      * @tc.desc   Test Js Api SingleKvStoreOffSyncComplete testcase 001
@@ -1208,7 +1174,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOffSyncComplete002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0460
      * @tc.desc   Test Js Api SingleKvStoreOffSyncComplete testcase 002
@@ -1236,7 +1201,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOffSyncComplete003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0470
      * @tc.desc   Test Js Api SingleKvStoreOffSyncComplete testcase 003
@@ -1265,7 +1229,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreOffSyncComplete004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0480
      * @tc.desc   Test Js Api SingleKvStoreOffSyncComplete testcase 004
@@ -1289,7 +1252,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreSetSyncRange001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0820
      * @tc.desc   Test Js Api SingleKvStoreSetSyncRange testcase 001
@@ -1317,7 +1279,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreSetSyncRange002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0830
      * @tc.desc   Test Js Api SingleKvStoreSetSyncRange testcase 002
@@ -1345,7 +1306,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreSetSyncRange003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0840
      * @tc.desc   Test Js Api SingleKvStoreSetSyncRange testcase 003
@@ -1373,7 +1333,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutBatch001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0550
      * @tc.desc   Test Js Api SingleKvStore.PutBatch()  testcase 001
@@ -1410,7 +1369,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutBatch002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0560
      * @tc.desc   Test Js Api SingleKvStore.PutBatch()  testcase 002
@@ -1457,7 +1415,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutBatch003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0570
      * @tc.desc   Test Js Api SingleKvStore.PutBatch()  testcase 003
@@ -1504,7 +1461,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutBatch004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0580
      * @tc.desc   Test Js Api SingleKvStore.PutBatch()  testcase 004
@@ -1551,7 +1507,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutBatch005
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0590
      * @tc.desc   Test Js Api SingleKvStore.PutBatch()  testcase 005
@@ -1599,7 +1554,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorePutBatch006
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0600
      * @tc.desc   Test Js Api SingleKvStore.PutBatch()  testcase 006
@@ -1647,7 +1601,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreDeleteBatch001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0080
      * @tc.desc   Test Js Api SingleKvStoreDeleteBatch testcase 001
@@ -1695,7 +1648,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreDeleteBatch002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0090
      * @tc.desc   Test Js Api SingleKvStoreDeleteBatch testcase 002
@@ -1721,7 +1673,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreDeleteBatch003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0100
      * @tc.desc   Test Js Api SingleKvStoreDeleteBatch testcase 003
@@ -1767,7 +1718,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorestartTransaction001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0850
      * @tc.desc   Test Js Api SingleKvStorestartTransaction testcase 001
@@ -1824,7 +1774,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorestartTransaction002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0860
      * @tc.desc   Test Js Api SingleKvStorestartTransaction testcase 002
@@ -1881,7 +1830,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorestartTransaction003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0870
      * @tc.desc   Test Js Api SingleKvStorestartTransaction testcase 003
@@ -1905,7 +1853,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorestartTransaction004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0880
      * @tc.desc   Test Js Api SingleKvStorestartTransaction testcase 004
@@ -1929,7 +1876,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStorestartTransaction005
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0890
      * @tc.desc   Test Js Api SingleKvStorestartTransaction testcase 005
@@ -1953,7 +1899,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreCommit001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0050
      * @tc.desc   Test Js Api SingleKvStoreCommit testcase 001
@@ -1977,7 +1922,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreCommit002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0060
      * @tc.desc   Test Js Api SingleKvStoreCommit testcase 002
@@ -2001,7 +1945,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreCommit003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0070
      * @tc.desc   Test Js Api SingleKvStoreCommit testcase 003
@@ -2025,7 +1968,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreRollback001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0750
      * @tc.desc   Test Js Api SingleKvStoreRollback testcase 001
@@ -2049,7 +1991,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreRollback002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0760
      * @tc.desc   Test Js Api SingleKvStoreRollback testcase 002
@@ -2073,7 +2014,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreRollback003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0770
      * @tc.desc   Test Js Api SingleKvStoreRollback testcase 003
@@ -2097,7 +2037,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreEnableSync001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0170
      * @tc.desc   Test Js Api SingleKvStoreEnableSync testcase 001
@@ -2123,7 +2062,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreEnableSync002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0180
      * @tc.desc   Test Js Api SingleKvStoreEnableSync testcase 002
@@ -2149,7 +2087,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreEnableSync003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0190
      * @tc.desc   Test Js Api SingleKvStoreEnableSync testcase 003
@@ -2173,7 +2110,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreEnableSync004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0200
      * @tc.desc   Test Js Api SingleKvStoreEnableSync testcase 004
@@ -2197,7 +2133,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreRemoveDeviceData001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0710
      * @tc.desc   Test Js Api SingleKvStoreRemoveDeviceData testcase 001
@@ -2237,7 +2172,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreRemoveDeviceData002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0720
      * @tc.desc   Test Js Api SingleKvStoreRemoveDeviceData testcase 002
@@ -2261,7 +2195,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreRemoveDeviceData003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0730
      * @tc.desc   Test Js Api SingleKvStoreRemoveDeviceData testcase 003
@@ -2286,7 +2219,6 @@ export default function singleKvStorePromiseStageTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreRemoveDeviceData004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0740
      * @tc.desc   Test Js Api SingleKvStoreRemoveDeviceData testcase 004
@@ -2310,7 +2242,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreSetSyncParam001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0780
      * @tc.desc   Test Js Api SingleKvStoreSetSyncParam testcase 001
@@ -2337,7 +2268,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreSetSyncParam002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0790
      * @tc.desc   Test Js Api SingleKvStoreSetSyncParam testcase 002
@@ -2361,7 +2291,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreSetSyncParam003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0800
      * @tc.desc   Test Js Api SingleKvStoreSetSyncParam testcase 003
@@ -2385,7 +2314,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreSetSyncParam004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0810
      * @tc.desc   Test Js Api SingleKvStoreSetSyncParam testcase 004
@@ -2409,7 +2337,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetSecurityLevel002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0360
      * @tc.desc   Test Js Api SingleKvStoreGetSecurityLevel testcase 002
@@ -2433,7 +2360,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetSecurityLevel003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0370
      * @tc.desc   Test Js Api SingleKvStoreGetSecurityLevel testcase 003
@@ -2457,7 +2383,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetSecurityLevel004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0380
      * @tc.desc   Test Js Api SingleKvStoreGetSecurityLevel testcase 004
@@ -2481,7 +2406,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetResultSet001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0280
      * @tc.desc   Test Js Api SingleKvStoreGetResultSet testcase 001
@@ -2535,7 +2459,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetResultSet002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0290
      * @tc.desc   Test Js Api SingleKvStoreGetResultSet testcase 002
@@ -2570,7 +2493,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetResultSet003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0300
      * @tc.desc   Test Js Api SingleKvStoreGetResultSet testcase 003
@@ -2603,7 +2525,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetResultSet004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0310
      * @tc.desc   Test Js Api SingleKvStoreGetResultSet testcase 004
@@ -2639,7 +2560,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetResultSet005
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0320
      * @tc.desc   Test Js Api SingleKvStoreGetResultSet testcase 005
@@ -2695,7 +2615,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetResultSet006
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0330
      * @tc.desc   Test Js Api SingleKvStoreGetResultSet testcase 006
@@ -2751,7 +2670,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreCloseResultSet001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0010
      * @tc.desc   Test Js Api SingleKvStoreCloseResultSet testcase 001
@@ -2778,7 +2696,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreCloseResultSet002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0020
      * @tc.desc   Test Js Api SingleKvStoreCloseResultSet testcase 002
@@ -2813,7 +2730,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreCloseResultSet003
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0030
      * @tc.desc   Test Js Api SingleKvStoreCloseResultSet testcase 003
@@ -2840,7 +2756,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreCloseResultSet004
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0040
      * @tc.desc   Test Js Api SingleKvStoreCloseResultSet testcase 004
@@ -2867,7 +2782,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetResultSize001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0340
      * @tc.desc   Test Js Api SingleKvStoreGetResultSize testcase 001
@@ -2917,7 +2831,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetResultSize002
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0350
      * @tc.desc   Test Js Api SingleKvStoreGetResultSize testcase 002
@@ -2967,7 +2880,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreGetEntries001
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0220
      * @tc.desc   Test Js Api SingleKvStoreGetEntries testcase 001
@@ -3019,7 +2931,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreChangeNotification101
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0900
      * @tc.desc   Test Js Api SingleKvStoreChangeNotification testcase 001
@@ -3047,7 +2958,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreChangeNotification102
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0910
      * @tc.desc   Test Js Api SingleKvStoreChangeNotification testcase 002
@@ -3081,7 +2991,6 @@ export default function singleKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSingleKvStoreChangeNotification103
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreEtsApiTest_0920
      * @tc.desc   Test Js Api SingleKvStoreChangeNotification testcase 003

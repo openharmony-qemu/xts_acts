@@ -35,12 +35,12 @@ export default function DecimalTest015() {
     });
         console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_log10_Func_001
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_log10_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -112,12 +112,12 @@ export default function DecimalTest015() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_002
-     * @tc.name      : Decimal_log10_Func_002
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_log10_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -182,12 +182,12 @@ export default function DecimalTest015() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_003
-     * @tc.name      : Decimal_log10_Func_003
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_log10_Func_003
+     * @tc.number DECIMAL_TEST_003
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -278,12 +278,12 @@ export default function DecimalTest015() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_004
-     * @tc.name      : Decimal_log10_Func_004
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_log10_Func_004
+     * @tc.number DECIMAL_TEST_004
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -383,12 +383,12 @@ export default function DecimalTest015() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_005
-     * @tc.name      : Decimal_log10_Func_005
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_log10_Func_005
+     * @tc.number DECIMAL_TEST_005
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -475,12 +475,12 @@ export default function DecimalTest015() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_006
-     * @tc.name      : Decimal_log10_Func_006
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_log10_Func_006
+     * @tc.number DECIMAL_TEST_006
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -548,12 +548,12 @@ export default function DecimalTest015() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_007
-     * @tc.name      : Decimal_log10_Func_007
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_log10_Func_007
+     * @tc.number DECIMAL_TEST_007
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -625,12 +625,12 @@ export default function DecimalTest015() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_008
-     * @tc.name      : Decimal_log10_Func_008
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_log10_Func_008
+     * @tc.number DECIMAL_TEST_008
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -687,12 +687,12 @@ export default function DecimalTest015() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_009
-     * @tc.name      : Decimal_log10_Func_009
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_log10_Func_009
+     * @tc.number DECIMAL_TEST_009
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({

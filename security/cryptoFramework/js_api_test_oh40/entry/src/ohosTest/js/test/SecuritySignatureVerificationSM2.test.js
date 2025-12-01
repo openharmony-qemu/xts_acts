@@ -42,9 +42,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         });
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_0100
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_0100
-         * @tc.name Signature and verification scenario testing
-         * @tc.desc the asyAlgoName is "SM2_256|SM3", Use the Callback Style of Interface
+         * @tc.desc   the asyAlgoName is "SM2_256|SM3", Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_0100",
@@ -67,11 +70,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_0200
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_0200
-         * @tc.name Create signature compatibility test
-         * @tc.desc the asyAlgoName is "RSA|SM3", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "ECC|SM3", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "DSA|SM3", Use the async Style of Interface
+         * @tc.desc   the asyAlgoName is "DSA|SM3", Use the async Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_0200",
@@ -105,15 +109,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_0300
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_0300
-         * @tc.name Create signature compatibility test
-         * @tc.desc the asyAlgoName is "SM2_256|NoHash", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|MD5", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|SHA256", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|SHA1", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|SHA224", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|SHA384", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|SHA512", Use the async Style of Interface
+         * @tc.desc   the asyAlgoName is "SM2_256|SHA512", Use the async Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_0300",
@@ -166,15 +167,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_0400
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_0400
-         * @tc.name Create verification compatibility test
-         * @tc.desc the asyAlgoName is "SM2_256|NoHash", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|MD5", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|SHA256", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|SHA1", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|SHA224", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|SHA384", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|SHA512", Use the async Style of Interface
+         * @tc.desc   the asyAlgoName is "SM2_256|SHA512", Use the async Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_0400",
@@ -227,10 +225,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_0500
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_0500
-         * @tc.name Create Key Generator Test
-         * @tc.desc the asyAlgoName is "SM2_2567", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is null, Use the async Style of Interface
+         * @tc.desc   the asyAlgoName is null, Use the async Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_0500",
@@ -256,12 +256,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_0600
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_0600
-         * @tc.name Create signature failed
-         * @tc.desc the asyAlgoName is "SM2_256|SHA257", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|NULL", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "NULL|SHA1", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "ECC|SHA", Use the async Style of Interface
+         * @tc.desc   the asyAlgoName is "ECC|SHA", Use the async Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_0600",
@@ -303,11 +303,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_0700
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_0700
-         * @tc.name Exception while initializing rsa signature object
-         * @tc.desc Pass in an exception parameter null and call it as a async
-         * @tc.desc Pass in the two public keys generated by the exception parameter SM2_256 and call them as async
-         * @tc.desc Pass in an exception parameter "sroundpriKey" and call it as a async
+         * @tc.desc   Pass in an exception parameter "sroundpriKey" and call it as a async
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_0700",
@@ -352,14 +353,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_0800
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_0800
-         * @tc.name Exception in adding signature data to rsa objects
-         * @tc.desc The signature object was not initialized, and the data to be signed "This is a sign test"
-         * was passed in as a promise to be called
-         * @tc.desc Call it as a promise without passing in parameters
-         * @tc.desc Pass in an exception parameter null and call it as a promise
-         * @tc.desc Pass in two exception parameters of "This is a sign test" and "This is a sign test"
-         * and call it promise
+         * @tc.desc   Pass in two exception parameters of "This is a sign test" and "This is a sign test"
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_0800",
@@ -397,12 +396,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_0900
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_0900
-         * @tc.name Signature data anomaly
-         * @tc.descPass in an exception parameter null and call it as a callback
-         * @tc.desc Pass in an exception parameter "" and call it as a callback
-         * @tc.desc Pass in two exception parameters "This is a sign test" and "This is a sign test"
-         * and call it as a callback
+         * @tc.desc   Pass in two exception parameters "This is a sign test" and "This is a sign test"
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_0900",
@@ -440,12 +439,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_1000
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_1000
-         * @tc.name Create verification failed
-         * @tc.desc the asyAlgoName is "SM2_2567|SHA256", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "NULL|SHA256", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|SHA122", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "SM2_256|NULL", Use the async Style of Interface
+         * @tc.desc   the asyAlgoName is "SM2_256|NULL", Use the async Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_1000",
@@ -487,11 +486,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_1100
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_1100
-         * @tc.name Abnormal situation of initialization verification object
-         * @tc.desc Pass in an exception parameter null and call it as a async
-         * @tc.desc Pass in the two public keys generated by the exception parameter SM2_256 and call them as async
-         * @tc.desc Pass in an exception parameter "sroundpriKey" and call it as a async
+         * @tc.desc   Pass in an exception parameter "sroundpriKey" and call it as a async
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_1100",
@@ -539,11 +539,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_1400
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_1400
-         * @tc.name Test signature verification and pass in ultra long parameters
-         * @tc.desc the asyAlgoName is "SM2_256|SM3", Use the async Style of Interface
-         * @tc.desc the asyAlgoName is "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz" * 350,
-         * Use the Promise Style of Interface
+         * @tc.desc   the asyAlgoName is "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz" * 350,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_1400",
@@ -579,9 +580,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_1500
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_1500
-         * @tc.name Key negotiation test
-         * @tc.desc the asyAlgoName is "SM2_256", Use the async Style of Interface
+         * @tc.desc   the asyAlgoName is "SM2_256", Use the async Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_1500",
@@ -600,10 +604,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         );
 
         /**
+         * @tc.name   Security_CryptoFramework_SignatureVerificationSM2_Func_1600
          * @tc.number Security_CryptoFramework_SignatureVerificationSM2_Func_1600
-         * @tc.name Signature verification and corresponding algorithm for obtaining signatures
-         * @tc.desc Pass in algorithm name "SM2_256|SM3" and call it using the async method
-         * @tc.desc Pass in algorithm name "SM2_256|SM3" and call it using the async method
+         * @tc.desc   Pass in algorithm name "SM2_256|SM3" and call it using the async method
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_1600",

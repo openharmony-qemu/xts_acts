@@ -25,12 +25,12 @@ export default function muslSetJmpNdk1Test() {
     })
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SETJMP_LONGJMP_0100
-     * @tc.name     : testMuslSetjmpLongjmp001
-     * @tc.desc     : test longjmp
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSetjmpLongjmp001
+     * @tc.number SUB_THIRDPARTY_MUSL_SETJMP_LONGJMP_0100
+     * @tc.desc   test longjmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSetjmpLongjmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = setjmp.longjmp();
@@ -39,12 +39,12 @@ export default function muslSetJmpNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SETJMP_SETJMP1_0100
-     * @tc.name       : testMuslSetjmpSetjmp1001
-     * @tc.desc       : test _setjmp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSetjmpSetjmp1001
+     * @tc.number SUB_THIRDPARTY_MUSL_SETJMP_SETJMP1_0100
+     * @tc.desc   test _setjmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSetjmpSetjmp1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a:number = setjmp._setjmp();
@@ -53,12 +53,12 @@ export default function muslSetJmpNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SETJMP_LONGJMP1_0100
-     * @tc.name       : testMuslSetjmpLongJmp1001
-     * @tc.desc       : test _longjmp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSetjmpLongJmp1001
+     * @tc.number SUB_THIRDPARTY_MUSL_SETJMP_LONGJMP1_0100
+     * @tc.desc   test _longjmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSetjmpLongJmp1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a:number = setjmp._longjmp();

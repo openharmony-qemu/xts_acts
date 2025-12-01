@@ -109,14 +109,12 @@ export default function ContextDirNormalTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0100';
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' --start');
       try {
-        await abilityDelegator.getCurrentTopAbility().then((ability) => {
-          let context = ability.context;
-          context.area = contextConstant.AreaMode.EL3;
-          areaMode = "el3";
-          let result = checkContextDir(context, 'entry');
-          expect(result).assertTrue();
-          done();
-        })
+        let context = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+        context.area = contextConstant.AreaMode.EL3;
+        areaMode = "el3";
+        let result = checkContextDir(context, 'entry');
+        expect(result).assertTrue();
+        done();
       } catch (e) {
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
         expect().assertFail();
@@ -136,14 +134,12 @@ export default function ContextDirNormalTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0200';
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' --start');
       try {
-        await abilityDelegator.getCurrentTopAbility().then((ability) => {
-          let context = ability.context;
-          context.area = contextConstant.AreaMode.EL4;
-          areaMode = "el4";
-          let result = checkContextDir(context, 'entry');
-          expect(result).assertTrue();
-          done();
-        })
+        let context = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+        context.area = contextConstant.AreaMode.EL4;
+        areaMode = "el4";
+        let result = checkContextDir(context, 'entry');
+        expect(result).assertTrue();
+        done();
       } catch (e) {
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
         expect().assertFail();

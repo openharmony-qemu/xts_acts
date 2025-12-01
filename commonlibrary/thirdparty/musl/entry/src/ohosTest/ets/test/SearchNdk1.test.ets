@@ -25,12 +25,12 @@ export default function muslSearch1Test() {
     })
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_HCREATE_0100
-     * @tc.name     : testMuslSearchHcreate001
-     * @tc.desc     : test hcreate
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchHcreate001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_HCREATE_0100
+     * @tc.desc   test hcreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchHcreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.hcreate(0);
@@ -39,12 +39,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_HCREATE_R_0100
-     * @tc.name     : testMuslSearchHcreateR001
-     * @tc.desc     : test hcreate_r
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchHcreateR001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_HCREATE_R_0100
+     * @tc.desc   test hcreate_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchHcreateR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.hcreateR(0);
@@ -53,12 +53,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_HDESTROY_0100
-     * @tc.name     : testMuslSearchHdestroy001
-     * @tc.desc     : test hdestroy
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchHdestroy001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_HDESTROY_0100
+     * @tc.desc   test hdestroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchHdestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.hdestroy(0);
@@ -67,12 +67,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_HDESTROY_R_0100
-     * @tc.name     : testMuslSearchHdestroyR001
-     * @tc.desc     : test hdestroy_r
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchHdestroyR001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_HDESTROY_R_0100
+     * @tc.desc   test hdestroy_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchHdestroyR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.hdestroyR(0);
@@ -81,12 +81,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_HEARCH_0100
-     * @tc.name     : testMuslSearchHsearch001
-     * @tc.desc     : test hsearch
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchHsearch001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_HEARCH_0100
+     * @tc.desc   test hsearch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchHsearch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.hsearch(0);
@@ -95,12 +95,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_HEARCH_0200
-     * @tc.name     : testMuslSearchHsearch002
-     * @tc.desc     : test hsearch
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchHsearch002
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_HEARCH_0200
+     * @tc.desc   test hsearch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchHsearch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.hsearch(-1);
@@ -109,12 +109,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_HEARCH_R_0100
-     * @tc.name     : testMuslSearchHsearchR001
-     * @tc.desc     : test hsearch_r
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchHsearchR001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_HEARCH_R_0100
+     * @tc.desc   test hsearch_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchHsearchR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.hsearchR(0);
@@ -123,12 +123,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_HEARCH_R_0200
-     * @tc.name     : testMuslSearchHsearchR002
-     * @tc.desc     : test hsearch_r
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchHsearchR002
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_HEARCH_R_0200
+     * @tc.desc   test hsearch_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchHsearchR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.hsearchR(-1);
@@ -137,12 +137,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_INSQUE_0100
-     * @tc.name     : testMuslSearchInsque001
-     * @tc.desc     : test insque
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchInsque001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_INSQUE_0100
+     * @tc.desc   test insque
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchInsque001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.insque();
@@ -151,12 +151,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_LFIND_0100
-     * @tc.name     : testMuslSearchLfind001
-     * @tc.desc     : test lfind
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchLfind001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_LFIND_0100
+     * @tc.desc   test lfind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchLfind001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.lfind(0);
@@ -165,12 +165,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_LFIND_0200
-     * @tc.name     : testMuslSearchLfind002
-     * @tc.desc     : test lfind
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchLfind002
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_LFIND_0200
+     * @tc.desc   test lfind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchLfind002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.lfind(-1);
@@ -179,12 +179,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_LSEARCH_0100
-     * @tc.name     : testMuslSearchSearch001
-     * @tc.desc     : test lsearch
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : level 1
+     * @tc.name   testMuslSearchSearch001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_LSEARCH_0100
+     * @tc.desc   test lsearch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchSearch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number= search.lSearch(0);
@@ -193,12 +193,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SAERCH_REMQUE_0100
-     * @tc.name     : testMuslSearchRemque001
-     * @tc.desc     : test remque
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchRemque001
+     * @tc.number SUB_THIRDPARTY_MUSL_SAERCH_REMQUE_0100
+     * @tc.desc   test remque
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchRemque001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.remque(0);
@@ -207,12 +207,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SEARCH_TDELETE_0100
-     * @tc.name       : testMuslSearchTdelete001
-     * @tc.desc       : test tdelete
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSearchTdelete001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_TDELETE_0100
+     * @tc.desc   test tdelete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchTdelete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.tdelete(0);
@@ -221,12 +221,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SEARCH_TDELETE_0200
-     * @tc.name       : testMuslSearchTdelete002
-     * @tc.desc       : test tdelete
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSearchTdelete002
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_TDELETE_0200
+     * @tc.desc   test tdelete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchTdelete002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.tdelete(-1);
@@ -235,12 +235,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SEARCH_TDESTROY_0100
-     * @tc.name       : testMuslSearchTdestroy001
-     * @tc.desc       : test tdestroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSearchTdestroy001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_TDESTROY_0100
+     * @tc.desc   test tdestroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchTdestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.tdestroy();
@@ -249,12 +249,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SEARCH_TFIND_0100
-     * @tc.name       : testMuslSearchTfind001
-     * @tc.desc       : test tfind
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSearchTfind001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_TFIND_0100
+     * @tc.desc   test tfind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchTfind001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.tfind(0);
@@ -263,12 +263,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SEARCH_TFIND_0200
-     * @tc.name       : testMuslSearchTfind002
-     * @tc.desc       : test tfind
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSearchTfind002
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_TFIND_0200
+     * @tc.desc   test tfind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchTfind002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.tfind(-1);
@@ -277,12 +277,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_TSEARCH_0100
-     * @tc.name     : testMuslSearchTsearch001
-     * @tc.desc     : test tsearch
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchTsearch001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_TSEARCH_0100
+     * @tc.desc   test tsearch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchTsearch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.tsearch();
@@ -291,12 +291,12 @@ export default function muslSearch1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SEARCH_TWALK_0100
-     * @tc.name     : testMuslSearchTwalk001
-     * @tc.desc     : test twalk
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSearchTwalk001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEARCH_TWALK_0100
+     * @tc.desc   test twalk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSearchTwalk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = search.twalk();

@@ -93,12 +93,12 @@ export class SendableExpressionOutArrowStaticReadonlyClass implements ISendable 
 export default function sendableClassStaticReadonlyTest() {
   describe('ActsSendableClassStaticReadonlyTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0100
-     * @tc.name       : testSendableStaticReadonlyClass0001
-     * @tc.desc       : Test SendableStaticReadonlyClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0100
+     * @tc.desc   Test SendableStaticReadonlyClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0001';
@@ -110,12 +110,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0200
-     * @tc.name       : testSendableStaticReadonlyClass0002
-     * @tc.desc       : Test SendableStaticReadonlyClass number is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0200
+     * @tc.desc   Test SendableStaticReadonlyClass number is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0002';
@@ -127,12 +127,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0300
-     * @tc.name       : testSendableStaticReadonlyClass0003
-     * @tc.desc       : Test SendableStaticReadonlyClass boolean is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0300
+     * @tc.desc   Test SendableStaticReadonlyClass boolean is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0003';
@@ -144,12 +144,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0400
-     * @tc.name       : testSendableStaticReadonlyClass0004
-     * @tc.desc       : Test SendableStaticReadonlyClass BigInt is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0400
+     * @tc.desc   Test SendableStaticReadonlyClass BigInt is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0004';
@@ -161,12 +161,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0500
-     * @tc.name       : testSendableStaticReadonlyClass0005
-     * @tc.desc       : Test SendableStaticReadonlyClass undefined is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0500
+     * @tc.desc   Test SendableStaticReadonlyClass undefined is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0005';
@@ -178,12 +178,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0600
-     * @tc.name       : testSendableStaticReadonlyClass0006
-     * @tc.desc       : Test SendableStaticReadonlyClass null is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0600
+     * @tc.desc   Test SendableStaticReadonlyClass null is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0006';
@@ -195,12 +195,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0700
-     * @tc.name       : testSendableStaticReadonlyClass0007
-     * @tc.desc       : Test SendableStaticReadonlyClass class is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0700
+     * @tc.desc   Test SendableStaticReadonlyClass class is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0007';
@@ -216,12 +216,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0800
-     * @tc.name       : testSendableStaticReadonlyClass0008
-     * @tc.desc       : Test SendableStaticReadonlyClass function is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0800
+     * @tc.desc   Test SendableStaticReadonlyClass function is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0008';
@@ -234,12 +234,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0900
-     * @tc.name       : testSendableStaticReadonlyClass0009
-     * @tc.desc       : Test SendableStaticReadonlyClass enum is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_0900
+     * @tc.desc   Test SendableStaticReadonlyClass enum is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0009';
@@ -252,12 +252,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1000
-     * @tc.name       : testSendableStaticReadonlyClass0010
-     * @tc.desc       : Test SendableStaticReadonlyClass Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1000
+     * @tc.desc   Test SendableStaticReadonlyClass Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0010';
@@ -272,12 +272,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1100
-     * @tc.name       : testSendableStaticReadonlyClass0011
-     * @tc.desc       : Test SendableStaticReadonlyClass Map is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1100
+     * @tc.desc   Test SendableStaticReadonlyClass Map is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0011';
@@ -292,12 +292,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1200
-     * @tc.name       : testSendableStaticReadonlyClass0012
-     * @tc.desc       : Test SendableStaticReadonlyClass Set is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1200
+     * @tc.desc   Test SendableStaticReadonlyClass Set is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0012';
@@ -312,12 +312,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1300
-     * @tc.name       : testSendableStaticReadonlyClass0013
-     * @tc.desc       : Test SendableStaticReadonlyClass TypedArrayInt8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1300
+     * @tc.desc   Test SendableStaticReadonlyClass TypedArrayInt8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0013';
@@ -332,12 +332,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1400
-     * @tc.name       : testSendableStaticReadonlyClass0014
-     * @tc.desc       : Test SendableStaticReadonlyClass TypedArrayUint8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1400
+     * @tc.desc   Test SendableStaticReadonlyClass TypedArrayUint8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0014';
@@ -352,12 +352,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1500
-     * @tc.name       : testSendableStaticReadonlyClass0015
-     * @tc.desc       : Test SendableStaticReadonlyClass TypedArrayInt16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1500
+     * @tc.desc   Test SendableStaticReadonlyClass TypedArrayInt16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0015';
@@ -372,12 +372,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1600
-     * @tc.name       : testSendableStaticReadonlyClass0016
-     * @tc.desc       : Test SendableStaticReadonlyClass TypedArrayUint16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1600
+     * @tc.desc   Test SendableStaticReadonlyClass TypedArrayUint16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0016';
@@ -392,12 +392,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1700
-     * @tc.name       : testSendableStaticReadonlyClass0017
-     * @tc.desc       : Test SendableStaticReadonlyClass TypedArrayInt32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1700
+     * @tc.desc   Test SendableStaticReadonlyClass TypedArrayInt32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0017';
@@ -412,12 +412,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1800
-     * @tc.name       : testSendableStaticReadonlyClass0018
-     * @tc.desc       : Test SendableStaticReadonlyClass TypedArrayUint32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1800
+     * @tc.desc   Test SendableStaticReadonlyClass TypedArrayUint32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0018';
@@ -432,12 +432,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1900
-     * @tc.name       : testSendableStaticReadonlyClass0019
-     * @tc.desc       : Test SendableStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_1900
+     * @tc.desc   Test SendableStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0019';
@@ -452,12 +452,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2000
-     * @tc.name       : testSendableStaticReadonlyClass0020
-     * @tc.desc       : Test SendableStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2000
+     * @tc.desc   Test SendableStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0020';
@@ -472,12 +472,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2100
-     * @tc.name       : testSendableStaticReadonlyClass0021
-     * @tc.desc       : Test SendableStaticReadonlyClass ArrayBuffer is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2100
+     * @tc.desc   Test SendableStaticReadonlyClass ArrayBuffer is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0021';
@@ -491,12 +491,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2200
-     * @tc.name       : testSendableStaticReadonlyClass0022
-     * @tc.desc       : Test SendableStaticReadonlyClass ConcatArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2200
+     * @tc.desc   Test SendableStaticReadonlyClass ConcatArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0022';
@@ -510,12 +510,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2300
-     * @tc.name       : testSendableStaticReadonlyClass0023
-     * @tc.desc       : Test SendableStaticReadonlyClass BitVector is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2300
+     * @tc.desc   Test SendableStaticReadonlyClass BitVector is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0023';
@@ -530,12 +530,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2400
-     * @tc.name       : testSendableStaticReadonlyClass0024
-     * @tc.desc       : Test SendableStaticReadonlyClass ASON is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2400
+     * @tc.desc   Test SendableStaticReadonlyClass ASON is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0024';
@@ -549,12 +549,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2500
-     * @tc.name       : testSendableStaticReadonlyClass0025
-     * @tc.desc       : Test SendableStaticReadonlyClass AsyncLock is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2500
+     * @tc.desc   Test SendableStaticReadonlyClass AsyncLock is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0025';
@@ -567,12 +567,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2600
-     * @tc.name       : testSendableStaticReadonlyClass0026
-     * @tc.desc       : Test SendableStaticReadonlyClass SendableUnionType is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableStaticReadonlyClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2600
+     * @tc.desc   Test SendableStaticReadonlyClass SendableUnionType is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableStaticReadonlyClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0026';
@@ -585,12 +585,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2700
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0001
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2700
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -603,12 +603,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2800
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0002
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass number is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2800
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass number is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -621,12 +621,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2900
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0003
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass boolean is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_2900
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass boolean is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -639,12 +639,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3000
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0004
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass BigInt is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3000
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass BigInt is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -658,12 +658,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3100
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0005
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass undefined is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3100
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass undefined is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -676,12 +676,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3200
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0006
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass null is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3200
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass null is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -694,12 +694,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3300
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0007
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass class is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3300
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass class is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -716,12 +716,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3400
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0008
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass function is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3400
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass function is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -737,12 +737,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3500
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0009
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass enum is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3500
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass enum is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -756,12 +756,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3600
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0010
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3600
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -777,12 +777,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3700
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0011
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass Map is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3700
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass Map is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -798,12 +798,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3800
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0012
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass Set is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3800
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass Set is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -819,12 +819,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3900
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0013
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass TypedArrayInt8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_3900
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass TypedArrayInt8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -842,12 +842,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4000
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0014
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass TypedArrayUint8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4000
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass TypedArrayUint8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -866,12 +866,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4100
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0015
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass TypedArrayInt16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4100
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass TypedArrayInt16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -890,12 +890,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4200
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0016
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass TypedArrayUint16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4200
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass TypedArrayUint16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -914,12 +914,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4300
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0017
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass TypedArrayInt32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4300
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass TypedArrayInt32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -938,12 +938,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4400
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0018
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass TypedArrayUint32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4400
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass TypedArrayUint32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -962,12 +962,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4500
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0019
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4500
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -986,12 +986,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4600
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0020
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4600
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -1010,12 +1010,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4700
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0021
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass ArrayBuffer is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4700
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass ArrayBuffer is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -1031,12 +1031,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4800
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0022
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass ConcatArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4800
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass ConcatArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -1051,12 +1051,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4900
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0023
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass BitVector is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_4900
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass BitVector is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -1072,12 +1072,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5000
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0024
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass ASON is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5000
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass ASON is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -1092,12 +1092,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5100
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0025
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass AsyncLock is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5100
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass AsyncLock is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -1111,12 +1111,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5200
-     * @tc.name       : testSendableNonParameterFuncStaticReadonlyClass0026
-     * @tc.desc       : Test SendableNonParameterFuncStaticReadonlyClass SendableUnionType is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonParameterFuncStaticReadonlyClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5200
+     * @tc.desc   Test SendableNonParameterFuncStaticReadonlyClass SendableUnionType is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonParameterFuncStaticReadonlyClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -1130,12 +1130,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5300
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0001
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5300
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0001';
@@ -1147,12 +1147,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5400
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0002
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass number is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5400
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass number is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0002';
@@ -1164,12 +1164,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5500
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0003
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass boolean is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5500
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass boolean is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0003';
@@ -1181,12 +1181,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5600
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0004
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass BigInt is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5600
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass BigInt is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0004';
@@ -1199,12 +1199,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5700
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0005
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass undefined is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5700
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass undefined is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0005';
@@ -1216,12 +1216,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5800
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0006
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass null is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5800
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass null is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0006';
@@ -1233,12 +1233,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5900
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0007
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass class is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_5900
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass class is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0007';
@@ -1254,12 +1254,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6000
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0008
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass function is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6000
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass function is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0008';
@@ -1272,12 +1272,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6100
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0009
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass enum is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6100
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass enum is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0009';
@@ -1290,12 +1290,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6200
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0010
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6200
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0010';
@@ -1310,12 +1310,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6300
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0011
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass Map is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6300
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass Map is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0011';
@@ -1330,12 +1330,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6400
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0012
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass Set is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6400
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass Set is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0012';
@@ -1350,12 +1350,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6500
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0013
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass TypedArrayInt8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6500
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass TypedArrayInt8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0013';
@@ -1370,12 +1370,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6600
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0014
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass TypedArrayUint8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6600
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass TypedArrayUint8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0014';
@@ -1390,12 +1390,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6700
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0015
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass TypedArrayInt16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6700
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass TypedArrayInt16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0015';
@@ -1410,12 +1410,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6800
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0016
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass TypedArrayUint16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6800
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass TypedArrayUint16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0016';
@@ -1430,12 +1430,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6900
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0017
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass TypedArrayInt32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_6900
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass TypedArrayInt32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0017';
@@ -1450,12 +1450,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7000
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0018
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass TypedArrayUint32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7000
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass TypedArrayUint32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0018';
@@ -1470,12 +1470,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7100
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0019
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7100
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0019';
@@ -1490,12 +1490,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7200
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0020
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7200
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0020';
@@ -1510,12 +1510,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7300
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0021
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass ArrayBuffer is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7300
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass ArrayBuffer is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0021';
@@ -1529,12 +1529,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7400
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0022
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass ConcatArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7400
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass ConcatArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0022';
@@ -1548,12 +1548,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7500
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0023
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass BitVector is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7500
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass BitVector is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0023';
@@ -1568,12 +1568,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7600
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0024
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass ASON is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7600
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass ASON is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0024';
@@ -1587,12 +1587,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7700
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0025
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass AsyncLock is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7700
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass AsyncLock is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0025';
@@ -1605,12 +1605,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7800
-     * @tc.name       : testSendableNonFuncStaticReadonlyClass0026
-     * @tc.desc       : Test SendableNonFuncStaticReadonlyClass SendableUnionType is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableNonFuncStaticReadonlyClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7800
+     * @tc.desc   Test SendableNonFuncStaticReadonlyClass SendableUnionType is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableNonFuncStaticReadonlyClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0026';
@@ -1623,12 +1623,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7900
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0001
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_7900
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0001';
@@ -1640,12 +1640,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8000
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0002
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass number is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8000
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass number is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0002';
@@ -1657,12 +1657,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8100
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0003
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass boolean is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8100
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass boolean is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0003';
@@ -1674,12 +1674,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8200
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0004
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass BigInt is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8200
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass BigInt is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0004';
@@ -1692,12 +1692,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8300
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0005
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass undefined is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8300
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass undefined is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0005';
@@ -1709,12 +1709,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8400
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0006
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass null is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8400
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass null is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0006';
@@ -1726,12 +1726,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8500
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0007
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass class is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8500
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass class is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0007';
@@ -1747,12 +1747,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8600
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0008
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass function is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8600
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass function is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0008';
@@ -1766,12 +1766,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8700
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0009
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass enum is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8700
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass enum is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0009';
@@ -1784,12 +1784,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8800
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0010
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8800
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0010';
@@ -1804,12 +1804,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8900
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0011
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass Map is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_8900
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass Map is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0011';
@@ -1824,12 +1824,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9000
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0012
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass Set is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9000
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass Set is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0012';
@@ -1844,12 +1844,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9100
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0013
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass TypedArrayInt8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9100
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass TypedArrayInt8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0013';
@@ -1864,12 +1864,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9200
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0014
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass TypedArrayUint8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9200
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass TypedArrayUint8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0014';
@@ -1884,12 +1884,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9300
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0015
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass TypedArrayInt16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9300
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass TypedArrayInt16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0015';
@@ -1904,12 +1904,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9400
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0016
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass TypedArrayUint16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9400
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass TypedArrayUint16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0016';
@@ -1924,12 +1924,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9500
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0017
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass TypedArrayInt32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9500
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass TypedArrayInt32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0017';
@@ -1944,12 +1944,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9600
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0018
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass TypedArrayUint32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9600
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass TypedArrayUint32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0018';
@@ -1964,12 +1964,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9700
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0019
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9700
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0019';
@@ -1984,12 +1984,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9800
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0020
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9800
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0020';
@@ -2004,12 +2004,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9900
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0021
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass ArrayBuffer is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_9900
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass ArrayBuffer is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0021';
@@ -2023,12 +2023,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10000
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0022
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass ConcatArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10000
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass ConcatArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0022';
@@ -2042,12 +2042,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10100
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0023
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass BitVector is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10100
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass BitVector is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0023';
@@ -2062,12 +2062,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10200
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0024
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass ASON is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10200
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass ASON is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0024';
@@ -2081,12 +2081,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10300
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0025
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass AsyncLock is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10300
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass AsyncLock is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0025';
@@ -2099,12 +2099,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10400
-     * @tc.name       : testSendableArrowNewStaticReadonlyClass0026
-     * @tc.desc       : Test SendableArrowNewStaticReadonlyClass SendableUnionType is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableArrowNewStaticReadonlyClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10400
+     * @tc.desc   Test SendableArrowNewStaticReadonlyClass SendableUnionType is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableArrowNewStaticReadonlyClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0026';
@@ -2117,12 +2117,12 @@ export default function sendableClassStaticReadonlyTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10500
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0001
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10500
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2135,12 +2135,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10600
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0002
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass number is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10600
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass number is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2153,12 +2153,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10700
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0003
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass boolean is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10700
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass boolean is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2171,12 +2171,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10800
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0004
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass BigInt is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10800
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass BigInt is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0004',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2190,12 +2190,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10900
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0005
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass undefined is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_10900
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass undefined is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0005',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2208,12 +2208,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11000
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0006
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass null is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11000
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass null is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0006',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2226,12 +2226,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11100
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0007
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass class is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11100
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass class is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0007',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2248,12 +2248,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11200
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0008
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass function is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11200
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass function is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0008',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2269,12 +2269,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11300
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0009
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass enum is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11300
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass enum is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0009',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2288,12 +2288,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11400
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0010
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11400
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0010',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2309,12 +2309,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11500
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0011
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass Map is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11500
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass Map is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0011',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2330,12 +2330,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11600
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0012
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass Set is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11600
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass Set is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0012',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2351,12 +2351,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11700
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0013
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayInt8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11700
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayInt8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0013',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2375,12 +2375,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11800
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0014
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayUint8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11800
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayUint8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0014',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2399,12 +2399,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11900
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0015
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayInt16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_11900
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayInt16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0015',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2423,12 +2423,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12000
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0016
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayUint16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12000
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayUint16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0016',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2447,12 +2447,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12100
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0017
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayInt32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12100
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayInt32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0017',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2471,12 +2471,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12200
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0018
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayUint32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12200
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayUint32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0018',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2495,12 +2495,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12300
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0019
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12300
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0019',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2519,12 +2519,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12400
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0020
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12400
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0020',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2543,12 +2543,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12500
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0021
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass ArrayBuffer is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12500
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass ArrayBuffer is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0021',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2564,12 +2564,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12600
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0022
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass ConcatArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12600
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass ConcatArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0022',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2584,12 +2584,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12700
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0023
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass BitVector is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12700
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass BitVector is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0023',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2605,12 +2605,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12800
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0024
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass ASON is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12800
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass ASON is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0024',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2625,12 +2625,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12900
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0025
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass AsyncLock is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_12900
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass AsyncLock is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0025',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2644,12 +2644,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13000
-     * @tc.name       : testSendableExpressionArrowOutStaticReadonlyClass0026
-     * @tc.desc       : Test SendableExpressionArrowOutStaticReadonlyClass SendableUnionType is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionArrowOutStaticReadonlyClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13000
+     * @tc.desc   Test SendableExpressionArrowOutStaticReadonlyClass SendableUnionType is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionArrowOutStaticReadonlyClass0026',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2664,12 +2664,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13100
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0001
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13100
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2684,12 +2684,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13200
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0002
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass number is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13200
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass number is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2704,12 +2704,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13300
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0003
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass boolean is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13300
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass boolean is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2724,12 +2724,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13400
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0004
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass BigInt is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13400
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass BigInt is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0004',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2746,12 +2746,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13500
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0005
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass undefined is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13500
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass undefined is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0005',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2766,12 +2766,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13600
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0006
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass null is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13600
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass null is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0006',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2786,12 +2786,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13700
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0007
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass class is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13700
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass class is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0007',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2808,12 +2808,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13800
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0008
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass function is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13800
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass function is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0008',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2832,12 +2832,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13900
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0009
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass enum is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_13900
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass enum is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0009',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2853,12 +2853,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14000
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0010
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14000
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0010',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2874,12 +2874,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14100
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0011
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass Map is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14100
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass Map is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0011',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2895,12 +2895,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14200
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0012
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass Set is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14200
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass Set is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0012',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2916,12 +2916,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14300
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0013
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayInt8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14300
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayInt8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0013',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2940,12 +2940,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14400
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0014
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayUint8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14400
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayUint8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0014',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2964,12 +2964,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14500
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0015
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayInt16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14500
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayInt16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0015',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -2988,12 +2988,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14600
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0016
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayUint16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14600
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayUint16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0016',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -3012,12 +3012,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14700
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0017
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayInt32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14700
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayInt32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0017',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -3036,12 +3036,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14800
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0018
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayUint32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14800
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayUint32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0018',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -3060,12 +3060,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14900
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0019
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_14900
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayUint8ClampedArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0019',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -3084,12 +3084,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15000
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0020
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15000
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass TypedArrayFloat32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0020',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -3108,12 +3108,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15100
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0021
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass ArrayBuffer is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15100
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass ArrayBuffer is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0021',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -3129,12 +3129,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15200
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0022
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass ConcatArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15200
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass ConcatArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0022',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -3149,12 +3149,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15300
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0023
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass BitVector is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15300
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass BitVector is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0023',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -3170,12 +3170,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15400
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0024
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass ASON is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15400
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass ASON is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0024',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -3190,12 +3190,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15500
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0025
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass AsyncLock is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15500
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass AsyncLock is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0025',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
@@ -3209,12 +3209,12 @@ export default function sendableClassStaticReadonlyTest() {
         }
       })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15600
-     * @tc.name       : testSendableExpressionOutArrowStaticReadonlyClass0026
-     * @tc.desc       : Test SendableExpressionOutArrowStaticReadonlyClass SendableUnionType is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableExpressionOutArrowStaticReadonlyClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_CLASS_STATIC_READONLY_15600
+     * @tc.desc   Test SendableExpressionOutArrowStaticReadonlyClass SendableUnionType is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableExpressionOutArrowStaticReadonlyClass0026',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {

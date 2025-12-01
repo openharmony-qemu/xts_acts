@@ -47,12 +47,12 @@ export default function GraphicEffectKitStaticTest() {
       pixelMap = image.createPixelMapSync(color, opts);
     })
     /**
-     * @tc.number    : effectKitTest_static_0100
-     * @tc.name      : effectKitTest_static_0100
-     * @tc.desc      : effect for test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   effectKitTest_static_0100
+     * @tc.number effectKitTest_static_0100
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -95,12 +95,12 @@ export default function GraphicEffectKitStaticTest() {
     })
 
     /**
-     * @tc.number     effectKitTest_static_0200
-     * @tc.name       effectKitTest_static_0200
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_0200
+     * @tc.number effectKitTest_static_0200
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -127,12 +127,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_0300
-     * @tc.name       effectKitTest_static_0300
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_0300
+     * @tc.number effectKitTest_static_0300
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -146,12 +146,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_0400
-     * @tc.name       effectKitTest_static_0400
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_0400
+     * @tc.number effectKitTest_static_0400
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -178,12 +178,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_0500
-     * @tc.name       effectKitTest_static_0500
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_0500
+     * @tc.number effectKitTest_static_0500
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_0500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -198,12 +198,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_0600
-     * @tc.name       effectKitTest_static_0600
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_0600
+     * @tc.number effectKitTest_static_0600
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_0600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -218,12 +218,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_0700
-     * @tc.name       effectKitTest_static_0700
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_0700
+     * @tc.number effectKitTest_static_0700
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_0700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -244,12 +244,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_0800
-     * @tc.name       effectKitTest_static_0800
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_0800
+     * @tc.number effectKitTest_static_0800
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_0800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -271,12 +271,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_0900
-     * @tc.name       effectKitTest_static_0900
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_0900
+     * @tc.number effectKitTest_static_0900
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_0900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -297,12 +297,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_1000
-     * @tc.name       effectKitTest_static_1000
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_1000
+     * @tc.number effectKitTest_static_1000
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_1000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -323,12 +323,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_1100
-     * @tc.name       effectKitTest_static_1100
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_1100
+     * @tc.number effectKitTest_static_1100
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_1100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -349,12 +349,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_1200
-     * @tc.name       effectKitTest_static_1200
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_1200
+     * @tc.number effectKitTest_static_1200
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_1200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -375,12 +375,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_1300
-     * @tc.name       effectKitTest_static_1300
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_1300
+     * @tc.number effectKitTest_static_1300
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_1300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -401,12 +401,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_1400
-     * @tc.name       effectKitTest_static_1400
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_1400
+     * @tc.number effectKitTest_static_1400
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_1400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -427,12 +427,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_1500
-     * @tc.name       effectKitTest_static_1500
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_1500
+     * @tc.number effectKitTest_static_1500
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_1500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -455,12 +455,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_1600
-     * @tc.name       effectKitTest_static_1600
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_1600
+     * @tc.number effectKitTest_static_1600
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -475,12 +475,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_1700
-     * @tc.name       effectKitTest_static_1700
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_1700
+     * @tc.number effectKitTest_static_1700
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -497,12 +497,12 @@ export default function GraphicEffectKitStaticTest() {
       })
 
     /**
-     * @tc.number     effectKitTest_static_1800
-     * @tc.name       effectKitTest_static_1800
-     * @tc.desc       effect for test
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   effectKitTest_static_1800
+     * @tc.number effectKitTest_static_1800
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("effectKitTest_static_1800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {

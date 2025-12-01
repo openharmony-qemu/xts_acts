@@ -41,10 +41,13 @@ export default function webViewContMessageError() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_0100
-     *tc.name testPostMessageInitErr
-     *tc.desc test interface of postMessage with not been associated with specific Web Components
+    /**
+     * @tc.name   testPostMessageInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_0100
+     * @tc.desc   test interface of postMessage with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPostMessageInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitPostMessageInitErr";
@@ -53,10 +56,13 @@ export default function webViewContMessageError() {
       Utils.registerEvent("testPostMessageInitErr", "Init error. The WebviewController must be associated with a Web component", 111800, done);
       await Utils.waitAndClickComponent(driver, "webViewContMessageError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_0200
-     *tc.name testPostMessageEventPortClose
-     *tc.desc test interface of postMessageEvent with WebMessagePort been closed by ets
+    /**
+     * @tc.name   testPostMessageEventPortClose
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCONTMESSAGEERROR_0200
+     * @tc.desc   test interface of postMessageEvent with WebMessagePort been closed by ets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPostMessageEventPortClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitPostMessageEventUnPortErr";

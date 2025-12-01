@@ -25,10 +25,13 @@ let tag: string = 'ObserverTestTag'; //日志标识字符串,作为tag标识当�
 export default function telSyncTest() {
   describe('telSyncTest', () => {
     hilog.info(domain, tag, '%{public}s','==========> Sync Test start ==========>');
-    /*
-     * @tc.number  SUB_Telephony_call_hasCallSync_0100
-     * @tc.name    Call interface hasCallSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_call_hasCallSync_0100
+     * @tc.number SUB_Telephony_call_hasCallSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Telephony_call_hasCallSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
         try {
@@ -42,10 +45,13 @@ export default function telSyncTest() {
         }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_call_getCallStateSync_0100
-     * @tc.name    Call interface getCallStateSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_call_getCallStateSync_0100
+     * @tc.number SUB_Telephony_call_getCallStateSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Telephony_call_getCallStateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
       let simState: sim.SimState = sim.getSimStateSync(0);

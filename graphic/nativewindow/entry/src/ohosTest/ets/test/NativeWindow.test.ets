@@ -25,12 +25,12 @@ export default function nativeWindowTest() {
     // Native Window Test
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0100
-     * @tc.name       : testNativeWindowCreateNativeWindowNullptr
-     * @tc.desc       : testNativeWindowCreateNativeWindowNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCreateNativeWindowNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0100
+     * @tc.desc   testNativeWindowCreateNativeWindowNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCreateNativeWindowNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -40,12 +40,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0101
-     * @tc.name       : testNativeWindowDestroyNativeWindowNullptr
-     * @tc.desc       : testNativeWindowDestroyNativeWindowNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowDestroyNativeWindowNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0101
+     * @tc.desc   testNativeWindowDestroyNativeWindowNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowDestroyNativeWindowNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -55,12 +55,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0102
-     * @tc.name       : testNativeWindowGetSurfaceIdNullptr
-     * @tc.desc       : testNativeWindowGetSurfaceIdNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowGetSurfaceIdNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0102
+     * @tc.desc   testNativeWindowGetSurfaceIdNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowGetSurfaceIdNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -70,12 +70,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0200
-     * @tc.name       : testNativeWindowCreateNativeWindowFromSurfaceIdNullptr
-     * @tc.desc       : testNativeWindowCreateNativeWindowFromSurfaceIdNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCreateNativeWindowFromSurfaceIdNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0200
+     * @tc.desc   testNativeWindowCreateNativeWindowFromSurfaceIdNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCreateNativeWindowFromSurfaceIdNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0201
-     * @tc.name       : testNativeWindowCreateNativeWindowFromSurfaceIdNormal
-     * @tc.desc       : testNativeWindowCreateNativeWindowFromSurfaceIdNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowCreateNativeWindowFromSurfaceIdNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0201
+     * @tc.desc   testNativeWindowCreateNativeWindowFromSurfaceIdNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowCreateNativeWindowFromSurfaceIdNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -102,12 +102,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0202
-     * @tc.name       : testNativeWindowCreateNativeWindowFromSurfaceIdSurfaceId
-     * @tc.desc       : testNativeWindowCreateNativeWindowFromSurfaceIdSurfaceId
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNativeWindowCreateNativeWindowFromSurfaceIdSurfaceId
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0202
+     * @tc.desc   testNativeWindowCreateNativeWindowFromSurfaceIdSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNativeWindowCreateNativeWindowFromSurfaceIdSurfaceId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -118,12 +118,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0300
-     * @tc.name       : testNativeWindowCreateNativeWindowBufferFromNativeBufferNullptr
-     * @tc.desc       : testNativeWindowCreateNativeWindowBufferFromNativeBufferNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCreateNativeWindowBufferFromNativeBufferNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0300
+     * @tc.desc   testNativeWindowCreateNativeWindowBufferFromNativeBufferNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCreateNativeWindowBufferFromNativeBufferNullptr',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -132,12 +132,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0301
-     * @tc.name       : testNativeWindowCreateNativeWindowBufferFromSurfaceBufferNullptr
-     * @tc.desc       : testNativeWindowCreateNativeWindowBufferFromSurfaceBufferNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCreateNativeWindowBufferFromSurfaceBufferNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0301
+     * @tc.desc   testNativeWindowCreateNativeWindowBufferFromSurfaceBufferNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCreateNativeWindowBufferFromSurfaceBufferNullptr',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -146,12 +146,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0302
-     * @tc.name       : testNativeWindowDestroyNativeWindowBufferNullptr
-     * @tc.desc       : testNativeWindowDestroyNativeWindowBufferNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowDestroyNativeWindowBufferNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0302
+     * @tc.desc   testNativeWindowDestroyNativeWindowBufferNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowDestroyNativeWindowBufferNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -160,12 +160,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0303
-     * @tc.name       : testNativeWindowGetBufferHandleFromNativeNullptr
-     * @tc.desc       : testNativeWindowGetBufferHandleFromNativeNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowGetBufferHandleFromNativeNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0303
+     * @tc.desc   testNativeWindowGetBufferHandleFromNativeNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowGetBufferHandleFromNativeNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -174,12 +174,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0304
-     * @tc.name       : testNativeWindowCreateNativeWindowBufferFromNativeBufferNormal
-     * @tc.desc       : testNativeWindowCreateNativeWindowBufferFromNativeBufferNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowCreateNativeWindowBufferFromNativeBufferNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0304
+     * @tc.desc   testNativeWindowCreateNativeWindowBufferFromNativeBufferNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowCreateNativeWindowBufferFromNativeBufferNormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -188,12 +188,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0306
-     * @tc.name       : testNativeWindowCreateNativeWindowBufferFromNativeBufferMuch
-     * @tc.desc       : testNativeWindowCreateNativeWindowBufferFromNativeBufferMuch
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCreateNativeWindowBufferFromNativeBufferMuch
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0306
+     * @tc.desc   testNativeWindowCreateNativeWindowBufferFromNativeBufferMuch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCreateNativeWindowBufferFromNativeBufferMuch',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -204,12 +204,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0400
-     * @tc.name       : testNativeWindowNativeWindowRequestBufferNullptr
-     * @tc.desc       : testNativeWindowNativeWindowRequestBufferNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowRequestBufferNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0400
+     * @tc.desc   testNativeWindowNativeWindowRequestBufferNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowRequestBufferNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -218,12 +218,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0401
-     * @tc.name       : testNativeWindowNativeWindowAbortBufferNullptr
-     * @tc.desc       : testNativeWindowNativeWindowAbortBufferNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowAbortBufferNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0401
+     * @tc.desc   testNativeWindowNativeWindowAbortBufferNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowAbortBufferNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -232,12 +232,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0402
-     * @tc.name       : testNativeWindowNativeWindowRequestAbortBufferNormal
-     * @tc.desc       : testNativeWindowNativeWindowRequestAbortBufferNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowRequestAbortBufferNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0402
+     * @tc.desc   testNativeWindowNativeWindowRequestAbortBufferNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowRequestAbortBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -246,12 +246,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0403
-     * @tc.name       : testNativeWindowNativeWindowRequestAbortBufferAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowRequestAbortBufferAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowRequestAbortBufferAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0403
+     * @tc.desc   testNativeWindowNativeWindowRequestAbortBufferAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowRequestAbortBufferAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -260,12 +260,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0404
-     * @tc.name       : testNativeWindowNativeWindowRequestBufferFenceFdNormal
-     * @tc.desc       : testNativeWindowNativeWindowRequestBufferFenceFdNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowRequestBufferFenceFdNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0404
+     * @tc.desc   testNativeWindowNativeWindowRequestBufferFenceFdNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowRequestBufferFenceFdNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -274,12 +274,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0405
-     * @tc.name       : testNativeWindowNativeWindowRequestBufferFenceFdAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowRequestBufferFenceFdAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowRequestBufferFenceFdAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0405
+     * @tc.desc   testNativeWindowNativeWindowRequestBufferFenceFdAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowRequestBufferFenceFdAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -288,12 +288,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0406
-     * @tc.name       : testNativeWindowNativeWindowRequestAbortBufferMax
-     * @tc.desc       : testNativeWindowNativeWindowRequestAbortBufferMax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowRequestAbortBufferMax
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0406
+     * @tc.desc   testNativeWindowNativeWindowRequestAbortBufferMax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowRequestAbortBufferMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -302,12 +302,12 @@ export default function nativeWindowTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0407
-     * @tc.name       : testNativeWindowNativeWindowRequestAbortBufferErrorCode
-     * @tc.desc       : testNativeWindowNativeWindowRequestAbortBufferErrorCode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowRequestAbortBufferErrorCode
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0407
+     * @tc.desc   testNativeWindowNativeWindowRequestAbortBufferErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowRequestAbortBufferErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -318,12 +318,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0500
-     * @tc.name       : testNativeWindowWriteToParcelErrptr
-     * @tc.desc       : testNativeWindowWriteToParcelErrptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowWriteToParcelErrptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0500
+     * @tc.desc   testNativeWindowWriteToParcelErrptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowWriteToParcelErrptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -333,12 +333,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0501
-     * @tc.name       : testNativeWindowReadFromParcelErrptr
-     * @tc.desc       : testNativeWindowReadFromParcelErrptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowReadFromParcelErrptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0501
+     * @tc.desc   testNativeWindowReadFromParcelErrptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowReadFromParcelErrptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -348,12 +348,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0502
-     * @tc.name       : testNativeWindowWRParcelNormal
-     * @tc.desc       : testNativeWindowWRParcelNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowWRParcelNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0502
+     * @tc.desc   testNativeWindowWRParcelNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowWRParcelNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -363,12 +363,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0503
-     * @tc.name       : testNativeWindowWriteToParcelAbNormal
-     * @tc.desc       : testNativeWindowWriteToParcelAbNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowWriteToParcelAbNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0503
+     * @tc.desc   testNativeWindowWriteToParcelAbNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowWriteToParcelAbNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -378,12 +378,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0504
-     * @tc.name       : testNativeWindowReadFromParcelAbNormal
-     * @tc.desc       : testNativeWindowReadFromParcelAbNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowReadFromParcelAbNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0504
+     * @tc.desc   testNativeWindowReadFromParcelAbNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowReadFromParcelAbNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -393,12 +393,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0505
-     * @tc.name       : testNativeWindowWRParcelDifferent
-     * @tc.desc       : testNativeWindowWRParcelDifferent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowWRParcelDifferent
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0505
+     * @tc.desc   testNativeWindowWRParcelDifferent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowWRParcelDifferent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -409,12 +409,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1700
-     * @tc.name       : testNativeWindowNativeWindowFlushBufferNullptr
-     * @tc.desc       : testNativeWindowNativeWindowFlushBufferNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 4
+     * @tc.name   testNativeWindowNativeWindowFlushBufferNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1700
+     * @tc.desc   testNativeWindowNativeWindowFlushBufferNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testNativeWindowNativeWindowFlushBufferNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
       async (done: Function) => {
@@ -424,12 +424,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1701
-     * @tc.name       : testNativeWindowNativeWindowFlushBufferNormal
-     * @tc.desc       : testNativeWindowNativeWindowFlushBufferNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowNativeWindowFlushBufferNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1701
+     * @tc.desc   testNativeWindowNativeWindowFlushBufferNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowNativeWindowFlushBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -439,12 +439,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1702
-     * @tc.name       : testNativeWindowNativeWindowFlushBufferAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowFlushBufferAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowFlushBufferAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1702
+     * @tc.desc   testNativeWindowNativeWindowFlushBufferAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowFlushBufferAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -454,12 +454,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1703
-     * @tc.name       : testNativeWindowNativeWindowFlushBufferErrorCode
-     * @tc.desc       : testNativeWindowNativeWindowFlushBufferErrorCode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowFlushBufferErrorCode
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1703
+     * @tc.desc   testNativeWindowNativeWindowFlushBufferErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowFlushBufferErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -469,12 +469,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0600
-     * @tc.name       : testNativeWindowGetLastFlushedBufferV2Nullptr
-     * @tc.desc       : testNativeWindowGetLastFlushedBufferV2Nullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowGetLastFlushedBufferV2Nullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0600
+     * @tc.desc   testNativeWindowGetLastFlushedBufferV2Nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowGetLastFlushedBufferV2Nullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -485,12 +485,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0601
-     * @tc.name       : testNativeWindowGetLastFlushedBufferNullptr
-     * @tc.desc       : testNativeWindowGetLastFlushedBufferNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowGetLastFlushedBufferNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0601
+     * @tc.desc   testNativeWindowGetLastFlushedBufferNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowGetLastFlushedBufferNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -501,12 +501,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0602
-     * @tc.name       : testNativeWindowGetLastFlushedBufferV2Normal
-     * @tc.desc       : testNativeWindowGetLastFlushedBufferV2Normal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowGetLastFlushedBufferV2Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0602
+     * @tc.desc   testNativeWindowGetLastFlushedBufferV2Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowGetLastFlushedBufferV2Normal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -517,12 +517,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0603
-     * @tc.name       : testNativeWindowGetLastFlushedBufferNormal
-     * @tc.desc       : testNativeWindowGetLastFlushedBufferNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowGetLastFlushedBufferNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0603
+     * @tc.desc   testNativeWindowGetLastFlushedBufferNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowGetLastFlushedBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -532,12 +532,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1600
-     * @tc.name       : testNativeWindowSetBufferHold
-     * @tc.desc       : testNativeWindowSetBufferHold
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowSetBufferHold
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1600
+     * @tc.desc   testNativeWindowSetBufferHold
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowSetBufferHold', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeWindow.testNativeWindowSetBufferHold();
@@ -547,12 +547,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0701
-     * @tc.name       : testNativeWindowGetNativeObjectMagicNormal
-     * @tc.desc       : testNativeWindowGetNativeObjectMagicNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowGetNativeObjectMagicNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0701
+     * @tc.desc   testNativeWindowGetNativeObjectMagicNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowGetNativeObjectMagicNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -563,12 +563,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0700
-     * @tc.name       : testNativeWindowGetNativeObjectMagicNullptr
-     * @tc.desc       : testNativeWindowGetNativeObjectMagicNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowGetNativeObjectMagicNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0700
+     * @tc.desc   testNativeWindowGetNativeObjectMagicNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowGetNativeObjectMagicNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -580,12 +580,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0702
-     * @tc.name       : testNativeWindowNativeObjectReferenceNullptr
-     * @tc.desc       : testNativeWindowNativeObjectReferenceNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeObjectReferenceNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0702
+     * @tc.desc   testNativeWindowNativeObjectReferenceNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeObjectReferenceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -596,12 +596,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0703
-     * @tc.name       : testNativeWindowNativeObjectReferenceNormal
-     * @tc.desc       : testNativeWindowNativeObjectReferenceNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowNativeObjectReferenceNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0703
+     * @tc.desc   testNativeWindowNativeObjectReferenceNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeObjectReferenceNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -612,12 +612,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0704
-     * @tc.name       : testNativeWindowNativeObjectUnreferenceNullptr
-     * @tc.desc       : testNativeWindowNativeObjectUnreferenceNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeObjectUnreferenceNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0704
+     * @tc.desc   testNativeWindowNativeObjectUnreferenceNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeObjectUnreferenceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -628,12 +628,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0705
-     * @tc.name       : testNativeWindowNativeObjectUnreferenceNormal
-     * @tc.desc       : testNativeWindowNativeObjectUnreferenceNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeObjectUnreferenceNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0705
+     * @tc.desc   testNativeWindowNativeObjectUnreferenceNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeObjectUnreferenceNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -644,12 +644,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0800
-     * @tc.name       : testNativeWindowNativeWindowAttachBufferNullptr
-     * @tc.desc       : testNativeWindowNativeWindowAttachBufferNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowAttachBufferNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0800
+     * @tc.desc   testNativeWindowNativeWindowAttachBufferNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowAttachBufferNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -660,12 +660,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0801
-     * @tc.name       : testNativeWindowNativeWindowDetachBufferNullptr
-     * @tc.desc       : testNativeWindowNativeWindowDetachBufferNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowDetachBufferNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0801
+     * @tc.desc   testNativeWindowNativeWindowDetachBufferNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowDetachBufferNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -676,12 +676,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0803
-     * @tc.name       : testNativeWindowNativeWindowDetachBufferNormal
-     * @tc.desc       : testNativeWindowNativeWindowDetachBufferNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowNativeWindowDetachBufferNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0803
+     * @tc.desc   testNativeWindowNativeWindowDetachBufferNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowNativeWindowDetachBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -692,12 +692,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0807
-     * @tc.name       : testNativeWindowNativeWindowAttachBufferErrorCode
-     * @tc.desc       : testNativeWindowNativeWindowAttachBufferErrorCode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNativeWindowNativeWindowAttachBufferErrorCode
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0807
+     * @tc.desc   testNativeWindowNativeWindowAttachBufferErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNativeWindowNativeWindowAttachBufferErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -708,12 +708,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0802
-     * @tc.name       : testNativeWindowNativeWindowAttachBufferNormal
-     * @tc.desc       : testNativeWindowNativeWindowAttachBufferNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowNativeWindowAttachBufferNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0802
+     * @tc.desc   testNativeWindowNativeWindowAttachBufferNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowNativeWindowAttachBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -724,12 +724,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0807
-     * @tc.name       : testNativeWindowNativeWindowDetachBufferErrorCode
-     * @tc.desc       : testNativeWindowNativeWindowDetachBufferErrorCode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNativeWindowNativeWindowDetachBufferErrorCode
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0807
+     * @tc.desc   testNativeWindowNativeWindowDetachBufferErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNativeWindowNativeWindowDetachBufferErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -740,12 +740,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0804
-     * @tc.name       : testNativeWindowNativeWindowAtDetachDifferentBufferNormal
-     * @tc.desc       : testNativeWindowNativeWindowAtDetachDifferentBufferNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNativeWindowNativeWindowAtDetachDifferentBufferNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0804
+     * @tc.desc   testNativeWindowNativeWindowAtDetachDifferentBufferNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNativeWindowNativeWindowAtDetachDifferentBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -756,12 +756,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0805
-     * @tc.name       : testNativeWindowNativeWindowAtDetachDifferentBufferAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowAtDetachDifferentBufferAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNativeWindowNativeWindowAtDetachDifferentBufferAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0805
+     * @tc.desc   testNativeWindowNativeWindowAtDetachDifferentBufferAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNativeWindowNativeWindowAtDetachDifferentBufferAbnormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
@@ -772,12 +772,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0900
-     * @tc.name       : testNativeWindowNativeWindowHandleOptNullptr
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 4
+     * @tc.name   testNativeWindowNativeWindowHandleOptNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0900
+     * @tc.desc   testNativeWindowNativeWindowHandleOptNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testNativeWindowNativeWindowHandleOptNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
       async (done: Function) => {
@@ -788,12 +788,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0901
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetBufferGeometryNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetBufferGeometryNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetBufferGeometryNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0901
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetBufferGeometryNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowNativeWindowHandleOptSetGetBufferGeometryNormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -804,12 +804,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0902
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0902
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -820,12 +820,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0903
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetFormatNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetFormatNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetFormatNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0903
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetFormatNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetFormatNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -836,12 +836,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0904
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetFormatAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetFormatAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetFormatAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0904
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetFormatAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetFormatAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -852,12 +852,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0905
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetUsageNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetUsageNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetUsageNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0905
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetUsageNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetUsageNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -868,12 +868,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0906
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetUsageAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetUsageAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetUsageAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0906
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetUsageAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetUsageAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -884,12 +884,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0907
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetStrideNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetStrideNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetStrideNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0907
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetStrideNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetStrideNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -900,12 +900,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0908
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetStrideAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetStrideAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetStrideAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0908
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetStrideAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetStrideAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -916,12 +916,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0909
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetSwapIntervalNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetSwapIntervalNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetSwapIntervalNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0909
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetSwapIntervalNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetSwapIntervalNormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -932,12 +932,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0910
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetSwapIntervalAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetSwapIntervalAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetSwapIntervalAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0910
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetSwapIntervalAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetSwapIntervalAbnormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -948,12 +948,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0911
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetColorGamutNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetColorGamutNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetColorGamutNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0911
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetColorGamutNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetColorGamutNormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -964,12 +964,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0912
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetColorGamutAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetColorGamutAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetColorGamutAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0912
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetColorGamutAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetColorGamutAbnormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -980,12 +980,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0913
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetTransformNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetTransformNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetTransformNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0913
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetTransformNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetTransformNormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -996,12 +996,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0914
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetTransformAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetTransformAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetTransformAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0914
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetTransformAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetTransformAbnormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -1012,12 +1012,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0915
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetUiTimeStampNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetUiTimeStampNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetUiTimeStampNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0915
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetUiTimeStampNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetUiTimeStampNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1028,12 +1028,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0916
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetUiTimeStampAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetUiTimeStampAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetUiTimeStampAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0916
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetUiTimeStampAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetUiTimeStampAbnormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -1044,12 +1044,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0917
-     * @tc.name       : testNativeWindowNativeWindowHandleOptGetBufferQueueSize
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptGetBufferQueueSize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNativeWindowNativeWindowHandleOptGetBufferQueueSize
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0917
+     * @tc.desc   testNativeWindowNativeWindowHandleOptGetBufferQueueSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNativeWindowNativeWindowHandleOptGetBufferQueueSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1060,12 +1060,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0918
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0918
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessNormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -1076,12 +1076,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0919
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0919
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessAbnormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
@@ -1092,12 +1092,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0920
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0920
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessNormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -1108,12 +1108,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0921
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0921
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessAbnormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
@@ -1124,12 +1124,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0922
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetSourceTypeNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetSourceTypeNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetSourceTypeNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0922
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetSourceTypeNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetSourceTypeNormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -1140,12 +1140,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0923
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetSourceTypeAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetSourceTypeAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetSourceTypeAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0923
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetSourceTypeAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetSourceTypeAbnormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -1156,12 +1156,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0924
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0924
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeNormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
@@ -1172,12 +1172,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0925
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeAbnormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0925
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeAbnormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -1188,12 +1188,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1300
-     * @tc.name       : testNativeWindowNativeWindowSetSetScalingModeV2Nullptr
-     * @tc.desc       : testNativeWindowNativeWindowSetSetScalingModeV2Nullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowSetSetScalingModeV2Nullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1300
+     * @tc.desc   testNativeWindowNativeWindowSetSetScalingModeV2Nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowSetSetScalingModeV2Nullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1204,12 +1204,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1301
-     * @tc.name       : testNativeWindowNativeWindowSetScalingModeV2ScalingMode
-     * @tc.desc       : testNativeWindowNativeWindowSetScalingModeV2ScalingMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowNativeWindowSetScalingModeV2ScalingMode
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1301
+     * @tc.desc   testNativeWindowNativeWindowSetScalingModeV2ScalingMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowNativeWindowSetScalingModeV2ScalingMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1220,12 +1220,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1500
-     * @tc.name       : testNativeWindowGetColorSpaceFirst
-     * @tc.desc       : testNativeWindowGetColorSpaceFirst
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowGetColorSpaceFirst
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1500
+     * @tc.desc   testNativeWindowGetColorSpaceFirst
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowGetColorSpaceFirst', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1236,12 +1236,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1501
-     * @tc.name       : testNativeWindowSetColorSpaceNormal
-     * @tc.desc       : testNativeWindowSetColorSpaceNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowSetColorSpaceNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1501
+     * @tc.desc   testNativeWindowSetColorSpaceNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowSetColorSpaceNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1252,12 +1252,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1502
-     * @tc.name       : testNativeWindowSetColorSpaceNullptr
-     * @tc.desc       : testNativeWindowSetColorSpaceNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowSetColorSpaceNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1502
+     * @tc.desc   testNativeWindowSetColorSpaceNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowSetColorSpaceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1268,12 +1268,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1503
-     * @tc.name       : testNativeWindowSetColorSpaceAbnormal
-     * @tc.desc       : testNativeWindowSetColorSpaceAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 4
+     * @tc.name   testNativeWindowSetColorSpaceAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1503
+     * @tc.desc   testNativeWindowSetColorSpaceAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testNativeWindowSetColorSpaceAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
       async (done: Function) => {
@@ -1284,12 +1284,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1504
-     * @tc.name       : testNativeWindowGetColorSpaceNullptr
-     * @tc.desc       : testNativeWindowGetColorSpaceNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowGetColorSpaceNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1504
+     * @tc.desc   testNativeWindowGetColorSpaceNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowGetColorSpaceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1300,12 +1300,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1505
-     * @tc.name       : testNativeWindowGetMetadataValueFirst
-     * @tc.desc       : testNativeWindowGetMetadataValueFirst
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowGetMetadataValueFirst
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1505
+     * @tc.desc   testNativeWindowGetMetadataValueFirst
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowGetMetadataValueFirst', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1316,12 +1316,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1506
-     * @tc.name       : testNativeWindowSetDynamicMetadataValue
-     * @tc.desc       : testNativeWindowSetDynamicMetadataValue
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowSetDynamicMetadataValue
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1506
+     * @tc.desc   testNativeWindowSetDynamicMetadataValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowSetDynamicMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1332,12 +1332,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1507
-     * @tc.name       : testNativeWindowSetMetadataValueTimes
-     * @tc.desc       : testNativeWindowSetMetadataValueTimes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowSetMetadataValueTimes
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1507
+     * @tc.desc   testNativeWindowSetMetadataValueTimes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowSetMetadataValueTimes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1348,12 +1348,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1508
-     * @tc.name       : testNativeWindowSetStaticMetadataValue
-     * @tc.desc       : testNativeWindowSetStaticMetadataValue
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNativeWindowSetStaticMetadataValue
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1508
+     * @tc.desc   testNativeWindowSetStaticMetadataValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNativeWindowSetStaticMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1364,12 +1364,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1509
-     * @tc.name       : testNativeWindowSetMetadataValue
-     * @tc.desc       : testNativeWindowSetMetadataValue
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNativeWindowSetMetadataValue
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1509
+     * @tc.desc   testNativeWindowSetMetadataValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNativeWindowSetMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1380,12 +1380,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1510
-     * @tc.name       : testNativeWindowSetNullMetadataValue
-     * @tc.desc       : testNativeWindowSetNullMetadataValue
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 4
+     * @tc.name   testNativeWindowSetNullMetadataValue
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1510
+     * @tc.desc   testNativeWindowSetNullMetadataValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testNativeWindowSetNullMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
       async (done: Function) => {
@@ -1396,12 +1396,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1511
-     * @tc.name       : testNativeWindowSetMetadataValueNullptr
-     * @tc.desc       : testNativeWindowSetMetadataValueNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowSetMetadataValueNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1511
+     * @tc.desc   testNativeWindowSetMetadataValueNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowSetMetadataValueNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1412,12 +1412,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1512
-     * @tc.name       : testNativeWindowGetMetadataValueAbnormal
-     * @tc.desc       : testNativeWindowGetMetadataValueAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 4
+     * @tc.name   testNativeWindowGetMetadataValueAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1512
+     * @tc.desc   testNativeWindowGetMetadataValueAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testNativeWindowGetMetadataValueAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
       async (done: Function) => {
@@ -1428,12 +1428,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1513
-     * @tc.name       : testNativeWindowGetMetadataValueNullptr
-     * @tc.desc       : testNativeWindowGetMetadataValueNullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowGetMetadataValueNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1513
+     * @tc.desc   testNativeWindowGetMetadataValueNullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowGetMetadataValueNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1444,12 +1444,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1514
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1514
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampNormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -1460,12 +1460,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1515
-     * @tc.name       : testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampAbNormal
-     * @tc.desc       : testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampAbNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampAbNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1515
+     * @tc.desc   testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampAbNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampAbNormal',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -1476,12 +1476,12 @@ export default function nativeWindowTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1516
-     * @tc.name       : testNativeWindowSetMetadataValue_metadata_type
-     * @tc.desc       : testNativeWindowSetMetadataValue_metadata_type
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowSetMetadataValue_metadata_type
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1516
+     * @tc.desc   testNativeWindowSetMetadataValue_metadata_type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowSetMetadataValue_metadata_type', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1491,12 +1491,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1517
-     * @tc.name       : testNativeWindowCreateNativeWindow
-     * @tc.desc       : testNativeWindowCreateNativeWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCreateNativeWindow
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1517
+     * @tc.desc   testNativeWindowCreateNativeWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCreateNativeWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1506,12 +1506,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1518
-     * @tc.name       : testNativeWindowNativeWindowSetSetScalingMode
-     * @tc.desc       : testNativeWindowNativeWindowSetSetScalingMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowSetSetScalingMode
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1518
+     * @tc.desc   testNativeWindowNativeWindowSetSetScalingMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowSetSetScalingMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1521,12 +1521,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1519
-     * @tc.name       : testNativeWindowNativeWindowSetMetaData
-     * @tc.desc       : testNativeWindowNativeWindowSetMetaData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowSetMetaData
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1519
+     * @tc.desc   testNativeWindowNativeWindowSetMetaData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowSetMetaData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1536,12 +1536,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1520
-     * @tc.name       : testNativeWindowNativeWindowSetMetaDataSet
-     * @tc.desc       : testNativeWindowNativeWindowSetMetaDataSet
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowSetMetaDataSet
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1520
+     * @tc.desc   testNativeWindowNativeWindowSetMetaDataSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowSetMetaDataSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1551,12 +1551,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1521
-     * @tc.name       : testNativeWindowNativeWindowSetMetaDataSet
-     * @tc.desc       : testNativeWindowNativeWindowSetMetaDataSet
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowNativeWindowSetTunnelHandle
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1521
+     * @tc.desc   testNativeWindowNativeWindowSetMetaDataSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowNativeWindowSetTunnelHandle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1566,12 +1566,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2000
-     * @tc.name       : testNativeWindowCleanCacheBeforeBufferRequested
-     * @tc.desc       : testNativeWindowCleanCacheBeforeBufferRequested
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCleanCacheBeforeBufferRequested
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2000
+     * @tc.desc   testNativeWindowCleanCacheBeforeBufferRequested
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCleanCacheBeforeBufferRequested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1581,12 +1581,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2001
-     * @tc.name       : testNativeWindowCleanCacheWhenBufferRequested
-     * @tc.desc       : testNativeWindowCleanCacheWhenBufferRequested
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCleanCacheWhenBufferRequested
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2001
+     * @tc.desc   testNativeWindowCleanCacheWhenBufferRequested
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCleanCacheWhenBufferRequested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1596,12 +1596,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2002
-     * @tc.name       : testNativeWindowCleanCacheWhenBufferFlushed
-     * @tc.desc       : testNativeWindowCleanCacheWhenBufferFlushed
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCleanCacheWhenBufferFlushed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2002
+     * @tc.desc   testNativeWindowCleanCacheWhenBufferFlushed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCleanCacheWhenBufferFlushed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1611,12 +1611,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2003
-     * @tc.name       : testNativeWindowCleanCacheWhenBufferAcquired
-     * @tc.desc       : testNativeWindowCleanCacheWhenBufferAcquired
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCleanCacheWhenBufferAcquired
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2003
+     * @tc.desc   testNativeWindowCleanCacheWhenBufferAcquired
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCleanCacheWhenBufferAcquired', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1626,12 +1626,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2004
-     * @tc.name       : testNativeWindowCleanCacheWhenBufferAcquired
-     * @tc.desc       : testNativeWindowCleanCacheWhenBufferAcquired
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCleanCacheWhenBufferReleased
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2004
+     * @tc.desc   testNativeWindowCleanCacheWhenBufferAcquired
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCleanCacheWhenBufferReleased', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1641,12 +1641,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2006
-     * @tc.name       : testNativeWindowCleanCacheLoopWhenBufferRequested
-     * @tc.desc       : testNativeWindowCleanCacheLoopWhenBufferRequested
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCleanCacheLoopWhenBufferRequested
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2006
+     * @tc.desc   testNativeWindowCleanCacheLoopWhenBufferRequested
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCleanCacheLoopWhenBufferRequested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1656,12 +1656,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2007
-     * @tc.name       : testNativeWindowCleanCacheLoopWhenBufferFlushed
-     * @tc.desc       : testNativeWindowCleanCacheLoopWhenBufferFlushed
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowCleanCacheLoopWhenBufferFlushed
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2007
+     * @tc.desc   testNativeWindowCleanCacheLoopWhenBufferFlushed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowCleanCacheLoopWhenBufferFlushed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1671,12 +1671,12 @@ export default function nativeWindowTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2100
-     * @tc.name       : testNativeWindowPreAllocBufferAbNormalPra
-     * @tc.desc       : testNativeWindowPreAllocBufferAbNormalPra
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowPreAllocBufferAbNormalPra
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2100
+     * @tc.desc   testNativeWindowPreAllocBufferAbNormalPra
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowPreAllocBufferAbNormalPra', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1686,12 +1686,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2101
-     * @tc.name       : testNativeWindowPreAllocBufferAbNormalPra2
-     * @tc.desc       : testNativeWindowPreAllocBufferAbNormalPra2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowPreAllocBufferAbNormalPra2
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2101
+     * @tc.desc   testNativeWindowPreAllocBufferAbNormalPra2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowPreAllocBufferAbNormalPra2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1701,12 +1701,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2102
-     * @tc.name       : testNativeWindowPreAllocBufferBufferCnt
-     * @tc.desc       : testNativeWindowPreAllocBufferBufferCnt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowPreAllocBufferBufferCnt
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2102
+     * @tc.desc   testNativeWindowPreAllocBufferBufferCnt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowPreAllocBufferBufferCnt', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1716,12 +1716,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2103
-     * @tc.name       : testNativeWindowPreAllocBufferAbnormal
-     * @tc.desc       : testNativeWindowPreAllocBufferAbnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowPreAllocBufferAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2103
+     * @tc.desc   testNativeWindowPreAllocBufferAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowPreAllocBufferAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1731,12 +1731,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2104
-     * @tc.name       : testNativeWindowPreAllocBufferDetachAttach
-     * @tc.desc       : testNativeWindowPreAllocBufferDetachAttach
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowPreAllocBufferDetachAttach
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2104
+     * @tc.desc   testNativeWindowPreAllocBufferDetachAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowPreAllocBufferDetachAttach', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1746,12 +1746,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2105
-     * @tc.name       : testNativeWindowPreAllocBufferDetachAttach02
-     * @tc.desc       : testNativeWindowPreAllocBufferDetachAttach02
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowPreAllocBufferDetachAttach02
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2105
+     * @tc.desc   testNativeWindowPreAllocBufferDetachAttach02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowPreAllocBufferDetachAttach02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1761,12 +1761,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2106
-     * @tc.name       : testNativeWindowPreAllocBufferNormal
-     * @tc.desc       : testNativeWindowPreAllocBufferNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowPreAllocBufferNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2106
+     * @tc.desc   testNativeWindowPreAllocBufferNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowPreAllocBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1776,12 +1776,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2200
-     * @tc.name       : testNativeWindowCleanBufferUsage
-     * @tc.desc       : testNativeWindowCleanBufferUsage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowCleanBufferUsage
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2200
+     * @tc.desc   testNativeWindowCleanBufferUsage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowCleanBufferUsage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1791,12 +1791,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2300
-     * @tc.name       : testNativeWindowLockBufferNormal
-     * @tc.desc       : testNativeWindowLockBufferNormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeWindowLockBufferNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2300
+     * @tc.desc   testNativeWindowLockBufferNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeWindowLockBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1806,12 +1806,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2301
-     * @tc.name       : testNativeWindowUnlockAndFlushBufferAbnormal01
-     * @tc.desc       : testNativeWindowUnlockAndFlushBufferAbnormal01
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowUnlockAndFlushBufferAbnormal01
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2301
+     * @tc.desc   testNativeWindowUnlockAndFlushBufferAbnormal01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowUnlockAndFlushBufferAbnormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1821,12 +1821,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2302
-     * @tc.name       : testNativeWindowUnlockAndFlushBufferAbnormal02
-     * @tc.desc       : testNativeWindowUnlockAndFlushBufferAbnormal02
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowUnlockAndFlushBufferAbnormal02
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2302
+     * @tc.desc   testNativeWindowUnlockAndFlushBufferAbnormal02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowUnlockAndFlushBufferAbnormal02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1836,12 +1836,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2303
-     * @tc.name       : testNativeWindowUnlockAndFlushBufferAbnormal03
-     * @tc.desc       : testNativeWindowUnlockAndFlushBufferAbnormal03
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowUnlockAndFlushBufferAbnormal03
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2303
+     * @tc.desc   testNativeWindowUnlockAndFlushBufferAbnormal03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowUnlockAndFlushBufferAbnormal03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1851,12 +1851,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2304
-     * @tc.name       : testNativeWindowUnlockAndFlushBufferAbnormal04
-     * @tc.desc       : testNativeWindowUnlockAndFlushBufferAbnormal04
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowUnlockAndFlushBufferAbnormal04
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2304
+     * @tc.desc   testNativeWindowUnlockAndFlushBufferAbnormal04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowUnlockAndFlushBufferAbnormal04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1866,12 +1866,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2305
-     * @tc.name       : testNativeWindowLockBufferNull
-     * @tc.desc       : testNativeWindowLockBufferNull
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowLockBufferNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2305
+     * @tc.desc   testNativeWindowLockBufferNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowLockBufferNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1881,12 +1881,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2306
-     * @tc.name       : testNativeWindowUnLockAndFlushBufferNull
-     * @tc.desc       : testNativeWindowUnLockAndFlushBufferNull
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowUnLockAndFlushBufferNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2306
+     * @tc.desc   testNativeWindowUnLockAndFlushBufferNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowUnLockAndFlushBufferNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1896,12 +1896,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2307
-     * @tc.name       : testNativeWindowLockBufferUpdateArea
-     * @tc.desc       : testNativeWindowLockBufferUpdateArea
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowLockBufferUpdateArea
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2307
+     * @tc.desc   testNativeWindowLockBufferUpdateArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowLockBufferUpdateArea', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1911,12 +1911,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2308
-     * @tc.name       : testNativeWindowLockBufferUpperLimit
-     * @tc.desc       : testNativeWindowLockBufferUpperLimit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowLockBufferUpperLimit
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2308
+     * @tc.desc   testNativeWindowLockBufferUpperLimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowLockBufferUpperLimit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1926,12 +1926,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2309
-     * @tc.name       : testNativeWindowLockBufferMultipleCalls
-     * @tc.desc       : testNativeWindowLockBufferMultipleCalls
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowLockBufferMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2309
+     * @tc.desc   testNativeWindowLockBufferMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowLockBufferMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1941,12 +1941,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2310
-     * @tc.name       : testNativeWindowUnLockAndFlushBufferMultipleCalls
-     * @tc.desc       : testNativeWindowUnLockAndFlushBufferMultipleCalls
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowUnLockAndFlushBufferMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2310
+     * @tc.desc   testNativeWindowUnLockAndFlushBufferMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowUnLockAndFlushBufferMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1956,12 +1956,12 @@ export default function nativeWindowTest() {
       });
 
     /**
-     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2311
-     * @tc.name       : testNativeWindowLockAndUnLockAndRequest
-     * @tc.desc       : testNativeWindowLockAndUnLockAndRequest
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNativeWindowLockAndUnLockAndRequest
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2311
+     * @tc.desc   testNativeWindowLockAndUnLockAndRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNativeWindowLockAndUnLockAndRequest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

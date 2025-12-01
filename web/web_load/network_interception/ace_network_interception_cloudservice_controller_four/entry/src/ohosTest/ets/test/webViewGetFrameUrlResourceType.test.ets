@@ -58,13 +58,13 @@ export default function ActsAceWebViewGetFrameUrlResourceType() {
         done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_getFrameUrl_resourceType_API_0001
-     *@tc.name testWebViewGetFrameUrlResourceType
-     *@tc.desc test getFrameUrl getResourceType
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewGetFrameUrlResourceType
+     * @tc.number SUB_ACE_WEB_getFrameUrl_resourceType_API_0001
+     * @tc.desc   test getFrameUrl getResourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewGetFrameUrlResourceType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewGetFrameUrlResourceType"

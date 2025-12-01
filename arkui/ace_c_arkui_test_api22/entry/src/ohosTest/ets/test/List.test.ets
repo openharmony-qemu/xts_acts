@@ -20,6 +20,8 @@ import snapSpeedTest from "./list/snapSpeedTest.test";
 import WaterFlowFillPolicyTest from "./waterFlow/WaterFlowFillPolicyTest.test"
 import imageDrawableDescriptorTest from "./image/imageDrawableDescriptorTest.test";
 import imageErrorTest from "./image/imageErrorTest.test";
+import textLineHeightTest from "./textLineHeight/TextLineHeightTest.test";
+import textAreaBarStateTest from "./textArea/TextAreaBarStateTest.test";
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -30,4 +32,6 @@ export default function testsuite() {
   WaterFlowFillPolicyTest();
   imageDrawableDescriptorTest();
   imageErrorTest();
+  textLineHeightTest();
+  textAreaBarStateTest();
 }

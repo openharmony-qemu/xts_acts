@@ -51,7 +51,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELX_0100
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELX_0100
      * @tc.desc   Test HidDdkErrCodeHIDRELX.
@@ -73,7 +72,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELY_0200
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELY_0200
      * @tc.desc   Test HidDdkErrCodeHIDRELY.
@@ -95,7 +93,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELZ_0300
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELZ_0300
      * @tc.desc   Test HidDdkErrCodeHIDRELZ.
@@ -117,7 +114,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELRX_0400
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELRX_0400
      * @tc.desc   Test HidDdkErrCodeHIDRELRX.
@@ -139,7 +135,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELRY_0500
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELRY_0500
      * @tc.desc   Test HidDdkErrCodeHIDRELRY.
@@ -161,7 +156,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELRZ_0600
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELRZ_0600
      * @tc.desc   Test HidDdkErrCodeHIDRELRZ.
@@ -183,7 +177,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEEL_0700
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEEL_0700
      * @tc.desc   Test HidDdkErrCodeHIDRELHWHEEL.
@@ -205,7 +198,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELDIAL_0800
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELDIAL_0800
      * @tc.desc   Test HidDdkErrCodeHIDRELDIAL.
@@ -227,7 +219,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEEL_0900
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEEL_0900
      * @tc.desc   Test HidDdkErrCodeHIDRELWHEEL.
@@ -249,7 +240,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELMISC_1000
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELMISC_1000
      * @tc.desc   Test HidDdkErrCodeHIDRELMISC.
@@ -271,7 +261,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELRESERVED_1100
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELRESERVED_1100
      * @tc.desc   Test HidDdkErrCodeHIDRELRESERVED.
@@ -293,7 +282,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEELHIRES_1200
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEELHIRES_1200
      * @tc.desc   Test HidDdkErrCodeHIDRELWHEELHIRES.
@@ -315,7 +303,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEELHIRES_1300
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEELHIRES_1300
      * @tc.desc   Test HidDdkErrCodeHIDRELHWHEELHIRES.
@@ -337,7 +324,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceHIDMSCSERIAL_1400
      * @tc.number SUB_Driver_Ext_HidCreateDeviceHIDMSCSERIAL_1400
      * @tc.desc   Test HidCreateDeviceHIDMSCSERIAL.
@@ -359,7 +345,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceHIDMSCPULSELED_1500
      * @tc.number SUB_Driver_Ext_HidCreateDeviceHIDMSCPULSELED_1500
      * @tc.desc   Test HidCreateDeviceHIDMSCPULSELED.
@@ -381,7 +366,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceHIDMSCGESTURE_1600
      * @tc.number SUB_Driver_Ext_HidCreateDeviceHIDMSCGESTURE_1600
      * @tc.desc   Test HidCreateDeviceHIDMSCGESTURE.
@@ -403,7 +387,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceHIDMSCRAW_1800
      * @tc.number SUB_Driver_Ext_HidCreateDeviceHIDMSCRAW_1800
      * @tc.desc   Test HidCreateDeviceHIDMSCRAW.
@@ -425,7 +408,6 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidCreateDeviceHIDMSCTIMESTAMP_1900
      * @tc.number SUB_Driver_Ext_HidCreateDeviceHIDMSCTIMESTAMP_1900
      * @tc.desc   Test HidCreateDeviceHIDMSCTIMESTAMP.

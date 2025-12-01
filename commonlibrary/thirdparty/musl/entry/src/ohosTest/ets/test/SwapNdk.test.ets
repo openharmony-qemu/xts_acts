@@ -25,12 +25,12 @@ export default function swapNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SWAP_SWAPON_0100
-     * @tc.name       : testMuslSwapSwapOn001
-     * @tc.desc       : test swapon
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSwapSwapOn001
+     * @tc.number SUB_THIRDPARTY_MUSL_SWAP_SWAPON_0100
+     * @tc.desc   test swapon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSwapSwapOn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(swapndk.swapon()).assertEqual(0);
@@ -38,12 +38,12 @@ export default function swapNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SWAP_SWAPOFF_0100
-     * @tc.name       : testMuslSwapSwapOff001
-     * @tc.desc       : test swapoff
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSwapSwapOff001
+     * @tc.number SUB_THIRDPARTY_MUSL_SWAP_SWAPOFF_0100
+     * @tc.desc   test swapoff
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSwapSwapOff001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(swapndk.swapoff()).assertEqual(0);

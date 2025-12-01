@@ -70,13 +70,13 @@ describe("SensorJsTest_sensor_7", function () {
     let errMessages = ['string is not defined','The parameter invalid'];
     let errMessage;
 
-    /*
-     * @tc.number:SUB_SensorsSystem_HALL_JSTest_0010
-     * @tc.name: Hall_SensorJsTest001
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest001---------------------------');
@@ -100,13 +100,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0020
-     * @tc.name: Hall_SensorJsTest002
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest002
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest002---------------------------');
@@ -132,13 +132,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0030
-     * @tc.name: Hall_SensorJsTest003
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest003
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest003---------------------------');
@@ -164,13 +164,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0040
-     * @tc.name: Hall_SensorJsTest004
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest004
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest004---------------------------');
@@ -194,13 +194,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0050
-     * @tc.name: Hall_SensorJsTest005
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest005
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0050
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest005---------------------------');
@@ -230,13 +230,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-   /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0060
-     * @tc.name: Hall_SensorJsTest006
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest006
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0060
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest006---------------------------');
@@ -263,13 +263,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0070
-     * @tc.name: Hall_SensorJsTest007
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest007
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0070
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest007---------------------------');
@@ -298,13 +298,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0080
-     * @tc.name: Hall_SensorJsTest008
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest008
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0080
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest008---------------------------');
@@ -336,13 +336,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0090
-     * @tc.name: Hall_SensorJsTest009
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest009
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0090
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest009---------------------------');
@@ -369,13 +369,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0100
-     * @tc.name: Hall_SensorJsTest010
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest010
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest010---------------------------');
@@ -411,13 +411,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0110
-     * @tc.name: Hall_SensorJsTest011
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest011
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0110
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest011---------------------------');
@@ -444,13 +444,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0120
-     * @tc.name:Hall_SensorJsTest012
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest012
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0120
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest012---------------------------');
@@ -486,13 +486,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_HALL_JSTest_0130
-     * @tc.name:Hall_SensorJsTest013
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest013
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------Hall_SensorJsTest013---------------------------');
@@ -519,13 +519,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_HALL_JSTest_0140
-     * @tc.name: Hall_SensorJsTest014
-     * @tc.desc: Functional Use Cases
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest014
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0140
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------Hall_SensorJsTest014--------------');
@@ -559,13 +559,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_HALL_JSTest_0150
-     * @tc.name: Hall_SensorJsTest015
-     * @tc.desc: Illegal ID passed in
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest015
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0150
+     * @tc.desc   Illegal ID passed in
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try{
@@ -600,13 +600,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_HALL_JSTest_0160
-     * @tc.name: Hall_SensorJsTest016
-     * @tc.desc: For normal scenarios
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest016
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0160
+     * @tc.desc   For normal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------Hall_SensorJsTest016--------------');
@@ -642,13 +642,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_HALL_JSTest_0170
-     * @tc.name: Hall_SensorJsTest017
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest017
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0170
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------Hall_SensorJsTest017--------------');
@@ -679,13 +679,13 @@ describe("SensorJsTest_sensor_7", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_HALL_JSTest_0180
-     * @tc.name: Hall_SensorJsTest018
-     * @tc.desc: Once Normal Subscription Scenario Use Case
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Hall_SensorJsTest018
+     * @tc.number SUB_SensorsSystem_HALL_JSTest_0180
+     * @tc.desc   Once Normal Subscription Scenario Use Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Hall_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try{

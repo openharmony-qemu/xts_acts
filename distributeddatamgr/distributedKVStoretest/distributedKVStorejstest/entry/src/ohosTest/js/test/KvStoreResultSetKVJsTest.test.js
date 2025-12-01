@@ -142,7 +142,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETCOUNT_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_0100
      * @tc.desc   Test Js Api KvStoreResultSet.GetCount() testcase 001
@@ -163,7 +162,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETCOUNT_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_0200
      * @tc.desc   Test Js Api KvStoreResultSet.GetCount() testcase 002
@@ -196,7 +194,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETCOUNT_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_0300
      * @tc.desc   Test Js Api KvStoreResultSet.GetCount() testcase 003
@@ -216,7 +213,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETCOUNT_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_0400
      * @tc.desc   Test Js Api KvStoreResultSet.GetCount() testcase 004
@@ -236,7 +232,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETPOSITION_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_0900
      * @tc.desc   Test Js Api KvStoreResultSet.GetPosition() testcase 001
@@ -257,7 +252,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETPOSITION_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_1000
      * @tc.desc   Test Js Api KvStoreResultSet.GetPosition() testcase 002
@@ -282,7 +276,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETPOSITION_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_1100
      * @tc.desc   Test Js Api KvStoreResultSet.GetPosition() testcase 003
@@ -302,7 +295,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETPOSITION_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_1200
      * @tc.desc   Test Js Api KvStoreResultSet.GetPosition() testcase 004
@@ -322,7 +314,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOFIRST_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_3200
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToFirst() testcase 001
@@ -343,7 +334,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOFIRST_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_3300
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToFirst() testcase 002
@@ -367,7 +357,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOFIRST_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_3400
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToFirst() testcase 003
@@ -387,7 +376,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOFIRST_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_3500
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToFirst() testcase 004
@@ -407,7 +395,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOFIRST_0500
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_3600
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToFirst() testcase 005
@@ -429,7 +416,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOLAST_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_3700
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToLast() testcase 001
@@ -450,7 +436,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOLAST_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_3800
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToLast() testcase 002
@@ -471,7 +456,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOLAST_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_3900
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToLast() testcase 003
@@ -491,7 +475,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOLAST_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_4000
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToLast() testcase 004
@@ -511,7 +494,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETONEXT_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_4100
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToNext() testcase 001
@@ -532,7 +514,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETONEXT_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_4200
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToNext() testcase 002
@@ -555,7 +536,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETONEXT_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_4300
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToNext() testcase 003
@@ -575,7 +555,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETONEXT_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_4400
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToNext() testcase 004
@@ -595,7 +574,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOPREVIOUS_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_4800
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPrevious() testcase 001
@@ -616,7 +594,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOPREVIOUS_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_4900
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPrevious() testcase 002
@@ -642,7 +619,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOPREVIOUS_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_5000
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPrevious() testcase 003
@@ -662,7 +638,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOPREVIOUS_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_5100
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPrevious() testcase 004
@@ -682,7 +657,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOPREVIOUS_0500
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_5200
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPrevious() testcase 005
@@ -707,7 +681,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_2900
      * @tc.desc   Test Js Api KvStoreResultSet.Move() testcase 001
@@ -727,7 +700,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_3000
      * @tc.desc   Test Js Api KvStoreResultSet.Move() testcase 002
@@ -751,7 +723,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_SETMOVE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_3100
      * @tc.desc   Test Js Api KvStoreResultSet.Move() testcase 003
@@ -776,7 +747,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_MOVETOPOSITION_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_4500
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPosition() testcase 001
@@ -796,7 +766,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_MOVETOPOSITION_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_4600
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPosition() testcase 002
@@ -816,7 +785,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_MOVETOPOSITION_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_4700
      * @tc.desc   Test Js Api KvStoreResultSet.MoveToPosition() testcase 003
@@ -839,7 +807,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISFIRST_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_2100
      * @tc.desc   Test Js Api KvStoreResultSet.IsFirst() testcase 001
@@ -860,7 +827,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISFIRST_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_2200
      * @tc.desc   Test Js Api KvStoreResultSet.IsFirst() testcase 002
@@ -885,7 +851,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISFIRST_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_2300
      * @tc.desc   Test Js Api KvStoreResultSet.IsFirst() testcase 003
@@ -905,7 +870,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISFIRST_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_2400
      * @tc.desc   Test Js Api KvStoreResultSet.IsFirst() testcase 004
@@ -925,7 +889,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISLAST_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_2500
      * @tc.desc   Test Js Api KvStoreResultSet.IsLast() testcase 001
@@ -946,7 +909,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISLAST_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_2600
      * @tc.desc   Test Js Api KvStoreResultSet.IsLast() testcase 002
@@ -968,7 +930,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISLAST_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_2700
      * @tc.desc   Test Js Api KvStoreResultSet.IsLast() testcase 003
@@ -988,7 +949,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISLAST_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_2800
      * @tc.desc   Test Js Api KvStoreResultSet.IsLast() testcase 004
@@ -1008,7 +968,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISBEFOREFIRST_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_1700
      * @tc.desc   Test Js Api KvStoreResultSet.IsBeforeFirst() testcase 001
@@ -1029,7 +988,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISBEFOREFIRST_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_1800
      * @tc.desc   Test Js Api KvStoreResultSet.IsBeforeFirst() testcase 002
@@ -1052,7 +1010,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISBEFOREFIRST_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_1900
      * @tc.desc   Test Js Api KvStoreResultSet.IsBeforeFirst() testcase 003
@@ -1072,7 +1029,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISBEFOREFIRST_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_2000
      * @tc.desc   Test Js Api KvStoreResultSet.IsBeforeFirst() testcase 004
@@ -1092,7 +1048,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISAFTERLAST_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_1300
      * @tc.desc   Test Js Api KvStoreResultSet.IsAfterLast() testcase 001
@@ -1113,7 +1068,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISAFTERLAST_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_1400
      * @tc.desc   Test Js Api KvStoreResultSet.IsAfterLast() testcase 002
@@ -1140,7 +1094,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISAFTERLAST_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_1500
      * @tc.desc   Test Js Api KvStoreResultSet.IsAfterLast() testcase 003
@@ -1160,7 +1113,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_ISAFTERLAST_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_1600
      * @tc.desc   Test Js Api KvStoreResultSet.IsAfterLast() testcase 004
@@ -1180,7 +1132,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETENTRY_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_0500
      * @tc.desc   Test Js Api KvStoreResultSet.GetEntry() testcase 001
@@ -1203,7 +1154,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETENTRY_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_0600
      * @tc.desc   Test Js Api KvStoreResultSet.GetEntry() testcase 002
@@ -1232,7 +1182,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETENTRY_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_0700
      * @tc.desc   Test Js Api KvStoreResultSet.GetEntry() testcase 003
@@ -1252,7 +1201,6 @@ export default function KvStoreResultSetTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_KVSTORERESULTSET_GETENTRY_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultJsApiTest_0800
      * @tc.desc   Test Js Api KvStoreResultSet.GetEntry() testcase 004

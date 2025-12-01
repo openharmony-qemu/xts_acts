@@ -43,12 +43,12 @@ export default function ConvertXml3Test() {
     })
 
     /**
+     * @tc.name   testConvertXml30001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_0100
-     * @tc.name testConvertXml30001
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvertXml30001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = runTest(`
@@ -104,12 +104,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_0200
-     * @tc.name testConvertXml30002
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -161,12 +161,12 @@ export default function ConvertXml3Test() {
         '}');
     });
     /**
+     * @tc.name   testConvertXml30003
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_0300
-     * @tc.name testConvertXml30003
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -201,12 +201,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_0400
-     * @tc.name testConvertXml30004
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -242,12 +242,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_0500
-     * @tc.name testConvertXml30005
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<message>操作成功</message>`);
@@ -268,12 +268,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_0600
-     * @tc.name testConvertXml30006
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<note>你好 😊！今天天气很好~@#￥%</note>`);
@@ -294,12 +294,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_0700
-     * @tc.name testConvertXml30007
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<desc>小于号:&lt; 和引号&quot;都转义了</desc>`);
@@ -320,12 +320,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30008
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_0800
-     * @tc.name testConvertXml30008
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result =
@@ -347,12 +347,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30010
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_1000
-     * @tc.name testConvertXml30010
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -408,12 +408,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30011
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_1100
-     * @tc.name testConvertXml30011
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest("");
@@ -421,12 +421,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_1200
-     * @tc.name testConvertXml30012
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(null);
@@ -434,12 +434,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30013
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_1300
-     * @tc.name testConvertXml30013
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(undefined);
@@ -447,12 +447,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30014
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_1400
-     * @tc.name testConvertXml30014
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest("   \n\t  ");
@@ -460,12 +460,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30015
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_1500
-     * @tc.name testConvertXml30015
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(123);
@@ -473,12 +473,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30016
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_1600
-     * @tc.name testConvertXml30016
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(true);
@@ -486,12 +486,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30017
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_1700
-     * @tc.name testConvertXml30017
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest({ a: 1 });
@@ -499,12 +499,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30018
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_1800
-     * @tc.name testConvertXml30018
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const longXml = `<root>${Array(10).fill("<item>数据</item>").join("")}</root>`;
@@ -632,12 +632,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30019
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_1900
-     * @tc.name testConvertXml30019
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<user><name>Tom</name><email>t@x.com</user>`);
@@ -645,12 +645,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30020
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_2000
-     * @tc.name testConvertXml30020
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<a><b></a></b>`);
@@ -659,12 +659,12 @@ export default function ConvertXml3Test() {
 
 
     /**
+     * @tc.name   testConvertXml30021
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_2100
-     * @tc.name testConvertXml30021
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<user><name>张三</name><age>25</age></user>`);
@@ -703,12 +703,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30022
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_2200
-     * @tc.name testConvertXml30022
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<app><config><debug>true</debug></config></app>`);
@@ -743,12 +743,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30023
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_2300
-     * @tc.name testConvertXml30023
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<data><flag /><value>42</value></data>`);
@@ -781,12 +781,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30024
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_2400
-     * @tc.name testConvertXml30024
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<msg>操作完成</msg>`);
@@ -807,12 +807,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30025
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_2500
-     * @tc.name testConvertXml30025
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<item><title></title><body></body></item>`);
@@ -839,12 +839,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30027
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_2700
-     * @tc.name testConvertXml30027
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<fruits><fruit>苹果</fruit><fruit>香蕉</fruit></fruits>`);
@@ -883,12 +883,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30028
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_2800
-     * @tc.name testConvertXml30028
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<root>单一内容</root>`);
@@ -909,12 +909,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30029
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_2900
-     * @tc.name testConvertXml30029
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<a><b><c><d>deep</d></c></b></a>`);
@@ -956,12 +956,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30030
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_3000
-     * @tc.name testConvertXml30030
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<user1><id>1001</id></user1>`);
@@ -989,12 +989,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30031
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_3100
-     * @tc.name testConvertXml30031
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<通知>你好世界</通知>`,);
@@ -1015,12 +1015,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30032
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_3200
-     * @tc.name testConvertXml30032
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<code>if(a<b && c>d){"hello"}</code>`);
@@ -1028,12 +1028,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30033
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_3300
-     * @tc.name testConvertXml30033
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<desc>使用&amp;连接&lt;标签&quot;属性</desc>`);
@@ -1054,12 +1054,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30034
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_3400
-     * @tc.name testConvertXml30034
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<script><![CDATA[for(i=0;i<10;i++){}]]></script>`);
@@ -1080,12 +1080,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30035
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_3500
-     * @tc.name testConvertXml30035
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<data><![CDATA[<!-- not a comment -->]]></data>`);
@@ -1106,12 +1106,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30036
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_3600
-     * @tc.name testConvertXml30036
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -1145,12 +1145,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30037
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_3700
-     * @tc.name testConvertXml30037
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<log>提交成功 ✅</log>`);
@@ -1171,12 +1171,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30038
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_3800
-     * @tc.name testConvertXml30038
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<name>Señor José ½ €</name>`);
@@ -1197,12 +1197,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30039
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_3900
-     * @tc.name testConvertXml30039
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<char>&#x4F60;&#x597D;</char>`);
@@ -1223,12 +1223,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30040
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_4000
-     * @tc.name testConvertXml30040
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<char>&#20320;&#22909;</char>`);
@@ -1248,12 +1248,12 @@ export default function ConvertXml3Test() {
         '}');
     });
     /**
+     * @tc.name   testConvertXml30041
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_4100
-     * @tc.name testConvertXml30041
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<person name="李四" age="30"/>`);
@@ -1272,12 +1272,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30042
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_4200
-     * @tc.name testConvertXml30042
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<城市 名称="北京" 类型="直辖市"/>`);
@@ -1296,12 +1296,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30043
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_4300
-     * @tc.name testConvertXml30043
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<tag value="a<b & c>d" enabled="true"/>`);
@@ -1309,12 +1309,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30044
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_4400
-     * @tc.name testConvertXml30044
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<file path="/a/b" size="1024" readonly="yes"/>`);
@@ -1334,12 +1334,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30045
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_4500
-     * @tc.name testConvertXml30045
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<img src="" alt=""/>`);
@@ -1358,12 +1358,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30046
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_4600
-     * @tc.name testConvertXml30046
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<input disabled required/>`);
@@ -1371,12 +1371,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30047
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_4700
-     * @tc.name testConvertXml30047
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<div id="main" class="box"><p>内容</p></div>`);
@@ -1408,12 +1408,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30048
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_4800
-     * @tc.name testConvertXml30048
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<item id="1">数据</item>`);
@@ -1437,12 +1437,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30049
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_4900
-     * @tc.name testConvertXml30049
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<tag 1name="invalid">test</tag>`);
@@ -1450,12 +1450,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30050
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_5000
-     * @tc.name testConvertXml30050
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`<tag name=test>无效语法</tag>`);
@@ -1463,12 +1463,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30052
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_5200
-     * @tc.name testConvertXml30052
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -1520,12 +1520,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30053
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_5300
-     * @tc.name testConvertXml30053
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -1587,12 +1587,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30054
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_5400
-     * @tc.name testConvertXml30054
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -1685,12 +1685,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30055
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_5500
-     * @tc.name testConvertXml30055
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -1842,12 +1842,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30056
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_5600
-     * @tc.name testConvertXml30056
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -1906,12 +1906,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30057
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_5700
-     * @tc.name testConvertXml30057
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(["<a>1</a>", "<b>2</b>"]);
@@ -1919,12 +1919,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30058
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_5800
-     * @tc.name testConvertXml30058
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest({ xml: "<a>1</a>" });
@@ -1932,12 +1932,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30059
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_5900
-     * @tc.name testConvertXml30059
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -2197,12 +2197,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30060
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_6000
-     * @tc.name testConvertXml30060
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -2270,12 +2270,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30061
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_6100
-     * @tc.name testConvertXml30061
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -2339,12 +2339,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30062
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_6200
-     * @tc.name testConvertXml30062
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -2366,12 +2366,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30063
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_6300
-     * @tc.name testConvertXml30063
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -2457,12 +2457,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30064
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_6400
-     * @tc.name testConvertXml30064
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -2524,12 +2524,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30065
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_6500
-     * @tc.name testConvertXml30065
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -2621,12 +2621,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30066
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_6600
-     * @tc.name testConvertXml30066
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -2745,12 +2745,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30068
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_6800
-     * @tc.name testConvertXml30068
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -2803,12 +2803,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30070
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_7000
-     * @tc.name testConvertXml30070
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const longText = "描述".repeat(1000);
@@ -2853,12 +2853,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30071
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_7100
-     * @tc.name testConvertXml30071
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -2950,12 +2950,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30072
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_7200
-     * @tc.name testConvertXml30072
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = runTest(`
@@ -3096,12 +3096,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30074
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_7400
-     * @tc.name testConvertXml30074
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3149,12 +3149,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30075
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_7500
-     * @tc.name testConvertXml30075
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3188,12 +3188,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30076
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_7600
-     * @tc.name testConvertXml30076
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3234,12 +3234,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30077
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_7700
-     * @tc.name testConvertXml30077
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3273,12 +3273,12 @@ export default function ConvertXml3Test() {
         '}');
     });
     /**
+     * @tc.name   testConvertXml30078
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_7800
-     * @tc.name testConvertXml30078
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3310,12 +3310,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30079
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_7900
-     * @tc.name testConvertXml30079
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3347,12 +3347,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30080
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_8000
-     * @tc.name testConvertXml30080
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3384,12 +3384,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30081
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_8100
-     * @tc.name testConvertXml30081
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3432,12 +3432,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30082
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_8200
-     * @tc.name testConvertXml30082
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3471,12 +3471,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30083
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_8300
-     * @tc.name testConvertXml30083
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3509,12 +3509,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30084
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_8400
-     * @tc.name testConvertXml30084
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3549,12 +3549,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30085
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_8500
-     * @tc.name testConvertXml30085
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3591,12 +3591,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30087
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_8700
-     * @tc.name testConvertXml30087
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3633,12 +3633,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30088
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_8800
-     * @tc.name testConvertXml30088
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3661,12 +3661,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30089
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_8900
-     * @tc.name testConvertXml30089
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3702,12 +3702,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30090
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_9000
-     * @tc.name testConvertXml30090
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3745,12 +3745,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30091
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_9100
-     * @tc.name testConvertXml30091
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3787,12 +3787,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30093
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_9300
-     * @tc.name testConvertXml30093
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3829,12 +3829,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30094
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_9400
-     * @tc.name testConvertXml30094
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3868,12 +3868,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30095
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_9500
-     * @tc.name testConvertXml30095
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3902,12 +3902,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30096
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_9600
-     * @tc.name testConvertXml30096
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3939,12 +3939,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30097
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_9700
-     * @tc.name testConvertXml30097
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -3977,12 +3977,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30098
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_9800
-     * @tc.name testConvertXml30098
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4011,12 +4011,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30099
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_9900
-     * @tc.name testConvertXml30099
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4039,12 +4039,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30100
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_10000
-     * @tc.name testConvertXml30100
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4077,12 +4077,12 @@ export default function ConvertXml3Test() {
         '}');
     });
     /**
+     * @tc.name   testConvertXml30101
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_10100
-     * @tc.name testConvertXml30101
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4111,12 +4111,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30103
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_10300
-     * @tc.name testConvertXml30103
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4150,12 +4150,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30104
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_10400
-     * @tc.name testConvertXml30104
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4180,12 +4180,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30105
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_10500
-     * @tc.name testConvertXml30105
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4219,12 +4219,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30106
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_10600
-     * @tc.name testConvertXml30106
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4254,12 +4254,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30107
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_10700
-     * @tc.name testConvertXml30107
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4282,12 +4282,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30108
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_10800
-     * @tc.name testConvertXml30108
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4315,12 +4315,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30109
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_10900
-     * @tc.name testConvertXml30109
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4353,12 +4353,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30110
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_11000
-     * @tc.name testConvertXml30110
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4387,12 +4387,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30111
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_11100
-     * @tc.name testConvertXml30111
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4426,12 +4426,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30112
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_11200
-     * @tc.name testConvertXml30112
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4465,12 +4465,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30113
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_11300
-     * @tc.name testConvertXml30113
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4503,12 +4503,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30114
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_11400
-     * @tc.name testConvertXml30114
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4542,12 +4542,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30115
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_11500
-     * @tc.name testConvertXml30115
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4581,12 +4581,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30116
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_11600
-     * @tc.name testConvertXml30116
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4615,12 +4615,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30117
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_11700
-     * @tc.name testConvertXml30117
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4653,12 +4653,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30118
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_11800
-     * @tc.name testConvertXml30118
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4681,12 +4681,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30119
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_11900
-     * @tc.name testConvertXml30119
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4716,12 +4716,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30120
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_12000
-     * @tc.name testConvertXml30120
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4756,12 +4756,12 @@ export default function ConvertXml3Test() {
 
 
     /**
+     * @tc.name   testConvertXml30121
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_12100
-     * @tc.name testConvertXml30121
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4794,12 +4794,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30122
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_12200
-     * @tc.name testConvertXml30122
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4837,12 +4837,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30123
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_12300
-     * @tc.name testConvertXml30123
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4874,12 +4874,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30124
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_12400
-     * @tc.name testConvertXml30124
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4913,12 +4913,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30125
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_12500
-     * @tc.name testConvertXml30125
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4947,12 +4947,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30126
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_12600
-     * @tc.name testConvertXml30126
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -4980,12 +4980,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30127
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_12700
-     * @tc.name testConvertXml30127
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -5014,12 +5014,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30128
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_12800
-     * @tc.name testConvertXml30128
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -5048,12 +5048,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30129
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_12900
-     * @tc.name testConvertXml30129
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -5081,12 +5081,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30130
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_13000
-     * @tc.name testConvertXml30130
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -5132,12 +5132,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30131
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_13100
-     * @tc.name testConvertXml30131
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -5175,12 +5175,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30132
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_13200
-     * @tc.name testConvertXml30132
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -5218,12 +5218,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30133
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_13300
-     * @tc.name testConvertXml30133
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -5258,12 +5258,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30134
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_13400
-     * @tc.name testConvertXml30134
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -5298,12 +5298,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30135
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_13500
-     * @tc.name testConvertXml30135
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -5334,12 +5334,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30137
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_13700
-     * @tc.name testConvertXml30137
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {
@@ -5371,12 +5371,12 @@ export default function ConvertXml3Test() {
     });
 
     /**
+     * @tc.name   testConvertXml30138
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_13800
-     * @tc.name testConvertXml30138
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test(`<a><b><c><d><e><f><g><h><i><j>deep</j></i></h></g></f></e></d></c></b></a>`);
@@ -5461,12 +5461,12 @@ export default function ConvertXml3Test() {
 
 
     /**
+     * @tc.name   testConvertXml30140
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML3_14000
-     * @tc.name testConvertXml30140
-     * @tc.desc Testing the convertxml
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the convertxml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXml30140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let options: convertxml.ConvertOptions = {

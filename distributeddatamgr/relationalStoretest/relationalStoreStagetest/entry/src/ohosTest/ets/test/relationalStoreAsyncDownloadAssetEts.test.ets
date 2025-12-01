@@ -95,7 +95,6 @@ export default function relationalStoreAsyncDownloadAssetTest() {
     console.log(TAG + "*************Unit Test Begin*************");
 
      /**
-      * @generated.time 2025-11-09 20:49:52
       * @tc.name   testRdbAsyncDownloadAsset001
       * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0100
       * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is true
@@ -132,7 +131,6 @@ export default function relationalStoreAsyncDownloadAssetTest() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:52
       * @tc.name   testRdbAsyncDownloadAsset002
       * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0200
       * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is false
@@ -169,7 +167,6 @@ export default function relationalStoreAsyncDownloadAssetTest() {
   })
 
   /**
-   * @generated.time 2025-11-09 20:49:52
    * @tc.name   testRdbAsyncDownloadAsset003
    * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0300
    * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is 20
@@ -203,7 +200,6 @@ export default function relationalStoreAsyncDownloadAssetTest() {
     })
 
    /**
-    * @generated.time 2025-11-09 20:49:52
     * @tc.name   testRdbAsyncDownloadAsset004
     * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0400
     * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is 0
@@ -237,7 +233,6 @@ export default function relationalStoreAsyncDownloadAssetTest() {
     })
 
    /**
-    * @generated.time 2025-11-09 20:49:52
     * @tc.name   testRdbAsyncDownloadAsset005
     * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0500
     * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is 1
@@ -271,7 +266,6 @@ export default function relationalStoreAsyncDownloadAssetTest() {
     })
 
    /**
-    * @generated.time 2025-11-09 20:49:52
     * @tc.name   testRdbAsyncDownloadAsset006
     * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0600
     * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is -1
@@ -306,7 +300,6 @@ export default function relationalStoreAsyncDownloadAssetTest() {
 
 
    /**
-    * @generated.time 2025-11-09 20:49:52
     * @tc.name   testRdbAsyncDownloadAsset007
     * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0700
     * @tc.desc   set distributed table cloud with 'autoSync' is true 'asyncDownloadAsset' is true
@@ -343,7 +336,6 @@ export default function relationalStoreAsyncDownloadAssetTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbAsyncDownloadAsset008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0800
      * @tc.desc   set distributed table cloud with 'autoSync' is true 'asyncDownloadAsset' is false

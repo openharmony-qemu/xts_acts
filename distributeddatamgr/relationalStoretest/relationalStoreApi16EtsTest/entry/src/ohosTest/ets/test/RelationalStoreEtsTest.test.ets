@@ -59,7 +59,6 @@ export default function relationalStoreEtsTest() {
     });
     console.info(TAG + "*************Unit Test Begin*************");
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreGetvalueEtstest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_getValueEtsAPI16Test_0100
      * @tc.desc   RelationalStore getValue test

@@ -55,7 +55,6 @@ export default function FivePointOne_resMgrStageTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getTimePeriodName_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETTIMEPERIODNAME_STAGE_static_0100
      * @tc.desc   getTimePeriodName
@@ -71,7 +70,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   add_stagetest_static_0100
      * @tc.number SUB_GLOBAL_ADD_STAGE_static_0100
      * @tc.desc   calendar.add
@@ -90,7 +88,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getTimeInMillis_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETTIMEINMILLIS_STAGE_static_0100
      * @tc.desc   calendar.getTimeInMillis
@@ -108,7 +105,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   compareDays_stagetest_static_0100
      * @tc.number SUB_GLOBAL_COMPAREDAYS_STAGE_static_0100
      * @tc.desc   calendar.compareDays
@@ -127,7 +123,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   HolidayManager_stagetest_static_0100
      * @tc.number SUB_GLOBAL_HOLIDAYMANAGER_STAGE_0100
      * @tc.desc   HolidayManager
@@ -157,7 +152,6 @@ export default function FivePointOne_resMgrStageTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   i18n_test_getBestMatchLocale_static_0010
      * @tc.number i18n_test_getBestMatchLocale_static_0010
      * @tc.desc   resource list is empty
@@ -177,7 +171,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   testgetThreeLetterRegion_static_0030
      * @tc.number testgetThreeLetterRegion_static_0030
      * @tc.desc   transfer GB and return GBR
@@ -192,7 +185,6 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   testgetThreeLetterLanguage_static_0030
      * @tc.number testgetThreeLetterLanguage_static_0030
      * @tc.desc   transfer en and return eng

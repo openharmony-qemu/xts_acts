@@ -58,14 +58,14 @@ export default function webCookieManagerTest() {
       console.info("web beforeEach start");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ISCOOKIEALLOWED_0100
-    * @tc.name       : testIsCookieAllowedStatic001
-    * @tc.desc       : test isCookieAllowed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testIsCookieAllowedStatic001
+     * @tc.number SUB_WEB_ISCOOKIEALLOWED_0100
+     * @tc.desc   test isCookieAllowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testIsCookieAllowedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -77,14 +77,14 @@ export default function webCookieManagerTest() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_ISCOOKIEALLOWED_0200
-    * @tc.name       : testIsCookieAllowedStatic002
-    * @tc.desc       : test isCookieAllowed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testIsCookieAllowedStatic002
+     * @tc.number SUB_WEB_ISCOOKIEALLOWED_0200
+     * @tc.desc   test isCookieAllowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testIsCookieAllowedStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testIsCookieAllowed002", 10)
@@ -95,14 +95,14 @@ export default function webCookieManagerTest() {
         done()
       })
 
-    /*
-   * @tc.number     : SUB_WEB_ISTHIRDPARTYCOOKIEALLOWED_0100
-   * @tc.name       : testIsThirdPartyCookieAllowedStatic001
-   * @tc.desc       : test isThirdPartyCookieAllowed
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 3
-   */
+    /**
+     * @tc.name   testIsThirdPartyCookieAllowedStatic001
+     * @tc.number SUB_WEB_ISTHIRDPARTYCOOKIEALLOWED_0100
+     * @tc.desc   test isThirdPartyCookieAllowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testIsThirdPartyCookieAllowedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testIsThirdPartyCookieAllowed001", 10)
@@ -113,14 +113,14 @@ export default function webCookieManagerTest() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_ISTHIRDPARTYCOOKIEALLOWED_0200
-    * @tc.name       : testIsThirdPartyCookieAllowedStatic002
-    * @tc.desc       : test isThirdPartyCookieAllowed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testIsThirdPartyCookieAllowedStatic002
+     * @tc.number SUB_WEB_ISTHIRDPARTYCOOKIEALLOWED_0200
+     * @tc.desc   test isThirdPartyCookieAllowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testIsThirdPartyCookieAllowedStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testIsThirdPartyCookieAllowed002", 10)
@@ -131,14 +131,14 @@ export default function webCookieManagerTest() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_PUTACCEPTTHIRDPARTYCOOKIEENABLED_0100
-    * @tc.name       : testPutAcceptThirdPartyCookieEnabledStatic001
-    * @tc.desc       : test putAcceptThirdPartyCookieEnabled
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testPutAcceptThirdPartyCookieEnabledStatic001
+     * @tc.number SUB_WEB_PUTACCEPTTHIRDPARTYCOOKIEENABLED_0100
+     * @tc.desc   test putAcceptThirdPartyCookieEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testPutAcceptThirdPartyCookieEnabledStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testPutAcceptThirdPartyCookieEnabled001", 10)

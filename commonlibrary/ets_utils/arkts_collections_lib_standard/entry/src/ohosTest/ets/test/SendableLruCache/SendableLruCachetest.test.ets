@@ -33,12 +33,12 @@ export default function sendableLruCachetest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLELRUCACHE_CONCAtARRRY_0100
-     * @tc.name      : SendableLruCachetestConcatArray0100
-     * @tc.desc      : constructor 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SendableLruCachetestConcatArray0100
+     * @tc.number SUB_SENDABLELRUCACHE_CONCAtARRRY_0100
+     * @tc.desc   constructor 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SendableLruCachetestConcatArray0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -59,12 +59,12 @@ export default function sendableLruCachetest() {
 
 
     /**
-     * @tc.number    : SUB_SENDABLELRUCACHE_CONCAtARRRY_0200
-     * @tc.name      : SendableLruCachetestConcatArray0200
-     * @tc.desc      : updateCapacity 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SendableLruCachetestConcatArray0200
+     * @tc.number SUB_SENDABLELRUCACHE_CONCAtARRRY_0200
+     * @tc.desc   updateCapacity 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SendableLruCachetestConcatArray0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

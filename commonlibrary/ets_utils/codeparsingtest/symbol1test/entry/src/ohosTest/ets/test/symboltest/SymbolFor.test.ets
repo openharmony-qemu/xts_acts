@@ -46,12 +46,12 @@ export default function symbolForTestTest() {
 
 
     /**
+     * @tc.name   SymbolForCaseSensitiveKeysTest001
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_001
-     * @tc.name SymbolForCaseSensitiveKeysTest001
-     * @tc.desc Verify Symbol.for() is case-sensitive for string keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.for() is case-sensitive for string keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForCaseSensitiveKeysTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test001_SymbolForCaseSensitiveKeys();
@@ -59,12 +59,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForEmptyStringKeyTest002
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_002
-     * @tc.name SymbolForEmptyStringKeyTest002
-     * @tc.desc Verify Symbol.for("") uses empty string as valid key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.for("") uses empty string as valid key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForEmptyStringKeyTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test002_SymbolForEmptyStringKey();
@@ -72,12 +72,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForObjectKeyTest003
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_003
-     * @tc.name SymbolForObjectKeyTest003
-     * @tc.desc Verify Object as key is coerced to "[object Object]"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Object as key is coerced to "[object Object]"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForObjectKeyTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test003_SymbolForObjectKey();
@@ -87,12 +87,12 @@ export default function symbolForTestTest() {
 
 
     /**
+     * @tc.name   SymbolForArrayKeyTest005
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_005
-     * @tc.name SymbolForArrayKeyTest005
-     * @tc.desc Verify Array as key uses array's toString() result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array as key uses array's toString() result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForArrayKeyTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test005_SymbolForArrayKey();
@@ -100,12 +100,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForNestedScopePersistenceTest006
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_006
-     * @tc.name SymbolForNestedScopePersistenceTest006
-     * @tc.desc Verify Symbol.for() persists across nested scopes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.for() persists across nested scopes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForNestedScopePersistenceTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test006_SymbolForNestedScopePersistence();
@@ -113,12 +113,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForFunctionKeyTest007
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_007
-     * @tc.name SymbolForFunctionKeyTest007
-     * @tc.desc Verify Function as key uses function's toString() result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Function as key uses function's toString() result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForFunctionKeyTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test007_SymbolForFunctionKey();
@@ -126,12 +126,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolKeyForNonGlobalSymbolTest008
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_008
-     * @tc.name SymbolKeyForNonGlobalSymbolTest008
-     * @tc.desc Verify Symbol.keyFor() returns undefined for non-global Symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.keyFor() returns undefined for non-global Symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolKeyForNonGlobalSymbolTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test008_SymbolKeyForNonGlobalSymbol();
@@ -139,12 +139,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForDateKeyTest009
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_009
-     * @tc.name SymbolForDateKeyTest009
-     * @tc.desc Verify Date object as key uses Date's toString() result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Date object as key uses Date's toString() result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForDateKeyTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test009_SymbolForDateKey();
@@ -152,12 +152,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForNoConflictWithBuiltInTest010
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_010
-     * @tc.name SymbolForNoConflictWithBuiltInTest010
-     * @tc.desc Verify Symbol.for() does not conflict with built-in Symbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.for() does not conflict with built-in Symbols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForNoConflictWithBuiltInTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test010_SymbolForNoConflictWithBuiltIn();
@@ -166,12 +166,12 @@ export default function symbolForTestTest() {
 
 
     /**
+     * @tc.name   SymbolForNestedObjectKeyTest011
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_011
-     * @tc.name SymbolForNestedObjectKeyTest011
-     * @tc.desc Verify nested object as key uses flattened toString()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify nested object as key uses flattened toString()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForNestedObjectKeyTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test011_SymbolForNestedObjectKey();
@@ -179,12 +179,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForRegExpKeyTest012
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_012
-     * @tc.name SymbolForRegExpKeyTest012
-     * @tc.desc Verify RegExp as key uses RegExp's toString()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify RegExp as key uses RegExp's toString()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForRegExpKeyTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test012_SymbolForRegExpKey();
@@ -194,12 +194,12 @@ export default function symbolForTestTest() {
 
 
     /**
+     * @tc.name   SymbolForUndefinedKeyTest014
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_014
-     * @tc.name SymbolForUndefinedKeyTest014
-     * @tc.desc Verify undefined as key is coerced to "undefined"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify undefined as key is coerced to "undefined"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForUndefinedKeyTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test014_SymbolForUndefinedKey();
@@ -207,12 +207,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForNullKeyTest015
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_015
-     * @tc.name SymbolForNullKeyTest015
-     * @tc.desc Verify null as key is coerced to "null"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify null as key is coerced to "null"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForNullKeyTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test015_SymbolForNullKey();
@@ -222,12 +222,12 @@ export default function symbolForTestTest() {
 
 
     /**
+     * @tc.name   SymbolForCrossModuleSharingTest017
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_017
-     * @tc.name SymbolForCrossModuleSharingTest017
-     * @tc.desc Verify cross-module simulation with global Symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify cross-module simulation with global Symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForCrossModuleSharingTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test017_SymbolForCrossModuleSharing();
@@ -235,12 +235,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForAsMapKeyTest018
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_018
-     * @tc.name SymbolForAsMapKeyTest018
-     * @tc.desc Verify global Symbol as Map key retains identity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify global Symbol as Map key retains identity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForAsMapKeyTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test018_SymbolForAsMapKey();
@@ -248,12 +248,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForInSetTest019
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_019
-     * @tc.name SymbolForInSetTest019
-     * @tc.desc Verify global Symbol in Set retains uniqueness
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify global Symbol in Set retains uniqueness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForInSetTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test019_SymbolForInSet();
@@ -261,12 +261,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForInStrictModeTest020
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_020
-     * @tc.name SymbolForInStrictModeTest020
-     * @tc.desc Verify Symbol.for() works in strict mode
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.for() works in strict mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForInStrictModeTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test020_SymbolForInStrictMode();
@@ -274,12 +274,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForKeyWithSpacesTest021
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_021
-     * @tc.name SymbolForKeyWithSpacesTest021
-     * @tc.desc Verify key with leading/trailing spaces is case-sensitive
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify key with leading/trailing spaces is case-sensitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForKeyWithSpacesTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test021_SymbolForKeyWithSpaces();
@@ -287,12 +287,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForSpecialCharKeyTest022
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_022
-     * @tc.name SymbolForSpecialCharKeyTest022
-     * @tc.desc Verify special character key is valid
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify special character key is valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForSpecialCharKeyTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test022_SymbolForSpecialCharKey();
@@ -300,12 +300,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForNumberObjectKeyTest023
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_023
-     * @tc.name SymbolForNumberObjectKeyTest023
-     * @tc.desc Verify Number object as key is coerced to string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Number object as key is coerced to string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForNumberObjectKeyTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test023_SymbolForNumberObjectKey();
@@ -313,12 +313,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForBooleanObjectKeyTest024
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_024
-     * @tc.name SymbolForBooleanObjectKeyTest024
-     * @tc.desc Verify Boolean object as key is coerced to string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Boolean object as key is coerced to string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForBooleanObjectKeyTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test024_SymbolForBooleanObjectKey();
@@ -326,12 +326,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolKeyForReturnTypeTest025
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_025
-     * @tc.name SymbolKeyForReturnTypeTest025
-     * @tc.desc Verify Symbol.keyFor() returns string or undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.keyFor() returns string or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolKeyForReturnTypeTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test025_SymbolKeyForReturnType();
@@ -339,12 +339,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForKeyReuseAfterDeleteTest026
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_026
-     * @tc.name SymbolForKeyReuseAfterDeleteTest026
-     * @tc.desc Verify reuse key after deleting global Symbol reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify reuse key after deleting global Symbol reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForKeyReuseAfterDeleteTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test026_SymbolForKeyReuseAfterDelete();
@@ -352,12 +352,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForAsObjectPropertyTest027
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_027
-     * @tc.name SymbolForAsObjectPropertyTest027
-     * @tc.desc Verify global Symbol as object property is non-enumerable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify global Symbol as object property is non-enumerable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForAsObjectPropertyTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test027_SymbolForAsObjectProperty();
@@ -365,12 +365,12 @@ export default function symbolForTestTest() {
     });
 
     /**
+     * @tc.name   SymbolForTypedArrayKeyTest028
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_028
-     * @tc.name SymbolForTypedArrayKeyTest028
-     * @tc.desc Verify TypedArray as key uses its toString()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify TypedArray as key uses its toString()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForTypedArrayKeyTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test028_SymbolForTypedArrayKey();
@@ -379,12 +379,12 @@ export default function symbolForTestTest() {
 
 
     /**
+     * @tc.name   SymbolForInPromiseTest030
      * @tc.number SUB_SYMBOL_FOR_STANDALONE_TEST_030
-     * @tc.name SymbolForInPromiseTest030
-     * @tc.desc Verify global Symbol with Promise.resolve retains identity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify global Symbol with Promise.resolve retains identity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolForInPromiseTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolForStandaloneTestUtils.test030_SymbolForInPromise();

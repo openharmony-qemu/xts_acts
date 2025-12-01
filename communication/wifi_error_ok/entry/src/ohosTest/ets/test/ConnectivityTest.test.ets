@@ -22,7 +22,6 @@ export default function ConnectivityTest() {
   describe('ConnectivityTest', () => {
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testConnectivityKitGetWifiStatus0100
      * @tc.number SUB_ConnectivityKit_GetWifiStatus_0100
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -43,7 +42,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testConnectivityKitGetWifiStatus0101
      * @tc.number SUB_ConnectivityKit_GetWifiStatus_0101
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -65,7 +63,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testConnectivityKitGetWifiStatus0102
      * @tc.number SUB_ConnectivityKit_GetWifiStatus_0102
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -87,7 +84,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testConnectivityKitGetWifiStatus0103
      * @tc.number SUB_ConnectivityKit_GetWifiStatus_0103
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -109,7 +105,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0100
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -131,7 +126,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0101
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0101
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -153,7 +147,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0102
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0102
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -175,7 +168,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0103
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0103
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -197,7 +189,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0104
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0104
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -219,7 +210,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0105
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0105
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -241,7 +231,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0106
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0106
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -263,7 +252,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0107
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0107
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -285,7 +273,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0108
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0108
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -307,7 +294,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0109
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0109
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
@@ -329,7 +315,6 @@ export default function ConnectivityTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0110
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0110
      * @tc.desc   testing OH_Wifi_IsWifiEnabled interface

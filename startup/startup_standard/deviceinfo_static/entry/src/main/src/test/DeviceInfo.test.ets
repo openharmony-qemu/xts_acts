@@ -22,12 +22,12 @@ import deviceinfo from '@ohos.deviceInfo'
 export default function DeviceInfoTest() {
   describe("DeviceInfoTest", (): void => {
     /**
+     * @tc.name   deviceinfo_test_static_0100
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_0100
-     * @tc.name deviceinfo_test_static_0100
-     * @tc.desc Get the deviceType
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the deviceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_0100 start');
@@ -47,12 +47,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_0200
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_0200
-     * @tc.name deviceinfo_test_static_0200
-     * @tc.desc Get the manufacture
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the manufacture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_0200 start');
@@ -72,12 +72,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_0300
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_0300
-     * @tc.name deviceinfo_test_static_0300
-     * @tc.desc Get the brand
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the brand
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_0300 start');
@@ -97,12 +97,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_0400
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_0400
-     * @tc.name deviceinfo_test_static_0400
-     * @tc.desc Get the marketName
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the marketName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_0400 start');
@@ -122,12 +122,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_0500
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_0500
-     * @tc.name deviceinfo_test_static_0500
-     * @tc.desc Get the productSeries
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the productSeries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_0500 start');
@@ -147,12 +147,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_0600
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_0600
-     * @tc.name deviceinfo_test_static_0600
-     * @tc.desc Get the productModel
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the productModel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_0600 start');
@@ -172,12 +172,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_0700
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_0700
-     * @tc.name deviceinfo_test_static_0700
-     * @tc.desc Get the productModelAlias
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the productModelAlias
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_0700 start');
@@ -197,12 +197,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_0800
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_0800
-     * @tc.name deviceinfo_test_static_0800
-     * @tc.desc Get the softwareModel
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the softwareModel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_0800 start');
@@ -222,12 +222,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_0900
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_0900
-     * @tc.name deviceinfo_test_static_0900
-     * @tc.desc Get the hardwareModel
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the hardwareModel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_0900 start');
@@ -247,12 +247,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_1000
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_1000
-     * @tc.name deviceinfo_test_static_1000
-     * @tc.desc Get the serial
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the serial
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1000 start');
@@ -272,12 +272,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_1100
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_1100
-     * @tc.name deviceinfo_test_static_1100
-     * @tc.desc Get the bootloaderVersion
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the bootloaderVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1100 start');
@@ -299,12 +299,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_1200
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_1200
-     * @tc.name deviceinfo_test_static_1200
-     * @tc.desc Get the abiList
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the abiList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1200 start');
@@ -324,12 +324,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_1300
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_1300
-     * @tc.name deviceinfo_test_static_1300
-     * @tc.desc Get the securityPatchTag
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the securityPatchTag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1300 start');
@@ -349,12 +349,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_1400
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_1400
-     * @tc.name deviceinfo_test_static_1400
-     * @tc.desc Get the displayVersion
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the displayVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1400 start');
@@ -374,12 +374,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_1500
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_1500
-     * @tc.name deviceinfo_test_static_1500
-     * @tc.desc Get the incrementalVersion
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the incrementalVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1500 start');
@@ -399,12 +399,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_1600
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_1600
-     * @tc.name deviceinfo_test_static_1600
-     * @tc.desc Get the osReleaseType
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the osReleaseType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1600 start');
@@ -426,12 +426,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_1700
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_1700
-     * @tc.name deviceinfo_test_static_1700
-     * @tc.desc Get the osFullName
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the osFullName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1700 start');
@@ -451,12 +451,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_1800
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_1800
-     * @tc.name deviceinfo_test_static_1800
-     * @tc.desc Get the majorVersion
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the majorVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1800 start');
@@ -471,12 +471,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_1900
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_1900
-     * @tc.name deviceinfo_test_static_1900
-     * @tc.desc Get the seniorVersion
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the seniorVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1900 start');
@@ -491,12 +491,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_2000
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_2000
-     * @tc.name deviceinfo_test_static_2000
-     * @tc.desc Get the featureVersion
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the featureVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2000 start');;
@@ -511,12 +511,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_2100
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_2100
-     * @tc.name deviceinfo_test_static_2100
-     * @tc.desc Get the buildVersion
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the buildVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2100 start');
@@ -531,12 +531,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_2200
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_2200
-     * @tc.name deviceinfo_test_static_2200
-     * @tc.desc Get the sdkApiVersion
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the sdkApiVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2200 start');
@@ -551,12 +551,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_2300
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_2300
-     * @tc.name deviceinfo_test_static_2300
-     * @tc.desc Get the firstApiVersion
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the firstApiVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2300 start');
@@ -571,12 +571,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_2400
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_2400
-     * @tc.name deviceinfo_test_static_2400
-     * @tc.desc Get the versionId
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the versionId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2400 start');
@@ -596,12 +596,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_2500
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_2500
-     * @tc.name deviceinfo_test_static_2500
-     * @tc.desc Get the buildType
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the buildType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2500 start');
@@ -621,12 +621,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_2600
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_2600
-     * @tc.name deviceinfo_test_static_2600
-     * @tc.desc Get the buildUser
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the buildUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2600 start');
@@ -646,12 +646,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_2700
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_2700
-     * @tc.name deviceinfo_test_static_2700
-     * @tc.desc Get the buildHost
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the buildHost
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2700 start');
@@ -671,12 +671,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_2800
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_2800
-     * @tc.name deviceinfo_test_static_2800
-     * @tc.desc Get the buildTime
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the buildTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2800 start');
@@ -696,12 +696,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_2900
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_2900
-     * @tc.name deviceinfo_test_static_2900
-     * @tc.desc Get the buildRootHash
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the buildRootHash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2900 start');
@@ -721,12 +721,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_3000
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_3000
-     * @tc.name deviceinfo_test_static_3000
-     * @tc.desc Get the udid
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the udid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_3000 start');
@@ -746,12 +746,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_3100
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_3100
-     * @tc.name deviceinfo_test_static_3100
-     * @tc.desc Get the distributionOSName
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the distributionOSName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_3100 start');
@@ -769,12 +769,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_3200
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_3200
-     * @tc.name deviceinfo_test_static_3200
-     * @tc.desc Get the distributionOSVersion
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the distributionOSVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_3200 start');
@@ -794,12 +794,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_3300
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_3300
-     * @tc.name deviceinfo_test_static_3300
-     * @tc.desc Get the distributionOSApiVersion
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the distributionOSApiVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_3300 start');
@@ -814,12 +814,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_3400
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_3400
-     * @tc.name deviceinfo_test_static_3400
-     * @tc.desc Get the distributionOSApiName
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the distributionOSApiName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_3400 start');
@@ -837,12 +837,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_3500
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_3500
-     * @tc.name deviceinfo_test_static_3500
-     * @tc.desc Get the distributionOSReleaseType
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the distributionOSReleaseType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_3500 start');
@@ -862,12 +862,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_3600
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_3600
-     * @tc.name deviceinfo_test_static_3600
-     * @tc.desc Get the ODID
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the ODID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_3600 start');
@@ -887,12 +887,12 @@ export default function DeviceInfoTest() {
     })
 
     /**
+     * @tc.name   deviceinfo_test_static_3700
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_3700
-     * @tc.name deviceinfo_test_static_3700
-     * @tc.desc Get the diskSN
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get the diskSN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deviceinfo_test_static_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_3700 start');

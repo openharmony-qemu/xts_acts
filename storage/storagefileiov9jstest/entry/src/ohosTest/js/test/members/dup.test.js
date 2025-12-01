@@ -22,14 +22,12 @@ export default function fileIODup() {
   describe('fileIO_fs_dup', function () {
 
   /**
+   * @tc.name   fileIO_test_dup_sync_000
    * @tc.number SUB_DF_FILEIO_DUP_SYNC_0000
-   * @tc.name fileIO_test_dup_sync_000
-   * @tc.desc Test dup() interfaces.
-   * Verifing the old and new fds share the same file offset.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test dup() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_dup_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_dup_sync_000');
@@ -53,14 +51,12 @@ export default function fileIODup() {
   });
 
   /**
+   * @tc.name   fileIO_test_dup_sync_001
    * @tc.number SUB_DF_FILEIO_DUP_SYNC_0100
-   * @tc.name fileIO_test_dup_sync_001
-   * @tc.desc Test dup() interfaces.
-   * Open the file in read-only mode, verifying the new fd is readable.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test dup() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_dup_sync_001', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_dup_sync_001');
@@ -85,14 +81,12 @@ export default function fileIODup() {
   });
 
   /**
+   * @tc.name   fileIO_test_dup_sync_002
    * @tc.number SUB_DF_FILEIO_DUP_SYNC_0200
-   * @tc.name fileIO_test_dup_sync_002
-   * @tc.desc Test dup() interfaces.
-   * Open the file in write-only mode, verifying the new fd is writable.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test dup() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_dup_sync_002', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_dup_sync_002');
@@ -117,13 +111,12 @@ export default function fileIODup() {
   });
 
   /**
+   * @tc.name   fileIO_test_dup_sync_003
    * @tc.number SUB_DF_FILEIO_DUP_SYNC_0300
-   * @tc.name fileIO_test_dup_sync_003
-   * @tc.desc Test dup() interfaces. Missing parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test dup() interfaces. Missing parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_dup_sync_003', Level.LEVEL3, function () {
     try {
@@ -136,14 +129,12 @@ export default function fileIODup() {
   });
 
   /**
+   * @tc.name   fileIO_test_dup_sync_004
    * @tc.number SUB_DF_FILEIO_DUP_SYNC_0400
-   * @tc.name fileIO_test_dup_sync_004
-   * @tc.desc Test dup() interfaces.
-   * The file descriptor must be valid(fd > 0).
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test dup() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_dup_sync_004', Level.LEVEL3, async function () {
 
@@ -157,14 +148,12 @@ export default function fileIODup() {
   });
 
   /**
+   * @tc.name   fileIO_test_dup_sync_005
    * @tc.number SUB_DF_FILEIO_DUP_SYNC_0500
-   * @tc.name fileIO_test_dup_sync_005
-   * @tc.desc Test dup() interfaces.
-   * The file has been closed and the file descriptor is invalid.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test dup() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_dup_sync_005', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_dup_sync_005');

@@ -54,7 +54,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction0100
      * @tc.number testbatchInsertWithConflictResolutionInTransaction0100
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0100
@@ -99,7 +98,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction0200
      * @tc.number testbatchInsertWithConflictResolutionInTransaction0200
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0200
@@ -144,7 +142,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction0300
      * @tc.number testbatchInsertWithConflictResolutionInTransaction0300
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0300
@@ -189,7 +186,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction0400
      * @tc.number testbatchInsertWithConflictResolutionInTransaction0400
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0400
@@ -234,7 +230,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction0500
      * @tc.number testbatchInsertWithConflictResolutionInTransaction0500
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0500
@@ -279,7 +274,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction0600
      * @tc.number testbatchInsertWithConflictResolutionInTransaction0600
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0600
@@ -324,7 +318,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction0700
      * @tc.number testbatchInsertWithConflictResolutionInTransaction0700
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0700
@@ -375,7 +368,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction0800
      * @tc.number testbatchInsertWithConflictResolutionInTransaction0800
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0800
@@ -425,7 +417,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction0900
      * @tc.number testbatchInsertWithConflictResolutionInTransaction0900
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0900
@@ -477,7 +468,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction1000
      * @tc.number testbatchInsertWithConflictResolutionInTransaction1000
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction1000
@@ -520,7 +510,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction1100
      * @tc.number testbatchInsertWithConflictResolutionInTransaction1100
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction1100
@@ -560,7 +549,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction1200
      * @tc.number testbatchInsertWithConflictResolutionInTransaction1200
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction1200
@@ -608,7 +596,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction1300
      * @tc.number testbatchInsertWithConflictResolutionInTransaction1300
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction1300
@@ -638,7 +625,6 @@ export default function relationalStoreBatchinsertTransactionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testbatchInsertWithConflictResolutionInTransaction1400
      * @tc.number testbatchInsertWithConflictResolutionInTransaction1400
      * @tc.desc   testbatchInsertWithConflictResolutionInTransaction1400

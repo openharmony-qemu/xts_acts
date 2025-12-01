@@ -166,7 +166,9 @@ export default function textAreaBC1Jsunit() {
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(BY.key('textArea1'));
       await text.inputText('rrr');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(2047)
+      await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('change');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('textAreaBC1Jsunit_0400 obj1 is: ' + obj1.$attrs.content);
@@ -312,7 +314,9 @@ export default function textAreaBC1Jsunit() {
       let driver = await UiDriver.create()
       let text = await driver.findComponent(BY.key('textArea1'));
       await text.inputText('ee');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(2047)
+      await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('change');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('textAreaBC1Jsunit_0800 obj1 is: ' + obj1.$attrs.content);
@@ -340,7 +344,9 @@ export default function textAreaBC1Jsunit() {
       let driver = await UiDriver.create()
       let text = await driver.findComponent(BY.key('textArea2'));
       await text.inputText('yy');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(2047)
+      await CommonFunc.sleep(1000);
       let y = await driver.findComponent(BY.key('button2'));
       await y.click();
       await CommonFunc.sleep(1000);

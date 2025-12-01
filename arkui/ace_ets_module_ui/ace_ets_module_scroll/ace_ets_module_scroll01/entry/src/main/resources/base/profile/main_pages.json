@@ -40,6 +40,8 @@
         "MainAbility/pages/Scroll/scrollStopDrag",
         "MainAbility/pages/Scroll/zoomScaleScroll",
         "MainAbility/pages/Scroll/zoomScaleNull",
+        "MainAbility/pages/Scroll/scrollZoomModifier",
+        "MainAbility/pages/Scroll/scrollDraggingFling",
         "MainAbility/pages/Scroll/scrollScrollbarColor",
         "MainAbility/pages/Scroll/ScrollContentSize"
     ]

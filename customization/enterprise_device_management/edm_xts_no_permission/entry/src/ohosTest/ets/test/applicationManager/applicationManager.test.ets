@@ -36,12 +36,12 @@ import common from '@ohos.enterprise.common';
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDRUNNINGBUNDLESSYNC_001
-     * @tc.name      : test_addDisallowedRunningBundlesSync_001
-     * @tc.desc      : test addDisallowedRunningBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedRunningBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDRUNNINGBUNDLESSYNC_001
+     * @tc.desc   test addDisallowedRunningBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedRunningBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -57,12 +57,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDRUNNINGBUNDLESSYNC_002
-     * @tc.name      : test_addDisallowedRunningBundlesSync_002
-     * @tc.desc      : test addDisallowedRunningBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedRunningBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDRUNNINGBUNDLESSYNC_002
+     * @tc.desc   test addDisallowedRunningBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedRunningBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
@@ -78,12 +78,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDRUNNINGBUNDLESSYNC_001
-     * @tc.name      : test_removeDisallowedRunningBundlesSync_001
-     * @tc.desc      : test removeDisallowedRunningBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedRunningBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDRUNNINGBUNDLESSYNC_001
+     * @tc.desc   test removeDisallowedRunningBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedRunningBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -99,12 +99,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDRUNNINGBUNDLESSYNC_002
-     * @tc.name      : test_removeDisallowedRunningBundlesSync_002
-     * @tc.desc      : test removeDisallowedRunningBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedRunningBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDRUNNINGBUNDLESSYNC_002
+     * @tc.desc   test removeDisallowedRunningBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedRunningBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
@@ -120,12 +120,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDRUNNINGBUNDLESSYNC_001
-     * @tc.name      : test_getDisallowedRunningBundlesSync_001
-     * @tc.desc      : test getDisallowedRunningBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedRunningBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDRUNNINGBUNDLESSYNC_001
+     * @tc.desc   test getDisallowedRunningBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedRunningBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -141,12 +141,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDRUNNINGBUNDLESSYNC_002
-     * @tc.name      : test_getDisallowedRunningBundlesSync_002
-     * @tc.desc      : test getDisallowedRunningBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedRunningBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDRUNNINGBUNDLESSYNC_002
+     * @tc.desc   test getDisallowedRunningBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedRunningBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
@@ -162,12 +162,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_001
-     * @tc.name      : test_addAutoStartApps_001
-     * @tc.desc      : test addAutoStartApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAutoStartApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_001
+     * @tc.desc   test addAutoStartApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAutoStartApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -184,12 +184,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_001
-     * @tc.name      : test_removeAutoStartApps_001
-     * @tc.desc      : test removeAutoStartApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAutoStartApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_001
+     * @tc.desc   test removeAutoStartApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAutoStartApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -206,12 +206,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETAUTOSTARTAPPS_001
-     * @tc.name      : test_getAutoStartApps_001
-     * @tc.desc      : test getAutoStartApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getAutoStartApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAUTOSTARTAPPS_001
+     * @tc.desc   test getAutoStartApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getAutoStartApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -227,12 +227,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_DISALLOWMODIFY_001
-     * @tc.name      : test_addAutoStartApps_disallowModify_001
-     * @tc.desc      : test addAutoStartAppsWithDisallowModify method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAutoStartApps_disallowModify_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_DISALLOWMODIFY_001
+     * @tc.desc   test addAutoStartAppsWithDisallowModify method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAutoStartApps_disallowModify_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -249,12 +249,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_USERID_001
-     * @tc.name      : test_removeAutoStartApps_userId_001
-     * @tc.desc      : test removeAutoStartAppsWithUserId method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAutoStartApps_userId_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_USERID_001
+     * @tc.desc   test removeAutoStartAppsWithUserId method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAutoStartApps_userId_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -271,12 +271,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETAUTOSTARTAPPS_USERID_001
-     * @tc.name      : test_getAutoStartApps_userId_001
-     * @tc.desc      : test getAutoStartAppsWithUserId method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getAutoStartApps_userId_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAUTOSTARTAPPS_USERID_001
+     * @tc.desc   test getAutoStartAppsWithUserId method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getAutoStartApps_userId_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -292,12 +292,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ISMODIFYAUTOSTARTAPPSDISALLOWED_001
-     * @tc.name      : test_isModifyAutoStartAppsDisallowed_001
-     * @tc.desc      : test isModifyAutoStartAppsDisallowed method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_isModifyAutoStartAppsDisallowed_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ISMODIFYAUTOSTARTAPPSDISALLOWED_001
+     * @tc.desc   test isModifyAutoStartAppsDisallowed method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_isModifyAutoStartAppsDisallowed_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -313,12 +313,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ISMODIFYKEEPALIVEAPPSDISALLOWED_001
-     * @tc.name      : test_isModifyKeepAliveAppsDisallowed_001
-     * @tc.desc      : test isModifyKeepAliveAppsDisallowed method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_isModifyKeepAliveAppsDisallowed_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ISMODIFYKEEPALIVEAPPSDISALLOWED_001
+     * @tc.desc   test isModifyKeepAliveAppsDisallowed method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_isModifyKeepAliveAppsDisallowed_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -334,12 +334,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_DISALLOWMODIFY_001
-     * @tc.name      : test_addKeepAliveAppsDisallowModify_001
-     * @tc.desc      : test addKeepAliveAppsWithDisallowModify method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addKeepAliveAppsDisallowModify_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_DISALLOWMODIFY_001
+     * @tc.desc   test addKeepAliveAppsWithDisallowModify method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addKeepAliveAppsDisallowModify_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -356,12 +356,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_001
-     * @tc.name      : test_addKeepAliveApps_001
-     * @tc.desc      : test addKeepAliveApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addKeepAliveApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_001
+     * @tc.desc   test addKeepAliveApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addKeepAliveApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -378,12 +378,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEKEEPALIVEAPPS_001
-     * @tc.name      : test_removeKeepAliveApps_001
-     * @tc.desc      : test removeKeepAliveApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeKeepAliveApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEKEEPALIVEAPPS_001
+     * @tc.desc   test removeKeepAliveApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeKeepAliveApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -400,12 +400,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETKEEPALIVEAPPS_001
-     * @tc.name      : test_getKeepAliveApps_001
-     * @tc.desc      : test getKeepAliveApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getKeepAliveApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETKEEPALIVEAPPS_001
+     * @tc.desc   test getKeepAliveApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getKeepAliveApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -422,12 +422,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_001
-     * @tc.name      : test_addFreezeExemptedApps_001
-     * @tc.desc      : test addFreezeExemptedApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addFreezeExemptedApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_001
+     * @tc.desc   test addFreezeExemptedApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addFreezeExemptedApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -450,12 +450,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_001
-     * @tc.name      : test_removeFreezeExemptedApps_001
-     * @tc.desc      : test removeFreezeExemptedApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeFreezeExemptedApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_001
+     * @tc.desc   test removeFreezeExemptedApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeFreezeExemptedApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -478,12 +478,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_001
-     * @tc.name      : test_getFreezeExemptedApps_001
-     * @tc.desc      : test getFreezeExemptedApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getFreezeExemptedApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_001
+     * @tc.desc   test getFreezeExemptedApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getFreezeExemptedApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -499,12 +499,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDUSERNONSTOPAPPS_001
-     * @tc.name      : test_addUserNonStopApps_001
-     * @tc.desc      : test addUserNonStopApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addUserNonStopApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDUSERNONSTOPAPPS_001
+     * @tc.desc   test addUserNonStopApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addUserNonStopApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -527,12 +527,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEUSERNONSTOPAPPS_001
-     * @tc.name      : test_removeUserNonStopApps_001
-     * @tc.desc      : test removeUserNonStopApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeUserNonStopApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEUSERNONSTOPAPPS_001
+     * @tc.desc   test removeUserNonStopApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeUserNonStopApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -555,12 +555,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETUSERNONSTOPAPPS_001
-     * @tc.name      : test_getUserNonStopApps_001
-     * @tc.desc      : test getUserNonStopApps method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getUserNonStopApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETUSERNONSTOPAPPS_001
+     * @tc.desc   test getUserNonStopApps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getUserNonStopApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -576,12 +576,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA
-     * @tc.name      : test_clearUpApplicationData
-     * @tc.desc      : test clearUpApplicationData method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA
+     * @tc.desc   test clearUpApplicationData method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData", Level.LEVEL2, async (done: Function) => {
       try {
@@ -597,12 +597,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_SETALLOWEDKIOSKAPPS_001
-     * @tc.name      : test_setAllowedKioskApps_001
-     * @tc.desc      : test setAllowedKioskApps method
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_setAllowedKioskApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETALLOWEDKIOSKAPPS_001
+     * @tc.desc   test setAllowedKioskApps method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_setAllowedKioskApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -619,12 +619,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETALLOWEDKIOSKAPPS_001
-     * @tc.name      : test_getAllowedKioskApps_001
-     * @tc.desc      : test getAllowedKioskApps method
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getAllowedKioskApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDKIOSKAPPS_001
+     * @tc.desc   test getAllowedKioskApps method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getAllowedKioskApps_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -640,12 +640,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_SETKIOSKFEATURES_001
-     * @tc.name      : test_setKioskFeatures_001
-     * @tc.desc      : test setKioskFeatures method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_setKioskFeatures_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETKIOSKFEATURES_001
+     * @tc.desc   test setKioskFeatures method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_setKioskFeatures_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -664,12 +664,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDALLOWEDRUNNINGBUNDLES
-     * @tc.name      : test_addAllowedRunningBundles_001
-     * @tc.desc      : test addAllowedRunningBundles method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAllowedRunningBundles_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDRUNNINGBUNDLES
+     * @tc.desc   test addAllowedRunningBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAllowedRunningBundles_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -685,12 +685,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDRUNNINGBUNDLES
-     * @tc.name      : test_removeAllowedRunningBundles_001
-     * @tc.desc      : test removeAllowedRunningBundles method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAllowedRunningBundles_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDRUNNINGBUNDLES
+     * @tc.desc   test removeAllowedRunningBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAllowedRunningBundles_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -706,12 +706,12 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETALLOWEDRUNNINGBUNDLES
-     * @tc.name      : test_getAllowedRunningBundles_001
-     * @tc.desc      : test getAllowedRunningBundles method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getAllowedRunningBundles_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDRUNNINGBUNDLES
+     * @tc.desc   test getAllowedRunningBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getAllowedRunningBundles_001", Level.LEVEL2, async (done: Function) => {
       try {

@@ -70,12 +70,12 @@ let fontDescExpectData: Array<FontDescData> = [
 export default function TextGetFontDescTest() {
   describe("TextGetFontDescTest", (): void => {
     /**
-     * @tc.number     testGetFontDescStatic
-     * @tc.name       testGetFontDescStatic
-     * @tc.desc       To test method get font desc
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      LEVEL1
+     * @tc.name   testGetFontDescStatic
+     * @tc.number testGetFontDescStatic
+     * @tc.desc   To test method get font desc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetFontDescStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

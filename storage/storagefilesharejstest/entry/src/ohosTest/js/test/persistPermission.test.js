@@ -22,15 +22,13 @@ export default function FileSahre_PersistPermission_test() {
     describe('PersistPermission_test', function () {
 
       /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0100
-      * @tc.name FileShare_persistPermission_001
-      * @tc.desc Test persistPermission() interfaces
-      * Test normal uri and OperationMode is READ_MODE.
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 0
-      * @tc.require
-      */
+       * @tc.name   FileShare_persistPermission_001
+       * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0100
+       * @tc.desc   Test persistPermission() interfaces
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('FileShare_persistPermission_001', Level.LEVEL0, async function (done) {
           try {
           let fileStr = "/data/storage/el2/base/haps/entry/files/FileShare_persistPermission_001.txt";
@@ -62,15 +60,13 @@ export default function FileSahre_PersistPermission_test() {
       });
 
       /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0200
-      * @tc.name FileShare_persistPermission_002
-      * @tc.desc Test persistPermission() interfaces
-      * Test normal uri and OperationMode is READ_MODE and WRITE_MODE .
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 0
-      * @tc.require
-      */
+       * @tc.name   FileShare_persistPermission_002
+       * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0200
+       * @tc.desc   Test persistPermission() interfaces
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('FileShare_persistPermission_002', Level.LEVEL0, async function (done) {
           try {
           let fileStr = "/data/storage/el2/base/haps/entry/files/FileShare_persistPermission_002.txt";
@@ -102,15 +98,13 @@ export default function FileSahre_PersistPermission_test() {
       });
 
       /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0300
-      * @tc.name FileShare_persistPermission_003
-      * @tc.desc Test persistPermission() interfaces
-      * Test normal uri and OperationMode is INVALID_MODE -1.
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 3
-      * @tc.require
-      */
+       * @tc.name   FileShare_persistPermission_003
+       * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0300
+       * @tc.desc   Test persistPermission() interfaces
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('FileShare_persistPermission_003', Level.LEVEL3, async function (done) {
           try {
           let fileStr1 = "/data/storage/el2/base/haps/entry/files/FileShare_persistPermission_003.txt";
@@ -155,15 +149,13 @@ export default function FileSahre_PersistPermission_test() {
       });
 
       /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0400
-      * @tc.name FileShare_persistPermission_004
-      * @tc.desc Test persistPermission() interfaces
-      * Test INVALID_PATH uri and OperationMode is READ_MODE.
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 3
-      * @tc.require
-      */
+       * @tc.name   FileShare_persistPermission_004
+       * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0400
+       * @tc.desc   Test persistPermission() interfaces
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('FileShare_persistPermission_004', Level.LEVEL3, async function (done) {
           try {
           let fileStr1 = "/data/storage/el2/base/haps/entry/files/FileShare_persistPermission_004.txt";
@@ -209,15 +201,13 @@ export default function FileSahre_PersistPermission_test() {
       });
 
       /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0500
-      * @tc.name FileShare_persistPermission_005
-      * @tc.desc Test persistPermission() interfaces
-      * Test normal uri and OperationMode is READ_MODE and PolicyErrorCode is PERSISTENCE_FORBIDDEN.
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 3
-      * @tc.require
-      */
+       * @tc.name   FileShare_persistPermission_005
+       * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0500
+       * @tc.desc   Test persistPermission() interfaces
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('FileShare_persistPermission_005', Level.LEVEL3, async function (done) {
         try {
           let fileStr1 = "/data/storage/el2/base/haps/entry/files/FileShare_persistPermission_005.txt";

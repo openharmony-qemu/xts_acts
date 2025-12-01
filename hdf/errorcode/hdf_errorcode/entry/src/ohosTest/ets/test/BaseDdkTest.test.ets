@@ -48,7 +48,6 @@ export default function ActsBaseDDkTest() {
       console.log(TAG, '*************hid Unit HidEmitEventTest end*************');
     })
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100
      * @tc.number SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100
      * @tc.desc   Test DdkMapAshmemAshmemFd.
@@ -70,7 +69,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkMapAshmemAddress_0200
      * @tc.number SUB_Driver_Ext_DdkMapAshmemAddress_0200
      * @tc.desc   Test DdkMapAshmemAddress.
@@ -92,7 +90,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkMapAshmemSize_0300
      * @tc.number SUB_Driver_Ext_DdkMapAshmemSize_0300
      * @tc.desc   Test DdkMapAshmemSize.
@@ -114,7 +111,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkMapAshmemOffset_0400
      * @tc.number SUB_Driver_Ext_DdkMapAshmemOffset_0400
      * @tc.desc   Test DdkMapAshmemOffset.
@@ -136,7 +132,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkMapAshmemBufferLength_0500
      * @tc.number SUB_Driver_Ext_DdkMapAshmemBufferLength_0500
      * @tc.desc   Test DdkMapAshmemBufferLength.
@@ -158,7 +153,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600
      * @tc.number SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600
      * @tc.desc   Test DdkMapAshmemTransferredLength.
@@ -180,7 +174,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkMapAshmemFailure_0700
      * @tc.number SUB_Driver_Ext_DdkMapAshmemFailure_0700
      * @tc.desc   Test DdkMapAshmemFailure.
@@ -202,7 +195,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800
      * @tc.number SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800
      * @tc.desc   Test DdkMapAshmemInvalidParameter.
@@ -224,7 +216,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900
      * @tc.number SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900
      * @tc.desc   Test DdkMapAshmemInvalidOperation.
@@ -246,7 +237,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkMapAshmemNullPTR_1000
      * @tc.number SUB_Driver_Ext_DdkMapAshmemNullPTR_1000
      * @tc.desc   Test DdkMapAshmemNullPTR.
@@ -268,7 +258,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkUnmapAshmemFailure_1100
      * @tc.number SUB_Driver_Ext_DdkUnmapAshmemFailure_1100
      * @tc.desc   Test DdkUnmapAshmemFailure.
@@ -290,7 +279,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_DdkDestroyAshmemFailure_1200
      * @tc.number SUB_Driver_Ext_DdkDestroyAshmemFailure_1200
      * @tc.desc   Test DdkDestroyAshmemFailure.
@@ -312,7 +300,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeTimeOut_1400
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeTimeOut_1400
      * @tc.desc   Test HidDdkErrCodeTimeOut.
@@ -334,7 +321,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeInitError_1500
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeInitError_1500
      * @tc.desc   Test HidDdkErrCodeInitError.
@@ -356,7 +342,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeNotFound_1600
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeNotFound_1600
      * @tc.desc   Test HidDdkErrCodeNotFound.
@@ -378,7 +363,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeIOError_1800
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeIOError_1800
      * @tc.desc   Test HidDdkErrCodeIOError.
@@ -401,7 +385,6 @@ export default function ActsBaseDDkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayHidRelAxes_2100
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayHidRelAxes_2100
      * @tc.desc   Test HidDdkErrCodeHidRelAxesArrayHidRelAxes.
@@ -423,7 +406,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayLength_2200
      * @tc.number SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayLength_2200
      * @tc.desc   Test HidDdkErrCodeHidRelAxesArrayLength.
@@ -445,7 +427,6 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   SUB_Driver_Ext_HidEmitEventInvalidParameter_2600
      * @tc.number SUB_Driver_Ext_HidEmitEventInvalidParameter_2600
      * @tc.desc   Test HidEmitEventInvalidParameter.

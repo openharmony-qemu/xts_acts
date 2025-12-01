@@ -58,13 +58,13 @@ export default function webTwoJsunit() {
       console.info("web beforeEach start");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_WarmupServiceWorker_API_0001
-     *@tc.name testWebViewWarmupServiceWorker
-     *@tc.desc test WarmupServiceWorker
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewWarmupServiceWorker
+     * @tc.number SUB_ACE_WEB_WarmupServiceWorker_API_0001
+     * @tc.desc   test WarmupServiceWorker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewWarmupServiceWorker',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);

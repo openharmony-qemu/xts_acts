@@ -41,7 +41,6 @@ export default function dataSharePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testOrderByAsc0001
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0010
      * @tc.desc   predicates orderByAsc normal test
@@ -62,7 +61,6 @@ export default function dataSharePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testOrderByDesc0001
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0020
      * @tc.desc   predicates orderByDesc normal test
@@ -84,7 +82,6 @@ export default function dataSharePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testAnd0001
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0030
      * @tc.desc   predicates and normal test
@@ -106,7 +103,6 @@ export default function dataSharePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testIn0001
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0040
      * @tc.desc   predicates in normal test
@@ -119,7 +115,7 @@ export default function dataSharePredicatesTest() {
       try {
         let numbersArr = new Array<ValueType>(255, 11.6, 13.0);
         let predicates = new data_dataSharePredicates.DataSharePredicates();
-        predicates.in("age", numbersArr);
+        predicates.inValues("age", numbersArr);
         expect(predicates != null && predicates != undefined).assertTrue()
       } catch (e: BusinessError) {
         expect().assertFail()
@@ -128,7 +124,6 @@ export default function dataSharePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testLimit0001
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0050
      * @tc.desc   predicates limit normal test

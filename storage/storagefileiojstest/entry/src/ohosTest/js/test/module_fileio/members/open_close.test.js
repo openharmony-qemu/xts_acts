@@ -23,13 +23,12 @@ export default function fileioOpenClose() {
 describe('fileio_open_close', function () {
 
   /**
+   * @tc.name   fileio_open_close_sync_000
    * @tc.number SUB_DF_FILEIO_OPEN_CLOSE_SYNC_0000
-   * @tc.name fileio_open_close_sync_000
-   * @tc.desc Test openSync() and closeSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openSync() and closeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_open_close_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_open_close_sync_000');
@@ -46,13 +45,12 @@ describe('fileio_open_close', function () {
   });
 
   /**
+   * @tc.name   fileio_open_close_sync_001
    * @tc.number SUB_DF_FILEIO_OPEN_CLOSE_SYNC_0010
-   * @tc.name fileio_open_close_sync_001
-   * @tc.desc Test openSync() and closeSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openSync() and closeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_open_close_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_open_close_sync_001');
@@ -70,13 +68,12 @@ describe('fileio_open_close', function () {
   });
 
   /**
+   * @tc.name   fileio_open_sync_000
    * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0000
-   * @tc.name fileio_open_sync_000
-   * @tc.desc Test openSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_open_sync_000', Level.LEVEL0, function () {
     try {
@@ -88,13 +85,12 @@ describe('fileio_open_close', function () {
   });
 
   /**
+   * @tc.name   fileio_open_sync_001
    * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0100
-   * @tc.name fileio_open_sync_001
-   * @tc.desc Test openSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_open_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_open_sync_001');
@@ -108,14 +104,12 @@ describe('fileio_open_close', function () {
   });
 
   /**
+   * @tc.name   fileio_open_sync_002
    * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0200
-   * @tc.name fileio_open_sync_002
-   * @tc.desc Test openSync() interface.
-   * Use default: flag = O_RDONLY, mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test openSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_open_sync_002', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_open_sync_002');
@@ -138,13 +132,12 @@ describe('fileio_open_close', function () {
   });
 
   /**
+   * @tc.name   fileio_close_sync_000
    * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_0000
-   * @tc.name fileio_close_sync_000
-   * @tc.desc Test closeSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test closeSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_close_sync_000', Level.LEVEL0, function () {
     try {
@@ -156,13 +149,12 @@ describe('fileio_open_close', function () {
   });
 
   /**
+   * @tc.name   fileio_close_sync_001
    * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_0010
-   * @tc.name fileio_close_sync_001
-   * @tc.desc Test closeSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test closeSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_close_sync_001', Level.LEVEL0, function () {
     try {

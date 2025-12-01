@@ -33,11 +33,14 @@ describe('hiSysEventSerTest', function () {
         console.info('hiSysEventSerTest afterEach called')
     })
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_3300
-	 * @tc.name testHiSysEventApi33
-	 * @tc.desc 验证调用write接口系统事件打点，hiview服务未成功启动，忽略事件打点，错误码11200003
-	 */
+ /**
+  * @tc.name   testHiSysEventApi33
+  * @tc.number DFX_DFT_HiSysEvent_JS_3300
+  * @tc.desc   验证调用write接口系统事件打点，hiview服务未成功启动，忽略事件打点，错误码11200003
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventApi33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi33 start')
 		try {
@@ -65,11 +68,14 @@ describe('hiSysEventSerTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_6700
-	 * @tc.name testHiSysEventApi67
-	 * @tc.desc 验证调用addwatcher，hiview服务未成功启动，调用失败，返回错误码11200003
-	 */
+ /**
+  * @tc.name   testHiSysEventApi67
+  * @tc.number DFX_DFT_HiSysEvent_JS_6700
+  * @tc.desc   验证调用addwatcher，hiview服务未成功启动，调用失败，返回错误码11200003
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventApi67', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi67 start')
 		let watcher = {
@@ -94,11 +100,14 @@ describe('hiSysEventSerTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_6800
-	 * @tc.name testHiSysEventApi68
-	 * @tc.desc 验证调用query，hiview服务未成功启动，调用失败，返回错误码11200003
-	 */
+ /**
+  * @tc.name   testHiSysEventApi68
+  * @tc.number DFX_DFT_HiSysEvent_JS_6800
+  * @tc.desc   验证调用query，hiview服务未成功启动，调用失败，返回错误码11200003
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventApi68', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi68 start')
 		try {
@@ -123,11 +132,14 @@ describe('hiSysEventSerTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_0900
-	 * @tc.name testHiSysEventBox09
-	 * @tc.desc 验证调用exportSysEvents接口，关闭hiview进程，抛出错误码11200003
-	 */
+ /**
+  * @tc.name   testHiSysEventBox09
+  * @tc.number DFX_DFT_HiSysevent_SandBox_0900
+  * @tc.desc   验证调用exportSysEvents接口，关闭hiview进程，抛出错误码11200003
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventBox09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventBox09 start')
 		try {
@@ -149,11 +161,14 @@ describe('hiSysEventSerTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_2300
-	 * @tc.name testHiSysEventBox23
-	 * @tc.desc 验证调用subscribe接口，关闭hiview进程，抛出错误码11200003
-	 */
+ /**
+  * @tc.name   testHiSysEventBox23
+  * @tc.number DFX_DFT_HiSysevent_SandBox_2300
+  * @tc.desc   验证调用subscribe接口，关闭hiview进程，抛出错误码11200003
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventBox23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventBox23 start')
 		try {
@@ -171,11 +186,14 @@ describe('hiSysEventSerTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_2400
-	 * @tc.name testHiSysEventBox24
-	 * @tc.desc 验证调用unsubscribe接口，关闭hiview进程，抛出错误码11200003
-	 */
+ /**
+  * @tc.name   testHiSysEventBox24
+  * @tc.number DFX_DFT_HiSysevent_SandBox_2400
+  * @tc.desc   验证调用unsubscribe接口，关闭hiview进程，抛出错误码11200003
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventBox24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventBox24 start')
 		try {

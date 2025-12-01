@@ -26,13 +26,12 @@ export default function SendableGroupWithAllocTest() {
         })
 
         /**
-         * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_GROUPWITHALLOC_001
-         * @tc.name: testManySendablesToGroup
-         * @tc.desc: checks Sendable with primitive type
-         * @tc.author: oleg-ignatenko
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 0
+         * @tc.name   testManySendablesToGroup
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_GROUPWITHALLOC_001
+         * @tc.desc   checks Sendable with primitive type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testManySendablesToGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
            let result = await testManySendablesToGroup();
@@ -41,13 +40,12 @@ export default function SendableGroupWithAllocTest() {
         })
 
         /**
-         * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_GROUPWITHALLOC_002
-         * @tc.name: testManySendablesToGroupWithAlloc
-         * @tc.desc: checks Sendable with primitive type
-         * @tc.author: oleg-ignatenko
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 2
+         * @tc.name   testSendableToGroupAndUpdateWithAlloc
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_GROUPWITHALLOC_002
+         * @tc.desc   checks Sendable with primitive type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("testSendableToGroupAndUpdateWithAlloc", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
            let result = await skipConditional(
@@ -57,13 +55,12 @@ export default function SendableGroupWithAllocTest() {
         })
 
         /**
-         * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_GROUPWITHALLOC_003
-         * @tc.name: testManySendablesToGroupWithAlloc
-         * @tc.desc: checks Sendable with primitive type
-         * @tc.author: oleg-ignatenko
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 2
+         * @tc.name   testSendablesFromOtherTaskWithAlloc
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_GROUPWITHALLOC_003
+         * @tc.desc   checks Sendable with primitive type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("testSendablesFromOtherTaskWithAlloc", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
            let result = await skipConditional(

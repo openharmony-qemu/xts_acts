@@ -53,13 +53,13 @@ export default function ActsAceWebSafeBrowsing() {
 
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_SAFEBROWSING_API_0001
-     *@tc.name testEnableSafeBrowsingTrue
-     *@tc.desc test EnableSafeBrowsingTrue
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testEnableSafeBrowsingTrue
+     * @tc.number SUB_ACE_WEB_SAFEBROWSING_API_0001
+     * @tc.desc   test EnableSafeBrowsingTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEnableSafeBrowsingTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitEnableSafeBrowsingTrue"
@@ -68,13 +68,13 @@ export default function ActsAceWebSafeBrowsing() {
       await Utils.waitAndClickComponent(driver, 'webSafeBrowsing');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SAFEBROWSING_API_0002
-     *@tc.name testEnableSafeBrowsingFalse
-     *@tc.desc test EnableSafeBrowsingFalse
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testEnableSafeBrowsingFalse
+     * @tc.number SUB_ACE_WEB_SAFEBROWSING_API_0002
+     * @tc.desc   test EnableSafeBrowsingFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEnableSafeBrowsingFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitEnableSafeBrowsingFalse"
@@ -83,13 +83,13 @@ export default function ActsAceWebSafeBrowsing() {
       await Utils.waitAndClickComponent(driver, 'webSafeBrowsing');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SAFEBROWSING_API_0003
-     *@tc.name testIsSafeBrowsingEnabledTrue
-     *@tc.desc test IsSafeBrowsingEnabledTrue
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testIsSafeBrowsingEnabledTrue
+     * @tc.number SUB_ACE_WEB_SAFEBROWSING_API_0003
+     * @tc.desc   test IsSafeBrowsingEnabledTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSafeBrowsingEnabledTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitIsSafeBrowsingEnabledTrue"
@@ -98,13 +98,13 @@ export default function ActsAceWebSafeBrowsing() {
       await Utils.waitAndClickComponent(driver, 'webSafeBrowsing');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SAFEBROWSING_API_0004
-     *@tc.name testIsSafeBrowsingEnabledFalse
-     *@tc.desc test IsSafeBrowsingEnabledFalse
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testIsSafeBrowsingEnabledFalse
+     * @tc.number SUB_ACE_WEB_SAFEBROWSING_API_0004
+     * @tc.desc   test IsSafeBrowsingEnabledFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSafeBrowsingEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitIsSafeBrowsingEnabledFalse"

@@ -31,12 +31,12 @@ export default function browserManagerTest() {
 
 function testSetPolicySync() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0100
-   * @tc.name      : test_setpolicysync_0100
-   * @tc.desc      : test setPolicySync method without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setpolicysync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0100
+   * @tc.desc   test setPolicySync method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setpolicysync_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -54,12 +54,12 @@ function testSetPolicySync() {
 
 function testSetManagedBrowserPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0100
-   * @tc.name      : test_setManagedBrowserPolicy_0100
-   * @tc.desc      : test setManagedBrowserPolicy method without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setManagedBrowserPolicy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0100
+   * @tc.desc   test setManagedBrowserPolicy method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setManagedBrowserPolicy_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -77,12 +77,12 @@ function testSetManagedBrowserPolicy() {
 
 function testGetManagedBrowserPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0100
-   * @tc.name      : test_getManagedBrowserPolicy_0100
-   * @tc.desc      : test getManagedBrowserPolicy method without active administration
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getManagedBrowserPolicy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0100
+   * @tc.desc   test getManagedBrowserPolicy method without active administration
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getManagedBrowserPolicy_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -95,12 +95,12 @@ function testGetManagedBrowserPolicy() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0200
-   * @tc.name      : test_getManagedBrowserPolicy_0200
-   * @tc.desc      : test getManagedBrowserPolicy method with appid is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getManagedBrowserPolicy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0200
+   * @tc.desc   test getManagedBrowserPolicy method with appid is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getManagedBrowserPolicy_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -116,12 +116,12 @@ function testGetManagedBrowserPolicy() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0300
-   * @tc.name      : test_getManagedBrowserPolicy_0300
-   * @tc.desc      : test getManagedBrowserPolicy method with invalid want
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getManagedBrowserPolicy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0300
+   * @tc.desc   test getManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getManagedBrowserPolicy_0300", Level.LEVEL2, async (done: Function) => {
     try {
@@ -136,12 +136,12 @@ function testGetManagedBrowserPolicy() {
 
 function testGetSelfManagedBrowserPolicyVersion() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETSELFMANAGEDBROWSERPOLICYVERSION_0100
-   * @tc.name      : test_getSelfManagedBrowserPolicyVersion_0100
-   * @tc.desc      : test getSelfManagedBrowserPolicyVersion
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getSelfManagedBrowserPolicyVersion_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETSELFMANAGEDBROWSERPOLICYVERSION_0100
+   * @tc.desc   test getSelfManagedBrowserPolicyVersion
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getSelfManagedBrowserPolicyVersion_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -158,12 +158,12 @@ function testGetSelfManagedBrowserPolicyVersion() {
 
 function testGetSelfManagedBrowserPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETSELFMANAGEDBROWSERPOLICY_0100
-   * @tc.name      : test_getSelfManagedBrowserPolicy_0100
-   * @tc.desc      : test getSelfManagedBrowserPolicy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getSelfManagedBrowserPolicy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETSELFMANAGEDBROWSERPOLICY_0100
+   * @tc.desc   test getSelfManagedBrowserPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getSelfManagedBrowserPolicy_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);

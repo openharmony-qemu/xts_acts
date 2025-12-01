@@ -34,7 +34,6 @@ export default function ActsLocationSwitchTest() {
     )
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_Location_StartLocatingTest0103
      * @tc.number SUB_LocationKit_OH_Location_StartLocating_Test_0103
      * @tc.desc   test OH_Location_StartLocating1.
@@ -59,7 +58,6 @@ export default function ActsLocationSwitchTest() {
     )
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_Location_StartLocatingTest0104
      * @tc.number SUB_LocationKit_OH_Location_StartLocating_Test_0104
      * @tc.desc   test OH_Location_StartLocating1.

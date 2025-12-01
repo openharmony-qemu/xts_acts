@@ -63,14 +63,14 @@ export default function webMediaPlayGestureAccess() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_MEDIAPLAYGESTUREACCESS_0100
-    * @tc.name        : testMediaPlayGestureAccess001
-    * @tc.desc        : test mediaPlayGestureAccess true
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testMediaPlayGestureAccess001
+     * @tc.number SUB_WEB_MEDIAPLAYGESTUREACCESS_0100
+     * @tc.desc   test mediaPlayGestureAccess true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMediaPlayGestureAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       emitKey = "emitMediaPlayGestureAccessTrue"
       Utils.emitEvent(emitKey, 300710)
@@ -81,14 +81,14 @@ export default function webMediaPlayGestureAccess() {
       await Utils.waitAndClickComponent(driver,'WebMediaPlayGestureAccessTestButton')
     })
 
-    /*
-    * @tc.number      : SUB_WEB_MEDIAPLAYGESTUREACCESS_0200
-    * @tc.name        : testMediaPlayGestureAccess002
-    * @tc.desc        : test mediaPlayGestureAccess false
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testMediaPlayGestureAccess002
+     * @tc.number SUB_WEB_MEDIAPLAYGESTUREACCESS_0200
+     * @tc.desc   test mediaPlayGestureAccess false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMediaPlayGestureAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       emitKey = "emitMediaPlayGestureAccessFalsePlay";
       Utils.emitEvent(emitKey, 300710)
@@ -99,14 +99,14 @@ export default function webMediaPlayGestureAccess() {
       await Utils.waitAndClickComponent(driver,'WebMediaPlayGestureAccessTestButton')
     })
 
-    /*
-    * @tc.number      : SUB_WEB_MEDIAPLAYGESTUREACCESS_0300
-    * @tc.name        : testMediaPlayGestureAccess003
-    * @tc.desc        : test mediaPlayGestureAccess false
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testMediaPlayGestureAccess003
+     * @tc.number SUB_WEB_MEDIAPLAYGESTUREACCESS_0300
+     * @tc.desc   test mediaPlayGestureAccess false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMediaPlayGestureAccess003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       emitKey = "emitMediaPlayGestureAccessFalsePause";
       Utils.emitEvent(emitKey, 300710)

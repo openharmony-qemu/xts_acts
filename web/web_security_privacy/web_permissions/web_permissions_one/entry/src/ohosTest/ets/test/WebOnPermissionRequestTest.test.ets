@@ -57,14 +57,14 @@ export default function webOnPermissionRequest() {
     })
 
 
-    /*
-    * @tc.number      : SUB_WEB_PERMISSIONREQUESTDENY_GROUP_0100
-    * @tc.name        : testPermissionRequestDenyGroup001
-    * @tc.desc        : test permissionRequest deny
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testPermissionRequestDenyGroup001
+     * @tc.number SUB_WEB_PERMISSIONREQUESTDENY_GROUP_0100
+     * @tc.desc   test permissionRequest deny
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPermissionRequestDenyGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPermissionRequestDeny001", 160860)
       Utils.registerBaseEvent("testPermissionRequestDeny001", '"deny"', 160870,
@@ -74,14 +74,14 @@ export default function webOnPermissionRequest() {
       await Utils.waitAndClickComponent(driver, "WebOnPermissionRequestTestButton");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_PERMISSIONREQUESTGRANT_GROUP_0100
-    * @tc.name        : testPermissionRequestGrantGroup001
-    * @tc.desc        : test permissionRequest grant
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testPermissionRequestGrantGroup001
+     * @tc.number SUB_WEB_PERMISSIONREQUESTGRANT_GROUP_0100
+     * @tc.desc   test permissionRequest grant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPermissionRequestGrantGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitPermissionRequestGrant001", 160860)
       Utils.registerBaseEvent("testPermissionRequestGrant001", '"grant"', 160880,

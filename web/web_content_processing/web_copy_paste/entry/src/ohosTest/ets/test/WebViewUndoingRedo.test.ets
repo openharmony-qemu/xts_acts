@@ -75,14 +75,14 @@ export default function ActswebviewUndoingRedo() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEWUNDOINGREDO_API_0001
-    * @tc.name        : testWebviewUndoingRedo
-    * @tc.desc        : testWebviewUndoingRedo
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testWebviewUndoingRedo
+     * @tc.number SUB_ACE_WEBVIEWUNDOINGREDO_API_0001
+     * @tc.desc   testWebviewUndoingRedo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebviewUndoingRedo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebviewUndoingRedo";
       Utils.emitEvent(emitKey, 130700);
@@ -90,14 +90,14 @@ export default function ActswebviewUndoingRedo() {
       sendEventByKey('webviewUndoingRedoButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEBVIEWUNDOINGREDO_API_0002
-    * @tc.name        : testWebviewUndoingRedo002
-    * @tc.desc        : testWebviewUndoingRedo002
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testWebviewUndoingRedo002
+     * @tc.number SUB_ACE_WEBVIEWUNDOINGREDO_API_0002
+     * @tc.desc   testWebviewUndoingRedo002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebviewUndoingRedo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebviewUndoingRedo002";
       Utils.emitEvent(emitKey, 130700);

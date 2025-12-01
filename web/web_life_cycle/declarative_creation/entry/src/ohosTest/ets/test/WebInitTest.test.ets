@@ -61,9 +61,13 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_0020
-     *tc.name OnControllerAttached                                                                                                                                                                                                                     *tc.desic Injects the JavaScript object into window and invoke the function in window
+    /**
+     * @tc.name   OnControllerAttached
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_0020
+     * @tc.desc   OnControllerAttached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnControllerAttached', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnControllerAttached', 138450)

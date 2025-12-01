@@ -33,7 +33,6 @@ export default function wifiDisableTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   isMeteredHotspotErrCode2501001Test
          * @tc.number isMeteredHotspotErrCode2501001Test
          * @tc.desc   Test isMeteredHotspotErrCode2501001Test API functionality
@@ -60,7 +59,6 @@ export default function wifiDisableTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   getLinkedInfoPromise2501001Test
          * @tc.number getLinkedInfoPromise2501001Test
          * @tc.desc   Test getLinkedInfoPromise2501001Test API functionality
@@ -86,7 +84,6 @@ export default function wifiDisableTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   getLinkedInfoCallback2501001Test
          * @tc.number getLinkedInfoCallback2501001Test
          * @tc.desc   Test getLinkedInfoCallback2501001Test API functionality
@@ -121,7 +118,6 @@ export default function wifiDisableTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   getLinkedInfoSync2501001Test
          * @tc.number getLinkedInfoSync2501001Test
          * @tc.desc   Test getLinkedInfoSync2501001Test API functionality

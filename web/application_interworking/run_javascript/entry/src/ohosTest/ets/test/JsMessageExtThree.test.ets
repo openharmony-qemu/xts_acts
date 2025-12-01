@@ -57,13 +57,13 @@ export default function jsMessageExtThree() {
     })
 
     /**
-    * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_NULL_0100
-    * @tc.name testPromiseGetErrorDescriptionNull001
-    * @tc.desc test Promise getErrorDescription null getType STRING
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 0
-    */
+     * @tc.name   testPromiseGetErrorDescriptionNull001
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_NULL_0100
+     * @tc.desc   test Promise getErrorDescription null getType STRING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPromiseGetErrorDescriptionNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseGetErrorDescriptionNull001", 143)
       Utils.registerBaseEvent("testPromiseGetErrorDescriptionNull001", true, 25112117, done,
@@ -73,12 +73,12 @@ export default function jsMessageExtThree() {
       sendEventByKey('JsMessageExtThreeButton', 10, '');
     })
     /**
+     * @tc.name   testPromiseGetErrorDescriptionNull002
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_NULL_0200
-     * @tc.name testPromiseGetErrorDescriptionNull002
-     * @tc.desc test Promise getErrorDescription null getType NUMBER
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Promise getErrorDescription null getType NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromiseGetErrorDescriptionNull002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseGetErrorDescriptionNull002", 143)
@@ -89,12 +89,12 @@ export default function jsMessageExtThree() {
       sendEventByKey('JsMessageExtThreeButton', 10, '');
     })
     /**
+     * @tc.name   testPromiseGetErrorDescriptionNull003
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_NULL_0300
-     * @tc.name testPromiseGetErrorDescriptionNull003
-     * @tc.desc test Promise getErrorDescription null getType BOOLEAN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Promise getErrorDescription null getType BOOLEAN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromiseGetErrorDescriptionNull003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseGetErrorDescriptionNull003", 143)
@@ -105,12 +105,12 @@ export default function jsMessageExtThree() {
       sendEventByKey('JsMessageExtThreeButton', 10, '');
     })
     /**
+     * @tc.name   testPromiseGetErrorDescriptionNull004
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_NULL_0400
-     * @tc.name testPromiseGetErrorDescriptionNull004
-     * @tc.desc test Promise getErrorDescription null getType ARRAY_BUFFER
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Promise getErrorDescription null getType ARRAY_BUFFER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromiseGetErrorDescriptionNull004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseGetErrorDescriptionNull004", 143)
@@ -121,12 +121,12 @@ export default function jsMessageExtThree() {
       sendEventByKey('JsMessageExtThreeButton', 10, '');
     })
     /**
+     * @tc.name   testPromiseGetErrorDescriptionNull005
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_PROMISE_NULL_0500
-     * @tc.name testPromiseGetErrorDescriptionNull005
-     * @tc.desc test Promise getErrorDescription null getType ARRAY
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Promise getErrorDescription null getType ARRAY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromiseGetErrorDescriptionNull005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseGetErrorDescriptionNull005", 143)
@@ -137,12 +137,12 @@ export default function jsMessageExtThree() {
       sendEventByKey('JsMessageExtThreeButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackGetErrorDescriptionNull001
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_CALLBACK_NULL_0100
-     * @tc.name testCallbackGetErrorDescriptionNull001
-     * @tc.desc test callback getErrorDescription null getType STRING
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test callback getErrorDescription null getType STRING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackGetErrorDescriptionNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackGetErrorDescriptionNull001", 143)
@@ -153,12 +153,12 @@ export default function jsMessageExtThree() {
       sendEventByKey('JsMessageExtThreeButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackGetErrorDescriptionNull002
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_CALLBACK_NULL_0200
-     * @tc.name testCallbackGetErrorDescriptionNull002
-     * @tc.desc test callback getErrorDescription null getType NUMBER
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test callback getErrorDescription null getType NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackGetErrorDescriptionNull002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackGetErrorDescriptionNull002", 143)
@@ -169,12 +169,12 @@ export default function jsMessageExtThree() {
       sendEventByKey('JsMessageExtThreeButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackGetErrorDescriptionNull003
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_CALLBACK_NULL_0300
-     * @tc.name testCallbackGetErrorDescriptionNull003
-     * @tc.desc test callback getErrorDescription null getType BOOLEAN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test callback getErrorDescription null getType BOOLEAN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackGetErrorDescriptionNull003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackGetErrorDescriptionNull003", 143)
@@ -185,12 +185,12 @@ export default function jsMessageExtThree() {
       sendEventByKey('JsMessageExtThreeButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackGetErrorDescriptionNull004
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_CALLBACK_NULL_0400
-     * @tc.name testCallbackGetErrorDescriptionNull004
-     * @tc.desc test callback getErrorDescription null getType ARRAY_BUFFER
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test callback getErrorDescription null getType ARRAY_BUFFER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackGetErrorDescriptionNull004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackGetErrorDescriptionNull004", 143)
@@ -201,12 +201,12 @@ export default function jsMessageExtThree() {
       sendEventByKey('JsMessageExtThreeButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackGetErrorDescriptionNull005
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_CALLBACK_NULL_0500
-     * @tc.name testCallbackGetErrorDescriptionNull005
-     * @tc.desc test callback getErrorDescription null getType ARRAY
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test callback getErrorDescription null getType ARRAY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackGetErrorDescriptionNull005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackGetErrorDescriptionNull005", 143)

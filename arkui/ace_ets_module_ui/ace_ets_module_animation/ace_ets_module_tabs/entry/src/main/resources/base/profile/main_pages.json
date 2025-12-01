@@ -64,8 +64,8 @@
         "MainAbility/pages/Tabs/curvesTabs",
         "MainAbility/pages/text/TextApi/tabsDemo",
         "MainAbility/pages/Tabs/barHeightNoMinHeightLimit",
-        "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex10",
-        "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex11",
-        "MainAbility/pages/Tabs/animationCurve"
+        "MainAbility/pages/Tabs/animationCurve",
+        "MainAbility/pages/Tabs/Tabs_onContentDidScroll/tabs_onContentDidScroll",
+        "MainAbility/pages/Tabs/Tabs_onContentDidScroll/tabs_undefined"
     ]
 }

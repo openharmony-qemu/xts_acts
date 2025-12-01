@@ -48,13 +48,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_0100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_0100
-     * @tc.name Test_Security_Button_PasteScenarios_0100
-     * @tc.desc Test SecurityComponent width attribute value is Normal and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent width attribute value is Normal and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_0100] START====');
@@ -157,13 +156,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_0200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_0200
-     * @tc.name Test_Security_Button_PasteScenarios_0200
-     * @tc.desc Test SecurityComponent height attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent height attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[TTest_Security_Button_PasteScenarios_0200] START====');
@@ -265,13 +263,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_0300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_0300
-     * @tc.name Test_Security_Button_PasteScenarios_0300
-     * @tc.desc Test SecurityComponent size.width attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent size.width attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_0300] START====');
@@ -376,13 +373,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_0400
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_0400
-     * @tc.name Test_Security_Button_PasteScenarios_0400
-     * @tc.desc Test SecurityComponent size.height attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent size.height attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_0400] START====');
@@ -487,13 +483,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_0500
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_0500
-     * @tc.name Test_Security_Button_PasteScenarios_0500
-     * @tc.desc Test SecurityComponent constraintSize.minWidth attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent constraintSize.minWidth attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_0500] START====');
@@ -598,13 +593,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_0600
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_0600
-     * @tc.name Test_Security_Button_PasteScenarios_0600
-     * @tc.desc Test SecurityComponent constraintSize.maxWidth attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent constraintSize.maxWidth attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_0600] START====');
@@ -709,13 +703,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_0700
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_0700
-     * @tc.name Test_Security_Button_PasteScenarios_0700
-     * @tc.desc Test SecurityComponent constraintSize.minHeight attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent constraintSize.minHeight attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_0700] START====');
@@ -820,13 +813,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_0800
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_0800
-     * @tc.name Test_Security_Button_PasteScenarios_0800
-     * @tc.desc Test SecurityComponent constraintSize.maxHeight attribute is Normal and Authorization succeed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent constraintSize.maxHeight attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_0800] START====');
@@ -931,13 +923,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_0900
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_0900
-     * @tc.name Test_Security_Button_PasteScenarios_0900
-     * @tc.desc Test SecurityComponent layoutDirection attribute is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent layoutDirection attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_0900] START====');
@@ -1040,13 +1031,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_1000
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_1000
-     * @tc.name Test_Security_Button_PasteScenarios_1000
-     * @tc.desc Test SecurityComponent iconSize attribute is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent iconSize attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_1000] START====');
@@ -1148,13 +1138,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_1100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_1100
-     * @tc.name Test_Security_Button_PasteScenarios_1100
-     * @tc.desc Test SecurityComponent position attribute X is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent position attribute X is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_1100] START====');
@@ -1256,13 +1245,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_1200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_1200
-     * @tc.name Test_Security_Button_PasteScenarios_1200
-     * @tc.desc Test SecurityComponent position attribute Y is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent position attribute Y is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_1200] START====');
@@ -1364,13 +1352,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_1300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_1300
-     * @tc.name Test_Security_Button_PasteScenarios_1300
-     * @tc.desc Test SecurityComponent markAnchor attribute X is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent markAnchor attribute X is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_1300] START====');
@@ -1472,13 +1459,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_1400
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_1400
-     * @tc.name Test_Security_Button_PasteScenarios_1400
-     * @tc.desc Test SecurityComponent markAnchor attribute Y is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent markAnchor attribute Y is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_1400] START====');
@@ -1580,13 +1566,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_1500
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_1500
-     * @tc.name Test_Security_Button_PasteScenarios_1500
-     * @tc.desc Test SecurityComponent offset attribute X is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent offset attribute X is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_1500] START====');
@@ -1688,13 +1673,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_1600
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_1600
-     * @tc.name Test_Security_Button_PasteScenarios_1600
-     * @tc.desc Test SecurityComponent offset attribute Y is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent offset attribute Y is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_1600] START====');
@@ -1796,13 +1780,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_1700
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_1700
-     * @tc.name Test_Security_Button_PasteScenarios_1700
-     * @tc.desc Test SecurityComponent fontSize attribute is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent fontSize attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_1700] START====');
@@ -1904,13 +1887,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_1800
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_1800
-     * @tc.name Test_Security_Button_PasteScenarios_1800
-     * @tc.desc Test SecurityComponent fontStyle attribute is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent fontStyle attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_1800] START====');
@@ -2012,13 +1994,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_1900
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_1900
-     * @tc.name Test_Security_Button_PasteScenarios_1900
-     * @tc.desc Test SecurityComponent fontWeight attribute is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent fontWeight attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_1900] START====');
@@ -2120,13 +2101,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_2000
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_2000
-     * @tc.name Test_Security_Button_PasteScenarios_2000
-     * @tc.desc Test SecurityComponent fontFamily attribute is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent fontFamily attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_2000] START====');
@@ -2228,13 +2208,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_2100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_2100
-     * @tc.name Test_Security_Button_PasteScenarios_2100
-     * @tc.desc Test SecurityComponent fontColor attribute is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent fontColor attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_2100] START====');
@@ -2336,13 +2315,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_2200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_2200
-     * @tc.name Test_Security_Button_PasteScenarios_2200
-     * @tc.desc Test SecurityComponent fontColor attribute is RGB value transmitted and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent fontColor attribute is RGB value transmitted and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_2200] START====');
@@ -2444,13 +2422,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_2300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_2300
-     * @tc.name Test_Security_Button_PasteScenarios_2300
-     * @tc.desc Test SecurityComponent iconColor attribute is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent iconColor attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_2300] START====');
@@ -2552,13 +2529,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_2400
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_2400
-     * @tc.name Test_Security_Button_PasteScenarios_2400
-     * @tc.desc Test SecurityComponent iconColor attribute is RGB value transmitted and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent iconColor attribute is RGB value transmitted and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_2400] START====');
@@ -2660,13 +2636,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_2500
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_2500
-     * @tc.name Test_Security_Button_PasteScenarios_2500
-     * @tc.desc Test SecurityComponent backgroundColor attribute is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent backgroundColor attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_2500] START====');
@@ -2768,13 +2743,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_2600
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_2600
-     * @tc.name Test_Security_Button_PasteScenarios_2600
-     * @tc.desc Test SecurityComponent backgroundColor attribute is RGB value transmitted and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent backgroundColor attribute is RGB value transmitted and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_2600] START====');
@@ -2876,13 +2850,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_2700
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_2700
-     * @tc.name Test_Security_Button_PasteScenarios_2700
-     * @tc.desc Test SecurityComponent borderColor attribute is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent borderColor attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_2700] START====');
@@ -2984,13 +2957,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_2800
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_2800
-     * @tc.name Test_Security_Button_PasteScenarios_2800
-     * @tc.desc Test SecurityComponent borderColor attribute is RGB value transmitted and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent borderColor attribute is RGB value transmitted and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_2800] START====');
@@ -3092,13 +3064,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_2900
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_2900
-     * @tc.name Test_Security_Button_PasteScenarios_2900
-     * @tc.desc Test SecurityComponent padding of left is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent padding of left is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_2900] START====');
@@ -3200,13 +3171,12 @@ export default function pasteComponentTest_1() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_PasteScenarios_3000
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_PasteScenarios_3000
-     * @tc.name Test_Security_Button_PasteScenarios_3000
-     * @tc.desc Test SecurityComponent padding of right is undefined and Authorization is successful
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent padding of right is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_PasteScenarios_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_PasteScenarios_3000] START====');

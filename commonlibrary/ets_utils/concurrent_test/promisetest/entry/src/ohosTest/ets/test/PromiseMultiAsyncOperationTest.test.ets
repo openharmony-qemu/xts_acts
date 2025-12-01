@@ -42,12 +42,12 @@ export default function PromiseMultiAsyncOperationTest() {
     });
 
     /**
+     * @tc.name   PromiseMultiAsyncOperationTest0100
      * @tc.number SUB_PROMISE_MULTI_ASYNC_OPERATION_TEST_0100
-     * @tc.name PromiseMultiAsyncOperationTest0100
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseMultiAsyncOperationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const taskSuccess1 = new taskpool.Task(taskSuccess);
@@ -77,12 +77,12 @@ export default function PromiseMultiAsyncOperationTest() {
     })
 
     /**
+     * @tc.name   PromiseMultiAsyncOperationTest0200
      * @tc.number SUB_PROMISE_MULTI_ASYNC_OPERATION_TEST_0200
-     * @tc.name PromiseMultiAsyncOperationTest0200
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseMultiAsyncOperationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const taskSuccess1 = new taskpool.Task(taskSuccess);
@@ -112,12 +112,12 @@ export default function PromiseMultiAsyncOperationTest() {
 
 
     /**
+     * @tc.name   PromiseMultiAsyncOperationTest0300
      * @tc.number SUB_PROMISE_MULTI_ASYNC_OPERATION_TEST_0300
-     * @tc.name PromiseMultiAsyncOperationTest0300
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseMultiAsyncOperationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const asyncFunction = async () => {

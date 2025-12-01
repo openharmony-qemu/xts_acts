@@ -49,6 +49,7 @@ export default function getBundleInfoForSelf() {
             if (err) {
               hilog.info(domain, tag, 'getBundleInfoForSelfPromiseDefault  ====> err' + JSON.stringify(err));
               expect().assertFail();
+              done();
             } else if (data !== undefined) {
               expect(data!.name).assertEqual(BUNDLE_NAME);
               expect(data!.vendor).assertEqual(VENDOR);
@@ -63,12 +64,13 @@ export default function getBundleInfoForSelf() {
               expect(data!.hapModulesInfo.length + '').assertEqual('0');
               expect(data!.reqPermissionDetails.length + '').assertEqual('0');
               expect(data!.permissionGrantStates.length + '').assertEqual('0');
+              hilog.info(domain, tag, 'getBundleInfoForSelfPromiseDefault  ====> end');
+              done();
             } else {
               hilog.info(domain, tag, 'getBundleInfoForSelfPromiseDefault  ====> Fail');
               expect().assertFail();
+              done();
             }
-            hilog.info(domain, tag, 'getBundleInfoForSelfPromiseDefault  ====> end');
-            done();
           })
       })
 
@@ -135,8 +137,8 @@ export default function getBundleInfoForSelf() {
         expect(data.hapModulesInfo.length + '').assertEqual('0');
         expect(data.reqPermissionDetails.length + '').assertEqual('0');
         expect(data.permissionGrantStates.length + '').assertEqual('0');
-        done();
         hilog.info(domain, tag, 'getBundleInfoForSelfSyncDefault end');
+        done();
       })
 
     /**
@@ -155,6 +157,7 @@ export default function getBundleInfoForSelf() {
             if (err) {
               hilog.info(domain, tag, 'getBundleInfoForSelfApplicationCallback  ====> err' + JSON.stringify(err));
               expect().assertFail();
+              done();
             }  if (data !== undefined) {
               expect(data.appInfo!.debug).assertTrue();
               expect(data.appInfo!.bundleType).assertEqual(bundle.BundleType.APP);
@@ -194,9 +197,11 @@ export default function getBundleInfoForSelf() {
               expect(data.appInfo!.installSource).assertEqual("unknown");
               expect(data.appInfo!.releaseType.length).assertLarger(0.0);
               expect(data.appInfo!.cloudFileSyncEnabled).assertFalse();
+              done();
             } else {
               hilog.info(domain, tag, 'getBundleInfoForSelfApplicationCallback  ====> Fail');
               expect().assertFail();
+              done();
             }
             hilog.info(domain, tag, 'getBundleInfoForSelfApplicationCallback  ====> end');
             done();
@@ -254,9 +259,11 @@ export default function getBundleInfoForSelf() {
               expect(data.appInfo!.installSource).assertEqual("unknown");
               expect(data.appInfo!.releaseType.length).assertLarger(0.0);
               expect(data.appInfo!.cloudFileSyncEnabled).assertFalse();
+              done();
             } else {
               hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> Fail');
               expect().assertFail();
+              done();
             }
             hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
             done();
@@ -324,9 +331,11 @@ export default function getBundleInfoForSelf() {
           expect(data.appInfo!.multiAppMode.multiAppModeType).assertEqual(bundle.MultiAppModeType.UNSPECIFIED);
           expect(data.appInfo!.multiAppMode.maxCount).assertEqual(0);
           expect(data.appInfo!.appIndex).assertEqual(0);
+          done();
         } else {
           hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> Fail');
           expect().assertFail();
+          done();
         }
         hilog.info(domain, tag, 'getBundleInfoForSelfApplicationSync  ====> end');
         done();
@@ -348,6 +357,7 @@ export default function getBundleInfoForSelf() {
             if (err) {
               hilog.info(domain, tag, 'getBundleInfoForSelfCallbackHapModuleInfo  ====> err' + JSON.stringify(err));
               expect().assertFail();
+              done();
             } else if (data !== undefined) {
               expect(data!.appInfo).assertEqual(null);
               expect(data!.hapModulesInfo.length).assertEqual(1.0);
@@ -374,9 +384,11 @@ export default function getBundleInfoForSelf() {
               expect(data!.hapModulesInfo[0].codePath).assertEqual("/data/storage/el1/bundle/entry.hap");
               expect(data!.hapModulesInfo[0].nativeLibraryPath).assertEqual("");
               expect(data!.hapModulesInfo[0].fileContextMenuConfig).assertEqual("");
+              done();
             } else {
               hilog.info(domain, tag, 'getBundleInfoForSelfCallbackHapModuleInfo  ====> Fail');
               expect().assertFail();
+              done();
             }
             hilog.info(domain, tag, 'getBundleInfoForSelfCallbackHapModuleInfo  ====> end');
             done();
@@ -490,6 +502,7 @@ export default function getBundleInfoForSelf() {
             if (err) {
               hilog.info(domain, tag, 'getBundleInfoForSelfCallbackAbilitiesInfo  ====> err' + JSON.stringify(err));
               expect().assertFail();
+              done();
             } else if (data !== undefined) {
               expect(data!.appInfo).assertEqual(null);
               expect(data!.hapModulesInfo[0].abilitiesInfo[0].bundleName).assertEqual(BUNDLE_NAME);
@@ -521,9 +534,11 @@ export default function getBundleInfoForSelf() {
               expect(data!.hapModulesInfo[0].abilitiesInfo[0].windowSize.minWindowWidth).assertEqual(0.0);
               expect(data!.hapModulesInfo[0].abilitiesInfo[0].windowSize.maxWindowHeight).assertEqual(0.0);
               expect(data!.hapModulesInfo[0].abilitiesInfo[0].windowSize.minWindowHeight).assertEqual(0.0);
+              done();
             } else {
               hilog.info(domain, tag, 'getBundleInfoForSelfCallbackAbilitiesInfo  ====> Fail');
               expect().assertFail();
+              done();
             }
             hilog.info(domain, tag, 'getBundleInfoForSelfCallbackAbilitiesInfo  ====> end');
             done();
@@ -1300,9 +1315,11 @@ export default function getBundleInfoForSelf() {
         expect(data!.hapModulesInfo[0].abilitiesInfo[2].orientationId).assertEqual(0.0);
         expect(data!.hapModulesInfo[0].abilitiesInfo[2].launchType).assertEqual(bundle.LaunchType.SPECIFIED);
         hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
+        done();
       } catch (err: BusinessError) {
         console.log('getBundleInfoForSelfApplicationPromise  ====> err', JSON.stringify(err));
         expect(err).assertFail();
+        done();
       }
       done();
     })  

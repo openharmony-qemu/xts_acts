@@ -46,14 +46,14 @@ export default function webScreenCaptureRequest() {
       console.info("ScreenCaptureRequestTest afterEach end");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_SCREENCAPTUREREQUESTDENY_GROUP_0100
-    * @tc.name        : testScreenCaptureRequestDenyGroupStatic001
-    * @tc.desc        : test screenCaptureRequest deny
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testScreenCaptureRequestDenyGroupStatic001
+     * @tc.number SUB_WEB_SCREENCAPTUREREQUESTDENY_GROUP_0100
+     * @tc.desc   test screenCaptureRequest deny
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScreenCaptureRequestDenyGroupStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('start testScreenCaptureRequestDenyGroupStatic001');
       let driver = Driver.create();
@@ -94,14 +94,14 @@ export default function webScreenCaptureRequest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_SCREENCAPTUREREQUESTGRANT_GROUP_0100
-    * @tc.name        : testScreenCaptureRequestGrantGroupStatic001
-    * @tc.desc        : test screenCaptureRequest grant
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testScreenCaptureRequestGrantGroupStatic001
+     * @tc.number SUB_WEB_SCREENCAPTUREREQUESTGRANT_GROUP_0100
+     * @tc.desc   test screenCaptureRequest grant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScreenCaptureRequestGrantGroupStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       await startAbility(bundleName, 'EntryAbility');

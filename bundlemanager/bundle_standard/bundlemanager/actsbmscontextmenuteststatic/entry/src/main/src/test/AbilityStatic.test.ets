@@ -59,6 +59,7 @@ export default function abilityTest() {
         await bundle.getBundleNameByUid(uid).then((data: string) => {
           console.info("getBundleNameByUidUnPermissionApi14 promise success " + data);
           expect().assertFail();
+          done();
         }).catch((err: BusinessError): void => {
           console.info("getBundleNameByUidUnPermissionApi14 promise error " + JSON.stringify(err));
           expect(err.code).assertEqual(201);

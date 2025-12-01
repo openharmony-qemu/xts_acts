@@ -23,13 +23,12 @@ export default function fileIORandomAccessFileRead() {
 describe('fileIO_randomAccessFile_read', function () {
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_000
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_0000
-     * @tc.name fileIO_randomaccessfile_read_sync_000
-     * @tc.desc Test readSync() interface. Test to read data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. Test to read data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_000', Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_000');
@@ -54,13 +53,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_001
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_0100
-     * @tc.name fileIO_randomaccessfile_read_sync_001
-     * @tc.desc Test readSync() interface. When the offset is 1. Test to read data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the offset is 1. Test to read data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_001', Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_001');
@@ -83,13 +81,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_003
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_0300
-     * @tc.name fileIO_randomaccessfile_read_sync_003
-     * @tc.desc Test readSync() interface. When the offset is 1 and the length is 5. Test to read data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the offset is 1 and the length is 5. Test to read data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_003', Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_003');
@@ -112,13 +109,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_004
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_0400
-     * @tc.name fileIO_randomaccessfile_read_sync_004
-     * @tc.desc Test readSync() interface. When offset equals buffer length. Test to read data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When offset equals buffer length. Test to read data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_004', Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_004');
@@ -141,13 +137,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_006
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_0600
-     * @tc.name fileIO_randomaccessfile_read_sync_006
-     * @tc.desc Test readSync() interface. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_sync_006', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_006');
@@ -168,13 +163,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_007
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_0700
-     * @tc.name fileIO_randomaccessfile_read_sync_007
-     * @tc.desc Test readSync() interface. When offset+length>buffer.size, read file_content.length - offset
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When offset+length>buffer.size, read file_content.length - offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_007', Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_007');
@@ -196,13 +190,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_008
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_0800
-     * @tc.name fileIO_randomaccessfile_read_sync_008
-     * @tc.desc Test readSync() interface. When the offset is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the offset is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_008', Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_008');
@@ -224,13 +217,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_009
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_0900
-     * @tc.name fileIO_randomaccessfile_read_sync_009
-     * @tc.desc Test readSync() interface. When the length is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the length is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_sync_009', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_009');
@@ -250,13 +242,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileio_randomaccessfile_read_sync_010
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_1000
-     * @tc.name fileio_randomaccessfile_read_sync_010
-     * @tc.desc Test readSync() interface. The "length" of option must > 0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interface. The "length" of option must > 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileio_randomaccessfile_read_sync_010', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileio_randomaccessfile_read_sync_010');
@@ -280,13 +271,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_011
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_1100
-     * @tc.name fileIO_randomaccessfile_read_sync_011
-     * @tc.desc Test readSync() interface. When there are no parameters.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When there are no parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_sync_011', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_011');
@@ -305,13 +295,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_012
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_1200
-     * @tc.name fileIO_randomaccessfile_read_sync_012
-     * @tc.desc Test readSync() interface. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_sync_012', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_012');
@@ -330,13 +319,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_013
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_1300
-     * @tc.name fileIO_randomaccessfile_read_sync_013
-     * @tc.desc Test readSync() interface. When the parameter type is wrong.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the parameter type is wrong.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_sync_013', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_013');
@@ -354,15 +342,14 @@ describe('fileIO_randomAccessFile_read', function () {
         }
     });
 
-    /**
-     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_1400
-     * @tc.name fileIO_randomaccessfile_read_sync_014
-     * @tc.desc Test readSync() interface. When the offset is 1 and the length is 5. Test to read data synchronously and filePointer after reading.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-     */
+        /**
+         * @tc.name   fileIO_randomaccessfile_read_sync_014
+         * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_1400
+         * @tc.desc   Test readSync() interface. When the offset is 1 and the length is 5. Test to read data synchronously and filePointer after reading.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('fileIO_randomaccessfile_read_sync_014', Level.LEVEL0, async function () {
             let fpath = await nextFileName('fileIO_randomaccessfile_read_sync_014');
             expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -387,13 +374,12 @@ describe('fileIO_randomAccessFile_read', function () {
         });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_000
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_0000
-     * @tc.name fileIO_randomaccessfile_read_async_000
-     * @tc.desc Test read() interface. return in callback mode. Test to read data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in callback mode. Test to read data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_000', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_000');
@@ -418,13 +404,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_001
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_0100
-     * @tc.name fileIO_randomaccessfile_read_async_001
-     * @tc.desc Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_001', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_001');
@@ -449,13 +434,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_002
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_0200
-     * @tc.name fileIO_randomaccessfile_read_async_002
-     * @tc.desc Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_002', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_002');
@@ -481,13 +465,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_003
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_0300
-     * @tc.name fileIO_randomaccessfile_read_async_003
-     * @tc.desc Test read() interface. return in callback mode. When the offset is 1 and the length is 5. Test to read data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in callback mode. When the offset is 1 and the length is 5. Test to read data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_003', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_003');
@@ -512,13 +495,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_004
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_0400
-     * @tc.name fileIO_randomaccessfile_read_async_004
-     * @tc.desc Test read() interface. return in promise mode. When offset equals buffer length. Test to read data asynchronously. 
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When offset equals buffer length. Test to read data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_004', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_004');
@@ -542,13 +524,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_005
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_0500
-     * @tc.name fileIO_randomaccessfile_read_async_005
-     * @tc.desc Test read() interface. return in callback mode. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in callback mode. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_async_005', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_005');
@@ -569,13 +550,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_006
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_0600
-     * @tc.name fileIO_randomaccessfile_read_async_006
-     * @tc.desc Test read() interface. return in promise mode. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_async_006', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_006');
@@ -595,13 +575,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_007
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_0700
-     * @tc.name fileIO_randomaccessfile_read_async_007
-     * @tc.desc Test read() interface. return in promise mode. When offset+length>buffer.size, read file_content.length - offset
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When offset+length>buffer.size, read file_content.length - offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_007', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_007');
@@ -622,13 +601,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_008
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_0800
-     * @tc.name fileIO_randomaccessfile_read_async_008
-     * @tc.desc Test read() interface. return in callback mode. When the offset is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in callback mode. When the offset is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_008', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_008');
@@ -652,13 +630,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_009
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_0900
-     * @tc.name fileIO_randomaccessfile_read_async_009
-     * @tc.desc Test read() interface. return in promise mode. When the length is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the length is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_async_009', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_009');
@@ -679,13 +656,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileio_randomaccessfile_read_async_010
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_1000
-     * @tc.name fileio_randomaccessfile_read_async_010
-     * @tc.desc Test read() interface. return in promise mode. The "length" of option must > 0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. The "length" of option must > 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileio_randomaccessfile_read_async_010', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileio_randomaccessfile_read_async_010');
@@ -710,13 +686,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_011
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_1100
-     * @tc.name fileIO_randomaccessfile_read_async_011
-     * @tc.desc Test read() interface. return in promise mode. When there are no parameters.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When there are no parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_async_011', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_011');
@@ -735,13 +710,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_012
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_1200
-     * @tc.name fileIO_randomaccessfile_read_async_012
-     * @tc.desc Test read() interface. return in promise mode. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_async_012', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_012');
@@ -760,13 +734,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_013
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_1300
-     * @tc.name fileIO_randomaccessfile_read_async_013
-     * @tc.desc Test read() interface. return in promise mode. When the parameter type is wrong.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the parameter type is wrong.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_async_013', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_013');
@@ -785,13 +758,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_014
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_1400
-     * @tc.name fileIO_randomaccessfile_read_async_014
-     * @tc.desc Test read() interface. return in callback mode. Test to read data asynchronously and checkout filePointer.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in callback mode. Test to read data asynchronously and checkout filePointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_014', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_014');
@@ -818,13 +790,12 @@ describe('fileIO_randomAccessFile_read', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_015
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_1500
-     * @tc.name fileIO_randomaccessfile_read_async_015
-     * @tc.desc Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously and checkout filePointer.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously and checkout filePointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_015', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_randomaccessfile_read_async_015');

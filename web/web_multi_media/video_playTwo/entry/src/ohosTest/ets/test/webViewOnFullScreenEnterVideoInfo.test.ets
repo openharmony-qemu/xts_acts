@@ -59,14 +59,14 @@ export default function webViewOnFullScreenEnterInfo() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_BASIC_ETS_FullscreenEnterEvent_videoWidth_videoHeight_API_0001
-    * @tc.name       : testOnFullScreenEnterVideoInfo
-    * @tc.desc       : test FullScreenEnterEvent videowidth videoHeight
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testOnFullScreenEnterVideoInfo
+     * @tc.number SUB_ACE_WEB_BASIC_ETS_FullscreenEnterEvent_videoWidth_videoHeight_API_0001
+     * @tc.desc   test FullScreenEnterEvent videowidth videoHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOnFullScreenEnterVideoInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         sendEventByKey('TestwebViewOnFullScreenEnterInfo', 10, '');
         let emitKey="emitOnfullscreenenterInfo";

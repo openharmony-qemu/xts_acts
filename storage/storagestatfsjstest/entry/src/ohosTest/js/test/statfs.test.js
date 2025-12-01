@@ -20,15 +20,14 @@ import { Level } from '@ohos/hypium';
 export default function statfs_test() {
 describe('statfs_test', function () {
 
-    /**
-     * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0000
-     * @tc.name statfs_test_get_free_bytes_async_000
-     * @tc.desc Test getFreeBytes() interfaces, When the path is a sandbox path, promise way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+  /**
+   * @tc.name   statfs_test_get_free_bytes_async_000
+   * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0000
+   * @tc.desc   Test getFreeBytes() interfaces, When the path is a sandbox path, promise way back.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statfs_test_get_free_bytes_async_000', Level.LEVEL0, async function (done) {
     try {
       let context = featureAbility.getContext();
@@ -43,15 +42,14 @@ describe('statfs_test', function () {
     }
   });
 
-    /**
-     * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0010
-     * @tc.name statfs_test_get_free_bytes_async_001
-     * @tc.desc Test getFreeBytes() interfaces, When the path is dev, callback way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+  /**
+   * @tc.name   statfs_test_get_free_bytes_async_001
+   * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0010
+   * @tc.desc   Test getFreeBytes() interfaces, When the path is dev, callback way back.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statfs_test_get_free_bytes_async_001', Level.LEVEL0, async function (done) {
     try {
       statfs.getFreeBytes("/dev",(err,number)=>{
@@ -65,15 +63,14 @@ describe('statfs_test', function () {
     }
   });
 
-    /**
-     * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0020
-     * @tc.name statfs_test_get_free_bytes_async_002
-     * @tc.desc Test getFreeBytes() interfaces, When the parameter type is wrong.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+  /**
+   * @tc.name   statfs_test_get_free_bytes_async_002
+   * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0020
+   * @tc.desc   Test getFreeBytes() interfaces, When the parameter type is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statfs_test_get_free_bytes_async_002', Level.LEVEL0, async function (done) {
     try {
       await statfs.getFreeBytes(1);
@@ -84,15 +81,14 @@ describe('statfs_test', function () {
     }
   });
 
-    /**
-     * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0030
-     * @tc.name statfs_test_get_free_bytes_async_003
-     * @tc.desc Test getFreeBytes() interfaces, When there are no parameters.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+  /**
+   * @tc.name   statfs_test_get_free_bytes_async_003
+   * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0030
+   * @tc.desc   Test getFreeBytes() interfaces, When there are no parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statfs_test_get_free_bytes_async_003', Level.LEVEL0, async function (done) {
     try {
       await statfs.getFreeBytes();
@@ -103,15 +99,14 @@ describe('statfs_test', function () {
     }
   });
 
-    /**
-     * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0040
-     * @tc.name statfs_test_get_free_bytes_async_004
-     * @tc.desc Test getFreeBytes() interfaces, When the path is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+  /**
+   * @tc.name   statfs_test_get_free_bytes_async_004
+   * @tc.number SUB_DF_STATFS_GET_FREE_BYTES_0040
+   * @tc.desc   Test getFreeBytes() interfaces, When the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statfs_test_get_free_bytes_async_004', Level.LEVEL0, async function (done) {
     try {
       await statfs.getFreeBytes("");
@@ -122,15 +117,14 @@ describe('statfs_test', function () {
     }
   });
 
-    /**
-     * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0000
-     * @tc.name statfs_test_get_total_bytes_async_000
-     * @tc.desc Test getTotalBytes() interfaces, When the path is a sandbox path, promise way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     /**
+      * @tc.name   statfs_test_get_total_bytes_async_000
+      * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0000
+      * @tc.desc   Test getTotalBytes() interfaces, When the path is a sandbox path, promise way back.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('statfs_test_get_total_bytes_async_000', Level.LEVEL0, async function (done) {
       try {
         let context = featureAbility.getContext();
@@ -146,14 +140,13 @@ describe('statfs_test', function () {
     });
   
     /**
+     * @tc.name   statfs_test_get_total_bytes_async_001
      * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0010
-     * @tc.name statfs_test_get_total_bytes_async_001
-     * @tc.desc Test getTotalBytes() interfaces, When the path is dev, callback way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getTotalBytes() interfaces, When the path is dev, callback way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('statfs_test_get_total_bytes_async_001', Level.LEVEL0, async function (done) {
       try {
         statfs.getTotalBytes("/dev",(err,number)=>{
@@ -168,14 +161,13 @@ describe('statfs_test', function () {
     });
   
     /**
+     * @tc.name   statfs_test_get_total_bytes_async_002
      * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0020
-     * @tc.name statfs_test_get_total_bytes_async_002
-     * @tc.desc Test getTotalBytes() interfaces, When the parameter type is wrong.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getTotalBytes() interfaces, When the parameter type is wrong.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('statfs_test_get_total_bytes_async_002', Level.LEVEL0, async function (done) {
       try {
         await statfs.getTotalBytes(1);
@@ -187,14 +179,13 @@ describe('statfs_test', function () {
     });
   
     /**
+     * @tc.name   statfs_test_get_total_bytes_async_003
      * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0030
-     * @tc.name statfs_test_get_total_bytes_async_003
-     * @tc.desc Test getTotalBytes() interfaces, When there are no parameters.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getTotalBytes() interfaces, When there are no parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('statfs_test_get_total_bytes_async_003', Level.LEVEL0, async function (done) {
       try {
         await statfs.getTotalBytes();
@@ -206,14 +197,13 @@ describe('statfs_test', function () {
     });
   
     /**
+     * @tc.name   statfs_test_get_total_bytes_async_004
      * @tc.number SUB_DF_STATFS_GET_TOTAL_BYTES_0040
-     * @tc.name statfs_test_get_total_bytes_async_004
-     * @tc.desc Test getTotalBytes() interfaces, When the path is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getTotalBytes() interfaces, When the path is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('statfs_test_get_total_bytes_async_004', Level.LEVEL0, async function (done) {
       try {
         await statfs.getTotalBytes("");

@@ -19,12 +19,12 @@ const Success = 0;
 export default function ActsPrintErrorTest() {
   describe('ActsPrintErrorTest', () => {
     /**
-     * @tc.number  : SUB_Oh_Print_NoError_0100
-     * @tc.name    : SUB_Oh_Print_NoError_0100
-     * @tc.desc    : Test OHPrintNoError.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_NoError_0100
+     * @tc.number SUB_Oh_Print_NoError_0100
+     * @tc.desc   Test OHPrintNoError.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_NoError_0100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -40,12 +40,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_InvalidParameter_0200
-     * @tc.name    : SUB_Oh_Print_InvalidParameter_0200
-     * @tc.desc    : Test OHPrintInvalidParameter.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_InvalidParameter_0200
+     * @tc.number SUB_Oh_Print_InvalidParameter_0200
+     * @tc.desc   Test OHPrintInvalidParameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_InvalidParameter_0200', Level.LEVEL1, async (done: Function) => {
       try {
@@ -61,12 +61,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_GenericFailure_0300
-     * @tc.name    : SUB_Oh_Print_GenericFailure_0300
-     * @tc.desc    : Test OHPrintGenericFailure.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_GenericFailure_0300
+     * @tc.number SUB_Oh_Print_GenericFailure_0300
+     * @tc.desc   Test OHPrintGenericFailure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_GenericFailure_0300', Level.LEVEL1, async (done: Function) => {
       try {
@@ -82,12 +82,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_InvalidPrintJob_0400
-     * @tc.name    : SUB_Oh_Print_InvalidPrintJob_0400
-     * @tc.desc    : Test OHPrintInvalidPrintJob.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_InvalidPrintJob_0400
+     * @tc.number SUB_Oh_Print_InvalidPrintJob_0400
+     * @tc.desc   Test OHPrintInvalidPrintJob.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_InvalidPrintJob_0400', Level.LEVEL1, async (done: Function) => {
       try {
@@ -103,12 +103,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_InvalidPrinter_0500
-     * @tc.name    : SUB_Oh_Print_InvalidPrinter_0500
-     * @tc.desc    : Test OHPrintInvalidPrinter.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_InvalidPrinter_0500
+     * @tc.number SUB_Oh_Print_InvalidPrinter_0500
+     * @tc.desc   Test OHPrintInvalidPrinter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_InvalidPrinter_0500', Level.LEVEL1, async (done: Function) => {
       try {
@@ -124,12 +124,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_Init1_0600
-     * @tc.name    : SUB_Oh_Print_Init1_0600
-     * @tc.desc    : Test OH_Print_Init1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_Init1_0600
+     * @tc.number SUB_Oh_Print_Init1_0600
+     * @tc.desc   Test OH_Print_Init1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_Init1_0600', Level.LEVEL1, async (done: Function) => {
       try {
@@ -145,12 +145,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_StartPrinterDiscovery1_0700
-     * @tc.name    : SUB_Oh_Print_StartPrinterDiscovery1_0700
-     * @tc.desc    : Test OH_Print_StartPrinterDiscovery1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_StartPrinterDiscovery1_0700
+     * @tc.number SUB_Oh_Print_StartPrinterDiscovery1_0700
+     * @tc.desc   Test OH_Print_StartPrinterDiscovery1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_StartPrinterDiscovery1_0700', Level.LEVEL1, async (done: Function) => {
       try {
@@ -166,12 +166,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_StopPrinterDiscovery1_0800
-     * @tc.name    : SUB_Oh_Print_StopPrinterDiscovery1_0800
-     * @tc.desc    : Test OH_Print_StopPrinterDiscovery1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_StopPrinterDiscovery1_0800
+     * @tc.number SUB_Oh_Print_StopPrinterDiscovery1_0800
+     * @tc.desc   Test OH_Print_StopPrinterDiscovery1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_StopPrinterDiscovery1_0800', Level.LEVEL1, async (done: Function) => {
       try {
@@ -187,12 +187,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_ConnectPrinter1_0900
-     * @tc.name    : SUB_Oh_Print_ConnectPrinter1_0900
-     * @tc.desc    : Test OH_Print_ConnectPrinter1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_ConnectPrinter1_0900
+     * @tc.number SUB_Oh_Print_ConnectPrinter1_0900
+     * @tc.desc   Test OH_Print_ConnectPrinter1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_ConnectPrinter1_0900', Level.LEVEL1, async (done: Function) => {
       try {
@@ -208,12 +208,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_StartPrintJob1_1000
-     * @tc.name    : SUB_Oh_Print_StartPrintJob1_1000
-     * @tc.desc    : Test OH_Print_StartPrintJob1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_StartPrintJob1_1000
+     * @tc.number SUB_Oh_Print_StartPrintJob1_1000
+     * @tc.desc   Test OH_Print_StartPrintJob1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_StartPrintJob1_1000', Level.LEVEL1, async (done: Function) => {
       try {
@@ -228,13 +228,13 @@ export default function ActsPrintErrorTest() {
       }
     })
 
-        /**
-     * @tc.number  : SUB_Oh_Print_StartPrintJob1_1001
-     * @tc.name    : SUB_Oh_Print_StartPrintJob1_1001
-     * @tc.desc    : Test OH_Print_StartPrintJob1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   SUB_Oh_Print_StartPrintJob1_1001
+     * @tc.number SUB_Oh_Print_StartPrintJob1_1001
+     * @tc.desc   Test OH_Print_StartPrintJob1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_StartPrintJob1_1001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -251,12 +251,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_RegisterPrinterChangeListener1_1100
-     * @tc.name    : SUB_Oh_Print_RegisterPrinterChangeListener1_1100
-     * @tc.desc    : Test OH_Print_RegisterPrinterChangeListener1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_RegisterPrinterChangeListener1_1100
+     * @tc.number SUB_Oh_Print_RegisterPrinterChangeListener1_1100
+     * @tc.desc   Test OH_Print_RegisterPrinterChangeListener1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_RegisterPrinterChangeListener1_1100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -272,12 +272,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_QueryPrinterList1_1200
-     * @tc.name    : SUB_Oh_Print_QueryPrinterList1_1200
-     * @tc.desc    : Test OH_Print_QueryPrinterList1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_QueryPrinterList1_1200
+     * @tc.number SUB_Oh_Print_QueryPrinterList1_1200
+     * @tc.desc   Test OH_Print_QueryPrinterList1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_QueryPrinterList1_1200', Level.LEVEL1, async (done: Function) => {
       try {
@@ -293,12 +293,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_QueryPrinterList2_1300
-     * @tc.name    : SUB_Oh_Print_QueryPrinterList2_1300
-     * @tc.desc    : Test OH_Print_QueryPrinterList2.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_QueryPrinterList2_1300
+     * @tc.number SUB_Oh_Print_QueryPrinterList2_1300
+     * @tc.desc   Test OH_Print_QueryPrinterList2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_QueryPrinterList2_1300', Level.LEVEL1, async (done: Function) => {
       try {
@@ -314,12 +314,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_QueryPrinterInfo1_1400
-     * @tc.name    : SUB_Oh_Print_QueryPrinterInfo1_1400
-     * @tc.desc    : Test OH_Print_QueryPrinterInfo1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_QueryPrinterInfo1_1400
+     * @tc.number SUB_Oh_Print_QueryPrinterInfo1_1400
+     * @tc.desc   Test OH_Print_QueryPrinterInfo1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_QueryPrinterInfo1_1400', Level.LEVEL1, async (done: Function) => {
       try {
@@ -335,12 +335,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_QueryPrinterInfo2_1500
-     * @tc.name    : SUB_Oh_Print_QueryPrinterInfo2_1500
-     * @tc.desc    : Test OH_Print_QueryPrinterInfo2.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_QueryPrinterInfo2_1500
+     * @tc.number SUB_Oh_Print_QueryPrinterInfo2_1500
+     * @tc.desc   Test OH_Print_QueryPrinterInfo2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_QueryPrinterInfo2_1500', Level.LEVEL1, async (done: Function) => {
       try {
@@ -356,12 +356,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_LaunchPrinterManager1_1600
-     * @tc.name    : SUB_Oh_Print_LaunchPrinterManager1_1600
-     * @tc.desc    : Test OH_Print_LaunchPrinterManager1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_LaunchPrinterManager1_1600
+     * @tc.number SUB_Oh_Print_LaunchPrinterManager1_1600
+     * @tc.desc   Test OH_Print_LaunchPrinterManager1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_LaunchPrinterManager1_1600', Level.LEVEL1, async (done: Function) => {
       try {
@@ -377,12 +377,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_Print_QueryPrinterProperties1_1700
-     * @tc.name    : SUB_Oh_Print_QueryPrinterProperties1_1700
-     * @tc.desc    : Test OH_Print_QueryPrinterProperties1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Print_QueryPrinterProperties1_1700
+     * @tc.number SUB_Oh_Print_QueryPrinterProperties1_1700
+     * @tc.desc   Test OH_Print_QueryPrinterProperties1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Print_QueryPrinterProperties1_1700', Level.LEVEL1, async (done: Function) => {
       try {
@@ -398,12 +398,12 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Oh_RestorePrinterProperties1_1800
-     * @tc.name    : SUB_Oh_RestorePrinterProperties1_1800
-     * @tc.desc    : Test OH_Print_RestorePrinterProperties1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_RestorePrinterProperties1_1800
+     * @tc.number SUB_Oh_RestorePrinterProperties1_1800
+     * @tc.desc   Test OH_Print_RestorePrinterProperties1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_RestorePrinterProperties1_1800', Level.LEVEL1, async (done: Function) => {
       try {

@@ -43,13 +43,13 @@ class DrawingNativeSamplingOptionsTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0100
- * @tc.name: testSamplingOptionsCreateDestroyDestroyNormal
- * @tc.desc: test for testSamplingOptionsCreateDestroyDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testSamplingOptionsCreateDestroyDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0100
+ * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCreateDestroyDestroyNormal, Function | SmallTest | Level0) {
     OH_Drawing_FilterMode filterModes[] = {
@@ -74,13 +74,13 @@ HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCreateDestroyDestr
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0101
- * @tc.name: testSamplingOptionsCreateDestroyDestroyNull
- * @tc.desc: test for testSamplingOptionsCreateDestroyDestroyNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSamplingOptionsCreateDestroyDestroyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0101
+ * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCreateDestroyDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_SamplingOptionsDestroy with empty parameter
@@ -89,13 +89,13 @@ HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCreateDestroyDestr
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0102
- * @tc.name: testSamplingOptionsCreateDestroyDestroyMultipleCalls
- * @tc.desc: test for testSamplingOptionsCreateDestroyDestroyMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSamplingOptionsCreateDestroyDestroyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0102
+ * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCreateDestroyDestroyMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_SamplingOptionsCreate 10 times with random enum values
@@ -125,13 +125,13 @@ HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCreateDestroyDestr
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0200
- * @tc.name: testSamplingOptionsCopyNormal
- * @tc.desc: test for testSamplingOptionsCopyNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testSamplingOptionsCopyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0200
+ * @tc.desc   test for testSamplingOptionsCopyNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCopyNormal, Function | SmallTest | Level0) {
     OH_Drawing_SamplingOptions *src = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
@@ -143,13 +143,13 @@ HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCopyNormal, Functi
     OH_Drawing_SamplingOptionsDestroy(samplingOptions);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0201
- * @tc.name: testSamplingOptionsCopyNull
- * @tc.desc: test for testSamplingOptionsCopyNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSamplingOptionsCopyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0201
+ * @tc.desc   test for testSamplingOptionsCopyNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCopyNull, Function | SmallTest | Level3) {
     // 1. The interface of OH_Drawing_SamplingOptionsCopy is passed null.
@@ -159,13 +159,13 @@ HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCopyNull, Function
     OH_Drawing_SamplingOptionsDestroy(samplingOptions);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0202
- * @tc.name: testSamplingOptionsCopyMultiCalls
- * @tc.desc: test for testSamplingOptionsCopyMultiCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testSamplingOptionsCopyMultiCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0202
+ * @tc.desc   test for testSamplingOptionsCopyMultiCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCopyMultiCalls, Function | SmallTest | Level3) {
     OH_Drawing_SamplingOptions *src = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);

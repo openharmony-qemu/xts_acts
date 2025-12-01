@@ -52,12 +52,12 @@ export default function drawingTsMatrixTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0100
-     * @tc.name      : testMatrixConstructorNormalStatic
-     * @tc.desc      : testMatrixConstructorNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixConstructorNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0100
+     * @tc.desc   testMatrixConstructorNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixConstructorNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMatrixConstructorNormalStatic';
@@ -72,12 +72,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0103
-     * @tc.name      : testMatrixConstructorMultipleCallsStatic
-     * @tc.desc      : testMatrixConstructorMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixConstructorMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0103
+     * @tc.desc   testMatrixConstructorMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixConstructorMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixConstructorMultipleCallsStatic';
@@ -93,12 +93,12 @@ export default function drawingTsMatrixTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0200
-     * @tc.name      : testMatrixSetRotationNormalStatic
-     * @tc.desc      : testMatrixSetRotationNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixSetRotationNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0200
+     * @tc.desc   testMatrixSetRotationNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixSetRotationNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMatrixSetRotationNormalStatic';
@@ -194,12 +194,12 @@ export default function drawingTsMatrixTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0203
-     * @tc.name      : testMatrixSetRotationMultipleCallsStatic
-     * @tc.desc      : testMatrixSetRotationMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetRotationMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0203
+     * @tc.desc   testMatrixSetRotationMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetRotationMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixSetRotationMultipleCallsStatic';
@@ -218,12 +218,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0300
-     * @tc.name      : testMatrixSetScaleNormalStatic
-     * @tc.desc      : testMatrixSetScaleNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixSetScaleNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0300
+     * @tc.desc   testMatrixSetScaleNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixSetScaleNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMatrixSetScaleNormalStatic';
@@ -303,12 +303,12 @@ export default function drawingTsMatrixTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0303
-     * @tc.name      : testMatrixSetScaleMultipleCallsStatic
-     * @tc.desc      : testMatrixSetScaleMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetScaleMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0303
+     * @tc.desc   testMatrixSetScaleMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetScaleMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixSetScaleMultipleCallsStatic';
@@ -326,12 +326,12 @@ export default function drawingTsMatrixTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0400
-     * @tc.name      : testMatrixSetTranslationNormalStatic
-     * @tc.desc      : testMatrixSetTranslationNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixSetTranslationNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0400
+     * @tc.desc   testMatrixSetTranslationNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixSetTranslationNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMatrixSetTranslationNormalStatic';
@@ -411,12 +411,12 @@ export default function drawingTsMatrixTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0403
-     * @tc.name      : testMatrixSetTranslationMultipleCallsStatic
-     * @tc.desc      : testMatrixSetTranslationMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetTranslationMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0403
+     * @tc.desc   testMatrixSetTranslationMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetTranslationMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixSetTranslationMultipleCallsStatic';
@@ -434,12 +434,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0500
-     * @tc.name      : testMatrixSetAndGetMatrixNormalStatic
-     * @tc.desc      : testMatrixSetAndGetMatrixNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixSetAndGetMatrixNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0500
+     * @tc.desc   testMatrixSetAndGetMatrixNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixSetAndGetMatrixNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMatrixSetAndGetMatrixNormalStatic';
@@ -524,12 +524,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0501
-     * @tc.name      : testMatrixSetAndGetMatrixNullStatic
-     * @tc.desc      : testMatrixSetAndGetMatrixNullStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetAndGetMatrixNullStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0501
+     * @tc.desc   testMatrixSetAndGetMatrixNullStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetAndGetMatrixNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixSetAndGetMatrixNullStatic';
@@ -545,12 +545,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0503
-     * @tc.name      : testMatrixSetAndGetMatrixMultipleCallsStatic
-     * @tc.desc      : testMatrixSetAndGetMatrixMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetAndGetMatrixMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0503
+     * @tc.desc   testMatrixSetAndGetMatrixMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetAndGetMatrixMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixSetAndGetMatrixMultipleCallsStatic';
@@ -601,12 +601,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0504
-     * @tc.name      : testMatrixSetAndGetMatrixAbNormalStatic
-     * @tc.desc      : testMatrixSetAndGetMatrixAbNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetAndGetMatrixAbNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0504
+     * @tc.desc   testMatrixSetAndGetMatrixAbNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetAndGetMatrixAbNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixSetAndGetMatrixAbNormalStatic';
@@ -651,12 +651,12 @@ export default function drawingTsMatrixTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0600
-     * @tc.name      : testMatrixPreConcatNormalStatic
-     * @tc.desc      : testMatrixPreConcatNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixPreConcatNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0600
+     * @tc.desc   testMatrixPreConcatNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixPreConcatNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMatrixPreConcatNormalStatic';
@@ -675,12 +675,12 @@ export default function drawingTsMatrixTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0603
-     * @tc.name      : testMatrixPreConcatMultipleCallsStatic
-     * @tc.desc      : testMatrixPreConcatMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPreConcatMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0603
+     * @tc.desc   testMatrixPreConcatMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPreConcatMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixPreConcatMultipleCallsStatic';
@@ -698,12 +698,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0700
-     * @tc.name      : testMatrixIsEqualNormalStatic
-     * @tc.desc      : testMatrixIsEqualNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixIsEqualNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0700
+     * @tc.desc   testMatrixIsEqualNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixIsEqualNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMatrixIsEqualNormalStatic';
@@ -734,12 +734,12 @@ export default function drawingTsMatrixTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0703
-     * @tc.name      : testMatrixIsEqualMultipleCallsStatic
-     * @tc.desc      : testMatrixIsEqualMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixIsEqualMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0703
+     * @tc.desc   testMatrixIsEqualMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixIsEqualMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixIsEqualMultipleCallsStatic';
@@ -772,12 +772,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0800
-     * @tc.name      : testMatrixInvertNormalStatic
-     * @tc.desc      : testMatrixInvertNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixInvertNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0800
+     * @tc.desc   testMatrixInvertNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixInvertNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMatrixInvertNormalStatic';
@@ -806,12 +806,12 @@ export default function drawingTsMatrixTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0803
-     * @tc.name      : testMatrixInvertMultipleCallsStatic
-     * @tc.desc      : testMatrixInvertMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixInvertMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0803
+     * @tc.desc   testMatrixInvertMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixInvertMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixInvertMultipleCallsStatic';
@@ -844,12 +844,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0900
-     * @tc.name      : testMatrixIsIdentityNormalStatic
-     * @tc.desc      : testMatrixIsIdentityNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixIsIdentityNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0900
+     * @tc.desc   testMatrixIsIdentityNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixIsIdentityNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMatrixIsIdentityNormalStatic';
@@ -876,12 +876,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0902
-     * @tc.name      : testMatrixIsIdentityMultipleCallsStatic
-     * @tc.desc      : testMatrixIsIdentityMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixIsIdentityMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0902
+     * @tc.desc   testMatrixIsIdentityMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixIsIdentityMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixIsIdentityMultipleCallsStatic';
@@ -899,12 +899,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_1000
-     * @tc.name      : testMatrixPostRotateNormalStatic
-     * @tc.desc      : testMatrixPostRotateNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixPostRotateNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_1000
+     * @tc.desc   testMatrixPostRotateNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixPostRotateNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMatrixPostRotateNormalStatic';
@@ -999,12 +999,12 @@ export default function drawingTsMatrixTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_1003
-     * @tc.name      : testMatrixPostRotateMultipleCallsStatic
-     * @tc.desc      : testMatrixPostRotateMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPostRotateMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_1003
+     * @tc.desc   testMatrixPostRotateMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPostRotateMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixPostRotateMultipleCallsStatic';
@@ -1023,12 +1023,12 @@ export default function drawingTsMatrixTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_1100
-     * @tc.name      : testMatrixPostScaleNormalStatic
-     * @tc.desc      : testMatrixPostScaleNormalStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixPostScaleNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_1100
+     * @tc.desc   testMatrixPostScaleNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixPostScaleNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMatrixPostScaleNormalStatic';
@@ -1108,12 +1108,12 @@ export default function drawingTsMatrixTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_1103
-     * @tc.name      : testMatrixPostScaleMultipleCallsStatic
-     * @tc.desc      : testMatrixPostScaleMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPostScaleMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_1103
+     * @tc.desc   testMatrixPostScaleMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPostScaleMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testMatrixPostScaleMultipleCallsStatic';

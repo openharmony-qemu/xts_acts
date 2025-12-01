@@ -57,13 +57,13 @@ export default function WebViewEnumAndSetWebController() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_WEB_FILESELECTORMODE_0200
-     * @tc.name       : testFileSelectorMode002
-     * @tc.desc       : test FileSelectorMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testFileSelectorMode002
+     * @tc.number SUB_WEB_FILESELECTORMODE_0200
+     * @tc.desc   test FileSelectorMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFileSelectorMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitFileSelectorModeFileOpenMultipleMode", EVENT_ID_SET_SUITE_KEY);
@@ -73,14 +73,14 @@ export default function WebViewEnumAndSetWebController() {
       await Utils.waitForExist(() => isReturn, "emitFileSelectorModeFileOpenMultipleMode" + '_returnCheck', true, 500);
       done();
     })
-    /*
-    * @tc.number     : SUB_WEB_FILESELECTORMODE_0300
-    * @tc.name       : testFileSelectorMode003
-    * @tc.desc       : test FileSelectorMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testFileSelectorMode003
+     * @tc.number SUB_WEB_FILESELECTORMODE_0300
+     * @tc.desc   test FileSelectorMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFileSelectorMode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitFileSelectorModeFileOpenFolderMode", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -89,14 +89,14 @@ export default function WebViewEnumAndSetWebController() {
       await Utils.waitForExist(() => isReturn, "emitFileSelectorModeFileOpenFolderMode" + '_returnCheck', true, 500);
       done();
     })
-    /*
-    * @tc.number     : SUB_WEB_CONTEXTMENUMEDIATYPE_0200
-    * @tc.name       : testContextMenuMediaType002
-    * @tc.desc       : test ContextMenuMediaType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testContextMenuMediaType002
+     * @tc.number SUB_WEB_CONTEXTMENUMEDIATYPE_0200
+     * @tc.desc   test ContextMenuMediaType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testContextMenuMediaType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeImage", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -106,14 +106,14 @@ export default function WebViewEnumAndSetWebController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CONTEXTMENUSOURCETYPEMOUSE_0100
-    * @tc.name       : testContextMenuSourceTypeMouse001
-    * @tc.desc       : test ContextMenuSourceTypeMouse
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testContextMenuSourceTypeMouse001
+     * @tc.number SUB_WEB_CONTEXTMENUSOURCETYPEMOUSE_0100
+     * @tc.desc   test ContextMenuSourceTypeMouse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testContextMenuSourceTypeMouse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuSourceTypeMouse", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;

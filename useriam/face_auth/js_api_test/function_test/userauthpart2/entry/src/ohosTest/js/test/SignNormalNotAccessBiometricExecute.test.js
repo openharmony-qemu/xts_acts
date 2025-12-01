@@ -68,7 +68,6 @@ export default function signNormalNotAccessBiometricExecute() {
       })
     }
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_UserAuthInstance_Func_0042
      * @tc.number Security_IAM_UserAuthInstance_Func_0042
      * @tc.desc   Security_IAM_UserAuthInstance_Func_0042
@@ -92,7 +91,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_UserAuthInstance_Func_0050
      * @tc.number Security_IAM_UserAuthInstance_Func_0050
      * @tc.desc   Security_IAM_UserAuthInstance_Func_0050
@@ -114,7 +112,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_UserAuthInstance_Func_0090
      * @tc.number Security_IAM_UserAuthInstance_Func_0090
      * @tc.desc   Security_IAM_UserAuthInstance_Func_0090
@@ -137,7 +134,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_IAM_authWidget_API_0130
      * @tc.number SUB_Security_IAM_authWidget_API_0130
      * @tc.desc   reuseUnlockResultDuration Parameter transmission test.
@@ -200,7 +196,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_IAM_authWidget_API_0150
      * @tc.number SUB_Security_IAM_authWidget_API_0150
      * @tc.desc   Excess parameter transfer test.
@@ -230,7 +225,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_IAM_authWidget_API_0100
      * @tc.number SUB_Security_IAM_authWidget_API_0100
      * @tc.desc   ReuseUnlockResultMode does not transmit.
@@ -270,7 +264,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_IAM_authWidget_API_0120
      * @tc.number SUB_Security_IAM_authWidget_API_0120
      * @tc.desc   ReuseUnlockResultDuration: 120000. ReuseUnlockResultMode: 2.
@@ -299,7 +292,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_IAM_authWidget_API_0140
      * @tc.number SUB_Security_IAM_authWidget_API_0140
      * @tc.desc   reuseUnlockResultMode Parameter transmission test.
@@ -365,7 +357,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_IAM_authWidget_API_0110
      * @tc.number SUB_Security_IAM_authWidget_API_0110
      * @tc.desc   reuseUnlockResultDuration does not transmit.
@@ -405,7 +396,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_IAM_authWidget_API_0200
      * @tc.number SUB_Security_IAM_authWidget_API_0200
      * @tc.desc   SUB_Security_IAM_authWidget_API_0200

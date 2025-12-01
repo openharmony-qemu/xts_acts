@@ -56,13 +56,13 @@ export default function ActsAceWebViewIncognitoMode2() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_INCOGNITOMODE2_API_0006
-     *@tc.name testWebViewClearAllCookiesSyncNormal
-     *@tc.desc test clearAllCookiesSync normal
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewClearAllCookiesSyncNormal
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE2_API_0006
+     * @tc.desc   test clearAllCookiesSync normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewClearAllCookiesSyncNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitWebViewIncognitoMode06', 134250);

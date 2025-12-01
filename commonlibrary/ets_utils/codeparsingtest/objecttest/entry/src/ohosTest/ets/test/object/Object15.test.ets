@@ -228,12 +228,12 @@ export default function Object15Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   Object15Test001
      * @tc.number SUB_BUILTINS_Object15_TEST_0100
-     * @tc.name Object15Test001
-     * @tc.desc test object create (direct and inherited property)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create (direct and inherited property)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn01_testDirectAndInheritedProperty();
@@ -241,12 +241,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test002
      * @tc.number SUB_BUILTINS_Object15_TEST_0200
-     * @tc.name Object15Test002
-     * @tc.desc test object create (null prototype)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create (null prototype)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn02_testObjectCreateNull();
@@ -254,12 +254,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test003
      * @tc.number SUB_BUILTINS_Object15_TEST_0300
-     * @tc.name Object15Test003
-     * @tc.desc test array index existence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array index existence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn03_testArrayIndexExistence();
@@ -267,12 +267,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test004
      * @tc.number SUB_BUILTINS_Object15_TEST_0400
-     * @tc.name Object15Test004
-     * @tc.desc test null/undefined own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test null/undefined own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn04_testNullUndefinedOwnProperty();
@@ -280,12 +280,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test005
      * @tc.number SUB_BUILTINS_Object15_TEST_0500
-     * @tc.name Object15Test005
-     * @tc.desc test deleted property detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test deleted property detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn05_testDeletedPropertyDetection();
@@ -293,12 +293,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test006
      * @tc.number SUB_BUILTINS_Object15_TEST_0600
-     * @tc.name Object15Test006
-     * @tc.desc test symbol property detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test symbol property detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn06_testSymbolPropertyDetection();
@@ -306,12 +306,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test007
      * @tc.number SUB_BUILTINS_Object15_TEST_0700
-     * @tc.name Object15Test007
-     * @tc.desc test non-enumerable property detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test non-enumerable property detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn07_testNonEnumerablePropertyDetection();
@@ -319,12 +319,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test008
      * @tc.number SUB_BUILTINS_Object15_TEST_0800
-     * @tc.name Object15Test008
-     * @tc.desc test nested object own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test nested object own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn08_testNestedObjectOwnProperty();
@@ -332,12 +332,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test009
      * @tc.number SUB_BUILTINS_Object15_TEST_0900
-     * @tc.name Object15Test009
-     * @tc.desc test date object own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test date object own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn09_testDateObjectOwnProperty();
@@ -345,12 +345,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test010
      * @tc.number SUB_BUILTINS_Object15_TEST_1000
-     * @tc.name Object15Test010
-     * @tc.desc test regexp object own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test regexp object own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn10_testRegExpObjectOwnProperty();
@@ -358,12 +358,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test011
      * @tc.number SUB_BUILTINS_Object15_TEST_1100
-     * @tc.name Object15Test011
-     * @tc.desc test class instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn11_testClassInstanceProperty();
@@ -371,12 +371,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test012
      * @tc.number SUB_BUILTINS_Object15_TEST_1200
-     * @tc.name Object15Test012
-     * @tc.desc test number property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test number property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn12_testNumberPropertyName();
@@ -384,12 +384,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test013
      * @tc.number SUB_BUILTINS_Object15_TEST_1300
-     * @tc.name Object15Test013
-     * @tc.desc test empty object detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test empty object detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn13_testEmptyObjectDetection();
@@ -397,12 +397,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test014
      * @tc.number SUB_BUILTINS_Object15_TEST_1400
-     * @tc.name Object15Test014
-     * @tc.desc test array non-index property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test array non-index property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn14_testArrayNonIndexProperty();
@@ -410,12 +410,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test015
      * @tc.number SUB_BUILTINS_Object15_TEST_1500
-     * @tc.name Object15Test015
-     * @tc.desc test set object own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test set object own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn15_testSetObjectOwnProperty();
@@ -423,12 +423,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test016
      * @tc.number SUB_BUILTINS_Object15_TEST_1600
-     * @tc.name Object15Test016
-     * @tc.desc test map object own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test map object own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn16_testMapObjectOwnProperty();
@@ -436,12 +436,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test017
      * @tc.number SUB_BUILTINS_Object15_TEST_1700
-     * @tc.name Object15Test017
-     * @tc.desc test object assign own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object assign own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn17_testObjectAssignOwnProperty();
@@ -449,12 +449,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test018
      * @tc.number SUB_BUILTINS_Object15_TEST_1800
-     * @tc.name Object15Test018
-     * @tc.desc test object define properties own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object define properties own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn18_testObjectDefinePropertiesOwnProperty();
@@ -462,12 +462,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test019
      * @tc.number SUB_BUILTINS_Object15_TEST_1900
-     * @tc.name Object15Test019
-     * @tc.desc test multi-level inheritance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test multi-level inheritance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn19_testMultiLevelInheritance();
@@ -475,12 +475,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test020
      * @tc.number SUB_BUILTINS_Object15_TEST_2000
-     * @tc.name Object15Test020
-     * @tc.desc test function own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test function own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn20_testFunctionOwnProperty();
@@ -488,12 +488,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test021
      * @tc.number SUB_BUILTINS_Object15_TEST_2100
-     * @tc.name Object15Test021
-     * @tc.desc test boolean property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test boolean property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn21_testBooleanPropertyName();
@@ -501,12 +501,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test022
      * @tc.number SUB_BUILTINS_Object15_TEST_2200
-     * @tc.name Object15Test022
-     * @tc.desc test NaN property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test NaN property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn22_testNaNPropertyName();
@@ -514,12 +514,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test023
      * @tc.number SUB_BUILTINS_Object15_TEST_2300
-     * @tc.name Object15Test023
-     * @tc.desc test class static vs instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class static vs instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn23_testClassStaticVsInstance();
@@ -527,12 +527,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test024
      * @tc.number SUB_BUILTINS_Object15_TEST_2400
-     * @tc.name Object15Test024
-     * @tc.desc test typed array own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test typed array own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn24_testTypedArrayOwnProperty();
@@ -540,12 +540,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test025
      * @tc.number SUB_BUILTINS_Object15_TEST_2500
-     * @tc.name Object15Test025
-     * @tc.desc test overridden prototype property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test overridden prototype property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn25_testOverriddenPrototypeProperty();
@@ -553,12 +553,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test026
      * @tc.number SUB_BUILTINS_Object15_TEST_2600
-     * @tc.name Object15Test026
-     * @tc.desc test empty string property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test empty string property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn26_testEmptyStringPropertyName();
@@ -566,12 +566,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test027
      * @tc.number SUB_BUILTINS_Object15_TEST_2700
-     * @tc.name Object15Test027
-     * @tc.desc test promise own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test promise own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn27_testPromiseOwnProperty();
@@ -579,12 +579,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test028
      * @tc.number SUB_BUILTINS_Object15_TEST_2800
-     * @tc.name Object15Test028
-     * @tc.desc test object from entries own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object from entries own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn28_testObjectFromEntriesOwnProperty();
@@ -592,12 +592,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test029
      * @tc.number SUB_BUILTINS_Object15_TEST_2900
-     * @tc.name Object15Test029
-     * @tc.desc test modified prototype own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test modified prototype own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn29_testModifiedPrototypeOwnProperty();
@@ -605,24 +605,24 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test030
      * @tc.number SUB_BUILTINS_Object15_TEST_3000
-     * @tc.name Object15Test030
-     * @tc.desc test BigInt property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test BigInt property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn30_testBigIntPropertyName();
       expect(result).assertEqual(false);
     });
     /**
+     * @tc.name   Object15Test031
      * @tc.number SUB_BUILTINS_Object15_TEST_3100
-     * @tc.name Object15Test031
-     * @tc.desc test Error object own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Error object own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn31_testErrorOwnProperty();
@@ -630,12 +630,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test032
      * @tc.number SUB_BUILTINS_Object15_TEST_3200
-     * @tc.name Object15Test032
-     * @tc.desc test configurable property detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test configurable property detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn32_testConfigurablePropertyDetection();
@@ -643,12 +643,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test033
      * @tc.number SUB_BUILTINS_Object15_TEST_3300
-     * @tc.name Object15Test033
-     * @tc.desc test spread operator own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test spread operator own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn33_testSpreadOperatorOwnProperty();
@@ -656,12 +656,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test034
      * @tc.number SUB_BUILTINS_Object15_TEST_3400
-     * @tc.name Object15Test034
-     * @tc.desc test weak collection own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test weak collection own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn34_testWeakCollectionOwnProperty();
@@ -669,12 +669,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test035
      * @tc.number SUB_BUILTINS_Object15_TEST_3500
-     * @tc.name Object15Test035
-     * @tc.desc test function value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test function value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn35_testFunctionValueProperty();
@@ -682,12 +682,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test036
      * @tc.number SUB_BUILTINS_Object15_TEST_3600
-     * @tc.name Object15Test036
-     * @tc.desc test ArrayBuffer own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ArrayBuffer own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn36_testArrayBufferOwnProperty();
@@ -695,12 +695,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test037
      * @tc.number SUB_BUILTINS_Object15_TEST_3700
-     * @tc.name Object15Test037
-     * @tc.desc test frozen object own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen object own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn37_testFrozenObjectOwnProperty();
@@ -708,12 +708,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test038
      * @tc.number SUB_BUILTINS_Object15_TEST_3800
-     * @tc.name Object15Test038
-     * @tc.desc test Symbol.iterator property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Symbol.iterator property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn38_testSymbolIteratorProperty();
@@ -721,12 +721,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test039
      * @tc.number SUB_BUILTINS_Object15_TEST_3900
-     * @tc.name Object15Test039
-     * @tc.desc test nested array own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test nested array own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn39_testNestedArrayOwnProperty();
@@ -734,12 +734,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test040
      * @tc.number SUB_BUILTINS_Object15_TEST_4000
-     * @tc.name Object15Test040
-     * @tc.desc test consistency with getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test consistency with getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn40_testConsistencyWithGetOwnPropertyNames();
@@ -747,12 +747,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test042
      * @tc.number SUB_BUILTINS_Object15_TEST_4200
-     * @tc.name Object15Test042
-     * @tc.desc test special character property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test special character property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn42_testSpecialCharPropertyName();
@@ -760,12 +760,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test043
      * @tc.number SUB_BUILTINS_Object15_TEST_4300
-     * @tc.name Object15Test043
-     * @tc.desc test class private property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class private property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn43_testClassPrivateProperty();
@@ -773,12 +773,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test044
      * @tc.number SUB_BUILTINS_Object15_TEST_4400
-     * @tc.name Object15Test044
-     * @tc.desc test DataView own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn44_testDataViewOwnProperty();
@@ -786,12 +786,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test045
      * @tc.number SUB_BUILTINS_Object15_TEST_4500
-     * @tc.name Object15Test045
-     * @tc.desc test sealed object own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test sealed object own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn45_testSealedObjectOwnProperty();
@@ -799,12 +799,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test046
      * @tc.number SUB_BUILTINS_Object15_TEST_4600
-     * @tc.name Object15Test046
-     * @tc.desc test consistency with Object.keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test consistency with Object.keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn46_testConsistencyWithObjectKeys();
@@ -812,12 +812,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test047
      * @tc.number SUB_BUILTINS_Object15_TEST_4700
-     * @tc.name Object15Test047
-     * @tc.desc test RegExp intrinsic properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test RegExp intrinsic properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn47_testRegExpIntrinsicProperties();
@@ -825,12 +825,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test048
      * @tc.number SUB_BUILTINS_Object15_TEST_4800
-     * @tc.name Object15Test048
-     * @tc.desc test Symbol value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Symbol value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn48_testSymbolValueProperty();
@@ -838,12 +838,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test049
      * @tc.number SUB_BUILTINS_Object15_TEST_4900
-     * @tc.name Object15Test049
-     * @tc.desc test Generator own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Generator own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn49_testGeneratorOwnProperty();
@@ -851,12 +851,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test050
      * @tc.number SUB_BUILTINS_Object15_TEST_5000
-     * @tc.name Object15Test050
-     * @tc.desc test property name conflict with prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test property name conflict with prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn50_testPropertyNameConflictWithPrototype();
@@ -864,12 +864,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test052
      * @tc.number SUB_BUILTINS_Object15_TEST_5200
-     * @tc.name Object15Test052
-     * @tc.desc test multiple assigned property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test multiple assigned property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn52_testMultipleAssignedProperty();
@@ -877,12 +877,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test054
      * @tc.number SUB_BUILTINS_Object15_TEST_5400
-     * @tc.name Object15Test054
-     * @tc.desc test Unicode property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Unicode property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn54_testUnicodePropertyName();
@@ -890,12 +890,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test055
      * @tc.number SUB_BUILTINS_Object15_TEST_5500
-     * @tc.name Object15Test055
-     * @tc.desc test async function own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test async function own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn55_testAsyncFunctionOwnProperty();
@@ -903,12 +903,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test057
      * @tc.number SUB_BUILTINS_Object15_TEST_5700
-     * @tc.name Object15Test057
-     * @tc.desc test Intl object own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl object own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn57_testIntlObjectOwnProperty();
@@ -916,12 +916,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test058
      * @tc.number SUB_BUILTINS_Object15_TEST_5800
-     * @tc.name Object15Test058
-     * @tc.desc test writable property detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test writable property detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn58_testWritablePropertyDetection();
@@ -929,12 +929,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test059
      * @tc.number SUB_BUILTINS_Object15_TEST_5900
-     * @tc.name Object15Test059
-     * @tc.desc test prototype set to null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prototype set to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn59_testPrototypeSetToNull();
@@ -942,24 +942,24 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test060
      * @tc.number SUB_BUILTINS_Object15_TEST_6000
-     * @tc.name Object15Test060
-     * @tc.desc test property name as array index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test property name as array index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn60_testPropertyNameAsArrayIndex();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object15Test061
      * @tc.number SUB_BUILTINS_Object15_TEST_6100
-     * @tc.name Object15Test061
-     * @tc.desc test Map/Set modify no affect own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Map/Set modify no affect own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn61_testMapSetModifyNoAffectOwnProp();
@@ -967,12 +967,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test062
      * @tc.number SUB_BUILTINS_Object15_TEST_6200
-     * @tc.name Object15Test062
-     * @tc.desc test newline in property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test newline in property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn62_testNewlineInPropertyName();
@@ -980,12 +980,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test063
      * @tc.number SUB_BUILTINS_Object15_TEST_6300
-     * @tc.name Object15Test063
-     * @tc.desc test TypedArray view index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TypedArray view index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn63_testTypedArrayViewIndex();
@@ -993,12 +993,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test064
      * @tc.number SUB_BUILTINS_Object15_TEST_6400
-     * @tc.name Object15Test064
-     * @tc.desc test class inheritance instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class inheritance instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn64_testClassInheritanceInstanceProp();
@@ -1006,12 +1006,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test065
      * @tc.number SUB_BUILTINS_Object15_TEST_6500
-     * @tc.name Object15Test065
-     * @tc.desc test Error subclass own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Error subclass own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn65_testErrorSubclassOwnProperty();
@@ -1019,12 +1019,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test066
      * @tc.number SUB_BUILTINS_Object15_TEST_6600
-     * @tc.name Object15Test066
-     * @tc.desc test BigInt value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test BigInt value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn66_testBigIntValueProperty();
@@ -1032,12 +1032,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test068
      * @tc.number SUB_BUILTINS_Object15_TEST_6800
-     * @tc.name Object15Test068
-     * @tc.desc test property name conflict with built-in
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test property name conflict with built-in
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn68_testPropertyNameConflictWithBuiltIn();
@@ -1045,12 +1045,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test070
      * @tc.number SUB_BUILTINS_Object15_TEST_7000
-     * @tc.name Object15Test070
-     * @tc.desc test prevent extensions object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevent extensions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn70_testPreventExtensionsObject();
@@ -1058,12 +1058,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test071
      * @tc.number SUB_BUILTINS_Object15_TEST_7100
-     * @tc.name Object15Test071
-     * @tc.desc test GeneratorFunction own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test GeneratorFunction own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn71_testGeneratorFunctionOwnProperty();
@@ -1071,12 +1071,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test072
      * @tc.number SUB_BUILTINS_Object15_TEST_7200
-     * @tc.name Object15Test072
-     * @tc.desc test tab in property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test tab in property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn72_testTabInPropertyName();
@@ -1084,12 +1084,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test073
      * @tc.number SUB_BUILTINS_Object15_TEST_7300
-     * @tc.name Object15Test073
-     * @tc.desc test Intl.NumberFormat own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.NumberFormat own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn73_testIntlNumberFormatOwnProperty();
@@ -1097,12 +1097,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test074
      * @tc.number SUB_BUILTINS_Object15_TEST_7400
-     * @tc.name Object15Test074
-     * @tc.desc test Promise value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn74_testPromiseValueProperty();
@@ -1110,12 +1110,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test075
      * @tc.number SUB_BUILTINS_Object15_TEST_7500
-     * @tc.name Object15Test075
-     * @tc.desc test ReadableStream own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ReadableStream own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn75_testReadableStreamOwnProperty();
@@ -1123,12 +1123,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test076
      * @tc.number SUB_BUILTINS_Object15_TEST_7600
-     * @tc.name Object15Test076
-     * @tc.desc test backslash in property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test backslash in property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn76_testBackslashInPropertyName();
@@ -1136,12 +1136,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test077
      * @tc.number SUB_BUILTINS_Object15_TEST_7700
-     * @tc.name Object15Test077
-     * @tc.desc test class getter/setter own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class getter/setter own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn77_testClassGetterSetterOwnProperty();
@@ -1149,12 +1149,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test078
      * @tc.number SUB_BUILTINS_Object15_TEST_7800
-     * @tc.name Object15Test078
-     * @tc.desc test RegExp value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test RegExp value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn78_testRegExpValueProperty();
@@ -1162,12 +1162,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test079
      * @tc.number SUB_BUILTINS_Object15_TEST_7900
-     * @tc.name Object15Test079
-     * @tc.desc test WritableStream own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test WritableStream own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn79_testWritableStreamOwnProperty();
@@ -1175,12 +1175,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test080
      * @tc.number SUB_BUILTINS_Object15_TEST_8000
-     * @tc.name Object15Test080
-     * @tc.desc test emoji in property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test emoji in property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn80_testEmojiInPropertyName();
@@ -1188,12 +1188,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test081
      * @tc.number SUB_BUILTINS_Object15_TEST_8100
-     * @tc.name Object15Test081
-     * @tc.desc test full-width character property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test full-width character property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn81_testFullWidthCharPropertyName();
@@ -1201,12 +1201,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test082
      * @tc.number SUB_BUILTINS_Object15_TEST_8200
-     * @tc.name Object15Test082
-     * @tc.desc test TransformStream own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TransformStream own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn82_testTransformStreamOwnProperty();
@@ -1214,12 +1214,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test083
      * @tc.number SUB_BUILTINS_Object15_TEST_8300
-     * @tc.name Object15Test083
-     * @tc.desc test Error instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Error instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn83_testErrorInstanceValueProperty();
@@ -1227,12 +1227,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test084
      * @tc.number SUB_BUILTINS_Object15_TEST_8400
-     * @tc.name Object15Test084
-     * @tc.desc test class static method vs instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class static method vs instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn84_testClassStaticMethodVsInstanceProp();
@@ -1240,12 +1240,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test085
      * @tc.number SUB_BUILTINS_Object15_TEST_8500
-     * @tc.name Object15Test085
-     * @tc.desc test space and special character combo property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test space and special character combo property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn85_testSpaceSpecialCharComboProperty();
@@ -1253,12 +1253,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test086
      * @tc.number SUB_BUILTINS_Object15_TEST_8600
-     * @tc.name Object15Test086
-     * @tc.desc test Atomics related property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Atomics related property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn86_testAtomicsRelatedProperty();
@@ -1266,12 +1266,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test087
      * @tc.number SUB_BUILTINS_Object15_TEST_8700
-     * @tc.name Object15Test087
-     * @tc.desc test redefined property detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test redefined property detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn87_testRedefinedPropertyDetection();
@@ -1279,12 +1279,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test088
      * @tc.number SUB_BUILTINS_Object15_TEST_8800
-     * @tc.name Object15Test088
-     * @tc.desc test Intl.DateTimeFormat parts
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.DateTimeFormat parts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn88_testIntlDateTimeFormatParts();
@@ -1292,12 +1292,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test089
      * @tc.number SUB_BUILTINS_Object15_TEST_8900
-     * @tc.name Object15Test089
-     * @tc.desc test non-printable character property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test non-printable character property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn89_testNonPrintableCharPropertyName();
@@ -1305,24 +1305,24 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test090
      * @tc.number SUB_BUILTINS_Object15_TEST_9000
-     * @tc.name Object15Test090
-     * @tc.desc test Promise.all instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise.all instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn90_testPromiseAllInstanceProperty();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object15Test091
      * @tc.number SUB_BUILTINS_Object15_TEST_9100
-     * @tc.name Object15Test091
-     * @tc.desc test Map/Set instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Map/Set instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn91_testMapSetInstanceValueProperty();
@@ -1330,12 +1330,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test092
      * @tc.number SUB_BUILTINS_Object15_TEST_9200
-     * @tc.name Object15Test092
-     * @tc.desc test class private static property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class private static property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn92_testClassPrivateStaticProperty();
@@ -1343,12 +1343,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test093
      * @tc.number SUB_BUILTINS_Object15_TEST_9300
-     * @tc.name Object15Test093
-     * @tc.desc test mixed language property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test mixed language property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn93_testMixedLangPropertyName();
@@ -1356,12 +1356,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test094
      * @tc.number SUB_BUILTINS_Object15_TEST_9400
-     * @tc.name Object15Test094
-     * @tc.desc test ReadableStreamReader own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ReadableStreamReader own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn94_testReadableStreamReaderOwnProperty();
@@ -1369,12 +1369,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test095
      * @tc.number SUB_BUILTINS_Object15_TEST_9500
-     * @tc.name Object15Test095
-     * @tc.desc test TypedArray instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TypedArray instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn95_testTypedArrayInstanceValueProperty();
@@ -1382,12 +1382,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test096
      * @tc.number SUB_BUILTINS_Object15_TEST_9600
-     * @tc.name Object15Test096
-     * @tc.desc test class inheritance static property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class inheritance static property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn96_testClassInheritanceStaticProperty();
@@ -1395,12 +1395,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test097
      * @tc.number SUB_BUILTINS_Object15_TEST_9700
-     * @tc.name Object15Test097
-     * @tc.desc test underline and number combo property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test underline and number combo property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn97_testUnderlineNumberComboProperty();
@@ -1408,12 +1408,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test098
      * @tc.number SUB_BUILTINS_Object15_TEST_9800
-     * @tc.name Object15Test098
-     * @tc.desc test WritableStreamWriter own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test WritableStreamWriter own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn98_testWritableStreamWriterOwnProperty();
@@ -1421,12 +1421,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test099
      * @tc.number SUB_BUILTINS_Object15_TEST_9900
-     * @tc.name Object15Test099
-     * @tc.desc test consistency with getOwnPropertyDescriptors
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test consistency with getOwnPropertyDescriptors
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn99_testConsistencyWithGetOwnPropertyDescriptors();
@@ -1434,12 +1434,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test100
      * @tc.number SUB_BUILTINS_Object15_TEST_10000
-     * @tc.name Object15Test100
-     * @tc.desc test emoji and text combo property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test emoji and text combo property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn100_testEmojiTextComboPropertyName();
@@ -1447,12 +1447,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test101
      * @tc.number SUB_BUILTINS_Object15_TEST_10100
-     * @tc.name Object15Test101
-     * @tc.desc test superscript and subscript property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test superscript and subscript property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn101_testSuperscriptSubscriptPropertyName();
@@ -1460,12 +1460,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test102
      * @tc.number SUB_BUILTINS_Object15_TEST_10200
-     * @tc.name Object15Test102
-     * @tc.desc test ReadableStreamBYOBReader own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ReadableStreamBYOBReader own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn102_testReadableStreamBYOBReaderOwnProperty();
@@ -1473,12 +1473,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test103
      * @tc.number SUB_BUILTINS_Object15_TEST_10300
-     * @tc.name Object15Test103
-     * @tc.desc test ArrayBuffer instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ArrayBuffer instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn103_testArrayBufferInstanceValueProperty();
@@ -1486,12 +1486,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test104
      * @tc.number SUB_BUILTINS_Object15_TEST_10400
-     * @tc.name Object15Test104
-     * @tc.desc test class private method detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class private method detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn104_testClassPrivateMethodDetection();
@@ -1499,12 +1499,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test105
      * @tc.number SUB_BUILTINS_Object15_TEST_10500
-     * @tc.name Object15Test105
-     * @tc.desc test special symbol combo property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test special symbol combo property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn105_testSpecialSymbolComboPropertyName();
@@ -1512,12 +1512,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test106
      * @tc.number SUB_BUILTINS_Object15_TEST_10600
-     * @tc.name Object15Test106
-     * @tc.desc test Intl.RelativeTimeFormat own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.RelativeTimeFormat own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn106_testIntlRelativeTimeFormatOwnProperty();
@@ -1525,12 +1525,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test108
      * @tc.number SUB_BUILTINS_Object15_TEST_10800
-     * @tc.name Object15Test108
-     * @tc.desc test Promise.race instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise.race instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn108_testPromiseRaceInstanceProperty();
@@ -1538,12 +1538,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test109
      * @tc.number SUB_BUILTINS_Object15_TEST_10900
-     * @tc.name Object15Test109
-     * @tc.desc test Unicode control character property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Unicode control character property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn109_testUnicodeControlCharPropertyName();
@@ -1551,12 +1551,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test110
      * @tc.number SUB_BUILTINS_Object15_TEST_11000
-     * @tc.name Object15Test110
-     * @tc.desc test WeakRef own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test WeakRef own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn110_testWeakRefOwnProperty();
@@ -1564,12 +1564,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test111
      * @tc.number SUB_BUILTINS_Object15_TEST_11100
-     * @tc.name Object15Test111
-     * @tc.desc test DataView instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn111_testDataViewInstanceValueProperty();
@@ -1577,12 +1577,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test112
      * @tc.number SUB_BUILTINS_Object15_TEST_11200
-     * @tc.name Object15Test112
-     * @tc.desc test class static private method detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class static private method detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn112_testClassStaticPrivateMethodDetection();
@@ -1590,12 +1590,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test113
      * @tc.number SUB_BUILTINS_Object15_TEST_11300
-     * @tc.name Object15Test113
-     * @tc.desc test language specific character property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test language specific character property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn113_testLangSpecificCharPropertyName();
@@ -1603,12 +1603,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test114
      * @tc.number SUB_BUILTINS_Object15_TEST_11400
-     * @tc.name Object15Test114
-     * @tc.desc test TransformStreamController own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TransformStreamController own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn114_testTransformStreamControllerOwnProperty();
@@ -1616,12 +1616,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test116
      * @tc.number SUB_BUILTINS_Object15_TEST_11600
-     * @tc.name Object15Test116
-     * @tc.desc test Intl.PluralRules own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.PluralRules own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn116_testIntlPluralRulesOwnProperty();
@@ -1629,12 +1629,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test117
      * @tc.number SUB_BUILTINS_Object15_TEST_11700
-     * @tc.name Object15Test117
-     * @tc.desc test bracket combo property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test bracket combo property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn117_testBracketComboPropertyName();
@@ -1642,12 +1642,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test118
      * @tc.number SUB_BUILTINS_Object15_TEST_11800
-     * @tc.name Object15Test118
-     * @tc.desc test resolved Promise instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test resolved Promise instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn118_testResolvedPromiseInstanceProperty();
@@ -1655,12 +1655,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test119
      * @tc.number SUB_BUILTINS_Object15_TEST_11900
-     * @tc.name Object15Test119
-     * @tc.desc test WeakMap/Set instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test WeakMap/Set instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn119_testWeakMapSetInstanceValueProperty();
@@ -1668,24 +1668,24 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test120
      * @tc.number SUB_BUILTINS_Object15_TEST_12000
-     * @tc.name Object15Test120
-     * @tc.desc test special space property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test special space property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn120_testSpecialSpacePropertyName();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object15Test121
      * @tc.number SUB_BUILTINS_Object15_TEST_12100
-     * @tc.name Object15Test121
-     * @tc.desc test Roman numeral property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Roman numeral property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn121_testRomanNumeralPropertyName();
@@ -1693,12 +1693,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test122
      * @tc.number SUB_BUILTINS_Object15_TEST_12200
-     * @tc.name Object15Test122
-     * @tc.desc test FinalizationRegistry own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test FinalizationRegistry own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn122_testFinalizationRegistryOwnProperty();
@@ -1706,12 +1706,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test124
      * @tc.number SUB_BUILTINS_Object15_TEST_12400
-     * @tc.name Object15Test124
-     * @tc.desc test class private field vs instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class private field vs instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn124_testClassPrivateFieldVsInstanceProp();
@@ -1719,12 +1719,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test125
      * @tc.number SUB_BUILTINS_Object15_TEST_12500
-     * @tc.name Object15Test125
-     * @tc.desc test slash and backslash combo property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test slash and backslash combo property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn125_testSlashBackslashComboProperty();
@@ -1732,12 +1732,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test126
      * @tc.number SUB_BUILTINS_Object15_TEST_12600
-     * @tc.name Object15Test126
-     * @tc.desc test Intl.DisplayNames own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.DisplayNames own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn126_testIntlDisplayNamesOwnProperty();
@@ -1745,12 +1745,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test128
      * @tc.number SUB_BUILTINS_Object15_TEST_12800
-     * @tc.name Object15Test128
-     * @tc.desc test rejected Promise instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test rejected Promise instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn128_testRejectedPromiseInstanceProperty();
@@ -1758,12 +1758,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test129
      * @tc.number SUB_BUILTINS_Object15_TEST_12900
-     * @tc.name Object15Test129
-     * @tc.desc test emoji modifier property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test emoji modifier property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn129_testEmojiModifierPropertyName();
@@ -1771,12 +1771,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test132
      * @tc.number SUB_BUILTINS_Object15_TEST_13200
-     * @tc.name Object15Test132
-     * @tc.desc test class static field vs instance field
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class static field vs instance field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn132_testClassStaticFieldVsInstanceField();
@@ -1784,12 +1784,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test133
      * @tc.number SUB_BUILTINS_Object15_TEST_13300
-     * @tc.name Object15Test133
-     * @tc.desc test math symbol property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test math symbol property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn133_testMathSymbolPropertyName();
@@ -1797,12 +1797,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test134
      * @tc.number SUB_BUILTINS_Object15_TEST_13400
-     * @tc.name Object15Test134
-     * @tc.desc test ReadableStreamController own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ReadableStreamController own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn134_testReadableStreamControllerOwnProperty();
@@ -1810,12 +1810,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test135
      * @tc.number SUB_BUILTINS_Object15_TEST_13500
-     * @tc.name Object15Test135
-     * @tc.desc test override to prototype property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test override to prototype property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn135_testOverrideToPrototypeProperty();
@@ -1823,12 +1823,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test136
      * @tc.number SUB_BUILTINS_Object15_TEST_13600
-     * @tc.name Object15Test136
-     * @tc.desc test Intl.Collator own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.Collator own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn136_testIntlCollatorOwnProperty();
@@ -1836,12 +1836,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test137
      * @tc.number SUB_BUILTINS_Object15_TEST_13700
-     * @tc.name Object15Test137
-     * @tc.desc test hash and path property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test hash and path property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn137_testHashPathPropertyName();
@@ -1849,12 +1849,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test138
      * @tc.number SUB_BUILTINS_Object15_TEST_13800
-     * @tc.name Object15Test138
-     * @tc.desc test Promise.allSettled instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise.allSettled instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn138_testPromiseAllSettledInstanceProperty();
@@ -1862,12 +1862,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test140
      * @tc.number SUB_BUILTINS_Object15_TEST_14000
-     * @tc.name Object15Test140
-     * @tc.desc test Symbol and emoji combo property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Symbol and emoji combo property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn140_testSymbolEmojiComboPropertyName();
@@ -1875,12 +1875,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test141
      * @tc.number SUB_BUILTINS_Object15_TEST_14100
-     * @tc.name Object15Test141
-     * @tc.desc test Egyptian numeral property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Egyptian numeral property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn141_testEgyptianNumeralPropertyName();
@@ -1888,12 +1888,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test142
      * @tc.number SUB_BUILTINS_Object15_TEST_14200
-     * @tc.name Object15Test142
-     * @tc.desc test WritableStreamController own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test WritableStreamController own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn142_testWritableStreamControllerOwnProperty();
@@ -1901,12 +1901,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test143
      * @tc.number SUB_BUILTINS_Object15_TEST_14300
-     * @tc.name Object15Test143
-     * @tc.desc test FinalizationRegistry instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test FinalizationRegistry instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn143_testFinalizationRegistryInstanceValueProperty();
@@ -1914,12 +1914,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test144
      * @tc.number SUB_BUILTINS_Object15_TEST_14400
-     * @tc.name Object15Test144
-     * @tc.desc test class private static field detection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class private static field detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn144_testClassPrivateStaticFieldDetection();
@@ -1927,12 +1927,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test145
      * @tc.number SUB_BUILTINS_Object15_TEST_14500
-     * @tc.name Object15Test145
-     * @tc.desc test colon and path property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test colon and path property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn145_testColonPathPropertyName();
@@ -1940,12 +1940,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test146
      * @tc.number SUB_BUILTINS_Object15_TEST_14600
-     * @tc.name Object15Test146
-     * @tc.desc test Intl.NumberFormatRange own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.NumberFormatRange own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn146_testIntlNumberFormatRange();
@@ -1953,12 +1953,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test147
      * @tc.number SUB_BUILTINS_Object15_TEST_14700
-     * @tc.name Object15Test147
-     * @tc.desc test sealed property value modify
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test sealed property value modify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn147_testSealedPropertyValueModify();
@@ -1966,12 +1966,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test148
      * @tc.number SUB_BUILTINS_Object15_TEST_14800
-     * @tc.name Object15Test148
-     * @tc.desc test Promise.any instance property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise.any instance property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn148_testPromiseAnyInstanceProperty();
@@ -1979,12 +1979,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test149
      * @tc.number SUB_BUILTINS_Object15_TEST_14900
-     * @tc.name Object15Test149
-     * @tc.desc test Sanskrit numeral property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Sanskrit numeral property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn149_testSanskritNumeralPropertyName();
@@ -1992,12 +1992,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test151
      * @tc.number SUB_BUILTINS_Object15_TEST_15100
-     * @tc.name Object15Test151
-     * @tc.desc test TransformStream instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TransformStream instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn151_testTransformStreamInstanceValueProperty();
@@ -2005,12 +2005,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test152
      * @tc.number SUB_BUILTINS_Object15_TEST_15200
-     * @tc.name Object15Test152
-     * @tc.desc test class inheritance getter/setter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class inheritance getter/setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn152_testClassInheritanceGetterSetter();
@@ -2018,12 +2018,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test153
      * @tc.number SUB_BUILTINS_Object15_TEST_15300
-     * @tc.name Object15Test153
-     * @tc.desc test tilde identifier property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test tilde identifier property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn153_testTildeIdentifierPropertyName();
@@ -2031,12 +2031,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test154
      * @tc.number SUB_BUILTINS_Object15_TEST_15400
-     * @tc.name Object15Test154
-     * @tc.desc test Intl.DateTimeFormat range parts
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.DateTimeFormat range parts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn154_testIntlDateTimeFormatRangeParts();
@@ -2044,12 +2044,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test156
      * @tc.number SUB_BUILTINS_Object15_TEST_15600
-     * @tc.name Object15Test156
-     * @tc.desc test Intl.Locale own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.Locale own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn156_testIntlLocaleOwnProperty();
@@ -2057,12 +2057,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test157
      * @tc.number SUB_BUILTINS_Object15_TEST_15700
-     * @tc.name Object15Test157
-     * @tc.desc test equals key value property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test equals key value property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn157_testEqualsKeyValuePropertyName();
@@ -2070,12 +2070,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test158
      * @tc.number SUB_BUILTINS_Object15_TEST_15800
-     * @tc.name Object15Test158
-     * @tc.desc test Promise with resolvers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise with resolvers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn158_testPromiseWithResolvers();
@@ -2083,12 +2083,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test159
      * @tc.number SUB_BUILTINS_Object15_TEST_15900
-     * @tc.name Object15Test159
-     * @tc.desc test ReadableStream instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ReadableStream instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn159_testReadableStreamInstanceValueProperty();
@@ -2096,12 +2096,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test160
      * @tc.number SUB_BUILTINS_Object15_TEST_16000
-     * @tc.name Object15Test160
-     * @tc.desc test Symbol and Unicode combo property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Symbol and Unicode combo property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn160_testSymbolUnicodeComboPropertyName();
@@ -2109,12 +2109,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test161
      * @tc.number SUB_BUILTINS_Object15_TEST_16100
-     * @tc.name Object15Test161
-     * @tc.desc test Hebrew numeral property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Hebrew numeral property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn161_testHebrewNumeralPropertyName();
@@ -2122,12 +2122,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test162
      * @tc.number SUB_BUILTINS_Object15_TEST_16200
-     * @tc.name Object15Test162
-     * @tc.desc test CompressionStream own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test CompressionStream own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn162_testCompressionStreamOwnProperty();
@@ -2135,12 +2135,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test163
      * @tc.number SUB_BUILTINS_Object15_TEST_16300
-     * @tc.name Object15Test163
-     * @tc.desc test WritableStream instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test WritableStream instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn163_testWritableStreamInstanceValueProperty();
@@ -2148,12 +2148,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test164
      * @tc.number SUB_BUILTINS_Object15_TEST_16400
-     * @tc.name Object15Test164
-     * @tc.desc test class private method vs prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class private method vs prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn164_testClassPrivateMethodVsPrototype();
@@ -2161,12 +2161,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test165
      * @tc.number SUB_BUILTINS_Object15_TEST_16500
-     * @tc.name Object15Test165
-     * @tc.desc test semicolon config property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test semicolon config property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn165_testSemicolonConfigPropertyName();
@@ -2174,12 +2174,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test166
      * @tc.number SUB_BUILTINS_Object15_TEST_16600
-     * @tc.name Object15Test166
-     * @tc.desc test Intl.PluralRules select range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.PluralRules select range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn166_testIntlPluralRulesSelectRange();
@@ -2187,12 +2187,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test167
      * @tc.number SUB_BUILTINS_Object15_TEST_16700
-     * @tc.name Object15Test167
-     * @tc.desc test prevent extensions modify value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevent extensions modify value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn167_testPreventExtensionsModifyValue();
@@ -2200,12 +2200,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test168
      * @tc.number SUB_BUILTINS_Object15_TEST_16800
-     * @tc.name Object15Test168
-     * @tc.desc test AggregateError own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test AggregateError own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn168_testAggregateErrorOwnProperty();
@@ -2213,12 +2213,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test169
      * @tc.number SUB_BUILTINS_Object15_TEST_16900
-     * @tc.name Object15Test169
-     * @tc.desc test Thai numeral property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Thai numeral property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn169_testThaiNumeralPropertyName();
@@ -2226,12 +2226,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test170
      * @tc.number SUB_BUILTINS_Object15_TEST_17000
-     * @tc.name Object15Test170
-     * @tc.desc test DecompressionStream own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DecompressionStream own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn170_testDecompressionStreamOwnProperty();
@@ -2239,12 +2239,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test171
      * @tc.number SUB_BUILTINS_Object15_TEST_17100
-     * @tc.name Object15Test171
-     * @tc.desc test CompressionStream instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test CompressionStream instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn171_testCompressionStreamInstanceValueProperty();
@@ -2252,12 +2252,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test172
      * @tc.number SUB_BUILTINS_Object15_TEST_17200
-     * @tc.name Object15Test172
-     * @tc.desc test class static method vs prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class static method vs prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn172_testClassStaticMethodVsPrototype();
@@ -2265,12 +2265,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test173
      * @tc.number SUB_BUILTINS_Object15_TEST_17300
-     * @tc.name Object15Test173
-     * @tc.desc test question param property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test question param property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn173_testQuestionParamPropertyName();
@@ -2278,12 +2278,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test174
      * @tc.number SUB_BUILTINS_Object15_TEST_17400
-     * @tc.name Object15Test174
-     * @tc.desc test Intl.RelativeTimeFormat parts
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.RelativeTimeFormat parts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn174_testIntlRelativeTimeFormatParts();
@@ -2291,12 +2291,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test177
      * @tc.number SUB_BUILTINS_Object15_TEST_17700
-     * @tc.name Object15Test177
-     * @tc.desc test Arabic letter property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arabic letter property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn177_testArabicLetterPropertyName();
@@ -2304,12 +2304,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test178
      * @tc.number SUB_BUILTINS_Object15_TEST_17800
-     * @tc.name Object15Test178
-     * @tc.desc test ReadableByteStreamController own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ReadableByteStreamController own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn178_testReadableByteStreamControllerOwnProperty();
@@ -2317,12 +2317,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test179
      * @tc.number SUB_BUILTINS_Object15_TEST_17900
-     * @tc.name Object15Test179
-     * @tc.desc test DecompressionStream instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DecompressionStream instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn179_testDecompressionStreamInstanceValueProperty();
@@ -2330,24 +2330,24 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test180
      * @tc.number SUB_BUILTINS_Object15_TEST_18000
-     * @tc.name Object15Test180
-     * @tc.desc test combining character property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test combining character property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn180_testCombiningCharPropertyName();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object15Test181
      * @tc.number SUB_BUILTINS_Object15_TEST_18100
-     * @tc.name Object15Test181
-     * @tc.desc test Japanese Kana property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Japanese Kana property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn181_testJapaneseKanaPropertyName();
@@ -2355,12 +2355,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test182
      * @tc.number SUB_BUILTINS_Object15_TEST_18200
-     * @tc.name Object15Test182
-     * @tc.desc test TextEncoder own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TextEncoder own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn182_testTextEncoderOwnProperty();
@@ -2368,12 +2368,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test183
      * @tc.number SUB_BUILTINS_Object15_TEST_18300
-     * @tc.name Object15Test183
-     * @tc.desc test TextEncoder instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TextEncoder instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn183_testTextEncoderInstanceValueProperty();
@@ -2381,12 +2381,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test184
      * @tc.number SUB_BUILTINS_Object15_TEST_18400
-     * @tc.name Object15Test184
-     * @tc.desc test class private field vs static field
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class private field vs static field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn184_testClassPrivateFieldVsStaticField();
@@ -2394,12 +2394,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test185
      * @tc.number SUB_BUILTINS_Object15_TEST_18500
-     * @tc.name Object15Test185
-     * @tc.desc test pipe option property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test pipe option property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn185_testPipeOptionPropertyName();
@@ -2407,12 +2407,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test186
      * @tc.number SUB_BUILTINS_Object15_TEST_18600
-     * @tc.name Object15Test186
-     * @tc.desc test Intl.Collator compare
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.Collator compare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn186_testIntlCollatorCompare();
@@ -2420,12 +2420,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test187
      * @tc.number SUB_BUILTINS_Object15_TEST_18700
-     * @tc.name Object15Test187
-     * @tc.desc test sealed property define descriptor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test sealed property define descriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn187_testSealedPropertyDefineDescriptor();
@@ -2433,12 +2433,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test188
      * @tc.number SUB_BUILTINS_Object15_TEST_18800
-     * @tc.name Object15Test188
-     * @tc.desc test TextDecoder own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TextDecoder own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn188_testTextDecoderOwnProperty();
@@ -2446,12 +2446,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test189
      * @tc.number SUB_BUILTINS_Object15_TEST_18900
-     * @tc.name Object15Test189
-     * @tc.desc test Korean Hangul property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Korean Hangul property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn189_testKoreanHangulPropertyName();
@@ -2459,12 +2459,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test190
      * @tc.number SUB_BUILTINS_Object15_TEST_19000
-     * @tc.name Object15Test190
-     * @tc.desc test CountQueuingStrategy own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test CountQueuingStrategy own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn190_testCountQueuingStrategyOwnProperty();
@@ -2472,12 +2472,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test191
      * @tc.number SUB_BUILTINS_Object15_TEST_19100
-     * @tc.name Object15Test191
-     * @tc.desc test TextDecoder instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TextDecoder instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn191_testTextDecoderInstanceValueProperty();
@@ -2485,12 +2485,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test192
      * @tc.number SUB_BUILTINS_Object15_TEST_19200
-     * @tc.name Object15Test192
-     * @tc.desc test class inheritance static field
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class inheritance static field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn192_testClassInheritanceStaticField();
@@ -2498,12 +2498,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test193
      * @tc.number SUB_BUILTINS_Object15_TEST_19300
-     * @tc.name Object15Test193
-     * @tc.desc test dollar variable property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test dollar variable property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn193_testDollarVariablePropertyName();
@@ -2511,12 +2511,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test194
      * @tc.number SUB_BUILTINS_Object15_TEST_19400
-     * @tc.name Object15Test194
-     * @tc.desc test Intl.DisplayNames of
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Intl.DisplayNames of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn194_testIntlDisplayNamesOf();
@@ -2524,12 +2524,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test195
      * @tc.number SUB_BUILTINS_Object15_TEST_19500
-     * @tc.name Object15Test195
-     * @tc.desc test frozen property define descriptor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen property define descriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn195_testFrozenPropertyDefineDescriptor();
@@ -2537,12 +2537,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test196
      * @tc.number SUB_BUILTINS_Object15_TEST_19600
-     * @tc.name Object15Test196
-     * @tc.desc test ByteLengthQueuingStrategy own property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ByteLengthQueuingStrategy own property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn196_testByteLengthQueuingStrategyOwnProperty();
@@ -2550,12 +2550,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test197
      * @tc.number SUB_BUILTINS_Object15_TEST_19700
-     * @tc.name Object15Test197
-     * @tc.desc test percent ratio property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test percent ratio property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn197_testPercentRatioPropertyName();
@@ -2563,12 +2563,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test198
      * @tc.number SUB_BUILTINS_Object15_TEST_19800
-     * @tc.name Object15Test198
-     * @tc.desc test Promise.race vs Promise.allSettled
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Promise.race vs Promise.allSettled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn198_testPromiseRaceVsAllSettled();
@@ -2576,12 +2576,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test199
      * @tc.number SUB_BUILTINS_Object15_TEST_19900
-     * @tc.name Object15Test199
-     * @tc.desc test CountQueuingStrategy instance value property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test CountQueuingStrategy instance value property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn199_testCountQueuingStrategyInstanceValueProperty();
@@ -2589,12 +2589,12 @@ export default function Object15Test() {
     });
 
     /**
+     * @tc.name   Object15Test200
      * @tc.number SUB_BUILTINS_Object15_TEST_20000
-     * @tc.name Object15Test200
-     * @tc.desc test Symbol and multi-language combo property name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Symbol and multi-language combo property name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object15Test200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn200_testSymbolMultiLangComboPropertyName();

@@ -50,12 +50,12 @@ export default function hasGesture() {
     })
 
     /**
+     * @tc.name   testWebView_getHttpBodyStream0100
      * @tc.number SUB_ACE_WEB_getHttpBodyStream_0100
-     * @tc.name testWebView_getHttpBodyStream0100
-     * @tc.desc test getHttpBodyStream
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test getHttpBodyStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_getHttpBodyStream0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -82,12 +82,12 @@ export default function hasGesture() {
     })
 
     /**
+     * @tc.name   testWebView_setStatus0100
      * @tc.number SUB_ACE_WEB_setStatus_0100
-     * @tc.name testWebView_setStatus0100
-     * @tc.desc test SetStatus
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test SetStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_setStatus0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -116,12 +116,12 @@ export default function hasGesture() {
     })
 
     /**
+     * @tc.name   testWebView_setStatus0200
      * @tc.number SUB_ACE_WEB_setStatus_0200
-     * @tc.name testWebView_setStatus0200
-     * @tc.desc test SetStatus
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test SetStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_setStatus0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -149,12 +149,12 @@ export default function hasGesture() {
     })
 
     /**
+     * @tc.name   testWebView_setStatus0300
      * @tc.number SUB_ACE_WEB_setStatus_0300
-     * @tc.name testWebView_setStatus0300
-     * @tc.desc test SetStatus
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test SetStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_setStatus0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

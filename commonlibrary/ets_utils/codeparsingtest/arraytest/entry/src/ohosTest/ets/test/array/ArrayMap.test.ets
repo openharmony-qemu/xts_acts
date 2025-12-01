@@ -95,12 +95,12 @@ export default function ArrayMapTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   ArrayMapTest001
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_0100
-     * @tc.name ArrayMapTest001
-     * @tc.desc Map number array to square values, verify new array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map number array to square values, verify new array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayMapTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [1, 2, 3, 4];
@@ -113,12 +113,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest002
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_0200
-     * @tc.name ArrayMapTest002
-     * @tc.desc Map string array to uppercase, verify new array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map string array to uppercase, verify new array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayMapTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ['a', 'b', 'c'];
@@ -129,12 +129,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest003
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_0300
-     * @tc.name ArrayMapTest003
-     * @tc.desc Callback with no return value, new array has undefined
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Callback with no return value, new array has undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayMapTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [1, 2, 3];
@@ -146,12 +146,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest004
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_0400
-     * @tc.name ArrayMapTest004
-     * @tc.desc Map empty array, return empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map empty array, return empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayMapTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [];
@@ -165,12 +165,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest005
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_0500
-     * @tc.name ArrayMapTest005
-     * @tc.desc Callback receives all three parameters (element, index, array)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Callback receives all three parameters (element, index, array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayMapTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       interface BaseI {
@@ -194,12 +194,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest006
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_0600
-     * @tc.name ArrayMapTest006
-     * @tc.desc Map single-element array, callback called once
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map single-element array, callback called once
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayMapTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ['only-element'];
@@ -214,12 +214,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest007
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_0700
-     * @tc.name ArrayMapTest007
-     * @tc.desc Map array with null and undefined elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map array with null and undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayMapTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [null, undefined, 1];
@@ -230,12 +230,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest008
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_0800
-     * @tc.name ArrayMapTest008
-     * @tc.desc Map array with boolean elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map array with boolean elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayMapTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [true, false, true];
@@ -246,12 +246,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest009
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_0900
-     * @tc.name ArrayMapTest009
-     * @tc.desc Map array with NaN element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map array with NaN element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayMapTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [NaN, 10, NaN];
@@ -262,12 +262,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest010
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_1000
-     * @tc.name ArrayMapTest010
-     * @tc.desc Map array of objects to extract property
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map array of objects to extract property
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayMapTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       interface BaseI {
@@ -287,36 +287,36 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest011
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_1100
-     * @tc.name ArrayMapTest011
-     * @tc.desc Use thisArg to bind this in callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Use thisArg to bind this in callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayMapTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayMapTest011()).assertDeepEquals([10, 20, 30]);
     });
 
     /**
+     * @tc.name   ArrayMapTest012
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_1200
-     * @tc.name ArrayMapTest012
-     * @tc.desc No thisArg: this is undefined in strict mode callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   No thisArg: this is undefined in strict mode callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayMapTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayMapTest012()).assertEqual(undefined);
     });
 
     /**
+     * @tc.name   ArrayMapTest013
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_1300
-     * @tc.name ArrayMapTest013
-     * @tc.desc Map sparse array: empty slots don't trigger callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Map sparse array: empty slots don't trigger callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayMapTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1, , 3];
@@ -332,12 +332,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest014
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_1400
-     * @tc.name ArrayMapTest014
-     * @tc.desc Map non-array object (class array) via call()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Map non-array object (class array) via call()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayMapTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = ArrayMapTest014() as string[];
@@ -347,12 +347,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest016
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_1600
-     * @tc.name ArrayMapTest016
-     * @tc.desc Callback uses index parameter to modify value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Callback uses index parameter to modify value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayMapTest016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [10, 20, 30];
@@ -363,12 +363,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest017
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_1700
-     * @tc.name ArrayMapTest017
-     * @tc.desc Callback uses original array parameter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Callback uses original array parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayMapTest017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3];
@@ -379,12 +379,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest018
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_1800
-     * @tc.name ArrayMapTest018
-     * @tc.desc Map array with BigInt elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Map array with BigInt elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayMapTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1n, 2n, 3n];
@@ -395,12 +395,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest019
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_1900
-     * @tc.name ArrayMapTest019
-     * @tc.desc Map array with Symbol elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Map array with Symbol elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayMapTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = ArrayMapTest019();
@@ -410,12 +410,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest020
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_2000
-     * @tc.name ArrayMapTest020
-     * @tc.desc thisArg is primitive value (converted to object)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   thisArg is primitive value (converted to object)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayMapTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = ArrayMapTest020();
@@ -425,12 +425,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest021
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_2100
-     * @tc.name ArrayMapTest021
-     * @tc.desc Callback throws error during iteration, traversal interrupts
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback throws error during iteration, traversal interrupts
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3, 4];
@@ -456,12 +456,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest022
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_2200
-     * @tc.name ArrayMapTest022
-     * @tc.desc Map array and modify original array during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array and modify original array during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3];
@@ -478,12 +478,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest023
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_2300
-     * @tc.name ArrayMapTest023
-     * @tc.desc Map large array (1000 elements), verify completeness
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map large array (1000 elements), verify completeness
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest023', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const arr: number[] = [];
@@ -501,12 +501,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest024
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_2400
-     * @tc.name ArrayMapTest024
-     * @tc.desc Callback is arrow function (ignores thisArg)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback is arrow function (ignores thisArg)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayMapTest024();
@@ -517,12 +517,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest025
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_2500
-     * @tc.name ArrayMapTest025
-     * @tc.desc Map array with function elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with function elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const func1 = () => 'a';
@@ -535,12 +535,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest026
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_2600
-     * @tc.name ArrayMapTest026
-     * @tc.desc Map array with nested objects, modify object in callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with nested objects, modify object in callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -558,12 +558,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest027
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_2700
-     * @tc.name ArrayMapTest027
-     * @tc.desc Callback is non-function (throws TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback is non-function (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2];
@@ -579,12 +579,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest028
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_2800
-     * @tc.name ArrayMapTest028
-     * @tc.desc Map non-array object without length (returns empty array)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map non-array object without length (returns empty array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayMapTest028() as string[];
@@ -594,12 +594,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest029
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_2900
-     * @tc.name ArrayMapTest029
-     * @tc.desc Map array with circular reference object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with circular reference object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -622,12 +622,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest030
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_3000
-     * @tc.name ArrayMapTest030
-     * @tc.desc Comprehensive test: mixed types + thisArg + sparse array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive test: mixed types + thisArg + sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = ArrayMapTest030() as (number | null | string | bigint | undefined)[];
@@ -646,12 +646,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest031
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_3100
-     * @tc.name ArrayMapTest031
-     * @tc.desc Map array with Infinity and -Infinity values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with Infinity and -Infinity values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [Infinity, -Infinity, 0];
@@ -661,12 +661,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest032
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_3200
-     * @tc.name ArrayMapTest032
-     * @tc.desc Callback uses optional chaining operator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses optional chaining operator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -684,12 +684,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest033
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_3300
-     * @tc.name ArrayMapTest033
-     * @tc.desc Map array with 0 and -0 (treated as equal)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with 0 and -0 (treated as equal)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [0, -0, 1];
@@ -701,12 +701,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest034
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_3400
-     * @tc.name ArrayMapTest034
-     * @tc.desc Map array of functions with different arity
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array of functions with different arity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const func0 = () => 'zero';
@@ -719,12 +719,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest035
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_3500
-     * @tc.name ArrayMapTest035
-     * @tc.desc Callback uses nullish coalescing operator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses nullish coalescing operator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [null, undefined, 0, '', 'value'];
@@ -734,60 +734,60 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest036
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_3600
-     * @tc.name ArrayMapTest036
-     * @tc.desc Map array with frozen objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest036()).assertDeepEquals([2, 4]);
     });
 
     /**
+     * @tc.name   ArrayMapTest037
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_3700
-     * @tc.name ArrayMapTest037
-     * @tc.desc Map array using generator function as callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array using generator function as callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest037()).assertDeepEquals([2, 4, 6]);
     });
 
     /**
+     * @tc.name   ArrayMapTest038
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_3800
-     * @tc.name ArrayMapTest038
-     * @tc.desc Map array with getter properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with getter properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest038()).assertDeepEquals([10, 20]);
     });
 
     /**
+     * @tc.name   ArrayMapTest039
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_3900
-     * @tc.name ArrayMapTest039
-     * @tc.desc Callback modifies own prototype chain
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback modifies own prototype chain
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest039()).assertDeepEquals([2, 4]);
     });
 
     /**
+     * @tc.name   ArrayMapTest040
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_4000
-     * @tc.name ArrayMapTest040
-     * @tc.desc Map array with date objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with date objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const date1 = new Date(2023, 0, 1);
@@ -799,12 +799,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest041
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_4100
-     * @tc.name ArrayMapTest041
-     * @tc.desc Map array using async callback (without await)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array using async callback (without await)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3];
@@ -816,12 +816,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest042
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_4200
-     * @tc.name ArrayMapTest042
-     * @tc.desc Map array with regexp elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with regexp elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [/abc/, /def/g, /ghi/i];
@@ -831,12 +831,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest043
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_4300
-     * @tc.name ArrayMapTest043
-     * @tc.desc Callback uses logical AND assignment
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses logical AND assignment
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [true, false, 0, 1, '', 'value'];
@@ -850,12 +850,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest044
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_4400
-     * @tc.name ArrayMapTest044
-     * @tc.desc Map array with weakmap references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with weakmap references
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {}
@@ -873,12 +873,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest045
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_4500
-     * @tc.name ArrayMapTest045
-     * @tc.desc Map array with elements that are promises
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are promises
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)];
@@ -888,36 +888,36 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest046
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_4600
-     * @tc.name ArrayMapTest046
-     * @tc.desc Callback uses logical OR assignment
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses logical OR assignment
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest046()).assertDeepEquals([0, '', false, 1, 'value', true]);
     });
 
     /**
+     * @tc.name   ArrayMapTest047
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_4700
-     * @tc.name ArrayMapTest047
-     * @tc.desc Map array with proxy objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with proxy objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest047()).assertDeepEquals([20, 20]);
     });
 
     /**
+     * @tc.name   ArrayMapTest048
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_4800
-     * @tc.name ArrayMapTest048
-     * @tc.desc Map array with elements that are maps
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are maps
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const map1 = new Map([['a', 1]]);
@@ -929,12 +929,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest049
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_4900
-     * @tc.name ArrayMapTest049
-     * @tc.desc Callback uses exponentiation assignment
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses exponentiation assignment
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 3, 4];
@@ -948,12 +948,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest050
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_5000
-     * @tc.name ArrayMapTest050
-     * @tc.desc Map array with elements that are sets
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are sets
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set1 = new Set([1, 2, 3]);
@@ -965,12 +965,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest051
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_5100
-     * @tc.name ArrayMapTest051
-     * @tc.desc Map array using callback that returns different primitive types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array using callback that returns different primitive types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, '2', true, null, undefined];
@@ -982,12 +982,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest052
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_5200
-     * @tc.name ArrayMapTest052
-     * @tc.desc Callback uses bitwise operators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses bitwise operators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3, 4];
@@ -997,12 +997,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest053
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_5300
-     * @tc.name ArrayMapTest053
-     * @tc.desc Map array with typed array elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with typed array elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [
@@ -1015,12 +1015,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest054
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_5400
-     * @tc.name ArrayMapTest054
-     * @tc.desc Callback uses string template literals
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses string template literals
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3];
@@ -1030,12 +1030,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest055
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_5500
-     * @tc.name ArrayMapTest055
-     * @tc.desc Map array with array buffer elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with array buffer elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [
@@ -1048,12 +1048,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest056
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_5600
-     * @tc.name ArrayMapTest056
-     * @tc.desc Callback uses optional parameters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses optional parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3];
@@ -1063,12 +1063,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest057
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_5700
-     * @tc.name ArrayMapTest057
-     * @tc.desc Map array with error objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with error objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [
@@ -1081,24 +1081,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest058
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_5800
-     * @tc.name ArrayMapTest058
-     * @tc.desc Callback uses rest parameters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses rest parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest058()).assertDeepEquals([1, 1, 1]);
     });
 
     /**
+     * @tc.name   ArrayMapTest059
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_5900
-     * @tc.name ArrayMapTest059
-     * @tc.desc Map array with weakset references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with weakset references
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {}
@@ -1115,12 +1115,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest060
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_6000
-     * @tc.name ArrayMapTest060
-     * @tc.desc Callback uses spread operator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses spread operator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [[1], [2, 3], [4, 5, 6]];
@@ -1130,24 +1130,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest061
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_6100
-     * @tc.name ArrayMapTest061
-     * @tc.desc Map array with elements that are module names (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are module names (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest061()).assertDeepEquals(['1.0', '2.0']);
     });
 
     /**
+     * @tc.name   ArrayMapTest062
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_6200
-     * @tc.name ArrayMapTest062
-     * @tc.desc Callback uses destructuring assignment
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses destructuring assignment
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1166,12 +1166,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest063
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_6300
-     * @tc.name ArrayMapTest063
-     * @tc.desc Map array with elements that are web API objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are web API objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1189,12 +1189,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest064
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_6400
-     * @tc.name ArrayMapTest064
-     * @tc.desc Callback uses default parameters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses default parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, null, 3, undefined, 5];
@@ -1204,24 +1204,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest065
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_6500
-     * @tc.name ArrayMapTest065
-     * @tc.desc Map array with elements that are promises (mixed resolved/rejected)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are promises (mixed resolved/rejected)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(await Promise.all(ArrayMapTest065())).assertDeepEquals([1, 'error', 3]);
     });
 
     /**
+     * @tc.name   ArrayMapTest066
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_6600
-     * @tc.name ArrayMapTest066
-     * @tc.desc Callback uses class instances with methods
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses class instances with methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       class Calculator {
@@ -1243,12 +1243,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest067
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_6700
-     * @tc.name ArrayMapTest067
-     * @tc.desc Map array with elements that are reflection objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are reflection objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const obj: GeneratedObjectLiteralInterface_1 = { a: 1, b: 2 };
@@ -1260,12 +1260,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest068
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_6800
-     * @tc.name ArrayMapTest068
-     * @tc.desc Callback uses dynamic property names
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses dynamic property names
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1284,12 +1284,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest069
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_6900
-     * @tc.name ArrayMapTest069
-     * @tc.desc Map array with elements that are JSON strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are JSON strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1307,24 +1307,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest070
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_7000
-     * @tc.name ArrayMapTest070
-     * @tc.desc Callback uses function binding
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses function binding
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest070()).assertDeepEquals([2, 4, 6]);
     });
 
     /**
+     * @tc.name   ArrayMapTest071
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_7100
-     * @tc.name ArrayMapTest071
-     * @tc.desc Map array with elements that are weak references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are weak references
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {}
@@ -1342,24 +1342,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest072
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_7200
-     * @tc.name ArrayMapTest072
-     * @tc.desc Callback uses function composition
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses function composition
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest072()).assertDeepEquals([3, 5, 7]);
     });
 
     /**
+     * @tc.name   ArrayMapTest073
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_7300
-     * @tc.name ArrayMapTest073
-     * @tc.desc Map array with elements that are intl objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are intl objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [
@@ -1372,12 +1372,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest074
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_7400
-     * @tc.name ArrayMapTest074
-     * @tc.desc Callback uses memoization
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses memoization
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayMapTest074() as (Map<number, number> | number[])[];
@@ -1387,24 +1387,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest075
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_7500
-     * @tc.name ArrayMapTest075
-     * @tc.desc Map array with elements that are generators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are generators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest075()).assertDeepEquals([3, 7]);
     });
 
     /**
+     * @tc.name   ArrayMapTest076
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_7600
-     * @tc.name ArrayMapTest076
-     * @tc.desc Callback uses recursion
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses recursion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const factorial = (n: number): number => n <= 1 ? 1 : n * factorial(n - 1);
@@ -1415,24 +1415,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest077
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_7700
-     * @tc.name ArrayMapTest077
-     * @tc.desc Map array with elements that are iterators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are iterators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayMapTest077()).assertDeepEquals([1, 3]);
     });
 
     /**
+     * @tc.name   ArrayMapTest078
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_7800
-     * @tc.name ArrayMapTest078
-     * @tc.desc Callback uses function currying
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses function currying
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const add = (a: number) => (b: number) => a + b;
@@ -1445,24 +1445,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest079
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_7900
-     * @tc.name ArrayMapTest079
-     * @tc.desc Map array with elements that are async iterators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are async iterators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(await Promise.all(ArrayMapTest079())).assertDeepEquals([2, 4]);
     });
 
     /**
+     * @tc.name   ArrayMapTest080
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_8000
-     * @tc.name ArrayMapTest080
-     * @tc.desc Callback uses higher-order functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses higher-order functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const createMultiplier = (factor: number) => (num: number) => num * factor;
@@ -1476,12 +1476,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest081
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_8100
-     * @tc.name ArrayMapTest081
-     * @tc.desc Map array with elements that are event emitters (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are event emitters (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1504,12 +1504,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest082
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_8200
-     * @tc.name ArrayMapTest082
-     * @tc.desc Callback uses type coercion intentionally
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses type coercion intentionally
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = ['1', '2', '3', '4'];
@@ -1519,12 +1519,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest083
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_8300
-     * @tc.name ArrayMapTest083
-     * @tc.desc Map array with elements that are web workers (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are web workers (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1547,12 +1547,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest084
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_8400
-     * @tc.name ArrayMapTest084
-     * @tc.desc Callback uses explicit type conversion
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses explicit type conversion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3, 4];
@@ -1562,12 +1562,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest085
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_8500
-     * @tc.name ArrayMapTest085
-     * @tc.desc Map array with elements that are file objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are file objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1585,12 +1585,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest086
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_8600
-     * @tc.name ArrayMapTest086
-     * @tc.desc Callback uses arrayBuffer and dataView
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses arrayBuffer and dataView
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const buffers = [
@@ -1607,12 +1607,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest087
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_8700
-     * @tc.name ArrayMapTest087
-     * @tc.desc Map array with elements that are geolocation objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are geolocation objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1634,12 +1634,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest088
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_8800
-     * @tc.name ArrayMapTest088
-     * @tc.desc Callback uses math functions with precision handling
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses math functions with precision handling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [0.1, 0.2, 0.3];
@@ -1649,12 +1649,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest089
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_8900
-     * @tc.name ArrayMapTest089
-     * @tc.desc Map array with elements that are media elements (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are media elements (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1672,12 +1672,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest090
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_9000
-     * @tc.name ArrayMapTest090
-     * @tc.desc Callback uses string manipulation with locale awareness
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses string manipulation with locale awareness
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = ['café', 'naïve', 'cliché'];
@@ -1687,12 +1687,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest091
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_9100
-     * @tc.name ArrayMapTest091
-     * @tc.desc Map array with elements that are performance timing objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are performance timing objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1710,12 +1710,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest092
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_9200
-     * @tc.name ArrayMapTest092
-     * @tc.desc Callback uses bitwise assignment operators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses bitwise assignment operators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 4, 8];
@@ -1729,12 +1729,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest093
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_9300
-     * @tc.name ArrayMapTest093
-     * @tc.desc Map array with elements that are crypto objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are crypto objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1755,12 +1755,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest094
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_9400
-     * @tc.name ArrayMapTest094
-     * @tc.desc Callback uses date manipulation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses date manipulation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [
@@ -1777,12 +1777,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest095
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_9500
-     * @tc.name ArrayMapTest095
-     * @tc.desc Map array with elements that are animation objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are animation objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1800,12 +1800,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest096
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_9600
-     * @tc.name ArrayMapTest096
-     * @tc.desc Callback uses regex with lookbehind assertions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses regex with lookbehind assertions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       try {
@@ -1824,12 +1824,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest097
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_9700
-     * @tc.name ArrayMapTest097
-     * @tc.desc Map array with elements that are battery status objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are battery status objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1847,24 +1847,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest098
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_9800
-     * @tc.name ArrayMapTest098
-     * @tc.desc Callback uses dynamic import (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses dynamic import (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(await Promise.all(ArrayMapTest098())).assertDeepEquals([5, 'TEST']);
     });
 
     /**
+     * @tc.name   ArrayMapTest099
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_9900
-     * @tc.name ArrayMapTest099
-     * @tc.desc Map array with elements that are notification objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Map array with elements that are notification objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1883,12 +1883,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest100
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_10000
-     * @tc.name ArrayMapTest100
-     * @tc.desc Callback uses top-level await (simulated in async context)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses top-level await (simulated in async context)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayMapTest100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1913,24 +1913,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest101
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_10100
-     * @tc.name ArrayMapTest101
-     * @tc.desc Map array with elements that are cache objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are cache objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayMapTest101()).assertDeepEquals([200, 404]);
     });
 
     /**
+     * @tc.name   ArrayMapTest102
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_10200
-     * @tc.name ArrayMapTest102
-     * @tc.desc Callback uses array groupBy polyfill
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses array groupBy polyfill
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -1946,12 +1946,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest103
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_10300
-     * @tc.name ArrayMapTest103
-     * @tc.desc Map array with elements that are device orientation objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are device orientation objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -1970,12 +1970,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest104
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_10400
-     * @tc.name ArrayMapTest104
-     * @tc.desc Callback uses string replaceAll method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses string replaceAll method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = ['a.b.c', 'x.y.z', '1.2.3'];
@@ -1985,12 +1985,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest105
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_10500
-     * @tc.name ArrayMapTest105
-     * @tc.desc Map array with elements that are payment request objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are payment request objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2008,12 +2008,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest106
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_10600
-     * @tc.name ArrayMapTest106
-     * @tc.desc Callback uses numeric separators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses numeric separators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [1_000, 2_000, 3_000];
@@ -2023,12 +2023,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest107
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_10700
-     * @tc.name ArrayMapTest107
-     * @tc.desc Map array with elements that are webgl objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are webgl objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2047,24 +2047,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest108
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_10800
-     * @tc.name ArrayMapTest108
-     * @tc.desc Callback uses logical assignment operators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses logical assignment operators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayMapTest108()).assertDeepEquals(['default', 1, 'default', 'hello', 'default', 'default']);
     });
 
     /**
+     * @tc.name   ArrayMapTest109
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_10900
-     * @tc.name ArrayMapTest109
-     * @tc.desc Map array with elements that are permission status objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are permission status objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2082,120 +2082,120 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest110
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_11000
-     * @tc.name ArrayMapTest110
-     * @tc.desc Callback uses top-level await with dynamic import (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses top-level await with dynamic import (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(await ArrayMapTest110()).assertDeepEquals(['TEST', 12]);
     });
 
     /**
+     * @tc.name   ArrayMapTest112
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_11200
-     * @tc.name ArrayMapTest112
-     * @tc.desc Callback uses array findLast method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses array findLast method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayMapTest112()).assertDeepEquals([3, 6, 12]);
     });
 
     /**
+     * @tc.name   ArrayMapTest113
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_11300
-     * @tc.name ArrayMapTest113
-     * @tc.desc Map array with elements that are scheduler objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are scheduler objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(await ArrayMapTest113()).assertDeepEquals([0, 1]);
     });
 
     /**
+     * @tc.name   ArrayMapTest114
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_11400
-     * @tc.name ArrayMapTest114
-     * @tc.desc Callback uses string at method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses string at method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayMapTest114()).assertDeepEquals(['o', 'd', 't']);
     });
 
     /**
+     * @tc.name   ArrayMapTest115
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_11500
-     * @tc.name ArrayMapTest115
-     * @tc.desc Map array with elements that are web assembly modules (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are web assembly modules (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayMapTest115()).assertDeepEquals([5, 6]);
     });
 
     /**
+     * @tc.name   ArrayMapTest116
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_11600
-     * @tc.name ArrayMapTest116
-     * @tc.desc Callback uses array findLastIndex method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses array findLastIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayMapTest116()).assertDeepEquals([2, 1, 3]);
     });
 
     /**
+     * @tc.name   ArrayMapTest117
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_11700
-     * @tc.name ArrayMapTest117
-     * @tc.desc Map array with elements that are background fetch objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are background fetch objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayMapTest117()).assertDeepEquals([100, 50]);
     });
 
     /**
+     * @tc.name   ArrayMapTest118
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_11800
-     * @tc.name ArrayMapTest118
-     * @tc.desc Callback uses array with() method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses array with() method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayMapTest118()).assertDeepEquals([[1, 0, 3], [4, 0, 6], [7, 0, 9]]);
     });
 
     /**
+     * @tc.name   ArrayMapTest119
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_11900
-     * @tc.name ArrayMapTest119
-     * @tc.desc Map array with elements that are content index objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are content index objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(await ArrayMapTest119()).assertDeepEquals(['article1', 'article2']);
     });
 
     /**
+     * @tc.name   ArrayMapTest120
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_12000
-     * @tc.name ArrayMapTest120
-     * @tc.desc Callback uses hashbang comments (syntax test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses hashbang comments (syntax test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [1, 2, 3];
@@ -2207,12 +2207,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest121
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_12100
-     * @tc.name ArrayMapTest121
-     * @tc.desc Map array with elements that are broadcast channel objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are broadcast channel objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2232,12 +2232,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest122
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_12200
-     * @tc.name ArrayMapTest122
-     * @tc.desc Callback uses array groupByToMap method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses array groupByToMap method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2253,12 +2253,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest123
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_12300
-     * @tc.name ArrayMapTest123
-     * @tc.desc Map array with elements that are web share objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are web share objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2276,24 +2276,24 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest124
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_12400
-     * @tc.name ArrayMapTest124
-     * @tc.desc Callback uses Temporal API (simulated if not available)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses Temporal API (simulated if not available)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayMapTest124()).assertDeepEquals([2024, 2024]);
     });
 
     /**
+     * @tc.name   ArrayMapTest125
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_12500
-     * @tc.name ArrayMapTest125
-     * @tc.desc Map array with elements that are media session objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are media session objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2316,12 +2316,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest126
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_12600
-     * @tc.name ArrayMapTest126
-     * @tc.desc Callback uses array toReversed method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses array toReversed method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [
@@ -2335,12 +2335,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest127
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_12700
-     * @tc.name ArrayMapTest127
-     * @tc.desc Map array with elements that are sensor objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are sensor objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2363,12 +2363,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest128
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_12800
-     * @tc.name ArrayMapTest128
-     * @tc.desc Callback uses array toSorted method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses array toSorted method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [
@@ -2382,12 +2382,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest129
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_12900
-     * @tc.name ArrayMapTest129
-     * @tc.desc Map array with elements that are serial port objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Map array with elements that are serial port objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2408,12 +2408,12 @@ export default function ArrayMapTest() {
     });
 
     /**
+     * @tc.name   ArrayMapTest130
      * @tc.number SUB_BUILTINS_ARRAY_MAP_TEST_13000
-     * @tc.name ArrayMapTest130
-     * @tc.desc Callback uses array toSpliced method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses array toSpliced method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayMapTest130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [

@@ -52,6 +52,8 @@ import canOverScroll from './Scroll/canOverScroll.test';
 import scrollStopDrag from './Scroll/scrollStopDrag.test';
 import zoomScaleScroll from './Scroll/zoomScaleScroll.test';
 import zoomScaleNull from './Scroll/zoomScaleNull.test';
+import scrollZoomModifier from './Scroll/scrollZoomModifier.test';
+import scrollDraggingFling from './Scroll/scrollDraggingFling.test';
 import scrollScrollbarColor from './Scroll/scrollScrollbarColor.test';
 import ScrollContentSize from './Scroll/ScrollContentSize.test';
 
@@ -95,6 +97,8 @@ export default function testsuite() {
   scrollStopDrag()
   zoomScaleScroll()
   zoomScaleNull()
+  scrollZoomModifier()
+  scrollDraggingFling()
   scrollScrollbarColor()
   ScrollContentSize()
 }

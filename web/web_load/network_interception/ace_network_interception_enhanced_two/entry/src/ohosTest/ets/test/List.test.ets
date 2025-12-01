@@ -17,6 +17,8 @@ import webOnLoadIntercept from './WebOnLoadIntercept.test'
 import WebViewEnumAndFontLibrary from './WebViewEnumAndFontLibrary.test'
 import webViewControllerPart3Test from './WebViewControllerPart3.test'
 import webViewControllerDownloadNetworkTest from './WebViewControllerDownloadNetworkTest.test'
+import webOnInterceptRequestSpecial from './WebOnInterceptRequestSpecial.test'
+import webOnLoadInterceptSpecial from './WebOnLoadInterceptSpecial.test'
 
 export default function testsuite() {
   webViewControllerPart3Test()
@@ -24,4 +26,6 @@ export default function testsuite() {
   webOnLoadIntercept()
   WebViewEnumAndFontLibrary()
   webViewControllerDownloadNetworkTest()
+  webOnInterceptRequestSpecial()
+  webOnLoadInterceptSpecial()
 }

@@ -62,7 +62,11 @@ function dataEnd_on_callback() {
 
 function dataReceiveProgress_on_callback(data: http.DataReceiveProgressInfo) {
   isONEventDataReceiveProgress +=1;
-  console.log(" dataReceiveProgress_on_callback receive datProgress:" + JSON.stringify(data));
+  console.log("dataReceiveProgress_on_callback receive data: " + JSON.stringify(data));
+  let receiveSize = data.receiveSize;
+  let totalSize = data.totalSize;
+  console.log("dataReceiveProgress_on_callback receiveSize: " + JSON.stringify(receiveSize) +
+    " , dataReceiveProgress_on_callback totalSize: " + JSON.stringify(totalSize));
 }
 
 export default function HttpRequestInStreamTest() {
@@ -75,12 +79,12 @@ export default function HttpRequestInStreamTest() {
     })
 
     /**
+     * @tc.name   testTelephonyhttpHttpRequestrequestInStream0100
      * @tc.number SUB_Telephony_http_HttpRequest_requestInStream_0100
-     * @tc.name testTelephonyhttpHttpRequestrequestInStream0100
-     * @tc.desc Test requestInStream(url: string, callback: AsyncCallback<void>): void.
-     * @tc.level LEVEL2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Test requestInStream(url: string, callback: AsyncCallback<void>): void.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyhttpHttpRequestrequestInStream0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = "testTelephonyhttpHttpRequestrequestInStream0100";
@@ -119,12 +123,12 @@ export default function HttpRequestInStreamTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetStackHttprequestInStreamondataReceive0100
      * @tc.number SUB_Telephony_NetStack_HttprequestInStream_on_dataReceive_0100
-     * @tc.name testTelephonyNetStackHttprequestInStreamondataReceive0100
-     * @tc.desc Test on(type: "dataReceive", callback: Callback<ArrayBuffer>): void.
-     * @tc.level LEVEL2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Test on(type: "dataReceive", callback: Callback<ArrayBuffer>): void.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHttprequestInStreamondataReceive0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = "testTelephonyNetStackHttprequestInStreamondataReceive0100";
@@ -155,12 +159,12 @@ export default function HttpRequestInStreamTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetStackHttprequestInStreamoffdataReceive0100
      * @tc.number SUB_Telephony_NetStack_HttprequestInStream_off_dataReceive_0100
-     * @tc.name testTelephonyNetStackHttprequestInStreamoffdataReceive0100
-     * @tc.desc Test off(type: "dataReceive", callback: Callback<ArrayBuffer>): void.
-     * @tc.level LEVEL2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Test off(type: "dataReceive", callback: Callback<ArrayBuffer>): void.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHttprequestInStreamoffdataReceive0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = "testTelephonyNetStackHttprequestInStreamoffdataReceive0100";
@@ -189,12 +193,12 @@ export default function HttpRequestInStreamTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetStackHttprequestInStreamoffdataReceive0200
      * @tc.number SUB_Telephony_NetStack_HttprequestInStream_off_dataReceive_0200
-     * @tc.name testTelephonyNetStackHttprequestInStreamoffdataReceive0200
-     * @tc.desc Test off(type: "dataReceive"): void.
-     * @tc.level LEVEL2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Test off(type: "dataReceive"): void.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHttprequestInStreamoffdataReceive0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = "testTelephonyNetStackHttprequestInStreamoffdataReceive0200";
@@ -224,12 +228,12 @@ export default function HttpRequestInStreamTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetStackHttprequestInStreamondataReceiveProgress0100
      * @tc.number SUB_Telephony_NetStack_HttprequestInStream_on_dataReceiveProgress_0100
-     * @tc.name testTelephonyNetStackHttprequestInStreamondataReceiveProgress0100
-     * @tc.desc Test on(type: "dataReceiveProgress", callback: Callback<{ receiveSize: number, totalSize: number }>): void.
-     * @tc.level LEVEL2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Test on(type: "dataReceiveProgress", callback: Callback<{ receiveSize: number, totalSize: number }>): void.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHttprequestInStreamondataReceiveProgress0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = "testTelephonyNetStackHttprequestInStreamondataReceiveProgress0100";
@@ -259,12 +263,12 @@ export default function HttpRequestInStreamTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetStackHttprequestInStreamoffdataReceiveProgress0100
      * @tc.number SUB_Telephony_NetStack_HttprequestInStream_off_dataReceiveProgress_0100
-     * @tc.name testTelephonyNetStackHttprequestInStreamoffdataReceiveProgress0100
-     * @tc.desc Test off(type: "dataReceiveProgress", callback: Callback<{ receiveSize: number, totalSize: number }>): void.
-     * @tc.level LEVEL2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Test off(type: "dataReceiveProgress", callback: Callback<{ receiveSize: number, totalSize: number }>): void.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHttprequestInStreamoffdataReceiveProgress0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = "testTelephonyNetStackHttprequestInStreamoffdataReceiveProgress0100";
@@ -295,12 +299,12 @@ export default function HttpRequestInStreamTest() {
 
 
     /**
+     * @tc.name   testTelephonyNetStackHttprequestInStreamoffdataReceiveProgress0200
      * @tc.number SUB_Telephony_NetStack_HttprequestInStream_off_dataReceiveProgress_0200
-     * @tc.name testTelephonyNetStackHttprequestInStreamoffdataReceiveProgress0200
-     * @tc.desc Test off(type: "dataReceiveProgress"): void.
-     * @tc.level LEVEL2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Test off(type: "dataReceiveProgress"): void.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHttprequestInStreamoffdataReceiveProgress0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = "testTelephonyNetStackHttprequestInStreamoffdataReceiveProgress0200";
@@ -332,12 +336,12 @@ export default function HttpRequestInStreamTest() {
 
 
     /**
+     * @tc.name   testTelephonyNetStackHttprequestInStreamondataEnd0100
      * @tc.number SUB_Telephony_NetStack_HttprequestInStream_on_dataEnd_0100
-     * @tc.name testTelephonyNetStackHttprequestInStreamondataEnd0100
-     * @tc.desc Test on(type: "dataEnd", callback: Callback<void>): void.
-     * @tc.level LEVEL2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Test on(type: "dataEnd", callback: Callback<void>): void.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHttprequestInStreamondataEnd0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = "testTelephonyNetStackHttprequestInStreamondataEnd0100";
@@ -367,12 +371,12 @@ export default function HttpRequestInStreamTest() {
 
 
     /**
+     * @tc.name   testTelephonyNetStackHttprequestInStreamoffdataEnd0100
      * @tc.number SUB_Telephony_NetStack_HttprequestInStream_off_dataEnd_0100
-     * @tc.name testTelephonyNetStackHttprequestInStreamoffdataEnd0100
-     * @tc.desc Test off(type: "dataEnd", callback?: Callback<void>): void.
-     * @tc.level LEVEL2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Test off(type: "dataEnd", callback?: Callback<void>): void.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHttprequestInStreamoffdataEnd0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = "testTelephonyNetStackHttprequestInStreamoffdataEnd0100";
@@ -401,12 +405,12 @@ export default function HttpRequestInStreamTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetStackHttprequestInStreamoffdataEnd0200
      * @tc.number SUB_Telephony_NetStack_HttprequestInStream_off_dataEnd_0200
-     * @tc.name testTelephonyNetStackHttprequestInStreamoffdataEnd0200
-     * @tc.desc Test off(type: "dataEnd"): void;.
-     * @tc.level LEVEL2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Test off(type: "dataEnd"): void;.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonyNetStackHttprequestInStreamoffdataEnd0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = "testTelephonyNetStackHttprequestInStreamoffdataEnd0200";

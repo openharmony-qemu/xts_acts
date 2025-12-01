@@ -34,6 +34,14 @@ let srcData63AfterSha256 = new Uint8Array([
 
 export default function SecurityHuksSignVerifyECCCallbackJsunit() {
     describe('SecurityHuksSignVerifyECCCallbackJsunit', function () {
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_ECC_001
+         * @tc.number Security_HUKS_SignVerify_API9_ECC_001
+         * @tc.desc   Security_HUKS_SignVerify_API9_ECC_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_ECC_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyECCSize224SIGNNONEKeyAlias001';
             let HuksOptions = {
@@ -58,6 +66,14 @@ export default function SecurityHuksSignVerifyECCCallbackJsunit() {
             await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'finish', false, srcData63AfterSha256);
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_ECC_002
+         * @tc.number Security_HUKS_SignVerify_API9_ECC_002
+         * @tc.desc   Security_HUKS_SignVerify_API9_ECC_002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_ECC_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyECCSize256SIGNNONEKeyAlias002';
             let HuksOptions = {
@@ -72,6 +88,14 @@ export default function SecurityHuksSignVerifyECCCallbackJsunit() {
             await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'abort', true, srcData63Kb);
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_ECC_003
+         * @tc.number Security_HUKS_SignVerify_API9_ECC_003
+         * @tc.desc   Security_HUKS_SignVerify_API9_ECC_003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_ECC_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyECCSize256SIGNNONEKeyAlias003';
             let HuksOptions = {
@@ -96,6 +120,14 @@ export default function SecurityHuksSignVerifyECCCallbackJsunit() {
             await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'finish', false, srcData65Sha256);
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_ECC_004
+         * @tc.number Security_HUKS_SignVerify_API9_ECC_004
+         * @tc.desc   Security_HUKS_SignVerify_API9_ECC_004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_ECC_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyECCSize256SIGNNONEKeyAlias004';
             let HuksOptions = {

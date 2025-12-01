@@ -50,15 +50,15 @@ export default function webWaitForAttachedTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_EMITWAITFORATTACHED_0100
-    * @tc.name        : emitWaitForAttached
-    * @tc.desc        : test on normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
 
+    /**
+     * @tc.name   emitWaitForAttached
+     * @tc.number emitWaitForAttached
+     * @tc.desc   emitWaitForAttached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitWaitForAttached', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWaitForAttached", 141311)
       let isReturn = false;

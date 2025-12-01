@@ -26,12 +26,12 @@ export default function SecurityHuksKeyAttestationTest() {
   describe('SecurityHuksKeyAttestationTest', () => {
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0100
-     * @tc.name   : test x25519 anonAttest, process success
-     * @tc.desc   : generate key, anonAttest key
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0100
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0100
+     * @tc.desc   generate key, anonAttest key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0100";
@@ -48,12 +48,12 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0200
-     * @tc.name   : test x25519 anonAttest, process success
-     * @tc.desc   : import key, anonAttest key
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0200
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0200
+     * @tc.desc   import key, anonAttest key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0200";
@@ -74,12 +74,12 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0300
-     * @tc.name   : test ed25519 anonAttest, process success
-     * @tc.desc   : generate key, anonAttest key
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0300
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0300
+     * @tc.desc   generate key, anonAttest key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0300";
@@ -96,12 +96,12 @@ export default function SecurityHuksKeyAttestationTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0400
-     * @tc.name   : test ed25519 anonAttest, process success
-     * @tc.desc   : import key, anonAttest key
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0400
+     * @tc.number SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0400
+     * @tc.desc   import key, anonAttest key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyAttestation_AnonAttestKey_API16_Func_0400";

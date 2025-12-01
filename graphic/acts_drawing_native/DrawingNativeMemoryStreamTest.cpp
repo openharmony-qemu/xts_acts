@@ -48,13 +48,13 @@ class DrawingNativeMemoryStreamTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0100
- * @tc.name: testMemoryStreamCreateNormal
- * @tc.desc: Test for creating memory stream with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMemoryStreamCreateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0100
+ * @tc.desc   Test for creating memory stream with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMemoryStreamTest, testMemoryStreamCreateNormal, Function | SmallTest | Level0) {
     // 1. Call OH_Drawing_MemoryStreamCreate with copyData set to true
@@ -74,13 +74,13 @@ HWTEST_F(DrawingNativeMemoryStreamTest, testMemoryStreamCreateNormal, Function |
     OH_Drawing_MemoryStreamDestroy(stream);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0101
- * @tc.name: testMemoryStreamCreateNull
- * @tc.desc: Test for creating memory stream with NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMemoryStreamCreateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0101
+ * @tc.desc   Test for creating memory stream with NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMemoryStreamTest, testMemoryStreamCreateNull, Function | SmallTest | Level3) {
     char data[10] = {0};
@@ -97,13 +97,13 @@ HWTEST_F(DrawingNativeMemoryStreamTest, testMemoryStreamCreateNull, Function | S
     OH_Drawing_MemoryStreamDestroy(stream);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0102
- * @tc.name: testMemoryStreamCreateAbnormal
- * @tc.desc: Test for creating memory stream with abnormal parameters (negative values).
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMemoryStreamCreateAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0102
+ * @tc.desc   Test for creating memory stream with abnormal parameters (negative values).
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMemoryStreamTest, testMemoryStreamCreateAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MemoryStreamCreate with a negative value as the second parameter
@@ -116,13 +116,13 @@ HWTEST_F(DrawingNativeMemoryStreamTest, testMemoryStreamCreateAbnormal, Function
     OH_Drawing_MemoryStreamDestroy(stream);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0103
- * @tc.name: testMemoryStreamCreateMultipleCalls
- * @tc.desc: Test for creating memory stream with multiple calls using different data segments.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMemoryStreamCreateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0103
+ * @tc.desc   Test for creating memory stream with multiple calls using different data segments.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMemoryStreamTest, testMemoryStreamCreateMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_MemoryStreamCreate 10 times, passing different data segments

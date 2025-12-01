@@ -47,12 +47,12 @@ export default function AtomicsAPISecondTest() {
     })
 
     /**
+     * @tc.name   AtomicsNotifyApiTest3800
      * @tc.number SUB_ATOMICS_API_TEST_3800
-     * @tc.name AtomicsNotifyApiTest3800
-     * @tc.desc Test Atomics.notify method to wake up agents sleeping in the wait queue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.notify method to wake up agents sleeping in the wait queue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsNotifyApiTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsNotifyApiTest3800';
@@ -84,12 +84,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsNotifyApiTest3900
      * @tc.number SUB_ATOMICS_API_TEST_3900
-     * @tc.name AtomicsNotifyApiTest3900
-     * @tc.desc Test Atomics.notify method with different indices including -1, 0, length, length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.notify method with different indices including -1, 0, length, length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsNotifyApiTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsNotifyApiTest3900';
@@ -142,12 +142,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsNotifyApiTest4000
      * @tc.number SUB_ATOMICS_API_TEST_4000
-     * @tc.name AtomicsNotifyApiTest4000
-     * @tc.desc Test Atomics.notify method with different count values (0, 1, 3)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.notify method with different count values (0, 1, 3)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsNotifyApiTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsNotifyApiTest4000';
@@ -182,12 +182,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsIsLockFreeApiTest4100
      * @tc.number SUB_ATOMICS_API_TEST_4100
-     * @tc.name AtomicsIsLockFreeApiTest4100
-     * @tc.desc Test Atomics.isLockFree method with values 1, 2, 4, 8 which should return true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree method with values 1, 2, 4, 8 which should return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsIsLockFreeApiTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsIsLockFreeApiTest4100';
@@ -216,12 +216,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsIsLockFreeApiTest4200
      * @tc.number SUB_ATOMICS_API_TEST_4200
-     * @tc.name AtomicsIsLockFreeApiTest4200
-     * @tc.desc Test Atomics.isLockFree method with values -1, 0, 3, 9, Integer.MAX_VALUE, Integer.MAX_VALUE+1 which should return false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree method with values -1, 0, 3, 9, Integer.MAX_VALUE, Integer.MAX_VALUE+1 which should return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsIsLockFreeApiTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsIsLockFreeApiTest4200';
@@ -257,12 +257,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsIsLockFreeApiTest4300
      * @tc.number SUB_ATOMICS_API_TEST_4300
-     * @tc.name AtomicsIsLockFreeApiTest4300
-     * @tc.desc Test Atomics.isLockFree method with null and undefined values which should return false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.isLockFree method with null and undefined values which should return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsIsLockFreeApiTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsIsLockFreeApiTest4300';
@@ -282,12 +282,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsArrayTest4400
      * @tc.number SUB_ATOMICS_API_TEST_4400
-     * @tc.name AtomicsArrayTest4400
-     * @tc.desc Test using arrayBuffer, sharedArrayBuffer, and numeric input with Int8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test using arrayBuffer, sharedArrayBuffer, and numeric input with Int8Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsArrayTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsArrayTest4400';
@@ -319,12 +319,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsArrayTest4500
      * @tc.number SUB_ATOMICS_API_TEST_4500
-     * @tc.name AtomicsArrayTest4500
-     * @tc.desc Test using arrayBuffer, sharedArrayBuffer, and numeric input with Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test using arrayBuffer, sharedArrayBuffer, and numeric input with Uint8Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsArrayTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsArrayTest4500';
@@ -356,12 +356,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsArrayTest4600
      * @tc.number SUB_ATOMICS_API_TEST_4600
-     * @tc.name AtomicsArrayTest4600
-     * @tc.desc Test using arrayBuffer, sharedArrayBuffer, and numeric input with Int16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test using arrayBuffer, sharedArrayBuffer, and numeric input with Int16Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsArrayTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsArrayTest4600';
@@ -393,12 +393,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsArrayTest4700
      * @tc.number SUB_ATOMICS_API_TEST_4700
-     * @tc.name AtomicsArrayTest4700
-     * @tc.desc Test using arrayBuffer, sharedArrayBuffer, and numeric input with Uint16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test using arrayBuffer, sharedArrayBuffer, and numeric input with Uint16Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsArrayTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsArrayTest4700';
@@ -430,12 +430,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsArrayTest4800
      * @tc.number SUB_ATOMICS_API_TEST_4800
-     * @tc.name AtomicsArrayTest4800
-     * @tc.desc Test using arrayBuffer, sharedArrayBuffer, and numeric input with Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test using arrayBuffer, sharedArrayBuffer, and numeric input with Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsArrayTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsArrayTest4800';
@@ -467,12 +467,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsArrayTest4900
      * @tc.number SUB_ATOMICS_API_TEST_4900
-     * @tc.name AtomicsArrayTest4900
-     * @tc.desc Test using arrayBuffer, sharedArrayBuffer, and numeric input with Uint32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test using arrayBuffer, sharedArrayBuffer, and numeric input with Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsArrayTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsArrayTest4900';
@@ -504,12 +504,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsArrayTest5000
      * @tc.number SUB_ATOMICS_API_TEST_5000
-     * @tc.name AtomicsArrayTest5000
-     * @tc.desc Test using arrayBuffer, sharedArrayBuffer, and numeric input with Uint8ClampedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test using arrayBuffer, sharedArrayBuffer, and numeric input with Uint8ClampedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsArrayTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsArrayTest5000';
@@ -545,12 +545,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsArrayTest5100
      * @tc.number SUB_ATOMICS_API_TEST_5100
-     * @tc.name AtomicsArrayTest5100
-     * @tc.desc Test using arrayBuffer, sharedArrayBuffer, and numeric input with Float32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test using arrayBuffer, sharedArrayBuffer, and numeric input with Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsArrayTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsArrayTest5100';
@@ -582,12 +582,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsArrayTest5200
      * @tc.number SUB_ATOMICS_API_TEST_5200
-     * @tc.name AtomicsArrayTest5200
-     * @tc.desc Test using arrayBuffer, sharedArrayBuffer, and numeric input with BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test using arrayBuffer, sharedArrayBuffer, and numeric input with BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsArrayTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsArrayTest5200';
@@ -619,12 +619,12 @@ export default function AtomicsAPISecondTest() {
     });
 
     /**
+     * @tc.name   AtomicsArrayTest5300
      * @tc.number SUB_ATOMICS_API_TEST_5300
-     * @tc.name AtomicsArrayTest5300
-     * @tc.desc Test using arrayBuffer, sharedArrayBuffer, and numeric input with BigUint64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test using arrayBuffer, sharedArrayBuffer, and numeric input with BigUint64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsArrayTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsArrayTest5300';

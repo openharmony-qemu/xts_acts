@@ -18,8 +18,12 @@ export default function LinkedListTest() {
 describe("LinkedListTest", function () {
       
   /**
-   * @tc.name: testConstructor001
-   * @tc.desc: Create an LinkedList instance. For example: let linkedList = new LinkedList().
+   * @tc.name   testConstructor001
+   * @tc.number testConstructor001
+   * @tc.desc   Create an LinkedList instance. For example: let linkedList = new LinkedList().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testConstructor001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     try {
@@ -32,8 +36,12 @@ describe("LinkedListTest", function () {
   });
   
   /**
-   * @tc.name: testAdd002
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: linkedList.add("四").
+   * @tc.name   testAdd002
+   * @tc.number testAdd002
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: linkedList.add("四").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -43,8 +51,12 @@ describe("LinkedListTest", function () {
   });
   
   /**
-   * @tc.name: testAdd003
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: linkedList.add(8).
+   * @tc.name   testAdd003
+   * @tc.number testAdd003
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: linkedList.add(8).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -54,9 +66,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd004
-   * @tc.desc: Add a element to the end of the LinkedList instance. 
-   * For example: let a = [1, 2, 3, 4];linkedList.add(a).
+   * @tc.name   testAdd004
+   * @tc.number testAdd004
+   * @tc.desc   Add a element to the end of the LinkedList instance.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -67,9 +82,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd005
-   * @tc.desc: Add a element to the end of the LinkedList instance. 
-   * For example: let a = {name: "lala", age: "13"};linkedList.add(a).
+   * @tc.name   testAdd005
+   * @tc.number testAdd005
+   * @tc.desc   Add a element to the end of the LinkedList instance.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -80,8 +98,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd006
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: let a = ".";linkedList.add(a).
+   * @tc.name   testAdd006
+   * @tc.number testAdd006
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: let a = ".";linkedList.add(a).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -92,8 +114,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd007
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: let a = "*";linkedList.add(a).
+   * @tc.name   testAdd007
+   * @tc.number testAdd007
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: let a = "*";linkedList.add(a).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -104,8 +130,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd008
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: let a = "/";linkedList.add(a).
+   * @tc.name   testAdd008
+   * @tc.number testAdd008
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: let a = "/";linkedList.add(a).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -116,8 +146,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd009
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: let a = "";linkedList.add(a).
+   * @tc.name   testAdd009
+   * @tc.number testAdd009
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: let a = "";linkedList.add(a).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -128,8 +162,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd010
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: let a = "a";linkedList.add(a).
+   * @tc.name   testAdd010
+   * @tc.number testAdd010
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: let a = "a";linkedList.add(a).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAdd010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -143,8 +181,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testHas011
-   * @tc.desc: Check whether the LinkedList contains a specified element. For example: linkedList.has("a").
+   * @tc.name   testHas011
+   * @tc.number testHas011
+   * @tc.desc   Check whether the LinkedList contains a specified element. For example: linkedList.has("a").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testHas011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -158,8 +200,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testClone012
-   * @tc.desc: Clone an LinkedList instance. For example: linkedList.clone().
+   * @tc.name   testClone012
+   * @tc.number testClone012
+   * @tc.desc   Clone an LinkedList instance. For example: linkedList.clone().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testClone012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -181,8 +227,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAddFirst013
-   * @tc.desc: Add element to LinkedList instance header. For example: linkedList.addFirst("e").
+   * @tc.name   testAddFirst013
+   * @tc.number testAddFirst013
+   * @tc.desc   Add element to LinkedList instance header. For example: linkedList.addFirst("e").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testAddFirst013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -195,8 +245,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testRemoveFirst014
-   * @tc.desc: Delete the header element of a LinkedList instance. For example: linkedList.removeFirst().
+   * @tc.name   testRemoveFirst014
+   * @tc.number testRemoveFirst014
+   * @tc.desc   Delete the header element of a LinkedList instance. For example: linkedList.removeFirst().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testRemoveFirst014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -216,10 +270,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGetLastIndexOf015
-   * @tc.desc:  In the LinkedList instance, find the index of a specified element from brack to front, 
-   * and return the index found for the first time. If not found, return -1.
-   * For example: linkedList.getLastIndexOf("a").
+   * @tc.name   testGetLastIndexOf015
+   * @tc.number testGetLastIndexOf015
+   * @tc.desc   In the LinkedList instance, find the index of a specified element from brack to front,
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testGetLastIndexOf015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -234,10 +290,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGetLastIndexOf016
-   * @tc.desc:  In the LinkedList instance, find the index of a specified element from brack to front, 
-   * and return the index found for the first time. If not found, return -1. 
-   * For example: linkedList.getLastIndexOf("f").
+   * @tc.name   testGetLastIndexOf016
+   * @tc.number testGetLastIndexOf016
+   * @tc.desc   In the LinkedList instance, find the index of a specified element from brack to front,
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testGetLastIndexOf016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -252,10 +310,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGetIndexOf017
-   * @tc.desc:  In the LinkedList instance, find the index of a specified element from front to back, 
-   * and return the index found for the first time. If not found, return -1. 
-   * For example: linkedList.getIndexOf("b").
+   * @tc.name   testGetIndexOf017
+   * @tc.number testGetIndexOf017
+   * @tc.desc   In the LinkedList instance, find the index of a specified element from front to back,
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testGetIndexOf017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -270,10 +330,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGetIndexOf018
-   * @tc.desc:  In the LinkedList instance, find the index of a specified element from front to back, 
-   * and return the index found for the first time. If not found, return -1. 
-   * For example: linkedList.getIndexOf("f").
+   * @tc.name   testGetIndexOf018
+   * @tc.number testGetIndexOf018
+   * @tc.desc   In the LinkedList instance, find the index of a specified element from front to back,
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testGetIndexOf018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -288,9 +350,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testRemoveByIndex019
-   * @tc.desc: In the linkedList instance, delete the element based on its index. 
-   * For example: linkedList.removeByIndex(2).
+   * @tc.name   testRemoveByIndex019
+   * @tc.number testRemoveByIndex019
+   * @tc.desc   In the linkedList instance, delete the element based on its index.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testRemoveByIndex019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -311,9 +376,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testRemoveByIndex020
-   * @tc.desc: In the linkedList instance, delete the element based on its subscript index. 
-   * For example: linkedList.removeByIndex(10).
+   * @tc.name   testRemoveByIndex020
+   * @tc.number testRemoveByIndex020
+   * @tc.desc   In the linkedList instance, delete the element based on its subscript index.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testRemoveByIndex020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -333,8 +401,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testRemove021
-   * @tc.desc: Delete the specified element. For example: linkedList.remove("a").
+   * @tc.name   testRemove021
+   * @tc.number testRemove021
+   * @tc.desc   Delete the specified element. For example: linkedList.remove("a").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testRemove021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -355,8 +427,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testRemove022
-   * @tc.desc: Delete the specified element. For example: linkedList.remove("d").
+   * @tc.name   testRemove022
+   * @tc.number testRemove022
+   * @tc.desc   Delete the specified element. For example: linkedList.remove("d").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testRemove022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -370,8 +446,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testRemove023
-   * @tc.desc: Delete the specified element. For example: linkedList.remove("d").
+   * @tc.name   testRemove023
+   * @tc.number testRemove023
+   * @tc.desc   Delete the specified element. For example: linkedList.remove("d").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testRemove023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -380,8 +460,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testRemoveFirstFound024
-   * @tc.desc: Delete the specified element found for the first time. For example: linkedList.removeFirstFound("b").
+   * @tc.name   testRemoveFirstFound024
+   * @tc.number testRemoveFirstFound024
+   * @tc.desc   Delete the specified element found for the first time. For example: linkedList.removeFirstFound("b").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testRemoveFirstFound024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -402,8 +486,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testRemoveLastFound025
-   * @tc.desc: Delete the specified element found for the last time. For example: linkedList.removeLastFound("b").
+   * @tc.name   testRemoveLastFound025
+   * @tc.number testRemoveLastFound025
+   * @tc.desc   Delete the specified element found for the last time. For example: linkedList.removeLastFound("b").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testRemoveLastFound025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -424,8 +512,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGetFirst026
-   * @tc.desc: Get the header element of the linkedList instance. For example: linkedList.getFirst().
+   * @tc.name   testGetFirst026
+   * @tc.number testGetFirst026
+   * @tc.desc   Get the header element of the linkedList instance. For example: linkedList.getFirst().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testGetFirst026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -439,8 +531,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGetLast027
-   * @tc.desc: Get the end element of the linkedList instance. For example: linkedList.getLast().
+   * @tc.name   testGetLast027
+   * @tc.number testGetLast027
+   * @tc.desc   Get the end element of the linkedList instance. For example: linkedList.getLast().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testGetLast027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -454,8 +550,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testInsert028
-   * @tc.desc: Insert an element into the middle of the LinkedList instance. For example: linkedList.insert(3, "d").
+   * @tc.name   testInsert028
+   * @tc.number testInsert028
+   * @tc.desc   Insert an element into the middle of the LinkedList instance. For example: linkedList.insert(3, "d").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testInsert028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -476,8 +576,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testInsert029
-   * @tc.desc: Insert an element into the middle of the LinkedList instance. For example: linkedList.insert(0, "d").
+   * @tc.name   testInsert029
+   * @tc.number testInsert029
+   * @tc.desc   Insert an element into the middle of the LinkedList instance. For example: linkedList.insert(0, "d").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testInsert029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
     let linkedList = new LinkedList();
@@ -498,8 +602,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testInsert030
-   * @tc.desc: Insert an element into the middle of the LinkedList instance. For example: linkedList.insert(5, "d").
+   * @tc.name   testInsert030
+   * @tc.number testInsert030
+   * @tc.desc   Insert an element into the middle of the LinkedList instance. For example: linkedList.insert(5, "d").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsert030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -520,8 +628,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testInsert031
-   * @tc.desc: Insert an element into the middle of the LinkedList instance. For example: linkedList.insert(9, "d").
+   * @tc.name   testInsert031
+   * @tc.number testInsert031
+   * @tc.desc   Insert an element into the middle of the LinkedList instance. For example: linkedList.insert(9, "d").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsert031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -541,8 +653,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testSet032
-   * @tc.desc: Modify the element corresponding to the specified index. For example: linkedList.set(2, "d").
+   * @tc.name   testSet032
+   * @tc.number testSet032
+   * @tc.desc   Modify the element corresponding to the specified index. For example: linkedList.set(2, "d").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testSet032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -556,8 +672,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testConvertToArray033
-   * @tc.desc: Convert an LinkedList instance to an array. For example: linkedList.convertToArray().
+   * @tc.name   testConvertToArray033
+   * @tc.number testConvertToArray033
+   * @tc.desc   Convert an LinkedList instance to an array. For example: linkedList.convertToArray().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testConvertToArray033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -574,8 +694,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testLength034
-   * @tc.desc: Get the number of elements in the LinkedList instance. For example: linkedList.length.
+   * @tc.name   testLength034
+   * @tc.number testLength034
+   * @tc.desc   Get the number of elements in the LinkedList instance. For example: linkedList.length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testLength034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -589,8 +713,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testClear035
-   * @tc.desc: Clear all elements in the linkedList instance. For example: linkedList.clear().
+   * @tc.name   testClear035
+   * @tc.number testClear035
+   * @tc.desc   Clear all elements in the linkedList instance. For example: linkedList.clear().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testClear035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -605,9 +733,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testIterator036
-   * @tc.desc: Iterates over all elements in an LinkedList instance. 
-   * For example: for (let item of linkedList) {arr.push(item);}.
+   * @tc.name   testIterator036
+   * @tc.number testIterator036
+   * @tc.desc   Iterates over all elements in an LinkedList instance.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testIterator036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -631,9 +762,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testForEach037
-   * @tc.desc: Traversing elements in an LinkedList instance. 
-   * For example: linkedList.forEach((item, index) => {arr.push(item);}).
+   * @tc.name   testForEach037
+   * @tc.number testForEach037
+   * @tc.desc   Traversing elements in an LinkedList instance.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testForEach037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -657,8 +791,12 @@ describe("LinkedListTest", function () {
   });
  
   /**
-   * @tc.name: testRemoveLast038
-   * @tc.desc: Delete the end element of a LinkedList instance. linkedList.removeLast().
+   * @tc.name   testRemoveLast038
+   * @tc.number testRemoveLast038
+   * @tc.desc   Delete the end element of a LinkedList instance. linkedList.removeLast().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testRemoveLast038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -679,8 +817,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGet039
-   * @tc.desc: Gets the element corresponding to the specified index. For example: linkedList.get(1).
+   * @tc.name   testGet039
+   * @tc.number testGet039
+   * @tc.desc   Gets the element corresponding to the specified index. For example: linkedList.get(1).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGet039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -694,8 +836,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGet040
-   * @tc.desc: Gets the element corresponding to the specified index. For example: linkedList.get(10).
+   * @tc.name   testGet040
+   * @tc.number testGet040
+   * @tc.desc   Gets the element corresponding to the specified index. For example: linkedList.get(10).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGet040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -709,8 +855,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testListGet041
-   * @tc.desc: Gets the element corresponding to the specified index. For example: linkedList[1].
+   * @tc.name   testListGet041
+   * @tc.number testListGet041
+   * @tc.desc   Gets the element corresponding to the specified index. For example: linkedList[1].
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testListGet041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -727,12 +877,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_01000
-   * @tc.name: testGet042
-   * @tc.desc: Gets the element corresponding to the specified index. For example: list.get(1).
-   * @tc.size: MediumTest
-   * @tc.type: Function
-   * @tc.level: Level 2
+   * @tc.name   testGet042
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_01000
+   * @tc.desc   Gets the element corresponding to the specified index. For example: list.get(1).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGet042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -745,8 +895,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testListSet042
-   * @tc.desc: Modify the element corresponding to the specified index. For example: linkedList[1] = "f".
+   * @tc.name   testListSet042
+   * @tc.number testListSet042
+   * @tc.desc   Modify the element corresponding to the specified index. For example: linkedList[1] = "f".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testListSet042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -764,9 +918,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd043
-   * @tc.desc: Add a element to the end of the LinkedList instance. 
-   * For example: for (let i = 0; i < 100; i++) {linkedList.add(i);}.
+   * @tc.name   testAdd043
+   * @tc.number testAdd043
+   * @tc.desc   Add a element to the end of the LinkedList instance.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAdd043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -778,9 +935,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testRemoveByIndex044
-   * @tc.desc: In the linkedList instance, delete the element based on its subscript index. 
-   * For example: linkedList.removeByIndex(1).
+   * @tc.name   testRemoveByIndex044
+   * @tc.number testRemoveByIndex044
+   * @tc.desc   In the linkedList instance, delete the element based on its subscript index.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testRemoveByIndex044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -795,8 +955,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testClone045
-   * @tc.desc: Clone an LinkedList instance. For example: linkedList.clone().
+   * @tc.name   testClone045
+   * @tc.number testClone045
+   * @tc.desc   Clone an LinkedList instance. For example: linkedList.clone().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testClone045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -811,9 +975,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGetIndexOf046
-   * @tc.desc:  In the LinkedList instance, find the index of a specified element from front to back, 
-   * and return the index found for the first time. If not found, return -1. For example: linkedList.getIndexOf(1).
+   * @tc.name   testGetIndexOf046
+   * @tc.number testGetIndexOf046
+   * @tc.desc   In the LinkedList instance, find the index of a specified element from front to back,
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGetIndexOf046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -822,13 +989,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_01005
-   * @tc.name: testRemoveByIndex045
-   * @tc.desc:   In the LinkedList instance, find the index of a specified element from front to back,
-   * and return the index found for the first time. If not found, return -1. For example: linkedList.getIndexOf(1).
-   * @tc.size: MediumTest
-   * @tc.type: Function
-   * @tc.level: Level 2
+   * @tc.name   testRemoveByIndex045
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_01005
+   * @tc.desc   In the LinkedList instance, find the index of a specified element from front to back,
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testRemoveByIndex045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -840,9 +1006,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testForEach047
-   * @tc.desc: Traversing elements in an LinkedList instance. 
-   * For example: linkedList.forEach((item, index) => { num++; }).
+   * @tc.name   testForEach047
+   * @tc.number testForEach047
+   * @tc.desc   Traversing elements in an LinkedList instance.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testForEach047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -854,8 +1023,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testHas048
-   * @tc.desc: Check whether the LinkedList contains a specified element. For example: linkedList.has(1).
+   * @tc.name   testHas048
+   * @tc.number testHas048
+   * @tc.desc   Check whether the LinkedList contains a specified element. For example: linkedList.has(1).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testHas048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -864,8 +1037,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGet050
-   * @tc.desc: Gets the element corresponding to the specified index. For example: linkedList.get(1).
+   * @tc.name   testGet050
+   * @tc.number testGet050
+   * @tc.desc   Gets the element corresponding to the specified index. For example: linkedList.get(1).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGet050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -874,8 +1051,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testClear051
-   * @tc.desc: Clear all elements in the LinkedList instance. For example: linkedList.clear().
+   * @tc.name   testClear051
+   * @tc.number testClear051
+   * @tc.desc   Clear all elements in the LinkedList instance. For example: linkedList.clear().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testClear051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -885,8 +1066,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGetLast052
-   * @tc.desc: Get the end element of the linkedList instance. For example: linkedList.getLast().
+   * @tc.name   testGetLast052
+   * @tc.number testGetLast052
+   * @tc.desc   Get the end element of the linkedList instance. For example: linkedList.getLast().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGetLast052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -895,8 +1080,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGetFirst053
-   * @tc.desc: Get the header element of the linkedList instance. For example: linkedList.getFirst().
+   * @tc.name   testGetFirst053
+   * @tc.number testGetFirst053
+   * @tc.desc   Get the header element of the linkedList instance. For example: linkedList.getFirst().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGetFirst053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -905,8 +1094,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd054
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: linkedList.add(null).
+   * @tc.name   testAdd054
+   * @tc.number testAdd054
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: linkedList.add(null).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAdd054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -916,8 +1109,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd055
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: linkedList.add(0.1).
+   * @tc.name   testAdd055
+   * @tc.number testAdd055
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: linkedList.add(0.1).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAdd055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -927,8 +1124,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd056
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: linkedList.add(-1).
+   * @tc.name   testAdd056
+   * @tc.number testAdd056
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: linkedList.add(-1).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAdd056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -938,8 +1139,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testAdd057
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: const obj = {}; linkedList.add(obj).
+   * @tc.name   testAdd057
+   * @tc.number testAdd057
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: const obj = {}; linkedList.add(obj).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAdd057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -950,8 +1155,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testIterator058
-   * @tc.desc: Iterates over all elements in an LinkedList instance. For example: linkedList[Symbol.iterator]().
+   * @tc.name   testIterator058
+   * @tc.number testIterator058
+   * @tc.desc   Iterates over all elements in an LinkedList instance. For example: linkedList[Symbol.iterator]().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testIterator058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -975,8 +1184,12 @@ describe("LinkedListTest", function () {
   });
 
   /**
-   * @tc.name: testAdd057
-   * @tc.desc: Add a element to the end of the LinkedList instance. For example: linkedList.add.bind({}, obj)().
+   * @tc.name   testAdd059 
+   * @tc.number testAdd059 
+   * @tc.desc   Add a element to the end of the LinkedList instance. For example: linkedList.add.bind({}, obj)().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testAdd059 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -991,8 +1204,12 @@ describe("LinkedListTest", function () {
   });
 
   /**
-   * @tc.name: testInsert058
-   * @tc.desc: Insert an element into the middle of the LinkedList instance. For example: linkedList.insert("a", "d").
+   * @tc.name   testInsert058
+   * @tc.number testInsert058
+   * @tc.desc   Insert an element into the middle of the LinkedList instance. For example: linkedList.insert("a", "d").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsert058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -1010,12 +1227,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_01002
-   * @tc.name: testInsert059
-   * @tc.desc: Insert an element into the middle of the LinkedList instance. For example: linkedList.insert("a", "d").
-   * @tc.size: MediumTest
-   * @tc.type: Function
-   * @tc.level: Level 2
+   * @tc.name   testInsert059
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_01002
+   * @tc.desc   Insert an element into the middle of the LinkedList instance. For example: linkedList.insert("a", "d").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testInsert059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -1028,8 +1245,12 @@ describe("LinkedListTest", function () {
   });
     
   /**
-   * @tc.name: testGet059
-   * @tc.desc: Gets the element corresponding to the specified index. For example: linkedList.get("a").
+   * @tc.name   testGet059
+   * @tc.number testGet059
+   * @tc.desc   Gets the element corresponding to the specified index. For example: linkedList.get("a").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testGet059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -1044,8 +1265,12 @@ describe("LinkedListTest", function () {
   });
 
   /**
-   * @tc.name: testRemoveFirst060
-   * @tc.desc: Delete the header element of a LinkedList instance. For example: linkedList.removeFirst().
+   * @tc.name   testRemoveFirst060
+   * @tc.number testRemoveFirst060
+   * @tc.desc   Delete the header element of a LinkedList instance. For example: linkedList.removeFirst().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testRemoveFirst060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -1060,8 +1285,12 @@ describe("LinkedListTest", function () {
   });
 
   /**
-   * @tc.name: testRemoveLast061
-   * @tc.desc: Delete the end element of a LinkedList instance. linkedList.removeLast().
+   * @tc.name   testRemoveLast061
+   * @tc.number testRemoveLast061
+   * @tc.desc   Delete the end element of a LinkedList instance. linkedList.removeLast().
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testRemoveLast061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -1076,9 +1305,12 @@ describe("LinkedListTest", function () {
   });
 
   /**
-   * @tc.name: testRemoveByIndex062
-   * @tc.desc: In the linkedList instance, delete the element based on its subscript index. 
-   * For example: linkedList.removeByIndex("a").
+   * @tc.name   testRemoveByIndex062
+   * @tc.number testRemoveByIndex062
+   * @tc.desc   In the linkedList instance, delete the element based on its subscript index.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testRemoveByIndex062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -1096,8 +1328,12 @@ describe("LinkedListTest", function () {
   });
 
   /**
-   * @tc.name: testRemoveFirstFound063
-   * @tc.desc: Delete the specified element found for the first time. For example: linkedList.removeFirstFound("b").
+   * @tc.name   testRemoveFirstFound063
+   * @tc.number testRemoveFirstFound063
+   * @tc.desc   Delete the specified element found for the first time. For example: linkedList.removeFirstFound("b").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testRemoveFirstFound063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -1112,8 +1348,12 @@ describe("LinkedListTest", function () {
   });
 
   /**
-   * @tc.name: testSet064
-   * @tc.desc: Modify the element corresponding to the specified index. For example: linkedList.set(6, "d").
+   * @tc.name   testSet064
+   * @tc.number testSet064
+   * @tc.desc   Modify the element corresponding to the specified index. For example: linkedList.set(6, "d").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testSet064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
@@ -1132,8 +1372,12 @@ describe("LinkedListTest", function () {
   });
 
   /**
-   * @tc.name: testSet065
-   * @tc.desc: Modify the element corresponding to the specified index. For example: linkedList.set("a", "d").
+   * @tc.name   testSet065
+   * @tc.number testSet065
+   * @tc.desc   Modify the element corresponding to the specified index. For example: linkedList.set("a", "d").
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testSet065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();

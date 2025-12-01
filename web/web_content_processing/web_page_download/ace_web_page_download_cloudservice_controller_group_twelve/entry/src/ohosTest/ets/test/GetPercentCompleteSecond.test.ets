@@ -59,12 +59,12 @@ export default function GetPercentCompleteSecond() {
     })
 
     /**
+     * @tc.name   testWebView_getPercentComplete1001
      * @tc.number SUB_ACE_WEB_getPercentComplete_1001
-     * @tc.name testWebView_getPercentComplete1001
-     * @tc.desc test getPercentComplete
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getPercentComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getPercentComplete1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -81,12 +81,12 @@ export default function GetPercentCompleteSecond() {
     })
 
     /**
+     * @tc.name   testWebView_getPercentComplete1002
      * @tc.number SUB_ACE_WEB_getPercentComplete_1002
-     * @tc.name testWebView_getPercentComplete1002
-     * @tc.desc test getPercentComplete
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getPercentComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getPercentComplete1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -103,12 +103,12 @@ export default function GetPercentCompleteSecond() {
     })
 
     /**
+     * @tc.name   testWebView_getPercentComplete1003
      * @tc.number SUB_ACE_WEB_getPercentComplete_1003
-     * @tc.name testWebView_getPercentComplete1003
-     * @tc.desc test getPercentComplete20
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getPercentComplete20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getPercentComplete1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -125,12 +125,12 @@ export default function GetPercentCompleteSecond() {
     })
 
     /**
+     * @tc.name   testWebView_getPercentComplete1004
      * @tc.number SUB_ACE_WEB_getPercentComplete_1004
-     * @tc.name testWebView_getPercentComplete1004
-     * @tc.desc test getPercentComplete80
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getPercentComplete80
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getPercentComplete1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -147,12 +147,12 @@ export default function GetPercentCompleteSecond() {
     })
 
     /**
+     * @tc.name   testWebView_getPercentComplete1005
      * @tc.number SUB_ACE_WEB_getPercentComplete_1005
-     * @tc.name testWebView_getPercentComplete1005
-     * @tc.desc test getPercentComplete40-100
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getPercentComplete40-100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getPercentComplete1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({

@@ -64,12 +64,12 @@ export default function ConnectionAppProxyTest() {
   describe('ConnectionAppProxyTest',()=>{
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0100
-     * @tc.name   : testNetworkMgrConnectionGetDefaultHttpProxy0100
-     * @tc.desc   : Setting Application level Proxy.
-     * @tc.level  : level0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionGetDefaultHttpProxy0100
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0100
+     * @tc.desc   Setting Application level Proxy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetDefaultHttpProxy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testNetworkMgrConnectionGetDefaultHttpProxy0100';
@@ -103,13 +103,13 @@ export default function ConnectionAppProxyTest() {
       }
     });
   
-   /**
-     * @tc.number : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0200
-     * @tc.name   : testNetworkMgrConnectionGetDefaultHttpProxy0200
-     * @tc.desc   : Setting Application level Proxy.
-     * @tc.level  : level0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultHttpProxy0200
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0200
+     * @tc.desc   Setting Application level Proxy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetDefaultHttpProxy0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testNetworkMgrConnectionGetDefaultHttpProxy0200';
@@ -139,13 +139,13 @@ export default function ConnectionAppProxyTest() {
         done();
       }
     });
-   /**
-     * @tc.number : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0300
-     * @tc.name   : testNetworkMgrConnectionGetDefaultHttpProxy0300
-     * @tc.desc   : Setting Application level Proxy.
-     * @tc.level  : level0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultHttpProxy0300
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0300
+     * @tc.desc   Setting Application level Proxy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetDefaultHttpProxy0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testNetworkMgrConnectionGetDefaultHttpProxy0300';
@@ -176,13 +176,13 @@ export default function ConnectionAppProxyTest() {
         done();
       }
     });
-  /**
-     * @tc.number : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0400
-     * @tc.name   : testNetworkMgrConnectionGetDefaultHttpProxy0400
-     * @tc.desc   : Setting Application level Proxy.
-     * @tc.level  : level0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultHttpProxy0400
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0400
+     * @tc.desc   Setting Application level Proxy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetDefaultHttpProxy0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testNetworkMgrConnectionGetDefaultHttpProxy0400';
@@ -212,13 +212,13 @@ export default function ConnectionAppProxyTest() {
         done();
       }
     });     
-/**
-     * @tc.number : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0500
-     * @tc.name   : testNetworkMgrConnectionGetDefaultHttpProxy0500
-     * @tc.desc   : Setting Application level Proxy.
-     * @tc.level  : level0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionGetDefaultHttpProxy0500
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultHttpProxy_0500
+     * @tc.desc   Setting Application level Proxy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetDefaultHttpProxy0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testNetworkMgrConnectionGetDefaultHttpProxy0500';

@@ -87,12 +87,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest0100
      * @tc.number JS_PROJECT_PROMISE_METHOD_0100
-     * @tc.name JSProjectPromiseTest0100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -105,12 +105,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest0200
      * @tc.number JS_PROJECT_PROMISE_METHOD_0200
-     * @tc.name JSProjectPromiseTest0200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -125,12 +125,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest0300
      * @tc.number JS_PROJECT_PROMISE_METHOD_0300
-     * @tc.name JSProjectPromiseTest0300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -143,12 +143,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest0400
      * @tc.number JS_PROJECT_PROMISE_METHOD_0400
-     * @tc.name JSProjectPromiseTest0400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -171,12 +171,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest0500
      * @tc.number JS_PROJECT_PROMISE_METHOD_0500
-     * @tc.name JSProjectPromiseTest0500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -197,12 +197,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest0600
      * @tc.number JS_PROJECT_PROMISE_METHOD_0600
-     * @tc.name JSProjectPromiseTest0600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -226,12 +226,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest0700
      * @tc.number JS_PROJECT_PROMISE_METHOD_0700
-     * @tc.name JSProjectPromiseTest0700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -253,12 +253,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest0800
      * @tc.number JS_PROJECT_PROMISE_METHOD_0800
-     * @tc.name JSProjectPromiseTest0800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -278,12 +278,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest0900
      * @tc.number JS_PROJECT_PROMISE_METHOD_0900
-     * @tc.name JSProjectPromiseTest0900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -312,12 +312,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest1000
      * @tc.number JS_PROJECT_PROMISE_METHOD_1000
-     * @tc.name JSProjectPromiseTest1000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -337,12 +337,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest1100
      * @tc.number JS_PROJECT_PROMISE_METHOD_1100
-     * @tc.name JSProjectPromiseTest1100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -378,12 +378,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest1200
      * @tc.number JS_PROJECT_PROMISE_METHOD_1200
-     * @tc.name JSProjectPromiseTest1200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -411,12 +411,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest1300
      * @tc.number JS_PROJECT_PROMISE_METHOD_1300
-     * @tc.name JSProjectPromiseTest1300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -431,12 +431,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest1400
      * @tc.number JS_PROJECT_PROMISE_METHOD_1400
-     * @tc.name JSProjectPromiseTest1400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -451,12 +451,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest1500
      * @tc.number JS_PROJECT_PROMISE_METHOD_1500
-     * @tc.name JSProjectPromiseTest1500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -471,12 +471,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest1600
      * @tc.number JS_PROJECT_PROMISE_METHOD_1600
-     * @tc.name JSProjectPromiseTest1600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -502,12 +502,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest1700
      * @tc.number JS_PROJECT_PROMISE_METHOD_1700
-     * @tc.name JSProjectPromiseTest1700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -533,12 +533,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest1800
      * @tc.number JS_PROJECT_PROMISE_METHOD_1800
-     * @tc.name JSProjectPromiseTest1800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -564,12 +564,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest1900
      * @tc.number JS_PROJECT_PROMISE_METHOD_1900
-     * @tc.name JSProjectPromiseTest1900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -585,12 +585,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest2000
      * @tc.number JS_PROJECT_PROMISE_METHOD_2000
-     * @tc.name JSProjectPromiseTest2000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -606,12 +606,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest2100
      * @tc.number JS_PROJECT_PROMISE_METHOD_2100
-     * @tc.name JSProjectPromiseTest2100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -637,12 +637,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest2200
      * @tc.number JS_PROJECT_PROMISE_METHOD_2200
-     * @tc.name JSProjectPromiseTest2200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -660,12 +660,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest2300
      * @tc.number JS_PROJECT_PROMISE_METHOD_2300
-     * @tc.name JSProjectPromiseTest2300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -680,12 +680,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest2400
      * @tc.number JS_PROJECT_PROMISE_METHOD_2400
-     * @tc.name JSProjectPromiseTest2400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -700,12 +700,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest2500
      * @tc.number JS_PROJECT_PROMISE_METHOD_2500
-     * @tc.name JSProjectPromiseTest2500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -720,12 +720,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest2600
      * @tc.number JS_PROJECT_PROMISE_METHOD_2600
-     * @tc.name JSProjectPromiseTest2600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -740,12 +740,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest2700
      * @tc.number JS_PROJECT_PROMISE_METHOD_2700
-     * @tc.name JSProjectPromiseTest2700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -760,12 +760,12 @@ export default function JSProjectPromiseTest() {
 
 
     /**
+     * @tc.name   JSProjectPromiseTest2800
      * @tc.number JS_PROJECT_PROMISE_METHOD_2800
-     * @tc.name JSProjectPromiseTest2800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JSProjectPromiseTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

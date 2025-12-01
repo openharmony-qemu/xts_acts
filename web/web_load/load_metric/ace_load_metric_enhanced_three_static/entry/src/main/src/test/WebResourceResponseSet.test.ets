@@ -50,14 +50,14 @@ export default function webResourceResponseSet() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    /*
-    * @tc.number     : SUB_WEB_SETRESPONSEDATA_0100
-    * @tc.name       : testSetResponseDataStatic001
-    * @tc.desc       : test setResponseData
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetResponseDataStatic001
+     * @tc.number SUB_WEB_SETRESPONSEDATA_0100
+     * @tc.desc   test setResponseData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetResponseDataStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -70,14 +70,14 @@ export default function webResourceResponseSet() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_SETRESPONSEENCODING_0100
-    * @tc.name       : testSetResponseEncodingStatic001
-    * @tc.desc       : test setResponseEncoding
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetResponseEncodingStatic001
+     * @tc.number SUB_WEB_SETRESPONSEENCODING_0100
+     * @tc.desc   test setResponseEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetResponseEncodingStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -90,14 +90,14 @@ export default function webResourceResponseSet() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_SETRESPONSEMIMETYPE_0100
-    * @tc.name       : testSetResponseMimeTypeStatic001
-    * @tc.desc       : test setResponseMimeType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetResponseMimeTypeStatic001
+     * @tc.number SUB_WEB_SETRESPONSEMIMETYPE_0100
+     * @tc.desc   test setResponseMimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetResponseMimeTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -110,14 +110,14 @@ export default function webResourceResponseSet() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_SETREASONMESSAGE_0100
-    * @tc.name       : testSetReasonMessageStatic001
-    * @tc.desc       : test setReasonMessage
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetReasonMessageStatic001
+     * @tc.number SUB_WEB_SETREASONMESSAGE_0100
+     * @tc.desc   test setReasonMessage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetReasonMessageStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -130,14 +130,14 @@ export default function webResourceResponseSet() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_SETRESPONSEHEADER_0100
-    * @tc.name       : testSetResponseHeaderStatic001
-    * @tc.desc       : test setResponseHeader
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetResponseHeaderStatic001
+     * @tc.number SUB_WEB_SETRESPONSEHEADER_0100
+     * @tc.desc   test setResponseHeader
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetResponseHeaderStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -150,14 +150,14 @@ export default function webResourceResponseSet() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_SETRESPONSECODE_0100
-    * @tc.name       : testSetResponseCodeStatic001
-    * @tc.desc       : test setResponseCode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetResponseCodeStatic001
+     * @tc.number SUB_WEB_SETRESPONSECODE_0100
+     * @tc.desc   test setResponseCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetResponseCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -170,14 +170,14 @@ export default function webResourceResponseSet() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_SETRESPONSEISREADY_0100
-    * @tc.name       : testSetResponseIsReadyStatic001
-    * @tc.desc       : test setResponseIsReady
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetResponseIsReadyStatic001
+     * @tc.number SUB_WEB_SETRESPONSEISREADY_0100
+     * @tc.desc   test setResponseIsReady
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetResponseIsReadyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

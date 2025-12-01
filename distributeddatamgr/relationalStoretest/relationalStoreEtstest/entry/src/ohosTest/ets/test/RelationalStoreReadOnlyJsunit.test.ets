@@ -103,7 +103,6 @@ export default function RdbStoreReadOnlyTest() {
     console.info(TAG + "*************JS Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0100
      * @tc.desc   1. set isReadOnly as true
@@ -127,7 +126,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0200
      * @tc.desc   1. set isReadOnly as true
@@ -159,7 +157,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0300
      * @tc.desc   1. set isReadOnly as true
@@ -182,7 +179,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0400
      * @tc.desc   insert data
@@ -215,7 +211,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0500
      * @tc.desc   insertSync data
@@ -249,7 +244,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0600
      * @tc.desc   batchInsert data
@@ -288,7 +282,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0700
      * @tc.desc   batchInsertSync data
@@ -327,7 +320,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0800
      * @tc.desc   update data
@@ -354,7 +346,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0900
      * @tc.desc   updateSync data
@@ -381,7 +372,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1000
      * @tc.desc   delete data
@@ -408,7 +398,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1100
      * @tc.desc   deleteSync data
@@ -436,7 +425,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1200
      * @tc.desc   begin transaction
@@ -462,7 +450,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1300
      * @tc.desc   query
@@ -488,7 +475,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1400
      * @tc.desc   querySql data
@@ -515,7 +501,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1500
      * @tc.desc   querySqlSync data
@@ -542,7 +527,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1600
      * @tc.desc   execute
@@ -568,7 +552,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1700
      * @tc.desc   executeSql
@@ -594,7 +577,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1800
      * @tc.desc   executeSync
@@ -620,7 +602,6 @@ export default function RdbStoreReadOnlyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_1900
      * @tc.desc   set user_version by store
@@ -645,7 +626,6 @@ export default function RdbStoreReadOnlyTest() {
       console.info(TAG + "************* testReadOnly1900 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testReadOnly2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_2000
      * @tc.desc   1. set isReadOnly as true

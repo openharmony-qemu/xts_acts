@@ -82,7 +82,6 @@ export default function SerialSingleTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRead001
      * @tc.number SUB_USB_HostMgr_SerialSingle_read_ErrCode_0100
      * @tc.desc   read timeout.
@@ -112,7 +111,6 @@ export default function SerialSingleTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReadSync001
      * @tc.number SUB_USB_HostMgr_SerialSingle_readSync_ErrCode_0100
      * @tc.desc   read timeout.

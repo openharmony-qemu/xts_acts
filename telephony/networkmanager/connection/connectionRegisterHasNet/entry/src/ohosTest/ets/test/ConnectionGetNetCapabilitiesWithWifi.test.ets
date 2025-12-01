@@ -36,12 +36,12 @@ export default function ConnectionGetNetCapabilitiesWithWifiTest() {
   describe("ConnectionGetNetCapabilitiesWithWifiTest", () => {
   
     /**
-     * @tc.number: SUB_NetManager_Connection_GetNetCapabilities_0100
-     * @tc.name:  testNetManagerConnectionGetNetCapabilities0100
-     * @tc.desc: GetNetCapabilities  detection
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   testNetManagerConnectionGetNetCapabilities0100
+     * @tc.number SUB_NetManager_Connection_GetNetCapabilities_0100
+     * @tc.desc   GetNetCapabilities  detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetManagerConnectionGetNetCapabilities0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName: string = "testNetManagerConnectionGetNetCapabilities0100";
@@ -81,12 +81,12 @@ export default function ConnectionGetNetCapabilitiesWithWifiTest() {
     });
 
     /**
-     * @tc.number: SUB_NetManager_Connection_GetNetCapabilities_0200
-     * @tc.name:  testNetManagerConnectionGetNetCapabilities0200
-     * @tc.desc: getNetCapabilities  detection
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   testNetManagerConnectionGetNetCapabilities0200
+     * @tc.number SUB_NetManager_Connection_GetNetCapabilities_0200
+     * @tc.desc   getNetCapabilities  detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetManagerConnectionGetNetCapabilities0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName: string = "testNetManagerConnectionGetNetCapabilities0200";
@@ -124,12 +124,12 @@ export default function ConnectionGetNetCapabilitiesWithWifiTest() {
     });
 
     /**
-     * @tc.number: SUB_NetManager_Connection_GetNetCapabilities_0300
-     * @tc.name:  testNetManagerConnectionGetNetCapabilities0300
-     * @tc.desc: getNetCapabilities  detection
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   testNetManagerConnectionGetNetCapabilities0300
+     * @tc.number SUB_NetManager_Connection_GetNetCapabilities_0300
+     * @tc.desc   getNetCapabilities  detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetManagerConnectionGetNetCapabilities0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName: string = "testNetManagerConnectionGetNetCapabilities0300";
@@ -162,12 +162,12 @@ export default function ConnectionGetNetCapabilitiesWithWifiTest() {
     });
 
     /**
-     * @tc.number: SUB_NetManager_Connection_GetNetCapabilities_0400
-     * @tc.name:  testNetManagerConnectionGetNetCapabilities0400
-     * @tc.desc: getNetCapabilities  detection
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   testNetManagerConnectionGetNetCapabilities0400
+     * @tc.number SUB_NetManager_Connection_GetNetCapabilities_0400
+     * @tc.desc   getNetCapabilities  detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetManagerConnectionGetNetCapabilities0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName: string = "testNetManagerConnectionGetNetCapabilities0400";

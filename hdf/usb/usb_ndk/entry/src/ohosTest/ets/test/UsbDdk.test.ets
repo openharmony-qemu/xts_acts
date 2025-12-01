@@ -61,7 +61,6 @@ export default function usbDdkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbInit001
      * @tc.number SUB_Driver_Ext_DDKETS_0100
      * @tc.desc   OH_Usb_Init Interface testing
@@ -77,7 +76,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbRelease001
      * @tc.number SUB_Driver_Ext_DDKETS_0200
      * @tc.desc   OH_Usb_Release Interface testing
@@ -93,7 +91,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbReleaseResource001
      * @tc.number SUB_Driver_Ext_DDKETS_3800
      * @tc.desc   OH_Usb_ReleaseResource Interface testing
@@ -109,7 +106,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbGetDeviceDescriptor001
      * @tc.number SUB_Driver_Ext_DDKETS_0300
      * @tc.desc   OH_Usb_GetDeviceDescriptor Interface testing
@@ -132,7 +128,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbGetDeviceDescriptor002
      * @tc.number SUB_Driver_Ext_DDKETS_0400
      * @tc.desc   OH_Usb_GetDeviceDescriptor Interface testing
@@ -154,7 +149,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbGetConfigDescriptor001
      * @tc.number SUB_Driver_Ext_DDKETS_0500
      * @tc.desc   OH_Usb_GetConfigDescriptor Interface testing
@@ -176,7 +170,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbGetConfigDescriptor002
      * @tc.number SUB_Driver_Ext_DDKETS_0600
      * @tc.desc   OH_Usb_GetConfigDescriptor Interface testing
@@ -198,7 +191,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbGetConfigDescriptor003
      * @tc.number SUB_Driver_Ext_DDKETS_0700
      * @tc.desc   OH_Usb_GetConfigDescriptor Interface testing
@@ -220,7 +212,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbFreeConfigDescriptor001
      * @tc.number SUB_Driver_Ext_DDKETS_0800
      * @tc.desc   OH_Usb_FreeConfigDescriptor Interface testing
@@ -242,7 +233,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbClaimInterface001
      * @tc.number SUB_Driver_Ext_DDKETS_0900
      * @tc.desc   OH_Usb_ClaimInterface Interface testing
@@ -264,7 +254,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbClaimInterface002
      * @tc.number SUB_Driver_Ext_DDKETS_1000
      * @tc.desc   OH_Usb_ClaimInterface Interface testing
@@ -286,7 +275,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbClaimInterface003
      * @tc.number SUB_Driver_Ext_DDKETS_1100
      * @tc.desc   OH_Usb_ClaimInterface Interface testing
@@ -308,7 +296,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbReleaseInterface001
      * @tc.number SUB_Driver_Ext_DDKETS_1200
      * @tc.desc   OH_Usb_ReleaseInterface Interface testing
@@ -330,7 +317,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSelectInterfaceSetting001
      * @tc.number SUB_Driver_Ext_DDKETS_1300
      * @tc.desc   OH_Usb_SelectInterfaceSetting Interface testing
@@ -352,7 +338,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSelectInterfaceSetting002
      * @tc.number SUB_Driver_Ext_DDKETS_1400
      * @tc.desc   OH_Usb_SelectInterfaceSetting Interface testing
@@ -374,7 +359,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbGetCurrentInterfaceSetting001
      * @tc.number SUB_Driver_Ext_DDKETS_1500
      * @tc.desc   OH_Usb_GetCurrentInterfaceSetting Interface testing
@@ -396,7 +380,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbGetCurrentInterfaceSetting002
      * @tc.number SUB_Driver_Ext_DDKETS_1600
      * @tc.desc   OH_Usb_GetCurrentInterfaceSetting Interface testing
@@ -418,7 +401,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbGetCurrentInterfaceSetting003
      * @tc.number SUB_Driver_Ext_DDKETS_1700
      * @tc.desc   OH_Usb_GetCurrentInterfaceSetting Interface testing
@@ -440,7 +422,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendControlReadRequest001
      * @tc.number SUB_Driver_Ext_DDKETS_1800
      * @tc.desc   OH_Usb_SendControlReadRequest Interface testing
@@ -462,7 +443,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendControlReadRequest002
      * @tc.number SUB_Driver_Ext_DDKETS_1900
      * @tc.desc   OH_Usb_SendControlReadRequest Interface testing
@@ -484,7 +464,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendControlReadRequest003
      * @tc.number SUB_Driver_Ext_DDKETS_2000
      * @tc.desc   OH_Usb_SendControlReadRequest Interface testing
@@ -506,7 +485,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendControlReadRequest004
      * @tc.number SUB_Driver_Ext_DDKETS_2100
      * @tc.desc   OH_Usb_SendControlReadRequest Interface testing
@@ -528,7 +506,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendControlReadRequest005
      * @tc.number SUB_Driver_Ext_DDKETS_2200
      * @tc.desc   OH_Usb_SendControlReadRequest Interface testing
@@ -550,7 +527,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendControlWriteRequest001
      * @tc.number SUB_Driver_Ext_DDKETS_2300
      * @tc.desc   OH_Usb_SendControlWriteRequest Interface testing
@@ -572,7 +548,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendControlWriteRequest002
      * @tc.number SUB_Driver_Ext_DDKETS_2400
      * @tc.desc   OH_Usb_SendControlWriteRequest Interface testing
@@ -594,7 +569,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendControlWriteRequest003
      * @tc.number SUB_Driver_Ext_DDKETS_2500
      * @tc.desc   OH_Usb_SendControlWriteRequest Interface testing
@@ -616,7 +590,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendControlWriteRequest004
      * @tc.number SUB_Driver_Ext_DDKETS_2600
      * @tc.desc   OH_Usb_SendControlWriteRequest Interface testing
@@ -638,7 +611,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendControlWriteRequest005
      * @tc.number SUB_Driver_Ext_DDKETS_3900
      * @tc.desc   OH_Usb_SendControlWriteRequest Interface testing
@@ -660,7 +632,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendPipeRequest001
      * @tc.number SUB_Driver_Ext_DDKETS_2700
      * @tc.desc   OH_Usb_SendPipeRequest Interface testing
@@ -682,7 +653,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendPipeRequest002
      * @tc.number SUB_Driver_Ext_DDKETS_2800
      * @tc.desc   OH_Usb_SendPipeRequest Interface testing
@@ -704,7 +674,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendPipeRequest003
      * @tc.number SUB_Driver_Ext_DDKETS_2900
      * @tc.desc   OH_Usb_SendPipeRequest Interface testing
@@ -726,7 +695,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendPipeRequest004
      * @tc.number SUB_Driver_Ext_DDKETS_3000
      * @tc.desc   OH_Usb_SendPipeRequest Interface testing
@@ -748,7 +716,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbCreateDeviceMemMap001
      * @tc.number SUB_Driver_Ext_DDKETS_3100
      * @tc.desc   OH_Usb_CreateDeviceMemMap Interface testing
@@ -770,7 +737,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbCreateDeviceMemMap002
      * @tc.number SUB_Driver_Ext_DDKETS_3200
      * @tc.desc   OH_Usb_CreateDeviceMemMap Interface testing
@@ -792,7 +758,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbDestroyDeviceMemMap001
      * @tc.number SUB_Driver_Ext_DDKETS_3300
      * @tc.desc   OH_Usb_DestroyDeviceMemMap Interface testing
@@ -814,7 +779,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendPipeRequestWithAshmem001
      * @tc.number SUB_Driver_Ext_DDKETS_3400
      * @tc.desc   OH_Usb_SendPipeRequestWithAshmem Interface testing
@@ -844,7 +808,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendPipeRequestWithAshmem002
      * @tc.number SUB_Driver_Ext_DDKETS_3500
      * @tc.desc   OH_Usb_SendPipeRequestWithAshmem Interface testing
@@ -874,7 +837,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendPipeRequestWithAshmem003
      * @tc.number SUB_Driver_Ext_DDKETS_3600
      * @tc.desc   OH_Usb_SendPipeRequestWithAshmem Interface testing
@@ -904,7 +866,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSendPipeRequestWithAshmem004
      * @tc.number SUB_Driver_Ext_DDKETS_3700
      * @tc.desc   OH_Usb_SendPipeRequestWithAshmem Interface testing
@@ -934,7 +895,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbGetDevices001
      * @tc.number SUB_Driver_Ext_DDK_0600
      * @tc.desc   OH_Usb_GetDevices Interface testing,return USB_DDK_SUCCESS
@@ -963,7 +923,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbGetDevices002
      * @tc.number SUB_Driver_Ext_DDK_0700
      * @tc.desc   OH_Usb_GetDevices Interface testing,return USB_DDK_INVALID_OPERATION
@@ -992,7 +951,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbGetDevices003
      * @tc.number SUB_Driver_Ext_DDK_0800
      * @tc.desc   OH_Usb_GetDevices Interface testing,return USB_DDK_INVALID_PARAMETER
@@ -1021,7 +979,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralInit001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_0100
      * @tc.desc   OH_ScsiPeripheral_Init Interface testing
@@ -1050,7 +1007,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRelease001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_0200
      * @tc.desc   OH_ScsiPeripheral_Release Interface testing
@@ -1079,7 +1035,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRelease002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_0300
      * @tc.desc   OH_ScsiPeripheral_Release Interface testing
@@ -1108,7 +1063,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralOpen001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_0400
      * @tc.desc   OH_ScsiPeripheral_Open Interface testing
@@ -1138,7 +1092,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralOpen002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_0500
      * @tc.desc   OH_ScsiPeripheral_Open Interface testing
@@ -1168,7 +1121,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralOpen003
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_0600
      * @tc.desc   OH_ScsiPeripheral_Open Interface testing
@@ -1198,7 +1150,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralOpen004
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_0700
      * @tc.desc   OH_ScsiPeripheral_Open Interface testing
@@ -1228,7 +1179,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralOpen005
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_0800
      * @tc.desc   OH_SCSIPeripheral_Open Interface testing
@@ -1258,7 +1208,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralOpen006
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_0900
      * @tc.desc   OH_SCSIPeripheral_Open Interface testing
@@ -1288,7 +1237,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralOpen007
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_1000
      * @tc.desc   OH_SCSIPeripheral_Open Interface testing
@@ -1318,7 +1266,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralOpen008
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_1100
      * @tc.desc   OH_SCSIPeripheral_Open Interface testing
@@ -1348,7 +1295,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralOpen009
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_1200
      * @tc.desc   OH_SCSIPeripheral_Open Interface testing
@@ -1378,7 +1324,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralClose001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_1300
      * @tc.desc   OH_ScsiPeripheral_Close Interface testing
@@ -1408,7 +1353,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralClose002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_1400
      * @tc.desc   OH_ScsiPeripheral_Close Interface testing
@@ -1438,7 +1382,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralClose003
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_1500
      * @tc.desc   OH_ScsiPeripheral_Close Interface testing
@@ -1468,7 +1411,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralReadCapacity001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_1600
      * @tc.desc   OH_ScsiPeripheral_ReadCapacity10 Interface testing
@@ -1498,7 +1440,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralReadCapacity002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_1700
      * @tc.desc   OH_ScsiPeripheral_ReadCapacity10 Interface testing
@@ -1528,7 +1469,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralReadCapacity003
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_1800
      * @tc.desc   OH_ScsiPeripheral_ReadCapacity10 Interface testing
@@ -1558,7 +1498,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralReadCapacity004
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_1900
      * @tc.desc   OH_SCSIPeripheral_ReadCapacity10 Interface testing
@@ -1588,7 +1527,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralReadCapacity005
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_2000
      * @tc.desc   OH_SCSIPeripheral_ReadCapacity10 Interface testing
@@ -1618,7 +1556,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralReadCapacity006
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_2100
      * @tc.desc   OH_SCSIPeripheral_ReadCapacity10 Interface testing
@@ -1648,7 +1585,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralReadCapacity007
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_2200
      * @tc.desc   OH_SCSIPeripheral_ReadCapacity10 Interface testing
@@ -1678,7 +1614,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralTestUnitReady001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_2300
      * @tc.desc   OH_ScsiPeripheral_TestUnitReady Interface testing
@@ -1708,7 +1643,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralTestUnitReady002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_2400
      * @tc.desc   OH_ScsiPeripheral_TestUnitReady Interface testing
@@ -1738,7 +1672,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralTestUnitReady003
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_2500
      * @tc.desc   OH_ScsiPeripheral_TestUnitReady Interface testing
@@ -1768,7 +1701,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralTestUnitReady004
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_2600
      * @tc.desc   OH_SCSIPeripheral_TestUnitReady Interface testing
@@ -1798,7 +1730,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralTestUnitReady005
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_2700
      * @tc.desc   OH_SCSIPeripheral_TestUnitReady Interface testing
@@ -1828,7 +1759,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralInquiry001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_2800
      * @tc.desc   OH_ScsiPeripheral_Inquiry Interface testing
@@ -1858,7 +1788,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralInquiry002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_2900
      * @tc.desc   OH_ScsiPeripheral_Inquiry Interface testing
@@ -1888,7 +1817,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralInquiry003
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_3000
      * @tc.desc   OH_ScsiPeripheral_Inquiry Interface testing
@@ -1918,7 +1846,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralInquiry004
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_3100
      * @tc.desc   OH_SCSIPeripheral_Inquiry Interface testing
@@ -1948,7 +1875,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralInquiry005
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_3200
      * @tc.desc   OH_SCSIPeripheral_Inquiry Interface testing
@@ -1978,7 +1904,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralInquiry006
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_3300
      * @tc.desc   OH_SCSIPeripheral_Inquiry Interface testing
@@ -2008,7 +1933,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralInquiry007
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_3400
      * @tc.desc   OH_SCSIPeripheral_Inquiry Interface testing
@@ -2038,7 +1962,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralInquiry008
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_3500
      * @tc.desc   OH_SCSIPeripheral_Inquiry Interface testing
@@ -2068,7 +1991,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRequestSense001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_3600
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2098,7 +2020,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRequestSense002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_3700
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2128,7 +2049,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRequestSense003
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_3800
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2158,7 +2078,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRequestSense004
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_3900
      * @tc.desc   OH_SCSIPeripheral_RequestSense Interface testing
@@ -2188,7 +2107,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRequestSense005
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_4000
      * @tc.desc   OH_SCSIPeripheral_RequestSense Interface testing
@@ -2218,7 +2136,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRequestSense006
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_4100
      * @tc.desc   OH_SCSIPeripheral_RequestSense Interface testing
@@ -2248,7 +2165,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRead001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_4200
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2278,7 +2194,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRead002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_4300
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2308,7 +2223,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRead003
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_4400
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2338,7 +2252,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRead004
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_4500
      * @tc.desc   OH_SCSIPeripheral_Read10 Interface testing
@@ -2368,7 +2281,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRead005
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_4600
      * @tc.desc   OH_SCSIPeripheral_Read10 Interface testing
@@ -2399,7 +2311,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRead006
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_4700
      * @tc.desc   OH_SCSIPeripheral_Read10 Interface testing
@@ -2429,7 +2340,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRead007
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_4800
      * @tc.desc   OH_SCSIPeripheral_Read10 Interface testing
@@ -2459,7 +2369,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRead008
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_4900
      * @tc.desc   OH_SCSIPeripheral_Read10 Interface testing
@@ -2489,7 +2398,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralRead009
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_5000
      * @tc.desc   OH_SCSIPeripheral_Read10 Interface testing
@@ -2519,7 +2427,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralWrite001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_5100
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2549,7 +2456,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralWrite002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_5200
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2579,7 +2485,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralWrite003
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_5300
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2609,7 +2514,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralWrite004
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_5400
      * @tc.desc   OH_SCSIPeripheral_RequestSense Interface testing
@@ -2639,7 +2543,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralWrite0041
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_5500
      * @tc.desc   OH_SCSIPeripheral_RequestSense Interface testing
@@ -2669,7 +2572,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralWrite005
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_5600
      * @tc.desc   OH_SCSIPeripheral_RequestSense Interface testing
@@ -2700,7 +2602,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralVerify001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_5700
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2730,7 +2631,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralVerify002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_5800
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2760,7 +2660,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralVerify003
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_5900
      * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
@@ -2790,7 +2689,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralSendRequestByCDB001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_6000
      * @tc.desc   OH_ScsiPeripheral_SendRequestByCdb Interface testing
@@ -2820,7 +2718,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralSendRequestByCDB002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_6100
      * @tc.desc   OH_ScsiPeripheral_SendRequestByCdb Interface testing
@@ -2849,7 +2746,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralSendRequestByCDB003
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_6200
      * @tc.desc   OH_ScsiPeripheral_SendRequestByCdb Interface testing
@@ -2878,7 +2774,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralSendRequestByCDB004
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_6300
      * @tc.desc   OH_ScsiPeripheral_SendRequestByCdb Interface testing
@@ -2907,7 +2802,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralCreateDeviceMemMap001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_6400
      * @tc.desc   OH_ScsiPeripheral_CreateDeviceMemMap Interface testing
@@ -2936,7 +2830,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralCreateDeviceMemMap002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_6500
      * @tc.desc   OH_ScsiPeripheral_CreateDeviceMemMap Interface testing
@@ -2965,7 +2858,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralCreateDeviceMemMap003
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_6600
      * @tc.desc   OH_SCSIPeripheral_CreateDeviceMemMap Interface testing
@@ -2994,7 +2886,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralDestroyDeviceMemMap001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_6700
      * @tc.desc   OH_ScsiPeripheral_DestroyDeviceMemMap Interface testing
@@ -3024,7 +2915,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralDestroyDeviceMemMap002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_6800
      * @tc.desc   OH_ScsiPeripheral_DestroyDeviceMemMap Interface testing
@@ -3053,7 +2943,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralParseBasicSenseInfo001
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_6900
      * @tc.desc   OH_ScsiPeripheral_ParseBasicSenseInfo Interface testing
@@ -3082,7 +2971,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testScsiPeripheralParseBasicSenseInfo002
      * @tc.number SUB_Driver_Ext_ScsiDdk_NdkStage_7000
      * @tc.desc   OH_ScsiPeripheral_ParseBasicSenseInfo Interface testing
@@ -3111,7 +2999,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialOpen001
      * @tc.number SUB_Driver_Ext_UsbSerial_0400
      * @tc.desc   OH_UsbSerial_Open Interface testing
@@ -3141,7 +3028,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialOpen002
      * @tc.number SUB_Driver_Ext_UsbSerial_0500
      * @tc.desc   OH_UsbSerial_Open Interface testing
@@ -3171,7 +3057,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialOpen003
      * @tc.number SUB_Driver_Ext_UsbSerial_0600
      * @tc.desc   OH_UsbSerial_Open Interface testing
@@ -3201,7 +3086,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialOpen004
      * @tc.number SUB_Driver_Ext_UsbSerial_0700
      * @tc.desc   OH_UsbSerial_Open Interface testing
@@ -3231,7 +3115,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialOpen005
      * @tc.number SUB_Driver_Ext_UsbSerial_0800
      * @tc.desc   OH_UsbSerial_Open Interface testing
@@ -3261,7 +3144,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialWrite001
      * @tc.number SUB_Driver_Ext_UsbSerial_0900
      * @tc.desc   OH_UsbSerial_Write Interface testing
@@ -3291,7 +3173,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialWrite002
      * @tc.number SUB_Driver_Ext_UsbSerial_1000
      * @tc.desc   OH_UsbSerial_Write Interface testing
@@ -3321,7 +3202,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialWrite003
      * @tc.number SUB_Driver_Ext_UsbSerial_1100
      * @tc.desc   OH_UsbSerial_Write Interface testing
@@ -3351,7 +3231,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialWrite004
      * @tc.number SUB_Driver_Ext_UsbSerial_1200
      * @tc.desc   OH_UsbSerial_Write Interface testing
@@ -3381,7 +3260,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialClose003
      * @tc.number SUB_Driver_Ext_UsbSerial_1500
      * @tc.desc   OH_UsbSerial_Write Interface testing
@@ -3410,7 +3288,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialClose004
      * @tc.number SUB_Driver_Ext_UsbSerial_1600
      * @tc.desc   OH_UsbSerial_Write Interface testing
@@ -3439,7 +3316,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialRead001
      * @tc.number SUB_Driver_Ext_UsbSerial_1700
      * @tc.desc   OH_UsbSerial_Read Interface testing
@@ -3469,7 +3345,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialRead002
      * @tc.number SUB_Driver_Ext_UsbSerial_1800
      * @tc.desc   OH_UsbSerial_Read Interface testing
@@ -3499,7 +3374,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialRead003
      * @tc.number SUB_Driver_Ext_UsbSerial_1900
      * @tc.desc   OH_UsbSerial_Read Interface testing
@@ -3529,7 +3403,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialRead004
      * @tc.number SUB_Driver_Ext_UsbSerial_2000
      * @tc.desc   OH_UsbSerial_Read Interface testing
@@ -3559,7 +3432,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetBaudRate001
      * @tc.number SUB_Driver_Ext_UsbSerial_2100
      * @tc.desc   OH_UsbSerial_SetBaudRate Interface testing
@@ -3589,7 +3461,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetBaudRate002
      * @tc.number SUB_Driver_Ext_UsbSerial_2200
      * @tc.desc   OH_UsbSerial_SetBaudRate Interface testing
@@ -3619,7 +3490,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetBaudRate003
      * @tc.number SUB_Driver_Ext_UsbSerial_2300
      * @tc.desc   OH_UsbSerial_SetBaudRate Interface testing
@@ -3649,7 +3519,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetBaudRate004
      * @tc.number SUB_Driver_Ext_UsbSerial_2400
      * @tc.desc   OH_UsbSerial_SetBaudRate Interface testing
@@ -3679,7 +3548,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetParams001
      * @tc.number SUB_Driver_Ext_UsbSerial_2500
      * @tc.desc   OH_UsbSerial_SetParams Interface testing
@@ -3709,7 +3577,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetParams002
      * @tc.number SUB_Driver_Ext_UsbSerial_2600
      * @tc.desc   OH_UsbSerial_SetParams Interface testing
@@ -3739,7 +3606,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetParams003
      * @tc.number SUB_Driver_Ext_UsbSerial_2700
      * @tc.desc   OH_UsbSerial_SetParams Interface testing
@@ -3769,7 +3635,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetParams004
      * @tc.number SUB_Driver_Ext_UsbSerial_2800
      * @tc.desc   OH_UsbSerial_SetParams Interface testing
@@ -3799,7 +3664,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetTimeout001
      * @tc.number SUB_Driver_Ext_UsbSerial_2900
      * @tc.desc   OH_UsbSerial_SetTimeout Interface testing
@@ -3829,7 +3693,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetTimeout002
      * @tc.number SUB_Driver_Ext_UsbSerial_3000
      * @tc.desc   OH_UsbSerial_SetTimeout Interface testing
@@ -3859,7 +3722,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetTimeout003
      * @tc.number SUB_Driver_Ext_UsbSerial_3100
      * @tc.desc   OH_UsbSerial_SetTimeout Interface testing
@@ -3889,7 +3751,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetTimeout004
      * @tc.number SUB_Driver_Ext_UsbSerial_3200
      * @tc.desc   OH_UsbSerial_SetTimeout Interface testing
@@ -3919,7 +3780,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetTimeout005
      * @tc.number SUB_Driver_Ext_UsbSerial_3300
      * @tc.desc   OH_UsbSerial_SetTimeout Interface testing
@@ -3949,7 +3809,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetFlowControl001
      * @tc.number SUB_Driver_Ext_UsbSerial_3400
      * @tc.desc   OH_UsbSerial_SetFlowControl Interface testing
@@ -3979,7 +3838,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetFlowControl002
      * @tc.number SUB_Driver_Ext_UsbSerial_3500
      * @tc.desc   OH_UsbSerial_SetFlowControl Interface testing
@@ -4009,7 +3867,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetFlowControl003
      * @tc.number SUB_Driver_Ext_UsbSerial_3600
      * @tc.desc   OH_UsbSerial_SetFlowControl Interface testing
@@ -4039,7 +3896,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialSetFlowControl004
      * @tc.number SUB_Driver_Ext_UsbSerial_3700
      * @tc.desc   OH_UsbSerial_SetFlowControl Interface testing
@@ -4069,7 +3925,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlush001
      * @tc.number SUB_Driver_Ext_UsbSerial_3800
      * @tc.desc   OH_UsbSerial_Flush Interface testing
@@ -4099,7 +3954,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlush002
      * @tc.number SUB_Driver_Ext_UsbSerial_3900
      * @tc.desc   OH_UsbSerial_Flush Interface testing
@@ -4129,7 +3983,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlush003
      * @tc.number SUB_Driver_Ext_UsbSerial_4000
      * @tc.desc   OH_UsbSerial_Flush Interface testing
@@ -4159,7 +4012,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlush004
      * @tc.number SUB_Driver_Ext_UsbSerial_4100
      * @tc.desc   OH_UsbSerial_Flush Interface testing
@@ -4189,7 +4041,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlushInput001
      * @tc.number SUB_Driver_Ext_UsbSerial_4200
      * @tc.desc   OH_UsbSerial_FlushInput Interface testing
@@ -4219,7 +4070,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlushInput002
      * @tc.number SUB_Driver_Ext_UsbSerial_4300
      * @tc.desc   OH_UsbSerial_FlushInput Interface testing
@@ -4249,7 +4099,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlushInput003
      * @tc.number SUB_Driver_Ext_UsbSerial_4400
      * @tc.desc   OH_UsbSerial_FlushInput Interface testing
@@ -4279,7 +4128,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlushInput004
      * @tc.number SUB_Driver_Ext_UsbSerial_4500
      * @tc.desc   OH_UsbSerial_FlushInput Interface testing
@@ -4309,7 +4157,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlushOutput001
      * @tc.number SUB_Driver_Ext_UsbSerial_4600
      * @tc.desc   OH_UsbSerial_FlushOutput Interface testing
@@ -4339,7 +4186,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlushOutput002
      * @tc.number SUB_Driver_Ext_UsbSerial_4700
      * @tc.desc   OH_UsbSerial_FlushOutput Interface testing
@@ -4369,7 +4215,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlushOutput003
      * @tc.number SUB_Driver_Ext_UsbSerial_4800
      * @tc.desc   OH_UsbSerial_FlushOutput Interface testing
@@ -4399,7 +4244,6 @@ export default function usbDdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbSerialFlushOutput004
      * @tc.number SUB_Driver_Ext_UsbSerial_4900
      * @tc.desc   OH_UsbSerial_FlushOutput Interface testing

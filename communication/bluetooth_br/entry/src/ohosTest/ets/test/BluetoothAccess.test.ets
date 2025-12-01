@@ -101,7 +101,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0100
          * @tc.desc   Test enableBluetooth api10
@@ -153,7 +152,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0200
          * @tc.desc   Test disableBluetooth api10
@@ -194,7 +192,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0300
          * @tc.desc   Test getState api10
@@ -220,7 +217,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0400
          * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0400
          * @tc.desc   Test on 'stateChange' api10
@@ -256,7 +252,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0500
          * @tc.desc   Test off 'stateChange' api10
@@ -302,7 +297,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0600
          * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0600
          * @tc.desc   Test BluetoothState api10
@@ -336,7 +330,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_GETPERSISTENTDEVICEIDS_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_GETPERSISTENTDEVICEIDS_0100
          * @tc.desc   Test getPersistentDeviceIds api16
@@ -362,7 +355,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_0100
          * @tc.desc   Test isValidRandomDeviceId api16
@@ -388,7 +380,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_0200
          * @tc.desc   Test isValidRandomDeviceId api16
@@ -409,7 +400,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_0100
          * @tc.desc   Test addPersistentDeviceId api16
@@ -436,7 +426,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_0100
          * @tc.desc   Test deletePersistentDeviceId api16
@@ -463,7 +452,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0700
          * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0700
          * @tc.desc   Test on 'stateChange' 401
@@ -483,7 +471,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0800
          * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0800
          * @tc.desc   Test off 'stateChange' 401
@@ -503,7 +490,6 @@ export default function btAccessTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLUETOOTHASYNC_0001
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLUETOOTHASYNC_0001
          * @tc.desc   Test Asynchronous interface for enables/disables Bluetooth on a device
@@ -575,12 +561,12 @@ export default function btAccessTest() {
         })
 
         /**
-         * @tc.number: SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
-         * @tc.name: SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
-         * @tc.desc: 20251113API22用例覆盖convertUuid 4-1.
-         * @tc.size: LargeTest
-         * @tc.type: Function
-         * @tc.level: Level0
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
+         * @tc.desc   20251113API22用例覆盖convertUuid 4-1.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL0
          */
         it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
             try {
@@ -592,21 +578,19 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0100 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
-                }else{
-                    expect().assertFail();
+                    expect(Number(error.code)).assertEqual(801);
                 }
             }
             done();
         })
 
         /**
-         * @tc.number: SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0200
-         * @tc.name: SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0200
-         * @tc.desc: 20251113API22用例覆盖convertUuid 4-2.
-         * @tc.size: LargeTest
-         * @tc.type: Function
-         * @tc.level: Level0
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0200
+         * @tc.desc   20251113API22用例覆盖convertUuid 4-2.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL0
          */
         it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0200", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
             try {
@@ -618,21 +602,19 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0200 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
-                }else{
-                    expect().assertFail();
+                    expect(Number(error.code)).assertEqual(801);
                 }
             }
             done();
         })
 
         /**
-         * @tc.number: SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0300
-         * @tc.name: SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0300
-         * @tc.desc: 20251113API22用例覆盖convertUuid 4-3.
-         * @tc.size: LargeTest
-         * @tc.type: Function
-         * @tc.level: Level0
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0300
+         * @tc.desc   20251113API22用例覆盖convertUuid 4-3.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL0
          */
         it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0300", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
             try {
@@ -644,21 +626,19 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0300 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
-                }else{
-                    expect().assertFail();
+                    expect(Number(error.code)).assertEqual(801);
                 }
             }
             done();
         })
 
         /**
-         * @tc.number: SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0400
-         * @tc.name: SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0400
-         * @tc.desc: 20251113API22用例覆盖convertUuid 4-4.
-         * @tc.size: LargeTest
-         * @tc.type: Function
-         * @tc.level: Level0
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0400
+         * @tc.desc   20251113API22用例覆盖convertUuid 4-4.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL0
          */
         it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0400", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
             try {
@@ -669,7 +649,7 @@ export default function btAccessTest() {
                 console.error(`[bt_arkts]converUuid 0400 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
                     console.info("[bluetooth_js]converuuid is not support");
-                    expect(true).assertTrue();
+                    expect(Number(error.code)).assertEqual(801);
                 }else{
                     expect(Number(error.code)).assertEqual(401);
                 }
