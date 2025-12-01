@@ -262,7 +262,7 @@ export default function imageObjectFitTest() {
 
     /**
      * @tc.name   testImageObjectFit019
-     * @tc.number SUB_ARKUI_CAPI_IMAGE_OBJECTFIT_1800
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_OBJECTFIT_1900
      * @tc.desc   testing objectfit for image with abnormal value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
