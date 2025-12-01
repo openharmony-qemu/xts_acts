@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import Utils from '../../test/Utils';
+import Utils from '../../test/Utils.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';

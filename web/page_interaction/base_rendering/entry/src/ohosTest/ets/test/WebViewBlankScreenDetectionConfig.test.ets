@@ -15,7 +15,7 @@
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import Utils from './Utils';
+import Utils from './Utils.test';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
 import { waitForExist} from './WaitTest.test';
@@ -63,7 +63,7 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
     /*
     * @tc.number     : SUB_WEB_ONDETECTEDBLANKSCREEN_0100
     * @tc.name       : testWebViewBlankScreenDetectionConfig
-    * @tc.desc       : test onDetectedBlankScreen
+    * @tc.desc       : DetectedBlankScreenReason
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 1
@@ -89,7 +89,7 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
     })
 
     /*
-    * @tc.number     : SUB_WEB_ONDETECTEDBLANKSCREEN_0200
+    * @tc.number     : SUB_WEB_ONDETECTEDBLANKSCREEN_0300
     * @tc.name       : testDetectedBlankScreenReason02
     * @tc.desc       : DetectedBlankScreenReason
     * @tc.size       : MediumTest
