@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct VelocityFileds {
+struct VelocityFields {
   @State count: number = 1000
   @State particle: EmitterParticleOptions<ParticleType> = {
     type: ParticleType.POINT, // 粒子类型
