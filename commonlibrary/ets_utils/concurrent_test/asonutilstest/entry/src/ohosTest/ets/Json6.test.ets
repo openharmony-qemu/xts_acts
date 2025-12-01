@@ -1945,7 +1945,1923 @@ export default function Json6Test() {
       expect(result.unique[1]).assertEqual("def");
     });
 
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_3500
+     * @tc.name Json6Test035
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: BelowAvgPriceCompare = {
+        products: [
+          { name: "A", price: 10 },
+          { name: "B", price: 20 },
+          { name: "C", price: 30 }
+        ],
+        belowAvg: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
 
+
+      const parsedObj = parsed as Record<string, Object>;
+      const products = parsedObj["products"] as Test35_Obj1[];
+      let sum = 0;
+      products.forEach(p => sum += p.price);
+      const avg = sum / products.length;
+      const b: Test35_Obj1[] = [];
+      products.forEach(p => {
+        if (p.price < avg) {
+          b.push(p);
+        }
+      });
+
+
+      const result: BelowAvgPriceCompare = {
+        products: products,
+        belowAvg: b
+      };
+
+      expect(result.belowAvg.length).assertEqual(1);
+      expect(result.belowAvg[0].name).assertEqual("A");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_3600
+     * @tc.name Json6Test036
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: AdjacentProductCompare = { numbers: [2, 3, 4, 5], products: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      const p: number[] = [];
+      for (let i = 0; i < numbers.length - 1; i++) {
+        p.push(numbers[i] * numbers[i + 1]);
+      }
+
+
+      const result: AdjacentProductCompare = {
+        numbers: numbers,
+        products: p
+      };
+
+      expect(result.products.length).assertEqual(3);
+      expect(result.products[0]).assertEqual(6);
+      expect(result.products[2]).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_3700
+     * @tc.name Json6Test037
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: MiddleSubstringCompare = { strings: ["abcde", "abcdef", "ab"], middles: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const m: string[] = [];
+      strings.forEach(s => {
+        const len = s.length;
+        if (len <= 2) {
+          m.push("");
+        } else {
+          m.push(s.substring(1, len - 1));
+        }
+      });
+
+
+      const result: MiddleSubstringCompare = {
+        strings: strings,
+        middles: m
+      };
+
+      expect(result.middles[0]).assertEqual("bcd");
+      expect(result.middles[1]).assertEqual("bcde");
+      expect(result.middles[2]).assertEqual("");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_3800
+     * @tc.name Json6Test038
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: MinValueIndexCompare = { numbers: [5, 2, 7, 2], min: 0, index: -1 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      let minVal = numbers[0];
+      let minIdx = 0;
+      for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] < minVal) {
+          minVal = numbers[i];
+          minIdx = i;
+        }
+      }
+
+
+      const result: MinValueIndexCompare = {
+        numbers: numbers,
+        min: minVal,
+        index: minIdx
+      };
+
+      expect(result.min).assertEqual(2);
+      expect(result.index).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_3900
+     * @tc.name Json6Test039
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: ReverseCharsCompare = { strings: ["hello", "world"], reversed: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const r: string[] = [];
+      strings.forEach(s => {
+        let rev = "";
+        for (let i = s.length - 1; i >= 0; i--) {
+          rev += s[i];
+        }
+        r.push(rev);
+      });
+
+
+      const result: ReverseCharsCompare = {
+        strings: strings,
+        reversed: r
+      };
+
+      expect(result.reversed[0]).assertEqual("olleh");
+      expect(result.reversed[1]).assertEqual("dlrow");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_4000
+     * @tc.name Json6Test040
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: NaturalLogCompare = { numbers: [1, Math.E, Math.E**2], logs: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      const l: number[] = [];
+      numbers.forEach(n => l.push(Math.log(n)));
+
+
+      const result: NaturalLogCompare = {
+        numbers: numbers,
+        logs: l
+      };
+
+      expect(result.logs[0]).assertEqual(0);
+      expect(result.logs[1]).assertEqual(1);
+      expect(result.logs[2]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_4100
+     * @tc.name Json6Test041
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: SumOfSquaresCompare = { numbers: [1, 2, 3], sum: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      let s = 0;
+      numbers.forEach(n => s += n * n);
+
+
+      const result: SumOfSquaresCompare = {
+        numbers: numbers,
+        sum: s
+      };
+
+      expect(result.sum).assertEqual(14);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_4200
+     * @tc.name Json6Test042
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: ReplaceSpaceCompare = { strings: ["hello world", "typescript is fun"], replaced: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const r: string[] = [];
+      strings.forEach(s => {
+        let newStr = "";
+        for (let i = 0; i < s.length; i++) {
+          newStr += s[i] === " " ? "_" : s[i];
+        }
+        r.push(newStr);
+      });
+
+
+      const result: ReplaceSpaceCompare = {
+        strings: strings,
+        replaced: r
+      };
+
+      expect(result.replaced[0]).assertEqual("hello_world");
+      expect(result.replaced[1]).assertEqual("typescript_is_fun");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_4300
+     * @tc.name Json6Test043
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: ExponentialCompare = { numbers: [0, 1, Math.LN2], results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      const r: number[] = [];
+      numbers.forEach(n => r.push(Math.exp(n)));
+
+
+      const result: ExponentialCompare = {
+        numbers: numbers,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(1);
+      expect(result.results[1]).assertEqual(Math.E);
+      expect(result.results[2]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_4400
+     * @tc.name Json6Test044
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: LowerCountCompare = { strings: ["AbcDE", "FGhiJ"], counts: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const c: number[] = [];
+      strings.forEach(s => {
+        let count = 0;
+        for (let i = 0; i < s.length; i++) {
+          const charCode = s.charCodeAt(i);
+          if (charCode >= 97 && charCode <= 122) {
+            count++;
+          }
+        }
+        c.push(count);
+      });
+
+
+      const result: LowerCountCompare = {
+        strings: strings,
+        counts: c
+      };
+
+      expect(result.counts[0]).assertEqual(2);
+      expect(result.counts[1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_4500
+     * @tc.name Json6Test045
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: DateFormatCompare = {
+        events: [
+          { name: "A", date: "2024-03-01" },
+          { name: "B", date: "2023-12-31" }
+        ],
+        formatted: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const events = parsedObj["events"] as Test45_Obj1[];
+      const f: Test45_Obj1[] = [];
+      events.forEach(e => {
+        const parts = e.date.split("-");
+        const formatted = parts[2] + "/" + parts[1] + "/" + parts[0];
+        f.push({ name: e.name, date: formatted } as Test45_Obj1);
+      });
+
+
+      const result: DateFormatCompare = {
+        events: events,
+        formatted: f
+      };
+
+      expect(result.formatted[0].date).assertEqual("01/03/2024");
+      expect(result.formatted[1].date).assertEqual("31/12/2023");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_4600
+     * @tc.name Json6Test046
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: AboveAvgElementsCompare = { numbers: [1, 2, 3, 4, 5], aboveAvg: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      let sum = 0;
+      numbers.forEach(n => sum += n);
+      const avg = sum / numbers.length;
+      const a: number[] = [];
+      numbers.forEach(n => {
+        if (n > avg) {
+          a.push(n);
+        }
+      });
+
+
+      const result: AboveAvgElementsCompare = {
+        numbers: numbers,
+        aboveAvg: a
+      };
+
+      expect(result.aboveAvg.length).assertEqual(2);
+      expect(result.aboveAvg[0]).assertEqual(4);
+      expect(result.aboveAvg[1]).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_4700
+     * @tc.name Json6Test047
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: ProperCaseCompare = { strings: ["hElLo", "wORLD"], proper: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const p: string[] = [];
+      strings.forEach(s => {
+        if (s.length === 0) {
+          p.push("");
+          return;
+        }
+        let properStr = s.charAt(0).toUpperCase();
+        for (let i = 1; i < s.length; i++) {
+          properStr += s.charAt(i).toLowerCase();
+        }
+        p.push(properStr);
+      });
+
+
+      const result: ProperCaseCompare = {
+        strings: strings,
+        proper: p
+      };
+
+      expect(result.proper[0]).assertEqual("Hello");
+      expect(result.proper[1]).assertEqual("World");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_4800
+     * @tc.name Json6Test048
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: SineCompare = { angles: [0, Math.PI / 2, Math.PI], sines: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const angles = parsedObj["angles"] as number[];
+      const s: number[] = [];
+      angles.forEach(a => s.push(Math.sin(a)));
+
+
+      const result: SineCompare = {
+        angles: angles,
+        sines: s
+      };
+
+      expect(result.sines[0]).assertEqual(0);
+      expect(result.sines[1]).assertEqual(1);
+      expect(result.sines[2]).assertEqual(1.2246467991473532e-16);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_4900
+     * @tc.name Json6Test049
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: IsAlphaCompare = { strings: ["abc", "a1b", "defg"], results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const r: boolean[] = [];
+      strings.forEach(s => {
+        let isAlpha = true;
+        for (let i = 0; i < s.length; i++) {
+          const code = s.charCodeAt(i);
+          const isUpper = code >= 65 && code <= 90;
+          const isLower = code >= 97 && code <= 122;
+          if (!isUpper && !isLower) {
+            isAlpha = false;
+            break;
+          }
+        }
+        r.push(isAlpha);
+      });
+
+
+      const result: IsAlphaCompare = {
+        strings: strings,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(true);
+      expect(result.results[1]).assertEqual(false);
+      expect(result.results[2]).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_5000
+     * @tc.name Json6Test050
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: FilteredTotalCompare = {
+        orders: [
+          { status: "completed", amount: 100 },
+          { status: "pending", amount: 200 },
+          { status: "completed", amount: 150 }
+        ],
+        completedTotal: 0
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const orders = parsedObj["orders"] as Test50_Obj1[];
+      let total = 0;
+      orders.forEach(o => {
+        if (o.status === "completed") {
+          total += o.amount;
+        }
+      });
+
+
+      const result: FilteredTotalCompare = {
+        orders: orders,
+        completedTotal: total
+      };
+
+      expect(result.completedTotal).assertEqual(250);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_5100
+     * @tc.name Json6Test051
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: SumOverMaxCompare = { numbers: [1, 2, 3, 4], ratio: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      let sum = 0;
+      let max = numbers[0];
+      numbers.forEach(n => {
+        sum += n;
+        if (n > max) {
+          max = n;
+        }
+      });
+
+
+      const result: SumOverMaxCompare = {
+        numbers: numbers,
+        ratio: sum / max
+      };
+
+      expect(result.ratio).assertEqual(10 / 4);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_5200
+     * @tc.name Json6Test052
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: SpecificCharCountCompare = { strings: ["apple", "banana", "grape"], char: "a", counts: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const char = parsedObj["char"] as string;
+      const c: number[] = [];
+      strings.forEach(s => {
+        let count = 0;
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === char) {
+            count++;
+          }
+        }
+        c.push(count);
+      });
+
+
+      const result: SpecificCharCountCompare = {
+        strings: strings,
+        char: char,
+        counts: c
+      };
+
+      expect(result.counts[0]).assertEqual(1);
+      expect(result.counts[1]).assertEqual(3);
+      expect(result.counts[2]).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_5300
+     * @tc.name Json6Test053
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: PriceRangeCountCompare = {
+        products: [
+          { name: "A", price: 15 },
+          { name: "B", price: 25 },
+          { name: "C", price: 35 }
+        ],
+        range: [20, 30],
+        count: 0
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const products = parsedObj["products"] as Test53_Obj1[];
+      const range = parsedObj["range"] as [number, number];
+      let cnt = 0;
+      products.forEach(p => {
+        if (p.price >= range[0] && p.price <= range[1]) {
+          cnt++;
+        }
+      });
+
+
+      const result: PriceRangeCountCompare = {
+        products: products,
+        range: range,
+        count: cnt
+      };
+
+      expect(result.count).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_5400
+     * @tc.name Json6Test054
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: SumOfSquareRootsCompare = { numbers: [9, 16, 25], sum: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      let s = 0;
+      numbers.forEach(n => s += Math.sqrt(n));
+
+
+      const result: SumOfSquareRootsCompare = {
+        numbers: numbers,
+        sum: s
+      };
+
+      expect(result.sum).assertEqual(12);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_5500
+     * @tc.name Json6Test055
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: StartsWithCheckCompare = { strings: ["apple", "app", "application"], prefix: "app", results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const prefix = parsedObj["prefix"] as string;
+      const r: boolean[] = [];
+      const prefixLen = prefix.length;
+      strings.forEach(s => {
+        if (s.length < prefixLen) {
+          r.push(false);
+          return;
+        }
+        let match = true;
+        for (let i = 0; i < prefixLen; i++) {
+          if (s[i] !== prefix[i]) {
+            match = false;
+            break;
+          }
+        }
+        r.push(match);
+      });
+
+
+      const result: StartsWithCheckCompare = {
+        strings: strings,
+        prefix: prefix,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(true);
+      expect(result.results[1]).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_5600
+     * @tc.name Json6Test056
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: MonthNameCompare = { months: [1, 6, 12], names: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const months = parsedObj["months"] as number[];
+      const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+      const n: string[] = [];
+      months.forEach(m => {
+        n.push(monthNames[m - 1]);
+      });
+
+
+      const result: MonthNameCompare = {
+        months: months,
+        names: n
+      };
+
+      expect(result.names[0]).assertEqual("January");
+      expect(result.names[1]).assertEqual("June");
+      expect(result.names[2]).assertEqual("December");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_5700
+     * @tc.name Json6Test057
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: HighRatingFilterCompare = {
+        movies: [
+          { title: "A", rating: 7.5 },
+          { title: "B", rating: 8.2 },
+          { title: "C", rating: 6.9 }
+        ],
+        threshold: 7.0,
+        highRated: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const movies = parsedObj["movies"] as Test57_Obj1[];
+      const threshold = parsedObj["threshold"] as number;
+      const h: Test57_Obj1[] = [];
+      movies.forEach(m => {
+        if (m.rating > threshold) {
+          h.push(m);
+        }
+      });
+
+
+      const result: HighRatingFilterCompare = {
+        movies: movies,
+        threshold: threshold,
+        highRated: h
+      };
+
+      expect(result.highRated.length).assertEqual(2);
+      expect(result.highRated[0].title).assertEqual("A");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_5800
+     * @tc.name Json6Test058
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: CosineCompare = { angles: [0, Math.PI / 2, Math.PI], cosines: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const angles = parsedObj["angles"] as number[];
+      const c: number[] = [];
+      angles.forEach(a => c.push(Math.cos(a)));
+
+
+      const result: CosineCompare = {
+        angles: angles,
+        cosines: c
+      };
+
+      expect(result.cosines[0]).assertEqual(1);
+      expect(result.cosines[1]).assertEqual(6.123233995736766e-17);
+      expect(result.cosines[2]).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_5900
+     * @tc.name Json6Test059
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: ReplaceAtPositionCompare = {
+        strings: ["apple", "banana"],
+        position: 1,
+        char: "*",
+        replaced: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const position = parsedObj["position"] as number;
+      const char = parsedObj["char"] as string;
+      const r: string[] = [];
+      strings.forEach(s => {
+        if (position < 0 || position >= s.length) {
+          r.push(s);
+          return;
+        }
+        let newStr = "";
+        for (let i = 0; i < s.length; i++) {
+          newStr += i === position ? char : s[i];
+        }
+        r.push(newStr);
+      });
+
+
+      const result: ReplaceAtPositionCompare = {
+        strings: strings,
+        position: position,
+        char: char,
+        replaced: r
+      };
+
+      expect(result.replaced[0]).assertEqual("a*ple");
+      expect(result.replaced[1]).assertEqual("b*nana");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_6000
+     * @tc.name Json6Test060
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: EvenSquareSumCompare = { numbers: [1, 2, 3, 4, 5], sum: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      let s = 0;
+      numbers.forEach(n => {
+        if (n % 2 === 0) {
+          s += n * n;
+        }
+      });
+
+
+      const result: EvenSquareSumCompare = {
+        numbers: numbers,
+        sum: s
+      };
+
+      expect(result.sum).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_6100
+     * @tc.name Json6Test061
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: HasConsecutiveCharsCompare = { strings: ["apple", "banana", "test"], results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const r: boolean[] = [];
+      strings.forEach(s => {
+        let hasConsecutive = false;
+        for (let i = 0; i < s.length - 1; i++) {
+          if (s[i] === s[i + 1]) {
+            hasConsecutive = true;
+            break;
+          }
+        }
+        r.push(hasConsecutive);
+      });
+
+
+      const result: HasConsecutiveCharsCompare = {
+        strings: strings,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(true);
+      expect(result.results[1]).assertEqual(false);
+      expect(result.results[2]).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_6200
+     * @tc.name Json6Test062
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: DateTopNCompare = {
+        events: [
+          { name: "B", date: "2024-03-01" },
+          { name: "A", date: "2024-04-15" },
+          { name: "C", date: "2024-02-20" }
+        ],
+        n: 2,
+        latest: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const events = parsedObj["events"] as Test68_Obj1[];
+      const n = parsedObj["n"] as number;
+      const temp: Test68_Obj1[] = [];
+      events.forEach(e => temp.push(e));
+      for (let i = 0; i < temp.length; i++) {
+        for (let j = i + 1; j < temp.length; j++) {
+          if (temp[i].date < temp[j].date) {
+            const t = temp[i];
+            temp[i] = temp[j];
+            temp[j] = t;
+          }
+        }
+      }
+      const l: Test68_Obj1[] = [];
+      for (let i = 0; i < Math.min(n, temp.length); i++) {
+        l.push(temp[i]);
+      }
+
+
+      const result: DateTopNCompare = {
+        events: events,
+        n: n,
+        latest: l
+      };
+
+      expect(result.latest.length).assertEqual(2);
+      expect(result.latest[0].name).assertEqual("A");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_6300
+     * @tc.name Json6Test063
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: TangentCompare = { angles: [0, Math.PI / 4, Math.PI / 2 - 0.0001], tangents: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const angles = parsedObj["angles"] as number[];
+      const t: number[] = [];
+      angles.forEach(a => t.push(Math.tan(a)));
+
+
+      const result: TangentCompare = {
+        angles: angles,
+        tangents: t
+      };
+
+      expect(result.tangents[0]).assertEqual(0);
+      expect(result.tangents[1]).assertClose(1, 1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_6400
+     * @tc.name Json6Test064
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: NonAlphaCountCompare = { strings: ["a1b!", "hello?", "pure"], counts: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const c: number[] = [];
+      strings.forEach(s => {
+        let count = 0;
+        for (let i = 0; i < s.length; i++) {
+          const code = s.charCodeAt(i);
+          const isUpper = code >= 65 && code <= 90;
+          const isLower = code >= 97 && code <= 122;
+          if (!isUpper && !isLower) {
+            count++;
+          }
+        }
+        c.push(count);
+      });
+
+
+      const result: NonAlphaCountCompare = {
+        strings: strings,
+        counts: c
+      };
+
+      expect(result.counts[0]).assertEqual(2);
+      expect(result.counts[1]).assertEqual(1);
+      expect(result.counts[2]).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_6500
+     * @tc.name Json6Test065
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: AsciiSortCompare = { strings: ["cab", "fed"], sorted: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const s: string[] = [];
+      strings.forEach(str => {
+        const chars: string[] = [];
+        for (let i = 0; i < str.length; i++) {
+          chars.push(str[i]);
+        }
+        for (let i = 0; i < chars.length; i++) {
+          for (let j = i + 1; j < chars.length; j++) {
+            if (chars[i].charCodeAt(0) > chars[j].charCodeAt(0)) {
+              const temp = chars[i];
+              chars[i] = chars[j];
+              chars[j] = temp;
+            }
+          }
+        }
+        s.push(chars.join(""));
+      });
+
+
+      const result: AsciiSortCompare = {
+        strings: strings,
+        sorted: s
+      };
+
+      expect(result.sorted[0]).assertEqual("abc");
+      expect(result.sorted[1]).assertEqual("def");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_6600
+     * @tc.name Json6Test066
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: SumOfAbsCompare = { numbers: [-1, 2, -3, 4], sum: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      let s = 0;
+      numbers.forEach(n => s += Math.abs(n));
+
+
+      const result: SumOfAbsCompare = {
+        numbers: numbers,
+        sum: s
+      };
+
+      expect(result.sum).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_6700
+     * @tc.name Json6Test067
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: IsNumericCompare = { strings: ["123", "12.3", "abc"], results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const r: boolean[] = [];
+      strings.forEach(s => {
+        let isNum = true;
+        let hasDot = false;
+        for (let i = 0; i < s.length; i++) {
+          const code = s.charCodeAt(i);
+          if (code >= 48 && code <= 57) {
+            continue;
+          }
+          if (code === 46 && !hasDot) {
+            hasDot = true;
+            continue;
+          }
+          isNum = false;
+          break;
+        }
+        r.push(isNum);
+      });
+
+
+      const result: IsNumericCompare = {
+        strings: strings,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(true);
+      expect(result.results[1]).assertEqual(true);
+      expect(result.results[2]).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_6800
+     * @tc.name Json6Test068
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: ExpCompare = { numbers: [0, 1, Math.LN2], results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      const r: number[] = [];
+      numbers.forEach(n => r.push(Math.exp(n)));
+
+
+      const result: ExpCompare = {
+        numbers: numbers,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(1);
+      expect(result.results[1]).assertClose(Math.E, 1);
+      expect(result.results[2]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_6900
+     * @tc.name Json6Test069
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: SwapFirstLastCompare = { strings: ["apple", "banana", "a"], swapped: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const s: string[] = [];
+      strings.forEach(str => {
+        if (str.length <= 1) {
+          s.push(str);
+          return;
+        }
+        const first = str[0];
+        const last = str[str.length - 1];
+        let middle = "";
+        for (let i = 1; i < str.length - 1; i++) {
+          middle += str[i];
+        }
+        s.push(last + middle + first);
+      });
+
+
+      const result: SwapFirstLastCompare = {
+        strings: strings,
+        swapped: s
+      };
+
+      expect(result.swapped[0]).assertEqual("eppla");
+      expect(result.swapped[1]).assertEqual("aananb");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_7000
+     * @tc.name Json6Test070
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: SquareCubeSumCompare = { numbers: [2, 3], results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      const r: number[] = [];
+      numbers.forEach(n => r.push(n * n + n * n * n));
+
+
+      const result: SquareCubeSumCompare = {
+        numbers: numbers,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(12);
+      expect(result.results[1]).assertEqual(36);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_7100
+     * @tc.name Json6Test071
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: IsEmailCompare = { strings: ["test@example.com", "invalid-email", "user@domain"], results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const r: boolean[] = [];
+      strings.forEach(s => {
+        let hasAt = false;
+        let atIndex = -1;
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === "@") {
+            if (hasAt) {
+              hasAt = false;
+              break;
+            }
+            hasAt = true;
+            atIndex = i;
+          }
+        }
+        const isValid = hasAt && atIndex > 0 && atIndex < s.length - 1;
+        r.push(isValid);
+      });
+
+
+      const result: IsEmailCompare = {
+        strings: strings,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(true);
+      expect(result.results[1]).assertEqual(false);
+      expect(result.results[2]).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_7200
+     * @tc.name Json6Test072
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: GeometricMeanCompare = { numbers: [2, 8], mean: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      let product = 1;
+      numbers.forEach(n => product *= n);
+      const mean = Math.pow(product, 1 / numbers.length);
+
+
+      const result: GeometricMeanCompare = {
+        numbers: numbers,
+        mean: mean
+      };
+
+      expect(result.mean).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_7300
+     * @tc.name Json6Test073
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: UpperCaseCountCompare = { strings: ["AbCdE", "FGhiJ", "klmno"], counts: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const c: number[] = [];
+      strings.forEach(s => {
+        let count = 0;
+        for (let i = 0; i < s.length; i++) {
+          const code = s.charCodeAt(i);
+          if (code >= 65 && code <= 90) {
+            count++;
+          }
+        }
+        c.push(count);
+      });
+
+
+      const result: UpperCaseCountCompare = {
+        strings: strings,
+        counts: c
+      };
+
+      expect(result.counts[0]).assertEqual(3);
+      expect(result.counts[1]).assertEqual(3);
+      expect(result.counts[2]).assertEqual(0);
+    });
+
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_7400
+     * @tc.name Json6Test074
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: AboveAvgProductsCompare = {
+        products: [
+          { name: "A", price: 10 },
+          { name: "B", price: 20 },
+          { name: "C", price: 30 }
+        ],
+        aboveAvg: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const products = parsedObj["products"] as Test74_Obj1[];
+      let sum = 0;
+      products.forEach(p => sum += p.price);
+      const avg = sum / products.length;
+      const a: Test74_Obj1[] = [];
+      products.forEach(p => {
+        if (p.price > avg) {
+          a.push(p);
+        }
+      });
+
+
+      const result: AboveAvgProductsCompare = {
+        products: products,
+        aboveAvg: a
+      };
+
+      expect(result.aboveAvg.length).assertEqual(1);
+      expect(result.aboveAvg[0].name).assertEqual("C");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_7500
+     * @tc.name Json6Test075
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: SumOfSquaredDiffsCompare = { numbers: [1, 2, 3, 4], sum: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      let sum = 0;
+      const avg = numbers.reduce((a, b) => a + b, 0) / numbers.length;
+      numbers.forEach(n => sum += Math.pow(n - avg, 2));
+
+
+      const result: SumOfSquaredDiffsCompare = {
+        numbers: numbers,
+        sum: sum
+      };
+
+      expect(result.sum).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_7600
+     * @tc.name Json6Test076
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: ContainsSubstringCompare = { strings: ["apple", "pineapple", "grape"], substring: "app", results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const substring = parsedObj["substring"] as string;
+      const r: boolean[] = [];
+      const subLen = substring.length;
+      strings.forEach(s => {
+        let found = false;
+        for (let i = 0; i <= s.length - subLen; i++) {
+          let match = true;
+          for (let j = 0; j < subLen; j++) {
+            if (s[i + j] !== substring[j]) {
+              match = false;
+              break;
+            }
+          }
+          if (match) {
+            found = true;
+            break;
+          }
+        }
+        r.push(found);
+      });
+
+
+      const result: ContainsSubstringCompare = {
+        strings: strings,
+        substring: substring,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(true);
+      expect(result.results[1]).assertEqual(true);
+      expect(result.results[2]).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_7700
+     * @tc.name Json6Test077
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: WeekdayNameCompare = { weekdays: [0, 3, 6], names: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const weekdays = parsedObj["weekdays"] as number[];
+      const weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday",
+        "Thursday", "Friday", "Saturday"];
+      const n: string[] = [];
+      weekdays.forEach(d => n.push(weekdayNames[d]));
+
+
+      const result: WeekdayNameCompare = {
+        weekdays: weekdays,
+        names: n
+      };
+
+      expect(result.names[0]).assertEqual("Sunday");
+      expect(result.names[1]).assertEqual("Wednesday");
+      expect(result.names[2]).assertEqual("Saturday");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_7800
+     * @tc.name Json6Test078
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: ReverseSortCharsCompare = { strings: ["cab", "fed"], sorted: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const s: string[] = [];
+      strings.forEach(str => {
+        const chars: string[] = [];
+        for (let i = 0; i < str.length; i++) {
+          chars.push(str[i]);
+        }
+        for (let i = 0; i < chars.length; i++) {
+          for (let j = i + 1; j < chars.length; j++) {
+            if (chars[i].charCodeAt(0) < chars[j].charCodeAt(0)) {
+              const temp = chars[i];
+              chars[i] = chars[j];
+              chars[j] = temp;
+            }
+          }
+        }
+        s.push(chars.join(""));
+      });
+
+
+      const result: ReverseSortCharsCompare = {
+        strings: strings,
+        sorted: s
+      };
+
+      expect(result.sorted[0]).assertEqual("cba");
+      expect(result.sorted[1]).assertEqual("fed");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_7900
+     * @tc.name Json6Test079
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: SinhCompare = { numbers: [0, Math.log(2 + Math.sqrt(3))], results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      const r: number[] = [];
+      numbers.forEach(n => r.push(Math.sinh(n)));
+
+
+      const result: SinhCompare = {
+        numbers: numbers,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(0);
+      expect(result.results[1]).assertClose(1.732, 1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_8000
+     * @tc.name Json6Test080
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: ReplaceSubstringCompare = {
+        strings: ["apple", "pineapple"],
+        from: "app",
+        to: "xyz",
+        replaced: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const from = parsedObj["from"] as string;
+      const to = parsedObj["to"] as string;
+      const r: string[] = [];
+      const fromLen = from.length;
+      strings.forEach(s => {
+        let newStr = "";
+        let i = 0;
+        while (i <= s.length - fromLen) {
+          let match = true;
+          for (let j = 0; j < fromLen; j++) {
+            if (s[i + j] !== from[j]) {
+              match = false;
+              break;
+            }
+          }
+          if (match) {
+            newStr += to;
+            i += fromLen;
+          } else {
+            newStr += s[i];
+            i++;
+          }
+        }
+        while (i < s.length) {
+          newStr += s[i];
+          i++;
+        }
+        r.push(newStr);
+      });
+
+
+      const result: ReplaceSubstringCompare = {
+        strings: strings,
+        from: from,
+        to: to,
+        replaced: r
+      };
+
+      expect(result.replaced[0]).assertEqual("xyzle");
+      expect(result.replaced[1]).assertEqual("pinexyzle");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_8100
+     * @tc.name Json6Test081
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: OddProductCompare = { numbers: [1, 2, 3, 4, 5], product: 1 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      let p = 1;
+      numbers.forEach(n => {
+        if (n % 2 === 1) {
+          p *= n;
+        }
+      });
+
+
+      const result: OddProductCompare = {
+        numbers: numbers,
+        product: p
+      };
+
+      expect(result.product).assertEqual(15);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_8200
+     * @tc.name Json6Test082
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: IsPalindromeCompare = { strings: ["madam", "hello", "racecar"], results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const r: boolean[] = [];
+      strings.forEach(s => {
+        let isPalin = true;
+        for (let i = 0; i < Math.floor(s.length / 2); i++) {
+          if (s[i] !== s[s.length - 1 - i]) {
+            isPalin = false;
+            break;
+          }
+        }
+        r.push(isPalin);
+      });
+
+
+      const result: IsPalindromeCompare = {
+        strings: strings,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(true);
+      expect(result.results[1]).assertEqual(false);
+      expect(result.results[2]).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_8300
+     * @tc.name Json6Test083
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: CoshCompare = { numbers: [0, Math.log(1 + Math.sqrt(2))], results: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const numbers = parsedObj["numbers"] as number[];
+      const r: number[] = [];
+      numbers.forEach(n => r.push(Math.cosh(n)));
+
+
+      const result: CoshCompare = {
+        numbers: numbers,
+        results: r
+      };
+
+      expect(result.results[0]).assertEqual(1);
+      expect(result.results[1]).assertClose(1.414, 1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json6_TEST_8400
+     * @tc.name Json6Test084
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json6Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      type ISendable = lang.ISendable;
+      const obj: SpaceCountCompare = { strings: ["hello world", "  test  case  ", "nospaces"], counts: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ISendable;
+
+
+      const parsedObj = parsed as Record<string, Object>;
+      const strings = parsedObj["strings"] as string[];
+      const c: number[] = [];
+      strings.forEach(s => {
+        let count = 0;
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === " ") {
+            count++;
+          }
+        }
+        c.push(count);
+      });
+
+
+      const result: SpaceCountCompare = {
+        strings: strings,
+        counts: c
+      };
+
+      expect(result.counts[0]).assertEqual(1);
+      expect(result.counts[1]).assertEqual(6);
+      expect(result.counts[2]).assertEqual(0);
+    });
+
+    
 
   })
 }
