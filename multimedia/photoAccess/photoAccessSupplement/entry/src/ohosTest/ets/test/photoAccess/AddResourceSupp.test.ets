@@ -1717,12 +1717,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1737,12 +1737,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1757,12 +1757,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1777,12 +1777,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1797,12 +1797,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1817,12 +1817,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1837,12 +1837,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1857,12 +1857,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1877,12 +1877,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1897,12 +1897,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1917,12 +1917,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1937,12 +1937,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1957,12 +1957,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.IMAGE;
@@ -1977,12 +1977,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -1997,12 +1997,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -2017,12 +2017,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -2037,12 +2037,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -2057,12 +2057,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -2077,12 +2077,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -2097,12 +2097,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -2117,12 +2117,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -2137,12 +2137,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -2157,12 +2157,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -2177,12 +2177,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -2197,12 +2197,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;
@@ -2217,12 +2217,12 @@ export default function AddResourceChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000
-     * @tc.name      : SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000
-     * @tc.desc      : add resource by invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000', Level.LEVEL2, async (done: Function) => {
       let photoType = photoAccessHelper.PhotoType.VIDEO;

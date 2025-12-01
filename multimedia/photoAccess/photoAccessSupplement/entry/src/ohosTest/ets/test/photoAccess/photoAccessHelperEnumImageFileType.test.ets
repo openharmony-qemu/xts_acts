@@ -67,12 +67,12 @@ export default function photoAccessHelperEnumImageFileType() {
     });
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_ENUM1_001
-     * @tc.name      : PHOTO_ACCESS_HELPER_ENUM1_001
-     * @tc.desc      : photoAccessHelper.ImageFileType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number PHOTO_ACCESS_HELPER_ENUM1_001
+     * @tc.name   PHOTO_ACCESS_HELPER_ENUM1_001
+     * @tc.desc   photoAccessHelper.ImageFileType
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('PHOTO_ACCESS_HELPER_ENUM1_001', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------PHOTO_ACCESS_HELPER_ENUM1_001---------')
@@ -82,12 +82,12 @@ export default function photoAccessHelperEnumImageFileType() {
       done();
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_ENUM1_002
-     * @tc.name      : PHOTO_ACCESS_HELPER_ENUM1_002
-     * @tc.desc      : photoAccessHelper.ResourceType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number PHOTO_ACCESS_HELPER_ENUM1_002
+     * @tc.name   PHOTO_ACCESS_HELPER_ENUM1_002
+     * @tc.desc   photoAccessHelper.ResourceType
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('PHOTO_ACCESS_HELPER_ENUM1_002', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------PHOTO_ACCESS_HELPER_ENUM1_002---------')
@@ -97,12 +97,12 @@ export default function photoAccessHelperEnumImageFileType() {
       done();
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_ENUM1_003
-     * @tc.name      : PHOTO_ACCESS_HELPER_ENUM1_003
-     * @tc.desc      : photoAccessHelper.FilterOperator
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number PHOTO_ACCESS_HELPER_ENUM1_003
+     * @tc.name   PHOTO_ACCESS_HELPER_ENUM1_003
+     * @tc.desc   photoAccessHelper.FilterOperator
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('PHOTO_ACCESS_HELPER_ENUM1_003', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------PHOTO_ACCESS_HELPER_ENUM1_003---------')
@@ -117,12 +117,12 @@ export default function photoAccessHelperEnumImageFileType() {
       done();
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_ENUM1_004
-     * @tc.name      : PHOTO_ACCESS_HELPER_ENUM1_004
-     * @tc.desc      : photoAccessHelper.SingleSelectionMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number PHOTO_ACCESS_HELPER_ENUM1_004
+     * @tc.name   PHOTO_ACCESS_HELPER_ENUM1_004
+     * @tc.desc   photoAccessHelper.SingleSelectionMode
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('PHOTO_ACCESS_HELPER_ENUM1_004', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------PHOTO_ACCESS_HELPER_ENUM1_004---------')
@@ -133,12 +133,12 @@ export default function photoAccessHelperEnumImageFileType() {
       done();
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_ENUM1_005
-     * @tc.name      : PHOTO_ACCESS_HELPER_ENUM1_005
-     * @tc.desc      : photoAccessHelper.PhotoViewMIMETypes
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number PHOTO_ACCESS_HELPER_ENUM1_005
+     * @tc.name   PHOTO_ACCESS_HELPER_ENUM1_005
+     * @tc.desc   photoAccessHelper.PhotoViewMIMETypes
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('PHOTO_ACCESS_HELPER_ENUM1_005', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------PHOTO_ACCESS_HELPER_ENUM1_005---------')
@@ -150,12 +150,12 @@ export default function photoAccessHelperEnumImageFileType() {
       done();
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_ENUM1_006
-     * @tc.name      : PHOTO_ACCESS_HELPER_ENUM1_006
-     * @tc.desc      : photoAccessHelper.DefaultChangeUri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number PHOTO_ACCESS_HELPER_ENUM1_006
+     * @tc.name   PHOTO_ACCESS_HELPER_ENUM1_006
+     * @tc.desc   photoAccessHelper.DefaultChangeUri
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('PHOTO_ACCESS_HELPER_ENUM1_006', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------PHOTO_ACCESS_HELPER_ENUM1_006---------')
@@ -165,12 +165,12 @@ export default function photoAccessHelperEnumImageFileType() {
       done();
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_ENUM1_007
-     * @tc.name      : PHOTO_ACCESS_HELPER_ENUM1_007
-     * @tc.desc      : photoAccessHelper.NotifyType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number PHOTO_ACCESS_HELPER_ENUM1_007
+     * @tc.name   PHOTO_ACCESS_HELPER_ENUM1_007
+     * @tc.desc   photoAccessHelper.NotifyType
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('PHOTO_ACCESS_HELPER_ENUM1_007', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------PHOTO_ACCESS_HELPER_ENUM1_007---------')

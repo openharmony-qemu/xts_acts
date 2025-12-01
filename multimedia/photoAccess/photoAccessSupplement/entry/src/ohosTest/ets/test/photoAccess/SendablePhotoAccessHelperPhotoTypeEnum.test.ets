@@ -77,12 +77,12 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
 
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_001
-     * @tc.name      : createAsset_sendable_promise_image_001
-     * @tc.desc      : promise, PhotoType->IMAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_001
+     * @tc.name   createAsset_sendable_promise_image_001
+     * @tc.desc   promise, PhotoType->IMAGE
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('createAsset_sendable_promise_image_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAsset_sendable_promise_image_001';
@@ -94,12 +94,12 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
       });
     })
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_002
-     * @tc.name      : createAsset_sendable_promise_video_001
-     * @tc.desc      : promise, PhotoType->VIDEO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_002
+     * @tc.name   createAsset_sendable_promise_video_001
+     * @tc.desc   promise, PhotoType->VIDEO
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('createAsset_sendable_promise_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAsset_sendable_promise_video_001';
@@ -115,12 +115,12 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
 
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_001
-     * @tc.name      : createAsset_sendable_promise_photoSubtype_001
-     * @tc.desc      : promise, image, with options, extension->jpg, subtype->BURST
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_001
+     * @tc.name   createAsset_sendable_promise_photoSubtype_001
+     * @tc.desc   promise, image, with options, extension->jpg, subtype->BURST
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('createAsset_sendable_promise_photoSubtype_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAsset_sendable_promise_photoSubtype_001';
@@ -136,12 +136,12 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
       });
     })
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_002
-     * @tc.name      : createAsset_sendable_promise_photoSubtype_002
-     * @tc.desc      : promise, video, with options, extension->mp4, subtype->BURST
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_002
+     * @tc.name   createAsset_sendable_promise_photoSubtype_002
+     * @tc.desc   promise, video, with options, extension->mp4, subtype->BURST
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('createAsset_sendable_promise_photoSubtype_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAsset_sendable_promise_photoSubtype_002';
@@ -158,12 +158,12 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_003
-     * @tc.name      : createAsset_sendable_promise_photoSubtype_003
-     * @tc.desc      : promise, video, with options, extension->mp4, subtype->MOVING_PHOTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_003
+     * @tc.name   createAsset_sendable_promise_photoSubtype_003
+     * @tc.desc   promise, video, with options, extension->mp4, subtype->MOVING_PHOTO
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('createAsset_sendable_promise_photoSubtype_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAsset_sendable_promise_photoSubtype_003';
@@ -179,12 +179,12 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
       });
     })
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_004
-     * @tc.name      : createAsset_sendable_promise_photoSubtype_004
-     * @tc.desc      : promise, image, with options, extension->jpg, subtype->MOVING_PHOTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_004
+     * @tc.name   createAsset_sendable_promise_photoSubtype_004
+     * @tc.desc   promise, image, with options, extension->jpg, subtype->MOVING_PHOTO
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('createAsset_sendable_promise_photoSubtype_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAsset_sendable_promise_photoSubtype_004';
@@ -200,12 +200,12 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
       });
     })
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_005
-     * @tc.name      : createAsset_sendable_promise_photoSubtype_005
-     * @tc.desc      : promise, video, with options, extension->mp4, subtype->DEFAULT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_005
+     * @tc.name   createAsset_sendable_promise_photoSubtype_005
+     * @tc.desc   promise, video, with options, extension->mp4, subtype->DEFAULT
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('createAsset_sendable_promise_photoSubtype_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAsset_sendable_promise_photoSubtype_005';
@@ -221,12 +221,12 @@ export default function sendablePhotoAccessHelperCreateAssetTest() {
       });
     })
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_006
-     * @tc.name      : createAsset_sendable_promise_photoSubtype_006
-     * @tc.desc      : promise, image, with options, extension->jpg, subtype->DEFAULT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_CREATE_ASSET_SENDABLE_006
+     * @tc.name   createAsset_sendable_promise_photoSubtype_006
+     * @tc.desc   promise, image, with options, extension->jpg, subtype->DEFAULT
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('createAsset_sendable_promise_photoSubtype_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAsset_sendable_promise_photoSubtype_006';

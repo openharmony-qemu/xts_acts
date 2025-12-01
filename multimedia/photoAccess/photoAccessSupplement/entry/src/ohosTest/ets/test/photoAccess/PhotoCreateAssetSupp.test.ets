@@ -95,12 +95,12 @@ export default function PhotoCreateAssetSuppTest() {
       }
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0001
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0001
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0001
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0001
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0001';
@@ -115,12 +115,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0002
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0002
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0002
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0002
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0002';
@@ -135,12 +135,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0003
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0003
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0003
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0003
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0003';
@@ -156,12 +156,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0004
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0004
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0004
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0004
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0004', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0004';
@@ -176,12 +176,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0005
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0005
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0005
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0005
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0005';
@@ -196,12 +196,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0006
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0006
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0006
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0006
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0006';
@@ -216,12 +216,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0007
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0007
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0007
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0007
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0007', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0007';
@@ -236,12 +236,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0008
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0008
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0008
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0008
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0008', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0008';
@@ -256,12 +256,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0009
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0009
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0009
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0009
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0009', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0009';
@@ -276,12 +276,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0010
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0010
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0010
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0010
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0010', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0010';
@@ -296,12 +296,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0011
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0011
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0011
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0011
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0011', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0011';
@@ -316,12 +316,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0016
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0016
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0016
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0016
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0016', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0016';
@@ -334,12 +334,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0017
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0017
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0017
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0017
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0017', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0017';
@@ -351,12 +351,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0018
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0018
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0018
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0018
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0018', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0018';
@@ -368,12 +368,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0019
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0019
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0019
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0019
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0019', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0019';
@@ -385,12 +385,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0020
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0020
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0020
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0020
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0020', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0020';
@@ -402,12 +402,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0021
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0021
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0021
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0021
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0021', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0021';
@@ -419,12 +419,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0022
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0022
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0022
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0022
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0022', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0022';
@@ -436,12 +436,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0023
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0023
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0023
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0023
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0023', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0023';
@@ -453,12 +453,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0024
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0024
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0024
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0024
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0024', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0024';
@@ -470,12 +470,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0025
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0025
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0025
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0025
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0025', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0025';
@@ -487,12 +487,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0026
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0026
-     * @tc.desc      : createAsset without CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0026
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0026
+     * @tc.desc   createAsset without CreateOptions
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0026', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0026';
@@ -504,12 +504,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0027
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0027
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0027
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0027
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0027', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0027';
@@ -525,12 +525,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0028
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0028
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0028
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0028
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0028', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0028';
@@ -545,12 +545,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0029
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0029
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0029
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0029
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0029', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0029';
@@ -565,12 +565,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0030
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0030
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0030
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0030
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0030', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0030';
@@ -585,12 +585,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0031
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0031
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0031
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0031
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0031', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0031';
@@ -605,12 +605,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0032
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0032
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0032
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0032
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0032', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0032';
@@ -625,12 +625,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0033
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0033
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0033
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0033
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0033', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0033';
@@ -645,12 +645,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0034
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0034
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0034
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0034
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0034', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0034';
@@ -665,12 +665,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0035
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0035
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0035
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0035
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0035', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0035';
@@ -685,12 +685,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0036
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0036
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0036
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0036
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0036', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0036';
@@ -705,12 +705,12 @@ export default function PhotoCreateAssetSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0037
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0037
-     * @tc.desc      : createAsset with undefined title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0037
+     * @tc.name   SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0037
+     * @tc.desc   createAsset with undefined title
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0037', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_VIDEO_0037';
