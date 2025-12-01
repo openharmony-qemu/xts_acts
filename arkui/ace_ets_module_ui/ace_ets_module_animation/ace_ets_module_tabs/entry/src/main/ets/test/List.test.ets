@@ -71,6 +71,8 @@ import curvesTabs from './TabsTest/curvesTabs.test';
 import animationCurve from './TabsTest/animationCurve.test';
 import tabsDemo from './textTest/TextApi/tabsDemo.test';
 
+import tabs_onContentDidScrollTest from './TabsTest/Tabs_onContentDidScroll/tabs_onContentDidScroll.test';
+import tabs_undefinedTest from './TabsTest/Tabs_onContentDidScroll/tabs_undefined.test';
 
 export default function testsuite() {
   tabsBarPositionJsunit();
@@ -125,4 +127,6 @@ export default function testsuite() {
   animationCurve();
   tabsBarPositionJsunit1();
   tabsDemo();
+  tabs_onContentDidScrollTest();
+  tabs_undefinedTest();
   } 
