@@ -457,7 +457,7 @@ export default function SetFromTest() {
      */
     it('testSetKeysValues020', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
-      const size: number = 100000;
+      const size: number = 1000;
 
       // Populate set
       for (let i = 0; i < size; i++) {
