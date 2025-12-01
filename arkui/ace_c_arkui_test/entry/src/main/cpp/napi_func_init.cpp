@@ -1381,6 +1381,8 @@ static napi_value Init(napi_env env, napi_value exports)
 
         {"testImageObjectFit018", nullptr, TestImageObjectFit018, nullptr, nullptr, nullptr, napi_default, nullptr},
 
+        {"testImageObjectFit019", nullptr, TestImageObjectFit019, nullptr, nullptr, nullptr, napi_default, nullptr},
+
         {"testImageObjectRepeat001", nullptr, TestImageObjectRepeat001, nullptr, nullptr, nullptr, napi_default,
          nullptr},
 
@@ -2050,7 +2052,9 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"testImageDynamicRangeMode004", nullptr, TestImageDynamicRangeMode004, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-         {"testImageDynamicRangeMode004", nullptr, TestImageDynamicRangeMode004, nullptr, nullptr, nullptr,
+        {"testImageDynamicRangeMode005", nullptr, TestImageDynamicRangeMode005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageDynamicRangeMode006", nullptr, TestImageDynamicRangeMode006, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testImageHdrBrightness001", nullptr, TestImageHdrBrightness001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
