@@ -4254,7 +4254,7 @@ static napi_value AudioSuiteEngine_CreatePipeline_0004(napi_env env, napi_callba
     OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_CreatePipeline(
-        nullptr, &audioSuitePipeline,
+        audioSuiteEngine, &audioSuitePipeline,
         static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST)
     );
     if (result == OH_AudioSuite_Result::AUDIOSUITE_ERROR_ENGINE_NOT_EXIST) {
