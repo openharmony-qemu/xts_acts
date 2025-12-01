@@ -1717,6 +1717,30 @@ export const testImageRotate003: () => number;
 
 export const testImageRotate004: () => number;
 
+export const testImageRotateOrientation001: () => number;
+
+export const testImageRotateOrientation002: () => number;
+
+export const testImageRotateOrientation003: () => number;
+
+export const testImageRotateOrientation004: () => number;
+
+export const testImageRotateOrientation005: () => number;
+
+export const testImageRotateOrientation006: () => number;
+
+export const testImageRotateOrientation007: () => number;
+
+export const testImageRotateOrientation008: () => number;
+
+export const testImageRotateOrientation009: () => number;
+
+export const testImageRotateOrientation010: () => number;
+
+export const testImageRotateOrientation011: () => number;
+
+export const testImageRotateOrientation012: () => number;
+
 export const testImageSaturate001: () => number;
 
 export const testImageSaturate002: () => number;

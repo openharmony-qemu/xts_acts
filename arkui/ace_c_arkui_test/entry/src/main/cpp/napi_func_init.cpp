@@ -1436,6 +1436,30 @@ static napi_value Init(napi_env env, napi_value exports)
 
         {"testImageRotate004", nullptr, TestImageRotate004, nullptr, nullptr, nullptr, napi_default, nullptr},
 
+        {"testImageRotateOrientation001", nullptr, TestImageRotateOrientation001, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation002", nullptr, TestImageRotateOrientation002, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation003", nullptr, TestImageRotateOrientation003, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation004", nullptr, TestImageRotateOrientation004, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation005", nullptr, TestImageRotateOrientation005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation006", nullptr, TestImageRotateOrientation006, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation007", nullptr, TestImageRotateOrientation007, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation008", nullptr, TestImageRotateOrientation008, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation009", nullptr, TestImageRotateOrientation009, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation010", nullptr, TestImageRotateOrientation010, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation011", nullptr, TestImageRotateOrientation011, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation012", nullptr, TestImageRotateOrientation012, nullptr, nullptr, nullptr, napi_default, nullptr},
+
         {"testImageSaturate001", nullptr, TestImageSaturate001, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"testImageSaturate002", nullptr, TestImageSaturate002, nullptr, nullptr, nullptr, napi_default, nullptr},
