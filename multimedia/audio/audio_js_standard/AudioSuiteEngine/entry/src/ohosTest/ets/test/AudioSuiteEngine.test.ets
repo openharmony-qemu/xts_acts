@@ -2074,7 +2074,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_CreatePipeline_0001
-     * @tc.name       AudioSuiteEngine createpipeline test
+     * @tc.name       AudioSuiteEngine_CreatePipeline_0001
      * @tc.desc       AudioSuiteEngine createpipeline test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2090,7 +2090,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_CreatePipeline_0002
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.name       AudioSuiteEngine_CreatePipeline_0002
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2106,7 +2106,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_CreatePipeline_0003
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.name       AudioSuiteEngine_CreatePipeline_0003
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2122,7 +2122,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_CreatePipeline_0004
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_ENGINE_NOT_EXIST test
+     * @tc.name       AudioSuiteEngine_CreatePipeline_0004
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_ENGINE_NOT_EXIST test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2138,7 +2138,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_CreatePipeline_0005
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_CREATE_EXCEED_SYSTEM_LIMITS test
+     * @tc.name       AudioSuiteEngine_CreatePipeline_0005
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_CREATE_EXCEED_SYSTEM_LIMITS test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2154,7 +2154,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_DestroyPipeline_0001
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_SUCCESS test
+     * @tc.name       AudioSuiteEngine_DestroyPipeline_0001
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_SUCCESS test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2170,7 +2170,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_DestroyPipeline_0002
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.name       AudioSuiteEngine_DestroyPipeline_0002
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2186,7 +2186,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_DestroyPipeline_0003
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.name       AudioSuiteEngine_DestroyPipeline_0003
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2202,7 +2202,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_DestroyPipeline_0004
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.name       AudioSuiteEngine_DestroyPipeline_0004
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2218,7 +2218,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_StartPipeline_0001
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_SUCCESS test
+     * @tc.name       AudioSuiteEngine_StartPipeline_0001
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_SUCCESS test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2234,7 +2234,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_StartPipeline_0002
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.name       AudioSuiteEngine_StartPipeline_0002
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2250,7 +2250,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_StartPipeline_0003
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.name       AudioSuiteEngine_StartPipeline_0003
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2266,7 +2266,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_StartPipeline_0004
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.name       AudioSuiteEngine_StartPipeline_0004
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2282,7 +2282,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_StartPipeline_0005
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.name       AudioSuiteEngine_StartPipeline_0005
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2298,7 +2298,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_StartPipeline_0006
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.name       AudioSuiteEngine_StartPipeline_0006
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2314,7 +2314,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_StopPipeline_0001
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.name       AudioSuiteEngine_StopPipeline_0001
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2330,7 +2330,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_StopPipeline_0002
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.name       AudioSuiteEngine_StopPipeline_0002
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2346,7 +2346,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_StopPipeline_0003
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.name       AudioSuiteEngine_StopPipeline_0003
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -2362,7 +2362,7 @@ export default function AudioSuiteEngineTest() {
 
     /**
      * @tc.number     AudioSuiteEngine_StopPipeline_0004
-     * @tc.name       AudioSuiteEngine AUDIOSUITE_SUCCESS test
+     * @tc.name       AudioSuiteEngine_StopPipeline_0004
      * @tc.desc       AudioSuiteEngine AUDIOSUITE_SUCCESS test
      * @tc.size       MEDIUM
      * @tc.type       Function
