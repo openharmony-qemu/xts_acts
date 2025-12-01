@@ -991,7 +991,7 @@ export default function AVMetadata() {
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
-      */
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
