@@ -184,5 +184,79 @@ export default function api16CertNoPermissionTestUnit() {
       done();
     });
 
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_static_0100
+     * @tc.name SUB_Security_CertManager_Ukey_static_0100
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_Ukey_static_0100 start');
+      const context :common.Context = await GlobalContext.getContext();
+      let certTypes: Array<certManagerDialog.CertificateType> = [
+        certManagerDialog.CertificateType.CREDENTIAL_UKEY
+      ];
+      let certPurpose: certManager.CertificatePurpose = certManager.CertificatePurpose.PURPOSE_DEFAULT;
+      let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
+      try {
+        await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
+        expect(null).assertFail();
+      } catch (error:BusinessError) {
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0100  Failed to open authorize dialog error.code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_static_0500
+     * @tc.name SUB_Security_CertManager_Ukey_static_0500
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_Ukey_static_0500 start');
+      let keyUri: string = 'test';
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      }
+
+      try {
+        await certManager.getUkeyCertificate(keyUri, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err:BusinessError) {
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0500 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_static_0900
+     * @tc.name SUB_Security_CertManager_Ukey_static_0900
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_Ukey_static_0900 start');
+      const context :common.Context = await GlobalContext.getContext();
+      let keyUri: string = "test"
+      let ukeyAuthRequest: certManagerDialog.UkeyAuthRequest = { keyUri: keyUri }
+
+      try {
+        await certManagerDialog.openUkeyAuthDialog(context, ukeyAuthRequest);
+        expect(null).assertFail();
+      } catch (err:BusinessError) {
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0900 Failed  Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+      }
+      done();
+    });
   })
 }
