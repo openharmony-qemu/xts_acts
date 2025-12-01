@@ -55,6 +55,7 @@ export default function SwipeRecognizerTest() {
      */
     it('SwipeRecognizer_0100', Level.LEVEL0, async (done: Function) => {
       console.info('SwipeRecognizer_0100 START');
+      await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let colum = CommonFunc.getComponentRectOnScreen('SwipeRecognizer');
