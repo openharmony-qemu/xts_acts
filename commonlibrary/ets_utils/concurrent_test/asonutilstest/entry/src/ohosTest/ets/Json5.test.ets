@@ -1964,6 +1964,1954 @@ export default function Json5Test() {
       expect(parsedObj.elements[1].xml).assertEqual("<data id='123' active='true'/>");
     });
 
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_3700
+     * @tc.name Json5Test037
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const originalObj: YamlContentObj = {
+        configs: [
+          { name: "App", yaml: "app:\n  name: myapp\n  version: 1.0.0\n  enabled: true" },
+          { name: "DB", yaml: "database:\n  host: localhost\n  port: 5432" }
+        ]
+      };
+      const jsonStr: string = ArkTSUtils.ASON.stringify(originalObj);
+      const parsedObj = ArkTSUtils.ASON.parse(jsonStr) as YamlContentObj;
+
+      expect(parsedObj.configs[0].yaml).assertEqual("app:\n  name: myapp\n  version: 1.0.0\n  enabled: true");
+      expect(parsedObj.configs[1].yaml).assertEqual("database:\n  host: localhost\n  port: 5432");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_3800
+     * @tc.name Json5Test038
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const originalObj: GraphqlQueryObj = {
+        queries: [
+          { name: "Users", query: "query Users($limit: Int) { users(limit: $limit) { id name email } }" },
+          { name: "Post", query: "mutation CreatePost($title: String!) { createPost(title: $title) { id } }" }
+        ]
+      };
+      const jsonStr: string = ArkTSUtils.ASON.stringify(originalObj);
+      const parsedObj = ArkTSUtils.ASON.parse(jsonStr) as GraphqlQueryObj;
+
+      expect(parsedObj.queries[0].query)
+        .assertEqual("query Users($limit: Int) { users(limit: $limit) { id name email } }");
+      expect(parsedObj.queries[1].query)
+        .assertEqual("mutation CreatePost($title: String!) { createPost(title: $title) { id } }");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_3900
+     * @tc.name Json5Test039
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const originalObj: TransportEmojiObj = {
+        vehicles: [
+          { name: "Car", emoji: "🚗" },
+          { name: "Train", emoji: "🚂" },
+          { name: "Plane", emoji: "✈️" }
+        ]
+      };
+      const jsonStr: string = ArkTSUtils.ASON.stringify(originalObj);
+      const parsedObj = ArkTSUtils.ASON.parse(jsonStr) as TransportEmojiObj1;
+      expect(parsedObj.vehicles[0].emoji).assertEqual("🚗");
+      expect(parsedObj.vehicles[2].name).assertEqual("Plane");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_4000
+     * @tc.name Json5Test040
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const originalArr: string[] = [
+        "$.store.book[0].title",
+        "$.store.book[*].author",
+        "$.store..price"
+      ];
+      const jsonStr: string = ArkTSUtils.ASON.stringify(originalArr);
+      const parsedArr = ArkTSUtils.ASON.parse(jsonStr) as string[];
+
+      expect(parsedArr[0]).assertEqual("$.store.book[0].title");
+      expect(parsedArr[2]).assertEqual("$.store..price");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_4100
+     * @tc.name Json5Test041
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const originalObj: MultiLangPunctObj = {
+        messages: {
+          en: "Hello! How are you?",
+          fr: "Bonjour ! Comment allez-vous ?",
+          zh: "你好！你怎么样？"
+        }
+      };
+      const jsonStr: string = ArkTSUtils.ASON.stringify(originalObj);
+      const parsedObj = ArkTSUtils.ASON.parse(jsonStr) as MultiLangPunctObj;
+
+      expect(parsedObj.messages.fr).assertEqual("Bonjour ! Comment allez-vous ?");
+      expect(parsedObj.messages.zh).assertEqual("你好！你怎么样？");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_4200
+     * @tc.name Json5Test042
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const originalObj: DockerCommandObj = {
+        commands: [
+          { name: "Build", cmd: "docker build -t myapp:1.0 -f Dockerfile ." },
+          { name: "Run", cmd: "docker run -d -p 80:80 --name app myapp:1.0" }
+        ]
+      };
+      const jsonStr: string = ArkTSUtils.ASON.stringify(originalObj);
+      const parsedObj = ArkTSUtils.ASON.parse(jsonStr) as DockerCommandObj;
+
+      expect(parsedObj.commands[0].cmd).assertEqual("docker build -t myapp:1.0 -f Dockerfile .");
+      expect(parsedObj.commands[1].cmd).assertEqual("docker run -d -p 80:80 --name app myapp:1.0");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_4300
+     * @tc.name Json5Test043
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const originalObj: JavaAnnotationObj = {
+        annotations: [
+          { name: "Controller", code: "@RestController\n@RequestMapping(\"/api/users\")" },
+          { name: "Service", code: "@Service\npublic class UserService {}" }
+        ]
+      };
+      const jsonStr: string = ArkTSUtils.ASON.stringify(originalObj);
+      const parsedObj = ArkTSUtils.ASON.parse(jsonStr) as JavaAnnotationObj;
+
+      expect(parsedObj.annotations[0].code).assertEqual("@RestController\n@RequestMapping(\"/api/users\")");
+      expect(parsedObj.annotations[1].code).assertEqual("@Service\npublic class UserService {}");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_4400
+     * @tc.name Json5Test044
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const originalObj: Test44_Obj2 = {
+        datasets: [
+          { values: [5, 2, 8, 1] },
+          { values: [10, 3, 7] }
+        ]
+      };
+      const jsonStr: string = ArkTSUtils.ASON.stringify(originalObj);
+      const parsedObj = ArkTSUtils.ASON.parse(jsonStr) as DeepMaxObj;
+
+      expect(parsedObj.datasets[0].maxValue).assertEqual(undefined);
+      expect(parsedObj.datasets[1].maxValue).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_4500
+     * @tc.name Json5Test045
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const originalObj: TransportEmojiObj1 = {
+        vehicles: [
+          { name: "Car", emoji: "🚗" },
+          { name: "Train", emoji: "🚂" },
+          { name: "Plane", emoji: "✈️" }
+        ]
+      };
+      const jsonStr: string = ArkTSUtils.ASON.stringify(originalObj);
+      const parsedObj = ArkTSUtils.ASON.parse(jsonStr) as TransportEmojiObj1;
+
+      expect(parsedObj.vehicles[0].emoji).assertEqual("🚗");
+      expect(parsedObj.vehicles[2].name).assertEqual("Plane");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_4600
+     * @tc.name Json5Test046
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    // it('Json5Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   const originalObj: Test45_Obj3 = {
+    //     ingredients: [
+    //       { name: "Sugar", ounces: 8 },
+    //       { name: "Flour", ounces: 16 }
+    //     ]
+    //   };
+    //   const jsonStr: string = ArkTSUtils.ASON.stringify(originalObj);
+    //   const parsedObj:OunceToGramObj = ArkTSUtils.ASON.parse(jsonStr) as OunceToGramObj;
+    //
+    //   parsedObj.ingredients = parsedObj.ingredients.map((ing: Test45_Obj2) => {
+    //     return {
+    //       name: ing.name,
+    //       ounces: ing.ounces,
+    //       grams: Math.round(ing.ounces * 28.35)
+    //     } as Test45_Obj4;
+    //   });
+    //
+    //   expect(parsedObj.ingredients[0].grams).assertEqual(227);
+    //   expect(parsedObj.ingredients[1].grams).assertEqual(454);
+    // });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_4700
+     * @tc.name Json5Test047
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: PositiveSumObj = { numbers: [1, -2, 3], sum: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: PositiveSumObj = ArkTSUtils.ASON.parse(json) as PositiveSumObj;
+
+      let sum = 0;
+      parsed.numbers.forEach((n: number) => {
+        if (n >= 0) {
+          sum += n;
+        }
+      });
+      parsed.sum = sum;
+
+      expect(parsed.sum).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_4800
+     * @tc.name Json5Test048
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: UpperCaseArr = { words: ["a", "b"], upper: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as UpperCaseArr;
+
+      const result: UpperCaseArr = {
+        words: parsed.words,
+        upper: parsed.words.map(w => w.toUpperCase())
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.upper)).assertEqual(ArkTSUtils.ASON.stringify(["A", "B"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_4900
+     * @tc.name Json5Test049
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: EvenNumbers = { data: [1, 2, 3], evens: [] };
+
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as EvenNumbers;
+
+      const evens: number[] = [];
+      parsed.data.forEach((n: number) => {
+        if (n % 2 === 0) {
+          evens.push(n);
+        }
+      });
+      const result: EvenNumbers = {
+        data: parsed.data,
+        evens: evens
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.evens)).assertEqual(ArkTSUtils.ASON.stringify([2]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_5000
+     * @tc.name Json5Test050
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: AverageObj = { values: [2, 4, 6], avg: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as AverageObj;
+
+      let sum = 0;
+      parsed.values.forEach((n: number) => sum += n);
+      const average = sum / parsed.values.length;
+
+      const result: AverageObj = {
+        values: parsed.values,
+        avg: average
+      };
+      expect(result.avg).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_5100
+     * @tc.name Json5Test051
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: StringLengths = { texts: ["a", "bb"], lengths: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as StringLengths;
+      const lengths: number[] = [];
+      parsed.texts.forEach((t: string) => lengths.push(t.length));
+
+      const result: StringLengths = {
+        texts: parsed.texts,
+        lengths: lengths
+      };;
+      expect(ArkTSUtils.ASON.stringify(result.lengths)).assertEqual(ArkTSUtils.ASON.stringify([1, 2]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_5200
+     * @tc.name Json5Test052
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: HourExtract = { times: ["12:30", "15:45"], hours: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as HourExtract;
+
+      const hours: number[] = [];
+      parsed.times.forEach((t: string) => {
+        const hourPart = t.split(":")[0];
+        hours.push(parseInt(hourPart));
+      });
+
+      const result: HourExtract = {
+        times: parsed.times,
+        hours: hours
+      };
+      expect(ArkTSUtils.ASON.stringify(result.hours)).assertEqual(ArkTSUtils.ASON.stringify([12, 15]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_5300
+     * @tc.name Json5Test053
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: LongStrings = { strings: ["a", "abc"], long: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as LongStrings;
+      const longStrings: string[] = [];
+      parsed.strings.forEach((s: string) => {
+        if (s.length > 2) {
+          longStrings.push(s);
+        }
+      });
+
+      const result: LongStrings = {
+        strings: parsed.strings,
+        long: longStrings
+      };
+      expect(ArkTSUtils.ASON.stringify(result.long)).assertEqual(ArkTSUtils.ASON.stringify(["abc"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_5400
+     * @tc.name Json5Test054
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: RoundedNumbers = { nums: [1.2, 2.8], rounded: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as RoundedNumbers;
+
+      const rounded: number[] = [];
+      parsed.nums.forEach((n: number) => rounded.push(Math.round(n)));
+      const result: RoundedNumbers = {
+        nums: parsed.nums,
+        rounded: rounded
+      };
+      expect(ArkTSUtils.ASON.stringify(result.rounded)).assertEqual(ArkTSUtils.ASON.stringify([1, 3]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_5500
+     * @tc.name Json5Test055
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: PositiveCount = { numbers: [-1, 2, 3], count: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as PositiveCount;
+      let count = 0;
+      parsed.numbers.forEach((n: number) => {
+        if (n > 0) {
+          count++;
+        }
+      });
+
+      const result: PositiveCount = {
+        numbers: parsed.numbers,
+        count: count
+      };
+      expect(result.count).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_5600
+     * @tc.name Json5Test056
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+
+    it('Json5Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+
+      const obj: FirstLetters = { words: ["apple", "banana"], letters: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: FirstLetters = ArkTSUtils.ASON.parse(json) as FirstLetters;
+
+      const letters: string[] = [];
+      parsed.words.forEach((w: string) => letters.push(w[0]));
+
+      const result: FirstLetters = {
+        words: parsed.words,
+        letters: letters
+      };
+      expect(ArkTSUtils.ASON.stringify(result.letters)).assertEqual(ArkTSUtils.ASON.stringify(["a", "b"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_5700
+     * @tc.name Json5Test057
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ReversedArr = { data: ["a", "b"], reversed: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: ReversedArr = ArkTSUtils.ASON.parse(json) as ReversedArr;
+      const reversed: string[] = [];
+      for (let i = parsed.data.length - 1; i >= 0; i--) {
+        reversed.push(parsed.data[i]);
+      }
+
+      const result: ReversedArr = {
+        data: parsed.data,
+        reversed: reversed
+      };
+      expect(ArkTSUtils.ASON.stringify(result.reversed)).assertEqual(ArkTSUtils.ASON.stringify(["b", "a"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_5800
+     * @tc.name Json5Test058
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: SquaredNumbers = { numbers: [2, 3], squares: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: SquaredNumbers = ArkTSUtils.ASON.parse(json) as SquaredNumbers;
+
+      const squares: number[] = [];
+      parsed.numbers.forEach((n: number) => squares.push(n * n));
+
+      const result: SquaredNumbers = {
+        numbers: parsed.numbers,
+        squares: squares
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.squares)).assertEqual(ArkTSUtils.ASON.stringify([4, 9]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_5900
+     * @tc.name Json5Test059
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: SubstringFilter = { strings: ["abc", "def"], filtered: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: SubstringFilter = ArkTSUtils.ASON.parse(json) as SubstringFilter;
+
+      const filtered: string[] = [];
+      parsed.strings.forEach((s: string) => {
+        if (s.includes("b")) {
+          filtered.push(s);
+        }
+      });
+      const result: SubstringFilter = {
+        strings: parsed.strings,
+        filtered: filtered
+      };
+      expect(ArkTSUtils.ASON.stringify(result.filtered)).assertEqual(ArkTSUtils.ASON.stringify(["abc"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_6000
+     * @tc.name Json5Test060
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: YearExtract = { dates: ["2020-01-01", "2021-02-02"], years: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as YearExtract;
+
+      const years: number[] = [];
+      parsed.dates.forEach((d: string) => {
+        const yearPart = d.split("-")[0];
+        years.push(parseInt(yearPart));
+      });
+
+      const result: YearExtract = {
+        dates: parsed.dates,
+        years: years
+      };
+      expect(ArkTSUtils.ASON.stringify(result.years)).assertEqual(ArkTSUtils.ASON.stringify([2020, 2021]));
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_6100
+     * @tc.name Json5Test061
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: SumSkipZero = { values: [1, 0, 2], sum: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: SumSkipZero = ArkTSUtils.ASON.parse(json) as SumSkipZero;
+      let sum = 0;
+      parsed.values.forEach((n: number) => {
+        if (n !== 0) {
+          sum += n;
+        }
+      });
+      const result: SumSkipZero = {
+        values: parsed.values,
+        sum: sum
+      };
+      expect(result.sum).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_6200
+     * @tc.name Json5Test062
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: StringConcat = { parts: ["a", "b"], combined: "" };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: StringConcat = ArkTSUtils.ASON.parse(json) as StringConcat;
+
+      let combined = "";
+      parsed.parts.forEach((p: string) => combined += p);
+
+      const result: StringConcat = {
+        parts: parsed.parts,
+        combined: combined
+      };
+      expect(result.combined).assertEqual("ab");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_6300
+     * @tc.name Json5Test063
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ThresholdFilter = { numbers: [5, 10, 15], above: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: ThresholdFilter = ArkTSUtils.ASON.parse(json) as ThresholdFilter;
+
+      const above: number[] = [];
+      parsed.numbers.forEach((n: number) => {
+        if (n > 10) {
+          above.push(n);
+        }
+      });
+
+      const result: ThresholdFilter = {
+        numbers: parsed.numbers,
+        above: above
+      };
+      expect(ArkTSUtils.ASON.stringify(result.above)).assertEqual(ArkTSUtils.ASON.stringify([15]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_6400
+     * @tc.name Json5Test064
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: LowerCaseArr = { words: ["A", "B"], lower: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: LowerCaseArr = ArkTSUtils.ASON.parse(json) as LowerCaseArr;
+
+      const lower: string[] = [];
+      parsed.words.forEach((w: string) => lower.push(w.toLowerCase()));
+
+      const result: LowerCaseArr = {
+        words: parsed.words,
+        lower: lower
+      };
+      expect(ArkTSUtils.ASON.stringify(result.lower)).assertEqual(ArkTSUtils.ASON.stringify(["a", "b"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_6500
+     * @tc.name Json5Test065
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ProductObj = { factors: [2, 3], product: 1 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: ProductObj = ArkTSUtils.ASON.parse(json) as ProductObj;
+
+      let product = 1;
+      parsed.factors.forEach((n: number) => product *= n);
+      const result: ProductObj = {
+        factors: parsed.factors,
+        product: product
+      };
+
+      expect(result.product).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_6600
+     * @tc.name Json5Test066
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: LastElement = { items: ["a", "b"], last: "" };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: LastElement = ArkTSUtils.ASON.parse(json) as LastElement;
+
+      const last = parsed.items.length > 0 ? parsed.items[parsed.items.length - 1] : "";
+      const result: LastElement = {
+        items: parsed.items,
+        last: last
+      };
+      expect(result.last).assertEqual("b");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_6700
+     * @tc.name Json5Test067
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: CharCount = { text: "abac", count: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as CharCount;
+
+      let count = 0;
+      for (let i = 0; i < parsed.text.length; i++) {
+        if (parsed.text[i] === "a") {
+          count++;
+        }
+      }
+      const result: CharCount = {
+        text: parsed.text,
+        count: count
+      };
+      expect(result.count).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_6800
+     * @tc.name Json5Test068
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: BinaryNumbers = { numbers: [2, 3], binary: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: BinaryNumbers = ArkTSUtils.ASON.parse(json) as BinaryNumbers;
+
+      const binary: string[] = [];
+      parsed.numbers.forEach((n: number) => binary.push(n.toString(2)));
+      const result: BinaryNumbers = {
+        numbers: parsed.numbers,
+        binary: binary
+      };
+      expect(ArkTSUtils.ASON.stringify(result.binary)).assertEqual(ArkTSUtils.ASON.stringify(["10", "11"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_6900
+     * @tc.name Json5Test069
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    // it('Json5Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   const obj: FilterObjects = { items: [{ id: 1 }, { id: 2 }], filtered: [] };
+    //   const json = ArkTSUtils.ASON.stringify(obj);
+    //   const parsed = ArkTSUtils.ASON.parse(json) as FilterObjects;
+    //
+    //   const filtered: Test69_Obj2[] = [];
+    //   parsed.items.forEach((i: Test69_Obj2) => {
+    //     if (i.id > 1) {
+    //       filtered.push(i);
+    //     }
+    //   });
+    //   const result: FilterObjects = {
+    //     items: parsed.items,
+    //     filtered: filtered
+    //   };
+    //   expect(ArkTSUtils.ASON.stringify(result.filtered)).assertEqual(ArkTSUtils.ASON.stringify([{ id: 2 }]));
+    // });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_7000
+     * @tc.name Json5Test070
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ArrayLength = { data: [1, 2, 3], length: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ArrayLength;
+
+      const result: ArrayLength = {
+        data: parsed.data,
+        length: parsed.data.length
+      };
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_7100
+     * @tc.name Json5Test071
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: StringReplace = { text: "abc", replaced: "" };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as StringReplace;
+
+      const replaced = parsed.text.replace("a", "x");
+      const result: StringReplace = {
+        text: parsed.text,
+        replaced: replaced
+      };
+      expect(result.replaced).assertEqual("xbc");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_7200
+     * @tc.name Json5Test072
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: RangeCheck = { numbers: [5, 15, 25], inRange: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as RangeCheck;
+
+      const inRange: number[] = [];
+      parsed.numbers.forEach((n: number) => {
+        if (n >= 10 && n <= 20) {
+          inRange.push(n);
+        }
+      });
+      const result: RangeCheck = {
+        numbers: parsed.numbers,
+        inRange: inRange
+      };
+      expect(ArkTSUtils.ASON.stringify(result.inRange)).assertEqual(ArkTSUtils.ASON.stringify([15]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_7300
+     * @tc.name Json5Test073
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ExtractProps = { items: [{ name: "a" }, { name: "b" }], names: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: ExtractProps = ArkTSUtils.ASON.parse(json) as ExtractProps;
+
+      const names: string[] = [];
+      parsed.items.forEach((i: Test73_Obj2) => names.push(i.name));
+      const result: ExtractProps = {
+        items: parsed.items,
+        names: names
+      };
+      expect(ArkTSUtils.ASON.stringify(result.names)).assertEqual(ArkTSUtils.ASON.stringify(["a", "b"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_7400
+     * @tc.name Json5Test074
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: TrimStrings = { texts: [" a ", "b "], trimmed: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: TrimStrings = ArkTSUtils.ASON.parse(json) as TrimStrings;
+
+      const trimmed: string[] = [];
+      parsed.texts.forEach((s: string) => trimmed.push(s.trim()));
+      const result: TrimStrings = {
+        texts: parsed.texts,
+        trimmed: trimmed
+      };
+      expect(ArkTSUtils.ASON.stringify(result.trimmed)).assertEqual(ArkTSUtils.ASON.stringify(["a", "b"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_7500
+     * @tc.name Json5Test075
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: MaxValue = { numbers: [3, 1, 4], max: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: MaxValue = ArkTSUtils.ASON.parse(json) as MaxValue;
+
+      let max = parsed.numbers[0];
+      parsed.numbers.forEach((n: number) => {
+        if (n > max) {
+          max = n;
+        }
+      });
+      const result: MaxValue = {
+        numbers: parsed.numbers,
+        max: max
+      };
+      expect(result.max).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_7600
+     * @tc.name Json5Test076
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: UniqueElements = { data: [1, 2, 2], unique: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: UniqueElements = ArkTSUtils.ASON.parse(json) as UniqueElements;
+
+      const unique: number[] = [];
+      parsed.data.forEach((n: number) => {
+        if (!unique.includes(n)) {
+          unique.push(n);
+        }
+      });
+      const result: UniqueElements = {
+        data: parsed.data,
+        unique: unique
+      };
+      expect(ArkTSUtils.ASON.stringify(result.unique)).assertEqual("[1,2]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_7700
+     * @tc.name Json5Test077
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: NumToStringArr = { numbers: [10, 20], strings: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as NumToStringArr;
+
+
+      const strings: string[] = [];
+      parsed.numbers.forEach(n => strings.push(n.toString()));
+      const result: NumToStringArr = {
+        numbers: parsed.numbers,
+        strings: strings
+      };
+      expect(ArkTSUtils.ASON.stringify(result.strings)).assertEqual('["10","20"]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_7800
+     * @tc.name Json5Test078
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: FilterActiveUsers = {
+        users: [{ id: 1, active: true }, { id: 2, active: false }],
+        active: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as FilterActiveUsers;
+
+      const active: Test78_Obj1[] = [];
+      parsed.users.forEach(u => {
+        if (u.active) {
+          active.push(u);
+        }
+      });
+      const result: FilterActiveUsers = {
+        users: parsed.users,
+        active: active
+      };
+      expect(ArkTSUtils.ASON.stringify(result.active)).assertEqual("[{\"id\":1,\"active\":true}]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_7900
+     * @tc.name Json5Test079
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: TotalStringLength = { words: ["a", "bc"], total: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as TotalStringLength;
+
+      let total = 0;
+      parsed.words.forEach(w => total += w.length);
+      const result: TotalStringLength = {
+        words: parsed.words,
+        total: total
+      };
+
+      expect(result.total).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_8000
+     * @tc.name Json5Test080
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ToPercentage = { values: [0.1, 0.5], percentages: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: ToPercentage = ArkTSUtils.ASON.parse(json) as ToPercentage;
+
+      const percentages: string[] = [];
+      parsed.values.forEach(n => percentages.push((n * 100) + "%"));
+      const result: ToPercentage = {
+        values: parsed.values,
+        percentages: percentages
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.percentages)).assertEqual('["10%","50%"]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_8100
+     * @tc.name Json5Test081
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: EvenLengthStrings = { strings: ["a", "bb", "ccc"], even: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as EvenLengthStrings;
+
+      const even: string[] = [];
+      parsed.strings.forEach(s => {
+        if (s.length % 2 === 0) {
+          even.push(s);
+        }
+      });
+      const result: EvenLengthStrings = {
+        strings: parsed.strings,
+        even: even
+      };
+      expect(ArkTSUtils.ASON.stringify(result.even)).assertEqual('["bb"]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_8200
+     * @tc.name Json5Test082
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ExtractMonths = { dates: ["2024-03-01", "2024-09-15"], months: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ExtractMonths;
+
+      const months: string[] = [];
+      parsed.dates.forEach(d => months.push(d.split("-")[1]));
+      const result: ExtractMonths = {
+        dates: parsed.dates,
+        months: months
+      };
+      expect(ArkTSUtils.ASON.stringify(result.months)).assertEqual('["03","09"]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_8300
+     * @tc.name Json5Test083
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: CubedNumbers = { numbers: [2, 3], cubes: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as CubedNumbers;
+
+      const cubes: number[] = [];
+      parsed.numbers.forEach(n => cubes.push(n * n * n));
+      const result: CubedNumbers = {
+        numbers: parsed.numbers,
+        cubes: cubes
+      };
+      expect(ArkTSUtils.ASON.stringify(result.cubes)).assertEqual("[8,27]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_8400
+     * @tc.name Json5Test084
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: CapitalizedWords = { words: ["apple", "banana"], capitalized: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as CapitalizedWords;
+
+      const capitalized: string[] = [];
+      parsed.words.forEach(w => {
+        capitalized.push(w.charAt(0).toUpperCase() + w.slice(1));
+      });
+      const result: CapitalizedWords = {
+        words: parsed.words,
+        capitalized: capitalized
+      };
+      expect(ArkTSUtils.ASON.stringify(result.capitalized)).assertEqual('["Apple","Banana"]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_8500
+     * @tc.name Json5Test085
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: RoundedAverage = { values: [1, 2, 3, 4], avg: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as RoundedAverage;
+
+      let sum = 0;
+      parsed.values.forEach(n => sum += n);
+      const average = sum / parsed.values.length;
+      const roundedAvg = Math.round(average * 10) / 10;
+      const result: RoundedAverage = {
+        values: parsed.values,
+        avg: roundedAvg
+      };
+      expect(result.avg).assertEqual(2.5);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_8600
+     * @tc.name Json5Test086
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: NegativeCount = { numbers: [-1, 2, -3], count: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as NegativeCount;
+
+      let count = 0;
+      parsed.numbers.forEach(n => {
+        if (n < 0) {
+          count++;
+        }
+      });
+      const result: NegativeCount = {
+        numbers: parsed.numbers,
+        count: count
+      };
+      expect(result.count).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_8700
+     * @tc.name Json5Test087
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: JoinedWithSeparator = { words: ["a", "b", "c"], joined: "" };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: JoinedWithSeparator = ArkTSUtils.ASON.parse(json) as JoinedWithSeparator;
+
+      let joined = "";
+      for (let i = 0; i < parsed.words.length; i++) {
+        joined += parsed.words[i];
+        if (i < parsed.words.length - 1) {
+          joined += "-";
+        }
+      }
+      const result: JoinedWithSeparator = {
+        words: parsed.words,
+        joined: joined
+      };
+
+      expect(result.joined).assertEqual("a-b-c");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_8800
+     * @tc.name Json5Test088
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: SumOfSquares = { numbers: [1, 2, 3], sum: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as SumOfSquares;
+
+      let sum = 0;
+      parsed.numbers.forEach(n => sum += n * n);
+      const result: SumOfSquares = {
+        numbers: parsed.numbers,
+        sum: sum
+      };
+      expect(result.sum).assertEqual(14);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_8900
+     * @tc.name Json5Test089
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: SumByProperty = {
+        orders: [{ id: 1, amount: 10 }, { id: 2, amount: 20 }],
+        total: 0
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as SumByProperty;
+
+      let total = 0;
+      parsed.orders.forEach(o => total += o.amount);
+      const result: SumByProperty = {
+        orders: parsed.orders,
+        total: total
+      };
+      expect(result.total).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_9000
+     * @tc.name Json5Test090
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ConditionalSum = {
+        transactions: [{ type: "income", amount: 100 }, { type: "expense", amount: 50 }],
+        income: 0
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ConditionalSum;
+
+      let income = 0;
+      parsed.transactions.forEach(t => {
+        if (t.type === "income") {
+          income += t.amount;
+        }
+      });
+      const result: ConditionalSum = {
+        transactions: parsed.transactions,
+        income: income
+      };
+      expect(result.income).assertEqual(100);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_9100
+     * @tc.name Json5Test091
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: MinValue = { numbers: [3, 1, 4], min: 0 };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: MinValue = ArkTSUtils.ASON.parse(json) as MinValue;
+
+      let min = parsed.numbers[0];
+      parsed.numbers.forEach(n => {
+        if (n < min) {
+          min = n;
+        }
+      });
+      const result: MinValue = {
+        numbers: parsed.numbers,
+        min: min
+      };
+      expect(result.min).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_9200
+     * @tc.name Json5Test092
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: LowercaseCompare = { words: ["Apple", "BANANA"], lowercase: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as LowercaseCompare;
+
+      const lowercase: string[] = [];
+      parsed.words.forEach(w => lowercase.push(w.toLowerCase()));
+      const result: LowercaseCompare = {
+        words: parsed.words,
+        lowercase: lowercase
+      };
+      expect(ArkTSUtils.ASON.stringify(result.lowercase)).assertEqual(ArkTSUtils.ASON.stringify(["apple", "banana"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_9300
+     * @tc.name Json5Test093
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: EvenCompare = { numbers: [1, 2, 3, 4], evens: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as EvenCompare;
+
+      const evens: number[] = [];
+      parsed.numbers.forEach(n => {
+        if (n % 2 === 0) {
+          evens.push(n);
+        }
+      });
+      const result: EvenCompare = {
+        numbers: parsed.numbers,
+        evens: evens
+      };
+      expect(ArkTSUtils.ASON.stringify(result.evens)).assertEqual(ArkTSUtils.ASON.stringify([2, 4]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_9400
+     * @tc.name Json5Test094
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ExtractIdCompare = {
+        users: [{ id: 1, name: "A" }, { id: 2, name: "B" }],
+        ids: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ExtractIdCompare;
+
+      const ids: number[] = [];
+      parsed.users.forEach(u => ids.push(u.id));
+      const result: ExtractIdCompare = {
+        users: parsed.users,
+        ids: ids
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.ids)).assertEqual(ArkTSUtils.ASON.stringify([1, 2]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_9500
+     * @tc.name Json5Test095
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: SquareCompare = { numbers: [2, 3, 4], squares: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as SquareCompare;
+
+      const squares: number[] = [];
+      parsed.numbers.forEach(n => squares.push(n * n));
+      const result: SquareCompare = {
+        numbers: parsed.numbers,
+        squares: squares
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.squares)).assertEqual(ArkTSUtils.ASON.stringify([4, 9, 16]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_9600
+     * @tc.name Json5Test096
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ConcatCompare = { parts: ["a", "b", "c"], combined: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ConcatCompare;
+
+      const combined: string[] = [];
+      combined.push(parsed.parts[0] + parsed.parts[1] + parsed.parts[2]);
+
+      const result: ConcatCompare = {
+        parts: parsed.parts,
+        combined: combined
+      };
+      expect(ArkTSUtils.ASON.stringify(result.combined)).assertEqual(ArkTSUtils.ASON.stringify(["abc"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_9700
+     * @tc.name Json5Test097
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ExtractDayCompare = { dates: ["2024-03-05", "2024-09-12"], days: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ExtractDayCompare;
+
+      const days: string[] = [];
+      parsed.dates.forEach(date => days.push(date.split("-")[2]));
+
+      const result: ExtractDayCompare = {
+        dates: parsed.dates,
+        days: days
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.days)).assertEqual(ArkTSUtils.ASON.stringify(["05", "12"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_9800
+     * @tc.name Json5Test098
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: GreaterThanTenCompare = { numbers: [5, 12, 8, 15], result: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as GreaterThanTenCompare;
+
+      const resultArr: number[] = [];
+      parsed.numbers.forEach(n => {
+        if (n > 10) {
+          resultArr.push(n);
+        }
+      });
+
+      const result: GreaterThanTenCompare = {
+        numbers: parsed.numbers,
+        result: resultArr
+      };
+      expect(ArkTSUtils.ASON.stringify(result.result)).assertEqual(ArkTSUtils.ASON.stringify([12, 15]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_9900
+     * @tc.name Json5Test099
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: CapitalCompare = { words: ["apple", "banana"], capitalized: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as CapitalCompare;
+
+      const capitalized: string[] = [];
+      parsed.words.forEach(w => {
+        capitalized.push(w.charAt(0).toUpperCase() + w.slice(1));
+      });
+
+      const result: CapitalCompare = {
+        words: parsed.words,
+        capitalized: capitalized
+      };
+      expect(ArkTSUtils.ASON.stringify(result.capitalized)).assertEqual(ArkTSUtils.ASON.stringify(["Apple", "Banana"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_10000
+     * @tc.name Json5Test100
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ActiveUserCompare = {
+        users: [{ name: "A", active: true }, { name: "B", active: false }],
+        active: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ActiveUserCompare;
+
+      const active: Test100_Obj1[] = [];
+      parsed.users.forEach(u => {
+        if (u.active) {
+          active.push(u);
+        }
+      });
+      const result: ActiveUserCompare = {
+        users: parsed.users,
+        active: active
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.active)).assertEqual(ArkTSUtils.ASON.stringify([({
+        name: "A",
+        active: true
+      } as GeneratedObjectLiteralInterface_2)]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_10100
+     * @tc.name Json5Test101
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: SumToArrayCompare = { numbers: [1, 2, 3], sum: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as SumToArrayCompare;
+
+      let sum = 0;
+      parsed.numbers.forEach(n => sum += n);
+      const result: SumToArrayCompare = {
+        numbers: parsed.numbers,
+        sum: [sum]
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.sum)).assertEqual(ArkTSUtils.ASON.stringify([6]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_10200
+     * @tc.name Json5Test102
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ReverseElementsCompare = { strings: ["abc", "de"], reversed: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ReverseElementsCompare;
+
+      const reversed: string[] = [];
+      parsed.strings.forEach(s => {
+        let rev = "";
+        for (let i = s.length - 1; i >= 0; i--) {
+          rev += s[i];
+        }
+        reversed.push(rev);
+      });
+      const result: ReverseElementsCompare = {
+        strings: parsed.strings,
+        reversed: reversed
+      };
+      expect(ArkTSUtils.ASON.stringify(result.reversed)).assertEqual(ArkTSUtils.ASON.stringify(["cba", "ed"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_10300
+     * @tc.name Json5Test103
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: DivisibleByFiveCompare = { numbers: [5, 12, 15, 7], result: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as DivisibleByFiveCompare;
+
+      const resultArr: number[] = [];
+      parsed.numbers.forEach(n => {
+        if (n % 5 === 0) {
+          resultArr.push(n);
+        }
+      });
+      const result: DivisibleByFiveCompare = {
+        numbers: parsed.numbers,
+        result: resultArr
+      };
+      expect(ArkTSUtils.ASON.stringify(result.result)).assertEqual(ArkTSUtils.ASON.stringify([5, 15]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_10400
+     * @tc.name Json5Test104
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: AddPropCompare = { items: [{ id: 1 }, { id: 2 }], withProp: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as AddPropCompare;
+
+      const withProp: Test104_Obj2[] = [];
+      parsed.items.forEach(i => withProp.push({ id: i.id, type: "test" }));
+      const result: AddPropCompare = {
+        items: parsed.items,
+        withProp: withProp
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.withProp))
+        .assertEqual('[{"id":1,"type":"test"},{"id":2,"type":"test"}]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_10500
+     * @tc.name Json5Test105
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: LengthStatsCompare = { strings: ["a", "bb", "ccc"], lengths: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as LengthStatsCompare;
+
+      const lengths: number[] = [];
+      parsed.strings.forEach(s => lengths.push(s.length));
+      const result: LengthStatsCompare = {
+        strings: parsed.strings,
+        lengths: lengths
+      };
+      expect(ArkTSUtils.ASON.stringify(result.lengths)).assertEqual(ArkTSUtils.ASON.stringify([1, 2, 3]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_10600
+     * @tc.name Json5Test106
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: WithUnitCompare = { values: [10, 20], withUnit: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: WithUnitCompare = ArkTSUtils.ASON.parse(json) as WithUnitCompare;
+
+      const withUnit: string[] = [];
+      parsed.values.forEach(n => withUnit.push(n + "kg"));
+      const result: WithUnitCompare = {
+        values: parsed.values,
+        withUnit: withUnit
+      };
+      expect(ArkTSUtils.ASON.stringify(result.withUnit)).assertEqual(ArkTSUtils.ASON.stringify(["10kg", "20kg"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_10700
+     * @tc.name Json5Test107
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: LongStringsCompare = { strings: ["a", "bc", "def"], long: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as LongStringsCompare;
+
+      const long: string[] = [];
+      parsed.strings.forEach(s => {
+        if (s.length > 2) {
+          long.push(s);
+        }
+      });
+      const result: LongStringsCompare = {
+        strings: parsed.strings,
+        long: long
+      };
+      expect(ArkTSUtils.ASON.stringify(result.long)).assertEqual(ArkTSUtils.ASON.stringify(["def"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_10800
+     * @tc.name Json5Test108
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: SortedCompare = {
+        items: [{ name: "B", value: 2 }, { name: "A", value: 1 }],
+        sorted: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed: SortedCompare = ArkTSUtils.ASON.parse(json) as SortedCompare;
+
+      const itemsCopy = [...parsed.items];
+      const sorted: Test108_Obj1[] = [];
+      for (let i = 0; i < itemsCopy.length; i++) {
+        let minIdx = i;
+        for (let j = i + 1; j < itemsCopy.length; j++) {
+          if (itemsCopy[j].value < itemsCopy[minIdx].value) {
+            minIdx = j;
+          }
+        }
+        const temp = itemsCopy[i];
+        itemsCopy[i] = itemsCopy[minIdx];
+        itemsCopy[minIdx] = temp;
+      }
+      itemsCopy.forEach(item => sorted.push(item));
+      const result: SortedCompare = {
+        items: parsed.items,
+        sorted: sorted
+      };
+      const expectedArray: Test108_Obj1[] = [
+        { name: "A", value: 1 } as Test108_Obj1,
+        { name: "B", value: 2 } as Test108_Obj1
+      ];
+
+      expect(ArkTSUtils.ASON.stringify(result.sorted))
+        .assertEqual(ArkTSUtils.ASON.stringify(expectedArray));
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_10900
+     * @tc.name Json5Test109
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: AbsoluteCompare = { numbers: [-1, 2, -3], absolute: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as AbsoluteCompare;
+      const  absolute: number[] = [];
+      parsed.numbers.forEach(n => absolute.push(n < 0 ? -n : n));
+
+      const result: AbsoluteCompare = {
+        numbers: parsed.numbers,
+        absolute: absolute
+      };
+      expect(ArkTSUtils.ASON.stringify(result.absolute)).assertEqual(ArkTSUtils.ASON.stringify([1, 2, 3]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_11000
+     * @tc.name Json5Test110
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: ReplaceCharCompare = { strings: ["a-b", "c-d"], replaced: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as ReplaceCharCompare;
+
+      const replaced: string[] = [];
+      parsed.strings.forEach(s => replaced.push(s.replace("-", "_")));
+
+      const result: ReplaceCharCompare = {
+        strings: parsed.strings,
+        replaced: replaced
+      };
+      expect(ArkTSUtils.ASON.stringify(result.replaced)).assertEqual(ArkTSUtils.ASON.stringify(["a_b", "c_d"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_11100
+     * @tc.name Json5Test111
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: SumPropCompare = {
+        orders: [{ id: 1, amount: 10 }, { id: 2, amount: 20 }],
+        total: []
+      };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as SumCountCompare;
+      let total = 0;
+      parsed.orders.forEach(o => total += o.amount);
+
+      const result: SumPropCompare = {
+        orders: parsed.orders,
+        total: [total]
+      };
+      expect(ArkTSUtils.ASON.stringify(result.total)).assertEqual(ArkTSUtils.ASON.stringify([30]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_11200
+     * @tc.name Json5Test112
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: UniqueCompare = { numbers: [1, 2, 2, 3], unique: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as UniqueCompare;
+      const unique: number[] = [];
+      parsed.numbers.forEach(n => {
+        if (!unique.includes(n)) {
+          unique.push(n);
+        }
+      });
+      const result: UniqueCompare = {
+        numbers: parsed.numbers,
+        unique: unique
+      };
+      expect(ArkTSUtils.ASON.stringify(result.unique)).assertEqual(ArkTSUtils.ASON.stringify([1, 2, 3]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_11300
+     * @tc.name Json5Test113
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: FirstCharCompare = { words: ["apple", "banana", "cat"], firstChars: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as FirstCharCompare;
+
+      const firstChars: string[] = [];
+      parsed.words.forEach(w => firstChars.push(w.charAt(0)));
+      const result: FirstCharCompare = {
+        words: parsed.words,
+        firstChars: firstChars
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.firstChars)).assertEqual(ArkTSUtils.ASON.stringify(["a", "b", "c"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_11400
+     * @tc.name Json5Test114
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: BinaryStrCompare = { numbers: [3, 5], binary: [] };
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as BinaryStrCompare;
+
+      const binary: string[] = [];
+      parsed.numbers.forEach(n => {
+        let bin = "";
+        let num = n;
+        while (num > 0) {
+          bin = (num % 2) + bin;
+          num = Math.floor(num / 2);
+        }
+        binary.push(bin);
+      });
+      const result: BinaryStrCompare = {
+        numbers: parsed.numbers,
+        binary: binary
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.binary)).assertEqual(ArkTSUtils.ASON.stringify(["11", "101"]));
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json5_TEST_11500
+     * @tc.name Json5Test115
+     * @tc.desc test Json
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json5Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const obj: PriceFilterCompare = {
+        products: [{ name: "A", price: 40 }, { name: "B", price: 60 }],
+        expensive: []
+      };
+
+      const json = ArkTSUtils.ASON.stringify(obj);
+      const parsed = ArkTSUtils.ASON.parse(json) as PriceFilterCompare;
+
+      const expensive: Test115_Obj1[] = [];
+      parsed.products.forEach(p => {
+        if (p.price > 50) {
+          expensive.push(p);
+        }
+      });
+      const result: PriceFilterCompare = {
+        products: parsed.products,
+        expensive: expensive
+      };
+
+      expect(ArkTSUtils.ASON.stringify(result.expensive)).assertEqual(ArkTSUtils.ASON.stringify([({
+        name: "B",
+        price: 60
+      } as GeneratedObjectLiteralInterface_3)]));
+    });
 
   })
 }
