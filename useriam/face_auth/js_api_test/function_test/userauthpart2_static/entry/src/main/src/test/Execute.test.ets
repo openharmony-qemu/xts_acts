@@ -42,7 +42,7 @@ const widgetParamDefault: userAuth.WidgetParam = {
   title: '使用密码验证',
 };
 
-const widgetParam = {
+const widgetParam: userAuth.WidgetParam  = {
   title: '请输入密码',
   uiContext: null,
 };

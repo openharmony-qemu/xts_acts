@@ -311,7 +311,7 @@ export default function userauthTest_API9() {
       let checkPin = checkSupportOrNot(userAuth.UserAuthType.PIN);
       let checkFingerprint = checkSupportOrNot(userAuth.UserAuthType.FINGERPRINT);
       let authType:userAuth.UserAuthType[] = [userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT, userAuth.UserAuthType.PIN];
-      let permaentLockoutDuration:int[]  = [userAuthNorth.PERMAENT_LOCKOUT_DURATION];
+      let permaentLockoutDuration:int[]  = [userAuth.PERMAENT_LOCKOUT_DURATION];
       if (checkPin == 0 && checkFace == 0 && checkFingerprint == 0) {
         for (let idx0 = 0; idx0 < authType.length; idx0++) {
           try {
