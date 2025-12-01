@@ -22,6 +22,7 @@ import imageDrawableDescriptorTest from "./image/imageDrawableDescriptorTest.tes
 import imageErrorTest from "./image/imageErrorTest.test";
 import textLineHeightTest from "./textLineHeight/TextLineHeightTest.test";
 import textAreaBarStateTest from "./textArea/TextAreaBarStateTest.test";
+import scrollBarTest from "./scrollbarTest/scrollbarTest.test";
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -34,4 +35,5 @@ export default function testsuite() {
   imageErrorTest();
   textLineHeightTest();
   textAreaBarStateTest();
+  scrollBarTest();
 }

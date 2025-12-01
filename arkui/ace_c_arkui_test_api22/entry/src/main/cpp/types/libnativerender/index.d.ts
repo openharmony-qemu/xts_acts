@@ -33,3 +33,5 @@ export const imageErrorTest: (a: string) => void;
 export const textLineHeightTest: (a: string) => void;
 
 export const textAreaBarStateTest: (a: string) => void;
+
+export const scrollBarTest: (a: string) => void;
