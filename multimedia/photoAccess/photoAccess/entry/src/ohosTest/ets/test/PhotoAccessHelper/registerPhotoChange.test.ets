@@ -43,12 +43,12 @@ export default function registerPhotoChangeTest () {
     const NOTIFY_CHANGE_UPDATE = photoAccessHelper.NotifyChangeType.NOTIFY_CHANGE_UPDATE;
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REGISTER_PHOTOCHANGE_CALLBACK_001
-     * @tc.name      : register_photoChange_callback_001
-     * @tc.desc      : listening motify file title, type NOTIFY_CHANGE_UPDATE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   register_photoChange_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_REGISTER_PHOTOCHANGE_CALLBACK_001
+     * @tc.desc   listening motify file title, type NOTIFY_CHANGE_UPDATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('register_photoChange_callback_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'register_photoChange_callback_001';

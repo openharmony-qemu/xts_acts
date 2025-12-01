@@ -275,12 +275,12 @@ export default function cameraCaptureSceneTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0200
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0200
-     * @tc.desc      : test media photo access helper request image data from capture with errorCode 14000011
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0200
+     * @tc.desc   test media photo access helper request image data from capture with errorCode 14000011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0200', Level.LEVEL2, async (done: Function) => {
         let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0200';
@@ -314,12 +314,12 @@ export default function cameraCaptureSceneTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0300
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0300
-     * @tc.desc      : test media photo access helper request image data from capture with errorCode 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0300
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0300
+     * @tc.desc   test media photo access helper request image data from capture with errorCode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0300', Level.LEVEL2, async (done: Function) => {
         let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0300';
@@ -347,12 +347,12 @@ export default function cameraCaptureSceneTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100
-     * @tc.desc      : test deliveryMode = HIGH_QUALITY_MODE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100
+     * @tc.desc   test deliveryMode = HIGH_QUALITY_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100', Level.LEVEL1, async (done: Function) => {
         let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100'
@@ -369,12 +369,12 @@ export default function cameraCaptureSceneTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400
-     * @tc.desc      : test deliveryMode = FAST_MODE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400
+     * @tc.desc   test deliveryMode = FAST_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400', Level.LEVEL2, async (done: Function) => {
         let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400'
@@ -391,12 +391,12 @@ export default function cameraCaptureSceneTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500
-     * @tc.desc      : test deliveryMode = BALANCE_MODE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500
+     * @tc.desc   test deliveryMode = BALANCE_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500', Level.LEVEL2, async (done: Function) => {
         let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500'
@@ -413,12 +413,12 @@ export default function cameraCaptureSceneTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600
-     * @tc.desc      : test deliveryMode = -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600
+     * @tc.desc   test deliveryMode = -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600', Level.LEVEL2, async (done: Function) => {
         let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600'
@@ -435,12 +435,12 @@ export default function cameraCaptureSceneTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700
-     * @tc.desc      : test requestOptions = undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700
+     * @tc.desc   test requestOptions = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700', Level.LEVEL2, async (done: Function) => {
         let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700'
@@ -454,12 +454,12 @@ export default function cameraCaptureSceneTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800
-     * @tc.desc      : test handler = undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800
+     * @tc.desc   test handler = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800', Level.LEVEL2, async (done: Function) => {
         let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800'
@@ -475,12 +475,12 @@ export default function cameraCaptureSceneTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900
-     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900
-     * @tc.desc      : test the requestID return from request image data
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900
+     * @tc.desc   test the requestID return from request image data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900', Level.LEVEL2, async (done: Function) => {
         let testNum: string = 'SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900'

@@ -74,12 +74,12 @@ export default function PictureMarshallingTest() {
     });
 
     /**
-     * @tc.number     PICTURE_MARSHALLING_001
-     * @tc.name       PICTURE_MARSHALLING_001
-     * @tc.desc       picture_marshalling webp图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_MARSHALLING_001
+     * @tc.number PICTURE_MARSHALLING_001
+     * @tc.desc   picture_marshalling webp图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_MARSHALLING_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_001';
@@ -97,12 +97,12 @@ export default function PictureMarshallingTest() {
     })
 
     /**
-     * @tc.number     PICTURE_MARSHALLING_002
-     * @tc.name       PICTURE_MARSHALLING_002
-     * @tc.desc       picture_marshalling webp图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_MARSHALLING_002
+     * @tc.number PICTURE_MARSHALLING_002
+     * @tc.desc   picture_marshalling webp图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_MARSHALLING_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_002';
@@ -120,12 +120,12 @@ export default function PictureMarshallingTest() {
     })
 
     /**
-     * @tc.number     PICTURE_MARSHALLING_003
-     * @tc.name       PICTURE_MARSHALLING_003
-     * @tc.desc       picture_marshalling webp图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_MARSHALLING_003
+     * @tc.number PICTURE_MARSHALLING_003
+     * @tc.desc   picture_marshalling webp图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_MARSHALLING_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_003';
@@ -144,12 +144,12 @@ export default function PictureMarshallingTest() {
     })
 
     /**
-     * @tc.number     PICTURE_MARSHALLING_004
-     * @tc.name       PICTURE_MARSHALLING_004
-     * @tc.desc       picture_marshalling png图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_MARSHALLING_004
+     * @tc.number PICTURE_MARSHALLING_004
+     * @tc.desc   picture_marshalling png图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_MARSHALLING_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_004';
@@ -167,12 +167,12 @@ export default function PictureMarshallingTest() {
     })
 
     /**
-     * @tc.number     PICTURE_MARSHALLING_005
-     * @tc.name       PICTURE_MARSHALLING_005
-     * @tc.desc       picture_marshalling png图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_MARSHALLING_005
+     * @tc.number PICTURE_MARSHALLING_005
+     * @tc.desc   picture_marshalling png图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_MARSHALLING_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_005';
@@ -190,12 +190,12 @@ export default function PictureMarshallingTest() {
     })
 
     /**
-     * @tc.number     PICTURE_MARSHALLING_006
-     * @tc.name       PICTURE_MARSHALLING_006
-     * @tc.desc       picture_marshalling png图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_MARSHALLING_006
+     * @tc.number PICTURE_MARSHALLING_006
+     * @tc.desc   picture_marshalling png图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_MARSHALLING_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_006';
@@ -214,12 +214,12 @@ export default function PictureMarshallingTest() {
     })
 
     /**
-     * @tc.number     PICTURE_MARSHALLING_007
-     * @tc.name       PICTURE_MARSHALLING_007
-     * @tc.desc       picture_marshalling jpg图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_MARSHALLING_007
+     * @tc.number PICTURE_MARSHALLING_007
+     * @tc.desc   picture_marshalling jpg图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_MARSHALLING_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_007';
@@ -237,13 +237,13 @@ export default function PictureMarshallingTest() {
     })
 
      /**
-     * @tc.number     PICTURE_MARSHALLING_008
-     * @tc.name       PICTURE_MARSHALLING_008
-     * @tc.desc       picture_marshalling jpg图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
+      * @tc.name   PICTURE_MARSHALLING_008
+      * @tc.number PICTURE_MARSHALLING_008
+      * @tc.desc   picture_marshalling jpg图片第一个参数为undefined覆盖
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('PICTURE_MARSHALLING_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_008';
       const path = 'test_exif.jpg';
@@ -260,12 +260,12 @@ export default function PictureMarshallingTest() {
     })
 
     /**
-     * @tc.number     PICTURE_MARSHALLING_009
-     * @tc.name       PICTURE_MARSHALLING_009
-     * @tc.desc       picture_marshalling jpg图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_MARSHALLING_009
+     * @tc.number PICTURE_MARSHALLING_009
+     * @tc.desc   picture_marshalling jpg图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_MARSHALLING_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_009';
@@ -284,12 +284,12 @@ export default function PictureMarshallingTest() {
     })
 
     /**
-     * @tc.number     PICTURE_MARSHALLING_010
-     * @tc.name       PICTURE_MARSHALLING_010
-     * @tc.desc       picture_marshalling jpeg图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_MARSHALLING_010
+     * @tc.number PICTURE_MARSHALLING_010
+     * @tc.desc   picture_marshalling jpeg图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_MARSHALLING_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_010';
@@ -307,13 +307,13 @@ export default function PictureMarshallingTest() {
     })
 
      /**
-     * @tc.number     PICTURE_MARSHALLING_011
-     * @tc.name       PICTURE_MARSHALLING_011
-     * @tc.desc       picture_marshalling jpeg图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
+      * @tc.name   PICTURE_MARSHALLING_011
+      * @tc.number PICTURE_MARSHALLING_011
+      * @tc.desc   picture_marshalling jpeg图片第一个参数为undefined覆盖
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('PICTURE_MARSHALLING_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_011';
       const path = 'test.jpeg';
@@ -330,12 +330,12 @@ export default function PictureMarshallingTest() {
     })
 
     /**
-     * @tc.number     PICTURE_MARSHALLING_012
-     * @tc.name       PICTURE_MARSHALLING_012
-     * @tc.desc       picture_marshalling jpeg图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_MARSHALLING_012
+     * @tc.number PICTURE_MARSHALLING_012
+     * @tc.desc   picture_marshalling jpeg图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_MARSHALLING_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_MARSHALLING_012';

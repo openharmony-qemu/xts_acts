@@ -422,12 +422,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_STATIC_0100
-      * @tc.desc   createCameraInput api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_STATIC_0100
+     * @tc.desc   createCameraInput api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_STATIC_0100--------------");
@@ -449,12 +449,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0200
-      * @tc.desc   photoOutput capture api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0200
+     * @tc.desc   photoOutput capture api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let captureSettingNull: cameraObj.PhotoCaptureSetting = {}
@@ -487,12 +487,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0400
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0400
-      * @tc.desc   photoOutput capture api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0400
+     * @tc.desc   photoOutput capture api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0400--------------");
@@ -516,12 +516,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0100
-      * @tc.desc   commitConfig api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0100
+     * @tc.desc   commitConfig api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0100--------------");
@@ -540,12 +540,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0200
-      * @tc.desc   commitConfig api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0200
+     * @tc.desc   commitConfig api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0200--------------");
@@ -562,12 +562,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_INPUT_STATIC_0300
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_INPUT_STATIC_0300
-      * @tc.desc   addInput api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_INPUT_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_INPUT_STATIC_0300
+     * @tc.desc   addInput api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_INPUT_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_INPUT_STATIC_0300--------------");
@@ -584,12 +584,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_INPUT_STATIC_0300
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_INPUT_STATIC_0300
-      * @tc.desc   removeInput api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_INPUT_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_INPUT_STATIC_0300
+     * @tc.desc   removeInput api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_INPUT_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_INPUT_STATIC_0300--------------");
@@ -606,12 +606,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_OUTPUT_STATIC_0300
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_OUTPUT_STATIC_0300
-      * @tc.desc   addOutput api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_OUTPUT_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_OUTPUT_STATIC_0300
+     * @tc.desc   addOutput api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_OUTPUT_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_OUTPUT_STATIC_0300--------------");
@@ -629,12 +629,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_OUTPUT_STATIC_0300
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_OUTPUT_STATIC_0300
-      * @tc.desc   removeOutput api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_OUTPUT_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_OUTPUT_STATIC_0300
+     * @tc.desc   removeOutput api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_OUTPUT_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_OUTPUT_STATIC_0300--------------");
@@ -653,12 +653,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0100
-      * @tc.desc   capturesession start api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0100
+     * @tc.desc   capturesession start api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0100--------------");
@@ -681,12 +681,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0200
-      * @tc.desc   capturesession start api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0200
+     * @tc.desc   capturesession start api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0200--------------");
@@ -711,12 +711,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_STOP_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_STOP_STATIC_0100
-      * @tc.desc   capturesession stop api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_STOP_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_STOP_STATIC_0100
+     * @tc.desc   capturesession stop api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_STOP_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_STOP_STATIC_0100--------------");
@@ -744,12 +744,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_STATIC_0100
-      * @tc.desc   capturesession hasFlash api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_STATIC_0100
+     * @tc.desc   capturesession hasFlash api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_STATIC_0100--------------");
@@ -773,12 +773,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFLASHMODESUPPORTED_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFLASHMODESUPPORTED_STATIC_0100
-      * @tc.desc   capturesession isFlashModeSupported api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFLASHMODESUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFLASHMODESUPPORTED_STATIC_0100
+     * @tc.desc   capturesession isFlashModeSupported api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFLASHMODESUPPORTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -802,12 +802,12 @@ export default function cameraErrorCodeUsecaseTest() {
       })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_STATIC_0100
-      * @tc.desc   capturesession getFlashMode api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_STATIC_0100
+     * @tc.desc   capturesession getFlashMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_STATIC_0100--------------");
@@ -829,12 +829,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_STATIC_0100
-      * @tc.desc   capturesession setFlashMode api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_STATIC_0100
+     * @tc.desc   capturesession setFlashMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_STATIC_0100--------------");
@@ -856,12 +856,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISEXPOSUREMODESUPPORTED_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISEXPOSUREMODESUPPORTED_STATIC_0100
-      * @tc.desc   capturesession isExposureModeSupported api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISEXPOSUREMODESUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISEXPOSUREMODESUPPORTED_STATIC_0100
+     * @tc.desc   capturesession isExposureModeSupported api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISEXPOSUREMODESUPPORTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -885,12 +885,12 @@ export default function cameraErrorCodeUsecaseTest() {
       })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_STATIC_0100
-      * @tc.desc   capturesession getExposureMode api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_STATIC_0100
+     * @tc.desc   capturesession getExposureMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_STATIC_0100--------------");
@@ -912,12 +912,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_STATIC_0100
-      * @tc.desc   capturesession setExposureMode api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_STATIC_0100
+     * @tc.desc   capturesession setExposureMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_STATIC_0100--------------");
@@ -939,12 +939,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_STATIC_0100
-      * @tc.desc   capturesession getMeteringPoint api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_STATIC_0100
+     * @tc.desc   capturesession getMeteringPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_STATIC_0100--------------");
@@ -966,12 +966,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0100
-      * @tc.desc   capturesession setMeteringPoint api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0100
+     * @tc.desc   capturesession setMeteringPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0100--------------");
@@ -997,12 +997,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0200
-      * @tc.desc   capturesession setMeteringPoint api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0200
+     * @tc.desc   capturesession setMeteringPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0200--------------");
@@ -1028,12 +1028,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREBIASRANGE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREBIASRANGE_STATIC_0100
-      * @tc.desc   capturesession getExposureBiasRange api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREBIASRANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREBIASRANGE_STATIC_0100
+     * @tc.desc   capturesession getExposureBiasRange api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREBIASRANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1057,12 +1057,12 @@ export default function cameraErrorCodeUsecaseTest() {
       })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0100
-      * @tc.desc   capturesession setExposureBias api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0100
+     * @tc.desc   capturesession setExposureBias api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0100--------------");
@@ -1085,12 +1085,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0500
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0500
-      * @tc.desc   photoOutput capture api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0500
+     * @tc.desc   photoOutput capture api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0500--------------");
@@ -1111,12 +1111,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0200
-      * @tc.desc   capturesession setExposureBias api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0200
+     * @tc.desc   capturesession setExposureBias api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0200--------------");
@@ -1141,12 +1141,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_STATIC_0100
-      * @tc.desc   capturesession getExposureValue api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_STATIC_0100
+     * @tc.desc   capturesession getExposureValue api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_STATIC_0100--------------");
@@ -1169,12 +1169,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFOCUSMODESUPPORTED_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFOCUSMODESUPPORTED_STATIC_0100
-      * @tc.desc   capturesession isFocusModeSupported api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFOCUSMODESUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFOCUSMODESUPPORTED_STATIC_0100
+     * @tc.desc   capturesession isFocusModeSupported api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFOCUSMODESUPPORTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1198,12 +1198,12 @@ export default function cameraErrorCodeUsecaseTest() {
       })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_STATIC_0100
-      * @tc.desc   capturesession getFocusMode api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_STATIC_0100
+     * @tc.desc   capturesession getFocusMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_STATIC_0100--------------");
@@ -1225,12 +1225,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_STATIC_0100
-      * @tc.desc   capturesession setFocusMode api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_STATIC_0100
+     * @tc.desc   capturesession setFocusMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_STATIC_0100--------------");
@@ -1252,12 +1252,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0100
-      * @tc.desc   capturesession setFocusPoint api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0100
+     * @tc.desc   capturesession setFocusPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0100--------------");
@@ -1280,12 +1280,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0200
-      * @tc.desc   capturesession setFocusPoint api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0200
+     * @tc.desc   capturesession setFocusPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0200--------------");
@@ -1310,12 +1310,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_STATIC_0100
-      * @tc.desc   capturesession getFocusPoint api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_STATIC_0100
+     * @tc.desc   capturesession getFocusPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_STATIC_0100--------------");
@@ -1341,12 +1341,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSLENGTH_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSLENGTH_STATIC_0100
-      * @tc.desc   capturesession getFocalLength api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSLENGTH_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSLENGTH_STATIC_0100
+     * @tc.desc   capturesession getFocalLength api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSLENGTH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSLENGTH_STATIC_0100--------------");
@@ -1368,12 +1368,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_STATIC_0100
-      * @tc.desc   capturesession getZoomRatioRange api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_STATIC_0100
+     * @tc.desc   capturesession getZoomRatioRange api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_STATIC_0100--------------");
@@ -1395,12 +1395,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_STATIC_0100
-      * @tc.desc   capturesession getZoomRatio api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_STATIC_0100
+     * @tc.desc   capturesession getZoomRatio api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_STATIC_0100--------------");
@@ -1422,12 +1422,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0100
-      * @tc.desc   capturesession setZoomRatio api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0100
+     * @tc.desc   capturesession setZoomRatio api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0100--------------");
@@ -1449,12 +1449,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0200
-      * @tc.desc   capturesession setZoomRatio api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0200
+     * @tc.desc   capturesession setZoomRatio api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0200--------------");
@@ -1479,12 +1479,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_STATIC_0100
-      * @tc.desc   capturesession isVideoStabilizationModeSupported api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_STATIC_0100
+     * @tc.desc   capturesession isVideoStabilizationModeSupported api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_STATIC_0100--------------");
@@ -1506,12 +1506,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_STATIC_0100
-      * @tc.desc   capturesession getActiveVideoStabilizationMode api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_STATIC_0100
+     * @tc.desc   capturesession getActiveVideoStabilizationMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_STATIC_0100--------------");
@@ -1533,12 +1533,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_STATIC_0100
-      * @tc.desc   capturesession setVideoStabilizationMode api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_STATIC_0100
+     * @tc.desc   capturesession setVideoStabilizationMode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_STATIC_0100--------------");
@@ -1560,12 +1560,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0100
-      * @tc.desc   videooutput  start api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0100
+     * @tc.desc   videooutput  start api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getVideoSurface();
@@ -1600,12 +1600,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0200
-      * @tc.desc   videooutput  start api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0200
+     * @tc.desc   videooutput  start api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0200--------------");
@@ -1637,12 +1637,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0100
-      * @tc.desc   MetadataOutput start api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0100
+     * @tc.desc   MetadataOutput start api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0100--------------");
@@ -1668,12 +1668,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0200
-      * @tc.desc   metadataOutput  start api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0200
+     * @tc.desc   metadataOutput  start api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0200--------------");
@@ -1699,12 +1699,12 @@ export default function cameraErrorCodeUsecaseTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0600
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0600
-      * @tc.desc   photoOutput capture api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0600
+     * @tc.desc   photoOutput capture api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0600--------------");
@@ -1727,12 +1727,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0700
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0700
-      * @tc.desc   photoOutput capture api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0700
+     * @tc.desc   photoOutput capture api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0700--------------");
@@ -1756,12 +1756,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0800
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0800
-      * @tc.desc   photoOutput capture api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0800
+     * @tc.desc   photoOutput capture api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0800--------------");
@@ -1782,12 +1782,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_BEGINCONFIG_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_BEGINCONFIG_STATIC_0100
-      * @tc.desc   capturesession beginConfig api
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_BEGINCONFIG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_BEGINCONFIG_STATIC_0100
+     * @tc.desc   capturesession beginConfig api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_BEGINCONFIG_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_BEGINCONFIG_STATIC_0100--------------");

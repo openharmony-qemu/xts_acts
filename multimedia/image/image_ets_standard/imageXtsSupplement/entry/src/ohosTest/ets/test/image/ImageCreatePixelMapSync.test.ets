@@ -79,12 +79,12 @@ export default function ImageCreatePixelMapSyncTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_001
-     * @tc.name       createPixelMapSync_promise_001
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_001
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_001
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_001';
@@ -101,12 +101,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_002
-     * @tc.name       createPixelMapSync_promise_002
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_002
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_002
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_002';
@@ -123,12 +123,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_003
-     * @tc.name       createPixelMapSync_promise_003
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_003
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_003
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_003';
@@ -145,12 +145,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_004
-     * @tc.name       createPixelMapSync_promise_004
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_004
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_004
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_004';
@@ -167,12 +167,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_005
-     * @tc.name       createPixelMapSync_promise_005
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_005
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_005
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_005';
@@ -189,12 +189,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_006
-     * @tc.name       createPixelMapSync_promise_006
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_006
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_006
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_006';
@@ -211,12 +211,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_007
-     * @tc.name       createPixelMapSync_promise_007
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_007
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_007
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_007';
@@ -233,12 +233,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_008
-     * @tc.name       createPixelMapSync_promise_008
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_008
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_008
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_008';
@@ -255,12 +255,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_009
-     * @tc.name       createPixelMapSync_promise_009
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_009
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_009
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_009';
@@ -277,12 +277,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_010
-     * @tc.name       createPixelMapSync_promise_010
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_010
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_010
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_010';
@@ -299,12 +299,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_011
-     * @tc.name       createPixelMapSync_promise_011
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_011
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_011
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_011';
@@ -321,12 +321,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_012
-     * @tc.name       createPixelMapSync_promise_012
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_012
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_012
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_012';
@@ -343,12 +343,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_013
-     * @tc.name       createPixelMapSync_promise_013
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_013
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_013
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_013';
@@ -365,12 +365,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_014
-     * @tc.name       createPixelMapSync_promise_014
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_014
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_014
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_014';
@@ -387,12 +387,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_015
-     * @tc.name       createPixelMapSync_promise_015
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_015
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_015
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_015';
@@ -409,12 +409,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_016
-     * @tc.name       createPixelMapSync_promise_016
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_016
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_016
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_016';
@@ -431,12 +431,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_017
-     * @tc.name       createPixelMapSync_promise_017
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_017
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_017
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_017';
@@ -453,12 +453,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_018
-     * @tc.name       createPixelMapSync_promise_018
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_018
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_018
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_018';
@@ -475,12 +475,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_019
-     * @tc.name       createPixelMapSync_promise_019
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_promise_019
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_019
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_019';
@@ -497,12 +497,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_020
-     * @tc.name       createPixelMapSync_option_promise_020
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_020
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_020
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_020';
@@ -514,12 +514,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_021
-     * @tc.name       createPixelMapSync_option_promise_021
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_021
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_021
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_021';
@@ -531,12 +531,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_022
-     * @tc.name       createPixelMapSync_option_promise_022
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_022
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_022
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_022';
@@ -548,12 +548,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_023
-     * @tc.name       createPixelMapSync_option_promise_023
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_023
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_023
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_023';
@@ -565,12 +565,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_024
-     * @tc.name       createPixelMapSync_option_promise_024
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_024
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_024
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_024';
@@ -582,12 +582,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_025
-     * @tc.name       createPixelMapSync_option_promise_025
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_025
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_025
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_025';
@@ -599,12 +599,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_026
-     * @tc.name       createPixelMapSync_option_promise_026
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_026
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_026
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_026';
@@ -616,12 +616,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_027
-     * @tc.name       createPixelMapSync_option_promise_027
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_027
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_027
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_027';
@@ -633,12 +633,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_028
-     * @tc.name       createPixelMapSync_option_promise_028
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_028
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_028
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_028';
@@ -650,12 +650,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_029
-     * @tc.name       createPixelMapSync_option_promise_029
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_029
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_029
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_029';
@@ -667,12 +667,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_030
-     * @tc.name       createPixelMapSync_option_promise_030
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_030
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_030
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_030';
@@ -684,12 +684,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_031
-     * @tc.name       createPixelMapSync_option_promise_031
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_031
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_031
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_031', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_031';
@@ -701,12 +701,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_032
-     * @tc.name       createPixelMapSync_option_promise_032
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_032
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_032
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_032', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_032';
@@ -718,12 +718,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_033
-     * @tc.name       createPixelMapSync_option_promise_033
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_033
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_033
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_033', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_033';
@@ -735,12 +735,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_034
-     * @tc.name       createPixelMapSync_option_promise_034
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_034
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_034
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_034', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_034';
@@ -752,12 +752,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_035
-     * @tc.name       createPixelMapSync_option_promise_035
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_035
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_035
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_035', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_035';
@@ -769,12 +769,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_036
-     * @tc.name       createPixelMapSync_option_promise_036
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_036
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_036
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_036', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_036';
@@ -786,12 +786,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_037
-     * @tc.name       createPixelMapSync_option_promise_037
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_037
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_037
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_037', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_037';
@@ -803,12 +803,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_SYNC_038
-     * @tc.name       createPixelMapSync_option_promise_038
-     * @tc.desc       createPixelMapSync
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMapSync_option_promise_038
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_SYNC_038
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_option_promise_038', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_option_promise_038';
@@ -820,12 +820,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_039
-     * @tc.name        createPixelMapSync_promise_039
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_039
+     * @tc.number createPixelMapSync_promise_039
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_039', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_039';
@@ -842,12 +842,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_040
-     * @tc.name        createPixelMapSync_promise_040
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_040
+     * @tc.number createPixelMapSync_promise_040
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_040', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_040';
@@ -864,12 +864,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_041
-     * @tc.name        createPixelMapSync_promise_041
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_041
+     * @tc.number createPixelMapSync_promise_041
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_041', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_041';
@@ -886,12 +886,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_042
-     * @tc.name        createPixelMapSync_promise_042
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_042
+     * @tc.number createPixelMapSync_promise_042
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_042', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_042';
@@ -908,12 +908,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_043
-     * @tc.name        createPixelMapSync_promise_043
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_043
+     * @tc.number createPixelMapSync_promise_043
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_043', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_043';
@@ -930,12 +930,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_044
-     * @tc.name        createPixelMapSync_promise_044
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_044
+     * @tc.number createPixelMapSync_promise_044
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_044', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_044';
@@ -952,12 +952,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_045
-     * @tc.name        createPixelMapSync_promise_045
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_045
+     * @tc.number createPixelMapSync_promise_045
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_045', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_045';
@@ -974,12 +974,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_046
-     * @tc.name        createPixelMapSync_promise_046
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_046
+     * @tc.number createPixelMapSync_promise_046
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_046', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_046';
@@ -996,12 +996,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_047
-     * @tc.name        createPixelMapSync_promise_047
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_047
+     * @tc.number createPixelMapSync_promise_047
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_047', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_047';
@@ -1018,12 +1018,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_048
-     * @tc.name        createPixelMapSync_promise_048
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_048
+     * @tc.number createPixelMapSync_promise_048
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_048', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_048';
@@ -1040,12 +1040,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_049
-     * @tc.name        createPixelMapSync_promise_049
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_049
+     * @tc.number createPixelMapSync_promise_049
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_049', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_049';
@@ -1062,12 +1062,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_050
-     * @tc.name        createPixelMapSync_promise_050
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_050
+     * @tc.number createPixelMapSync_promise_050
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_050', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_050';
@@ -1084,12 +1084,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_051
-     * @tc.name        createPixelMapSync_promise_051
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_051
+     * @tc.number createPixelMapSync_promise_051
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_051', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_051';
@@ -1106,12 +1106,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_052
-     * @tc.name        createPixelMapSync_promise_052
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_052
+     * @tc.number createPixelMapSync_promise_052
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_052', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_052';
@@ -1128,12 +1128,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_053
-     * @tc.name        createPixelMapSync_promise_053
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_053
+     * @tc.number createPixelMapSync_promise_053
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_053', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_053';
@@ -1150,12 +1150,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_054
-     * @tc.name        createPixelMapSync_promise_054
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_054
+     * @tc.number createPixelMapSync_promise_054
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_054', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_054';
@@ -1172,12 +1172,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_055
-     * @tc.name        createPixelMapSync_promise_055
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_055
+     * @tc.number createPixelMapSync_promise_055
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_055', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_055';
@@ -1194,12 +1194,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_056
-     * @tc.name        createPixelMapSync_promise_056
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_056
+     * @tc.number createPixelMapSync_promise_056
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_056', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_056';
@@ -1216,12 +1216,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_057
-     * @tc.name        createPixelMapSync_promise_057
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_057
+     * @tc.number createPixelMapSync_promise_057
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_057', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_057';
@@ -1238,12 +1238,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_058
-     * @tc.name        createPixelMapSync_promise_058
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_058
+     * @tc.number createPixelMapSync_promise_058
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_058', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_058';
@@ -1260,12 +1260,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_059
-     * @tc.name        createPixelMapSync_promise_059
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_059
+     * @tc.number createPixelMapSync_promise_059
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_059', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_059';
@@ -1282,12 +1282,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_060
-     * @tc.name        createPixelMapSync_promise_060
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_060
+     * @tc.number createPixelMapSync_promise_060
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_060', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_060';
@@ -1304,12 +1304,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_061
-     * @tc.name        createPixelMapSync_promise_061
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_061
+     * @tc.number createPixelMapSync_promise_061
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_061', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_061';
@@ -1326,12 +1326,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_062
-     * @tc.name        createPixelMapSync_promise_062
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_062
+     * @tc.number createPixelMapSync_promise_062
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_062', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_062';
@@ -1348,12 +1348,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_063
-     * @tc.name        createPixelMapSync_promise_063
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_063
+     * @tc.number createPixelMapSync_promise_063
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_063', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_063';
@@ -1370,12 +1370,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_064
-     * @tc.name        createPixelMapSync_promise_064
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_064
+     * @tc.number createPixelMapSync_promise_064
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_064', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_064';
@@ -1392,12 +1392,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_065
-     * @tc.name        createPixelMapSync_promise_065
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_065
+     * @tc.number createPixelMapSync_promise_065
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_065', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_065';
@@ -1414,12 +1414,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_066
-     * @tc.name        createPixelMapSync_promise_066
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_066
+     * @tc.number createPixelMapSync_promise_066
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_066', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_066';
@@ -1436,12 +1436,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_067
-     * @tc.name        createPixelMapSync_promise_067
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_067
+     * @tc.number createPixelMapSync_promise_067
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_067', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_067';
@@ -1458,12 +1458,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_068
-     * @tc.name        createPixelMapSync_promise_068
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_068
+     * @tc.number createPixelMapSync_promise_068
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_068', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_068';
@@ -1480,12 +1480,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_069
-     * @tc.name        createPixelMapSync_promise_069
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_069
+     * @tc.number createPixelMapSync_promise_069
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_069', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_069';
@@ -1502,12 +1502,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_070
-     * @tc.name        createPixelMapSync_promise_070
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_070
+     * @tc.number createPixelMapSync_promise_070
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_070', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_070';
@@ -1524,12 +1524,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_071
-     * @tc.name        createPixelMapSync_promise_071
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_071
+     * @tc.number createPixelMapSync_promise_071
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_071', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_071';
@@ -1546,12 +1546,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_072
-     * @tc.name        createPixelMapSync_promise_072
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_072
+     * @tc.number createPixelMapSync_promise_072
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_072', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_072';
@@ -1568,12 +1568,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_073
-     * @tc.name        createPixelMapSync_promise_073
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_073
+     * @tc.number createPixelMapSync_promise_073
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_073', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_073';
@@ -1590,12 +1590,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_074
-     * @tc.name        createPixelMapSync_promise_074
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_074
+     * @tc.number createPixelMapSync_promise_074
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_074', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_074';
@@ -1612,12 +1612,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_075
-     * @tc.name        createPixelMapSync_promise_075
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_075
+     * @tc.number createPixelMapSync_promise_075
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_075', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_075';
@@ -1634,12 +1634,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_076
-     * @tc.name        createPixelMapSync_promise_076
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_076
+     * @tc.number createPixelMapSync_promise_076
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_076', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_076';
@@ -1656,12 +1656,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_077
-     * @tc.name        createPixelMapSync_promise_077
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_077
+     * @tc.number createPixelMapSync_promise_077
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_077', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_077';
@@ -1678,12 +1678,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_078
-     * @tc.name        createPixelMapSync_promise_078
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_078
+     * @tc.number createPixelMapSync_promise_078
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_078', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_078';
@@ -1700,12 +1700,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_079
-     * @tc.name        createPixelMapSync_promise_079
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_079
+     * @tc.number createPixelMapSync_promise_079
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_079', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_079';
@@ -1722,12 +1722,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_080
-     * @tc.name        createPixelMapSync_promise_080
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_080
+     * @tc.number createPixelMapSync_promise_080
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_080', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_080';
@@ -1744,12 +1744,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_081
-     * @tc.name        createPixelMapSync_promise_081
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_081
+     * @tc.number createPixelMapSync_promise_081
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_081', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_081';
@@ -1766,12 +1766,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_082
-     * @tc.name        createPixelMapSync_promise_082
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_082
+     * @tc.number createPixelMapSync_promise_082
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_082', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_082';
@@ -1788,12 +1788,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_083
-     * @tc.name        createPixelMapSync_promise_083
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_083
+     * @tc.number createPixelMapSync_promise_083
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_083', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_083';
@@ -1810,12 +1810,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_084
-     * @tc.name        createPixelMapSync_promise_084
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_084
+     * @tc.number createPixelMapSync_promise_084
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_084', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_084';
@@ -1832,12 +1832,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_085
-     * @tc.name        createPixelMapSync_promise_085
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_085
+     * @tc.number createPixelMapSync_promise_085
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_085', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_085';
@@ -1854,12 +1854,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_086
-     * @tc.name        createPixelMapSync_promise_086
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_086
+     * @tc.number createPixelMapSync_promise_086
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_086', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_086';
@@ -1876,12 +1876,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_087
-     * @tc.name        createPixelMapSync_promise_087
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_087
+     * @tc.number createPixelMapSync_promise_087
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_087', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_087';
@@ -1898,12 +1898,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_088
-     * @tc.name        createPixelMapSync_promise_088
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_088
+     * @tc.number createPixelMapSync_promise_088
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_088', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_088';
@@ -1920,12 +1920,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_089
-     * @tc.name        createPixelMapSync_promise_089
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_089
+     * @tc.number createPixelMapSync_promise_089
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_089', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_089';
@@ -1942,12 +1942,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_090
-     * @tc.name        createPixelMapSync_promise_090
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_090
+     * @tc.number createPixelMapSync_promise_090
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_090', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_090';
@@ -1964,12 +1964,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_091
-     * @tc.name        createPixelMapSync_promise_091
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_091
+     * @tc.number createPixelMapSync_promise_091
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_091', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_091';
@@ -1986,12 +1986,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_092
-     * @tc.name        createPixelMapSync_promise_092
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_092
+     * @tc.number createPixelMapSync_promise_092
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_092', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_092';
@@ -2008,12 +2008,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_093
-     * @tc.name        createPixelMapSync_promise_093
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_093
+     * @tc.number createPixelMapSync_promise_093
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_093', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_093';
@@ -2030,12 +2030,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_094
-     * @tc.name        createPixelMapSync_promise_094
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_094
+     * @tc.number createPixelMapSync_promise_094
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_094', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_094';
@@ -2052,12 +2052,12 @@ export default function ImageCreatePixelMapSyncTest() {
     })
 
     /**
-     * @tc.number      createPixelMapSync_promise_095
-     * @tc.name        createPixelMapSync_promise_095
-     * @tc.desc        createPixelMapSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   createPixelMapSync_promise_095
+     * @tc.number createPixelMapSync_promise_095
+     * @tc.desc   createPixelMapSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapSync_promise_095', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapSync_promise_095';

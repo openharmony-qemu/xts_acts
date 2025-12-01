@@ -51,12 +51,12 @@ export default function ImageCreateUnpremultipliedPixelMapTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_001
-     * @tc.name      : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_001
-     * @tc.desc      : 正常参数测试（Promise方式）
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_001
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_001
+     * @tc.desc   正常参数测试（Promise方式）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_001';
@@ -80,12 +80,12 @@ export default function ImageCreateUnpremultipliedPixelMapTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_002
-     * @tc.name      : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_002
-     * @tc.desc      : 第1个参数为null（Promise方式）
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_002
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_002
+     * @tc.desc   第1个参数为null（Promise方式）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_002';
@@ -110,12 +110,12 @@ export default function ImageCreateUnpremultipliedPixelMapTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_003
-     * @tc.name      : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_003
-     * @tc.desc      : 第1个参数为undefined（Promise方式）
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_003
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_003
+     * @tc.desc   第1个参数为undefined（Promise方式）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_003';
@@ -140,12 +140,12 @@ export default function ImageCreateUnpremultipliedPixelMapTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_004
-     * @tc.name      : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_004
-     * @tc.desc      : 第2个参数为null（Promise方式）
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_004
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_004
+     * @tc.desc   第2个参数为null（Promise方式）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_004', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_004';
@@ -170,12 +170,12 @@ export default function ImageCreateUnpremultipliedPixelMapTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_005
-     * @tc.name      : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_005
-     * @tc.desc      : 第2个参数为undefined（Promise方式）
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_005
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_005
+     * @tc.desc   第2个参数为undefined（Promise方式）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_005', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_005';
@@ -200,12 +200,12 @@ export default function ImageCreateUnpremultipliedPixelMapTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_006
-     * @tc.name      : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_006
-     * @tc.desc      : 第1个参数为null（Callback方式）
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_006
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_006
+     * @tc.desc   第1个参数为null（Callback方式）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_006', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_006';
@@ -230,12 +230,12 @@ export default function ImageCreateUnpremultipliedPixelMapTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_007
-     * @tc.name      : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_007
-     * @tc.desc      : 第1个参数为undefined（Callback方式）
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_007
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_007
+     * @tc.desc   第1个参数为undefined（Callback方式）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_007', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_007';
@@ -260,12 +260,12 @@ export default function ImageCreateUnpremultipliedPixelMapTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_008
-     * @tc.name      : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_008
-     * @tc.desc      : 第2个参数为null（Callback方式）
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_008
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_008
+     * @tc.desc   第2个参数为null（Callback方式）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_008', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_008';
@@ -290,12 +290,12 @@ export default function ImageCreateUnpremultipliedPixelMapTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_009
-     * @tc.name      : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_009
-     * @tc.desc      : 第2个参数为undefined（Callback方式）
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_009
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_009
+     * @tc.desc   第2个参数为undefined（Callback方式）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_009', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_009';

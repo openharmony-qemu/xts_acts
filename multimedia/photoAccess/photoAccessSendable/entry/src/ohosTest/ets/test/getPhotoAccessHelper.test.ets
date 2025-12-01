@@ -35,12 +35,12 @@ export default function getPhotoAccessHelperTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Sendable_Helper_001
-     * @tc.name      : getPhotoAccessHelper_000
-     * @tc.desc      : get a photoAccess instance
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getPhotoAccessHelper_000
+     * @tc.number Sub_Photo_Access_Sendable_Get_Sendable_Helper_001
+     * @tc.desc   get a photoAccess instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPhotoAccessHelper_000', Level.LEVEL0, async (done: Function) => {
       try {

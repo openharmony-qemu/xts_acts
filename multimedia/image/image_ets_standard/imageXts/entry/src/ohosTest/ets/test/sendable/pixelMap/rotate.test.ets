@@ -80,12 +80,12 @@ export default function sendableRotateTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_ROTATE_001
-     * @tc.name      : rotate_sendable_promise_001
-     * @tc.desc      : rotate
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   rotate_sendable_promise_001
+     * @tc.number PIXEL_MAP_ROTATE_001
+     * @tc.desc   rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rotate_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'rotate_sendable_promise_001';
@@ -96,12 +96,12 @@ export default function sendableRotateTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_ROTATE_002
-     * @tc.name      : rotate_sendable_promise_002
-     * @tc.desc      : rotate
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   rotate_sendable_promise_002
+     * @tc.number PIXEL_MAP_ROTATE_002
+     * @tc.desc   rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rotate_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'rotate_sendable_promise_002';
@@ -112,12 +112,12 @@ export default function sendableRotateTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_ROTATE_003
-     * @tc.name      : rotate_sendable_promise_003
-     * @tc.desc      : rotate
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   rotate_sendable_promise_003
+     * @tc.number PIXEL_MAP_ROTATE_003
+     * @tc.desc   rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rotate_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'rotate_sendable_promise_003';
@@ -128,12 +128,12 @@ export default function sendableRotateTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_ROTATE_004
-     * @tc.name      : rotate_sendable_promise_004
-     * @tc.desc      : rotate
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   rotate_sendable_promise_004
+     * @tc.number PIXEL_MAP_ROTATE_004
+     * @tc.desc   rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rotate_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'rotate_sendable_promise_004';
@@ -144,12 +144,12 @@ export default function sendableRotateTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_ROTATE_005
-     * @tc.name      : rotate_sendable_promise_005
-     * @tc.desc      : rotate
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   rotate_sendable_promise_005
+     * @tc.number PIXEL_MAP_ROTATE_005
+     * @tc.desc   rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rotate_sendable_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'rotate_sendable_promise_005';
@@ -160,12 +160,12 @@ export default function sendableRotateTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_ROTATE_006
-     * @tc.name      : rotate_sendable_promise_006
-     * @tc.desc      : rotate
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   rotate_sendable_promise_006
+     * @tc.number PIXEL_MAP_ROTATE_006
+     * @tc.desc   rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rotate_sendable_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'rotate_sendable_promise_006';
@@ -176,12 +176,12 @@ export default function sendableRotateTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_ROTATE_007
-     * @tc.name      : rotate_abnormal_sendable_promise_001
-     * @tc.desc      : rotate
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   rotate_abnormal_sendable_promise_001
+     * @tc.number PIXEL_MAP_ROTATE_007
+     * @tc.desc   rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rotate_abnormal_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'rotate_abnormal_sendable_promise_001';
@@ -192,12 +192,12 @@ export default function sendableRotateTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_ROTATE_008
-     * @tc.name      : rotate_abnormal_sendable_promise_002
-     * @tc.desc      : rotate
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   rotate_abnormal_sendable_promise_002
+     * @tc.number PIXEL_MAP_ROTATE_008
+     * @tc.desc   rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rotate_abnormal_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'rotate_abnormal_sendable_promise_002';
@@ -208,12 +208,12 @@ export default function sendableRotateTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_ROTATE_009
-     * @tc.name      : rotate_abnormal_sendable_promise_003
-     * @tc.desc      : rotate
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   rotate_abnormal_sendable_promise_003
+     * @tc.number PIXEL_MAP_ROTATE_009
+     * @tc.desc   rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rotate_abnormal_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'rotate_abnormal_sendable_promise_003';
@@ -224,12 +224,12 @@ export default function sendableRotateTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_ROTATE_010
-     * @tc.name      : rotate_abnormal_sendable_promise_004
-     * @tc.desc      : rotate
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   rotate_abnormal_sendable_promise_004
+     * @tc.number PIXEL_MAP_ROTATE_010
+     * @tc.desc   rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rotate_abnormal_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'rotate_abnormal_sendable_promise_004';

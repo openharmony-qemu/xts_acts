@@ -70,15 +70,12 @@ export default function ImageCreator() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_PROMISE_STATIC_0100
-      * @tc.desc    release-promise
-      *                 1.create ImageCreator
-      *                 2.call release
-      *                 3.return empty
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_PROMISE_STATIC_0100
+     * @tc.desc   release-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_PROMISE_STATIC_0100");
@@ -101,15 +98,12 @@ export default function ImageCreator() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_CALLBACK_STATIC_0100
-      * @tc.desc    release-callback
-      *                 1.create ImageCreator
-      *                 2.call release
-      *                 3.return empty
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_CALLBACK_STATIC_0100
+     * @tc.desc   release-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_CALLBACK_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_CALLBACK_STATIC_0100");
@@ -132,15 +126,12 @@ export default function ImageCreator() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_PROMISE_STATIC_0100
-      * @tc.desc    dequeueImage-promise
-      *                 1.create ImageCreator
-      *                 2.call dequeueImage
-      *                 3.return image
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_PROMISE_STATIC_0100
+     * @tc.desc   dequeueImage-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let creator = image.createImageCreator(SIZE, FORMAT, CAPACITY);
@@ -165,15 +156,12 @@ export default function ImageCreator() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_CALLBACK_STATIC_0100
-      * @tc.desc    dequeueImage-callback
-      *                 1.create ImageCreator
-      *                 2.call dequeueImage
-      *                 3.return image
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_CALLBACK_STATIC_0100
+     * @tc.desc   dequeueImage-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_CALLBACK_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let creator = image.createImageCreator(SIZE, FORMAT, CAPACITY);
@@ -198,16 +186,12 @@ export default function ImageCreator() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200
-      * @tc.desc    queueImage-promise
-      *                 1.create ImageCreator
-      *                 2.call dequeueImage
-      *                 3.call queueImage
-      *                 4.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200
+     * @tc.desc   queueImage-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let creator = image.createImageCreator(SIZE, FORMAT, CAPACITY);
@@ -253,18 +237,15 @@ export default function ImageCreator() {
       }
     })
 
-    /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200
-      * @tc.desc    queueImage-callback
-      *                 1.create ImageCreator
-      *                 2.call dequeueImage
-      *                 3.call queueImage
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
-     */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let creator = image.createImageCreator(SIZE, FORMAT, CAPACITY);
       if (creator != undefined) {
@@ -307,15 +288,12 @@ export default function ImageCreator() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATOR_ON_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATOR_ON_STATIC_0100
-      * @tc.desc    on
-      *                 1.create ImageCreator
-      *                 2.call on
-      *                 3.return image
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_ON_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_ON_STATIC_0100
+     * @tc.desc   on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATOR_ON_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let creator = image.createImageCreator(SIZE, FORMAT, CAPACITY);
@@ -369,16 +347,12 @@ export default function ImageCreator() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100
-      * @tc.desc    imageCreator-off-'imageRelease'
-      *                 1.Create ImageCreator
-      *                 2.Close callback subscription (call creator.off (a))
-      *                 3.Pass in the correct parameter for a in off (a)
-      *                 4.View Image Creator callback subscription effect
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100
+     * @tc.desc   imageCreator-off-'imageRelease'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100 start');

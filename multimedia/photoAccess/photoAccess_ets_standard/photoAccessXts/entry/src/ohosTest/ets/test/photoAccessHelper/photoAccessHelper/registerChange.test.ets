@@ -191,12 +191,12 @@ export default function registerChangeTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_REGISTER_CHANGE_001
-     * @tc.name      : registerChange_image_uri_001
-     * @tc.desc      : listen photoAsset uri, modify image title-type: NOTIFY_UPDATE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   registerChange_image_uri_001
+     * @tc.number PHOTO_ACCESS_HELPER_REGISTER_CHANGE_001
+     * @tc.desc   listen photoAsset uri, modify image title-type: NOTIFY_UPDATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('registerChange_image_uri_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'registerChange_image_uri_001';
@@ -209,12 +209,12 @@ export default function registerChangeTest() {
     })*/
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_REGISTER_CHANGE_002
-     * @tc.name      : registerChange_video_uri_001
-     * @tc.desc      : listen photoAsset uri, modify video title-type: NOTIFY_UPDATE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   registerChange_video_uri_001
+     * @tc.number PHOTO_ACCESS_HELPER_REGISTER_CHANGE_002
+     * @tc.desc   listen photoAsset uri, modify video title-type: NOTIFY_UPDATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('registerChange_video_uri_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'registerChange_video_uri_001';
@@ -226,15 +226,15 @@ export default function registerChangeTest() {
       done();
     })*/
 
-    /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_REGISTER_CHANGE_003 //TODO count对不上
-     * @tc.name      : registerChange_image_uri_002
-     * @tc.desc      : listen photoAsset uri, remove asset-type: NOTIFY_REMOVE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
     /*
+        /**
+         * @tc.name   registerChange_image_uri_002
+         * @tc.number registerChange_image_uri_002
+         * @tc.desc   registerChange_image_uri_002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('registerChange_image_uri_002', Level.LEVEL0, async (done: Function) => {
           const testName = 'registerChange_image_uri_002';
           let fetchOps = photoFetchOption(testName, photoKeys.DISPLAY_NAME, imageDisplayName);
@@ -246,15 +246,15 @@ export default function registerChangeTest() {
         })
     */
 
-    /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_REGISTER_CHANGE_002
-     * @tc.name      : registerChange_video_uri_002
-     * @tc.desc      : listen photoAsset uri, modify video title-type: NOTIFY_UPDATE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
     /*
+        /**
+         * @tc.name   registerChange_video_uri_002
+         * @tc.number registerChange_video_uri_002
+         * @tc.desc   registerChange_video_uri_002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('registerChange_video_uri_002', Level.LEVEL0, async (done: Function) => {
           const testName = 'registerChange_video_uri_002';
           let fetchOps = photoFetchOption(testName, photoKeys.DISPLAY_NAME, videoDisplayName);
@@ -267,12 +267,12 @@ export default function registerChangeTest() {
     */
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_REGISTER_CHANGE_005
-     * @tc.name      : registerChange_album_image_uri_001
-     * @tc.desc      : listen album uri, modify image title-type: NOTIFY_ALBUM_ADD_ASSET
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   registerChange_album_image_uri_001
+     * @tc.number PHOTO_ACCESS_HELPER_REGISTER_CHANGE_005
+     * @tc.desc   listen album uri, modify image title-type: NOTIFY_ALBUM_ADD_ASSET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('registerChange_album_image_uri_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'registerChange_album_image_uri_001';
@@ -285,15 +285,15 @@ export default function registerChangeTest() {
       done();
     })
 
-    /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_REGISTER_CHANGE_006 //TODO uri不相符
-     * @tc.name      : registerChange_album_video_uri_001
-     * @tc.desc      : listen album uri, modify video title-type: NOTIFY_ALBUM_ADD_ASSET
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
     /*
+        /**
+         * @tc.name   registerChange_album_video_uri_001
+         * @tc.number registerChange_album_video_uri_001
+         * @tc.desc   registerChange_album_video_uri_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('registerChange_album_video_uri_001', Level.LEVEL0, async (done: Function) => {
           const testName = 'registerChange_album_video_uri_001';
           let fetchOps = photoFetchOption(testName, photoKeys.DISPLAY_NAME, videoDisplayName);

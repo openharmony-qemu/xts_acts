@@ -41,12 +41,12 @@ export default function ImagePixelMapMarshallingTest() {
     });
 
     /**
-     * @tc.number     IMAGE_PIXEL_MAP_MARSHALLING_001
-     * @tc.name       IMAGE_PIXEL_MAP_MARSHALLING_001
-     * @tc.desc       第1个参数为空对象
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_PIXEL_MAP_MARSHALLING_001
+     * @tc.number IMAGE_PIXEL_MAP_MARSHALLING_001
+     * @tc.desc   第1个参数为空对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_PIXEL_MAP_MARSHALLING_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_MARSHALLING_001';
@@ -69,12 +69,12 @@ export default function ImagePixelMapMarshallingTest() {
     });
 
     /**
-     * @tc.number     IMAGE_PIXEL_MAP_MARSHALLING_002
-     * @tc.name       IMAGE_PIXEL_MAP_MARSHALLING_002
-     * @tc.desc       第1个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_PIXEL_MAP_MARSHALLING_002
+     * @tc.number IMAGE_PIXEL_MAP_MARSHALLING_002
+     * @tc.desc   第1个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_PIXEL_MAP_MARSHALLING_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_MARSHALLING_002';
@@ -97,12 +97,12 @@ export default function ImagePixelMapMarshallingTest() {
     });
 
     /**
-     * @tc.number     IMAGE_PIXEL_MAP_MARSHALLING_003
-     * @tc.name       IMAGE_PIXEL_MAP_MARSHALLING_003
-     * @tc.desc       第1个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_PIXEL_MAP_MARSHALLING_003
+     * @tc.number IMAGE_PIXEL_MAP_MARSHALLING_003
+     * @tc.desc   第1个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_PIXEL_MAP_MARSHALLING_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_MARSHALLING_003';

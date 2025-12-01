@@ -56,12 +56,12 @@ export default function ImageAuxiliaryPictureWritePixelIsFromBufferTest() {
     });
 
     /**
-     * @tc.number     IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_001
-     * @tc.name       IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_001
-     * @tc.desc       第一个参数为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_001
+     * @tc.number IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_001
+     * @tc.desc   第一个参数为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_001';
@@ -80,12 +80,12 @@ export default function ImageAuxiliaryPictureWritePixelIsFromBufferTest() {
     })
 
     /**
-     * @tc.number     IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_002
-     * @tc.name       IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_002
-     * @tc.desc       第一个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_002
+     * @tc.number IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_002
+     * @tc.desc   第一个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_002';
@@ -105,12 +105,12 @@ export default function ImageAuxiliaryPictureWritePixelIsFromBufferTest() {
     })
 
     /**
-     * @tc.number     IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_003
-     * @tc.name       IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_003
-     * @tc.desc       第一个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_003
+     * @tc.number IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_003
+     * @tc.desc   第一个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_WRITE_PIXELS_FROM_BUFFER_003';

@@ -44,15 +44,15 @@ export default function PhotoAccessHelperOn_PhotoChangeTest() {
       console.info(TAG, 'afterAll case.');
       AppStorage.delete('emptyString')
     });
-    /**
-     * @tc.number     SUB_PHOTO_ON_PHOTO_Change_001
-     * @tc.name       SUB_PHOTO_ON_PHOTO_Change_001
-     * @tc.desc       第一个参数为空字符串的情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   SUB_PHOTO_ON_PHOTO_Change_001
+     * @tc.number SUB_PHOTO_ON_PHOTO_Change_001
+     * @tc.desc   SUB_PHOTO_ON_PHOTO_Change_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_PHOTO_ON_PHOTO_Change_001', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_PHOTO_ON_PHOTO_Change_001";
       try {
@@ -70,14 +70,14 @@ export default function PhotoAccessHelperOn_PhotoChangeTest() {
       }
     });
 
-    /**
-     * @tc.number     SUB_PHOTO_ON_PHOTO_Change_002
-     * @tc.name       SUB_PHOTO_ON_PHOTO_Change_002
-     * @tc.desc       第一个参数为undefined的情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
+      /**
+       * @tc.name   SUB_PHOTO_ON_PHOTO_Change_002
+       * @tc.number SUB_PHOTO_ON_PHOTO_Change_002
+       * @tc.desc   第一个参数为undefined的情况
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('SUB_PHOTO_ON_PHOTO_Change_002', Level.LEVEL0, async (done: Function) => {
         const testName = "SUB_PHOTO_ON_PHOTO_Change_002";
 
@@ -97,12 +97,12 @@ export default function PhotoAccessHelperOn_PhotoChangeTest() {
         }
       });
     /**
-     * @tc.number     SUB_PHOTO_ON_PHOTO_Change_003
-     * @tc.name       SUB_PHOTO_ON_PHOTO_Change_003
-     * @tc.desc       第一个参数为null的情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_PHOTO_ON_PHOTO_Change_003
+     * @tc.number SUB_PHOTO_ON_PHOTO_Change_003
+     * @tc.desc   第一个参数为null的情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PHOTO_ON_PHOTO_Change_003', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_PHOTO_ON_PHOTO_Change_003";

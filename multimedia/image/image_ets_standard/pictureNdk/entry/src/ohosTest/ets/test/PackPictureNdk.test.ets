@@ -426,13 +426,13 @@ export default function packPictureNdkTest() {
       }
     }
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_CONVERT_PNG_TO_DATA_0100
-     * @tc.name      : PackToFileFromPicture
-     * @tc.desc      : Test packing pictures to file when the format of picture is png.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_CONVERT_PNG_TO_DATA_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_CONVERT_PNG_TO_DATA_0100
+     * @tc.desc   Test packing pictures to file when the format of picture is png.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_CONVERT_PNG_TO_DATA_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -467,13 +467,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NDK_PACK_PNG_PICTURE_TO_DATA_0100
-     * @tc.name      : PackToDataFromPicture
-     * @tc.desc      : Test packing pictures to data when the format of picture is png.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NDK_PACK_PNG_PICTURE_TO_DATA_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NDK_PACK_PNG_PICTURE_TO_DATA_0100
+     * @tc.desc   Test packing pictures to data when the format of picture is png.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NDK_PACK_PNG_PICTURE_TO_DATA_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -506,13 +506,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKTOFILE_JPEG_ERROR_0100
-     * @tc.name      : PackToFileFromPicture
-     * @tc.desc      : Test packing pictures to file.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKTOFILE_JPEG_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKTOFILE_JPEG_ERROR_0100
+     * @tc.desc   Test packing pictures to file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKTOFILE_JPEG_ERROR_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -544,13 +544,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -568,13 +568,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0200
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0200
+     * @tc.desc   Test pack data to ArrayBuffer from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -592,13 +592,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0300
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0300
+     * @tc.desc   Test pack data to file from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -616,13 +616,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0400
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0400
+     * @tc.desc   Test pack data to file from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -640,13 +640,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0500
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0500
+     * @tc.desc   Test pack data to ArrayBuffer from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -664,13 +664,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0600
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0600
+     * @tc.desc   Test pack data to ArrayBuffer from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -688,13 +688,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0700
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0700
+     * @tc.desc   Test pack data to file from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -712,13 +712,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0800
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0800
+     * @tc.desc   Test pack data to file from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -736,13 +736,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0900
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0900
+     * @tc.desc   Test pack data to file from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_0900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -758,13 +758,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1000
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1000
+     * @tc.desc   Test pack data to file from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -780,13 +780,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1100
+     * @tc.desc   Test pack data to file from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -802,13 +802,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1200
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with only mainPicture.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1200
+     * @tc.desc   Test pack data to file from picture with only mainPicture.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_JPEG_1200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -824,13 +824,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -849,13 +849,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0200
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0200
+     * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -874,13 +874,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0300
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0300
+     * @tc.desc   Test pack data to file from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -899,13 +899,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0400
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0400
+     * @tc.desc   Test pack data to file from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -924,13 +924,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0500
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0500
+     * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -949,13 +949,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0600
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0600
+     * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -974,13 +974,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0700
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0700
+     * @tc.desc   Test pack data to file from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -999,13 +999,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0800
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0800
+     * @tc.desc   Test pack data to file from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1024,13 +1024,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0900
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0900
+     * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_0900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1047,13 +1047,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1000
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1000
+     * @tc.desc   Test pack data to file from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1070,13 +1070,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1093,13 +1093,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1200
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with GAINMAP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1200
+     * @tc.desc   Test pack data to file from picture with GAINMAP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_JPEG_1200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1116,13 +1116,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1141,13 +1141,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0200
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0200
+     * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1166,13 +1166,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0300
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0300
+     * @tc.desc   Test pack data to file from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1191,13 +1191,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0400
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0400
+     * @tc.desc   Test pack data to file from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1216,13 +1216,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0500
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0500
+     * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1241,13 +1241,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0600
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0600
+     * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1266,13 +1266,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0700
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0700
+     * @tc.desc   Test pack data to file from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1291,13 +1291,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0800
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0800
+     * @tc.desc   Test pack data to file from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1316,13 +1316,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0900
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0900
+     * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_0900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1339,13 +1339,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1000
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1000
+     * @tc.desc   Test pack data to file from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1362,13 +1362,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1385,13 +1385,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1200
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1200
+     * @tc.desc   Test pack data to file from picture with UNREFOCUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_JPEG_1200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1408,13 +1408,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1433,13 +1433,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0200
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0200
+     * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1458,13 +1458,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0300
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0300
+     * @tc.desc   Test pack data to file from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1483,13 +1483,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0400
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0400
+     * @tc.desc   Test pack data to file from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1508,13 +1508,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0500
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0500
+     * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1533,13 +1533,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0600
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0600
+     * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1558,13 +1558,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0700
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0700
+     * @tc.desc   Test pack data to file from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1583,13 +1583,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0800
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0800
+     * @tc.desc   Test pack data to file from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1608,13 +1608,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0900
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0900
+     * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_0900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1631,13 +1631,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1000
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1000
+     * @tc.desc   Test pack data to file from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1654,13 +1654,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1677,13 +1677,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1200
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with DEPTH.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1200
+     * @tc.desc   Test pack data to file from picture with DEPTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_JPEG_1200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1700,13 +1700,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1725,13 +1725,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0200
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0200
+     * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1750,13 +1750,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0300
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0300
+     * @tc.desc   Test pack data to file from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1775,13 +1775,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0400
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0400
+     * @tc.desc   Test pack data to file from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1800,13 +1800,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0500
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0500
+     * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1825,13 +1825,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0600
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0600
+     * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1850,13 +1850,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0700
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0700
+     * @tc.desc   Test pack data to file from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1875,13 +1875,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0800
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0800
+     * @tc.desc   Test pack data to file from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1900,13 +1900,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0900
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0900
+     * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_0900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1923,13 +1923,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1000
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1000
+     * @tc.desc   Test pack data to file from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1946,13 +1946,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1969,13 +1969,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1200
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with LINEAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1200
+     * @tc.desc   Test pack data to file from picture with LINEAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_JPEG_1200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1992,13 +1992,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2017,13 +2017,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0200
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0200
+     * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2042,13 +2042,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0300
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0300
+     * @tc.desc   Test pack data to file from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2067,13 +2067,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0400
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0400
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0400
+     * @tc.desc   Test pack data to file from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2092,13 +2092,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0500
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0500
+     * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2117,13 +2117,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0600
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0600
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0600
+     * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2142,13 +2142,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0700
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0700
+     * @tc.desc   Test pack data to file from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2167,13 +2167,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0800
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0800
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0800
+     * @tc.desc   Test pack data to file from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2192,13 +2192,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0900
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0900
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0900
+     * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_0900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2215,13 +2215,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1000
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1000
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1000
+     * @tc.desc   Test pack data to file from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2238,13 +2238,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1100
-     * @tc.name      : testPackToDataFromPicture for JPEG
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2261,13 +2261,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1200
-     * @tc.name      : testPackToFileFromPicture for JPEG
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1200
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1200
+     * @tc.desc   Test pack data to file from picture with FRAGMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_JPEG_1200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2284,13 +2284,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with only mainPicture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with only mainPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -2313,14 +2313,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0200
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with only mainPicture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0200
+      * @tc.desc   Test pack data to ArrayBuffer from picture with only mainPicture
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2342,13 +2342,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0300
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with only mainPicture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0300
+     * @tc.desc   Test pack data to file from picture with only mainPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0300', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -2371,14 +2371,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0400
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with only mainPicture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0400
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0400
+      * @tc.desc   Test pack data to file from picture with only mainPicture
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0400', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2400,13 +2400,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0500
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with only mainPicture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0500
+     * @tc.desc   Test pack data to ArrayBuffer from picture with only mainPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0500', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -2429,14 +2429,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0600
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with only mainPicture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0600
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0600
+      * @tc.desc   Test pack data to ArrayBuffer from picture with only mainPicture
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0600', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2458,13 +2458,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0700
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with only mainPicture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0700
+     * @tc.desc   Test pack data to file from picture with only mainPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0700', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -2487,14 +2487,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0800
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with only mainPicture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0800
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0800
+      * @tc.desc   Test pack data to file from picture with only mainPicture
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0800', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2516,14 +2516,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0900
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with MAINPICTURE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0900
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0900
+      * @tc.desc   Test pack data to ArrayBuffer from picture with MAINPICTURE
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_0900', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2543,14 +2543,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1000
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with MAINPICTURE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1000
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1000
+      * @tc.desc   Test pack data to file from picture with MAINPICTURE
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1000', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2570,14 +2570,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with MAINPICTURE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1100
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1100
+      * @tc.desc   Test pack data to ArrayBuffer from picture with MAINPICTURE
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2597,14 +2597,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1200
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with MAINPICTURE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1200
+      * @tc.desc   Test pack data to file from picture with MAINPICTURE
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKMAINPICTURE_HEIF_1200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2624,13 +2624,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -2653,14 +2653,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0200
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0200
+      * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2682,13 +2682,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0300
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0300
+     * @tc.desc   Test pack data to file from picture with GAINMAP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0300', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -2711,14 +2711,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0400
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0400
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0400
+      * @tc.desc   Test pack data to file from picture with GAINMAP
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0400', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2740,13 +2740,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0500
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0500
+     * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0500', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -2769,14 +2769,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0600
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0600
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0600
+      * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0600', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2798,13 +2798,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0700
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0700
+     * @tc.desc   Test pack data to file from picture with GAINMAP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0700', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -2827,14 +2827,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0800
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0800
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0800
+      * @tc.desc   Test pack data to file from picture with GAINMAP
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0800', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2856,14 +2856,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0900
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0900
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0900
+      * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_0900', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2883,14 +2883,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1000
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1000
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1000
+      * @tc.desc   Test pack data to file from picture with GAINMAP
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1000', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2910,14 +2910,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1100
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1100
+      * @tc.desc   Test pack data to ArrayBuffer from picture with GAINMAP
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2937,14 +2937,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1200
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with GAINMAP
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1200
+      * @tc.desc   Test pack data to file from picture with GAINMAP
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKGAINMAP_HEIF_1200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -2964,13 +2964,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -2993,14 +2993,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0200
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0200
+      * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3022,13 +3022,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0300
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0300
+     * @tc.desc   Test pack data to file from picture with UNREFOCUS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0300', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -3051,14 +3051,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0400
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0400
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0400
+      * @tc.desc   Test pack data to file from picture with UNREFOCUS
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0400', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3080,13 +3080,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0500
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0500
+     * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0500', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -3109,14 +3109,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0600
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0600
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0600
+      * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0600', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3138,13 +3138,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0700
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0700
+     * @tc.desc   Test pack data to file from picture with UNREFOCUS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0700', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -3167,14 +3167,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0800
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0800
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0800
+      * @tc.desc   Test pack data to file from picture with UNREFOCUS
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0800', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3196,14 +3196,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0900
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0900
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0900
+      * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_0900', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3223,14 +3223,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1000
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1000
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1000
+      * @tc.desc   Test pack data to file from picture with UNREFOCUS
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1000', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3250,14 +3250,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1100
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1100
+      * @tc.desc   Test pack data to ArrayBuffer from picture with UNREFOCUS
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3277,14 +3277,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1200
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with UNREFOCUS
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1200
+      * @tc.desc   Test pack data to file from picture with UNREFOCUS
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKUNREFOCUS_HEIF_1200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3304,13 +3304,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -3333,14 +3333,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0200
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0200
+      * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3362,13 +3362,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0300
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0300
+     * @tc.desc   Test pack data to file from picture with DEPTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0300', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -3391,14 +3391,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0400
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0400
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0400
+      * @tc.desc   Test pack data to file from picture with DEPTH
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0400', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3420,13 +3420,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0500
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0500
+     * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0500', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -3449,14 +3449,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0600
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0600
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0600
+      * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0600', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3478,13 +3478,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0700
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0700
+     * @tc.desc   Test pack data to file from picture with DEPTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0700', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -3507,14 +3507,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0800
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0800
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0800
+      * @tc.desc   Test pack data to file from picture with DEPTH
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0800', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3536,14 +3536,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0900
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0900
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0900
+      * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_0900', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3563,14 +3563,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1000
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1000
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1000
+      * @tc.desc   Test pack data to file from picture with DEPTH
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1000', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3590,14 +3590,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1100
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1100
+      * @tc.desc   Test pack data to ArrayBuffer from picture with DEPTH
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3617,14 +3617,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1200
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with DEPTH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1200
+      * @tc.desc   Test pack data to file from picture with DEPTH
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKDEPTH_HEIF_1200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3644,13 +3644,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -3673,14 +3673,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0200
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0200
+      * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3702,13 +3702,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0300
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0300
+     * @tc.desc   Test pack data to file from picture with LINEAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0300', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -3731,14 +3731,14 @@ export default function packPictureNdkTest() {
       }
     })    
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0400
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0400
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0400
+      * @tc.desc   Test pack data to file from picture with LINEAR
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0400', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3760,14 +3760,14 @@ export default function packPictureNdkTest() {
       }
     })    
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0500
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0500
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0500
+      * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0500', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3789,14 +3789,14 @@ export default function packPictureNdkTest() {
       }
     })    
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0600
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0600
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0600
+      * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0600', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3818,13 +3818,13 @@ export default function packPictureNdkTest() {
       }
     })    
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0700
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0700
+     * @tc.desc   Test pack data to file from picture with LINEAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0700', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -3847,14 +3847,14 @@ export default function packPictureNdkTest() {
       }
     })    
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0800
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0800
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0800
+      * @tc.desc   Test pack data to file from picture with LINEAR
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0800', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3876,14 +3876,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0900
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0900
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0900
+      * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_0900', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3903,14 +3903,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1000
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1000
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1000
+      * @tc.desc   Test pack data to file from picture with LINEAR
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1000', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3930,14 +3930,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1100
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1100
+      * @tc.desc   Test pack data to ArrayBuffer from picture with LINEAR
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3957,14 +3957,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1200
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with LINEAR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1200
+      * @tc.desc   Test pack data to file from picture with LINEAR
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKLINEAR_HEIF_1200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -3984,13 +3984,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0100
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0100
+     * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -4013,14 +4013,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0200
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0200
+      * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -4042,13 +4042,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0300
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0300
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0300
+     * @tc.desc   Test pack data to file from picture with FRAGMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0300', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -4071,14 +4071,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0400
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0400
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0400
+      * @tc.desc   Test pack data to file from picture with FRAGMENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0400', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -4100,13 +4100,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0500
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0500
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0500
+     * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0500', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -4129,14 +4129,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0600
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0600
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0600
+      * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0600', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -4158,13 +4158,13 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0700
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0700
+     * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0700
+     * @tc.desc   Test pack data to file from picture with FRAGMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0700', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
@@ -4187,14 +4187,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0800
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0800
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0800
+      * @tc.desc   Test pack data to file from picture with FRAGMENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0800', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -4216,14 +4216,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0900
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0900
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0900
+      * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_0900', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -4243,14 +4243,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1000
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1000
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1000
+      * @tc.desc   Test pack data to file from picture with FRAGMENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1000', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -4270,14 +4270,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1100
-     * @tc.name      : testPackToDataFromPicture for HEIF
-     * @tc.desc      : Test pack data to ArrayBuffer from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1100
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1100
+      * @tc.desc   Test pack data to ArrayBuffer from picture with FRAGMENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1100', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {
@@ -4297,14 +4297,14 @@ export default function packPictureNdkTest() {
       }
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1200
-     * @tc.name      : testPackToFileFromPicture for HEIF
-     * @tc.desc      : Test pack data to file from picture with FRAGMENT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1200
+      * @tc.number SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1200
+      * @tc.desc   Test pack data to file from picture with FRAGMENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_MULTIMEDIA_PICTURE_NATIVE_PACKFRAGMENT_HEIF_1200', Level.LEVEL0, async (done: Function) => {
       if (!(isSupportHdr && isSupportHeicEncode)) {
         if (!isSupportHdr) {

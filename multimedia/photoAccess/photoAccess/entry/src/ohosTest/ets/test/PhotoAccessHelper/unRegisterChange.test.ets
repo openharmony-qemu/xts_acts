@@ -39,12 +39,12 @@ export default function unRegisterChangeTest () {
       await sleep(1000);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_UNREGISTERCHANGE_0100
-     * @tc.name      : unRegisterChange_001
-     * @tc.desc      : unRegister listening motify file title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   unRegisterChange_001
+     * @tc.number SUB_PHOTOACCESS_UNREGISTERCHANGE_0100
+     * @tc.desc   unRegister listening motify file title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unRegisterChange_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'unRegisterChange_001';
@@ -74,12 +74,12 @@ export default function unRegisterChangeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_UNREGISTERCHANGE_0700
-     * @tc.name      : unRegisterChange_007
-     * @tc.desc      : unRegister listening create album
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   unRegisterChange_007
+     * @tc.number SUB_PHOTOACCESS_UNREGISTERCHANGE_0700
+     * @tc.desc   unRegister listening create album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unRegisterChange_007', Level.LEVEL0, async (done: Function) => {
       const testNum = 'unRegisterChange_007';
@@ -105,12 +105,12 @@ export default function unRegisterChangeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_UNREGISTERCHANGE_0800
-     * @tc.name      : unRegisterChange_008
-     * @tc.desc      : unRegister listening create album
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   unRegisterChange_008
+     * @tc.number SUB_PHOTOACCESS_UNREGISTERCHANGE_0800
+     * @tc.desc   unRegister listening create album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unRegisterChange_008', Level.LEVEL0, async (done: Function) => {
       const testNum = 'unRegisterChange_008';
@@ -141,14 +141,22 @@ export default function unRegisterChangeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_UNREGISTERCHANGE_1000
-     * @tc.name      : unRegisterChange_010
-     * @tc.desc      : unRegister listening change album overUri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   unRegisterChange_010
+     * @tc.number SUB_PHOTOACCESS_UNREGISTERCHANGE_1000
+     * @tc.desc   unRegister listening change album overUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     // it('unRegisterChange_010', Level.LEVEL0, async example(done: Function) =>{
+    /**
+     * @tc.name   unRegisterChange_010
+     * @tc.number unRegisterChange_010
+     * @tc.desc   unRegisterChange_010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('unRegisterChange_010', Level.LEVEL0, async (done: Function) =>{
       const testNum = 'unRegisterChange_010';
       try {
@@ -181,12 +189,12 @@ export default function unRegisterChangeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_UNREGISTERCHANGE_1100
-     * @tc.name      : unRegisterChange_011
-     * @tc.desc      : unRegister listening album addAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   unRegisterChange_011
+     * @tc.number SUB_PHOTOACCESS_UNREGISTERCHANGE_1100
+     * @tc.desc   unRegister listening album addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unRegisterChange_011', Level.LEVEL0, async (done: Function) => {
       const testNum = 'unRegisterChange_011';
@@ -216,12 +224,12 @@ export default function unRegisterChangeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_UNREGISTERCHANGE_1200
-     * @tc.name      : unRegisterChange_012
-     * @tc.desc      : unRegister listening album removeAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   unRegisterChange_012
+     * @tc.number SUB_PHOTOACCESS_UNREGISTERCHANGE_1200
+     * @tc.desc   unRegister listening album removeAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unRegisterChange_012', Level.LEVEL0, async (done: Function) => {
       const testNum = 'unRegisterChange_012';
@@ -252,12 +260,12 @@ export default function unRegisterChangeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_UNREGISTERCHANGE_1500
-     * @tc.name      : unRegisterChange_015
-     * @tc.desc      : unRegister remove all listening
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   unRegisterChange_015
+     * @tc.number SUB_PHOTOACCESS_UNREGISTERCHANGE_1500
+     * @tc.desc   unRegister remove all listening
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('unRegisterChange_015', Level.LEVEL3, async (done: Function) => {
       const testNum = 'unRegisterChange_015';
@@ -291,12 +299,12 @@ export default function unRegisterChangeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_UNREGISTERCHANGE_CALLBACK_0000
-     * @tc.name      : unRegisterChange_callback_000
-     * @tc.desc      : unRegister remove specified callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   unRegisterChange_callback_000
+     * @tc.number SUB_PHOTOACCESS_UNREGISTERCHANGE_CALLBACK_0000
+     * @tc.desc   unRegister remove specified callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('unRegisterChange_callback_000', Level.LEVEL3, async (done: Function) => {
       const testNum = 'unRegisterChange_callback_000';

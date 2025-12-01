@@ -90,12 +90,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_001
-     * @tc.name      : createUnpremultipliedPixelMap_promise_001
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_001
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_001
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createUnpremultipliedPixelMap_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_001';
@@ -116,12 +116,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_002
-     * @tc.name      : createUnpremultipliedPixelMap_promise_002
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_002
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_002
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createUnpremultipliedPixelMap_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_002';
@@ -142,12 +142,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_003
-     * @tc.name      : createUnpremultipliedPixelMap_promise_003
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_003
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_003
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createUnpremultipliedPixelMap_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_003';
@@ -168,12 +168,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_004
-     * @tc.name      : createUnpremultipliedPixelMap_promise_004
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_004
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_004
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_004';
@@ -194,12 +194,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_005
-     * @tc.name      : createUnpremultipliedPixelMap_promise_005
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_005
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_005
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_005';
@@ -220,12 +220,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_006
-     * @tc.name      : createUnpremultipliedPixelMap_promise_006
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_006
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_006
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createUnpremultipliedPixelMap_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_006';
@@ -246,12 +246,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_007
-     * @tc.name      : createUnpremultipliedPixelMap_promise_007
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_007
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_007
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_007';
@@ -272,12 +272,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_008
-     * @tc.name      : createUnpremultipliedPixelMap_promise_008
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_008
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_008
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_008';
@@ -298,12 +298,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_009
-     * @tc.name      : createUnpremultipliedPixelMap_promise_009
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_009
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_009
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_009';
@@ -324,12 +324,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_010
-     * @tc.name      : createUnpremultipliedPixelMap_promise_010
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_010
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_010
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createUnpremultipliedPixelMap_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_010';
@@ -350,12 +350,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_011
-     * @tc.name      : createUnpremultipliedPixelMap_promise_011
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_011
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_011
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createUnpremultipliedPixelMap_promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_011';
@@ -376,12 +376,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_012
-     * @tc.name      : createUnpremultipliedPixelMap_promise_012
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_012
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_012
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createUnpremultipliedPixelMap_promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_012';
@@ -402,12 +402,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_013
-     * @tc.name      : createUnpremultipliedPixelMap_promise_013
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_promise_013
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_013
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_promise_013';
@@ -428,12 +428,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_014
-     * @tc.name      : createUnpremultipliedPixelMap_callback_001
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_001
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_014
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createUnpremultipliedPixelMap_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_001';
@@ -454,12 +454,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_015
-     * @tc.name      : createUnpremultipliedPixelMap_callback_002
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_002
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_015
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createUnpremultipliedPixelMap_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_002';
@@ -480,12 +480,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_016
-     * @tc.name      : createUnpremultipliedPixelMap_callback_003
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_003
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_016
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createUnpremultipliedPixelMap_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_003';
@@ -506,12 +506,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_017 //TODO 中断
-     * @tc.name      : createUnpremultipliedPixelMap_callback_004
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_004
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_017 //TODO 中断
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_004';
@@ -532,12 +532,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_018 //TODO 中断
-     * @tc.name      : createUnpremultipliedPixelMap_callback_005
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_005
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_018 //TODO 中断
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_callback_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_005';
@@ -558,12 +558,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_019
-     * @tc.name      : createUnpremultipliedPixelMap_callback_006
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_006
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_019
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createUnpremultipliedPixelMap_callback_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_006';
@@ -584,12 +584,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_020 //TODO 中断
-     * @tc.name      : createUnpremultipliedPixelMap_callback_007
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_007
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_020 //TODO 中断
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_callback_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_007';
@@ -610,12 +610,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_021 //TODO 中断
-     * @tc.name      : createUnpremultipliedPixelMap_callback_008
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_008
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_021 //TODO 中断
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_callback_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_008';
@@ -636,12 +636,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_022 //TODO 中断
-     * @tc.name      : createUnpremultipliedPixelMap_callback_009
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_009
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_022 //TODO 中断
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_callback_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_009';
@@ -662,12 +662,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_023 //TODO 超时
-     * @tc.name      : createUnpremultipliedPixelMap_callback_010
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_010
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_023 //TODO 超时
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_callback_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_010';
@@ -688,12 +688,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_024 //TODO 超时
-     * @tc.name      : createUnpremultipliedPixelMap_callback_011
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_011
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_024 //TODO 超时
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_callback_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_011';
@@ -714,12 +714,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_025//TODO 超时
-     * @tc.name      : createUnpremultipliedPixelMap_callback_012
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_012
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_025//TODO 超时
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_callback_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_012';
@@ -740,12 +740,12 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_026//TODO 中断
-     * @tc.name      : createUnpremultipliedPixelMap_callback_013
-     * @tc.desc      : createUnpremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createUnpremultipliedPixelMap_callback_013
+     * @tc.number IMAGE_CREATE_UN_PREMULTIPLIED_PIXEL_MAP_026//TODO 中断
+     * @tc.desc   createUnpremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createUnpremultipliedPixelMap_callback_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'createUnpremultipliedPixelMap_callback_013';

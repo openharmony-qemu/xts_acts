@@ -825,12 +825,12 @@ export default function audioCapturer() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_0200
-     * @tc.name      : AudioCapturer - getOverflowCountSync
-     * @tc.desc      : AudioCapturer - getOverflowCountSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_0200
+     * @tc.desc   AudioCapturer - getOverflowCountSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -869,12 +869,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_0100
-     * @tc.name      : AudioCapturer - setWillMuteWhenInterrupted
-     * @tc.desc      : AudioCapturer - setWillMuteWhenInterrupted
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_0100
+     * @tc.desc   AudioCapturer - setWillMuteWhenInterrupted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -911,12 +911,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_0200
-     * @tc.name      : AudioCapturer - setWillMuteWhenInterrupted
-     * @tc.desc      : AudioCapturer - setWillMuteWhenInterrupted
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_0200
+     * @tc.desc   AudioCapturer - setWillMuteWhenInterrupted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -953,12 +953,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_PREPARED_STATE_0100
-     * @tc.name      :
-     * @tc.desc      : createAudioCapturer callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_PREPARED_STATE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_PREPARED_STATE_0100
+     * @tc.desc   createAudioCapturer callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_PREPARED_STATE_0100', 1, (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -990,12 +990,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_RUNNING_STATE_0100
-     * @tc.name      : AudioCapturer-Check-STATE-RUNNING
-     * @tc.desc      : AudioCapturer with state running
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_RUNNING_STATE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_RUNNING_STATE_0100
+     * @tc.desc   AudioCapturer with state running
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_RUNNING_STATE_0100', 1, (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1026,12 +1026,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_STOPPED_STATE_0100
-     * @tc.name      : AudioCapturer-Check-STATE-STOPPED
-     * @tc.desc      : AudioCapturer with state stopped
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_STOPPED_STATE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_STOPPED_STATE_0100
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_STOPPED_STATE_0100', 1, (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1062,12 +1062,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_BUFFER_SIZE_0100
-     * @tc.name      : AudioCapturer-get_buffer_size
-     * @tc.desc      : AudioCapturer with state stopped
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_BUFFER_SIZE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_BUFFER_SIZE_0100
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_BUFFER_SIZE_0100', 1, (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1099,12 +1099,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_0100
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_0100
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -1137,12 +1137,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMOISE_PREPARED_STATE_0100
-     * @tc.name      : AudioCapturer-Check-STATE-PREPARED
-     * @tc.desc      : AudioCapturer with state prepared
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMOISE_PREPARED_STATE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMOISE_PREPARED_STATE_0100
+     * @tc.desc   AudioCapturer with state prepared
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMOISE_PREPARED_STATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1173,12 +1173,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RUNNING_STATE_0100
-     * @tc.name      : AudioCapturer-Check-STATE-RUNNING
-     * @tc.desc      : AudioCapturer with state running
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RUNNING_STATE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RUNNING_STATE_0100
+     * @tc.desc   AudioCapturer with state running
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RUNNING_STATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1210,12 +1210,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOPPED_STATE_0100
-     * @tc.name      : AudioCapturer-Check-STATE-STOPPED
-     * @tc.desc      : AudioCapturer with state stopped
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOPPED_STATE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOPPED_STATE_0100
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOPPED_STATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1249,12 +1249,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASED_STATE_0100
-     * @tc.name      : AudioCapturer-Check-STATE-RELEASED
-     * @tc.desc      : AudioCapturer with state released
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASED_STATE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASED_STATE_0100
+     * @tc.desc   AudioCapturer with state released
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASED_STATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1287,12 +1287,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_SYNC_0100
-     * @tc.name      : AudioCapturer-get_buffer_size_sync
-     * @tc.desc      : AudioCapturer with state stopped
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_SYNC_0100
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_SYNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1338,12 +1338,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_0100
-     * @tc.name      : AudioCapturer-get_buffer_size
-     * @tc.desc      : AudioCapturer with state stopped
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_0100
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1389,12 +1389,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_READ_BUFFER_0100
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_READ_BUFFER_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_READ_BUFFER_0100
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_READ_BUFFER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkpromisereadbuffer.pcm");
@@ -1475,12 +1475,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_CB_0100
-     * @tc.name      : AudioCapturer-Set1-Media
-     * @tc.desc      : AudioCapturer with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_CB_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_CB_0100
+     * @tc.desc   AudioCapturer with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_CB_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1514,12 +1514,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_CB_ENUM_0100
-     * @tc.name      : AudioCapturer-Set1-Media
-     * @tc.desc      : AudioCapturer with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_CB_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_CB_ENUM_0100
+     * @tc.desc   AudioCapturer with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_CB_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -1552,12 +1552,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0100
-     * @tc.name      : AudioCapturer-Set1-Media
-     * @tc.desc      : AudioCapturer with parameter set 7
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0100
+     * @tc.desc   AudioCapturer with parameter set 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1591,12 +1591,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0100
-     * @tc.name      : AudioCapturer-Set1-Media
-     * @tc.desc      : AudioCapturer with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0100
+     * @tc.desc   AudioCapturer with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1630,12 +1630,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0200
-     * @tc.name      : AudioRec-Set1
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0200
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -1669,12 +1669,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0200
-     * @tc.name      : AudioRec-Set1
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0200
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -1708,12 +1708,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0300
-     * @tc.name      : AudioRec-Set2
-     * @tc.desc      : record audio with parameter set 2
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0300
+     * @tc.desc   record audio with parameter set 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo96000: audio.AudioStreamInfo = {
@@ -1747,12 +1747,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0300
-     * @tc.name      : AudioRec-Set2
-     * @tc.desc      : record audio with parameter set 2
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0300
+     * @tc.desc   record audio with parameter set 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo96000: audio.AudioStreamInfo = {
@@ -1786,12 +1786,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0400
-     * @tc.name      : AudioRec-Set3
-     * @tc.desc      : record audio with parameter set 3
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0400
+     * @tc.desc   record audio with parameter set 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo48000: audio.AudioStreamInfo = {
@@ -1825,12 +1825,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0400
-     * @tc.name      : AudioRec-Set3
-     * @tc.desc      : record audio with parameter set 3
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0400
+     * @tc.desc   record audio with parameter set 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo48000: audio.AudioStreamInfo = {
@@ -1864,12 +1864,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0500
-     * @tc.name      : AudioRec-Set4
-     * @tc.desc      : record audio with parameter set 4
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0500
+     * @tc.desc   record audio with parameter set 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo8000: audio.AudioStreamInfo = {
@@ -1903,12 +1903,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0500
-     * @tc.name      : AudioRec-Set4
-     * @tc.desc      : record audio with parameter set 4
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0500
+     * @tc.desc   record audio with parameter set 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo8000: audio.AudioStreamInfo = {
@@ -1942,12 +1942,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0600
-     * @tc.name      : AudioRec-Set5
-     * @tc.desc      : record audio with parameter set 5
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0600
+     * @tc.desc   record audio with parameter set 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo11025: audio.AudioStreamInfo = {
@@ -1981,12 +1981,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0600
-     * @tc.name      : AudioRec-Set5
-     * @tc.desc      : record audio with parameter set 5
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0600
+     * @tc.desc   record audio with parameter set 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo11025: audio.AudioStreamInfo = {
@@ -2020,12 +2020,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0700
-     * @tc.name      : AudioRec-Set6
-     * @tc.desc      : record audio with parameter set 6
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0700
+     * @tc.desc   record audio with parameter set 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo12000: audio.AudioStreamInfo = {
@@ -2059,12 +2059,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0800
-     * @tc.name      : AudioRec-Set7
-     * @tc.desc      : record audio with parameter set 7
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0800
+     * @tc.desc   record audio with parameter set 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo16000: audio.AudioStreamInfo = {
@@ -2098,12 +2098,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0800
-     * @tc.name      : AudioRec-Set7
-     * @tc.desc      : record audio with parameter set 7
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0800
+     * @tc.desc   record audio with parameter set 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo16000: audio.AudioStreamInfo = {
@@ -2137,13 +2137,13 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0900
-     * @tc.name      : AudioRec-Set8
-     * @tc.desc      : record audio with parameter set 8
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     //  */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0900
+     * @tc.desc   record audio with parameter set 8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo22050: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_22050,
@@ -2176,12 +2176,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0900
-     * @tc.name      : AudioRec-Set8
-     * @tc.desc      : record audio with parameter set 8
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0900
+     * @tc.desc   record audio with parameter set 8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo22050: audio.AudioStreamInfo = {
@@ -2215,12 +2215,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1000
-     * @tc.name      : AudioRec-Set9
-     * @tc.desc      : record audio with parameter set 9
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1000
+     * @tc.desc   record audio with parameter set 9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo24000: audio.AudioStreamInfo = {
@@ -2255,12 +2255,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1000
-     * @tc.name      : AudioRec-Set9
-     * @tc.desc      : record audio with parameter set 9
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1000
+     * @tc.desc   record audio with parameter set 9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo24000: audio.AudioStreamInfo = {
@@ -2294,12 +2294,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1100
-     * @tc.name      : AudioRec-Set10
-     * @tc.desc      : record audio with parameter set 010
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1100
+     * @tc.desc   record audio with parameter set 010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo32000: audio.AudioStreamInfo = {
@@ -2333,12 +2333,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1100
-     * @tc.name      : AudioRec-Set10
-     * @tc.desc      : record audio with parameter set 010
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1100
+     * @tc.desc   record audio with parameter set 010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo32000: audio.AudioStreamInfo = {
@@ -2372,12 +2372,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1200
-     * @tc.name      : AudioRec-Set11
-     * @tc.desc      : record audio with parameter set 011
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1200
+     * @tc.desc   record audio with parameter set 011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo64000: audio.AudioStreamInfo = {
@@ -2411,12 +2411,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1200
-     * @tc.name      : AudioRec-Set11
-     * @tc.desc      : record audio with parameter set 011
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1200
+     * @tc.desc   record audio with parameter set 011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo64000: audio.AudioStreamInfo = {
@@ -2450,12 +2450,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1300
-     * @tc.name      : AudioRec-Set11 , SourceType set SOURCE_TYPE_VOICE_RECOGNITION
-     * @tc.desc      : record audio with parameter set 011
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1300
+     * @tc.desc   record audio with parameter set 011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo64000: audio.AudioStreamInfo = {
@@ -2489,12 +2489,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_0100
-     * @tc.name      : AudioRec-Set1
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -2529,12 +2529,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_ENUM_0100
-     * @tc.name      : AudioRec-Set1
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_ENUM_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -2568,12 +2568,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_START_0100
-     * @tc.name      : AudioCapturer-GET_AUDIO_TIME
-     * @tc.desc      : AudioCapturer GET_AUDIO_TIME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_START_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_START_0100
+     * @tc.desc   AudioCapturer GET_AUDIO_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_START_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -2606,12 +2606,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_READ_WRITE_0100
-     * @tc.name      : AudioCapturer-GET_AUDIO_TIME
-     * @tc.desc      : AudioCapturer GET_AUDIO_TIME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_READ_WRITE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_READ_WRITE_0100
+     * @tc.desc   AudioCapturer GET_AUDIO_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_READ_WRITE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -2698,12 +2698,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_STOP_0100
-     * @tc.name      : AudioCapturer-GET_AUDIO_TIME
-     * @tc.desc      : AudioCapturer GET_AUDIO_TIME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_STOP_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_STOP_0100
+     * @tc.desc   AudioCapturer GET_AUDIO_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_STOP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -2795,12 +2795,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_0100
-     * @tc.name      : AudioCapturer-GET_AUDIO_TIME
-     * @tc.desc      : AudioCapturer GET_AUDIO_TIME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_0100
+     * @tc.desc   AudioCapturer GET_AUDIO_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2845,12 +2845,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_SYNC_0100
-     * @tc.name      : AudioCapturer-GET_AUDIO_TIME_SYNC
-     * @tc.desc      : AudioCapturer GET_AUDIO_TIME_SYNC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_SYNC_0100
+     * @tc.desc   AudioCapturer GET_AUDIO_TIME_SYNC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_SYNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2895,12 +2895,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO_SYNC
-     * @tc.name      : AudioCapturer-GET_AUDIO_TIMESTAMP_INFO_SYNC
-     * @tc.desc      : AudioCapturer GET_AUDIO_TIMESTAMP_INFO_SYNC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO_SYNC
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO_SYNC
+     * @tc.desc   AudioCapturer GET_AUDIO_TIMESTAMP_INFO_SYNC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO_SYNC',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
@@ -2947,12 +2947,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO
-     * @tc.name      : AudioCapturer-GET_AUDIO_TIMESTAMP_INFO
-     * @tc.desc      : AudioCapturer GET_AUDIO_TIMESTAMP_INFO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO
+     * @tc.desc   AudioCapturer GET_AUDIO_TIMESTAMP_INFO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2999,12 +2999,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOP_BEFORE_START_0100
-     * @tc.name      : AudioCapturer-GET_AUDIO_TIME
-     * @tc.desc      : AudioCapturer createAudioCapturer->stop->release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOP_BEFORE_START_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOP_BEFORE_START_0100
+     * @tc.desc   AudioCapturer createAudioCapturer->stop->release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOP_BEFORE_START_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -3051,12 +3051,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASE_BEFORE_START_0100
-     * @tc.name      : AudioCapturer-GET_AUDIO_TIME
-     * @tc.desc      : AudioCapturer GET_AUDIO_TIME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASE_BEFORE_START_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASE_BEFORE_START_0100
+     * @tc.desc   AudioCapturer GET_AUDIO_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASE_BEFORE_START_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -3100,12 +3100,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_SYNC_0100
-     * @tc.name      : getStreamInfoSync
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_SYNC_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_SYNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -3151,12 +3151,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_0100
-     * @tc.name      : AudioRec-Set1
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -3202,12 +3202,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_ENUM_0100
-     * @tc.name      : AudioRec-Set1
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_ENUM_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -3253,12 +3253,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_REC_CB_VOICE_CHAT_GET_STREAM_INFO_0200
-     * @tc.name      : AudioRec-Set1
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_CB_VOICE_CHAT_GET_STREAM_INFO_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_CB_VOICE_CHAT_GET_STREAM_INFO_0200
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_CB_VOICE_CHAT_GET_STREAM_INFO_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -3306,12 +3306,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_0300
-     * @tc.name      : AudioRec-Set1
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_0300
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -3357,12 +3357,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_ENUM_0300
-     * @tc.name      : AudioRec-Set1
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_ENUM_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_ENUM_0300
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_ENUM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -3407,12 +3407,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO__SYNC_0400
-     * @tc.name      : getCapturerInfoSync
-     * @tc.desc      : getCapturerInfoSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO__SYNC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO__SYNC_0400
+     * @tc.desc   getCapturerInfoSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO__SYNC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -3459,12 +3459,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_REC_VOICE_CHAT_PR_ENUM_AUDIO_STREAM_INFO_INVALID_0100
-     * @tc.name      : AudioRec-Set1
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_VOICE_CHAT_PR_ENUM_AUDIO_STREAM_INFO_INVALID_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_VOICE_CHAT_PR_ENUM_AUDIO_STREAM_INFO_INVALID_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_VOICE_CHAT_PR_ENUM_AUDIO_STREAM_INFO_INVALID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -3492,12 +3492,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_REC_VOICE_CHAT_PR_ENUM_AUDIO_CAPTURER_INFO_INVALID_0100
-     * @tc.name      : AudioRec-Set1
-     * @tc.desc      : record audio with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_VOICE_CHAT_PR_ENUM_AUDIO_CAPTURER_INFO_INVALID_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_VOICE_CHAT_PR_ENUM_AUDIO_CAPTURER_INFO_INVALID_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_VOICE_CHAT_PR_ENUM_AUDIO_CAPTURER_INFO_INVALID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -3532,12 +3532,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0100
-     * @tc.name      : AudioCapturer-Check-STATE-STOPPED
-     * @tc.desc      : AudioCapturer with state stopped
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0100
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0100', 2, (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -3569,12 +3569,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0200
-     * @tc.name      : AudioCapturer-Check-STATE-STOPPED
-     * @tc.desc      : AudioCapturer with state stopped
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0200
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0200', 2, (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -3605,12 +3605,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0300
-     * @tc.name      : AudioCapturer-Check-STATE-STOPPED
-     * @tc.desc      : AudioCapturer with state stopped
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0300
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0300', 2, (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -3642,12 +3642,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0400
-     * @tc.name      : AudioCapturer-Check-STATE-STOPPED
-     * @tc.desc      : AudioCapturer with state stopped
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0400
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_ON_0400', 2, (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -3679,12 +3679,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0100
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0100
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -3720,12 +3720,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0200
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0200
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -3761,12 +3761,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0300
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0300
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -3802,12 +3802,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0400
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0400
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -3843,12 +3843,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0500
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0500
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -3884,12 +3884,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0600
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0600
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -3925,12 +3925,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0700
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0700
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -3966,12 +3966,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0800
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0800
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_MARK_REACH_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -4007,12 +4007,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0100
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0100
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -4048,12 +4048,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0200
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0200
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -4089,12 +4089,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0300
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0300
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -4130,12 +4130,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0400
-     * @tc.name      : AudioCapturer-Check-READ_BUFFER
-     * @tc.desc      : AudioCapturer with read buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0400
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_READ_BUFFER_PERIOD_REACH_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -4171,12 +4171,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_0100
-     * @tc.name      : AudioCapturer - getAudioStreamId
-     * @tc.desc      : AudioCapturer - getAudioStreamId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_0100
+     * @tc.desc   AudioCapturer - getAudioStreamId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4214,12 +4214,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_0200
-     * @tc.name      : AudioCapturer - getAudioStreamId
-     * @tc.desc      : AudioCapturer - getAudioStreamId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_0200
+     * @tc.desc   AudioCapturer - getAudioStreamId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4255,12 +4255,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_SYNC_0300
-     * @tc.name      : AudioCapturer - getAudioStreamIdSync
-     * @tc.desc      : AudioCapturer - getAudioStreamIdSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_SYNC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_SYNC_0300
+     * @tc.desc   AudioCapturer - getAudioStreamIdSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_SYNC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4298,12 +4298,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_0100
-     * @tc.name      : AudioCapturer - getOverflowCount
-     * @tc.desc      : AudioCapturer - getOverflowCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_0100
+     * @tc.desc   AudioCapturer - getOverflowCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4337,13 +4337,13 @@ export default function audioCapturer() {
       }
       done();
     })
-        /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100
-     * @tc.name      : test[AudioCapturer function with voice message sourcetype]
-     * @tc.desc      : AudioCapturer with parameter set
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100
+     * @tc.desc   AudioCapturer with parameter set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4379,12 +4379,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0100
-     * @tc.name      : CAPTURER_RENDERER_FORMAT_F32LE_Test_0100
-     * @tc.desc      : CAPTURER_RENDERER_FORMAT_F32LE_Test_0100
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0100
+     * @tc.desc   CAPTURER_RENDERER_FORMAT_F32LE_Test_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4433,12 +4433,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0200
-     * @tc.name      : CAPTURER_RENDERER_FORMAT_F32LE_Test_0200
-     * @tc.desc      : CAPTURER_RENDERER_FORMAT_F32LE_Test_0200
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0200
+     * @tc.desc   CAPTURER_RENDERER_FORMAT_F32LE_Test_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4487,12 +4487,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0300
-     * @tc.name      : CAPTURER_RENDERER_FORMAT_F32LE_Test_0300
-     * @tc.desc      : CAPTURER_RENDERER_FORMAT_F32LE_Test_0300
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0300
+     * @tc.desc   CAPTURER_RENDERER_FORMAT_F32LE_Test_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0300', Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4541,12 +4541,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0400
-     * @tc.name      : CAPTURER_RENDERER_FORMAT_F32LE_Test_0400
-     * @tc.desc      : CAPTURER_RENDERER_FORMAT_F32LE_Test_0400
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0400
+     * @tc.desc   CAPTURER_RENDERER_FORMAT_F32LE_Test_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_0400', Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4594,12 +4594,12 @@ export default function audioCapturer() {
       }
     })
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_0100
-     * @tc.name      : AudioCapturer ON MARKREACH
-     * @tc.desc      : AudioCapturer ON MARKREACH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_0100
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_0100
+     * @tc.desc   AudioCapturer ON MARKREACH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4633,12 +4633,12 @@ export default function audioCapturer() {
       done();
     })
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_0200
-     * @tc.name      : AudioCapturer ON MARKREACH
-     * @tc.desc      : AudioCapturer ON MARKREACH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_0200
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_0200
+     * @tc.desc   AudioCapturer ON MARKREACH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4672,12 +4672,12 @@ export default function audioCapturer() {
       done();
     })
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURE_OFF_MARKREACH_0100
-     * @tc.name      : AudioCapturer OFF MARKREACH
-     * @tc.desc      : AudioCapturer OFF MARKREACH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_OFF_MARKREACH_0100
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_OFF_MARKREACH_0100
+     * @tc.desc   AudioCapturer OFF MARKREACH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURE_OFF_MARKREACH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4713,12 +4713,12 @@ export default function audioCapturer() {
       done();
     })
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURE_OFF_MARKREACH_0200
-     * @tc.name      : AudioCapturer OFF MARKREACH
-     * @tc.desc      : AudioCapturer OFF MARKREACH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_OFF_MARKREACH_0200
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_OFF_MARKREACH_0200
+     * @tc.desc   AudioCapturer OFF MARKREACH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURE_OFF_MARKREACH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4754,12 +4754,12 @@ export default function audioCapturer() {
       done();
     })
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_0100
-     * @tc.name      : AudioCapturer ON PERIODREACH
-     * @tc.desc      : AudioCapturer ON PERIODREACH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_0100
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_0100
+     * @tc.desc   AudioCapturer ON PERIODREACH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4793,12 +4793,12 @@ export default function audioCapturer() {
       done();
     })
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_0200
-     * @tc.name      : AudioCapturer ON PERIODREACH
-     * @tc.desc      : AudioCapturer ON PERIODREACH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_0200
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_0200
+     * @tc.desc   AudioCapturer ON PERIODREACH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4832,12 +4832,12 @@ export default function audioCapturer() {
       done();
     })
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURE_OFF_PERIODREACH_0100
-     * @tc.name      : AudioCapturer OFF PERIODREACH
-     * @tc.desc      : AudioCapturer OFF PERIODREACH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_OFF_PERIODREACH_0100
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_OFF_PERIODREACH_0100
+     * @tc.desc   AudioCapturer OFF PERIODREACH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURE_OFF_PERIODREACH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4873,12 +4873,12 @@ export default function audioCapturer() {
       done();
     })
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURE_OFF_PERIODREACH_0200
-     * @tc.name      : AudioCapturer OFF PERIODREACH
-     * @tc.desc      : AudioCapturer OFF PERIODREACH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_OFF_PERIODREACH_0200
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_OFF_PERIODREACH_0200
+     * @tc.desc   AudioCapturer OFF PERIODREACH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURE_OFF_PERIODREACH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4914,12 +4914,12 @@ export default function audioCapturer() {
       done();
     })
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURE_OFF_STATECHANGE_0100
-     * @tc.name      : AudioCapturer OFF STATECHANGE
-     * @tc.desc      : AudioCapturer OFF STATECHANGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_OFF_STATECHANGE_0100
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_OFF_STATECHANGE_0100
+     * @tc.desc   AudioCapturer OFF STATECHANGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURE_OFF_STATECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4963,12 +4963,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURE_OFF_STATECHANGE_0200
-     * @tc.name      : AudioCapturer OFF STATECHANGE
-     * @tc.desc      : AudioCapturer OFF STATECHANGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_OFF_STATECHANGE_0200
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_OFF_STATECHANGE_0200
+     * @tc.desc   AudioCapturer OFF STATECHANGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURE_OFF_STATECHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5012,12 +5012,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURE_SOURCETYPE_UNPROCESSED_0100
-     * @tc.name      : SOURCETYPE_UNPROCESSED
-     * @tc.desc      : SOURCETYPE_UNPROCESSED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_SOURCETYPE_UNPROCESSED_0100
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_SOURCETYPE_UNPROCESSED_0100
+     * @tc.desc   SOURCETYPE_UNPROCESSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AUDIO_AUDIOCAPTURE_SOURCETYPE_UNPROCESSED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5046,12 +5046,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURER_OFF_AUDIOINTERRUPT_0100
-     * @tc.name      : OFF_AUDIOINTERRUPT
-     * @tc.desc      : OFF_AUDIOINTERRUPT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURER_OFF_AUDIOINTERRUPT_0100
+     * @tc.number SUB_AUDIO_AUDIOCAPTURER_OFF_AUDIOINTERRUPT_0100
+     * @tc.desc   OFF_AUDIOINTERRUPT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURER_OFF_AUDIOINTERRUPT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -5099,12 +5099,12 @@ export default function audioCapturer() {
       });
     })
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURER_OFF_AUDIOINTERRUPT_0200
-     * @tc.name      : OnVolumeChange - getVolumeManager - MEDIA
-     * @tc.desc      : OnVolumeChange - getVolumeManager - MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURER_OFF_AUDIOINTERRUPT_0200
+     * @tc.number SUB_AUDIO_AUDIOCAPTURER_OFF_AUDIOINTERRUPT_0200
+     * @tc.desc   OnVolumeChange - getVolumeManager - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURER_OFF_AUDIOINTERRUPT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -5152,12 +5152,12 @@ export default function audioCapturer() {
       });
     })
     /**
-     * @tc.number    : SUB_AUDIO_AUDIOCAPTURER_ON_INPUTDEVICECHANGE_0100
-     * @tc.name      : OnVolumeChange - getVolumeManager - MEDIA
-     * @tc.desc      : OnVolumeChange - getVolumeManager - MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURER_ON_INPUTDEVICECHANGE_0100
+     * @tc.number SUB_AUDIO_AUDIOCAPTURER_ON_INPUTDEVICECHANGE_0100
+     * @tc.desc   OnVolumeChange - getVolumeManager - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_AUDIO_AUDIOCAPTURER_ON_INPUTDEVICECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -5199,13 +5199,13 @@ export default function audioCapturer() {
       });
     })
 
-        /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_FRAMEWORK_LIVE_FUNCTION_TEST_001
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_FRAMEWORK_LIVE_FUNCTION_TEST_001
-     * @tc.desc      : SourceType Live
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_FRAMEWORK_LIVE_FUNCTION_TEST_001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_FRAMEWORK_LIVE_FUNCTION_TEST_001
+     * @tc.desc   SourceType Live
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_FRAMEWORK_LIVE_FUNCTION_TEST_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioCapturerOptions: audio.AudioCapturerOptions = {

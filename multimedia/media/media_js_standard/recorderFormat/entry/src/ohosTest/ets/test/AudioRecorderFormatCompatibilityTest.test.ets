@@ -47,14 +47,14 @@ export default function AudioRecorderFormatCompatibilityTest() {
       console.info('afterAll case');
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0100
-        * @tc.name      : location: {latitude: -90, longitude: -180}
-        * @tc.desc      : location test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0100
+     * @tc.desc   location test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0100', Level.LEVEL0,async (done: Function) => {
       await mediaTestBase.getFd('COMPATIBILITY_0100.m4a');
       mediaTestBase.audioConfig.uri = "fd://"+mediaTestBase.outputFdObject.fd;
@@ -67,14 +67,14 @@ export default function AudioRecorderFormatCompatibilityTest() {
       mediaTestBase.audioRecorder?.prepare(mediaTestBase.audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0200
-        * @tc.name      : location: {latitude: 90, longitude: 180}
-        * @tc.desc      : location test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0200
+     * @tc.desc   location test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0200', Level.LEVEL0,async (done: Function) => {
       await  mediaTestBase.getFd('COMPATIBILITY_0200.m4a');
       mediaTestBase.audioConfig.uri = "fd://"+mediaTestBase.outputFdObject.fd;
@@ -87,14 +87,14 @@ export default function AudioRecorderFormatCompatibilityTest() {
       mediaTestBase.audioRecorder?.prepare(mediaTestBase.audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0300
-        * @tc.name      : location: {latitude: 0, longitude: 0}
-        * @tc.desc      : location test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0300
+     * @tc.desc   location test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0300', Level.LEVEL0,async (done: Function) => {
       await mediaTestBase.getFd('COMPATIBILITY_0300.m4a');
       mediaTestBase.audioConfig.uri = "fd://"+mediaTestBase.outputFdObject.fd;
@@ -107,14 +107,14 @@ export default function AudioRecorderFormatCompatibilityTest() {
       mediaTestBase.audioRecorder?. prepare(mediaTestBase.audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0400
-        * @tc.name      : location: {latitude: 0, longitude: 180}
-        * @tc.desc      : location test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0400
+     * @tc.desc   location test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0400', Level.LEVEL0,async (done: Function) => {
       await mediaTestBase.getFd('COMPATIBILITY_0400.m4a');
       mediaTestBase.audioConfig.uri = "fd://"+mediaTestBase.outputFdObject.fd;
@@ -127,14 +127,14 @@ export default function AudioRecorderFormatCompatibilityTest() {
       mediaTestBase.audioRecorder?.prepare(mediaTestBase.audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0500
-        * @tc.name      : location: {latitude: -30, longitude: 60}
-        * @tc.desc      : location test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0500
+     * @tc.desc   location test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0500', Level.LEVEL0,async (done: Function) => {
       await mediaTestBase.getFd('COMPATIBILITY_0500.m4a');
       mediaTestBase.audioConfig.uri = "fd://"+mediaTestBase.outputFdObject.fd;
@@ -147,14 +147,14 @@ export default function AudioRecorderFormatCompatibilityTest() {
       mediaTestBase.audioRecorder?.prepare(mediaTestBase.audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0600
-        * @tc.name      : location: {latitude: 60, longitude: -90}
-        * @tc.desc      : location test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0600
+     * @tc.desc   location test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_0600', Level.LEVEL0,async (done: Function) => {
       await mediaTestBase.getFd('COMPATIBILITY_0600.m4a');
       mediaTestBase.audioConfig.uri = "fd://"+mediaTestBase.outputFdObject.fd;

@@ -110,15 +110,12 @@ export default function abilityTest() {
     })
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_AIHDR_CREATEPIXELMAP_STATIC_0100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_AIHDR_CREATEPIXELMAP_STATIC_0100
-      * @tc.desc    TTest_createPixelMap_decodingOptions_aihdr_auto_jpg
-      *                 1.create imageSource
-      *                 2.set decodingDynamicRange of DecodeOptions to HDR
-      *                 3.create PixelMap and getImageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_DECODEOPTIONS_WITH_AIHDR_CREATEPIXELMAP_STATIC_0100
+     * @tc.number SUB_DECODEOPTIONS_WITH_AIHDR_CREATEPIXELMAP_STATIC_0100
+     * @tc.desc   TTest_createPixelMap_decodingOptions_aihdr_auto_jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_AIHDR_CREATEPIXELMAP_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test.jpg");

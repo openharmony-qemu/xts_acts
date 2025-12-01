@@ -56,12 +56,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_001
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_001
-     * @tc.desc       CAMERA_POSITION_UNSPECIFIED and CAMERA_TYPE_DEFAULT
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_001
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_001
+     * @tc.desc   CAMERA_POSITION_UNSPECIFIED and CAMERA_TYPE_DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_001',Level.LEVEL1, async () => {
       const testName = 'test001_getAvailableCameras'
@@ -84,12 +84,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_002
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_002
-     * @tc.desc       CAMERA_POSITION_UNSPECIFIED and CAMERA_TYPE_WIDE_ANGLE
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_002
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_002
+     * @tc.desc   CAMERA_POSITION_UNSPECIFIED and CAMERA_TYPE_WIDE_ANGLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_002',Level.LEVEL1, async () => {
       const testName = 'test002_getAvailableCameras'
@@ -112,12 +112,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_003
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_003
-     * @tc.desc       CAMERA_POSITION_UNSPECIFIED and CAMERA_TYPE_ULTRA_WIDE
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_003
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_003
+     * @tc.desc   CAMERA_POSITION_UNSPECIFIED and CAMERA_TYPE_ULTRA_WIDE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_003',Level.LEVEL1, async () => {
       const testName = 'test003_getAvailableCameras'
@@ -140,12 +140,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_004
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_004
-     * @tc.desc       CAMERA_POSITION_UNSPECIFIED and CAMERA_TYPE_TELEPHOTO
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_004
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_004
+     * @tc.desc   CAMERA_POSITION_UNSPECIFIED and CAMERA_TYPE_TELEPHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_004', Level.LEVEL1, async () => {
       const testName = 'test004_getAvailableCameras'
@@ -168,12 +168,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_005
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_005
-     * @tc.desc       CAMERA_POSITION_UNSPECIFIED and CAMERA_TYPE_TRUE_DEPTH
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_005
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_005
+     * @tc.desc   CAMERA_POSITION_UNSPECIFIED and CAMERA_TYPE_TRUE_DEPTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_005', Level.LEVEL1, async () => {
       const testName = 'test005_getAvailableCameras'
@@ -196,12 +196,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_006
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_006
-     * @tc.desc       CAMERA_POSITION_BACK and CAMERA_TYPE_DEFAULT
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_006
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_006
+     * @tc.desc   CAMERA_POSITION_BACK and CAMERA_TYPE_DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_006', Level.LEVEL1, async () => {
       const testName = 'test006_getAvailableCameras'
@@ -224,12 +224,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_007
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_007
-     * @tc.desc       CAMERA_POSITION_BACK and CAMERA_TYPE_WIDE_ANGLE
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_007
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_007
+     * @tc.desc   CAMERA_POSITION_BACK and CAMERA_TYPE_WIDE_ANGLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_007', Level.LEVEL1, async () => {
       const testName = 'test007_getAvailableCameras'
@@ -252,12 +252,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_008
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_008
-     * @tc.desc       CAMERA_POSITION_BACK and CAMERA_TYPE_ULTRA_WIDE
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_008
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_008
+     * @tc.desc   CAMERA_POSITION_BACK and CAMERA_TYPE_ULTRA_WIDE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_008', Level.LEVEL1, async () => {
       const testName = 'test008_getAvailableCameras'
@@ -280,12 +280,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_009
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_009
-     * @tc.desc       CAMERA_POSITION_BACK and CAMERA_TYPE_TELEPHOTO
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_009
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_009
+     * @tc.desc   CAMERA_POSITION_BACK and CAMERA_TYPE_TELEPHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_009',Level.LEVEL1, async () => {
       const testName = 'test009_getAvailableCameras'
@@ -308,12 +308,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_010
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_010
-     * @tc.desc       CAMERA_POSITION_BACK and CAMERA_TYPE_TRUE_DEPTH
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_010
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_010
+     * @tc.desc   CAMERA_POSITION_BACK and CAMERA_TYPE_TRUE_DEPTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_010', Level.LEVEL1, async () => {
       const testName = 'test010_getAvailableCameras'
@@ -336,12 +336,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_011
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_011
-     * @tc.desc       CAMERA_POSITION_FRONT and CAMERA_TYPE_DEFAULT
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_011
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_011
+     * @tc.desc   CAMERA_POSITION_FRONT and CAMERA_TYPE_DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_011', Level.LEVEL1, async () => {
       const testName = 'test011_getAvailableCameras'
@@ -364,12 +364,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_012
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_012
-     * @tc.desc       CAMERA_POSITION_FRONT and CAMERA_TYPE_WIDE_ANGLE
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_012
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_012
+     * @tc.desc   CAMERA_POSITION_FRONT and CAMERA_TYPE_WIDE_ANGLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_012', Level.LEVEL1, async () => {
       const testName = 'test012_getAvailableCameras'
@@ -392,12 +392,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_013
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_013
-     * @tc.desc       CAMERA_POSITION_FRONT and CAMERA_TYPE_ULTRA_WIDE
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_013
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_013
+     * @tc.desc   CAMERA_POSITION_FRONT and CAMERA_TYPE_ULTRA_WIDE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_013',Level.LEVEL1, async () => {
       const testName = 'test013_getAvailableCameras'
@@ -420,12 +420,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_014
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_014
-     * @tc.desc       CAMERA_POSITION_FRONT and CAMERA_TYPE_TELEPHOTO
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_014
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_014
+     * @tc.desc   CAMERA_POSITION_FRONT and CAMERA_TYPE_TELEPHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_014',Level.LEVEL1, async () => {
       const testName = 'test014_getAvailableCameras'
@@ -448,12 +448,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_015
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_015
-     * @tc.desc       CAMERA_POSITION_FRONT and CAMERA_TYPE_TRUE_DEPTH
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_015
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_015
+     * @tc.desc   CAMERA_POSITION_FRONT and CAMERA_TYPE_TRUE_DEPTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_015', Level.LEVEL1, async () => {
       const testName = 'test015_getAvailableCameras'
@@ -476,12 +476,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_016
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_016
-     * @tc.desc       CAMERA_POSITION_FOLD_INNER and CAMERA_TYPE_DEFAULT
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_016
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_016
+     * @tc.desc   CAMERA_POSITION_FOLD_INNER and CAMERA_TYPE_DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_016', Level.LEVEL1, async () => {
       const testName = 'test016_getAvailableCameras'
@@ -504,12 +504,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_017
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_017
-     * @tc.desc       CAMERA_POSITION_FOLD_INNER and CAMERA_TYPE_WIDE_ANGLE
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_017
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_017
+     * @tc.desc   CAMERA_POSITION_FOLD_INNER and CAMERA_TYPE_WIDE_ANGLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_017', Level.LEVEL1, async () => {
       const testName = 'test017_getAvailableCameras'
@@ -532,12 +532,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_018
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_018
-     * @tc.desc       CAMERA_POSITION_FOLD_INNER and CAMERA_TYPE_ULTRA_WIDE
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_018
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_018
+     * @tc.desc   CAMERA_POSITION_FOLD_INNER and CAMERA_TYPE_ULTRA_WIDE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_018', Level.LEVEL1, async () => {
       const testName = 'test018_getAvailableCameras'
@@ -560,12 +560,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_019
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_019
-     * @tc.desc       CAMERA_POSITION_FOLD_INNER and CAMERA_TYPE_TELEPHOTO
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_019
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_019
+     * @tc.desc   CAMERA_POSITION_FOLD_INNER and CAMERA_TYPE_TELEPHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_019', Level.LEVEL1, async () => {
       const testName = 'test019_getAvailableCameras'
@@ -588,12 +588,12 @@ export default function CameraDeviceTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_020
-     * @tc.name       SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_020
-     * @tc.desc       CAMERA_POSITION_FOLD_INNER and CAMERA_TYPE_TRUE_DEPTH
-     * @tc.size       SMALL
-     * @tc.type       FUNCTION
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_020
+     * @tc.number SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_020
+     * @tc.desc   CAMERA_POSITION_FOLD_INNER and CAMERA_TYPE_TRUE_DEPTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_020',Level.LEVEL1, async () => {
       const testName = 'test020_getAvailableCameras'

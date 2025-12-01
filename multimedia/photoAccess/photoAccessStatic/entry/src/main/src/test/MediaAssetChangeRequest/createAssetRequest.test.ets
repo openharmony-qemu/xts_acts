@@ -29,12 +29,12 @@ export default function createAssetRequest() {
   describe("createAssetRequest", (): void => {
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_STATIC_0000
-      * @tc.name    create_asset_request_static_000
-      * @tc.desc    create image without options
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   create_asset_request_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_STATIC_0000
+     * @tc.desc   create image without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("create_asset_request_static_000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -66,12 +66,12 @@ export default function createAssetRequest() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_STATIC_0100
-      * @tc.name    create_asset_request_static_001
-      * @tc.desc    create image with options
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   create_asset_request_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_STATIC_0100
+     * @tc.desc   create image with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("create_asset_request_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -107,12 +107,12 @@ export default function createAssetRequest() {
 
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_STATIC_0200
-      * @tc.name    create_asset_request_static_002
-      * @tc.desc    create video without options
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   create_asset_request_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_STATIC_0200
+     * @tc.desc   create video without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("create_asset_request_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -146,12 +146,12 @@ export default function createAssetRequest() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_STATIC_0300
-      * @tc.name    create_asset_request_static_003
-      * @tc.desc    create video with options
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   create_asset_request_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_STATIC_0300
+     * @tc.desc   create video with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("create_asset_request_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -187,12 +187,12 @@ export default function createAssetRequest() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_STATIC_0400
-      * @tc.name    create_asset_request_static_004
-      * @tc.desc    create image with extension as ''
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   create_asset_request_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_ASSET_REQUEST_STATIC_0400
+     * @tc.desc   create image with extension as ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('create_asset_request_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

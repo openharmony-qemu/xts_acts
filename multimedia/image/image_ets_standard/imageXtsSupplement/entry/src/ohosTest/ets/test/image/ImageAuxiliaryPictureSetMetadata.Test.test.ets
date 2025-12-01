@@ -43,12 +43,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
 
 
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_001
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_001
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_001
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_001
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_001';
@@ -73,12 +73,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_002
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_002
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_002
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_002
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_002';
@@ -103,12 +103,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_003
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_003
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_003
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_003
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_003';
@@ -133,12 +133,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_004
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_004
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_004
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_004
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_004';
@@ -163,12 +163,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_005
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_005
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_005
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_005
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_005';
@@ -194,12 +194,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_006
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_006
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_006
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_006
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_006';
@@ -224,12 +224,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_007
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_007
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_007
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_007
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_007';
@@ -254,12 +254,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_008
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_008
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_008
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_008
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_008';
@@ -284,12 +284,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_009
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_009
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_009
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_009
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_009';
@@ -314,12 +314,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_010
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_010
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_010
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_010
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_010';
@@ -344,12 +344,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_011
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_011
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_011
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_011
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_011';
@@ -374,12 +374,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_012
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_012
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_012
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_012
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_012';
@@ -404,12 +404,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_013
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_013
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_013
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_013
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_013';
@@ -434,12 +434,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_014
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_014
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_014
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_014
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_014';
@@ -464,12 +464,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_015
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_015
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_015
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_015
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_015';
@@ -495,12 +495,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_016
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_016
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_016
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_016
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_016';
@@ -525,12 +525,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_017
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_017
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_017
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_017
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_017';
@@ -555,12 +555,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_018
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_018
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_018
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_018
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_018';
@@ -585,12 +585,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_019
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_019
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_019
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_019
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_019';
@@ -615,12 +615,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_020
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_020
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_020
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_020
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_020';
@@ -645,12 +645,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_021
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_021
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_021
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_021
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_021';
@@ -675,12 +675,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_022
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_022
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_022
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_022
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_022';
@@ -705,12 +705,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_023
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_023
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_023
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_023
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_023';
@@ -735,12 +735,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_024
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_024
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_024
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_024
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_024';
@@ -765,12 +765,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_025
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_025
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_025
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_025
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_025';
@@ -796,12 +796,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_026
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_026
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_026
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_026
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_026';
@@ -826,12 +826,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_027
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_027
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_027
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_027
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_027';
@@ -856,12 +856,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_028
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_028
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_028
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_028
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_028';
@@ -886,12 +886,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_029
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_029
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_029
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_029
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_029';
@@ -916,12 +916,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_030
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_030
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_030
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_030
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_030';
@@ -948,12 +948,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
 
 
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_031
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_031
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_031
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_031
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_031', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_031';
@@ -980,12 +980,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_032
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_032
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_032
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_032
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_032', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_032';
@@ -1012,12 +1012,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_033
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_033
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_033
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_033
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_033', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_033';
@@ -1044,12 +1044,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_034
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_034
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_034
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_034
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_034', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_034';
@@ -1076,12 +1076,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_035
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_035
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_035
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_035
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_035', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_035';
@@ -1109,12 +1109,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_036
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_036
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_036
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_036
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_036', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_036';
@@ -1141,12 +1141,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_037
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_037
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_037
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_037
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_037', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_037';
@@ -1173,12 +1173,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_038
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_038
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_038
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_038
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_038', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_038';
@@ -1205,12 +1205,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_039
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_039
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_039
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_039
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_039', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_039';
@@ -1237,12 +1237,12 @@ export default function ImageAuxiliaryPictureSetMetadataTest() {
       }
     });
     /**
-     * @tc.number    : IMAGE_AUXILIARY_PICTURE_SET_METADATA_040
-     * @tc.name      : IMAGE_AUXILIARY_PICTURE_SET_METADATA_040
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_SET_METADATA_040
+     * @tc.number IMAGE_AUXILIARY_PICTURE_SET_METADATA_040
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_040', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_040';

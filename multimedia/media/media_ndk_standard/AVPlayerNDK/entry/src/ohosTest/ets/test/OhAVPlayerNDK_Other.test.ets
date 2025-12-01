@@ -149,12 +149,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERLIST_0100
-     * @tc.name       : testOhAvPlayerList001
-     * @tc.desc       : Test Playlist
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testOhAvPlayerList001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERLIST_0100
+     * @tc.desc   Test Playlist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerList001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerList001 test start `);
@@ -264,13 +264,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-pause-stop-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0100
-     * @tc.name       : testGetAVPlayerNormalProcess001
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAVPlayerNormalProcess001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0100
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerNormalProcess001', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerNormalProcess001 test start `);
@@ -311,13 +310,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-pause-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0200
-     * @tc.name       : testGetAVPlayerNormalProcess002
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAVPlayerNormalProcess002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0200
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerNormalProcess002', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerNormalProcess002 test start `);
@@ -355,13 +353,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-stop-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0300
-     * @tc.name       : testGetAVPlayerNormalProcess003
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAVPlayerNormalProcess003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0300
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerNormalProcess003', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerNormalProcess003 test start `);
@@ -400,13 +397,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0400
-     * @tc.name       : testGetAVPlayerNormalProcess004
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAVPlayerNormalProcess004
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0400
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerNormalProcess004', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerNormalProcess004 test start `);
@@ -439,13 +435,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0500
-     * @tc.name       : testGetAVPlayerNormalProcess005
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAVPlayerNormalProcess005
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0500
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerNormalProcess005', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerNormalProcess005 test start `);
@@ -466,13 +461,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0600
-     * @tc.name       : testGetAVPlayerNormalProcess006
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAVPlayerNormalProcess006
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0600
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerNormalProcess006', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerNormalProcess006 test start `);
@@ -499,13 +493,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-stop-reset-setFD-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0700
-     * @tc.name       : testGetAVPlayerNormalProcess007
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAVPlayerNormalProcess007
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERNORMALPROCESS_0700
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerNormalProcess007', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerNormalProcess007 test start `);
@@ -554,13 +547,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-play-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0100
-     * @tc.name       : testGetAVPlayerAbnormal001
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0100
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal001', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal001 test start `);
@@ -584,13 +576,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-pause-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0200
-     * @tc.name       : testGetAVPlayerAbnormal002
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0200
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal002', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal002 test start `);
@@ -619,13 +610,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-stop-pause-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0300
-     * @tc.name       : testGetAVPlayerAbnormal003
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0300
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal003', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal003 test start `);
@@ -663,13 +653,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-stop-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0400
-     * @tc.name       : testGetAVPlayerAbnormal004
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal004
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0400
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal004', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal004 test start `);
@@ -698,13 +687,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-pause-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0500
-     * @tc.name       : testGetAVPlayerAbnormal005
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal005
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0500
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal005', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal005 test start `);
@@ -728,13 +716,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-stop-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0600
-     * @tc.name       : testGetAVPlayerAbnormal006
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal006
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0600
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal006', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal006 test start `);
@@ -758,13 +745,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-stop-setFD-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0700
-     * @tc.name       : testGetAVPlayerAbnormal007
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal007
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0700
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal007', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal007 test start `);
@@ -803,13 +789,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-prepare-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0800
-     * @tc.name       : testGetAVPlayerAbnormal008
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal008
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0800
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal008', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal008 test start `);
@@ -825,13 +810,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-play-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0900
-     * @tc.name       : testGetAVPlayerAbnormal009
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal009
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_0900
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal009', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal009 test start `);
@@ -847,13 +831,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-pause-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1000
-     * @tc.name       : testGetAVPlayerAbnormal010
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal010
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1000
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal010', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal010 test start `);
@@ -869,13 +852,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-stop-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1100
-     * @tc.name       : testGetAVPlayerAbnormal011
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal011
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1100
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal011', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal011 test start `);
@@ -891,13 +873,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-pause-stop-play-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1200
-     * @tc.name       : testGetAVPlayerAbnormal011
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal012
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1200
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal012', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal012 test start `);
@@ -945,13 +926,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-stop-play-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1300
-     * @tc.name       : testGetAVPlayerAbnormal013
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal013
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1300
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal013', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal013 test start `);
@@ -990,13 +970,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-pause-prepare-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1400
-     * @tc.name       : testGetAVPlayerAbnormal014
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal014
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1400
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal014', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal014 test start `);
@@ -1035,13 +1014,12 @@ export default function OhAVPlayerNDKOtherTest() {
       done();
     });
     /**
-     * create-setFD-prepare-play-prepare-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1500
-     * @tc.name       : testGetAVPlayerAbnormal015
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetAVPlayerAbnormal015
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERABNORMAL_1500
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerAbnormal015', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerAbnormal015 test start `);
@@ -1097,12 +1075,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0100
-     * @tc.name       : testOhAvPlayerSetPlaybackSpeed001
-     * @tc.desc       : Set the player playback rate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetPlaybackSpeed001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0100
+     * @tc.desc   Set the player playback rate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetPlaybackSpeed001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetPlaybackSpeed001 test start `);
@@ -1164,12 +1142,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0200
-     * @tc.name       : testOhAvPlayerSetPlaybackSpeed002
-     * @tc.desc       : Set the player playback rate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetPlaybackSpeed002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0200
+     * @tc.desc   Set the player playback rate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetPlaybackSpeed002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetPlaybackSpeed002 test start `);
@@ -1229,12 +1207,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0300
-     * @tc.name       : testOhAvPlayerSetPlaybackSpeed003
-     * @tc.desc       : Set the player playback rate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetPlaybackSpeed003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0300
+     * @tc.desc   Set the player playback rate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetPlaybackSpeed003', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetPlaybackSpeed003 test start `);
@@ -1294,12 +1272,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0400
-     * @tc.name       : testOhAvPlayerSetPlaybackSpeed004
-     * @tc.desc       : Set the player playback rate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetPlaybackSpeed004
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0400
+     * @tc.desc   Set the player playback rate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetPlaybackSpeed004', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetPlaybackSpeed004 test start `);
@@ -1359,12 +1337,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0500
-     * @tc.name       : testOhAvPlayerSetPlaybackSpeed005
-     * @tc.desc       : Set the player playback rate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetPlaybackSpeed005
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0500
+     * @tc.desc   Set the player playback rate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetPlaybackSpeed005', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetPlaybackSpeed005 test start `);
@@ -1424,12 +1402,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0100
-     * @tc.name       : testOhAvPlayerSelectBitRate001
-     * @tc.desc       : Set the bitrate used by the HLS player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSelectBitRate001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0100
+     * @tc.desc   Set the bitrate used by the HLS player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSelectBitRate001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSelectBitRate001 test start `);
@@ -1477,12 +1455,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0200
-     * @tc.name       : testOhAvPlayerSelectBitRate002
-     * @tc.desc       : Set the bitrate used by the HLS player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSelectBitRate002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0200
+     * @tc.desc   Set the bitrate used by the HLS player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSelectBitRate002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSelectBitRate002 test start `);
@@ -1530,12 +1508,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0300
-     * @tc.name       : testOhAvPlayerSelectBitRate003
-     * @tc.desc       : Set the bitrate used by the HLS player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSelectBitRate003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0300
+     * @tc.desc   Set the bitrate used by the HLS player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSelectBitRate003', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSelectBitRate003 test start `);
@@ -1584,12 +1562,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0400
-     * @tc.name       : testOhAvPlayerSelectBitRate004
-     * @tc.desc       : Set the bitrate used by the HLS player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSelectBitRate004
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0400
+     * @tc.desc   Set the bitrate used by the HLS player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSelectBitRate004', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSelectBitRate004 test start `);
@@ -1638,12 +1616,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYERCALLBACK_0100
-     * @tc.name       : testOhAvPlayerSetPlayerCallback001
-     * @tc.desc       : Set the player callback method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetPlayerCallback001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYERCALLBACK_0100
+     * @tc.desc   Set the player callback method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetPlayerCallback001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetPlayerCallback001 test start `);
@@ -1689,12 +1667,12 @@ export default function OhAVPlayerNDKOtherTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETLOOPING_0100
-     * @tc.name       : testOhAvPlayerSetLooping001
-     * @tc.desc       : Set loop playback.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetLooping001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETLOOPING_0100
+     * @tc.desc   Set loop playback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetLooping001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetLooping001 test start `);
@@ -1747,12 +1725,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETLOOPING_0200
-     * @tc.name       : testOhAvPlayerSetLooping002
-     * @tc.desc       : Set loop playback.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetLooping002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETLOOPING_0200
+     * @tc.desc   Set loop playback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetLooping002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetLooping002 test start `);
@@ -1805,12 +1783,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0100
-     * @tc.name       : testOhAvPlayerSetVolume001
-     * @tc.desc       : Set the volume of the player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetVolume001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0100
+     * @tc.desc   Set the volume of the player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetVolume001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetVolume001 test start `);
@@ -1859,12 +1837,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0200
-     * @tc.name       : testOhAvPlayerSetVolume002
-     * @tc.desc       : Set the volume of the player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetVolume002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0200
+     * @tc.desc   Set the volume of the player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetVolume002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetVolume002 test start `);
@@ -1915,12 +1893,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0300
-     * @tc.name       : testOhAvPlayerSetVolume003
-     * @tc.desc       : Set the volume of the player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetVolume003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0300
+     * @tc.desc   Set the volume of the player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetVolume003', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetVolume003 test start `);
@@ -1973,12 +1951,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0400
-     * @tc.name       : testOhAvPlayerSetVolume004
-     * @tc.desc       : Set the volume of the player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetVolume004
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0400
+     * @tc.desc   Set the volume of the player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetVolume004', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetVolume004 test start `);
@@ -2026,12 +2004,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0500
-     * @tc.name       : testOhAvPlayerSetVolume005
-     * @tc.desc       : Set the volume of the player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetVolume005
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0500
+     * @tc.desc   Set the volume of the player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetVolume005', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetVolume005 test start `);
@@ -2081,12 +2059,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0600
-     * @tc.name       : testOhAvPlayerSetVolume006
-     * @tc.desc       : Set the volume of the player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetVolume006
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0600
+     * @tc.desc   Set the volume of the player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetVolume006', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetVolume006 test start `);
@@ -2167,12 +2145,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETCURRENTTRACK_0100
-     * @tc.name       : testOhAvPlayerGetCurrentTrack001
-     * @tc.desc       : Get the currently valid track index.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testOhAvPlayerGetCurrentTrack001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETCURRENTTRACK_0100
+     * @tc.desc   Get the currently valid track index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetCurrentTrack001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetCurrentTrack001 test start `);
@@ -2206,12 +2184,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETCURRENTTRACK_0200
-     * @tc.name       : testOhAvPlayerGetCurrentTrack002
-     * @tc.desc       : Get the currently valid track index.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testOhAvPlayerGetCurrentTrack002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETCURRENTTRACK_0200
+     * @tc.desc   Get the currently valid track index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetCurrentTrack002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetCurrentTrack002 test start `);
@@ -2248,12 +2226,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETDURATION_0100
-     * @tc.name       : testOhAvPlayerGetDuration001
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testOhAvPlayerGetDuration001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETDURATION_0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetDuration001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetDuration001 test start `);
@@ -2287,12 +2265,12 @@ export default function OhAVPlayerNDKOtherTest() {
 
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETVIDEOWIDTH_0100
-     * @tc.name       : testOhAvPlayerGetVideoWidth001
-     * @tc.desc       : Get video width.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testOhAvPlayerGetVideoWidth001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETVIDEOWIDTH_0100
+     * @tc.desc   Get video width.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetVideoWidth001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetVideoWidth001 test start `);
@@ -2325,12 +2303,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETVIDEOHEIGHT_0100
-     * @tc.name       : testOhAvPlayerGetVideoHeight001
-     * @tc.desc       : Obtain video height.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testOhAvPlayerGetVideoHeighth001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETVIDEOHEIGHT_0100
+     * @tc.desc   Obtain video height.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetVideoHeighth001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetVideoHeight001 test start `);
@@ -2420,13 +2398,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
     // L0 L1;
     /**
-     * create-setFD-prepare-(play-pause)x3-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0100
-     * @tc.name       : testGetAVPlayerCirculate001
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0100
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate001', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate001 test start `);
@@ -2459,13 +2436,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-(prepare-stop)x3-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0200
-     * @tc.name       : testGetAVPlayerCirculate002
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0200
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate002', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate002 test start `);
@@ -2551,13 +2527,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-(prepare-play-stop)x3-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0300
-     * @tc.name       : testGetAVPlayerCirculate003
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0300
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate003', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate003 test start `);
@@ -2594,13 +2569,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * (SetFd - Prepare - Reset)x3
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0400
-     * @tc.name       : testGetAVPlayerCirculate004
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate004
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0400
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate004', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate004 test start `);
@@ -2686,13 +2660,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * (setFD-prepare-play-stop-reset)x3
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0500
-     * @tc.name       : testGetAVPlayerCirculate005
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate005
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0500
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate005', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate005 test start `);
@@ -2732,13 +2705,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * (setFD-prepare-stop-reset)x3
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0600
-     * @tc.name       : testGetAVPlayerCirculate006
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate006
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0600
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate006', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate006 test start `);
@@ -2773,13 +2745,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * (setFD-prepare-play - pause -reset)x3
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0700
-     * @tc.name       : testGetAVPlayerCirculate007
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate007
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0700
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate007', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate007 test start `);
@@ -2876,13 +2847,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-stop-prepare-play-stop-prepare-stop-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0800
-     * @tc.name       : testGetAVPlayerCirculate008
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate008
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0800
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate008', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate008 test start `);
@@ -2936,13 +2906,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-stop-prepare-play-stop-prepare-stop-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0900
-     * @tc.name       : testGetAVPlayerCirculate009
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate009
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_0900
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate009', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate009 test start `);
@@ -3056,13 +3025,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-play-stop-prepare-stop-prepare-play-stop-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1000
-     * @tc.name       : testGetAVPlayerCirculate010
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate010
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1000
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate010', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate010 test start `);
@@ -3118,13 +3086,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * create-setFD-prepare-stop-prepare-stop-prepare-play-stop-release
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1100
-     * @tc.name       : testGetAVPlayerCirculate011
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate011
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1100
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate011', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate011 test start `);
@@ -3232,13 +3199,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * SetFd - Prepare - Reset-setFD-prepare-play-stop-reset-SetFd - Prepare - Reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1200
-     * @tc.name       : testGetAVPlayerCirculate012
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate012
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1200
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate012', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate012 test start `);
@@ -3309,13 +3275,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * SetFd-Prepare-Reset-SetFd-Prepare-Reset-setFD-prepare-play-stop-reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1300
-     * @tc.name       : testGetAVPlayerCirculate013
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate013
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1300
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate013', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate013 test start `);
@@ -3440,13 +3405,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * setFD-prepare-play-stop-reset-setFD-prepare-play-stop-reset-SetFd-Prepare-Reset-
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1400
-     * @tc.name       : testGetAVPlayerCirculate014
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate014
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1400
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate014', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate014 test start `);
@@ -3527,13 +3491,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * setFD-prepare-stop-reset-setFD-prepare-play - pause -reset-setFD-prepare-stop-reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1500
-     * @tc.name       : testGetAVPlayerCirculate015
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate015
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1500
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate015', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate015 test start `);
@@ -3667,13 +3630,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * setFD-prepare-play - pause -reset-setFD-prepare-stop-reset-setFD-prepare-play - pause -reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1600
-     * @tc.name       : testGetAVPlayerCirculate016
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate016
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1600
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate016', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate016 test start `);
@@ -3755,13 +3717,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * SetFd - Prepare - Reset-setFD-prepare-play-stop-reset-setFD-prepare-stop-reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1700
-     * @tc.name       : testGetAVPlayerCirculate017
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate017
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1700
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate017', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate017 test start `);
@@ -3892,13 +3853,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * SetFd - Prepare - Reset-setFD-prepare-stop-reset-setFD-prepare-play-stop-reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1800
-     * @tc.name       : testGetAVPlayerCirculate018
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate018
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1800
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate018', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate018 test start `);
@@ -3972,13 +3932,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * SetFd - Prepare - Reset-SetFd - Prepare - Reset-setFD-prepare-stop-reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1900
-     * @tc.name       : testGetAVPlayerCirculate019
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate019
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_1900
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate019', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate019 test start `);
@@ -4097,13 +4056,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * SetFd - Prepare - Reset-setFD-prepare-stop-reset-SetFd - Prepare - Reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2000
-     * @tc.name       : testGetAVPlayerCirculate020
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate020
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2000
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate020', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate020 test start `);
@@ -4169,13 +4127,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * setFD-prepare-play-stop-reset-SetFd - Prepare - Reset-SetFd - Prepare - Reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2100
-     * @tc.name       : testGetAVPlayerCirculate021
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate021
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2100
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate021', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate021 test start `);
@@ -4302,13 +4259,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * setFD-prepare-play-stop-reset-SetFd - Prepare - Reset-setFD-prepare-play-stop-reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2200
-     * @tc.name       : testGetAVPlayerCirculate022
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate022
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2200
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate022', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate022 test start `);
@@ -4389,13 +4345,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * setFD-prepare-play-stop-reset-setFD-prepare-play-stop-reset-SetFd - Prepare - Reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2300
-     * @tc.name       : testGetAVPlayerCirculate023
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate023
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2300
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate023', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate023 test start `);
@@ -4530,13 +4485,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * setFD-prepare-play-stop-reset-SetFd - Prepare - Reset-setFD-prepare-stop-reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2400
-     * @tc.name       : testGetAVPlayerCirculate024
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate024
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2400
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate024', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate024 test start `);
@@ -4610,13 +4564,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * setFD-prepare-play-stop-reset-setFD-prepare-stop-reset-SetFd - Prepare - Reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2500
-     * @tc.name       : testGetAVPlayerCirculate025
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate025
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2500
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate025', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate025 test start `);
@@ -4748,13 +4701,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * setFD-prepare-play-stop-reset-setFD-prepare-stop-reset-setFD-prepare-play-stop-reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2600
-     * @tc.name       : testGetAVPlayerCirculate026
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate026
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2600
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate026', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate026 test start `);
@@ -4838,13 +4790,12 @@ export default function OhAVPlayerNDKOtherTest() {
     });
 
     /**
-     * setFD-prepare-play-stop-reset-setFD-prepare-stop-reset-setFD-prepare-stop-reset
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2700
-     * @tc.name       : testGetAVPlayerCirculate027
-     * @tc.desc       : State machine testing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetAVPlayerCirculate027
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GETAVPLAYERCIRCULATE_2700
+     * @tc.desc   State machine testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAVPlayerCirculate027', Level.LEVEL0,async (done: Function) => {
       console.info(`testGetAVPlayerCirculate027 test start `);

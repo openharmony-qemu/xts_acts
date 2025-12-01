@@ -2201,12 +2201,12 @@ export default function audioRendererTest() {
     }
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_ON_OUTPUTDEVICECHANGEWITHINFO_STATIC_0100
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_ON_OUTPUTDEVICECHANGEWITHINFO_STATIC_0100
-     *@tc.desc        on_outputDeviceChangeWithInfo
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_OUTPUTDEVICECHANGEWITHINFO_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_OUTPUTDEVICECHANGEWITHINFO_STATIC_0100
+     * @tc.desc   on_outputDeviceChangeWithInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_OUTPUTDEVICECHANGEWITHINFO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2235,12 +2235,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMDEVICECHANGEREASON_STATIC_0100
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMDEVICECHANGEREASON_STATIC_0100
-     *@tc.desc        AudioStreamDeviceChangeReason
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMDEVICECHANGEREASON_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMDEVICECHANGEREASON_STATIC_0100
+     * @tc.desc   AudioStreamDeviceChangeReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMDEVICECHANGEREASON_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(`${TagFrmwkRender}: AudioStreamDeviceChangeReason: ${JSON.stringify(audio.AudioStreamDeviceChangeReason.REASON_UNKNOWN)}`);
@@ -2259,12 +2259,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0100
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0100
-     *@tc.desc        setSpeed_getSpeed_AudioSamplingRate_48000
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0100
+     * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_48000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2293,12 +2293,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0200
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0200
-     *@tc.desc        setSpeed_getSpeed_AudioSamplingRate_8000
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0200
+     * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_8000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2326,12 +2326,12 @@ export default function audioRendererTest() {
       done();
     })
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0300
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0300
-     *@tc.desc        setSpeed_getSpeed_AudioSamplingRate_16000
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0300
+     * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_16000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2360,12 +2360,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0400
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0400
-     *@tc.desc        setSpeed_getSpeed_AudioSamplingRate_24000
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0400
+     * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_24000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2394,12 +2394,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0500
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0500
-     *@tc.desc        setSpeed_getSpeed_AudioSamplingRate_44100
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0500
+     * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2428,12 +2428,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0600
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0600
-     *@tc.desc        setSpeed_getSpeed_AudioSamplingRate_48000
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0600
+     * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_48000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2462,12 +2462,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0700
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0700
-     *@tc.desc        setSpeed_getSpeed_AudioSamplingRate_8000
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0700
+     * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_8000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2495,12 +2495,12 @@ export default function audioRendererTest() {
       done();
     })
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0800
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0800
-     *@tc.desc        setSpeed_getSpeed_AudioSamplingRate_16000
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0800
+     * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_16000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2529,12 +2529,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0900
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0900
-     *@tc.desc        setSpeed_getSpeed_AudioSamplingRate_24000
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0900
+     * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_24000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2563,12 +2563,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1000
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1000
-     *@tc.desc        setSpeed_getSpeed_AudioSamplingRate_44100
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1000
+     * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2597,12 +2597,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1100
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1100
-     *@tc.desc        setSpeed_getSpeed_AudioSamplingRate_44100
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1100
+     * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2631,12 +2631,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1200
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1200
-     *@tc.desc        setSpeed_no_start
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1200
+     * @tc.desc   setSpeed_no_start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2665,12 +2665,12 @@ export default function audioRendererTest() {
       done();
     })
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1300
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1300
-     *@tc.desc        setSpeed_invalid_number_parameter
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1300
+     * @tc.desc   setSpeed_invalid_number_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2700,12 +2700,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOCHANNEL_STATIC_0100
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOCHANNEL_STATIC_0100
-     *@tc.desc        Get All AudioChannel
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCHANNEL_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCHANNEL_STATIC_0100
+     * @tc.desc   Get All AudioChannel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOCHANNEL_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(`${TagFrmwkRender}: get CHANNEL_1 success: ` + JSON.stringify(audio.AudioChannel.CHANNEL_1));
@@ -2737,12 +2737,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_CHANNEL_LAYOUT_STATIC_0100
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_CHANNEL_LAYOUT_STATIC_0100
-     *@tc.desc        All AudioChannelLayout
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CHANNEL_LAYOUT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CHANNEL_LAYOUT_STATIC_0100
+     * @tc.desc   All AudioChannelLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_CHANNEL_LAYOUT_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(`${TagFrmwkRender}: get CH_LAYOUT_UNKNOWN success: ` + JSON.stringify(audio.AudioChannelLayout.CH_LAYOUT_UNKNOWN));
@@ -2847,12 +2847,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_GETSTREAMINFO_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_GETSTREAMINFO_STATIC_0100
-     * @tc.desc        AudioRenderer-GetStreamInfo
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETSTREAMINFO_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETSTREAMINFO_STATIC_0100
+     * @tc.desc   AudioRenderer-GetStreamInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETSTREAMINFO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -2897,12 +2897,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_SYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_SYNC_STATIC_0100
-     * @tc.desc        AudioRenderer-GetAudioSceneSync
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_SYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_SYNC_STATIC_0100
+     * @tc.desc   AudioRenderer-GetAudioSceneSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -2934,12 +2934,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_GETAUDIOTIMESYNC_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_GETAUDIOTIMESYNC_STATIC_0200
-     * @tc.desc        AudioRenderer - getAudioTimeSync - During Play
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_GETAUDIOTIMESYNC_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_GETAUDIOTIMESYNC_STATIC_0200
+     * @tc.desc   AudioRenderer - getAudioTimeSync - During Play
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_GETAUDIOTIMESYNC_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -2971,12 +2971,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_SYNC_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_SYNC_STATIC_0300
-     * @tc.desc        AudioRenderer - getAudioStreamIdSync
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_SYNC_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_SYNC_STATIC_0300
+     * @tc.desc   AudioRenderer - getAudioStreamIdSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_SYNC_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -3021,12 +3021,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETINTERRUPTMODESYNC_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETINTERRUPTMODESYNC_STATIC_0400
-     * @tc.desc        STREAM_VOICE_CALL AUDIO_INTERRUPT STREAM_VOICE_ASSISTANT
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETINTERRUPTMODESYNC_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETINTERRUPTMODESYNC_STATIC_0400
+     * @tc.desc   STREAM_VOICE_CALL AUDIO_INTERRUPT STREAM_VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINTERRUPTMODESYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let interrput_flag = false;
@@ -3119,12 +3119,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0100
-     * @tc.desc        STREAM_VOICE_CALL AUDIO_INTERRUPT STREAM_VOICE_ASSISTANT
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0100
+     * @tc.desc   STREAM_VOICE_CALL AUDIO_INTERRUPT STREAM_VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let interrput_flag = false;
@@ -3215,12 +3215,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0200
-     * @tc.desc        STREAM_RING INTERRUPT STREAM_VOICE_ASSISTANT
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0200
+     * @tc.desc   STREAM_RING INTERRUPT STREAM_VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let interrput_flag = false;
@@ -3311,12 +3311,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0300
-     * @tc.desc        STREAM_MUSIC INTERRUPT STREAM_VOICE_ASSISTANT
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0300
+     * @tc.desc   STREAM_MUSIC INTERRUPT STREAM_VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let interrput_flag = false;
@@ -3407,12 +3407,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0400
-     * @tc.desc        STREAM_VOICE_ASSISTANT INTERRUPT STREAM_VOICE_ASSISTANT
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0400
+     * @tc.desc   STREAM_VOICE_ASSISTANT INTERRUPT STREAM_VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let interrput_flag = false;
@@ -3503,12 +3503,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0500
-     * @tc.desc        STREAM_VOICE_ASSISTANT INTERRUPT STREAM_VOICE_CALL
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0500
+     * @tc.desc   STREAM_VOICE_ASSISTANT INTERRUPT STREAM_VOICE_CALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let interrput_flag = false;
@@ -3598,12 +3598,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0600
-     * @tc.desc        STREAM_VOICE_ASSISTANT INTERRUPT STREAM_RING
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0600
+     * @tc.desc   STREAM_VOICE_ASSISTANT INTERRUPT STREAM_RING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let interrput_flag = false;
@@ -3693,12 +3693,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0700
-     * @tc.desc        STREAM_VOICE_ASSISTANT INTERRUPT STREAM_MUSIC
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0700
+     * @tc.desc   STREAM_VOICE_ASSISTANT INTERRUPT STREAM_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let interrput_flag = false;
@@ -3789,12 +3789,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0100
-     * @tc.desc        SetInterruptMode mode 0 callback,is public share mode
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0100
+     * @tc.desc   SetInterruptMode mode 0 callback,is public share mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -3828,12 +3828,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0200
-     * @tc.desc        SetInterruptMode mode 1 callback,is independent mode
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0200
+     * @tc.desc   SetInterruptMode mode 1 callback,is independent mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -3867,12 +3867,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0300
-     * @tc.desc        SetInterruptMode mode 0 promise,is public share mode
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0300
+     * @tc.desc   SetInterruptMode mode 0 promise,is public share mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -3903,12 +3903,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0400
-     * @tc.desc        SetInterruptMode mode 1 promise,is independent mode
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0400
+     * @tc.desc   SetInterruptMode mode 1 promise,is independent mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETINTERRUPTMODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -3939,12 +3939,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0100
-     * @tc.desc        AudioRenderer - getAudioStreamId
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0100
+     * @tc.desc   AudioRenderer - getAudioStreamId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -3985,12 +3985,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0200
-     * @tc.desc        AudioRenderer - getAudioStreamId
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0200
+     * @tc.desc   AudioRenderer - getAudioStreamId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4031,12 +4031,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0300
-     * @tc.desc        AudioRenderer - getAudioStreamId
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0300
+     * @tc.desc   AudioRenderer - getAudioStreamId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4078,12 +4078,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0100
-     * @tc.desc        AudioRenderer - setVolume 0 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0100
+     * @tc.desc   AudioRenderer - setVolume 0 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4136,12 +4136,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0200
-     * @tc.desc        AudioRenderer - setVolume 0.5 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0200
+     * @tc.desc   AudioRenderer - setVolume 0.5 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4194,12 +4194,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0300
-     * @tc.desc        AudioRenderer - setVolume 1.1 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0300
+     * @tc.desc   AudioRenderer - setVolume 1.1 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4257,12 +4257,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0500
-     * @tc.desc        AudioRenderer - setVolume 0 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0500
+     * @tc.desc   AudioRenderer - setVolume 0 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4316,12 +4316,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0600
-     * @tc.desc        AudioRenderer - setVolume 0.5 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0600
+     * @tc.desc   AudioRenderer - setVolume 0.5 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4375,12 +4375,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0700
-     * @tc.desc        AudioRenderer - setVolume 1.1 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0700
+     * @tc.desc   AudioRenderer - setVolume 1.1 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -4439,12 +4439,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0100
-     * @tc.desc        AudioRenderer with parameter set 1
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0100
+     * @tc.desc   AudioRenderer with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -4476,12 +4476,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0200
-     * @tc.desc        AudioRenderer - getAudioTime -Before Play
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0200
+     * @tc.desc   AudioRenderer - getAudioTime -Before Play
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -4513,12 +4513,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0300
-     * @tc.desc        AudioRenderer - getAudioTime - During Play
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0300
+     * @tc.desc   AudioRenderer - getAudioTime - During Play
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -4550,12 +4550,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0400
-     * @tc.desc        AudioRenderer - getAudioTime - after Play
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0400
+     * @tc.desc   AudioRenderer - getAudioTime - after Play
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -4587,12 +4587,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0500
-     * @tc.desc        AudioRenderer - markReached
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0500
+     * @tc.desc   AudioRenderer - markReached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4623,12 +4623,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0600
-     * @tc.desc        AudioRenderer - markReached
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0600
+     * @tc.desc   AudioRenderer - markReached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4659,12 +4659,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0700
-     * @tc.desc        AudioRenderer - markReached
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0700
+     * @tc.desc   AudioRenderer - markReached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4695,12 +4695,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0800
-     * @tc.desc        AudioRenderer - periodReach
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0800
+     * @tc.desc   AudioRenderer - periodReach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4730,12 +4730,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0900
-     * @tc.desc        AudioRenderer - periodReach
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0900
+     * @tc.desc   AudioRenderer - periodReach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4766,12 +4766,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1000
-     * @tc.desc        AudioRenderer - periodReach
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1000
+     * @tc.desc   AudioRenderer - periodReach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4802,12 +4802,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1100
-     * @tc.desc        AudioRenderer with parameter set 2
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1100
+     * @tc.desc   AudioRenderer with parameter set 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4839,12 +4839,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1200
-     * @tc.desc        AudioRenderer with parameter set 3
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1200
+     * @tc.desc   AudioRenderer with parameter set 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4876,12 +4876,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1300
-     * @tc.desc        AudioRenderer with parameter set 4
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1300
+     * @tc.desc   AudioRenderer with parameter set 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4912,12 +4912,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1400
-     * @tc.desc        AudioRenderer with parameter set 5
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1400
+     * @tc.desc   AudioRenderer with parameter set 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4948,12 +4948,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1500
-     * @tc.desc        AudioRenderer with parameter set 6
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1500
+     * @tc.desc   AudioRenderer with parameter set 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -4984,12 +4984,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1600
-     * @tc.desc        AudioRenderer with parameter set 7
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1600
+     * @tc.desc   AudioRenderer with parameter set 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5020,12 +5020,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1700
-     * @tc.desc        AudioRenderer with parameter set 11
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1700
+     * @tc.desc   AudioRenderer with parameter set 11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5056,12 +5056,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1800
-     * @tc.desc        AudioRenderer-isStreamActive - UNKNOWN - UNKNOWN
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1800
+     * @tc.desc   AudioRenderer-isStreamActive - UNKNOWN - UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5103,12 +5103,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1900
-     * @tc.desc        AudioRenderer-isStreamActive - SPEECH - UNKNOWN
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1900
+     * @tc.desc   AudioRenderer-isStreamActive - SPEECH - UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5149,12 +5149,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2000
-     * @tc.desc        AudioRenderer-isStreamActive - MUSIC - UNKNOWN
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2000
+     * @tc.desc   AudioRenderer-isStreamActive - MUSIC - UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5195,12 +5195,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2100
-     * @tc.desc        AudioRenderer-isStreamActive - MOVIE - UNKNOWN
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2100
+     * @tc.desc   AudioRenderer-isStreamActive - MOVIE - UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5242,12 +5242,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2200
-     * @tc.desc        AudioRenderer-isStreamActive - SONIFICATION - UNKNOWN
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2200
+     * @tc.desc   AudioRenderer-isStreamActive - SONIFICATION - UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5288,12 +5288,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2300
-     * @tc.desc        AudioRenderer-isStreamActive - RINGTONE - UNKNOWN
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2300
+     * @tc.desc   AudioRenderer-isStreamActive - RINGTONE - UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5334,12 +5334,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2400
-     * @tc.desc        AudioRenderer-isStreamActive - UNKNOWN - MEDIA
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2400
+     * @tc.desc   AudioRenderer-isStreamActive - UNKNOWN - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5380,12 +5380,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2500
-     * @tc.desc        AudioRenderer-isStreamActive - SPEECH - MEDIA
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2500
+     * @tc.desc   AudioRenderer-isStreamActive - SPEECH - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5426,12 +5426,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2600
-     * @tc.desc        AudioRenderer-isStreamActive - MUSIC - MEDIA
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2600
+     * @tc.desc   AudioRenderer-isStreamActive - MUSIC - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5473,12 +5473,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2700
-     * @tc.desc        AudioRenderer-isStreamActive - MOVIE - MEDIA
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2700
+     * @tc.desc   AudioRenderer-isStreamActive - MOVIE - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5519,12 +5519,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2800
-     * @tc.desc        AudioRenderer-isStreamActive - SONOTIFICATION - MEDIA
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2800
+     * @tc.desc   AudioRenderer-isStreamActive - SONOTIFICATION - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5565,12 +5565,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2900
-     * @tc.desc        AudioRenderer-isStreamActive - RINGTONE - MEDIA
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2900
+     * @tc.desc   AudioRenderer-isStreamActive - RINGTONE - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5611,12 +5611,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3000
-     * @tc.desc        AudioRenderer-isStreamActive - UNKNOWN - VOICE_COMMUNICATION
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3000
+     * @tc.desc   AudioRenderer-isStreamActive - UNKNOWN - VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5657,12 +5657,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3100
-     * @tc.desc        AudioRenderer-isStreamActive - SPEECH - VOICE_COMMUNICATION
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3100
+     * @tc.desc   AudioRenderer-isStreamActive - SPEECH - VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5703,12 +5703,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3200
-     * @tc.desc        AudioRenderer-isStreamActive - MUSIC - VOICE_COMMUNICATION
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3200
+     * @tc.desc   AudioRenderer-isStreamActive - MUSIC - VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5749,12 +5749,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3300
-     * @tc.desc        AudioRenderer-isStreamActive - MOVIE - VOICE_COMMUNICATION
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3300
+     * @tc.desc   AudioRenderer-isStreamActive - MOVIE - VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5795,12 +5795,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3400
-     * @tc.desc        AudioRenderer-isStreamActive - SONOTIFICATION - VOICE_COMMUNICATION
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3400
+     * @tc.desc   AudioRenderer-isStreamActive - SONOTIFICATION - VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5841,12 +5841,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3500
-     * @tc.desc        AudioRenderer-isStreamActive - RINGTONE - VOICE_COMMUNICATION
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3500
+     * @tc.desc   AudioRenderer-isStreamActive - RINGTONE - VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5887,12 +5887,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3600
-     * @tc.desc        AudioRenderer-isStreamActive - UNKNOWN - NOTIFICATION_RINGTONE
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3600
+     * @tc.desc   AudioRenderer-isStreamActive - UNKNOWN - NOTIFICATION_RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5934,12 +5934,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3700
-     * @tc.desc        AudioRenderer-isStreamActive - SPEECH - NOTIFICATION_RINGTONE
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3700
+     * @tc.desc   AudioRenderer-isStreamActive - SPEECH - NOTIFICATION_RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -5981,12 +5981,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3800
-     * @tc.desc        AudioRenderer-isStreamActive - MUSIC - NOTIFICATION_RINGTONE
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3800
+     * @tc.desc   AudioRenderer-isStreamActive - MUSIC - NOTIFICATION_RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6028,12 +6028,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3900
-     * @tc.desc        AudioRenderer-isStreamActive - MOVIE - NOTIFICATION_RINGTONE
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3900
+     * @tc.desc   AudioRenderer-isStreamActive - MOVIE - NOTIFICATION_RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6075,12 +6075,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4000
-     * @tc.desc        AudioRenderer-isStreamActive - SONOTIFICATION - NOTIFICATION_RINGTONE
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4000
+     * @tc.desc   AudioRenderer-isStreamActive - SONOTIFICATION - NOTIFICATION_RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6121,12 +6121,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4100
-     * @tc.desc        AudioRenderer-isStreamActive - RINGTONE - NOTIFICATION_RINGTONE
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4100
+     * @tc.desc   AudioRenderer-isStreamActive - RINGTONE - NOTIFICATION_RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6168,12 +6168,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4200
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set1
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4200
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6248,12 +6248,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4300
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set2
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4300
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6330,12 +6330,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4400
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set3
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4400
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6412,12 +6412,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4500
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set4
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4500
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6494,12 +6494,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4600
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set5
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4600
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6576,12 +6576,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4700
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set6
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4700
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6658,12 +6658,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4800
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set7
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4800
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6740,12 +6740,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4900
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set8
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4900
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6822,12 +6822,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5000
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set9
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5000
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6904,12 +6904,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5100
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set10
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5100
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -6986,12 +6986,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5200
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set11
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5200
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7068,12 +7068,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5300
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set12
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5300
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7150,12 +7150,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5400
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set13
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5400
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set13
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7232,12 +7232,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5500
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set14
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5500
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set14
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7314,12 +7314,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5600
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set15
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5600
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7396,12 +7396,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5700
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set16
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5700
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7478,12 +7478,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5800
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set17
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5800
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set17
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7560,12 +7560,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5900
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set18
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5900
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set18
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7642,12 +7642,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6000
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set19
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6000
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set19
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7724,12 +7724,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6100
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set20
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6100
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7806,12 +7806,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6200
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set21
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6200
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7888,12 +7888,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6300
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set22
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6300
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -7970,12 +7970,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6400
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set23
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6400
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -8052,12 +8052,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6500
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - Set24
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6500
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - Set24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -8134,12 +8134,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6600
-     * @tc.desc        AudioRenderer - STATE_PREPARED
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6600
+     * @tc.desc   AudioRenderer - STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -8208,12 +8208,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6700
-     * @tc.desc        AudioRenderer - STATE_RUNNING
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6700
+     * @tc.desc   AudioRenderer - STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -8297,12 +8297,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6800
-     * @tc.desc        AudioRenderer - STATE_STOPPED
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6800
+     * @tc.desc   AudioRenderer - STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -8388,12 +8388,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6900
-     * @tc.desc        AudioRenderer - STATE_RELEASED
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6900
+     * @tc.desc   AudioRenderer - STATE_RELEASED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -8480,12 +8480,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7000
-     * @tc.desc        AudioRenderer - STATE_PAUSED
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7000
+     * @tc.desc   AudioRenderer - STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -8580,12 +8580,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7600
-     * @tc.desc        AudioRenderer - getAudioTime - Error
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7600
+     * @tc.desc   AudioRenderer - getAudioTime - Error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -8672,12 +8672,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7700
-     * @tc.desc        AudioRenderer - STATE_PREPARED
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7700
+     * @tc.desc   AudioRenderer - STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -8748,12 +8748,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7800
-     * @tc.desc        AudioRenderer - STATE_RUNNING
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7800
+     * @tc.desc   AudioRenderer - STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -8845,12 +8845,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7900
-     * @tc.desc        AudioRenderer - STATE_STOPPED
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7900
+     * @tc.desc   AudioRenderer - STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -8944,12 +8944,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8000
-     * @tc.desc        AudioRenderer - STATE_RELEASED
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8000
+     * @tc.desc   AudioRenderer - STATE_RELEASED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -9043,12 +9043,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8100
-     * @tc.desc        AudioRenderer - STATE_PAUSED
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8100
+     * @tc.desc   AudioRenderer - STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -9146,12 +9146,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8200
-     * @tc.desc        AudioState - STATE_INVALID
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8200
+     * @tc.desc   AudioState - STATE_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.AudioState.STATE_INVALID == -1).assertTrue();
@@ -9160,12 +9160,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8300
-     * @tc.desc        AudioState - STATE_NEW
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8300
+     * @tc.desc   AudioState - STATE_NEW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.AudioState.STATE_NEW == 0).assertTrue();
@@ -9174,12 +9174,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8400
-     * @tc.desc        AudioSampleFormat - STATE_FORMAT_INVALID
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8400
+     * @tc.desc   AudioSampleFormat - STATE_FORMAT_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.AudioSampleFormat.SAMPLE_FORMAT_INVALID == -1).assertTrue();
@@ -9188,12 +9188,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8500
-     * @tc.desc        SourceType - SOURCE_TYPE_INVALID
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8500
+     * @tc.desc   SourceType - SOURCE_TYPE_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.SourceType.SOURCE_TYPE_INVALID == -1).assertTrue();
@@ -9202,12 +9202,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8600
-     * @tc.desc        AudioRenderer - Pause - Callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8600
+     * @tc.desc   AudioRenderer - Pause - Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -9308,12 +9308,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8700
-     * @tc.desc        AudioEncodingType - ENCODING_TYPE_INVALID
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8700
+     * @tc.desc   AudioEncodingType - ENCODING_TYPE_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.AudioEncodingType.ENCODING_TYPE_INVALID == -1).assertTrue();
@@ -9322,12 +9322,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8800
-     * @tc.desc        StreamUsage - STREAM_USAGE_VOICE_ASSISTANT
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8800
+     * @tc.desc   StreamUsage - STREAM_USAGE_VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -9364,12 +9364,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8900
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - SetALARM
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8900
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - SetALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -9446,12 +9446,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9000
-     * @tc.desc        AudioRenderer-SET & GET AudioRendererInfo - SetACCESSIBILITY
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9000
+     * @tc.desc   AudioRenderer-SET & GET AudioRendererInfo - SetACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -9528,12 +9528,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9100
-     * @tc.desc        AudioRenderer-isActive - MUSIC - ALARM
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9100
+     * @tc.desc   AudioRenderer-isActive - MUSIC - ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -9575,12 +9575,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9200
-     * @tc.desc        AudioRenderer-isActive - SPEECH - ACCESSIBILITY
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9200
+     * @tc.desc   AudioRenderer-isActive - SPEECH - ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -9622,12 +9622,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0900
-     * @tc.desc        AudioRenderer - setVolume 0 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0900
+     * @tc.desc   AudioRenderer - setVolume 0 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -9680,12 +9680,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1100
-     * @tc.desc        AudioRenderer - setVolume 1 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1100
+     * @tc.desc   AudioRenderer - setVolume 1 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -9738,12 +9738,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1200
-     * @tc.desc        AudioRenderer - setVolume 1.1 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1200
+     * @tc.desc   AudioRenderer - setVolume 1.1 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -9801,12 +9801,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1400
-     * @tc.desc        AudioRenderer - setVolume 0 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1400
+     * @tc.desc   AudioRenderer - setVolume 0 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -9860,12 +9860,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1600
-     * @tc.desc        AudioRenderer - setVolume 1 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1600
+     * @tc.desc   AudioRenderer - setVolume 1 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -9919,12 +9919,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1700
-     * @tc.desc        AudioRenderer - setVolume 1.1 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1700
+     * @tc.desc   AudioRenderer - setVolume 1.1 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -9983,12 +9983,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1900
-     * @tc.desc        AudioRenderer - setVolume 0 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1900
+     * @tc.desc   AudioRenderer - setVolume 0 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10041,12 +10041,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2000
-     * @tc.desc        AudioRenderer - setVolume -1 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2000
+     * @tc.desc   AudioRenderer - setVolume -1 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10104,12 +10104,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2100
-     * @tc.desc        AudioRenderer - setVolume 1 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2100
+     * @tc.desc   AudioRenderer - setVolume 1 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10162,12 +10162,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2200
-     * @tc.desc        AudioRenderer - setVolume 1.1 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2200
+     * @tc.desc   AudioRenderer - setVolume 1.1 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10225,12 +10225,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2400
-     * @tc.desc        AudioRenderer - setVolume 0 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2400
+     * @tc.desc   AudioRenderer - setVolume 0 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10284,12 +10284,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2500
-     * @tc.desc        AudioRenderer - setVolume -1 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2500
+     * @tc.desc   AudioRenderer - setVolume -1 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10348,12 +10348,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2600
-     * @tc.desc        AudioRenderer - setVolume 1 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2600
+     * @tc.desc   AudioRenderer - setVolume 1 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10407,12 +10407,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2700
-     * @tc.desc        AudioRenderer - setVolume 1.1 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2700
+     * @tc.desc   AudioRenderer - setVolume 1.1 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SET_VOLUME_STATIC_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10471,12 +10471,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9300
-     * @tc.desc        AudioRenderer with parameter STREAM_USAGE_VIDEO_COMMUNICATION
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9300
+     * @tc.desc   AudioRenderer with parameter STREAM_USAGE_VIDEO_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -10505,12 +10505,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_VIDEO_STREAM_STATIC_USAGE
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_VIDEO_STREAM_STATIC_USAGE
-     * @tc.desc        AudioRenderer with parameter STREAM_USAGE_VIDEO_COMMUNICATION
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_VIDEO_STREAM_STATIC_USAGE
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_VIDEO_STREAM_STATIC_USAGE
+     * @tc.desc   AudioRenderer with parameter STREAM_USAGE_VIDEO_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_VIDEO_STREAM_STATIC_USAGE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -10539,12 +10539,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0100
-     * @tc.desc        AudioRenderer - getVolume 0 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0100
+     * @tc.desc   AudioRenderer - getVolume 0 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10600,12 +10600,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0200
-     * @tc.desc        AudioRenderer - getVolume 0.5 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0200
+     * @tc.desc   AudioRenderer - getVolume 0.5 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10661,12 +10661,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0300
-     * @tc.desc        AudioRenderer - getVolume 1 - promise
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0300
+     * @tc.desc   AudioRenderer - getVolume 1 - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10722,12 +10722,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0400
-     * @tc.desc        AudioRenderer - getVolume 1 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0400
+     * @tc.desc   AudioRenderer - getVolume 1 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10774,12 +10774,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0500
-     * @tc.desc        AudioRenderer - setVolume 0 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0500
+     * @tc.desc   AudioRenderer - setVolume 0 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10836,12 +10836,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0600
-     * @tc.desc        AudioRenderer - setVolume 0 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0600
+     * @tc.desc   AudioRenderer - setVolume 0 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10898,12 +10898,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0700
-     * @tc.desc        AudioRenderer - setVolume 0 - callback
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0700
+     * @tc.desc   AudioRenderer - setVolume 0 - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_VOLUME_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -10960,12 +10960,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_STATIC_0100
-     * @tc.desc        AudioRenderer - STATE_RUNNING
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_STATIC_0100
+     * @tc.desc   AudioRenderer - STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -11062,12 +11062,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0100
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0100
-     *@tc.desc        Test AudioRenderer writeData callback with on interface
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0100
+     * @tc.desc   Test AudioRenderer writeData callback with on interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -11096,12 +11096,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0200
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0200
-     *@tc.desc        Test AudioRenderer writeData callback with VALID result
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0200
+     * @tc.desc   Test AudioRenderer writeData callback with VALID result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -11130,12 +11130,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0300
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0300
-     *@tc.desc        Test AudioRenderer writeData callback with INVALID result
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0300
+     * @tc.desc   Test AudioRenderer writeData callback with INVALID result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -11168,12 +11168,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_MEDIA_MUTE_PLAY_STATIC_0008
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_MEDIA_MUTE_PLAY_STATIC_0008
-     *@tc.desc        setSilentModeAndMixWithOthers and getSilentModeAndMixWithOthers success
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MEDIA_MUTE_PLAY_STATIC_0008
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MEDIA_MUTE_PLAY_STATIC_0008
+     * @tc.desc   setSilentModeAndMixWithOthers and getSilentModeAndMixWithOthers success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_MEDIA_MUTE_PLAY_STATIC_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -11215,12 +11215,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_MEDIA_MUTE_PLAY_STATIC_0009
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_MEDIA_MUTE_PLAY_STATIC_0009
-     *@tc.desc        setSilentModeAndMixWithOthers and getSilentModeAndMixWithOthers success
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MEDIA_MUTE_PLAY_STATIC_0009
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MEDIA_MUTE_PLAY_STATIC_0009
+     * @tc.desc   setSilentModeAndMixWithOthers and getSilentModeAndMixWithOthers success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_MEDIA_MUTE_PLAY_STATIC_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -11262,12 +11262,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_SET_DEFAULT_OUTPUT_DEVICE_STATIC_0001
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_SET_DEFAULT_OUTPUT_DEVICE_STATIC_0001
-     *@tc.desc        setDefaultOutputDevice input usage invalid return 6800103
-     *@tc.size        MediumTest
-     *@tc.type        Function
-     *@tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_DEFAULT_OUTPUT_DEVICE_STATIC_0001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_DEFAULT_OUTPUT_DEVICE_STATIC_0001
+     * @tc.desc   setDefaultOutputDevice input usage invalid return 6800103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_DEFAULT_OUTPUT_DEVICE_STATIC_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -11320,12 +11320,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_ON_STATIC_0100
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_ON_STATIC_0100
-     *@tc.desc        on_streamVolumeChange
-     *@tc.size        MEDIUM
-     *@tc.type        Function
-     *@tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_ON_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_ON_STATIC_0100
+     * @tc.desc   on_streamVolumeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_ON_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_ON_STATIC_0100';
@@ -11390,12 +11390,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0100
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0100
-     *@tc.desc        off_streamVolumeChange
-     *@tc.size        MEDIUM
-     *@tc.type        Function
-     *@tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0100
+     * @tc.desc   off_streamVolumeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0100';
@@ -11427,12 +11427,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100
-     *@tc.desc        getVolumeInUnitOfDbByStream
-     *@tc.size        MEDIUM
-     *@tc.type        Function
-     *@tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100
+     * @tc.desc   getVolumeInUnitOfDbByStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_0100';
@@ -11454,12 +11454,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     *@tc.number      SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100
-     *@tc.name        SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100
-     *@tc.desc        getVolumeByStream
-     *@tc.size        MEDIUM
-     *@tc.type        Function
-     *@tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100
+     * @tc.desc   getVolumeByStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100';
@@ -11499,12 +11499,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9800
-     * @tc.desc        AudioRenderer - CallBack
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9800
+     * @tc.desc   AudioRenderer - CallBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -11604,12 +11604,12 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9900
-     * @tc.desc        AudioRenderer - appVolumeChange
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9900
+     * @tc.desc   AudioRenderer - appVolumeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {

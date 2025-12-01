@@ -107,12 +107,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ON_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ON_STATIC_0100
-      * @tc.desc   setTorchMode(); 设置手电筒模式开关 setTorchMode(ON)
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ON_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ON_STATIC_0100
+     * @tc.desc   setTorchMode(); 设置手电筒模式开关 setTorchMode(ON)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ON_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (mCameraNum == 0) {
@@ -143,12 +143,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_OFF_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_OFF_STATIC_0100
-      * @tc.desc   setTorchMode(); 设置手电筒模式开关 setTorchMode(OFF)
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_OFF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_OFF_STATIC_0100
+     * @tc.desc   setTorchMode(); 设置手电筒模式开关 setTorchMode(OFF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_OFF_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (mCameraNum == 0) {
@@ -179,12 +179,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_AUTO_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_AUTO_STATIC_0100
-      * @tc.desc   setTorchMode(); 设置手电筒模式开关 setTorchMode(AUTO)
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_AUTO_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_AUTO_STATIC_0100
+     * @tc.desc   setTorchMode(); 设置手电筒模式开关 setTorchMode(AUTO)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_AUTO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (mCameraNum == 0) {
@@ -215,12 +215,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0100
-      * @tc.desc   on 监听，手电筒更改模式OFF2ON
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0100
+     * @tc.desc   on 监听，手电筒更改模式OFF2ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (mCameraNum == 0) {
@@ -273,12 +273,12 @@ export default function cameraTorchTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0200
-      * @tc.desc   on 监听，手电筒更改模式OFF2AUTO
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0200
+     * @tc.desc   on 监听，手电筒更改模式OFF2AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (mCameraNum == 0) {
@@ -329,12 +329,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0300
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0300
-      * @tc.desc   on 监听，手电筒更改模式ON2OFF
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0300
+     * @tc.desc   on 监听，手电筒更改模式ON2OFF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (mCameraNum == 0) {
@@ -385,12 +385,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0400
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0400
-      * @tc.desc   on 监听，手电筒更改模式ON2AUTO
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0400
+     * @tc.desc   on 监听，手电筒更改模式ON2AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (mCameraNum == 0) {
@@ -439,12 +439,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0500
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0500
-      * @tc.desc   on 监听，手电筒更改模式AUTO2OFF
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0500
+     * @tc.desc   on 监听，手电筒更改模式AUTO2OFF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (mCameraNum == 0) {
@@ -495,12 +495,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0600
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0600
-      * @tc.desc   on 监听，手电筒更改模式AUTO2ON
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0600
+     * @tc.desc   on 监听，手电筒更改模式AUTO2ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (mCameraNum == 0) {
@@ -551,12 +551,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_OFF_TORCH_STATUS_CHANGE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_OFF_TORCH_STATUS_CHANGE_STATIC_0100
-      * @tc.desc   OFF torchStatusChange after ON
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_OFF_TORCH_STATUS_CHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_OFF_TORCH_STATUS_CHANGE_STATIC_0100
+     * @tc.desc   OFF torchStatusChange after ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_OFF_TORCH_STATUS_CHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (mCameraNum == 0) {

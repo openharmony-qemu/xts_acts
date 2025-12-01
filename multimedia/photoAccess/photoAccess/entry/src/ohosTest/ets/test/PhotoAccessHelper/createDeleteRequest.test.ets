@@ -47,12 +47,12 @@ export default function createDeleteRequestTest() {
       }
     };
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_DELETE_REQUEST_0000
-     * @tc.name      : createDeleteRequest_callback_000
-     * @tc.desc      : delete 1 file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createDeleteRequest_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_DELETE_REQUEST_0000
+     * @tc.desc   delete 1 file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createDeleteRequest_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createDeleteRequest_callback_000';
@@ -78,12 +78,12 @@ export default function createDeleteRequestTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_DELETE_REQUEST_0100
-     * @tc.name      : createDeleteRequest_callback_001
-     * @tc.desc      : createFiles 0 file,error code is 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createDeleteRequest_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_DELETE_REQUEST_0100
+     * @tc.desc   createFiles 0 file,error code is 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createDeleteRequest_callback_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createDeleteRequest_callback_001';
@@ -101,12 +101,12 @@ export default function createDeleteRequestTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_DELETE_REQUEST_0000
-     * @tc.name      : createDeleteRequest_promise_000
-     * @tc.desc      : delete 1 file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createDeleteRequest_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_DELETE_REQUEST_0000
+     * @tc.desc   delete 1 file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createDeleteRequest_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createDeleteRequest_promise_000';
@@ -126,12 +126,12 @@ export default function createDeleteRequestTest() {
       }
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_DELETE_REQUEST_0100
-     * @tc.name      : createDeleteRequest_promise_001
-     * @tc.desc      : createFiles 0 file,error code is 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createDeleteRequest_promise_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_DELETE_REQUEST_0100
+     * @tc.desc   createFiles 0 file,error code is 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createDeleteRequest_promise_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createDeleteRequest_promise_001';

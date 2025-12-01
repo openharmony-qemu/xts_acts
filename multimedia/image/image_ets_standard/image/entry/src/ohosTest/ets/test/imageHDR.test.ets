@@ -103,12 +103,12 @@ export default function imageHDR() {
     }
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0100
-     * @tc.name     : decode hdr image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreatePixelMap By DecodingOptions4、GetImageInfo to check whether supported Sdr
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreatePixelMap By DecodingOptions4、GetImageInfo to check whether supported Sdr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0100", Level.LEVEL2, async (done: Function) => {
       try {
@@ -149,12 +149,12 @@ export default function imageHDR() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0200
-     * @tc.name     : decode hdr image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreatePixelMap By DecodingOptions4、GetImageInfo to check whether supported Sdr
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0200
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreatePixelMap By DecodingOptions4、GetImageInfo to check whether supported Sdr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0200", Level.LEVEL2, async (done: Function) => {
       try {
@@ -195,12 +195,12 @@ export default function imageHDR() {
     });
     
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0200
-     * @tc.name     : decode hdr image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.pack image,4.createImageSource by pack,5.GetImageInfo to check whether supported Sdr
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0200
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.pack image,4.createImageSource by pack,5.GetImageInfo to check whether supported Sdr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODE_HDR_0300", Level.LEVEL2, async (done: Function) => {
       try {
@@ -255,12 +255,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_0100
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_0100", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_0100';
@@ -268,12 +268,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_0200
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_0200
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_0200", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_0200';
@@ -281,12 +281,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_0300
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_0300
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_0300", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_0300';
@@ -294,12 +294,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_0400
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_0400
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_0400", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_0400';
@@ -307,12 +307,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_0500
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_0500
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_0500", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_0500';
@@ -320,12 +320,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_0600
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_0600
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_0600", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_0600';
@@ -333,12 +333,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_0700
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_0700
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_0700", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_0700';
@@ -346,12 +346,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_0800
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_0800
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_0800", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_0800';
@@ -359,12 +359,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_0900
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_0900
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_0900", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_0900';
@@ -372,12 +372,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_1000
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_1000
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_1000", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_1000';
@@ -385,12 +385,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_1100
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_1100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_1100", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_1100';
@@ -398,12 +398,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_1200
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_1200
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_1200", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_1200';
@@ -411,12 +411,12 @@ export default function imageHDR() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_1300
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_1300
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_1300", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_1300';
@@ -425,12 +425,12 @@ export default function imageHDR() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_MIMETYPE_1400
-     * @tc.name     : check mimetype values
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MIMETYPE_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MIMETYPE_1400
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.getImageInfo from ImageSource,4.check the mimetype of different pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MIMETYPE_1400", Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_MULTIMEDIA_IMAGE_MIMETYPE_1400';

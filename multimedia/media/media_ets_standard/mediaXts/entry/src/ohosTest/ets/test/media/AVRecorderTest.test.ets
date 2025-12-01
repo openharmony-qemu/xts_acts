@@ -1306,12 +1306,12 @@ export default function AVRecorderTest() {
     });
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_001
-     * @tc.name      : createAVRecorder_callback_001
-     * @tc.desc      : Test creat AvRecorder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createAVRecorder_callback_001
+     * @tc.number AV_RECORDER_FUNC_TEST_001
+     * @tc.desc   Test creat AvRecorder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVRecorder_callback_001', Level.LEVEL0, async (done: Function) => {
       await createAvRecorderCallback();
@@ -1319,12 +1319,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_002
-     * @tc.name      : createAVRecorder_promise_001
-     * @tc.desc      : Test creat AvRecorder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createAVRecorder_promise_001
+     * @tc.number AV_RECORDER_FUNC_TEST_002
+     * @tc.desc   Test creat AvRecorder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVRecorder_promise_001', Level.LEVEL0, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1332,12 +1332,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_003
-     * @tc.name      : prepareAVRecorder_callback_001
-     * @tc.desc      : Test prepare AvRecorder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_callback_001
+     * @tc.number AV_RECORDER_FUNC_TEST_003
+     * @tc.desc   Test prepare AvRecorder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_callback_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1345,12 +1345,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_004
-     * @tc.name      : prepareAVRecorder_callback_002
-     * @tc.desc      : Test prepare AvRecorder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_callback_002
+     * @tc.number AV_RECORDER_FUNC_TEST_004
+     * @tc.desc   Test prepare AvRecorder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_callback_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1358,12 +1358,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_005
-     * @tc.name      : prepareAVRecorder_callback_003
-     * @tc.desc      : Test prepare AvRecorder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_callback_003
+     * @tc.number AV_RECORDER_FUNC_TEST_005
+     * @tc.desc   Test prepare AvRecorder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_callback_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1371,12 +1371,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_006
-     * @tc.name      : prepareAVRecorder_callback_004
-     * @tc.desc      : Test prepare AvRecorder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_callback_004
+     * @tc.number AV_RECORDER_FUNC_TEST_006
+     * @tc.desc   Test prepare AvRecorder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_callback_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1384,12 +1384,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_007
-     * @tc.name      : prepareAVRecorder_callback_005
-     * @tc.desc      : Test prepare AvRecorder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_callback_005
+     * @tc.number AV_RECORDER_FUNC_TEST_007
+     * @tc.desc   Test prepare AvRecorder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_callback_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1397,12 +1397,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_008
-     * @tc.name      : prepareAVRecorder_callback_006
-     * @tc.desc      : Test prepare AvRecorder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_callback_006
+     * @tc.number AV_RECORDER_FUNC_TEST_008
+     * @tc.desc   Test prepare AvRecorder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_callback_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1410,12 +1410,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_009
-     * @tc.name      : prepareAVRecorder_promise_001
-     * @tc.desc      : Test prepare AvRecorder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_promise_001
+     * @tc.number AV_RECORDER_FUNC_TEST_009
+     * @tc.desc   Test prepare AvRecorder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_promise_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1424,12 +1424,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_010
-     * @tc.name      : prepareAVRecorder_promise_002
-     * @tc.desc      : Test prepare AvRecorder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_promise_002
+     * @tc.number AV_RECORDER_FUNC_TEST_010
+     * @tc.desc   Test prepare AvRecorder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_promise_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1438,12 +1438,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_011
-     * @tc.name      : prepareAVRecorder_promise_003
-     * @tc.desc      : Test prepare AvRecorder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_promise_003
+     * @tc.number AV_RECORDER_FUNC_TEST_011
+     * @tc.desc   Test prepare AvRecorder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_promise_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1452,12 +1452,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_012
-     * @tc.name      : prepareAVRecorder_promise_004
-     * @tc.desc      : Test prepare AvRecorder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_promise_004
+     * @tc.number AV_RECORDER_FUNC_TEST_012
+     * @tc.desc   Test prepare AvRecorder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_promise_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1466,12 +1466,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_013
-     * @tc.name      : prepareAVRecorder_promise_005
-     * @tc.desc      : Test prepare AvRecorder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_promise_005
+     * @tc.number AV_RECORDER_FUNC_TEST_013
+     * @tc.desc   Test prepare AvRecorder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_promise_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1480,12 +1480,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_014
-     * @tc.name      : prepareAVRecorder_promise_006
-     * @tc.desc      : Test prepare AvRecorder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   prepareAVRecorder_promise_006
+     * @tc.number AV_RECORDER_FUNC_TEST_014
+     * @tc.desc   Test prepare AvRecorder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('prepareAVRecorder_promise_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1494,12 +1494,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_015
-     * @tc.name      : getAVRecorderConfig_callback_001
-     * @tc.desc      : Test getAVRecorderConfig callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_callback_001
+     * @tc.number AV_RECORDER_FUNC_TEST_015
+     * @tc.desc   Test getAVRecorderConfig callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_callback_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1508,12 +1508,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_016
-     * @tc.name      : getAVRecorderConfig_callback_002
-     * @tc.desc      : Test getAVRecorderConfig callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_callback_002
+     * @tc.number AV_RECORDER_FUNC_TEST_016
+     * @tc.desc   Test getAVRecorderConfig callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_callback_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1522,12 +1522,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_017
-     * @tc.name      : getAVRecorderConfig_callback_003
-     * @tc.desc      : Test getAVRecorderConfig callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_callback_003
+     * @tc.number AV_RECORDER_FUNC_TEST_017
+     * @tc.desc   Test getAVRecorderConfig callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_callback_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1536,12 +1536,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_018
-     * @tc.name      : getAVRecorderConfig_callback_004
-     * @tc.desc      : Test getAVRecorderConfig callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_callback_004
+     * @tc.number AV_RECORDER_FUNC_TEST_018
+     * @tc.desc   Test getAVRecorderConfig callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_callback_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1550,12 +1550,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_019
-     * @tc.name      : getAVRecorderConfig_callback_005
-     * @tc.desc      : Test getAVRecorderConfig callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_callback_005
+     * @tc.number AV_RECORDER_FUNC_TEST_019
+     * @tc.desc   Test getAVRecorderConfig callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_callback_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1564,12 +1564,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_020
-     * @tc.name      : getAVRecorderConfig_callback_006
-     * @tc.desc      : Test getAVRecorderConfig callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_callback_006
+     * @tc.number AV_RECORDER_FUNC_TEST_020
+     * @tc.desc   Test getAVRecorderConfig callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_callback_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1578,12 +1578,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_021
-     * @tc.name      : getAVRecorderConfig_promise_001
-     * @tc.desc      : Test getAVRecorderConfig promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_promise_001
+     * @tc.number AV_RECORDER_FUNC_TEST_021
+     * @tc.desc   Test getAVRecorderConfig promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_promise_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1592,12 +1592,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_022
-     * @tc.name      : getAVRecorderConfig_promise_002
-     * @tc.desc      : Test getAVRecorderConfig promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_promise_002
+     * @tc.number AV_RECORDER_FUNC_TEST_022
+     * @tc.desc   Test getAVRecorderConfig promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_promise_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1606,12 +1606,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_023
-     * @tc.name      : getAVRecorderConfig_promise_003
-     * @tc.desc      : Test getAVRecorderConfig promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_promise_003
+     * @tc.number AV_RECORDER_FUNC_TEST_023
+     * @tc.desc   Test getAVRecorderConfig promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_promise_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1620,12 +1620,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_024
-     * @tc.name      : getAVRecorderConfig_promise_004
-     * @tc.desc      : Test getAVRecorderConfig promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_promise_004
+     * @tc.number AV_RECORDER_FUNC_TEST_024
+     * @tc.desc   Test getAVRecorderConfig promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_promise_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1634,12 +1634,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_025
-     * @tc.name      : getAVRecorderConfig_promise_005
-     * @tc.desc      : Test getAVRecorderConfig promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_promise_005
+     * @tc.number AV_RECORDER_FUNC_TEST_025
+     * @tc.desc   Test getAVRecorderConfig promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_promise_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1648,12 +1648,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_026
-     * @tc.name      : getAVRecorderConfig_promise_006
-     * @tc.desc      : Test getAVRecorderConfig promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAVRecorderConfig_promise_006
+     * @tc.number AV_RECORDER_FUNC_TEST_026
+     * @tc.desc   Test getAVRecorderConfig promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAVRecorderConfig_promise_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1662,12 +1662,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_027
-     * @tc.name      : getInputSurface_callback_abnormal_001
-     * @tc.desc      : Test abnormal scene of getInputSurface callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_callback_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_027
+     * @tc.desc   Test abnormal scene of getInputSurface callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_callback_abnormal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1675,12 +1675,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_028
-     * @tc.name      : getInputSurface_callback_abnormal_002
-     * @tc.desc      : Test abnormal scene of getInputSurface callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_callback_abnormal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_028
+     * @tc.desc   Test abnormal scene of getInputSurface callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_callback_abnormal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1689,12 +1689,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_029
-     * @tc.name      : getInputSurface_callback_abnormal_003
-     * @tc.desc      : Test abnormal scene of getInputSurface callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_callback_abnormal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_029
+     * @tc.desc   Test abnormal scene of getInputSurface callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_callback_abnormal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1703,12 +1703,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_030
-     * @tc.name      : getInputSurface_callback_abnormal_004
-     * @tc.desc      : Test abnormal scene of getInputSurface callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_callback_abnormal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_030
+     * @tc.desc   Test abnormal scene of getInputSurface callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_callback_abnormal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1717,12 +1717,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_031
-     * @tc.name      : getInputSurface_callback_abnormal_005
-     * @tc.desc      : Test abnormal scene of getInputSurface callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_callback_abnormal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_031
+     * @tc.desc   Test abnormal scene of getInputSurface callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_callback_abnormal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1731,12 +1731,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_032
-     * @tc.name      : getInputSurface_callback_abnormal_006
-     * @tc.desc      : Test abnormal scene of getInputSurface callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_callback_abnormal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_032
+     * @tc.desc   Test abnormal scene of getInputSurface callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_callback_abnormal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1745,12 +1745,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_033
-     * @tc.name      : getInputSurface_callback_abnormal_007
-     * @tc.desc      : Test abnormal scene of getInputSurface callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_callback_abnormal_007
+     * @tc.number AV_RECORDER_FUNC_TEST_033
+     * @tc.desc   Test abnormal scene of getInputSurface callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getInputSurface_callback_abnormal_007', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1759,12 +1759,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_034
-     * @tc.name      : getInputSurface_promise_abnormal_001
-     * @tc.desc      : Test abnormal scene of getInputSurface promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_promise_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_034
+     * @tc.desc   Test abnormal scene of getInputSurface promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_promise_abnormal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1772,12 +1772,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_035
-     * @tc.name      : getInputSurface_promise_abnormal_002
-     * @tc.desc      : Test abnormal scene of getInputSurface promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_promise_abnormal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_035
+     * @tc.desc   Test abnormal scene of getInputSurface promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_promise_abnormal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1786,12 +1786,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_036
-     * @tc.name      : getInputSurface_promise_abnormal_003
-     * @tc.desc      : Test abnormal scene of getInputSurface promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_promise_abnormal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_036
+     * @tc.desc   Test abnormal scene of getInputSurface promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_promise_abnormal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1800,12 +1800,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_037
-     * @tc.name      : getInputSurface_promise_abnormal_004
-     * @tc.desc      : Test abnormal scene of getInputSurface promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_promise_abnormal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_037
+     * @tc.desc   Test abnormal scene of getInputSurface promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_promise_abnormal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1814,12 +1814,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_038
-     * @tc.name      : getInputSurface_promise_abnormal_005
-     * @tc.desc      : Test abnormal scene of getInputSurface promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_promise_abnormal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_038
+     * @tc.desc   Test abnormal scene of getInputSurface promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_promise_abnormal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1828,12 +1828,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_039
-     * @tc.name      : getInputSurface_promise_abnormal_006
-     * @tc.desc      : Test abnormal scene of getInputSurface promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_promise_abnormal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_039
+     * @tc.desc   Test abnormal scene of getInputSurface promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_promise_abnormal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1842,12 +1842,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_040
-     * @tc.name      : getInputSurface_promise_abnormal_007
-     * @tc.desc      : Test abnormal scene of getInputSurface promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getInputSurface_promise_abnormal_007
+     * @tc.number AV_RECORDER_FUNC_TEST_040
+     * @tc.desc   Test abnormal scene of getInputSurface promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getInputSurface_promise_abnormal_007', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1859,12 +1859,12 @@ export default function AVRecorderTest() {
     //  The operate GetInputSurface failed due to not permit in current state.{"code":5400102,"name":"BusinessError"}
     // 测试用video类型的config才能拿到surfaceId，但是接口描述未进行介绍
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_041
-     * @tc.name      : getInputSurface_callback_normal_001
-     * @tc.desc      : Test normal scene of getInputSurface callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   getInputSurface_callback_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_041
+     * @tc.desc   Test normal scene of getInputSurface callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getInputSurface_callback_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1874,12 +1874,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_042
-     * @tc.name      : getInputSurface_callback_normal_002
-     * @tc.desc      : Test normal scene of getInputSurface callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   getInputSurface_callback_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_042
+     * @tc.desc   Test normal scene of getInputSurface callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getInputSurface_callback_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1889,12 +1889,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_043
-     * @tc.name      : getInputSurface_promise_normal_001
-     * @tc.desc      : Test normal scene of getInputSurface promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   getInputSurface_promise_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_043
+     * @tc.desc   Test normal scene of getInputSurface promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getInputSurface_promise_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1904,12 +1904,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_044
-     * @tc.name      : getInputSurface_promise_normal_002
-     * @tc.desc      : Test normal scene of getInputSurface promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   getInputSurface_promise_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_044
+     * @tc.desc   Test normal scene of getInputSurface promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getInputSurface_promise_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1919,12 +1919,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_045
-     * @tc.name      : updateRotation_promise_abnormal_001
-     * @tc.desc      : Test abnormal scene of updateRotation promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   updateRotation_promise_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_045
+     * @tc.desc   Test abnormal scene of updateRotation promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateRotation_promise_abnormal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1932,12 +1932,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_046
-     * @tc.name      : updateRotation_promise_abnormal_002
-     * @tc.desc      : Test abnormal scene of updateRotation promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   updateRotation_promise_abnormal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_046
+     * @tc.desc   Test abnormal scene of updateRotation promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateRotation_promise_abnormal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1945,12 +1945,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_047
-     * @tc.name      : updateRotation_promise_abnormal_003
-     * @tc.desc      : Test abnormal scene of updateRotation promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   updateRotation_promise_abnormal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_047
+     * @tc.desc   Test abnormal scene of updateRotation promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateRotation_promise_abnormal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1958,12 +1958,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_048
-     * @tc.name      : updateRotation_promise_abnormal_004
-     * @tc.desc      : Test abnormal scene of updateRotation promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   updateRotation_promise_abnormal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_048
+     * @tc.desc   Test abnormal scene of updateRotation promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateRotation_promise_abnormal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1972,12 +1972,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_049
-     * @tc.name      : updateRotation_promise_abnormal_005
-     * @tc.desc      : Test abnormal scene of updateRotation promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   updateRotation_promise_abnormal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_049
+     * @tc.desc   Test abnormal scene of updateRotation promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateRotation_promise_abnormal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -1986,12 +1986,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_050
-     * @tc.name      : updateRotation_promise_normal_001
-     * @tc.desc      : Test normal scene of updateRotation promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   updateRotation_promise_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_050
+     * @tc.desc   Test normal scene of updateRotation promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateRotation_promise_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2000,12 +2000,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_051
-     * @tc.name      : updateRotation_promise_normal_002
-     * @tc.desc      : Test normal scene of updateRotation promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   updateRotation_promise_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_051
+     * @tc.desc   Test normal scene of updateRotation promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateRotation_promise_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2014,12 +2014,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_052
-     * @tc.name      : updateRotation_promise_normal_003
-     * @tc.desc      : Test normal scene of updateRotation promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   updateRotation_promise_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_052
+     * @tc.desc   Test normal scene of updateRotation promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateRotation_promise_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2028,12 +2028,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_053
-     * @tc.name      : updateRotation_promise_normal_004
-     * @tc.desc      : Test normal scene of updateRotation promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   updateRotation_promise_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_053
+     * @tc.desc   Test normal scene of updateRotation promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateRotation_promise_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2042,12 +2042,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_054
-     * @tc.name      : updateRotation_promise_normal_005
-     * @tc.desc      : Test normal scene of updateRotation promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   updateRotation_promise_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_054
+     * @tc.desc   Test normal scene of updateRotation promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateRotation_promise_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2056,12 +2056,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_055
-     * @tc.name      : updateRotation_promise_normal_006
-     * @tc.desc      : Test normal scene of updateRotation promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   updateRotation_promise_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_055
+     * @tc.desc   Test normal scene of updateRotation promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateRotation_promise_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2070,12 +2070,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_056
-     * @tc.name      : start_promise_normal_001
-     * @tc.desc      : Test normal scene of start avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_promise_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_056
+     * @tc.desc   Test normal scene of start avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_promise_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2085,12 +2085,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_057
-     * @tc.name      : start_promise_normal_002
-     * @tc.desc      : Test normal scene of start avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_promise_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_057
+     * @tc.desc   Test normal scene of start avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_promise_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2100,12 +2100,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_058
-     * @tc.name      : start_promise_normal_003
-     * @tc.desc      : Test normal scene of start avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_promise_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_058
+     * @tc.desc   Test normal scene of start avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_promise_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2115,12 +2115,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_059
-     * @tc.name      : start_promise_normal_004
-     * @tc.desc      : Test normal scene of start avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_promise_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_059
+     * @tc.desc   Test normal scene of start avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_promise_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2130,12 +2130,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_060
-     * @tc.name      : start_promise_normal_005
-     * @tc.desc      : Test normal scene of start avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_promise_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_060
+     * @tc.desc   Test normal scene of start avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_promise_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2145,12 +2145,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_061
-     * @tc.name      : start_promise_normal_006
-     * @tc.desc      : Test normal scene of start avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_promise_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_061
+     * @tc.desc   Test normal scene of start avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_promise_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2160,12 +2160,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_062
-     * @tc.name      : start_callback_normal_001
-     * @tc.desc      : Test normal scene of start avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_callback_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_062
+     * @tc.desc   Test normal scene of start avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_callback_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2174,12 +2174,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_063
-     * @tc.name      : start_callback_normal_002
-     * @tc.desc      : Test normal scene of start avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_callback_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_063
+     * @tc.desc   Test normal scene of start avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_callback_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2188,12 +2188,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_064
-     * @tc.name      : start_callback_normal_003
-     * @tc.desc      : Test normal scene of start avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_callback_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_064
+     * @tc.desc   Test normal scene of start avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_callback_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2202,12 +2202,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_065
-     * @tc.name      : start_callback_normal_004
-     * @tc.desc      : Test normal scene of start avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_callback_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_065
+     * @tc.desc   Test normal scene of start avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_callback_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2216,12 +2216,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_066
-     * @tc.name      : start_callback_normal_005
-     * @tc.desc      : Test normal scene of start avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_callback_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_066
+     * @tc.desc   Test normal scene of start avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_callback_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2230,12 +2230,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_067
-     * @tc.name      : start_callback_normal_006
-     * @tc.desc      : Test normal scene of start avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_callback_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_067
+     * @tc.desc   Test normal scene of start avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_callback_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2244,12 +2244,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_068
-     * @tc.name      : start_promise_abnormal_001
-     * @tc.desc      : Test abnormal scene of start avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_promise_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_068
+     * @tc.desc   Test abnormal scene of start avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_promise_abnormal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2257,12 +2257,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_069
-     * @tc.name      : start_callback_abnormal_001
-     * @tc.desc      : Test abnormal scene of start avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   start_callback_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_069
+     * @tc.desc   Test abnormal scene of start avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('start_callback_abnormal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2270,12 +2270,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_070
-     * @tc.name      : pause_callback_normal_001
-     * @tc.desc      : Test normal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_070
+     * @tc.desc   Test normal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_callback_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2286,12 +2286,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_071
-     * @tc.name      : pause_callback_normal_002
-     * @tc.desc      : Test normal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_071
+     * @tc.desc   Test normal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_callback_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2302,12 +2302,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_072
-     * @tc.name      : pause_callback_normal_003
-     * @tc.desc      : Test normal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_072
+     * @tc.desc   Test normal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_callback_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2318,12 +2318,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_073
-     * @tc.name      : pause_callback_normal_004
-     * @tc.desc      : Test normal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_073
+     * @tc.desc   Test normal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_callback_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2334,12 +2334,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_074
-     * @tc.name      : pause_callback_normal_005
-     * @tc.desc      : Test normal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_074
+     * @tc.desc   Test normal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_callback_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2350,12 +2350,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_075
-     * @tc.name      : pause_callback_normal_006
-     * @tc.desc      : Test normal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_075
+     * @tc.desc   Test normal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_callback_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2366,12 +2366,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_076
-     * @tc.name      : pause_promise_normal_001
-     * @tc.desc      : Test normal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_076
+     * @tc.desc   Test normal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2382,12 +2382,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_077
-     * @tc.name      : pause_promise_normal_002
-     * @tc.desc      : Test normal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_077
+     * @tc.desc   Test normal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2398,12 +2398,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_078
-     * @tc.name      : pause_promise_normal_003
-     * @tc.desc      : Test normal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_078
+     * @tc.desc   Test normal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2414,12 +2414,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_079
-     * @tc.name      : pause_promise_normal_004
-     * @tc.desc      : Test normal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_079
+     * @tc.desc   Test normal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2430,12 +2430,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_080
-     * @tc.name      : pause_promise_normal_005
-     * @tc.desc      : Test normal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_080
+     * @tc.desc   Test normal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2446,12 +2446,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_081
-     * @tc.name      : pause_promise_normal_006
-     * @tc.desc      : Test normal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_081
+     * @tc.desc   Test normal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2462,12 +2462,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_082
-     * @tc.name      : pause_callback_abnormal_001
-     * @tc.desc      : Test abnormal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_082
+     * @tc.desc   Test abnormal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_callback_abnormal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2477,12 +2477,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_083
-     * @tc.name      : pause_callback_abnormal_002
-     * @tc.desc      : Test abnormal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_abnormal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_083
+     * @tc.desc   Test abnormal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('pause_callback_abnormal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2492,12 +2492,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_084
-     * @tc.name      : pause_callback_abnormal_003
-     * @tc.desc      : Test abnormal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_abnormal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_084
+     * @tc.desc   Test abnormal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('pause_callback_abnormal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2507,12 +2507,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_085
-     * @tc.name      : pause_callback_abnormal_004
-     * @tc.desc      : Test abnormal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_abnormal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_085
+     * @tc.desc   Test abnormal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('pause_callback_abnormal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2522,12 +2522,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_086
-     * @tc.name      : pause_callback_abnormal_005
-     * @tc.desc      : Test abnormal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_abnormal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_086
+     * @tc.desc   Test abnormal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('pause_callback_abnormal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2537,12 +2537,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_087
-     * @tc.name      : pause_callback_abnormal_006
-     * @tc.desc      : Test abnormal scene of pause avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_callback_abnormal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_087
+     * @tc.desc   Test abnormal scene of pause avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('pause_callback_abnormal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2552,12 +2552,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_088
-     * @tc.name      : pause_promise_abnormal_001
-     * @tc.desc      : Test abnormal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_088
+     * @tc.desc   Test abnormal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_abnormal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2566,12 +2566,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_089
-     * @tc.name      : pause_promise_abnormal_002
-     * @tc.desc      : Test abnormal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_abnormal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_089
+     * @tc.desc   Test abnormal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_abnormal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2580,12 +2580,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_090
-     * @tc.name      : pause_promise_abnormal_003
-     * @tc.desc      : Test abnormal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_abnormal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_090
+     * @tc.desc   Test abnormal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_abnormal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2594,12 +2594,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_091
-     * @tc.name      : pause_promise_abnormal_004
-     * @tc.desc      : Test abnormal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_abnormal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_091
+     * @tc.desc   Test abnormal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_abnormal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2608,12 +2608,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_092
-     * @tc.name      : pause_promise_abnormal_005
-     * @tc.desc      : Test abnormal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_abnormal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_092
+     * @tc.desc   Test abnormal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_abnormal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2622,12 +2622,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_093
-     * @tc.name      : pause_promise_abnormal_006
-     * @tc.desc      : Test abnormal scene of pause avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   pause_promise_abnormal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_093
+     * @tc.desc   Test abnormal scene of pause avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('pause_promise_abnormal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2636,12 +2636,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_094
-     * @tc.name      : resume_callback_normal_001
-     * @tc.desc      : Test normal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_callback_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_094
+     * @tc.desc   Test normal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_callback_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2650,12 +2650,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_095
-     * @tc.name      : resume_callback_normal_002
-     * @tc.desc      : Test normal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_callback_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_095
+     * @tc.desc   Test normal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_callback_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2664,12 +2664,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_096
-     * @tc.name      : resume_callback_normal_003
-     * @tc.desc      : Test normal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_callback_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_096
+     * @tc.desc   Test normal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_callback_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2678,12 +2678,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_097
-     * @tc.name      : resume_callback_normal_004
-     * @tc.desc      : Test normal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_callback_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_097
+     * @tc.desc   Test normal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_callback_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2692,12 +2692,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_098
-     * @tc.name      : resume_callback_normal_005
-     * @tc.desc      : Test normal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_callback_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_098
+     * @tc.desc   Test normal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_callback_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2706,12 +2706,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_099
-     * @tc.name      : resume_callback_normal_006
-     * @tc.desc      : Test normal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_callback_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_099
+     * @tc.desc   Test normal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_callback_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2720,12 +2720,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_100
-     * @tc.name      : resume_promise_normal_001
-     * @tc.desc      : Test normal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_promise_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_100
+     * @tc.desc   Test normal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_promise_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2737,12 +2737,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_101
-     * @tc.name      : resume_promise_normal_002
-     * @tc.desc      : Test normal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_promise_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_101
+     * @tc.desc   Test normal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_promise_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2754,12 +2754,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_102
-     * @tc.name      : resume_promise_normal_003
-     * @tc.desc      : Test normal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_promise_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_102
+     * @tc.desc   Test normal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_promise_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2771,12 +2771,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_103
-     * @tc.name      : resume_promise_normal_004
-     * @tc.desc      : Test normal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_promise_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_103
+     * @tc.desc   Test normal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_promise_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2788,12 +2788,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_104
-     * @tc.name      : resume_promise_normal_005
-     * @tc.desc      : Test normal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_promise_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_104
+     * @tc.desc   Test normal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_promise_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2805,12 +2805,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_105
-     * @tc.name      : resume_promise_normal_006
-     * @tc.desc      : Test normal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   resume_promise_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_105
+     * @tc.desc   Test normal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('resume_promise_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2822,6 +2822,14 @@ export default function AVRecorderTest() {
     })
 
     // Todo start（）之后也能resume成功，但是接口文档描述：需要在pause()事件成功触发后，才能调用resume方法。
+    /**
+     * @tc.name   resume_callback_abnormal_001
+     * @tc.number resume_callback_abnormal_001
+     * @tc.desc   resume_callback_abnormal_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     /*    it('resume_callback_abnormal_001', Level.LEVEL2, async (done: Function) => {
           await createAvRecorderPromise();
           await initConfigAndPreparedPromise(media.AudioSourceType.AUDIO_SOURCE_TYPE_DEFAULT);
@@ -2831,12 +2839,12 @@ export default function AVRecorderTest() {
         });*/
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_106
-     * @tc.name      : resume_callback_abnormal_001
-     * @tc.desc      : Test abnormal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_callback_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_106
+     * @tc.desc   Test abnormal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_callback_abnormal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2846,12 +2854,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_107
-     * @tc.name      : resume_callback_abnormal_002
-     * @tc.desc      : Test abnormal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_callback_abnormal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_107
+     * @tc.desc   Test abnormal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_callback_abnormal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2861,12 +2869,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_108
-     * @tc.name      : resume_callback_abnormal_003
-     * @tc.desc      : Test abnormal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_callback_abnormal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_108
+     * @tc.desc   Test abnormal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_callback_abnormal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2876,12 +2884,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_109
-     * @tc.name      : resume_callback_abnormal_004
-     * @tc.desc      : Test abnormal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_callback_abnormal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_109
+     * @tc.desc   Test abnormal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_callback_abnormal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2891,12 +2899,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_110
-     * @tc.name      : resume_callback_abnormal_005
-     * @tc.desc      : Test abnormal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_callback_abnormal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_110
+     * @tc.desc   Test abnormal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_callback_abnormal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2906,12 +2914,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_111
-     * @tc.name      : resume_callback_abnormal_006
-     * @tc.desc      : Test abnormal scene of resume avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_callback_abnormal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_111
+     * @tc.desc   Test abnormal scene of resume avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_callback_abnormal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2921,12 +2929,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_112
-     * @tc.name      : resume_promise_abnormal_001
-     * @tc.desc      : Test abnormal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_promise_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_112
+     * @tc.desc   Test abnormal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_promise_abnormal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2936,12 +2944,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_113
-     * @tc.name      : resume_promise_abnormal_002
-     * @tc.desc      : Test abnormal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_promise_abnormal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_113
+     * @tc.desc   Test abnormal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_promise_abnormal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2951,12 +2959,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_114
-     * @tc.name      : resume_promise_abnormal_003
-     * @tc.desc      : Test abnormal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_promise_abnormal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_114
+     * @tc.desc   Test abnormal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_promise_abnormal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2966,12 +2974,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_115
-     * @tc.name      : resume_promise_abnormal_004
-     * @tc.desc      : Test abnormal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_promise_abnormal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_115
+     * @tc.desc   Test abnormal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_promise_abnormal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2981,12 +2989,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_116
-     * @tc.name      : resume_promise_abnormal_005
-     * @tc.desc      : Test abnormal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_promise_abnormal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_116
+     * @tc.desc   Test abnormal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_promise_abnormal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -2996,12 +3004,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_117
-     * @tc.name      : resume_promise_abnormal_006
-     * @tc.desc      : Test abnormal scene of resume avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   resume_promise_abnormal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_117
+     * @tc.desc   Test abnormal scene of resume avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resume_promise_abnormal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3012,12 +3020,12 @@ export default function AVRecorderTest() {
 
     // 测试Stop接口正常场景,预期是需要在start()或pause()事件成功触发后，才能调用stop方法
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_118
-     * @tc.name      : stop_callback_normal_001
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_118
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3026,12 +3034,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_119
-     * @tc.name      : stop_callback_normal_002
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_119
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3040,12 +3048,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_120
-     * @tc.name      : stop_callback_normal_003
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_120
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3054,12 +3062,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_121
-     * @tc.name      : stop_callback_normal_004
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_121
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3068,12 +3076,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_122
-     * @tc.name      : stop_callback_normal_005
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_122
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3082,12 +3090,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_123
-     * @tc.name      : stop_callback_normal_006
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_123
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3096,12 +3104,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_124
-     * @tc.name      : stop_callback_normal_007
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_007
+     * @tc.number AV_RECORDER_FUNC_TEST_124
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_007', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3110,12 +3118,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_125
-     * @tc.name      : stop_callback_normal_008
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_008
+     * @tc.number AV_RECORDER_FUNC_TEST_125
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_008', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3124,12 +3132,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_126
-     * @tc.name      : stop_callback_normal_009
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_009
+     * @tc.number AV_RECORDER_FUNC_TEST_126
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_009', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3138,12 +3146,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_127
-     * @tc.name      : stop_callback_normal_010
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_010
+     * @tc.number AV_RECORDER_FUNC_TEST_127
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_010', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3152,12 +3160,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_128
-     * @tc.name      : stop_callback_normal_011
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_011
+     * @tc.number AV_RECORDER_FUNC_TEST_128
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_011', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3166,12 +3174,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_129
-     * @tc.name      : stop_callback_normal_012
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_012
+     * @tc.number AV_RECORDER_FUNC_TEST_129
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_012', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3180,12 +3188,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_130
-     * @tc.name      : stop_callback_normal_013
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_013
+     * @tc.number AV_RECORDER_FUNC_TEST_130
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_013', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3194,12 +3202,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_131
-     * @tc.name      : stop_callback_normal_014
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_014
+     * @tc.number AV_RECORDER_FUNC_TEST_131
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_014', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3208,12 +3216,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_132
-     * @tc.name      : stop_callback_normal_015
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_015
+     * @tc.number AV_RECORDER_FUNC_TEST_132
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_015', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3222,12 +3230,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_133
-     * @tc.name      : stop_callback_normal_016
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_016
+     * @tc.number AV_RECORDER_FUNC_TEST_133
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_016', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3236,12 +3244,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_134
-     * @tc.name      : stop_callback_normal_017
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_017
+     * @tc.number AV_RECORDER_FUNC_TEST_134
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_017', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3250,12 +3258,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_135
-     * @tc.name      : stop_callback_normal_018
-     * @tc.desc      : Test normal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_normal_018
+     * @tc.number AV_RECORDER_FUNC_TEST_135
+     * @tc.desc   Test normal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_normal_018', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3264,12 +3272,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_136
-     * @tc.name      : stop_promise_normal_001
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_136
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3280,12 +3288,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_137
-     * @tc.name      : stop_promise_normal_002
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_137
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3296,12 +3304,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_138
-     * @tc.name      : stop_promise_normal_003
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_138
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3312,12 +3320,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_139
-     * @tc.name      : stop_promise_normal_004
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_139
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3328,12 +3336,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_140
-     * @tc.name      : stop_promise_normal_005
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_140
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3344,12 +3352,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_141
-     * @tc.name      : stop_promise_normal_006
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_141
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3360,12 +3368,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_142
-     * @tc.name      : stop_promise_normal_007
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_007
+     * @tc.number AV_RECORDER_FUNC_TEST_142
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_007', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3377,12 +3385,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_143
-     * @tc.name      : stop_promise_normal_008
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_008
+     * @tc.number AV_RECORDER_FUNC_TEST_143
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_008', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3394,12 +3402,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_144
-     * @tc.name      : stop_promise_normal_009
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_009
+     * @tc.number AV_RECORDER_FUNC_TEST_144
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_009', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3411,12 +3419,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_145
-     * @tc.name      : stop_promise_normal_010
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_010
+     * @tc.number AV_RECORDER_FUNC_TEST_145
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_010', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3428,12 +3436,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_146
-     * @tc.name      : stop_promise_normal_011
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_011
+     * @tc.number AV_RECORDER_FUNC_TEST_146
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_011', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3445,12 +3453,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_147
-     * @tc.name      : stop_promise_normal_012
-     * @tc.desc      : Test normal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_normal_012
+     * @tc.number AV_RECORDER_FUNC_TEST_147
+     * @tc.desc   Test normal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_normal_012', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3463,12 +3471,12 @@ export default function AVRecorderTest() {
 
     // 测试Stop接口异常场景,预期是需要在start()或pause()事件成功触发后，才能调用stop方法
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_148
-     * @tc.name      : stop_callback_abnormal_001
-     * @tc.desc      : Test abnormal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_148
+     * @tc.desc   Test abnormal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_abnormal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3477,12 +3485,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_149
-     * @tc.name      : stop_callback_abnormal_002
-     * @tc.desc      : Test abnormal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_abnormal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_149
+     * @tc.desc   Test abnormal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_abnormal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3491,12 +3499,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_150
-     * @tc.name      : stop_callback_abnormal_003
-     * @tc.desc      : Test abnormal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_abnormal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_150
+     * @tc.desc   Test abnormal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_abnormal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3505,12 +3513,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_151
-     * @tc.name      : stop_callback_abnormal_004
-     * @tc.desc      : Test abnormal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_abnormal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_151
+     * @tc.desc   Test abnormal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_abnormal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3519,12 +3527,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_152
-     * @tc.name      : stop_callback_abnormal_005
-     * @tc.desc      : Test abnormal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_abnormal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_152
+     * @tc.desc   Test abnormal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_abnormal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3533,12 +3541,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_153
-     * @tc.name      : stop_callback_abnormal_006
-     * @tc.desc      : Test abnormal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_abnormal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_153
+     * @tc.desc   Test abnormal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_abnormal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3547,12 +3555,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_154
-     * @tc.name      : stop_callback_abnormal_007
-     * @tc.desc      : Test abnormal scene of stop avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_callback_abnormal_007
+     * @tc.number AV_RECORDER_FUNC_TEST_154
+     * @tc.desc   Test abnormal scene of stop avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_callback_abnormal_007', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3561,12 +3569,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_155
-     * @tc.name      : stop_promise_abnormal_001
-     * @tc.desc      : Test abnormal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_155
+     * @tc.desc   Test abnormal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_abnormal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3576,12 +3584,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_156
-     * @tc.name      : stop_promise_abnormal_002
-     * @tc.desc      : Test abnormal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_abnormal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_156
+     * @tc.desc   Test abnormal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_abnormal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3591,12 +3599,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_157
-     * @tc.name      : stop_promise_abnormal_003
-     * @tc.desc      : Test abnormal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_abnormal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_157
+     * @tc.desc   Test abnormal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_abnormal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3606,12 +3614,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_158
-     * @tc.name      : stop_promise_abnormal_004
-     * @tc.desc      : Test abnormal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_abnormal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_158
+     * @tc.desc   Test abnormal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_abnormal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3621,12 +3629,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_159
-     * @tc.name      : stop_promise_abnormal_005
-     * @tc.desc      : Test abnormal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_abnormal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_159
+     * @tc.desc   Test abnormal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_abnormal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3636,12 +3644,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_160
-     * @tc.name      : stop_promise_abnormal_006
-     * @tc.desc      : Test abnormal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_abnormal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_160
+     * @tc.desc   Test abnormal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_abnormal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3651,12 +3659,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_161
-     * @tc.name      : stop_promise_abnormal_007
-     * @tc.desc      : Test abnormal scene of stop avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   stop_promise_abnormal_007
+     * @tc.number AV_RECORDER_FUNC_TEST_161
+     * @tc.desc   Test abnormal scene of stop avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stop_promise_abnormal_007', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3665,12 +3673,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_162
-     * @tc.name      : reset_callback_normal_001
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_162
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_callback_normal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3679,12 +3687,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_163
-     * @tc.name      : reset_callback_normal_002
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_163
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_callback_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3693,12 +3701,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_164
-     * @tc.name      : reset_callback_normal_003
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_164
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_callback_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3707,12 +3715,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_165
-     * @tc.name      : reset_callback_normal_004
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_165
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_callback_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3721,12 +3729,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_166
-     * @tc.name      : reset_callback_normal_005
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_166
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_callback_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3735,12 +3743,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_167
-     * @tc.name      : reset_callback_normal_006
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_167
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_callback_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3749,12 +3757,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_168
-     * @tc.name      : reset_callback_normal_007
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_007
+     * @tc.number AV_RECORDER_FUNC_TEST_168
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_callback_normal_007', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3763,12 +3771,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_169
-     * @tc.name      : reset_callback_normal_008
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_008
+     * @tc.number AV_RECORDER_FUNC_TEST_169
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_callback_normal_008', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3777,12 +3785,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_170
-     * @tc.name      : reset_callback_normal_009
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_009
+     * @tc.number AV_RECORDER_FUNC_TEST_170
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_callback_normal_009', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3791,12 +3799,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_171
-     * @tc.name      : reset_callback_normal_010
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_010
+     * @tc.number AV_RECORDER_FUNC_TEST_171
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_callback_normal_010', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3805,12 +3813,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_172
-     * @tc.name      : reset_callback_normal_011
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_011
+     * @tc.number AV_RECORDER_FUNC_TEST_172
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_callback_normal_011', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3819,12 +3827,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_173
-     * @tc.name      : reset_callback_normal_012
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_callback_normal_012
+     * @tc.number AV_RECORDER_FUNC_TEST_173
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_callback_normal_012', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3833,12 +3841,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_174
-     * @tc.name      : reset_promise_normal_001
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_174
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_promise_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3849,12 +3857,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_175
-     * @tc.name      : reset_promise_normal_002
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_175
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_promise_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3865,12 +3873,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_176
-     * @tc.name      : reset_promise_normal_003
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_176
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_promise_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3881,12 +3889,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_177
-     * @tc.name      : reset_promise_normal_004
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_177
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_promise_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3897,12 +3905,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_178
-     * @tc.name      : reset_promise_normal_005
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_178
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_promise_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3913,12 +3921,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_179
-     * @tc.name      : reset_promise_normal_006
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_179
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_promise_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3929,12 +3937,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_180
-     * @tc.name      : reset_promise_normal_007
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_007
+     * @tc.number AV_RECORDER_FUNC_TEST_180
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_promise_normal_007', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3947,12 +3955,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_181
-     * @tc.name      : reset_promise_normal_008
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_008
+     * @tc.number AV_RECORDER_FUNC_TEST_181
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_promise_normal_008', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3965,12 +3973,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_182
-     * @tc.name      : reset_promise_normal_009
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_009
+     * @tc.number AV_RECORDER_FUNC_TEST_182
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_promise_normal_009', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -3983,12 +3991,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_183
-     * @tc.name      : reset_promise_normal_010
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_010
+     * @tc.number AV_RECORDER_FUNC_TEST_183
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_promise_normal_010', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4001,12 +4009,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_184
-     * @tc.name      : reset_promise_normal_011
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_011
+     * @tc.number AV_RECORDER_FUNC_TEST_184
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_promise_normal_011', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4019,12 +4027,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_185
-     * @tc.name      : reset_promise_normal_012
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   reset_promise_normal_012
+     * @tc.number AV_RECORDER_FUNC_TEST_185
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reset_promise_normal_012', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4037,12 +4045,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_186
-     * @tc.name      : release_callback_normal_001
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_186
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_callback_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4056,12 +4064,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_187
-     * @tc.name      : release_callback_normal_002
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_187
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_callback_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4075,12 +4083,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_188
-     * @tc.name      : release_callback_normal_003
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_188
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_callback_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4094,12 +4102,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_189
-     * @tc.name      : release_callback_normal_004
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_189
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_callback_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4113,12 +4121,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_190
-     * @tc.name      : release_callback_normal_005
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_190
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_callback_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4132,12 +4140,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_191
-     * @tc.name      : release_callback_normal_006
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_191
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_callback_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4151,12 +4159,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_192
-     * @tc.name      : release_callback_normal_007
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_007
+     * @tc.number AV_RECORDER_FUNC_TEST_192
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('release_callback_normal_007', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4166,12 +4174,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_193
-     * @tc.name      : release_callback_normal_008
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_008
+     * @tc.number AV_RECORDER_FUNC_TEST_193
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_callback_normal_008', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4181,12 +4189,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_194
-     * @tc.name      : release_callback_normal_009
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_009
+     * @tc.number AV_RECORDER_FUNC_TEST_194
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_callback_normal_009', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4196,12 +4204,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_195
-     * @tc.name      : release_callback_normal_010
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_010
+     * @tc.number AV_RECORDER_FUNC_TEST_195
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_callback_normal_010', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4211,12 +4219,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_196
-     * @tc.name      : release_callback_normal_011
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_011
+     * @tc.number AV_RECORDER_FUNC_TEST_196
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_callback_normal_011', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4226,12 +4234,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_197
-     * @tc.name      : release_callback_normal_012
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_callback_normal_012
+     * @tc.number AV_RECORDER_FUNC_TEST_197
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_callback_normal_012', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4241,12 +4249,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_198
-     * @tc.name      : release_promise_normal_001
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_198
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4260,12 +4268,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_199
-     * @tc.name      : release_promise_normal_002
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_199
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_002', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4279,12 +4287,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_200
-     * @tc.name      : release_promise_normal_003
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_200
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_003', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4298,12 +4306,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_201
-     * @tc.name      : release_promise_normal_004
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_201
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_004', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4317,12 +4325,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_202
-     * @tc.name      : release_promise_normal_005
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_202
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_005', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4336,12 +4344,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_203
-     * @tc.name      : release_promise_normal_006
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_203
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_006', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4355,12 +4363,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_204
-     * @tc.name      : release_promise_normal_007
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_007
+     * @tc.number AV_RECORDER_FUNC_TEST_204
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_007', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4370,12 +4378,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_205
-     * @tc.name      : release_promise_normal_008
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_008
+     * @tc.number AV_RECORDER_FUNC_TEST_205
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_008', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4385,12 +4393,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_206
-     * @tc.name      : release_promise_normal_009
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_009
+     * @tc.number AV_RECORDER_FUNC_TEST_206
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_009', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4400,12 +4408,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_207
-     * @tc.name      : release_promise_normal_010
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_010
+     * @tc.number AV_RECORDER_FUNC_TEST_207
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_010', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4415,12 +4423,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_208
-     * @tc.name      : release_promise_normal_011
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_011
+     * @tc.number AV_RECORDER_FUNC_TEST_208
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_011', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4430,12 +4438,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_209
-     * @tc.name      : release_promise_normal_012
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   release_promise_normal_012
+     * @tc.number AV_RECORDER_FUNC_TEST_209
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('release_promise_normal_012', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4445,12 +4453,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_210
-     * @tc.name      : reset_callback_normal_013
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_callback_normal_013
+     * @tc.number AV_RECORDER_FUNC_TEST_210
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_callback_normal_013', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4459,12 +4467,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_211
-     * @tc.name      : reset_callback_normal_014
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_callback_normal_014
+     * @tc.number AV_RECORDER_FUNC_TEST_211
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_callback_normal_014', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4473,12 +4481,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_212
-     * @tc.name      : reset_callback_normal_015
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_callback_normal_015
+     * @tc.number AV_RECORDER_FUNC_TEST_212
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_callback_normal_015', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4487,12 +4495,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_213
-     * @tc.name      : reset_callback_normal_016
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_callback_normal_016
+     * @tc.number AV_RECORDER_FUNC_TEST_213
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_callback_normal_016', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4501,12 +4509,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_214
-     * @tc.name      : reset_callback_normal_017
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_callback_normal_017
+     * @tc.number AV_RECORDER_FUNC_TEST_214
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_callback_normal_017', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4515,12 +4523,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_215
-     * @tc.name      : reset_callback_normal_018
-     * @tc.desc      : Test normal scene of reset avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_callback_normal_018
+     * @tc.number AV_RECORDER_FUNC_TEST_215
+     * @tc.desc   Test normal scene of reset avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_callback_normal_018', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4529,12 +4537,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_216
-     * @tc.name      : reset_promise_normal_013
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_promise_normal_013
+     * @tc.number AV_RECORDER_FUNC_TEST_216
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_promise_normal_013', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4544,12 +4552,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_217
-     * @tc.name      : reset_promise_normal_014
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_promise_normal_014
+     * @tc.number AV_RECORDER_FUNC_TEST_217
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_promise_normal_014', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4559,12 +4567,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_218
-     * @tc.name      : reset_promise_normal_015
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_promise_normal_015
+     * @tc.number AV_RECORDER_FUNC_TEST_218
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_promise_normal_015', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4574,12 +4582,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_219
-     * @tc.name      : reset_promise_normal_016
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_promise_normal_016
+     * @tc.number AV_RECORDER_FUNC_TEST_219
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_promise_normal_016', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4589,12 +4597,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_220
-     * @tc.name      : reset_promise_normal_017
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_promise_normal_017
+     * @tc.number AV_RECORDER_FUNC_TEST_220
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_promise_normal_017', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4604,12 +4612,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_221
-     * @tc.name      : reset_promise_normal_018
-     * @tc.desc      : Test normal scene of reset avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   reset_promise_normal_018
+     * @tc.number AV_RECORDER_FUNC_TEST_221
+     * @tc.desc   Test normal scene of reset avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('reset_promise_normal_018', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4619,12 +4627,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_222
-     * @tc.name      : release_callback_normal_013
-     * @tc.desc      : Test normal scene of release avRecord callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   release_callback_normal_013
+     * @tc.number AV_RECORDER_FUNC_TEST_222
+     * @tc.desc   Test normal scene of release avRecord callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('release_callback_normal_013', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4633,12 +4641,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_223
-     * @tc.name      : release_promise_normal_013
-     * @tc.desc      : Test normal scene of release avRecord promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   release_promise_normal_013
+     * @tc.number AV_RECORDER_FUNC_TEST_223
+     * @tc.desc   Test normal scene of release avRecord promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('release_promise_normal_013', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4647,12 +4655,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_224
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_normal_001
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_224
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_normal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4662,12 +4670,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_225
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_normal_002
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_225
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_normal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4677,12 +4685,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_226
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_normal_003
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_226
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_normal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4692,12 +4700,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_227
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_normal_004
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_227
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_normal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4707,12 +4715,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_228
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_normal_005
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_228
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_normal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4722,12 +4730,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_229
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_normal_006
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_229
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_normal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4737,12 +4745,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_230
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_normal_001
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_230
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_normal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4752,12 +4760,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_231
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_normal_002
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_231
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_normal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4767,12 +4775,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_232
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_normal_003
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_232
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_normal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4782,12 +4790,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_233
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_normal_004
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_233
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_normal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4797,12 +4805,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_234
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_normal_005
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_234
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_normal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4812,12 +4820,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_235
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_normal_006
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_235
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_normal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4827,12 +4835,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_236
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_abnormal_001
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_236
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_abnormal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4844,12 +4852,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_237
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_abnormal_002
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_abnormal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_237
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_abnormal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4861,12 +4869,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_238
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_abnormal_003
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_abnormal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_238
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_abnormal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4878,12 +4886,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_239
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_abnormal_004
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_abnormal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_239
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_abnormal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4895,12 +4903,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_240
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_abnormal_005
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_abnormal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_240
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_abnormal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4912,12 +4920,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_241
-     * @tc.name      : getCurrentAudioCapturerInfo_callback_abnormal_006
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_callback_abnormal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_241
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_callback_abnormal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4929,12 +4937,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_242
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_abnormal_001
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_242
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_abnormal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4946,12 +4954,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_243
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_abnormal_002
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_abnormal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_243
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_abnormal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4963,12 +4971,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_244
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_abnormal_003
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_abnormal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_244
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_abnormal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4980,12 +4988,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_245
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_abnormal_004
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_abnormal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_245
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_abnormal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -4997,12 +5005,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_246
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_abnormal_005
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_abnormal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_246
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_abnormal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5014,12 +5022,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_247
-     * @tc.name      : getCurrentAudioCapturerInfo_promise_abnormal_006
-     * @tc.desc      : after stop, getCurrentAudioCapturerInfo promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getCurrentAudioCapturerInfo_promise_abnormal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_247
+     * @tc.desc   after stop, getCurrentAudioCapturerInfo promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getCurrentAudioCapturerInfo_promise_abnormal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5031,12 +5039,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_248
-     * @tc.name      : getAudioCapturerMaxAmplitude_callback_normal_001
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_callback_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_248
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_callback_normal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5046,12 +5054,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_249
-     * @tc.name      : getAudioCapturerMaxAmplitude_callback_normal_002
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_callback_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_249
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_callback_normal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5061,12 +5069,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_250
-     * @tc.name      : getAudioCapturerMaxAmplitude_callback_normal_003
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_callback_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_250
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_callback_normal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5076,12 +5084,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_251
-     * @tc.name      : getAudioCapturerMaxAmplitude_callback_normal_004
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_callback_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_251
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_callback_normal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5091,12 +5099,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_252
-     * @tc.name      : getAudioCapturerMaxAmplitude_callback_normal_005
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_callback_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_252
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_callback_normal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5106,12 +5114,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_253
-     * @tc.name      : getAudioCapturerMaxAmplitude_callback_normal_006
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_callback_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_253
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_callback_normal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5121,12 +5129,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_254
-     * @tc.name      : getAudioCapturerMaxAmplitude_promise_normal_001
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_promise_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_254
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_promise_normal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5136,12 +5144,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_255
-     * @tc.name      : getAudioCapturerMaxAmplitude_promise_normal_002
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_promise_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_255
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_promise_normal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5151,12 +5159,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_256
-     * @tc.name      : getAudioCapturerMaxAmplitude_promise_normal_003
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_promise_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_256
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_promise_normal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5166,12 +5174,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_257
-     * @tc.name      : getAudioCapturerMaxAmplitude_promise_normal_004
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_promise_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_257
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_promise_normal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5181,12 +5189,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_258
-     * @tc.name      : getAudioCapturerMaxAmplitude_promise_normal_005
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_promise_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_258
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_promise_normal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5196,12 +5204,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_259
-     * @tc.name      : getAudioCapturerMaxAmplitude_promise_normal_006
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_promise_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_259
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_promise_normal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5211,12 +5219,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_260
-     * @tc.name      : getAudioCapturerMaxAmplitude_callback_abnormal_001
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_callback_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_260
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_callback_abnormal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5228,12 +5236,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_261
-     * @tc.name      : getAudioCapturerMaxAmplitude_promise_abnormal_001
-     * @tc.desc      : Test normal scene of getAudioCapturerMaxAmplitude promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAudioCapturerMaxAmplitude_promise_abnormal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_261
+     * @tc.desc   Test normal scene of getAudioCapturerMaxAmplitude promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAudioCapturerMaxAmplitude_promise_abnormal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5245,12 +5253,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_262
-     * @tc.name      : getAvailableEncoder_callback_normal_001
-     * @tc.desc      : Test normal scene of getAvailableEncoder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_callback_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_262
+     * @tc.desc   Test normal scene of getAvailableEncoder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_callback_normal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5260,12 +5268,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_263
-     * @tc.name      : getAvailableEncoder_callback_normal_002
-     * @tc.desc      : Test normal scene of getAvailableEncoder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_callback_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_263
+     * @tc.desc   Test normal scene of getAvailableEncoder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_callback_normal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5275,12 +5283,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_264
-     * @tc.name      : getAvailableEncoder_callback_normal_003
-     * @tc.desc      : Test normal scene of getAvailableEncoder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_callback_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_264
+     * @tc.desc   Test normal scene of getAvailableEncoder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_callback_normal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5290,12 +5298,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_265
-     * @tc.name      : getAvailableEncoder_callback_normal_004
-     * @tc.desc      : Test normal scene of getAvailableEncoder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_callback_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_265
+     * @tc.desc   Test normal scene of getAvailableEncoder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_callback_normal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5305,12 +5313,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_266
-     * @tc.name      : getAvailableEncoder_callback_normal_005
-     * @tc.desc      : Test normal scene of getAvailableEncoder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_callback_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_266
+     * @tc.desc   Test normal scene of getAvailableEncoder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_callback_normal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5320,12 +5328,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_267
-     * @tc.name      : getAvailableEncoder_callback_normal_006
-     * @tc.desc      : Test normal scene of getAvailableEncoder callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_callback_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_267
+     * @tc.desc   Test normal scene of getAvailableEncoder callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_callback_normal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5335,12 +5343,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_268
-     * @tc.name      : getAvailableEncoder_promise_normal_001
-     * @tc.desc      : Test normal scene of getAvailableEncoder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_promise_normal_001
+     * @tc.number AV_RECORDER_FUNC_TEST_268
+     * @tc.desc   Test normal scene of getAvailableEncoder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_promise_normal_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5350,12 +5358,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_269
-     * @tc.name      : getAvailableEncoder_promise_normal_002
-     * @tc.desc      : Test normal scene of getAvailableEncoder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_promise_normal_002
+     * @tc.number AV_RECORDER_FUNC_TEST_269
+     * @tc.desc   Test normal scene of getAvailableEncoder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_promise_normal_002', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5365,12 +5373,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_270
-     * @tc.name      : getAvailableEncoder_promise_normal_003
-     * @tc.desc      : Test normal scene of getAvailableEncoder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_promise_normal_003
+     * @tc.number AV_RECORDER_FUNC_TEST_270
+     * @tc.desc   Test normal scene of getAvailableEncoder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_promise_normal_003', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5380,12 +5388,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_271
-     * @tc.name      : getAvailableEncoder_promise_normal_004
-     * @tc.desc      : Test normal scene of getAvailableEncoder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_promise_normal_004
+     * @tc.number AV_RECORDER_FUNC_TEST_271
+     * @tc.desc   Test normal scene of getAvailableEncoder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_promise_normal_004', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5395,12 +5403,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_272
-     * @tc.name      : getAvailableEncoder_promise_normal_005
-     * @tc.desc      : Test normal scene of getAvailableEncoder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_promise_normal_005
+     * @tc.number AV_RECORDER_FUNC_TEST_272
+     * @tc.desc   Test normal scene of getAvailableEncoder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_promise_normal_005', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5410,12 +5418,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_273
-     * @tc.name      : getAvailableEncoder_promise_normal_006
-     * @tc.desc      : Test normal scene of getAvailableEncoder promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   getAvailableEncoder_promise_normal_006
+     * @tc.number AV_RECORDER_FUNC_TEST_273
+     * @tc.desc   Test normal scene of getAvailableEncoder promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAvailableEncoder_promise_normal_006', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5425,12 +5433,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_274
-     * @tc.name      : stateChange_listen_001
-     * @tc.desc      : Test normal scene of listen stateChange promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   stateChange_listen_001
+     * @tc.number AV_RECORDER_FUNC_TEST_274
+     * @tc.desc   Test normal scene of listen stateChange promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('stateChange_listen_001', Level.LEVEL1, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5445,12 +5453,12 @@ export default function AVRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_275
-     * @tc.name      : audioCapturerChange_listen_001
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   audioCapturerChange_listen_001
+     * @tc.number AV_RECORDER_FUNC_TEST_275
+     * @tc.desc   Test normal scene of getCurrentAudioCapturerInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('audioCapturerChange_listen_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
@@ -5461,15 +5469,15 @@ export default function AVRecorderTest() {
       done();
     })
 
-    /**
-     * @tc.number    : AV_RECORDER_FUNC_TEST_276
-     * @tc.name      : photoAssetAvailable_listen_001
-     * @tc.desc      : Test normal scene of getCurrentAudioCapturerInfo promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
-     */
 /*
+    /**
+     * @tc.name   photoAssetAvailable_listen_001
+     * @tc.number photoAssetAvailable_listen_001
+     * @tc.desc   photoAssetAvailable_listen_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('photoAssetAvailable_listen_001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
       photoAssetAvailableListen();

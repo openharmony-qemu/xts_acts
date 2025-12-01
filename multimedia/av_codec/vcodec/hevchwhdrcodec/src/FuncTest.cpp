@@ -102,9 +102,12 @@ void HDRFuncNdkTest::TearDown() {}
 } // namespace OHOS
 namespace {
 /**
- * @tc.number    : DEMUXER_DEC_ENC_MUXER_FUNC_009
- * @tc.name      : DEMUXER_DEC_ENC_MUXER_FUNC_009
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_009
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_009
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_009, TestSize.Level1)
 {
@@ -124,9 +127,12 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_009, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_DEC_ENC_MUXER_FUNC_010
- * @tc.name      : DEMUXER_DEC_ENC_MUXER_FUNC_010
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_010
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_010, TestSize.Level1)
 {
@@ -146,9 +152,12 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_010, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_DEC_ENC_MUXER_FUNC_011
- * @tc.name      : DEMUXER_DEC_ENC_MUXER_FUNC_011
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_011
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_011
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_011, TestSize.Level1)
 {
@@ -168,9 +177,12 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_011, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_DEC_ENC_MUXER_FUNC_012
- * @tc.name      : DEMUXER_DEC_ENC_MUXER_FUNC_012
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_012
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_012
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_012, TestSize.Level1)
 {
@@ -190,9 +202,12 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_012, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_DEC_ENC_MUXER_FUNC_013
- * @tc.name      : DEMUXER_DEC_ENC_MUXER_FUNC_013
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_013
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_013
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_013, TestSize.Level1)
 {

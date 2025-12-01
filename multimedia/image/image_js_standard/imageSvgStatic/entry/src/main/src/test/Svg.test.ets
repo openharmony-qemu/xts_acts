@@ -200,16 +200,12 @@ export default function imageSvg() {
         }
       };
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_STATIC_0100
-      * @tc.desc    createPixelMap - promise
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_STATIC_0100
+     * @tc.desc   createPixelMap - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -229,16 +225,12 @@ export default function imageSvg() {
         packOpts);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_STATIC_0100
-      * @tc.desc    createPixelMap - callback
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_STATIC_0100
+     * @tc.desc   createPixelMap - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -259,15 +251,12 @@ export default function imageSvg() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0100
-      * @tc.desc    createPixelMap - promise-sampleSize: -1
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0100
+     * @tc.desc   createPixelMap - promise-sampleSize: -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOption: image.DecodingOptions = {
@@ -289,15 +278,12 @@ export default function imageSvg() {
         decodingOption);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0200
-      * @tc.desc    createPixelMap - promise-index: -1
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0200
+     * @tc.desc   createPixelMap - promise-index: -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOption: image.DecodingOptions = {
@@ -320,15 +306,12 @@ export default function imageSvg() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0300
-      * @tc.desc    createPixelMap - promise-rotate: 500
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0300
+     * @tc.desc   createPixelMap - promise-rotate: 500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOption: image.DecodingOptions = {
@@ -351,15 +334,12 @@ export default function imageSvg() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0500
-      * @tc.desc    createPixelMap - promise-{x: 10000, y: 0}
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0500
+     * @tc.desc   createPixelMap - promise-{x: 10000, y: 0}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOption: image.DecodingOptions = {
@@ -381,15 +361,12 @@ export default function imageSvg() {
         decodingOption);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0600
-      * @tc.desc    createPixelMap - promise-{x: 0, y: 10000}
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0600
+     * @tc.desc   createPixelMap - promise-{x: 0, y: 10000}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOption: image.DecodingOptions = {

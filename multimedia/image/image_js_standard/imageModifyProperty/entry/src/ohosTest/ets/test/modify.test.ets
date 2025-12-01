@@ -647,14 +647,12 @@ export default function imageModifyProperty() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0100
-     * @tc.name      : modifyImageProperty(Orientation)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -667,14 +665,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0200
-     * @tc.name      : modifyImageProperty(GPSLatitude)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -687,14 +683,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0300
-     * @tc.name      : modifyImageProperty(GPSLongitude)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -707,14 +701,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0400
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0400", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -727,14 +719,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0500
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0500", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -747,14 +737,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0600
-     * @tc.name      : modifyImageProperty(Orientation)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -765,14 +753,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0700
-     * @tc.name      : modifyImageProperty(GPSLatitude)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0700", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -789,14 +775,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0800
-     * @tc.name      : modifyImageProperty(GPSLongitude)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -813,14 +797,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0900
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_0900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -837,14 +819,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1000
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -861,14 +841,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1100
-     * @tc.name      : modifyImageProperty(BitsPerSample)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1100", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -885,14 +863,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1200
-     * @tc.name      : modifyImageProperty(ImageLength)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1200", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -909,14 +885,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1300
-     * @tc.name      : modifyImageProperty(ImageWidth)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1300", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -933,14 +907,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1400
-     * @tc.name      : modifyImageProperty(DateTimeOriginal)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1400", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -957,14 +929,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1500
-     * @tc.name      : modifyImageProperty(ExposureTime)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1500", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -981,14 +951,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1600
-     * @tc.name      : modifyImageProperty(SceneType)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1005,14 +973,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1700
-     * @tc.name      : modifyImageProperty(ISOSpeedRatings)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1700", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1029,14 +995,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1800
-     * @tc.name      : modifyImageProperty(FNumber)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1053,14 +1017,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1900
-     * @tc.name      : modifyImageProperty(DateTime)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_1900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1077,14 +1039,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2000
-     * @tc.name      : modifyImageProperty(GPSTimeStamp)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1101,14 +1061,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2100
-     * @tc.name      : modifyImageProperty(GPSDateStamp)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2100", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1125,14 +1083,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2200
-     * @tc.name      : modifyImageProperty(ImageDescription)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2200", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1149,14 +1105,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2300
-     * @tc.name      : modifyImageProperty(Make)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2300", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1173,14 +1127,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2400
-     * @tc.name      : modifyImageProperty(Model)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2400", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1197,14 +1149,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2600
-     * @tc.name      : modifyImageProperty(SensitivityType)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1221,14 +1171,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2800
-     * @tc.name      : modifyImageProperty(RecommendedExposureIndex)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1245,14 +1193,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2900
-     * @tc.name      : modifyImageProperty(ISOSpeedRatings)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_2900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1269,14 +1215,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3000
-     * @tc.name      : modifyImageProperty(ApertureValue)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1293,14 +1237,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3100
-     * @tc.name      : modifyImageProperty(ExposureBiasValue)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3100", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1317,14 +1259,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3200
-     * @tc.name      : modifyImageProperty(MeteringMode)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3200", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1341,14 +1281,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3300
-     * @tc.name      : modifyImageProperty(LightSource)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3300", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1365,14 +1303,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3400
-     * @tc.name      : modifyImageProperty(Flash)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3400", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1389,14 +1325,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3500
-     * @tc.name      : modifyImageProperty(FocalLength)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3500", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1413,14 +1347,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3600
-     * @tc.name      : modifyImageProperty(UserComment)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1437,14 +1369,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3700
-     * @tc.name      : modifyImageProperty(PixelXDimension)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3700", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1461,14 +1391,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3800
-     * @tc.name      : modifyImageProperty(PixelYDimension)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1485,14 +1413,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3900
-     * @tc.name      : modifyImageProperty(WhiteBalance)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_3900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1509,14 +1435,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_4000
-     * @tc.name      : modifyImageProperty(FocalLengthIn35mmFilm)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_4000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_4000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_4000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1534,14 +1458,12 @@ export default function imageModifyProperty() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0100
-     * @tc.name      : modifyImageProperty(Orientation)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(done, "SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0100", "buffer", "Orientation",
@@ -1549,14 +1471,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0200
-     * @tc.name      : modifyImageProperty(GPSLatitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -1569,14 +1489,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0300
-     * @tc.name      : modifyImageProperty(GPSLongitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0300", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -1589,14 +1507,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0400
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0400", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -1609,14 +1525,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0500
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0500", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -1629,14 +1543,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0600
-     * @tc.name      : modifyImageProperty(Orientation)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1647,14 +1559,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0700
-     * @tc.name      : modifyImageProperty(GPSLatitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0700", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1665,14 +1575,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0800
-     * @tc.name      : modifyImageProperty(GPSLongitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1683,14 +1591,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0900
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_0900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1701,14 +1607,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1000
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1719,14 +1623,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1100
-     * @tc.name      : modifyImageProperty(BitsPerSample)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1100", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1737,14 +1639,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1200
-     * @tc.name      : modifyImageProperty(ImageLength)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1200", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1755,14 +1655,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1300
-     * @tc.name      : modifyImageProperty(ImageWidth)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1300", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1774,14 +1672,12 @@ export default function imageModifyProperty() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1400
-     * @tc.name      : modifyImageProperty(DateTimeOriginal)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1400", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1798,14 +1694,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1500
-     * @tc.name      : modifyImageProperty(ExposureTime)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1500", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1822,14 +1716,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1600
-     * @tc.name      : modifyImageProperty(SceneType)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1846,14 +1738,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1700
-     * @tc.name      : modifyImageProperty(ISOSpeedRatings)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1700", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1870,14 +1760,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1800
-     * @tc.name      : modifyImageProperty(FNumber)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1894,14 +1782,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1900
-     * @tc.name      : modifyImageProperty(DateTime)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_1900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1918,14 +1804,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2000
-     * @tc.name      : modifyImageProperty(GPSTimeStamp)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1942,14 +1826,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2100
-     * @tc.name      : modifyImageProperty(GPSDateStamp)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2100", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1966,14 +1848,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2200
-     * @tc.name      : modifyImageProperty(ImageDescription)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2200", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -1990,14 +1870,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2300
-     * @tc.name      : modifyImageProperty(Make)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2300", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2014,14 +1892,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2400
-     * @tc.name      : modifyImageProperty(Model)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2400", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2038,14 +1914,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2600
-     * @tc.name      : modifyImageProperty(SensitivityType)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2062,14 +1936,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2800
-     * @tc.name      : modifyImageProperty(RecommendedExposureIndex)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2086,14 +1958,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2900
-     * @tc.name      : modifyImageProperty(ISOSpeedRatings)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_2900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2110,14 +1980,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3000
-     * @tc.name      : modifyImageProperty(ApertureValue)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2134,14 +2002,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3100
-     * @tc.name      : modifyImageProperty(ExposureBiasValue)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3100", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2158,14 +2024,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3200
-     * @tc.name      : modifyImageProperty(MeteringMode)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3200", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2182,14 +2046,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3300
-     * @tc.name      : modifyImageProperty(LightSource)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3300", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2206,14 +2068,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3400
-     * @tc.name      : modifyImageProperty(Flash)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3400", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2230,14 +2090,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3500
-     * @tc.name      : modifyImageProperty(FocalLength)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3500", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2254,14 +2112,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3600
-     * @tc.name      : modifyImageProperty(UserComment)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2278,14 +2134,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3700
-     * @tc.name      : modifyImageProperty(PixelXDimension)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3700", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2302,14 +2156,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3800
-     * @tc.name      : modifyImageProperty(PixelYDimension)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2326,14 +2178,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3900
-     * @tc.name      : modifyImageProperty(WhiteBalance)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_3900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2350,14 +2200,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_4000
-     * @tc.name      : modifyImageProperty(FocalLengthIn35mmFilm)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_4000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_4000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_4000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2374,14 +2222,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0100
-     * @tc.name      : modifyImageProperty(Orientation,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -2394,14 +2240,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0200
-     * @tc.name      : modifyImageProperty(GPSLatitude,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -2414,14 +2258,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0300
-     * @tc.name      : modifyImageProperty(GPSLongitude,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0300", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -2434,14 +2276,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0400
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0400", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -2454,14 +2294,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0500
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0500", Level.LEVEL0, async (done: Function) => {
       testModifyImageBufferProperty(
@@ -2474,14 +2312,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0600
-     * @tc.name      : modifyImageProperty(Orientation,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2498,14 +2334,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0700
-     * @tc.name      : modifyImageProperty(GPSLatitude,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0700", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2522,14 +2356,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0800
-     * @tc.name      : modifyImageProperty(GPSLongitude,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2546,14 +2378,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0900
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_0900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2570,14 +2400,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1000
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2594,14 +2422,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1100
-     * @tc.name      : modifyImageProperty(BitsPerSample,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1100", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2618,14 +2444,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1200
-     * @tc.name      : modifyImageProperty(ImageLength,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1200", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2642,14 +2466,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1300
-     * @tc.name      : modifyImageProperty(ImageWidth,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1300", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2667,14 +2489,12 @@ export default function imageModifyProperty() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1400
-     * @tc.name      : modifyImageProperty(DateTimeOriginal,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1400", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2691,14 +2511,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1500
-     * @tc.name      : modifyImageProperty(ExposureTime,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1500", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2715,14 +2533,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1600
-     * @tc.name      : modifyImageProperty(SceneType,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2739,14 +2555,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1700
-     * @tc.name      : modifyImageProperty(ISOSpeedRatings,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1700", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2763,14 +2577,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1800
-     * @tc.name      : modifyImageProperty(FNumber,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2787,14 +2599,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1900
-     * @tc.name      : modifyImageProperty(DateTime,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_1900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2811,14 +2621,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2000
-     * @tc.name      : modifyImageProperty(GPSTimeStamp,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2835,14 +2643,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2100
-     * @tc.name      : modifyImageProperty(GPSDateStamp,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2100", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2859,14 +2665,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2200
-     * @tc.name      : modifyImageProperty(ImageDescription,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2200", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2883,14 +2687,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2300
-     * @tc.name      : modifyImageProperty(Make,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2300", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2907,14 +2709,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2400
-     * @tc.name      : modifyImageProperty(Model,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2400", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2931,14 +2731,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2600
-     * @tc.name      : modifyImageProperty(SensitivityType,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2955,14 +2753,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2800
-     * @tc.name      : modifyImageProperty(RecommendedExposureIndex,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -2979,14 +2775,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2900
-     * @tc.name      : modifyImageProperty(ISOSpeedRatings,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_2900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3003,14 +2797,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3000
-     * @tc.name      : modifyImageProperty(ApertureValue,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3027,14 +2819,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3100
-     * @tc.name      : modifyImageProperty(ExposureBiasValue,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3100", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3051,14 +2841,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3200
-     * @tc.name      : modifyImageProperty(MeteringMode,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3200", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3075,14 +2863,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3300
-     * @tc.name      : modifyImageProperty(LightSource,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3300", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3099,14 +2885,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3400
-     * @tc.name      : modifyImageProperty(Flash,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3400", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3123,14 +2907,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3500
-     * @tc.name      : modifyImageProperty(FocalLength,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3500", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3147,14 +2929,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3600
-     * @tc.name      : modifyImageProperty(UserComment,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3600", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3171,14 +2951,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3700
-     * @tc.name      : modifyImageProperty(PixelXDimension,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3700", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3195,14 +2973,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3800
-     * @tc.name      : modifyImageProperty(PixelYDimension,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3800", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3219,14 +2995,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3900
-     * @tc.name      : modifyImageProperty(WhiteBalance,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_3900", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3243,14 +3017,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_4000
-     * @tc.name      : modifyImageProperty(FocalLengthIn35mmFilm,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value,options)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_4000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_4000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_4000", Level.LEVEL0, async (done: Function) => {
       let checkProps = (result: ESObject) => {
@@ -3268,14 +3040,12 @@ export default function imageModifyProperty() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0100
-     * @tc.name      : modifyImageProperty(Orientation)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0100", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyPromiseError(
@@ -3288,14 +3058,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0200
-     * @tc.name      : modifyImageProperty(GPSLatitude)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0200", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyPromiseError(
@@ -3308,14 +3076,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0300
-     * @tc.name      : modifyImageProperty(GPSLongitude)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0300", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyPromiseError(
@@ -3328,14 +3094,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0400
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0400", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyPromiseError(
@@ -3348,14 +3112,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0500
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0500", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyPromiseError(
@@ -3368,14 +3130,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0600
-     * @tc.name      : modifyImageProperty(Orientation)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0600", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyPromiseError(
@@ -3388,14 +3148,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0700
-     * @tc.name      : modifyImageProperty(GPSLatitude)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0700", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyPromiseError(
@@ -3408,14 +3166,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0800
-     * @tc.name      : modifyImageProperty(GPSLongitude)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0800", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyPromiseError(
@@ -3428,14 +3184,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0900
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_0900", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyPromiseError(
@@ -3448,14 +3202,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_1000
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_1000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_ERROR_1000", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyPromiseError(
@@ -3468,14 +3220,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0100
-     * @tc.name      : modifyImageProperty(Orientation)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0100", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyCbErr(done, "SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0100", "fd", "Orientation",
@@ -3483,14 +3233,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0200
-     * @tc.name      : modifyImageProperty(GPSLatitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0200", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyCbErr(done, "SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0200", "fd", "GPSLatitude",
@@ -3498,14 +3246,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0300
-     * @tc.name      : modifyImageProperty(GPSLongitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0300", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyCbErr(done, "SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0300", "fd",
@@ -3513,14 +3259,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0400
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0400", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyCbErr(done, "SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0400", "fd",
@@ -3528,14 +3272,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0500
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0500", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyCbErr(done, "SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0500", "fd",
@@ -3543,14 +3285,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0600
-     * @tc.name      : modifyImageProperty(Orientation)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0600", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyCbErr(
@@ -3563,14 +3303,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0700
-     * @tc.name      : modifyImageProperty(GPSLatitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0700", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyCbErr(done, "SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0700", "buffer",
@@ -3578,14 +3316,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0800
-     * @tc.name      : modifyImageProperty(GPSLongitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0800", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyCbErr(
@@ -3598,14 +3334,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0900
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_0900", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyCbErr(
@@ -3618,14 +3352,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_1000
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_1000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_CALLBACK_ERROR_1000", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyCbErr(
@@ -3638,14 +3370,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0100
-     * @tc.name      : modifyImageProperty(Orientation)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0100", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyOptCbErr(
@@ -3658,14 +3388,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0200
-     * @tc.name      : modifyImageProperty(GPSLatitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0200", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyOptCbErr(
@@ -3678,14 +3406,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0300
-     * @tc.name      : modifyImageProperty(GPSLongitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0300", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyOptCbErr(
@@ -3698,14 +3424,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0400
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0400", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyOptCbErr(
@@ -3718,14 +3442,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0500
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0500", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyOptCbErr(
@@ -3738,14 +3460,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0600
-     * @tc.name      : modifyImageProperty(Orientation)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0600", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyOptCbErr(
@@ -3758,14 +3478,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0700
-     * @tc.name      : modifyImageProperty(GPSLatitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0700", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyOptCbErr(
@@ -3778,14 +3496,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0800
-     * @tc.name      : modifyImageProperty(GPSLongitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0800", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyOptCbErr(
@@ -3798,14 +3514,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0900
-     * @tc.name      : modifyImageProperty(GPSLatitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_0900", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyOptCbErr(
@@ -3818,14 +3532,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_1000
-     * @tc.name      : modifyImageProperty(GPSLongitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call modifyImageProperty(key,value)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_1000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROPERTY_CALLBACK_ERROR_1000", Level.LEVEL0, async (done: Function) => {
       testModifyImagePropertyOptCbErr(
@@ -3838,14 +3550,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0100
-     * @tc.name      : test modifyImageProperties for jpg with multy keys
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0100
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -3866,14 +3576,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0200
-     * @tc.name      : test modifyImageProperties for jpg with single key
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0200
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -3892,14 +3600,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0300
-     * @tc.name      : test modifyImageProperties for all the key with null value of jpg icon
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0300
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -3920,14 +3626,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0400
-     * @tc.name      : test modifyImageProperties for partially the key with null value of jpg icon
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0400
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0400", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -3948,15 +3652,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0500
-     * @tc.name      : test modify image properties using the value obtained from getImageProperties
-     * @tc.desc      : 1.create buffer imagesource1
-     *                 2.call imagesource1.getImageProperties(checkKey)
-     *                 3.create jpg imagesource2
-     *                 4.call imagesource2.modifyImageProperties(props)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0500
+     * @tc.desc   1.create buffer imagesource1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_0500", Level.LEVEL0, async (done: Function) => {
       let checkKey = [
@@ -3976,14 +3677,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0100
-     * @tc.name      : test modifyImageProperties for jpg with invalid value
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0100
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0100", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -4004,14 +3703,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0200
-     * @tc.name      : test modifyImageProperties for jpg with out-of-bounds value
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0200
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0200", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -4032,14 +3729,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0300
-     * @tc.name      : test modifyImageProperties for jpg with invalid keys
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0300
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0300", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -4060,14 +3755,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0400
-     * @tc.name      : test modifyImageProperties for jpg with invalid key
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0400
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0400", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -4088,14 +3781,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0500
-     * @tc.name      : test modifyImageProperties for jpg with all null value
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0500
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0500", Level.LEVEL0, async (done: Function) => {
       let checkKeys: ESObject = Object.values(image.PropertyKey).filter(item =>
@@ -4118,14 +3809,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0600
-     * @tc.name      : test modifyImageProperties for jpg with partially null value
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0600
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0600", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -4146,14 +3835,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0700
-     * @tc.name      : test modifyImageProperties for jpg with incorrect type
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0700
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0700", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -4174,14 +3861,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0800
-     * @tc.name      : test modifyImageProperties for private filed of jpg
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0800
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0800", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -4202,14 +3887,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0900
-     * @tc.name      : test modifyImageProperties for private and public filed of jpg
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0900
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_0900", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -4234,14 +3917,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_1000
-     * @tc.name      : test modifyImageProperties for unwritable filed of jpg
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_1000
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_1000", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -4264,14 +3945,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_1100
-     * @tc.name      : test modifyImageProperties for tiff with multy keys
-     * @tc.desc      : 1.create tiff imagesource
-     *                 2.call modifyImageProperty(keys)
-     *                 3.return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_1100
+     * @tc.desc   1.create tiff imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_1100", Level.LEVEL0, async (done: Function) => {
       let props: ESObject = {
@@ -4292,52 +3971,48 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0100
-     * @tc.name      : test modifyImageProperty GIFLoopCount for gif
-     * @tc.desc      : 1.getFd()
-     *                 2.modifyImageProperty()
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0100
+     * @tc.desc   1.getFd()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0100", Level.LEVEL0, async (done: Function) => {
       console.info("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0100 start");
       testModifyLoopCountErr("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0100", "gif", false, done);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0200
-     * @tc.name      : test modifyImageProperties GIFLoopCount for gif
-     * @tc.desc      : 1.getFd()
-     *                 2.modifyImageProperties()
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0200
+     * @tc.desc   1.getFd()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0200", Level.LEVEL0, async (done: Function) => {
       console.info("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0200 start");
       testModifyLoopCountErr("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0200", "gif", true, done);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0300
-     * @tc.name      : test modifyImageProperty GIFLoopCount for jpg
-     * @tc.desc      : 1.getFd()
-     *                 2.modifyImageProperty()
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0300
+     * @tc.desc   1.getFd()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0300", Level.LEVEL0, async (done: Function) => {
       console.info("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0300 start");
       testModifyLoopCountErr("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0300", "jpg", false, done);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0400
-     * @tc.name      : test modifyImageProperties GIFLoopCount for jpg
-     * @tc.desc      : 1.getFd()
-     *                 2.modifyImageProperties()
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0400
+     * @tc.desc   1.getFd()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0400", Level.LEVEL0, async (done: Function) => {
       console.info("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_0400 start");
@@ -4345,15 +4020,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0100
-     * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty, getImageProperty
-     *                 3.Use test_exif.jpg format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0100
+     * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4371,15 +4043,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0200
-     * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty, getImageProperty
-     *                 3.Use test_exif_v3.heic format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0200
+     * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4407,15 +4076,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0300
-     * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty, getImageProperty
-     *                 3.Use test_exif.png format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0300
+     * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -4434,15 +4100,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0400
-     * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty, getImageProperty
-     *                 3.Use test_exif_v2.webp format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0400
+     * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -4454,15 +4117,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0500
-     * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty, getImageProperty
-     *                 3.Use test_dng.dng format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0500
+     * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -4474,15 +4134,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0600
-     * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty, getImageProperty
-     *                 3.Use test.jpg format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0600
+     * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4494,15 +4151,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_0700
-     * @tc.desc      : test get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call getImageProperty
-     *                 3.Use food.jpg format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_0700
+     * @tc.desc   test get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_0700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4522,15 +4176,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0800
-     * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty, getImageProperty
-     *                 3.Use food.jpg format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0800
+     * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4542,15 +4193,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0900
-     * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty, getImageProperty
-     *                 3.Use food_notHW.jpg format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0900
+     * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4562,15 +4210,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1000
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1000
-     * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty, getImageProperty
-     *                 3.Use food_notHW.jpg format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1000
+     * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4584,15 +4229,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0100
-     * @tc.desc      : test Modify Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty
-     *                 3.Use test.bmp format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0100
+     * @tc.desc   test Modify Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4604,15 +4246,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0200
-     * @tc.desc      : test Modify Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty
-     *                 3.Use moving_test.gif format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0200
+     * @tc.desc   test Modify Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4624,15 +4263,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0300
-     * @tc.desc      : test Modify Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty
-     *                 3.Use test.ico format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0300
+     * @tc.desc   test Modify Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4644,15 +4280,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0400
-     * @tc.desc      : test Modify Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty
-     *                 3.Use test_large.svg format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0400
+     * @tc.desc   test Modify Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4665,15 +4298,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0500
-     * @tc.desc      : test modify Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty
-     *                 3.test_exif.jpg write characters that are less than or equal to 0
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0500
+     * @tc.desc   test modify Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4685,15 +4315,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0600
-     * @tc.desc      : test modify Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call modifyImageProperty
-     *                 3.test_exif.jpg write characters longer than 64*1024
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0600
+     * @tc.desc   test modify Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4707,15 +4334,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0700
-     * @tc.desc      : test get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call getImageProperty
-     *                 3.Use test.bmp format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0700
+     * @tc.desc   test get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4724,15 +4348,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0800
-     * @tc.desc      : test get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call getImageProperty
-     *                 3.Use moving_test.gif format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0800
+     * @tc.desc   test get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4741,15 +4362,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0900
-     * @tc.desc      : test get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call getImageProperty
-     *                 3.Use test.ico format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0900
+     * @tc.desc   test get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4758,15 +4376,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1000
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1000
-     * @tc.desc      : test get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call getImageProperty
-     *                 3.Use test_large.svg format images
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1000
+     * @tc.desc   test get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4775,15 +4390,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1100
-     * @tc.desc      : test get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call getImageProperty
-     *                 3.testExif.jpg no makernote info
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1100
+     * @tc.desc   test get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -4792,15 +4404,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1200
-     * @tc.desc      : test get Maker Note Image Property
-     *                 1.create imagesource
-     *                 2.call getImageProperty
-     *                 3.food_notHW2.jpg
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1200
+     * @tc.desc   test get Maker Note Image Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

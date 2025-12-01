@@ -143,12 +143,12 @@ export default function CameraInputTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_INPUT_001
-     * @tc.name      : open_callback_001
-     * @tc.desc      : No abnormal scenarios-0 param, callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   open_callback_001
+     * @tc.number CAMERA_INPUT_001
+     * @tc.desc   No abnormal scenarios-0 param, callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('open_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'open_callback_001';
@@ -183,12 +183,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_002
-     * @tc.name      : open_promise_001
-     * @tc.desc      : No abnormal scenarios-0 param, promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   open_promise_001
+     * @tc.number CAMERA_INPUT_002
+     * @tc.desc   No abnormal scenarios-0 param, promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('open_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'open_promise_001';
@@ -224,12 +224,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_003
-     * @tc.name      : open_promise_secure_photo_001
-     * @tc.desc      : No abnormal scenarios -> isSecureEnabled-true, promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   open_promise_secure_photo_001
+     * @tc.number CAMERA_INPUT_003
+     * @tc.desc   No abnormal scenarios -> isSecureEnabled-true, promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('open_promise_secure_photo_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'open_promise_secure_photo_001';
@@ -270,12 +270,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_004
-     * @tc.name      : open_promise_secure_photo_002
-     * @tc.desc      : No abnormal scenarios -> isSecureEnabled-false, promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   open_promise_secure_photo_002
+     * @tc.number CAMERA_INPUT_004
+     * @tc.desc   No abnormal scenarios -> isSecureEnabled-false, promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('open_promise_secure_photo_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'open_promise_secure_photo_002';
@@ -311,12 +311,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_005
-     * @tc.name      : open_promise_with_concurrent_001
-     * @tc.desc      : No abnormal scenarios -> CameraConcurrentType-CAMERA_LIMITED_CAPABILITY, promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   open_promise_with_concurrent_001
+     * @tc.number CAMERA_INPUT_005
+     * @tc.desc   No abnormal scenarios -> CameraConcurrentType-CAMERA_LIMITED_CAPABILITY, promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('open_promise_with_concurrent_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'open_promise_with_concurrent_001';
@@ -324,12 +324,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_006
-     * @tc.name      : open_promise_with_concurrent_002
-     * @tc.desc      : No abnormal scenarios -> CameraConcurrentType-CAMERA_FULL_CAPABILITY, promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   open_promise_with_concurrent_002
+     * @tc.number CAMERA_INPUT_006
+     * @tc.desc   No abnormal scenarios -> CameraConcurrentType-CAMERA_FULL_CAPABILITY, promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('open_promise_with_concurrent_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'open_promise_with_concurrent_002';
@@ -337,12 +337,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_007
-     * @tc.name      : open_promise_with_concurrent_abnormal_001
-     * @tc.desc      : CameraConcurrentType->abnormalType, promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   open_promise_with_concurrent_abnormal_001
+     * @tc.number CAMERA_INPUT_007
+     * @tc.desc   CameraConcurrentType->abnormalType, promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('open_promise_with_concurrent_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'open_promise_with_concurrent_abnormal_001';
@@ -384,12 +384,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_008 // TODO
-     * @tc.name      : open_promise_abnormal_001
-     * @tc.desc      : No abnormal scenarios-0 param, promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   open_promise_abnormal_001
+     * @tc.number CAMERA_INPUT_008 // TODO
+     * @tc.desc   No abnormal scenarios-0 param, promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('open_promise_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'open_promise_abnormal_001';
@@ -424,12 +424,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_009
-     * @tc.name      : close_callback_001
-     * @tc.desc      : No abnormal scenarios-0 param, callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   close_callback_001
+     * @tc.number CAMERA_INPUT_009
+     * @tc.desc   No abnormal scenarios-0 param, callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('close_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'close_callback_001';
@@ -465,12 +465,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_010
-     * @tc.name      : close_promise_001
-     * @tc.desc      : No abnormal scenarios-0 param, promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   close_promise_001
+     * @tc.number CAMERA_INPUT_010
+     * @tc.desc   No abnormal scenarios-0 param, promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('close_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'close_promise_001';
@@ -508,12 +508,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_011
-     * @tc.name      : on_off_error_Listen_001
-     * @tc.desc      : No abnormal scenarios-error listen
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   on_off_error_Listen_001
+     * @tc.number CAMERA_INPUT_011
+     * @tc.desc   No abnormal scenarios-error listen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_error_Listen_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_error_Listen_001';
@@ -548,12 +548,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_012
-     * @tc.name      : on_off_error_Listen_002
-     * @tc.desc      : error listen-cameraDevice-abnormal
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   on_off_error_Listen_002
+     * @tc.number CAMERA_INPUT_012
+     * @tc.desc   error listen-cameraDevice-abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('on_off_error_Listen_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'on_off_error_Listen_002';
@@ -588,12 +588,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_013
-     * @tc.name      : on_off_error_Listen_003
-     * @tc.desc      : error listen-two input
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   on_off_error_Listen_003
+     * @tc.number CAMERA_INPUT_013
+     * @tc.desc   error listen-two input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('on_off_error_Listen_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'on_off_error_Listen_003';
@@ -632,12 +632,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_014
-     * @tc.name      : open_close_abnormal_001
-     * @tc.desc      : Wrong order-first close, then open
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   open_close_abnormal_001
+     * @tc.number CAMERA_INPUT_014
+     * @tc.desc   Wrong order-first close, then open
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('open_close_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'open_close_abnormal_001';
@@ -664,12 +664,12 @@ export default function CameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_INPUT_015
-     * @tc.name      : open_promise_abnormal_002
-     * @tc.desc      : Wrong order-open twice -> error_code: 7400102
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   open_promise_abnormal_002
+     * @tc.number CAMERA_INPUT_015
+     * @tc.desc   Wrong order-open twice -> error_code: 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('open_promise_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'open_promise_abnormal_002';

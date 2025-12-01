@@ -42,12 +42,12 @@ export default function convertToPhotoAssetTest () {
     })
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Covert_001
-     * @tc.name      : covert_photo_promise_000
-     * @tc.desc      : covert photo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   covert_photo_promise_000
+     * @tc.number Sub_Photo_Access_Sendable_Covert_001
+     * @tc.desc   covert photo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('covert_photo_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'covert_photo_promise_000';

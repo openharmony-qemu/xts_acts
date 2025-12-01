@@ -52,10 +52,13 @@ OH_AudioStreamBuilder* ActsAudioNdkTest::CreateRenderBuilder()
 }
 
 /**
-* @tc.name  : Test OH_AudioRenderer_GetUnderflowCount API.
-* @tc.number: SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetUnderflowCount_0100
-* @tc.desc  : Test OH_AudioRenderer_GetUnderflowCount interface.
-*/
+ * @tc.name   SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetUnderflowCount_0100
+ * @tc.number SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetUnderflowCount_0100
+ * @tc.desc   Test OH_AudioRenderer_GetUnderflowCount interface.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST(ActsAudioNdkTest, SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetUnderflowCount_0100, TestSize.Level0)
 {
     OH_AudioStreamBuilder* builder = ActsAudioNdkTest::CreateRenderBuilder();

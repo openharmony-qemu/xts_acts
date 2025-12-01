@@ -121,12 +121,12 @@ export default function PreviewOutputTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PREVIEW_001
-     * @tc.name      : on_error_listen_previewOutput_001
-     * @tc.desc      : No abnormal scenarios-listen on error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   on_error_listen_previewOutput_001
+     * @tc.number CAMERA_OUTPUT_PREVIEW_001
+     * @tc.desc   No abnormal scenarios-listen on error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_error_listen_previewOutput_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_error_listen_previewOutput_001';
@@ -158,12 +158,12 @@ export default function PreviewOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PREVIEW_002
-     * @tc.name      : off_error_listen_previewOutput_001
-     * @tc.desc      : No abnormal scenarios-listen off error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   off_error_listen_previewOutput_001
+     * @tc.number CAMERA_OUTPUT_PREVIEW_002
+     * @tc.desc   No abnormal scenarios-listen off error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('off_error_listen_previewOutput_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'off_error_listen_previewOutput_001';
@@ -208,12 +208,12 @@ export default function PreviewOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PREVIEW_003
-     * @tc.name      : release_preview_callback_001
-     * @tc.desc      : No abnormal scenarios-preview output release-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_preview_callback_001
+     * @tc.number CAMERA_OUTPUT_PREVIEW_003
+     * @tc.desc   No abnormal scenarios-preview output release-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_preview_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_preview_callback_001';
@@ -250,12 +250,12 @@ export default function PreviewOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PREVIEW_004
-     * @tc.name      : release_preview_promise_001
-     * @tc.desc      : No abnormal scenarios-preview output release-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_preview_promise_001
+     * @tc.number CAMERA_OUTPUT_PREVIEW_004
+     * @tc.desc   No abnormal scenarios-preview output release-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_preview_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_preview_promise_001';
@@ -289,15 +289,15 @@ export default function PreviewOutputTest() {
       }
     })
 
-    /**
-     * @tc.number    : CAMERA_OUTPUT_PREVIEW_005 //TODO 未能成功监听错误码
-     * @tc.name      : on_error_listen_previewOutput_abnormal_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
 /*
+    /**
+     * @tc.name   on_error_listen_previewOutput_abnormal_001
+     * @tc.number on_error_listen_previewOutput_abnormal_001
+     * @tc.desc   on_error_listen_previewOutput_abnormal_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('on_error_listen_previewOutput_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_error_listen_previewOutput_abnormal_001';
       console.info(TAG, testName + ' begin.');

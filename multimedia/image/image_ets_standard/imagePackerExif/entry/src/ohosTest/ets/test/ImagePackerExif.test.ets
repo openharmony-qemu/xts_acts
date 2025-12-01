@@ -348,13 +348,12 @@ export default function imagePackerExifTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0100
-     * @tc.name      : packing -promise
-     * @tc.desc      : 1.modifyImageProperty
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0100
+     * @tc.desc   1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0100"
@@ -378,13 +377,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0200
-     * @tc.name      : packing -promise
-     * @tc.desc      : 1.modifyImageProperty
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0200
+     * @tc.desc   1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0200"
@@ -408,13 +406,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300
-     * @tc.name      : packing -promise
-     * @tc.desc      : 1.modifyImageProperty
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300
+     * @tc.desc   1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300"
@@ -438,13 +435,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0100
-     * @tc.name      : packing -promise
-     * @tc.desc      : 1.packing
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0100
+     * @tc.desc   1.packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0100"
@@ -468,13 +464,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0200
-     * @tc.name      : packing -promise
-     * @tc.desc      : 1.packing
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0200
+     * @tc.desc   1.packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0200"
@@ -498,13 +493,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0300
-     * @tc.name      : packing -promise
-     * @tc.desc      : 1.packing
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0300
+     * @tc.desc   1.packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_PROMISE_0300"
@@ -528,13 +522,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0100
-     * @tc.name      : packToFile -promise
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0100
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0100"
@@ -558,13 +551,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0200
-     * @tc.name      : packToFile -promise
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0200
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0200"
@@ -588,13 +580,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0300
-     * @tc.name      : packToFile -promise
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0300
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_PROMISE_0300"
@@ -618,13 +609,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0100
-     * @tc.name      : packToFile -promise
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0100
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0100"
@@ -649,13 +639,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0200
-     * @tc.name      : packToFile -promise
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0200
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0200"
@@ -680,13 +669,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0300
-     * @tc.name      : packToFile -promise
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0300
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_PROMISE_0300"
@@ -710,13 +698,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0100
-     * @tc.name      : packing -callback
-     * @tc.desc      : 1.packing                                                                                                                                                                           sc      : 1.modifyImageProperty
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0100
+     * @tc.desc   1.packing                                                                                                                                                                           sc      : 1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0100"
@@ -740,13 +727,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0200
-     * @tc.name      : packing -callback
-     * @tc.desc      : 1.packing                                                                                                                                                                           sc      : 1.modifyImageProperty
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0200
+     * @tc.desc   1.packing                                                                                                                                                                           sc      : 1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0200"
@@ -770,13 +756,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0300
-     * @tc.name      : packing -callback
-     * @tc.desc      : 1.packing                                                                                                                                                                           sc      : 1.modifyImageProperty
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0300
+     * @tc.desc   1.packing                                                                                                                                                                           sc      : 1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAP_CALLBACK_0300"
@@ -800,13 +785,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0100
-     * @tc.name      : packing -callback
-     * @tc.desc      : 1.packing
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0100
+     * @tc.desc   1.packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0100"
@@ -830,13 +814,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0200
-     * @tc.name      : packing -callback
-     * @tc.desc      : 1.packing
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0200
+     * @tc.desc   1.packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0200"
@@ -860,13 +843,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0300
-     * @tc.name      : packing -callback
-     * @tc.desc      : 1.packing
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0300
+     * @tc.desc   1.packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0300"
@@ -890,13 +872,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0100
-     * @tc.name      : packToFile -callback
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0100
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0100"
@@ -920,13 +901,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0200
-     * @tc.name      : packToFile -callback
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0200
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0200"
@@ -950,13 +930,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0300
-     * @tc.name      : packToFile -callback
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0300
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAP_CALLBACK_0300"
@@ -980,13 +959,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0100
-     * @tc.name      : packToFile -callback
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0100
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = 'SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0100'
@@ -1010,13 +988,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0200
-     * @tc.name      : packToFile -callback
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0200
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
       const tag: string = 'SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0200'
@@ -1040,13 +1017,12 @@ export default function imagePackerExifTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0300
-     * @tc.name      : packToFile -callback
-     * @tc.desc      : 1.packToFile
-     *                 2.getImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0300
+     * @tc.desc   1.packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
       const tag: string = 'SUB_MULTIMEDIA_IMAGE_PACKTOFILE_IMAGESOURCE_CALLBACK_0300'

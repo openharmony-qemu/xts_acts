@@ -41,12 +41,12 @@ export default function requestImageDataTest() {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_STATIC_0100
-      * @tc.name    request_image_data_static_001
-      * @tc.desc    request image data with fastMode and oringinalMode
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   request_image_data_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_STATIC_0100
+     * @tc.desc   request image data with fastMode and oringinalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_data_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

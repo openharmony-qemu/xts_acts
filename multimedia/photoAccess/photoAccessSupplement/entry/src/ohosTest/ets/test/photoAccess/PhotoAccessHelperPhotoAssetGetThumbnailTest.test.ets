@@ -54,12 +54,12 @@ export default function sendableGetThumbnailTest() {
     });
 
     /**
-     * @tc.number     SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_01
-     * @tc.name       SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_01
-     * @tc.desc       第一个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_01
+     * @tc.number SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_01
+     * @tc.desc   第一个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_01', Level.LEVEL2, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_01';
@@ -84,12 +84,12 @@ export default function sendableGetThumbnailTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_02
-     * @tc.name       SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_02
-     * @tc.desc       第一个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_02
+     * @tc.number SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_02
+     * @tc.desc   第一个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_02', Level.LEVEL2, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_02';
@@ -113,12 +113,12 @@ export default function sendableGetThumbnailTest() {
       }
     })
     /**
-     * @tc.number     SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_03
-     * @tc.name       SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_03
-     * @tc.desc       第一个参数为空字符串
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_03
+     * @tc.number SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_03
+     * @tc.desc   第一个参数为空字符串
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_03', Level.LEVEL2, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ASSET_GET_THUMBNAIL_03';

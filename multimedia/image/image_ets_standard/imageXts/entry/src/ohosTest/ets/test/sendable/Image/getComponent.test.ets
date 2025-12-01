@@ -60,12 +60,12 @@ export default function sendableGetComponentTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_GET_COMPONENT_001
-     * @tc.name      : getComponent_sendable_promise_001
-     * @tc.desc      : getComponent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getComponent_sendable_promise_001
+     * @tc.number IMAGE_GET_COMPONENT_001
+     * @tc.desc   getComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('getComponent_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getComponent_sendable_promise_001';

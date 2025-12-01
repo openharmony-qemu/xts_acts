@@ -140,14 +140,12 @@ export default function imageExifGetSyncTest() {
     }
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0100
-     * @tc.desc        1.create imageSource
-     *                 2.getImagePropertySync(keys)
-     *                 3.the getImagePropertySync value is the expected value
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0100', Level.LEVEL0, async (done: () => void) => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0100'
@@ -337,14 +335,12 @@ export default function imageExifGetSyncTest() {
 
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0200
-     * @tc.desc        1.create imageSource
-     *                 2.getImagePropertySync(keys)
-     *                 3.the getImagePropertySync value is the expected value
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0200
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0200', Level.LEVEL0, async (done: () => void) => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0200'
@@ -530,14 +526,12 @@ export default function imageExifGetSyncTest() {
     })
     
     /**
-     * @tc.number      SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0300
-     * @tc.desc        1.create imageSource
-     *                 2.getImagePropertySync(keys)
-     *                 3.the getImagePropertySync value is the expected value
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0300
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0300', Level.LEVEL0, async (done: () => void) => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0300'
@@ -726,14 +720,12 @@ export default function imageExifGetSyncTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0400
-     * @tc.desc        1.create imageSource
-     *                 2.getImagePropertySync(keys)
-     *                 3.the getImagePropertySync value is the expected value
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0400
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0400', Level.LEVEL0, async (done: () => void) => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0400'
@@ -922,14 +914,12 @@ export default function imageExifGetSyncTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0500
-     * @tc.desc        1.create imageSource
-     *                 2.getImagePropertySync(keys)
-     *                 3.the getImagePropertySync value is the expected value
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0500
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0500', Level.LEVEL0, async (done: () => void) => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0500'
@@ -1118,14 +1108,12 @@ export default function imageExifGetSyncTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0600
-     * @tc.desc        1.create imageSource
-     *                 2.getImagePropertySync(keys)
-     *                 3.the getImagePropertySync value is the expected value
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0600
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0600', Level.LEVEL0, async (done: () => void) => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0600'
@@ -1157,14 +1145,12 @@ export default function imageExifGetSyncTest() {
 
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0700
-     * @tc.desc        1.create imageSource
-     *                 2.getImagePropertySync(keys)
-     *                 3.the getImagePropertySync value is the expected value
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0700
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0700', Level.LEVEL0, async (done: () => void) => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0700'
@@ -1195,14 +1181,12 @@ export default function imageExifGetSyncTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0800
-     * @tc.desc        1.create imageSource
-     *                 2.getImagePropertySync(keys)
-     *                 3.the getImagePropertySync value is the expected value
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0800
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0800', Level.LEVEL0, async (done: () => void) => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0800'
@@ -1233,14 +1217,12 @@ export default function imageExifGetSyncTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0900
-     * @tc.desc        1.create imageSource
-     *                 2.getImagePropertySync(keys)
-     *                 3.the getImagePropertySync value is the expected value
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0900
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0900', Level.LEVEL0, async (done: () => void) => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_0900'
@@ -1271,14 +1253,12 @@ export default function imageExifGetSyncTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_01000
-     * @tc.name        SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_01000
-     * @tc.desc        1.create imageSource
-     *                 2.getImagePropertySync('MakerNote')
-     *                 3.the getImagePropertySync value is the expected value
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_01000
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_01000
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_01000', Level.LEVEL0, async (done: () => void) => {
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTY_SYNC_STATIC_01000'

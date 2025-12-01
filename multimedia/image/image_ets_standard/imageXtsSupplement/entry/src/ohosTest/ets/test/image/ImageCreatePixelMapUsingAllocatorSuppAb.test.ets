@@ -49,12 +49,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       AppStorage.delete('empty')
     });
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Promise_Supp_001
-     * @tc.name       image_createPixelMapUsingAllocator_Promise_Supp_001
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Promise_Supp_001
+     * @tc.number image_createPixelMapUsingAllocator_Promise_Supp_001
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Promise_Supp_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Promise_Supp_001';
@@ -73,12 +73,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Promise_Supp_002
-     * @tc.name       image_createPixelMapUsingAllocator_Promise_Supp_002
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Promise_Supp_002
+     * @tc.number image_createPixelMapUsingAllocator_Promise_Supp_002
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Promise_Supp_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Promise_Supp_002';
@@ -97,12 +97,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Promise_Supp_003
-     * @tc.name       image_createPixelMapUsingAllocator_Promise_Supp_003
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Promise_Supp_003
+     * @tc.number image_createPixelMapUsingAllocator_Promise_Supp_003
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Promise_Supp_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Promise_Supp_003';
@@ -122,12 +122,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Promise_Supp_004
-     * @tc.name       image_createPixelMapUsingAllocator_Promise_Supp_004
-     * @tc.desc       Image,createPixelMapUsingAllocator,opts:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Promise_Supp_004
+     * @tc.number image_createPixelMapUsingAllocator_Promise_Supp_004
+     * @tc.desc   Image,createPixelMapUsingAllocator,opts:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Promise_Supp_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Promise_Supp_004';
@@ -147,12 +147,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Promise_Supp_005
-     * @tc.name       image_createPixelMapUsingAllocator_Promise_Supp_005
-     * @tc.desc       Image,createPixelMapUsingAllocator,opts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Promise_Supp_005
+     * @tc.number image_createPixelMapUsingAllocator_Promise_Supp_005
+     * @tc.desc   Image,createPixelMapUsingAllocator,opts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Promise_Supp_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Promise_Supp_005';
@@ -171,12 +171,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Promise_Supp_006
-     * @tc.name       image_createPixelMapUsingAllocator_Promise_Supp_006
-     * @tc.desc       Image,createPixelMapUsingAllocator,opts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Promise_Supp_006
+     * @tc.number image_createPixelMapUsingAllocator_Promise_Supp_006
+     * @tc.desc   Image,createPixelMapUsingAllocator,opts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Promise_Supp_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Promise_Supp_006';
@@ -195,12 +195,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Promise_Supp_007
-     * @tc.name       image_createPixelMapUsingAllocator_Promise_Supp_007
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:null,opts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Promise_Supp_007
+     * @tc.number image_createPixelMapUsingAllocator_Promise_Supp_007
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:null,opts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Promise_Supp_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Promise_Supp_007';
@@ -218,12 +218,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Promise_Supp_008
-     * @tc.name       image_createPixelMapUsingAllocator_Promise_Supp_008
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:undefined,opts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Promise_Supp_008
+     * @tc.number image_createPixelMapUsingAllocator_Promise_Supp_008
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:undefined,opts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Promise_Supp_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Promise_Supp_008';
@@ -241,12 +241,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Promise_Supp_009
-     * @tc.name       image_createPixelMapUsingAllocator_Promise_Supp_009
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:null,opts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Promise_Supp_009
+     * @tc.number image_createPixelMapUsingAllocator_Promise_Supp_009
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:null,opts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Promise_Supp_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Promise_Supp_009';
@@ -264,12 +264,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Promise_Supp_010
-     * @tc.name       image_createPixelMapUsingAllocator_Promise_Supp_010
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:undefined,opts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Promise_Supp_010
+     * @tc.number image_createPixelMapUsingAllocator_Promise_Supp_010
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:undefined,opts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Promise_Supp_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Promise_Supp_010';
@@ -287,12 +287,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Promise_Supp_011
-     * @tc.name       image_createPixelMapUsingAllocator_Promise_Supp_011
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:'',opts:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Promise_Supp_011
+     * @tc.number image_createPixelMapUsingAllocator_Promise_Supp_011
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:'',opts:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Promise_Supp_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Promise_Supp_011';
@@ -313,12 +313,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
     })
 
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Sync_Supp_001
-     * @tc.name       image_createPixelMapUsingAllocator_Sync_Supp_001
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:'',opts:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Sync_Supp_001
+     * @tc.number image_createPixelMapUsingAllocator_Sync_Supp_001
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:'',opts:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Sync_Supp_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Sync_Supp_001';
@@ -335,12 +335,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
     })
 
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Sync_Supp_002
-     * @tc.name       image_createPixelMapUsingAllocator_Sync_Supp_002
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:undefined,opts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Sync_Supp_002
+     * @tc.number image_createPixelMapUsingAllocator_Sync_Supp_002
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:undefined,opts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Sync_Supp_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Sync_Supp_002';
@@ -354,12 +354,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Sync_Supp_003
-     * @tc.name       image_createPixelMapUsingAllocator_Sync_Supp_003
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:undefined,opts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Sync_Supp_003
+     * @tc.number image_createPixelMapUsingAllocator_Sync_Supp_003
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:undefined,opts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Sync_Supp_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Sync_Supp_003';
@@ -373,12 +373,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Sync_Supp_004
-     * @tc.name       image_createPixelMapUsingAllocator_Sync_Supp_004
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:null,opts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Sync_Supp_004
+     * @tc.number image_createPixelMapUsingAllocator_Sync_Supp_004
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:null,opts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Sync_Supp_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Sync_Supp_004';
@@ -392,12 +392,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Sync_Supp_005
-     * @tc.name       image_createPixelMapUsingAllocator_Sync_Supp_005
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:null,opts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Sync_Supp_005
+     * @tc.number image_createPixelMapUsingAllocator_Sync_Supp_005
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:null,opts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Sync_Supp_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Sync_Supp_005';
@@ -411,12 +411,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Sync_Supp_006
-     * @tc.name       image_createPixelMapUsingAllocator_Sync_Supp_006
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:'',
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Sync_Supp_006
+     * @tc.number image_createPixelMapUsingAllocator_Sync_Supp_006
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:'',
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Sync_Supp_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Sync_Supp_006';
@@ -432,12 +432,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Sync_Supp_007
-     * @tc.name       image_createPixelMapUsingAllocator_Sync_Supp_007
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:null,
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Sync_Supp_007
+     * @tc.number image_createPixelMapUsingAllocator_Sync_Supp_007
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:null,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Sync_Supp_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Sync_Supp_007';
@@ -452,12 +452,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Sync_Supp_008
-     * @tc.name       image_createPixelMapUsingAllocator_Sync_Supp_008
-     * @tc.desc       Image,createPixelMapUsingAllocator,color:undefined,
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Sync_Supp_008
+     * @tc.number image_createPixelMapUsingAllocator_Sync_Supp_008
+     * @tc.desc   Image,createPixelMapUsingAllocator,color:undefined,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Sync_Supp_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Sync_Supp_008';
@@ -472,12 +472,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Sync_Supp_009
-     * @tc.name       image_createPixelMapUsingAllocator_Sync_Supp_009
-     * @tc.desc       Image,createPixelMapUsingAllocator,opts:'',
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Sync_Supp_009
+     * @tc.number image_createPixelMapUsingAllocator_Sync_Supp_009
+     * @tc.desc   Image,createPixelMapUsingAllocator,opts:'',
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Sync_Supp_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Sync_Supp_009';
@@ -493,12 +493,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Sync_Supp_010
-     * @tc.name       image_createPixelMapUsingAllocator_Sync_Supp_010
-     * @tc.desc       Image,createPixelMapUsingAllocator,opts:null,
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Sync_Supp_010
+     * @tc.number image_createPixelMapUsingAllocator_Sync_Supp_010
+     * @tc.desc   Image,createPixelMapUsingAllocator,opts:null,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Sync_Supp_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Sync_Supp_010';
@@ -513,12 +513,12 @@ export default function CreatePixelMapUsingAllocatorAndSync() {
       done();
     })
     /**
-     * @tc.number     image_createPixelMapUsingAllocator_Sync_Supp_011
-     * @tc.name       image_createPixelMapUsingAllocator_Sync_Supp_011
-     * @tc.desc       Image,createPixelMapUsingAllocator,opts:undefined,
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_createPixelMapUsingAllocator_Sync_Supp_011
+     * @tc.number image_createPixelMapUsingAllocator_Sync_Supp_011
+     * @tc.desc   Image,createPixelMapUsingAllocator,opts:undefined,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_createPixelMapUsingAllocator_Sync_Supp_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_createPixelMapUsingAllocator_Sync_Supp_011';

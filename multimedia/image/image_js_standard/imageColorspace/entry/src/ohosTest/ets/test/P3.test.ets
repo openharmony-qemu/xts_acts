@@ -129,14 +129,12 @@ export default function ImageP3() {
         
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETCOLORSPACE_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_GETCOLORSPACE_0100
-         * @tc.desc      : 1.create imagesource
-         *                 2.createPixelMap
-         *                 3.getColorSpace and getColorSpaceName
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETCOLORSPACE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETCOLORSPACE_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_GETCOLORSPACE_0100", Level.LEVEL0, async (done:Function)=> {
             let logger:ESObject = Logger("SUB_MULTIMEDIA_IMAGE_GETCOLORSPACE_0100");
@@ -165,15 +163,12 @@ export default function ImageP3() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0100
-         * @tc.desc      : 1.create imagesource
-         *                 2.createPixelMap
-         *                 3.setColorSpace
-         *                 4.getColorSpace and getColorSpaceName
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0100", Level.LEVEL0, (done:Function)=> {
             let imageSource = image.createImageSource(testP3.buffer);
@@ -186,15 +181,12 @@ export default function ImageP3() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0200
-         * @tc.desc      : 1.create imagesource
-         *                 2.createPixelMap
-         *                 3.setColorSpace
-         *                 4.getColorSpace and getColorSpaceName
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0200", Level.LEVEL1, (done:Function)=> {
             let imageSource = image.createImageSource(testImg.buffer);
@@ -207,15 +199,12 @@ export default function ImageP3() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0300
-         * @tc.desc      : 1.create imagesource
-         *                 2.createPixelMap
-         *                 3.setColorSpace
-         *                 4.getColorSpace and getColorSpaceName
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0300
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0300", Level.LEVEL1, async (done:Function)=> {
             await getFd("colorspace.jpg");
@@ -229,15 +218,12 @@ export default function ImageP3() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0400
-         * @tc.desc      : 1.create imagesource
-         *                 2.createPixelMap
-         *                 3.setColorSpace
-         *                 4.getColorSpace and getColorSpaceName
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0400
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SETCOLORSPACE_0400", Level.LEVEL1, async (done:Function)=> {
             await getFd("DisplayP3.png");

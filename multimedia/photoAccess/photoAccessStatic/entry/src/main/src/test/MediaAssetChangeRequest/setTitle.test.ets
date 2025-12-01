@@ -42,12 +42,12 @@ export default function setTitleChangeRequestTest() {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_SET_TITLE_CHANGE_REQUEST_STATIC_0100
-      * @tc.name    set_title_change_request_static_001
-      * @tc.desc    change asset title '', error code 401
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   set_title_change_request_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_TITLE_CHANGE_REQUEST_STATIC_0100
+     * @tc.desc   change asset title '', error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('set_title_change_request_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

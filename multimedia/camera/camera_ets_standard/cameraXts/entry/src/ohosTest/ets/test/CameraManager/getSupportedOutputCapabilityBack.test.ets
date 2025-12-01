@@ -86,12 +86,12 @@ export default function getSupportedOutputCapabilityBackTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_001
-     * @tc.name      : getSupportedOutputCapability_back_001
-     * @tc.desc      : No abnormal scenarios-mode->NORMAL_PHOTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedOutputCapability_back_001
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_001
+     * @tc.desc   No abnormal scenarios-mode->NORMAL_PHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedOutputCapability_back_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedOutputCapability_back_001';
@@ -99,12 +99,12 @@ export default function getSupportedOutputCapabilityBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_002
-     * @tc.name      : getSupportedOutputCapability_back_002
-     * @tc.desc      : No abnormal scenarios-mode->NORMAL_VIDEO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedOutputCapability_back_002
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_002
+     * @tc.desc   No abnormal scenarios-mode->NORMAL_VIDEO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedOutputCapability_back_002', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedOutputCapability_back_002';
@@ -112,12 +112,12 @@ export default function getSupportedOutputCapabilityBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_003
-     * @tc.name      : getSupportedOutputCapability_back_003
-     * @tc.desc      : No abnormal scenarios-mode->SECURE_PHOTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedOutputCapability_back_003
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_003
+     * @tc.desc   No abnormal scenarios-mode->SECURE_PHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedOutputCapability_back_003', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedOutputCapability_back_003';
@@ -125,12 +125,12 @@ export default function getSupportedOutputCapabilityBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_004
-     * @tc.name      : getSupportedOutputCapability_abnormal_back_001
-     * @tc.desc      : scene mode->null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedOutputCapability_abnormal_back_001
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_004
+     * @tc.desc   scene mode->null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedOutputCapability_abnormal_back_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedOutputCapability_abnormal_back_001';
@@ -138,12 +138,12 @@ export default function getSupportedOutputCapabilityBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_005
-     * @tc.name      : getSupportedOutputCapability_abnormal_back_002
-     * @tc.desc      : scene mode->undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedOutputCapability_abnormal_back_002
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_005
+     * @tc.desc   scene mode->undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedOutputCapability_abnormal_back_002', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedOutputCapability_abnormal_back_002';
@@ -151,12 +151,12 @@ export default function getSupportedOutputCapabilityBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_006
-     * @tc.name      : getSupportedOutputCapability_abnormal_back_003
-     * @tc.desc      : scene mode->invalid mode -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedOutputCapability_abnormal_back_003
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_006
+     * @tc.desc   scene mode->invalid mode -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedOutputCapability_abnormal_back_003', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedOutputCapability_abnormal_back_003';
@@ -164,12 +164,12 @@ export default function getSupportedOutputCapabilityBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_007
-     * @tc.name      : getSupportedOutputCapability_abnormal_back_004
-     * @tc.desc      : cameraDevice->invalid -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedOutputCapability_abnormal_back_004
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_007
+     * @tc.desc   cameraDevice->invalid -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedOutputCapability_abnormal_back_004', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedOutputCapability_abnormal_back_004';
@@ -177,12 +177,12 @@ export default function getSupportedOutputCapabilityBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_008
-     * @tc.name      : getSupportedOutputCapability_abnormal_back_005
-     * @tc.desc      : cameraDevice->undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedOutputCapability_abnormal_back_005
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_008
+     * @tc.desc   cameraDevice->undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedOutputCapability_abnormal_back_005', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedOutputCapability_abnormal_back_005';
@@ -190,12 +190,12 @@ export default function getSupportedOutputCapabilityBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_009
-     * @tc.name      : getSupportedOutputCapability_abnormal_back_006
-     * @tc.desc      : cameraDevice->null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedOutputCapability_abnormal_back_006
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_009
+     * @tc.desc   cameraDevice->null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedOutputCapability_abnormal_back_006', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedOutputCapability_abnormal_back_006';
@@ -203,12 +203,12 @@ export default function getSupportedOutputCapabilityBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_010
-     * @tc.name      : getSupportedOutputCapability_abnormal_back_007
-     * @tc.desc      : cameraDevice->invalid -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedOutputCapability_abnormal_back_007
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_010
+     * @tc.desc   cameraDevice->invalid -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedOutputCapability_abnormal_back_007', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedOutputCapability_abnormal_back_007';
@@ -216,12 +216,12 @@ export default function getSupportedOutputCapabilityBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_011
-     * @tc.name      : getSupportedOutputCapability_abnormal_back_008
-     * @tc.desc      : cameraDevice->invalid, sceneMode: SECURE_PHOTO -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedOutputCapability_abnormal_back_008
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_OUTPUT_CAPABILITY_BACK_011
+     * @tc.desc   cameraDevice->invalid, sceneMode: SECURE_PHOTO -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedOutputCapability_abnormal_back_008', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedOutputCapability_abnormal_back_008';

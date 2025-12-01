@@ -189,12 +189,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0100
-         * @tc.desc        Testing set callMetadata - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0100
+         * @tc.desc   Testing set callMetadata - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -247,12 +247,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0600
-         * @tc.desc        Testing destroy before setCallMetadata - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0600
+         * @tc.desc   Testing destroy before setCallMetadata - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -278,12 +278,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0700
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0700
-         * @tc.desc        Testing set name - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0700
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0700
+         * @tc.desc   Testing set name - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -317,12 +317,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0800
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0800
-         * @tc.desc        Testing set phoneNumber - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0800
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0800
+         * @tc.desc   Testing set phoneNumber - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -356,12 +356,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0900
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0900
-         * @tc.desc        Testing set avatar - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0900
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0900
+         * @tc.desc   Testing set avatar - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_PROMISE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -404,12 +404,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_PROMISE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_PROMISE_STATIC_0100
-         * @tc.desc        Testing destroy before getCallMetadata - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_PROMISE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_PROMISE_STATIC_0100
+         * @tc.desc   Testing destroy before getCallMetadata - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let callMetadata0: avSession.CallMetadata = {
@@ -445,12 +445,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_PROMISE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_PROMISE_STATIC_0200
-         * @tc.desc        Testing destroy before getCallMetadata - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_PROMISE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_PROMISE_STATIC_0200
+         * @tc.desc   Testing destroy before getCallMetadata - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -489,12 +489,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0100
-         * @tc.desc        Testing set callMetadata0 - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0100
+         * @tc.desc   Testing set callMetadata0 - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
@@ -556,12 +556,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0600
-         * @tc.desc        Testing destroy before setCallMetadata - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0600
+         * @tc.desc   Testing destroy before setCallMetadata - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -595,12 +595,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0070
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0070
-         * @tc.desc        Testing set name - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0070
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0070
+         * @tc.desc   Testing set name - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -640,12 +640,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0080
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0080
-         * @tc.desc        Testing set phoneNumber - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0080
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0080
+         * @tc.desc   Testing set phoneNumber - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -685,12 +685,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0090
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0090
-         * @tc.desc        Testing set avatar - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0090
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0090
+         * @tc.desc   Testing set avatar - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_STATIC_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
@@ -742,12 +742,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_CALLBACK_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_CALLBACK_STATIC_0100
-         * @tc.desc        Testing destroy before getCallMetadata - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_CALLBACK_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_CALLBACK_STATIC_0100
+         * @tc.desc   Testing destroy before getCallMetadata - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
@@ -776,12 +776,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_CALLBACK_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_CALLBACK_STATIC_0200
-         * @tc.desc        Testing destroy before getCallMetadata - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_CALLBACK_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_CALLBACK_STATIC_0200
+         * @tc.desc   Testing destroy before getCallMetadata - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCALLMETADATA_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -811,12 +811,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0100
-         * @tc.desc        Testing set AVCallstate - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0100
+         * @tc.desc   Testing set AVCallstate - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -849,12 +849,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0200
-         * @tc.desc        Testing set AVCallstate - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0200
+         * @tc.desc   Testing set AVCallstate - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -887,12 +887,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0300
-         * @tc.desc        Testing set AVCallstate - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0300
+         * @tc.desc   Testing set AVCallstate - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -925,12 +925,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0400
-         * @tc.desc        Testing set AVCallstate - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0400
+         * @tc.desc   Testing set AVCallstate - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -963,12 +963,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0500
-         * @tc.desc        Testing set AVCallstate - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0500
+         * @tc.desc   Testing set AVCallstate - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1001,12 +1001,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0600
-         * @tc.desc        Testing set AVCallstate - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0600
+         * @tc.desc   Testing set AVCallstate - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1039,12 +1039,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0700
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0700
-         * @tc.desc        Testing set AVCallstate - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0700
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0700
+         * @tc.desc   Testing set AVCallstate - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1077,12 +1077,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0800
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0800
-         * @tc.desc        Testing set AVCallstate - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0800
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0800
+         * @tc.desc   Testing set AVCallstate - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1115,12 +1115,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_1300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_1300
-         * @tc.desc        Testing destroy before setAVCallState - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_1300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_1300
+         * @tc.desc   Testing destroy before setAVCallState - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_PROMISE_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1146,12 +1146,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_PROMISE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_PROMISE_STATIC_0100
-         * @tc.desc        Testing destroy before getAVCallState - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_PROMISE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_PROMISE_STATIC_0100
+         * @tc.desc   Testing destroy before getAVCallState - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let avCallState0: avSession.AVCallState = {
@@ -1188,12 +1188,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_PROMISE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_PROMISE_STATIC_0200
-         * @tc.desc        Testing destroy before getAVCallState - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_PROMISE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_PROMISE_STATIC_0200
+         * @tc.desc   Testing destroy before getAVCallState - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1233,12 +1233,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0100
-         * @tc.desc        Testing set AVCallstate - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0100
+         * @tc.desc   Testing set AVCallstate - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1277,12 +1277,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0200
-         * @tc.desc        Testing set AVCallstate - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0200
+         * @tc.desc   Testing set AVCallstate - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1321,12 +1321,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0300
-         * @tc.desc        Testing set AVCallstate - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0300
+         * @tc.desc   Testing set AVCallstate - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1365,12 +1365,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0400
-         * @tc.desc        Testing set AVCallstate - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0400
+         * @tc.desc   Testing set AVCallstate - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1409,12 +1409,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0500
-         * @tc.desc        Testing set AVCallstate - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0500
+         * @tc.desc   Testing set AVCallstate - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1453,12 +1453,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0600
-         * @tc.desc        Testing set AVCallstate - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0600
+         * @tc.desc   Testing set AVCallstate - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1497,12 +1497,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0700
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0700
-         * @tc.desc        Testing set AVCallstate - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0700
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0700
+         * @tc.desc   Testing set AVCallstate - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1541,12 +1541,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0800
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0800
-         * @tc.desc        Testing set AVCallstate - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0800
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0800
+         * @tc.desc   Testing set AVCallstate - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1585,12 +1585,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_1300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_1300
-         * @tc.desc        Testing destroy before setAVCallState - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_1300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_1300
+         * @tc.desc   Testing destroy before setAVCallState - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVCALLSTATE_CALLBACK_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1624,12 +1624,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_CALLBACK_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_CALLBACK_STATIC_0100
-         * @tc.desc        Testing destroy before getAVCallState - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_CALLBACK_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_CALLBACK_STATIC_0100
+         * @tc.desc   Testing destroy before getAVCallState - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -1658,12 +1658,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_CALLBACK_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_CALLBACK_STATIC_0200
-         * @tc.desc        Testing destroy before getAVCallState - callback
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_CALLBACK_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_CALLBACK_STATIC_0200
+         * @tc.desc   Testing destroy before getAVCallState - callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCALLSTATE_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1692,12 +1692,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0100
-         * @tc.desc        Testing on('callMetadataChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0100
+         * @tc.desc   Testing on('callMetadataChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1727,12 +1727,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0200
-         * @tc.desc        Testing on('callMetadataChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0200
+         * @tc.desc   Testing on('callMetadataChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1761,12 +1761,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0300
-         * @tc.desc        Testing on('callMetadataChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0300
+         * @tc.desc   Testing on('callMetadataChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1799,12 +1799,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0400
-         * @tc.desc        Testing on('callMetadataChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0400
+         * @tc.desc   Testing on('callMetadataChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1843,12 +1843,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0500
-         * @tc.desc        Testing on('callMetadataChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0500
+         * @tc.desc   Testing on('callMetadataChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1888,12 +1888,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0600
-         * @tc.desc        Testing on('callMetadataChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0600
+         * @tc.desc   Testing on('callMetadataChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1932,12 +1932,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0700
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0700
-         * @tc.desc        Testing on('callMetadataChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0700
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0700
+         * @tc.desc   Testing on('callMetadataChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1967,12 +1967,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0800
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0800
-         * @tc.desc        Testing on('callMetadataChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0800
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0800
+         * @tc.desc   Testing on('callMetadataChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1997,12 +1997,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0900
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0900
-         * @tc.desc        Testing on('callMetadataChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0900
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0900
+         * @tc.desc   Testing on('callMetadataChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLMETADATACHANGE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
@@ -2025,12 +2025,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_CALLMETADATACHANGE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_CALLMETADATACHANGE_STATIC_0100
-         * @tc.desc        Testing off('callMetadataChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_CALLMETADATACHANGE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_CALLMETADATACHANGE_STATIC_0100
+         * @tc.desc   Testing off('callMetadataChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_CALLMETADATACHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2050,12 +2050,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0100
-         * @tc.desc        Testing on('callStateChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0100
+         * @tc.desc   Testing on('callStateChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let AVCallState: avSession.AVCallState = {
@@ -2083,12 +2083,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0200
-         * @tc.desc        Testing on('callStateChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0200
+         * @tc.desc   Testing on('callStateChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2116,12 +2116,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0300
-         * @tc.desc        Testing on('callStateChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0300
+         * @tc.desc   Testing on('callStateChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2154,12 +2154,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0400
-         * @tc.desc        Testing on('callStateChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0400
+         * @tc.desc   Testing on('callStateChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2197,12 +2197,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0500
-         * @tc.desc        Testing on('callStateChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0500
+         * @tc.desc   Testing on('callStateChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2241,12 +2241,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0600
-         * @tc.desc        Testing on('callStateChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0600
+         * @tc.desc   Testing on('callStateChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2284,12 +2284,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0700
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0700
-         * @tc.desc        Testing on('callStateChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0700
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0700
+         * @tc.desc   Testing on('callStateChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let AVCallState: avSession.AVCallState = {
@@ -2318,12 +2318,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0800
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0800
-         * @tc.desc        Testing on('callStateChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0800
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0800
+         * @tc.desc   Testing on('callStateChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2348,12 +2348,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0900
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0900
-         * @tc.desc        Testing on('callStateChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0900
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0900
+         * @tc.desc   Testing on('callStateChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CALLSTATECHANGE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
@@ -2376,12 +2376,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_CALLSTATECHANGE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_CALLSTATECHANGE_STATIC_0100
-         * @tc.desc        Testing off('callStateChange')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_CALLSTATECHANGE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_CALLSTATECHANGE_STATIC_0100
+         * @tc.desc   Testing off('callStateChange')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_CALLSTATECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2401,12 +2401,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0100
-         * @tc.desc        Testing on('answer')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0100
+         * @tc.desc   Testing on('answer')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2428,12 +2428,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0200
-         * @tc.desc        Testing on('answer')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0200
+         * @tc.desc   Testing on('answer')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2465,12 +2465,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0300
-         * @tc.desc        Testing on('answer')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0300
+         * @tc.desc   Testing on('answer')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2507,12 +2507,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0400
-         * @tc.desc        Testing on('answer')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0400
+         * @tc.desc   Testing on('answer')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2550,12 +2550,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0500
-         * @tc.desc        Testing on('answer')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0500
+         * @tc.desc   Testing on('answer')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2592,12 +2592,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0600
-         * @tc.desc        Testing destroy before on('answer')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0600
+         * @tc.desc   Testing destroy before on('answer')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_ANSWER_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2622,12 +2622,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_ANSWER_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_ANSWER_STATIC_0100
-         * @tc.desc        Testing destroy before off('answer')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_ANSWER_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_ANSWER_STATIC_0100
+         * @tc.desc   Testing destroy before off('answer')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_ANSWER_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2647,12 +2647,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0100
-         * @tc.desc        Testing on('hangUp')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0100
+         * @tc.desc   Testing on('hangUp')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2674,12 +2674,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0200
-         * @tc.desc        Testing on('hangUp')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0200
+         * @tc.desc   Testing on('hangUp')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2711,12 +2711,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0300
-         * @tc.desc        Testing on('hangUp')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0300
+         * @tc.desc   Testing on('hangUp')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2753,12 +2753,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0400
-         * @tc.desc        Testing on('hangUp')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0400
+         * @tc.desc   Testing on('hangUp')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2796,12 +2796,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0500
-         * @tc.desc        Testing on('hangUp')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0500
+         * @tc.desc   Testing on('hangUp')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2838,12 +2838,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0600
-         * @tc.desc        Testing destroy before on('hangUp')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0600
+         * @tc.desc   Testing destroy before on('hangUp')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_HANGUP_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2867,12 +2867,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_HANGUP_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_HANGUP_STATIC_0100
-         * @tc.desc        Testing destroy before off('hangUp')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_HANGUP_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_HANGUP_STATIC_0100
+         * @tc.desc   Testing destroy before off('hangUp')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_HANGUP_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2893,12 +2893,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0100
-         * @tc.desc        Testing on('toggleCallMute')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0100
+         * @tc.desc   Testing on('toggleCallMute')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2920,12 +2920,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0200
-         * @tc.desc        Testing on('toggleCallMute')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0200
+         * @tc.desc   Testing on('toggleCallMute')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2957,12 +2957,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0300
-         * @tc.desc        Testing on('toggleCallMute')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0300
+         * @tc.desc   Testing on('toggleCallMute')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -2999,12 +2999,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0400
-         * @tc.desc        Testing on('toggleCallMute')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0400
+         * @tc.desc   Testing on('toggleCallMute')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3042,12 +3042,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0500
-         * @tc.desc        Testing on('toggleCallMute')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0500
+         * @tc.desc   Testing on('toggleCallMute')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3084,12 +3084,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0600
-         * @tc.desc        Testing destroy before on('toggleCallMute')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0600
+         * @tc.desc   Testing destroy before on('toggleCallMute')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_TOGGLECALLMUTE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3114,12 +3114,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_TOGGLECALLMUTE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_TOGGLECALLMUTE_STATIC_0100
-         * @tc.desc        Testing destroy before off('toggleCallMute')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_TOGGLECALLMUTE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_TOGGLECALLMUTE_STATIC_0100
+         * @tc.desc   Testing destroy before off('toggleCallMute')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_TOGGLECALLMUTE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -3138,12 +3138,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0100
-         * @tc.desc        Testing on('playWithAssetId') -- one on function
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0100
+         * @tc.desc   Testing on('playWithAssetId') -- one on function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3165,12 +3165,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0200
-         * @tc.desc        Testing on('playWithAssetId') -- many on functions
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0200
+         * @tc.desc   Testing on('playWithAssetId') -- many on functions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3205,12 +3205,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0300
-         * @tc.desc        Testing destroy before on('playWithAssetId')
-         * @tc.size        MediumTest
-         * @tc.type        Fault Tolerance
-         * @tc.level       Level4
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0300
+         * @tc.desc   Testing destroy before on('playWithAssetId')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_PLAYWITHASSETID_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             try {
@@ -3234,12 +3234,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0100
-         * @tc.desc        Testing off('playWithAssetId') --off one function
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0100
+         * @tc.desc   Testing off('playWithAssetId') --off one function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3273,12 +3273,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0200
-         * @tc.desc        Testing off('playWithAssetId') -- off select on functions
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0200
+         * @tc.desc   Testing off('playWithAssetId') -- off select on functions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3314,12 +3314,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0300
-         * @tc.desc        Testing off('playWithAssetId') -- off all on functions
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0300
+         * @tc.desc   Testing off('playWithAssetId') -- off all on functions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3344,12 +3344,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0400
-         * @tc.desc        Testing not on('playWithAssetId') before off('playWithAssetId')
-         * @tc.size        MediumTest
-         * @tc.type        Fault Tolerance
-         * @tc.level       Level4
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0400
+         * @tc.desc   Testing not on('playWithAssetId') before off('playWithAssetId')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             try {
@@ -3367,12 +3367,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0500
-         * @tc.desc        Testing destroy before off('playWithAssetId')
-         * @tc.size        MediumTest
-         * @tc.type        Fault Tolerance
-         * @tc.level       Level4
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0500
+         * @tc.desc   Testing destroy before off('playWithAssetId')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             await session!.destroy();
@@ -3391,12 +3391,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1200
-         * @tc.desc        Testing sendControlCommand(command)-promise-special characters &max length
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1200
+         * @tc.desc   Testing sendControlCommand(command)-promise-special characters &max length
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3420,12 +3420,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1300
-         * @tc.desc        Testing sendControlCommand(command)-promise-exceed max length
-         * @tc.size        MediumTest
-         * @tc.type        Fault Tolerance
-         * @tc.level       Level4
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1300
+         * @tc.desc   Testing sendControlCommand(command)-promise-exceed max length
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3452,12 +3452,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1400
-         * @tc.desc        Testing sendControlCommand(command)-promise-with no parameters
-         * @tc.size        MediumTest
-         * @tc.type        Fault Tolerance
-         * @tc.level       Level4
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1400
+         * @tc.desc   Testing sendControlCommand(command)-promise-with no parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3483,12 +3483,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1500
-         * @tc.desc        Testing sendControlCommand(command)-promise-type error
-         * @tc.size        MediumTest
-         * @tc.type        Fault Tolerance
-         * @tc.level       Level4
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1500
+         * @tc.desc   Testing sendControlCommand(command)-promise-type error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3515,12 +3515,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1600
-         * @tc.desc        Testing sendControlCommand(command)-promise-parameter to None
-         * @tc.size        MediumTest
-         * @tc.type        Fault Tolerance
-         * @tc.level       Level4
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1600
+         * @tc.desc   Testing sendControlCommand(command)-promise-parameter to None
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_PROMISE_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3547,12 +3547,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1200
-         * @tc.desc        Testing sendControlCommand(command)-callback-special characters &max length
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1200
+         * @tc.desc   Testing sendControlCommand(command)-callback-special characters &max length
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3582,12 +3582,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1300
-         * @tc.desc        Testing sendControlCommand(command)-callback-exceed max length
-         * @tc.size        MediumTest
-         * @tc.type        Fault Tolerance
-         * @tc.level       Level4
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1300
+         * @tc.desc   Testing sendControlCommand(command)-callback-exceed max length
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3617,12 +3617,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1400
-         * @tc.desc        Testing sendControlCommand(command)-callback-with no parameters
-         * @tc.size        MediumTest
-         * @tc.type        Fault Tolerance
-         * @tc.level       Level4
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1400
+         * @tc.desc   Testing sendControlCommand(command)-callback-with no parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3651,12 +3651,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1500
-         * @tc.desc        Testing sendControlCommand(command)-callback-type error
-         * @tc.size        MediumTest
-         * @tc.type        Fault Tolerance
-         * @tc.level       Level4
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1500
+         * @tc.desc   Testing sendControlCommand(command)-callback-type error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {
@@ -3686,12 +3686,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1600
-         * @tc.desc        Testing sendControlCommand(command)-callback-parameter to None
-         * @tc.size        MediumTest
-         * @tc.type        Fault Tolerance
-         * @tc.level       Level4
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1600
+         * @tc.desc   Testing sendControlCommand(command)-callback-parameter to None
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             let command: avSession.AVControlCommand = {

@@ -151,12 +151,12 @@ export default function getTest() {
     //callback
     //image
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_0000
-      * @tc.name    get_image_uri_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.URI
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_uri_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_0000
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_uri_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -171,12 +171,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_0100
-      * @tc.name    get_image_photo_type_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.PHOTO_TYPE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_photo_type_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_0100
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.PHOTO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_photo_type_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -191,12 +191,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_0200
-      * @tc.name    get_image_displayName_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.DISPLAY_NAME
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_displayName_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_0200
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.DISPLAY_NAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_displayName_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -210,12 +210,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_0300
-      * @tc.name    get_image_date_added_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.DATE_ADDED
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_date_added_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_0300
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.DATE_ADDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_date_added_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -230,12 +230,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_0400
-      * @tc.name    get_image_date_modified_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.DATE_MODIFIED
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_date_modified_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_0400
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.DATE_MODIFIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_date_modified_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -250,12 +250,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_0500
-      * @tc.name    get_image_duration_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.DURATION
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_duration_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_0500
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.DURATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_duration_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -270,12 +270,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_0600
-      * @tc.name    get_image_width_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.WIDTH
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_width_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_0600
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.WIDTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_width_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -290,12 +290,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_0700
-      * @tc.name    get_image_height_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.HEIGHT
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_height_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_0700
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.HEIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_height_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -310,12 +310,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_0800
-      * @tc.name    get_image_date_taken_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.DATE_TAKEN
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_date_taken_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_0800
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.DATE_TAKEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_date_taken_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -330,12 +330,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_0900
-      * @tc.name    get_image_orientation_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.ORIENTATION
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_orientation_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_0900
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.ORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_orientation_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -350,12 +350,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_1000
-      * @tc.name    get_image_favorite_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.FAVORITE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_favorite_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_1000
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.FAVORITE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_favorite_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -370,12 +370,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_1100
-      * @tc.name    get_image_size_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.SIZE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_size_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_1100
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_size_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -390,12 +390,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_1200
-      * @tc.name    get_image_title_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.TITLE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_title_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_1200
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.TITLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_title_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -410,12 +410,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_1300
-      * @tc.name    get_image_position_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.POSITION
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_image_position_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_1300
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_position_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -430,12 +430,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_5000
-      * @tc.name    get_video_uri_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.URI
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_uri_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_5000
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_uri_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -450,12 +450,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_5100
-      * @tc.name    get_video_photo_type_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.PHOTO_TYPE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_photo_type_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_5100
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.PHOTO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_photo_type_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -470,12 +470,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_5200
-      * @tc.name    get_video_display_name_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.DISPLAY_NAME
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_display_name_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_5200
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.DISPLAY_NAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_display_name_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -489,12 +489,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_5300
-      * @tc.name    get_video_date_added_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.DATE_ADDED
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_date_added_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_5300
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.DATE_ADDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_added_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -509,12 +509,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_5400
-      * @tc.name    get_video_date_modified_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.DATE_MODIFIED
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_date_modified_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_5400
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.DATE_MODIFIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_modified_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -529,12 +529,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_5500
-      * @tc.name    get_video_duration_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.DURATION
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_duration_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_5500
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.DURATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_duration_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -549,12 +549,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_5600
-      * @tc.name    get_video_width_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.WIDTH
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_width_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_5600
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.WIDTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_width_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -569,12 +569,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_5700
-      * @tc.name    get_video_height_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.HEIGHT
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_height_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_5700
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.HEIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_height_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -589,12 +589,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_5800
-      * @tc.name    get_video_date_taken_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.DATE_TAKEN
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_date_taken_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_5800
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.DATE_TAKEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_taken_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -609,12 +609,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_5900
-      * @tc.name    get_video_orientation_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.ORIENTATION
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_orientation_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_5900
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.ORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_orientation_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -629,12 +629,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_6000
-      * @tc.name    get_video_favorite_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.FAVORITE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_favorite_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_6000
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.FAVORITE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_favorite_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -649,12 +649,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_6100
-      * @tc.name    get_video_size_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.SIZE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_size_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_6100
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_size_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -669,12 +669,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_6200
-      * @tc.name    get_video_title_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.TITLE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_title_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_6200
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.TITLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_title_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -689,12 +689,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_6300
-      * @tc.name    get_video_position_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.POSITION
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_position_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_6300
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_position_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -709,12 +709,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_6600
-      * @tc.name    get_image_date_add_ms_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.DATE_ADDED_MS
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_image_date_add_ms_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_6600
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.DATE_ADDED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_date_add_ms_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -736,12 +736,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_6700
-      * @tc.name    get_video_date_added_ms_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.DATE_ADDED_MS
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_video_date_added_ms_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_6700
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.DATE_ADDED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_date_added_ms_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -763,12 +763,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_6800
-      * @tc.name    get_image_date_modified_ms_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.DATE_MODIFIED_MS
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_image_date_modified_ms_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_6800
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.DATE_MODIFIED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_date_modified_ms_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -791,12 +791,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_6900
-      * @tc.name    get_video_date_modified_ms_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.DATE_MODIFIED_MS
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_video_date_modified_ms_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_6900
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.DATE_MODIFIED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_date_modified_ms_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -820,12 +820,12 @@ export default function getTest() {
 
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_7000
-      * @tc.name    get_image_dynamic_range_type_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.DYNAMIC_RANGE_TYPE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_image_dynamic_range_type_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_7000
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.DYNAMIC_RANGE_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_dynamic_range_type_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -840,12 +840,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_7001
-      * @tc.name    get_image_cover_position_static_001
-      * @tc.desc    common image get photoAccessHelper.PhotoKeys.COVER_POSITION
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_image_cover_position_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_7001
+     * @tc.desc   common image get photoAccessHelper.PhotoKeys.COVER_POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_cover_position_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -860,12 +860,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_7002
-      * @tc.name    get_video_cover_position_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.COVER_POSITION
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_video_cover_position_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_7002
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.COVER_POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_cover_position_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -880,12 +880,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_7003
-      * @tc.name    get_image_burst_key_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.BURST_KEY
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_image_burst_key_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_7003
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.BURST_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_burst_key_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -901,12 +901,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_7004
-      * @tc.name    get_video_burst_key_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.BURST_KEY
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_video_burst_key_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_7004
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.BURST_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_burst_key_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -922,12 +922,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_7005
-      * @tc.name    get_image_lcd_size_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.LCD_SIZE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_image_lcd_size_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_7005
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.LCD_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_lcd_size_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -942,12 +942,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_7006
-      * @tc.name    get_video_lcd_size_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.LCD_SIZE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_video_lcd_size_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_7006
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.LCD_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_lcd_size_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -962,12 +962,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_7007
-      * @tc.name    get_image_thm_size_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.THM_SIZE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_image_thm_size_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_7007
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.THM_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_thm_size_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -983,12 +983,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_STATIC_7008
-      * @tc.name    get_video_thm_size_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.THM_SIZE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_video_thm_size_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_STATIC_7008
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.THM_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_thm_size_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1004,12 +1004,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_IMAGE_DETAIL_TIME_STATIC_001
-      * @tc.name    get_image_detail_time_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.DETAIL_TIME
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_image_detail_time_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_IMAGE_DETAIL_TIME_STATIC_001
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.DETAIL_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_detail_time_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1039,12 +1039,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_VIDEO_DETAIL_TIME_STATIC_002
-      * @tc.name    get_video_detail_time_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.DETAIL_TIME
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_video_detail_time_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_VIDEO_DETAIL_TIME_STATIC_002
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.DETAIL_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_detail_time_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1074,12 +1074,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_IMAGE_DATE_TAKEN_MS_STATIC_001
-      * @tc.name    get_image_date_taken_ms_static_001
-      * @tc.desc    image get photoAccessHelper.PhotoKeys.DATE_TAKEN_MS
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_image_date_taken_ms_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_IMAGE_DATE_TAKEN_MS_STATIC_001
+     * @tc.desc   image get photoAccessHelper.PhotoKeys.DATE_TAKEN_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_date_taken_ms_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1100,12 +1100,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_VIDEO_DATE_TAKEN_MS_STATIC_001
-      * @tc.name    get_video_date_taken_ms_static_001
-      * @tc.desc    video get photoAccessHelper.PhotoKeys.DATE_TAKEN_MS
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   get_video_date_taken_ms_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_VIDEO_DATE_TAKEN_MS_STATIC_001
+     * @tc.desc   video get photoAccessHelper.PhotoKeys.DATE_TAKEN_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_date_taken_ms_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -1126,12 +1126,12 @@ export default function getTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_VIDEO_DATE_TAKEN_MS_STATIC_002
-      * @tc.name    get_video_date_taken_ms_static_002
-      * @tc.desc    video get key '', error code 14000014
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_video_date_taken_ms_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_VIDEO_DATE_TAKEN_MS_STATIC_002
+     * @tc.desc   video get key '', error code 14000014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_taken_ms_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

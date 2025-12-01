@@ -66,12 +66,12 @@ export default function getCountTest() {
     });
 
     /**
-     * @tc.number    : FETCH_RESULT_GET_COUNT_001
-     * @tc.name      : fetchResult_getCount_promise_001
-     * @tc.desc      : getCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getCount_promise_001
+     * @tc.number FETCH_RESULT_GET_COUNT_001
+     * @tc.desc   getCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getCount_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getCount_promise_001';
@@ -80,12 +80,12 @@ export default function getCountTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_GET_COUNT_002
-     * @tc.name      : fetchResult_getCount_promise_002
-     * @tc.desc      : getCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getCount_promise_002
+     * @tc.number FETCH_RESULT_GET_COUNT_002
+     * @tc.desc   getCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getCount_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getCount_promise_002';
@@ -94,12 +94,12 @@ export default function getCountTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_GET_COUNT_003
-     * @tc.name      : fetchResult_getCount_promise_003
-     * @tc.desc      : getCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getCount_promise_003
+     * @tc.number FETCH_RESULT_GET_COUNT_003
+     * @tc.desc   getCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getCount_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getCount_promise_003';

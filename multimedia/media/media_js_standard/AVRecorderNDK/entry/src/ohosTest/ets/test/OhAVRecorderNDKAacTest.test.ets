@@ -76,12 +76,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_001
-     * @tc.name       : testOhAvRecorder_aac_success_001
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_001
+     * @tc.number testOhAvRecorder_aac_success_001
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_001', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_001 test start `);
@@ -126,12 +126,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_002
-     * @tc.name       : testOhAvRecorder_aac_success_002
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_002
+     * @tc.number testOhAvRecorder_aac_success_002
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_002', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_002 test start `);
@@ -176,12 +176,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_003
-     * @tc.name       : testOhAvRecorder_aac_success_003
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_003
+     * @tc.number testOhAvRecorder_aac_success_003
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_003', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_003 test start `);
@@ -222,12 +222,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_004
-     * @tc.name       : testOhAvRecorder_aac_success_004
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_004
+     * @tc.number testOhAvRecorder_aac_success_004
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_004', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_004 test start `);
@@ -270,12 +270,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_005
-     * @tc.name       : testOhAvRecorder_aac_success_005
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_005
+     * @tc.number testOhAvRecorder_aac_success_005
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_005', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_005 test start `);
@@ -320,12 +320,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_006
-     * @tc.name       : testOhAvRecorder_aac_success_006
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_006
+     * @tc.number testOhAvRecorder_aac_success_006
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_006', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_006 test start `);
@@ -368,12 +368,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_007
-     * @tc.name       : testOhAvRecorder_aac_success_007
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_007
+     * @tc.number testOhAvRecorder_aac_success_007
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_007', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_007 test start `);
@@ -420,12 +420,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_008
-     * @tc.name       : testOhAvRecorder_aac_success_008
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_008
+     * @tc.number testOhAvRecorder_aac_success_008
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_008', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_008 test start `);
@@ -470,12 +470,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_009
-     * @tc.name       : testOhAvRecorder_aac_success_009
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_009
+     * @tc.number testOhAvRecorder_aac_success_009
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_009', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_009 test start `);
@@ -520,12 +520,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_010
-     * @tc.name       : testOhAvRecorder_aac_success_010
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_010
+     * @tc.number testOhAvRecorder_aac_success_010
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_010', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_010 test start `);
@@ -568,12 +568,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_011
-     * @tc.name       : testOhAvRecorder_aac_success_011
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_011
+     * @tc.number testOhAvRecorder_aac_success_011
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_011', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_011 test start `);
@@ -614,12 +614,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_012
-     * @tc.name       : testOhAvRecorder_aac_success_012
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_012
+     * @tc.number testOhAvRecorder_aac_success_012
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_012', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_012 test start `);
@@ -662,12 +662,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_013
-     * @tc.name       : testOhAvRecorder_aac_success_013
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_013
+     * @tc.number testOhAvRecorder_aac_success_013
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_013', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_013 test start `);
@@ -710,12 +710,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_014
-     * @tc.name       : testOhAvRecorder_aac_success_014
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_014
+     * @tc.number testOhAvRecorder_aac_success_014
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_014', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_014 test start `);
@@ -758,12 +758,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_015
-     * @tc.name       : testOhAvRecorder_aac_success_015
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_015
+     * @tc.number testOhAvRecorder_aac_success_015
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_015', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_015 test start `);
@@ -808,12 +808,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_016
-     * @tc.name       : testOhAvRecorder_aac_success_016
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_016
+     * @tc.number testOhAvRecorder_aac_success_016
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_016', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_016 test start `);
@@ -856,12 +856,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_017
-     * @tc.name       : testOhAvRecorder_aac_success_017
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_017
+     * @tc.number testOhAvRecorder_aac_success_017
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_017', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_017 test start `);
@@ -908,12 +908,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_018
-     * @tc.name       : testOhAvRecorder_aac_success_018
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_018
+     * @tc.number testOhAvRecorder_aac_success_018
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_018', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_018 test start `);
@@ -958,12 +958,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_019
-     * @tc.name       : testOhAvRecorder_aac_success_019
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_019
+     * @tc.number testOhAvRecorder_aac_success_019
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_019', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_019 test start `);
@@ -1003,12 +1003,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_020
-     * @tc.name       : testOhAvRecorder_aac_success_020
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_020
+     * @tc.number testOhAvRecorder_aac_success_020
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_020', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_020 test start `);
@@ -1057,12 +1057,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_021
-     * @tc.name       : testOhAvRecorder_aac_success_021
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_021
+     * @tc.number testOhAvRecorder_aac_success_021
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_021', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_021 test start `);
@@ -1121,12 +1121,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_022
-     * @tc.name       : testOhAvRecorder_aac_success_022
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_022
+     * @tc.number testOhAvRecorder_aac_success_022
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_022', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_022 test start `);
@@ -1187,12 +1187,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_023
-     * @tc.name       : testOhAvRecorder_aac_success_023
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_023
+     * @tc.number testOhAvRecorder_aac_success_023
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_023', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_023 test start `);
@@ -1237,12 +1237,12 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_aac_success_024
-     * @tc.name       : testOhAvRecorder_aac_success_024
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_aac_success_024
+     * @tc.number testOhAvRecorder_aac_success_024
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOhAvRecorder_aac_success_024', 0, async (done: Function) => {
       console.info(`testOhAvRecorder_aac_success_024 test start `);

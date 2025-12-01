@@ -246,15 +246,12 @@ export default function imagePackToFile() {
         }
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0100
-         * @tc.name      : sub_multimedia_image_packToFile_promise_imagesource_001
-         * @tc.desc      : 1.create imagesource
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with imagesource-jpg
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0100", Level.LEVEL0, async function (done) {
             await getImageSourceData("test.png")
@@ -275,15 +272,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0200
-         * @tc.name      : sub_multimedia_image_packToFile_promise_imagesource_002
-         * @tc.desc      : 1.create imagesource-png
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with imagesource-webp
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0200
+         * @tc.desc   1.create imagesource-png
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0200", Level.LEVEL0, async function (done) {
             await getImageSourceData("test.png")
@@ -304,15 +298,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0300
-         * @tc.name      : sub_multimedia_image_packToFile_promise_imagesource_003
-         * @tc.desc      : 1.create imagesource
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with imagesource-png
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0300
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0300", Level.LEVEL0, async function (done) {
             await getImageSourceData("test.png")
@@ -333,15 +324,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0100
-         * @tc.name      : sub_multimedia_image_packToFile_callback_imagesource_001
-         * @tc.desc      : 1.create imagesource
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with imagesource-jpg
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0100", Level.LEVEL0, async function (done) {
             await getImageSourceData("test.png")
@@ -362,15 +350,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0200
-         * @tc.name      : sub_multimedia_image_packToFile_callback_imagesource_002
-         * @tc.desc      : 1.create imagesource
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with imagesource-webp
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0200", Level.LEVEL0, async function (done) {
             await getImageSourceData("test.png")
@@ -391,15 +376,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0300
-         * @tc.name      : sub_multimedia_image_packToFile_callback_imagesource_003
-         * @tc.desc      : 1.create imagesource
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with imagesource-png
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0300
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0300", Level.LEVEL0, async function (done) {
             await getImageSourceData("test.png")
@@ -420,15 +402,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0100
-         * @tc.name      : sub_multimedia_image_packToFile_promise_pixelmap_001
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with pixelmap-jpg
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0100", Level.LEVEL0, async function (done) {
             await getPixelMapData()
@@ -449,15 +428,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0200
-         * @tc.name      : sub_multimedia_image_packToFile_promise_pixelmap_002
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with pixelmap-webp
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0200", Level.LEVEL0, async function (done) {
             await getPixelMapData()
@@ -478,15 +454,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0300
-         * @tc.name      : sub_multimedia_image_packToFile_promise_pixelmap_003
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with pixelmap-png
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_0300", Level.LEVEL0, async function (done) {
             await getPixelMapData()
@@ -507,15 +480,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0100
-         * @tc.name      : sub_multimedia_image_packToFile_callback_pixelmap_001
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with pixelmap-jpg
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0100", Level.LEVEL0, async function (done) {
             await getPixelMapData()
@@ -536,15 +506,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0200
-         * @tc.name      : sub_multimedia_image_packToFile_callback_pixelmap_002
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with pixelmap-webp
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0200", Level.LEVEL0, async function (done) {
             await getPixelMapData()
@@ -565,15 +532,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0300
-         * @tc.name      : sub_multimedia_image_packToFile_callback_pixelmap_003
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile with pixelmap-png
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_0300", Level.LEVEL0, async function (done) {
             await getPixelMapData()
@@ -594,15 +558,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0100
-         * @tc.name      : sub_multimedia_image_packToFile_callback_pixelmap_err_001
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile no quality
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0100", Level.LEVEL0, async function (done) {
             await getPixelMapData()
@@ -618,15 +579,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0200
-         * @tc.name      : sub_multimedia_image_packToFile_callback_pixelmap_err_002
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile { format: "image/jpeg", quality: 101 }
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0200", Level.LEVEL0, async function (done) {
             await getPixelMapData()
@@ -643,15 +601,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0300
-         * @tc.name      : sub_multimedia_image_packToFile_callback_pixelmap_err_003
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile { format: "image/txt", quality: 100 };
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0300", Level.LEVEL0, async function (done) {
             await getPixelMapData()
@@ -667,15 +622,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0100
-         * @tc.name      : sub_multimedia_image_packToFile_promise_pixelmap_err_001
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile no quality
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0100", Level.LEVEL0, async function (done) {
             await getPixelMapData()
@@ -691,15 +643,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0200
-         * @tc.name      : sub_multimedia_image_packToFile_promise_pixelmap_err_002
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile { format: "image/jpeg", quality: 101 };
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0200", Level.LEVEL0, async function (done) {
             await getPixelMapData()
@@ -716,15 +665,12 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0300
-         * @tc.name      : sub_multimedia_image_packToFile_promise_pixelmap_err_003
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile { format: "image/txt", quality: 100 };
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0300", Level.LEVEL0, async function (done) {
             await getPixelMapData()
