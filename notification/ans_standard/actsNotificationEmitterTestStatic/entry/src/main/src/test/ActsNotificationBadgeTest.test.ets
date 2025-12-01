@@ -48,6 +48,9 @@ export default function ActsNotificationEmitterTest() {
       await Utils.msSleep(500)
       console.info(`${TAG} afterEach END`)
     })
+    afterEach(()=>{
+      await Utils.msSleep(500)
+    })
 
     /**
      * @tc.name   Sub_Notification_Emitter_Subscribe_Capabilities_Static_1100
@@ -818,6 +821,7 @@ export default function ActsNotificationEmitterTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
             done();
           })
+          await Utils.msSleep(500)
           emitter.emit('eventid');
           done()
         } catch (e) {
@@ -883,6 +887,7 @@ export default function ActsNotificationEmitterTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
             done();
           })
+          await Utils.msSleep(500)
           emitter.emit('eventid', eventData);
           done()
         } catch (e) {
@@ -921,7 +926,9 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
         try {
           emitter.onEventData("eventid", oncallback1);
+          await Utils.msSleep(500)
           emitter.onEventData("eventid", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", eventData);
         } catch (e) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s',
@@ -993,7 +1000,9 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
         try {
           emitter.onEventData("eventid", oncallback1);
+          await Utils.msSleep(500)
           emitter.onEventData("eventid", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", eventData);
         } catch (e) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s',
