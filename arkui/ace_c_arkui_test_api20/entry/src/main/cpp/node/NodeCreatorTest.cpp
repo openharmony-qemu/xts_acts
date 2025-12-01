@@ -118,6 +118,110 @@ napi_value CreateNodeArkUIPostAsyncUITask(napi_env env, napi_callback_info info)
     delete contextHandle;
     return nullptr;
 }
+napi_value CreateNodeArkUIPostAsyncUITaskResultValueS(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = { nullptr, nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    ArkUI_NodeContentHandle contentHandle;
+    int32_t result = OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetNodeContentFromNapiValue Failed %{public}d", result);
+        return nullptr;
+    }
+    ArkUI_ContextHandle contextHandle;
+    result = OH_ArkUI_GetContextFromNapiValue(env, args[1], &contextHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetContextFromNapiValue Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    
+    auto scrollNode = std::make_shared<ArkUIScrollNode>();
+    scrollNode->SetScrollBarDisplayMode(ARKUI_SCROLL_BAR_DISPLAY_MODE_OFF);
+    result = OH_ArkUI_NodeContent_AddNode(contentHandle, scrollNode->GetHandle());
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_NodeContent_AddNode Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    g_nodeMap[contentHandle] = scrollNode;
+    
+    auto columnNode = std::make_shared<ArkUIColumnNode>();
+    scrollNode->AddChild(columnNode);
+    
+    for (int32_t i = 0; i < g_cardTypeInfos.size(); i++) {
+        //UI线程创建子树根节点，保证scroll的子节点顺序
+        auto columnItem = std::make_shared<ArkUIColumnNode>();
+        columnItem->SetMargin(NODE_MARGIN, 0, NODE_MARGIN, 0);
+        columnNode->AddChild(columnItem);
+        AsyncData* asyncData = new AsyncData();
+        asyncData->parent = columnItem;
+        asyncData->cardInfo = g_cardTypeInfos[i];
+        // 在非UI线程创建组件树，创建完成后回到主线程挂载到主树上
+        result = OH_ArkUI_PostAsyncUITask(contextHandle, asyncData, CreateCardNodeTree, MountNodeTree);
+        ASSERT_EQ(result, ARKUI_ERROR_CODE_NO_ERROR);
+        if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+            OH_LOG_ERROR(LOG_APP, "OH_ArkUI_PostAsyncUITask Failed %{public}d", result);
+            delete asyncData;
+        }
+    }
+    delete contextHandle;
+    return nullptr;
+}
+napi_value CreateNodeArkUIPostAsyncUITaskResultValueF(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = { nullptr, nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    ArkUI_NodeContentHandle contentHandle;
+    int32_t result = OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetNodeContentFromNapiValue Failed %{public}d", result);
+        return nullptr;
+    }
+    ArkUI_ContextHandle contextHandle;
+    result = OH_ArkUI_GetContextFromNapiValue(env, args[1], &contextHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetContextFromNapiValue Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    
+    auto scrollNode = std::make_shared<ArkUIScrollNode>();
+    scrollNode->SetScrollBarDisplayMode(ARKUI_SCROLL_BAR_DISPLAY_MODE_OFF);
+    result = OH_ArkUI_NodeContent_AddNode(contentHandle, scrollNode->GetHandle());
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_NodeContent_AddNode Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    g_nodeMap[contentHandle] = scrollNode;
+    
+    auto columnNode = std::make_shared<ArkUIColumnNode>();
+    scrollNode->AddChild(columnNode);
+    
+    for (int32_t i = 0; i < g_cardTypeInfos.size(); i++) {
+        //UI线程创建子树根节点，保证scroll的子节点顺序
+        auto columnItem = std::make_shared<ArkUIColumnNode>();
+        columnItem->SetMargin(NODE_MARGIN, 0, NODE_MARGIN, 0);
+        columnNode->AddChild(columnItem);
+        AsyncData* asyncData = new AsyncData();
+        asyncData->parent = columnItem;
+        asyncData->cardInfo = g_cardTypeInfos[i];
+        // 在非UI线程创建组件树，创建完成后回到主线程挂载到主树上
+        result = OH_ArkUI_PostAsyncUITask(contextHandle, nullptr, CreateCardNodeTree, MountNodeTree);
+        ASSERT_EQ(result, ARKUI_ERROR_CODE_PARAM_INVALID);
+        if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+            OH_LOG_ERROR(LOG_APP, "OH_ArkUI_PostAsyncUITask Failed %{public}d", result);
+            delete asyncData;
+        }
+    }
+    delete contextHandle;
+    return nullptr;
+}
 
 napi_value CreateNodeArkUIPostUITask(napi_env env, napi_callback_info info)
 {
@@ -171,6 +275,112 @@ napi_value CreateNodeArkUIPostUITask(napi_env env, napi_callback_info info)
     delete contextHandle;
     return nullptr;
 }
+napi_value CreateNodeArkUIPostUITaskResultValueS(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = { nullptr, nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    ArkUI_NodeContentHandle contentHandle;
+    int32_t result = OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetNodeContentFromNapiValue Failed %{public}d", result);
+        return nullptr;
+    }
+    ArkUI_ContextHandle contextHandle;
+    result = OH_ArkUI_GetContextFromNapiValue(env, args[1], &contextHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetContextFromNapiValue Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    
+    auto scrollNode = std::make_shared<ArkUIScrollNode>();
+    scrollNode->SetScrollBarDisplayMode(ARKUI_SCROLL_BAR_DISPLAY_MODE_OFF);
+    result = OH_ArkUI_NodeContent_AddNode(contentHandle, scrollNode->GetHandle());
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_NodeContent_AddNode Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    g_nodeMap[contentHandle] = scrollNode;
+    
+    auto columnNode = std::make_shared<ArkUIColumnNode>();
+    scrollNode->AddChild(columnNode);
+    
+    for (int32_t i = 0; i < g_cardTypeInfos.size(); i++) {
+        //UI线程创建子树根节点，保证scroll的子节点顺序
+        auto columnItem = std::make_shared<ArkUIColumnNode>();
+        columnItem->SetMargin(NODE_MARGIN, 0, NODE_MARGIN, 0);
+        columnNode->AddChild(columnItem);
+        AsyncData* asyncData = new AsyncData();
+        asyncData->parent = columnItem;
+        asyncData->cardInfo = g_cardTypeInfos[i];
+        // 在非UI线程创建组件树，创建完成后回到主线程挂载到主树上
+        CreateCardNodeTree(asyncData);
+        result = OH_ArkUI_PostUITask(contextHandle, asyncData, MountNodeTree);
+        ASSERT_EQ(result, ARKUI_ERROR_CODE_NO_ERROR);
+        if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+            OH_LOG_ERROR(LOG_APP, "OH_ArkUI_PostUITask Failed %{public}d", result);
+            delete asyncData;
+        }
+    }
+    delete contextHandle;
+    return nullptr;
+}
+napi_value CreateNodeArkUIPostUITaskResultValueF(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = { nullptr, nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    ArkUI_NodeContentHandle contentHandle;
+    int32_t result = OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetNodeContentFromNapiValue Failed %{public}d", result);
+        return nullptr;
+    }
+    ArkUI_ContextHandle contextHandle;
+    result = OH_ArkUI_GetContextFromNapiValue(env, args[1], &contextHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetContextFromNapiValue Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    
+    auto scrollNode = std::make_shared<ArkUIScrollNode>();
+    scrollNode->SetScrollBarDisplayMode(ARKUI_SCROLL_BAR_DISPLAY_MODE_OFF);
+    result = OH_ArkUI_NodeContent_AddNode(contentHandle, scrollNode->GetHandle());
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_NodeContent_AddNode Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    g_nodeMap[contentHandle] = scrollNode;
+    
+    auto columnNode = std::make_shared<ArkUIColumnNode>();
+    scrollNode->AddChild(columnNode);
+    
+    for (int32_t i = 0; i < g_cardTypeInfos.size(); i++) {
+        //UI线程创建子树根节点，保证scroll的子节点顺序
+        auto columnItem = std::make_shared<ArkUIColumnNode>();
+        columnItem->SetMargin(NODE_MARGIN, 0, NODE_MARGIN, 0);
+        columnNode->AddChild(columnItem);
+        AsyncData* asyncData = new AsyncData();
+        asyncData->parent = columnItem;
+        asyncData->cardInfo = g_cardTypeInfos[i];
+        // 在非UI线程创建组件树，创建完成后回到主线程挂载到主树上
+        CreateCardNodeTree(asyncData);
+        result = OH_ArkUI_PostUITask(contextHandle, nullptr, MountNodeTree);
+        ASSERT_EQ(result, ARKUI_ERROR_CODE_PARAM_INVALID);
+        if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+            OH_LOG_ERROR(LOG_APP, "OH_ArkUI_PostUITask Failed %{public}d", result);
+            delete asyncData;
+        }
+    }
+    delete contextHandle;
+    return nullptr;
+}
 
 napi_value CreateNodeArkUIPostUITaskAndWait(napi_env env, napi_callback_info info)
 {
@@ -216,6 +426,112 @@ napi_value CreateNodeArkUIPostUITaskAndWait(napi_env env, napi_callback_info inf
         CreateCardNodeTree(asyncData);
         // 在非UI线程创建组件树，创建完成后回到主线程挂载到主树上
         result = OH_ArkUI_PostUITaskAndWait(contextHandle, asyncData, MountNodeTree);
+        if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+            OH_LOG_ERROR(LOG_APP, "OH_ArkUI_PostUITaskAndWait Failed %{public}d", result);
+            delete asyncData;
+        }
+    }
+    delete contextHandle;
+    return nullptr;
+}
+napi_value CreateNodeArkUIPostUITaskAndWaitResultValueS(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = { nullptr, nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    ArkUI_NodeContentHandle contentHandle;
+    int32_t result = OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetNodeContentFromNapiValue Failed %{public}d", result);
+        return nullptr;
+    }
+    ArkUI_ContextHandle contextHandle;
+    result = OH_ArkUI_GetContextFromNapiValue(env, args[1], &contextHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetContextFromNapiValue Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    
+    auto scrollNode = std::make_shared<ArkUIScrollNode>();
+    scrollNode->SetScrollBarDisplayMode(ARKUI_SCROLL_BAR_DISPLAY_MODE_OFF);
+    result = OH_ArkUI_NodeContent_AddNode(contentHandle, scrollNode->GetHandle());
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_NodeContent_AddNode Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    g_nodeMap[contentHandle] = scrollNode;
+    
+    auto columnNode = std::make_shared<ArkUIColumnNode>();
+    scrollNode->AddChild(columnNode);
+    
+    for (int32_t i = 0; i < g_cardTypeInfos.size(); i++) {
+        //UI线程创建子树根节点，保证scroll的子节点顺序
+        auto columnItem = std::make_shared<ArkUIColumnNode>();
+        columnItem->SetMargin(NODE_MARGIN, 0, NODE_MARGIN, 0);
+        columnNode->AddChild(columnItem);
+        AsyncData* asyncData = new AsyncData();
+        asyncData->parent = columnItem;
+        asyncData->cardInfo = g_cardTypeInfos[i];
+        CreateCardNodeTree(asyncData);
+        // 在非UI线程创建组件树，创建完成后回到主线程挂载到主树上
+        result = OH_ArkUI_PostUITaskAndWait(contextHandle, asyncData, MountNodeTree);
+        ASSERT_EQ(result, ARKUI_ERROR_CODE_NO_ERROR);
+        if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+            OH_LOG_ERROR(LOG_APP, "OH_ArkUI_PostUITaskAndWait Failed %{public}d", result);
+            delete asyncData;
+        }
+    }
+    delete contextHandle;
+    return nullptr;
+}
+napi_value CreateNodeArkUIPostUITaskAndWaitResultValueF(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = { nullptr, nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    ArkUI_NodeContentHandle contentHandle;
+    int32_t result = OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetNodeContentFromNapiValue Failed %{public}d", result);
+        return nullptr;
+    }
+    ArkUI_ContextHandle contextHandle;
+    result = OH_ArkUI_GetContextFromNapiValue(env, args[1], &contextHandle);
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetContextFromNapiValue Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    
+    auto scrollNode = std::make_shared<ArkUIScrollNode>();
+    scrollNode->SetScrollBarDisplayMode(ARKUI_SCROLL_BAR_DISPLAY_MODE_OFF);
+    result = OH_ArkUI_NodeContent_AddNode(contentHandle, scrollNode->GetHandle());
+    if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "OH_ArkUI_NodeContent_AddNode Failed %{public}d", result);
+        delete contextHandle;
+        return nullptr;
+    }
+    g_nodeMap[contentHandle] = scrollNode;
+    
+    auto columnNode = std::make_shared<ArkUIColumnNode>();
+    scrollNode->AddChild(columnNode);
+    
+    for (int32_t i = 0; i < g_cardTypeInfos.size(); i++) {
+        //UI线程创建子树根节点，保证scroll的子节点顺序
+        auto columnItem = std::make_shared<ArkUIColumnNode>();
+        columnItem->SetMargin(NODE_MARGIN, 0, NODE_MARGIN, 0);
+        columnNode->AddChild(columnItem);
+        AsyncData* asyncData = new AsyncData();
+        asyncData->parent = columnItem;
+        asyncData->cardInfo = g_cardTypeInfos[i];
+        CreateCardNodeTree(asyncData);
+        // 在非UI线程创建组件树，创建完成后回到主线程挂载到主树上
+        result = OH_ArkUI_PostUITaskAndWait(contextHandle, nullptr, MountNodeTree);
+        ASSERT_EQ(result, ARKUI_ERROR_CODE_PARAM_INVALID);
         if (result != ARKUI_ERROR_CODE_NO_ERROR) {
             OH_LOG_ERROR(LOG_APP, "OH_ArkUI_PostUITaskAndWait Failed %{public}d", result);
             delete asyncData;
