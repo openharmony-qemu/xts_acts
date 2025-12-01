@@ -81,12 +81,12 @@ import {
 export default function MapTaskPoolTest() {
   describe('MapTaskPoolTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0100
-     * @tc.name       : testCollectionsMap0001
-     * @tc.desc       : Testing Collections of Map, create 1:1~10:10, use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0100
+     * @tc.desc   Testing Collections of Map, create 1:1~10:10, use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0001';
@@ -110,12 +110,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0200
-     * @tc.name       : testCollectionsMap0002
-     * @tc.desc       : Testing Collections of Map, create <number, number>, use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0200
+     * @tc.desc   Testing Collections of Map, create <number, number>, use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0002';
@@ -139,12 +139,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0300
-     * @tc.name       : testCollectionsMap0003
-     * @tc.desc       : Testing Collections of Map, create <number, userdefined>, use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0300
+     * @tc.desc   Testing Collections of Map, create <number, userdefined>, use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0003';
@@ -168,12 +168,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0400
-     * @tc.name       : testCollectionsMap0004
-     * @tc.desc       : Testing Collections of Map, create <number, string>, entries use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0400
+     * @tc.desc   Testing Collections of Map, create <number, string>, entries use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0004';
@@ -197,12 +197,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0500
-     * @tc.name       : testCollectionsMap0005
-     * @tc.desc       : Testing Collections of Map, create <number, string>, set, entries use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0500
+     * @tc.desc   Testing Collections of Map, create <number, string>, set, entries use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0005';
@@ -226,12 +226,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0600
-     * @tc.name       : testCollectionsMap0006
-     * @tc.desc       : Testing Collections of Map, create <number, string>, delete key, entries use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0600
+     * @tc.desc   Testing Collections of Map, create <number, string>, delete key, entries use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0006';
@@ -255,12 +255,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0700
-     * @tc.name       : testCollectionsMap0007
-     * @tc.desc       : Testing Collections of Map, create <number, string>, clear map, entries use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0700
+     * @tc.desc   Testing Collections of Map, create <number, string>, clear map, entries use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0007';
@@ -284,12 +284,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0800
-     * @tc.name       : testCollectionsMap0008
-     * @tc.desc       : Testing Collections of Map, create <number, string>, set map[], keys use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0800
+     * @tc.desc   Testing Collections of Map, create <number, string>, set map[], keys use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0008';
@@ -313,12 +313,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0900
-     * @tc.name       : testCollectionsMap0009
-     * @tc.desc       : Testing Collections of Map, create <number, string>, set map, keys use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_0900
+     * @tc.desc   Testing Collections of Map, create <number, string>, set map, keys use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0009';
@@ -342,12 +342,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1000
-     * @tc.name       : testCollectionsMap0010
-     * @tc.desc       : Testing Collections of Map, create <number, string>, set map[], values use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1000
+     * @tc.desc   Testing Collections of Map, create <number, string>, set map[], values use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0010';
@@ -371,12 +371,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1100
-     * @tc.name       : testCollectionsMap0011
-     * @tc.desc       : Testing Collections of Map, create <number, string>, set map, values use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1100
+     * @tc.desc   Testing Collections of Map, create <number, string>, set map, values use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0011';
@@ -400,12 +400,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1200
-     * @tc.name       : testCollectionsMap0012
-     * @tc.desc       : Testing Collections of Map, create <number, string>, set map, values use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1200
+     * @tc.desc   Testing Collections of Map, create <number, string>, set map, values use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0012';
@@ -429,12 +429,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1300
-     * @tc.name       : testCollectionsMap0013
-     * @tc.desc       : Testing Collections of Map, create <number, string>, set->delete map, values use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1300
+     * @tc.desc   Testing Collections of Map, create <number, string>, set->delete map, values use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0013';
@@ -458,12 +458,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1400
-     * @tc.name       : testCollectionsMap0014
-     * @tc.desc       : Testing Collections of Map, create <number, string>, set->clear map, values use for of.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1400
+     * @tc.desc   Testing Collections of Map, create <number, string>, set->clear map, values use for of.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0014';
@@ -487,12 +487,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1500
-     * @tc.name       : testCollectionsMap0015
-     * @tc.desc       : Testing Collections of Map, create <number, string> [], clear map, get undefined,has false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1500
+     * @tc.desc   Testing Collections of Map, create <number, string> [], clear map, get undefined,has false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0015';
@@ -516,13 +516,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1600
-     * @tc.name       : testCollectionsMap0016
-     * @tc.desc       : Testing Collections of Map, create <number, string> [1,'0'],[2,'1'],
-     * clear map, get undefined,has false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1600
+     * @tc.desc   Testing Collections of Map, create <number, string> [1,'0'],[2,'1'],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0016';
@@ -546,13 +545,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1700
-     * @tc.name       : testCollectionsMap0017
-     * @tc.desc       : Testing Collections of Map, create <number, string> [1,'0'],[2,'1'],
-     * clear map, get undefined,has false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1700
+     * @tc.desc   Testing Collections of Map, create <number, string> [1,'0'],[2,'1'],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0017';
@@ -576,12 +574,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1800
-     * @tc.name       : testCollectionsMap0018
-     * @tc.desc       : Testing Collections of Map, create <string, string> [],delete ''.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1800
+     * @tc.desc   Testing Collections of Map, create <string, string> [],delete ''.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0018';
@@ -605,12 +603,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1900
-     * @tc.name       : testCollectionsMap0019
-     * @tc.desc       : Testing Collections of Map, create <string, string> ['0','1'],delete ''.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_1900
+     * @tc.desc   Testing Collections of Map, create <string, string> ['0','1'],delete ''.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0019';
@@ -635,12 +633,12 @@ export default function MapTaskPoolTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2000
-     * @tc.name       : testCollectionsMap0020
-     * @tc.desc       : Testing Collections of Map, create <null, string> [],delete null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2000
+     * @tc.desc   Testing Collections of Map, create <null, string> [],delete null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0020';
@@ -664,12 +662,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2100
-     * @tc.name       : testCollectionsMap0021
-     * @tc.desc       : Testing Collections of Map, create <null, string> [null, '0'],delete null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2100
+     * @tc.desc   Testing Collections of Map, create <null, string> [null, '0'],delete null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0021';
@@ -693,12 +691,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2200
-     * @tc.name       : testCollectionsMap0022
-     * @tc.desc       : Testing Collections of Map, create <undefined, string> [],delete undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2200
+     * @tc.desc   Testing Collections of Map, create <undefined, string> [],delete undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0022';
@@ -722,12 +720,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2300
-     * @tc.name       : testCollectionsMap0023
-     * @tc.desc       : Testing Collections of Map, create <undefined, string> [],delete undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2300
+     * @tc.desc   Testing Collections of Map, create <undefined, string> [],delete undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0023';
@@ -751,12 +749,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2400
-     * @tc.name       : testCollectionsMap0024
-     * @tc.desc       : Testing Collections of Map, create <number, string> [],delete 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2400
+     * @tc.desc   Testing Collections of Map, create <number, string> [],delete 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0024';
@@ -780,12 +778,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2500
-     * @tc.name       : testCollectionsMap0025
-     * @tc.desc       : Testing Collections of Map, create <number, string> [1,'a'],delete 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2500
+     * @tc.desc   Testing Collections of Map, create <number, string> [1,'a'],delete 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0025';
@@ -809,12 +807,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2600
-     * @tc.name       : testCollectionsMap0026
-     * @tc.desc       : Testing Collections of Map, create <number, string> [1,'a'],delete 2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2600
+     * @tc.desc   Testing Collections of Map, create <number, string> [1,'a'],delete 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0026';
@@ -838,12 +836,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2700
-     * @tc.name       : testCollectionsMap0027
-     * @tc.desc       : Testing Collections of Map, create <number, string> [1,'a'],delete -> set -> clear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2700
+     * @tc.desc   Testing Collections of Map, create <number, string> [1,'a'],delete -> set -> clear.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0027';
@@ -867,12 +865,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2800
-     * @tc.name       : testCollectionsMap0028
-     * @tc.desc       : Testing Collections of Map, create <number, string> [], forEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2800
+     * @tc.desc   Testing Collections of Map, create <number, string> [], forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0028';
@@ -896,12 +894,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2900
-     * @tc.name       : testCollectionsMap0029
-     * @tc.desc       : Testing Collections of Map, create <number, string> [], forEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_2900
+     * @tc.desc   Testing Collections of Map, create <number, string> [], forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0029';
@@ -925,12 +923,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3000
-     * @tc.name       : testCollectionsMap0030
-     * @tc.desc       : Testing Collections of Map, create <number, string> [[0,'foo'],[1,'bar']], forEach delete.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3000
+     * @tc.desc   Testing Collections of Map, create <number, string> [[0,'foo'],[1,'bar']], forEach delete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0030';
@@ -954,12 +952,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3100
-     * @tc.name       : testCollectionsMap0031
-     * @tc.desc       : Testing Collections of Map, create <number, string> [[0,'foo'],[1,'bar']], forEach clear().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3100
+     * @tc.desc   Testing Collections of Map, create <number, string> [[0,'foo'],[1,'bar']], forEach clear().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0031';
@@ -983,12 +981,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3200
-     * @tc.name       : testCollectionsMap0032
-     * @tc.desc       : Testing Collections of Map, create <string, string> [], map.get().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3200
+     * @tc.desc   Testing Collections of Map, create <string, string> [], map.get().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0032';
@@ -1012,12 +1010,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3300
-     * @tc.name       : testCollectionsMap0033
-     * @tc.desc       : Testing Collections of Map, create <number, string> [0,'a'], map.get().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3300
+     * @tc.desc   Testing Collections of Map, create <number, string> [0,'a'], map.get().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0033';
@@ -1041,12 +1039,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3400
-     * @tc.name       : testCollectionsMap0034
-     * @tc.desc       : Testing Collections of Map, create <number, string> [], map.get(null).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3400
+     * @tc.desc   Testing Collections of Map, create <number, string> [], map.get(null).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0034';
@@ -1070,12 +1068,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3500
-     * @tc.name       : testCollectionsMap0035
-     * @tc.desc       : Testing Collections of Map, create <null, string> [null,'a'], map.get(null).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0035
+     * @tc.number SUB_COMMONLIBLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3500
+     * @tc.desc   Testing Collections of Map, create <null, string> [null,'a'], map.get(null).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0035';
@@ -1099,12 +1097,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3600
-     * @tc.name       : testCollectionsMap0036
-     * @tc.desc       : Testing Collections of Map, create <undefined, string> [], map.get(undefined).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3600
+     * @tc.desc   Testing Collections of Map, create <undefined, string> [], map.get(undefined).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0036';
@@ -1128,12 +1126,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3700
-     * @tc.name       : testCollectionsMap0037
-     * @tc.desc       : Testing Collections of Map, create <undefined, string> [undefined,'a'], map.get(undefined).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3700
+     * @tc.desc   Testing Collections of Map, create <undefined, string> [undefined,'a'], map.get(undefined).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0037';
@@ -1157,12 +1155,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3800
-     * @tc.name       : testCollectionsMap0038
-     * @tc.desc       : Testing Collections of Map, create <number, string> [1,'a'], map.get(1).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3800
+     * @tc.desc   Testing Collections of Map, create <number, string> [1,'a'], map.get(1).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0038';
@@ -1186,12 +1184,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3900
-     * @tc.name       : testCollectionsMap0039
-     * @tc.desc       : Testing Collections of Map, create <number, string> [1,'a'], map.get(2).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_3900
+     * @tc.desc   Testing Collections of Map, create <number, string> [1,'a'], map.get(2).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0039';
@@ -1215,12 +1213,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4000
-     * @tc.name       : testCollectionsMap0040
-     * @tc.desc       : Testing Collections of Map, create <number, string> [1,'a'], delete->set->clear,map.get(1).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4000
+     * @tc.desc   Testing Collections of Map, create <number, string> [1,'a'], delete->set->clear,map.get(1).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0040';
@@ -1244,12 +1242,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4100
-     * @tc.name       : testCollectionsMap0041
-     * @tc.desc       : Testing Collections of Map, create <string, string> [], map.has("").
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4100
+     * @tc.desc   Testing Collections of Map, create <string, string> [], map.has("").
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0041';
@@ -1273,12 +1271,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4200
-     * @tc.name       : testCollectionsMap0042
-     * @tc.desc       : Testing Collections of Map, create <string, string> ['0','a'], map.has("").
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4200
+     * @tc.desc   Testing Collections of Map, create <string, string> ['0','a'], map.has("").
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0042';
@@ -1302,12 +1300,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4300
-     * @tc.name       : testCollectionsMap0043
-     * @tc.desc       : Testing Collections of Map, create <null, string> [], map.has(null).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4300
+     * @tc.desc   Testing Collections of Map, create <null, string> [], map.has(null).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0043';
@@ -1331,12 +1329,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4400
-     * @tc.name       : testCollectionsMap0044
-     * @tc.desc       : Testing Collections of Map, create <null, string> [null, 'a'], map.has(null).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4400
+     * @tc.desc   Testing Collections of Map, create <null, string> [null, 'a'], map.has(null).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0044';
@@ -1360,12 +1358,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4500
-     * @tc.name       : testCollectionsMap0045
-     * @tc.desc       : Testing Collections of Map, create <undefined, string> [], map.has(undefined).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4500
+     * @tc.desc   Testing Collections of Map, create <undefined, string> [], map.has(undefined).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0045';
@@ -1389,12 +1387,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4600
-     * @tc.name       : testCollectionsMap0046
-     * @tc.desc       : Testing Collections of Map, create <undefined, string> [undefined, 'a'], map.has(undefined).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      :  Level 1
+     * @tc.name   testCollectionsMap0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4600
+     * @tc.desc   Testing Collections of Map, create <undefined, string> [undefined, 'a'], map.has(undefined).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0046';
@@ -1418,12 +1416,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4700
-     * @tc.name       : testCollectionsMap0047
-     * @tc.desc       : Testing Collections of Map, create <number, string> [], map.has(1).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4700
+     * @tc.desc   Testing Collections of Map, create <number, string> [], map.has(1).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0047';
@@ -1447,12 +1445,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4800
-     * @tc.name       : testCollectionsMap0048
-     * @tc.desc       : Testing Collections of Map, create <number, string> [1,'a'], map.has(1).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4800
+     * @tc.desc   Testing Collections of Map, create <number, string> [1,'a'], map.has(1).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0048';
@@ -1476,12 +1474,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4900
-     * @tc.name       : testCollectionsMap0049
-     * @tc.desc       : Testing Collections of Map, create <number, string> [1,'a'], map.has(2).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_4900
+     * @tc.desc   Testing Collections of Map, create <number, string> [1,'a'], map.has(2).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0049';
@@ -1505,12 +1503,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5000
-     * @tc.name       : testCollectionsMap0050
-     * @tc.desc       : Testing Collections of Map, create <number, string> [1,'a'], delete->set->clear,map.has().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5000
+     * @tc.desc   Testing Collections of Map, create <number, string> [1,'a'], delete->set->clear,map.has().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0050';
@@ -1534,12 +1532,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5100
-     * @tc.name       : testCollectionsMap0051
-     * @tc.desc       : Testing Collections of Map, set <string, string> ["",'a'], size 1,get true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5100
+     * @tc.desc   Testing Collections of Map, set <string, string> ["",'a'], size 1,get true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0051';
@@ -1563,12 +1561,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5200
-     * @tc.name       : testCollectionsMap0052
-     * @tc.desc       : Testing Collections of Map, set <string, string> ["a","0"], size 1,get true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5200
+     * @tc.desc   Testing Collections of Map, set <string, string> ["a","0"], size 1,get true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0052';
@@ -1592,12 +1590,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5300
-     * @tc.name       : testCollectionsMap0053
-     * @tc.desc       : Testing Collections of Map, set <null, string> [null,"0"], size 1,get true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5300
+     * @tc.desc   Testing Collections of Map, set <null, string> [null,"0"], size 1,get true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0053';
@@ -1621,12 +1619,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5400
-     * @tc.name       : testCollectionsMap0054
-     * @tc.desc       : Testing Collections of Map, set <undefined, string> [undefined,"0"], size 1,get true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5400
+     * @tc.desc   Testing Collections of Map, set <undefined, string> [undefined,"0"], size 1,get true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0054';
@@ -1650,12 +1648,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5500
-     * @tc.name       : testCollectionsMap0055
-     * @tc.desc       : Testing Collections of Map, set <string, string> ['xxxxx',"0"], size 1,get true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5500
+     * @tc.desc   Testing Collections of Map, set <string, string> ['xxxxx',"0"], size 1,get true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0055';
@@ -1679,12 +1677,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5600
-     * @tc.name       : testCollectionsMap0056
-     * @tc.desc       : Testing Collections of Map, set <string, null> ['0',null], size 1,get true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5600
+     * @tc.desc   Testing Collections of Map, set <string, null> ['0',null], size 1,get true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0056';
@@ -1708,12 +1706,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5700
-     * @tc.name       : testCollectionsMap0057
-     * @tc.desc       : Testing Collections of Map, set <string, number> ['0',1], size 1,get true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5700
+     * @tc.desc   Testing Collections of Map, set <string, number> ['0',1], size 1,get true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0057';
@@ -1737,12 +1735,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5800
-     * @tc.name       : testCollectionsMap0058
-     * @tc.desc       : Testing Collections of Map, set <string, undefined> ['0',undefined], size 1,get true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5800
+     * @tc.desc   Testing Collections of Map, set <string, undefined> ['0',undefined], size 1,get true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0058';
@@ -1766,12 +1764,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5900
-     * @tc.name       : testCollectionsMap0059
-     * @tc.desc       : Testing Collections of Map, set <number, string> [] 1000, size 1000,get true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_5900
+     * @tc.desc   Testing Collections of Map, set <number, string> [] 1000, size 1000,get true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0059';
@@ -1795,12 +1793,12 @@ export default function MapTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_6000
-     * @tc.name       : testCollectionsMap0060
-     * @tc.desc       : Testing Collections of Map, set <number, string> [], delete->set->clear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsMap0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_MAP_6000
+     * @tc.desc   Testing Collections of Map, set <number, string> [], delete->set->clear.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsMap0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsMap0060';

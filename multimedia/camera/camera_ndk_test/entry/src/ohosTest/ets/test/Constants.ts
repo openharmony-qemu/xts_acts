@@ -122,9 +122,26 @@ export class Torch_Mode {
   static readonly OFF = 0;
   static readonly ON = 1;
   static readonly AUTO = 2;
+  static readonly TORCH_MODE_OFF = 3;
+  static readonly TORCH_MODE_ON = 4;
+  static readonly TORCH_MODE_AUTO = 5;
 }
 
 export class Camera_QualityPrioritization {
   static readonly HIGH_QUALITY = 0;
   static readonly POWER_BALANCE = 1;
+}
+
+export class Camera_ImageRotation {
+  static readonly IMAGE_ROTATION = 0;
+  static readonly IMAGE_ROTATION_0 = 1;
+  static readonly IMAGE_ROTATION_90 = 2;
+  static readonly IMAGE_ROTATION_180 = 3;
+  static readonly IMAGE_ROTATION_270 = 4;
+}
+
+export class Camera_SmoothZoomMode {
+  static readonly NORMAL = 0;
+  static readonly FIRST_PARAMETER_ERROR = 1;
+  static readonly SMOOTH_ZOOM_MODE_NORMAL = 2;
 }

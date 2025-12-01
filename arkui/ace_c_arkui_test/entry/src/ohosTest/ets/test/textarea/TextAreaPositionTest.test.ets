@@ -26,26 +26,26 @@ export default function textAreaPositionTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_POSITION_0100
-     * @tc.name: testTextAreaPosition001
-     * @tc.desc: testing position for textarea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaPosition001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_POSITION_0100
+     * @tc.desc   testing position for textarea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaPosition001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaPosition001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_POSITION_0200
-     * @tc.name: testTextAreaPosition002
-     * @tc.desc: testing position for textarea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaPosition002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_POSITION_0200
+     * @tc.desc   testing position for textarea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaPosition002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaPosition002()).assertEqual(0)

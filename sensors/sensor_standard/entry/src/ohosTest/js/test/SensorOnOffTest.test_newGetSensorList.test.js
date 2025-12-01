@@ -60,13 +60,13 @@ describe("SensorJsTest_sensor_35", function () {
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
     let TAG  = ''
 
-   /**
-     * @tc.number:SUB_SensorsSystem_GetSensorLists_JSTest_0010
-     * @tc.name: getSensorLists_SensorJsTest001
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   getSensorLists_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_GetSensorLists_JSTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("getSensorLists_SensorJsTest001",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         TAG = 'getSensorLists_SensorJsTest001';
@@ -89,12 +89,12 @@ describe("SensorJsTest_sensor_35", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GetSensorLists_JSTest_0020
-     * @tc.name: getSensorLists_SensorJsTest002
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   getSensorLists_SensorJsTest002
+     * @tc.number SUB_SensorsSystem_GetSensorLists_JSTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getSensorLists_SensorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'getSensorLists_SensorJsTest002';
@@ -119,12 +119,12 @@ describe("SensorJsTest_sensor_35", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GetSensorLists_JSTest_0030
-     * @tc.name: getSensorLists_SensorJsTest003
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   getSensorLists_SensorJsTest003
+     * @tc.number SUB_SensorsSystem_GetSensorLists_JSTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getSensorLists_SensorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'getSensorLists_SensorJsTest003';
@@ -147,13 +147,13 @@ describe("SensorJsTest_sensor_35", function () {
     })
 
 /**
-     * @tc.number:SUB_SensorsSystem_GetSensorLists_JSTest_0040
-     * @tc.name: getSensorLists_SensorJsTest004
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
-     */
+ * @tc.name   getSensorLists_SensorJsTest004
+ * @tc.number SUB_SensorsSystem_GetSensorLists_JSTest_0040
+ * @tc.desc   Verification results of the incorrect parameters of the test interface.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it("getSensorLists_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
     TAG = 'getSensorLists_SensorJsTest004';
     try{
@@ -175,13 +175,13 @@ it("getSensorLists_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level
 })
 
 /**
-     * @tc.number:SUB_SensorsSystem_GetSensorLists_JSTest_0050
-     * @tc.name: getSensorLists_SensorJsTest005
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
-     */
+ * @tc.name   getSensorLists_SensorJsTest005
+ * @tc.number SUB_SensorsSystem_GetSensorLists_JSTest_0050
+ * @tc.desc   Verification results of the incorrect parameters of the test interface.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it("getSensorLists_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
     TAG = 'getSensorLists_SensorJsTest005';
     try{
@@ -204,12 +204,12 @@ it("getSensorLists_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level
 })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GetSensorLists_JSTest_0060
-     * @tc.name: getSensorLists_SensorJsTest006
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   getSensorLists_SensorJsTest006
+     * @tc.number SUB_SensorsSystem_GetSensorLists_JSTest_0060
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getSensorLists_SensorJsTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'getSensorLists_SensorJsTest006';
@@ -233,12 +233,12 @@ it("getSensorLists_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GetSensorLists_JSTest_0070
-     * @tc.name: getSensorLists_SensorJsTest007
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   getSensorLists_SensorJsTest007
+     * @tc.number SUB_SensorsSystem_GetSensorLists_JSTest_0070
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getSensorLists_SensorJsTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'getSensorLists_SensorJsTest007';
@@ -261,12 +261,12 @@ it("getSensorLists_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GetSensorLists_JSTest_0080
-     * @tc.name: getSensorLists_SensorJsTest008
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   getSensorLists_SensorJsTest008
+     * @tc.number SUB_SensorsSystem_GetSensorLists_JSTest_0080
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getSensorLists_SensorJsTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'getSensorLists_SensorJsTest008';
@@ -289,12 +289,12 @@ it("getSensorLists_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GetSensorLists_JSTest_0090
-     * @tc.name: getSensorLists_SensorJsTest009
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   getSensorLists_SensorJsTest009
+     * @tc.number SUB_SensorsSystem_GetSensorLists_JSTest_0090
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getSensorLists_SensorJsTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'getSensorLists_SensorJsTest009';

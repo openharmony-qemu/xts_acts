@@ -25,14 +25,14 @@ export default class EntryAbility extends UIAbility {
     webview.WebviewController.setActiveWebEngineVersion(webview.ArkWebEngineVersion.M114)
     if (webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M114) {
       console.log("Active Web Engine Version set to M114")
-    } else if (webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M132) {
+    } else if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M132) {
       console.log("Active Web Engine Version set to M132")
-    } else if (webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.SYSTEM_DEFAULT) {
+    } else if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.SYSTEM_DEFAULT) {
       console.log("Active Web Engine Version set to SYSTEM_DEFAULT")
     }
-    if (webview.WebviewController.isActiveWebEngineEvergreen()) {
+    if (webview.WebviewController.isActiveWebEngineEvergreen() == true) {
       console.log("Active Web Engine is Evergreen")
-    } else {
+    } else if(webview.WebviewController.isActiveWebEngineEvergreen() == false){
       console.log("Active Web Engine is Evergreen false")
     }
 

@@ -47,12 +47,12 @@ export default function BuilderNodeTwoTest() {
     });
 
     /**
-     * @tc.number    BuilderNodeTwoTest_0100
-     * @tc.name      BuilderNodeTwoTest_0100
-     * @tc.desc      BuilderNode LocalStorage Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BuilderNodeTwoTest_0100
+     * @tc.number BuilderNodeTwoTest_0100
+     * @tc.desc   BuilderNode LocalStorage Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuilderNodeTwoTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('BuilderNodeTwoTest_0100 START');

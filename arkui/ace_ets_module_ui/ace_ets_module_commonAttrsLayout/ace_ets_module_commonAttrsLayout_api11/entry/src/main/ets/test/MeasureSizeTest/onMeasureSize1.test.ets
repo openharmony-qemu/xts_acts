@@ -56,12 +56,14 @@ export default function onMeasureSize1() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_onMeasureSize1_001
-    * @tc.name  : onMeasureSize
-    * @tc.desc  : Calling the onMeasureSize interface normally
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   onMeasureSize1_001
+     * @tc.number SUB_ACE_TS_COMPONENT_onMeasureSize1_001
+     * @tc.desc   Calling the onMeasureSize interface normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onMeasureSize1_001', Level.LEVEL0, async (done: Function) => {
 
       console.info('[onMeasureSize1_001] START');

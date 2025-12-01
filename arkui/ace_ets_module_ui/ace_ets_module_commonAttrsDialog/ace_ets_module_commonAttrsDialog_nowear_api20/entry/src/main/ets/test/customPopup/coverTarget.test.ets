@@ -62,13 +62,12 @@ export default function CustomCoverTargetTest() {
         });
 
         /**
-         * @tc.number    CustomCoverTargetPopup_0010
-         * @tc.name      CustomCoverTargetPopup_0010
-         * @tc.desc      coverTarget,determine that the y-axis in the upper left corner of the customPopup is smaller 
-         *               than the y-axis in the lower right corner of the parent component
-         * @tc.level:    Level 0
-         * @tc.type :    Function
-         * @tc.size :    MediumTest
+         * @tc.name   CustomCoverTargetPopup_0010
+         * @tc.number CustomCoverTargetPopup_0010
+         * @tc.desc   coverTarget,determine that the y-axis in the upper left corner of the customPopup is smaller
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('CustomCoverTargetPopup_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {

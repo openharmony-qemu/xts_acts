@@ -22,6 +22,8 @@ group("actscalltest") {
       "systemappcallerb:ActsSystemAppCallerBRelyHap",
       "systemappcallerc:ActsSystemAppCallerCRelyHap",
       "systemcallentrytest:ActsCallTestEntryTest",
+      "systemcallentrytestrelystatic:ActsCallTestEntryRelyStaticTest",
+      "systemcallentryteststatic:ActsCallTestEntryStaticTest",
       "systemcallfeature:ActsCallTestFeatureRelyHap",
       "thirdappa:ActsThirdAppARelyHap",
       "thirdcalltest:ActsThirdCallTest",

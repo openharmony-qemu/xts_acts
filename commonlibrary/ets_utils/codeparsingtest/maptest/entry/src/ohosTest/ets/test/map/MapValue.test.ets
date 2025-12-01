@@ -72,12 +72,12 @@ export default function MapValueTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   MapValuesTest001
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_001
-     * @tc.name MapValuesTest001
-     * @tc.desc Basic functionality: values() of empty Map returns empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Basic functionality: values() of empty Map returns empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<string, string> = new Map();
@@ -86,12 +86,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest002
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_002
-     * @tc.name MapValuesTest002
-     * @tc.desc Basic functionality: values() with single key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Basic functionality: values() with single key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a']]);
@@ -101,12 +101,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest003
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_003
-     * @tc.name MapValuesTest003
-     * @tc.desc Order preservation: values() maintains insertion order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Order preservation: values() maintains insertion order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[3, 'c'], [1, 'a'], [2, 'b']]);
@@ -117,12 +117,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest004
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_004
-     * @tc.name MapValuesTest004
-     * @tc.desc Key override: values() keeps last set value for duplicate keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Key override: values() keeps last set value for duplicate keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest004',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<string, string> = new Map();
@@ -134,12 +134,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest005
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_005
-     * @tc.name MapValuesTest005
-     * @tc.desc Iterator property: values() returns object with next method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator property: values() returns object with next method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest005',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<string, string> = new Map();
@@ -149,12 +149,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest006
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_006
-     * @tc.name MapValuesTest006
-     * @tc.desc Iterator traversal: complete value sequence via next()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator traversal: complete value sequence via next()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest006',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'x'], [2, 'y']]);
@@ -166,12 +166,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest007
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_007
-     * @tc.name MapValuesTest007
-     * @tc.desc Consistency: values() match values in entries()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Consistency: values() match values in entries()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest007',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[10, 'foo'], [20, 'bar']]);
@@ -182,12 +182,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest008
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_008
-     * @tc.name MapValuesTest008
-     * @tc.desc Consistency: values() match get() results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Consistency: values() match get() results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest008',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[5, 'test']]);
@@ -196,12 +196,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest009
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_009
-     * @tc.name MapValuesTest009
-     * @tc.desc String keys: values() with string as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   String keys: values() with string as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest009',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([['name', 'test']]);
@@ -210,12 +210,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest010
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_010
-     * @tc.name MapValuesTest010
-     * @tc.desc Boolean keys: values() with boolean as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Boolean keys: values() with boolean as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest010',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[true, 'yes'], [false, 'no']]);
@@ -225,12 +225,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest011
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_011
-     * @tc.name MapValuesTest011
-     * @tc.desc Object keys: values() with object reference as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Object keys: values() with object reference as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest011',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
@@ -244,12 +244,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest012
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_012
-     * @tc.name MapValuesTest012
-     * @tc.desc Symbol keys: values() with Symbol as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Symbol keys: values() with Symbol as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest012',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest012 = MapValuesTest012();
@@ -257,12 +257,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest013
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_013
-     * @tc.name MapValuesTest013
-     * @tc.desc Null key: values() with null as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Null key: values() with null as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest013',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[null, 'null value']]);
@@ -271,12 +271,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest014
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_014
-     * @tc.name MapValuesTest014
-     * @tc.desc Undefined key: values() with undefined as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Undefined key: values() with undefined as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest014',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[undefined, 'undefined value']]);
@@ -285,12 +285,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest015
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_015
-     * @tc.name MapValuesTest015
-     * @tc.desc Function values: values() contains function references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Function values: values() contains function references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest015',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const func = () => 'test';
@@ -301,12 +301,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest016
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_016
-     * @tc.name MapValuesTest016
-     * @tc.desc Array values: values() contains array references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Array values: values() contains array references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest016',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -317,12 +317,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest017
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_017
-     * @tc.name MapValuesTest017
-     * @tc.desc Object values: values() contains object references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Object values: values() contains object references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest017',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
@@ -337,12 +337,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest018
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_018
-     * @tc.name MapValuesTest018
-     * @tc.type Function
-     * @tc.desc Original Map unchanged after values()
-     * @tc.size MediumTest
-     * @tc.level Level 1
+     * @tc.desc   Original Map unchanged after values()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest018',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a']]);
@@ -352,12 +352,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest019
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_019
-     * @tc.name MapValuesTest019
-     * @tc.desc Iterator reuse: can traverse multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator reuse: can traverse multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest019',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a']]);
@@ -367,12 +367,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest020
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_020
-     * @tc.name MapValuesTest020
-     * @tc.desc New iterator: each values() call returns new iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   New iterator: each values() call returns new iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest020',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<string, string> = new Map();
@@ -382,12 +382,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest021
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_021
-     * @tc.name MapValuesTest021
-     * @tc.desc Iterator behavior: continues after Map modification (add new entry)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterator behavior: continues after Map modification (add new entry)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest021',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a']]);
@@ -398,12 +398,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest022
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_022
-     * @tc.name MapValuesTest022
-     * @tc.desc Iterator behavior: skips deleted entries (not yet iterated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterator behavior: skips deleted entries (not yet iterated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest022',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -414,12 +414,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest023
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_023
-     * @tc.name MapValuesTest023
-     * @tc.desc Iterator behavior: ignores modified entries (already iterated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterator behavior: ignores modified entries (already iterated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest023',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -430,12 +430,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest024
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_024
-     * @tc.name MapValuesTest024
-     * @tc.desc for...of loop over values()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   for...of loop over values()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest024',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'x'], [2, 'y']]);
@@ -448,12 +448,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest025
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_025
-     * @tc.name MapValuesTest025
-     * @tc.desc values() with NaN as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with NaN as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest025',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, NaN]]);
@@ -462,12 +462,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest026
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_026
-     * @tc.name MapValuesTest026
-     * @tc.desc values() with Infinity as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Infinity as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest026',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, Infinity]]);
@@ -476,12 +476,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest027
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_027
-     * @tc.name MapValuesTest027
-     * @tc.desc values() with -Infinity as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with -Infinity as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest027',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, -Infinity]]);
@@ -490,12 +490,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest028
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_028
-     * @tc.name MapValuesTest028
-     * @tc.desc values() with BigInt as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with BigInt as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest028',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 42n]]);
@@ -504,12 +504,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest029
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_029
-     * @tc.name MapValuesTest029
-     * @tc.desc values() with Date object as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Date object as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapValuesTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date: Date = new Date(2023, 0, 1);
@@ -522,12 +522,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest030
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_030
-     * @tc.name MapValuesTest030
-     * @tc.desc values() with RegExp as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with RegExp as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest030',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex = /test/;
@@ -538,12 +538,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest031
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_031
-     * @tc.name MapValuesTest031
-     * @tc.desc values() with Map as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest031',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const innerMap = new Map([[1, 'a']]);
@@ -554,12 +554,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest032
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_032
-     * @tc.name MapValuesTest032
-     * @tc.desc values() with Set as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Set as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest032',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const set = new Set([1, 2]);
@@ -570,12 +570,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest033
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_033
-     * @tc.name MapValuesTest033
-     * @tc.desc values() with WeakMap as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with WeakMap as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest033',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {}
@@ -590,12 +590,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest034
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_034
-     * @tc.name MapValuesTest034
-     * @tc.desc values() with WeakSet as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with WeakSet as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest034',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {}
@@ -610,12 +610,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest035
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_035
-     * @tc.name MapValuesTest035
-     * @tc.desc values() with class instance as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with class instance as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest035',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest035 begin');
@@ -632,12 +632,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest036
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_036
-     * @tc.name MapValuesTest036
-     * @tc.desc values() after clear()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() after clear()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest036',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest036 begin');
@@ -648,12 +648,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest037
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_037
-     * @tc.name MapValuesTest037
-     * @tc.desc Iterator behavior: after clear()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterator behavior: after clear()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest037',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest037 begin');
@@ -665,12 +665,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest038
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_038
-     * @tc.name MapValuesTest038
-     * @tc.desc values() with numeric zero and negative zero as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with numeric zero and negative zero as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest038',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest038 begin');
@@ -683,12 +683,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest039
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_039
-     * @tc.name MapValuesTest039
-     * @tc.desc values() with empty string as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with empty string as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest039',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest039 begin');
@@ -699,12 +699,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest040
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_040
-     * @tc.name MapValuesTest040
-     * @tc.desc values() with large string as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with large string as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest040',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest040 begin');
@@ -716,12 +716,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest041
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_041
-     * @tc.name MapValuesTest041
-     * @tc.desc values() with multi-line string as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with multi-line string as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest041',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'MapValuesTest041 begin');
@@ -733,12 +733,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest042
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_042
-     * @tc.name MapValuesTest042
-     * @tc.desc values() with nested objects as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with nested objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest042',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface LevelC {
@@ -767,12 +767,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest043
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_043
-     * @tc.name MapValuesTest043
-     * @tc.desc values() with circular reference as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with circular reference as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest043',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
@@ -788,12 +788,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest044
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_044
-     * @tc.name MapValuesTest044
-     * @tc.desc values() with typed array as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with typed array as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest044',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const typedArr = new Uint8Array([1, 2, 3]);
@@ -804,12 +804,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest045
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_045
-     * @tc.name MapValuesTest045
-     * @tc.desc values() with function with properties as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with function with properties as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest045',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const testFunc = () => {
@@ -824,12 +824,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest046
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_046
-     * @tc.name MapValuesTest046
-     * @tc.desc values() with generator function as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with generator function as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest046',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest046 = MapValuesTest046();
@@ -840,12 +840,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest047
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_047
-     * @tc.name MapValuesTest047
-     * @tc.desc values() with async function as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with async function as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest047',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const asyncFunc = async () => 'async result';
@@ -855,12 +855,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest048
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_048
-     * @tc.name MapValuesTest048
-     * @tc.desc values() with array buffer as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with array buffer as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest048',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(8);
@@ -871,12 +871,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest049
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_049
-     * @tc.name MapValuesTest049
-     * @tc.desc values() with frozen object as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with frozen object as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest049',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest049 = MapValuesTest049();
@@ -885,12 +885,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest050
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_050
-     * @tc.name MapValuesTest050
-     * @tc.desc values() with sealed object as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with sealed object as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest050',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest050 = MapValuesTest050();
@@ -899,12 +899,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest051
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_051
-     * @tc.name MapValuesTest051
-     * @tc.desc values() with empty object as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   values() with empty object as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest051',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest051 = MapValuesTest051();
@@ -913,12 +913,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest052
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_052
-     * @tc.name MapValuesTest052
-     * @tc.desc values() with null as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with null as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest052',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, null]]);
@@ -927,12 +927,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest053
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_053
-     * @tc.name MapValuesTest053
-     * @tc.desc values() with undefined as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with undefined as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest053',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, undefined]]);
@@ -941,12 +941,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest054
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_054
-     * @tc.name MapValuesTest054
-     * @tc.desc values() with mixed value types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with mixed value types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest054',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest054 = MapValuesTest054();
@@ -958,12 +958,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest055
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_055
-     * @tc.name MapValuesTest055
-     * @tc.desc values() with large number of entries (1000)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with large number of entries (1000)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest055',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<number, string> = new Map();
@@ -977,12 +977,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest056
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_056
-     * @tc.name MapValuesTest056
-     * @tc.desc Performance: values() with 10000 entries
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 3
+     * @tc.desc   Performance: values() with 10000 entries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest056',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<number, number> = new Map();
@@ -1000,12 +1000,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest057
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_057
-     * @tc.name MapValuesTest057
-     * @tc.desc values() iterator with Symbol.iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() iterator with Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest057',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest057 = MapValuesTest057();
@@ -1015,12 +1015,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest058
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_058
-     * @tc.name MapValuesTest058
-     * @tc.desc values() iterator toStringTag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() iterator toStringTag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest058',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest058 = MapValuesTest058();
@@ -1029,12 +1029,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest059
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_059
-     * @tc.name MapValuesTest059
-     * @tc.desc values() with Symbol as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Symbol as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest059',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest059 = MapValuesTest059();
@@ -1043,12 +1043,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest060
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_060
-     * @tc.name MapValuesTest060
-     * @tc.desc values() with global Symbol as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with global Symbol as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest060',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest060 = MapValuesTest060();
@@ -1056,12 +1056,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest061
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_061
-     * @tc.name MapValuesTest061
-     * @tc.desc values() after entries deletion during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() after entries deletion during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest061',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a'], [2, 'b'], [3, 'c']]);
@@ -1079,12 +1079,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest062
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_062
-     * @tc.name MapValuesTest062
-     * @tc.desc values() after entries addition during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() after entries addition during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest062',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -1101,12 +1101,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest063
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_063
-     * @tc.name MapValuesTest063
-     * @tc.desc values() iterator return() method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() iterator return() method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest063',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest063 = MapValuesTest063();
@@ -1116,12 +1116,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest064
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_064
-     * @tc.name MapValuesTest064
-     * @tc.desc values() with same value in multiple entries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with same value in multiple entries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest064',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
@@ -1143,12 +1143,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest065
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_065
-     * @tc.name MapValuesTest065
-     * @tc.desc values() with Map that has NaN as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map that has NaN as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest065',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[NaN, 'value']]);
@@ -1157,12 +1157,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest066
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_066
-     * @tc.name MapValuesTest066
-     * @tc.desc values() with Map that has -0 as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map that has -0 as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest066',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[-0, 'value']]);
@@ -1171,12 +1171,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest067
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_067
-     * @tc.name MapValuesTest067
-     * @tc.desc values() with Map that has 0 and -0 as separate keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map that has 0 and -0 as separate keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest067',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[0, 'zero'], [-0, 'neg-zero']]);
@@ -1187,12 +1187,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest068
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_068
-     * @tc.name MapValuesTest068
-     * @tc.desc values() with Map that has same object reference as key multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map that has same object reference as key multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest068',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {}
@@ -1209,12 +1209,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest069
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_069
-     * @tc.name MapValuesTest069
-     * @tc.desc values() with Map that has different object instances as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map that has different object instances as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest069',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest069 = MapValuesTest069();
@@ -1224,12 +1224,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest070
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_070
-     * @tc.name MapValuesTest070
-     * @tc.desc values() with Map created from object entries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map created from object entries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest070',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
@@ -1249,12 +1249,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest071
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_071
-     * @tc.name MapValuesTest071
-     * @tc.desc values() with Map created from array of arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map created from array of arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest071',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest071 = MapValuesTest071();
@@ -1264,12 +1264,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest072
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_072
-     * @tc.name MapValuesTest072
-     * @tc.desc values() with Map created from another Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map created from another Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest072',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const original = new Map([[1, 'a'], [2, 'b']]);
@@ -1280,12 +1280,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest073
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_073
-     * @tc.name MapValuesTest073
-     * @tc.desc values() after modifying value object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() after modifying value object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest073',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
@@ -1301,12 +1301,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest074
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_074
-     * @tc.name MapValuesTest074
-     * @tc.desc values() after replacing value object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() after replacing value object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest074',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
@@ -1327,12 +1327,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest075
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_075
-     * @tc.name MapValuesTest075
-     * @tc.desc values() with inherited properties (none, since Map uses own properties)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with inherited properties (none, since Map uses own properties)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest075',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest075 = MapValuesTest075();
@@ -1342,12 +1342,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest076
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_076
-     * @tc.name MapValuesTest076
-     * @tc.desc values() with Map that has been frozen
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map that has been frozen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest076',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest076 = MapValuesTest076();
@@ -1356,12 +1356,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest077
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_077
-     * @tc.name MapValuesTest077
-     * @tc.desc values() with Map that has been sealed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map that has been sealed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest077',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest077 = MapValuesTest077();
@@ -1370,12 +1370,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest078
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_078
-     * @tc.name MapValuesTest078
-     * @tc.desc values() with Map prototype modified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with Map prototype modified
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest078',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest078 = MapValuesTest078();
@@ -1383,12 +1383,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest079
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_079
-     * @tc.name MapValuesTest079
-     * @tc.desc values() with subclassed Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with subclassed Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest079',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest079 = MapValuesTest079();
@@ -1397,12 +1397,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest080
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_080
-     * @tc.name MapValuesTest080
-     * @tc.desc values() used with Array.prototype.map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() used with Array.prototype.map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest080',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 10], [2, 20], [3, 30]]);
@@ -1414,12 +1414,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest081
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_081
-     * @tc.name MapValuesTest081
-     * @tc.desc values() used with Array.prototype.filter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() used with Array.prototype.filter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest081',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 5], [2, 15], [3, 25], [4, 5]]);
@@ -1431,12 +1431,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest082
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_082
-     * @tc.name MapValuesTest082
-     * @tc.desc values() used with Array.prototype.reduce
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() used with Array.prototype.reduce
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest082',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 1], [2, 2], [3, 3], [4, 4]]);
@@ -1447,12 +1447,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest083
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_083
-     * @tc.name MapValuesTest083
-     * @tc.desc values() used with Array.prototype.find
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() used with Array.prototype.find
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest083',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'apple'], [2, 'banana'], [3, 'cherry']]);
@@ -1462,12 +1462,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest084
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_084
-     * @tc.name MapValuesTest084
-     * @tc.desc values() used with Array.prototype.every
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() used with Array.prototype.every
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest084',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map1 = new Map([[1, 5], [2, 10], [3, 15]]);
@@ -1484,12 +1484,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest085
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_085
-     * @tc.name MapValuesTest085
-     * @tc.desc values() used with Array.prototype.some
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() used with Array.prototype.some
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest085',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map1 = new Map([[1, 'cat'], [2, 'dog'], [3, 'bird']]);
@@ -1506,12 +1506,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest086
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_086
-     * @tc.name MapValuesTest086
-     * @tc.desc values() with empty values array and array methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with empty values array and array methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest086',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<string, string> = new Map();
@@ -1523,12 +1523,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest087
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_087
-     * @tc.name MapValuesTest087
-     * @tc.desc values() iterator with spread operator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() iterator with spread operator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest087',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, 'a'], [2, 'b'], [3, 'c']]);
@@ -1539,12 +1539,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest088
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_088
-     * @tc.name MapValuesTest088
-     * @tc.desc values() with Map containing itself as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with Map containing itself as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest088',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest088 = MapValuesTest088();
@@ -1552,12 +1552,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest089
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_089
-     * @tc.name MapValuesTest089
-     * @tc.desc values() with Map containing other Maps as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map containing other Maps as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest089',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map1 = new Map([[1, 'a']]);
@@ -1571,12 +1571,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest090
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_090
-     * @tc.name MapValuesTest090
-     * @tc.desc values() with recursive Map structure
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with recursive Map structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest090',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest090 = MapValuesTest090();
@@ -1585,12 +1585,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest091
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_091
-     * @tc.name MapValuesTest091
-     * @tc.desc values() with Map that has been converted to array and back
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map that has been converted to array and back
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest091',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const original = new Map([[1, 'a'], [2, 'b']]);
@@ -1603,12 +1603,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest092
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_092
-     * @tc.name MapValuesTest092
-     * @tc.desc values() with Map and JSON serialization of values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map and JSON serialization of values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest092',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest092 = MapValuesTest092();
@@ -1616,12 +1616,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest093
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_093
-     * @tc.name MapValuesTest093
-     * @tc.desc values() with non-serializable values (functions)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with non-serializable values (functions)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest093',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const func = () => {
@@ -1634,12 +1634,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest094
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_094
-     * @tc.name MapValuesTest094
-     * @tc.desc values() with Map in a different realm (iframe)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with Map in a different realm (iframe)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest094',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const iframeMap = new Map([[1, 'iframe value']]);
@@ -1649,12 +1649,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest095
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_095
-     * @tc.name MapValuesTest095
-     * @tc.desc values() with Map that has been cloned
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map that has been cloned
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest095',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const original = new Map([[1, 'a'], [2, 'b']]);
@@ -1668,12 +1668,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest096
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_096
-     * @tc.name MapValuesTest096
-     * @tc.desc values() with Map and modified prototype chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with Map and modified prototype chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest096',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest096 = MapValuesTest096();
@@ -1681,12 +1681,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest097
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_097
-     * @tc.name MapValuesTest097
-     * @tc.desc values() with Map and property descriptors
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with Map and property descriptors
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest097',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest097 = MapValuesTest097();
@@ -1694,12 +1694,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest098
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_098
-     * @tc.name MapValuesTest098
-     * @tc.desc values() with very large values (memory usage test)
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 3
+     * @tc.desc   values() with very large values (memory usage test)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest098',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<number, string> = new Map();
@@ -1714,12 +1714,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest099
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_099
-     * @tc.name MapValuesTest099
-     * @tc.desc values() with Map that has been garbage collected (indirect test)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with Map that has been garbage collected (indirect test)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest099',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let map: Map<number, string> | null = new Map([[1, 'a']]);
@@ -1730,12 +1730,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest100
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_100
-     * @tc.name MapValuesTest100
-     * @tc.desc values() with Map and same values added and removed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map and same values added and removed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map: Map<number, string> = new Map();
@@ -1748,12 +1748,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest101
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_101
-     * @tc.name MapValuesTest101
-     * @tc.desc values() with Map and numeric keys in descending order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map and numeric keys in descending order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest101',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[5, 'e'], [4, 'd'], [3, 'c'], [2, 'b'], [1, 'a']]);
@@ -1766,12 +1766,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest102
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_102
-     * @tc.name MapValuesTest102
-     * @tc.desc values() with Map and string keys with varying cases
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map and string keys with varying cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest102',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([
@@ -1787,12 +1787,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest103
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_103
-     * @tc.name MapValuesTest103
-     * @tc.desc values() with Map and mixed key types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map and mixed key types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest103',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest103 = MapValuesTest103();
@@ -1805,12 +1805,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest104
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_104
-     * @tc.name MapValuesTest104
-     * @tc.desc values() with Map and ES6+ features as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map and ES6+ features as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest104',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest104 = MapValuesTest104();
@@ -1820,12 +1820,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest105
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_105
-     * @tc.name MapValuesTest105
-     * @tc.desc values() with Map and dynamic values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map and dynamic values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest105',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let dynamicValue = 'initial';
@@ -1836,12 +1836,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest106
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_106
-     * @tc.name MapValuesTest106
-     * @tc.desc values() with Map and dynamic object values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map and dynamic object values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest106',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
@@ -1856,12 +1856,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest107
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_107
-     * @tc.name MapValuesTest107
-     * @tc.desc values() with Map and proxy as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with Map and proxy as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest107',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest107 = MapValuesTest107();
@@ -1869,12 +1869,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest108
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_108
-     * @tc.name MapValuesTest108
-     * @tc.desc values() with Map and reflective properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   values() with Map and reflective properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest108',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface MyObj {
@@ -1891,12 +1891,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest109
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_109
-     * @tc.name MapValuesTest109
-     * @tc.desc values() with Map and symbols as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map and symbols as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest109',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest109 = MapValuesTest109();
@@ -1906,12 +1906,12 @@ export default function MapValueTest() {
     });
 
     /**
+     * @tc.name   MapValuesTest110
      * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_110
-     * @tc.name MapValuesTest110
-     * @tc.desc values() with Map and comprehensive value types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   values() with Map and comprehensive value types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapValuesTest110',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ValuesTest109 = MapValuesTest110();

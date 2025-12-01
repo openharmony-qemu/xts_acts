@@ -50,12 +50,12 @@ export default function BuiltinsConstructorTest() {
     })
 
     /**
-     * @tc.number    : SUB_BUILTINS_CONSTRUCTOR_TEST_0100
-     * @tc.name      : testBigIntPositive
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBigIntPositive
+     * @tc.number SUB_BUILTINS_CONSTRUCTOR_TEST_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBigIntPositive', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -84,12 +84,12 @@ export default function BuiltinsConstructorTest() {
       });
 
     /**
-     * @tc.number    : SUB_BUILTINS_CONSTRUCTOR_TEST_0200
-     * @tc.name      : testBigIntString
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBigIntString
+     * @tc.number SUB_BUILTINS_CONSTRUCTOR_TEST_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBigIntString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

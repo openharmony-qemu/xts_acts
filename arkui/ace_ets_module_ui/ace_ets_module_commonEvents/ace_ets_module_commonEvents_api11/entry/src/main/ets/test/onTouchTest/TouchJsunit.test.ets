@@ -56,6 +56,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("touch after each called");
     })
 
+    /**
+     * @tc.name   testTouch01
+     * @tc.number testTouch01
+     * @tc.desc   testTouch01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTouch01', Level.LEVEL0, async (done: Function) => {
       console.info('[testTouch01] START');
       await CommonFunc.sleep(1000);

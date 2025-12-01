@@ -29,14 +29,12 @@ export default function fileIOStreamFlush() {
   describe('fileIO_fs_stream_flush', (): void => {
 
     /**
+     * @tc.name   fileIO_test_stream_flush_sync_static_000
      * @tc.number SUB_DF_FILEIO_STREAM_FLUSH_SYNC_0000
-     * @tc.name fileIO_test_stream_flush_sync_static_000
-     * @tc.desc Test the flushSync() interface of class Stream.
-     * Refresh file stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the flushSync() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_stream_flush_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_stream_flush_sync_static_000');
@@ -56,14 +54,12 @@ export default function fileIOStreamFlush() {
     });
 
     /**
+     * @tc.name   fileIO_test_stream_flush_async_static_000
      * @tc.number SUB_DF_FILEIO_STREAM_FLUSH_ASYNC_0000
-     * @tc.name fileIO_test_stream_flush_async_static_000
-     * @tc.desc Test the flush() interface of class Stream. Promise.
-     * Refresh the file stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the flush() interface of class Stream. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_stream_flush_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_stream_flush_async_static_000');
@@ -84,14 +80,12 @@ export default function fileIOStreamFlush() {
     });
 
     /**
+     * @tc.name   fileIO_test_stream_flush_async_static_001
      * @tc.number SUB_DF_FILEIO_STREAM_FLUSH_ASYNC_0100
-     * @tc.name fileIO_test_stream_flush_async_static_001
-     * @tc.desc Test the flush() interface of class Stream. Callback.
-     * Refresh the file stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   Test the flush() interface of class Stream. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_stream_flush_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_stream_flush_async_static_001');

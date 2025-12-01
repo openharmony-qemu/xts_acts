@@ -56,12 +56,12 @@ export default function RichEditorStabillity002() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0002
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0002
-     * @tc.desc  : Continuously use Ctrl+V shortcut keys to paste and test RichEditor Stability
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0002
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0002
+     * @tc.desc   Continuously use Ctrl+V shortcut keys to paste and test RichEditor Stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0002',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0002 START');
@@ -70,34 +70,34 @@ export default function RichEditorStabillity002() {
       let pointCenter = await rich.getBoundsCenter();
       await driver.longClick(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
       await CommonFunc.sleep(500);
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(500);
       let getPosition = await driver.findComponent(ON.id('getPosition'));
-      getPosition.click();
+      await getPosition.click();
       await CommonFunc.sleep(500);
       let pointPosition = await driver.findComponent(ON.id('pointPosition'));
       let pointPositionText = await pointPosition.getText();
@@ -107,12 +107,12 @@ export default function RichEditorStabillity002() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0003
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0003
-     * @tc.desc  : Continuously calling updateSpanStyle to update styles to test RichEditor Stability
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0003
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0003
+     * @tc.desc   Continuously calling updateSpanStyle to update styles to test RichEditor Stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0003',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0003 START');
@@ -121,7 +121,7 @@ export default function RichEditorStabillity002() {
       updateSpanStyles.click();
       await CommonFunc.sleep(2000);
       let getSpans = await driver.findComponent(ON.id('getSpans'));
-      getSpans.click();
+      await getSpans.click();
       await CommonFunc.sleep(500);
       let style = await driver.findComponent(ON.id('style'));
       let styleText = await style.getText();

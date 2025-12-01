@@ -61,12 +61,12 @@ export default function systemBarEffectTest() {
     });
 
     /**
+     * @tc.name   systemBarEffectTest_0100
      * @tc.number systemBarEffectTest_0100
-     * @tc.name systemBarEffectTest_0100
-     * @tc.desc test api of systemBarEffect
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test api of systemBarEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('systemBarEffectTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('systemBarEffectTest_0100 START');

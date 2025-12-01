@@ -26,13 +26,13 @@ export default function customPropertyTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGetCustomProperty001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetCustomProperty001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestGetCustomProperty';
@@ -42,13 +42,13 @@ export default function customPropertyTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGetParentInPageTree002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetParentInPageTree002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestGetParentInPageTree';
@@ -63,13 +63,13 @@ export default function customPropertyTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGetActiveChildrenInfo003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetActiveChildrenInfo003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestGetActiveChildrenInfo';
@@ -84,13 +84,13 @@ export default function customPropertyTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGetCurrentPageRootNode004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetCurrentPageRootNode004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestGetCurrentPageRootNode';
@@ -105,13 +105,13 @@ export default function customPropertyTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testIsCreatedByNDK005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsCreatedByNDK005', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestIsCreatedByNDK';
@@ -121,13 +121,13 @@ export default function customPropertyTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGetNodeType006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetNodeType006', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestGetNodeType';
@@ -137,13 +137,13 @@ export default function customPropertyTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomPropertyDestroy007
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomPropertyDestroy007', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestCustomPropertyDestroy';
@@ -153,13 +153,13 @@ export default function customPropertyTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomPropertyGetStringValue008
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomPropertyGetStringValue008', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestCustomPropertyGetStringValue';
@@ -169,13 +169,13 @@ export default function customPropertyTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testActiveChildrenInfoDestroy009
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testActiveChildrenInfoDestroy009', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestActiveChildrenInfoDestroy';
@@ -190,13 +190,13 @@ export default function customPropertyTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testActiveChildrenInfoGetNodeByIndex010
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testActiveChildrenInfoGetNodeByIndex010', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestActiveChildrenInfoGetNodeByIndex';
@@ -211,13 +211,13 @@ export default function customPropertyTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
-     * @tc.name       : testRemoveCustomProperty002
-     * @tc.desc       : testing Custom Property
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testActiveChildrenInfoGetCount011
+     * @tc.number SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0200
+     * @tc.desc   testing Custom Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testActiveChildrenInfoGetCount011', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestActiveChildrenInfoGetNodeByIndex';

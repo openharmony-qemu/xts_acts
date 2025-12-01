@@ -41,6 +41,7 @@ export default function registerPhotoChangeTest () {
     });
 
     const NOTIFY_CHANGE_UPDATE = photoAccessHelper.NotifyChangeType.NOTIFY_CHANGE_UPDATE;
+    const NOTIFY_CHANGE_YUV_READY = photoAccessHelper.NotifyChangeType.NOTIFY_CHANGE_YUV_READY;
 
     /**
      * @tc.number    : SUB_PHOTOACCESS_HELPER_REGISTER_PHOTOCHANGE_CALLBACK_001
@@ -70,6 +71,49 @@ export default function registerPhotoChangeTest () {
           console.info(`${testNum} changeData: ${JSON.stringify(changeData)}`);
           helper.off('photoChange');
           expect(changeData.type).assertEqual(NOTIFY_CHANGE_UPDATE);
+        });
+        await sleep(550);
+        const newTitle = testNum + photoAsset.get(photoKeys.TITLE);
+        photoAsset.set(photoKeys.TITLE, newTitle);
+        await photoAsset.commitModify();
+        await sleep(1000);
+        expect(count).assertEqual(1);
+        done();
+      } catch (error) {
+        console.log(`${testNum}: tryError: ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_REGISTER_PHOTOCHANGE_CALLBACK_002
+     * @tc.name      : register_photoChange_callback_002
+     * @tc.desc      : listening motify file title, type NOTIFY_CHANGE_YUV_READY
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('register_photoChange_callback_002', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'register_photoChange_callback_002';
+      try {
+        const predicates = new dataSharePredicates.DataSharePredicates();
+        const ops : photoAccessHelper.FetchOptions = {
+          fetchColumns: [photoKeys.TITLE],
+          predicates: predicates
+        };
+        const fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(ops);
+        console.log(`${testNum} :: fetchResult is undefined ? ${fetchResult === undefined}`);
+        expect(fetchResult !== undefined).assertTrue();
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        fetchResult.close();
+        let count = 0;
+        await sleep(550);
+        helper.on('photoChange', async (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+          count++;
+          console.info(`${testNum} changeData: ${JSON.stringify(changeData)}`);
+          helper.off('photoChange');
+          expect(changeData.type).assertEqual(NOTIFY_CHANGE_YUV_READY);
         });
         await sleep(550);
         const newTitle = testNum + photoAsset.get(photoKeys.TITLE);

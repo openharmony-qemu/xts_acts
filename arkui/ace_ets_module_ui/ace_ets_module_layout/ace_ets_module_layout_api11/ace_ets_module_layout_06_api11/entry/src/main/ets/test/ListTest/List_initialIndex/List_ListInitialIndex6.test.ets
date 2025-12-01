@@ -61,9 +61,12 @@ export default function list_ListInitialIndex6Test() {
       console.info("List_ListInitialIndex6Test after each called");
     });
     /**
+     * @tc.name   testListInitialIndexToThreeWithTwoLane
      * @tc.number SUB_ACE_LIST_LISTINITIALINDEX_0600
-     * @tc.name testListInitialIndexToThreeWithTwoLane
-     * @tc.desc set the InitialIndex of list to 3,the lanes of list to 2
+     * @tc.desc   set the InitialIndex of list to 3,the lanes of list to 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListInitialIndexToThreeWithTwoLane',  Level.LEVEL0, async (done: Function) => {
       console.info('[testListInitialIndexToThreeWithTwoLane] START');

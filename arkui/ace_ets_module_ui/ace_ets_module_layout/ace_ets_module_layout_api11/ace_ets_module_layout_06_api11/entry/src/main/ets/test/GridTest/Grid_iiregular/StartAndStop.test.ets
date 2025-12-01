@@ -51,14 +51,16 @@ export default function StartAndStop() {
     });
 
 
-    /* *
-* @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
-* @tc.name  : Component sliding triggers onScrollStop and onScrollStart
-* @tc.desc  : Set the scroll direction to portrait
-* @tc.level : Level 2
-*/
 
 
+    /**
+     * @tc.name   StartAndStop_0300
+     * @tc.number StartAndStop_0300
+     * @tc.desc   StartAndStop_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StartAndStop_0300',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[StartAndStop_0300] START');

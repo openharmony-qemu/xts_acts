@@ -47,10 +47,12 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number    FrameNodeTest_0010
-     * @tc.name      FrameNodeTest_0010
-     * @tc.desc      FrameNode addSupportedUIStates NORMAL succ
-     * @tc.level:    Level 1
+     * @tc.name   FrameNodeTest_0010
+     * @tc.number FrameNodeTest_0010
+     * @tc.desc   FrameNode addSupportedUIStates NORMAL succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FrameNodeTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('FrameNodeTest_0010 START');
@@ -70,10 +72,12 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number    FrameNodeTest_0020
-     * @tc.name      FrameNodeTest_0020
-     * @tc.desc      FrameNode addSupportedUIStates PRESSED succ
-     * @tc.level:    Level 1
+     * @tc.name   FrameNodeTest_0020
+     * @tc.number FrameNodeTest_0020
+     * @tc.desc   FrameNode addSupportedUIStates PRESSED succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FrameNodeTest_0020', Level.LEVEL1, async (done: Function) => {
       console.info('FrameNodeTest_0020 START');
@@ -93,10 +97,12 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number    FrameNodeTest_0030
-     * @tc.name      FrameNodeTest_0030
-     * @tc.desc      FrameNode addSupportedUIStates FOCUSED succ
-     * @tc.level:    Level 1
+     * @tc.name   FrameNodeTest_0030
+     * @tc.number FrameNodeTest_0030
+     * @tc.desc   FrameNode addSupportedUIStates FOCUSED succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FrameNodeTest_0030', Level.LEVEL1, async (done: Function) => {
       console.info('FrameNodeTest_0030 START');
@@ -115,10 +121,12 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number    FrameNodeTest_0040
-     * @tc.name      FrameNodeTest_0040
-     * @tc.desc      FrameNode addSupportedUIStates DISABLED succ
-     * @tc.level:    Level 1
+     * @tc.name   FrameNodeTest_0040
+     * @tc.number FrameNodeTest_0040
+     * @tc.desc   FrameNode addSupportedUIStates DISABLED succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FrameNodeTest_0040', Level.LEVEL1, async (done: Function) => {
       console.info('FrameNodeTest_0040 START');
@@ -139,10 +147,12 @@ export default function FrameNodeTest() {
     });
 
     /**
-     * @tc.number    FrameNodeTest_0050
-     * @tc.name      FrameNodeTest_0050
-     * @tc.desc      FrameNode removeSupportedUIStates succ
-     * @tc.level:    Level 1
+     * @tc.name   FrameNodeTest_0050
+     * @tc.number FrameNodeTest_0050
+     * @tc.desc   FrameNode removeSupportedUIStates succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FrameNodeTest_0050', Level.LEVEL1, async (done: Function) => {
       console.info('FrameNodeTest_0050 START');

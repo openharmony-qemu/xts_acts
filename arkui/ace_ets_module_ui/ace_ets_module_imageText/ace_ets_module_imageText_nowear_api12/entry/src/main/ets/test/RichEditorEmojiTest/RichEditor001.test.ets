@@ -55,12 +55,12 @@ export default function RichEditor001() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0021
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0021
-     * @tc.desc  : Using the del key, it is not possible to delete a single emoji in front of the cursor to test the RichEditor emoji
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0021
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0021
+     * @tc.desc   Using the del key, it is not possible to delete a single emoji in front of the cursor to test the RichEditor emoji
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0021',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0021 START');
@@ -71,7 +71,7 @@ export default function RichEditor001() {
       await CommonFunc.sleep(1000);
 
       let point = await driver.findComponent(ON.id('get_position'));
-      point.click();
+      await point.click();
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('position_text'));
       let beginPosition = await text.getText();
@@ -80,7 +80,7 @@ export default function RichEditor001() {
 
       await CommonFunc.sleep(500);
 
-      point.click();
+      await point.click();
       await CommonFunc.sleep(1000);
       let endPosition = await text.getText();
 
@@ -89,12 +89,12 @@ export default function RichEditor001() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0016
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0016
-     * @tc.desc  : Using the del key, you can delete a single emoji after the cursor to test the RichEditor emoji
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0016
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0016
+     * @tc.desc   Using the del key, you can delete a single emoji after the cursor to test the RichEditor emoji
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0016',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0016 START');
@@ -105,11 +105,11 @@ export default function RichEditor001() {
       await CommonFunc.sleep(1000);
 
       let back = await driver.findComponent(ON.id('back'));
-      back.click();
+      await back.click();
       await CommonFunc.sleep(500);
 
       let point = await driver.findComponent(ON.id('get_position'));
-      point.click();
+      await point.click();
       await CommonFunc.sleep(500);
       let text = await driver.findComponent(ON.id('position_text'));
       let beginPosition = await text.getText();
@@ -118,7 +118,7 @@ export default function RichEditor001() {
 
       await CommonFunc.sleep(500);
 
-      point.click();
+      await point.click();
       await CommonFunc.sleep(1000);
       let endPosition = await text.getText();
 

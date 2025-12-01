@@ -34,13 +34,12 @@ export default function NativeGestureTest1() {
       done();
     });
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREINTERRUPTINFO_GETTOUCHRECOGNIZERS_0200
-     * @tc.name    : testGetTouchRecognizers0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchRecognizers0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREINTERRUPTINFO_GETTOUCHRECOGNIZERS_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchRecognizers0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -58,13 +57,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TOUCHRECOGNIZER_CANCELTOUCH_0200
-     * @tc.name    : testCancelTouch0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCancelTouch0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TOUCHRECOGNIZER_CANCELTOUCH_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCancelTouch0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -82,13 +80,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_GetResponseRecognizersFromInterruptInfo_0200
-     * @tc.name    : testGetFromInterruptInfo0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetFromInterruptInfo0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_GetResponseRecognizersFromInterruptInfo_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetFromInterruptInfo0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -106,13 +103,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_SetGestureRecognizerEnabled_0100
-     * @tc.name    : testSetGestureRecognizerEnabled0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testSetGestureRecognizerEnabled0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_SetGestureRecognizerEnabled_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetGestureRecognizerEnabled0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -130,13 +126,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_SetGestureRecognizerEnabled_0200
-     * @tc.name    : testSetGestureRecognizerEnabled0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testSetGestureRecognizerEnabled0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_SetGestureRecognizerEnabled_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetGestureRecognizerEnabled0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -154,13 +149,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_SetGestureRecognizerLimitFingerCount_0100
-     * @tc.name    : testSetGestureRecognizerLimitFingerCount0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testSetGestureRecognizerLimitFingerCount0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_SetGestureRecognizerLimitFingerCount_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetGestureRecognizerLimitFingerCount0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -178,13 +172,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTURERECOGNIZERSTATE_0100
-     * @tc.name    : testGetGestureRecognizerState0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureRecognizerState0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTURERECOGNIZERSTATE_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureRecognizerState0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -203,13 +196,12 @@ export default function NativeGestureTest1() {
 
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTURERECOGNIZERSTATE_0200
-     * @tc.name    : testGetGestureRecognizerState0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureRecognizerState0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTURERECOGNIZERSTATE_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureRecognizerState0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -227,13 +219,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREEVENTTARGETINFO_0100
-     * @tc.name    : testGetGestureEventTargetInfo0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureEventTargetInfo0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREEVENTTARGETINFO_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureEventTargetInfo0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -251,13 +242,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREEVENTTARGETINFO_0200
-     * @tc.name    : testGetGestureEventTargetInfo0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureEventTargetInfo0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREEVENTTARGETINFO_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureEventTargetInfo0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -275,13 +265,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLBEGIN_0200
-     * @tc.name    : testGestureEventTargetInfo_IsScrollBegin0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGestureEventTargetInfo_IsScrollBegin0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLBEGIN_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureEventTargetInfo_IsScrollBegin0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -299,13 +288,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLBEGIN_0300
-     * @tc.name    : testGestureEventTargetInfo_IsScrollBegin0300
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGestureEventTargetInfo_IsScrollBegin0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLBEGIN_0300
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureEventTargetInfo_IsScrollBegin0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -324,13 +312,12 @@ export default function NativeGestureTest1() {
 
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLEND_0200
-     * @tc.name    : testGestureEventTargetInfo_IsScrollEnd0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGestureEventTargetInfo_IsScrollEnd0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLEND_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureEventTargetInfo_IsScrollEnd0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -348,13 +335,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLEND_0300
-     * @tc.name    : testGestureEventTargetInfo_IsScrollEnd0300
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGestureEventTargetInfo_IsScrollEnd0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLEND_0300
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureEventTargetInfo_IsScrollEnd0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -372,13 +358,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_GETPANGESTUREDIRECTIONMASK_0100
-     * @tc.name    : testGetPanGestureDirectionMask0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetPanGestureDirectionMask0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_GETPANGESTUREDIRECTIONMASK_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetPanGestureDirectionMask0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -395,14 +380,13 @@ export default function NativeGestureTest1() {
         }
       })
 
-   /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_GETPANGESTUREDIRECTIONMASK_0200
-     * @tc.name    : testGetPanGestureDirectionMask0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testGetPanGestureDirectionMask0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_GETPANGESTUREDIRECTIONMASK_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetPanGestureDirectionMask0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -420,13 +404,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTURETAG_0200
-     * @tc.name    : testGetGestureTag0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureTag0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTURETAG_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureTag0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -444,13 +427,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREBINDNODEID_0100
-     * @tc.name    : testGetGestureBindNodeId0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureBindNodeId0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREBINDNODEID_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureBindNodeId0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -469,13 +451,12 @@ export default function NativeGestureTest1() {
 
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREBINDNODEID_0200
-     * @tc.name    : testGetGestureBindNodeId0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureBindNodeId0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREBINDNODEID_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureBindNodeId0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -493,13 +474,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREBINDNODEID_0300
-     * @tc.name    : testGetGestureBindNodeId0300
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureBindNodeId0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREBINDNODEID_0300
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureBindNodeId0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -517,13 +497,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_PARALLELINNERGESTUREEVENT_GETCONFLICTRECOGNIZERS_0200
-     * @tc.name    : testGetConflictRecognizers0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetConflictRecognizers0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_PARALLELINNERGESTUREEVENT_GETCONFLICTRECOGNIZERS_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetConflictRecognizers0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -541,13 +520,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_SETARKUIGESTURERECOGNIZERDISPOSENOTIFY_0200
-     * @tc.name    : testSetArkUIGestureRecognizerDisposeNotify0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testSetArkUIGestureRecognizerDisposeNotify0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_SETARKUIGESTURERECOGNIZERDISPOSENOTIFY_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetArkUIGestureRecognizerDisposeNotify0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -565,13 +543,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREPARAM_DIRECTMASK_0100
-     * @tc.name    : testGetGestureParam_DirectMask0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureParam_DirectMask0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREPARAM_DIRECTMASK_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureParam_DirectMask0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -589,13 +566,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREPARAM_FINGERCOUNT_0100
-     * @tc.name    : testGetGestureParam_FingerCount0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureParam_FingerCount0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREPARAM_FINGERCOUNT_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureParam_FingerCount0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -613,13 +589,12 @@ export default function NativeGestureTest1() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREPARAM_LIMITFINGERCOUNT_0100
-     * @tc.name    : testGetGestureParam_limitFingerCount0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetGestureParam_limitFingerCount0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GETGESTUREPARAM_LIMITFINGERCOUNT_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGestureParam_limitFingerCount0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

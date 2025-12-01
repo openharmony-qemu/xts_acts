@@ -26,195 +26,195 @@ export default function commonAttrsAccessibilityValueTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0100
-     * @tc.name       : testCommonAttrsAccessibilityValue001
-     * @tc.desc       : testing accessibility value for commonAttrs with valid value create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0100
+     * @tc.desc   testing accessibility value for commonAttrs with valid value create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0200
-     * @tc.name       : testCommonAttrsAccessibilityValue002
-     * @tc.desc       : testing accessibility value for commonAttrs with invalid value dispose
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0200
+     * @tc.desc   testing accessibility value for commonAttrs with invalid value dispose
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0300
-     * @tc.name       : testCommonAttrsAccessibilityValue003
-     * @tc.desc       : testing accessibility value for commonAttrs with null value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0300
+     * @tc.desc   testing accessibility value for commonAttrs with null value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0400
-     * @tc.name       : testCommonAttrsAccessibilityValue004
-     * @tc.desc       : testing accessibility value for commonAttrs with empty value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0400
+     * @tc.desc   testing accessibility value for commonAttrs with empty value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0500
-     * @tc.name       : testCommonAttrsAccessibilityValue005
-     * @tc.desc       : testing accessibility value for commonAttrs with min value -1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0500
+     * @tc.desc   testing accessibility value for commonAttrs with min value -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0600
-     * @tc.name       : testCommonAttrsAccessibilityValue006
-     * @tc.desc       : testing accessibility value for commonAttrs with min value 1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue006
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0600
+     * @tc.desc   testing accessibility value for commonAttrs with min value 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0700
-     * @tc.name       : testCommonAttrsAccessibilityValue007
-     * @tc.desc       : testing accessibility value for commonAttrs with valid value min 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue007
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0700
+     * @tc.desc   testing accessibility value for commonAttrs with valid value min 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0800
-     * @tc.name       : testCommonAttrsAccessibilityValue008
-     * @tc.desc       : testing accessibility value for commonAttrs with valid value min 1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue008
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0800
+     * @tc.desc   testing accessibility value for commonAttrs with valid value min 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0900
-     * @tc.name       : testCommonAttrsAccessibilityValue009
-     * @tc.desc       : testing accessibility value for commonAttrs with max value 200
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue009
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_0900
+     * @tc.desc   testing accessibility value for commonAttrs with max value 200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1000
-     * @tc.name       : testCommonAttrsAccessibilityValue010
-     * @tc.desc       : testing accessibility value for commonAttrs with max value 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue010
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1000
+     * @tc.desc   testing accessibility value for commonAttrs with max value 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1100
-     * @tc.name       : testCommonAttrsAccessibilityValue011
-     * @tc.desc       : testing accessibility value for commonAttrs with valid value 1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue011
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1100
+     * @tc.desc   testing accessibility value for commonAttrs with valid value 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue011()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1200
-     * @tc.name       : testCommonAttrsAccessibilityValue012
-     * @tc.desc       : testing accessibility value for commonAttrs with max value 200
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue012
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1200
+     * @tc.desc   testing accessibility value for commonAttrs with max value 200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue012', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue012()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1300
-     * @tc.name       : testCommonAttrsAccessibilityValue013
-     * @tc.desc       : testing accessibility value for commonAttrs with max value 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue013
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1300
+     * @tc.desc   testing accessibility value for commonAttrs with max value 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue013', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue013()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1400
-     * @tc.name       : testCommonAttrsAccessibilityValue014
-     * @tc.desc       : testing accessibility value for commonAttrs with max value -1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue014
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1400
+     * @tc.desc   testing accessibility value for commonAttrs with max value -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue014', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue014()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1500
-     * @tc.name       : testCommonAttrsAccessibilityValue015
-     * @tc.desc       : testing resetAttribute accessibility value for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityValue015
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYVALUE_1500
+     * @tc.desc   testing resetAttribute accessibility value for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityValue015', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityValue015()).assertEqual(0)

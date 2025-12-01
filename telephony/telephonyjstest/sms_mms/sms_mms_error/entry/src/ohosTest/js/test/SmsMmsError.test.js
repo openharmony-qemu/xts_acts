@@ -21,12 +21,13 @@ describe('SmsMmsErrorTest', function () {
 
   var rawArrayNull = [];
 
-  /*
-   * @tc.number  Telephony_SmsMms_createMessage_Async_0200
-   * @tc.name    Call interface CreateMessage,
-   *             The incoming PDU is empty, the specification is 3GPP,
-   *             shortMessage isn't empty
-   * @tc.desc    Function test
+  /**
+   * @tc.name   Telephony_SmsMms_createMessage_Async_0200
+   * @tc.number Telephony_SmsMms_createMessage_Async_0200
+   * @tc.desc   Function test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('Telephony_SmsMms_createMessage_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
     sms.createMessage(rawArrayNull, '3gpp', (err, shortMessage) => {
@@ -51,13 +52,14 @@ describe('SmsMmsErrorTest', function () {
     });
   });
 
-  
-  /*
-   * @tc.number  Telephony_SmsMms_createMessage_Promise_0200
-   * @tc.name    Call interface CreateMessage,
-   *             The incoming PDU is empty, the specification is 3GPP,
-   *             promise returns the result Don't empty
-   * @tc.desc    Function test
+
+  /**
+   * @tc.name   Telephony_SmsMms_createMessage_Promise_0200
+   * @tc.number Telephony_SmsMms_createMessage_Promise_0200
+   * @tc.desc   Function test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('Telephony_SmsMms_createMessage_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
     try {
@@ -73,23 +75,34 @@ describe('SmsMmsErrorTest', function () {
 
 
 
-  /*
-   * @tc.number  Telephony_SmsMms_hasSmsCapability_0100
-   * @tc.name    Check whether the Ims SMS function is supported
-   * @tc.desc    Function test
+  /**
+   * @tc.name   Telephony_SmsMms_hasSmsCapability_0100
+   * @tc.number Telephony_SmsMms_hasSmsCapability_0100
+   * @tc.desc   Function test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('Telephony_SmsMms_hasSmsCapability_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
     let result = sms.hasSmsCapability();
-    console.log('Telephony_SmsMms_hasSmsCapability_0100 result : ' + result);
-    expect(result === false || result === true).assertTrue();
+    if (result) {
+      expect(result).assertEqual(true);
+      console.log(`Telephony_SmsMms_hasSmsCapability_0100 result : ${JSON.stringify(result)}`);
+    } else {
+      expect(result).assertEqual(false);
+      console.log(`Telephony_SmsMms_hasSmsCapability_0100 result : ${JSON.stringify(result)}`);
+    }
     done();
   });
 
 
   /**
-   * @tc.number   Telephony_SmsMms_getDefaultSmsSlotId_Async_0100
-   * @tc.name     Set the default card slot ID for sending SMS
-   * @tc.desc     Function test
+   * @tc.name   Telephony_SmsMms_getDefaultSmsSlotId_Async_0100
+   * @tc.number Telephony_SmsMms_getDefaultSmsSlotId_Async_0100
+   * @tc.desc   Function test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('Telephony_SmsMms_getDefaultSmsSlotId_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
     sms.getDefaultSmsSlotId((getErr, getResult) => {
@@ -104,9 +117,12 @@ describe('SmsMmsErrorTest', function () {
   });
 
   /**
-   * @tc.number   Telephony_SmsMms_getDefaultSmsSlotId_Promise_0100
-   * @tc.name     Set the default card slot ID for sending SMS
-   * @tc.desc     Function test
+   * @tc.name   Telephony_SmsMms_getDefaultSmsSlotId_Promise_0100
+   * @tc.number Telephony_SmsMms_getDefaultSmsSlotId_Promise_0100
+   * @tc.desc   Function test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('Telephony_SmsMms_getDefaultSmsSlotId_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
     try {
@@ -120,9 +136,12 @@ describe('SmsMmsErrorTest', function () {
   });
 
   /**
+   * @tc.name   Telephony_SmsMms_sendMessage_Promise_0100
    * @tc.number Telephony_SmsMms_sendMessage_Promise_0100
-   * @tc.name Telephony_SmsMms_sendMessage_Promise_0100
-   * @tc.desc Function test
+   * @tc.desc   Function test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('Telephony_SmsMms_sendMessage_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
     try {
@@ -155,11 +174,14 @@ describe('SmsMmsErrorTest', function () {
     }
   });
 
-  /**
-   * @tc.number Telephony_SmsMms_sendShortMessage_Promise_0100
-   * @tc.name Telephony_SmsMms_sendShortMessage_Promise_0100
-   * @tc.desc Function test
-   */
+   /**
+    * @tc.name   Telephony_SmsMms_sendShortMessage_Promise_0100
+    * @tc.number Telephony_SmsMms_sendShortMessage_Promise_0100
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('Telephony_SmsMms_sendShortMessage_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
     try {
       let sendCallback = function (err, data) {
@@ -196,11 +218,14 @@ describe('SmsMmsErrorTest', function () {
     }
   });
 
-  /**
-   * @tc.number Telephony_SmsMms_sendShortMessage_Async_0100
-   * @tc.name Telephony_SmsMms_sendShortMessage_Async_0100
-   * @tc.desc Function test
-   */
+   /**
+    * @tc.name   Telephony_SmsMms_sendShortMessage_Async_0100
+    * @tc.number Telephony_SmsMms_sendShortMessage_Async_0100
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('Telephony_SmsMms_sendShortMessage_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
     try {
       let sendCallback = function (err, data) {
@@ -231,7 +256,7 @@ describe('SmsMmsErrorTest', function () {
           console.info('Telephony_SmsMms_sendShortMessage_Async_0100 ' + JSON.stringify(data));
           expect().assertFail();
           done();
-        }        
+        }
       });
       done();
     } catch (error) {

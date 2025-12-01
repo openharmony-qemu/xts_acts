@@ -56,11 +56,14 @@ describe('CharacterInI18nTest', function () {
         + ' syslocale: ' + I18n.System.getSystemLocale());
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1100
-    * @tc.name    test isDigit interface
-    * @tc.desc    check the isDigit interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1100
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1100
+     * @tc.desc   check the isDigit interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_character_1100', Level.LEVEL0, function () {
         console.log('i18n_test_character_1100 ' + 'start');
         let character = new I18n.Character();
@@ -69,11 +72,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1120
-    * @tc.name    test isDigit interface with 123 param
-    * @tc.desc    check the isDigit interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1120
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1120
+     * @tc.desc   check the isDigit interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1120', Level.LEVEL2, function () {
         console.log('i18n_test_character_1120 ' + 'start');
         let character = new I18n.Character();
@@ -82,11 +88,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1140
-    * @tc.name    test isDigit interface with 123abc param
-    * @tc.desc    check the isDigit interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1140
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1140
+     * @tc.desc   check the isDigit interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1140', Level.LEVEL2, function () {
         console.log('i18n_test_character_1140 ' + 'start');
         let character = new I18n.Character();
@@ -95,11 +104,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1150
-    * @tc.name    test isDigit interface with abc123 param
-    * @tc.desc    check the isDigit interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1150
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1150
+     * @tc.desc   check the isDigit interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1150', Level.LEVEL2, function () {
         console.log('i18n_test_character_1150 ' + 'start');
         let character = new I18n.Character();
@@ -108,11 +120,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1160
-    * @tc.name    test isDigit interface with null param
-    * @tc.desc    check the isDigit interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1160
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1160
+     * @tc.desc   check the isDigit interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1160', Level.LEVEL2, function () {
         console.log('i18n_test_character_1160 ' + 'start');
         let character = new I18n.Character();
@@ -121,11 +136,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1200
-    * @tc.name    test isSpaceChar interface with abc param
-    * @tc.desc    check the isSpaceChar interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1200
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1200
+     * @tc.desc   check the isSpaceChar interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_character_1200', Level.LEVEL0, function () {
         console.log('i18n_test_character_1200 ' + 'start');
         let character = new I18n.Character();
@@ -134,11 +152,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1220
-    * @tc.name    test isSpaceChar interface with one space param
-    * @tc.desc    check the isSpaceChar interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1220
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1220
+     * @tc.desc   check the isSpaceChar interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1220', Level.LEVEL2, function () {
         console.log('i18n_test_character_1220 ' + 'start');
         let character = new I18n.Character();
@@ -147,11 +168,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1240
-    * @tc.name    test isSpaceChar interface with multi space param
-    * @tc.desc    check the isSpaceChar interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1240
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1240
+     * @tc.desc   check the isSpaceChar interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1240', Level.LEVEL2, function () {
         console.log('i18n_test_character_1240 ' + 'start');
         let character = new I18n.Character();
@@ -160,11 +184,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1300
-    * @tc.name    test isWhitespace interface with abc param
-    * @tc.desc    check the isWhitespace interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1300
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1300
+     * @tc.desc   check the isWhitespace interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_character_1300', Level.LEVEL0, function () {
         console.log('i18n_test_character_1300 ' + 'start');
         let character = new I18n.Character();
@@ -173,11 +200,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1320
-    * @tc.name    test isWhitespace interface with \u0009 param
-    * @tc.desc    check the isWhitespace interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1320
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1320
+     * @tc.desc   check the isWhitespace interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1320', Level.LEVEL2, function () {
         console.log('i18n_test_character_1320 ' + 'start');
         let character = new I18n.Character();
@@ -186,11 +216,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1400
-    * @tc.name    test isRTL interface with abc param
-    * @tc.desc    check the isRTL interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1400
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1400
+     * @tc.desc   check the isRTL interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_character_1400', Level.LEVEL0, function () {
         console.log('i18n_test_character_1400 ' + 'start');
         let character = new I18n.Character();
@@ -199,11 +232,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1420
-    * @tc.name    test isRTL interface with ١٢٣٤٥٦٧ param
-    * @tc.desc    check the isRTL interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1420
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1420
+     * @tc.desc   check the isRTL interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1420', Level.LEVEL2, function () {
         console.log('i18n_test_character_1420 ' + 'start');
         let character = new I18n.Character();
@@ -212,11 +248,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1440
-    * @tc.name    test isRTL interface with 我是小明 param
-    * @tc.desc    check the isRTL interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1440
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1440
+     * @tc.desc   check the isRTL interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1440', Level.LEVEL2, function () {
         console.log('i18n_test_character_1440 ' + 'start');
         let character = new I18n.Character();
@@ -225,11 +264,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1460
-    * @tc.name    test isRTL interface with نحن param
-    * @tc.desc    check the isRTL interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1460
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1460
+     * @tc.desc   check the isRTL interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1460', Level.LEVEL2, function () {
         console.log('i18n_test_character_1460 ' + 'start');
         let character = new I18n.Character();
@@ -238,11 +280,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1500
-    * @tc.name    test isIdeograph interface with abc param
-    * @tc.desc    check the isIdeograph interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1500
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1500
+     * @tc.desc   check the isIdeograph interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1500', Level.LEVEL2, function () {
         console.log('i18n_test_character_1500 ' + 'start');
         let character = new I18n.Character();
@@ -251,11 +296,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1520
-    * @tc.name    test isIdeograph interface with '我' param
-    * @tc.desc    check the isIdeograph interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1520
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1520
+     * @tc.desc   check the isIdeograph interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1520', Level.LEVEL2, function () {
         console.log('i18n_test_character_1520 ' + 'start');
         let character = new I18n.Character();
@@ -264,11 +312,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1540
-    * @tc.name    test isIdeograph interface with '우리' param
-    * @tc.desc    check the isIdeograph interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1540
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1540
+     * @tc.desc   check the isIdeograph interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1540', Level.LEVEL2, function () {
         console.log('i18n_test_character_1540 ' + 'start');
         let character = new I18n.Character();
@@ -277,11 +328,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1560
-    * @tc.name    test isIdeograph interface with '私た' param
-    * @tc.desc    check the isIdeograph interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1560
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1560
+     * @tc.desc   check the isIdeograph interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1560', Level.LEVEL2, function () {
         console.log('i18n_test_character_1560 ' + 'start');
         let character = new I18n.Character();
@@ -290,11 +344,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1600
-    * @tc.name    test isLetter interface with abc param
-    * @tc.desc    check the isLetter interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1600
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1600
+     * @tc.desc   check the isLetter interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_character_1600', Level.LEVEL0, function () {
         console.log('i18n_test_character_1600 ' + 'start');
         let character = new I18n.Character();
@@ -303,11 +360,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1620
-    * @tc.name    test isLetter interface with 123 param
-    * @tc.desc    check the isLetter interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1620
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1620
+     * @tc.desc   check the isLetter interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1620', Level.LEVEL2, function () {
         console.log('i18n_test_character_1620 ' + 'start');
         let character = new I18n.Character();
@@ -316,11 +376,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1640
-    * @tc.name    test isLetter interface with abc123 param
-    * @tc.desc    check the isLetter interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1640
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1640
+     * @tc.desc   check the isLetter interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1640', Level.LEVEL2, function () {
         console.log('i18n_test_character_1640 ' + 'start');
         let character = new I18n.Character();
@@ -329,11 +392,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1660
-    * @tc.name    test isLetter interface with 123abc param
-    * @tc.desc    check the isLetter interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1660
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1660
+     * @tc.desc   check the isLetter interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1660', Level.LEVEL2, function () {
         console.log('i18n_test_character_1660 ' + 'start');
         let character = new I18n.Character();
@@ -342,11 +408,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1700
-    * @tc.name    test isLowerCase interface with abc param
-    * @tc.desc    check the isLowerCase interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1700
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1700
+     * @tc.desc   check the isLowerCase interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_character_1700', Level.LEVEL0, function () {
         console.log('i18n_test_character_1700 ' + 'start');
         let character = new I18n.Character();
@@ -355,11 +424,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1720
-    * @tc.name    ftest isLowerCase interface with ABC param
-    * @tc.desc    check the isLowerCase interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1720
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1720
+     * @tc.desc   check the isLowerCase interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1720', Level.LEVEL2, function () {
         console.log('i18n_test_character_1720 ' + 'start');
         let character = new I18n.Character();
@@ -368,11 +440,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1740
-    * @tc.name    test isLowerCase interface with abcDEF param
-    * @tc.desc    check the isLowerCase interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1740
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1740
+     * @tc.desc   check the isLowerCase interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1740', Level.LEVEL2, function () {
         console.log('i18n_test_character_1740 ' + 'start');
         let character = new I18n.Character();
@@ -381,11 +456,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1760
-    * @tc.name    test isLowerCase interface with ABCdef param
-    * @tc.desc    check the isLowerCase interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1760
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1760
+     * @tc.desc   check the isLowerCase interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1760', Level.LEVEL2, function () {
         console.log('i18n_test_character_1760 ' + 'start');
         let character = new I18n.Character();
@@ -394,11 +472,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1800
-    * @tc.name    test isUpperCase interface with ABC param
-    * @tc.desc    check the isUpperCase interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1800
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1800
+     * @tc.desc   check the isUpperCase interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_character_1800', Level.LEVEL0, function () {
         console.log('i18n_test_character_1800 ' + 'start');
         let character = new I18n.Character();
@@ -407,11 +488,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1820
-    * @tc.name    test isUpperCase interface with abc param
-    * @tc.desc    check the isUpperCase interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1820
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1820
+     * @tc.desc   check the isUpperCase interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1820', Level.LEVEL2, function () {
         console.log('i18n_test_character_1820 ' + 'start');
         let character = new I18n.Character();
@@ -420,11 +504,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1840
-    * @tc.name    test isUpperCase interface with ABCdef param
-    * @tc.desc    check the isUpperCase interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1840
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1840
+     * @tc.desc   check the isUpperCase interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1840', Level.LEVEL2, function () {
         console.log('i18n_test_character_1840 ' + 'start');
         let character = new I18n.Character();
@@ -433,11 +520,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1860
-    * @tc.name    test isUpperCase interface with abcDEF param
-    * @tc.desc    check the isUpperCase interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1860
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1860
+     * @tc.desc   check the isUpperCase interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1860', Level.LEVEL2, function () {
         console.log('i18n_test_character_1860 ' + 'start');
         let character = new I18n.Character();
@@ -446,11 +536,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1900
-    * @tc.name    test getType interface with a param
-    * @tc.desc    check the getType interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1900
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1900
+     * @tc.desc   check the getType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_character_1900', Level.LEVEL0, function () {
         console.log('i18n_test_character_1900 ' + 'start');
         let character = new I18n.Character();
@@ -459,11 +552,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertEqual('U_LOWERCASE_LETTER');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1920
-    * @tc.name    ftest getType interface with ABC param
-    * @tc.desc    check the getType interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1920
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1920
+     * @tc.desc   check the getType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1920', Level.LEVEL2, function () {
         console.log('i18n_test_character_1920 ' + 'start');
         let character = new I18n.Character();
@@ -472,11 +568,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertEqual('U_UPPERCASE_LETTER');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1940
-    * @tc.name    test getType interface with ABCdef param
-    * @tc.desc    check the getType interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1940
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1940
+     * @tc.desc   check the getType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1940', Level.LEVEL2, function () {
         console.log('i18n_test_character_1940 ' + 'start');
         let character = new I18n.Character();
@@ -485,11 +584,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertEqual('U_UPPERCASE_LETTER');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1960
-    * @tc.name    test getType interface with 123 param
-    * @tc.desc    check the getType interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1960
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1960
+     * @tc.desc   check the getType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1960', Level.LEVEL2, function () {
         console.log('i18n_test_character_1960 ' + 'start');
         let character = new I18n.Character();
@@ -498,11 +600,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertEqual('U_DECIMAL_DIGIT_NUMBER');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1970
-    * @tc.name    test getType interface with 123abc param
-    * @tc.desc    check the getType interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1970
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1970
+     * @tc.desc   check the getType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1970', Level.LEVEL2, function () {
         console.log('i18n_test_character_1970 ' + 'start');
         let character = new I18n.Character();
@@ -511,11 +616,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertEqual('U_DECIMAL_DIGIT_NUMBER');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1980
-    * @tc.name    test getType interface with ١٢٣٤٥٦٧ param
-    * @tc.desc    check the getType interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1980
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1980
+     * @tc.desc   check the getType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1980', Level.LEVEL2, function () {
         console.log('i18n_test_character_1980 ' + 'start');
         let character = new I18n.Character();
@@ -524,11 +632,14 @@ describe('CharacterInI18nTest', function () {
         expect(value).assertEqual('U_DECIMAL_DIGIT_NUMBER');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CHARACTER_1990
-    * @tc.name    test getType interface with multi space param
-    * @tc.desc    check the getType interface
-    */
+    /**
+     * @tc.name   i18n_test_character_1990
+     * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_1990
+     * @tc.desc   check the getType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_character_1990', Level.LEVEL2, function () {
         console.log('i18n_test_character_1990 ' + 'start');
         let character = new I18n.Character();

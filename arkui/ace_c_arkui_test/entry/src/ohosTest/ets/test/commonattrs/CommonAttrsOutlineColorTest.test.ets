@@ -26,52 +26,52 @@ export default function commonAttrsOutlineColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_OUTLINECOLOR_0100
-     * @tc.name       : testCommonAttrsOutlineColor001
-     * @tc.desc       : testing outline color for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOutlineColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_OUTLINECOLOR_0100
+     * @tc.desc   testing outline color for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOutlineColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsOutlineColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_OUTLINECOLOR_0200
-     * @tc.name       : testCommonAttrsOutlineColor002
-     * @tc.desc       : testing outline color for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOutlineColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_OUTLINECOLOR_0200
+     * @tc.desc   testing outline color for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOutlineColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsOutlineColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_OUTLINECOLOR_0300
-     * @tc.name       : testCommonAttrsOutlineColor003
-     * @tc.desc       : testing outline color for commonattrs with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOutlineColor003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_OUTLINECOLOR_0300
+     * @tc.desc   testing outline color for commonattrs with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOutlineColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsOutlineColor003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_OUTLINECOLOR_0400
-     * @tc.name       : testCommonAttrsOutlineColor004
-     * @tc.desc       : testing resetAttribute outline color for commonattrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOutlineColor004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_OUTLINECOLOR_0400
+     * @tc.desc   testing resetAttribute outline color for commonattrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOutlineColor004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsOutlineColor004()).assertEqual(0)

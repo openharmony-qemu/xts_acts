@@ -19,12 +19,12 @@ import testNapi from 'libentry.so'
 export default function ActsPredicatesTest() {
   describe('ActsPredicatesTest', () => {
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Glob_0100
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Glob_0100
-     * @tc.desc    : Test the successful execution of the OH_Predicates_Glob interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Glob_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Glob_0100
+     * @tc.desc   Test the successful execution of the OH_Predicates_Glob interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Glob_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -42,12 +42,12 @@ export default function ActsPredicatesTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotGlob_0200
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotGlob_0200
-     * @tc.desc    : Test the successful execution of the OH_Predicates_NotGlob interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotGlob_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotGlob_0200
+     * @tc.desc   Test the successful execution of the OH_Predicates_NotGlob interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotGlob_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -65,12 +65,12 @@ export default function ActsPredicatesTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotLike_0300
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotLike_0300
-     * @tc.desc    : Test the successful execution of the OH_Predicates_NotLike interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotLike_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotLike_0300
+     * @tc.desc   Test the successful execution of the OH_Predicates_NotLike interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_Predicates_NotLike_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -88,12 +88,12 @@ export default function ActsPredicatesTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Having_0400
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Having_0400
-     * @tc.desc    : Test the successful execution of the OH_Predicates_Having interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Having_0400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Having_0400
+     * @tc.desc   Test the successful execution of the OH_Predicates_Having interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_Predicates_Having_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

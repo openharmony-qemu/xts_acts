@@ -85,13 +85,13 @@ describe("SensorJsTest_sensor_2", function () {
     const EPS = 0.01
 
     /**
-    * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0010
-    * @tc.name: SensorGeomagenticAlgorithmJSTest001
-    * @tc.desc: Verification results of the incorrect parameters of the test interface.
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+     * @tc.name   SensorGeomagenticAlgorithmJSTest001
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SensorGeomagenticAlgorithmJSTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest001-------------------------");
         let promiseArray = []
@@ -129,12 +129,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0020
-     * @tc.name: SensorGeomagenticAlgorithmJSTest002
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest002
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest002-------------------------");
@@ -176,12 +176,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0030
-     * @tc.name: SensorGeomagenticAlgorithmJSTest003
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest003
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest003-------------------------");
@@ -220,12 +220,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0040
-     * @tc.name: SensorGeomagenticAlgorithmJSTest004
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest004
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest004-------------------------");
@@ -257,12 +257,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0050
-     * @tc.name: SensorGeomagenticAlgorithmJSTest005
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest005
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0050
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest005-------------------------");
@@ -292,12 +292,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0060
-     * @tc.name: SensorGeomagenticAlgorithmJSTest006
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest006
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0060
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest006-------------------------");
@@ -328,12 +328,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0070
-     * @tc.name: SensorGeomagenticAlgorithmJSTest007
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest007
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0070
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest007-------------------------");
@@ -365,12 +365,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0080
-     * @tc.name: SensorGeomagenticAlgorithmJSTest008
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest008
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0080
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest008-------------------------");
@@ -394,12 +394,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0090
-     * @tc.name: SensorGeomagenticAlgorithmJSTest009
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest009
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0090
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest009-------------------------");
@@ -423,12 +423,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0100
-     * @tc.name: SensorGeomagenticAlgorithmJSTest010
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest010
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest010-------------------------");
@@ -452,12 +452,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0110
-     * @tc.name: SensorGeomagenticAlgorithmJSTest011
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest011
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0110
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest011-------------------------");
@@ -481,12 +481,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0120
-     * @tc.name: SensorGeomagenticAlgorithmJSTest012
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest012
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0120
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest012-------------------------");
@@ -518,12 +518,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0130
-     * @tc.name: SensorGeomagenticAlgorithmJSTest013
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest013
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest013-------------------------");
@@ -547,12 +547,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0140
-     * @tc.name: SensorGeomagenticAlgorithmJSTest014
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest014
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0140
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest014-------------------------");
@@ -576,12 +576,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0150
-     * @tc.name: SensorGeomagenticAlgorithmJSTest015
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest015
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0150
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest015-------------------------");
@@ -605,12 +605,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0160
-     * @tc.name: SensorGeomagenticAlgorithmJSTest016
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest016
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0160
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest016-------------------------");
@@ -634,12 +634,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0170
-     * @tc.name: SensorGeomagenticAlgorithmJSTest017
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest017
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0170
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest017-------------------------");
@@ -662,12 +662,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0180
-     * @tc.name: SensorGeomagenticAlgorithmJSTest018
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest018
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0180
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest018-------------------------");
@@ -691,12 +691,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0190
-     * @tc.name: SensorGeomagenticAlgorithmJSTest019
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest019
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0190
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest019-------------------------");
@@ -720,12 +720,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0200
-     * @tc.name: SensorGeomagenticAlgorithmJSTest020
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest020
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest020-------------------------");
@@ -748,12 +748,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0210
-     * @tc.name: SensorGeomagenticAlgorithmJSTest021
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest021
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0210
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest021-------------------------");
@@ -777,12 +777,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0220
-     * @tc.name: SensorGeomagenticAlgorithmJSTest022
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest022
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0220
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest022-------------------------");
@@ -806,12 +806,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0230
-     * @tc.name: SensorGeomagenticAlgorithmJSTest023
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest023
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0230
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest023-------------------------");
@@ -835,12 +835,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0240
-     * @tc.name: SensorGeomagenticAlgorithmJSTest024
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest024
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0240
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest024-------------------------");
@@ -863,12 +863,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0250
-     * @tc.name: SensorGeomagenticAlgorithmJSTest025
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest025
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0250
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest025-------------------------");
@@ -891,12 +891,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0260
-     * @tc.name: SensorGeomagenticAlgorithmJSTest026
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest026
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0260
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SensorGeomagenticAlgorithmJSTest026-------------------------");
@@ -922,12 +922,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0270
-     * @tc.name: SensorGeomagenticAlgorithmJSTest027
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest027
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0270
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest027------------------');
@@ -961,12 +961,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0280
-     * @tc.name: SensorGeomagenticAlgorithmJSTest028
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest028
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0280
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest028------------------');
@@ -992,12 +992,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0290
-     * @tc.name: SensorGeomagenticAlgorithmJSTest029
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest029
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0290
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest029------------------');
@@ -1023,12 +1023,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0300
-     * @tc.name: SensorGeomagenticAlgorithmJSTest030
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest030
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0300
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest030------------------');
@@ -1054,12 +1054,12 @@ describe("SensorJsTest_sensor_2", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0310
-     * @tc.name: SensorGeomagenticAlgorithmJSTest031
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorGeomagenticAlgorithmJSTest031
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0310
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest031------------------');
@@ -1084,13 +1084,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0320
-     * @tc.name: SensorGeomagenticAlgorithmJSTest032
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest032
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0320
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest032------------------');
@@ -1108,13 +1108,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0330
-     * @tc.name: SensorGeomagenticAlgorithmJSTest033
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest033
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0330
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest033------------------');
@@ -1131,13 +1131,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0340
-     * @tc.name: SensorGeomagenticAlgorithmJSTest034
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest034
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0340
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest034------------------');
@@ -1154,13 +1154,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0350
-     * @tc.name: SensorGeomagenticAlgorithmJSTest035
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest035
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0350
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest035------------------');
@@ -1177,13 +1177,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0360
-     * @tc.name: SensorGeomagenticAlgorithmJSTest036
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest036
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0360
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest036------------------');
@@ -1208,13 +1208,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0370
-     * @tc.name: SensorGeomagenticAlgorithmJSTest037
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest037
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0370
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest037------------------start');
@@ -1231,13 +1231,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0380
-     * @tc.name: SensorGeomagenticAlgorithmJSTest038
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest038
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0380
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest038------------------');
@@ -1254,13 +1254,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0390
-     * @tc.name: SensorGeomagenticAlgorithmJSTest039
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest039
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0390
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         for (let i = 0; i < timeMillis.length; i++) {
@@ -1285,13 +1285,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0400
-     * @tc.name: SensorGeomagenticAlgorithmJSTest040
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest040
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0400
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest040------------------');
@@ -1308,13 +1308,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0410
-     * @tc.name: SensorGeomagenticAlgorithmJSTest041
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest041
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0410
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest041------------------');
@@ -1331,13 +1331,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0420
-     * @tc.name: SensorGeomagenticAlgorithmJSTest042
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest042
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0420
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest042 max ------------------');
@@ -1354,13 +1354,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0430
-     * @tc.name: SensorGeomagenticAlgorithmJSTest043
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest043
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0430
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest043------------------');
@@ -1377,13 +1377,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0440
-     * @tc.name: SensorGeomagenticAlgorithmJSTest044
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest044
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0440
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest044------------------');
@@ -1400,13 +1400,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0450
-     * @tc.name: SensorGeomagenticAlgorithmJSTest045
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest045
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0450
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SensorGeomagenticAlgorithmJSTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest045------------------');
@@ -1434,13 +1434,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0460
-     * @tc.name: SensorGeomagenticAlgorithmJSTest046
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest046
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0460
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest046------------------');
@@ -1457,13 +1457,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0470
-     * @tc.name: SensorGeomagenticAlgorithmJSTest047
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest047
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0470
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest047------------------');
@@ -1480,13 +1480,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0480
-     * @tc.name: SensorGeomagenticAlgorithmJSTest048
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest048
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0480
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest048------------------');
@@ -1503,13 +1503,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0490
-     * @tc.name: SensorGeomagenticAlgorithmJSTest049
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest049
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0490
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest049------------------');
@@ -1526,13 +1526,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0500
-     * @tc.name: SensorGeomagenticAlgorithmJSTest050
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest050
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0500
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest050------------------');
@@ -1549,13 +1549,13 @@ describe("SensorJsTest_sensor_2", function () {
         done()
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0510
-     * @tc.name: SensorGeomagenticAlgorithmJSTest051
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorGeomagenticAlgorithmJSTest051
+     * @tc.number SUB_SensorsSystem_GeomagneticAlgorithm_JSTest_0510
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorGeomagenticAlgorithmJSTest051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('------------------SensorGeomagenticAlgorithmJSTest051------------------');

@@ -54,12 +54,12 @@ export default function RichEditorCustomColors001() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMCOLORS_0023
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMCOLORS_0023
-     * @tc.desc  : Custom color delete selected content test RichEditor custom cursor color
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 4
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMCOLORS_0023
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMCOLORS_0023
+     * @tc.desc   Custom color delete selected content test RichEditor custom cursor color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMCOLORS_0023',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMCOLORS_0023 START');
@@ -70,7 +70,7 @@ export default function RichEditorCustomColors001() {
       await CommonFunc.sleep(1000);
 
       let back = await driver.findComponent(ON.id('set_select'));
-      back.click();
+      await back.click();
       await CommonFunc.sleep(500);
 
       //KEYCODE_DEL

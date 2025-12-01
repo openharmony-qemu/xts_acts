@@ -46,11 +46,13 @@ export default function rotationGestureTest() {
     });
 
     /**
-    * @tc.number
-    * @tc.name  : RotationGesture1_0100
-    * @tc.desc  : To test whether isFingerCountLimited is effective.
-    * @tc.level : Level 2
-    */
+     * @tc.name   RotationGesture1_0100
+     * @tc.number RotationGesture1_0100
+     * @tc.desc   To test whether isFingerCountLimited is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RotationGesture1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RotationGesture1_0100 START');
       await CommonFunc.sleep(1000);
@@ -84,11 +86,13 @@ export default function rotationGestureTest() {
     });
 
     /**
-    * @tc.number
-    * @tc.name  : RotationGesture1_0200
-    * @tc.desc  : To test whether isFingerCountLimited is effective.
-    * @tc.level : Level 1
-    */
+     * @tc.name   RotationGesture1_0200
+     * @tc.number RotationGesture1_0200
+     * @tc.desc   To test whether isFingerCountLimited is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RotationGesture1_0200', Level.LEVEL0, async (done: Function) => {
       console.info('RotationGesture1_0200 START');
       await CommonFunc.sleep(1000);

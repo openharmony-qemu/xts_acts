@@ -46,12 +46,12 @@ export default function waterFlow2Jsunit() {
     });
 
     /**
-     * @tc.number    waterFlow2Jsunit_001
-     * @tc.name      waterFlow2Jsunit_001
-     * @tc.desc      The WaterFlow component supports events
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   waterFlow2Jsunit_001
+     * @tc.number waterFlow2Jsunit_001
+     * @tc.desc   The WaterFlow component supports events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('waterFlow2Jsunit_001', Level.LEVEL1, async (done: Function) => {
       console.info('[waterFlow2Jsunit_001] START');

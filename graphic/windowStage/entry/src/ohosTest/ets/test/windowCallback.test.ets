@@ -77,12 +77,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         console.info(` Succeeded in getWindowAvoidArea1. Data: ${JSON.stringify(avoidArea1)}`);
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1300
-     * @tc.name      : testSetSystemBarEnable_ShowStatusBar_HideNavBar_Callback
-     * @tc.desc      : Test ohosWindow.setSystemBarEnable API function test1.
-     * @tc.size      : MediumTestTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_ShowStatusBar_HideNavBar_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1300
+     * @tc.desc   Test ohosWindow.setSystemBarEnable API function test1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_ShowStatusBar_HideNavBar_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_ShowStatusBar_HideNavBar_Callback';
@@ -193,12 +193,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       done();
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1230
-     * @tc.name      : testSetSystemBarEnable_HideStatusBar_ShowNavBar_Callback
-     * @tc.desc      : Verify that the scene hides the status bar and displays the navigation bar.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_HideStatusBar_ShowNavBar_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1230
+     * @tc.desc   Verify that the scene hides the status bar and displays the navigation bar.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_HideStatusBar_ShowNavBar_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_HideStatusBar_ShowNavBar_Callback';
@@ -303,12 +303,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       done();
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1320
-     * @tc.name      : testSetSystemBarEnable_Show_StatusBarAndNavBar_Callback
-     * @tc.desc      : Verify that the scene displays both the status bar and the navigation bar.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_Show_StatusBarAndNavBar_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1320
+     * @tc.desc   Verify that the scene displays both the status bar and the navigation bar.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_Show_StatusBarAndNavBar_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_Show_StatusBarAndNavBar_Callback';
@@ -393,12 +393,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       done();
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1250
-     * @tc.name      : testSetSystemBarEnable_Hide_StatusBarAndNavBar_Callback
-     * @tc.desc      : Verify that the scene hides both the status bar and the navigation bar.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_Hide_StatusBarAndNavBar_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1250
+     * @tc.desc   Verify that the scene hides both the status bar and the navigation bar.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_Hide_StatusBarAndNavBar_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_Hide_StatusBarAndNavBar_Callback';
@@ -501,12 +501,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       done();
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1270
-     * @tc.name      :  testSetSystemBarEnable_Invalid_Parameter_Callback
-     * @tc.desc      : Verify the scene where illegal values are entered when the navigation bar and status bar are displayed or hidden
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_Invalid_Parameter_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1270
+     * @tc.desc   Verify the scene where illegal values are entered when the navigation bar and status bar are displayed or hidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_Invalid_Parameter_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_Invalid_Parameter_Callback';
@@ -607,12 +607,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       })
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1380
-     * @tc.name      :  testSetSystemBarEnable_RGB_Callback
-     * @tc.desc      : TVerify the scene where the colors of the status bar and navigation bar are set in RGB
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_RGB_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1380
+     * @tc.desc   TVerify the scene where the colors of the status bar and navigation bar are set in RGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_RGB_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_RGB_Callback';
@@ -660,12 +660,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1340
-     * @tc.name      : testSetSystemBarEnable_Hexadecimal_Callback
-     * @tc.desc      : Verify the scene where the status bar and navigation bar colors are set in hexadecimal form
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_Hexadecimal_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1340
+     * @tc.desc   Verify the scene where the status bar and navigation bar colors are set in hexadecimal form
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_Hexadecimal_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_Hexadecimal_Callback';
@@ -724,12 +724,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1360
-     * @tc.name      : testSetSystemBarEnable_KeywordForm_Callback
-     * @tc.desc      : TVerify the scene where the status bar and navigation bar colors are set as keywords
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_KeywordForm_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1360
+     * @tc.desc   TVerify the scene where the status bar and navigation bar colors are set as keywords
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_KeywordForm_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_KeywordForm_Callback';
@@ -786,12 +786,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0210
-     * @tc.name      : testCreate_Not_Exist_Win_Type_Callback
-     * @tc.desc      : Verify the scenario of creating a window of a type that does not exist
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreate_Not_Exist_Win_Type_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0210
+     * @tc.desc   Verify the scenario of creating a window of a type that does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreate_Not_Exist_Win_Type_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testCreate_Not_Exist_Win_Type_Callback';
@@ -815,12 +815,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0750
-     * @tc.name      : testListener_Sys_AvoidAreaChange_Callback
-     * @tc.desc      : Verify whether the change of avoidance area and change monitoring can be turned on normally
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testListener_Sys_AvoidAreaChange_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0750
+     * @tc.desc   Verify whether the change of avoidance area and change monitoring can be turned on normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testListener_Sys_AvoidAreaChange_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       await sleep(800)
@@ -895,12 +895,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0790
-     * @tc.name      : testLoadContent_Exist_Create_SysWin_Callback
-     * @tc.desc      : Verify the scenario of loading an existing page
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Exist_Create_SysWin_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0790
+     * @tc.desc   Verify the scenario of loading an existing page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Exist_Create_SysWin_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Exist_Create_SysWin_Callback';
@@ -928,12 +928,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0870
-     * @tc.name      : testLoadContent_Para_Is_Null_Create_SysWin_Callback
-     * @tc.desc      : Verify the scenario of loading a page that does not exist
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Para_Is_Null_Create_SysWin_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0870
+     * @tc.desc   Verify the scenario of loading a page that does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Para_Is_Null_Create_SysWin_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Para_Is_Null_Create_SysWin_Callback';
@@ -963,12 +963,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0830
-     * @tc.name      : testLoadContent_Exist_Input_Para_Path_Callback
-     * @tc.desc      : Verify the scenario of loading an existing page
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Exist_Input_Para_Path_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0830
+     * @tc.desc   Verify the scenario of loading an existing page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Exist_Input_Para_Path_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Exist_Input_Para_Path_Callback';
@@ -990,12 +990,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0850
-     * @tc.name      : testLoadContent_Input_Para_Is_Null_Callback
-     * @tc.desc      : Verify the scenario of loading an existing page
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Input_Para_Is_Null_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0850
+     * @tc.desc   Verify the scenario of loading an existing page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Input_Para_Is_Null_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Input_Para_Is_Null_Callback';
@@ -1024,12 +1024,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       console.log(msgStr + 'end');
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0810
-     * @tc.name      : testLoadContent_Exist_Input_Para_PathAndStorage_Callback
-     * @tc.desc      : Verify the scenario of loading an existing page
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Exist_Input_Para_PathAndStorage_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0810
+     * @tc.desc   Verify the scenario of loading an existing page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Exist_Input_Para_PathAndStorage_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Exist_Input_Para_PathAndStorage_Callback';
@@ -1052,12 +1052,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0890
-     * @tc.name      : testLoadContent_Para_PathAndStorage_Is_Null_Callback
-     * @tc.desc      : Verify the scenario of loading an existing page
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Para_PathAndStorage_Is_Null_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0890
+     * @tc.desc   Verify the scenario of loading an existing page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Para_PathAndStorage_Is_Null_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Para_PathAndStorage_Is_Null_Callback';
@@ -1085,12 +1085,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0040
-     * @tc.name      : testCreateSubWindow_WinName_IsNot_Empty_Callback
-     * @tc.desc      : Verify the scenario of creating an auxiliary window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateSubWindow_WinName_IsNot_Empty_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0040
+     * @tc.desc   Verify the scenario of creating an auxiliary window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateSubWindow_WinName_IsNot_Empty_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testCreateSubWindow_WinName_IsNot_Empty_Callback';
@@ -1163,12 +1163,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0060
-     * @tc.name      : testCreateSubWindow_WinName_Is_Null_Callback
-     * @tc.desc      : Verify the scene of entering illegal values to create an auxiliary window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateSubWindow_WinName_Is_Null_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0060
+     * @tc.desc   Verify the scene of entering illegal values to create an auxiliary window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateSubWindow_WinName_Is_Null_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testCreateSubWindow_WinName_Is_Null_Callback';
@@ -1195,12 +1195,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0570
-     * @tc.name      : testGetSubWindow_Callback
-     * @tc.desc      : Verify the scene of obtaining all auxiliary sub windows
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetSubWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0570
+     * @tc.desc   Verify the scene of obtaining all auxiliary sub windows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetSubWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testGetSubWindow_Callback';
@@ -1223,12 +1223,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1190
-     * @tc.name      : testSetPrivacyMode_AppSubWin_Callback
-     * @tc.desc      : Verify the scene where the application sub window is set as a security layer
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPrivacyMode_AppSubWin_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1190
+     * @tc.desc   Verify the scene where the application sub window is set as a security layer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPrivacyMode_AppSubWin_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetPrivacyMode_AppSubWin_Callback';
@@ -1298,12 +1298,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1210
-     * @tc.name      : testSetPrivacyMode_createSubWindow_Callback
-     * @tc.desc      : Verify that the auxiliary window is set as the security layer
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPrivacyMode_createSubWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1210
+     * @tc.desc   Verify that the auxiliary window is set as the security layer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPrivacyMode_createSubWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetPrivacyMode_createSubWindow_Callback';
@@ -1384,12 +1384,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1170
-     * @tc.name      : testSetPreferredOrientation_Callback
-     * @tc.desc      : Sets the display direction property of the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientation_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1170
+     * @tc.desc   Sets the display direction property of the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPreferredOrientation_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetPreferredOrientation_Callback';
@@ -1442,12 +1442,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       done()
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2150
-     * @tc.name      : testSnapshotTest_Callback_Form
-     * @tc.desc      : Scenario of screenshot of verification window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSnapshotTest_Callback_Form
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2150
+     * @tc.desc   Scenario of screenshot of verification window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshotTest_Callback_Form', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSnapshotTest_Callback_Form';
@@ -1487,12 +1487,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0320
-     * @tc.name      : testDialogTargetTouch_Callback
-     * @tc.desc      : Verify the scenario of opening modal window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testDialogTargetTouch_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0320
+     * @tc.desc   Verify the scenario of opening modal window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDialogTargetTouch_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testDialogTargetTouch_Callback';
@@ -1515,12 +1515,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1070
-     * @tc.name      : testSetAspectRatio_Cancel_Upon_Success_Callback
-     * @tc.desc      : Validate the scenario cancelled after setting the proportion of the content layout of the main window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetAspectRatio_Cancel_Upon_Success_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1070
+     * @tc.desc   Validate the scenario cancelled after setting the proportion of the content layout of the main window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_Cancel_Upon_Success_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetAspectRatio_Cancel_Upon_Success_Callback';
@@ -1583,12 +1583,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       await resetAspectRatio()
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2330
-     * @tc.name      : testSetAspectRatio_Invalid_Params_Callback
-     * @tc.desc      : Validate the scenario where the content layout proportion of the main window is abnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetAspectRatio_Invalid_Params_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2330
+     * @tc.desc   Validate the scenario where the content layout proportion of the main window is abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_Invalid_Params_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetAspectRatio_Invalid_Params_Callback';
@@ -1629,12 +1629,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
     })
 
     /**
+     * @tc.name   test_loadContentByName_callback_withstorage
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_LOADCONTENTBYNAME_JS_API_2340
-     * @tc.name test_loadContentByName_callback_withstorage
-     * @tc.desc Test the function of loadContentByName withstorage callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.desc   Test the function of loadContentByName withstorage callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_loadContentByName_callback_withstorage', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let msg = "test_loadContentByName_callback_withstorage"
@@ -1658,12 +1658,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       }
     });
     /**
+     * @tc.name   test_loadContentByName_callback_withoutstorage
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_LOADCONTENTBYNAME_JS_API_2350
-     * @tc.name test_loadContentByName_callback_withoutstorage
-     * @tc.desc Test the function of loadContentByName withoutstorage callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.desc   Test the function of loadContentByName withoutstorage callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_loadContentByName_callback_withoutstorage', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let msg = "test_loadContentByName_callback_withoutstorage"
@@ -1687,12 +1687,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       }
     });
     /**
+     * @tc.name   test_loadContentByName_Promise
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_LOADCONTENTBYNAME_JS_API_2360
-     * @tc.name test_loadContentByName_Promise
-     * @tc.desc Test the function of loadContentByName Promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.desc   Test the function of loadContentByName Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_loadContentByName_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let msg = "test_loadContentByName_Promise"
@@ -1714,12 +1714,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
-     * @tc.name      : testGetTitleButtonRect
-     * @tc.desc      : Test the function of getTitleButtonRect
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetTitleButtonRect
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
+     * @tc.desc   Test the function of getTitleButtonRect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetTitleButtonRect', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let msgStr: string = 'testGetTitleButtonRect';
@@ -1746,12 +1746,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
-     * @tc.name      : testWindowTitleButtonRectChange_on_Function_Callback
-     * @tc.desc      : Test the function of windowTitleButtonRectChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWindowTitleButtonRectChange_on_Function_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
+     * @tc.desc   Test the function of windowTitleButtonRectChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowTitleButtonRectChange_on_Function_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let msgStr: string = 'testWindowTitleButtonRectChange_on';
@@ -1779,12 +1779,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
-     * @tc.name      : testWindowTitleButtonRectChange_off_Function_Callback
-     * @tc.desc      : Test the function of windowTitleButtonRectChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWindowTitleButtonRectChange_off_Function_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
+     * @tc.desc   Test the function of windowTitleButtonRectChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowTitleButtonRectChange_off_Function_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let msgStr: string = 'testWindowTitleButtonRectChange_off';
@@ -1809,12 +1809,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2630
-     * @tc.name      : testEnumWindow_windowType
-     * @tc.desc      : window type enumeration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testEnumWindow_windowType
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2630
+     * @tc.desc   window type enumeration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEnumWindow_windowType', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       console.info('testEnumWindow_windowType test the enum value of windowType begin');
@@ -1843,12 +1843,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       }
     });
     /**
+     * @tc.name   test_windowClassLoadContentByName_callback_withstorage
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_LOADCONTENTBYNAME_JS_API_3880
-     * @tc.name test_windowClassLoadContentByName_callback_withstorage
-     * @tc.desc Test the function of windowClass windowClassLoadContentByName withstorage callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.desc   Test the function of windowClass windowClassLoadContentByName withstorage callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_windowClassLoadContentByName_callback_withstorage', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let msg = "test_windowClassLoadContentByName_callback_withstorage"
@@ -1879,12 +1879,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
     });
 
     /**
+     * @tc.name   test_windowClassLoadContentByName_callback_withoutstorage
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_LOADCONTENTBYNAME_JS_API_3890
-     * @tc.name test_windowClassLoadContentByName_callback_withoutstorage
-     * @tc.desc Test the function of windowClassLoadContentByName withoutstorage callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.desc   Test the function of windowClassLoadContentByName withoutstorage callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_windowClassLoadContentByName_callback_withoutstorage', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let msg = "test_windowClassLoadContentByName_callback_withoutstorage"
@@ -1914,12 +1914,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
 
 
     /**
+     * @tc.name   test_windowClassLoadContentByName_Promise
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_LOADCONTENTBYNAME_JS_API_3900
-     * @tc.name test_windowClassLoadContentByName_Promise
-     * @tc.desc Test the function of windowClassLoadContentByName Promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.desc   Test the function of windowClassLoadContentByName Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_windowClassLoadContentByName_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
 
@@ -1949,12 +1949,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
     
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3980
-     * @tc.name      : testNoInteractionDetected_on_Function_Callback
-     * @tc.desc      : window type noInteractionDetected
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testNoInteractionDetected_on_Function_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3980
+     * @tc.desc   window type noInteractionDetected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNoInteractionDetected_on_Function_Callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>{
       let msgStr = "testNoInteractionDetected_on_Function_Callback";
@@ -1982,12 +1982,12 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3990
-     * @tc.name      : tetestNoInteractionDetected_off_Function_Callback
-     * @tc.desc      : window type noInteractionDetected
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testNoInteractionDetected_off_Function_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3990
+     * @tc.desc   window type noInteractionDetected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNoInteractionDetected_off_Function_Callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>{
       let msgStr = "tetestNoInteractionDetected_off_Function_Callback";

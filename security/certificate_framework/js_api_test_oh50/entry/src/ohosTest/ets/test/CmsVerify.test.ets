@@ -18,6 +18,14 @@ import { cert } from "@kit.DeviceCertificateKit";
 import { createX509Cert, intervalTime, stressTimeout } from "./utils/certificate/certPem";
 import {
   CMS_ENVELOPE,
+  CMS_EXPIRED_DATA,
+  CMS_EXPIRED_ENTRY_CERT,
+  CMS_EXPIRED_INTER_CERT,
+  CMS_EXPIRED_ROOT_CERT,
+  CMS_NOT_EFFECT_DATA,
+  CMS_NOT_EFFECT_ENTRY_CERT,
+  CMS_NOT_EFFECT_INTER_CERT,
+  CMS_NOT_EFFECT_ROOT_CERT,
   CMS_SIGN_ATTACHED_NO_DATA,
   CMS_SIGN_BINARY_DETACHED_NO_DATA,
   CMS_SIGN_DETACHED_DATA,
@@ -51,12 +59,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
   describe("certFrameworkCmsVerifyTestUnit", () => {
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_0100
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_0100
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_0100
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -94,12 +102,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_0200
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_0200
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_0200
-     * @tc.desc The CMS Verify, RSA, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, RSA, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -137,12 +145,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_0300
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_0300
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_0300
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -182,12 +190,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_0400
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_0400
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_0400
-     * @tc.desc The CMS Verify, RSA, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, RSA, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -227,12 +235,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_0500
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_0500
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_0500
-     * @tc.desc The CMS Verify, RSA, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, RSA, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -279,12 +287,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_0600
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_0600
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_0600
-     * @tc.desc The CMS Verify, RSA, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, RSA, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_0600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -326,12 +334,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_0700
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_0700
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_0700
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_0700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -373,12 +381,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_0800
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_0800
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_0800
-     * @tc.desc The CMS Verify, RSA, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, RSA, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_0800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -427,12 +435,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_0900
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_0900
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_0900
-     * @tc.desc The CMS Verify, RSA, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, RSA, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_0900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -474,12 +482,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_1000
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_1000
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_1000
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_1000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -513,12 +521,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_1100
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_1100
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_1100
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_1100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -550,12 +558,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_1200
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_1200
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_1200
-     * @tc.desc The CMS Verify, RSA, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, RSA, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_1200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -609,12 +617,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_1300
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_1300
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_1300
-     * @tc.desc The CMS Verify, RSA, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, RSA, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_1300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -651,12 +659,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_1400
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_1400
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_1400
-     * @tc.desc The CMS Verify, DSA, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, DSA, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_1400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -681,12 +689,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_1500
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_1500
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_1500
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_1500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -727,12 +735,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_1600
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_1600
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_1600
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_1600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -775,12 +783,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_1700
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_1700
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_1700
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_1700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -800,12 +808,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_1800
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_1800
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_1800
-     * @tc.desc The CMS Verify, RSA, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, RSA, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_1800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -830,12 +838,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_1900
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_1900
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_1900
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_1900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -851,12 +859,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_2000
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_2000
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_2000
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -881,12 +889,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_2100
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_2100
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_2100
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -911,12 +919,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_2200
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_2200
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_2200
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -942,12 +950,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_2300
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_2300
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_2300
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -971,12 +979,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_2400
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_2400
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_2400
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1001,12 +1009,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_2500
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_2500
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_2500
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1041,12 +1049,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_2600
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_2600
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_2600
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1063,12 +1071,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_2700
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_2700
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_2700
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1095,12 +1103,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_2800
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_2800
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_2800
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1129,12 +1137,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_2900
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_2900
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_2900
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1161,12 +1169,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_3000
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_3000
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_3000
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_3000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1192,12 +1200,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_3100
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_3100
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_3100
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_3100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1224,12 +1232,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_3200
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_3200
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_3200
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_3200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1254,12 +1262,12 @@ export default function certFrameworkCmsVerifyTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_3300
      * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_3300
-     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_3300
-     * @tc.desc The CMS Verify, ECC, Promise Type
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_3300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1307,6 +1315,68 @@ export default function certFrameworkCmsVerifyTestUnit() {
         } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_3300 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_3400
+     * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_3400
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_Cms_Verify_Func_3400",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let plainText: Uint8Array = new Uint8Array([0x01, 0x02, 0x03, 0x04]);
+          let x509CertEntry: cert.X509Cert = await createX509Cert(CMS_EXPIRED_ENTRY_CERT);
+          let x509CertInter: cert.X509Cert = await createX509Cert(CMS_EXPIRED_INTER_CERT);
+          let x509CertRoot: cert.X509Cert = await createX509Cert(CMS_EXPIRED_ROOT_CERT);
+          let config: cert.CmsVerificationConfig = {
+            trustCerts: [x509CertRoot, x509CertInter],
+            contentData: plainText,
+            signerCerts: [x509CertEntry]
+          };
+          let verify: cert.CmsParser = cert.createCmsParser();
+          await verify.setRawData(CMS_EXPIRED_DATA, cert.CmsFormat.PEM);
+          await verify.verifySignedData(config);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] Cms_Verify_Func_3400 “${error}“, error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_HAS_EXPIRED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_Cms_Verify_Func_3500
+     * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_3500
+     * @tc.desc   The CMS Verify, ECC, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_Cms_Verify_Func_3500",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let plainText: Uint8Array = new Uint8Array([0x01, 0x02, 0x03, 0x04]);
+          let x509CertEntry: cert.X509Cert = await createX509Cert(CMS_NOT_EFFECT_ENTRY_CERT);
+          let x509CertInter: cert.X509Cert = await createX509Cert(CMS_NOT_EFFECT_INTER_CERT);
+          let x509CertRoot: cert.X509Cert = await createX509Cert(CMS_NOT_EFFECT_ROOT_CERT);
+          let config: cert.CmsVerificationConfig = {
+            trustCerts: [x509CertRoot, x509CertInter],
+            contentData: plainText,
+            signerCerts: [x509CertEntry]
+          };
+          let verify: cert.CmsParser = cert.createCmsParser();
+          await verify.setRawData(CMS_NOT_EFFECT_DATA, cert.CmsFormat.PEM);
+          await verify.verifySignedData(config);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] Cms_Verify_Func_3500 “${error}“, error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_NOT_YET_VALID);
         }
         done();
       });

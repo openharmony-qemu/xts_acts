@@ -56,10 +56,13 @@ export default function DeviceManagerNormalCanIUseTest() {
       console.log('*************DeviceManager Unit DeviceManagerSysApiNormalJsNdkTest End*************');
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerNormalCanIUse_0100
-     * @tc.name       : testDeviceManagerNormalCanIUsek001
-     * @tc.desc       : verify DeviceManagerCanIUse any device
+    /**
+     * @tc.name   testDeviceManagerNormalCanIUsek001
+     * @tc.number SUB_Driver_Ext_DeviceManagerNormalCanIUse_0100
+     * @tc.desc   verify DeviceManagerCanIUse any device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDeviceManagerNormalCanIUsek001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
         console.info(TAG, '----------------------testDeviceManagerNormalCanIUsek001---------------------------');

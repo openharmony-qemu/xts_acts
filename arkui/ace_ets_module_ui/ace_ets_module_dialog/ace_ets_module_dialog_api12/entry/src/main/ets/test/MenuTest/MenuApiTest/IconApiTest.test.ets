@@ -46,12 +46,12 @@ export default function IconApiTest() {
     });
 
     /**
-     * @tc.number    IconApiTest
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   IconApiTest_001
+     * @tc.number IconApiTest
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("IconApiTest_001", Level.LEVEL2, async (done: Function) => {
       console.info("[IconApiTest_001] START");
@@ -69,12 +69,12 @@ export default function IconApiTest() {
     });
 
     /**
-     * @tc.number    IconApiTest
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   IconApiTest_002
+     * @tc.number IconApiTest
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("IconApiTest_002", Level.LEVEL2, async (done: Function) => {
       console.info("[IconApiTest_002] START");

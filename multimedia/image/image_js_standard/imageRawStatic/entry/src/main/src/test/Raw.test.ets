@@ -26,17 +26,17 @@ export default function imageRaw() {
   const RGBA_8888 = image.PixelMapFormat.RGBA_8888;
   let filePath: string;
   let fdNumber: int;
-  let filesDir: string | undefined | null;
+  let filesDir: string;
 
   describe("imageRaw", () => {
     beforeAll(async () => {
       console.info("beforeAll case");
-      await initialize();
-      filesDir = Hypium.get('filesDir') as string | undefined | null;
     });
 
     beforeEach(() => {
       console.info("beforeEach case");
+      await initialize();
+      filesDir = Hypium.get('filesDir') as string;
     });
 
     afterEach(async () => {
@@ -120,7 +120,7 @@ export default function imageRaw() {
     let createPixelMapPromise =
       async (done: () => void, testNum: string, picName: string, decodeOpts: image.DecodingOptions,
         packOpts: image.PackingOption): Promise<void> => {
-        let imageSourceApi: image.ImageSource;
+        let imageSourceApi: image.ImageSource | undefined;
         try {
           await getFd(picName);
           imageSourceApi = image.createImageSource(fdNumber);
@@ -154,7 +154,7 @@ export default function imageRaw() {
     let createPixelMapCallBack =
       async (done: () => void, testNum: string, picName: string, decodeOpts: image.DecodingOptions,
         packOpts: image.PackingOption): Promise<void> => {
-        let imageSourceApi: image.ImageSource;
+        let imageSourceApi: image.ImageSource | undefined;
         try {
           await getFd(picName);
           imageSourceApi = image.createImageSource(fdNumber);
@@ -187,7 +187,7 @@ export default function imageRaw() {
 
     let createPixelMapCallBackErr =
       async (done: () => void, testNum: string, picName: string, decodeOpts: image.DecodingOptions): Promise<void> => {
-        let imageSourceApi: image.ImageSource;
+        let imageSourceApi: image.ImageSource | undefined;
         try {
           await getFd(picName);
           imageSourceApi = image.createImageSource(fdNumber);
@@ -219,7 +219,7 @@ export default function imageRaw() {
 
     let createPixelMapPromiseErr =
       async (done: () => void, testNum: string, picName: string, decodeOpts: image.DecodingOptions): Promise<void> => {
-        let imageSourceApi: image.ImageSource;
+        let imageSourceApi: image.ImageSource | undefined;
         try {
           await getFd(picName);
           imageSourceApi = image.createImageSource(fdNumber);

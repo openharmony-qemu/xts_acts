@@ -59,111 +59,111 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_0100
-    * @tc.name       : testRunJavaScript001
-    * @tc.desc       : test runJavaScript
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRunJavaScript001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_0100
+     * @tc.desc   test runJavaScript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRunJavaScript001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitRunJavaScript", 171340)
       Utils.registerEvent("testRunJavaScript001", true, 171350, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_0200
-    * @tc.name       : testRunJavaScript002
-    * @tc.desc       : test runJavaScript
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRunJavaScript002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_0200
+     * @tc.desc   test runJavaScript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRunJavaScript002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRunJavaScript002", 171340)
       Utils.registerEvent("testRunJavaScript002", 'null', 171360, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_0300
-    * @tc.name       : testRunJavaScript003
-    * @tc.desc       : test runJavaScript
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRunJavaScript003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_0300
+     * @tc.desc   test runJavaScript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRunJavaScript003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRunJavaScript003", 171340)
       Utils.registerEvent("testRunJavaScript003", '"This value is from indexJru.html"', 171370, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_0400
-    * @tc.name       : testRunJavaScript004
-    * @tc.desc       : test runJavaScript
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRunJavaScript004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_0400
+     * @tc.desc   test runJavaScript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRunJavaScript004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRunJavaScript004", 171340)
       Utils.registerEvent("testRunJavaScript004", 'null', 171380, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPTEXT_0100
-    * @tc.name       : testRunJavaScriptExt001
-    * @tc.desc       : test runJavaScriptExt
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRunJavaScriptExt001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPTEXT_0100
+     * @tc.desc   test runJavaScriptExt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRunJavaScriptExt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRunJavaScriptExt001", 171340)
       Utils.registerEvent("testRunJavaScriptExt001", '"This value is from indexJru.html"', 171390, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPTEXT_0200
-    * @tc.name       : testRunJavaScriptExt002
-    * @tc.desc       : test runJavaScriptExt
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRunJavaScriptExt002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPTEXT_0200
+     * @tc.desc   test runJavaScriptExt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRunJavaScriptExt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRunJavaScriptExt002", 171340)
       Utils.registerEvent("testRunJavaScriptExt002", true, 171400, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPTEXT_0300
-    * @tc.name       : testRunJavaScriptExt003
-    * @tc.desc       : test runJavaScriptExt
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRunJavaScriptExt003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPTEXT_0300
+     * @tc.desc   test runJavaScriptExt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRunJavaScriptExt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRunJavaScriptExt003", 171340)
       Utils.registerEvent("testRunJavaScriptExt003", '"This value is from indexJru.html"', 171410, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPTEXT_0400
-    * @tc.name       : testRunJavaScriptExt004
-    * @tc.desc       : test runJavaScriptExt
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRunJavaScriptExt004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPTEXT_0400
+     * @tc.desc   test runJavaScriptExt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRunJavaScriptExt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRunJavaScriptExt004", 171340)
       Utils.registerEvent("testRunJavaScriptExt004", true, 171420, done);

@@ -26,39 +26,39 @@ export default function gridColumnTemplateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_COLUMNTEMPLATE_0100
-     * @tc.name       : testGridColumnTemplate001
-     * @tc.desc       : testing ColumnTemplate for Grid with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridColumnTemplate001
+     * @tc.number SUB_ARKUI_CAPI_GRID_COLUMNTEMPLATE_0100
+     * @tc.desc   testing ColumnTemplate for Grid with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridColumnTemplate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridColumnTemplate001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_COLUMNTEMPLATE_0200
-     * @tc.name       : testGridColumnTemplate002
-     * @tc.desc       : testing ColumnTemplate for Grid with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridColumnTemplate002
+     * @tc.number SUB_ARKUI_CAPI_GRID_COLUMNTEMPLATE_0200
+     * @tc.desc   testing ColumnTemplate for Grid with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridColumnTemplate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridColumnTemplate002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_COLUMNTEMPLATE_0300
-     * @tc.name       : testGridColumnTemplate003
-     * @tc.desc       : testing ColumnTemplate for Grid with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridColumnTemplate003
+     * @tc.number SUB_ARKUI_CAPI_GRID_COLUMNTEMPLATE_0300
+     * @tc.desc   testing ColumnTemplate for Grid with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridColumnTemplate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridColumnTemplate003()).assertEqual(0)

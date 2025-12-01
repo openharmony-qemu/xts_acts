@@ -22,14 +22,12 @@ export default function fileIORead() {
   describe('fileIO_fs_read', function () {
 
   /**
+   * @tc.name   fileIO_test_read_sync_000
    * @tc.number SUB_DF_FILEIO_READ_SYNC_0000
-   * @tc.name fileIO_test_read_sync_000
-   * @tc.desc Test readSync() interfaces.
-   * Open the file in read-only mode, default read from current offset.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_000');
@@ -51,14 +49,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_001
    * @tc.number SUB_DF_FILEIO_READ_SYNC_0100
-   * @tc.name fileIO_test_read_sync_001
-   * @tc.desc Test readSync() interfaces.
-   * Open the file in read-only mode, reading the file with length = 1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_001');
@@ -80,14 +76,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_002
    * @tc.number SUB_DF_FILEIO_READ_SYNC_0200
-   * @tc.name fileIO_test_read_sync_002
-   * @tc.desc Test readSync() interfaces.
-   * Open the file in read-only mode, reading the file with length = -1((0 < length < buffer.size)).
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_sync_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_002');
@@ -110,14 +104,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_003
    * @tc.number SUB_DF_FILEIO_READ_SYNC_0300
-   * @tc.name fileIO_test_read_sync_003
-   * @tc.desc Test readSync() interfaces.
-   * Open the file in read-only mode, reading the file with length > the content of file(Read normal).
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_sync_003', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_003');
@@ -139,14 +131,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_004
    * @tc.number SUB_DF_FILEIO_READ_SYNC_0400
-   * @tc.name fileIO_test_read_sync_004
-   * @tc.desc Test readSync() interfaces.
-   * Read the file with invalid length > size of ArrayBuffer.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_sync_004', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_004');
@@ -168,14 +158,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_005
    * @tc.number SUB_DF_FILEIO_READ_SYNC_0500
-   * @tc.name fileIO_test_read_sync_005
-   * @tc.desc Test readSync() interfaces.
-   * Open the file in read-only mode, reading the file with offset(position) = 1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_sync_005', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_005');
@@ -197,14 +185,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_006
    * @tc.number SUB_DF_FILEIO_READ_SYNC_0600
-   * @tc.name fileIO_test_read_sync_006
-   * @tc.desc Test readSync() interfaces.
-   * Read the file with invalid offset = -1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_sync_006', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_006');
@@ -227,14 +213,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_007
    * @tc.number SUB_DF_FILEIO_READ_SYNC_0700
-   * @tc.name fileIO_test_read_sync_007
-   * @tc.desc Test readSync() interfaces.
-   * Open the file in read-only mode, reading the file with offset(position) > the content of file(Read normal).
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_sync_007', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_007');
@@ -256,14 +240,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_008
    * @tc.number SUB_DF_FILEIO_READ_SYNC_0800
-   * @tc.name fileIO_test_read_sync_008
-   * @tc.desc Test readSync() interfaces.
-   * Open the file in read-only mode, reading the file with offset(position) = 1, length = 10.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_sync_008', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_008');
@@ -286,14 +268,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_009
    * @tc.number SUB_DF_FILEIO_READ_SYNC_0900
-   * @tc.name fileIO_test_read_sync_009
-   * @tc.desc Test readSync() interfaces.
-   * Read the file with invalid fd.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_sync_009', Level.LEVEL0, async function () {
 
@@ -307,14 +287,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_010
    * @tc.number SUB_DF_FILEIO_READ_SYNC_1000
-   * @tc.name fileIO_test_read_sync_010
-   * @tc.desc Test readSync() interfaces.
-   * Verify that the Chinese, English, and symbols can be read correctly.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_sync_010', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_010');
@@ -337,14 +315,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_011
    * @tc.number SUB_DF_FILEIO_READ_SYNC_1100
-   * @tc.name fileIO_test_read_sync_011
-   * @tc.desc Test readSync() interfaces.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_read_sync_011', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_011');
@@ -366,14 +342,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_sync_012
    * @tc.number SUB_DF_FILEIO_READ_SYNC_1200
-   * @tc.name fileIO_test_read_sync_012
-   * @tc.desc Test readSync() interfaces.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_read_sync_012', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_read_sync_012');
@@ -401,14 +375,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_000
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_0000
-   * @tc.name fileIO_test_read_async_000
-   * @tc.desc Test read() interfaces. Promise.
-   * Open the file in read-only mode, default read from current offset.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_000');
@@ -431,14 +403,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_001
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_0100
-   * @tc.name fileIO_test_read_async_001
-   * @tc.desc Test read() interfaces. Callback.
-   * Open the file in read-only mode, default read from current offset.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_001');
@@ -471,14 +441,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_002
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_0200
-   * @tc.name fileIO_test_read_async_002
-   * @tc.desc Test read() interfaces. Promise.
-   * Open the file in write-only mode, verifying it is not readable.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_002');
@@ -499,14 +467,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_003
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_0300
-   * @tc.name fileIO_test_read_async_003
-   * @tc.desc Test read() interfaces. Callback.
-   * Open the file in write-only mode, verifying it is not readable.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_003');
@@ -532,14 +498,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_004
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_0400
-   * @tc.name fileIO_test_read_async_004
-   * @tc.desc Test read() interfaces. Promise.
-   * Open the file in read-only mode, reading the file with offset(position) = 1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_004', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_004');
@@ -562,14 +526,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_005
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_0500
-   * @tc.name fileIO_test_read_async_005
-   * @tc.desc Test read() interfaces. Callback.
-   * Open the file in read-only mode, reading the file with offset(position) = 1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_005', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_005');
@@ -597,14 +559,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_006
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_0600
-   * @tc.name fileIO_test_read_async_006
-   * @tc.desc Test read() interface. Promise.
-   * Open the file in read-only mode, reading the file with length = 1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_006', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_006');
@@ -627,14 +587,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_007
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_0700
-   * @tc.name fileIO_test_read_async_007
-   * @tc.desc Test read() interface. Callback.
-   * Open the file in read-only mode, reading the file with length = 1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_007', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_007');
@@ -662,14 +620,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_008
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_0800
-   * @tc.name fileIO_test_read_async_008
-   * @tc.desc Test read() interfaces. Promise.
-   * Open the file in read-only mode, reading the file with offset > the content of file(Read normal).
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_008', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_008');
@@ -692,14 +648,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_009
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_0900
-   * @tc.name fileIO_test_read_async_009
-   * @tc.desc Test read() interfaces. Callback.
-   * Open the file in read-only mode, reading the file with offset > the content of file(Read normal).
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_009', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_009');
@@ -727,14 +681,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_010
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_1000
-   * @tc.name fileIO_test_read_async_010
-   * @tc.desc Test read() interfaces.
-   * Open the file in read-only mode, reading the file with offset(position) = 1, length = 11.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_010', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_010');
@@ -758,14 +710,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_011
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_1100
-   * @tc.name fileIO_test_read_async_011
-   * @tc.desc Test read() interfaces. Callback.
-   * Open the file in read-only mode, reading the file with offset(position) = 1, length = 11.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_011', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_011');
@@ -794,14 +744,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_012
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_1200
-   * @tc.name fileIO_test_read_async_012
-   * @tc.desc Test read() interfaces. Promise.
-   * Read with invalid fd parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_012', Level.LEVEL0, async function (done) {
     try {
@@ -815,14 +763,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_013
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_1300
-   * @tc.name fileIO_test_read_async_013
-   * @tc.desc Test read() interfaces. Callback.
-   * Read with invalid fd parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_013', Level.LEVEL0, async function (done) {
     try {
@@ -839,14 +785,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_014
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_1400
-   * @tc.name fileIO_test_read_async_014
-   * @tc.desc Test read() interfaces. Callback.
-   * Read with invalid offset < 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_014', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_014');
@@ -871,14 +815,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_015
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_1500
-   * @tc.name fileIO_test_read_async_015
-   * @tc.desc Test read() interfaces. Callback.
-   * Read with invalid length > size of ArrayBuffer(4096).
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_015', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_015');
@@ -903,14 +845,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_016
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_1600
-   * @tc.name fileIO_test_read_async_016
-   * @tc.desc Test read() interfaces. Promise.
-   * Open the file in read-only mode, reading the file with empty option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_016', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_016');
@@ -931,14 +871,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_017
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_1700
-   * @tc.name fileIO_test_read_async_017
-   * @tc.desc Test read() interfaces. Callback.
-   * Open the file in read-only mode, reading the file with empty option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_017', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_017');
@@ -965,14 +903,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_018
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_1800
-   * @tc.name fileIO_test_read_async_018
-   * @tc.desc Test read() interfaces.
-   * Open the file in read-only mode, reading the file with length = -1(0 < length < buffer.size).
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_018', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_018');
@@ -996,14 +932,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_019
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_1900
-   * @tc.name fileIO_test_read_async_019
-   * @tc.desc Test read() interfaces.
-   * Verify that the Chinese, English, and symbols can be read correctly.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_read_async_019', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_019');
@@ -1027,14 +961,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_020
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_2000
-   * @tc.name fileIO_test_read_async_020
-   * @tc.desc Test read() interfaces. Promise.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_read_async_020', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_020');
@@ -1057,14 +989,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_021
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_2100
-   * @tc.name fileIO_test_read_async_021
-   * @tc.desc Test read() interfaces. Callback.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_read_async_021', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_021');
@@ -1097,14 +1027,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_022
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_2200
-   * @tc.name fileIO_test_read_async_022
-   * @tc.desc Test read() interfaces. Promise.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_read_async_022', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_022');
@@ -1133,14 +1061,12 @@ export default function fileIORead() {
   });
 
   /**
+   * @tc.name   fileIO_test_read_async_023
    * @tc.number SUB_DF_FILEIO_READ_ASYNC_2300
-   * @tc.name fileIO_test_read_async_023
-   * @tc.desc Test read() interfaces. Callback.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test read() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_read_async_023', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_read_async_023');

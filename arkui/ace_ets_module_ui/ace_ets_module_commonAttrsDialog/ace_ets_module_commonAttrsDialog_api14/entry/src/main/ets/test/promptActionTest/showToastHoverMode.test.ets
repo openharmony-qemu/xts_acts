@@ -41,14 +41,14 @@ export default function showToastHoverMode(){
       }
       done();
     });
-    /* *
-    * @tc.number: showToastHoverMode_0100
-    * @tc.name  : showToastHoverMode_0100
-    * @tc.desc  : To test enableHoverMode(false) and hoverModeArea(default)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   showToastHoverMode_0100
+     * @tc.number showToastHoverMode_0100
+     * @tc.desc   To test enableHoverMode(false) and hoverModeArea(default)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastHoverMode_0100', Level.LEVEL0, async (done:Function) =>{
       console.info('showToastHoverMode_0100 START');
       let driver = await Driver.create()
@@ -65,14 +65,14 @@ export default function showToastHoverMode(){
       console.info('[showToastHoverMode_0100] END');
       done();
     });
-    /* *
-    * @tc.number: showToastHoverMode_0200
-    * @tc.name  : showToastHoverMode_0200
-    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(default)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   showToastHoverMode_0200
+     * @tc.number showToastHoverMode_0200
+     * @tc.desc   To test enableHoverMode(true) and hoverModeArea(default)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastHoverMode_0200', Level.LEVEL0, async (done:Function) =>{
       console.info('showToastHoverMode_0200 START');
       let driver = await Driver.create()
@@ -94,14 +94,14 @@ export default function showToastHoverMode(){
       done();
     });
 
-    /* *
-    * @tc.number: showToastHoverMode_0300
-    * @tc.name  : showToastHoverMode_0300
-    * @tc.desc  : To test enableHoverMode(false) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   showToastHoverMode_0300
+     * @tc.number showToastHoverMode_0300
+     * @tc.desc   To test enableHoverMode(false) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastHoverMode_0300', Level.LEVEL0, async (done:Function) =>{
       console.info('showToastHoverMode_0300 START');
       let driver = await Driver.create()
@@ -121,14 +121,14 @@ export default function showToastHoverMode(){
       console.info('[showToastHoverMode_0300] END');
       done();
     });
-   /* *
-    * @tc.number: showToastHoverMode_0400
-    * @tc.name  : showToastHoverMode_0400
-    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   showToastHoverMode_0400
+     * @tc.number showToastHoverMode_0400
+     * @tc.desc   To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastHoverMode_0400', Level.LEVEL0, async (done:Function) =>{
       console.info('showToastHoverMode_0400 START');
       let driver = await Driver.create()
@@ -153,14 +153,14 @@ export default function showToastHoverMode(){
       done();
     });
 
-    /* *
-    * @tc.number: showToastHoverMode_0500
-    * @tc.name  : showToastHoverMode_0500
-    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.BOTTOM_SCREEN)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   showToastHoverMode_0500
+     * @tc.number showToastHoverMode_0500
+     * @tc.desc   To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.BOTTOM_SCREEN)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastHoverMode_0500', Level.LEVEL0, async (done:Function) =>{
       console.info('showToastHoverMode_0500 START');
       let driver = await Driver.create()
@@ -189,14 +189,14 @@ export default function showToastHoverMode(){
       console.info('[showToastHoverMode_0500] END');
       done();
     });
-    /* *
-    * @tc.number: showToastHoverMode_0600
-    * @tc.name  : showToastHoverMode_0600
-    * @tc.desc  : To test enableHoverMode(false) and hoverModeArea(HoverModeAreaType.BOTTOM_SCREEN)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   showToastHoverMode_0600
+     * @tc.number showToastHoverMode_0600
+     * @tc.desc   To test enableHoverMode(false) and hoverModeArea(HoverModeAreaType.BOTTOM_SCREEN)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastHoverMode_0600', Level.LEVEL0, async (done:Function) =>{
       console.info('showToastHoverMode_0600 START');
       let driver = await Driver.create()

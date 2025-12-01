@@ -44,6 +44,14 @@ export default function radioJsunit2() {
       console.info("radio after each called");
     });
 
+    /**
+     * @tc.name   testRadio_100
+     * @tc.number testRadio_100
+     * @tc.desc   testRadio_100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRadio_100', Level.LEVEL1, async (done: Function) => {
       console.info('[testRadio_100] START');
       await Utils.sleep(1000);
@@ -57,6 +65,14 @@ export default function radioJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testRadio_200
+     * @tc.number testRadio_200
+     * @tc.desc   testRadio_200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRadio_200', Level.LEVEL1, async (done: Function) => {
       console.info('[testRadio_200] START');
       await Utils.sleep(1000);
@@ -69,6 +85,14 @@ export default function radioJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testRadio_300
+     * @tc.number testRadio_300
+     * @tc.desc   testRadio_300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRadio_300', Level.LEVEL1, async (done: Function) => {
       console.info('[testRadio_300] START');
       await Utils.sleep(1000);

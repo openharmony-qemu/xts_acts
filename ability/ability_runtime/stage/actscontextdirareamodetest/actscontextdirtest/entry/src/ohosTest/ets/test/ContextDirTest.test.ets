@@ -104,7 +104,7 @@ export default function ContextDirTest() {
           .then((ability) => {
             ability?.lastRequestWant?.abilityName !== 'TestAbility' && ability?.context?.terminateSelf();
           });
-        await sleep(300);
+        await sleep(600);
       } catch (error) {
         hilog.info(0x0000, 'testTag', '%{public}s', "close TopAbility error: " + JSON.stringify(error));
       }
@@ -112,16 +112,16 @@ export default function ContextDirTest() {
         bundleName: 'com.example.contextdirtest',
         abilityName: 'TestAbility',
       })
-      await sleep(300);
+      await sleep(1200);
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_Dir_0100
-     * @tc.name       : Test the system application obtains AbilityContext under the same application and module, sets the area to EL3.
-     * @tc.desc       : The sandbox path is correct and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_Dir_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_Dir_0100
+     * @tc.desc   The sandbox path is correct and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_Dir_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_Dir_0100';
@@ -143,12 +143,12 @@ export default function ContextDirTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_Dir_0200
-     * @tc.name       : Test the system application obtains AbilityContext under the same application and module, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_Dir_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_Dir_0200
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_Dir_0200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_Dir_0200';
@@ -170,12 +170,12 @@ export default function ContextDirTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_Dir_0300
-     * @tc.name       : Test the system application obtains AbilityContext under the same application but different modules, sets the area to EL3.
-     * @tc.desc       : The sandbox path is correct and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_Dir_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_Dir_0300
+     * @tc.desc   The sandbox path is correct and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_Dir_0300', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_Dir_0300';
@@ -204,12 +204,12 @@ export default function ContextDirTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_Dir_0400
-     * @tc.name       : Test the system application obtains AbilityContext under the same application but different modules, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_Dir_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_Dir_0400
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_Dir_0400', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_Dir_0400';
@@ -238,12 +238,12 @@ export default function ContextDirTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_ModuleContext_Dir_0500
-     * @tc.name       : Test the system application obtains ModuleContext under the same application but different modules, sets the area to EL3.
-     * @tc.desc       : The sandbox path is correct and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_ModuleContext_Dir_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ModuleContext_Dir_0500
+     * @tc.desc   The sandbox path is correct and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ModuleContext_Dir_0500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_ModuleContext_Dir_0500';
@@ -264,12 +264,12 @@ export default function ContextDirTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_ModuleContext_Dir_0600
-     * @tc.name       : Test the system application obtains ModuleContext under the same application but different modules, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_ModuleContext_Dir_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ModuleContext_Dir_0600
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ModuleContext_Dir_0600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_ModuleContext_Dir_0600';
@@ -290,12 +290,12 @@ export default function ContextDirTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0700
-     * @tc.name       : Test the system application obtains ApplicationContext under different applications, sets the area to EL3.
-     * @tc.desc       : The sandbox path is correct and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0700
+     * @tc.desc   The sandbox path is correct and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0700', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0700';
@@ -326,12 +326,12 @@ export default function ContextDirTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0800
-     * @tc.name       : Test the system application obtains ApplicationContext under different applications, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0800
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0800', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0800';
@@ -362,12 +362,12 @@ export default function ContextDirTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_0900
-     * @tc.name       : Test the system application obtains AbilityStageContext under the same application and module, sets the area to EL3.
-     * @tc.desc       : The sandbox path is correct and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_0900
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_0900
+     * @tc.desc   The sandbox path is correct and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_0900', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_0900';
@@ -388,12 +388,12 @@ export default function ContextDirTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_1000
-     * @tc.name       : Test the system application obtains AbilityStageContext under the same application and module, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_1000
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_1000
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_1000', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_1000';
@@ -414,12 +414,12 @@ export default function ContextDirTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1100
-     * @tc.name       : Two applications applying for the same groupId, set the area to EL3 respectively, can obtain the same shared sandbox path.
-     * @tc.desc       : The sandbox path is same and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1100
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1100
+     * @tc.desc   The sandbox path is same and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1100';
@@ -429,11 +429,31 @@ export default function ContextDirTest() {
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
       commonEventManager.createSubscriber({
-        events: ["getGroupDirEvent1"],
+        events: ["getGroupDirEvent1", "getGroupDirDone"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
         Subscriber = data;
         commonEventManager.subscribe(Subscriber, async (_, data) => {
+          if (data.event === "getGroupDirDone") {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " receive getGroupDirDone event");
+            try {
+              abilityDelegator.startAbility({
+                bundleName: "com.example.contextdirnormaltest",
+                abilityName: "EntryAbility",
+                moduleName: 'entry',
+                parameters: {
+                  isPublish: true,
+                  areaMode: "el3"
+                }
+              }, (err) => {
+                hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
+              })
+            } catch (e) {
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
+              expect().assertFail();
+              done();
+            }
+          }
           if (data?.parameters?.result !== undefined) {
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + " Subscriber data " + JSON.stringify(data.parameters.result));
             getGroupDirDataOther = data.parameters.result;
@@ -452,36 +472,20 @@ export default function ContextDirTest() {
           getGroupDirData = data;
           expect(getGroupDirData).assertContain("/data/storage/el3/group");
           expect(err).assertNull();
+          commonEventManager.publish("getGroupDirDone", () => {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " publish getGroupDirDone event success");
+          });
         })
-        await sleep(300);
-        try {
-          abilityDelegator.startAbility({
-            bundleName: "com.example.contextdirnormaltest",
-            abilityName: "EntryAbility",
-            moduleName: 'entry',
-            parameters: {
-              isPublish: true,
-              areaMode: "el3"
-            }
-          }, (err) => {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
-            done();
-          })
-        } catch (e) {
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
-          expect().assertFail();
-          done();
-        }
       })
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1200
-     * @tc.name       : Two applications applying for the same groupId, set the area to EL4 respectively, can obtain the same shared sandbox path.
-     * @tc.desc       : The sandbox path is same and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1200
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1200
+     * @tc.desc   The sandbox path is same and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1200';
@@ -491,11 +495,31 @@ export default function ContextDirTest() {
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
       commonEventManager.createSubscriber({
-        events: ["getGroupDirEvent1"],
+        events: ["getGroupDirEvent1", "getGroupDirDone"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
         Subscriber = data;
         commonEventManager.subscribe(Subscriber, async (_, data) => {
+          if (data.event === "getGroupDirDone") {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " receive getGroupDirDone event");
+            try {
+              abilityDelegator.startAbility({
+                bundleName: "com.example.contextdirnormaltest",
+                abilityName: "EntryAbility",
+                moduleName: 'entry',
+                parameters: {
+                  isPublish: true,
+                  areaMode: "el4"
+                }
+              }, (err) => {
+                hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
+              })
+            } catch (e) {
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
+              expect().assertFail();
+              done();
+            }
+          }
           if (data?.parameters?.result !== undefined) {
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + " Subscriber data " + JSON.stringify(data.parameters.result));
             getGroupDirDataOther = data.parameters.result;
@@ -514,36 +538,20 @@ export default function ContextDirTest() {
           getGroupDirData = data;
           expect(getGroupDirData).assertContain("/data/storage/el4/group");
           expect(err).assertNull();
+          commonEventManager.publish("getGroupDirDone", () => {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " publish getGroupDirDone event success");
+          });
         })
-        await sleep(300);
-        try {
-          abilityDelegator.startAbility({
-            bundleName: "com.example.contextdirnormaltest",
-            abilityName: "EntryAbility",
-            moduleName: 'entry',
-            parameters: {
-              isPublish: true,
-              areaMode: "el4"
-            }
-          }, (err) => {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
-            done();
-          })
-        } catch (e) {
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
-          expect().assertFail();
-          done();
-        }
       })
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1300
-     * @tc.name       : Two applications applying for different groupIds, set the area to EL3 respectively, can obtain different shared sandbox path.
-     * @tc.desc       : The sandbox path is different and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1300
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1300
+     * @tc.desc   The sandbox path is different and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1300', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1300';
@@ -553,11 +561,31 @@ export default function ContextDirTest() {
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
       commonEventManager.createSubscriber({
-        events: ["getGroupDirEvent2"],
+        events: ["getGroupDirEvent2", "getGroupDirDone"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
         Subscriber = data;
         commonEventManager.subscribe(Subscriber, async (_, data) => {
+          if (data.event === "getGroupDirDone") {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " receive getGroupDirDone event");
+            try {
+              abilityDelegator.startAbility({
+                bundleName: "com.example.contextdirnormaltest",
+                abilityName: "EntryAbility",
+                moduleName: 'entry',
+                parameters: {
+                  isPublish: true,
+                  areaMode: "el3"
+                }
+              }, (err) => {
+                hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
+              })
+            } catch (e) {
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
+              expect().assertFail();
+              done();
+            }
+          }
           if (data?.parameters?.result !== undefined) {
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + " Subscriber data " + JSON.stringify(data.parameters.result));
             getGroupDirDataOther = data.parameters.result;
@@ -576,36 +604,20 @@ export default function ContextDirTest() {
           getGroupDirData = data;
           expect(getGroupDirData).assertContain("/data/storage/el3/group");
           expect(err).assertNull();
+          commonEventManager.publish("getGroupDirDone", () => {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " publish getGroupDirDone event success");
+          });
         })
-        await sleep(300);
-        try {
-          abilityDelegator.startAbility({
-            bundleName: "com.example.contextdirnormaltest",
-            abilityName: "EntryAbility",
-            moduleName: 'entry',
-            parameters: {
-              isPublish: true,
-              areaMode: "el3"
-            }
-          }, (err) => {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
-            done();
-          })
-        } catch (e) {
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
-          expect().assertFail();
-          done();
-        }
       })
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1400
-     * @tc.name       : Two applications applying for different groupIds, set the area to EL4 respectively, can obtain different shared sandbox path.
-     * @tc.desc       : The sandbox path is different and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1400
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1400
+     * @tc.desc   The sandbox path is different and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1400', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_GetGroupDir_1400';
@@ -615,11 +627,31 @@ export default function ContextDirTest() {
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
       commonEventManager.createSubscriber({
-        events: ["getGroupDirEvent2"],
+        events: ["getGroupDirEvent2", "getGroupDirDone"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
         Subscriber = data;
         commonEventManager.subscribe(Subscriber, async (_, data) => {
+          if (data.event === "getGroupDirDone") {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " receive getGroupDirDone event");
+            try {
+              abilityDelegator.startAbility({
+                bundleName: "com.example.contextdirnormaltest",
+                abilityName: "EntryAbility",
+                moduleName: 'entry',
+                parameters: {
+                  isPublish: true,
+                  areaMode: "el4"
+                }
+              }, (err) => {
+                hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
+              })
+            } catch (e) {
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
+              expect().assertFail();
+              done();
+            }
+          }
           if (data?.parameters?.result !== undefined) {
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + " Subscriber data " + JSON.stringify(data.parameters.result));
             getGroupDirDataOther = data.parameters.result;
@@ -638,36 +670,20 @@ export default function ContextDirTest() {
           getGroupDirData = data;
           expect(getGroupDirData).assertContain("/data/storage/el4/group");
           expect(err).assertNull();
+          commonEventManager.publish("getGroupDirDone", () => {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " publish getGroupDirDone event success");
+          });
         })
-        await sleep(300);
-        try {
-          abilityDelegator.startAbility({
-            bundleName: "com.example.contextdirnormaltest",
-            abilityName: "EntryAbility",
-            moduleName: 'entry',
-            parameters: {
-              isPublish: true,
-              areaMode: "el4"
-            }
-          }, (err) => {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
-            done();
-          })
-        } catch (e) {
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
-          expect().assertFail();
-          done();
-        }
       })
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_ApplicationContext_Dir_1500
-     * @tc.name       : Test the system application obtains ApplicationContext under the same application, sets the area to EL3.
-     * @tc.desc       : The sandbox path is correct and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContext_Dir_1500
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContext_Dir_1500
+     * @tc.desc   The sandbox path is correct and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContext_Dir_1500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_ApplicationContext_Dir_1500';
@@ -689,12 +705,12 @@ export default function ContextDirTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_ApplicationContext_Dir_1600
-     * @tc.name       : Test the system application obtains ApplicationContext under the same application, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContext_Dir_1600
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContext_Dir_1600
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContext_Dir_1600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_ApplicationContext_Dir_1600';

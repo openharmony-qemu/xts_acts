@@ -57,12 +57,12 @@ export default function EnableBackForwardCacheTest() {
     });
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache00016
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_00015
-     * @tc.name testWebView_enableBackForwardCache00016
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWebView_enableBackForwardCache00016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("SUB_ACE_WEB_BFCACHE_SDK_00015", 119010)

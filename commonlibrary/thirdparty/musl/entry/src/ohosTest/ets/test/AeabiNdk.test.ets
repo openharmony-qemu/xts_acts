@@ -25,12 +25,12 @@ export default function aeabiNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMCLR_0100
-     * @tc.name       : testMuslAeabiMemclr001
-     * @tc.desc       : test __aeabi_memclr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemclr001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMCLR_0100
+     * @tc.desc   test __aeabi_memclr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemclr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemclr();
@@ -40,12 +40,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMCLR4_0100
-     * @tc.name       : testMuslAeabiMemclr4001
-     * @tc.desc       : test __aeabi_memclr4
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemclr4001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMCLR4_0100
+     * @tc.desc   test __aeabi_memclr4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemclr4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemclr4();
@@ -55,12 +55,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMCLR8_0100
-     * @tc.name       : testMuslAeabiMemclr8001
-     * @tc.desc       : test __aeabi_memclr8
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemclr8001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMCLR8_0100
+     * @tc.desc   test __aeabi_memclr8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemclr8001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemclr4();
@@ -70,12 +70,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMCPY_0100
-     * @tc.name       : testMuslAeabiMemcpy001
-     * @tc.desc       : test __aeabi_memcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemcpy001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMCPY_0100
+     * @tc.desc   test __aeabi_memcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemcpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemcpy();
@@ -85,12 +85,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMCPY4_0100
-     * @tc.name       : testMuslAeabiMemcpy4001
-     * @tc.desc       : test __aeabi_memcpy4
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemcpy4001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMCPY4_0100
+     * @tc.desc   test __aeabi_memcpy4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemcpy4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemcpy4();
@@ -100,12 +100,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMCPY8_0100
-     * @tc.name       : testMuslAeabiMemcpy8001
-     * @tc.desc       : test __aeabi_memcpy8
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemcpy8001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMCPY8_0100
+     * @tc.desc   test __aeabi_memcpy8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemcpy8001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemcpy4();
@@ -115,12 +115,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMMOVE_0100
-     * @tc.name       : testMuslAeabiMemmove001
-     * @tc.desc       : test __aeabi_memmove
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemmove001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMMOVE_0100
+     * @tc.desc   test __aeabi_memmove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemmove001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemmove();
@@ -130,12 +130,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMMOVE4_0100
-     * @tc.name       : testMuslAeabiMemmove4001
-     * @tc.desc       : test __aeabi_memmove4
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemmove4001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMMOVE4_0100
+     * @tc.desc   test __aeabi_memmove4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemmove4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemmove4();
@@ -145,12 +145,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMMOVE8_0100
-     * @tc.name       : testMuslAeabiMemmove8001
-     * @tc.desc       : test __aeabi_memmove8
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemmove8001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMMOVE8_0100
+     * @tc.desc   test __aeabi_memmove8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemmove8001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemmove8();
@@ -160,12 +160,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMSET_0100
-     * @tc.name       : testMuslAeabiMemset001
-     * @tc.desc       : test __aeabi_memset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemset001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMSET_0100
+     * @tc.desc   test __aeabi_memset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemset();
@@ -175,12 +175,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMSET4_0100
-     * @tc.name       : testMuslAeabiMemset4001
-     * @tc.desc       : test __aeabi_memset4
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemset4001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMSET4_0100
+     * @tc.desc   test __aeabi_memset4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemset4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemset4();
@@ -190,12 +190,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_MEMSET8_0100
-     * @tc.name       : testMuslAeabiMemset8001
-     * @tc.desc       : test __aeabi_memset8
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiMemset8001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_MEMSET8_0100
+     * @tc.desc   test __aeabi_memset8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiMemset8001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiMemset8();
@@ -205,12 +205,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AEABI_READ_TP_0100
-     * @tc.name       : testMuslAeabiReadTp001
-     * @tc.desc       : test __aeabi_read_tp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslAeabiReadTp001
+     * @tc.number SUB_THIRDPARTY_MUSL_AEABI_READ_TP_0100
+     * @tc.desc   test __aeabi_read_tp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslAeabiReadTp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.aeabiReadTp();
@@ -220,12 +220,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_PROGNAME_0100
-     * @tc.name       : testMuslProgname001
-     * @tc.desc       : test __progname
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslProgname001
+     * @tc.number SUB_THIRDPARTY_MUSL_PROGNAME_0100
+     * @tc.desc   test __progname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslProgname001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.progname();
@@ -235,12 +235,12 @@ export default function aeabiNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STACK_CHK_GUARD_0100
-     * @tc.name       : testMuslStackChkGuard001
-     * @tc.desc       : test __stack_chk_guard
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStackChkGuard001
+     * @tc.number SUB_THIRDPARTY_MUSL_STACK_CHK_GUARD_0100
+     * @tc.desc   test __stack_chk_guard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMuslStackChkGuard001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = aeabi.stackChkGuard();

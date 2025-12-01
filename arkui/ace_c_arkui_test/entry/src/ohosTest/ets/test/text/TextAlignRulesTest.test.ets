@@ -26,117 +26,117 @@ export default function textAlignRulesTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0100
-     * @tc.name       : testTextAlignRules001
-     * @tc.desc       : testing alignRules for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAlignRules001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0100
+     * @tc.desc   testing alignRules for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAlignRules001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAlignRules001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0200
-     * @tc.name       : testTextAlignRules002
-     * @tc.desc       : testing alignRules for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAlignRules002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0200
+     * @tc.desc   testing alignRules for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAlignRules002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAlignRules002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0300
-     * @tc.name       : testTextAlignRules003
-     * @tc.desc       : testing alignRules for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAlignRules003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0300
+     * @tc.desc   testing alignRules for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAlignRules003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAlignRules003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0400
-     * @tc.name       : testTextAlignRules004
-     * @tc.desc       : testing alignRules for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAlignRules004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0400
+     * @tc.desc   testing alignRules for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAlignRules004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAlignRules004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0500
-     * @tc.name       : testTextAlignRules005
-     * @tc.desc       : testing alignRules for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAlignRules005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0500
+     * @tc.desc   testing alignRules for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAlignRules005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAlignRules005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0600
-     * @tc.name       : testTextAlignRules006
-     * @tc.desc       : testing alignRules for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAlignRules006
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0600
+     * @tc.desc   testing alignRules for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAlignRules006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAlignRules006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0700
-     * @tc.name       : testTextAlignRules007
-     * @tc.desc       : testing alignRules for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAlignRules007
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0700
+     * @tc.desc   testing alignRules for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAlignRules007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAlignRules007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0800
-     * @tc.name       : testTextAlignRules008
-     * @tc.desc       : testing alignRules for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAlignRules008
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0800
+     * @tc.desc   testing alignRules for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAlignRules008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAlignRules008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0900
-     * @tc.name       : testTextAlignRules009
-     * @tc.desc       : testing alignRules for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAlignRules009
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ALIGNRULES_0900
+     * @tc.desc   testing alignRules for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAlignRules009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAlignRules009()).assertEqual(0)

@@ -35,9 +35,12 @@ class MremapApiTest : public testing::Test {
 };
 
 /**
+ * @tc.name   testSbrkZero
  * @tc.number SUB_KERNEL_MEM_SBRK_0100
- * @tc.name   sbrk function increment 0 test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MremapApiTest, testSbrkZero, Function | MediumTest | Level2)
 {
@@ -47,9 +50,12 @@ HWTEST_F(MremapApiTest, testSbrkZero, Function | MediumTest | Level2)
 }
 
 /**
+ * @tc.name   testSbrkENOMEM
  * @tc.number SUB_KERNEL_MEM_SBRK_0200
- * @tc.name   sbrk function errno for ENOMEM test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MremapApiTest, testSbrkENOMEM, Function | MediumTest | Level3)
 {
@@ -60,9 +66,12 @@ HWTEST_F(MremapApiTest, testSbrkENOMEM, Function | MediumTest | Level3)
 }
 
 /**
+ * @tc.name   testMremapAnonExpand
  * @tc.number SUB_KERNEL_MEM_MREMAP_0100
- * @tc.name   mremap function anonymous remap expand area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MremapApiTest, testMremapAnonExpand, Function | MediumTest | Level2)
 {
@@ -102,9 +111,12 @@ HWTEST_F(MremapApiTest, testMremapAnonExpand, Function | MediumTest | Level2)
 }
 
 /**
+ * @tc.name   testMremapAnonShrink
  * @tc.number SUB_KERNEL_MEM_MREMAP_0200
- * @tc.name   mremap function anonymous remap shrink area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MremapApiTest, testMremapAnonShrink, Function | MediumTest | Level3)
 {
@@ -140,9 +152,12 @@ HWTEST_F(MremapApiTest, testMremapAnonShrink, Function | MediumTest | Level3)
 }
 
 /**
+ * @tc.name   testMremapAnonExpandFixAddr
  * @tc.number SUB_KERNEL_MEM_MREMAP_0300
- * @tc.name   mremap function anonymous remap and expand area to fix address test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MremapApiTest, testMremapAnonExpandFixAddr, Function | MediumTest | Level3)
 {
@@ -184,9 +199,12 @@ HWTEST_F(MremapApiTest, testMremapAnonExpandFixAddr, Function | MediumTest | Lev
 }
 
 /**
+ * @tc.name   testMremapAnonShrinkFixAddr
  * @tc.number SUB_KERNEL_MEM_MREMAP_0400
- * @tc.name   mremap function anonymous remap and shrink area to fix address test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MremapApiTest, testMremapAnonShrinkFixAddr, Function | MediumTest | Level3)
 {
@@ -224,9 +242,12 @@ HWTEST_F(MremapApiTest, testMremapAnonShrinkFixAddr, Function | MediumTest | Lev
 }
 
 /**
+ * @tc.name   testMremapFileExpand
  * @tc.number SUB_KERNEL_MEM_MREMAP_0500
- * @tc.name   mremap function file remap expand area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MremapApiTest, testMremapFileExpand, Function | MediumTest | Level2)
 {
@@ -276,9 +297,12 @@ HWTEST_F(MremapApiTest, testMremapFileExpand, Function | MediumTest | Level2)
 }
 
 /**
+ * @tc.name   testMremapFileShrink
  * @tc.number SUB_KERNEL_MEM_MREMAP_0600
- * @tc.name   mremap function file remap shrink area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MremapApiTest, testMremapFileShrink, Function | MediumTest | Level3)
 {
@@ -326,9 +350,12 @@ HWTEST_F(MremapApiTest, testMremapFileShrink, Function | MediumTest | Level3)
 }
 
 /**
+ * @tc.name   testMremapFileExpandFixAddr
  * @tc.number SUB_KERNEL_MEM_MREMAP_0700
- * @tc.name   mremap function file remap and expand area to fix address test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MremapApiTest, testMremapFileExpandFixAddr, Function | MediumTest | Level3)
 {
@@ -381,9 +408,12 @@ HWTEST_F(MremapApiTest, testMremapFileExpandFixAddr, Function | MediumTest | Lev
 }
 
 /**
+ * @tc.name   testMremapFileShrinkFixAddr
  * @tc.number SUB_KERNEL_MEM_MREMAP_0800
- * @tc.name   mremap function file remap and shrink area to fix address test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MremapApiTest, testMremapFileShrinkFixAddr, Function | MediumTest | Level3)
 {
@@ -435,9 +465,12 @@ HWTEST_F(MremapApiTest, testMremapFileShrinkFixAddr, Function | MediumTest | Lev
 }
 
 /**
+ * @tc.name   testMremapEINVAL
  * @tc.number SUB_KERNEL_MEM_MREMAP_0900
- * @tc.name   mremap function errno for EINVAL test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(MremapApiTest, testMremapEINVAL, Function | MediumTest | Level4)
 {

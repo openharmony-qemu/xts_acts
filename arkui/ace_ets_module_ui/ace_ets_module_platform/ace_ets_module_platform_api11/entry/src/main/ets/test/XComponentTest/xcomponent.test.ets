@@ -45,10 +45,13 @@ export default function xcomponentGetXComponentContextJsunit() {
       console.info("xcomponentGetXComponentContext after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-     * @tc.name         testxcomponentGetXComponentContext0010
-     * @tc.desic         acexcomponentGetXComponentContextEtsTest0010
+    /**
+     * @tc.name   testxcomponentGetXComponentContext0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0009
+     * @tc.desc   testxcomponentGetXComponentContext0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testxcomponentGetXComponentContext0010', Level.LEVEL1, async () => {
       console.info('xcomponentGetXComponentContext testxcomponentGetXComponentContext0010 START');
@@ -73,10 +76,13 @@ export default function xcomponentGetXComponentContextJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         testxcomponentSetXComponentSurfaceSize0001
-     * @tc.desic         acexcomponentSetXComponentSurfaceSizeEtsTest0001
+    /**
+     * @tc.name   testxcomponentSetXComponentSurfaceSize0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   testxcomponentSetXComponentSurfaceSize0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testxcomponentSetXComponentSurfaceSize0001', Level.LEVEL1, async () => {
       console.info('xcomponentSetXComponentContext testxcomponentSetXComponentSurfaceSize0001 START');
@@ -92,10 +98,13 @@ export default function xcomponentGetXComponentContextJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         testxcomponentSetXComponentSurfaceSize0002
-     * @tc.desic         acexcomponentSetXComponentSurfaceSizeEtsTest0002
+    /**
+     * @tc.name   testxcomponentSetXComponentSurfaceSize0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   testxcomponentSetXComponentSurfaceSize0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testxcomponentSetXComponentSurfaceSize0002', Level.LEVEL1, async () => {
       console.info('xcomponentSetXComponentContext testxcomponentSetXComponentSurfaceSize0002 START');

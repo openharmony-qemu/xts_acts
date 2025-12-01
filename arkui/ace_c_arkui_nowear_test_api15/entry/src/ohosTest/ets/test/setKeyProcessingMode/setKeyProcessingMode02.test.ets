@@ -25,15 +25,15 @@ export default function setKeyProcessingMode02(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0100
-     * @tc.name       : setKeyProcessingMode02001
-     * @tc.desc       : Setting Out-of-focus
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   setKeyProcessingMode001
+     * @tc.number setKeyProcessingMode001
+     * @tc.desc   setKeyProcessingMode001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('setKeyProcessingMode001',  Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'setKeyProcessingMode02';
       await Utils.pushPage(`setKeyProcessingMode/${PAGE_TAG}`);

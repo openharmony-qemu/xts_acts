@@ -47,12 +47,12 @@ export default function BuilderNodeIsDisposedTest() {
     });
 
     /**
-     * @tc.number    BuilderNodeIsDisposedTest_0100
-     * @tc.name      BuilderNodeIsDisposedTest_0100
-     * @tc.desc      frameNode: BuilderNode isDisposed Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BuilderNodeIsDisposedTest_0100
+     * @tc.number BuilderNodeIsDisposedTest_0100
+     * @tc.desc   frameNode: BuilderNode isDisposed Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuilderNodeIsDisposedTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('BuilderNodeIsDisposedTest_0100 START');

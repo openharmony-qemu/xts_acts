@@ -38,13 +38,13 @@ export default function webJsunit() {
       console.info('web beforeEach start');
     })
 
-    /*
-  * @tc.number : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_CREATEPDF_001
-  * @tc.name : SavePDFStatic
-  * @tc.desc : get createPdf
-  * @tc.size : MediumTest
-  * @tc.type : Function
-  * @tc.level : Level 3
+    /**
+     * @tc.name   SavePDFStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_CREATEPDF_001
+     * @tc.desc   get createPdf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SavePDFStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       emitKey = 'emitSavePDF';
@@ -57,14 +57,14 @@ export default function webJsunit() {
       done();
     })
 
-    /*
- * @tc.number : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_CREATEPDF_002
- * @tc.name : SavePDF1Static
- * @tc.desc : get createPdf
- * @tc.size : MediumTest
- * @tc.type : Function
- * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   SavePDF1Static
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_CREATEPDF_002
+     * @tc.desc   get createPdf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SavePDF1Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       emitKey = 'emitSavePDF1';
       Utils.emitEvent(emitKey, 10)

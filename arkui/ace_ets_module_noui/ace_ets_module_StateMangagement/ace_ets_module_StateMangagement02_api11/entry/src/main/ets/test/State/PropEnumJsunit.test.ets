@@ -64,6 +64,14 @@ export default function PropEnumJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+    /**
+     * @tc.name   PropEnumJsunit_0200
+     * @tc.number PropEnumJsunit_0200
+     * @tc.desc   PropEnumJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropEnumJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropEnumJsunit_0200 START');
@@ -87,6 +95,14 @@ export default function PropEnumJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropEnumJsunit_0400
+     * @tc.number PropEnumJsunit_0400
+     * @tc.desc   PropEnumJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropEnumJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropEnumJsunit_0400 START');

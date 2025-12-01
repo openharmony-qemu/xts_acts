@@ -45,12 +45,12 @@ export default function SwiperInterface02() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300
      * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300
-     * @tc.name SWIPER_INTERFACE_1300
-     * @tc.desc show Curves.springCurve
-     * @tc.level Level 3
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   show Curves.springCurve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300 START");
@@ -63,12 +63,12 @@ export default function SwiperInterface02() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310
      * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310
-     * @tc.name SWIPER_INTERFACE_1310
-     * @tc.desc show responsive-spring-motion
-     * @tc.level Level 3
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   show responsive-spring-motion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310 START");
@@ -81,12 +81,12 @@ export default function SwiperInterface02() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320
      * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320
-     * @tc.name SWIPER_INTERFACE_1320
-     * @tc.desc show steps
-     * @tc.level Level 3
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   show steps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320 START");

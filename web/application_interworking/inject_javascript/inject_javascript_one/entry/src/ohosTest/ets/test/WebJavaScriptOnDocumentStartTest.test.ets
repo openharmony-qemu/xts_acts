@@ -15,11 +15,13 @@
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function webJavaScriptOnDocumentStartTest() {
 
@@ -41,7 +43,7 @@ export default function webJavaScriptOnDocumentStartTest() {
       } catch (err) {
         console.error('push WebJavaScriptOnDocumentStartTest page error: ' + err);
       }
-      await waitForComponent("WebJavaScriptOnDocumentStartTestButton");
+      await driver.waitForComponent(ON.id("WebJavaScriptOnDocumentStartTestButton"), 10000);
       done()
     });
 
@@ -55,32 +57,32 @@ export default function webJavaScriptOnDocumentStartTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0100
-    * @tc.name       : testJavaScriptOnDocumentStart001
-    * @tc.desc       : test javaScriptOnDocumentStart
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testJavaScriptOnDocumentStart001
+     * @tc.number SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0100
+     * @tc.desc   test javaScriptOnDocumentStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testJavaScriptOnDocumentStart001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testJavaScriptOnDocumentStart001", 172210)
       Utils.registerEvent("testJavaScriptOnDocumentStart001", '"Red"', 172220, done);
-      sendEventByKey('WebJavaScriptOnDocumentStartTestButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0200
-    * @tc.name       : testJavaScriptOnDocumentStart002
-    * @tc.desc       : test javaScriptOnDocumentStart
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testJavaScriptOnDocumentStart002
+     * @tc.number SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0200
+     * @tc.desc   test javaScriptOnDocumentStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testJavaScriptOnDocumentStart002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testJavaScriptOnDocumentStart002", 172210)
       Utils.registerEvent("testJavaScriptOnDocumentStart002", '"Red"', 172230, done);
-      sendEventByKey('WebJavaScriptOnDocumentStartTestButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
     })
 
   })

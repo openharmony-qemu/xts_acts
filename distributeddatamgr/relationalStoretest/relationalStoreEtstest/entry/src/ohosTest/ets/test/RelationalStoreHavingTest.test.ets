@@ -81,12 +81,12 @@ export default function relationalStoreHavingTest() {
       console.info(TAG + "*************Unit Test end*************");
     })
     /**
-     * @tc.name testHaving001
+     * @tc.name   testHaving001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0100
-     * @tc.desc having success
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   having success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHaving001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testHaving001 start *************");
@@ -110,12 +110,12 @@ export default function relationalStoreHavingTest() {
     })
 
     /**
-     * @tc.name testHaving002
+     * @tc.name   testHaving002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0200
-     * @tc.desc having success
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   having success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHaving002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testHaving002 start *************");
@@ -138,12 +138,12 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving002 end   *************");
     })
     /**
-     * @tc.name testHaving003
+     * @tc.name   testHaving003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0300
-     * @tc.desc having conditions is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   having conditions is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHaving003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testHaving003 start *************");
@@ -162,12 +162,12 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving003 end   *************");
     })
     /**
-     * @tc.name testHaving004
+     * @tc.name   testHaving004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0400
-     * @tc.desc having errcode is 14800001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   having errcode is 14800001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHaving004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testHaving004 start *************");
@@ -185,12 +185,12 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving004 end   *************");
     })
     /**
-     * @tc.name testHaving005
+     * @tc.name   testHaving005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0500
-     * @tc.desc hvaing errcode is 14800001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   hvaing errcode is 14800001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHaving005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testHaving005 start *************");
@@ -208,12 +208,12 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving005 end   *************");
     })
     /**
-     * @tc.name testHaving006
+     * @tc.name   testHaving006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0600
-     * @tc.desc having args is []
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   having args is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHaving006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testHaving006 start *************");
@@ -236,12 +236,12 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving006 end   *************");
     })
     /**
-     * @tc.name testHaving007
+     * @tc.name   testHaving007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0700
-     * @tc.desc having args is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   having args is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHaving007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testHaving007 start *************");
@@ -264,12 +264,12 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving007 end   *************");
     })
     /**
-     * @tc.name testHaving008
+     * @tc.name   testHaving008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0800
-     * @tc.desc having args is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   having args is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHaving008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testHaving008 start *************");
@@ -292,12 +292,12 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving008 end   *************");
     })
     /**
-     * @tc.name testHaving009
+     * @tc.name   testHaving009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0900
-     * @tc.desc having errcode is 14800001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   having errcode is 14800001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHaving009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testHaving009 start *************");
@@ -316,12 +316,12 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving009 end   *************");
     })
     /**
-     * @tc.name testHaving010
+     * @tc.name   testHaving010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_1000
-     * @tc.desc having errcode is 14800021
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   having errcode is 14800021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHaving010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testHaving010 start *************");

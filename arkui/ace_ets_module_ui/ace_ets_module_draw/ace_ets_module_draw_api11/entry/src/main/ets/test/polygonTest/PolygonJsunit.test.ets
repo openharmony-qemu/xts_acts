@@ -44,6 +44,14 @@ export default function polygonJsunit() {
       console.info("polygon after each called");
     });
 
+    /**
+     * @tc.name   testPolygon001
+     * @tc.number testPolygon001
+     * @tc.desc   testPolygon001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPolygon001', Level.LEVEL0, async (done: Function) => {
       console.info('[testPolygon001] START');
       await Utils.sleep(1000);

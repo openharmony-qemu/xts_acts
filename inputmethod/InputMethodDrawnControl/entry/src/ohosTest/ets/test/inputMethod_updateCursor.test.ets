@@ -82,10 +82,12 @@ export default function inputMethodTest() {
     );
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_updateCursor_Async_0100
      * @tc.number SUB_Misc_inputMethod_updateCursor_Async_0100
-     * @tc.name When calling the changeSelection interface in Async mode, the parameter cursorInfo=CursorInfo object
-     *             must be passed in
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_updateCursor_Async_0100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_updateCursor_Async_0100';
@@ -115,9 +117,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_updateCursor_Async_0600
      * @tc.number SUB_Misc_inputMethod_updateCursor_Async_0600
-     * @tc.name The input method keyboard is not bound, and the changeSelection interface is called in Async mode
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_updateCursor_Async_0600', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_updateCursor_Async_0600';
@@ -157,10 +162,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_updateCursor_Promise_0100
      * @tc.number SUB_Misc_inputMethod_updateCursor_Promise_0100
-     * @tc.name To call the changeSelection interface in Promise mode, the parameter cursorInfo=CursorInfo object
-     *             must be passed in
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_updateCursor_Promise_0100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_updateCursor_Promise_0100';
@@ -181,9 +188,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_updateCursor_Promise_0600
      * @tc.number SUB_Misc_inputMethod_updateCursor_Promise_0600
-     * @tc.name The input method keyboard is not bound, and the changeSelection interface is called in Promise mode
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_updateCursor_Promise_0600', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_updateCursor_Promise_0600';
@@ -214,9 +224,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_updateCursor_Promise_0700
      * @tc.number SUB_Misc_inputMethod_updateCursor_Promise_0700
-     * @tc.name Call the updateCursor interface in Promise mode, and pass in an invalid input parameter
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_updateCursor_Promise_0700', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_updateCursor_Promise_0700';

@@ -35,11 +35,13 @@ export default function sandboxContextTest() {
 
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2400
-     * @tc.name    SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2400
-     * @tc.desc    Verifying that non-DLP applications receive a 401 error when passing incorrect parameter types to the API
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2400
+     * @tc.number SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2400
+     * @tc.desc   Verifying that non-DLP applications receive a 401 error when passing incorrect parameter types to the API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2400', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2400';
@@ -77,11 +79,13 @@ export default function sandboxContextTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2800
-     * @tc.name    SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2800
-     * @tc.desc    Verifying that non-DLP applications receive a 401 error when passing incorrect parameter types to the API (callback)
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2800
+     * @tc.number SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2800
+     * @tc.desc   Verifying that non-DLP applications receive a 401 error when passing incorrect parameter types to the API (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2800', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_Sandbox_SupportsStartSandbox_2800';

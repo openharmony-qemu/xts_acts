@@ -43,12 +43,14 @@ export default function textArea_center() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_TextArea_Center_001
-    * @tc.name  : testSearch
-    * @tc.desc  : When textArea is in the middle, clicking on the top of the input box triggers the keyboard
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textArea_center_001
+     * @tc.number SUB_ACE_TS_COMPONENT_TextArea_Center_001
+     * @tc.desc   When textArea is in the middle, clicking on the top of the input box triggers the keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textArea_center_001', Level.LEVEL2, async (done: Function) => {
 
       console.info('[textArea_center_001] START');
@@ -81,12 +83,14 @@ export default function textArea_center() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_TextArea_Center_002
-    * @tc.name  : testSearch
-    * @tc.desc  : When textArea is in the middle, clicking on the middle of the input box triggers the keyboard
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textArea_center_002
+     * @tc.number SUB_ACE_TS_COMPONENT_TextArea_Center_002
+     * @tc.desc   When textArea is in the middle, clicking on the middle of the input box triggers the keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textArea_center_002', Level.LEVEL2, async (done: Function) => {
 
       console.info('[textArea_center_002] START');
@@ -101,7 +105,7 @@ export default function textArea_center() {
         let driver = await Driver.create();
         await CommonFunc.sleep(500);
         await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2 + vp2px(20)))
+          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) * 0.7))
         );
         await CommonFunc.sleep(1000);
 
@@ -118,12 +122,14 @@ export default function textArea_center() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_TextArea_Center_003
-    * @tc.name  : testSearch
-    * @tc.desc  : When textArea is in the middle, clicking on the bottom of the input box triggers the keyboard
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textArea_center_003
+     * @tc.number SUB_ACE_TS_COMPONENT_TextArea_Center_003
+     * @tc.desc   When textArea is in the middle, clicking on the bottom of the input box triggers the keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textArea_center_003', Level.LEVEL2, async (done: Function) => {
 
       console.info('[textArea_center_003] START');

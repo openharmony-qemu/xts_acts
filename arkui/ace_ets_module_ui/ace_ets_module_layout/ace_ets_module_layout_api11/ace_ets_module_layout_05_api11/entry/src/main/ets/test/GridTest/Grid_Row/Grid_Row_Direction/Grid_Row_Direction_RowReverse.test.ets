@@ -47,9 +47,12 @@ export default function Grid_Row_Direction_RowReverse() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowDirection_RowReverse_0100
      * @tc.number SUB_ACE_GRIDROWDIRECTIONROWREVERSE_0100
-     * @tc.name testDirectionRowReverse
-     * @tc.desc Set the Direction of GridRow to RowReverse
+     * @tc.desc   Set the Direction of GridRow to RowReverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowDirection_RowReverse_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowDirection_RowReverse_0100 START');

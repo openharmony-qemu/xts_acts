@@ -169,12 +169,12 @@ export default function Object9Test() {
     })
 
     /**
+     * @tc.name   Object9Test001
      * @tc.number SUB_BUILTINS_Object9_TEST_0100
-     * @tc.name Object9Test001
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn01_testDataPropertyDescriptor();
@@ -182,24 +182,24 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test002
      * @tc.number SUB_BUILTINS_Object9_TEST_0200
-     * @tc.name Object9Test002
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn02_testAccessorPropertyDescriptor();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object9Test003
      * @tc.number SUB_BUILTINS_Object9_TEST_0300
-     * @tc.name Object9Test003
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn03_testNonExistentOrPrototypeProperty();
@@ -207,12 +207,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test004
      * @tc.number SUB_BUILTINS_Object9_TEST_0400
-     * @tc.name Object9Test004
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn04_testNonWritableDataProperty();
@@ -220,12 +220,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test005
      * @tc.number SUB_BUILTINS_Object9_TEST_0500
-     * @tc.name Object9Test005
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn05_testNonEnumerableDataProperty();
@@ -233,12 +233,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test006
      * @tc.number SUB_BUILTINS_Object9_TEST_0600
-     * @tc.name Object9Test006
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn06_testNonConfigurableDataProperty();
@@ -246,12 +246,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test007
      * @tc.number SUB_BUILTINS_Object9_TEST_0700
-     * @tc.name Object9Test007
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn07_testAccessorOnlyGetter();
@@ -259,12 +259,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test008
      * @tc.number SUB_BUILTINS_Object9_TEST_0800
-     * @tc.name Object9Test008
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn08_testAccessorOnlySetter();
@@ -272,12 +272,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test009
      * @tc.number SUB_BUILTINS_Object9_TEST_0900
-     * @tc.name Object9Test009
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn09_testNonEnumerableAccessor();
@@ -285,12 +285,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test010
      * @tc.number SUB_BUILTINS_Object9_TEST_1000
-     * @tc.name Object9Test010
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn10_testNonConfigurableAccessor();
@@ -298,12 +298,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test011
      * @tc.number SUB_BUILTINS_Object9_TEST_1100
-     * @tc.name Object9Test011
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn11_testNullUndefinedTarget();
@@ -311,12 +311,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test013
      * @tc.number SUB_BUILTINS_Object9_TEST_1300
-     * @tc.name Object9Test013
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn13_testStringWrapperObject();
@@ -324,12 +324,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test014
      * @tc.number SUB_BUILTINS_Object9_TEST_1400
-     * @tc.name Object9Test014
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn14_testArrayIndexProperty();
@@ -337,12 +337,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test015
      * @tc.number SUB_BUILTINS_Object9_TEST_1500
-     * @tc.name Object9Test015
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn15_testArrayLengthProperty();
@@ -350,12 +350,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test016
      * @tc.number SUB_BUILTINS_Object9_TEST_1600
-     * @tc.name Object9Test016
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn16_testSymbolProperty();
@@ -363,12 +363,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test017
      * @tc.number SUB_BUILTINS_Object9_TEST_1700
-     * @tc.name Object9Test017
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn17_testNonWritableValueUnchangeable();
@@ -376,12 +376,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test019
      * @tc.number SUB_BUILTINS_Object9_TEST_1900
-     * @tc.name Object9Test019
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn19_testAccessorDependsExternalVar();
@@ -389,12 +389,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test020
      * @tc.number SUB_BUILTINS_Object9_TEST_2000
-     * @tc.name Object9Test020
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn20_testEmptyValueDataProperty();
@@ -402,12 +402,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test021
      * @tc.number SUB_BUILTINS_Object9_TEST_2100
-     * @tc.name Object9Test021
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn21_testFunctionPrototypeDescriptor();
@@ -415,12 +415,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test022
      * @tc.number SUB_BUILTINS_Object9_TEST_2200
-     * @tc.name Object9Test022
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn22_testObjectPrototypeToString();
@@ -428,12 +428,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test023
      * @tc.number SUB_BUILTINS_Object9_TEST_2300
-     * @tc.name Object9Test023
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn23_testNonEnumerableInForIn();
@@ -441,12 +441,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test024
      * @tc.number SUB_BUILTINS_Object9_TEST_2400
-     * @tc.name Object9Test024
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn24_testConfigurablePropertyDeletable();
@@ -454,12 +454,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test025
      * @tc.number SUB_BUILTINS_Object9_TEST_2500
-     * @tc.name Object9Test025
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn25_testAccessorSetterModifyExternal();
@@ -467,12 +467,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test026
      * @tc.number SUB_BUILTINS_Object9_TEST_2600
-     * @tc.name Object9Test026
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn26_testNumberPrimitiveAutoWrap();
@@ -480,12 +480,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test028
      * @tc.number SUB_BUILTINS_Object9_TEST_2800
-     * @tc.name Object9Test028
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn28_testOwnVsPrototypeSameName();
@@ -493,12 +493,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test029
      * @tc.number SUB_BUILTINS_Object9_TEST_2900
-     * @tc.name Object9Test029
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn29_testNonConfigurableAccessorNoModify();
@@ -506,24 +506,24 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test030
      * @tc.number SUB_BUILTINS_Object9_TEST_3000
-     * @tc.name Object9Test030
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn30_testAccessorWritableUndefined();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object9Test031
      * @tc.number SUB_BUILTINS_Object9_TEST_3100
-     * @tc.name Object9Test031
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn31_testEmptyObjectNonExistentProp();
@@ -531,12 +531,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test033
      * @tc.number SUB_BUILTINS_Object9_TEST_3300
-     * @tc.name Object9Test033
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn33_testObjectCreateOwnProp();
@@ -544,12 +544,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test034
      * @tc.number SUB_BUILTINS_Object9_TEST_3400
-     * @tc.name Object9Test034
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn34_testNonWritableNonConfigurableValue();
@@ -557,12 +557,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test036
      * @tc.number SUB_BUILTINS_Object9_TEST_3600
-     * @tc.name Object9Test036
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn36_testDefinePropertiesSingleDescriptor();
@@ -570,12 +570,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test038
      * @tc.number SUB_BUILTINS_Object9_TEST_3800
-     * @tc.name Object9Test038
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn38_testNonConfigurableCannotChangeEnumerable();
@@ -583,12 +583,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test039
      * @tc.number SUB_BUILTINS_Object9_TEST_3900
-     * @tc.name Object9Test039
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn39_testSymbolIteratorPropertyDescriptor();
@@ -596,12 +596,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test040
      * @tc.number SUB_BUILTINS_Object9_TEST_4000
-     * @tc.name Object9Test040
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn40_testWeakSetNoOwnEnumerableProps();
@@ -609,12 +609,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test041
      * @tc.number SUB_BUILTINS_Object9_TEST_4100
-     * @tc.name Object9Test041
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn41_testClassInstancePropDescriptor();
@@ -622,12 +622,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test043
      * @tc.number SUB_BUILTINS_Object9_TEST_4300
-     * @tc.name Object9Test043
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn43_testNonConfigurableCannotChangeConfigurable();
@@ -635,12 +635,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test044
      * @tc.number SUB_BUILTINS_Object9_TEST_4400
-     * @tc.name Object9Test044
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn44_testStringPrimitiveLengthDescriptor();
@@ -648,12 +648,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test045
      * @tc.number SUB_BUILTINS_Object9_TEST_4500
-     * @tc.name Object9Test045
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn45_testClassStaticPropDescriptor();
@@ -661,12 +661,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test046
      * @tc.number SUB_BUILTINS_Object9_TEST_4600
-     * @tc.name Object9Test046
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn46_testArrayPrototypePushDescriptor();
@@ -674,12 +674,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test047
      * @tc.number SUB_BUILTINS_Object9_TEST_4700
-     * @tc.name Object9Test047
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn47_testAccessorNoWritableConcept();
@@ -687,12 +687,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test048
      * @tc.number SUB_BUILTINS_Object9_TEST_4800
-     * @tc.name Object9Test048
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn48_testWeakMapNoOwnProps();
@@ -700,12 +700,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test049
      * @tc.number SUB_BUILTINS_Object9_TEST_4900
-     * @tc.name Object9Test049
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn49_testObjectAssignPropDescriptor();
@@ -713,12 +713,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test050
      * @tc.number SUB_BUILTINS_Object9_TEST_5000
-     * @tc.name Object9Test050
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn50_testRegExpLastIndexDescriptor();
@@ -726,12 +726,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test051
      * @tc.number SUB_BUILTINS_Object9_TEST_5100
-     * @tc.name Object9Test051
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn51_testFunctionNameDescriptor();
@@ -739,12 +739,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test052
      * @tc.number SUB_BUILTINS_Object9_TEST_5200
-     * @tc.name Object9Test052
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn52_testConfigurableAccessorModifySetter();
@@ -752,12 +752,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test053
      * @tc.number SUB_BUILTINS_Object9_TEST_5300
-     * @tc.name Object9Test053
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn53_testArrayHoleDescriptor();
@@ -765,12 +765,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test055
      * @tc.number SUB_BUILTINS_Object9_TEST_5500
-     * @tc.name Object9Test055
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn55_testSymbolNonEnumerableProp();
@@ -778,12 +778,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test056
      * @tc.number SUB_BUILTINS_Object9_TEST_5600
-     * @tc.name Object9Test056
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn56_testNonWritableStrictModeError();
@@ -791,12 +791,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test057
      * @tc.number SUB_BUILTINS_Object9_TEST_5700
-     * @tc.name Object9Test057
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn57_testClassProtoMethodDescriptor();
@@ -804,12 +804,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test059
      * @tc.number SUB_BUILTINS_Object9_TEST_5900
-     * @tc.name Object9Test059
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn59_testDescriptorValueNull();
@@ -817,12 +817,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test060
      * @tc.number SUB_BUILTINS_Object9_TEST_6000
-     * @tc.name Object9Test060
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn60_testConfigurableDataToAccessor();
@@ -830,12 +830,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test062
      * @tc.number SUB_BUILTINS_Object9_TEST_6200
-     * @tc.name Object9Test062
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn62_testClassStaticMethodDescriptor();
@@ -843,12 +843,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test063
      * @tc.number SUB_BUILTINS_Object9_TEST_6300
-     * @tc.name Object9Test063
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn63_testArrayPrototypePopDescriptor();
@@ -856,12 +856,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test067
      * @tc.number SUB_BUILTINS_Object9_TEST_6700
-     * @tc.name Object9Test067
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn67_testConfigurableDataModifyValue();
@@ -869,12 +869,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test069
      * @tc.number SUB_BUILTINS_Object9_TEST_6900
-     * @tc.name Object9Test069
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn69_testSymbolConfigurableAccessor();
@@ -882,12 +882,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test071
      * @tc.number SUB_BUILTINS_Object9_TEST_7100
-     * @tc.name Object9Test071
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn71_testNonEnumerableNotInObjectKeys();
@@ -895,12 +895,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test072
      * @tc.number SUB_BUILTINS_Object9_TEST_7200
-     * @tc.name Object9Test072
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn72_testFunctionLengthDescriptor();
@@ -908,12 +908,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test074
      * @tc.number SUB_BUILTINS_Object9_TEST_7400
-     * @tc.name Object9Test074
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn74_testConfigurableAccessorModifyEnumerable();
@@ -921,12 +921,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test076
      * @tc.number SUB_BUILTINS_Object9_TEST_7600
-     * @tc.name Object9Test076
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn76_testConfigurablePropDeletable();
@@ -934,12 +934,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test078
      * @tc.number SUB_BUILTINS_Object9_TEST_7800
-     * @tc.name Object9Test078
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn78_testArrayNonIndexOwnProp();
@@ -947,12 +947,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test080
      * @tc.number SUB_BUILTINS_Object9_TEST_8000
-     * @tc.name Object9Test080
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn80_testConfigurableDataToNonWritable();
@@ -960,12 +960,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test082
      * @tc.number SUB_BUILTINS_Object9_TEST_8200
-     * @tc.name Object9Test082
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn82_testClassInstanceNonEnumerableProp();
@@ -973,12 +973,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test084
      * @tc.number SUB_BUILTINS_Object9_TEST_8400
-     * @tc.name Object9Test084
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn84_testNonConfigurableDataToAccessor();
@@ -986,12 +986,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test087
      * @tc.number SUB_BUILTINS_Object9_TEST_8700
-     * @tc.name Object9Test087
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn87_testConfigurableAccessorDeletable();
@@ -999,12 +999,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test090
      * @tc.number SUB_BUILTINS_Object9_TEST_9000
-     * @tc.name Object9Test090
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn90_testNonEnumerableAccessorInGetOwnNames();
@@ -1012,12 +1012,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test092
      * @tc.number SUB_BUILTINS_Object9_TEST_9200
-     * @tc.name Object9Test092
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn92_testClassPrivateFieldDescriptor();
@@ -1025,12 +1025,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test093
      * @tc.number SUB_BUILTINS_Object9_TEST_9300
-     * @tc.name Object9Test093
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn93_testArrayPrototypeShiftDescriptor();
@@ -1038,12 +1038,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test094
      * @tc.number SUB_BUILTINS_Object9_TEST_9400
-     * @tc.name Object9Test094
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn94_testNonConfigurableAfterFreeze();
@@ -1051,12 +1051,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test097
      * @tc.number SUB_BUILTINS_Object9_TEST_9700
-     * @tc.name Object9Test097
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn97_testConfigurableDataModifyEnumerable();
@@ -1064,12 +1064,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test099
      * @tc.number SUB_BUILTINS_Object9_TEST_9900
-     * @tc.name Object9Test099
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn99_testSymbolNonConfigurableData();
@@ -1077,12 +1077,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test101
      * @tc.number SUB_BUILTINS_Object9_TEST_10100
-     * @tc.name Object9Test101
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn101_testNonEnumerableNotInObjectValues();
@@ -1090,12 +1090,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test102
      * @tc.number SUB_BUILTINS_Object9_TEST_10200
-     * @tc.name Object9Test102
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn102_testArrowFunctionNameDescriptor();
@@ -1103,12 +1103,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test104
      * @tc.number SUB_BUILTINS_Object9_TEST_10400
-     * @tc.name Object9Test104
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn104_testConfigurableAccessorModifyConfigurable();
@@ -1116,12 +1116,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test106
      * @tc.number SUB_BUILTINS_Object9_TEST_10600
-     * @tc.name Object9Test106
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn106_testDescriptorValueNaN();
@@ -1129,12 +1129,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test108
      * @tc.number SUB_BUILTINS_Object9_TEST_10800
-     * @tc.name Object9Test108
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn108_testArraySymbolOwnProp();
@@ -1142,12 +1142,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test110
      * @tc.number SUB_BUILTINS_Object9_TEST_11000
-     * @tc.name Object9Test110
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn110_testConfigurableToNonConfigurable();
@@ -1155,12 +1155,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test112
      * @tc.number SUB_BUILTINS_Object9_TEST_11200
-     * @tc.name Object9Test112
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn112_testClassInstanceWritableAccessor();
@@ -1168,12 +1168,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test114
      * @tc.number SUB_BUILTINS_Object9_TEST_11400
-     * @tc.name Object9Test114
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn114_testNonConfigurableAccessorStrictMode();
@@ -1181,12 +1181,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test117
      * @tc.number SUB_BUILTINS_Object9_TEST_11700
-     * @tc.name Object9Test117
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn117_testConfigurableAccessorDeleteAndRedefine();
@@ -1194,12 +1194,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test120
      * @tc.number SUB_BUILTINS_Object9_TEST_12000
-     * @tc.name Object9Test120
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn120_testNonEnumerableInGetOwnDescriptors();
@@ -1207,12 +1207,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test122
      * @tc.number SUB_BUILTINS_Object9_TEST_12200
-     * @tc.name Object9Test122
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn122_testConfigurableToNonEnumerable();
@@ -1220,12 +1220,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test123
      * @tc.number SUB_BUILTINS_Object9_TEST_12300
-     * @tc.name Object9Test123
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn123_testArrayPrototypeUnshiftDescriptor();
@@ -1233,12 +1233,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test124
      * @tc.number SUB_BUILTINS_Object9_TEST_12400
-     * @tc.name Object9Test124
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn124_testFrozenObjectNonConfigurable();
@@ -1246,12 +1246,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test127
      * @tc.number SUB_BUILTINS_Object9_TEST_12700
-     * @tc.name Object9Test127
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn127_testDescriptorValueInfinity();
@@ -1259,12 +1259,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test129
      * @tc.number SUB_BUILTINS_Object9_TEST_12900
-     * @tc.name Object9Test129
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn129_testSymbolEnumerableAccessor();
@@ -1272,12 +1272,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test131
      * @tc.number SUB_BUILTINS_Object9_TEST_13100
-     * @tc.name Object9Test131
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn131_testNonEnumerableNotInObjectEntries();
@@ -1285,12 +1285,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test132
      * @tc.number SUB_BUILTINS_Object9_TEST_13200
-     * @tc.name Object9Test132
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn132_testBoundFunctionNameDescriptor();
@@ -1298,12 +1298,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test136
      * @tc.number SUB_BUILTINS_Object9_TEST_13600
-     * @tc.name Object9Test136
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn136_testDescriptorValueNegativeInfinity();
@@ -1311,12 +1311,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test138
      * @tc.number SUB_BUILTINS_Object9_TEST_13800
-     * @tc.name Object9Test138
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn138_testArraySymbolSpeciesDescriptor();
@@ -1324,12 +1324,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test140
      * @tc.number SUB_BUILTINS_Object9_TEST_14000
-     * @tc.name Object9Test140
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn140_testConfigurableToNonConfigurableValue();
@@ -1337,12 +1337,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test142
      * @tc.number SUB_BUILTINS_Object9_TEST_14200
-     * @tc.name Object9Test142
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn142_testClassPrototypeMethodDescriptor();
@@ -1350,12 +1350,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test144
      * @tc.number SUB_BUILTINS_Object9_TEST_14400
-     * @tc.name Object9Test144
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn144_testNonConfigurableAccessorDeleteStrict();
@@ -1363,12 +1363,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test147
      * @tc.number SUB_BUILTINS_Object9_TEST_14700
-     * @tc.name Object9Test147
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn147_testAccessorDeleteRedefineData();
@@ -1376,24 +1376,24 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test150
      * @tc.number SUB_BUILTINS_Object9_TEST_15000
-     * @tc.name Object9Test150
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn150_testNonEnumerableNotInStringify();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object9Test151
      * @tc.number SUB_BUILTINS_Object9_TEST_15100
-     * @tc.name Object9Test151
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn151_testErrorMessageDescriptor();
@@ -1401,12 +1401,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test153
      * @tc.number SUB_BUILTINS_Object9_TEST_15300
-     * @tc.name Object9Test153
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn153_testArrayPrototypeSliceDescriptor();
@@ -1414,12 +1414,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test154
      * @tc.number SUB_BUILTINS_Object9_TEST_15400
-     * @tc.name Object9Test154
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn154_testSealedObjectProperty();
@@ -1427,12 +1427,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test157
      * @tc.number SUB_BUILTINS_Object9_TEST_15700
-     * @tc.name Object9Test157
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn157_testDescriptorValueFunction();
@@ -1440,12 +1440,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test161
      * @tc.number SUB_BUILTINS_Object9_TEST_16100
-     * @tc.name Object9Test161
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn161_testNonEnumerableInGetOwnSymbols();
@@ -1453,12 +1453,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test162
      * @tc.number SUB_BUILTINS_Object9_TEST_16200
-     * @tc.name Object9Test162
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn162_testGeneratorFunctionNameDescriptor();
@@ -1466,12 +1466,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test164
      * @tc.number SUB_BUILTINS_Object9_TEST_16400
-     * @tc.name Object9Test164
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn164_testAccessorToNonEnumerable();
@@ -1479,12 +1479,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test166
      * @tc.number SUB_BUILTINS_Object9_TEST_16600
-     * @tc.name Object9Test166
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn166_testDescriptorValueObject();
@@ -1492,12 +1492,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test170
      * @tc.number SUB_BUILTINS_Object9_TEST_17000
-     * @tc.name Object9Test170
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn170_testNonConfigurableWritableValue();
@@ -1505,12 +1505,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test172
      * @tc.number SUB_BUILTINS_Object9_TEST_17200
-     * @tc.name Object9Test172
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn172_testClassStaticAccessorDescriptor();
@@ -1518,12 +1518,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test177
      * @tc.number SUB_BUILTINS_Object9_TEST_17700
-     * @tc.name Object9Test177
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn177_testAccessorRedefineAsNonWritableData();
@@ -1531,12 +1531,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test180
      * @tc.number SUB_BUILTINS_Object9_TEST_18000
-     * @tc.name Object9Test180
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn180_testNonEnumerableNotInObjectAssign();
@@ -1544,12 +1544,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test182
      * @tc.number SUB_BUILTINS_Object9_TEST_18200
-     * @tc.name Object9Test182
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn182_testNonWritableStrictModeThrow();
@@ -1557,12 +1557,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test183
      * @tc.number SUB_BUILTINS_Object9_TEST_18300
-     * @tc.name Object9Test183
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn183_testArrayPrototypeFilterDescriptor();
@@ -1570,12 +1570,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test184
      * @tc.number SUB_BUILTINS_Object9_TEST_18400
-     * @tc.name Object9Test184
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn184_testFrozenAccessorProperty();
@@ -1583,12 +1583,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test187
      * @tc.number SUB_BUILTINS_Object9_TEST_18700
-     * @tc.name Object9Test187
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn187_testDescriptorValueArray();
@@ -1596,12 +1596,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test189
      * @tc.number SUB_BUILTINS_Object9_TEST_18900
-     * @tc.name Object9Test189
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn189_testSymbolNonConfigurableAccessor();
@@ -1609,12 +1609,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test191
      * @tc.number SUB_BUILTINS_Object9_TEST_19100
-     * @tc.name Object9Test191
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn191_testNonEnumerableSymbolInGetOwnSymbols();
@@ -1622,12 +1622,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test192
      * @tc.number SUB_BUILTINS_Object9_TEST_19200
-     * @tc.name Object9Test192
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn192_testAsyncFunctionNameDescriptor();
@@ -1635,12 +1635,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test193
      * @tc.number SUB_BUILTINS_Object9_TEST_19300
-     * @tc.name Object9Test193
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn193_testWeakSetPrototypeProps();
@@ -1648,12 +1648,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test194
      * @tc.number SUB_BUILTINS_Object9_TEST_19400
-     * @tc.name Object9Test194
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn194_testNonConfigurableAccessorModifyValue();
@@ -1661,12 +1661,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test196
      * @tc.number SUB_BUILTINS_Object9_TEST_19600
-     * @tc.name Object9Test196
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn196_testDescriptorValueRegExp();
@@ -1674,12 +1674,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test198
      * @tc.number SUB_BUILTINS_Object9_TEST_19800
-     * @tc.name Object9Test198
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn198_testArraySymbolIsConcatSpreadable();
@@ -1687,12 +1687,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test199
      * @tc.number SUB_BUILTINS_Object9_TEST_19900
-     * @tc.name Object9Test199
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn199_testWeakMapPrototypeProps();
@@ -1700,12 +1700,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test200
      * @tc.number SUB_BUILTINS_Object9_TEST_20000
-     * @tc.name Object9Test200
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn200_testNonConfigurableNonWritable();
@@ -1713,12 +1713,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test202
      * @tc.number SUB_BUILTINS_Object9_TEST_20200
-     * @tc.name Object9Test202
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn202_testClassPrivateMethodDescriptor();
@@ -1726,12 +1726,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test204
      * @tc.number SUB_BUILTINS_Object9_TEST_20400
-     * @tc.name Object9Test204
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn204_testNonConfigurableAccessorModifySetterStrict();
@@ -1739,12 +1739,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test207
      * @tc.number SUB_BUILTINS_Object9_TEST_20700
-     * @tc.name Object9Test207
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn207_testAccessorRedefineAsNonEnumerableData();
@@ -1752,12 +1752,12 @@ export default function Object9Test() {
     });
 
     /**
+     * @tc.name   Object9Test210
      * @tc.number SUB_BUILTINS_Object9_TEST_21000
-     * @tc.name Object9Test210
-     * @tc.desc test object getOwnPropertyNames
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object getOwnPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object9Test210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn210_testNonEnumerableInGetOwnNames();

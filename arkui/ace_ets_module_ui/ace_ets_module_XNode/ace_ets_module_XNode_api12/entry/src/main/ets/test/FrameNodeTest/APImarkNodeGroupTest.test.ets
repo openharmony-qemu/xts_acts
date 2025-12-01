@@ -40,12 +40,12 @@ export default function APImarkNodeGroupTest() {
       done();
     });
     /**
-     * @tc.number    APImarkNodeGroupTest_0100
-     * @tc.name      APImarkNodeGroupTest_0100
-     * @tc.desc      frameNode: APImarkNodeGroup
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APImarkNodeGroupTest_0100
+     * @tc.number APImarkNodeGroupTest_0100
+     * @tc.desc   frameNode: APImarkNodeGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APImarkNodeGroupTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APImarkNodeGroupTest_0100 START');

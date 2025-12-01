@@ -57,12 +57,12 @@ export default function FivePointOne_i18nStageTest() {
     });
 
     /**
-     * @tc.number  SUB_GLOBAL_refinedFormat_static_0160
-     * @tc.name    SUB_GLOBAL_refinedFormat_static_0160
-     * @tc.desc    begin code same as stop code
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_static_0160
+     * @tc.number SUB_GLOBAL_refinedFormat_static_0160
+     * @tc.desc   begin code same as stop code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_static_0160', Level.LEVEL2, async (): Promise<void> => {
       let numFormat: intl.NumberFormat = new intl.NumberFormat("zh-hans-CN");
@@ -71,12 +71,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_refinedFormat_static_0170
-     * @tc.name    SUB_GLOBAL_refinedFormat_static_0170
-     * @tc.desc    normally (begin code & stop code)
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_static_0170
+     * @tc.number SUB_GLOBAL_refinedFormat_static_0170
+     * @tc.desc   normally (begin code & stop code)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_static_0170', Level.LEVEL2, async (): Promise<void> => {
       let numFormat: intl.NumberFormat = new intl.NumberFormat("zh-hans-CN");
@@ -85,12 +85,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_refinedFormat_static_0180
-     * @tc.name    SUB_GLOBAL_refinedFormat_static_0180
-     * @tc.desc    begin code with negative ,stop code with decimal
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_static_0180
+     * @tc.number SUB_GLOBAL_refinedFormat_static_0180
+     * @tc.desc   begin code with negative ,stop code with decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_static_0180', Level.LEVEL2, async (): Promise<void> => {
       let numFormat = new intl.NumberFormat("zh-hans-CN");
@@ -99,12 +99,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_refinedFormat_static_0190
-     * @tc.name    SUB_GLOBAL_refinedFormat_static_0190
-     * @tc.desc    begin code large than stop code
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.name   SUB_GLOBAL_refinedFormat_static_0190
+     * @tc.number SUB_GLOBAL_refinedFormat_static_0190
+     * @tc.desc   begin code large than stop code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GLOBAL_refinedFormat_static_0190', Level.LEVEL0, async (): Promise<void> => {
       let numFormat = new intl.NumberFormat("zh-hans-CN");
@@ -113,12 +113,12 @@ export default function FivePointOne_i18nStageTest() {
     })
     
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getTemperatureName_static_0100
-     * @tc.name    I18N_test_getTemperatureName_static_0100
-     * @tc.desc    i18n.TemperatureType.CELSIUS
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.name   I18N_test_getTemperatureName_static_0100
+     * @tc.number SUB_GLOBAL_I18N_getTemperatureName_static_0100
+     * @tc.desc   i18n.TemperatureType.CELSIUS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('I18N_test_getTemperatureName_static_0100', Level.LEVEL0, async (): Promise<void> => {
       let type = i18n.System.getTemperatureName(i18n.TemperatureType.CELSIUS);
@@ -127,12 +127,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getTemperatureName_static_0200
-     * @tc.name    I18N_test_getTemperatureName_static_0200
-     * @tc.desc    i18n.TemperatureType.FAHRENHEIT
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getTemperatureName_static_0200
+     * @tc.number SUB_GLOBAL_I18N_getTemperatureName_static_0200
+     * @tc.desc   i18n.TemperatureType.FAHRENHEIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getTemperatureName_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let type = i18n.System.getTemperatureName(i18n.TemperatureType.FAHRENHEIT);
@@ -141,12 +141,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getTemperatureName_static_0300
-     * @tc.name    I18N_test_getTemperatureName_static_0300
-     * @tc.desc    i18n.TemperatureType.KELVIN
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getTemperatureName_static_0300
+     * @tc.number SUB_GLOBAL_I18N_getTemperatureName_static_0300
+     * @tc.desc   i18n.TemperatureType.KELVIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getTemperatureName_static_0300', Level.LEVEL2, async (): Promise<void> => {
       let type = i18n.System.getTemperatureName(i18n.TemperatureType.KELVIN);
@@ -155,12 +155,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getTemperatureName_static_0400
-     * @tc.name    I18N_test_getTemperatureName_static_0400
-     * @tc.desc    input number zero
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.name   I18N_test_getTemperatureName_static_0400
+     * @tc.number SUB_GLOBAL_I18N_getTemperatureName_static_0400
+     * @tc.desc   input number zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getTemperatureName_static_0400', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -172,12 +172,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0100
-     * @tc.name    I18N_test_getSimplifiedLanguage_static_01_static_0100
-     * @tc.desc    en-GB & en-Latn-US
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 0
+     * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0100
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0100
+     * @tc.desc   en-GB & en-Latn-US
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('I18N_test_getSimplifiedLanguage_static_01_static_0100', Level.LEVEL0, async (): Promise<void> => {
       let type_one = i18n.System.getSimplifiedLanguage('en-GB');
@@ -189,12 +189,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0200
-     * @tc.name    I18N_test_getSimplifiedLanguage_static_01_static_0200
-     * @tc.desc    zh-Hant-HK & zh-Hant-TW
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0200
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0200
+     * @tc.desc   zh-Hant-HK & zh-Hant-TW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_static_01_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let type_one = i18n.System.getSimplifiedLanguage('zh-Hant-HK');
@@ -206,12 +206,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0300
-     * @tc.name    I18N_test_getSimplifiedLanguage_static_01_static_0300
-     * @tc.desc    es-ES & es-US
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0300
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0300
+     * @tc.desc   es-ES & es-US
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_static_01_static_0300', Level.LEVEL2, async (): Promise<void> => {
       let type_one = i18n.System.getSimplifiedLanguage('es-ES');
@@ -223,12 +223,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0400
-     * @tc.name    I18N_test_getSimplifiedLanguage_static_01_static_0400
-     * @tc.desc    pt-PT & pt-BR
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0400
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0400
+     * @tc.desc   pt-PT & pt-BR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_static_01_static_0400', Level.LEVEL2, async (): Promise<void> => {
       let type_one = i18n.System.getSimplifiedLanguage('pt-PT');
@@ -240,12 +240,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0500
-     * @tc.name    I18N_test_getSimplifiedLanguage_static_01_static_0500
-     * @tc.desc    en-CN & en-Test
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0500
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0500
+     * @tc.desc   en-CN & en-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_static_01_static_0500', Level.LEVEL2, async (): Promise<void> => {
       let type_one = i18n.System.getSimplifiedLanguage('en-CN');
@@ -257,12 +257,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0600
-     * @tc.name    I18N_test_getSimplifiedLanguage_static_01_static_0600
-     * @tc.desc    zh-Hant-CN & zh-Hant-Test
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0600
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0600
+     * @tc.desc   zh-Hant-CN & zh-Hant-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_static_01_static_0600', Level.LEVEL2, async (): Promise<void> => {
       let type_one = i18n.System.getSimplifiedLanguage('zh-Hant-CN');
@@ -274,12 +274,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0700
-     * @tc.name    I18N_test_getSimplifiedLanguage_static_01_static_0700
-     * @tc.desc    es-CN & es-Test
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0700
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0700
+     * @tc.desc   es-CN & es-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_static_01_static_0700', Level.LEVEL2, async (): Promise<void> => {
       let type_one = i18n.System.getSimplifiedLanguage('es-CN');
@@ -291,12 +291,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0800
-     * @tc.name    I18N_test_getSimplifiedLanguage_static_01_static_0800
-     * @tc.desc    pt-CN & pt-Test
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0800
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0800
+     * @tc.desc   pt-CN & pt-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_static_01_static_0800', Level.LEVEL2, async (): Promise<void> => {
       let type_one = i18n.System.getSimplifiedLanguage('pt-CN');
@@ -308,12 +308,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0900
-     * @tc.name    I18N_test_getSimplifiedLanguage_static_01_static_0900
-     * @tc.desc    bo-CN & bo-Test & bo-Test
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0900
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0900
+     * @tc.desc   bo-CN & bo-Test & bo-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_static_01_static_0900', Level.LEVEL2, async (): Promise<void> => {
       let type_one = i18n.System.getSimplifiedLanguage('bo-CN');
@@ -328,12 +328,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_1000
-     * @tc.name    I18N_test_getSimplifiedLanguage_static_01_static_1000
-     * @tc.desc    pt-CN & pt-Test
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_1000
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_1000
+     * @tc.desc   pt-CN & pt-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getSimplifiedLanguage_static_01_static_1000', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -346,12 +346,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_refinedFormat_static_0310
-     * @tc.name    SUB_GLOBAL_refinedFormat_static_0310
-     * @tc.desc    maximumFractionDigits: 2 & maximumSignificantDigits: 6 & roundingPriority: "lessPrecision"
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_static_0310
+     * @tc.number SUB_GLOBAL_refinedFormat_static_0310
+     * @tc.desc   maximumFractionDigits: 2 & maximumSignificantDigits: 6 & roundingPriority: "lessPrecision"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_static_0310', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let numOptions: intl.NumberOptions = {
@@ -365,12 +365,12 @@ export default function FivePointOne_i18nStageTest() {
     })
     
     /**
-     * @tc.number  SUB_GLOBAL_refinedFormat_static_0320
-     * @tc.name    SUB_GLOBAL_refinedFormat_static_0320
-     * @tc.desc    maximumFractionDigits: 2 & roundingIncrement: 1
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_static_0320
+     * @tc.number SUB_GLOBAL_refinedFormat_static_0320
+     * @tc.desc   maximumFractionDigits: 2 & roundingIncrement: 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GLOBAL_refinedFormat_static_0320', Level.LEVEL0, async (): Promise<void> => {
       let numOptions: intl.NumberOptions = {
@@ -382,12 +382,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_FilePathMirroring_static_0100
-     * @tc.name    SUB_GLOBAL_FilePathMirroring_static_0100
-     * @tc.desc    path /data/out/tmp & delimiter /
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_GLOBAL_FilePathMirroring_static_0100
+     * @tc.number SUB_GLOBAL_FilePathMirroring_static_0100
+     * @tc.desc   path /data/out/tmp & delimiter /
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_FilePathMirroring_static_0100', Level.LEVEL2, async (): Promise<void> => {
       let path: string = "/data/out/tmp";
@@ -398,13 +398,13 @@ export default function FivePointOne_i18nStageTest() {
       expect(flag).assertTrue();
     })
 
-     /**
-     * @tc.number  SUB_GLOBAL_refinedFormat_static_0020
-     * @tc.name    SUB_GLOBAL_refinedFormat_static_0020
-     * @tc.desc    Date(2024, 11, 13, 6, 30, 25) & 'y'/'M'/'d' 'h':'m':'s'
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+    /**
+     * @tc.name   SUB_GLOBAL_refinedFormat_static_0020
+     * @tc.number SUB_GLOBAL_refinedFormat_static_0020
+     * @tc.desc   Date(2024, 11, 13, 6, 30, 25) & 'y'/'M'/'d' 'h':'m':'s'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_static_0020', Level.LEVEL2, async (): Promise<void> => {
       let locale: Intl.Locale = new Intl.Locale("zh-Hans-CN");
@@ -416,12 +416,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_refinedFormat_static_0630
-     * @tc.name    SUB_GLOBAL_refinedFormat_static_0630
-     * @tc.desc    roundingMode: "halfExpand" & maximumSignificantDigits: 5
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_static_0630
+     * @tc.number SUB_GLOBAL_refinedFormat_static_0630
+     * @tc.desc   roundingMode: "halfExpand" & maximumSignificantDigits: 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GLOBAL_refinedFormat_static_0630', Level.LEVEL0,  async (done: () => void): Promise<void> => {
       let numOptions: intl.NumberOptions = {
@@ -435,12 +435,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_refinedFormat_static_0790
-     * @tc.name    SUB_GLOBAL_refinedFormat_static_0790
-     * @tc.desc    skeletonFormat (1230000) & getSimpleNumberFormatBySkeleton "engineering/sign-always"
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_static_0790
+     * @tc.number SUB_GLOBAL_refinedFormat_static_0790
+     * @tc.desc   skeletonFormat (1230000) & getSimpleNumberFormatBySkeleton "engineering/sign-always"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_static_0790', Level.LEVEL2, async (): Promise<void> => {
       let locale: Intl.Locale = new Intl.Locale("zh-Hans-CN");
@@ -451,12 +451,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_refinedFormat_static_008
-     * @tc.name    SUB_GLOBAL_refinedFormat_static_008
-     * @tc.desc    local is CN
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_static_008
+     * @tc.number SUB_GLOBAL_refinedFormat_static_008
+     * @tc.desc   local is CN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_static_008', Level.LEVEL2, async (): Promise<void> => {
       let locale: Intl.Locale = new Intl.Locale("zh-Hans-CN");
@@ -467,12 +467,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getSimplifiedLanguage_static_01_static_1010
-     * @tc.name    I18N_test_getSimplifiedLanguage_static_01_static_1010
-     * @tc.desc    no param
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_1010
+     * @tc.number I18N_test_getSimplifiedLanguage_static_01_static_1010
+     * @tc.desc   no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_static_01_static_1010', Level.LEVEL2, async (): Promise<void> => {
       let type_one = i18n.System.getSimplifiedLanguage();
@@ -481,12 +481,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getTemperatureType_static_0100
-     * @tc.name    I18N_test_getTemperatureType_static_0100
-     * @tc.desc    no param
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getTemperatureType_static_0100
+     * @tc.number I18N_test_getTemperatureType_static_0100
+     * @tc.desc   no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getTemperatureType_static_0100', Level.LEVEL2, async (): Promise<void> => {
       let type: i18n.TemperatureType = i18n.System.getTemperatureType();
@@ -495,12 +495,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getFirstDayOfWeek_static_0100
-     * @tc.name    I18N_test_getFirstDayOfWeek_static_0100
-     * @tc.desc    no param
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getFirstDayOfWeek_static_0100
+     * @tc.number I18N_test_getFirstDayOfWeek_static_0100
+     * @tc.desc   no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getFirstDayOfWeek_static_0100', Level.LEVEL2, async (): Promise<void> => {
       let type = i18n.System.getFirstDayOfWeek();
@@ -509,12 +509,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getUnicodeWrappedFilePath_static_0100
-     * @tc.name    I18N_test_getUnicodeWrappedFilePath_static_0100
-     * @tc.desc    890001
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.name   I18N_test_getUnicodeWrappedFilePath_static_0100
+     * @tc.number I18N_test_getUnicodeWrappedFilePath_static_0100
+     * @tc.desc   890001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getUnicodeWrappedFilePath_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -529,12 +529,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getUnicodeWrappedFilePath_static_0200
-     * @tc.name    I18N_test_getUnicodeWrappedFilePath_static_0200
-     * @tc.desc    path & delimiter
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getUnicodeWrappedFilePath_static_0200
+     * @tc.number I18N_test_getUnicodeWrappedFilePath_static_0200
+     * @tc.desc   path & delimiter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getUnicodeWrappedFilePath_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let path: string = "/data/out/tmp";
@@ -545,12 +545,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getUnicodeWrappedFilePath_static_0300
-     * @tc.name    I18N_test_getUnicodeWrappedFilePath_static_0300
-     * @tc.desc    path
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getUnicodeWrappedFilePath_static_0300
+     * @tc.number I18N_test_getUnicodeWrappedFilePath_static_0300
+     * @tc.desc   path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getUnicodeWrappedFilePath_static_0300', Level.LEVEL2, async (): Promise<void> => {
       let path: string = "/data/out/tmp";
@@ -560,12 +560,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getSimpleDateTimeFormatByPattern_static_0100
-     * @tc.name    I18N_test_getSimpleDateTimeFormatByPattern_static_0100
-     * @tc.desc    89001
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.name   I18N_test_getSimpleDateTimeFormatByPattern_static_0100
+     * @tc.number I18N_test_getSimpleDateTimeFormatByPattern_static_0100
+     * @tc.desc   89001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getSimpleDateTimeFormatByPattern_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -578,12 +578,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getSimpleDateTimeFormatByPattern_static_0200
-     * @tc.name    I18N_test_getSimpleDateTimeFormatByPattern_static_0200
-     * @tc.desc    only date
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimpleDateTimeFormatByPattern_static_0200
+     * @tc.number I18N_test_getSimpleDateTimeFormatByPattern_static_0200
+     * @tc.desc   only date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimpleDateTimeFormatByPattern_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let date: Date = new Date(2024, 11, 13, 6, 30, 25);
@@ -595,12 +595,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getSimpleDateTimeFormatBySkeleton_static_0100
-     * @tc.name    I18N_test_getSimpleDateTimeFormatBySkeleton_static_0100
-     * @tc.desc    89001
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.name   I18N_test_getSimpleDateTimeFormatBySkeleton_static_0100
+     * @tc.number I18N_test_getSimpleDateTimeFormatBySkeleton_static_0100
+     * @tc.desc   89001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getSimpleDateTimeFormatBySkeleton_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -613,12 +613,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getSimpleDateTimeFormatBySkeleton_static_0200
-     * @tc.name    I18N_test_getSimpleDateTimeFormatBySkeleton_static_0200
-     * @tc.desc    only date
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimpleDateTimeFormatBySkeleton_static_0200
+     * @tc.number I18N_test_getSimpleDateTimeFormatBySkeleton_static_0200
+     * @tc.desc   only date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimpleDateTimeFormatBySkeleton_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let date: Date = new Date(2024, 11, 13, 6, 30, 25);
@@ -629,9 +629,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  roundingMode_test_static_0100
-     * @tc.name    roundingMode_test_static_0100
-     * @tc.desc    test roundingIncrement success
+     * @tc.name   roundingMode_test_static_0100
+     * @tc.number roundingMode_test_static_0100
+     * @tc.desc   test roundingIncrement success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("roundingMode_test_static_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TAG: string = "roundingMode";
@@ -651,9 +654,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  roundingIncrement_test_static_0100
-     * @tc.name    roundingIncrement_test_static_0100
-     * @tc.desc    test roundingIncrement success
+     * @tc.name   roundingIncrement_test_static_0100
+     * @tc.number roundingIncrement_test_static_0100
+     * @tc.desc   test roundingIncrement success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("roundingIncrement_test_static_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TAG: string = "roundingIncrement";
@@ -673,12 +679,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getSimpleNumberFormatBySkeleton_static_0100
-     * @tc.name    I18N_test_getSimpleNumberFormatBySkeleton_static_0100
-     * @tc.desc    89001
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.name   I18N_test_getSimpleNumberFormatBySkeleton_static_0100
+     * @tc.number I18N_test_getSimpleNumberFormatBySkeleton_static_0100
+     * @tc.desc   89001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getSimpleNumberFormatBySkeleton_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -691,12 +697,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number  I18N_test_getSimpleNumberFormatBySkeleton_static_0200
-     * @tc.name    I18N_test_getSimpleNumberFormatBySkeleton_static_0200
-     * @tc.desc    only skeletonFormatter
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   I18N_test_getSimpleNumberFormatBySkeleton_static_0200
+     * @tc.number I18N_test_getSimpleNumberFormatBySkeleton_static_0200
+     * @tc.desc   only skeletonFormatter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimpleNumberFormatBySkeleton_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let skeletonFormatter: i18n.SimpleNumberFormat =

@@ -44,7 +44,7 @@ async function clickMatchingButton(texts: Array<string>) {
 };
 
 async function handlePermissionPrompt() {
-  let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
+  let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), 2000);
   hilog.info(0x0000, TAG, '%{public}s',
     `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
   if (allowed) {
@@ -148,12 +148,12 @@ export default function actsStartAppCloneAppTest() {
 
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppcloneChose_0100
      * @tc.number SUB_Ability_AbilityRuntime_AppcloneChose_0100
-     * @tc.name Test start  without creating app clone
-     * @tc.desc Test startAbility while target has no app clone
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test startAbility while target has no app clone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppcloneChose_0100', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_AppcloneChose_0100';
@@ -210,12 +210,12 @@ export default function actsStartAppCloneAppTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppcloneChose_0200
      * @tc.number SUB_Ability_AbilityRuntime_AppcloneChose_0200
-     * @tc.name  Test start  without creating app clone
-     * @tc.desc Test startAbility while target index is 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test startAbility while target index is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppcloneChose_0200', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_AppcloneChose_0200';
@@ -270,12 +270,12 @@ export default function actsStartAppCloneAppTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppcloneChose_0300
      * @tc.number SUB_Ability_AbilityRuntime_AppcloneChose_0300
-     * @tc.name Test start  without creating app clone
-     * @tc.desc Test startAbility while target index is 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test startAbility while target index is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppcloneChose_0300', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_AppcloneChose_0300';
@@ -315,12 +315,12 @@ export default function actsStartAppCloneAppTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppcloneChose_0500
      * @tc.number SUB_Ability_AbilityRuntime_AppcloneChose_0500
-     * @tc.name Test start without creating clones (matching 1 application)
-     * @tc.desc Test startAbility while target entities is entity.system.entryability
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test startAbility while target entities is entity.system.entryability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppcloneChose_0500', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_AppcloneChose_0500';
@@ -377,12 +377,12 @@ export default function actsStartAppCloneAppTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppcloneChose_0400
      * @tc.number SUB_Ability_AbilityRuntime_AppcloneChose_0400
-     * @tc.name Test start without creating clones (matching 4 application)
-     * @tc.desc Test startAbility while target entities is entity.system.common
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test startAbility while target entities is entity.system.common
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppcloneChose_0400', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_AppcloneChose_0400';

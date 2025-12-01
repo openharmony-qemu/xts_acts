@@ -20,12 +20,12 @@ const Success = 0;
 export default function ActsCommonEventErrorTest() {
   describe('ActsCommonEventErrorTest', () => {
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_InvalidParameter_0100
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_InvalidParameter_0100
-     * @tc.desc    : Test testCommonEventInvalidParameter
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_InvalidParameter_0100
+     * @tc.number Sub_Notification_Ces_CommonEvent_InvalidParameter_0100
+     * @tc.desc   Test testCommonEventInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_InvalidParameter_0100', Level.LEVEL2, async (done: Function) => {
       try {
@@ -41,12 +41,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublisherPermissionSuccess_0200
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublisherPermissionSuccess_0200
-     * @tc.desc    : Test SetPublisherPermissionSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublisherPermissionSuccess_0200
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublisherPermissionSuccess_0200
+     * @tc.desc   Test SetPublisherPermissionSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublisherPermissionSuccess_0200', Level.LEVEL2, async (done: Function) => {
       try {
@@ -62,12 +62,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublisherPermissionError_0300
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublisherPermissionError_0300
-     * @tc.desc    : Test SetPublisherPermissionError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublisherPermissionError_0300
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublisherPermissionError_0300
+     * @tc.desc   Test SetPublisherPermissionError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublisherPermissionError_0300', Level.LEVEL2, async (done: Function) => {
       try {
@@ -84,12 +84,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameSuccess_0400
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameSuccess_0400
-     * @tc.desc    : Test SetPublisherBundleNameSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameSuccess_0400
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameSuccess_0400
+     * @tc.desc   Test SetPublisherBundleNameSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameSuccess_0400', Level.LEVEL2, async (done: Function) => {
       try {
@@ -105,12 +105,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameError_0500
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameError_0500
-     * @tc.desc    : Test SetPublisherBundleNameError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameError_0500
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameError_0500
+     * @tc.desc   Test SetPublisherBundleNameError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublisherBundleNameError_0500', Level.LEVEL2, async (done: Function) => {
       try {
@@ -126,12 +126,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_InvalidParameter_0600
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_InvalidParameter_0600
-     * @tc.desc    : Test SetPublishInfoBundleNameInvalidParameter
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_InvalidParameter_0600
+     * @tc.number Sub_Notification_Ces_CommonEvent_InvalidParameter_0600
+     * @tc.desc   Test SetPublishInfoBundleNameInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_InvalidParameter_0600', Level.LEVEL2, async (done: Function) => {
       try {
@@ -147,12 +147,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublishInfoPermissionSuccess_0700
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublishInfoPermissionSuccess_0700
-     * @tc.desc    : Test SetPublishInfoPermissionSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublishInfoPermissionSuccess_0700
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublishInfoPermissionSuccess_0700
+     * @tc.desc   Test SetPublishInfoPermissionSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublishInfoPermissionSuccess_0700', Level.LEVEL2, async (done: Function) => {
       try {
@@ -168,12 +168,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublishInfoPermissionError_0800
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublishInfoPermissionError_0800
-     * @tc.desc    : Test SetPublishInfoPermissionError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublishInfoPermissionError_0800
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublishInfoPermissionError_0800
+     * @tc.desc   Test SetPublishInfoPermissionError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublishInfoPermissionError_0800', Level.LEVEL2, async (done: Function) => {
       try {
@@ -189,12 +189,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublishInfoCodeSuccess_0900
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublishInfoCodeSuccess_0900
-     * @tc.desc    : Test SetPublishInfoCodeSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublishInfoCodeSuccess_0900
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublishInfoCodeSuccess_0900
+     * @tc.desc   Test SetPublishInfoCodeSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublishInfoCodeSuccess_0900', Level.LEVEL2, async (done: Function) => {
       try {
@@ -210,12 +210,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublishInfoCodeError_1000
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublishInfoCodeError_1000
-     * @tc.desc    : Test SetPublishInfoCodeError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublishInfoCodeError_1000
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublishInfoCodeError_1000
+     * @tc.desc   Test SetPublishInfoCodeError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublishInfoCodeError_1000', Level.LEVEL2, async (done: Function) => {
       try {
@@ -231,12 +231,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublishInfoDataSuccess_1100
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublishInfoDataSuccess_1100
-     * @tc.desc    : Test SetPublishInfoDataSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublishInfoDataSuccess_1100
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublishInfoDataSuccess_1100
+     * @tc.desc   Test SetPublishInfoDataSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublishInfoDataSuccess_1100', Level.LEVEL2, async (done: Function) => {
       try {
@@ -252,12 +252,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublishInfoDataError_1200
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublishInfoDataError_1200
-     * @tc.desc    : Test SetPublishInfoDataError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublishInfoDataError_1200
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublishInfoDataError_1200
+     * @tc.desc   Test SetPublishInfoDataError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublishInfoDataError_1200', Level.LEVEL2, async (done: Function) => {
       try {
@@ -273,12 +273,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublishInfoParameterSuccess_1300
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublishInfoParameterSuccess_1300
-     * @tc.desc    : Test SetPublishInfoParameterSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublishInfoParameterSuccess_1300
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublishInfoParameterSuccess_1300
+     * @tc.desc   Test SetPublishInfoParameterSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublishInfoParameterSuccess_1300', Level.LEVEL2, async (done: Function) => {
       try {
@@ -294,12 +294,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetPublishInfoParameterError_1400
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetPublishInfoParameterError_1400
-     * @tc.desc    : Test SetPublishInfoParameterError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetPublishInfoParameterError_1400
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetPublishInfoParameterError_1400
+     * @tc.desc   Test SetPublishInfoParameterError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetPublishInfoParameterError_1400', Level.LEVEL2, async (done: Function) => {
       try {
@@ -315,12 +315,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetIntToParameterSuccess_1500
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetIntToParameterSuccess_1500
-     * @tc.desc    : Test SetIntToParameterSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetIntToParameterSuccess_1500
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetIntToParameterSuccess_1500
+     * @tc.desc   Test SetIntToParameterSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetIntToParameterSuccess_1500', Level.LEVEL2, async (done: Function) => {
       try {
@@ -336,12 +336,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetIntToParameterError_1600
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetIntToParameterError_1600
-     * @tc.desc    : Test SetIntToParameterError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetIntToParameterError_1600
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetIntToParameterError_1600
+     * @tc.desc   Test SetIntToParameterError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetIntToParameterError_1600', Level.LEVEL2, async (done: Function) => {
       try {
@@ -357,12 +357,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetIntArrayToParameterSuccess_1700
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetIntArrayToParameterSuccess_1700
-     * @tc.desc    : Test SetIntArrayToParameterSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetIntArrayToParameterSuccess_1700
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetIntArrayToParameterSuccess_1700
+     * @tc.desc   Test SetIntArrayToParameterSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetIntArrayToParameterSuccess_1700', Level.LEVEL2, async (done: Function) => {
       try {
@@ -378,12 +378,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetIntArrayToParameterError_1800
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetIntArrayToParameterError_1800
-     * @tc.desc    : Test SetIntArrayToParameterError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetIntArrayToParameterError_1800
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetIntArrayToParameterError_1800
+     * @tc.desc   Test SetIntArrayToParameterError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetIntArrayToParameterError_1800', Level.LEVEL2, async (done: Function) => {
       try {
@@ -399,12 +399,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetLongToParameterSuccess_1900
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetLongToParameterSuccess_1900
-     * @tc.desc    : Test SetLongToParameterSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetLongToParameterSuccess_1900
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetLongToParameterSuccess_1900
+     * @tc.desc   Test SetLongToParameterSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetLongToParameterSuccess_1900', Level.LEVEL2, async (done: Function) => {
       try {
@@ -420,12 +420,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetLongToParameterError_2000
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetLongToParameterError_2000
-     * @tc.desc    : Test SetLongToParameterError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetLongToParameterError_2000
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetLongToParameterError_2000
+     * @tc.desc   Test SetLongToParameterError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetLongToParameterError_2000', Level.LEVEL2, async (done: Function) => {
       try {
@@ -441,12 +441,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetLongArrayToParameterSuccess_2100
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetLongArrayToParameterSuccess_2100
-     * @tc.desc    : Test SetLongArrayToParameterSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetLongArrayToParameterSuccess_2100
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetLongArrayToParameterSuccess_2100
+     * @tc.desc   Test SetLongArrayToParameterSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetLongArrayToParameterSuccess_2100', Level.LEVEL2, async (done: Function) => {
       try {
@@ -462,12 +462,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetLongArrayToParameterError_2200
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetLongArrayToParameterError_2200
-     * @tc.desc    : Test SetLongArrayToParameterError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetLongArrayToParameterError_2200
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetLongArrayToParameterError_2200
+     * @tc.desc   Test SetLongArrayToParameterError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetLongArrayToParameterError_2200', Level.LEVEL2, async (done: Function) => {
       try {
@@ -483,12 +483,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetBoolToParameterSuccess_2300
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetBoolToParameterSuccess_2300
-     * @tc.desc    : Test SetBoolToParameterSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetBoolToParameterSuccess_2300
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetBoolToParameterSuccess_2300
+     * @tc.desc   Test SetBoolToParameterSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetBoolToParameterSuccess_2300', Level.LEVEL2, async (done: Function) => {
       try {
@@ -504,12 +504,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetBoolToParameterError_2400
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetBoolToParameterError_2400
-     * @tc.desc    : Test SetBoolToParameterError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetBoolToParameterError_2400
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetBoolToParameterError_2400
+     * @tc.desc   Test SetBoolToParameterError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetBoolToParameterError_2400', Level.LEVEL2, async (done: Function) => {
       try {
@@ -525,12 +525,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetBoolArrayToParameterSuccess_2500
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetBoolArrayToParameterSuccess_2500
-     * @tc.desc    : Test SetBoolArrayToParameterSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetBoolArrayToParameterSuccess_2500
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetBoolArrayToParameterSuccess_2500
+     * @tc.desc   Test SetBoolArrayToParameterSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetBoolArrayToParameterSuccess_2500', Level.LEVEL2, async (done: Function) => {
       try {
@@ -546,12 +546,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetBoolArrayToParameterError_2600
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetBoolArrayToParameterError_2600
-     * @tc.desc    : Test SetBoolArrayToParameterError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetBoolArrayToParameterError_2600
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetBoolArrayToParameterError_2600
+     * @tc.desc   Test SetBoolArrayToParameterError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetBoolArrayToParameterError_2600', Level.LEVEL2, async (done: Function) => {
       try {
@@ -567,12 +567,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetCharToParameterSuccess_2700
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetCharToParameterSuccess_2700
-     * @tc.desc    : Test SetCharToParameterSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetCharToParameterSuccess_2700
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetCharToParameterSuccess_2700
+     * @tc.desc   Test SetCharToParameterSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetCharToParameterSuccess_2700', Level.LEVEL2, async (done: Function) => {
       try {
@@ -588,12 +588,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetCharToParameterError_2800
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetCharToParameterError_2800
-     * @tc.desc    : Test SetCharToParameterError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetCharToParameterError_2800
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetCharToParameterError_2800
+     * @tc.desc   Test SetCharToParameterError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetCharToParameterError_2800', Level.LEVEL2, async (done: Function) => {
       try {
@@ -609,12 +609,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetCharArrayToParameterSuccess_2900
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetCharArrayToParameterSuccess_2900
-     * @tc.desc    : Test SetCharArrayToParameterSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetCharArrayToParameterSuccess_2900
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetCharArrayToParameterSuccess_2900
+     * @tc.desc   Test SetCharArrayToParameterSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetCharArrayToParameterSuccess_2900', Level.LEVEL2, async (done: Function) => {
       try {
@@ -630,12 +630,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetCharArrayToParameterError_3000
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetCharArrayToParameterError_3000
-     * @tc.desc    : Test SetCharArrayToParameterError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetCharArrayToParameterError_3000
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetCharArrayToParameterError_3000
+     * @tc.desc   Test SetCharArrayToParameterError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetCharArrayToParameterError_3000', Level.LEVEL2, async (done: Function) => {
       try {
@@ -651,12 +651,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetDoubleToParameterSuccess_3100
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetDoubleToParameterSuccess_3100
-     * @tc.desc    : Test SetDoubleToParameterSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetDoubleToParameterSuccess_3100
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetDoubleToParameterSuccess_3100
+     * @tc.desc   Test SetDoubleToParameterSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetDoubleToParameterSuccess_3100', Level.LEVEL2, async (done: Function) => {
       try {
@@ -672,12 +672,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetDoubleToParameterError_3200
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetDoubleToParameterError_3200
-     * @tc.desc    : Test SetDoubleToParameterError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetDoubleToParameterError_3200
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetDoubleToParameterError_3200
+     * @tc.desc   Test SetDoubleToParameterError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetDoubleToParameterError_3200', Level.LEVEL2, async (done: Function) => {
       try {
@@ -693,12 +693,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetDoubleArrayToParameterSuccess_3300
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetDoubleArrayToParameterSuccess_3300
-     * @tc.desc    : Test SetDoubleArrayToParameterSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetDoubleArrayToParameterSuccess_3300
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetDoubleArrayToParameterSuccess_3300
+     * @tc.desc   Test SetDoubleArrayToParameterSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetDoubleArrayToParameterSuccess_3300', Level.LEVEL2, async (done: Function) => {
       try {
@@ -714,12 +714,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SetDoubleArrayToParameterError_3400
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SetDoubleArrayToParameterError_3400
-     * @tc.desc    : Test SetDoubleArrayToParameterError
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SetDoubleArrayToParameterError_3400
+     * @tc.number Sub_Notification_Ces_CommonEvent_SetDoubleArrayToParameterError_3400
+     * @tc.desc   Test SetDoubleArrayToParameterError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SetDoubleArrayToParameterError_3400', Level.LEVEL2, async (done: Function) => {
       try {
@@ -735,12 +735,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_PublishSuccess_3500
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_PublishSuccess_3500
-     * @tc.desc    : Test PublishSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_PublishSuccess_3500
+     * @tc.number Sub_Notification_Ces_CommonEvent_PublishSuccess_3500
+     * @tc.desc   Test PublishSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_PublishSuccess_3500', Level.LEVEL2, async (done: Function) => {
       try {
@@ -756,12 +756,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_PublishInvalidParameter_3600
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_PublishInvalidParameter_3600
-     * @tc.desc    : Test PublishInvalidParameter
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_PublishInvalidParameter_3600
+     * @tc.number Sub_Notification_Ces_CommonEvent_PublishInvalidParameter_3600
+     * @tc.desc   Test PublishInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_PublishInvalidParameter_3600', Level.LEVEL2, async (done: Function) => {
       try {
@@ -777,12 +777,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_PublishWithInfoSuccess_3700
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_PublishWithInfoSuccess_3700
-     * @tc.desc    : Test PublishWithInfoSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_PublishWithInfoSuccess_3700
+     * @tc.number Sub_Notification_Ces_CommonEvent_PublishWithInfoSuccess_3700
+     * @tc.desc   Test PublishWithInfoSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_PublishWithInfoSuccess_3700', Level.LEVEL2, async (done: Function) => {
       try {
@@ -798,12 +798,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_PublishWithInfoInvalidParameter_3800
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_PublishWithInfoInvalidParameter_3800
-     * @tc.desc    : Test PublishWithInfoInvalidParameter
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_PublishWithInfoInvalidParameter_3800
+     * @tc.number Sub_Notification_Ces_CommonEvent_PublishWithInfoInvalidParameter_3800
+     * @tc.desc   Test PublishWithInfoInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_PublishWithInfoInvalidParameter_3800', Level.LEVEL2, async (done: Function) => {
       try {
@@ -819,12 +819,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SubscribeSuccess_3900
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SubscribeSuccess_3900
-     * @tc.desc    : Test SubscribeSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SubscribeSuccess_3900
+     * @tc.number Sub_Notification_Ces_CommonEvent_SubscribeSuccess_3900
+     * @tc.desc   Test SubscribeSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SubscribeSuccess_3900', Level.LEVEL2, async (done: Function) => {
       try {
@@ -840,12 +840,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_4000
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_4000
-     * @tc.desc    : Test SubscriberNumExceeded
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_4000
+     * @tc.number Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_4000
+     * @tc.desc   Test SubscriberNumExceeded
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded_4000', Level.LEVEL2, async (done: Function) => {
       try {
@@ -861,12 +861,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SubscribeInvalidParameter_4100
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SubscribeInvalidParameter_4100
-     * @tc.desc    : Test SubscribeInvalidParameter
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SubscribeInvalidParameter_4100
+     * @tc.number Sub_Notification_Ces_CommonEvent_SubscribeInvalidParameter_4100
+     * @tc.desc   Test SubscribeInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SubscribeInvalidParameter_4100', Level.LEVEL2, async (done: Function) => {
       try {
@@ -882,12 +882,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded1_4200
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded1_4200
-     * @tc.desc    : Test SubscriberNumExceeded1
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded1_4200
+     * @tc.number Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded1_4200
+     * @tc.desc   Test SubscriberNumExceeded1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_SubscriberNumExceeded1_4200', Level.LEVEL2, async (done: Function) => {
       try {
@@ -903,12 +903,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_UnSubscribeSuccess_4300
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_UnSubscribeSuccess_4300
-     * @tc.desc    : Test UnSubscribeSuccess
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_UnSubscribeSuccess_4300
+     * @tc.number Sub_Notification_Ces_CommonEvent_UnSubscribeSuccess_4300
+     * @tc.desc   Test UnSubscribeSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_UnSubscribeSuccess_4300', Level.LEVEL2, async (done: Function) => {
       try {
@@ -924,12 +924,12 @@ export default function ActsCommonEventErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_Notification_Ces_CommonEvent_UnSubscribeInvalidParameter_4400
-     * @tc.name    : Sub_Notification_Ces_CommonEvent_UnSubscribeInvalidParameter_4400
-     * @tc.desc    : Test UnSubscribeInvalidParameter
-     * @tc.level   : Level2
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   Sub_Notification_Ces_CommonEvent_UnSubscribeInvalidParameter_4400
+     * @tc.number Sub_Notification_Ces_CommonEvent_UnSubscribeInvalidParameter_4400
+     * @tc.desc   Test UnSubscribeInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_CommonEvent_UnSubscribeInvalidParameter_4400', Level.LEVEL2, async (done: Function) => {
       try {

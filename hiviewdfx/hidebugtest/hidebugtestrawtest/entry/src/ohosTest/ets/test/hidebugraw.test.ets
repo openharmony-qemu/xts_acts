@@ -45,12 +45,12 @@ export default function HidebugrawTest() {
     })
 
     /**
+     * @tc.name   testHidebugraw_0100
      * @tc.number SUB_DFX_DFR_Hidebug_Ets_0100
-     * @tc.name testHidebugraw_0100
-     * @tc.desc 验证dumpJsRawHeapData()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证dumpJsRawHeapData()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHidebugraw_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -74,12 +74,12 @@ export default function HidebugrawTest() {
     })
     
     /**
+     * @tc.name   testHidebugraw_0200
      * @tc.number SUB_DFX_DFR_Hidebug_Ets_0200
-     * @tc.name testHidebugraw_0200
-     * @tc.desc 验证同步dumpJsRawHeapData() 
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证同步dumpJsRawHeapData()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHidebugraw_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -103,12 +103,12 @@ export default function HidebugrawTest() {
     })
 
     /**
+     * @tc.name   testHidebugraw_0300
      * @tc.number SUB_DFX_DFR_Hidebug_Ets_0300
-     * @tc.name testHidebugraw_0300
-     * @tc.desc 连续dumpJsRawHeapData() 捕获11400112错误码
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   连续dumpJsRawHeapData() 捕获11400112错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHidebugraw_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -133,12 +133,12 @@ export default function HidebugrawTest() {
     })
 
     /**
+     * @tc.name   testHidebugraw_0400
      * @tc.number SUB_DFX_DFR_Hidebug_Ets_0400
-     * @tc.name testHidebugraw_0400
-     * @tc.desc 验证 setJsRawHeapTrimLevel(1) 和 不设置setJsRawHeapTrimLevel 时候比较文件大小
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证 setJsRawHeapTrimLevel(1) 和 不设置setJsRawHeapTrimLevel 时候比较文件大小
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHidebugraw_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -174,12 +174,12 @@ export default function HidebugrawTest() {
     })
 
     /**
+     * @tc.name   testHidebugraw_0500
      * @tc.number SUB_DFX_DFR_Hidebug_Ets_0500
-     * @tc.name testHidebugraw_0500
-     * @tc.desc 验证 setJsRawHeapTrimLevel(1) 和 setJsRawHeapTrimLevel(0) 时候比较文件大小
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证 setJsRawHeapTrimLevel(1) 和 setJsRawHeapTrimLevel(0) 时候比较文件大小
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHidebugraw_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -216,12 +216,12 @@ export default function HidebugrawTest() {
 
 
     /**
+     * @tc.name   testHidebugraw_0600
      * @tc.number SUB_DFX_DFR_Hidebug_Ets_0600
-     * @tc.name testHidebugraw_0600
-     * @tc.desc setJsRawHeapTrimLevel 传入异常值返回 401 错误码
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   setJsRawHeapTrimLevel 传入异常值返回 401 错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHidebugraw_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -237,12 +237,12 @@ export default function HidebugrawTest() {
     })
 
     /**
+     * @tc.name   testHidebugraw_0700
      * @tc.number SUB_DFX_DFR_Hidebug_Ets_0700
-     * @tc.name testHidebugraw_0700
-     * @tc.desc hidebug.setJsRawHeapTrimLevel 传入枚举类型 TRIM_LEVEL_1 和 TRIM_LEVEL_2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   hidebug.setJsRawHeapTrimLevel 传入枚举类型 TRIM_LEVEL_1 和 TRIM_LEVEL_2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHidebugraw_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -280,12 +280,12 @@ export default function HidebugrawTest() {
 
 
     /**
+     * @tc.name   testHidebugraw_0800
      * @tc.number SUB_DFX_DFR_Hidebug_Ets_0800
-     * @tc.name testHidebugraw_0800
-     * @tc.desc setJsRawHeapTrimLevel 传入异常值返回 401 错误码
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   setJsRawHeapTrimLevel 传入异常值返回 401 错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHidebugraw_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {

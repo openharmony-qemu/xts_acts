@@ -54,9 +54,12 @@ export default function I18NTest() {
     });
     
     /**
-     * @tc.number  SUB_GLOBAL_I18N_JS_static_8800
-     * @tc.name    i18n_test_static_8800
-     * @tc.desc    get the isRTL value, test isRTL interface with zh-CN param
+     * @tc.name   i18n_test_static_8800
+     * @tc.number SUB_GLOBAL_I18N_JS_static_8800
+     * @tc.desc   get the isRTL value, test isRTL interface with zh-CN param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_test_static_8800', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_test_static_8800 ' + 'start');
@@ -66,9 +69,12 @@ export default function I18NTest() {
     })
     
     /**
+     * @tc.name   i18n_test_static_8900
      * @tc.number i18n_test_static_8900
-     * @tc.name i18n_test_static_8900
-     * @tc.desc get the isRTL value
+     * @tc.desc   get the isRTL value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_test_static_8900', Level.LEVEL2, (): void => {
       hilog.info(domain, tag, '%{public}s', 'i18n_test_static_8900 start');
@@ -78,9 +84,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_test_static_9000
      * @tc.number i18n_test_static_9000
-     * @tc.name i18n_test_static_9000
-     * @tc.desc get the isRTL value
+     * @tc.desc   get the isRTL value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_test_static_9000', Level.LEVEL2, (): void => {
       hilog.info(domain, tag, '%{public}s', 'i18n_test_static_9000 start');
@@ -91,12 +100,12 @@ export default function I18NTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_EntityRecognizer_static_1100
-     * @tc.name     : SUB_GLOBAL_I18N_EntityRecognizer_static_1100
-     * @tc.desc     : findEntityInfo - Identifying Entity Information in Text
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_1100
+     * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_1100
+     * @tc.desc   findEntityInfo - Identifying Entity Information in Text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GLOBAL_I18N_EntityRecognizer_static_1100', Level.LEVEL0, async (): Promise<void> => {
       let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("zh-CN");

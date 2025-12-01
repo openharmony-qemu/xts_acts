@@ -54,12 +54,12 @@ export default function RichEditorOnWillChange003() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0003
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0003
-     * @tc.desc  : The return value of onWillchange is false. Click on Add Text Span to add characters to test RichEditor OnSelectionChange
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0003
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0003
+     * @tc.desc   The return value of onWillchange is false. Click on Add Text Span to add characters to test RichEditor OnSelectionChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0003',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0003 START');
@@ -68,7 +68,7 @@ export default function RichEditorOnWillChange003() {
       await CommonFunc.sleep(500);
 
       let add_text = await driver.findComponent(ON.id('add_text'));
-      add_text.click();
+      await add_text.click();
       await CommonFunc.sleep(500);
       let onWillChange = await driver.findComponent(ON.id('onWillChange_callback'));
       let onWillText = await onWillChange.getText();

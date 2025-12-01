@@ -26,14 +26,14 @@ export default function customComponentOnFocusTest() {
       await Utils.pushPage(`customcomponent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONFOCUS_0100
-    * @tc.name       : testCustomComponentOnFocus001
-    * @tc.desc       : test onFocus event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentOnFocus001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONFOCUS_0100
+     * @tc.desc   test onFocus event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentOnFocus001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnFocusTestCustomComponentCompare')
       await Utils.sleep(2000)
@@ -43,14 +43,14 @@ export default function customComponentOnFocusTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONFOCUS_0200
-    * @tc.name       : testCustomComponentOnFocus002
-    * @tc.desc       : test onFocus event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentOnFocus002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONFOCUS_0200
+     * @tc.desc   test onFocus event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentOnFocus002', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnFocusTestCustomComponent')
       await Utils.sleep(2000)

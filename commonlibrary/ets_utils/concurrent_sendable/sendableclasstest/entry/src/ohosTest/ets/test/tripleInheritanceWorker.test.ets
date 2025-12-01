@@ -23,12 +23,12 @@ export default function tripleInheritanceWorkerTest() {
 
   describe('ActsTripleInheritanceWorkerTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_WORKER_0100
-     * @tc.name       : testTripleInheritanceWorker0001
-     * @tc.desc       : Test tripleInheritanceWorker.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTripleInheritanceWorker0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_WORKER_0100
+     * @tc.desc   Test tripleInheritanceWorker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTripleInheritanceWorker0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testTripleInheritanceWorker0001';
@@ -64,12 +64,12 @@ export default function tripleInheritanceWorkerTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_WORKER_0200
-     * @tc.name       : testTripleInheritanceWorker0002
-     * @tc.desc       : Test setting a top-level instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTripleInheritanceWorker0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_WORKER_0200
+     * @tc.desc   Test setting a top-level instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTripleInheritanceWorker0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testTripleInheritanceWorker0002';
@@ -106,12 +106,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_WORKER_0300
-     * @tc.name       : testTripleInheritanceWorker0003
-     * @tc.desc       : Test setting an enum value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTripleInheritanceWorker0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_WORKER_0300
+     * @tc.desc   Test setting an enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTripleInheritanceWorker0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testTripleInheritanceWorker0003';
@@ -148,12 +148,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_WORKER_0400
-     * @tc.name       : testTripleInheritanceWorker0004
-     * @tc.desc       : Test setting an array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTripleInheritanceWorker0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_WORKER_0400
+     * @tc.desc   Test setting an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTripleInheritanceWorker0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testTripleInheritanceWorker0004';
@@ -190,12 +190,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_WORKER_0500
-     * @tc.name       : testTripleInheritanceWorker0005
-     * @tc.desc       : Test setting an async lock.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTripleInheritanceWorker0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_WORKER_0500
+     * @tc.desc   Test setting an async lock.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTripleInheritanceWorker0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testTripleInheritanceWorker0005';
@@ -232,12 +232,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_CLASS_WORKER_0100
-     * @tc.name       : testSendableFourAttributeClassWorker0001
-     * @tc.desc       : Test setting a number.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableFourAttributeClassWorker0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_CLASS_WORKER_0100
+     * @tc.desc   Test setting a number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableFourAttributeClassWorker0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableFourAttributeClassWorker0001';
@@ -274,12 +274,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_CLASS_WORKER_0200
-     * @tc.name       : testSendableFourAttributeClassWorker0002
-     * @tc.desc       : Test setting an enum value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableFourAttributeClassWorker0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_CLASS_WORKER_0200
+     * @tc.desc   Test setting an enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableFourAttributeClassWorker0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableFourAttributeClassWorker0002';
@@ -316,12 +316,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_CLASS_WORKER_0300
-     * @tc.name       : testSendableFourAttributeClassWorker0003
-     * @tc.desc       : Test setting an array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableFourAttributeClassWorker0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_CLASS_WORKER_0300
+     * @tc.desc   Test setting an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableFourAttributeClassWorker0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableFourAttributeClassWorker0003';
@@ -358,12 +358,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_CLASS_WORKER_0400
-     * @tc.name       : testSendableFourAttributeClassWorker0004
-     * @tc.desc       : Test setting an async lock.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableFourAttributeClassWorker0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_CLASS_WORKER_0400
+     * @tc.desc   Test setting an async lock.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableFourAttributeClassWorker0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableFourAttributeClassWorker0004';
@@ -400,12 +400,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_CLASS_WORKER_0500
-     * @tc.name       : testSendableFourAttributeClassWorker0005
-     * @tc.desc       : Test setting an inherited class.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableFourAttributeClassWorker0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_CLASS_WORKER_0500
+     * @tc.desc   Test setting an inherited class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableFourAttributeClassWorker0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableFourAttributeClassWorker0005';
@@ -442,12 +442,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0100
-     * @tc.name       : testFourthLevelSendableClassOverWorker0001
-     * @tc.desc       : Test toString method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOverWorker0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0100
+     * @tc.desc   Test toString method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOverWorker0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOverWorker0001';
@@ -484,12 +484,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0200
-     * @tc.name       : testFourthLevelSendableClassOverWorker0002
-     * @tc.desc       : Test setting a number with an offset.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOverWorker0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0200
+     * @tc.desc   Test setting a number with an offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOverWorker0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOverWorker0002';
@@ -525,12 +525,12 @@ export default function tripleInheritanceWorkerTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0300
-     * @tc.name       : testFourthLevelSendableClassOverWorker0003
-     * @tc.desc       : Test setting an enum without parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOverWorker0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0300
+     * @tc.desc   Test setting an enum without parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOverWorker0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOverWorker0003';
@@ -567,12 +567,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0400
-     * @tc.name       : testFourthLevelSendableClassOverWorker0004
-     * @tc.desc       : Test setting an array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOverWorker0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0400
+     * @tc.desc   Test setting an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOverWorker0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOverWorker0004';
@@ -609,12 +609,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0500
-     * @tc.name       : testFourthLevelSendableClassOverWorker0005
-     * @tc.desc       : Test setting an async lock.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOverWorker0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0500
+     * @tc.desc   Test setting an async lock.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOverWorker0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOverWorker0005';
@@ -651,12 +651,12 @@ export default function tripleInheritanceWorkerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0600
-     * @tc.name       : testFourthLevelSendableClassOverWorker0006
-     * @tc.desc       : Test setting an inherited class.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOverWorker0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_WORKER_0600
+     * @tc.desc   Test setting an inherited class.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOverWorker0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOverWorker0006';

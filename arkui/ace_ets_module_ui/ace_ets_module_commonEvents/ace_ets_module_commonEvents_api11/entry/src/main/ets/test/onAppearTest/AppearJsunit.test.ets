@@ -56,6 +56,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("appear after each called");
     })
 
+    /**
+     * @tc.name   testAppear01
+     * @tc.number testAppear01
+     * @tc.desc   testAppear01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAppear01', Level.LEVEL0, async (done: Function) => {
       console.info('[testAppear01] START');
       await CommonFunc.sleep(1000);

@@ -61,12 +61,12 @@ export default function QueueTest() {
     })
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0100
-     * @tc.name      : testQueueAddNumber
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testQueueAddNumber
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testQueueAddNumber', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -95,12 +95,12 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0200
-     * @tc.name      : testQueueAddString
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testQueueAddString
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testQueueAddString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -129,12 +129,12 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0300
-     * @tc.name      : testQueueAddUndefined
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testQueueAddUndefined
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testQueueAddUndefined', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -163,12 +163,12 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0400
-     * @tc.name      : testQueuePop
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testQueuePop
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testQueuePop', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -198,12 +198,12 @@ export default function QueueTest() {
 
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0600
-     * @tc.name      : testQueuePopEmpty
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testQueuePopEmpty
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testQueuePopEmpty', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -232,12 +232,12 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0700
-     * @tc.name      : testQueueGetFirst
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testQueueGetFirst
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testQueueGetFirst', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -266,12 +266,12 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0900
-     * @tc.name      : testQueueGetFirstEmpty
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testQueueGetFirstEmpty
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_0900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testQueueGetFirstEmpty', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -300,12 +300,12 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_1000
-     * @tc.name      : testQueueForEach
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testQueueForEach
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_1000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testQueueForEach', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -334,12 +334,12 @@ export default function QueueTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_1100
-     * @tc.name      : testQueueSymbolIterator
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testQueueSymbolIterator
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_1100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testQueueSymbolIterator', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

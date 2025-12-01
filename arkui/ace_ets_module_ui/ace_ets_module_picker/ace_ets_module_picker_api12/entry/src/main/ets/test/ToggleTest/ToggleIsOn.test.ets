@@ -47,12 +47,12 @@ export default function ToggleContentIsOn() {
     });
 
     /**
-     * @tc.number    ArkUI_Stage_Toggle_Content_0100
-     * @tc.name      Tests the builder property of the Toggle component
-     * @tc.desc      set the isOn property value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   ArkUI_Stage_Toggle_Content_0100
+     * @tc.number ArkUI_Stage_Toggle_Content_0100
+     * @tc.desc   set the isOn property value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Toggle_Content_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_Stage_Toggle_Content_0100] START');

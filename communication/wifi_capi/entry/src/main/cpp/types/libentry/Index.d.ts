@@ -13,3 +13,4 @@
  * limitations under the License.
  */
 export const getWifiSwitchState: () => number;
+export const getWifiMacAddress: () => string;

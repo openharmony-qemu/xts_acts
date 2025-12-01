@@ -40,12 +40,14 @@ export default function bindSheetShowClose() {
       }
       done();
     });
-    /* *
-    * @tc.number: bindSheetShowClose_0100
-    * @tc.name  : bindSheetShowClose_0100
-    * @tc.desc  : To test the release of the placeholder area when the showClose property is set to false
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   bindSheetShowClose_0100
+     * @tc.number bindSheetShowClose_0100
+     * @tc.desc   To test the release of the placeholder area when the showClose property is set to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('bindSheetShowClose_0100', Level.LEVEL0, async (done: Function) => {
       console.info('bindSheetShowClose_0100 START');
       let driver = await Driver.create()

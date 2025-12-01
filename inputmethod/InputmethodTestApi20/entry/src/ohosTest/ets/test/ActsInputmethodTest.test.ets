@@ -19,12 +19,12 @@ import testNapi from 'libentry.so'
 export default function ActsInputmethodTest() {
   describe('ActsInputmethodTest', () => {
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_AttachOptions_IsShowKeyboard_0100
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_AttachOptions_IsShowKeyboard_0100
-     * @tc.desc      test OH_AttachOptions_IsShowKeyboard Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_AttachOptions_IsShowKeyboard_0100
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_AttachOptions_IsShowKeyboard_0100
+     * @tc.desc   test OH_AttachOptions_IsShowKeyboard Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_AttachOptions_IsShowKeyboard_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -45,12 +45,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_AttachOptions_GetRequestKeyboardReason_0200
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_AttachOptions_GetRequestKeyboardReason_0200
-     * @tc.desc      test OH_AttachOptions_GetRequestKeyboardReason Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_AttachOptions_GetRequestKeyboardReason_0200
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_AttachOptions_GetRequestKeyboardReason_0200
+     * @tc.desc   test OH_AttachOptions_GetRequestKeyboardReason Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_AttachOptions_GetRequestKeyboardReason_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -71,12 +71,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodController_Attach_0300
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodController_Attach_0300
-     * @tc.desc      test OH_InputMethodController_Attach Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodController_Attach_0300
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodController_Attach_0300
+     * @tc.desc   test OH_InputMethodController_Attach Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodController_Attach_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -97,12 +97,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodController_Detach_0400
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodController_Detach_0400
-     * @tc.desc      test OH_InputMethodController_Detach Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodController_Detach_0400
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodController_Detach_0400
+     * @tc.desc   test OH_InputMethodController_Detach Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodController_Detach_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -123,12 +123,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0500
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0500
-     * @tc.desc      test OH_CursorInfo_SetRect Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0500
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0500
+     * @tc.desc   test OH_CursorInfo_SetRect Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -149,12 +149,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0600
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0600
-     * @tc.desc      test OH_CursorInfo_SetRect Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0600
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0600
+     * @tc.desc   test OH_CursorInfo_SetRect Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -175,12 +175,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0700
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0700
-     * @tc.desc      test OH_CursorInfo_GetRect Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0700
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0700
+     * @tc.desc   test OH_CursorInfo_GetRect Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -201,12 +201,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0800
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0800
-     * @tc.desc      test OH_CursorInfo_GetRect Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0800
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0800
+     * @tc.desc   test OH_CursorInfo_GetRect Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -227,12 +227,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_0900
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_0900
-     * @tc.desc      test OH_InputMethodProxy_ShowKeyboard Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_0900
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_0900
+     * @tc.desc   test OH_InputMethodProxy_ShowKeyboard Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_0900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -253,12 +253,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_1000
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_1000
-     * @tc.desc      test OH_InputMethodProxy_ShowKeyboard Detached
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_1000
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_1000
+     * @tc.desc   test OH_InputMethodProxy_ShowKeyboard Detached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_1000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -279,12 +279,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1100
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1100
-     * @tc.desc      test OH_InputMethodProxy_ShowTextInput Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1100
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1100
+     * @tc.desc   test OH_InputMethodProxy_ShowTextInput Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -305,12 +305,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1200
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1200
-     * @tc.desc      test OH_InputMethodProxy_ShowTextInput Detached
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1200
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1200
+     * @tc.desc   test OH_InputMethodProxy_ShowTextInput Detached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -331,12 +331,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1300
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1300
-     * @tc.desc      test OH_InputMethodProxy_HideKeyboard Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1300
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1300
+     * @tc.desc   test OH_InputMethodProxy_HideKeyboard Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -357,12 +357,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1400
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1400
-     * @tc.desc      test OH_InputMethodProxy_HideKeyboard Detached
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1400
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1400
+     * @tc.desc   test OH_InputMethodProxy_HideKeyboard Detached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -383,12 +383,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1500
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1500
-     * @tc.desc      test OH_InputMethodProxy_NotifySelectionChange Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1500
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1500
+     * @tc.desc   test OH_InputMethodProxy_NotifySelectionChange Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -409,12 +409,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1600
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1600
-     * @tc.desc      test OH_InputMethodProxy_NotifySelectionChange Detached
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1600
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1600
+     * @tc.desc   test OH_InputMethodProxy_NotifySelectionChange Detached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -435,12 +435,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1700
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1700
-     * @tc.desc      test OH_InputMethodProxy_NotifySelectionChange PARAMCHECK Error
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1700
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1700
+     * @tc.desc   test OH_InputMethodProxy_NotifySelectionChange PARAMCHECK Error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -461,12 +461,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1800
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1800
-     * @tc.desc      test OH_InputMethodProxy_NotifyConfigurationChange Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1800
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1800
+     * @tc.desc   test OH_InputMethodProxy_NotifyConfigurationChange Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -487,12 +487,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1900
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1900
-     * @tc.desc      test OH_InputMethodProxy_NotifyConfigurationChange Detached
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1900
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1900
+     * @tc.desc   test OH_InputMethodProxy_NotifyConfigurationChange Detached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -513,12 +513,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_2000
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_2000
-     * @tc.desc      test OH_InputMethodProxy_NotifyConfigurationChange PARAMCHECK Error
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_2000
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_2000
+     * @tc.desc   test OH_InputMethodProxy_NotifyConfigurationChange PARAMCHECK Error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_2000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -539,12 +539,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2100
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2100
-     * @tc.desc      test OH_InputMethodProxy_NotifyCursorUpdate Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2100
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2100
+     * @tc.desc   test OH_InputMethodProxy_NotifyCursorUpdate Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -565,12 +565,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2200
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2200
-     * @tc.desc      test OH_InputMethodProxy_NotifyCursorUpdate Detached
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2200
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2200
+     * @tc.desc   test OH_InputMethodProxy_NotifyCursorUpdate Detached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -591,12 +591,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2300
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2300
-     * @tc.desc      test OH_InputMethodProxy_NotifyCursorUpdate PARAMCHECK Error
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2300
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2300
+     * @tc.desc   test OH_InputMethodProxy_NotifyCursorUpdate PARAMCHECK Error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -617,12 +617,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2400
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2400
-     * @tc.desc      test OH_InputMethodProxy_SendPrivateCommand Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2400
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2400
+     * @tc.desc   test OH_InputMethodProxy_SendPrivateCommand Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -643,12 +643,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2500
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2500
-     * @tc.desc      test OH_InputMethodProxy_SendPrivateCommand Detached
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2500
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2500
+     * @tc.desc   test OH_InputMethodProxy_SendPrivateCommand Detached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -669,12 +669,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2600
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2600
-     * @tc.desc      test OH_InputMethodProxy_SendPrivateCommand PARAMCHECK Error
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2600
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2600
+     * @tc.desc   test OH_InputMethodProxy_SendPrivateCommand PARAMCHECK Error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -695,12 +695,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2700
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2700
-     * @tc.desc      test OH_PrivateCommand_SetKey Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2700
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2700
+     * @tc.desc   test OH_PrivateCommand_SetKey Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -721,12 +721,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2800
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2800
-     * @tc.desc      test OH_PrivateCommand_SetKey OK
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2800
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2800
+     * @tc.desc   test OH_PrivateCommand_SetKey OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -747,12 +747,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetBoolValue_2900
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetBoolValue_2900
-     * @tc.desc      test OH_PrivateCommand_SetBoolValue Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetBoolValue_2900
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetBoolValue_2900
+     * @tc.desc   test OH_PrivateCommand_SetBoolValue Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetBoolValue_2900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -773,12 +773,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetIntValue_3000
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetIntValue_3000
-     * @tc.desc      test OH_PrivateCommand_SetIntValue Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetIntValue_3000
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetIntValue_3000
+     * @tc.desc   test OH_PrivateCommand_SetIntValue Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetIntValue_3000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -799,12 +799,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetStrValue_3100
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetStrValue_3100
-     * @tc.desc      test OH_PrivateCommand_SetStrValue Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetStrValue_3100
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetStrValue_3100
+     * @tc.desc   test OH_PrivateCommand_SetStrValue Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetStrValue_3100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -825,12 +825,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3200
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3200
-     * @tc.desc      test OH_PrivateCommand_GetKey Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3200
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3200
+     * @tc.desc   test OH_PrivateCommand_GetKey Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -851,12 +851,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3300
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3300
-     * @tc.desc      test OH_PrivateCommand_GetKey Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3300
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3300
+     * @tc.desc   test OH_PrivateCommand_GetKey Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -877,12 +877,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3400
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3400
-     * @tc.desc      test OH_PrivateCommand_GetValueType Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3400
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3400
+     * @tc.desc   test OH_PrivateCommand_GetValueType Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -903,12 +903,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3500
-     * @tc.name     SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3500
-     * @tc.desc     test OH_PrivateCommand_GetValueType Ok
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3500
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3500
+     * @tc.desc   test OH_PrivateCommand_GetValueType Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -929,12 +929,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3600
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3600
-     * @tc.desc      test OH_PrivateCommand_GetBoolValue Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3600
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3600
+     * @tc.desc   test OH_PrivateCommand_GetBoolValue Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -955,12 +955,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3700
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3700
-     * @tc.desc      test OH_PrivateCommand_GetBoolValue Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3700
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3700
+     * @tc.desc   test OH_PrivateCommand_GetBoolValue Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -981,12 +981,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3800
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3800
-     * @tc.desc      test OH_PrivateCommand_GetBoolValue Query Failed
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3800
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3800
+     * @tc.desc   test OH_PrivateCommand_GetBoolValue Query Failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1007,12 +1007,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_3900
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_3900
-     * @tc.desc      test OH_PrivateCommand_GetIntValue Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_3900
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_3900
+     * @tc.desc   test OH_PrivateCommand_GetIntValue Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_3900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1033,12 +1033,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4000
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4000
-     * @tc.desc      test OH_PrivateCommand_GetIntValue Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4000
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4000
+     * @tc.desc   test OH_PrivateCommand_GetIntValue Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1059,12 +1059,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4100
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4100
-     * @tc.desc      test OH_PrivateCommand_GetIntValue Query Failed
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4100
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4100
+     * @tc.desc   test OH_PrivateCommand_GetIntValue Query Failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1085,12 +1085,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4200
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4200
-     * @tc.desc      test OH_PrivateCommand_GetStrValue Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4200
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4200
+     * @tc.desc   test OH_PrivateCommand_GetStrValue Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1111,12 +1111,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4300
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4300
-     * @tc.desc      test OH_PrivateCommand_GetStrValue Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4300
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4300
+     * @tc.desc   test OH_PrivateCommand_GetStrValue Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1137,12 +1137,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4400
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4400
-     * @tc.desc      test OH_PrivateCommand_GetStrValue Query Failed
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4400
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4400
+     * @tc.desc   test OH_PrivateCommand_GetStrValue Query Failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1163,12 +1163,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4500
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4500
-     * @tc.desc      test OH_TextAvoidInfo_SetPositionY Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4500
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4500
+     * @tc.desc   test OH_TextAvoidInfo_SetPositionY Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1189,12 +1189,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4600
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4600
-     * @tc.desc      test OH_TextAvoidInfo_SetPositionY Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4600
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4600
+     * @tc.desc   test OH_TextAvoidInfo_SetPositionY Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1215,12 +1215,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4700
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4700
-     * @tc.desc      test OH_TextAvoidInfo_SetHeight Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4700
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4700
+     * @tc.desc   test OH_TextAvoidInfo_SetHeight Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1241,12 +1241,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4800
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4800
-     * @tc.desc      test OH_TextAvoidInfo_SetHeight Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4800
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4800
+     * @tc.desc   test OH_TextAvoidInfo_SetHeight Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1267,12 +1267,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_4900
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_4900
-     * @tc.desc      test OH_TextAvoidInfo_GetPositionY Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_4900
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_4900
+     * @tc.desc   test OH_TextAvoidInfo_GetPositionY Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_4900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1293,12 +1293,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_5000
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_5000
-     * @tc.desc      test OH_TextAvoidInfo_GetPositionY Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_5000
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_5000
+     * @tc.desc   test OH_TextAvoidInfo_GetPositionY Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_5000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1319,12 +1319,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5100
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5100
-     * @tc.desc      test OH_TextAvoidInfo_GetHeight Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5100
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5100
+     * @tc.desc   test OH_TextAvoidInfo_GetHeight Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1345,12 +1345,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5200
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5200
-     * @tc.desc      test OH_TextAvoidInfo_GetHeight Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5200
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5200
+     * @tc.desc   test OH_TextAvoidInfo_GetHeight Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1371,12 +1371,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5300
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5300
-     * @tc.desc      test OH_TextConfig_SetInputType Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5300
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5300
+     * @tc.desc   test OH_TextConfig_SetInputType Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1397,12 +1397,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5400
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5400
-     * @tc.desc      test OH_TextConfig_SetInputType Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5400
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5400
+     * @tc.desc   test OH_TextConfig_SetInputType Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1423,12 +1423,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5500
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5500
-     * @tc.desc      test OH_TextConfig_SetEnterKeyType Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5500
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5500
+     * @tc.desc   test OH_TextConfig_SetEnterKeyType Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1449,12 +1449,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5600
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5600
-     * @tc.desc      test OH_TextConfig_SetEnterKeyType Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5600
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5600
+     * @tc.desc   test OH_TextConfig_SetEnterKeyType Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1475,12 +1475,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5700
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5700
-     * @tc.desc      test OH_TextConfig_SetPreviewTextSupport Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5700
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5700
+     * @tc.desc   test OH_TextConfig_SetPreviewTextSupport Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1501,12 +1501,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5800
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5800
-     * @tc.desc      test OH_TextConfig_SetPreviewTextSupport Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5800
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5800
+     * @tc.desc   test OH_TextConfig_SetPreviewTextSupport Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1527,12 +1527,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_5900
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_5900
-     * @tc.desc      test OH_TextConfig_SetSelection Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_5900
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_5900
+     * @tc.desc   test OH_TextConfig_SetSelection Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_5900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1553,12 +1553,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_6000
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_6000
-     * @tc.desc      test OH_TextConfig_SetSelection Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_6000
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_6000
+     * @tc.desc   test OH_TextConfig_SetSelection Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_6000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1579,12 +1579,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6100
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6100
-     * @tc.desc      test OH_TextConfig_SetWindowId Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6100
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6100
+     * @tc.desc   test OH_TextConfig_SetWindowId Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1605,12 +1605,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6200
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6200
-     * @tc.desc      test OH_TextConfig_SetWindowId Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6200
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6200
+     * @tc.desc   test OH_TextConfig_SetWindowId Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1631,12 +1631,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6300
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6300
-     * @tc.desc      test OH_TextConfig_SetPlaceholder Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6300
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6300
+     * @tc.desc   test OH_TextConfig_SetPlaceholder Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1657,12 +1657,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6400
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6400
-     * @tc.desc      test OH_TextConfig_SetPlaceholder Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6400
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6400
+     * @tc.desc   test OH_TextConfig_SetPlaceholder Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1683,12 +1683,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6500
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6500
-     * @tc.desc      test OH_TextConfig_SetAbilityName Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6500
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6500
+     * @tc.desc   test OH_TextConfig_SetAbilityName Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1709,12 +1709,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6600
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6600
-     * @tc.desc      test OH_TextConfig_SetAbilityName Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6600
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6600
+     * @tc.desc   test OH_TextConfig_SetAbilityName Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1735,12 +1735,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6700
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6700
-     * @tc.desc      test OH_TextConfig_GetInputType Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6700
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6700
+     * @tc.desc   test OH_TextConfig_GetInputType Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1761,12 +1761,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6800
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6800
-     * @tc.desc      test OH_TextConfig_GetInputType Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6800
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6800
+     * @tc.desc   test OH_TextConfig_GetInputType Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1787,12 +1787,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_6900
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_6900
-     * @tc.desc      test OH_TextConfig_GetEnterKeyType Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_6900
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_6900
+     * @tc.desc   test OH_TextConfig_GetEnterKeyType Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_6900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1813,12 +1813,12 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @tc.number    SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_7000
-     * @tc.name      SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_7000
-     * @tc.desc      test OH_TextConfig_GetEnterKeyType Ok
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_7000
+     * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_7000
+     * @tc.desc   test OH_TextConfig_GetEnterKeyType Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_7000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,

@@ -45,10 +45,13 @@ export default function selectOnSelectJsunit() {
       console.info("selectOnSelect after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testselectOnSelect0001
-     * @tc.desic         aceselectOnSelectEtsTest0001
+    /**
+     * @tc.name   testselectOnSelect0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testselectOnSelect0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testselectOnSelect0001', Level.LEVEL1, async () => {
       console.info('selectOnSelect testselectOnSelect0001 START');
@@ -62,10 +65,13 @@ export default function selectOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testselectOnSelect0002
-     * @tc.desic         aceselectOnSelectEtsTest0002
+    /**
+     * @tc.name   testselectOnSelect0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testselectOnSelect0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testselectOnSelect0002', Level.LEVEL1, async () => {
       console.info('selectOnSelect testselectOnSelect0002 START');

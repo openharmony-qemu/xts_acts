@@ -273,12 +273,12 @@ export default function api16CertFuncTestTwoUnit() {
     })
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallUserTrustedCertificates_0015
      * @tc.number SUB_Security_CertManager_InstallUserTrustedCertificates_0015
-     * @tc.name test installUserTrustedCertificateSync interface
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_InstallUserTrustedCertificates_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_Security_CertManager_InstallUserTrustedCertificates_0015 start');
@@ -325,12 +325,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallUserTrustedCertificates_0016
      * @tc.number SUB_Security_CertManager_InstallUserTrustedCertificates_0016
-     * @tc.name test installUserTrustedCertificateSync interface
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_InstallUserTrustedCertificates_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_Security_CertManager_InstallUserTrustedCertificates_0016 start');
@@ -377,12 +377,12 @@ export default function api16CertFuncTestTwoUnit() {
 
 
     /**
+     * @tc.name   SUB_Security_CertManager_UninstallUserTrustedCertificate_0011
      * @tc.number SUB_Security_CertManager_UninstallUserTrustedCertificate_0011
-     * @tc.name test uninstallUserTrustedCertificateSync interface
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_UninstallUserTrustedCertificate_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_Security_CertManager_UninstallUserTrustedCertificate_0011 start');
@@ -415,12 +415,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_UninstallUserTrustedCertificate_0012
      * @tc.number SUB_Security_CertManager_UninstallUserTrustedCertificate_0012
-     * @tc.name test uninstallUserTrustedCertificateSync interface
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_UninstallUserTrustedCertificate_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_Security_CertManager_UninstallUserTrustedCertificate_0012 start');
@@ -453,12 +453,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_UninstallUserTrustedCertificate_0013
      * @tc.number SUB_Security_CertManager_UninstallUserTrustedCertificate_0013
-     * @tc.name test uninstallUserTrustedCertificateSync interface
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_UninstallUserTrustedCertificate_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_Security_CertManager_UninstallUserTrustedCertificate_0013 start');
@@ -493,12 +493,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_UninstallUserTrustedCertificate_0014
      * @tc.number SUB_Security_CertManager_UninstallUserTrustedCertificate_0014
-     * @tc.name test uninstallUserTrustedCertificateSync interface
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_UninstallUserTrustedCertificate_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_Security_CertManager_UninstallUserTrustedCertificate_0014 start');
@@ -528,12 +528,12 @@ export default function api16CertFuncTestTwoUnit() {
       done();
     });
     /**
+     * @tc.name   SUB_Security_CertManager_UninstallUserTrustedCertificate_0015
      * @tc.number SUB_Security_CertManager_UninstallUserTrustedCertificate_0015
-     * @tc.name test uninstallUserTrustedCertificateSync interface
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_UninstallUserTrustedCertificate_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_Security_CertManager_UninstallUserTrustedCertificate_0015 start');
@@ -565,12 +565,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_0011
      * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_0011
-     * @tc.name test OpenUninstallCertificateDialog with abnormal parameters
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenUninstallCertificateDialog_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0011: started ");
@@ -606,12 +606,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_0012
      * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_0012
-     * @tc.name test openUninstallCertificateDialog with abnormal parameters
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenUninstallCertificateDialog_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0012: started ");
@@ -632,12 +632,12 @@ export default function api16CertFuncTestTwoUnit() {
 
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_0014
      * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_0014
-     * @tc.name test OpenUninstallCertificateDialog with abnormal parameters
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenUninstallCertificateDialog_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0014: started ");
@@ -677,12 +677,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_0015
      * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_0015
-     * @tc.name test openUninstallCertificateDialog with abnormal parameters
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenUninstallCertificateDialog_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0015: started ");
@@ -702,12 +702,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenCertificateDialog_0012
      * @tc.number SUB_Security_CertManager_OpenCertificateDialog_0012
-     * @tc.name test openCertificateDetailDialog with abnormal parameters
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenCertificateDialog_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenCertificateDialog_0012: started ");
@@ -739,12 +739,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenCertificateDialog_0030
      * @tc.number SUB_Security_CertManager_OpenCertificateDialog_0030
-     * @tc.name test openCertificateDetailDialog
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenCertificateDialog_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenCertificateDialog_0030: started ");
@@ -768,12 +768,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenCertificateDialog_0010
      * @tc.number SUB_Security_CertManager_OpenCertificateDialog_0010
-     * @tc.name test openCertificateDetailDialog with abnormal parameters
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenCertificateDialog_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenCertificateDialog_0010: started ");
@@ -794,12 +794,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0100
      * @tc.number SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0100
-     * @tc.name test openInstallCertificateDialog
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040: started ");
@@ -822,12 +822,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManger_OpenUninstallCertDialogCertJsApi_Func_0100
      * @tc.number SUB_Security_CertManger_OpenUninstallCertDialogCertJsApi_Func_0100
-     * @tc.name test openUninstallCertificateDialog
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManger_OpenUninstallCertDialogCertJsApi_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManger_OpenUninstallCertDialogCertJsApi_Func_0100: started ");
@@ -847,12 +847,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallCaCert_0107
      * @tc.number SUB_Security_CertManager_InstallCaCert_0107
-     * @tc.name test installUserTrustedCertificateSync interface
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_InstallCaCert_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_Security_CertManager_InstallCaCert_0107 start');
@@ -868,12 +868,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallCaCert_0108
      * @tc.number SUB_Security_CertManager_InstallCaCert_0108
-     * @tc.name test openCertificateDetailDialog
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_InstallCaCert_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.log("SUB_Security_CertManager_InstallCaCert_0108: started ");
@@ -899,12 +899,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_openAuthorzeDialog_0101
      * @tc.number SUB_Security_CertManager_openAuthorzeDialog_0101
-     * @tc.name test openCertificateDetailDialog
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_openAuthorzeDialog_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_openAuthorzeDialog_0101: started ");

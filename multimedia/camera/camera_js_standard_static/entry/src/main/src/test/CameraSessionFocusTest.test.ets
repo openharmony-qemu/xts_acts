@@ -87,14 +87,14 @@ let mFocusPointInvalidRB: cameraObj.Point = {
 }
 
 let mEnableCheckInvalidFocusPoint: boolean = false;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 
 export default function cameraSessionFocusTest() {
   let mVideoRecorder: media.AVRecorder | undefined;
   let fdNumber: int;
   let fdPath: string = "";
   let mVideoSurface: string | undefined;
-  let receiver: image.ImageReceiver;
+  let receiver: image.ImageReceiver | undefined;
   let mPhotoSurface: string = "";
   let surfaceId: string = '';
 
@@ -124,7 +124,7 @@ export default function cameraSessionFocusTest() {
       console.log(TAG + 'before receiver check')
       if (receiver !== undefined) {
           console.log(TAG + 'Photo receiver is created successfully')
-          mPhotoSurface= await receiver.getReceivingSurfaceId()
+          mPhotoSurface= await receiver!.getReceivingSurfaceId()
           console.log(TAG + 'Photo received id: ' + mPhotoSurface)
       } else {
               console.log(TAG + 'Photo receiver is created failed')
@@ -1463,7 +1463,7 @@ export default function cameraSessionFocusTest() {
         expect().assertFail();
       } else {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ON_FOCUSSTATECHANGE_STATIC_0100 to operate");
-        mCameraSession.on('focusStateChange', (err: BusinessError | null, data: cameraObj.FocusState | undefined) => {
+        mCameraSession.onFocusStateChange((err: BusinessError | null, data: cameraObj.FocusState | undefined) => {
           if (!err) {
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ON_FOCUSSTATECHANGE_STATIC_0100 success");
           } else {
@@ -1473,7 +1473,7 @@ export default function cameraSessionFocusTest() {
           await Utils.msSleep(1000);
           done();
         })
-        mCameraSession.off('focusStateChange')
+        mCameraSession.offFocusStateChange()
       }
       await Utils.msSleep(1000);
       done();
@@ -1496,7 +1496,7 @@ export default function cameraSessionFocusTest() {
         expect().assertFail();
       } else {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_ON_ERROR_STATIC_0100 to operate");
-        mCameraSession.on('error', (err: BusinessError) => {
+        mCameraSession.onError((err: BusinessError) => {
           if (!err) {
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_ON_ERROR_STATIC_0100 success");
           } else {
@@ -1506,7 +1506,7 @@ export default function cameraSessionFocusTest() {
           await Utils.msSleep(1000);
           done();
         })
-        mCameraSession.off('error')
+        mCameraSession.offError()
       }
       await Utils.msSleep(1000);
       done();

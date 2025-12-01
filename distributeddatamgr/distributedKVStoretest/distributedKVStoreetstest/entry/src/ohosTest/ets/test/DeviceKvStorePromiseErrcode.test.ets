@@ -129,10 +129,23 @@ export default function deviceKvStorePromiseErrcodeTest(){
           `, error code is ${error.code}, message is ${error.message}`);
         expect(null).assertFail();
       });
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-      await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-      console.info(TAG + 'beforeAll end');
-      done();
+
+
+      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
+        console.info('beforeAll closeKVStore success');
+        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+            console.info('beforeAll deleteKVStore success');
+            kvStore = null;
+            done();
+        }).catch((err) => {
+            console.info('beforeAll deleteKVStore err ' + err);
+            done();
+        });
+      }).catch((err) => {
+          console.info('beforeAll closeKVStore err ' + err);
+          done();
+      });
+
     });
 
     afterAll(async (done:Function) => {
@@ -166,22 +179,29 @@ export default function deviceKvStorePromiseErrcodeTest(){
     });
     afterEach(async (done:Function) =>  {
       console.info(TAG + 'afterEach');
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, async (err, data) => {
-        console.info(TAG + 'afterEach closeKVStore success');
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, (err, data) => {
-          console.info(TAG + 'afterEach deleteKVStore success');
+      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
+        console.info('afterEach closeKVStore success');
+        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+          console.info('afterEach deleteKVStore success');
+          kvStore = null;
+          done();
+        }).catch((err) => {
+          console.error('afterEach deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
           done();
         });
+      }).catch((err) => {
+        console.error('afterEach closeKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+        done();
       });
     });
 
     /**
+     * @tc.name   SUB_DDM_DKV_Get_Did_ErrCode_0001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0001
-     * @tc.desc getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.Get(Deviceid) ErrCode 0
+     * @tc.desc   getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_Get_Did_ErrCode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_Did_ErrCode_0001');
@@ -203,12 +223,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_Get_Did_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0100
-     * @tc.desc getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.Get(Deviceid) ErrCode 401
+     * @tc.desc   getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_Get_Did_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_Did_ErrCode_0100');
@@ -231,12 +251,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_Get_Did_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0200
-     * @tc.desc getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.Get(Deviceid) ErrCode 15100003
+     * @tc.desc   getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_Get_Did_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_Did_ErrCode_0200');
@@ -261,12 +281,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_Get_Did_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0300
-     * @tc.desc getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.Get(Deviceid) ErrCode 15100004
+     * @tc.desc   getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_Get_Did_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_Did_ErrCode_0300');
@@ -289,12 +309,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_Get_Did_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0400
-     * @tc.desc getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.Get(Deviceid) ErrCode 15100005
+     * @tc.desc   getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_Get_Did_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_Did_ErrCode_0400');
@@ -318,12 +338,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
+     * @tc.name   SUB_DDM_DKV_Get_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0100
-     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.Get(key) ErrCode 401
+     * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_Get_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_ErrCode_0100');
@@ -347,12 +367,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
+     * @tc.name   SUB_DDM_DKV_Get_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0200
-     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.Get ErrCode 15100003
+     * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_Get_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_ErrCode_0200');
@@ -375,12 +395,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_Get_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0300
-     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.Get ErrCode 15100004
+     * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_Get_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_ErrCode_0300');
@@ -403,12 +423,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_Get_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0400
-     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.Get ErrCode 15100005
+     * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_Get_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_ErrCode_0400');
@@ -432,14 +452,14 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
 
-      /**
+    /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0001
-     * @tc.desc Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 0
-       * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 0
-       */
+     * @tc.desc   Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0001 000 ');
       try {
@@ -464,12 +484,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0100
-     * @tc.desc Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 401
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 401
+     * @tc.desc   Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0100 ');
@@ -491,12 +511,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0200
-     * @tc.desc Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100003
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100003
+     * @tc.desc   Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0200 ');
@@ -520,12 +540,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0300
-     * @tc.desc Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100005
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100005
+     * @tc.desc   Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0300 ');
@@ -549,12 +569,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
       /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Key_ErrCode_0100
-     * @tc.desc Test Js Api DeviceKvStore.getEntries() ErrCode 401
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries() ErrCode 401
+       * @tc.name   SUB_DDM_DKV_GetEntries_Key_ErrCode_0100
+       * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Key_ErrCode_0100
+       * @tc.desc   Test Js Api DeviceKvStore.getEntries() ErrCode 401
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_DDM_DKV_GetEntries_Key_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
         console.info(TAG + 'SUB_DDM_DKV_GetEntries_Key_ErrCode_0100 ');
@@ -576,12 +596,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
       })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Key_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Key_ErrCode_0200
-     * @tc.desc Test Js Api DeviceKvStore.getEntries() ErrCode 15100003
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100003
+     * @tc.desc   Test Js Api DeviceKvStore.getEntries() ErrCode 15100003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Key_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Key_ErrCode_0200 ');
@@ -605,12 +625,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Key_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Key_ErrCode_0300
-     * @tc.desc Test Js Api DeviceKvStore.getEntries() ErrCode 15100005
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries() ErrCode 15100005
+     * @tc.desc   Test Js Api DeviceKvStore.getEntries() ErrCode 15100005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Key_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Key_ErrCode_0300 ');
@@ -634,12 +654,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0001
-     * @tc.desc  getEntries(deviceId: string, query: Query): Promise<Entry[]>
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid, query) ErrCode 0
+     * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0001');
@@ -664,12 +684,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0100
-     * @tc.desc  getEntries(deviceId: string, query: Query): Promise<Entry[]>
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid, query) ErrCode 401
+     * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0100');
@@ -692,12 +712,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0200
-     * @tc.desc  getEntries(deviceId: string, query: Query): Promise<Entry[]>
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid, query) ErrCode 15100003
+     * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0001');
@@ -722,12 +742,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0300
-     * @tc.desc  getEntries(deviceId: string, query: Query): Promise<Entry[]>
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid, query) ErrCode 15100005
+     * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0001');
@@ -752,12 +772,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Query_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Query_ErrCode_0100
-     * @tc.desc  getEntries(query: Query): Promise<Entry[]>
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(query) ErrCode 401
+     * @tc.desc   getEntries(query: Query): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Query_ErrCode_0100');
@@ -780,12 +800,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Query_ErrCode_0200
-     * @tc.desc  getEntries(query: Query): Promise<Entry[]>
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(query) ErrCode 15100003
+     * @tc.desc   getEntries(query: Query): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Query_ErrCode_0200');
@@ -809,12 +829,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetEntries_Query_ErrCode_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Query_ErrCode_0300
-     * @tc.desc  getEntries(deviceId: string, query: Query): Promise<Entry[]>
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid, query) ErrCode 15100005
+     * @tc.desc   getEntries(deviceId: string, query: Query): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetEntries_Query_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Query_ErrCode_0300');
@@ -839,12 +859,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0001
-     * @tc.desc getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 0
+     * @tc.desc   getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0001');
@@ -874,12 +894,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0100
-     * @tc.desc getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 401
+     * @tc.desc   getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0100');
@@ -907,40 +927,45 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0200
-     * @tc.desc getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 15100001
+     * @tc.desc   getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0200');
       try {
         let resultSets: factory.KVStoreResultSet[] = [];
         for (let i=0; i<9; i++) {
-          await kvStore.getResultSet(localDeviceId, 'key_test_string_2').then((result) => {
+          await kvStore.getResultSet(localDeviceId, 'key_test_string_2').then(async(result) => {
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets.push(result);
-          }).catch((err:BusinessError) => {
+          }).catch(async(err:BusinessError) => {
             console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
             expect(15100001).assertEqual(err.code);
+            await sleep(1000);
+            for (let j=0; j<9; j++) {
+              try{
+                await kvStore.closeResultSet(resultSets[j], (err) => {
+                  if (err == undefined) {
+                    console.info(TAG + ' closeResultSet success, j=' + j);
+                  } else {
+                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                  }
+                })
+              }catch(er){
+                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+              }
+            }
+
+            await sleep(2000);
+            done();
+
           });
         }
-        for (let j=0; j<9; j++) {
-          try{
-            await kvStore.closeResultSet(resultSets[j], (err) => {
-              if (err == undefined) {
-                console.info(TAG + ' closeResultSet success, j=' + j);
-              } else {
-                console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-              }
-            })
-          }catch(er){
-            console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
-            done();
-          }
-        }
+
 
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -950,12 +975,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0400
-     * @tc.desc getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 15100005
+     * @tc.desc   getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0300');
@@ -978,12 +1003,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Key_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Key_ErrCode_0100
-     * @tc.desc getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 401
+     * @tc.desc   getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Key_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Key_ErrCode_0100');
@@ -1011,40 +1036,45 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Key_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Key_ErrCode_0200
-     * @tc.desc getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 15100001
+     * @tc.desc   getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Key_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Key_ErrCode_0200');
       try {
         let resultSets: factory.KVStoreResultSet[] = [];
         for (let i=0; i<9; i++) {
-          await kvStore.getResultSet('key_test_string_2').then((result) => {
+          await kvStore.getResultSet('key_test_string_2').then(async(result) => {
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets.push(result);
-          }).catch((err:BusinessError) => {
+          }).catch(async(err:BusinessError) => {
             console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
             expect(15100001).assertEqual(err.code);
+            await sleep(1000);
+            for (let j=0; j<9; j++) {
+              try{
+                await kvStore.closeResultSet(resultSets[j], (err) => {
+                  if (err == undefined) {
+                    console.info(TAG + ' closeResultSet success, j=' + j);
+                  } else {
+                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                  }
+                })
+              }catch(er){
+                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+              }
+            }
+
+            await sleep(2000);
+            done();
+
           });
         }
-        for (let j=0; j<9; j++) {
-          try{
-            await kvStore.closeResultSet(resultSets[j], (err) => {
-              if (err == undefined) {
-                console.info(TAG + ' closeResultSet success, j=' + j);
-              } else {
-                console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-              }
-            })
-          }catch(er){
-            console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
-            done();
-          }
-        }
+
 
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1054,12 +1084,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Key_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Key_ErrCode_0400
-     * @tc.desc getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 15100005
+     * @tc.desc   getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Key_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Key_ErrCode_0300');
@@ -1081,12 +1111,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0001
-     * @tc.desc getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 0
+     * @tc.desc   getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0001');
@@ -1119,12 +1149,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0100
-     * @tc.desc getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 401
+     * @tc.desc   getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0100');
@@ -1154,12 +1184,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0200
-     * @tc.desc getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 15100001
+     * @tc.desc   getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0200');
@@ -1169,28 +1199,32 @@ export default function deviceKvStorePromiseErrcodeTest(){
         query.prefixKey("batch_test");
         let resultSets: factory.KVStoreResultSet[] = [];
         for (let i=0; i<9; i++) {
-          await kvStore.getResultSet(localDeviceId, query).then((result) => {
+          await kvStore.getResultSet(localDeviceId, query).then(async(result) => {
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets.push(result);
-          }).catch((err:BusinessError) => {
+          }).catch(async(err:BusinessError) => {
             console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
             expect(15100001).assertEqual(err.code);
+            await sleep(1000);
+            for (let j=0; j<9; j++) {
+              try{
+                await kvStore.closeResultSet(resultSets[j], (err) => {
+                  if (err == undefined) {
+                    console.info(TAG + ' closeResultSet success, j=' + j);
+                  } else {
+                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                  }
+                })
+              }catch(er){
+                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+              }
+            }
+
+            await sleep(2000);
+            done();
           });
         }
-        for (let j=0; j<9; j++) {
-          try{
-            await kvStore.closeResultSet(resultSets[j], (err) => {
-              if (err == undefined) {
-                console.info(TAG + ' closeResultSet success, j=' + j);
-              } else {
-                console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-              }
-            })
-          }catch(er){
-            console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
-            done();
-          }
-        }
+
 
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1200,12 +1234,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0400
-     * @tc.desc getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 15100005
+     * @tc.desc   getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0300');
@@ -1230,14 +1264,14 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
 
-      /**
-       * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Query_ErrCode_0100
-       * @tc.desc getResultSet(query: Query): Promise<KVStoreResultSet>;
-       * @tc.size MEDIUMTEST
-       * @tc.type FUNCTION
-       * @tc.level LEVEL2
-       * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 401
-       */
+    /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Query_ErrCode_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Query_ErrCode_0100
+     * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_DDM_DKV_GetResultSet_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Query_ErrCode_0100');
       try {
@@ -1266,12 +1300,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Query_ErrCode_0200
-     * @tc.desc getResultSet(query: Query): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 15100001
+     * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Query_ErrCode_0200');
@@ -1281,28 +1315,32 @@ export default function deviceKvStorePromiseErrcodeTest(){
         query.prefixKey("batch_test");
         let resultSets: factory.KVStoreResultSet[] = [];
         for (let i=0; i<9; i++) {
-          await kvStore.getResultSet(query).then((result) => {
+          await kvStore.getResultSet(query).then(async(result) => {
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets.push(result);
-          }).catch((err:BusinessError) => {
+          }).catch(async(err:BusinessError) => {
             console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
             expect(15100001).assertEqual(err.code);
+            await sleep(1000);
+            for (let j=0; j<9; j++) {
+              try{
+                await kvStore.closeResultSet(resultSets[j], (err) => {
+                  if (err == undefined) {
+                    console.info(TAG + ' closeResultSet success, j=' + j);
+                  } else {
+                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                  }
+                })
+              }catch(er){
+                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+              }
+            }
+
+            await sleep(2000);
+            done();
           });
         }
-        for (let j=0; j<9; j++) {
-          try{
-            await kvStore.closeResultSet(resultSets[j], (err) => {
-              if (err == undefined) {
-                console.info(TAG + ' closeResultSet success, j=' + j);
-              } else {
-                console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-              }
-            })
-          }catch(er){
-            console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
-            done();
-          }
-        }
+
 
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1312,12 +1350,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSet_Query_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Query_ErrCode_0400
-     * @tc.desc getResultSet(query: Query): Promise<KVStoreResultSet>;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 15100005
+     * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSet_Query_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Query_ErrCode_0300');
@@ -1342,12 +1380,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Did_Query_ErrCode_0100
-     * @tc.desc getResultSize(deviceId: string, query: Query): Promise<number>
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSize ErrCode 401
+     * @tc.desc   getResultSize(deviceId: string, query: Query): Promise<number>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0100');
@@ -1366,12 +1404,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Did_Query_ErrCode_0200
-     * @tc.desc getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSize ErrCode 15100005
+     * @tc.desc   getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0200');
@@ -1390,12 +1428,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
-     * @tc.name SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0400
+     * @tc.name   SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Did_Query_ErrCode_0400
-     * @tc.desc getResultSize(deviceId: string, query: Query): Promise<number>  ErrCode 15100004
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
+     * @tc.desc   getResultSize(deviceId: string, query: Query): Promise<number>  ErrCode 15100004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0400');
@@ -1420,12 +1458,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSize_Query_ErrCode_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Query_ErrCode_0100
-     * @tc.desc getResultSize(query: Query): Promise<number>
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSize ErrCode 401
+     * @tc.desc   getResultSize(query: Query): Promise<number>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSize_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSize_Query_ErrCode_0100');
@@ -1444,12 +1482,12 @@ export default function deviceKvStorePromiseErrcodeTest(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_GetResultSize_Query_ErrCode_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Query_ErrCode_0200
-     * @tc.desc getResultSize(query: Query): Promise<number>
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSize ErrCode 15100005
+     * @tc.desc   getResultSize(query: Query): Promise<number>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_GetResultSize_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSize_Query_ErrCode_0200');

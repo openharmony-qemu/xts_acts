@@ -47,12 +47,14 @@ export default function SelectAttr() {
     });
 
 
-    /*
-    * @tc.number      SelectAttr_001
-    * @tc.name        SelectAttr_001
-    * @tc.desc        SelectAttr OptionWidthMode.FIT_TRIGGER test
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   SelectAttr_001
+     * @tc.number SelectAttr_001
+     * @tc.desc   SelectAttr OptionWidthMode.FIT_TRIGGER test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SelectAttr_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SelectAttr_001] START');
       await Utils.sleep(1000);

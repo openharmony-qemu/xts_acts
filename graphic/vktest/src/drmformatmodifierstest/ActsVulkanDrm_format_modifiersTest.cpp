@@ -39,11 +39,19 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanDrm_format_modifiersTestCase
+     * @tc.number TestVulkanDrm_format_modifiersTestCase
+     * @tc.desc   TestVulkanDrm_format_modifiersTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanDrmformatmodifiersTest, TestVulkanDrm_format_modifiersTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanDrmformatmodifiersTest------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/drm-format-modifiers.txt "
                 "--deqp-log-filename=ActsVulkanDrmformatmodifiersTest.qpa");
         }

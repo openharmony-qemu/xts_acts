@@ -23,13 +23,12 @@ export default function fileioStreamFlush() {
 describe('fileio_stream_flush', function () {
 
   /**
+   * @tc.name   fileio_test_stream_flush_sync_000
    * @tc.number SUB_DF_FILEIO_STREAM_FLUSHSYNC_0000
-   * @tc.name fileio_test_stream_flush_sync_000
-   * @tc.desc Test flushSync() interface, refresh file stream.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test flushSync() interface, refresh file stream.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_flush_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_flush_sync_000');
@@ -48,15 +47,14 @@ describe('fileio_stream_flush', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_STREAM_FLUSHSYNC_0100
-   * @tc.name fileio_test_stream_flush_sync_001
-   * @tc.desc Test flushSync() interface, When there are parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileio_test_stream_flush_sync_001
+    * @tc.number SUB_DF_FILEIO_STREAM_FLUSHSYNC_0100
+    * @tc.desc   Test flushSync() interface, When there are parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileio_test_stream_flush_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_flush_sync_001');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -75,13 +73,12 @@ describe('fileio_stream_flush', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_flush_async_000
    * @tc.number SUB_DF_FILEIO_STREAM_FLUSHASYNC_0000
-   * @tc.name fileio_test_stream_flush_async_000
-   * @tc.desc Test flush() interface, refresh the file stream and return in promise mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test flush() interface, refresh the file stream and return in promise mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_flush_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_flush_async_000');
@@ -104,13 +101,12 @@ describe('fileio_stream_flush', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_flush_async_001
    * @tc.number SUB_DF_FILEIO_STREAM_FLUSHASYNC_0100
-   * @tc.name fileio_test_stream_flush_async_001
-   * @tc.desc Test flush() interface, refresh the file stream and return in callback mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test flush() interface, refresh the file stream and return in callback mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_flush_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_flush_async_001');

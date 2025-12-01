@@ -66,12 +66,12 @@ export default function bluetoothAccessTest() {
         })
 
         /**
+         * @tc.name   constantTest
          * @tc.number constantTest
-         * @tc.name constantTest
-         * @tc.desc Test constantTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test constantTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("constantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -108,12 +108,12 @@ export default function bluetoothAccessTest() {
         })
 
         /**
+         * @tc.name   bluetoothOnOffStateTest
          * @tc.number bluetoothOnOffStateTest
-         * @tc.name bluetoothOnOffStateTest
-         * @tc.desc Test bluetoothOnOffStateTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test bluetoothOnOffStateTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("bluetoothOnOffStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -176,12 +176,12 @@ export default function bluetoothAccessTest() {
         })
 
         /**
+         * @tc.name   accessConstantTest
          * @tc.number accessConstantTest
-         * @tc.name accessConstantTest
-         * @tc.desc Test accessConstantTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test accessConstantTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("accessConstantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -215,19 +215,19 @@ export default function bluetoothAccessTest() {
         })
 
         /**
+         * @tc.name   stateChangeTest
          * @tc.number stateChangeTest
-         * @tc.name stateChangeTest
-         * @tc.desc Test stateChangeTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test stateChangeTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("stateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: access.BluetoothState) => void = (changeInfo: access.BluetoothState) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo stateChange:" + changeInfo);
             }
             try{
-                access.on('stateChange', onReceiveEvent);
+                access.onStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "stateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -239,7 +239,7 @@ export default function bluetoothAccessTest() {
             }
             await Utils.msSleep(1000);
             try{
-                access.off('stateChange');
+                access.offStateChange();
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "stateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -253,19 +253,19 @@ export default function bluetoothAccessTest() {
         })
 
         /**
+         * @tc.name   stateChangeTest2
          * @tc.number stateChangeTest2
-         * @tc.name stateChangeTest2
-         * @tc.desc Test stateChangeTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test stateChangeTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("stateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: access.BluetoothState) => void = (changeInfo: access.BluetoothState) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo stateChange:" + changeInfo);
             }
             try{
-                access.on('stateChange', onReceiveEvent);
+                access.onStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "stateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -277,7 +277,7 @@ export default function bluetoothAccessTest() {
             }
             await Utils.msSleep(1000);
             try{
-                access.off('stateChange', onReceiveEvent);
+                access.offStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "stateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {

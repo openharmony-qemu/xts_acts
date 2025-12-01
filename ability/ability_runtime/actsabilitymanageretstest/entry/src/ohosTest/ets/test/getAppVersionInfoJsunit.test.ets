@@ -36,7 +36,6 @@ function checkAppVersionInfo(msg: string, data: ESObject) {
 export default function getHapModuleInfoJsunit() {
   describe('getAppVersionInfoTest', () => {
     let TAG1 = "SUB_AA_OpenHarmony == getAppVersionInfoTest: ";
-    let sleepTimeOne = 1000;
     let id: number;
     beforeAll(async (done: Function) => {
       console.log(TAG1 + "beforeAll called");
@@ -46,30 +45,27 @@ export default function getHapModuleInfoJsunit() {
       })
       id = delayInfo.requestId;
       console.log(TAG1 + "requestId is : " + id);
-      setTimeout(() => {
-        console.log(TAG1 + "beforeAll end");
+      console.log(TAG1 + "beforeAll end");
         done();
-      }, sleepTimeOne);
     })
 
     afterAll(async (done: Function) => {
       console.log(TAG1 + "afterAll called");
       backgroundTaskManager.cancelSuspendDelay(id);
-      setTimeout(() => {
-        console.log(TAG1 + "afterAll end");
+      console.log(TAG1 + "afterAll end");
         done();
-      }, sleepTimeOne)
     })
 
     /**
-     * @tc.number: context_getAppVersionInfo_test_0100
-     * @tc.name: getAppVersionInfo:Gets the version information for the application.
-     * @tc.desc: Check the return type of the interface (by Promise)
-     * @tc.level 0
+     * @tc.name   context_getAppVersionInfo_test_0100
+     * @tc.number context_getAppVersionInfo_test_0100
+     * @tc.desc   Check the return type of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('context_getAppVersionInfo_test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[context_getAppVersionInfo_test_0100] START');
-      await Utils.sleep(1000);
       let timeOldStamp = Utils.getNowTime();
       let context = ability_featureAbility.getContext();
       context.getAppVersionInfo()
@@ -89,15 +85,16 @@ export default function getHapModuleInfoJsunit() {
     })
 
     /**
-     * @tc.number: context_getAppVersionInfo_test_0200
-     * @tc.name: getAppVersionInfo:Gets the version information for the application.
-     * @tc.desc: Check the return type of the interface (by Callback)
-     * @tc.level 0
+     * @tc.name   context_getAppVersionInfo_test_0200
+     * @tc.number context_getAppVersionInfo_test_0200
+     * @tc.desc   Check the return type of the interface (by Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('context_getAppVersionInfo_test_0200', Level.LEVEL0, async (done: Function) => {
       try {
         console.info('[context_getAppVersionInfo_test_0200] START');
-        await Utils.sleep(1000);
         let timeOldStamp = await Utils.getNowTime();
         let context = ability_featureAbility.getContext();
         context.getAppVersionInfo((error, data) => {

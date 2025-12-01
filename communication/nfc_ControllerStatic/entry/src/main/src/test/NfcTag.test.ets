@@ -43,15 +43,15 @@ export default function nfcTagTest() {
         })
         hilog.info(domain, tag1, '%{public}s', 'describe start11');
 
-        /**
-         * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0100
-         * @tc.name MIFARE_CLASSIC
-         * @tc.desc Check whether the NFC function is enabled.
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 1
-         */
 
+        /**
+         * @tc.name   SUB_COMMUNICATION_NFC_Tag_static_0100
+         * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0100
+         * @tc.desc   SUB_COMMUNICATION_NFC_Tag_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_COMMUNICATION_NFC_Tag_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 MIFARE_CLASSIC is' + tag.NfcForumType.MIFARE_CLASSIC);
             expect(tag.NfcForumType.MIFARE_CLASSIC).assertEqual(101);

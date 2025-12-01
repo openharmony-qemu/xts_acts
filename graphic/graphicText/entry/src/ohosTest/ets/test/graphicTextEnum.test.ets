@@ -45,14 +45,14 @@ export default function graphicTextEnum() {
       pixel = await image.createPixelMap(color, opts);
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_001
-     * @tc.name      : testEnumRectWidthStyle
-     * @tc.desc      : To test the enum value of RectWidthStyle.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectWidthStyle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_001
+     * @tc.desc   To test the enum value of RectWidthStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testRectWidthStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testRectWidthStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testRectWidthStyle"
       console.info(msg + 'begin');
       try {
@@ -64,14 +64,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_002
-     * @tc.name      : testEnumRectHeightStyle
-     * @tc.desc      : To test the enum value of RectHeightStyle.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectHeightStyle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_002
+     * @tc.desc   To test the enum value of RectHeightStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testRectHeightStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testRectHeightStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testRectHeightStyle"
       console.info(msg + 'begin');
       try {
@@ -87,14 +87,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_003
-     * @tc.name      : testEnumAffinity
-     * @tc.desc      : To test the enum value of Affinity.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testAffinity
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_003
+     * @tc.desc   To test the enum value of Affinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testAffinity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testAffinity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testAffinity"
       console.info(msg + 'begin');
       try {
@@ -106,14 +106,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_004
-     * @tc.name      : testEnumTextAlign
-     * @tc.desc      : To test the enum value of TextAlign.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextAlign
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_004
+     * @tc.desc   To test the enum value of TextAlign.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTextAlign', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextAlign', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextAlign"
       console.info(msg + 'begin');
       try {
@@ -129,14 +129,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_005
-     * @tc.name      : testEnumTextDirection
-     * @tc.desc      : To test the enum value of TextDirection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextDirection
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_005
+     * @tc.desc   To test the enum value of TextDirection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTextDirection', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextDirection', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextDirection"
       console.info(msg + 'begin');
       try {
@@ -148,14 +148,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_006
-     * @tc.name      : testEnumBreakStrategy
-     * @tc.desc      : To test the enum value of BreakStrategy.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testBreakStrategy
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_006
+     * @tc.desc   To test the enum value of BreakStrategy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testBreakStrategy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testBreakStrategy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testBreakStrategy"
       console.info(msg + 'begin');
       try {
@@ -168,14 +168,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_007
-     * @tc.name      : testEnumWordBreak
-     * @tc.desc      : To test the enum value of WordBreak.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWordBreak
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_007
+     * @tc.desc   To test the enum value of WordBreak.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testWordBreak', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testWordBreak', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testWordBreak"
       console.info(msg + 'begin');
       try {
@@ -188,14 +188,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_008
-     * @tc.name      : testEnumTextDecorationType
-     * @tc.desc      : To test the enum value of TextDecorationType.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextDecorationType
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_008
+     * @tc.desc   To test the enum value of TextDecorationType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTextDecorationType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextDecorationType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextDecorationType"
       console.info(msg + 'begin');
       try {
@@ -209,14 +209,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_009
-     * @tc.name      : testEnumTextDecorationStyle
-     * @tc.desc      : To test the enum value of TextDecorationStyle.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextDecorationStyle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_009
+     * @tc.desc   To test the enum value of TextDecorationStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTextDecorationStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextDecorationStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextDecorationStyle"
       console.info(msg + 'begin');
       try {
@@ -231,14 +231,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_010
-     * @tc.name      : testEnumFontWeight
-     * @tc.desc      : To test the enum value of FontWeight.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testFontWeight
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_010
+     * @tc.desc   To test the enum value of FontWeight.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testFontWeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testFontWeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testFontWeight"
       console.info(msg + 'begin');
       try {
@@ -257,14 +257,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_011
-     * @tc.name      : testEnumFontStyle
-     * @tc.desc      : To test the enum value of FontStyle.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testFontStyle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_011
+     * @tc.desc   To test the enum value of FontStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testFontStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testFontStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testFontStyle"
       console.info(msg + 'begin');
       try {
@@ -277,14 +277,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_012
-     * @tc.name      : testEnumTextBaseline
-     * @tc.desc      : To test the enum value of TextBaseline.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextBaseline
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_012
+     * @tc.desc   To test the enum value of TextBaseline.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTextBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextBaseline"
       console.info(msg + 'begin');
       try {
@@ -296,14 +296,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_013
-     * @tc.name      : testEnumEllipsisMode
-     * @tc.desc      : To test the enum value of EllipsisMode.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testEllipsisMode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_013
+     * @tc.desc   To test the enum value of EllipsisMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testEllipsisMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testEllipsisMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testEllipsisMode"
       console.info(msg + 'begin');
       try {
@@ -316,14 +316,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_014
-     * @tc.name      : testPlaceholderAlignment
-     * @tc.desc      : To test the enum value of PlaceholderAlignment.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPlaceholderAlignment
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_014
+     * @tc.desc   To test the enum value of PlaceholderAlignment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testPlaceholderAlignment', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testPlaceholderAlignment', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testPlaceholderAlignment"
       console.info(msg + 'begin');
       try {
@@ -340,14 +340,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_014
-     * @tc.name      : testTextVerticalAlign
-     * @tc.desc      : To test the enum value of PlaceholderAlignment.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextVerticalAlign
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_014
+     * @tc.desc   To test the enum value of PlaceholderAlignment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTextVerticalAlign', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextVerticalAlign', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextVerticalAlign"
       console.info(msg + 'begin');
       try {
@@ -361,14 +361,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    testTextFontWidth
-     * @tc.name      testTextFontWidth
-     * @tc.desc      To test the enum value of testTextFontWidth.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level3
+     * @tc.name   testTextFontWidth
+     * @tc.number testTextFontWidth
+     * @tc.desc   To test the enum value of testTextFontWidth.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTextFontWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextFontWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextFontWidth"
       console.info(msg + 'begin');
       try {
@@ -387,14 +387,14 @@ export default function graphicTextEnum() {
       }
     })
     /**
-     * @tc.number    testLineHeightStyle
-     * @tc.name      testLineHeightStyle
-     * @tc.desc      To test the enum value of testLineHeightStyle.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level1
+     * @tc.name   testLineHeightStyle
+     * @tc.number testLineHeightStyle
+     * @tc.desc   To test the enum value of testLineHeightStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLineHeightStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineHeightStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testLineHeightStyle"
       console.info(msg + 'begin');
       try {

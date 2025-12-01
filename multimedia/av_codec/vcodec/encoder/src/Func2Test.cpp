@@ -65,12 +65,12 @@ void HwEncFunc2NdkTest::SetUpTestCase()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     const char *tmpCodecName = OH_AVCapability_GetName(cap);
-    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != 0)
+    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName) + 1) != 0)
         cout << "memcpy failed" << endl;
     cout << "codecname: " << g_codecName << endl;
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
-    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc)) != 0)
+    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc) + 1) != 0)
         cout << "memcpy failed" << endl;
     cout << "codecname_hevc: " << g_codecNameHEVC << endl;
 }
@@ -1638,6 +1638,31 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0190, TestSize.Level2)
         ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
         vEncSample->WaitForEOS();
         ASSERT_LT(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_PIXE_FORMAT_0010
+ * @tc.name      : 264 pixelformat query key
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_PIXE_FORMAT_0010, TestSize.Level2)
+{
+    if (cap != nullptr && !access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_shared<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->isGetVideoSupportedPixelFormats = true;
+        vEncSample->isGetFormatKey = true;
+        vEncSample->avcodecMimeType = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
+        vEncSample->isEncoder = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_LT(1, vEncSample->pixlFormatNum);
+        ASSERT_EQ(0, vEncSample->firstCallBackKey);
+        ASSERT_EQ(0, vEncSample->onStreamChangedKey);
     }
 }
 } // namespace

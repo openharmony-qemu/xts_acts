@@ -46,9 +46,12 @@ void BuildModel(OH_NNModel *model, const OHNNGraphArgs &graphArgs)
 } // namespace
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_CreateQuantParam_0100
- * @tc.desc: 创建量化参数
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_CreateQuantParam_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Model_CreateQuantParam_0100
+ * @tc.desc   创建量化参数
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_CreateQuantParam_0100, Function | MediumTest | Level0)
 {
@@ -58,9 +61,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_CreateQuantParam_0100, Function
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_DestroyQuantParam_0100
- * @tc.desc: 释放量化参数,*quantParam为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_DestroyQuantParam_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Model_DestroyQuantParam_0100
+ * @tc.desc   释放量化参数,*quantParam为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_DestroyQuantParam_0100, Function | MediumTest | Level0)
 {
@@ -69,9 +75,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_DestroyQuantParam_0100, Functio
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_DestroyQuantParam_0200
- * @tc.desc: 释放量化参数,quantParam为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_DestroyQuantParam_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Model_DestroyQuantParam_0200
+ * @tc.desc   释放量化参数,quantParam为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_DestroyQuantParam_0200, Function | MediumTest | Level0)
 {
@@ -79,9 +88,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_DestroyQuantParam_0200, Functio
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetQuantParam_0100
- * @tc.desc: 设置量化参数，参数为空，返回失败
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetQuantParam_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetQuantParam_0100
+ * @tc.desc   设置量化参数，参数为空，返回失败
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0100, Function | MediumTest | Level0)
 {
@@ -90,9 +102,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0100, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetQuantParam_0200
- * @tc.desc: 设置量化参数，参数合法,count=1,参数的channel=1,调用成功
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetQuantParam_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetQuantParam_0200
+ * @tc.desc   设置量化参数，参数合法,count=1,参数的channel=1,调用成功
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0200, Function | MediumTest | Level0)
 {
@@ -115,9 +130,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0200, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetQuantParam_0300
- * @tc.desc: 设置量化参数，count=1,channel=2,Per-Layer模式，设置成功
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetQuantParam_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetQuantParam_0300
+ * @tc.desc   设置量化参数，count=1,channel=2,Per-Layer模式，设置成功
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0300, Function | MediumTest | Level0)
 {
@@ -140,9 +158,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0300, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetQuantParam_0400
- * @tc.desc: 设置量化参数，参数合法,count=2,参数的channel=1,调用失败
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetQuantParam_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetQuantParam_0400
+ * @tc.desc   设置量化参数，参数合法,count=2,参数的channel=1,调用失败
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0400, Function | MediumTest | Level0)
 {
@@ -165,9 +186,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0400, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetQuantParam_0500
- * @tc.desc: 设置量化参数，参数合法,参数count不一致,调用失败
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetQuantParam_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetQuantParam_0500
+ * @tc.desc   设置量化参数，参数合法,参数count不一致,调用失败
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0500, Function | MediumTest | Level0)
 {
@@ -190,9 +214,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0500, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetQuantParam_0600
- * @tc.desc: 设置量化参数，参数合法,不设置zeroPoints,调用失败
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetQuantParam_0600
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetQuantParam_0600
+ * @tc.desc   设置量化参数，参数合法,不设置zeroPoints,调用失败
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0600, Function | MediumTest | Level0)
 {
@@ -213,9 +240,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0600, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetQuantParam_0700
- * @tc.desc: 设置量化参数，参数合法,不设置numBits,调用失败
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetQuantParam_0700
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetQuantParam_0700
+ * @tc.desc   设置量化参数，参数合法,不设置numBits,调用失败
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0700, Function | MediumTest | Level0)
 {
@@ -236,9 +266,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0700, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetQuantParam_0800
- * @tc.desc: 设置量化参数，参数合法,不设置scales,调用失败
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetQuantParam_0800
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetQuantParam_0800
+ * @tc.desc   设置量化参数，参数合法,不设置scales,调用失败
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0800, Function | MediumTest | Level0)
 {
@@ -259,9 +292,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0800, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetQuantParam_0900
- * @tc.desc: 设置量化参数，参数合法,tensor下标等于当前tensor个数,返回失败
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetQuantParam_0900
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetQuantParam_0900
+ * @tc.desc   设置量化参数，参数合法,tensor下标等于当前tensor个数,返回失败
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0900, Function | MediumTest | Level0)
 {
@@ -284,9 +320,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetQuantParam_0900, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_AddTensorToModel_0100
- * @tc.desc: 添加tensor到模型，model为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_AddTensorToModel_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Model_AddTensorToModel_0100
+ * @tc.desc   添加tensor到模型，model为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_AddTensorToModel_0100, Function | MediumTest | Level0)
 {
@@ -297,9 +336,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_AddTensorToModel_0100, Function
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_AddTensorToModel_0200
- * @tc.desc: 添加tensor到模型，tensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_AddTensorToModel_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Model_AddTensorToModel_0200
+ * @tc.desc   添加tensor到模型，tensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_AddTensorToModel_0200, Function | MediumTest | Level0)
 {
@@ -310,9 +352,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_AddTensorToModel_0200, Function
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetTensorData_0100
- * @tc.desc: 设置操作数值，model为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetTensorData_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetTensorData_0100
+ * @tc.desc   设置操作数值，model为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorData_0100, Function | MediumTest | Level0)
 {
@@ -321,9 +366,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorData_0100, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetTensorData_0200
- * @tc.desc: 设置操作数值，databuffer为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetTensorData_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetTensorData_0200
+ * @tc.desc   设置操作数值，databuffer为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorData_0200, Function | MediumTest | Level0)
 {
@@ -338,9 +386,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorData_0200, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetTensorData_0300
- * @tc.desc: 设置操作数值，length = 0
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetTensorData_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetTensorData_0300
+ * @tc.desc   设置操作数值，length = 0
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorData_0300, Function | MediumTest | Level0)
 {
@@ -356,9 +407,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorData_0300, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetTensorData_0400
- * @tc.desc: 设置操作数值，index大于tensor个数
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetTensorData_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetTensorData_0400
+ * @tc.desc   设置操作数值，index大于tensor个数
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorData_0400, Function | MediumTest | Level0)
 {
@@ -374,9 +428,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorData_0400, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetTensorType_0100
- * @tc.desc: 设置tensortype，model为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetTensorType_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetTensorType_0100
+ * @tc.desc   设置tensortype，model为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorType_0100, Function | MediumTest | Level0)
 {
@@ -384,9 +441,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorType_0100, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetTensorType_0200
- * @tc.desc: 设置tensortype，index大于tensor个数
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetTensorType_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetTensorType_0200
+ * @tc.desc   设置tensortype，index大于tensor个数
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorType_0200, Function | MediumTest | Level0)
 {
@@ -401,9 +461,12 @@ HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorType_0200, Function | 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Model_SetTensorType_0300
- * @tc.desc: 设置tensortype，遍历设置tensorType
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Model_SetTensorType_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Model_SetTensorType_0300
+ * @tc.desc   设置tensortype，遍历设置tensorType
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ModelTest, SUB_AI_NNRt_Func_North_Model_SetTensorType_0300, Function | MediumTest | Level0)
 {

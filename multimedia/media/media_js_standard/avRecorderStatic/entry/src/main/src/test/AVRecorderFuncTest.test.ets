@@ -18,7 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import eventEmitter from '@ohos.events.emitter';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 import { Permissions } from 'permissions';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Common from './Common.test';
 import { FdObject } from './Common.test';
 import Utils from './Util.test';
@@ -139,7 +139,7 @@ export default function avRecorderTest() {
     let eventEmitterFun =
       (avRecorder: media.AVRecorder | undefined, avConfig: media.AVRecorderConfig, recorderTime: number, steps: string[],
         done: () => void) => {
-        let ed: Record<string, Object> = {
+        let ed: Record<String, RecordData> = {
           'avConfig': avConfig,
           'recorderTime': recorderTime,
           'steps': steps,
@@ -178,15 +178,15 @@ export default function avRecorderTest() {
 
     let setAVRecorderCallback = (avRecorder: media.AVRecorder, done: () => void) => {
       // 状态机变化回调函数
-      avRecorder.on('stateChange', (state, reason) => {
+      avRecorder.onStateChange((state, reason) => {
         console.info(TAG + 'current state is: ' + state);
       })
       // 录制监听回调函数
-      avRecorder.on('audioCapturerChange', (AudioCapturerChangeInfo) => {
+      avRecorder.onAudioCapturerChange((AudioCapturerChangeInfo) => {
         console.info(TAG + 'audioCapturerChange');
       });
       // 错误上报回调函数
-      avRecorder.on('error', (err: BusinessError|null) => {
+      avRecorder.onError((err: BusinessError|null) => {
         try {
           console.error(TAG + 'error ocConstantSourceNode, error message is ' + err!!);
           // await releaseRecorderPromise(avRecorder, done);
@@ -199,7 +199,7 @@ export default function avRecorderTest() {
 
     let registerAvRecorderCallback = (eventData: eventEmitter.EventData) => {
       console.log('SETONCALLBACK_EVENT 11 eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       try {
@@ -213,11 +213,11 @@ export default function avRecorderTest() {
         console.info('setAVRecorderCallback failed and catch error is ' + error);
       }
     }
-    eventEmitter.on(SETONCALLBACK_EVENT, registerAvRecorderCallback);
+    eventEmitter.onEventData(SETONCALLBACK_EVENT, registerAvRecorderCallback);
 
     let registerCreateCallback = (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       media.createAVRecorder((error: BusinessError|null, recorder: undefined|media.AVRecorder) => {
@@ -235,12 +235,12 @@ export default function avRecorderTest() {
         }
       });
     }
-    eventEmitter.on(CREATE_EVENT, registerCreateCallback);
+    eventEmitter.onEventData(CREATE_EVENT, registerCreateCallback);
 
     let registerPrepareCallback = (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
       try {
-        let data = eventData.data as Record<string, Object>;
+        let data = eventData.data as Record<String, RecordData>;
         let steps: string[] = data?.get('steps') as string[];
         steps.shift();
         let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -262,11 +262,11 @@ export default function avRecorderTest() {
         console.info(`PREPARE_EVENT fail, error:${err}`);
       }
     }
-    eventEmitter.on(PREPARE_EVENT, registerPrepareCallback);
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
 
-    eventEmitter.on(STARTRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(STARTRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('STARTRECORDER_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -296,9 +296,9 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(STOPRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(STOPRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -326,9 +326,9 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(PAUSERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(PAUSERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -356,9 +356,9 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(RESUMERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(RESUMERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -386,9 +386,9 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(RELEASECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(RELEASECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -407,9 +407,9 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(START_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(START_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('START_TIMETEST_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -420,9 +420,9 @@ export default function avRecorderTest() {
       toNextStep(avRecorder, avConfig, recorderTime, steps, done);
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(END_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(END_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -438,9 +438,9 @@ export default function avRecorderTest() {
       toNextStep(avRecorder, avConfig, recorderTime, steps, done);
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(RELEASECORDER_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(RELEASECORDER_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder

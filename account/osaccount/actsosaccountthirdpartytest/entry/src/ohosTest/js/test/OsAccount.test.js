@@ -30,14 +30,14 @@ export default function ActsOsAccountTest() {
             done();
         });
 
-        /*
-        * @tc.number  : ActsOsAccountCheckMultiOsAccountEnabled_0100
-        * @tc.name    : test checkMultiOsAccountEnabled callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountCheckMultiOsAccountEnabled_0100
+         * @tc.number ActsOsAccountCheckMultiOsAccountEnabled_0100
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountCheckMultiOsAccountEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountCheckMultiOsAccountEnabled_0100 start====");
             let accountManager = osAccount.getAccountManager();
@@ -53,14 +53,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountIsOsAccountConstraintEnabled_0100
-        * @tc.name    : test isOsAccountConstraintEnabled
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountIsOsAccountConstraintEnabled_0100
+         * @tc.number ActsOsAccountIsOsAccountConstraintEnabled_0100
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountIsOsAccountConstraintEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountIsOsAccountConstraintEnabled_0100 start====");
             let accountManager = osAccount.getAccountManager();
@@ -77,14 +77,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountIsOsAccountConstraintEnabled_0200
-        * @tc.name    : test isOsAccountConstraintEnabled
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountIsOsAccountConstraintEnabled_0200
+         * @tc.number ActsOsAccountIsOsAccountConstraintEnabled_0200
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountIsOsAccountConstraintEnabled_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountIsOsAccountConstraintEnabled_0200 start====");
             let accountManager = osAccount.getAccountManager();
@@ -101,14 +101,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountCheckOsAccountTestable_0100
-        * @tc.name    : test isOsAccountConstraintEnabled callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountCheckOsAccountTestable_0100
+         * @tc.number ActsOsAccountCheckOsAccountTestable_0100
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountCheckOsAccountTestable_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountCheckOsAccountTestable_0100 start====");
             let accountManager = osAccount.getAccountManager();
@@ -124,14 +124,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalId_0100
-        * @tc.name    : test getOsAccountLocalId callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalId_0100
+         * @tc.number ActsOsAccountGetOsAccountLocalId_0100
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalId_0100 start====");
             let accountManager = osAccount.getAccountManager();
@@ -147,14 +147,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForUid_0100
-        * @tc.name    : test getOsAccountLocalIdForUid callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForUid_0100
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForUid_0100
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForUid_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForUid_0100 start====");
             let accountManager = osAccount.getAccountManager();
@@ -170,14 +170,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForUid_0200
-        * @tc.name    : test getOsAccountLocalIdForUid callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForUid_0200
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForUid_0200
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForUid_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForUid_0200 start====");
             let accountManager = osAccount.getAccountManager();
@@ -196,14 +196,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForUid_0300
-        * @tc.name    : test getOsAccountLocalIdForUid callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForUid_0300
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForUid_0300
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForUid_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForUid_0300 start====");
             let accountManager = osAccount.getAccountManager();
@@ -222,14 +222,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForUid_0400
-        * @tc.name    : test getOsAccountLocalIdForUid
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForUid_0400
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForUid_0400
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForUid_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForUid_0400 start====");
             let accountManager = osAccount.getAccountManager();
@@ -245,14 +245,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForUid_0500
-        * @tc.name    : test getOsAccountLocalIdForUid
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForUid_0500
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForUid_0500
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForUid_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForUid_0500 start====");
             let accountManager = osAccount.getAccountManager();
@@ -268,14 +268,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForUid_0600
-        * @tc.name    : test getOsAccountLocalIdForUid
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForUid_0600
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForUid_0600
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForUid_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForUid_0600 start====");
             let accountManager = osAccount.getAccountManager();
@@ -291,14 +291,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetActivatedOsAccountLocalIds_0100
-        * @tc.name    : test getActivatedOsAccountLocalIds callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetActivatedOsAccountLocalIds_0100
+         * @tc.number ActsOsAccountGetActivatedOsAccountLocalIds_0100
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetActivatedOsAccountLocalIds_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetActivatedOsAccountLocalIds_0100 start====");
             let accountManager = osAccount.getAccountManager();
@@ -314,14 +314,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForSerialNumber_0100
-        * @tc.name    : test getOsAccountLocalIdForSerialNumber callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForSerialNumber_0100
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForSerialNumber_0100
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForSerialNumber_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForSerialNumber_0100 start====");
             let accountManager = osAccount.getAccountManager();
@@ -337,14 +337,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForSerialNumber_0200
-        * @tc.name    : test getOsAccountLocalIdForSerialNumber callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForSerialNumber_0200
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForSerialNumber_0200
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForSerialNumber_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForSerialNumber_0200 start====");
             let accountManager = osAccount.getAccountManager();
@@ -363,14 +363,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForSerialNumber_0300
-        * @tc.name    : test getOsAccountLocalIdForSerialNumber callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForSerialNumber_0300
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForSerialNumber_0300
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForSerialNumber_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForSerialNumber_0200 start====");
             let accountManager = osAccount.getAccountManager();
@@ -389,14 +389,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForSerialNumber_0400
-        * @tc.name    : test getOsAccountLocalIdForSerialNumber
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForSerialNumber_0400
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForSerialNumber_0400
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForSerialNumber_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForSerialNumber_0400 start====");
             let accountManager = osAccount.getAccountManager();
@@ -412,14 +412,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForSerialNumber_0500
-        * @tc.name    : test getOsAccountLocalIdForSerialNumber
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForSerialNumber_0500
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForSerialNumber_0500
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForSerialNumber_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForSerialNumber_0500 start====");
             let accountManager = osAccount.getAccountManager();
@@ -435,14 +435,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetOsAccountLocalIdForSerialNumber_0600
-        * @tc.name    : test getOsAccountLocalIdForSerialNumber
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetOsAccountLocalIdForSerialNumber_0600
+         * @tc.number ActsOsAccountGetOsAccountLocalIdForSerialNumber_0600
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetOsAccountLocalIdForSerialNumber_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetOsAccountLocalIdForSerialNumber_0600 start====");
             let accountManager = osAccount.getAccountManager();
@@ -458,14 +458,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetSerialNumberForOsAccountLocalId_0100
-        * @tc.name    : test getSerialNumberForOsAccountLocalId callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetSerialNumberForOsAccountLocalId_0100
+         * @tc.number ActsOsAccountGetSerialNumberForOsAccountLocalId_0100
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetSerialNumberForOsAccountLocalId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetSerialNumberForOsAccountLocalId_0100 start====");
             let accountManager = osAccount.getAccountManager();
@@ -481,14 +481,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetSerialNumberForOsAccountLocalId_0200
-        * @tc.name    : test getSerialNumberForOsAccountLocalId callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetSerialNumberForOsAccountLocalId_0200
+         * @tc.number ActsOsAccountGetSerialNumberForOsAccountLocalId_0200
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetSerialNumberForOsAccountLocalId_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetSerialNumberForOsAccountLocalId_0200 start====");
             let accountManager = osAccount.getAccountManager();
@@ -507,14 +507,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetSerialNumberForOsAccountLocalId_0300
-        * @tc.name    : test getSerialNumberForOsAccountLocalId callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetSerialNumberForOsAccountLocalId_0300
+         * @tc.number ActsOsAccountGetSerialNumberForOsAccountLocalId_0300
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetSerialNumberForOsAccountLocalId_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetSerialNumberForOsAccountLocalId_0300 start====");
             let accountManager = osAccount.getAccountManager();
@@ -535,14 +535,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetSerialNumberForOsAccountLocalId_0400
-        * @tc.name    : test getSerialNumberForOsAccountLocalId callbcak
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetSerialNumberForOsAccountLocalId_0400
+         * @tc.number ActsOsAccountGetSerialNumberForOsAccountLocalId_0400
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetSerialNumberForOsAccountLocalId_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetSerialNumberForOsAccountLocalId_0400 start====");
             let accountManager = osAccount.getAccountManager();
@@ -563,14 +563,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetSerialNumberForOsAccountLocalId_0500
-        * @tc.name    : test getSerialNumberForOsAccountLocalId
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetSerialNumberForOsAccountLocalId_0500
+         * @tc.number ActsOsAccountGetSerialNumberForOsAccountLocalId_0500
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetSerialNumberForOsAccountLocalId_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetSerialNumberForOsAccountLocalId_0500 start====");
             let accountManager = osAccount.getAccountManager();
@@ -586,14 +586,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetSerialNumberForOsAccountLocalId_0600
-        * @tc.name    : test getSerialNumberForOsAccountLocalId
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetSerialNumberForOsAccountLocalId_0600
+         * @tc.number ActsOsAccountGetSerialNumberForOsAccountLocalId_0600
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetSerialNumberForOsAccountLocalId_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetSerialNumberForOsAccountLocalId_0600 start====");
             let accountManager = osAccount.getAccountManager();
@@ -609,14 +609,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetSerialNumberForOsAccountLocalId_0700
-        * @tc.name    : test getSerialNumberForOsAccountLocalId
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetSerialNumberForOsAccountLocalId_0700
+         * @tc.number ActsOsAccountGetSerialNumberForOsAccountLocalId_0700
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetSerialNumberForOsAccountLocalId_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetSerialNumberForOsAccountLocalId_0700 start====");
             let accountManager = osAccount.getAccountManager();
@@ -632,14 +632,14 @@ export default function ActsOsAccountTest() {
             }
         });
 
-        /*
-        * @tc.number  : ActsOsAccountGetSerialNumberForOsAccountLocalId_0800
-        * @tc.name    : test getSerialNumberForOsAccountLocalId
-        * @tc.desc    : Verify Parameter error code
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+        /**
+         * @tc.name   ActsOsAccountGetSerialNumberForOsAccountLocalId_0800
+         * @tc.number ActsOsAccountGetSerialNumberForOsAccountLocalId_0800
+         * @tc.desc   Verify Parameter error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsOsAccountGetSerialNumberForOsAccountLocalId_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsOsAccountGetSerialNumberForOsAccountLocalId_0800 start====");
             let accountManager = osAccount.getAccountManager();

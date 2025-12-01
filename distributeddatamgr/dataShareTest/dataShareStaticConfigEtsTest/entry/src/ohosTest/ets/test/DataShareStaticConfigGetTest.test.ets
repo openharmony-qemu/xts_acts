@@ -100,12 +100,12 @@ export default function dataShareStaticConfigGetTest() {
     })
 
     /**
-     * @tc.name dataShareStaticConfigGetTest001
+     * @tc.name   dataShareStaticConfigGetTest001
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1250
-     * @tc.desc uri repeat
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -130,12 +130,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest002
+     * @tc.name   dataShareStaticConfigGetTest002
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1260
-     * @tc.desc uri is number
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri is number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -160,12 +160,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest003
+     * @tc.name   dataShareStaticConfigGetTest003
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1070
-     * @tc.desc uri is chinese
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri is chinese
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -190,12 +190,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest004
+     * @tc.name   dataShareStaticConfigGetTest004
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1080
-     * @tc.desc value is false
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   value is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -220,12 +220,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest005
+     * @tc.name   dataShareStaticConfigGetTest005
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1090
-     * @tc.desc value is true
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   value is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -250,12 +250,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest006
+     * @tc.name   dataShareStaticConfigGetTest006
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1100
-     * @tc.desc value is special character
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   value is special character
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -280,12 +280,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest007
+     * @tc.name   dataShareStaticConfigGetTest007
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1110
-     * @tc.desc uri path is space
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri path is space
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -310,12 +310,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest008
+     * @tc.name   dataShareStaticConfigGetTest008
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1120
-     * @tc.desc uri path is null
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri path is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -340,12 +340,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest009
+     * @tc.name   dataShareStaticConfigGetTest009
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1130
-     * @tc.desc uri path is all
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri path is all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -370,12 +370,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest010
+     * @tc.name   dataShareStaticConfigGetTest010
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1140
-     * @tc.desc uri path is special character
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri path is special character
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -400,12 +400,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest011
+     * @tc.name   dataShareStaticConfigGetTest011
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1150
-     * @tc.desc uri bundle name is error
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri bundle name is error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -430,12 +430,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest012
+     * @tc.name   dataShareStaticConfigGetTest012
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1160
-     * @tc.desc uri can delete
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri can delete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -468,12 +468,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest013
+     * @tc.name   dataShareStaticConfigGetTest013
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1170
-     * @tc.desc uri length is 256
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri length is 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -498,12 +498,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest014
+     * @tc.name   dataShareStaticConfigGetTest014
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1180
-     * @tc.desc uri length is 257
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri length is 257
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -523,12 +523,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest015
+     * @tc.name   dataShareStaticConfigGetTest015
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1190
-     * @tc.desc static config can be published
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   static config can be published
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -577,12 +577,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest016
+     * @tc.name   dataShareStaticConfigGetTest016
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1200
-     * @tc.desc value Equal 4096
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   value Equal 4096
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -606,12 +606,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest017
+     * @tc.name   dataShareStaticConfigGetTest017
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1210
-     * @tc.desc value more than 4096
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   value more than 4096
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -635,12 +635,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest018
+     * @tc.name   dataShareStaticConfigGetTest018
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1220
-     * @tc.desc allowList is 128
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   allowList is 128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -664,12 +664,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest019
+     * @tc.name   dataShareStaticConfigGetTest019
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1230
-     * @tc.desc allowList is 129
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   allowList is 129
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [
@@ -695,12 +695,12 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name dataShareStaticConfigGetTest020
+     * @tc.name   dataShareStaticConfigGetTest020
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1240
-     * @tc.desc [allowList] more than 256
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   [allowList] more than 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareStaticConfigGetTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = [

@@ -79,9 +79,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshIdProp
-         * @tc.desc      ACE
+         * @tc.name   testRefreshIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshIdProp', Level.LEVEL0, async function(done) {
             console.info('testRefreshIdProp START');
@@ -97,9 +100,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshClassProp
-         * @tc.desc      ACE
+         * @tc.name   testRefreshClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshClassProp', Level.LEVEL0, async function(done) {
             console.info('testRefreshClassProp START');
@@ -116,9 +122,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRefreshClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testRefreshClassPropNone START');
@@ -136,9 +145,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshRefProp
-         * @tc.desc      ACE
+         * @tc.name   testRefreshRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshRefProp', Level.LEVEL0, async function(done) {
             console.info('testRefreshRefProp START');
@@ -155,9 +167,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRefreshRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testRefreshRefPropNone START');
@@ -175,9 +190,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testRefreshDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testRefreshDisabledPropTrue START');
@@ -194,9 +212,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testRefreshDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testRefreshDisabledPropFalse START');
@@ -213,9 +234,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRefreshDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testRefreshDisabledPropNone START');
@@ -232,9 +256,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testRefreshFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testRefreshFocusablePropTrue START');
@@ -251,9 +278,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testRefreshFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testRefreshFocusablePropFalse START');
@@ -270,9 +300,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testRefreshFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testRefreshFocusablePropNone START');
@@ -289,9 +322,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshDataProp
-         * @tc.desc      ACE
+         * @tc.name   testRefreshDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshDataProp', Level.LEVEL0, async function(done) {
             console.info('testRefreshDataProp START');
@@ -309,9 +345,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRefreshDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testRefreshDataPropNone START');
@@ -329,9 +368,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testRefreshClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testRefreshClickEffectPropSmall START');
@@ -348,9 +390,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testRefreshClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testRefreshClickEffectPropMedium START');
@@ -367,9 +412,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testRefreshClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testRefreshClickEffectPropLarge START');
@@ -386,9 +434,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRefreshClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testRefreshClickEffectPropNone START');
@@ -406,9 +457,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testRefreshDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testRefreshDirPropRtl START');
@@ -425,9 +479,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testRefreshDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testRefreshDirPropLtr START');
@@ -444,9 +501,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testRefreshDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testRefreshDirPropAuto START');
@@ -463,9 +523,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRefreshDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testRefreshDirPropNone START');
@@ -482,9 +545,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testRefreshForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshForPropNull', Level.LEVEL0, async function(done) {
             console.info('testRefreshForPropNull START');
@@ -502,9 +568,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testRefreshForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshForPropOne', Level.LEVEL0, async function(done) {
             console.info('testRefreshForPropOne START');
@@ -522,9 +591,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testRefreshForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshForPropThree', Level.LEVEL0, async function(done) {
             console.info('testRefreshForPropThree START');
@@ -542,9 +614,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testRefreshIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testRefreshIfPropTrue START');
@@ -562,9 +637,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testRefreshShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testRefreshShowPropTrue START');
@@ -582,9 +660,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testRefreshShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testRefreshShowPropFalse START');
@@ -602,9 +683,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRefreshShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testRefreshShowPropNone START');
@@ -621,12 +705,15 @@ export default function undo() {
             done();
         });
 
-        /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testOffsetProp
-         * @tc.desc      ACE
-         */
 
+        /**
+         * @tc.name   testOffsetProp
+         * @tc.number testOffsetProp
+         * @tc.desc   testOffsetProp
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testOffsetProp', Level.LEVEL0, async function(done) {
             console.info('testOffsetProp START');
             console.info("[refreshProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -642,12 +729,15 @@ export default function undo() {
             done();
         });
 
-        /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshingPropFalse
-         * @tc.desc      ACE
-         */
 
+        /**
+         * @tc.name   testRefreshingPropFalse
+         * @tc.number testRefreshingPropFalse
+         * @tc.desc   testRefreshingPropFalse
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testRefreshingPropFalse', Level.LEVEL0, async function(done) {
             console.info('testRefreshingPropFalse START');
             console.info("[refreshProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -663,12 +753,15 @@ export default function undo() {
             done();
         });
 
-        /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshingPropTrue
-         * @tc.desc      ACE
-         */
 
+        /**
+         * @tc.name   testRefreshingPropTrue
+         * @tc.number testRefreshingPropTrue
+         * @tc.desc   testRefreshingPropTrue
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testRefreshingPropTrue', Level.LEVEL0, async function(done) {
             console.info('testRefreshingPropTrue START');
             console.info("[refreshProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -684,12 +777,15 @@ export default function undo() {
             done();
         });
 
-        /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTypePropAuto
-         * @tc.desc      ACE
-         */
 
+        /**
+         * @tc.name   testTypePropAuto
+         * @tc.number testTypePropAuto
+         * @tc.desc   testTypePropAuto
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testTypePropAuto', Level.LEVEL0, async function(done) {
             console.info('testTypePropAuto START');
             console.info("[refreshProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -705,12 +801,15 @@ export default function undo() {
             done();
         });
 
-        /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTypePropPullDown
-         * @tc.desc      ACE
-         */
 
+        /**
+         * @tc.name   testTypePropPullDown
+         * @tc.number testTypePropPullDown
+         * @tc.desc   testTypePropPullDown
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testTypePropPullDown', Level.LEVEL0, async function(done) {
             console.info('testTypePropPullDown START');
             console.info("[refreshProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -726,12 +825,15 @@ export default function undo() {
             done();
         });
 
-        /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLastTimePropTrue
-         * @tc.desc      ACE
-         */
 
+        /**
+         * @tc.name   testLastTimePropTrue
+         * @tc.number testLastTimePropTrue
+         * @tc.desc   testLastTimePropTrue
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testLastTimePropTrue', Level.LEVEL0, async function(done) {
             console.info('testLastTimePropTrue START');
             console.info("[refreshProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -747,12 +849,15 @@ export default function undo() {
             done();
         });
 
-        /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testLastTimePropFalse
-         * @tc.desc      ACE
-         */
 
+        /**
+         * @tc.name   testLastTimePropFalse
+         * @tc.number testLastTimePropFalse
+         * @tc.desc   testLastTimePropFalse
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testLastTimePropFalse', Level.LEVEL0, async function(done) {
             console.info('testLastTimePropFalse START');
             console.info("[refreshProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -768,12 +873,15 @@ export default function undo() {
             done();
         })
 
-        /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testFrictionProp
-         * @tc.desc      ACE
-         */
 
+        /**
+         * @tc.name   testFrictionProp
+         * @tc.number testFrictionProp
+         * @tc.desc   testFrictionProp
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testFrictionProp', Level.LEVEL0, async function(done) {
             console.info('testFrictionProp START');
             console.info("[refreshProps] get globalThis.value is: " + JSON.stringify(globalThis.value));

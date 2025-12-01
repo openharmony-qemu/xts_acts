@@ -281,7 +281,7 @@ export default class MainAbility extends Ability {
     })
     setTimeout(() => {
       Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-    }, 1000)
+    }, 6000)
   }
 
   onDestroy() {

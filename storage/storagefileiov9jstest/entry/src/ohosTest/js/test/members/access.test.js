@@ -22,14 +22,12 @@ export default function fileIOAccess() {
 describe('fileIO_fs_access', function () {
 
   /**
+   * @tc.name   test_FileIO_Access_Sync_000
    * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0000
-   * @tc.name test_FileIO_Access_Sync_000
-   * @tc.desc Test accessSync() interface.
-   * This interface shall work properly in normal case.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('test_FileIO_Access_Sync_000');
@@ -50,14 +48,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Sync_001
    * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0100
-   * @tc.name test_FileIO_Access_Sync_001
-   * @tc.desc Test accessSync() interface.
-   * The test file is not exist.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('test_FileIO_Access_Sync_001');
@@ -72,14 +68,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Sync_002
    * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0200
-   * @tc.name test_FileIO_Access_Sync_002
-   * @tc.desc Test accessSync() interface.
-   * The test file path is illegal.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Sync_002', Level.LEVEL0, async function () {
 
@@ -92,16 +86,14 @@ describe('fileIO_fs_access', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0300
-   * @tc.name test_FileIO_Access_Sync_003
-   * @tc.desc Test accessSync() interface.
-   * Test that the file is exist, AccessModeType = EXIST
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+   /**
+    * @tc.name   test_FileIO_Access_Sync_003
+    * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0300
+    * @tc.desc   Test accessSync() interface.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('test_FileIO_Access_Sync_003', Level.LEVEL0, async function () {
     let fpath = await nextFileName('test_FileIO_Access_Sync_003');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -122,14 +114,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Sync_004
    * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0400
-   * @tc.name test_FileIO_Access_Sync_004
-   * @tc.desc Test accessSync() interface.
-   * Test that the file is exist, AccessModeType = WRITE
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Sync_004', Level.LEVEL0, async function () {
     let fpath = await nextFileName('test_FileIO_Access_Sync_004');
@@ -151,14 +141,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Sync_005
    * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0500
-   * @tc.name test_FileIO_Access_Sync_005
-   * @tc.desc Test accessSync() interface.
-   * Test that the file is exist, AccessModeType = READ
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Sync_005', Level.LEVEL0, async function () {
     let fpath = await nextFileName('test_FileIO_Access_Sync_005');
@@ -180,14 +168,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Sync_006
    * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0600
-   * @tc.name test_FileIO_Access_Sync_006
-   * @tc.desc Test accessSync() interface.
-   * Test that the file is exist, AccessModeType = READ_WRITE
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Sync_006', Level.LEVEL0, async function () {
     let fpath = await nextFileName('test_FileIO_Access_Sync_006');
@@ -209,14 +195,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Sync_007
    * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0700
-   * @tc.name test_FileIO_Access_Sync_007
-   * @tc.desc Test accessSync() interface.
-   * Test that the file is exist, AccessFlagType.LOCAL
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Sync_007', Level.LEVEL0, async function () {
     let fpath = await nextFileName('test_FileIO_Access_Sync_007');
@@ -238,14 +222,31 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Sync_008
+   * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0800
+   * @tc.desc   Test accessSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('test_FileIO_Access_Sync_008', Level.LEVEL0, async function () {
+    let fpath = await nextFileName('test_FileIO_Access_Sync_008');
+    try {
+      let ret = fileIO.accessSync(fpath, fileIO.AccessModeType.EXIST, fileIO.AccessFlagType.LOCAL);
+      expect(ret === false).assertTrue();
+    } catch (e) {
+      console.log('test_FileIO_Access_Sync_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   test_FileIO_Access_Async_000
    * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0000
-   * @tc.name test_FileIO_Access_Async_000
-   * @tc.desc Test access() interface. Promise.
-   * Use promise to test that the file is exist. Sync method reads data from file.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test access() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test_FileIO_Access_Async_000');
@@ -268,14 +269,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Async_001
    * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0100
-   * @tc.name test_FileIO_Access_Async_001
-   * @tc.desc Test access() interface. Callback.
-   * Use callback to test that the file is exist. Sync method reads data from file.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test access() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test_FileIO_Access_Async_001');
@@ -303,14 +302,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Async_002
    * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0200
-   * @tc.name test_FileIO_Access_Async_002
-   * @tc.desc Test access() interface. Promise.
-   * Async test file does not exist.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test access() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test_FileIO_Access_Async_002');
@@ -326,14 +323,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Async_003
    * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0300
-   * @tc.name test_FileIO_Access_Async_003
-   * @tc.desc Test access() interface. Callback.
-   * Async test file does not exist.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test access() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test_FileIO_Access_Async_003');
@@ -354,14 +349,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Async_004
    * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0400
-   * @tc.name test_FileIO_Access_Async_004
-   * @tc.desc Test access() interface. Promise.
-   * Invalid path parameter.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test access() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Async_004', Level.LEVEL0, async function (done) {
 
@@ -376,14 +369,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Async_005
    * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0500
-   * @tc.name test_FileIO_Access_Async_005
-   * @tc.desc Test access() interface. Callback.
-   * Invalid path parameter.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test access() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Async_005', Level.LEVEL0, async function (done) {
 
@@ -398,16 +389,14 @@ describe('fileIO_fs_access', function () {
     }
   });
   
-  /**
-   * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0600
-   * @tc.name test_FileIO_Access_Async_006
-   * @tc.desc Test access() interface. Promise.
-   * Use promise to test that the file is exist. AccessModeType = EXIST.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+   /**
+    * @tc.name   test_FileIO_Access_Async_006
+    * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0600
+    * @tc.desc   Test access() interface. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('test_FileIO_Access_Async_006', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test_FileIO_Access_Async_006');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -429,14 +418,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Async_007
    * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0700
-   * @tc.name test_FileIO_Access_Async_007
-   * @tc.desc Test access() interface. Promise.
-   * Use promise to test that the file is exist. AccessModeType = WRITE.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test access() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Async_007', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test_FileIO_Access_Async_007');
@@ -459,14 +446,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Async_008
    * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0800
-   * @tc.name test_FileIO_Access_Async_008
-   * @tc.desc Test access() interface. Promise.
-   * Use promise to test that the file is exist. AccessModeType = READ.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test access() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Async_008', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test_FileIO_Access_Async_008');
@@ -489,14 +474,12 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Access_Async_009
    * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0900
-   * @tc.name test_FileIO_Access_Async_009
-   * @tc.desc Test access() interface. Promise.
-   * Use promise to test that the file is exist. AccessModeType = READ_WRITE.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test access() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_FileIO_Access_Async_009', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test_FileIO_Access_Async_009');

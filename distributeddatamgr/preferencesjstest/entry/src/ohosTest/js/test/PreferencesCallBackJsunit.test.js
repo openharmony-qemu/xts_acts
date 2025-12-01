@@ -51,13 +51,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesClear0012
+         * @tc.name   testPreferencesClear0012
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2200
-         * @tc.desc clear callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         * 
+         * @tc.desc   clear callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesClear0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.put(KEY_TEST_STRING_ELEMENT, "test");
@@ -70,12 +69,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesHasKey0032
+         * @tc.name   testPreferencesHasKey0032
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1200
-         * @tc.desc has string callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   has string callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesHasKey0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.put(KEY_TEST_STRING_ELEMENT, "test");
@@ -86,12 +85,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesHasKey0033
+         * @tc.name   testPreferencesHasKey0033
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1600
-         * @tc.desc has int callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   has int callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesHasKey0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.put(KEY_TEST_INT_ELEMENT, 1);
@@ -102,12 +101,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesHasKey0034
+         * @tc.name   testPreferencesHasKey0034
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1500
-         * @tc.desc has float callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   has float callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesHasKey0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.put(KEY_TEST_FLOAT_ELEMENT, 1.1);
@@ -118,12 +117,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesHasKey0035
+         * @tc.name   testPreferencesHasKey0035
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1700
-         * @tc.desc has long callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   has long callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesHasKey0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.put(KEY_TEST_LONG_ELEMENT, 0);
@@ -134,12 +133,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesHasKey0036
+         * @tc.name   testPreferencesHasKey0036
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1400
-         * @tc.desc has boolean callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   has boolean callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesHasKey0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.put(KEY_TEST_BOOLEAN_ELEMENT, false);
@@ -150,12 +149,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesGetDefValue0062
+         * @tc.name   testPreferencesGetDefValue0062
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2100
-         * @tc.desc get defaultValue callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   get defaultValue callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPreferencesGetDefValue0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await mPreferences.clear();
@@ -166,12 +165,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesGetFloat0072
+         * @tc.name   testPreferencesGetFloat0072
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1800
-         * @tc.desc get float callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   get float callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesGetFloat0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -183,12 +182,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesGetInt0082
+         * @tc.name   testPreferencesGetInt0082
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1900
-         * @tc.desc get int callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   get int callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesGetInt0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -200,12 +199,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesGetLong0092
+         * @tc.name   testPreferencesGetLong0092
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1100
-         * @tc.desc get long callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   get long callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesGetLong0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -219,12 +218,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesGetString102
+         * @tc.name   testPreferencesGetString102
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2000
-         * @tc.desc get String callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   get String callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesGetString102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -237,12 +236,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesPutBoolean0122
+         * @tc.name   testPreferencesPutBoolean0122
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0300
-         * @tc.desc put boolean callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put boolean callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesPutBoolean0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -257,12 +256,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesPutFloat0132
+         * @tc.name   testPreferencesPutFloat0132
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0400
-         * @tc.desc put float callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put float callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesPutFloat0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -277,12 +276,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesPutInt0142
+         * @tc.name   testPreferencesPutInt0142
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0500
-         * @tc.desc put int callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put int callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesPutInt0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -297,12 +296,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesPutLong0152
+         * @tc.name   testPreferencesPutLong0152
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1000
-         * @tc.desc put long callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put long callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesPutLong0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -318,12 +317,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesPutString0162
+         * @tc.name   testPreferencesPutString0162
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0900
-         * @tc.desc put String callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put String callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesPutString0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -338,12 +337,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesCallback0172
+         * @tc.name   testPreferencesCallback0172
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2500
-         * @tc.desc flush String callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   flush String callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesCallback0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             console.log(TAG + "testPreferencesCallback0172 begin.");
@@ -379,12 +378,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesPutStringArray0001
+         * @tc.name   testPreferencesPutStringArray0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0800
-         * @tc.desc put String callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put String callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesPutStringArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -400,12 +399,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesPutNumArray0001
+         * @tc.name   testPreferencesPutNumArray0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0700
-         * @tc.desc put String callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put String callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesPutNumArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -421,12 +420,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesPutBoolArray0001
+         * @tc.name   testPreferencesPutBoolArray0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0600
-         * @tc.desc put String callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put String callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesPutBoolArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -442,12 +441,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesGetAll0001
+         * @tc.name   testPreferencesGetAll0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2400
-         * @tc.desc getAll callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   getAll callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesGetAll0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();
@@ -487,12 +486,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesGetPreferences0001
+         * @tc.name   testPreferencesGetPreferences0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2300
-         * @tc.desc getPreferences callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   getPreferences callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesGetPreferences0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const NAME = 'getPreferencesTest'
@@ -509,12 +508,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesDeletePreferences0001
+         * @tc.name   testPreferencesDeletePreferences0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0200
-         * @tc.desc deletePreferences callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   deletePreferences callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesDeletePreferences0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const NAME = 'getPreferencesTest'
@@ -540,12 +539,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testRemovePreferencesFromCache0001
+         * @tc.name   testRemovePreferencesFromCache0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0100
-         * @tc.desc removePreferencesFromCache interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   removePreferencesFromCache interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRemovePreferencesFromCache0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await dataPreferences.getPreferences(context, NAME, (err, preferences) => {
@@ -570,12 +569,12 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @tc.name testPreferencesGetDefValue0173
+         * @tc.name   testPreferencesGetDefValue0173
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1300
-         * @tc.desc get defaultValue callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   get defaultValue callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferencesGetDefValue0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPreferences.clear();

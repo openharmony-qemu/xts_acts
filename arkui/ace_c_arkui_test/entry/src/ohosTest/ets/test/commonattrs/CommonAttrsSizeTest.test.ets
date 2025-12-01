@@ -26,156 +26,156 @@ export default function commonAttrsSizeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_0100
-     * @tc.name       : testCommonAttrsSize001
-     * @tc.desc       : testing size commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_0100
+     * @tc.desc   testing size commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_0200
-     * @tc.name       : testCommonAttrsSize002
-     * @tc.desc       : testing size commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_0200
+     * @tc.desc   testing size commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_0300
-     * @tc.name       : testCommonAttrsSize003
-     * @tc.desc       : testing size commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_0300
+     * @tc.desc   testing size commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_0400
-     * @tc.name       : testCommonAttrsSize004
-     * @tc.desc       : testing size commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_0400
+     * @tc.desc   testing size commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_0500
-     * @tc.name       : testCommonAttrsSize005
-     * @tc.desc       : testing size commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_0500
+     * @tc.desc   testing size commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_0600
-     * @tc.name       : testCommonAttrsSize006
-     * @tc.desc       : testing size commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize006
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_0600
+     * @tc.desc   testing size commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_0700
-     * @tc.name       : testCommonAttrsSize007
-     * @tc.desc       : testing size commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize007
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_0700
+     * @tc.desc   testing size commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_0800
-     * @tc.name       : testCommonAttrsSize008
-     * @tc.desc       : testing size commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize008
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_0800
+     * @tc.desc   testing size commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_0900
-     * @tc.name       : testCommonAttrsSize009
-     * @tc.desc       : testing size commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize009
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_0900
+     * @tc.desc   testing size commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_1000
-     * @tc.name       : testCommonAttrsSize010
-     * @tc.desc       : testing size commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize010
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_1000
+     * @tc.desc   testing size commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_1100
-     * @tc.name       : testCommonAttrsSize011
-     * @tc.desc       : testing size commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize011
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_1100
+     * @tc.desc   testing size commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize011()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SIZE_1200
-     * @tc.name       : testCommonAttrsSize012
-     * @tc.desc       : testing resetAttribute size commonattrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSize012
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SIZE_1200
+     * @tc.desc   testing resetAttribute size commonattrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSize012', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSize012()).assertEqual(0)

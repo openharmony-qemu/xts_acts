@@ -15,7 +15,6 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
 import drawing from '@ohos.graphics.drawing';
-import { getEnumCount } from './Util.test';
 import { BusinessError } from '@ohos.base';
 
 export default function samplingOptionsTest() {
@@ -41,12 +40,12 @@ export default function samplingOptionsTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SAMPLINGOPTIONS_STATIC_0100
-     * @tc.name      : testSamplingOptionsConstructorNormalStatic
-     * @tc.desc      : Test for testSamplingOptionsConstructorNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSamplingOptionsConstructorNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SAMPLINGOPTIONS_STATIC_0100
+     * @tc.desc   Test for testSamplingOptionsConstructorNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSamplingOptionsConstructorNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (): void => {
       const msg = 'testSamplingOptionsConstructorNormalStatic';
@@ -68,12 +67,12 @@ export default function samplingOptionsTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SAMPLINGOPTIONS_STATIC_0103
-     * @tc.name      : testSamplingOptionsConstructorMultipleCallsStatic
-     * @tc.desc      : Test for testSamplingOptionsConstructorMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSamplingOptionsConstructorMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SAMPLINGOPTIONS_STATIC_0103
+     * @tc.desc   Test for testSamplingOptionsConstructorMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSamplingOptionsConstructorMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
       const msg = 'testSamplingOptionsConstructorMultipleCallsStatic';

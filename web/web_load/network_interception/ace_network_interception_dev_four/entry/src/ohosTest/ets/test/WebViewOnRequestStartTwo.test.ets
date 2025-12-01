@@ -57,14 +57,14 @@ export default function webViewOnRequestStartTwo() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBDEAULTONREQUESTSTARTTWO_0300
-    * @tc.name       : defaultOnRequestStart0300
-    * @tc.desc       : test WebdefaultOnRequestStartTwo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   defaultOnRequestStart0300
+     * @tc.number SUB_WEB_WEBDEAULTONREQUESTSTARTTWO_0300
+     * @tc.desc   test WebdefaultOnRequestStartTwo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('defaultOnRequestStart0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("defaultOnRequestStart0300", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

@@ -32,7 +32,7 @@ let mCameraSession: cameraObj.VideoSession;
 let mCameraNum: number;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let surfaceId: string = '';
 
 let isEmpty01 = (data: cameraObj.CameraManager) => {
@@ -234,7 +234,7 @@ let isEmpty08 = (data: BusinessError) => {
      console.log(TAG + 'before receiver check')
      if (receiver !== undefined) {
        console.log(TAG + 'Photo receiver is created successfully')
-       mPhotoSurface = await receiver.getReceivingSurfaceId()
+       mPhotoSurface = await receiver!.getReceivingSurfaceId()
        console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
      } else {
        console.log(TAG + 'Photo receiver is created failed')
@@ -390,7 +390,7 @@ let isEmpty08 = (data: BusinessError) => {
           await startCameraSession(i);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 startCameraSession");
 
-          mCameraInput.on('error', mCameraDevicesArray[i], (err: BusinessError) => {
+          mCameraInput.onError(mCameraDevicesArray[i], (err: BusinessError) => {
             if (isEmpty08(err)) {
               console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 err == null || undefined");
               await stopCameraSession();
@@ -402,7 +402,7 @@ let isEmpty08 = (data: BusinessError) => {
           })
 
           try {
-            mCameraInput.off('error', mCameraDevicesArray[i]);
+            mCameraInput.offError( mCameraDevicesArray[i]);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 off('reeor') SUCCESSFUL");
             done();
           } catch (error:BusinessError) {

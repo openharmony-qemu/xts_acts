@@ -104,14 +104,14 @@ export default function geolocationTest_geo1() {
         })
     
 
-    /**
-     * @tc.number SUB_HSS_LocationSystem_Geo_0100
-     * @tc.name testIsGeoServiceAvailable
-     * @tc.desc Check whether address resolution and reverse address resolution are supported.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_HSS_LocationSystem_Geo_0100
+      * @tc.number SUB_HSS_LocationSystem_Geo_0100
+      * @tc.desc   Check whether address resolution and reverse address resolution are supported.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_HSS_LocationSystem_Geo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
             geolocation.isGeoServiceAvailable(async (err, data) => {
@@ -133,12 +133,12 @@ export default function geolocationTest_geo1() {
     });
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_0200
      * @tc.number SUB_HSS_LocationSystem_Geo_0200
-     * @tc.name TestisGeoServiceAvailable
-     * @tc.desc Check whether address resolution and reverse address resolution are supported.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check whether address resolution and reverse address resolution are supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
@@ -159,12 +159,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_0300
      * @tc.number SUB_HSS_LocationSystem_Geo_0300
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Address Resolution Test.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Address Resolution Test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let reverseGeocodeRequest = { "latitude": 31.265496, "longitude": 121.62771, "maxItems": 1, "locale": "zh" };
@@ -186,12 +186,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
-    * @tc.number SUB_HSS_LocationSystem_Geo_0400
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Address Resolution Test.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.name   SUB_HSS_LocationSystem_Geo_0400
+     * @tc.number SUB_HSS_LocationSystem_Geo_0400
+     * @tc.desc   Address Resolution Test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let reverseGeocodeRequest = { "latitude": 31.265496, "longitude": 121.62771, "maxItems": 1 };
@@ -230,12 +230,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_0500
      * @tc.number SUB_HSS_LocationSystem_Geo_0500
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Obtaining Multiple Addresses Using the Address Resolution Function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Obtaining Multiple Addresses Using the Address Resolution Function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let reverseGeocodeRequest = { "latitude": 31.265496, "longitude": 121.62771, "maxItems": 5 };
@@ -256,12 +256,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
-    * @tc.number SUB_HSS_LocationSystem_Geo_0600
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Input parameter boundary test of the address resolution function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.name   SUB_HSS_LocationSystem_Geo_0600
+     * @tc.number SUB_HSS_LocationSystem_Geo_0600
+     * @tc.desc   Input parameter boundary test of the address resolution function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let reverseGeocodeRequest1 = { "latitude": 90, "longitude": 121.62771, "maxItems": 1 };
@@ -325,12 +325,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_0700
      * @tc.number SUB_HSS_LocationSystem_Geo_0700
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Input parameter boundary test of the address resolution function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Input parameter boundary test of the address resolution function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let reverseGeocodeRequest = { "latitude": 31.265496, "longitude": 180, "maxItems": 1 };
@@ -391,12 +391,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_0800
      * @tc.number SUB_HSS_LocationSystem_Geo_0800
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Reverse address resolution test.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Reverse address resolution test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let geocodeRequest = {
@@ -456,12 +456,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_0900
      * @tc.number SUB_HSS_LocationSystem_Geo_0900
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Reverse address resolution test.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Reverse address resolution test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let geocodeRequest = { "description": "上海市浦东新区金穗路1800号", "maxItems": 1 };
@@ -481,12 +481,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_1000
      * @tc.number SUB_HSS_LocationSystem_Geo_1000
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Obtaining Multiple Locations Using the Reverse Address Resolution Function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Obtaining Multiple Locations Using the Reverse Address Resolution Function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let geocodeRequest = { "description": "上海市浦东新区金穗路1800号", "maxItems": 5 };
@@ -507,12 +507,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_1100
      * @tc.number SUB_HSS_LocationSystem_Geo_1100
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Invalid parameter input test for the reverse address resolution function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Invalid parameter input test for the reverse address resolution function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
@@ -546,12 +546,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_1200
      * @tc.number SUB_HSS_LocationSystem_Geo_1200
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Test the reverse address resolution function in the specified range..
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the reverse address resolution function in the specified range..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let geocodeRequest = {
@@ -579,13 +579,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_1300
      * @tc.number SUB_HSS_LocationSystem_Geo_1300
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Invalid input parameter test for the reverse address resolution function in the specified range
-     *          -Invalid location name.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Invalid input parameter test for the reverse address resolution function in the specified range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let geocodeRequest = {
@@ -632,13 +631,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_1400
      * @tc.number SUB_HSS_LocationSystem_Geo_1400
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Invalid input parameter test for the reverse address resolution function in the specified range
-     *          - the address is not in the range.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Invalid input parameter test for the reverse address resolution function in the specified range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let geocodeRequest = {
@@ -666,13 +664,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_1500
      * @tc.number SUB_HSS_LocationSystem_Geo_1500
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Invalid longitude and latitude entered for the reverse address resolution
-     *          function in the specified range. The longitude and latitude range boundary is inverted..
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Invalid longitude and latitude entered for the reverse address resolution
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let geocodeRequest = {
@@ -700,12 +697,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_1600
      * @tc.number SUB_HSS_LocationSystem_Geo_1600
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Input parameter boundary test for the reverse address resolution function in a specified range.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Input parameter boundary test for the reverse address resolution function in a specified range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let geocodeRequest1 = {
@@ -877,12 +874,12 @@ export default function geolocationTest_geo1() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_Geo_1700
      * @tc.number SUB_HSS_LocationSystem_Geo_1700
-     * @tc.name TestgetAddressesFromLocation
-     * @tc.desc Longitude input parameter boundary test for the reverse address resolution function in a specified range
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Longitude input parameter boundary test for the reverse address resolution function in a specified range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_Geo_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let geocodeRequest1 = {

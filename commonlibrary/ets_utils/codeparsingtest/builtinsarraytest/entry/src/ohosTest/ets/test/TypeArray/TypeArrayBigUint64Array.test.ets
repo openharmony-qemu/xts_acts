@@ -23,7 +23,7 @@ export default function typeArrayBigUint64ArrayTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100)
+      await sleep(30);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -38,12 +38,12 @@ export default function typeArrayBigUint64ArrayTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0000
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0000
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0000
-     * @tc.desc 验证BigUint64Array基本构造和初始化
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array基本构造和初始化
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr1 = new BigUint64Array(2);
@@ -67,12 +67,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0001
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0001
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0001
-     * @tc.desc 验证BigUint64Array与DataView的基础同步
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array与DataView的基础同步
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buf = new ArrayBuffer(8);
@@ -87,12 +87,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0002
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0002
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0002
-     * @tc.desc 验证BigUint64Array的索引访问和修改
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的索引访问和修改
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -112,12 +112,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0003
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0003
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0003
-     * @tc.desc 验证BigUint64Array与SharedArrayBuffer的同步性
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array与SharedArrayBuffer的同步性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(16);
@@ -134,12 +134,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0004
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0004
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0004
-     * @tc.desc 验证BigUint64Array的set方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的set方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array(5);
@@ -157,12 +157,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0005
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0005
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0005
-     * @tc.desc 验证BigUint64Array的subarray方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的subarray方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -181,12 +181,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0006
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0006
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0006
-     * @tc.desc 验证BigUint64Array的slice方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的slice方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -205,12 +205,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0007
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0007
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0007
-     * @tc.desc 验证BigUint64Array与DataView的8位值交互
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array与DataView的8位值交互
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(8);
@@ -230,12 +230,12 @@ export default function typeArrayBigUint64ArrayTest() {
       expect(dv.getUint8(7)).assertEqual(0x11);
     })
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0008
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0008
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0008
-     * @tc.desc 验证BigUint64Array与DataView的16位值交互
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array与DataView的16位值交互
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(8);
@@ -260,12 +260,12 @@ export default function typeArrayBigUint64ArrayTest() {
     });
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0009
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0009
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0009
-     * @tc.desc 验证BigUint64Array与DataView的32位值交互
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array与DataView的32位值交互
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(8);
@@ -286,12 +286,12 @@ export default function typeArrayBigUint64ArrayTest() {
     });
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0010
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0010
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0010
-     * @tc.desc 验证BigUint64Array的fill方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的fill方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array(5);
@@ -317,12 +317,12 @@ export default function typeArrayBigUint64ArrayTest() {
     });
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0011
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0011
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0011
-     * @tc.desc 验证BigUint64Array的copyWithin方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的copyWithin方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -357,12 +357,12 @@ export default function typeArrayBigUint64ArrayTest() {
     });
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0012
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0012
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0012
-     * @tc.desc 验证BigUint64Array的indexOf方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的indexOf方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([10n, 20n, 30n, 20n, 40n]);
@@ -385,12 +385,12 @@ export default function typeArrayBigUint64ArrayTest() {
     });
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0013
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0013
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0013
-     * @tc.desc 验证BigUint64Array的lastIndexOf方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的lastIndexOf方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([10n, 20n, 30n, 20n, 40n]);
@@ -414,12 +414,12 @@ export default function typeArrayBigUint64ArrayTest() {
     });
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0014
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0014
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0014
-     * @tc.desc 验证BigUint64Array的includes方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的includes方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([5n, 10n, 15n, 20n]);
@@ -441,12 +441,12 @@ export default function typeArrayBigUint64ArrayTest() {
     });
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0015
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0015
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0015
-     * @tc.desc 验证BigUint64Array的entries迭代器
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的entries迭代器
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -465,12 +465,12 @@ export default function typeArrayBigUint64ArrayTest() {
       expect(arr[2]).assertEqual(3n);
     });
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0016
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0016
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0016
-     * @tc.desc 验证BigUint64Array的keys迭代器
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的keys迭代器
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array(3);
@@ -483,12 +483,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0017
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0017
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0017
-     * @tc.desc 验证BigUint64Array的values迭代器
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的values迭代器
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([10n, 20n, 30n]);
@@ -501,12 +501,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0018
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0018
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0018
-     * @tc.desc 验证BigUint64Array的forEach方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的forEach方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -523,12 +523,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0019
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0019
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0019
-     * @tc.desc 验证BigUint64Array的every方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的every方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr1 = new BigUint64Array([2n, 4n, 6n, 8n]);
@@ -540,12 +540,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0020
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0020
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0020
-     * @tc.desc 验证BigUint64Array的some方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的some方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr1 = new BigUint64Array([1n, 3n, 5n, 7n]);
@@ -557,12 +557,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0021
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0021
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0021
-     * @tc.desc 验证BigUint64Array的reduce方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的reduce方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -574,12 +574,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0022
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0022
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0022
-     * @tc.desc 验证BigUint64Array的reduceRight方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的reduceRight方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -589,12 +589,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0023
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0023
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0023
-     * @tc.desc 验证BigUint64Array的map方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的map方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -608,12 +608,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0024
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0024
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0024
-     * @tc.desc 验证BigUint64Array的filter方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的filter方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n, 6n]);
@@ -626,12 +626,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0025
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0025
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0025
-     * @tc.desc 验证BigUint64Array与DataView的字节序差异
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array与DataView的字节序差异
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(8);
@@ -649,12 +649,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0026
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0026
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0026
-     * @tc.desc 验证BigUint64Array处理超出32位范围的值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array处理超出32位范围的值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array(1);
@@ -671,12 +671,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0027
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0027
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0027
-     * @tc.desc 验证BigUint64Array的最大可能值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的最大可能值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array(1);
@@ -694,12 +694,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0028
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0028
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0028
-     * @tc.desc 验证BigUint64Array与普通数组的转换
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array与普通数组的转换
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const original = [1n, 2n, 3n, 4n];
@@ -714,12 +714,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0029
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0029
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0029
-     * @tc.desc 验证BigUint64Array的byteOffset和byteLength属性
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的byteOffset和byteLength属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buf = new ArrayBuffer(32);
@@ -738,12 +738,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0030
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0030
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0030
-     * @tc.desc 验证BigUint64Array使用不同偏移量创建视图
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array使用不同偏移量创建视图
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(24);
@@ -761,12 +761,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0031
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0031
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0031
-     * @tc.desc 验证BigUint64Array对无效偏移量的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array对无效偏移量的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(16);
@@ -788,12 +788,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0032
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0032
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0032
-     * @tc.desc 验证BigUint64Array与DataView处理特殊数值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array与DataView处理特殊数值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(8);
@@ -814,12 +814,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0033
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0033
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0033
-     * @tc.desc 验证BigUint64Array的find方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的find方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([5n, 10n, 15n, 20n, 25n]);
@@ -831,12 +831,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0034
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0034
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0034
-     * @tc.desc 验证BigUint64Array的findIndex方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的findIndex方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([5n, 10n, 15n, 20n, 25n]);
@@ -848,12 +848,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0035
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0035
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0035
-     * @tc.desc 验证BigUint64Array与DataView混合类型读写
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array与DataView混合类型读写
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(8);
@@ -871,12 +871,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0036
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0036
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0036
-     * @tc.desc 验证BigUint64Array的join方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的join方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -887,12 +887,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0037
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0037
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0037
-     * @tc.desc 验证BigUint64Array的reverse方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的reverse方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -912,12 +912,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0038
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0038
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0038
-     * @tc.desc 验证BigUint64Array的sort方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的sort方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([3n, 1n, 4n, 2n]);
@@ -937,12 +937,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0039
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0039
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0039
-     * @tc.desc 验证BigUint64Array与SharedArrayBuffer的并发模拟
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array与SharedArrayBuffer的并发模拟
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayBigUint64ArrayBufferDv0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
       async (Done: Function) => {
@@ -975,12 +975,12 @@ export default function typeArrayBigUint64ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0040
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0040
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0040
-     * @tc.desc 验证BigUint64Array的slice方法边界情况
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的slice方法边界情况
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -998,12 +998,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0041
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0041
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0041
-     * @tc.desc 验证BigUint64Array的subarray方法边界情况
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的subarray方法边界情况
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -1015,12 +1015,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0042
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0042
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0042
-     * @tc.desc 验证BigUint64Array的set方法边界情况
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的set方法边界情况
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array(5);
@@ -1048,12 +1048,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0043
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0043
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0043
-     * @tc.desc 验证BigUint64Array的fill方法边界情况
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的fill方法边界情况
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -1074,12 +1074,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0044
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0044
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0044
-     * @tc.desc 验证BigUint64Array的copyWithin方法边界情况
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的copyWithin方法边界情况
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -1100,12 +1100,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0045
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0045
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0045
-     * @tc.desc 验证BigUint64Array与DataView处理浮点数表示
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array与DataView处理浮点数表示
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buf = new ArrayBuffer(8);
@@ -1123,12 +1123,12 @@ export default function typeArrayBigUint64ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0047
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0047
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0047
-     * @tc.desc 验证BigUint64Array的of方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的of方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = BigUint64Array.of(1n, 2n, 3n, 4n);
@@ -1141,12 +1141,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0049
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0049
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0049
-     * @tc.desc 验证BigUint64Array与其他TypedArray的交互
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array与其他TypedArray的交互
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(16);
@@ -1170,12 +1170,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0056
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0056
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0056
-     * @tc.desc 验证BigUint64Array与DataView处理NaN和Infinity
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array与DataView处理NaN和Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buf = new ArrayBuffer(16);
@@ -1195,12 +1195,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0057
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0057
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0057
-     * @tc.desc 验证BigUint64Array的reduce方法在中途修改数组的行为
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的reduce方法在中途修改数组的行为
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -1220,12 +1220,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0062
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0062
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0062
-     * @tc.desc 验证BigUint64Array与JSON的转换
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array与JSON的转换
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -1237,12 +1237,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0063
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0063
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0063
-     * @tc.desc 验证BigUint64Array的values迭代器在数组修改后的行为
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的values迭代器在数组修改后的行为
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -1264,12 +1264,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0064
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0064
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0064
-     * @tc.desc 验证BigUint64Array的迭代器在数组长度变化时的行为
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的迭代器在数组长度变化时的行为
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -1292,12 +1292,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0065
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0065
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0065
-     * @tc.desc 验证BigUint64Array的includes方法对NaN的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的includes方法对NaN的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(16);
@@ -1314,12 +1314,12 @@ export default function typeArrayBigUint64ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0069
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0069
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0069
-     * @tc.desc 验证BigUint64Array与SharedArrayBuffer的原子操作
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array与SharedArrayBuffer的原子操作
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -1336,12 +1336,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0070
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0070
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0070
-     * @tc.desc 验证BigUint64Array的forEach方法对稀疏数组的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的forEach方法对稀疏数组的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array(5);
@@ -1363,12 +1363,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0071
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0071
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0071
-     * @tc.desc 验证BigUint64Array的reduceRight方法在中途修改数组的行为
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的reduceRight方法在中途修改数组的行为
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -1389,12 +1389,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0073
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0073
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0073
-     * @tc.desc 验证BigUint64Array的indexOf方法对重复值的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的indexOf方法对重复值的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([5n, 3n, 5n, 7n, 5n, 9n]);
@@ -1406,12 +1406,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0074
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0074
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0074
-     * @tc.desc 验证BigUint64Array的lastIndexOf方法对重复值的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的lastIndexOf方法对重复值的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([5n, 3n, 5n, 7n, 5n, 9n]);
@@ -1423,12 +1423,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0076
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0076
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0076
-     * @tc.desc 验证BigUint64Array的find方法对重复值的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的find方法对重复值的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([10n, 20n, 10n, 30n, 10n]);
@@ -1440,12 +1440,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0077
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0077
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0077
-     * @tc.desc 验证BigUint64Array的findIndex方法对重复值的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的findIndex方法对重复值的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([10n, 20n, 10n, 30n, 10n]);
@@ -1463,12 +1463,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0078
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0078
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0078
-     * @tc.desc 验证BigUint64Array与ArrayBuffer的slice方法交互
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array与ArrayBuffer的slice方法交互
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const original = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -1481,12 +1481,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0079
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0079
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0079
-     * @tc.desc 验证BigUint64Array的keys迭代器在数组修改后的行为
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的keys迭代器在数组修改后的行为
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -1500,12 +1500,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0080
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0080
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0080
-     * @tc.desc 验证BigUint64Array的entries迭代器在数组修改后的行为
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的entries迭代器在数组修改后的行为
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -1517,12 +1517,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0081
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0081
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0081
-     * @tc.desc 验证BigUint64Array的every方法对空数组的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的every方法对空数组的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new BigUint64Array(0);
@@ -1532,12 +1532,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0082
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0082
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0082
-     * @tc.desc 验证BigUint64Array的some方法对空数组的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的some方法对空数组的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new BigUint64Array(0);
@@ -1547,12 +1547,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0083
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0083
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0083
-     * @tc.desc 验证BigUint64Array的reduce方法对空数组的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的reduce方法对空数组的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new BigUint64Array(0);
@@ -1569,12 +1569,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0087
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0087
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0087
-     * @tc.desc 验证BigUint64Array的fill方法对不同填充值的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的fill方法对不同填充值的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array(3);
@@ -1587,12 +1587,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0088
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0088
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0088
-     * @tc.desc 验证BigUint64Array的set方法对不同源类型的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的set方法对不同源类型的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array(3);
@@ -1605,12 +1605,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0089
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0089
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0089
-     * @tc.desc 验证BigUint64Array的sort方法对不同比较函数的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的sort方法对不同比较函数的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([3n, 1n, 4n, 2n]);
@@ -1628,12 +1628,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0090
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0090
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0090
-     * @tc.desc 验证BigUint64Array的copyWithin方法对重叠区域的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的copyWithin方法对重叠区域的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr1 = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -1657,12 +1657,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0091
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0091
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0091
-     * @tc.desc 验证BigUint64Array的slice方法对整个数组的复制
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的slice方法对整个数组的复制
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -1684,12 +1684,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0092
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0092
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0092
-     * @tc.desc 验证BigUint64Array的subarray方法对整个数组的引用
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的subarray方法对整个数组的引用
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -1712,12 +1712,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0093
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0093
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0093
-     * @tc.desc 验证BigUint64Array的values方法与for...of循环的兼容性
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的values方法与for...of循环的兼容性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -1734,12 +1734,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0094
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0094
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0094
-     * @tc.desc 验证BigUint64Array的entries方法与for...of循环的兼容性
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的entries方法与for...of循环的兼容性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -1756,12 +1756,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0095
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0095
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0095
-     * @tc.desc 验证BigUint64Array与ArrayBuffer的byteLength匹配
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array与ArrayBuffer的byteLength匹配
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const length = 5;
@@ -1775,12 +1775,12 @@ export default function typeArrayBigUint64ArrayTest() {
 
     })
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0096
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0096
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0096
-     * @tc.desc 验证BigUint64Array的BYTES_PER_ELEMENT常量
-     * @tc.size SmallTest
-     * @tc.type Attribute
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的BYTES_PER_ELEMENT常量
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(BigUint64Array.BYTES_PER_ELEMENT).assertEqual(8);
@@ -1789,12 +1789,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0100
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0100
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0100
-     * @tc.desc 验证BigUint64Array的构造函数对无效参数的处理
-     * @tc.size SmallTest
-     * @tc.type Constructor
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的构造函数对无效参数的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let errorThrown = false;
@@ -1809,12 +1809,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0102
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0102
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0102
-     * @tc.desc 验证BigUint64Array的map方法返回新数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的map方法返回新数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -1832,12 +1832,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0103
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0103
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0103
-     * @tc.desc 验证BigUint64Array的filter方法返回新数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的filter方法返回新数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -1850,12 +1850,12 @@ export default function typeArrayBigUint64ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0107
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0107
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0107
-     * @tc.desc 验证BigUint64Array的slice方法返回新数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的slice方法返回新数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -1868,12 +1868,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0109
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0109
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0109
-     * @tc.desc 验证BigUint64Array的from方法返回新数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的from方法返回新数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const source = [1n, 2n, 3n];
@@ -1888,12 +1888,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0110
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0110
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0110
-     * @tc.desc 验证BigUint64Array的of方法返回新数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的of方法返回新数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = BigUint64Array.of(1n, 2n, 3n);
@@ -1907,12 +1907,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0111
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0111
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0111
-     * @tc.desc 验证BigUint64Array的every方法短路行为
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的every方法短路行为
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([2n, 4n, 6n, 3n, 8n]);
@@ -1927,12 +1927,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0112
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0112
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0112
-     * @tc.desc 验证BigUint64Array的some方法短路行为
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的some方法短路行为
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 3n, 5n, 4n, 7n]);
@@ -1947,12 +1947,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0113
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0113
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0113
-     * @tc.desc 验证BigUint64Array的forEach方法无法中断
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的forEach方法无法中断
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -1970,12 +1970,12 @@ export default function typeArrayBigUint64ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0115
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0115
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0115
-     * @tc.desc 验证BigUint64Array的splice方法返回被删除元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的splice方法返回被删除元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -1991,12 +1991,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0116
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0116
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0116
-     * @tc.desc 验证BigUint64Array的indexOf方法对NaN的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的indexOf方法对NaN的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(16);
@@ -2013,12 +2013,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0117
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0117
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0117
-     * @tc.desc 验证BigUint64Array的lastIndexOf方法对NaN的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的lastIndexOf方法对NaN的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(24);
@@ -2033,12 +2033,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0118
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0118
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0118
-     * @tc.desc 验证BigUint64Array的find方法对稀疏数组的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的find方法对稀疏数组的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array(5);
@@ -2050,12 +2050,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0119
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0119
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0119
-     * @tc.desc 验证BigUint64Array的findIndex方法对稀疏数组的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的findIndex方法对稀疏数组的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array(5);
@@ -2067,12 +2067,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0120
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0120
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0120
-     * @tc.desc 验证BigUint64Array的sort方法稳定性
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的sort方法稳定性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([2n, 1n, 2n, 3n, 1n, 3n]);
@@ -2088,12 +2088,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0121
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0121
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0121
-     * @tc.desc 验证BigUint64Array的fill方法对整个数组的填充
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的fill方法对整个数组的填充
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -2103,12 +2103,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0122
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0122
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0122
-     * @tc.desc 验证BigUint64Array的fill方法对部分数组的填充
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的fill方法对部分数组的填充
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -2118,12 +2118,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0123
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0123
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0123
-     * @tc.desc 验证BigUint64Array的copyWithin方法对整个数组的复制
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的copyWithin方法对整个数组的复制
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -2134,12 +2134,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0124
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0124
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0124
-     * @tc.desc 验证BigUint64Array的set方法对超出范围的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的set方法对超出范围的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array(3);
@@ -2162,12 +2162,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0125
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0125
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0125
-     * @tc.desc 验证BigUint64Array的set方法对负偏移量的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的set方法对负偏移量的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array(5);
@@ -2192,12 +2192,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0126
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0126
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0126
-     * @tc.desc 验证BigUint64Array的slice方法对负索引的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的slice方法对负索引的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -2210,12 +2210,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0127
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0127
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0127
-     * @tc.desc 验证BigUint64Array的subarray方法对负索引的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的subarray方法对负索引的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -2229,12 +2229,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0128
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0128
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0128
-     * @tc.desc 验证BigUint64Array的join方法对空数组的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的join方法对空数组的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new BigUint64Array(0);
@@ -2244,12 +2244,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0129
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0129
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0129
-     * @tc.desc 验证BigUint64Array的reverse方法对空数组的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的reverse方法对空数组的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new BigUint64Array(0);
@@ -2259,12 +2259,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0130
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0130
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0130
-     * @tc.desc 验证BigUint64Array的sort方法对空数组的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的sort方法对空数组的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new BigUint64Array(0);
@@ -2274,12 +2274,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0136
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0136
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0136
-     * @tc.desc 验证BigUint64Array的join方法使用不同分隔符
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的join方法使用不同分隔符
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -2293,12 +2293,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0137
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0137
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0137
-     * @tc.desc 验证BigUint64Array的includes方法对边界值的处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的includes方法对边界值的处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const maxVal = 0xFFFFFFFFFFFFFFFFn;
@@ -2310,12 +2310,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0138
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0138
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0138
-     * @tc.desc 验证BigUint64Array的includes方法从指定位置搜索
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的includes方法从指定位置搜索
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 1n, 3n, 1n]);
@@ -2331,12 +2331,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0139
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0139
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0139
-     * @tc.desc 验证BigUint64Array的indexOf方法对超出范围的起始索引处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的indexOf方法对超出范围的起始索引处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2348,12 +2348,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0140
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0140
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0140
-     * @tc.desc 验证BigUint64Array的lastIndexOf方法对超出范围的起始索引处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的lastIndexOf方法对超出范围的起始索引处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 1n, 3n]);
@@ -2365,12 +2365,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0141
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0141
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0141
-     * @tc.desc 验证BigUint64Array的fill方法对超出范围的索引处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的fill方法对超出范围的索引处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0141', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -2384,12 +2384,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0142
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0142
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0142
-     * @tc.desc 验证BigUint64Array的copyWithin方法对超出范围的索引处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的copyWithin方法对超出范围的索引处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -2402,12 +2402,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0143
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0143
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0143
-     * @tc.desc 验证BigUint64Array的splice方法对超出范围的索引处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的splice方法对超出范围的索引处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2422,12 +2422,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0144
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0144
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0144
-     * @tc.desc 验证BigUint64Array的splice方法删除数量超出范围
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array的splice方法删除数量超出范围
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -2440,12 +2440,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0145
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0145
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0145
-     * @tc.desc 验证BigUint64Array的from方法对映射函数的异常处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的from方法对映射函数的异常处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let errorThrown = false;
@@ -2461,12 +2461,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0146
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0146
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0146
-     * @tc.desc 验证BigUint64Array的map方法对映射函数的异常处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的map方法对映射函数的异常处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2487,12 +2487,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0147
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0147
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0147
-     * @tc.desc 验证BigUint64Array的filter方法对回调函数的异常处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的filter方法对回调函数的异常处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2513,12 +2513,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0148
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0148
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0148
-     * @tc.desc 验证BigUint64Array的reduce方法对回调函数的异常处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的reduce方法对回调函数的异常处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2539,12 +2539,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0149
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0149
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0149
-     * @tc.desc 验证BigUint64Array的every方法对回调函数的异常处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的every方法对回调函数的异常处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2565,12 +2565,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0150
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0150
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0150
-     * @tc.desc 验证BigUint64Array的some方法对回调函数的异常处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的some方法对回调函数的异常处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2591,12 +2591,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0151
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0151
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0151
-     * @tc.desc 验证BigUint64Array的forEach方法对回调函数的异常处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的forEach方法对回调函数的异常处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2616,12 +2616,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0152
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0152
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0152
-     * @tc.desc 验证BigUint64Array的find方法对回调函数的异常处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的find方法对回调函数的异常处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2642,12 +2642,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0153
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0153
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0153
-     * @tc.desc 验证BigUint64Array的findIndex方法对回调函数的异常处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的findIndex方法对回调函数的异常处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2668,12 +2668,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0155
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0155
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0155
-     * @tc.desc 验证BigUint64Array的sort方法对比较函数的异常处理
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的sort方法对比较函数的异常处理
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
@@ -2694,12 +2694,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0156
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0156
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0156
-     * @tc.desc 验证BigUint64Array与其他类型化数组共享缓冲区
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证BigUint64Array与其他类型化数组共享缓冲区
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(16);
@@ -2715,12 +2715,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0157
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0157
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0157
-     * @tc.desc 验证BigUint64Array的byteOffset属性正确反映偏移量
-     * @tc.size SmallTest
-     * @tc.type Attribute
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的byteOffset属性正确反映偏移量
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(24);
@@ -2734,12 +2734,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0158
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0158
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0158
-     * @tc.desc 验证BigUint64Array的set方法正确处理偏移量
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的set方法正确处理偏移量
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array(5);
@@ -2750,12 +2750,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0159
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0159
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0159
-     * @tc.desc 验证BigUint64Array的subarray方法创建视图
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的subarray方法创建视图
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -2768,12 +2768,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0160
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0160
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0160
-     * @tc.desc 验证BigUint64Array的slice方法创建新数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的slice方法创建新数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -2786,12 +2786,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0161
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0161
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0161
-     * @tc.desc 验证BigUint64Array的reverse方法反转数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的reverse方法反转数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0161', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -2801,12 +2801,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0162
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0162
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0162
-     * @tc.desc 验证BigUint64Array的sort方法正确排序
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的sort方法正确排序
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0162', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([3n, 1n, 4n, 2n]);
@@ -2816,12 +2816,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0163
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0163
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0163
-     * @tc.desc 验证BigUint64Array的fill方法部分填充
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的fill方法部分填充
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0163', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -2831,12 +2831,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0164
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0164
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0164
-     * @tc.desc 验证BigUint64Array的copyWithin方法复制范围内元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的copyWithin方法复制范围内元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0164', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -2846,12 +2846,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0165
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0165
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0165
-     * @tc.desc 验证BigUint64Array的indexOf方法查找元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的indexOf方法查找元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0165', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([10n, 20n, 30n, 20n, 10n]);
@@ -2862,12 +2862,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0166
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0166
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0166
-     * @tc.desc 验证BigUint64Array的lastIndexOf方法查找元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的lastIndexOf方法查找元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0166', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([10n, 20n, 30n, 20n, 10n]);
@@ -2878,12 +2878,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0167
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0167
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0167
-     * @tc.desc 验证BigUint64Array的includes方法检查元素存在
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的includes方法检查元素存在
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0167', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -2894,12 +2894,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0168
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0168
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0168
-     * @tc.desc 验证BigUint64Array的forEach方法遍历元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的forEach方法遍历元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0168', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2916,12 +2916,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0169
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0169
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0169
-     * @tc.desc 验证BigUint64Array的map方法映射元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的map方法映射元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -2931,12 +2931,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0170
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0170
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0170
-     * @tc.desc 验证BigUint64Array的filter方法过滤元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的filter方法过滤元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
@@ -2946,12 +2946,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0171
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0171
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0171
-     * @tc.desc 验证BigUint64Array的every方法检查所有元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的every方法检查所有元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr1 = new BigUint64Array([2n, 4n, 6n, 8n]);
@@ -2962,12 +2962,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0172
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0172
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0172
-     * @tc.desc 验证BigUint64Array的some方法检查存在元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的some方法检查存在元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0172', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr1 = new BigUint64Array([1n, 3n, 5n, 7n]);
@@ -2978,12 +2978,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0173
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0173
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0173
-     * @tc.desc 验证BigUint64Array的reduce方法累加元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的reduce方法累加元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
@@ -2994,12 +2994,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0175
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0175
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0175
-     * @tc.desc 验证BigUint64Array的values迭代器
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   验证BigUint64Array的values迭代器
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigUint64ArrayBufferDv0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
@@ -3013,12 +3013,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0176
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0176
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0176
-     * @tc.desc Verify BigUint64Array with DataView writing float values (interpreted as unsigned)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array with DataView writing float values (interpreted as unsigned)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0176', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3039,12 +3039,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0177
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0177
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0177
-     * @tc.desc Verify BigUint64Array subarray with max length (covers remaining elements)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array subarray with max length (covers remaining elements)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0177', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -3064,12 +3064,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0178
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0178
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0178
-     * @tc.desc Verify BigUint64Array slice with max length (covers remaining elements)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array slice with max length (covers remaining elements)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0178', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -3088,12 +3088,12 @@ export default function typeArrayBigUint64ArrayTest() {
       expect(sliced1[0]).assertEqual(15n);
     })
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0181
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0181
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0181
-     * @tc.desc Verify BigUint64Array with DataView reading signed 32-bit values (interpreted as unsigned)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array with DataView reading signed 32-bit values (interpreted as unsigned)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0181', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3113,12 +3113,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0182
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0182
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0182
-     * @tc.desc Verify BigUint64Array copyWithin with target beyond array length (no-op)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array copyWithin with target beyond array length (no-op)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0182', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3138,12 +3138,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0183
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0183
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0183
-     * @tc.desc Verify BigUint64Array fill with target beyond array length (no-op)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array fill with target beyond array length (no-op)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0183', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3165,12 +3165,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0184
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0184
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0184
-     * @tc.desc Verify BigUint64Array with SharedArrayBuffer (multi-thread simulation: lock-free read)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array with SharedArrayBuffer (multi-thread simulation: lock-free read)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0184', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(8);
@@ -3190,12 +3190,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0185
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0185
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0185
-     * @tc.desc Verify BigUint64Array indexOf with non-integer start (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array indexOf with non-integer start (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0185', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3216,12 +3216,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0186
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0186
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0186
-     * @tc.desc Verify BigUint64Array lastIndexOf with non-integer start (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array lastIndexOf with non-integer start (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0186', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3242,12 +3242,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0187
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0187
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0187
-     * @tc.desc Verify BigUint64Array includes with non-integer start (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array includes with non-integer start (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0187', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -3268,12 +3268,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0188
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0188
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0188
-     * @tc.desc Verify BigUint64Array with DataView writing 8-bit unsigned values (partial byte)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array with DataView writing 8-bit unsigned values (partial byte)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0188', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3297,12 +3297,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0189
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0189
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0189
-     * @tc.desc Verify BigUint64Array with DataView writing 16-bit unsigned values (partial bytes)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array with DataView writing 16-bit unsigned values (partial bytes)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0189', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3331,12 +3331,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0192
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0192
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0192
-     * @tc.desc Verify BigUint64Array with DataView reading 64-bit values in big-endian
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array with DataView reading 64-bit values in big-endian
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0192', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3358,12 +3358,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0193
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0193
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0193
-     * @tc.desc Verify BigUint64Array copyWithin with non-integer target/start/end (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array copyWithin with non-integer target/start/end (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0193', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3388,12 +3388,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0194
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0194
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0194
-     * @tc.desc Verify BigUint64Array fill with non-integer start/end (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array fill with non-integer start/end (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0194', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3419,12 +3419,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0195
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0195
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0195
-     * @tc.desc Verify BigUint64Array with SharedArrayBuffer (empty buffer, multi-view consistency)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array with SharedArrayBuffer (empty buffer, multi-view consistency)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0195', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptySab: SharedArrayBuffer = new SharedArrayBuffer(0);
@@ -3469,12 +3469,12 @@ export default function typeArrayBigUint64ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0196
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0196
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0196
-     * @tc.desc Verify BigUint64Array slice with non-integer start/end (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array slice with non-integer start/end (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0196', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3497,12 +3497,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0197
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0197
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0197
-     * @tc.desc Verify BigUint64Array with DataView reading 64-bit values in mixed endianness
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array with DataView reading 64-bit values in mixed endianness
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0197', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3527,12 +3527,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0198
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0198
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0198
-     * @tc.desc Verify BigUint64Array with DataView writing 32-bit unsigned values (partial bytes)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array with DataView writing 32-bit unsigned values (partial bytes)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0198', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3561,12 +3561,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0199
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0199
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0199
-     * @tc.desc Verify BigUint64Array with DataView reading unsigned 32-bit values (coerced to BigUint)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array with DataView reading unsigned 32-bit values (coerced to BigUint)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0199', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3589,12 +3589,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0200
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0200
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0200
-     * @tc.desc Verify BigUint64Array forEach stops if callback throws error
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array forEach stops if callback throws error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3634,12 +3634,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0201
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0201
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0201
-     * @tc.desc Verify BigUint64Array map stops if callback throws error
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array map stops if callback throws error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0201', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3683,12 +3683,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0202
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0202
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0202
-     * @tc.desc Verify BigUint64Array filter stops if callback throws error
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array filter stops if callback throws error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0202', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -3730,12 +3730,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0203
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0203
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0203
-     * @tc.desc Verify BigUint64Array reduce stops if callback throws error
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array reduce stops if callback throws error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0203', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3780,12 +3780,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0204
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0204
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0204
-     * @tc.desc Verify BigUint64Array every stops early if callback returns false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array every stops early if callback returns false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0204', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3821,12 +3821,12 @@ export default function typeArrayBigUint64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigUint64ArrayBufferDv0205
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGUINT64ARRAY_BUFFER_DV_0205
-     * @tc.name TypeArrayBigUint64ArrayBufferDv0205
-     * @tc.desc Verify BigUint64Array some stops early if callback returns true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigUint64Array some stops early if callback returns true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigUint64ArrayBufferDv0205', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);

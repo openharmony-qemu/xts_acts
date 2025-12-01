@@ -28,6 +28,7 @@ export default function windowKeyBorad() {
     let windowStage: window.WindowStage;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
+    let isFreeWindowMode = false;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -44,32 +45,31 @@ export default function windowKeyBorad() {
       console.info('beforeAll isPCStatus: ' + isPCStatus);
       let mainWindow = windowStage.getMainWindowSync();
       await mainWindow.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      isFreeWindowMode = mainWindow.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
       let driver: Driver = Driver.create();
       await sleep(1000);
-      if (isPCStatus==''||isAutoWindow == 'false') {
+      if (isFreeWindowMode==false) {
         let input = await driver.findComponent(ON.id('textInput'));
         console.info('beforeAll input: ' + JSON.stringify(input));
         await sleep(1000);
         await input.click();
         await sleep(1000);
-        let text1 = await driver.findComponent(ON.text('同意'));
+        let text1 = await driver.findComponent(ON.text('下一步'));
         console.info('beforeAll text1: ' + JSON.stringify(text1));
-        let text2 = await driver.findComponent(ON.text('下一步'));
-        console.info('beforeAll text2: ' + JSON.stringify(text2));
         await sleep(1000);
         if (text1) {
           await text1.click();
-          console.info('beforeAll 同意 click success');
-          await sleep(1000);
-          let text = await driver.findComponent(ON.text('下一步'));
-          console.info('beforeAll text: ' + JSON.stringify(text));
-          await text.click();
           console.info('beforeAll 下一步 click success');
           await sleep(1000);
-        } else if(text2){
-          await text2.click();
-          console.info('beforeAll 下一步 click success');
-          await sleep(1000);
+          let text2 = await driver.findComponent(ON.text('完成'));
+          console.info('beforeAll text2: ' + JSON.stringify(text2));
+          if(text2){
+            await text2.click();
+            console.info('beforeAll 完成 click success');
+          }
         } else{
           await driver.pressBack();
           console.info('beforeAll pressBack success');
@@ -90,19 +90,19 @@ export default function windowKeyBorad() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0100
-     * @tc.name      : testMainWindow_onKeyboradWillShow
-     * @tc.desc      : 主窗监听onKeyboardWillShow后拉起固定态输入法键盘触发回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_onKeyboradWillShow
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0100
+     * @tc.desc   主窗监听onKeyboardWillShow后拉起固定态输入法键盘触发回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_onKeyboradWillShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_onKeyboradWillShow ';
       console.log(caseName + 'begin');
       let mainWindow = windowStage.getMainWindowSync();
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback  = async (keyboardInfo: window.KeyboardInfo) => {
@@ -156,12 +156,12 @@ export default function windowKeyBorad() {
     
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0400
-     * @tc.name      : testSubWindowDestroy_onKeyboradWillShow
-     * @tc.desc      : 子窗销毁后监听onKeyboardWillShow返回1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSubWindowDestroy_onKeyboradWillShow
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0400
+     * @tc.desc   子窗销毁后监听onKeyboardWillShow返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSubWindowDestroy_onKeyboradWillShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSubWindowDestroy_onKeyboradWillShow ';
@@ -173,7 +173,7 @@ export default function windowKeyBorad() {
       await subWindowClass.showWindow();
       await sleep(200);
       try {
-        if (isPCStatus != '' || isAutoWindow != '') {
+        if (isFreeWindowMode == true) {
           await subWindowClass.destroyWindow()
           done();
         }
@@ -191,12 +191,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0500
-     * @tc.name      : testSubWindowDestroy_offKeyboradWillShow
-     * @tc.desc      : 子窗销毁后取消监听offKeyboardWillShow返回1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSubWindowDestroy_offKeyboradWillShow
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_0500
+     * @tc.desc   子窗销毁后取消监听offKeyboardWillShow返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSubWindowDestroy_offKeyboradWillShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSubWindowDestroy_offKeyboradWillShow ';
@@ -208,7 +208,7 @@ export default function windowKeyBorad() {
       await subWindowClass.showWindow();
       await sleep(200);
       try {
-        if (isPCStatus != '' || isAutoWindow != '') {
+        if (isFreeWindowMode == true) {
           await subWindowClass.destroyWindow()
           done();
         }
@@ -226,12 +226,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0100
-     * @tc.name      : testMainWindow_onkeyboardWillHide
-     * @tc.desc      : 主窗监听onKeyboardWillHide后隐藏固定态输入法键盘触发回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_onkeyboardWillHide
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0100
+     * @tc.desc   主窗监听onKeyboardWillHide后隐藏固定态输入法键盘触发回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_onkeyboardWillHide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_onkeyboardWillHide ';
@@ -239,7 +239,7 @@ export default function windowKeyBorad() {
       let mainWindow = windowStage.getMainWindowSync();
       console.info(`${caseName} Succeeded in getting the main window.`);
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
@@ -296,12 +296,12 @@ export default function windowKeyBorad() {
     
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0400
-     * @tc.name      : testSubWindowDestroy_onkeyboardWillHide
-     * @tc.desc      : 子窗销毁后监听onKeyboardWillHide返回1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSubWindowDestroy_onkeyboardWillHide
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0400
+     * @tc.desc   子窗销毁后监听onKeyboardWillHide返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSubWindowDestroy_onkeyboardWillHide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSubWindowDestroy_onkeyboardWillHide ';
@@ -313,7 +313,7 @@ export default function windowKeyBorad() {
       await subWindowClass.showWindow();
       await sleep(200);
       try {
-        if (isPCStatus != '' || isAutoWindow != '') {
+        if (isFreeWindowMode == true) {
           await subWindowClass.destroyWindow()
           done();
         }
@@ -331,12 +331,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0500
-     * @tc.name      : testSubWindowDestroy_offkeyboardWillHide
-     * @tc.desc      : 子窗销毁后取消监听offKeyboardWillHide返回1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSubWindowDestroy_offkeyboardWillHide
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0500
+     * @tc.desc   子窗销毁后取消监听offKeyboardWillHide返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSubWindowDestroy_offkeyboardWillHide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSubWindowDestroy_offkeyboardWillHide ';
@@ -348,7 +348,7 @@ export default function windowKeyBorad() {
       await subWindowClass.showWindow();
       await sleep(200);
       try {
-        if (isPCStatus != '' || isAutoWindow != '') {
+        if (isFreeWindowMode == true) {
           await subWindowClass.destroyWindow()
           done();
         }
@@ -366,12 +366,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0100
-     * @tc.name      : testMainWindow_OnAndOffKeyBoardWillShow_RegisterTwoTimes
-     * @tc.desc      : 主窗注册2次输入法键盘显示隐藏验证回调2次
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_OnAndOffKeyBoardWillShow_RegisterTwoTimes
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0100
+     * @tc.desc   主窗注册2次输入法键盘显示隐藏验证回调2次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_OnAndOffKeyBoardWillShow_RegisterTwoTimes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_OnAndOffKeyBoardWillShow_RegisterTwoTimes ';
@@ -381,7 +381,7 @@ export default function windowKeyBorad() {
       let timer1 = 0;
       let timer2 = 0;
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback1  = (keyboardInfo: window.KeyboardInfo) => {
@@ -436,12 +436,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0200
-     * @tc.name      : testMainWindow_OnAndOffKeyBoardWillShow_UnregisterOneTimes
-     * @tc.desc      : 主窗注册2次输入法键盘显示隐藏后取消其中一个监听验证回调1次
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_OnAndOffKeyBoardWillShow_UnregisterOneTimes
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0200
+     * @tc.desc   主窗注册2次输入法键盘显示隐藏后取消其中一个监听验证回调1次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_OnAndOffKeyBoardWillShow_UnregisterOneTimes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_OnAndOffKeyBoardWillShow_UnregisterOneTimes ';
@@ -451,7 +451,7 @@ export default function windowKeyBorad() {
       let timer1 = 0;
       let timer2 = 0;
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback1  = (keyboardInfo: window.KeyboardInfo) => {
@@ -509,12 +509,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0300
-     * @tc.name      : testMainWindow_OnAndOffKeyBoardWillShow_UnregisterAll
-     * @tc.desc      : 主窗注册2次输入法键盘显示隐藏后取消所有监听验证无法触发回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_OnAndOffKeyBoardWillShow_UnregisterAll
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0300
+     * @tc.desc   主窗注册2次输入法键盘显示隐藏后取消所有监听验证无法触发回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_OnAndOffKeyBoardWillShow_UnregisterAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_OnAndOffKeyBoardWillShow_UnregisterAll ';
@@ -524,7 +524,7 @@ export default function windowKeyBorad() {
       let timer1 = 0;
       let timer2 = 0;
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback1  = (keyboardInfo: window.KeyboardInfo) => {
@@ -580,12 +580,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0400
-     * @tc.name      : testMainWindow_OnAndOffKeyBoardWillShow
-     * @tc.desc      : 主窗注册输入法键盘显示隐藏后可监听多个输入框拉起固定键盘的显示隐藏
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMainWindow_OnAndOffKeyBoardWillShow
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_ONKEYBOARDWILLHIDE_0400
+     * @tc.desc   主窗注册输入法键盘显示隐藏后可监听多个输入框拉起固定键盘的显示隐藏
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainWindow_OnAndOffKeyBoardWillShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMainWindow_OnAndOffKeyBoardWillShow ';
@@ -595,7 +595,7 @@ export default function windowKeyBorad() {
       let timer1 = 0;
       let timer2 = 0;
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
@@ -647,12 +647,12 @@ export default function windowKeyBorad() {
     });
 
     /**
-     * @tc.number    : testWindowAnimationCurve_0100
-     * @tc.name      : testWindowAnimationCurveEnum
-     * @tc.desc      : Test the function value of WindowAnimationCurve
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWindowAnimationCurveEnum
+     * @tc.number testWindowAnimationCurve_0100
+     * @tc.desc   Test the function value of WindowAnimationCurve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindowAnimationCurveEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testWindowAnimationCurveEnum';

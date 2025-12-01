@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <cmath>
 #include <vector>
 #include "nativeFontNdk.h"
 
@@ -802,5 +803,98 @@ napi_value OHDrawingTypographyHandlerAddEncodedText009(napi_env env, napi_callba
         napi_create_int32(env, FAIL, &result3);
     }
     napi_set_element(env, result, ARR_NUM_2, result3);
+    return result;
+}
+
+bool NearEqual(const double left, const double right)
+{
+    constexpr double epsilon = 0.001f;
+    return (std::abs(left - right) <= epsilon);
+}
+
+napi_value OHDrawingSetTypographyStyleAttributeDouble001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    double lineSpacingSet = 30.0f;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDouble(typoStyle,
+        OH_Drawing_TypographyStyleAttributeId::TYPOGRAPHY_STYLE_ATTR_D_LINE_SPACING, lineSpacingSet);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_SUCCESS,
+        "SetTypographyStyleAttributeDouble errorCode != OH_DRAWING_SUCCESS");
+    double lineSpacingGet = 0.0f;
+    errorCode = OH_Drawing_GetTypographyStyleAttributeDouble(typoStyle,
+        OH_Drawing_TypographyStyleAttributeId::TYPOGRAPHY_STYLE_ATTR_D_LINE_SPACING, &lineSpacingGet);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_SUCCESS,
+        "GetTypographyStyleAttributeDouble errorCode != OH_DRAWING_SUCCESS");
+    bool isEqual = NearEqual(lineSpacingGet, lineSpacingSet);
+    NAPI_ASSERT(env, isEqual == true, "lineSpacingGet != lineSpacingSet");
+    napi_create_int32(env, SUCCESS, &result);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    return result;
+}
+
+napi_value OHDrawingSetTypographyStyleAttributeInt001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle == nullptr, create error");
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeInt(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_I_FONT_WIDTH, FONT_WIDTH_SEMI_EXPANDED);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_SUCCESS,
+        "SetTypographyStyleAttributeInt errorCode != OH_DRAWING_SUCCESS");
+    int outResult = 0;
+    errorCode = OH_Drawing_GetTypographyStyleAttributeInt(typoStyle, TYPOGRAPHY_STYLE_ATTR_I_FONT_WIDTH, &outResult);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_SUCCESS,
+        "GetTypographyStyleAttributeInt errorCode != OH_DRAWING_SUCCESS");
+    bool isEqual = outResult == FONT_WIDTH_SEMI_EXPANDED;
+    NAPI_ASSERT(env, isEqual == true, "widthGet != widthSet");
+    napi_create_int32(env, SUCCESS, &result);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    return result;
+}
+
+napi_value OHDrawingSetTextStyleAttributeDouble001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TextStyle* txtStyle = OH_Drawing_CreateTextStyle();
+    NAPI_ASSERT(env, txtStyle != nullptr, "txtStyle == nullptr, create error");
+    double maxLineHeight = 30.0f;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTextStyleAttributeDouble(txtStyle,
+        OH_Drawing_TextStyleAttributeId::TEXT_STYLE_ATTR_D_LINE_HEIGHT_MAXIMUM, maxLineHeight);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_SUCCESS,
+        "SetTextStyleAttributeDouble errorCode != OH_DRAWING_SUCCESS");
+    double getResult = 0;
+    errorCode = OH_Drawing_GetTextStyleAttributeDouble(txtStyle,
+        OH_Drawing_TextStyleAttributeId::TEXT_STYLE_ATTR_D_LINE_HEIGHT_MAXIMUM, &getResult);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_SUCCESS,
+        "GetTextStyleAttributeDouble errorCode != OH_DRAWING_SUCCESS");
+    bool isEqual = NearEqual(getResult, maxLineHeight);
+    NAPI_ASSERT(env, isEqual == true,
+        "TEXT_STYLE_ATTR_D_LINE_HEIGHT_MAXIMUM get != TEXT_STYLE_ATTR_D_LINE_HEIGHT_MAXIMUM set");
+    napi_create_int32(env, SUCCESS, &result);
+    OH_Drawing_DestroyTextStyle(txtStyle);
+    return result;
+}
+
+napi_value OHDrawingSetTextStyleAttributeInt001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TextStyle* txtStyle = OH_Drawing_CreateTextStyle();
+    NAPI_ASSERT(env, txtStyle != nullptr, "txtStyle == nullptr, create error");
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTextStyleAttributeInt(txtStyle,
+        OH_Drawing_TextStyleAttributeId::TEXT_STYLE_ATTR_I_LINE_HEIGHT_STYLE,
+        OH_Drawing_LineHeightStyle::TEXT_LINE_HEIGHT_BY_FONT_HEIGHT);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_SUCCESS,
+        "SetTextStyleAttributeInt errorCode != OH_DRAWING_SUCCESS");
+    int outResult = 0;
+    errorCode = OH_Drawing_GetTextStyleAttributeInt(txtStyle,
+        OH_Drawing_TextStyleAttributeId::TEXT_STYLE_ATTR_I_LINE_HEIGHT_STYLE, &outResult);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_SUCCESS,
+        "GetTextStyleAttributeInt errorCode != OH_DRAWING_SUCCESS");
+    bool isEqual = outResult == TEXT_LINE_HEIGHT_BY_FONT_HEIGHT;
+    NAPI_ASSERT(env, isEqual == true, "TEXT_LINE_HEIGHT_BY_FONT_HEIGHT get != TEXT_LINE_HEIGHT_BY_FONT_HEIGHT set");
+    napi_create_int32(env, SUCCESS, &result);
+    OH_Drawing_DestroyTextStyle(txtStyle);
     return result;
 }

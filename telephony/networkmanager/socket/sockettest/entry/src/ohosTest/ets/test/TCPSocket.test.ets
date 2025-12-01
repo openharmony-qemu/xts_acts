@@ -59,12 +59,12 @@ export default function TCPSocketTest() {
   describe('ActsTCPSocketTest', () => {
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_ConstructTCPSocketInstance_0100
      * @tc.name   testNetworkMgrSocketTCPSocketConstructTCPSocketInstance0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_ConstructTCPSocketInstance_0100
      * @tc.desc   Create a TCP Socket object
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConstructTCPSocketInstance0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConstructTCPSocketInstance0100';
@@ -83,12 +83,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0100
      * @tc.name   testNetworkMgrSocketTCPSocketBind0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0100
      * @tc.desc   Bind IP address and port,Only fill in IPV4 address;  callback
-     * @tc.size    MediumTest
-     * @tc.type   Function
-     * @tc.level  level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrSocketTCPSocketBind0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind0100';
@@ -123,12 +123,12 @@ export default function TCPSocketTest() {
 
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0500
      * @tc.name   testNetworkMgrSocketTCPSocketBind0500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0500
      * @tc.desc   Bind IP address and port,bad address;  callback
-     * @tc.size    MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind0500';
@@ -164,12 +164,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0600
      * @tc.name   testNetworkMgrSocketTCPSocketBind0600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0600
      * @tc.desc   Bind IP address and port,Port is boundary -1;  callback
-     * @tc.size    MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind0600';
@@ -205,12 +205,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0700
      * @tc.name   testNetworkMgrSocketTCPSocketBind0700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0700
      * @tc.desc   Bind IP address and port,port is boundary 0;  callback
-     * @tc.size    MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind0700';
@@ -246,12 +246,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0800
      * @tc.name   testNetworkMgrSocketTCPSocketBind0800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0800
      * @tc.desc   Bind IP address and port,Port is boundary 65535;  callback
-     * @tc.size    MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind0800';
@@ -287,12 +287,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0900
      * @tc.name   testNetworkMgrSocketTCPSocketBind0900
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_0900
      * @tc.desc   Bind IP address and port,Port is boundary 65536;  callback
-     * @tc.size    MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind0900';
@@ -328,12 +328,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1000
      * @tc.name   testNetworkMgrSocketTCPSocketBind1000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1000
      * @tc.desc   Bind IP address and port, bad family;  callback
-     * @tc.size    MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind1000';
@@ -369,12 +369,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1100
      * @tc.name   testNetworkMgrSocketTCPSocketBind1100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1100
      * @tc.desc   Bind IP address and port,Input parameter is null;  callback
-     * @tc.size    MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind1100';
@@ -402,12 +402,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1200
      * @tc.name   testNetworkMgrSocketTCPSocketBind1200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1200
      * @tc.desc   Bind IP address and port,Input parameter is undefined;  callback
-     * @tc.size    MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind1200';
@@ -435,12 +435,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1300
      * @tc.name   testNetworkMgrSocketTCPSocketBind1300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1300
      * @tc.desc   Bind IP address and port,Only fill in IPV4 address; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind1300';
@@ -475,12 +475,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1400
      * @tc.name   testNetworkMgrSocketTCPSocketBind1400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1400
      * @tc.desc   Bind IP address and port,Only fill in IPV6 address; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind1400';
@@ -515,12 +515,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1500
      * @tc.name   testNetworkMgrSocketTCPSocketBind1500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1500
      * @tc.desc   Bind IP address and port,The address and protocol are both IPV6; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind1500';
@@ -556,12 +556,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1600
      * @tc.name   testNetworkMgrSocketTCPSocketBind1600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1600
      * @tc.desc   Bind IP address and port,Address and protocol inversion; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind1600';
@@ -594,12 +594,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1700
      * @tc.name   testNetworkMgrSocketTCPSocketBind1700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1700
      * @tc.desc   Bind IP address and port, bad address; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind1700';
@@ -633,12 +633,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1800
      * @tc.name   testNetworkMgrSocketTCPSocketBind1800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1800
      * @tc.desc   Bind IP address and port,Port number is -1; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind1800';
@@ -675,12 +675,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1900
      * @tc.name   testNetworkMgrSocketTCPSocketBind1900
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_1900
      * @tc.desc   Bind IP address and port,Port number is 0; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind1900';
@@ -717,12 +717,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2000
      * @tc.name   testNetworkMgrSocketTCPSocketBind2000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2000
      * @tc.desc   Bind IP address and port,Port number is 65535; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind2000';
@@ -759,12 +759,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2100
      * @tc.name   testNetworkMgrSocketTCPSocketBind2100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2100
      * @tc.desc   Bind IP address and port,Port number is 65536; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind2100';
@@ -801,12 +801,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2200
      * @tc.name   testNetworkMgrSocketTCPSocketBind2200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2200
      * @tc.desc   Bind IP address and port, bad family; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind2200';
@@ -843,12 +843,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2300
      * @tc.name   testNetworkMgrSocketTCPSocketBind2300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2300
      * @tc.desc   Bind IP address and port with null; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind2300';
@@ -876,12 +876,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2400
      * @tc.name   testNetworkMgrSocketTCPSocketBind2400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2400
      * @tc.desc   Bind IP address and port with undefined; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind2400';
@@ -909,12 +909,12 @@ export default function TCPSocketTest() {
     });
     
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2500
      * @tc.name   testNetworkMgrSocketTCPSocketBind2500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Bind_2500
      * @tc.desc   Bind IP address and port,Address is Domain name ; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketBind2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketBind2500';
@@ -947,12 +947,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0100
      * @tc.name   testNetworkMgrSocketTCPSocketConnect0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0100
      * @tc.desc   Connect to the specified server IP address and port; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect0100';
@@ -996,12 +996,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0200
      * @tc.name   testNetworkMgrSocketTCPSocketConnect0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0200
      * @tc.desc   Connect to the specified IP address and port,Input parameter is null; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect0200';
@@ -1041,12 +1041,12 @@ export default function TCPSocketTest() {
 
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0400
      * @tc.name   testNetworkMgrSocketTCPSocketConnect0400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0400
      * @tc.desc   Connect to the specified IP address and port,Set timeout and address; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect0400';
@@ -1093,12 +1093,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0500
      * @tc.name   testNetworkMgrSocketTCPSocketConnect0500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0500
      * @tc.desc   Connect to the specified IP address and port,hour is undefined; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect0500';
@@ -1141,12 +1141,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0600
      * @tc.name   testNetworkMgrSocketTCPSocketConnect0600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0600
      * @tc.desc   Connect to the specified IP address and port, only has an IPV4 address; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect0600';
@@ -1190,12 +1190,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0700
      * @tc.name   testNetworkMgrSocketTCPSocketConnect0700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0700
      * @tc.desc   Connect to the specified IP address and port,Port is -65536; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect0700';
@@ -1242,12 +1242,12 @@ export default function TCPSocketTest() {
     
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0800
      * @tc.name   testNetworkMgrSocketTCPSocketConnect0800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0800
      * @tc.desc   Connect to the specified IP address and port,The address and protocol  are both IPV6; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect0800';
@@ -1286,14 +1286,14 @@ export default function TCPSocketTest() {
       }
     });
 
-    /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0900
-     * @tc.name   testNetworkMgrSocketTCPSocketConnect0900
-     * @tc.desc   Connect to the specified IP address and port,Port is -65535; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
-     */
+        /**
+         * @tc.name   testNetworkMgrSocketTCPSocketConnect0900
+         * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_0900
+         * @tc.desc   Connect to the specified IP address and port,Port is -65535; callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testNetworkMgrSocketTCPSocketConnect0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
           let caseName: string = 'testNetworkMgrSocketTCPSocketConnect0900';
           try {
@@ -1338,12 +1338,12 @@ export default function TCPSocketTest() {
         });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1000
      * @tc.name   testNetworkMgrSocketTCPSocketConnect1000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1000
      * @tc.desc   Connect to the specified IP address and port,bad address; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect1000';
@@ -1389,12 +1389,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1200
      * @tc.name   testNetworkMgrSocketTCPSocketConnect1200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1200
      * @tc.desc   Connect to the specified IP address and port,Port is -0; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect1200';
@@ -1440,12 +1440,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1300
      * @tc.name   testNetworkMgrSocketTCPSocketConnect1300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1300
      * @tc.desc   Connect to the specified IP address and port,Port is 65535; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect1300';
@@ -1493,12 +1493,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1400
      * @tc.name   testNetworkMgrSocketTCPSocketConnect1400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1400
      * @tc.desc   Connect to the specified IP address and port,Port is 65536; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect1400';
@@ -1544,12 +1544,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1500
      * @tc.name   testNetworkMgrSocketTCPSocketConnect1500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1500
      * @tc.desc   Connect to the specified IP address and port,bad family; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect1500';
@@ -1595,12 +1595,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1600
      * @tc.name   testNetworkMgrSocketTCPSocketConnect1600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1600
      * @tc.desc   Connect to the specified IP address and port,Connect without binding or listening; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect1600';
@@ -1635,12 +1635,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1700
      * @tc.name   testNetworkMgrSocketTCPSocketConnect1700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1700
      * @tc.desc   Connect to the specified server IP address and port; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect1700';
@@ -1687,12 +1687,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1800
      * @tc.name   testNetworkMgrSocketTCPSocketConnect1800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1800
      * @tc.desc   Connect to the specified IP address and port,Input parameter is null; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect1800';
@@ -1731,12 +1731,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1900
      * @tc.name   testNetworkMgrSocketTCPSocketConnect1900
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_1900
      * @tc.desc   Connect to the specified IP address and port,Input parameter is undefined; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect1900';
@@ -1775,12 +1775,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2000
      * @tc.name   testNetworkMgrSocketTCPSocketConnect2000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2000
      * @tc.desc   Connect to the specified IP address and port,Set timeout and address; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect2000';
@@ -1828,12 +1828,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2100
      * @tc.name   testNetworkMgrSocketTCPSocketConnect2100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2100
      * @tc.desc   Connect to the specified IP address and port,hour is undefined; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect2100';
@@ -1880,12 +1880,12 @@ export default function TCPSocketTest() {
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2200
      * @tc.name   testNetworkMgrSocketTCPSocketConnect2200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2200
      * @tc.desc   Connect to the specified IP address and port, only has an IPV4 address; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect2200';
@@ -1929,14 +1929,14 @@ export default function TCPSocketTest() {
       }
     });
 
-    /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2300
-     * @tc.name   testNetworkMgrSocketTCPSocketConnect2300
-     * @tc.desc   Connect to the specified IP address and port,Port is 65537; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
-     */
+/**
+ * @tc.name   testNetworkMgrSocketTCPSocketConnect2300
+ * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2300
+ * @tc.desc   Connect to the specified IP address and port,Port is 65537; callback
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 it('testNetworkMgrSocketTCPSocketConnect2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
   let caseName: string = 'testNetworkMgrSocketTCPSocketConnect2300';
   try {
@@ -1980,14 +1980,14 @@ it('testNetworkMgrSocketTCPSocketConnect2300', TestType.FUNCTION | Size.MEDIUMTE
   }
 });
 
-    /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2400
-     * @tc.name   testNetworkMgrSocketTCPSocketConnect2400
-     * @tc.desc   Connect to the specified IP address and port,Port is 66561; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
-     */
+/**
+ * @tc.name   testNetworkMgrSocketTCPSocketConnect2400
+ * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2400
+ * @tc.desc   Connect to the specified IP address and port,Port is 66561; callback
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
   let caseName: string = 'testNetworkMgrSocketTCPSocketConnect2400';
   try {
@@ -2032,12 +2032,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
 });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2500
      * @tc.name   testNetworkMgrSocketTCPSocketConnect2500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2500
      * @tc.desc   Connect to the specified IP address and port,Address and protocol inversion; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect2500';
@@ -2084,12 +2084,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2600
      * @tc.name   testNetworkMgrSocketTCPSocketConnect2600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2600
      * @tc.desc   Connect to the specified IP address and port,bad address; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect2600';
@@ -2137,12 +2137,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
 
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2800
      * @tc.name   testNetworkMgrSocketTCPSocketConnect2800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_2800
      * @tc.desc   Connect to the specified IP address and port,Port is -0; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect2800';
@@ -2190,12 +2190,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
 
     
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_3000
      * @tc.name   testNetworkMgrSocketTCPSocketConnect3000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_3000
      * @tc.desc   Connect to the specified IP address and port,Port is 65536; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketConnect3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnect3000';
@@ -2241,14 +2241,14 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
       }
     });
 
-    /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_3100
-     * @tc.name   testNetworkMgrSocketTCPSocketConnect3100
-     * @tc.desc   Connect to the specified IP address and port,Port is 65537; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
-     */
+        /**
+         * @tc.name   testNetworkMgrSocketTCPSocketConnect3100
+         * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_3100
+         * @tc.desc   Connect to the specified IP address and port,Port is 65537; promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testNetworkMgrSocketTCPSocketConnect3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
           let caseName: string = 'testNetworkMgrSocketTCPSocketConnect3100';
           try {
@@ -2294,14 +2294,14 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         });
 
 
-    /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_3200
-     * @tc.name   testNetworkMgrSocketTCPSocketConnect3200
-     * @tc.desc   Connect to the specified IP address and port,bad family; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
-     */
+            /**
+             * @tc.name   testNetworkMgrSocketTCPSocketConnect3200
+             * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_3200
+             * @tc.desc   Connect to the specified IP address and port,bad family; promise
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             it('testNetworkMgrSocketTCPSocketConnect3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
               let caseName: string = 'testNetworkMgrSocketTCPSocketConnect3200';
               try {
@@ -2346,14 +2346,14 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
               }
             });
 
-    /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_3300
-     * @tc.name   testNetworkMgrSocketTCPSocketConnect3300
-     * @tc.desc   Connect to the specified IP address and port,Connect without binding or listening; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
-     */
+            /**
+             * @tc.name   testNetworkMgrSocketTCPSocketConnect3300
+             * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Connect_3300
+             * @tc.desc   Connect to the specified IP address and port,Connect without binding or listening; promise
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             it('testNetworkMgrSocketTCPSocketConnect3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
               let caseName: string = 'testNetworkMgrSocketTCPSocketConnect3300';
               try {
@@ -2392,12 +2392,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
 
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0100
      * @tc.name   testNetworkMgrSocketTCPSocketSend0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0100
      * @tc.desc   Sending data through TCP Socket connection,To the client; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend0100';
@@ -2444,12 +2444,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0200
      * @tc.name   testNetworkMgrSocketTCPSocketSend0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0200
      * @tc.desc   Sending data through TCP Socket connection,To the server; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend0200';
@@ -2496,12 +2496,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0400
      * @tc.name   testNetworkMgrSocketTCPSocketSend0400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0400
      * @tc.desc   Sending data through TCP Socket connection,Input parameter is null; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend0400';
@@ -2547,12 +2547,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0500
      * @tc.name   testNetworkMgrSocketTCPSocketSend0500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0500
      * @tc.desc   Sending data through TCP Socket connection,Input parameter is undefined; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend0500';
@@ -2596,12 +2596,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0600
      * @tc.name   testNetworkMgrSocketTCPSocketSend0600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0600
      * @tc.desc   Sending data through TCP Socket connection,Send data of arraybuffer type; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend0600';
@@ -2648,12 +2648,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0700
      * @tc.name   testNetworkMgrSocketTCPSocketSend0700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0700
      * @tc.desc   Sending data through TCP Socket connection,Set data format to empty string; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend0700';
@@ -2701,12 +2701,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0800
      * @tc.name   testNetworkMgrSocketTCPSocketSend0800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0800
      * @tc.desc   Sending data through TCP Socket connection,Set data format to UTF-8; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend0800';
@@ -2754,12 +2754,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0900
      * @tc.name   testNetworkMgrSocketTCPSocketSend0900
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_0900
      * @tc.desc   Sending data through TCP Socket connection,Set data format to UTF-16BE; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend0900';
@@ -2807,12 +2807,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1000
      * @tc.name   testNetworkMgrSocketTCPSocketSend1000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1000
      * @tc.desc   Sending data through TCP Socket connection,Set data format to UTF-16LE; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend1000';
@@ -2860,12 +2860,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1100
      * @tc.name   testNetworkMgrSocketTCPSocketSend1100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1100
      * @tc.desc   Sending data through TCP Socket connection,Set data format to UTF-16; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend1100';
@@ -2913,12 +2913,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1200
      * @tc.name   testNetworkMgrSocketTCPSocketSend1200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1200
      * @tc.desc   Sending data through TCP Socket connection,Set data format to US-AECII; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend1200';
@@ -2966,12 +2966,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1300
      * @tc.name   testNetworkMgrSocketTCPSocketSend1300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1300
      * @tc.desc   Sending data through TCP Socket connection,Set data format to ISO-8859-1; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend1300';
@@ -3019,12 +3019,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1400
      * @tc.name   testNetworkMgrSocketTCPSocketSend1400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1400
      * @tc.desc   Sending data through TCP Socket connection,Set data format to GB2312; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend1400';
@@ -3072,12 +3072,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1500
      * @tc.name   testNetworkMgrSocketTCPSocketSend1500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1500
      * @tc.desc   Sending data through TCP Socket connection,Set data format to undefined; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend1500';
@@ -3125,12 +3125,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1600
      * @tc.name   testNetworkMgrSocketTCPSocketSend1600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1600
      * @tc.desc   Sending data through TCP Socket connection,To the client; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend1600';
@@ -3178,12 +3178,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1700
      * @tc.name   testNetworkMgrSocketTCPSocketSend1700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1700
      * @tc.desc   Sending data through TCP Socket connection,To the server; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend1700';
@@ -3232,12 +3232,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1900
      * @tc.name   testNetworkMgrSocketTCPSocketSend1900
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_1900
      * @tc.desc   Sending data through TCP Socket connection,Input parameter is null; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend1900';
@@ -3283,12 +3283,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2000
      * @tc.name   testNetworkMgrSocketTCPSocketSend2000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2000
      * @tc.desc   Sending data through TCP Socket connection,Input parameter is undefined; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend2000';
@@ -3334,12 +3334,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2100
      * @tc.name   testNetworkMgrSocketTCPSocketSend2100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2100
      * @tc.desc   Sending data through TCP Socket connection,Send data of arraybuffer type; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend2100';
@@ -3387,12 +3387,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2200
      * @tc.name   testNetworkMgrSocketTCPSocketSend2200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2200
      * @tc.desc   Sending data through TCP Socket connection,Set data format to empty string; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend2200';
@@ -3441,12 +3441,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2300
      * @tc.name   testNetworkMgrSocketTCPSocketSend2300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2300
      * @tc.desc   Sending data through TCP Socket connection,Set data format to UTF-8; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend2300';
@@ -3495,12 +3495,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2400
      * @tc.name   testNetworkMgrSocketTCPSocketSend2400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2400
      * @tc.desc   Sending data through TCP Socket connection,Set data format to UTF-16BE; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend2400';
@@ -3549,12 +3549,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2500
      * @tc.name   testNetworkMgrSocketTCPSocketSend2500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2500
      * @tc.desc   Sending data through TCP Socket connection,Set data format to UTF-16LE; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend2500';
@@ -3603,12 +3603,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2600
      * @tc.name   testNetworkMgrSocketTCPSocketSend2600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2600
      * @tc.desc   Sending data through TCP Socket connection,Set data format to UTF-16; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend2600';
@@ -3657,12 +3657,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2700
      * @tc.name   testNetworkMgrSocketTCPSocketSend2700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2700
      * @tc.desc   Sending data through TCP Socket connection,Set data format to US-AECII; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend2700';
@@ -3711,12 +3711,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2800
      * @tc.name   testNetworkMgrSocketTCPSocketSend2800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2800
      * @tc.desc   Sending data through TCP Socket connection,Set data format to ISO-8859-1; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend2800';
@@ -3765,12 +3765,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2900
      * @tc.name   testNetworkMgrSocketTCPSocketSend2900
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_2900
      * @tc.desc   Sending data through TCP Socket connection,Set data format to GB2312; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend2900';
@@ -3819,12 +3819,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_3000
      * @tc.name   testNetworkMgrSocketTCPSocketSend3000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Send_3000
      * @tc.desc   Sending data through TCP Socket connection,Set data format to undefined; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSend3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSend3000';
@@ -3873,12 +3873,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0100
      * @tc.name   testNetworkMgrSocketTCPSocketClose0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0100
      * @tc.desc   Close the TCP Socket connection,Call close before binding or listening; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketClose0100';
@@ -3906,12 +3906,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0200
      * @tc.name   testNetworkMgrSocketTCPSocketClose0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0200
      * @tc.desc   Close the TCP Socket connection,After bind and connect; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketClose0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketClose0200';
@@ -3952,12 +3952,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0300
      * @tc.name   testNetworkMgrSocketTCPSocketClose0300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0300
      * @tc.desc   Close the TCP Socket connection ,after listen and connect; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketClose0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketClose0300';
@@ -4001,12 +4001,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0400
      * @tc.name   testNetworkMgrSocketTCPSocketClose0400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0400
      * @tc.desc   Close the TCP Socket connection,Call close before binding or listening; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketClose0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketClose0400';
@@ -4035,12 +4035,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0500
      * @tc.name   testNetworkMgrSocketTCPSocketClose0500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0500
      * @tc.desc   Close the TCP Socket connection,after bind and connect; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketClose0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketClose0500';
@@ -4082,12 +4082,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0600
      * @tc.name   testNetworkMgrSocketTCPSocketClose0600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_Close_0600
      * @tc.desc   Close the TCP Socket connection,after listen and connect; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketClose0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketClose0500';
@@ -4132,12 +4132,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0100
      * @tc.name   testNetworkMgrSocketTCPSocketGetRemoteAddress0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0100
      * @tc.desc   Get the Opposite Socket Address,before bind or listen; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetRemoteAddress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetRemoteAddress0100';
@@ -4166,12 +4166,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0200
      * @tc.name   testNetworkMgrSocketTCPSocketGetRemoteAddress0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0200
      * @tc.desc   Get the Opposite Socket Address,after bind and connect; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetRemoteAddress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetRemoteAddress0200';
@@ -4218,12 +4218,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0300
      * @tc.name   testNetworkMgrSocketTCPSocketGetRemoteAddress0300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0300
      * @tc.desc   Get the Opposite Socket Address, after listen and connect; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetRemoteAddress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetRemoteAddress0300';
@@ -4272,12 +4272,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0400
      * @tc.name   testNetworkMgrSocketTCPSocketGetRemoteAddress0400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0400
      * @tc.desc   Get the Opposite Socket Address,before bind or listen; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetRemoteAddress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetRemoteAddress0400';
@@ -4306,12 +4306,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0500
      * @tc.name   testNetworkMgrSocketTCPSocketGetRemoteAddress0500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0500
      * @tc.desc   Get the Opposite Socket Address, after bind and connect; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetRemoteAddress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetRemoteAddress0500';
@@ -4359,12 +4359,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0600
      * @tc.name   testNetworkMgrSocketTCPSocketGetRemoteAddress0600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetRemoteAddress_0600
      * @tc.desc   Get the Opposite Socket Address,after listen and connect; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetRemoteAddress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetRemoteAddress0600';
@@ -4414,12 +4414,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0100
      * @tc.name   testNetworkMgrSocketTCPSocketGetState0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0100
      * @tc.desc   Get TCPSocket status,before bind or listen; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetState0100';
@@ -4450,12 +4450,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0200
      * @tc.name   testNetworkMgrSocketTCPSocketGetState0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0200
      * @tc.desc   Get TCPSocket status,after bind; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetState0200';
@@ -4495,12 +4495,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0300
      * @tc.name   testNetworkMgrSocketTCPSocketGetState0300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0300
      * @tc.desc   Get TCPSocket status,after bind and connect; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetState0300';
@@ -4546,12 +4546,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0400
      * @tc.name   testNetworkMgrSocketTCPSocketGetState0400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0400
      * @tc.desc   Get TCPSocket status,after listen and connect; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetState0400';
@@ -4600,12 +4600,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0500
      * @tc.name   testNetworkMgrSocketTCPSocketGetState0500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0500
      * @tc.desc   Get TCPSocket status,before bind or listen; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetState0500';
@@ -4637,12 +4637,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0600
      * @tc.name   testNetworkMgrSocketTCPSocketGetState0600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0600
      * @tc.desc   Get TCPSocket status; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetState0600'
@@ -4683,12 +4683,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0700
      * @tc.name   testNetworkMgrSocketTCPSocketGetState0700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0700
      * @tc.desc   Get TCPSocket status; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetState0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetState0700';
@@ -4733,12 +4733,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0800
      * @tc.name   testNetworkMgrSocketTCPSocketGetState0800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetState_0800
      * @tc.desc   Get TCPSocket status; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetState0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetState0800';
@@ -4786,12 +4786,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0100
      * @tc.name   testNetworkMgrSocketTCPSocketGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0100
      * @tc.desc   Get TCPSocket status,before bind or listen; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetSocketFd0100';
@@ -4819,12 +4819,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0200
      * @tc.name   testNetworkMgrSocketTCPSocketGetSocketFd0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0200
      * @tc.desc   Get TCPSocket status,after bind; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetSocketFd0200';
@@ -4862,12 +4862,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0300
      * @tc.name   testNetworkMgrSocketTCPSocketGetSocketFd0300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0300
      * @tc.desc   Get TCPSocket status,after bind and connect; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetSocketFd0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetSocketFd0300';
@@ -4911,12 +4911,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0400
      * @tc.name   testNetworkMgrSocketTCPSocketGetSocketFd0400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0400
      * @tc.desc   Get TCPSocket status,after listen and connect; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetSocketFd0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetSocketFd0400';
@@ -4963,12 +4963,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0500
      * @tc.name   testNetworkMgrSocketTCPSocketGetSocketFd0500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0500
      * @tc.desc   Get TCPSocket status, before bind or listen; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetSocketFd0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetSocketFd0500';
@@ -4997,12 +4997,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0600
      * @tc.name   testNetworkMgrSocketTCPSocketGetSocketFd0600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0600
      * @tc.desc   Get TCPSocket status,after bind; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetSocketFd0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetSocketFd0600';
@@ -5041,12 +5041,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0700
      * @tc.name   testNetworkMgrSocketTCPSocketGetSocketFd0700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0700
      * @tc.desc   Get TCPSocket status,after bind and connect; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetSocketFd0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetSocketFd0700';
@@ -5091,12 +5091,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0800
      * @tc.name   testNetworkMgrSocketTCPSocketGetSocketFd0800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_GetSocketFd_0800
      * @tc.desc   Get TCPSocket status,after listen and connect; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketGetSocketFd0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketGetSocketFd0800';
@@ -5144,12 +5144,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0100
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0100
      * @tc.desc   Get TCPSocket status,after bind;  callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions0100';
@@ -5199,12 +5199,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0200
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0200
      * @tc.desc   Get TCPSocket status,after bind and connect; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions0200';
@@ -5260,12 +5260,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0300
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions0300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0300
      * @tc.desc   Get TCPSocket status,after listen and connect; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions0300';
@@ -5324,12 +5324,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0400
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions0400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0400
      * @tc.desc   Get TCPSocket status,Input parameter is null; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions0400';
@@ -5367,12 +5367,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0500
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions0500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0500
      * @tc.desc   Get TCPSocket status,Input parameter is undefined; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions0500';
@@ -5410,12 +5410,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0600
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions0600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0600
      * @tc.desc   Get TCPSocket status,Input parameter keepAlive is false; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions0600';
@@ -5459,12 +5459,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0700
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions0700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0700
      * @tc.desc   Get TCPSocket status,Input parameter keepAlive is true; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions0700';
@@ -5508,12 +5508,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0800
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions0800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0800
      * @tc.desc   Get TCPSocket status,Input parameter OOBlnLine is false ; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions0800';
@@ -5557,12 +5557,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0900
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions0900
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_0900
      * @tc.desc   Get TCPSocket status, Input parameter OOBlnLine is true; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions0900';
@@ -5606,12 +5606,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1000
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions1000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1000
      * @tc.desc   Get TCPSocket status,Input parameter TCPNoDelay is false;  callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions1000';
@@ -5655,12 +5655,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1100
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions1100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1100
      * @tc.desc   Get TCPSocket status,Input parameter TCPNoDelay is true;  callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions1100';
@@ -5704,12 +5704,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1200
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions1200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1200
      * @tc.desc   Get TCPSocket status,Input parameter receiveBufferSize is -1; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions1200';
@@ -5753,12 +5753,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1300
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions1300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1300
      * @tc.desc   Get TCPSocket status,Input parameter receiveBufferSize is 0; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions1300';
@@ -5802,12 +5802,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1400
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions1400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1400
      * @tc.desc   Get TCPSocket status,Input parameter receiveBufferSize is 100; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions1400';
@@ -5851,12 +5851,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1500
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions1500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1500
      * @tc.desc   Get TCPSocket status,Input parameter sendBufferSize is -1; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions1500';
@@ -5900,12 +5900,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1600
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions1600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1600
      * @tc.desc   Get TCPSocket status,Input parameter sendBufferSize is 0; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions1600';
@@ -5949,12 +5949,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1700
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions1700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1700
      * @tc.desc   Get TCPSocket status,Input parameter sendBufferSize is 100; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions1700';
@@ -5998,12 +5998,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1800
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions1800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1800
      * @tc.desc   Get TCPSocket status,Input parameter reuseAddress is true; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions1800';
@@ -6047,12 +6047,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1900
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions1900
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_1900
      * @tc.desc   Get TCPSocket status,Input parameter reuseAddress is false; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions1900';
@@ -6096,12 +6096,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2000
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions2000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2000
      * @tc.desc   Get TCPSocket status,Input parameter socketTimeout is -1; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions2000';
@@ -6145,12 +6145,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2100
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions2100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2100
      * @tc.desc   Get TCPSocket status,Input parameter socketTimeout is 0; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions2100';
@@ -6194,12 +6194,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2200
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions2200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2200
      * @tc.desc   Get TCPSocket status,Input parameter socketTimeout is 100; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions2200';
@@ -6243,12 +6243,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2300
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions2300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2300
      * @tc.desc   Get TCPSocket status,Input parameter linger is -1; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions2300';
@@ -6291,12 +6291,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2400
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions2400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2400
      * @tc.desc   Get TCPSocket status,Input parameter linger is 0; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions2400';
@@ -6339,12 +6339,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2500
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions2500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2500
      * @tc.desc   Get TCPSocket status,Input parameter linger is 65535; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions2500';
@@ -6387,12 +6387,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2600
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions2600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2600
      * @tc.desc   Get TCPSocket status,Input parameter linger is 65536; callback
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions2600';
@@ -6435,12 +6435,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2700
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions2700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2700
      * @tc.desc   Get TCPSocket status,after bind; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions2700';
@@ -6491,12 +6491,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2800
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions2800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2800
      * @tc.desc   Get TCPSocket status,after bind and connect; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: String = 'testNetworkMgrSocketTCPSocketSetExtraOptions2800';
@@ -6553,12 +6553,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2900
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions2900
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_2900
      * @tc.desc   Get TCPSocket status,after listen and connect; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: String = 'testNetworkMgrSocketTCPSocketSetExtraOptions2900';
@@ -6618,12 +6618,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3000
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions3000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3000
      * @tc.desc   Get TCPSocket status,Input parameter is null; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions3000';
@@ -6662,12 +6662,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3100
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions3100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3100
      * @tc.desc   Get TCPSocket status,Input parameter is undefined; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions3100';
@@ -6706,12 +6706,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3200
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions3200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3200
      * @tc.desc   Get TCPSocket status,Input parameter keepAlive is false; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions3200';
@@ -6756,12 +6756,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3300
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions3300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3300
      * @tc.desc   Get TCPSocket status,Input parameter keepAlive is true; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions3300';
@@ -6806,12 +6806,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3400
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions3400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3400
      * @tc.desc   Get TCPSocket status,Input parameter OOBlnLine is false; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions3400';
@@ -6856,12 +6856,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3500
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions3500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3500
      * @tc.desc   Get TCPSocket status, Input parameter OOBlnLine is true; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions3500';
@@ -6906,12 +6906,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3600
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions3600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3600
      * @tc.desc   Get TCPSocket status,Input parameter TCPNoDelay is false; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions3600';
@@ -6956,12 +6956,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3700
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions3700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3700
      * @tc.desc   Get TCPSocket status,Input parameter TCPNoDelay is true; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions3700';
@@ -7006,12 +7006,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3800
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions3800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3800
      * @tc.desc   Get TCPSocket status,Input parameter receiveBufferSize is -1; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions3800';
@@ -7056,12 +7056,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3900
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions3900
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_3900
      * @tc.desc   Get TCPSocket status,Input parameter receiveBufferSize is 0; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions3900';
@@ -7106,12 +7106,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4000
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions4000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4000
      * @tc.desc   Get TCPSocket status,Input parameter receiveBufferSize is 100; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions4000';
@@ -7156,12 +7156,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4100
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions4100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4100
      * @tc.desc   Get TCPSocket status,Input parameter sendBufferSize is -1; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions4100';
@@ -7206,12 +7206,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4200
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions4200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4200
      * @tc.desc   Get TCPSocket status,Input parameter sendBufferSize is 0; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions4200';
@@ -7256,12 +7256,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4300
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions4300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4300
      * @tc.desc   Get TCPSocket status,Input parameter sendBufferSize is 100; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions4300';
@@ -7306,12 +7306,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4400
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions4400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4400
      * @tc.desc   Get TCPSocket status,Input parameter reuseAddress is true; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions4400';
@@ -7356,12 +7356,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4500
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions4500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4500
      * @tc.desc   Get TCPSocket status,Input parameter reuseAddress is false; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions4500';
@@ -7406,12 +7406,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4600
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions4600
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4600
      * @tc.desc   Get TCPSocket status,Input parameter socketTimeout is -1; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions4600';
@@ -7456,12 +7456,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4700
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions4700
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4700
      * @tc.desc   Get TCPSocket status,Input parameter socketTimeout is 0; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions4700';
@@ -7506,12 +7506,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4800
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions4800
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4800
      * @tc.desc   Get TCPSocket status,Input parameter socketTimeout is 100; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions4800';
@@ -7556,12 +7556,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4900
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions4900
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_4900
      * @tc.desc   Get TCPSocket status,Input parameter linger is -1; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions4900';
@@ -7605,12 +7605,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_5000
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions5000
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_5000
      * @tc.desc   Get TCPSocket status,Input parameter linger is 0; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions5000';
@@ -7654,12 +7654,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_5100
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions5100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_5100
      * @tc.desc   Get TCPSocket status,Input parameter linger is 65535; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions5100';
@@ -7703,12 +7703,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_5200
      * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions5200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_5200
      * @tc.desc   Get TCPSocket status,Input parameter linger is 65536; promise
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketSetExtraOptions5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions5200';
@@ -7752,12 +7752,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OnMessage_0100
      * @tc.name   testNetworkMgrSocketTCPSocketOnMessage0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OnMessage_0100
      * @tc.desc   Subscription to receive message events for TCPSocket connections,after listen and connect
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketOnMessage0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketOnMessage0100';
@@ -7812,12 +7812,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffMessage_0100
      * @tc.name   testNetworkMgrSocketTCPSocketOffMessage0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffMessage_0100
      * @tc.desc   Unsubscribe from receiving message events for TCPSocket connections,After a subscription
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketOffMessage0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketOffMessage0100';
@@ -7866,12 +7866,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffMessage_0200
      * @tc.name   testNetworkMgrSocketTCPSocketOffMessage0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffMessage_0200
      * @tc.desc   Unsubscribe from receiving message events for TCPSocket connections,After Subscribing multiple times
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketOffMessage0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketOffMessage0200';
@@ -7926,12 +7926,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OnConnect_0100
      * @tc.name   testNetworkMgrSocketTCPSocketOnConnect0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OnConnect_0100
      * @tc.desc   Subscription to connection events for TCPSocket after bind
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketOnConnect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketOnConnect0100';
@@ -7971,12 +7971,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OnConnect_0200
      * @tc.name   testNetworkMgrSocketTCPSocketOnConnect0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OnConnect_0200
      * @tc.desc   Subscription to connection events for TCPSocket,after listen
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketOnConnect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketOnConnect0200';
@@ -8018,12 +8018,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffConnect_0100
      * @tc.name   testNetworkMgrSocketTCPSocketOffConnect0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffConnect_0100
      * @tc.desc   Unsubscribe from TCP Socket connection events,After a subscription
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketOffConnect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketOffConnect0100';
@@ -8063,12 +8063,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffConnect_0200
      * @tc.name   testNetworkMgrSocketTCPSocketOffConnect0200
-     * @tc.desc    Unsubscribe from TCP Socket connection events,After Subscribing multiple times
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffConnect_0200
+     * @tc.desc   Unsubscribe from TCP Socket connection events,After Subscribing multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketOffConnect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketOffConnect0200';
@@ -8114,12 +8114,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OnClose_0100
      * @tc.name   testNetworkMgrSocketTCPSocketOnClose0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OnClose_0100
      * @tc.desc   Subscribe to the closure event of TCPSocket, after bind
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketOnClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketOnClose0100';
@@ -8154,12 +8154,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OnClose_0200
      * @tc.name   testNetworkMgrSocketTCPSocketOnClose0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OnClose_0200
      * @tc.desc   Subscribe to the closure event of TCPSocket,after listen
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketOnClose0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketOnClose0200';
@@ -8203,12 +8203,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffClose_0100
      * @tc.name   testNetworkMgrSocketTCPSocketOffClose0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffClose_0100
      * @tc.desc   Unsubscribe from the closing event of TCPSocket,After a subscription
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketOffClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketOffClose0100';
@@ -8251,12 +8251,12 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     /**
-     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffClose_0200
      * @tc.name   testNetworkMgrSocketTCPSocketOffClose0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_OffClose_0200
      * @tc.desc   Unsubscribe from the closing event of TCPSocket,After Subscribing multiple times
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTCPSocketOffClose0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketOffClose0200';

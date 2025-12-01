@@ -50,10 +50,12 @@ export default function EnableSwipeBackPage() {
 
 
     /**
-     * @tc.number    EnableSwipeBackPage_0100
-     * @tc.name      EnableSwipeBackPage_0100
-     * @tc.desc      Test enableSwipeBack test true
-     * @tc.level     Level 0
+     * @tc.name   EnableSwipeBackPage_0100
+     * @tc.number EnableSwipeBackPage_0100
+     * @tc.desc   Test enableSwipeBack test true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableSwipeBackPage_0100', Level.LEVEL0, async (done: Function) => {
       console.info('EnableSwipeBackPage_0100 START');
@@ -81,10 +83,12 @@ export default function EnableSwipeBackPage() {
     });
 
     /**
-     * @tc.number    EnableSwipeBackPage_0200
-     * @tc.name      EnableSwipeBackPage_0200
-     * @tc.desc      Test enableSwipeBack test false
-     * @tc.level     Level 0
+     * @tc.name   EnableSwipeBackPage_0200
+     * @tc.number EnableSwipeBackPage_0200
+     * @tc.desc   Test enableSwipeBack test false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableSwipeBackPage_0200', Level.LEVEL0, async (done: Function) => {
       console.info('EnableSwipeBackPage_0200 START');

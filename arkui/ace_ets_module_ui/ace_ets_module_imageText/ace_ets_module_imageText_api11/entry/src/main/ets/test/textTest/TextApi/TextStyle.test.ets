@@ -49,12 +49,12 @@ export default function TextStyle() {
 
 
     /**
-     * @tc.number    TextStyle_0001
-     * @tc.name      TextStyle_0001
-     * @tc.desc      set api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextStyle_0001
+     * @tc.number TextStyle_0001
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextStyle_0001', Level.LEVEL1, async (done: Function) => {
 
@@ -69,12 +69,12 @@ export default function TextStyle() {
     });
 
     /**
-     * @tc.number    TextStyle_0002
-     * @tc.name      TextStyle_0002
-     * @tc.desc      set api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextStyle_0002
+     * @tc.number TextStyle_0002
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextStyle_0002', Level.LEVEL1, async (done: Function) => {
 
@@ -89,12 +89,12 @@ export default function TextStyle() {
     });
 
     /**
-     * @tc.number    TextStyle_0003
-     * @tc.name      TextStyle_0003
-     * @tc.desc      set api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextStyle_0003
+     * @tc.number TextStyle_0003
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextStyle_0003', Level.LEVEL1, async (done: Function) => {
 
@@ -110,12 +110,12 @@ export default function TextStyle() {
 
 
     /**
-     * @tc.number    TextStyle_0004
-     * @tc.name      TextStyle_0004
-     * @tc.desc      set api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextStyle_0004
+     * @tc.number TextStyle_0004
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextStyle_0004', Level.LEVEL1, async (done: Function) => {
 
@@ -131,12 +131,12 @@ export default function TextStyle() {
 
 
     /**
-     * @tc.number    TextStyle_0005
-     * @tc.name      TextStyle_0005
-     * @tc.desc      set api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextStyle_0005
+     * @tc.number TextStyle_0005
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextStyle_0005', Level.LEVEL1, async (done: Function) => {
 
@@ -152,12 +152,12 @@ export default function TextStyle() {
 
 
     /**
-     * @tc.number    TextStyle_0006
-     * @tc.name      TextStyle_0006
-     * @tc.desc      set api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextStyle_0006
+     * @tc.number TextStyle_0006
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextStyle_0006', Level.LEVEL1, async (done: Function) => {
 
@@ -173,12 +173,12 @@ export default function TextStyle() {
 
 
     /**
-     * @tc.number    TextStyle_0007
-     * @tc.name      TextStyle_0007
-     * @tc.desc      set api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextStyle_0007
+     * @tc.number TextStyle_0007
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextStyle_0007', Level.LEVEL1, async (done: Function) => {
 
@@ -194,12 +194,12 @@ export default function TextStyle() {
 
 
     /**
-     * @tc.number    TextStyle_0008
-     * @tc.name      TextStyle_0008
-     * @tc.desc      set api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextStyle_0008
+     * @tc.number TextStyle_0008
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextStyle_0008', Level.LEVEL1, async (done: Function) => {
       console.info('[TextStyle_0008] START');

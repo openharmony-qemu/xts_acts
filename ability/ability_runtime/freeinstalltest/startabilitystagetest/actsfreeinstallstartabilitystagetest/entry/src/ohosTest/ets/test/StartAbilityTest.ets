@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -88,18 +88,20 @@ export default function startAbilityTest() {
         abilityDelegator.executeShellCommand(cmd5, (err: base.BusinessError, d: ESObject) => {
           console.info("executeShellCommand5 : err : " + JSON.stringify(err), " data : " + JSON.stringify(d));
         })
-        await sleep(500);
       }
+      await sleep(2000);
       done();
     });
 
 
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_0100
-     * @tc.name    The deviceid passed in is null, so the installation free process is implemented
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_0100
+     * @tc.number FreeInstall_Stage_Local_StartAbility_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_0100", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_0100-------------");
@@ -112,22 +114,25 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0100-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_0200
-     * @tc.name    The passed in deviceid is empty, and the installed apps are automatically pulled up
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_0200
+     * @tc.number FreeInstall_Stage_Local_StartAbility_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_0200", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_0200-------------");
@@ -142,22 +147,25 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0200-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_0300
-     * @tc.name    The deviceid passed in is empty. There is no need to install or installed HAP package
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_0300
+     * @tc.number FreeInstall_Stage_Local_StartAbility_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_0300", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_0300-------------");
@@ -176,21 +184,24 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == SYSTEM_INNER_ERROR).assertTrue();
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0300-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_0400
-     * @tc.name    Do not transfer deviceid to realize installation free process
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_0400
+     * @tc.number FreeInstall_Stage_Local_StartAbility_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_0400", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_0400-------------");
@@ -210,22 +221,25 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0400-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_0500
-     * @tc.name    The installed application will be automatically pulled up without transmitting the deviceid
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_0500
+     * @tc.number FreeInstall_Stage_Local_StartAbility_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_0500", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_0500-------------");
@@ -239,22 +253,25 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0500-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_0600
-     * @tc.name    Manually obtain and pass in the deviceid of the device to realize the installation free process
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_0600
+     * @tc.number FreeInstall_Stage_Local_StartAbility_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_0600", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_0600-------------");
@@ -274,23 +291,25 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0600-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_0700
-     * @tc.name    Manually obtain and pass in the deviceid of the device,
-                    and the installed application will be automatically pulled up
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_0700
+     * @tc.number FreeInstall_Stage_Local_StartAbility_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_0700", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_0700-------------");
@@ -299,9 +318,10 @@ export default function startAbilityTest() {
       let deviceId = "";
       abilityForeground(TAG);
       await sleep(1000);
-      await abilityDelegator.getCurrentTopAbility((err, data) => {
+      abilityDelegator.getCurrentTopAbility((err, data) => {
         console.log(TAG + 'getCurrentTopAbility result: ' + JSON.stringify(data) + " , err: " + JSON.stringify(err));
       })
+      await sleep(2000);
       let str:Want = {
         "deviceId": deviceId,
         "bundleName": "com.example.qianyiyingyong.hmservice",
@@ -309,23 +329,25 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0700-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_0800
-     * @tc.name    Without passing deviceid, pull up the HAP with the same bundlename and different
-                    abilityname as the entry to realize the installation free process
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_0800
+     * @tc.number FreeInstall_Stage_Local_StartAbility_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_0800", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_0800-------------");
@@ -349,22 +371,25 @@ export default function startAbilityTest() {
         "moduleName": "hnm2",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0800-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_1200
-     * @tc.name    Bad flags=1717 passed in, atomized HAP package installed
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_1200
+     * @tc.number FreeInstall_Stage_Local_StartAbility_1200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_1200", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_1200-------------");
@@ -383,22 +408,25 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": 1717,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_1200-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_1700
-     * @tc.name    No flag is transmitted, and there are HAP packages that need to be installed under the specified path
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_1700
+     * @tc.number FreeInstall_Stage_Local_StartAbility_1700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_1700", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_1700-------------");
@@ -410,21 +438,24 @@ export default function startAbilityTest() {
         "abilityName": "com.example.qianyiyingyong.MainAbility",
         "moduleName": "entry",
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == ERR_COMPONENT_NOF_FOUND).assertTrue();
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_1700-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_1800
-     * @tc.name    No flag is transmitted, and the atomized HAP package is installed
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_1800
+     * @tc.number FreeInstall_Stage_Local_StartAbility_1800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_1800", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_1800-------------");
@@ -442,22 +473,25 @@ export default function startAbilityTest() {
         "abilityName": "com.example.qianyiyingyong.MainAbility",
         "moduleName": "entry",
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_1800-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_2100
-     * @tc.name    The parameters field is passed in the want to realize the installation free process
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_2100
+     * @tc.number FreeInstall_Stage_Local_StartAbility_2100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_2100", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_2100-------------");
@@ -477,23 +511,25 @@ export default function startAbilityTest() {
           "site": "很开心看到你！"
         }
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2100-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_2200
-     * @tc.name    The parameters field is passed in the want, and the installed applications
-                    are automatically pulled up
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_2200
+     * @tc.number FreeInstall_Stage_Local_StartAbility_2200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_2200", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_2200-------------");
@@ -512,24 +548,26 @@ export default function startAbilityTest() {
           "site": "很开心看到你！"
         }
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2200-------------");
       done();
     });
 
-    /*
- * @tc.number  FreeInstall_Stage_Local_StartAbility_2300
- * @tc.name    Make the current service not in the foreground, and there are HAP
-                packages that need not be installed under the specified path
- * @tc.desc    Function test
- * @tc.level   0
- */
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_2300
+     * @tc.number FreeInstall_Stage_Local_StartAbility_2300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("FreeInstall_Stage_Local_StartAbility_2300", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_2300-------------");
       TAG = "FreeInstall_Stage_Local_StartAbility_2300";
@@ -548,21 +586,24 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == ERR_NOT_TOP).assertTrue();
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2300-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_2400
-     * @tc.name    The current service is not in the foreground, and the atomized HAP package has been installed
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_2400
+     * @tc.number FreeInstall_Stage_Local_StartAbility_2400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_2400", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_2400-------------");
@@ -582,21 +623,24 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == ERR_NOT_TOP).assertTrue();
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2400-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_2500
-     * @tc.name    FA Service Center installation free timeout
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_2500
+     * @tc.number FreeInstall_Stage_Local_StartAbility_2500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_2500", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_2500-------------");
@@ -629,22 +673,24 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == SYSTEM_INNER_ERROR).assertTrue();
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2500-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_3000
-     * @tc.name    There are hapa and hapb with the same bundlename and abilityname and different modulenames.
-                    Under the specified path, there are hapa with correct input parameters that need not be installed
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_3000
+     * @tc.number FreeInstall_Stage_Local_StartAbility_3000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_3000", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_3000-------------");
@@ -683,23 +729,25 @@ export default function startAbilityTest() {
         "moduleName": "hm4",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_3000-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_3100
-     * @tc.name    There are hapa and hapb with the same bundlename and abilityname and different modulenames.
-                    Hapb with input parameter error exists in the specified path
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_3100
+     * @tc.number FreeInstall_Stage_Local_StartAbility_3100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_3100", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_3100-------------");
@@ -723,21 +771,24 @@ export default function startAbilityTest() {
         "moduleName": "hm4",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == SYSTEM_INNER_ERROR).assertTrue();
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_3100-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_3200
-     * @tc.name    Wrong modulename passed in
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_3200
+     * @tc.number FreeInstall_Stage_Local_StartAbility_3200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_3200", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_3200-------------");
@@ -761,22 +812,24 @@ export default function startAbilityTest() {
         "moduleName": "hnm",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == SYSTEM_INNER_ERROR).assertTrue();
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_3200-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_3300
-     * @tc.name    Do not transfer modulename. There are HAP packages that need not be
-                    installed under the specified path
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_3300
+     * @tc.number FreeInstall_Stage_Local_StartAbility_3300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_3300", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_3300-------------");
@@ -788,21 +841,24 @@ export default function startAbilityTest() {
         "abilityName": "com.example.qianyiyingyong.MainAbility",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == SYSTEM_INNER_ERROR).assertTrue();
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_3300-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_3400
-     * @tc.name    Modulename is not passed. Atomized HAP package is installed
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_3400
+     * @tc.number FreeInstall_Stage_Local_StartAbility_3400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_3400", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_3400-------------");
@@ -821,23 +877,25 @@ export default function startAbilityTest() {
         "abilityName": "com.example.qianyiyingyong.MainAbility",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_3400-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_1900
-     * @tc.name    The current service is not in the foreground. Page a jumps to page B first.
-                    There are HAP packages that need not be installed under the specified path
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_1900
+     * @tc.number FreeInstall_Stage_Local_StartAbility_1900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_1900", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_1900-------------");
@@ -849,11 +907,12 @@ export default function startAbilityTest() {
         "abilityName": "MainAbility1",
         "moduleName": "entry",
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": Mainability2 startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": Mainability2 startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       abilityBackground(TAG);
       await sleep(1000);
       let str2:Want = {
@@ -862,22 +921,24 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str2).then((data:number) => {
+      globalThis.abilityContext.startAbility(str2).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == ERR_NOT_TOP).assertTrue();
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_1900-------------");
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_Stage_Local_StartAbility_2000
-     * @tc.name    The current service is not in the foreground. Page a jumps to page B first.
-                    The atomized HAP package has been installed
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_Local_StartAbility_2000
+     * @tc.number FreeInstall_Stage_Local_StartAbility_2000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_Local_StartAbility_2000", Level.LEVEL0, async (done:Function) => {
       console.info("------------start FreeInstall_Stage_Local_StartAbility_2000-------------");
@@ -894,11 +955,12 @@ export default function startAbilityTest() {
         "abilityName": "MainAbility1",
         "moduleName": "entry",
       }
-      await globalThis.abilityContext.startAbility(str).then((data:number) => {
+      globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": Mainability2 startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": Mainability2 startAbility fail. err: " + JSON.stringify(error));
       });
+      await sleep(2000);
       abilityBackground(TAG);
       await sleep(1000);
       let str2:Want = {
@@ -907,12 +969,13 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      await globalThis.abilityContext.startAbility(str2).then((data:number) => {
+      globalThis.abilityContext.startAbility(str2).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == ERR_NOT_TOP).assertTrue();
       });
+      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2000-------------");
       done();
     });

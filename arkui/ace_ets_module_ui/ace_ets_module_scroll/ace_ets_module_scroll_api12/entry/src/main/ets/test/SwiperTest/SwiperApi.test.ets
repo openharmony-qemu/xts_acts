@@ -43,15 +43,15 @@ export default function SwiperApi() {
       console.info("SwiperApi after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_Swiper_0010
-     * @tc.name       : SwiperApi_001
-     * @tc.desc       : swiper Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SwiperApi_001
+     * @tc.number SwiperApi_001
+     * @tc.desc   SwiperApi_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SwiperApi_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SwiperApi_001] START');
 

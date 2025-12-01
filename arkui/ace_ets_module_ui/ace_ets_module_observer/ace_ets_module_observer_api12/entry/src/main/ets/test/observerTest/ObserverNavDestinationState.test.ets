@@ -48,11 +48,13 @@ export default function ObserverNavDestinationState() {
       });
 
 
-      /**
-     * @tc.number    ObserverNavDestinationState_0100
-     * @tc.name      ObserverNavDestinationState_0100
-     * @tc.desc      Test Observer NavDestinationState
-     * @tc.level:    Level 2
+    /**
+     * @tc.name   ObserverNavDestinationState_0100
+     * @tc.number ObserverNavDestinationState_0100
+     * @tc.desc   Test Observer NavDestinationState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ObserverNavDestinationState_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[ObserverNavDestinationState_0100] START');

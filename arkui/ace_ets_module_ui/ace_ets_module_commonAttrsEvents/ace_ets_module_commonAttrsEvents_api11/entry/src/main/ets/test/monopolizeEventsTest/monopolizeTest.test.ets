@@ -55,12 +55,12 @@ export default function monopolizeTest() {
       done();
     });
     /**
+     * @tc.name   monopolizeTest_0100
      * @tc.number monopolize
-     * @tc.name monopolizeTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('monopolizeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('monopolizeTest_0100 START');

@@ -55,12 +55,12 @@ export default function RichEditorOnWillChange015() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0011
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0011
-     * @tc.desc  : To test the RichEditor on WillChange callback, undo the operation of cutting a piece of content and then pasting it
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0011
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0011
+     * @tc.desc   To test the RichEditor on WillChange callback, undo the operation of cutting a piece of content and then pasting it
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0011',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0011 START');
@@ -70,11 +70,11 @@ export default function RichEditorOnWillChange015() {
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
 
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(500);
       pointCenter = await rich.getBoundsCenter();
       await driver.longClick(pointCenter.x, pointCenter.y);
@@ -105,7 +105,7 @@ export default function RichEditorOnWillChange015() {
       expect(ondidRangeAfter).assertEqual('ondid rangeAfter:{"start":2,"end":4}');
 
       //撤销粘贴
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z);
       await CommonFunc.sleep(500);
 
       replaceCall = await replacedSpansCallback.getText();

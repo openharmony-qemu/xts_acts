@@ -26,13 +26,13 @@ export default function textFontFamilyTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_FONTFAMILY_0100
-     * @tc.name       : testTextFontFamily001
-     * @tc.desc       : testing fontFamily for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextFontFamily001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_FONTFAMILY_0100
+     * @tc.desc   testing fontFamily for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextFontFamily001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextFontFamily001()).assertEqual(0)

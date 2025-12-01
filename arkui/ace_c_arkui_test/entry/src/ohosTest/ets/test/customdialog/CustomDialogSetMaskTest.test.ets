@@ -26,52 +26,52 @@ export default function customDialogSetMaskTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMASK_0100
-     * @tc.name       : testCustomDialogSetMask001
-     * @tc.desc       : testing setMask for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetMask001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMASK_0100
+     * @tc.desc   testing setMask for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetMask001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetMask001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMASK_0200
-     * @tc.name       : testCustomDialogSetMask002
-     * @tc.desc       : testing setMask for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetMask002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMASK_0200
+     * @tc.desc   testing setMask for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetMask002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetMask002()).assertEqual(0)
       done()
     })
     
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMASK_0300
-     * @tc.name       : testCustomDialogSetMask003
-     * @tc.desc       : testing setMask for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetMask003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMASK_0300
+     * @tc.desc   testing setMask for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetMask003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetMask003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMASK_0400
-     * @tc.name       : testCustomDialogSetMask004
-     * @tc.desc       : testing setMask for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetMask004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMASK_0400
+     * @tc.desc   testing setMask for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetMask004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetMask004()).assertEqual(0)

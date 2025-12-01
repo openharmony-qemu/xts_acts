@@ -45,12 +45,12 @@ export default function ButtonStyle() {
       console.info("ButtonStyle after each called");
     });
     /**
-     * @tc.number    ButtonStyle_001
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   ButtonStyle_001
+     * @tc.number ButtonStyle_001
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ButtonStyle_001', Level.LEVEL3, async (done: Function) => {
       console.info('[ButtonStyle_001] START');

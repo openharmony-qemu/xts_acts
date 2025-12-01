@@ -44,15 +44,15 @@ export default function SelectStatusTest() {
     });
 
 
-    /**
-     * @tc.number    SelectStatusTest_0100
-     * @tc.name      SelectStatusTest_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
-     */
      
+    /**
+     * @tc.name   SelectStatusTest_0100
+     * @tc.number SelectStatusTest_0100
+     * @tc.desc   SelectStatusTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SelectStatusTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let tagName = 'SelectStatusTest_0100';
       console.info('[' + tagName + '] START============================');
@@ -75,15 +75,15 @@ export default function SelectStatusTest() {
       done();
     });
 
-    /**
-     * @tc.number    SelectStatusTest_0200
-     * @tc.name      SelectStatusTest_0200
-     * @tc.desc      set api
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   SelectStatusTest_0200
+     * @tc.number SelectStatusTest_0200
+     * @tc.desc   SelectStatusTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SelectStatusTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let tagName = 'SelectStatusTest_0200';
       console.info('[' + tagName + '] START============================');

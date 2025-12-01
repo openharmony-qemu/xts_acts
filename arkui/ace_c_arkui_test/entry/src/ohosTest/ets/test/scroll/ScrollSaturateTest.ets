@@ -26,78 +26,78 @@ export default function scrollSaturateTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SATURATE_0100
-     * @tc.name       : testScrollSaturate001
-     * @tc.desc       : testing saturate for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollSaturate001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SATURATE_0100
+     * @tc.desc   testing saturate for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollSaturate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollSaturate001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SATURATE_0200
-     * @tc.name       : testScrollSaturate002
-     * @tc.desc       : testing saturate for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollSaturate002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SATURATE_0200
+     * @tc.desc   testing saturate for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollSaturate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollSaturate002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SATURATE_0300
-     * @tc.name       : testScrollSaturate003
-     * @tc.desc       : testing saturate for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollSaturate003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SATURATE_0300
+     * @tc.desc   testing saturate for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollSaturate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollSaturate003()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SATURATE_0400
-     * @tc.name       : testScrollSaturate004
-     * @tc.desc       : testing saturate for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollSaturate004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SATURATE_0400
+     * @tc.desc   testing saturate for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollSaturate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollSaturate004()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SATURATE_0500
-     * @tc.name       : testScrollSaturate005
-     * @tc.desc       : testing saturate for scroll with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testScrollSaturate005
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SATURATE_0500
+     * @tc.desc   testing saturate for scroll with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollSaturate005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollSaturate005()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SATURATE_0600
-     * @tc.name       : testScrollSaturate006
-     * @tc.desc       : testing saturate for scroll with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testScrollSaturate006
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SATURATE_0600
+     * @tc.desc   testing saturate for scroll with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollSaturate006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollSaturate006()).assertEqual(0)

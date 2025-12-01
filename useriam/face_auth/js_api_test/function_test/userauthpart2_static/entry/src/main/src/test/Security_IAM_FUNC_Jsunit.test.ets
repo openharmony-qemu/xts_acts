@@ -59,12 +59,12 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @tc.number     Security_IAM_Func_Static_0102
-     * @tc.name       Security_IAM_Func_Static_0102
-     * @tc.desc       Abnormal testing
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   Security_IAM_Func_Static_0102
+     * @tc.number Security_IAM_Func_Static_0102
+     * @tc.desc   Abnormal testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Security_IAM_Func_Static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace Security_IAM_Func_Static_0102 start');
@@ -122,13 +122,13 @@ export default function userauthTest_API9() {
 
 
     /**
-        * @tc.number     Security_IAM_PIN_Kit_Func_Static_0104
-        * @tc.name       Security_IAM_PIN_Kit_Func_Static_0104
-        * @tc.desc       Enumeration testing
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level 0
-    */
+     * @tc.name   Security_IAM_PIN_Kit_Func_Static_0104
+     * @tc.number Security_IAM_PIN_Kit_Func_Static_0104
+     * @tc.desc   Enumeration testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_PIN_Kit_Func_Static_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace Security_IAM_PIN_Kit_Func_Static_0104 start');
       expect('10000').assertEqual(''+userAuth.AuthTrustLevel.ATL1);
@@ -142,13 +142,13 @@ export default function userauthTest_API9() {
 
 
     /**
-        * @tc.number     Security_IAM_PIN_Kit_Func_Static_0106
-        * @tc.name       Security_IAM_PIN_Kit_Func_Static_0106
-        * @tc.desc       Enumeration testing
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level 0
-    */
+     * @tc.name   Security_IAM_PIN_Kit_Func_Static_0106
+     * @tc.number Security_IAM_PIN_Kit_Func_Static_0106
+     * @tc.desc   Enumeration testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_PIN_Kit_Func_Static_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace Security_IAM_PIN_Kit_Func_Static_0106 start');
       expect('2').assertEqual(''+userAuth.UserAuthType.FACE);
@@ -158,13 +158,13 @@ export default function userauthTest_API9() {
     })
 
     /**
-        * @tc.number     Security_IAM_Func_Static_0107
-        * @tc.name       Security_IAM_Func_Static_0107
-        * @tc.desc       Enumeration testing
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level 0
-    */
+     * @tc.name   Security_IAM_Func_Static_0107
+     * @tc.number Security_IAM_Func_Static_0107
+     * @tc.desc   Enumeration testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_Func_Static_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace Security_IAM_Func_Static_0107 start');
       expect('12500000').assertEqual(''+userAuth.UserAuthResultCode.SUCCESS);
@@ -184,12 +184,12 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @tc.number  SUB_Security_userIam_authWidget_Func_skip_Static_0190
-     * @tc.name    SUB_Security_userIam_authWidget_Func_skip_Static_0190
-     * @tc.desc    authWidget
-     * @tc.type    Function
-     * @tc.size    SmallTest
-     * @tc.level   Level3
+     * @tc.name   SUB_Security_userIam_authWidget_Func_skip_Static_0190
+     * @tc.number SUB_Security_userIam_authWidget_Func_skip_Static_0190
+     * @tc.desc   authWidget
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_userIam_authWidget_Func_skip_Static_0190', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_skip_Static_0190 start');
@@ -223,12 +223,12 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @tc.number  SUB_Security_userIam_authWidget_Func_Tip_Static_0031
-     * @tc.name    SUB_Security_userIam_authWidget_Func_Tip_Static_0031
-     * @tc.desc    authWidget
-     * @tc.type    Function
-     * @tc.size    SmallTest
-     * @tc.level   Level3
+     * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_Static_0031
+     * @tc.number SUB_Security_userIam_authWidget_Func_Tip_Static_0031
+     * @tc.desc   authWidget
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_userIam_authWidget_Func_Tip_Static_0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_Tip_Static_0031 start');
@@ -244,12 +244,12 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @tc.number  SUB_Security_userIam_authWidget_Func_Tip_Static_0032
-     * @tc.name    SUB_Security_userIam_authWidget_Func_Tip_Static_0032
-     * @tc.desc    authWidget
-     * @tc.type    Function
-     * @tc.size    SmallTest
-     * @tc.level   Level3
+     * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_Static_0032
+     * @tc.number SUB_Security_userIam_authWidget_Func_Tip_Static_0032
+     * @tc.desc   authWidget
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_userIam_authWidget_Func_Tip_Static_0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_Tip_Static_0032 start');
@@ -296,14 +296,14 @@ export default function userauthTest_API9() {
       done();
     });
 
-    /*
-    * @tc.number     SUB_Security_IAM_UserAuth_FUNC_Static_0110
-    * @tc.name       SUB_Security_IAM_UserAuth_FUNC_Static_0110
-    * @tc.desc       getAuthLockState parameter validity check
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    * @tc.level      Level 1
-    */
+    /**
+     * @tc.name   SUB_Security_IAM_UserAuth_FUNC_Static_0110
+     * @tc.number SUB_Security_IAM_UserAuth_FUNC_Static_0110
+     * @tc.desc   getAuthLockState parameter validity check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Security_IAM_UserAuth_FUNC_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace SUB_Security_IAM_UserAuth_FUNC_Static_0110 start');
       let checkFace = checkSupportOrNot(userAuth.UserAuthType.FACE);

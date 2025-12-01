@@ -102,11 +102,12 @@ export default function openSessionTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0600
          * @tc.number SUB_Communication_NFC_secureElement_js_0600
-         * @tc.name Test getReader
-         * @tc.desc Obtains the reader that provides the session.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains the reader that provides the session.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0600', Level.LEVEL0, function () {
             try {
@@ -129,11 +130,12 @@ export default function openSessionTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0700
          * @tc.number SUB_Communication_NFC_secureElement_js_0700
-         * @tc.name Test getATR
-         * @tc.desc Obtain the ATR of the SE.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtain the ATR of the SE.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0700', Level.LEVEL0, function ()  {
             try {
@@ -157,11 +159,12 @@ export default function openSessionTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0800
          * @tc.number SUB_Communication_NFC_secureElement_js_0800
-         * @tc.name Test close Session
-         * @tc.desc Close a single session.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Close a single session.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0800', Level.LEVEL0, async function (done) {
             try {

@@ -36,14 +36,14 @@ export default function buttonRollAngleTest() {
       await Utils.pushPage(`button/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ROLLANGLE_0100
-    * @tc.name       : testButtonRollAngle001
-    * @tc.desc       : test GetRollAngle function is normal
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   buttonRollAngleTest001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ROLLANGLE_0100
+     * @tc.desc   test GetRollAngle function is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonRollAngleTest001', Level.LEVEL1, async (done: Function) => {
       await penClickEvent('RollAngleTestButton')
       await Utils.sleep(2000)

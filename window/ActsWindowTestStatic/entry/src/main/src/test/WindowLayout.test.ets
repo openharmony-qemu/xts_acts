@@ -63,12 +63,12 @@ export default function WindowLayoutTest() {
         })
 
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_STATUS_CHANGE_JS_API_0100
-         * @tc.name        testOnOffWindowStatusChange_OnSubWindow_static_0100
-         * @tc.desc        Enable listening for window mode changes
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testOnOffWindowStatusChange_OnSubWindow_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_STATUS_CHANGE_JS_API_0100
+         * @tc.desc   Enable listening for window mode changes
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOnOffWindowStatusChange_OnSubWindow_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testOnOffWindowStatusChange_OnSubWindow_static_0100';
@@ -80,7 +80,7 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(data));
             }
             try {
-                (subWin as window.Window).on('windowStatusChange', callback);
+                (subWin as window.Window).onWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes.');
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -93,7 +93,7 @@ export default function WindowLayoutTest() {
                 }
             }
             try {
-                (subWin as window.Window).off('windowStatusChange', callback);
+                (subWin as window.Window).offWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister for window status changes.');
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -106,7 +106,7 @@ export default function WindowLayoutTest() {
                 }
             }
             try {
-                (subWin as window.Window).off('windowStatusChange');
+                (subWin as window.Window).offWindowStatusChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister all for window status changes');
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -122,12 +122,12 @@ export default function WindowLayoutTest() {
             done();
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_STATUS_CHANGE_JS_API_0200
-         * @tc.name        testOnOffWindowStatusChange_OnMainWindow_static_0200
-         * @tc.desc        Enable listening for window mode changes
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testOnOffWindowStatusChange_OnMainWindow_static_0200
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_STATUS_CHANGE_JS_API_0200
+         * @tc.desc   Enable listening for window mode changes
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOnOffWindowStatusChange_OnMainWindow_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testOnOffWindowStatusChange_OnMainWindow_static_0200';
@@ -139,7 +139,7 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(data));
             }
             try {
-                mainWin.on('windowStatusChange', callback);
+                mainWin.onWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes.');
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -152,7 +152,7 @@ export default function WindowLayoutTest() {
                 }
             }
             try {
-                mainWin.off('windowStatusChange', callback);
+                mainWin.offWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister for window status changes.');
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -165,7 +165,7 @@ export default function WindowLayoutTest() {
                 }
             }
             try {
-                mainWin.off('windowStatusChange');
+                mainWin.offWindowStatusChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister all for window status changes');;
             } catch (exception: BusinessError) {
                 if (exception.code != 801) {
@@ -181,12 +181,12 @@ export default function WindowLayoutTest() {
         })
 
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SHOWWINDOW_JS_API_0100
-         * @tc.name        testShowWindow_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc        show window windowStateAbnormal
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testShowWindow_WindowStateAbnormal_Callback_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SHOWWINDOW_JS_API_0100
+         * @tc.desc   show window windowStateAbnormal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testShowWindow_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'testShowWindow_WindowStateAbnormal_Callback_static_0100';
@@ -211,12 +211,12 @@ export default function WindowLayoutTest() {
             });
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SHOWWINDOW_JS_API_0200
-         * @tc.name        testShowWindow_WindowStateAbnormal_Promise_static_0100
-         * @tc.desc        show window windowStateAbnormal
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testShowWindow_WindowStateAbnormal_Promise_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SHOWWINDOW_JS_API_0200
+         * @tc.desc   show window windowStateAbnormal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testShowWindow_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'testShowWindow_WindowStateAbnormal_Promise_static_0100';
@@ -239,12 +239,12 @@ export default function WindowLayoutTest() {
             });
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DESTROYWINDOW_JS_API_0100
-         * @tc.name        testDestroyWindow_WindowStateAbnormal_Promise_static_0100
-         * @tc.desc        destroy window windowStateAbnormal
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testDestroyWindow_WindowStateAbnormal_Promise_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DESTROYWINDOW_JS_API_0100
+         * @tc.desc   destroy window windowStateAbnormal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDestroyWindow_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let caseName :string = 'testDestroyWindow_WindowStateAbnormal_Promise_static_0100';
@@ -266,12 +266,12 @@ export default function WindowLayoutTest() {
             });
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DESTROYWINDOW_JS_API_0200
-         * @tc.name        testDestroyWindow_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc        destroy window windowStateAbnormal
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testDestroyWindow_WindowStateAbnormal_Callback_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DESTROYWINDOW_JS_API_0200
+         * @tc.desc   destroy window windowStateAbnormal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDestroyWindow_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let caseName :string = 'testDestroyWindow_WindowStateAbnormal_Callback_static_0100';
@@ -296,12 +296,12 @@ export default function WindowLayoutTest() {
             });
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTO_JS_API_0100
-         * @tc.name        testMoveWindowTo_WindowStateAbnormal_Promise_static_0100
-         * @tc.desc        Move window windowStateAbnormal
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testMoveWindowTo_WindowStateAbnormal_Promise_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTO_JS_API_0100
+         * @tc.desc   Move window windowStateAbnormal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testMoveWindowTo_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let caseName :string = 'testMoveWindowTo_WindowStateAbnormal_Promise_static_0100';
@@ -330,12 +330,12 @@ export default function WindowLayoutTest() {
         })
 
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTO_JS_API_0200
-         * @tc.name        testMoveWindowTo_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc        Move window windowStateAbnormal
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testMoveWindowTo_WindowStateAbnormal_Callback_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTO_JS_API_0200
+         * @tc.desc   Move window windowStateAbnormal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testMoveWindowTo_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'testMoveWindowTo_WindowStateAbnormal_Callback_static_0100';
@@ -366,12 +366,12 @@ export default function WindowLayoutTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0100
-         * @tc.name        testResize_WindowStateAbnormal_Promise_static_0100
-         * @tc.desc        Change the current window size
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testResize_WindowStateAbnormal_Promise_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0100
+         * @tc.desc   Change the current window size
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testResize_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let caseName :string = 'testResize_WindowStateAbnormal_Promise_static_0100';
@@ -399,12 +399,12 @@ export default function WindowLayoutTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0200
-         * @tc.name        testResize_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc        Change the current window size
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testResize_WindowStateAbnormal_Callback_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0200
+         * @tc.desc   Change the current window size
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testResize_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'testResize_WindowStateAbnormal_Callback_static_0100';
@@ -435,12 +435,12 @@ export default function WindowLayoutTest() {
             }
         })
         /**
-         * @tc.number       testGetGlobalRectErrCode1300002_0100
-         * @tc.name         testGetGlobalRectErrCode1300002_static_0100
-         * @tc.desc         testGetGlobalRectErrCode1300002_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testGetGlobalRectErrCode1300002_static_0100
+         * @tc.number testGetGlobalRectErrCode1300002_0100
+         * @tc.desc   testGetGlobalRectErrCode1300002_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetGlobalRectErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = "testGetGlobalRectErrCode1300002_static_0100";
@@ -472,12 +472,12 @@ export default function WindowLayoutTest() {
             
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DET_GLOBAL_RECT_0100
-         * @tc.name        testgetGlobalRect_static_0200
-         * @tc.desc        get the global rect.
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testgetGlobalRect_static_0200
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DET_GLOBAL_RECT_0100
+         * @tc.desc   get the global rect.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testgetGlobalRect_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'testgetGlobalRect_static_0200';
@@ -503,12 +503,12 @@ export default function WindowLayoutTest() {
         })
         
         /**
-         * @tc.number       testOnWindowHighlightChangeErrCode1300002_0100
-         * @tc.name         testOnWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.desc         testOnWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOnWindowHighlightChangeErrCode1300002_static_0100
+         * @tc.number testOnWindowHighlightChangeErrCode1300002_0100
+         * @tc.desc   testOnWindowHighlightChangeErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOnWindowHighlightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnWindowHighlightChangeErrCode1300002_static_0100";
@@ -521,7 +521,7 @@ export default function WindowLayoutTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.on('windowHighlightChange', (data) => {
+                tempWnd.onWindowHighlightChange((data) => {
                     console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
@@ -541,12 +541,12 @@ export default function WindowLayoutTest() {
         })
 
         /**
-         * @tc.number       testOffWindowHighlightChangeErrCode1300002_0100
-         * @tc.name         testOffWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.desc         testOffWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOffWindowHighlightChangeErrCode1300002_static_0100
+         * @tc.number testOffWindowHighlightChangeErrCode1300002_0100
+         * @tc.desc   testOffWindowHighlightChangeErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOffWindowHighlightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffWindowHighlightChangeErrCode1300002_static_0100";
@@ -559,7 +559,7 @@ export default function WindowLayoutTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.off('windowHighlightChange', (data) => {
+                tempWnd.offWindowHighlightChange((data) => {
                     console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
@@ -579,12 +579,12 @@ export default function WindowLayoutTest() {
         })
         
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0900
-         * @tc.name        testOnRectChangeOptionsResizeSubWindow_static_0100
-         * @tc.desc        Test the function value of testRectChangeOptions
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testOnRectChangeOptionsResizeSubWindow_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0900
+         * @tc.desc   Test the function value of testRectChangeOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testOnRectChangeOptionsResizeSubWindow_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "TestOnRectChangeOptionsResizeSubWindow_static_0100";
@@ -594,11 +594,11 @@ export default function WindowLayoutTest() {
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
                 await Utils.msSleep(1000);
-                subWindowClass.on('windowSizeChange', (data:window.Size) => {
+                subWindowClass.onWindowSizeChange((data:window.Size) => {
                     hilog.info(0x0000, '[ANI]',`${caseName} Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
                     expect(data.width).assertEqual(500);
                     expect(data.height).assertEqual(500);
-                    subWindowClass.off('windowSizeChange');
+                    subWindowClass.offWindowSizeChange();
                     subWindowClass.destroyWindow();
                     done();
                 });
@@ -612,12 +612,12 @@ export default function WindowLayoutTest() {
         })
         
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0200
-         * @tc.name        testRectChangeOptions_on_static_0200
-         * @tc.desc        Test the function value of testRectChangeOptions
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testRectChangeOptions_on_static_0200
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0200
+         * @tc.desc   Test the function value of testRectChangeOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testRectChangeOptions_on_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let msgStr:string = "testRectChangeOptions_on_static_0200";
@@ -625,7 +625,7 @@ export default function WindowLayoutTest() {
             try {
                 let windowClass: window.Window = await windowStage.createSubWindow("testRectChangeOptions_on_static_0200");
                 await windowClass.destroyWindow();
-                windowClass.on('windowRectChange', (data: window.RectChangeOptions) => {
+                windowClass.onWindowRectChange((data: window.RectChangeOptions) => {
                     hilog.info(0x0000, '[ANI]',`Succeeded window rect changes. Data: ` + JSON.stringify(data));
                 });
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
@@ -645,12 +645,12 @@ export default function WindowLayoutTest() {
         })
 
         /**
-         * @tc.number      testOnRectChangeOptionsMoveErrorCode1300002_static_0100
-         * @tc.name        testOnRectChangeOptionsMoveErrorCode1300002_static_0100
-         * @tc.desc        testOnRectChangeOptionsMoveErrorCode1300002_static_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testOnRectChangeOptionsMoveErrorCode1300002_static_0100
+         * @tc.number testOnRectChangeOptionsMoveErrorCode1300002_static_0100
+         * @tc.desc   testOnRectChangeOptionsMoveErrorCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testOnRectChangeOptionsMoveErrorCode1300002_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnRectChangeOptionsMoveErrorCode1300002_static_0100" ;
@@ -659,12 +659,12 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]', `${caseName} Succeeded in creating the sub window.`);
                 await subWindowClass.showWindow();
                 await Utils.msSleep(1000);
-                subWindowClass.on('windowRectChange', (data : window.RectChangeOptions) => {
+                subWindowClass.onWindowRectChange((data : window.RectChangeOptions) => {
                     hilog.info(0x0000, '[ANI]',`${caseName}: Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
                     hilog.info(0x0000, '[ANI]',`${caseName}: Succeeded window reason changes. reason: ${JSON.stringify(data.reason)}`);
                     expect(data!.rect.left).assertEqual(300);
                     expect(data!.rect.top).assertEqual(300);
-                    subWindowClass.off('windowRectChange');
+                    subWindowClass.offWindowRectChange();
                     subWindowClass.destroyWindow();
                     done();
                 });
@@ -685,12 +685,12 @@ export default function WindowLayoutTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0100
-         * @tc.name        testRectChangeOptions_off_static_0100
-         * @tc.desc        Test the function value of testRectChangeOptions
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testRectChangeOptions_off_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0100
+         * @tc.desc   Test the function value of testRectChangeOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testRectChangeOptions_off_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
             let msgStr:string = "testRectChangeOptions_off_static_0100";
@@ -698,7 +698,7 @@ export default function WindowLayoutTest() {
             try {
                 let windowClass: window.Window = await windowStage.createSubWindow("testRectChangeOptions_off_static_0100");
                 await windowClass.destroyWindow();
-                windowClass.off('windowRectChange');
+                windowClass.offWindowRectChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
                 expect(false).assertTrue();
                 done();
@@ -714,7 +714,128 @@ export default function WindowLayoutTest() {
                 }
             }
         })
+        /**
+         * @tc.name   testGlobalDisplayToClientwithDestroyedWindow_Static
+         * @tc.number SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_Static_0400
+         * @tc.desc   验证globalDisplayToClient接口窗口异常状态调用
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testGlobalDisplayToClientwithDestroyedWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const caseName :string = 'testGlobalDisplayToClientwithDestroyedWindow_Static';
+            hilog.info(domain, tag,caseName + 'begin.');
+            let windowClass:window.Window = await windowStage.createSubWindow('testGlobalDisplayToClientwithDestroyedWindow')
+            await windowClass.destroyWindow()
+            try {
+                let position:window.Position = windowClass.globalDisplayToClient(100, 100);
+                hilog.info(domain, tag,caseName + ' position: ' + JSON.stringify(position));
+                expect(false).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
+                expect(err.code).assertEqual(1300002);
+                expect(err.message!=null).assertTrue();
+                done()
+            }
+        })
+        /**
+         * @tc.name   testGlobalDisplayToClientwithOutofRange_Static
+         * @tc.number SUB_BASIC_WMS_GLOBAL_DISPLAY_TO_CLIENT_WITH_INVAILD_PARAMETERS_Static
+         * @tc.desc   验证子窗调用globalDisplayToClient入参超出int值抛1300016错误码
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGlobalDisplayToClientwithOutofRange_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            const caseName :string = 'testGlobalDisplayToClientwithOutofRange_Static';
+            hilog.info(domain, tag,caseName + 'begin.');
+            let windowClass:window.Window = await windowStage.createSubWindow('testGlobalDisplayToClientwithOutofRange')
+            await Utils.msSleep(200);
+            await windowClass.setUIContent('pages/index2');
+            await windowClass.showWindow();
+            await Utils.msSleep(200)
+            await windowClass.moveWindowTo(-50, -50);
+            await Utils.msSleep(200);
+            try {
+                const maxInt = 2^31 -1;
+                windowClass.globalDisplayToClient(maxInt, maxInt);
+                await windowClass.destroyWindow()
+                expect(false).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
+                await windowClass.destroyWindow();
+                expect(err.message!=null).assertTrue();
+                if (err.code == 801) {
+                    done()
+                } else {
+                    expect(err.code).assertEqual(1300016)
+                    done()
+                }
+            }
+        })
+        /**
+         * @tc.name   testClientToGlobalDisplaywithDestoryedWindow_Static
+         * @tc.number SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_Static_0200
+         * @tc.desc   验证clientToGlobalDisplay接口窗口异常状态调用
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testClientToGlobalDisplaywithDestoryedWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const caseName :string = 'testClientToGlobalDisplaywithDestoryedWindow_Static';
+            hilog.info(domain, tag,caseName + 'begin.');
+            let windowClass:window.Window = await windowStage.createSubWindow('testMoveWindowToGlobalDisplaywithDestoryedWindow')
+            await windowClass.destroyWindow();
+            try {
+                let position:window.Position = windowClass.clientToGlobalDisplay(100, 100);
+                hilog.info(domain, tag,caseName + ' position: ' + JSON.stringify(position));
+                expect(false).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
+                expect(err.code).assertEqual(1300002);
+                expect(err.message!=null).assertTrue();
+                done();
+            }
+        })
 
+        /**
+         * @tc.name   testClientToGlobalDisplaywithPositionOutofRange_Static
+         * @tc.number SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_Static_0300
+         * @tc.desc   验证clientToGlobalDisplay接口入参越界
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testClientToGlobalDisplaywithPositionOutofRange_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const caseName :string = 'testClientToGlobalDisplaywithPositionOutofRange_Static';
+            hilog.info(domain, tag,caseName + 'begin.');
+            let windowClass:window.Window = await windowStage.createSubWindow('testClientToGlobalDisplaywithPositionOutofRange')
+            await windowClass.setUIContent('pages/index2');
+            await windowClass.showWindow();
+            windowClass.moveWindowToAsync(50,50);
+            await Utils.msSleep(1000);
+            try {
+                const maxInt = 2^31 -1;
+                let position:window.Position = windowClass.clientToGlobalDisplay(maxInt, maxInt);
+                hilog.info(domain, tag,caseName + ' position: ' + JSON.stringify(position));
+                await windowClass.destroyWindow();
+                expect(false).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
+                await windowClass.destroyWindow();
+                expect(err.message!=null).assertTrue();
+                if (err.code == 801) {
+                    done()
+                } else {
+                    expect(err.code).assertEqual(1300016)
+                    done();
+                }
+            }
+        })
 
 
     })

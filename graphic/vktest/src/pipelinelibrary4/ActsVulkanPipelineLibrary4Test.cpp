@@ -39,19 +39,19 @@ namespace OHOS {
     {
     }
 
-    /*
-     * @tc.number: TestVulkanPipelineTestCase004
-     * @tc.name  : TestVulkanPipelineTestCase004
-     * @tc.desc  : test vulkan xts
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   TestVulkanPipelineTestCase004
+     * @tc.number TestVulkanPipelineTestCase004
+     * @tc.desc   test vulkan xts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     HWTEST_F(ActsVulkanPipelineLibrary4Test, TestVulkanPipelineTestCase004, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanPipelineLibrary4Test------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/pipeline/pipeline-library4.txt "
                 "--deqp-log-filename=ActsVulkanPipelineLibrary4Test.qpa");
         }

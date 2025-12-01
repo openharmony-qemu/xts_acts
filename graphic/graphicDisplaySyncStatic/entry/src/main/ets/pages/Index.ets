@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import { memo} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent, ExpectedFrameRateRange } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import displaySync from '@ohos.graphics.displaySync'
@@ -38,7 +37,7 @@ struct MyStateSample {
             max: 120
           }
           this.ds.setExpectedFrameRateRange(range);
-          this.ds.on('frame', (info: displaySync.IntervalInfo) => {
+          this.ds.onFrame((info: displaySync.IntervalInfo) => {
             this.timestamp = info.timestamp;
             this.targetTimestamp = info.targetTimestamp;
           })
@@ -47,7 +46,7 @@ struct MyStateSample {
       Button('stop').backgroundColor('#FFFF00FF')
         .onClick((e: ClickEvent) => {
           hilog.info(0x0000, 'testTag', 'Stop');
-          this.ds.off('frame')
+          this.ds.offFrame();
           this.ds.stop();
         }).id('stop')
     }

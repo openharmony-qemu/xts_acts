@@ -26,13 +26,13 @@ export default function DragGetDragEventTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_GetDragEvent_0100
-     * @tc.name       : GetDragEventTest001
-     * @tc.desc       : testing getDragEvent event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragGetDragEventTest001
+     * @tc.number SUB_ARKUI_CAPI_Drag_GetDragEvent_0100
+     * @tc.desc   testing getDragEvent event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragGetDragEventTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_getDragEvent_001()).assertEqual(0)

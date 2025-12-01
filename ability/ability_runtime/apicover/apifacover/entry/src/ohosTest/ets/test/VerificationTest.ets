@@ -57,18 +57,19 @@ export default function verificationTest() {
 
     afterEach(async (done: Function) => {
       try{
-        await driver1.delayMs(1000);
         done();
       }catch{
         console.info("VerificationTestTest afterEach delayMs error" );
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_HasWindowFocus_0100
-     * @tc.name    Start ability to judge whether there is window focus.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_HasWindowFocus_0100
+     * @tc.number SUB_AA_OpenHarmony_HasWindowFocus_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_HasWindowFocus_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_HasWindowFocus_0100 ==>';
@@ -119,11 +120,13 @@ export default function verificationTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_AbilityConstant_0200
-     * @tc.name    The startAbility interface starts the ability, not the start of call or continue.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_AbilityConstant_0200
+     * @tc.number SUB_AA_OpenHarmony_AbilityConstant_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_AbilityConstant_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_AbilityConstant_0200 ==>';
@@ -185,11 +188,13 @@ export default function verificationTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_AppManagerTest_0100
-     * @tc.name    Whether the user is conducting stability test verification.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_AppManagerTest_0100
+     * @tc.number SUB_AA_OpenHarmony_AppManagerTest_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_AppManagerTest_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_AppManagerTest_0100 ==>';
@@ -208,11 +213,13 @@ export default function verificationTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_GetScreenDensity_0100
-     * @tc.name    Start ability and get resolution.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_GetScreenDensity_0100
+     * @tc.number SUB_AA_OpenHarmony_GetScreenDensity_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_GetScreenDensity_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_GetScreenDensity_0100 ==>';
@@ -263,11 +270,13 @@ export default function verificationTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_RequestPermissionsFromUser_0100
-     * @tc.name    FA model is not configured with permission for authorization verification.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_RequestPermissionsFromUser_0100
+     * @tc.number SUB_AA_OpenHarmony_RequestPermissionsFromUser_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_RequestPermissionsFromUser_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_RequestPermissionsFromUser_0100 ==>';
@@ -324,11 +333,13 @@ export default function verificationTest() {
     })
 
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_RequestPermissionsFromUser_0200
-     * @tc.name    FA model is not configured with permission for authorization verification.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_RequestPermissionsFromUser_0200
+     * @tc.number SUB_AA_OpenHarmony_RequestPermissionsFromUser_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_RequestPermissionsFromUser_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_RequestPermissionsFromUser_0200 ==>';
@@ -367,7 +378,7 @@ export default function verificationTest() {
           console.info(TAG + `fail click ` + JSON.stringify(e));
         }
         console.info(TAG + `end click`);
-        await sleep(4000);
+        await sleep(2000);
         console.info(TAG + `end`);
         done();
       } catch (err) {
@@ -377,12 +388,14 @@ export default function verificationTest() {
       }
     })
 
-    /*
-    * @tc.number  SUB_AA_OpenHarmony_SetMissionLabel_0100
-    * @tc.name    Verify setMissionLabel that the input parameter is undefined.
-    * @tc.desc    Function test
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_SetMissionLabel_0100
+     * @tc.number SUB_AA_OpenHarmony_SetMissionLabel_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_OpenHarmony_SetMissionLabel_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_SetMissionLabel_0100 ==>';
       console.info(TAG + " start");
@@ -418,12 +431,14 @@ export default function verificationTest() {
       done();
     })
 
-    /*
-    * @tc.number  SUB_AA_OpenHarmony_SetMissionLabel_0300
-    * @tc.name    Verify setMissionLabel that the input parameter is string.
-    * @tc.desc    Function test
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_SetMissionLabel_0300
+     * @tc.number SUB_AA_OpenHarmony_SetMissionLabel_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_OpenHarmony_SetMissionLabel_0300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_SetMissionLabel_0300 ==>';
       console.info(TAG + " start");
@@ -438,17 +453,19 @@ export default function verificationTest() {
         .catch((err: BusinessError) => {
           console.info(TAG + "setMissionLabel err = " + JSON.stringify(err));
         });
-      await sleep(1000);
+      await sleep(500);
       expect(missionLabelUpdatedFlag).assertTrue();
       done();
     })
 
-    /*
-    * @tc.number  SUB_AA_OpenHarmony_SetMissionLabel_0400
-    * @tc.name    Verify multiple setMissionLabel that the input parameter is string.
-    * @tc.desc    Function test
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_SetMissionLabel_0400
+     * @tc.number SUB_AA_OpenHarmony_SetMissionLabel_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_OpenHarmony_SetMissionLabel_0400', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_SetMissionLabel_0400 ==>';
       console.info(TAG + " start");
@@ -472,7 +489,7 @@ export default function verificationTest() {
         .catch((err: BusinessError) => {
           console.info(TAG + "setMissionLabel2 err = " + JSON.stringify(err));
         });
-      await sleep(1000);
+      await sleep(500);
       expect(missionLabelUpdatedCount).assertEqual(2);
 
       missionLabelUpdatedCount = 0;
@@ -490,17 +507,19 @@ export default function verificationTest() {
           missionLabelUpdatedCount++;
         }
       })
-      await sleep(1000);
+      await sleep(500);
       expect(missionLabelUpdatedCount).assertEqual(2);
       done();
     })
 
-    /*
-    * @tc.number  SUB_AA_OpenHarmony_StartAbilityLife_0100
-    * @tc.name    Ability startup and termination will not trigger the migration lifecycle.
-    * @tc.desc    Function test
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_StartAbilityLife_0100
+     * @tc.number SUB_AA_OpenHarmony_StartAbilityLife_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_OpenHarmony_StartAbilityLife_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_StartAbilityLife_0100 ==>';
       console.info(TAG + " start");

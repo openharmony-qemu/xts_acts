@@ -49,13 +49,12 @@ export default function saveCompCustomizeTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_Customize_0100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_Customize_0100
-     * @tc.name Test_Security_Button_Save_Customize_0100
-     * @tc.desc Test SaveComponent attr "setIcon, setText, iconBorderRadius, stateEffect" and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SaveComponent attr "setIcon, setText, iconBorderRadius, stateEffect" and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_Customize_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_Customize_0100] START====');

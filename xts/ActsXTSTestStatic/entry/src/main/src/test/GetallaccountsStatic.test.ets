@@ -39,14 +39,13 @@ export default function ActsGetAllAccountsNoParameterStatic() {
     });
 
     /**
-    * @tc.number     ActsGetAllAccountsNoParameter_0100
-    * @tc.name       ActsGetAllAccountsNoParameter_0100
-    * @tc.desc       This application has not added an account and has not been authorized by other applications to
-    *                 obtain authorization, getAllAccounts callback
-    * @tc.level      Level1
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    */
+     * @tc.name   ActsGetAllAccountsNoParameter_0100
+     * @tc.number ActsGetAllAccountsNoParameter_0100
+     * @tc.desc   This application has not added an account and has not been authorized by other applications to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ActsGetAllAccountsNoParameter_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0100 start====");
@@ -74,14 +73,13 @@ export default function ActsGetAllAccountsNoParameterStatic() {
         });
       });
     /**
-    * @tc.number     ActsGetAllAccountsNoParameter_0200
-    * @tc.name       ActsGetAllAccountsNoParameter_0200
-    * @tc.desc       This application has not added an account and has not been authorized by other applications to
-    *                 obtain authorization, getAllAccounts promise
-    * @tc.level      Level1
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    */
+     * @tc.name   ActsGetAllAccountsNoParameter_0200
+     * @tc.number ActsGetAllAccountsNoParameter_0200
+     * @tc.desc   This application has not added an account and has not been authorized by other applications to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ActsGetAllAccountsNoParameter_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0200 start====");
@@ -100,13 +98,13 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-    * @tc.number     ActsGetAllAccountsNoParameter_0300
-    * @tc.name       ActsGetAllAccountsNoParameter_0300
-    * @tc.desc       This application gets authorization after adding a single account, getAllAccounts callback
-    * @tc.level      Level0
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    */
+     * @tc.name   ActsGetAllAccountsNoParameter_0300
+     * @tc.number ActsGetAllAccountsNoParameter_0300
+     * @tc.desc   This application gets authorization after adding a single account, getAllAccounts callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsGetAllAccountsNoParameter_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0300 start====");
@@ -150,13 +148,13 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-    * @tc.number     ActsGetAllAccountsNoParameter_0400
-    * @tc.name       ActsGetAllAccountsNoParameter_0400
-    * @tc.desc       This application gets authorization after adding a single account, getAllAccounts promise
-    * @tc.level      Level0
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    */
+     * @tc.name   ActsGetAllAccountsNoParameter_0400
+     * @tc.number ActsGetAllAccountsNoParameter_0400
+     * @tc.desc   This application gets authorization after adding a single account, getAllAccounts promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsGetAllAccountsNoParameter_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0400 start====");
@@ -186,14 +184,13 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-    * @tc.number     ActsGetAllAccountsNoParameter_0500
-    * @tc.name       ActsGetAllAccountsNoParameter_0500
-    * @tc.desc       This application is added to obtain authorization after adding multiple application accounts
-    *                 getAllAccounts callback
-    * @tc.level      Level3
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    */
+     * @tc.name   ActsGetAllAccountsNoParameter_0500
+     * @tc.number ActsGetAllAccountsNoParameter_0500
+     * @tc.desc   This application is added to obtain authorization after adding multiple application accounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccountsNoParameter_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0500 start====");
@@ -255,14 +252,13 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-    * @tc.number     ActsGetAllAccountsNoParameter_0600
-    * @tc.name       ActsGetAllAccountsNoParameter_0600
-    * @tc.desc       This application is added to obtain authorization after adding multiple application accounts
-    *                 getAllAccounts promise
-    * @tc.level      Level3
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    */
+     * @tc.name   ActsGetAllAccountsNoParameter_0600
+     * @tc.number ActsGetAllAccountsNoParameter_0600
+     * @tc.desc   This application is added to obtain authorization after adding multiple application accounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccountsNoParameter_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0600 start====");
@@ -305,14 +301,13 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-    * @tc.number     ActsGetAllAccountsNoParameter_0700
-    * @tc.name       ActsGetAllAccountsNoParameter_0700
-    * @tc.desc       This application adds different application accounts three times in a row, and obtains
-    *                 authorization after deleting the account added for the second time, getAllAccounts callback
-    * @tc.level      Level3
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    */
+     * @tc.name   ActsGetAllAccountsNoParameter_0700
+     * @tc.number ActsGetAllAccountsNoParameter_0700
+     * @tc.desc   This application adds different application accounts three times in a row, and obtains
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccountsNoParameter_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0700 start====");
@@ -368,14 +363,13 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-    * @tc.number     ActsGetAllAccountsNoParameter_0800
-    * @tc.name       ActsGetAllAccountsNoParameter_0800
-    * @tc.desc       This application adds different application accounts three times in a row, and obtains
-    *                 authorization after deleting the account added for the second time, getAllAccounts promise
-    * @tc.level      Level3
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    */
+     * @tc.name   ActsGetAllAccountsNoParameter_0800
+     * @tc.number ActsGetAllAccountsNoParameter_0800
+     * @tc.desc   This application adds different application accounts three times in a row, and obtains
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccountsNoParameter_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0800 start====");
@@ -417,14 +411,13 @@ export default function ActsGetAllAccountsNoParameterStatic() {
       });
 
     /**
-    * @tc.number     ActsGetAllAccountsNoParameter_1100
-    * @tc.name       ActsGetAllAccountsNoParameter_1100
-    * @tc.desc       This application adds an account, other application authorizes an account to this application
-    *                 and this application obtains authorization, getAllAccounts promise
-    * @tc.level      Level3
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    */
+     * @tc.name   ActsGetAllAccountsNoParameter_1100
+     * @tc.number ActsGetAllAccountsNoParameter_1100
+     * @tc.desc   This application adds an account, other application authorizes an account to this application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccountsNoParameter_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_1100 start====");

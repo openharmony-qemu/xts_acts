@@ -39,12 +39,12 @@ export default function builtinsArrayBufferConstructorTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1001
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_0100
-     * @tc.name buildinsArrayBufferConstructorTest1001
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('buildinsArrayBufferConstructorTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -57,12 +57,12 @@ export default function builtinsArrayBufferConstructorTest() {
       })
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1002
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_0200
-     * @tc.name buildinsArrayBufferConstructorTest1002
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -75,12 +75,12 @@ export default function builtinsArrayBufferConstructorTest() {
       })
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1003
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_0300
-     * @tc.name buildinsArrayBufferConstructorTest1003
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -97,12 +97,12 @@ export default function builtinsArrayBufferConstructorTest() {
       })
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1004
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_0400
-     * @tc.name buildinsArrayBufferConstructorTest1004
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -115,12 +115,12 @@ export default function builtinsArrayBufferConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1005
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_0500
-     * @tc.name buildinsArrayBufferConstructorTest1005
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -134,12 +134,12 @@ export default function builtinsArrayBufferConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1006
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_0600
-     * @tc.name buildinsArrayBufferConstructorTest1006
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -157,12 +157,12 @@ export default function builtinsArrayBufferConstructorTest() {
       })
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1007
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_0700
-     * @tc.name buildinsArrayBufferConstructorTest1007
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -180,12 +180,12 @@ export default function builtinsArrayBufferConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1008
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_0800
-     * @tc.name buildinsArrayBufferConstructorTest1008
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -198,12 +198,12 @@ export default function builtinsArrayBufferConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1009
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_0900
-     * @tc.name buildinsArrayBufferConstructorTest1009
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -221,12 +221,12 @@ export default function builtinsArrayBufferConstructorTest() {
       })
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1010
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_1000
-     * @tc.name buildinsArrayBufferConstructorTest1010
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -240,12 +240,12 @@ export default function builtinsArrayBufferConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1011
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_1100
-     * @tc.name buildinsArrayBufferConstructorTest1011
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -259,12 +259,12 @@ export default function builtinsArrayBufferConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1012
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_1200
-     * @tc.name buildinsArrayBufferConstructorTest1012
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -278,12 +278,12 @@ export default function builtinsArrayBufferConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1013
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_1300
-     * @tc.name buildinsArrayBufferConstructorTest1013
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -300,12 +300,12 @@ export default function builtinsArrayBufferConstructorTest() {
       })
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1014
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_1400
-     * @tc.name buildinsArrayBufferConstructorTest1014
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -319,12 +319,12 @@ export default function builtinsArrayBufferConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1015
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_1500
-     * @tc.name buildinsArrayBufferConstructorTest1015
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -338,12 +338,12 @@ export default function builtinsArrayBufferConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayBufferConstructorTest1016
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_CONSTRUCTOR_TEST_1600
-     * @tc.name buildinsArrayBufferConstructorTest1016
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferConstructorTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

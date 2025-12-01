@@ -25,13 +25,13 @@ export default function textAreaOnChangeTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ONCHANGE_0100
-     * @tc.name: testTextAreaOnChange001
-     * @tc.desc: testing onChange for textArea
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaOnChange001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ONCHANGE_0100
+     * @tc.desc   testing onChange for textArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaOnChange001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TextAreaOnChangeTest';

@@ -42,12 +42,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_1300
-     * @tc.name   : testGetPreferencesHelper0001
-     * @tc.desc   : GetPreferencesSync interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testGetPreferencesHelper0001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_1300
+     * @tc.desc   GetPreferencesSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testGetPreferencesHelper0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       mPreferences = await dataPreferences.getPreferences(context, NAME);
@@ -58,12 +58,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_1200
-     * @tc.name   : testGetPreferencesHelper0002
-     * @tc.desc   : GetPreferences interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testGetPreferencesHelper0002
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_1200
+     * @tc.desc   GetPreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testGetPreferencesHelper0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const promise = dataPreferences.getPreferences(context, NAME);
@@ -85,12 +85,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1300
-     * @tc.name   : testRemovePreferencesFromCacheHelper0001
-     * @tc.desc   : RemovePreferencesFromCache interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRemovePreferencesFromCacheHelper0001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1300
+     * @tc.desc   RemovePreferencesFromCache interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRemovePreferencesFromCacheHelper0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let preferences = await dataPreferences.getPreferences(context, NAME);
@@ -107,12 +107,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0600
-     * @tc.name   : testRemovePreferencesFromCacheHelper0004
-     * @tc.desc   : RemovePreferencesFromCache interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRemovePreferencesFromCacheHelper0004
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0600
+     * @tc.desc   RemovePreferencesFromCache interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRemovePreferencesFromCacheHelper0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let preferences = await dataPreferences.getPreferences(context, NAME);
@@ -137,12 +137,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0800
-     * @tc.name   : testRemovePreferencesFromCacheHelper0005
-     * @tc.desc   : RemovePreferencesFromCache interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRemovePreferencesFromCacheHelper0005
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0800
+     * @tc.desc   RemovePreferencesFromCache interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRemovePreferencesFromCacheHelper0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let preferences = await dataPreferences.getPreferences(context, {
@@ -163,12 +163,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0700
-     * @tc.name   : testRemovePreferencesFromCacheHelper0006
-     * @tc.desc   : RemovePreferencesFromCache interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRemovePreferencesFromCacheHelper0006
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0700
+     * @tc.desc   RemovePreferencesFromCache interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRemovePreferencesFromCacheHelper0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let preferences = await dataPreferences.getPreferences(context, {
@@ -197,12 +197,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1800
-     * @tc.name   : testPreferencesDeleteHelper0001
-     * @tc.desc   : DeletePreferences interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testPreferencesDeleteHelper0001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1800
+     * @tc.desc   DeletePreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesDeleteHelper0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let preferences = await dataPreferences.getPreferences(context, NAME);
@@ -220,12 +220,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0700
-     * @tc.name   : testPreferencesDeleteHelper0004
-     * @tc.desc   : DeletePreferences interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testPreferencesDeleteHelper0004
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0700
+     * @tc.desc   DeletePreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesDeleteHelper0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let preferences = await dataPreferences.getPreferences(context, NAME);
@@ -250,12 +250,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0900
-     * @tc.name   : testPreferencesDeleteHelper0005
-     * @tc.desc   : DeletePreferences interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testPreferencesDeleteHelper0005
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0900
+     * @tc.desc   DeletePreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesDeleteHelper0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let preferences = await dataPreferences.getPreferences(context, {
@@ -277,12 +277,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0800
-     * @tc.name   : testPreferencesDeleteHelper0006
-     * @tc.desc   : DeletePreferences interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testPreferencesDeleteHelper0006
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0800
+     * @tc.desc   DeletePreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesDeleteHelper0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let preferences = await dataPreferences.getPreferences(context, {
@@ -311,36 +311,36 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number  : SUB_DistributedData_CrossPlatform_SDK_Preferences_JSAPITest_0400
-     * @tc.name    : testMaxKeyLength001
-     * @tc.desc    : Test key length
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     * @tc.level   : Level 0
+     * @tc.name   testMaxKeyLength001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_JSAPITest_0400
+     * @tc.desc   Test key length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testMaxKeyLength001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(dataPreferences.MAX_KEY_LENGTH == 1024).assertTrue();
     });
 
     /**
-     * @tc.number  : SUB_DistributedData_CrossPlatform_SDK_Preferences_JSAPITest_0500
-     * @tc.name    : testMaxValueLength001
-     * @tc.desc    : Test value length
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     * @tc.level   : Level 0
+     * @tc.name   testMaxValueLength001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_JSAPITest_0500
+     * @tc.desc   Test value length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testMaxValueLength001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(dataPreferences.MAX_VALUE_LENGTH == 16*1024*1024).assertTrue();
     });
 
     /**
-     * @tc.number  : SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0800
-     * @tc.name    : testPreferencesOn001
-     * @tc.desc    : Test on interface
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   testPreferencesOn001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0800
+     * @tc.desc   Test on interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesOn001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
@@ -359,12 +359,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number  : SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0600
-     * @tc.name    : testPreferencesOn002
-     * @tc.desc    : Test on interface
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   testPreferencesOn002
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0600
+     * @tc.desc   Test on interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesOn002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
@@ -382,12 +382,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number  : SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0400
-     * @tc.name    : testPreferencesOn003
-     * @tc.desc    : Test on interface
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   testPreferencesOn003
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0400
+     * @tc.desc   Test on interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesOn003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
@@ -405,12 +405,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number  : SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0300
-     * @tc.name    : testPreferencesOn004
-     * @tc.desc    : Test on interface
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   testPreferencesOn004
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0300
+     * @tc.desc   Test on interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesOn004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
@@ -428,12 +428,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number  : SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0200
-     * @tc.name    : testPreferencesOff001
-     * @tc.desc    : Test off interface
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   testPreferencesOff001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0200
+     * @tc.desc   Test off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesOff001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
@@ -456,12 +456,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number  : SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0100
-     * @tc.name    : testPreferencesOff002
-     * @tc.desc    : Test off interface
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   testPreferencesOff002
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0100
+     * @tc.desc   Test off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesOff002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
@@ -484,12 +484,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number  : SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0700
-     * @tc.name    : testPreferencesOff003
-     * @tc.desc    : Test off interface
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   testPreferencesOff003
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0700
+     * @tc.desc   Test off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesOff003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
@@ -509,12 +509,12 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @tc.number  : SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0500
-     * @tc.name    : testPreferencesOff004
-     * @tc.desc    : Test off interface
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   testPreferencesOff004
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0500
+     * @tc.desc   Test off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesOff004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {

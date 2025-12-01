@@ -24,6 +24,9 @@ export default {
     onInit() {
         this.title = 'scene accessible first application';
         console.info('====>scene accessible first application start====');
+        let enableBundle = 'com.example.actsgetallaccessiblemultiple';
+        let enableBundle2 = 'com.example.getmultipleaccountstest';
+        let enableBundle3 = 'com.example.getmultipleaccountstest.static';
         let appAccountManager = account.createAppAccountManager();
         console.info('====>create first scene manager finish====');
         appAccountManager.createAccount('account_name_scene_first_first', async (err)=>{
@@ -38,6 +41,11 @@ export default {
             } catch (err) {
                 console.info('====>enableAppAccess first account for enableBundle2 err:' + JSON.stringify(err));
             }
+            try {
+                await appAccountManager.setAppAccess('account_name_scene_first_first', enableBundle3, true);
+            } catch (err) {
+                console.info('====>enableAppAccess first account for enableBundle2 err:' + JSON.stringify(err));
+            }
             await appAccountManager.createAccount('account_name_scene_first_second');
             try {
                 await appAccountManager.setAppAccess('account_name_scene_first_second', enableBundle, true);
@@ -46,6 +54,11 @@ export default {
             }
             try {
                 await appAccountManager.setAppAccess('account_name_scene_first_second', enableBundle2, true);
+            } catch (err) {
+                console.info('====>enableAppAccess second enableBundle2 err:' + JSON.stringify(err));
+            }
+            try {
+                await appAccountManager.setAppAccess('account_name_scene_first_second', enableBundle3, true);
             } catch (err) {
                 console.info('====>enableAppAccess second enableBundle2 err:' + JSON.stringify(err));
             }
@@ -61,9 +74,7 @@ export default {
                     deviceId: '',
                     bundleName: 'com.example.actsaccountaccessiblesecond',
                     abilityName: 'com.example.actsaccountaccessiblesecond.MainAbility',
-                    action: 'action1',
-                    parameters:
-                    {},
+                    action: 'action1'
                 },
             }, async (err, data) => {
                 console.info('====>startAbility second err:' + JSON.stringify(err));

@@ -39,13 +39,13 @@ export default function PowerPermissionTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number  PowerPermissionTest_0100
-     * @tc.name   testPowerPermissionTest_0100
-     * @tc.desc    Function test
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   PowerPermissionTest_0100
+     * @tc.number PowerPermissionTest_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PowerPermissionTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let TAG = 'PowerPermissionTest_0100'

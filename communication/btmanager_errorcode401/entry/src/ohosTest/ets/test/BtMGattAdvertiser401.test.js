@@ -110,13 +110,13 @@ export default function btManagerAdvertError401Test() {
           })
 
           /**
-               * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3000
-               * @tc.name testStartAdvertising
-               * @tc.desc Test api 401 - parameters setting is null.
-               * @tc.type Function
-               * @tc.size MediumTest
-               * @tc.level Level 0
-               */
+           * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3000
+           * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3000
+           * @tc.desc   Test api 401 - parameters setting is null.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
+           */
           it('SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
                     let manufactureValueBuffer = new Uint8Array(4);
                     manufactureValueBuffer[0] = 1;
@@ -163,13 +163,13 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-               * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3100
-               * @tc.name testStartAdvertising
-               * @tc.desc Test api 401 - parameters setting is error type.
-               * @tc.type Function
-               * @tc.size MediumTest
-               * @tc.level Level 2
-               */
+           * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3100
+           * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3100
+           * @tc.desc   Test api 401 - parameters setting is error type.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
+           */
           it('SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
                     let manufactureValueBuffer = new Uint8Array(4);
                     manufactureValueBuffer[0] = 1;
@@ -216,13 +216,13 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-               * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3200
-               * @tc.name testStartAdvertising
-               * @tc.desc Test api 401 - interval of setting is error type.
-               * @tc.type Function
-               * @tc.size MediumTest
-               * @tc.level Level 2
-               */
+           * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3200
+           * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3200
+           * @tc.desc   Test api 401 - interval of setting is error type.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
+           */
           it('SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
                     let manufactureValueBuffer = new Uint8Array(4);
                     manufactureValueBuffer[0] = 1;
@@ -262,14 +262,14 @@ export default function btManagerAdvertError401Test() {
                     done();
                })
 
-          /**
-               * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3300
-               * @tc.name testStartAdvertising
-               * @tc.desc Test api 401 - txPower of setting is error type.
-               * @tc.type Function
-               * @tc.size MediumTest
-               * @tc.level Level 2
-               */
+               /**
+                * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3300
+                * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3300
+                * @tc.desc   Test api 401 - txPower of setting is error type.
+                * @tc.type   FUNCTION
+                * @tc.size   MEDIUMTEST
+                * @tc.level  LEVEL2
+                */
                it('SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
                     let manufactureValueBuffer = new Uint8Array(4);
                     manufactureValueBuffer[0] = 1;
@@ -309,14 +309,14 @@ export default function btManagerAdvertError401Test() {
                     done();
                })
 
-          /**
-               * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3400
-               * @tc.name testStartAdvertising
-               * @tc.desc Test api 401 - connectable of setting is error type.
-               * @tc.type Function
-               * @tc.size MediumTest
-               * @tc.level Level 2
-               */
+               /**
+                * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3400
+                * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3400
+                * @tc.desc   Test api 401 - connectable of setting is error type.
+                * @tc.type   FUNCTION
+                * @tc.size   MEDIUMTEST
+                * @tc.level  LEVEL2
+                */
                it('SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
                     let manufactureValueBuffer = new Uint8Array(4);
                     manufactureValueBuffer[0] = 1;
@@ -357,13 +357,13 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-               * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3500
-               * @tc.name testStartAdvertising
-               * @tc.desc Test api 401 - parameters advData is null.
-               * @tc.type Function
-               * @tc.size MediumTest
-               * @tc.level Level 3
-               */
+           * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3500
+           * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3500
+           * @tc.desc   Test api 401 - parameters advData is null.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
+           */
           it('SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) { 
                     let manufactureValueBuffer = new Uint8Array(4);
                     manufactureValueBuffer[0] = 1;
@@ -393,13 +393,13 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-               * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3600
-               * @tc.name testStartAdvertising
-               * @tc.desc Test api 401 - serviceUuids of advData is null.
-               * @tc.type Function
-               * @tc.size MediumTest
-               * @tc.level Level 3
-               */
+           * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3600
+           * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3600
+           * @tc.desc   Test api 401 - serviceUuids of advData is null.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
+           */
           it('SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
                     let manufactureValueBuffer = new Uint8Array(4);
                     manufactureValueBuffer[0] = 1;
@@ -439,13 +439,13 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-               * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3700
-               * @tc.name testStartAdvertising
-               * @tc.desc Test api 401 - manufactureData of advData is null.
-               * @tc.type Function
-               * @tc.size MediumTest
-               * @tc.level Level 3
-               */
+           * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3700
+           * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3700
+           * @tc.desc   Test api 401 - manufactureData of advData is null.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
+           */
           it('SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
                     let manufactureValueBuffer = new Uint8Array(4);
                     manufactureValueBuffer[0] = 1;
@@ -482,13 +482,13 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-               * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3800
-               * @tc.name testStartAdvertising
-               * @tc.desc Test api 401 - serviceData of advData is null.
-               * @tc.type Function
-               * @tc.size MediumTest
-               * @tc.level Level 3
-               */
+           * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3800
+           * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3800
+           * @tc.desc   Test api 401 - serviceData of advData is null.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
+           */
           it('SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
                     let manufactureValueBuffer = new Uint8Array(4);
                     manufactureValueBuffer[0] = 1;
@@ -524,14 +524,14 @@ export default function btManagerAdvertError401Test() {
                     done();
                })
 
-          /**
-               * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3900
-               * @tc.name testStartAdvertising
-               * @tc.desc Test api 401 - manufactureValue of advData is error type.
-               * @tc.type Function
-               * @tc.size MediumTest
-               * @tc.level Level 3
-               */
+               /**
+                * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3900
+                * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3900
+                * @tc.desc   Test api 401 - manufactureValue of advData is error type.
+                * @tc.type   FUNCTION
+                * @tc.size   MEDIUMTEST
+                * @tc.level  LEVEL2
+                */
                it('SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
                     let serviceValueBuffer = new Uint8Array(4);
                     serviceValueBuffer[0] = 4;
@@ -566,14 +566,14 @@ export default function btManagerAdvertError401Test() {
                     done();
                })
 
-          /**
-               * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_4000
-               * @tc.name testStartAdvertising
-               * @tc.desc Test api 401 - serviceValue of advData is error type.
-               * @tc.type Function
-               * @tc.size MediumTest
-               * @tc.level Level 3
-               */
+               /**
+                * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_4000
+                * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_4000
+                * @tc.desc   Test api 401 - serviceValue of advData is error type.
+                * @tc.type   FUNCTION
+                * @tc.size   MEDIUMTEST
+                * @tc.level  LEVEL2
+                */
                it('SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
                     let manufactureValueBuffer = new Uint8Array(4);
                     manufactureValueBuffer[0] = 1;

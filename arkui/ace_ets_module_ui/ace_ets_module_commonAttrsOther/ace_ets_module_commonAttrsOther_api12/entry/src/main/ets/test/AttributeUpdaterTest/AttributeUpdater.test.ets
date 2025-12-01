@@ -43,12 +43,12 @@ export default function AttributeUpdaterTest() {
     });
 
     /**
-     * @tc.number    AttributeUpdaterTest_0010
-     * @tc.name      AttributeUpdaterTest_0010
-     * @tc.desc      AttributeUpdater: UpdateConstructorParams
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   AttributeUpdaterTest_0010
+     * @tc.number AttributeUpdaterTest_0010
+     * @tc.desc   AttributeUpdater: UpdateConstructorParams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AttributeUpdaterTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('AttributeUpdaterTest_0010 START');

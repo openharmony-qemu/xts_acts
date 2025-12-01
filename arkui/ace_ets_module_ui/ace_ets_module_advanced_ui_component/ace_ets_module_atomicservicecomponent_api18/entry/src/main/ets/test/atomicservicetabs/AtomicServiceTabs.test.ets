@@ -53,12 +53,12 @@ export default function atomicservicetabsTest() {
     });
 
     /**
+     * @tc.name   atomicservicetabsTest_0100
      * @tc.number atomicservicetabs
-     * @tc.name atomicservicetabsTest_0100
-     * @tc.desc Test atomicservicetabs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test atomicservicetabs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('atomicservicetabsTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[atomicservicetabsTest_0100] START');

@@ -34,10 +34,10 @@
 #define SUCCESS 0
 #define FAIL (-1)
 #define PARAM_0 0
-#define PARAM_8 8
 #define PARAM_1 1
 #define PARAM_2 2
 #define PARAM_3 3
+#define PARAM_8 8
 #define PARAM_16 16
 #define PARAM_800 800
 #define PARAM_600 600
@@ -58,6 +58,8 @@
 #define NUMBER_5000 5000
 #define NUMBER_99999 99999
 #define NUMBER_100000 100000
+#define ERRCODE_40001000 40001000
+#define ERRCODE_40601000 40601000
 
 class InitNativeWindow {
 private:
@@ -111,6 +113,29 @@ public:
         region->rects = rect;
         int32_t ret = OH_NativeWindow_NativeWindowRequestBuffer(_nativeWindow, &Buffer, &fenceFd);
         ret = OH_NativeWindow_NativeWindowFlushBuffer(_nativeWindow, Buffer, fenceFd, *region);
+        return ret;
+    };
+    
+    int32_t OH_FlushBuffer1(BufferHandle **handle, uint32_t num = 3)
+    {
+        OHNativeWindowBuffer *buffer = nullptr;
+        int fenceFd = -1;
+        struct Region *region = new Region();
+        struct Region::Rect *rect = new Region::Rect();
+        rect->x = 0x100;
+        rect->y = 0x100;
+        rect->w = 0x100;
+        rect->h = 0x100;
+        region->rects = rect;
+        int32_t ret = -1;
+        if (num < PARAM_1 || num > PARAM_3) {
+            num = PARAM_3;
+        };
+        for (int i = 0; i < num; i++) {
+            ret = OH_NativeWindow_NativeWindowRequestBuffer(_nativeWindow, &buffer, &fenceFd);
+            ret = OH_NativeWindow_NativeWindowFlushBuffer(_nativeWindow, buffer, fenceFd, *region);
+        }
+        *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
         return ret;
     };
 };
@@ -198,7 +223,11 @@ napi_value OHNativeImageGetColorSpaceDestoryImage(napi_env env, napi_callback_in
 napi_value OHNativeImageCreateWithSingleBufferModeTest1(napi_env env, napi_callback_info info);
 napi_value OHNativeImageCreateWithSingleBufferModeTest2(napi_env env, napi_callback_info info);
 napi_value OHNativeImageCreateWithSingleBufferModeTest3(napi_env env, napi_callback_info info);
-napi_value OHConsumerSurfaceCreateWithSingleBufferModeTest1(napi_env env, napi_callback_info info);
-napi_value OHConsumerSurfaceCreateWithSingleBufferModeTest2(napi_env env, napi_callback_info info);
-napi_value OHConsumerSurfaceCreateWithSingleBufferModeTest3(napi_env env, napi_callback_info info);
+napi_value OHConsumerSurfaceCreateWithSingleBufferModeTest(napi_env env, napi_callback_info info);
+napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal(napi_env env, napi_callback_info info);
+napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal01(napi_env env, napi_callback_info info);
+napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal02(napi_env env, napi_callback_info info);
+napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal03(napi_env env, napi_callback_info info);
+napi_value OHNativeImageAcquireLatestNativeWindowBufferCall(napi_env env, napi_callback_info info);
+napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env env, napi_callback_info info);
 #endif // NATIVEIMAGE_TEST_H

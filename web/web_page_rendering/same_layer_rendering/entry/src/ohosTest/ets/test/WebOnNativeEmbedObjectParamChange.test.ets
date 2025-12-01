@@ -60,16 +60,16 @@ export default function WebOnNativeEmbedObjectParamChange() {
       done();
     })
 
+
+
     /**
-     * @tc.number     SUB_ACE_WEB_EMITONNATIVEEMBEDOBJECTPARAMCHANGE_API_0100
-     * @tc.name       emitOnNativeEmbedObjectParamChange001
-     * @tc.desc       emitOnNativeEmbedObjectParamChange001
-     * @tc.size_t     MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   emitOnNativeEmbedObjectParamChange001
+     * @tc.number emitOnNativeEmbedObjectParamChange001
+     * @tc.desc   emitOnNativeEmbedObjectParamChange001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('emitOnNativeEmbedObjectParamChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         Utils.emitEvent('emitOnNativeEmbedObjectParamChange001', 130701)
@@ -78,12 +78,12 @@ export default function WebOnNativeEmbedObjectParamChange() {
       })
 
     /**
-     * @tc.number     SUB_ACE_WEB_EMITONNATIVEEMBEDOBJECTPARAMCHANGE_API_0200
-     * @tc.name       emitOnNativeEmbedObjectParamChange002
-     * @tc.desc       emitOnNativeEmbedObjectParamChange002
-     * @tc.size_t     MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   emitOnNativeEmbedObjectParamChange002
+     * @tc.number SUB_ACE_WEB_EMITONNATIVEEMBEDOBJECTPARAMCHANGE_API_0200
+     * @tc.desc   emitOnNativeEmbedObjectParamChange002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitOnNativeEmbedObjectParamChange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -93,15 +93,15 @@ export default function WebOnNativeEmbedObjectParamChange() {
       })
 
 
-    /**
-     * @tc.number     SUB_ACE_WEB_EMITONNATIVEEMBEDOBJECTPARAMCHANGE_API_0300
-     * @tc.name       emitOnNativeEmbedObjectParamChange003
-     * @tc.desc       emitOnNativeEmbedObjectParamChange003
-     * @tc.size_t     MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   emitOnNativeEmbedObjectParamChange003
+     * @tc.number emitOnNativeEmbedObjectParamChange003
+     * @tc.desc   emitOnNativeEmbedObjectParamChange003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitOnNativeEmbedObjectParamChange003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         Utils.emitEvent('emitOnNativeEmbedObjectParamChange003', 130701)

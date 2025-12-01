@@ -53,6 +53,14 @@ export default function ButtonHoverTest() {
       // This API supports only one parameter: clear action function.
     })
     
+    /**
+     * @tc.name   ArkUX_Hover_stoppropagation_0100
+     * @tc.number ArkUX_Hover_stoppropagation_0100
+     * @tc.desc   ArkUX_Hover_stoppropagation_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Hover_stoppropagation_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Hover_stoppropagation_0100 START');
       setTimeout(() => {

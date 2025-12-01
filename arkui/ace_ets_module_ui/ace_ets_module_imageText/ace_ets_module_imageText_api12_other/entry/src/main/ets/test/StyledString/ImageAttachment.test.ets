@@ -46,13 +46,13 @@ export default function ImageAttachment() {
       console.info("ImageAttachment after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         ImageAttachment0001
-    * @tc.desic        The ImageAttachment Attributes
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   ImageAttachment0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   ImageAttachment0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachment0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -94,13 +94,13 @@ export default function ImageAttachment() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-    * @tc.name         ImageAttachment0002
-    * @tc.desic        The ImageAttachment Attributes
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   ImageAttachment0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   ImageAttachment0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachment0002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -142,13 +142,13 @@ export default function ImageAttachment() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-    * @tc.name         ImageAttachment0003
-    * @tc.desic        The ImageAttachment Attributes
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   ImageAttachment0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   ImageAttachment0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachment0003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -190,13 +190,13 @@ export default function ImageAttachment() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-    * @tc.name         ImageAttachment0004
-    * @tc.desic        The ImageAttachment Attributes
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   ImageAttachment0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   ImageAttachment0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachment0004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -238,13 +238,13 @@ export default function ImageAttachment() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-    * @tc.name         ImageAttachment0005
-    * @tc.desic        The ImageAttachment Attributes
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   ImageAttachment0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   ImageAttachment0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachment0005', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -286,13 +286,13 @@ export default function ImageAttachment() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-    * @tc.name         ImageAttachment0006
-    * @tc.desic        The ImageAttachment Attributes
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   ImageAttachment0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   ImageAttachment0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAttachment0006', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

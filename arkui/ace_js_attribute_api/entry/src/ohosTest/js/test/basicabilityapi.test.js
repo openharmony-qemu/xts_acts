@@ -57,9 +57,12 @@ export default function basicabilityapi() {
         }
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_0100
-         * @tc.name      testClearInterval
-         * @tc.desc      Cancel the repetitive timing tasks previously set by setInterval.
+         * @tc.name   testClearInterval
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_0100
+         * @tc.desc   Cancel the repetitive timing tasks previously set by setInterval.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testClearInterval', Level.LEVEL0, async function(done) {
             console.info('testClearInterval START');
@@ -89,9 +92,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_0200
-         * @tc.name      testConsole
-         * @tc.desc      Print a text message.
+         * @tc.name   testConsole
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_0200
+         * @tc.desc   Print a text message.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testConsole', Level.LEVEL0, function () {
             console.info('testConsole START');
@@ -111,9 +117,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_0300
-         * @tc.name      testRouterPush
-         * @tc.desc      Go to the specified page of the application.
+         * @tc.name   testRouterPush
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_0300
+         * @tc.desc   Go to the specified page of the application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRouterPush', Level.LEVEL0, async function (done) {
             console.info('testRouterPush START');
@@ -144,9 +153,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_0310
-         * @tc.name      testRouterPushNotExist
-         * @tc.desc      Test push not exist page.
+         * @tc.name   testRouterPushNotExist
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_0310
+         * @tc.desc   Test push not exist page.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRouterPushNotExist', Level.LEVEL0, async function (done) {
             console.info('testRouterPushNotExist START');
@@ -176,9 +188,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_0400
-         * @tc.name      testRouterReplace
-         * @tc.desc      Replace the current page with a page in the application, and destroy the replaced page.
+         * @tc.name   testRouterReplace
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_0400
+         * @tc.desc   Replace the current page with a page in the application, and destroy the replaced page.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRouterReplace', Level.LEVEL0, async function (done) {
             console.info('testRouterReplace START');
@@ -222,9 +237,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_0410
-         * @tc.name      testRouterReplaceNotExist
-         * @tc.desc      Test replace not exist page.
+         * @tc.name   testRouterReplaceNotExist
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_0410
+         * @tc.desc   Test replace not exist page.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRouterReplaceNotExist', Level.LEVEL0, async function (done) {
             console.info('testRouterReplaceNotExist START');
@@ -245,9 +263,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_0500
-         * @tc.name      testRouterBack
-         * @tc.desc      Return to the previous page or the specified page.
+         * @tc.name   testRouterBack
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_0500
+         * @tc.desc   Return to the previous page or the specified page.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRouterBack', Level.LEVEL0, async function (done) {
             console.info('testRouterBack START');
@@ -286,9 +307,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_0600
-         * @tc.name      testRouterClear
-         * @tc.desc      Clear all historical pages in the page stack, and only keep the current page as the top page.
+         * @tc.name   testRouterClear
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_0600
+         * @tc.desc   Clear all historical pages in the page stack, and only keep the current page as the top page.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRouterClear', Level.LEVEL0, function () {
             console.info('testRouterClear START');
@@ -299,9 +323,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_0700
-         * @tc.name      testRouterLength
-         * @tc.desc      Get the number of pages currently in the page stack.
+         * @tc.name   testRouterLength
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_0700
+         * @tc.desc   Get the number of pages currently in the page stack.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRouterLength', Level.LEVEL0, async function (done) {
             console.info('testRouterLength START');
@@ -332,9 +359,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_0800
-         * @tc.name      testRouterGetState
-         * @tc.desc      Get the status information of the current page.
+         * @tc.name   testRouterGetState
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_0800
+         * @tc.desc   Get the status information of the current page.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRouterGetState', Level.LEVEL0, async function (done) {
             console.info('testRouterGetState START');
@@ -352,9 +382,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_0900
-         * @tc.name      testPromptShowToast
-         * @tc.desc      Show text pop-up window.
+         * @tc.name   testPromptShowToast
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_0900
+         * @tc.desc   Show text pop-up window.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPromptShowToast', Level.LEVEL0, function () {
             try{
@@ -374,9 +407,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_1000
-         * @tc.name      testPromptDialog
-         * @tc.desc      Display the dialog box in the page.
+         * @tc.name   testPromptDialog
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_1000
+         * @tc.desc   Display the dialog box in the page.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPromptDialog', Level.LEVEL0, function () {
             console.info('testPromptDialog START')
@@ -411,9 +447,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_1100
-         * @tc.name      testConfigurationGetLocale
-         * @tc.desc      Get the current language and region of the app. Synchronize with the language and region.
+         * @tc.name   testConfigurationGetLocale
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_1100
+         * @tc.desc   Get the current language and region of the app. Synchronize with the language and region.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testConfigurationGetLocale', Level.LEVEL0, function () {
             console.info('testConfigurationGetLocale START');
@@ -428,9 +467,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_1200
-         * @tc.name      testSetTimeout
-         * @tc.desc      Set up a timer that executes a function or a specified piece of code after the timer expires.
+         * @tc.name   testSetTimeout
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_1200
+         * @tc.desc   Set up a timer that executes a function or a specified piece of code after the timer expires.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetTimeout', Level.LEVEL0, async function (done) {
             console.info('testSetTimeout START');
@@ -452,9 +494,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_1300
-         * @tc.name      testClearTimeout
-         * @tc.desc      The timer previously established by calling setTimeout() is cancelled.
+         * @tc.name   testClearTimeout
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_1300
+         * @tc.desc   The timer previously established by calling setTimeout() is cancelled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testClearTimeout', Level.LEVEL0, async function (done) {
             console.info('testClearTimeout START');
@@ -475,9 +520,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_1400
-         * @tc.name      testSetInterval
-         * @tc.desc      Call a function or execute a code segment repeatedly, with a fixed time delay between each call.
+         * @tc.name   testSetInterval
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_1400
+         * @tc.desc   Call a function or execute a code segment repeatedly, with a fixed time delay between each call.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSetInterval', Level.LEVEL0, async function (done) {
             console.info('testSetInterval START');
@@ -496,9 +544,12 @@ export default function basicabilityapi() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_1500
-         * @tc.name      testRequestAnimationFrame
-         * @tc.desc      Sets a vsync after which a function will be executed.
+         * @tc.name   testRequestAnimationFrame
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_1500
+         * @tc.desc   Sets a vsync after which a function will be executed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRequestAnimationFrame', Level.LEVEL0, async function (done) {
             console.info('testRequestAnimationFrame START');
@@ -510,9 +561,12 @@ export default function basicabilityapi() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASICABILITY_JS_API_1600
-         * @tc.name      testCancelAnimationFrame
-         * @tc.desc      Indicates the vsync callback ID returned by "requestAnimationFrame()".
+         * @tc.name   testCancelAnimationFrame
+         * @tc.number SUB_ACE_BASICABILITY_JS_API_1600
+         * @tc.desc   Indicates the vsync callback ID returned by "requestAnimationFrame()".
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCancelAnimationFrame', Level.LEVEL0, async function (done) {
             console.info('testCancelAnimationFrame START');

@@ -54,14 +54,14 @@ export default function webViewMinLogicalFontSize() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MINLOGICALFONTSIZE_0100
-    * @tc.name       : testMinLogicalFontSize001
-    * @tc.desc       : test minLogicalFontSize
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMinLogicalFontSize001
+     * @tc.number SUB_WEB_MINLOGICALFONTSIZE_0100
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMinLogicalFontSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitMinLogicalFontSize", 150420)
       Utils.registerEvent("testMinLogicalFontSize001", true, 150430, done);
@@ -69,14 +69,14 @@ export default function webViewMinLogicalFontSize() {
       await StartModel.click();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MINLOGICALFONTSIZEMIN_0100
-    * @tc.name       : testMinLogicalFontSizeMin001
-    * @tc.desc       : test minLogicalFontSizeMin
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMinLogicalFontSizeMin001
+     * @tc.number SUB_WEB_MINLOGICALFONTSIZEMIN_0100
+     * @tc.desc   test minLogicalFontSizeMin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMinLogicalFontSizeMin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitMinLogicalFontSizeMin",150420)
       Utils.registerEvent("testMinLogicalFontSizeMin001", true, 150440, done);
@@ -84,14 +84,14 @@ export default function webViewMinLogicalFontSize() {
       await StartModel.click();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MINLOGICALFONTSIZEMAX_0100
-    * @tc.name       : testMinLogicalFontSizeMax001
-    * @tc.desc       : test minLogicalFontSizeMax
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMinLogicalFontSizeMax001
+     * @tc.number SUB_WEB_MINLOGICALFONTSIZEMAX_0100
+     * @tc.desc   test minLogicalFontSizeMax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMinLogicalFontSizeMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitMinLogicalFontSizeMax", 150420)
       Utils.registerEvent("testMinLogicalFontSizeMax001", true, 150450, done);

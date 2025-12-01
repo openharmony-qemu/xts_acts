@@ -21,12 +21,12 @@ export default function ActsBackgroundProcessManagerNdkTest() {
   describe('ActsBackgroundProcessManagerNdkTest', () => {
 
     /**
-     * @tc.number  : SUB_Resourceschedule_BackgroundProcessManager_SetProcessPriority_0100
-     * @tc.name    : test Res_BackgroundProcessManager_SetProcessPriority Test Normal Scene
-     * @tc.desc    : SetProcessPriority api normal call.
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_BackgroundProcessManager_SetProcessPriority_0100
+     * @tc.number SUB_Resourceschedule_BackgroundProcessManager_SetProcessPriority_0100
+     * @tc.desc   SetProcessPriority api normal call.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_BackgroundProcessManager_SetProcessPriority_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -44,12 +44,12 @@ export default function ActsBackgroundProcessManagerNdkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_BackgroundProcessManager_ResetProcessPriority_0100
-     * @tc.name    : test Res_BackgroundProcessManager_ReSetProcessPriority Test Normal Scene
-     * @tc.desc    : ReSetProcessPriority api normal call.
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_BackgroundProcessManager_ResetProcessPriority_0100
+     * @tc.number SUB_Resourceschedule_BackgroundProcessManager_ResetProcessPriority_0100
+     * @tc.desc   ReSetProcessPriority api normal call.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_BackgroundProcessManager_ResetProcessPriority_0100', Level.LEVEL3, async (done: Function) => {
       try {

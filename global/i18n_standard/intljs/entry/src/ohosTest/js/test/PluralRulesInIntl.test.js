@@ -57,11 +57,14 @@ describe('PluralRulesInIntlTest', function () {
         + ' syslocale: ' + I18n.System.getSystemLocale());
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_2600
-    * @tc.name    get PluralRules
-    * @tc.desc    check the select result
-    */
+    /**
+     * @tc.name   pluralrules_test_2600
+     * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2600
+     * @tc.desc   check the select result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pluralrules_test_2600', Level.LEVEL2, function () {
         let pl = new Intl.PluralRules();
         let value = pl.select(0);
@@ -69,11 +72,14 @@ describe('PluralRulesInIntlTest', function () {
         expect(value).assertEqual('other');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_2700
-    * @tc.name    get PluralRules with zh locale
-    * @tc.desc    check the select result
-    */
+    /**
+     * @tc.name   pluralrules_test_2700
+     * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2700
+     * @tc.desc   check the select result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pluralrules_test_2700', Level.LEVEL2, function () {
         let pl = new Intl.PluralRules('zh');
         let value = pl.select(0);
@@ -81,11 +87,14 @@ describe('PluralRulesInIntlTest', function () {
         expect(value).assertEqual('other');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_2720
-    * @tc.name    get PluralRules with zh locale and undefined options
-    * @tc.desc    check the select result
-    */
+    /**
+     * @tc.name   pluralrules_test_2720
+     * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2720
+     * @tc.desc   check the select result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pluralrules_test_2720', Level.LEVEL2, function () {
         let pl = new Intl.PluralRules('zh', undefined);
         let value = pl.select(0);
@@ -93,11 +102,14 @@ describe('PluralRulesInIntlTest', function () {
         expect(value).assertEqual('other');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_2740
-    * @tc.name    get PluralRules with zh locale and null options
-    * @tc.desc    check the select result
-    */
+    /**
+     * @tc.name   pluralrules_test_2740
+     * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2740
+     * @tc.desc   check the select result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pluralrules_test_2740', Level.LEVEL2, function () {
         let pl = new Intl.PluralRules('zh', null);
         let value = pl.select(0);
@@ -105,11 +117,14 @@ describe('PluralRulesInIntlTest', function () {
         expect(value).assertEqual('other');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_2800
-    * @tc.name    get PluralRules with zh locale and ordinal type
-    * @tc.desc    check the select result
-    */
+    /**
+     * @tc.name   pluralrules_test_2800
+     * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2800
+     * @tc.desc   check the select result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pluralrules_test_2800', Level.LEVEL2, function () {
         let pl = new Intl.PluralRules('zh', {'type': 'ordinal'});
         let value = pl.select(0);
@@ -117,11 +132,14 @@ describe('PluralRulesInIntlTest', function () {
         expect(value).assertEqual('other');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_2900
-    * @tc.name    get PluralRules with zh locale and loolup localeMatcher
-    * @tc.desc    check the select result
-    */
+    /**
+     * @tc.name   pluralrules_test_2900
+     * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2900
+     * @tc.desc   check the select result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pluralrules_test_2900', Level.LEVEL2, function () {
         let pl = new Intl.PluralRules('zh', {'localeMatcher': 'lookup'});
         let value = pl.select(0);
@@ -129,11 +147,14 @@ describe('PluralRulesInIntlTest', function () {
         expect(value).assertEqual('other');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_3000
-    * @tc.name    get PluralRules with zh locale and minimumIntegerDigits options
-    * @tc.desc    check the select result
-    */
+    /**
+     * @tc.name   pluralrules_test_3000
+     * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_3000
+     * @tc.desc   check the select result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pluralrules_test_3000', Level.LEVEL2, function () {
         let pl = new Intl.PluralRules('zh', {'minimumIntegerDigits': 10});
         let value = pl.select(0);
@@ -141,11 +162,14 @@ describe('PluralRulesInIntlTest', function () {
         expect(value).assertEqual('other');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_3100
-    * @tc.name    get PluralRules with zh locale and minimumFractionDigits options
-    * @tc.desc    check the select result
-    */
+    /**
+     * @tc.name   pluralrules_test_3100
+     * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_3100
+     * @tc.desc   check the select result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pluralrules_test_3100', Level.LEVEL2, function () {
         let pl = new Intl.PluralRules('zh', {'minimumFractionDigits': 11});
         let value = pl.select(0);
@@ -153,11 +177,14 @@ describe('PluralRulesInIntlTest', function () {
         expect(value).assertEqual('other');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_3200
-    * @tc.name    get PluralRules with zh locale and maximumFractionDigits options
-    * @tc.desc    check the select result
-    */
+    /**
+     * @tc.name   pluralrules_test_3200
+     * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_3200
+     * @tc.desc   check the select result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pluralrules_test_3200', Level.LEVEL2, function () {
         let pl = new Intl.PluralRules('zh', {'maximumFractionDigits': 'lookup'});
         let value = pl.select(0);
@@ -165,11 +192,14 @@ describe('PluralRulesInIntlTest', function () {
         expect(value).assertEqual('other');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_3300
-    * @tc.name    get PluralRules with zh locale and minimumSignificantDigits options
-    * @tc.desc    check the select result
-    */
+    /**
+     * @tc.name   pluralrules_test_3300
+     * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_3300
+     * @tc.desc   check the select result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pluralrules_test_3300', Level.LEVEL2, function () {
         let pl = new Intl.PluralRules('zh', {'minimumSignificantDigits': 10});
         let value = pl.select(0);
@@ -177,11 +207,14 @@ describe('PluralRulesInIntlTest', function () {
         expect(value).assertEqual('other');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_3400
-    * @tc.name    get PluralRules with zh locale and maximumSignificantDigits options
-    * @tc.desc    check the select result
-    */
+    /**
+     * @tc.name   pluralrules_test_3400
+     * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_3400
+     * @tc.desc   check the select result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('pluralrules_test_3400', Level.LEVEL2, function () {
         let pl = new Intl.PluralRules('zh', {'maximumSignificantDigits': 11});
         let value = pl.select(0);

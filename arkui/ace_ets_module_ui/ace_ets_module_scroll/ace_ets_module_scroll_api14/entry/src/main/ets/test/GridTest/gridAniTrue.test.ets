@@ -46,12 +46,12 @@ export default function gridAniTrue() {
     });
 
     /**
-     * @tc.number    gridAniTrue_001
-     * @tc.name      gridAniTrue_0100
-     * @tc.desc      Set the animation parameter of ScrollPage to true.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   gridAniTrue_0100
+     * @tc.number gridAniTrue_001
+     * @tc.desc   Set the animation parameter of ScrollPage to true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('gridAniTrue_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[gridAniTrue_0100] START');

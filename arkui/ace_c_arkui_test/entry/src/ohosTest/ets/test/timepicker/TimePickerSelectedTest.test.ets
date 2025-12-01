@@ -26,26 +26,26 @@ export default function timePickerSelectedTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TIMEPICKER_SELECTED_0100
-     * @tc.name       : testTimePickerSelected001
-     * @tc.desc       : testing selected for timePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTimePickerSelected001
+     * @tc.number SUB_ARKUI_CAPI_TIMEPICKER_SELECTED_0100
+     * @tc.desc   testing selected for timePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimePickerSelected001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTimePickerSelected001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TIMEPICKER_SELECTED_0200
-     * @tc.name       : testTimePickerSelected002
-     * @tc.desc       : testing selected for timePicker with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTimePickerSelected002
+     * @tc.number SUB_ARKUI_CAPI_TIMEPICKER_SELECTED_0200
+     * @tc.desc   testing selected for timePicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimePickerSelected002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTimePickerSelected002()).assertEqual(0)

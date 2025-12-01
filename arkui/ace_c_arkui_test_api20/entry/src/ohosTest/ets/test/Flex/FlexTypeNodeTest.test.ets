@@ -48,10 +48,12 @@ export default function FlexTypeNodeTest() {
     });
 
     /**
-     * @tc.number    FlexTypeNodeTest_0100
-     * @tc.name      FlexTypeNodeTest_0100
-     * @tc.desc      Test FlexTypeNode
-     * @tc.level     Level 1
+     * @tc.name   FlexTypeNodeTest_0100
+     * @tc.number FlexTypeNodeTest_0100
+     * @tc.desc   Test FlexTypeNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FlexTypeNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[FlexTypeNodeTest_0100] START');
@@ -87,12 +89,12 @@ export default function FlexTypeNodeTest() {
       done();
     });
     /**
-     * @tc.number    FlexTypeNodeTest_0200
-     * @tc.name      FlexTypeNodeTest_0200
-     * @tc.desc      Test FlexTypeNodePage undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   FlexTypeNodeTest_0200
+     * @tc.number FlexTypeNodeTest_0200
+     * @tc.desc   Test FlexTypeNodePage undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('FlexTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[FlexTypeNodeTest_0200] START');

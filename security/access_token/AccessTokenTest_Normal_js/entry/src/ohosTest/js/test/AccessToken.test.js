@@ -59,12 +59,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessToken_001
          * @tc.number Test_verifyAccessToken_001
-         * @tc.name Test atManager.verifyAccessToken.
-         * @tc.desc After the installation, user_grant permission is not granted by default(Promise).
-         * @tc.level: Level0
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   After the installation, user_grant permission is not granted by default(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Test_verifyAccessToken_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("Test_verifyAccessToken_001 start");
@@ -77,12 +77,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessToken_002
          * @tc.number Test_verifyAccessToken_002
-         * @tc.name Test atManager.verifyAccessToken.
-         * @tc.desc After the installation, system_grant permission is granted by default(Promise).
-         * @tc.level: Level0
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   After the installation, system_grant permission is granted by default(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Test_verifyAccessToken_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("Test_verifyAccessToken_002 start");
@@ -95,12 +95,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessToken_003
          * @tc.number Test_verifyAccessToken_003
-         * @tc.name Test atManager.verifyAccessToken.
-         * @tc.desc Test invalid TokenID(0)(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test invalid TokenID(0)(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_verifyAccessToken_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_verifyAccessToken_003 start");
@@ -113,12 +113,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessToken_004
          * @tc.number Test_verifyAccessToken_004
-         * @tc.name Test atManager.verifyAccessToken.
-         * @tc.desc Test invalid permission(empty)(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test invalid permission(empty)(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_verifyAccessToken_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_verifyAccessToken_004 start");
@@ -131,12 +131,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessToken_005
          * @tc.number Test_verifyAccessToken_005
-         * @tc.name Test atManager.verifyAccessToken.
-         * @tc.desc Test invalid permission(length exceeds 256)(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test invalid permission(length exceeds 256)(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_verifyAccessToken_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_verifyAccessToken_005 start");
@@ -153,12 +153,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessToken_006
          * @tc.number Test_verifyAccessToken_006
-         * @tc.name Test atManager.verifyAccessToken.
-         * @tc.desc Test Error tokenID(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test Error tokenID(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_verifyAccessToken_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_verifyAccessToken_006 start");
@@ -173,12 +173,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessToken_007
          * @tc.number Test_verifyAccessToken_007
-         * @tc.name Test atManager.verifyAccessToken.
-         * @tc.desc Test Error permission(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test Error permission(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_verifyAccessToken_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_verifyAccessToken_007 start");
@@ -193,12 +193,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessTokenSync_000
          * @tc.number Test_verifyAccessTokenSync_0000
-         * @tc.name Test_verifyAccessTokenSync_000.
-         * @tc.desc Test verifyAccessTokenSync, After the installation, user_grant permission is not granted by default.
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test verifyAccessTokenSync, After the installation, user_grant permission is not granted by default.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_verifyAccessTokenSync_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
             console.info("Test_verifyAccessTokenSync_000 start");
@@ -209,12 +209,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessTokenSync_001
          * @tc.number Test_verifyAccessTokenSync_0100
-         * @tc.name Test_verifyAccessTokenSync_001.
-         * @tc.desc Test verifyAccessTokenSync, After the installation, system_grant permission is granted by default.
-         * @tc.level: Level1
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test verifyAccessTokenSync, After the installation, system_grant permission is granted by default.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('Test_verifyAccessTokenSync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
             console.info("Test_verifyAccessTokenSync_001 start");
@@ -225,12 +225,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessTokenSync_002
          * @tc.number Test_verifyAccessTokenSync_0200
-         * @tc.name Test_verifyAccessTokenSync_002.
-         * @tc.desc Test verifyAccessTokenSync, invalid TokenID(0).
-         * @tc.level: Level2
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test verifyAccessTokenSync, invalid TokenID(0).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Test_verifyAccessTokenSync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             console.info("Test_verifyAccessTokenSync_002 start");
@@ -244,12 +244,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessTokenSync_003
          * @tc.number Test_verifyAccessTokenSync_0300
-         * @tc.name Test_verifyAccessTokenSync_003.
-         * @tc.desc Test verifyAccessTokenSync, invalid permission(empty).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test verifyAccessTokenSync, invalid permission(empty).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_verifyAccessTokenSync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
             console.info("Test_verifyAccessTokenSync_003 start");
@@ -263,12 +263,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessTokenSync_004
          * @tc.number Test_verifyAccessTokenSync_0400
-         * @tc.name Test_verifyAccessTokenSync_004.
-         * @tc.desc Test verifyAccessTokenSync, invalid permission(length exceeds 256).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test verifyAccessTokenSync, invalid permission(length exceeds 256).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_verifyAccessTokenSync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
             console.info("Test_verifyAccessTokenSync_004 start");
@@ -286,12 +286,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessTokenSync_005
          * @tc.number Test_verifyAccessTokenSync_0500
-         * @tc.name Test_verifyAccessTokenSync_005.
-         * @tc.desc Test Error tokenID(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test Error tokenID(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_verifyAccessTokenSync_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
             console.info("Test_verifyAccessTokenSync_005 start");
@@ -307,12 +307,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_verifyAccessTokenSync_006
          * @tc.number Test_verifyAccessTokenSync_0600
-         * @tc.name Test_verifyAccessTokenSync_006.
-         * @tc.desc Test Error permission(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test Error permission(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_verifyAccessTokenSync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
             console.info("Test_verifyAccessTokenSync_006 start");
@@ -328,12 +328,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessToken_001
          * @tc.number Test_checkAccessToken_001
-         * @tc.name Test atManager.checkAccessToken.
-         * @tc.desc After the installation, user_grant permission is not granted by default(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   After the installation, user_grant permission is not granted by default(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessToken_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessToken_001 start");
@@ -348,12 +348,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessToken_002
          * @tc.number Test_checkAccessToken_002
-         * @tc.name Test atManager.checkAccessToken.
-         * @tc.desc After the installation, system_grant permission is granted by default(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   After the installation, system_grant permission is granted by default(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessToken_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessToken_002 start");
@@ -370,12 +370,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessToken_003
          * @tc.number Test_checkAccessToken_003
-         * @tc.name Test atManager.checkAccessToken.
-         * @tc.desc Test invalid TokenID(0)(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test invalid TokenID(0)(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessToken_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessToken_003 start");
@@ -390,12 +390,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessToken_004
          * @tc.number Test_checkAccessToken_004
-         * @tc.name Test atManager.checkAccessToken.
-         * @tc.desc Test invalid permission(empty)(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test invalid permission(empty)(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessToken_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessToken_004 start");
@@ -410,12 +410,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessToken_005
          * @tc.number Test_checkAccessToken_005
-         * @tc.name Test atManager.checkAccessToken.
-         * @tc.desc Test invalid permission(length exceeds 256)(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test invalid permission(length exceeds 256)(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessToken_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessToken_005 start");
@@ -434,12 +434,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessToken_006
          * @tc.number Test_checkAccessToken_006
-         * @tc.name Test atManager.checkAccessToken.
-         * @tc.desc After the installation, user_grant permission is not granted by default(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   After the installation, user_grant permission is not granted by default(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessToken_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessToken_006 start");
@@ -454,12 +454,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessToken_007
          * @tc.number Test_checkAccessToken_007
-         * @tc.name Test atManager.checkAccessToken.
-         * @tc.desc Test Error tokenID(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test Error tokenID(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessToken_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessToken_007 start");
@@ -476,12 +476,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessToken_008
          * @tc.number Test_checkAccessToken_008
-         * @tc.name Test atManager.checkAccessToken.
-         * @tc.desc Test Error permission(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test Error permission(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessToken_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessToken_008 start");
@@ -498,12 +498,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessTokenSync_001
          * @tc.number Test_checkAccessTokenSync_001
-         * @tc.name Test atManager.checkAccessTokenSync.
-         * @tc.desc After the installation, user_grant permission is not granted by default(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   After the installation, user_grant permission is not granted by default(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessTokenSync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessTokenSync_001 start");
@@ -518,12 +518,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessTokenSync_002
          * @tc.number Test_checkAccessTokenSync_002
-         * @tc.name Test atManager.checkAccessTokenSync.
-         * @tc.desc After the installation, system_grant permission is granted by default(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   After the installation, system_grant permission is granted by default(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessTokenSync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessTokenSync_002 start");
@@ -539,12 +539,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessTokenSync_003
          * @tc.number Test_checkAccessTokenSync_003
-         * @tc.name Test atManager.checkAccessTokenSync.
-         * @tc.desc Test invalid TokenID(0)(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test invalid TokenID(0)(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessTokenSync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessTokenSync_003 start");
@@ -558,12 +558,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessTokenSync_004
          * @tc.number Test_checkAccessTokenSync_004
-         * @tc.name Test atManager.checkAccessTokenSync.
-         * @tc.desc Test invalid permission(empty)(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test invalid permission(empty)(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessTokenSync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessTokenSync_004 start");
@@ -577,12 +577,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessTokenSync_005
          * @tc.number Test_checkAccessTokenSync_005
-         * @tc.name Test atManager.checkAccessTokenSync.
-         * @tc.desc Test invalid permission(length exceeds 256)(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test invalid permission(length exceeds 256)(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessTokenSync_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessTokenSync_005 start");
@@ -600,12 +600,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessTokenSync_006
          * @tc.number Test_checkAccessTokenSync_006
-         * @tc.name Test atManager.checkAccessTokenSync.
-         * @tc.desc Test Error tokenID(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test Error tokenID(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessTokenSync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessTokenSync_006 start");
@@ -622,12 +622,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_checkAccessTokenSync_007
          * @tc.number Test_checkAccessTokenSync_007
-         * @tc.name Test atManager.checkAccessTokenSync.
-         * @tc.desc Test Error permission(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Test Error permission(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_checkAccessTokenSync_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_checkAccessTokenSync_007 start");
@@ -644,12 +644,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_requestPermissionsFromUser_001
          * @tc.number Test_requestPermissionsFromUser_0100
-         * @tc.name Test_requestPermissionsFromUser_001.
-         * @tc.desc RequestPermissionsFromUser normal scenario(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   RequestPermissionsFromUser normal scenario(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestPermissionsFromUser_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestPermissionsFromUser_001 start");
@@ -673,12 +673,12 @@ export default function AccessTokenTest() {
 
 
         /**
+         * @tc.name   Test_requestPermissionsFromUser_002
          * @tc.number Test_requestPermissionsFromUser_0200
-         * @tc.name Test_requestPermissionsFromUser_002.
-         * @tc.desc Exception scenario use case(Promise).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Exception scenario use case(Promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestPermissionsFromUser_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestPermissionsFromUser_002 start");
@@ -702,12 +702,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_requestPermissionsFromUser_003
          * @tc.number Test_requestPermissionsFromUser_0300
-         * @tc.name Test_requestPermissionsFromUser_003.
-         * @tc.desc RequestPermissionsFromUser normal scenario(callback).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   RequestPermissionsFromUser normal scenario(callback).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestPermissionsFromUser_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestPermissionsFromUser_003 start");
@@ -728,12 +728,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_requestPermissionsFromUser_004
          * @tc.number Test_requestPermissionsFromUser_0400
-         * @tc.name Test_requestPermissionsFromUser_004.
-         * @tc.desc Exception scenario use case(callback).
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   Exception scenario use case(callback).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestPermissionsFromUser_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestPermissionsFromUser_004 start ");
@@ -755,12 +755,12 @@ export default function AccessTokenTest() {
 
 
         /**
+         * @tc.name   Test_requestPermissionOnSetting_001
          * @tc.number Test_requestPermissionOnSetting_0100
-         * @tc.name Test_requestPermissionOnSetting_001.
-         * @tc.desc requestPermissionOnSetting Permissions.
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   requestPermissionOnSetting Permissions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestPermissionOnSetting_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestPermissionOnSetting_001 start ");
@@ -780,12 +780,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_requestPermissionOnSetting_002
          * @tc.number Test_requestPermissionOnSetting_0200
-         * @tc.name Test_requestPermissionOnSetting_002.
-         * @tc.desc requestPermissionOnSetting Permissions no context.
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   requestPermissionOnSetting Permissions no context.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestPermissionOnSetting_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestPermissionOnSetting_002 start ");
@@ -805,12 +805,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_requestPermissionOnSetting_003
          * @tc.number Test_requestPermissionOnSetting_0300
-         * @tc.name Test_requestPermissionOnSetting_003.
-         * @tc.desc requestPermissionOnSetting Permissions no permissionList.
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   requestPermissionOnSetting Permissions no permissionList.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestPermissionOnSetting_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestPermissionOnSetting_003 start ");
@@ -829,12 +829,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_requestPermissionOnSetting_004
          * @tc.number Test_requestPermissionOnSetting_0400
-         * @tc.name Test_requestPermissionOnSetting_004.
-         * @tc.desc requestPermissionOnSetting Permissions Abnormal parameter type.
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   requestPermissionOnSetting Permissions Abnormal parameter type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestPermissionOnSetting_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestPermissionOnSetting_004 start ");
@@ -853,12 +853,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_requestPermissionOnSetting_005
          * @tc.number Test_requestPermissionOnSetting_0500
-         * @tc.name Test_requestPermissionOnSetting_005.
-         * @tc.desc requestPermissionOnSetting Permissions Abnormal parameter type.
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   requestPermissionOnSetting Permissions Abnormal parameter type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestPermissionOnSetting_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestPermissionOnSetting_005 start ");
@@ -878,12 +878,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_requestGlobalSwitch_001
          * @tc.number Test_requestGlobalSwitch_0100
-         * @tc.name Test_requestGlobalSwitch_001.
-         * @tc.desc requestGlobalSwitch Permissions.
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   requestGlobalSwitch Permissions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestGlobalSwitch_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestGlobalSwitch_001 start ");
@@ -902,12 +902,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_requestGlobalSwitch_002
          * @tc.number Test_requestGlobalSwitch_0200
-         * @tc.name Test_requestGlobalSwitch_002.
-         * @tc.desc requestGlobalSwitch Permissions Abnormal parameter type undefined.
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   requestGlobalSwitch Permissions Abnormal parameter type undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestGlobalSwitch_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestGlobalSwitch_002 start ");
@@ -926,12 +926,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_requestGlobalSwitch_003
          * @tc.number Test_requestGlobalSwitch_0300
-         * @tc.name Test_requestGlobalSwitch_003.
-         * @tc.desc requestGlobalSwitch Permissions Abnormal parameter type [].
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   requestGlobalSwitch Permissions Abnormal parameter type [].
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestGlobalSwitch_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestGlobalSwitch_003 start ");
@@ -950,12 +950,12 @@ export default function AccessTokenTest() {
         })
 
         /**
+         * @tc.name   Test_requestGlobalSwitch_004
          * @tc.number Test_requestGlobalSwitch_0400
-         * @tc.name Test_requestGlobalSwitch_004.
-         * @tc.desc requestGlobalSwitch Permissions Abnormal parameter type ''.
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+         * @tc.desc   requestGlobalSwitch Permissions Abnormal parameter type ''.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Test_requestGlobalSwitch_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("Test_requestGlobalSwitch_004 start ");
@@ -973,13 +973,13 @@ export default function AccessTokenTest() {
             }
         })
 
-        /*
-         * @tc.number:Test_SwitchType_0100
-         * @tc.name: Test_SwitchType_001
-         * @tc.desc: abilityAccessCtrl SwitchType CAMERA
-         * @tc.level: Level0
-         * @tc.size: MediumTest
-         * @tc.type: Function
+        /**
+         * @tc.name   Test_SwitchType_001
+         * @tc.number Test_SwitchType_0100
+         * @tc.desc   abilityAccessCtrl SwitchType CAMERA
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("Test_SwitchType_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
             console.info('----------------------Test_SwitchType_001---------------------------');
@@ -989,13 +989,13 @@ export default function AccessTokenTest() {
             done();
         })
 
-        /*
-         * @tc.number:Test_SwitchType_0200
-         * @tc.name: Test_SwitchType_002
-         * @tc.desc: abilityAccessCtrl SwitchType MICROPHONE
-         * @tc.level: Level0
-         * @tc.size: MediumTest
-         * @tc.type: Function
+        /**
+         * @tc.name   Test_SwitchType_002
+         * @tc.number Test_SwitchType_0200
+         * @tc.desc   abilityAccessCtrl SwitchType MICROPHONE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("Test_SwitchType_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
             console.info('----------------------Test_SwitchType_002---------------------------');
@@ -1005,13 +1005,13 @@ export default function AccessTokenTest() {
             done();
         })
 
-        /*
-         * @tc.number:Test_SwitchType_0300
-         * @tc.name: Test_SwitchType_003
-         * @tc.desc: abilityAccessCtrl SwitchType LOCATION
-         * @tc.level: Level0
-         * @tc.size: MediumTest
-         * @tc.type: Function
+        /**
+         * @tc.name   Test_SwitchType_003
+         * @tc.number Test_SwitchType_0300
+         * @tc.desc   abilityAccessCtrl SwitchType LOCATION
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("Test_SwitchType_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
             console.info('----------------------Test_SwitchType_003---------------------------');
@@ -1021,13 +1021,13 @@ export default function AccessTokenTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_Security_AccessToken_OnTest_0100
-         * @tc.name: Test AT on callback success
-         * @tc.desc: Test on,Subscription Permission Change
-         * @tc.level: Level3
-         * @tc.size: MediumTest
-         * @tc.type: Function
+        /**
+         * @tc.name   SUB_Security_AccessToken_OnTest_0100
+         * @tc.number SUB_Security_AccessToken_OnTest_0100
+         * @tc.desc   Test on,Subscription Permission Change
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("SUB_Security_AccessToken_OnTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info('SUB_Security_AccessToken_OnTest_0100 start');
@@ -1063,13 +1063,13 @@ export default function AccessTokenTest() {
             }
         })
 
-        /*
-         * @tc.number:SUB_Security_AccessToken_On_PROTest_0100
-         * @tc.name: Test AT on PERMISSION_REVOKED_OPER Const Attribute
-         * @tc.desc: Test PermissionStateChangeType const PERMISSION_REVOKED_OPER
-         * @tc.level: Level0
-         * @tc.size: MediumTest
-         * @tc.type: Function
+        /**
+         * @tc.name   SUB_Security_AccessToken_On_PROTest_0100
+         * @tc.number SUB_Security_AccessToken_On_PROTest_0100
+         * @tc.desc   Test PermissionStateChangeType const PERMISSION_REVOKED_OPER
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_Security_AccessToken_On_PROTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('----------------------SUB_Security_AccessToken_On_PROTest_0100---------------------------');
@@ -1079,13 +1079,13 @@ export default function AccessTokenTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_Security_AccessToken_On_PGOTest_0200
-         * @tc.name: Test AT on PERMISSION_GRANTED_OPER Const Attribute
-         * @tc.desc: Test PermissionStateChangeType const PERMISSION_GRANTED_OPER
-         * @tc.level: Level0
-         * @tc.size: MediumTest
-         * @tc.type: Function
+        /**
+         * @tc.name   SUB_Security_AccessToken_On_PGOTest_0200
+         * @tc.number SUB_Security_AccessToken_On_PGOTest_0200
+         * @tc.desc   Test PermissionStateChangeType const PERMISSION_GRANTED_OPER
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_Security_AccessToken_On_PGOTest_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('----------------------SUB_Security_AccessToken_On_PGOTest_0200---------------------------');

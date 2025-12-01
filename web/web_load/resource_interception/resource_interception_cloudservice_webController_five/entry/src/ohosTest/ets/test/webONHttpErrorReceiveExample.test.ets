@@ -56,13 +56,13 @@ export default function webONHttpErrorReceiveExample() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_WEBERRORRECV_API_0200
-     * @tc.name       : testOnHttpErrorReceiveByExampleWebc
-     * @tc.desc       : test interface of onHttpErrorReceive with parameter used by example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testOnHttpErrorReceiveByExampleWebc
+     * @tc.number SUB_ACE_BASIC_ETS_WEBERRORRECV_API_0200
+     * @tc.desc   test interface of onHttpErrorReceive with parameter used by example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnHttpErrorReceiveByExampleWebc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnHttpErrorReceiveByExampleWebc", EVENT_ID_SET_EMIT_KEY);

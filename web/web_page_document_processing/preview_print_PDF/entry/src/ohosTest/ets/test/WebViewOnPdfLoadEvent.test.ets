@@ -62,28 +62,28 @@ export default function ActsAceWebViewOnPdfLoadEvent() {
       console.log("ActsAceWebViewOnPdfLoadEvent beforeEach end***********");
     })
 
-    /*
-      * @tc.number      : SUB_ACE_WEB_WEBVIEWWEBVIEWONPDFLOADEVENT_API_0001
-      * @tc.name        : emitwebViewWebViewOnPdfLoadEvent001
-      * @tc.desc        : emitwebViewWebViewOnPdfLoadEvent001
-      * @tc.size        : MediumTest
-      * @tc.type        : Function
-      * @tc.level       : Level 0
-      */
+    /**
+     * @tc.name   emitwebViewWebViewOnPdfLoadEvent001
+     * @tc.number SUB_ACE_WEB_WEBVIEWWEBVIEWONPDFLOADEVENT_API_0001
+     * @tc.desc   emitwebViewWebViewOnPdfLoadEvent001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitwebViewWebViewOnPdfLoadEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitwebViewWebViewOnPdfLoadEvent001", 300620)
       Utils.registerEvent("emitwebViewWebViewOnPdfLoadEvent001", 'resource://rawfile/printTemplate.pdf', 300630, done);
       sendEventByKey('WebViewOnPdfLoadEventKey', 10, '');
     })
 
-    /*
-       * @tc.number      : SUB_ACE_WEB_WEBVIEWWEBVIEWONPDFLOADEVENT_API_0002
-       * @tc.name        : emitwebViewWebViewOnPdfLoadEvent002
-       * @tc.desc        : emitwebViewWebViewOnPdfLoadEvent002
-       * @tc.size        : MediumTest
-       * @tc.type        : Function
-       * @tc.level       : Level 0
-       */
+    /**
+     * @tc.name   emitwebViewWebViewOnPdfLoadEvent002
+     * @tc.number SUB_ACE_WEB_WEBVIEWWEBVIEWONPDFLOADEVENT_API_0002
+     * @tc.desc   emitwebViewWebViewOnPdfLoadEvent002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitwebViewWebViewOnPdfLoadEvent002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitwebViewWebViewOnPdfLoadEvent002", 300620)
       Utils.registerEvent("emitwebViewWebViewOnPdfLoadEvent002", 0, 300640, done);

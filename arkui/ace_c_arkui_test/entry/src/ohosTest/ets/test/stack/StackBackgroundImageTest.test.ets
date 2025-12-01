@@ -26,91 +26,91 @@ export default function stackBackgroundImageTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0100
-     * @tc.name       : testStackBackgroundImage001
-     * @tc.desc       : testing backgroundImage for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundImage001
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0100
+     * @tc.desc   testing backgroundImage for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImage001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImage001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0200
-     * @tc.name       : testStackBackgroundImage002
-     * @tc.desc       : testing backgroundImage for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundImage002
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0200
+     * @tc.desc   testing backgroundImage for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImage002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImage002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0300
-     * @tc.name       : testStackBackgroundImage003
-     * @tc.desc       : testing backgroundImage for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundImage003
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0300
+     * @tc.desc   testing backgroundImage for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImage003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImage003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0400
-     * @tc.name       : testStackBackgroundImage004
-     * @tc.desc       : testing backgroundImage for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundImage004
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0400
+     * @tc.desc   testing backgroundImage for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImage004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImage004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0500
-     * @tc.name       : testStackBackgroundImage005
-     * @tc.desc       : testing backgroundImage for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackBackgroundImage005
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0500
+     * @tc.desc   testing backgroundImage for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImage005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImage005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0600
-     * @tc.name       : testStackBackgroundImage006
-     * @tc.desc       : testing backgroundImage for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackBackgroundImage006
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0600
+     * @tc.desc   testing backgroundImage for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImage006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImage006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0700
-     * @tc.name       : testStackBackgroundImage007
-     * @tc.desc       : testing default values of backgroundImage property of the stack
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundImage007
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGE_0700
+     * @tc.desc   testing default values of backgroundImage property of the stack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImage007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImage007()).assertEqual(0)

@@ -59,13 +59,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
         done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0295
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative173
-     * @tc.desc        : test SdkSchemeHandler didFail code -173
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative173
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0295
+     * @tc.desc   test SdkSchemeHandler didFail code -173
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative173";
@@ -78,13 +78,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
     })
 
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0296
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative174
-     * @tc.desc        : test SdkSchemeHandler didFail code -174
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative174
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0296
+     * @tc.desc   test SdkSchemeHandler didFail code -174
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative174"
@@ -96,13 +96,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0297
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative176
-     * @tc.desc        : test SdkSchemeHandler didFail code -176
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative176
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0297
+     * @tc.desc   test SdkSchemeHandler didFail code -176
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative176"
@@ -114,13 +114,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0298
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative177
-     * @tc.desc        : test SdkSchemeHandler didFail code -177
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative177
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0298
+     * @tc.desc   test SdkSchemeHandler didFail code -177
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative177"
@@ -132,13 +132,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0299
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative178
-     * @tc.desc        : test SdkSchemeHandler didFail code -178
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative178
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0299
+     * @tc.desc   test SdkSchemeHandler didFail code -178
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative178"
@@ -150,13 +150,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0300
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative179
-     * @tc.desc        : test SdkSchemeHandler didFail code -179
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative179
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0300
+     * @tc.desc   test SdkSchemeHandler didFail code -179
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative179"
@@ -168,13 +168,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0301
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative180
-     * @tc.desc        : test SdkSchemeHandler didFail code -180
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative180
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0301
+     * @tc.desc   test SdkSchemeHandler didFail code -180
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative180"
@@ -186,13 +186,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0302
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative181
-     * @tc.desc        : test SdkSchemeHandler didFail code -181
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative181
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0302
+     * @tc.desc   test SdkSchemeHandler didFail code -181
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative181"
@@ -204,13 +204,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0303
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative182
-     * @tc.desc        : test SdkSchemeHandler didFail code -182
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative182
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0303
+     * @tc.desc   test SdkSchemeHandler didFail code -182
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative182"
@@ -222,13 +222,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0304
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative183
-     * @tc.desc        : test SdkSchemeHandler didFail code -183
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative183
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0304
+     * @tc.desc   test SdkSchemeHandler didFail code -183
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative183"
@@ -240,13 +240,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0305
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative184
-     * @tc.desc        : test SdkSchemeHandler didFail code -184
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative184
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0305
+     * @tc.desc   test SdkSchemeHandler didFail code -184
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative184"
@@ -258,13 +258,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0306
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative200
-     * @tc.desc        : test SdkSchemeHandler didFail code -200
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative200
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0306
+     * @tc.desc   test SdkSchemeHandler didFail code -200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative200"
@@ -276,13 +276,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0307
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative201
-     * @tc.desc        : test SdkSchemeHandler didFail code -201
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative201
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0307
+     * @tc.desc   test SdkSchemeHandler didFail code -201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative201"
@@ -294,13 +294,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0308
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative202
-     * @tc.desc        : test SdkSchemeHandler didFail code -202
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative202
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0308
+     * @tc.desc   test SdkSchemeHandler didFail code -202
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative202"
@@ -312,13 +312,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0309
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative203
-     * @tc.desc        : test SdkSchemeHandler didFail code -203
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative203
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0309
+     * @tc.desc   test SdkSchemeHandler didFail code -203
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative203"
@@ -330,13 +330,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0310
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative204
-     * @tc.desc        : test SdkSchemeHandler didFail code -204
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative204
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0310
+     * @tc.desc   test SdkSchemeHandler didFail code -204
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative204"
@@ -348,13 +348,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0311
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative205
-     * @tc.desc        : test SdkSchemeHandler didFail code -205
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative205
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0311
+     * @tc.desc   test SdkSchemeHandler didFail code -205
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative205"
@@ -366,13 +366,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0312
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative206
-     * @tc.desc        : test SdkSchemeHandler didFail code -206
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative206
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0312
+     * @tc.desc   test SdkSchemeHandler didFail code -206
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative206"
@@ -384,13 +384,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0313
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative207
-     * @tc.desc        : test SdkSchemeHandler didFail code -207
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative207
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0313
+     * @tc.desc   test SdkSchemeHandler didFail code -207
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative207"
@@ -402,13 +402,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0314
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative208
-     * @tc.desc        : test SdkSchemeHandler didFail code -208
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative208
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0314
+     * @tc.desc   test SdkSchemeHandler didFail code -208
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative208"
@@ -420,13 +420,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0315
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative210
-     * @tc.desc        : test SdkSchemeHandler didFail code -210
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative210
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0315
+     * @tc.desc   test SdkSchemeHandler didFail code -210
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative210"
@@ -438,13 +438,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0316
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative211
-     * @tc.desc        : test SdkSchemeHandler didFail code -211
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative211
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0316
+     * @tc.desc   test SdkSchemeHandler didFail code -211
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative211"
@@ -456,13 +456,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0317
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative212
-     * @tc.desc        : test SdkSchemeHandler didFail code -212
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative212
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0317
+     * @tc.desc   test SdkSchemeHandler didFail code -212
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative212"
@@ -474,13 +474,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0318
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative213
-     * @tc.desc        : test SdkSchemeHandler didFail code -213
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative213
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0318
+     * @tc.desc   test SdkSchemeHandler didFail code -213
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative213"
@@ -492,13 +492,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0319
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative214
-     * @tc.desc        : test SdkSchemeHandler didFail code -214
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative214
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0319
+     * @tc.desc   test SdkSchemeHandler didFail code -214
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative214"
@@ -510,13 +510,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0320
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative215
-     * @tc.desc        : test SdkSchemeHandler didFail code -215
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative215
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0320
+     * @tc.desc   test SdkSchemeHandler didFail code -215
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative215"
@@ -528,13 +528,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0321
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative217
-     * @tc.desc        : test SdkSchemeHandler didFail code -217
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative217
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0321
+     * @tc.desc   test SdkSchemeHandler didFail code -217
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative217"
@@ -546,13 +546,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0322
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative218
-     * @tc.desc        : test SdkSchemeHandler didFail code -218
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative218
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0322
+     * @tc.desc   test SdkSchemeHandler didFail code -218
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative218"
@@ -564,13 +564,13 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0323
-     * @tc.name        : testWebViewSdkSchemeHandlerDidFailNegative219
-     * @tc.desc        : test SdkSchemeHandler didFail code -219
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandlerDidFailNegative219
+     * @tc.number SUB_ACE_WEB_WEBHOST_SDK_0323
+     * @tc.desc   test SdkSchemeHandler didFail code -219
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative219"

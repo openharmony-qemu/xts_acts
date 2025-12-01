@@ -43,6 +43,14 @@ export default function SearchJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   SearchJsunit_0100
+     * @tc.number SearchJsunit_0100
+     * @tc.desc   SearchJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchJsunit_0100', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Search component
       console.info('[SearchJsunit_0100] START');
@@ -72,6 +80,14 @@ export default function SearchJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   SearchJsunit_0200
+     * @tc.number SearchJsunit_0200
+     * @tc.desc   SearchJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchJsunit_0200', Level.LEVEL0, async (done: Function) => {
       // Modify the properties of component Search
       console.info('[SearchJsunit_0200] START');
@@ -125,6 +141,14 @@ export default function SearchJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   SearchJsunit_0300
+     * @tc.number SearchJsunit_0300
+     * @tc.desc   SearchJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchJsunit_0300', Level.LEVEL0, async (done: Function) => {
       // Verify the functions of the Search component
       console.info('[SearchJsunit_0300] START');
@@ -227,6 +251,14 @@ export default function SearchJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   SearchJsunit_0400
+     * @tc.number SearchJsunit_0400
+     * @tc.desc   SearchJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchJsunit_0400', Level.LEVEL0, async (done: Function) => {
       // Illegal modification of properties of component Search
       console.info('[SearchJsunit_0400] START');

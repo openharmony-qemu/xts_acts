@@ -56,9 +56,12 @@ export default function rowJsunit() {
     });
 
     /**
+     * @tc.name   rowTest001
      * @tc.number SUB_ACE_BASIC_ETS_API_0490
-     * @tc.name rowTest001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rowTest001',  Level.LEVEL0, async () => {
       console.info('++++++++++++++++ Row TestCase 1 START ++++++++++++++++');

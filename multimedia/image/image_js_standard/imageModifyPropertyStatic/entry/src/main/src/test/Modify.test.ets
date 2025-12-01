@@ -99,7 +99,7 @@ export default function imageModifyProperty() {
       checkKey: Array<image.PropertyKey>
     ) => {
       let logger = new Logger(testNum);
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       if (type == "buffer") {
         let buffer = getBuffer(fileName);
         imageSourceApi = image.createImageSource(buffer);
@@ -248,7 +248,7 @@ export default function imageModifyProperty() {
       isBatch: boolean,
       done: () => void
     ) => {
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       try {
         if (type == "gif") {
           getFd("moving_test_loop1.gif");
@@ -748,6 +748,11 @@ export default function imageModifyProperty() {
       ];
       let buffer = getBuffer("test_exif.jpg");
       let imageSource = image.createImageSource(buffer);
+      if (imageSource == undefined) {
+        console.info(`create image source failed`);
+        expect().assertFail();
+        return undefined;
+      }
       let props = await imageSource.getImageProperties(checkKey);
       await imageSource.release();
       await testModifyImageProperties(

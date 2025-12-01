@@ -55,12 +55,12 @@ export default function RichEditorOnWillChange016() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0008
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0008
-     * @tc.desc  : Revoke the input text content and then restore it to test RichEditor on WillChange callback
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0008
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0008
+     * @tc.desc   Revoke the input text content and then restore it to test RichEditor on WillChange callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0008',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0008 START');
@@ -70,13 +70,13 @@ export default function RichEditorOnWillChange016() {
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      await driver.triggerKey(KeyCode.KEYCODE_A);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_B);
+      await driver.triggerKey(KeyCode.KEYCODE_B);
       await CommonFunc.sleep(500);
 
       //撤销输入
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z);
       await CommonFunc.sleep(500);
 
       let onDidChange_rangeBefore = await driver.findComponent(ON.id('onDidChange_rangeBefore'));
@@ -93,7 +93,7 @@ export default function RichEditorOnWillChange016() {
       expect(ondidRangeAfter).assertEqual('ondid rangeAfter:{"start":1,"end":1}');
 
       //还原输入
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y);
       await CommonFunc.sleep(500);
 
       replaceCall = await replacedSpansCallback.getText();

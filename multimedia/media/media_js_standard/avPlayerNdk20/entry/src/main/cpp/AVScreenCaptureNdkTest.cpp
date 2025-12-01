@@ -932,6 +932,7 @@ static napi_value OH_AVScreenCapture_GetCaptureTypeSelected0100(napi_env env, na
 {
     void *userData;
     OH_AVScreenCaptureConfig config_;
+    SetConfig(config_);
     OH_AVScreenCapture_SetSelectionCallback(g_screenCapturee, OnUserSelected, userData);
     auto qaz = OH_AVScreenCapture_Init(g_screenCapturee, config_);
     OH_AVScreenCapture_StartScreenCapture(g_screenCapturee);

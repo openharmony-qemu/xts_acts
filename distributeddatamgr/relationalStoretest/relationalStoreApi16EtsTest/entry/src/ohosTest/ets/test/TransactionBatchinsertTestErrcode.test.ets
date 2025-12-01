@@ -49,15 +49,15 @@ export default function TransactionBatchinsertTestErrcode() {
 
     });
 
-    /**
-     * @tc.name transaction.batchInsertWithConflictResolution errcode is 14800014
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_4000
-     * @tc.desc transaction.batchInsertWithConflictResolution errcode is 14800014
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testTransactionBatchInsertWithConflictResolutionErrcode0100
+     * @tc.number testTransactionBatchInsertWithConflictResolutionErrcode0100
+     * @tc.desc   testTransactionBatchInsertWithConflictResolutionErrcode0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTransactionBatchInsertWithConflictResolutionErrcode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testTransactionBatchInsertWithConflictResolutionErrcode0100 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -87,15 +87,15 @@ export default function TransactionBatchinsertTestErrcode() {
     })
 
 
-    /**
-     * @tc.name transaction.batchInsertWithConflictResolution errcode is 14800027
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_4100
-     * @tc.desc transaction.batchInsertWithConflictResolution errcode is 14800027
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testTransactionBatchInsertWithConflictResolutionErrcode0200
+     * @tc.number testTransactionBatchInsertWithConflictResolutionErrcode0200
+     * @tc.desc   testTransactionBatchInsertWithConflictResolutionErrcode0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTransactionBatchInsertWithConflictResolutionErrcode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testTransactionBatchInsertWithConflictResolutionErrcode0200 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -130,15 +130,15 @@ export default function TransactionBatchinsertTestErrcode() {
       }
       console.log(TAG + "testTransactionBatchInsertWithConflictResolutionErrcode0200 end");
     })
-    /**
-     * @tc.name transaction.batchInsertWithConflictResolution errcode is 14800021
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_4200
-     * @tc.desc transaction.batchInsertWithConflictResolution errcode is 14800021
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testTransactionBatchInsertWithConflictResolutionErrcode0300
+     * @tc.number testTransactionBatchInsertWithConflictResolutionErrcode0300
+     * @tc.desc   testTransactionBatchInsertWithConflictResolutionErrcode0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTransactionBatchInsertWithConflictResolutionErrcode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testTransactionBatchInsertWithConflictResolutionErrcode0300 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -168,15 +168,15 @@ export default function TransactionBatchinsertTestErrcode() {
       console.log(TAG + "testTransactionBatchInsertWithConflictResolutionErrcode0300 end");
     })
 
-    /**
-     * @tc.name transaction.batchInsertWithConflictResolution errcode is 14800033
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_4300
-     * @tc.desc transaction.batchInsertWithConflictResolution errcode is 14800033
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testTransactionBatchInsertWithConflictResolutionErrcode0400
+     * @tc.number testTransactionBatchInsertWithConflictResolutionErrcode0400
+     * @tc.desc   testTransactionBatchInsertWithConflictResolutionErrcode0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTransactionBatchInsertWithConflictResolutionErrcode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testTransactionBatchInsertWithConflictResolutionErrcode0400 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -207,15 +207,15 @@ export default function TransactionBatchinsertTestErrcode() {
       console.log(TAG + "testTransactionBatchInsertWithConflictResolutionErrcode0400 end");
     })
 
-    /**
-     * @tc.name transaction.batchInsertWithConflictResolution errcode is 14800047
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_4400
-     * @tc.desc transaction.batchInsertWithConflictResolution errcode is 14800047
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testTransactionBatchInsertWithConflictResolutionErrcode0500
+     * @tc.number testTransactionBatchInsertWithConflictResolutionErrcode0500
+     * @tc.desc   testTransactionBatchInsertWithConflictResolutionErrcode0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTransactionBatchInsertWithConflictResolutionErrcode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testTransactionBatchInsertWithConflictResolutionErrcode0500 start *************");
       let u8 = new Uint8Array([1, 2, 3]);

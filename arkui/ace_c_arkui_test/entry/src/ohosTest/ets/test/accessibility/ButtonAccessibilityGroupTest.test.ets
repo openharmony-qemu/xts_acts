@@ -26,52 +26,52 @@ export default function buttonAccessibilityGroupTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYGROUP_0100
-     * @tc.name       : testButtonAccessibilityGroup001
-     * @tc.desc       : testing accessibilityGroup for Button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testButtonAccessibilityGroup001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYGROUP_0100
+     * @tc.desc   testing accessibilityGroup for Button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityGroup001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityGroup001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYGROUP_0200
-     * @tc.name       : testButtonAccessibilityGroup002
-     * @tc.desc       : testing accessibilityGroup for Button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testButtonAccessibilityGroup002
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYGROUP_0200
+     * @tc.desc   testing accessibilityGroup for Button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityGroup002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityGroup002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYGROUP_0300
-     * @tc.name       : testButtonAccessibilityGroup003
-     * @tc.desc       : testing accessibilityGroup for Button with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testButtonAccessibilityGroup003
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYGROUP_0300
+     * @tc.desc   testing accessibilityGroup for Button with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityGroup003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityGroup003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYGROUP_0400
-     * @tc.name       : testButtonAccessibilityGroup004
-     * @tc.desc       : testing accessibilityGroup for Button with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testButtonAccessibilityGroup004
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYGROUP_0400
+     * @tc.desc   testing accessibilityGroup for Button with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityGroup004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityGroup004()).assertEqual(0)

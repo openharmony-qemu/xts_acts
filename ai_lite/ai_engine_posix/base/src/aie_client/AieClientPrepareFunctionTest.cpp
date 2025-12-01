@@ -118,9 +118,12 @@ static void TestAieClientPrepare(bool isAsync, bool isPrepareInputInfoNull, bool
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0100
- * @tc.name   : 01. algorithmInfo中isAsync=false，inputInfo不为空，cb为空，调用AieClientPrepare返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientPrepareFunction0101
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0101, Function | MediumTest | Level2)
 {
@@ -129,9 +132,12 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0101, Functio
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0200
- * @tc.name   : 02. algorithmInfo中isAsync=false，inputInfo为空，cb为空，调用AieClientPrepare返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientPrepareFunction0102
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0102, Function | MediumTest | Level3)
 {
@@ -140,9 +146,12 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0102, Functio
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0300
- * @tc.name   : 03. algorithmInfo中isAsync=false，inputInfo不为空，cb不为空，调用AieClientPrepare返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientPrepareFunction0103
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0103, Function | MediumTest | Level3)
 {
@@ -151,9 +160,12 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0103, Functio
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0400
- * @tc.name   : 04. algorithmInfo中isAsync=false，inputInfo为空，cb不为空，调用AieClientPrepare返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientPrepareFunction0104
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Sync_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0104, Function | MediumTest | Level3)
 {
@@ -162,9 +174,12 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0104, Functio
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0100
- * @tc.name   : 01. algorithmInfo中isAsync=true，inputInfo不为空，cb不为空，调用AieClientPrepare返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientPrepareFunction0201
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0201, Function | MediumTest | Level3)
 {
@@ -173,9 +188,12 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0201, Functio
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0200
- * @tc.name   : 02. algorithmInfo中isAsync=true，inputInfo为空，cb不为空，调用AieClientPrepare返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientPrepareFunction0202
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0202, Function | MediumTest | Level3)
 {
@@ -184,9 +202,12 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0202, Functio
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0300
- * @tc.name   : 03. algorithmInfo中isAsync=true，inputInfo不为空，cb为空，调用AieClientPrepare返回失败
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientPrepareFunction0203
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0203, Function | MediumTest | Level3)
 {
@@ -195,9 +216,12 @@ HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0203, Functio
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0400
- * @tc.name   : 04. algorithmInfo中isAsync=true，inputInfo为空，cb为空，调用AieClientPrepare返回失败
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientPrepareFunction0204
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientPrepare_Async_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientPrepareFunctionTest, testAieClientPrepareFunction0204, Function | MediumTest | Level3)
 {

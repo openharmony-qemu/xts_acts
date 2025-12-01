@@ -22,13 +22,12 @@ export default function fileIORandomAccessFileSetFilePointer() {
 describe('fileIO_randomAccessFile_setFilePointer', function () {
 
     /**
+     * @tc.name   fileIO_randomaccessfile_set_file_pointer_sync_000
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_SET_FILE_POINTER_SYNC_0000
-     * @tc.name fileIO_randomaccessfile_set_file_pointer_sync_000
-     * @tc.desc Test setFilePointer() interface. Set file offset pointer position and read will start from filePointer + offset
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test setFilePointer() interface. Set file offset pointer position and read will start from filePointer + offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_set_file_pointer_sync_000', Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_set_file_pointer_sync_000');
@@ -54,13 +53,12 @@ describe('fileIO_randomAccessFile_setFilePointer', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_set_file_pointer_sync_001
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_SET_FILE_POINTER_SYNC_0100
-     * @tc.name fileIO_randomaccessfile_set_file_pointer_sync_001
-     * @tc.desc Test setFilePointer() interface. Invalid fpointer.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test setFilePointer() interface. Invalid fpointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_set_file_pointer_sync_001', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_set_file_pointer_sync_001');
@@ -77,13 +75,12 @@ describe('fileIO_randomAccessFile_setFilePointer', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_set_file_pointer_sync_002
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_SET_FILE_POINTER_SYNC_0200
-     * @tc.name fileIO_randomaccessfile_set_file_pointer_sync_002
-     * @tc.desc Test setFilePointer() interface. Missing Parameter.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test setFilePointer() interface. Missing Parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_set_file_pointer_sync_002', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_randomaccessfile_set_file_pointer_sync_002');

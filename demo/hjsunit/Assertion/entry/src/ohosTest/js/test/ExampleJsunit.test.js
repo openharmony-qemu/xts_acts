@@ -16,6 +16,14 @@ import app from '@system.app'
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('appInfoTest', function () {
+    /**
+     * @tc.name   app_info_test_001
+     * @tc.number app_info_test_001
+     * @tc.desc   app_info_test_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('app_info_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var info = app.getInfo()
         expect(info.versionName).assertEqual('1.0')

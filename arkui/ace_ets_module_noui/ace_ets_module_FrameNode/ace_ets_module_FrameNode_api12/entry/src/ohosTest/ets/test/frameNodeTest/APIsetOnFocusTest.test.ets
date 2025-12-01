@@ -39,16 +39,16 @@ export default function APIsetOnFocusTest() {
       }
       done();
     });
+
+
     /**
-     * @tc.number frameNode
-     * @tc.name APIsetOnFocusTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIsetOnFocusTest_0100
+     * @tc.number APIsetOnFocusTest_0100
+     * @tc.desc   APIsetOnFocusTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('APIsetOnFocusTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIsetOnFocusTest_0100 START');
       let strJson = getInspectorByKey('setOnFocus_1');
@@ -64,16 +64,16 @@ export default function APIsetOnFocusTest() {
       console.info('[APIsetOnFocusTest_0100] END');
       done();
     });
+
+
     /**
-     * @tc.number frameNode
-     * @tc.name APIsetOnBlurTest_0200
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIsetOnFocusTest_0200
+     * @tc.number APIsetOnFocusTest_0200
+     * @tc.desc   APIsetOnFocusTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('APIsetOnFocusTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('APIsetOnFocusTest_0200 START');
       let driver = await Driver.create()

@@ -26,12 +26,12 @@ export default function printExtensionTest() {
   describe('printExtensionTest', () => {
 
     /**
+     * @tc.name   printExtension_function_0100
      * @tc.number printExtension_function_0100
-     * @tc.name Test printExtension
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0100', Level.LEVEL2, () => {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0100 onCreate begin');
@@ -43,12 +43,12 @@ export default function printExtensionTest() {
     })
 
     /**
+     * @tc.name   printExtension_function_0200
      * @tc.number printExtension_function_0200
-     * @tc.name Test printExtension
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0200', Level.LEVEL2, () => {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0200 onStartDiscoverPrinter begin');
@@ -56,12 +56,12 @@ export default function printExtensionTest() {
     })
 
     /**
+     * @tc.name   printExtension_function_0300
      * @tc.number printExtension_function_0300
-     * @tc.name Test printExtension
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0300', Level.LEVEL2, () => {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0300 onStopDiscoverPrinter begin');
@@ -69,12 +69,12 @@ export default function printExtensionTest() {
     })
 
     /**
+     * @tc.name   printExtension_function_0400
      * @tc.number printExtension_function_0400
-     * @tc.name Test printExtension
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0400', Level.LEVEL2, () => {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0400 onConnectPrinter begin');
@@ -82,12 +82,12 @@ export default function printExtensionTest() {
     })
 
     /**
+     * @tc.name   printExtension_function_0500
      * @tc.number printExtension_function_0500
-     * @tc.name Test printExtension
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0500', Level.LEVEL2, () => {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0500 onDisconnectPrinter begin');
@@ -95,12 +95,12 @@ export default function printExtensionTest() {
     })
 
     /**
+     * @tc.name   printExtension_function_0600
      * @tc.number printExtension_function_0600
-     * @tc.name Test printExtension
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0600', Level.LEVEL2, () => {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0600 onDestroy begin');

@@ -110,12 +110,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_CALLBACK_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1800
-     * @tc.name clearData
-     * @tc.desc Clear the data in the system pasteBoard
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Clear the data in the system pasteBoard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_CALLBACK_0100 start")
@@ -134,12 +134,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_CALLBACK_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2000
-     * @tc.name clearData
-     * @tc.desc Clear the data in the system pasteBoard fail,type of parameter "callback" is string
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Clear the data in the system pasteBoard fail,type of parameter "callback" is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_CALLBACK_0200 start")
@@ -158,12 +158,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_PROMISE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1900
-     * @tc.name clearData
-     * @tc.desc Clear the data in the system pasteBoard
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Clear the data in the system pasteBoard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_PROMISE_0100 start")
@@ -194,12 +194,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_3200
-     * @tc.name getData
-     * @tc.desc get the pastedata from system pasteBoard success
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   get the pastedata from system pasteBoard success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0100 start")
@@ -224,12 +224,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_3400
-     * @tc.name getData
-     * @tc.desc get the pastedata from system pasteBoard fail,type of parameter "callback" is string
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   get the pastedata from system pasteBoard fail,type of parameter "callback" is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0200 start")
@@ -249,12 +249,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_PROMISE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_3300
-     * @tc.name getData
-     * @tc.desc get the pastedata from system pasteBoard success
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   get the pastedata from system pasteBoard success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_PROMISE_0100 start")
@@ -278,12 +278,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1300
-     * @tc.name hasData
-     * @tc.desc Determine if there is data in the system pasteboard success, result is true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Determine if there is data in the system pasteboard success, result is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0100 start")
@@ -307,12 +307,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1600
-     * @tc.name hasData
-     * @tc.desc Determine if there is data in the system pasteboard success, result is true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Determine if there is data in the system pasteboard success, result is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0200 start")
@@ -332,12 +332,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0300
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1500
-     * @tc.name hasData
-     * @tc.desc Determine if there is data in the system pasteboard fail,type of parameter "callback" is string
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Determine if there is data in the system pasteboard fail,type of parameter "callback" is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0300 start")
@@ -356,12 +356,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_PROMISE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1400
-     * @tc.name hasData
-     * @tc.desc Determine if there is data in the system pasteboard success, result is true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Determine if there is data in the system pasteboard success, result is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_PROMISE_0100 start")
@@ -383,12 +383,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_PROMISE_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1700
-     * @tc.name hasData
-     * @tc.desc Determine if there is data in the system pasteboard success, result is true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Determine if there is data in the system pasteboard success, result is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_PROMISE_0200 start")
@@ -406,12 +406,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2600
-     * @tc.name setData
-     * @tc.desc Put pastedata to system pasteBoard success
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Put pastedata to system pasteBoard success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0100 start")
@@ -436,12 +436,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2800
-     * @tc.name setData
-     * @tc.desc Put pastedata to system pasteBoard fail,type of parameter "pasteData" is string
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Put pastedata to system pasteBoard fail,type of parameter "pasteData" is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0200 start")
@@ -466,12 +466,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0300
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_3100
-     * @tc.name setData
-     * @tc.desc Put pastedata to system pasteBoard fail,type of parameter "pasteData" is string
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Put pastedata to system pasteBoard fail,type of parameter "pasteData" is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0300 start")
@@ -490,12 +490,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2700
-     * @tc.name setData
-     * @tc.desc Put pastedata to system pasteBoard success
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Put pastedata to system pasteBoard success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0100 start")
@@ -517,12 +517,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2900
-     * @tc.name setData
-     * @tc.desc Put pastedata to system pasteBoard fail,type of parameter "pasteData" is string
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Put pastedata to system pasteBoard fail,type of parameter "pasteData" is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0200 start")
@@ -539,12 +539,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0300
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_3000
-     * @tc.name setData
-     * @tc.desc Put pastedata to system pasteBoard fail without parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Put pastedata to system pasteBoard fail without parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0300 start")
@@ -561,12 +561,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_ISREMOTEDATA_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_SourceOrType_0100
-     * @tc.name isRemoteData
-     * @tc.desc clear data than check the data whether it is from remote device
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   clear data than check the data whether it is from remote device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_ISREMOTEDATA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "SUB_PASTEBOARD_ISREMOTEDATA_0100 start")
@@ -585,12 +585,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_ISREMOTEDATA_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_SourceOrType_0200
-     * @tc.name isRemoteData
-     * @tc.desc set data than check the data whether it is from remote device
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   set data than check the data whether it is from remote device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_ISREMOTEDATA_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "SUB_PASTEBOARD_ISREMOTEDATA_0200 start")
@@ -614,12 +614,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_HASDATATYPE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_SourceOrType_0300
-     * @tc.name hasDataType
-     * @tc.desc set data than check the data type
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   set data than check the data type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_HASDATATYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "SUB_PASTEBOARD_HASDATATYPE_0100 start")
@@ -642,12 +642,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_HASDATATYPE_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_SourceOrType_0400
-     * @tc.name hasDataType
-     * @tc.desc set data than check the data type
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   set data than check the data type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_HASDATATYPE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "SUB_PASTEBOARD_HASDATATYPE_0200 start")
@@ -671,12 +671,12 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
+     * @tc.name   SUB_PASTEBOARD_GETDATASOURCE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_SourceOrType_0500
-     * @tc.name getDataSource
-     * @tc.desc set data than get the data source
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   set data than get the data source
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_GETDATASOURCE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "SUB_PASTEBOARD_GETDATASOURCE_0100 start")
@@ -701,12 +701,12 @@ export default function pasteBoardSystemPasteBoardTest() {
 
 
     /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0800
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_9900
-     * @tc.name getData
-     * @tc.desc get the pastedata from system pasteBoard success
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   get the pastedata from system pasteBoard success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0800 start")

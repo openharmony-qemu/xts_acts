@@ -61,9 +61,12 @@ export default function list_ListInitialIndex1Test() {
       console.info("List_ListInitialIndex1Test after each called");
     });
     /**
+     * @tc.name   testListInitialIndexToTwoWithOneLane
      * @tc.number SUB_ACE_LIST_LISTINITIALINDEX_0100
-     * @tc.name testListInitialIndexToTwoWithOneLane
-     * @tc.desc the InitialIndex of list set to 2
+     * @tc.desc   the InitialIndex of list set to 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListInitialIndexToTwoWithOneLane',  Level.LEVEL0, async (done: Function) => {
       console.info('[testListInitialIndexToTwoWithOneLane] START');

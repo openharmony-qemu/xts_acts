@@ -65,6 +65,12 @@ async function getInputMethodPermission() {
     await TextInput.click()
     await driver.delayMs(1000)
     let permissionBtn1 = await driver.findComponent(ON.text('同意'))
+    if (permissionBtn1 == null) {
+        let scroll = await driver.findComponent(ON.type('Scroll'))
+        if (scroll != null) {
+            permissionBtn1 = await scroll.scrollSearch(ON.text('同意'))
+        }
+    }
     if (permissionBtn1 != null) {
         await permissionBtn1.click()
         await driver.delayMs(1000)
@@ -92,9 +98,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   testComponentEventOccurOptionsClickMonitor
          * @tc.number UiTest_API22_001
-         * @tc.name testComponentEventOccurOptionsClickMonitor
-         * @tc.desc monitor component click.
+         * @tc.desc   monitor component click.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentEventOccurOptionsClickMonitor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, testComponentEventOccurOptionsClickMonitor start`);
@@ -108,12 +117,13 @@ export default function UiTest() {
                     expect(elementInfo.text == 'toast').assertTrue()
                     expect(elementInfo.type == 'Button').assertTrue()
                     expect(elementInfo.componentEventType == 1).assertTrue();
+                    expect(elementInfo.componentId).assertEqual('toastBtn');
                 } catch (err) {
                     console.log(`${TestTag}, testComponentEventOccurOptionsClickMonitor callback error ,${JSON.stringify(err)}`);
                 }
             }
             try {
-                let nextOn: On = ON.isBefore(ON.text('next page')).type('Button');
+                let nextOn: On =ON.text('toast').type('Button');
                 observer.once('componentEventOccur', ComponentEventType.COMPONENT_CLICKED, {
                     timeout: 9000,
                     on: nextOn
@@ -133,9 +143,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   testComponentEventOccurOptionsLongClickMonitor
          * @tc.number UiTest_API22_002
-         * @tc.name testComponentEventOccurOptionsLongClickMonitor
-         * @tc.desc monitor component LongClick.
+         * @tc.desc   monitor component LongClick.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentEventOccurOptionsLongClickMonitor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, testComponentEventOccurOptionsLongClickMonitor start`);
@@ -149,6 +162,7 @@ export default function UiTest() {
                     expect(elementInfo.text == '').assertTrue();
                     expect(elementInfo.type == 'Button').assertTrue();
                     expect(elementInfo.componentEventType == 2).assertTrue();
+                    expect(elementInfo.componentId).assertEqual('my-key');
                 } catch (err) {
                     console.log(`${TestTag}, testComponentEventOccurOptionsLongClickMonitor callback,${JSON.stringify(err)}`);
                 }
@@ -173,9 +187,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   testComponentEventOccurOptionsWithInClickMonitor
          * @tc.number UiTest_API22_003
-         * @tc.name testComponentEventOccurOptionsWithInClickMonitor
-         * @tc.desc monitor component click.
+         * @tc.desc   monitor component click.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentEventOccurOptionsWithInClickMonitor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, testComponentEventOccurOptionsWithInClickMonitor start`);
@@ -189,6 +206,7 @@ export default function UiTest() {
                     expect(elementInfo.text == 'toast').assertTrue()
                     expect(elementInfo.type == 'Button').assertTrue()
                     expect(elementInfo.componentEventType == 1).assertTrue();
+                    expect(elementInfo.componentId).assertEqual('toastBtn');
                 } catch (err) {
                     console.log(`${TestTag}, testComponentEventOccurOptionsWithInClickMonitor callback error ,${JSON.stringify(err)}`);
                 }
@@ -196,7 +214,7 @@ export default function UiTest() {
             try {
                 observer.once('componentEventOccur', ComponentEventType.COMPONENT_CLICKED, {
                     timeout: 9000,
-                    on: ON.within(ON.type('Scroll')).text('toast')
+                    on: ON.text('toast')
                 } , callback);
             } catch (error) {
                 console.log(`${TestTag}, testComponentEventOccurOptionsWithInClickMonitor once error ,${JSON.stringify(error)}`);
@@ -213,9 +231,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   testComponentEventOccurOptionsScrollStartMonitor
          * @tc.number UiTest_API22_004
-         * @tc.name testComponentEventOccurOptionsScrollStartMonitor
-         * @tc.desc monitor component Scroll start.
+         * @tc.desc   monitor component Scroll start.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentEventOccurOptionsScrollStartMonitor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, testComponentEventOccurOptionsScrollStartMonitor start`);
@@ -258,9 +279,12 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.number: UiTest_API22_005
-         * @tc.name: testComponentEventOccurOptionsScrollEndMonitor
-         * @tc.desc: monitor component Scroll end.
+         * @tc.name   testComponentEventOccurOptionsScrollEndMonitor
+         * @tc.number UiTest_API22_005
+         * @tc.desc   monitor component Scroll end.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentEventOccurOptionsScrollEndMonitor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, testComponentEventOccurOptionsScrollEndMonitor start`);
@@ -302,9 +326,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   testComponentEventOccurOptionsTextContentMonitor
          * @tc.number UiTest_API22_006
-         * @tc.name testComponentEventOccurOptionsTextContentMonitor
-         * @tc.desc monitor component text changed.
+         * @tc.desc   monitor component text changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentEventOccurOptionsTextContentMonitor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, testComponentEventOccurOptionsTextContentMonitor start`);
@@ -363,9 +390,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   testComponentEventOccurOptionsTimeOutClickMonitor
          * @tc.number UiTest_API22_007
-         * @tc.name testComponentEventOccurOptionsTimeOutClickMonitor
-         * @tc.desc monitor component click.
+         * @tc.desc   monitor component click.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentEventOccurOptionsTimeOutClickMonitor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, testComponentEventOccurOptionsTimeOutClickMonitor start`);
@@ -406,9 +436,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   tesIsComponentPresentWhenLongClickTrue
          * @tc.number UiTest_API22_012
-         * @tc.name tesIsComponentPresentWhenLongClickTrue
-         * @tc.desc isComponentPresentWhenLongClick test.
+         * @tc.desc   isComponentPresentWhenLongClick test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('tesIsComponentPresentWhenLongClickTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesIsComponentPresentWhenLongClickTrue start`);
@@ -433,9 +466,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   tesIsComponentPresentWhenLongClickFalse
          * @tc.number UiTest_API22_013
-         * @tc.name tesIsComponentPresentWhenLongClickFalse
-         * @tc.desc isComponentPresentWhenLongClick test.
+         * @tc.desc   isComponentPresentWhenLongClick test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('tesIsComponentPresentWhenLongClickFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesIsComponentPresentWhenLongClickNotCom start`);
@@ -466,9 +502,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   tesIsComponentPresentWhenDragTrue
          * @tc.number UiTest_API22_014
-         * @tc.name tesIsComponentPresentWhenDragTrue
-         * @tc.desc isComponentPresentWhenDrag test.
+         * @tc.desc   isComponentPresentWhenDrag test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('tesIsComponentPresentWhenDragTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue start`);
@@ -493,9 +532,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   tesIsComponentPresentWhenDragFalse
          * @tc.number UiTest_API22_015
-         * @tc.name tesIsComponentPresentWhenDragFalse
-         * @tc.desc isComponentPresentWhenDrag test.
+         * @tc.desc   isComponentPresentWhenDrag test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('tesIsComponentPresentWhenDragFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesIsComponentPresentWhenDragFalse start`);
@@ -530,9 +572,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   tesIsComponentPresentWhenSwipeTrue
          * @tc.number UiTest_API22_016
-         * @tc.name tesIsComponentPresentWhenSwipeTrue
-         * @tc.desc isComponentPresentWhenSwipe test.
+         * @tc.desc   isComponentPresentWhenSwipe test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('tesIsComponentPresentWhenSwipeTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue start`);
@@ -554,9 +599,12 @@ export default function UiTest() {
 
 
         /**
+         * @tc.name   tesIsComponentPresentWhenSwipeFalse
          * @tc.number UiTest_API22_017
-         * @tc.name tesIsComponentPresentWhenSwipeFalse
-         * @tc.desc isComponentPresentWhenSwipe test.
+         * @tc.desc   isComponentPresentWhenSwipe test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('tesIsComponentPresentWhenSwipeFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse start`);
@@ -579,9 +627,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   tesKnuckleKnockSingle
          * @tc.number UiTest_API22_018
-         * @tc.name tesKnuckleKnockSingle
-         * @tc.desc isComponentPresentWhenLongClick test.
+         * @tc.desc   isComponentPresentWhenLongClick test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('tesKnuckleKnockSingle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesKnuckleKnockSingle start`);
@@ -609,9 +660,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   tesKnuckleKnockDouble
          * @tc.number UiTest_API22_019
-         * @tc.name tesKnuckleKnockDouble
-         * @tc.desc isComponentPresentWhenLongClick test.
+         * @tc.desc   isComponentPresentWhenLongClick test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('tesKnuckleKnockDouble', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesKnuckleKnockDouble start`);
@@ -640,9 +694,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   tesKnuckleKnockS
          * @tc.number UiTest_API22_020
-         * @tc.name tesKnuckleKnockS
-         * @tc.desc isComponentPresentWhenLongClick test.
+         * @tc.desc   isComponentPresentWhenLongClick test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('tesKnuckleKnockS', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesKnuckleKnockS start`);
@@ -692,9 +749,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   tesKnuckleKnockRect
          * @tc.number UiTest_API22_021
-         * @tc.name tesKnuckleKnockRect
-         * @tc.desc isComponentPresentWhenLongClick test.
+         * @tc.desc   isComponentPresentWhenLongClick test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('tesKnuckleKnockRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesKnuckleKnockRect start`);
@@ -735,9 +795,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   teTouchPadTwoFingersScrollVer
          * @tc.number UiTest_API22_022
-         * @tc.name teTouchPadTwoFingersScrollVer
-         * @tc.desc isComponentPresentWhenLongClick test.
+         * @tc.desc   isComponentPresentWhenLongClick test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('teTouchPadTwoFingersScrollVer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, teTouchPadTwoFingersScrollVer start`);
@@ -766,9 +829,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   teTouchPadTwoFingersScrollHor
          * @tc.number UiTest_API22_023
-         * @tc.name teTouchPadTwoFingersScrollHor
-         * @tc.desc isComponentPresentWhenLongClick test.
+         * @tc.desc   isComponentPresentWhenLongClick test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('teTouchPadTwoFingersScrollHor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, teTouchPadTwoFingersScrollHor start`);
@@ -816,11 +882,14 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts');
         })
 
-        /*
-        * @tc.number: uiTest_20001
-        * @tc.name: testDriverLongClickAt
-        * @tc.desc: LongClick on the specified location on the screen, the value of duration is 3000.
-        */
+        /**
+         * @tc.name   testDriverLongClickAt
+         * @tc.number uiTest_20001
+         * @tc.desc   LongClick on the specified location on the screen, the value of duration is 3000.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testDriverLongClickAt', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, testDriverLongClickAt start`);
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -837,11 +906,14 @@ export default function UiTest() {
             console.log(`${TestTag}, testDriverLongClickAt end`);
         })
 
-        /*
-        * @tc.number: uiTest_20002
-        * @tc.name: testNewMouseLongClick
-        * @tc.desc: longClick in the specified location on the screen by mouse, the value of speed and duration are 3000.
-        */
+        /**
+         * @tc.name   testNewMouseLongClick
+         * @tc.number uiTest_20002
+         * @tc.desc   longClick in the specified location on the screen by mouse, the value of speed and duration are 3000.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testNewMouseLongClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testNewMouseLongClick start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -856,10 +928,13 @@ export default function UiTest() {
             console.log(TestTag, 'testNewMouseLongClick over');
         })
 
-        /*
-         * @tc.number: uiTest_20003
-         * @tc.name: testDriverInputText
-         * @tc.desc: enter '123',the values of both paste and addition are false
+        /**
+         * @tc.name   testDriverInputText
+         * @tc.number uiTest_20003
+         * @tc.desc   enter '123',the values of both paste and addition are false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDriverInputText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testDriverInputText start');
@@ -895,10 +970,13 @@ export default function UiTest() {
             console.log(TestTag, 'testDriverInputText over');
         })
 
-        /*
-         * @tc.number: uiTest_20004
-         * @tc.name: testDriverInputText1
-         * @tc.desc: enter '长贵儿',the values of both paste and addition are false
+        /**
+         * @tc.name   testDriverInputText1
+         * @tc.number uiTest_20004
+         * @tc.desc   enter '长贵儿',the values of both paste and addition are false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDriverInputText1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testDriverInputText1 start');
@@ -933,10 +1011,13 @@ export default function UiTest() {
             console.log(TestTag, 'testDriverInputText1 over');
         })
 
-        /*
-         * @tc.number: uiTest_20005
-         * @tc.name: testDriverInputText2
-         * @tc.desc: enter '123',the values of paste is true,the values of addition is false
+        /**
+         * @tc.name   testDriverInputText2
+         * @tc.number uiTest_20005
+         * @tc.desc   enter '123',the values of paste is true,the values of addition is false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDriverInputText2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testDriverInputText2 start');
@@ -971,10 +1052,13 @@ export default function UiTest() {
             console.log(TestTag, 'testDriverInputText2 over');
         })
 
-        /*
-         * @tc.number: uiTest_20006
-         * @tc.name: testDriverInputText3
-         * @tc.desc: enter '123',the values of paste is false,the values of addition is true
+        /**
+         * @tc.name   testDriverInputText3
+         * @tc.number uiTest_20006
+         * @tc.desc   enter '123',the values of paste is false,the values of addition is true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDriverInputText3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testDriverInputText3 start');
@@ -1000,10 +1084,13 @@ export default function UiTest() {
             console.log(TestTag, 'testDriverInputText3 over');
         })
 
-        /*
-         * @tc.number: uiTest_20007
-         * @tc.name: testDriverInputText4
-         * @tc.desc: enter '123',the values of paste is true,the values of addition is true
+        /**
+         * @tc.name   testDriverInputText4
+         * @tc.number uiTest_20007
+         * @tc.desc   enter '123',the values of paste is true,the values of addition is true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDriverInputText4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testDriverInputText4 start');
@@ -1029,10 +1116,13 @@ export default function UiTest() {
             console.log(TestTag, 'testDriverInputText4 over');
         })
 
-        /*
-         * @tc.number: uiTest_20008
-         * @tc.name: testComponentInputText
-         * @tc.desc: enter '123',the values of both paste and addition are false
+        /**
+         * @tc.name   testComponentInputText
+         * @tc.number uiTest_20008
+         * @tc.desc   enter '123',the values of both paste and addition are false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentInputText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testComponentInputText start');
@@ -1057,10 +1147,13 @@ export default function UiTest() {
             console.log(TestTag, 'testComponentInputText over');
         })
 
-        /*
-         * @tc.number: uiTest_20009
-         * @tc.name: testComponentInputText1
-         * @tc.desc: enter '长贵儿',the values of both paste and addition are false
+        /**
+         * @tc.name   testComponentInputText1
+         * @tc.number uiTest_20009
+         * @tc.desc   enter '长贵儿',the values of both paste and addition are false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentInputText1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testComponentInputText1 start');
@@ -1094,10 +1187,13 @@ export default function UiTest() {
             console.log(TestTag, 'testComponentInputText1 over');
         })
 
-        /*
-         * @tc.number: uiTest_20010
-         * @tc.name: testComponentInputText2
-         * @tc.desc: enter '123',the values of paste is true,the values of addition is false
+        /**
+         * @tc.name   testComponentInputText2
+         * @tc.number uiTest_20010
+         * @tc.desc   enter '123',the values of paste is true,the values of addition is false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentInputText2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testComponentInputText2 start');
@@ -1131,10 +1227,13 @@ export default function UiTest() {
             console.log(TestTag, 'testComponentInputText2 over');
         })
 
-        /*
-         * @tc.number: uiTest_20011
-         * @tc.name: testComponentInputText3
-         * @tc.desc: enter '123',the values of paste is false,the values of addition is true
+        /**
+         * @tc.name   testComponentInputText3
+         * @tc.number uiTest_20011
+         * @tc.desc   enter '123',the values of paste is false,the values of addition is true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentInputText3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testComponentInputText3 start');
@@ -1159,10 +1258,13 @@ export default function UiTest() {
             console.log(TestTag, 'testComponentInputText3 over');
         })
 
-        /*
-         * @tc.number: uiTest_20012
-         * @tc.name: testComponentInputText4
-         * @tc.desc: enter '123',the values of paste is true,the values of addition is true
+        /**
+         * @tc.name   testComponentInputText4
+         * @tc.number uiTest_20012
+         * @tc.desc   enter '123',the values of paste is true,the values of addition is true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testComponentInputText4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testComponentInputText4 start');
@@ -1187,10 +1289,13 @@ export default function UiTest() {
             console.log(TestTag, 'testComponentInputText4 over');
         })
 
-        /*
-         * @tc.number: uiTest_20013
-         * @tc.name: testCrownRotate
-         * @tc.desc: crownRotate test
+        /**
+         * @tc.name   testCrownRotate
+         * @tc.number uiTest_20013
+         * @tc.desc   crownRotate test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testCrownRotate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testCrownRotate start');
@@ -1224,10 +1329,13 @@ export default function UiTest() {
             console.log(TestTag, 'testCrownRotate over');
         })
 
-        /*
-         * @tc.number: uiTest_20014
-         * @tc.name: testCrownRotateSpeed
-         * @tc.desc: crownRotate test
+        /**
+         * @tc.name   testCrownRotateSpeed
+         * @tc.number uiTest_20014
+         * @tc.desc   crownRotate test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testCrownRotateSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testCrownRotateSpeed start');
@@ -1261,10 +1369,13 @@ export default function UiTest() {
             console.log(TestTag, 'testCrownRotateSpeed over');
         })
 
-        /*
-         * @tc.number: uiTest_20015
-         * @tc.name: testBelongingDisplay
-         * @tc.desc: belongingDisplay test
+        /**
+         * @tc.name   testBelongingDisplay
+         * @tc.number uiTest_20015
+         * @tc.desc   belongingDisplay test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testBelongingDisplay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testBelongingDisplay start');
@@ -1285,10 +1396,13 @@ export default function UiTest() {
             console.log(TestTag, 'testBelongingDisplay over');
         })
 
-        /*
-         * @tc.number: uiTest_20016
-         * @tc.name: testGetDisplayId
-         * @tc.desc: getDisplayId test
+        /**
+         * @tc.name   testGetDisplayId
+         * @tc.number uiTest_20016
+         * @tc.desc   getDisplayId test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testGetDisplayId start');
@@ -1309,10 +1423,13 @@ export default function UiTest() {
             console.log(TestTag, 'testGetDisplayId over');
         })
 
-        /*
-         * @tc.number: uiTest_20017
-         * @tc.name: testPressBackWithId
-         * @tc.desc: pressBack test
+        /**
+         * @tc.name   testPressBackWithId
+         * @tc.number uiTest_20017
+         * @tc.desc   pressBack test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testPressBackWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testPressBackWithId start');
@@ -1331,10 +1448,13 @@ export default function UiTest() {
             console.log(TestTag, 'testPressBackWithId over');
         })
 
-        /*
-         * @tc.number: uiTest_20018
-         * @tc.name: testTriggerKeyWithId
-         * @tc.desc: triggerKey test
+        /**
+         * @tc.name   testTriggerKeyWithId
+         * @tc.number uiTest_20018
+         * @tc.desc   triggerKey test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testTriggerKeyWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testTriggerKeyWithId start');
@@ -1355,10 +1475,13 @@ export default function UiTest() {
             console.log(TestTag, 'testTriggerKeyWithId over');
         })
 
-        /*
-         * @tc.number: uiTest_20019
-         * @tc.name: testScreenCapWithId
-         * @tc.desc: screenCap test
+        /**
+         * @tc.name   testScreenCapWithId
+         * @tc.number uiTest_20019
+         * @tc.desc   screenCap test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScreenCapWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testScreenCapWithId start');
@@ -1374,10 +1497,13 @@ export default function UiTest() {
             console.log(TestTag, 'testScreenCapWithId over');
         })
 
-        /*
-         * @tc.number: uiTest_20020
-         * @tc.name: testGetDisplaySizeWithId
-         * @tc.desc: getDisplaySize test
+        /**
+         * @tc.name   testGetDisplaySizeWithId
+         * @tc.number uiTest_20020
+         * @tc.desc   getDisplaySize test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetDisplaySizeWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testGetDisplaySizeWithId start');
@@ -1392,10 +1518,13 @@ export default function UiTest() {
             console.log(TestTag, 'testScreenCapWithId over');
         })
 
-        /*
-         * @tc.number: uiTest_20021
-         * @tc.name: testGetDisplayDensityWithId
-         * @tc.desc: getDisplayDensity test
+        /**
+         * @tc.name   testGetDisplayDensityWithId
+         * @tc.number uiTest_20021
+         * @tc.desc   getDisplayDensity test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetDisplayDensityWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testGetDisplayDensityWithId start');
@@ -1411,10 +1540,13 @@ export default function UiTest() {
         })
 
 
-        /*
-         * @tc.number: uiTest_20022
-         * @tc.name: testClickAt
-         * @tc.desc: clickAt test
+        /**
+         * @tc.name   testClickAt
+         * @tc.number uiTest_20022
+         * @tc.desc   clickAt test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testClickAt', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testClickAt start');
@@ -1431,10 +1563,13 @@ export default function UiTest() {
             console.log(TestTag, 'testClickAt over');
         })
 
-        /*
-         * @tc.number: uiTest_20023
-         * @tc.name: testDoubleClickAt
-         * @tc.desc: doubleClickAt test
+        /**
+         * @tc.name   testDoubleClickAt
+         * @tc.number uiTest_20023
+         * @tc.desc   doubleClickAt test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDoubleClickAt', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testDoubleClickAt start');
@@ -1456,10 +1591,13 @@ export default function UiTest() {
             console.log(TestTag, 'testDoubleClickAt over');
         })
 
-        /*
-         * @tc.number: uiTest_20024
-         * @tc.name: test_swipeBetween
-         * @tc.desc: swipeBetween test
+        /**
+         * @tc.name   test_swipeBetween
+         * @tc.number uiTest_20024
+         * @tc.desc   swipeBetween test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('test_swipeBetween', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_swipeBetween start');
@@ -1480,10 +1618,13 @@ export default function UiTest() {
             console.log(TestTag, 'test_swipeBetween over');
         })
 
-        /*
-         * @tc.number: uiTest_20025
-         * @tc.name: test_swipeBetweenspeednull
-         * @tc.desc: swipeBetween test
+        /**
+         * @tc.name   test_swipeBetweenspeednull
+         * @tc.number uiTest_20025
+         * @tc.desc   swipeBetween test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('test_swipeBetweenspeednull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_swipeBetween start');
@@ -1504,10 +1645,13 @@ export default function UiTest() {
             console.log(TestTag, 'test_swipeBetween over');
         })
 
-        /*
-         * @tc.number: uiTest_20026
-         * @tc.name: test_swipeBetweenspeedundefined
-         * @tc.desc: swipeBetween test
+        /**
+         * @tc.name   test_swipeBetweenspeedundefined
+         * @tc.number uiTest_20026
+         * @tc.desc   swipeBetween test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('test_swipeBetweenspeedundefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_swipeBetween start');
@@ -1528,10 +1672,13 @@ export default function UiTest() {
             console.log(TestTag, 'test_swipeBetween over');
         })
 
-        /*
-         * @tc.number: uiTest_20027
-         * @tc.name: test_swipeBetweenspeed199
-         * @tc.desc: swipeBetween test
+        /**
+         * @tc.name   test_swipeBetweenspeed199
+         * @tc.number uiTest_20027
+         * @tc.desc   swipeBetween test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('test_swipeBetweenspeed199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_swipeBetween start');
@@ -1552,10 +1699,13 @@ export default function UiTest() {
             console.log(TestTag, 'test_swipeBetween over');
         })
 
-        /*
-         * @tc.number: uiTest_20028
-         * @tc.name: test_swipeBetweenspeed40001
-         * @tc.desc: swipeBetween test
+        /**
+         * @tc.name   test_swipeBetweenspeed40001
+         * @tc.number uiTest_20028
+         * @tc.desc   swipeBetween test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('test_swipeBetweenspeed40001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_swipeBetween start');
@@ -1576,10 +1726,13 @@ export default function UiTest() {
             console.log(TestTag, 'test_swipeBetween over');
         })
 
-        /*
-         * @tc.number: uiTest_20029
-         * @tc.name: test_swipeBetweenspeed1000
-         * @tc.desc: swipeBetween test
+        /**
+         * @tc.name   test_swipeBetweenspeed1000
+         * @tc.number uiTest_20029
+         * @tc.desc   swipeBetween test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('test_swipeBetweenspeed1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_swipeBetween start');
@@ -1600,10 +1753,13 @@ export default function UiTest() {
             console.log(TestTag, 'test_swipeBetween over');
         })
 
-        /*
-         * @tc.number: uiTest_20030
-         * @tc.name: testFlingWithId
-         * @tc.desc: fling test
+        /**
+         * @tc.name   testFlingWithId
+         * @tc.number uiTest_20030
+         * @tc.desc   fling test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testFlingWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testFlingWithId start');
@@ -1651,10 +1807,13 @@ export default function UiTest() {
             console.log(TestTag, 'testFlingWithId over');
         })
 
-        /*
-         * @tc.number: uiTest_20032
-         * @tc.name: testTriggerCombineKeysWithId
-         * @tc.desc: triggerCombineKeys test
+        /**
+         * @tc.name   testTriggerCombineKeysWithId
+         * @tc.number uiTest_20032
+         * @tc.desc   triggerCombineKeys test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testTriggerCombineKeysWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testTriggerCombineKeysWithId start');
@@ -1711,10 +1870,13 @@ export default function UiTest() {
             console.log(TestTag, 'testTriggerCombineKeysWithId over');
         })
 
-        /*
-         * @tc.number: uiTest_20033
-         * @tc.name: test_origin
-         * @tc.desc: specifies the string value match pattern.
+        /**
+         * @tc.name   test_origin
+         * @tc.number uiTest_20033
+         * @tc.desc   specifies the string value match pattern.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('test_origin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_origin start');
@@ -1734,10 +1896,13 @@ export default function UiTest() {
             console.log(TestTag, 'test_origin end');
         })
 
-        /*
-         * @tc.number: uiTest_20034
-         * @tc.name: testWindowAttrWithId
-         * @tc.desc: find window by WindowFilter and get it's active status.
+        /**
+         * @tc.name   testWindowAttrWithId
+         * @tc.number uiTest_20034
+         * @tc.desc   find window by WindowFilter and get it's active status.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowAttrWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -1752,10 +1917,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_20035
-         * @tc.name: testScreenCaptureWithId
-         * @tc.desc: capture the specified area of current screen.
+        /**
+         * @tc.name   testScreenCaptureWithId
+         * @tc.number uiTest_20035
+         * @tc.desc   capture the specified area of current screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScreenCaptureWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -1781,11 +1949,14 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts');
         })
 
-        /*
-        * @tc.number: UiTest_API16_001
-        * @tc.name: test_touchPadMultiFingerSwipe_Up_Down_3
-        * @tc.desc: Swipe UP or Down with three point.
-        */
+        /**
+         * @tc.name   test_touchPadMultiFingerSwipe_Up_Down_3
+         * @tc.number UiTest_API16_001
+         * @tc.desc   Swipe UP or Down with three point.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_touchPadMultiFingerSwipe_Up_Down_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_Up_Down_3 start');
             try {
@@ -1818,11 +1989,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_Up_Down_3 end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_002
-        * @tc.name: test_touchPadMultiFingerSwipe_Up_Down_Stay_3
-        * @tc.desc: Swipe Up or Down with three point then  in more task statue
-        */
+        /**
+         * @tc.name   test_touchPadMultiFingerSwipe_Up_Down_Stay_3
+         * @tc.number UiTest_API16_002
+         * @tc.desc   Swipe Up or Down with three point then  in more task statue
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_touchPadMultiFingerSwipe_Up_Down_Stay_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_Up_Down_Stay_3 start');
             try {
@@ -1854,11 +2028,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_Up_Down_Stay_3 end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_003
-        * @tc.name: test_touchPadMultiFingerSwipe_other
-        * @tc.desc: Swipe Left, Swipe with four point
-        */
+        /**
+         * @tc.name   test_touchPadMultiFingerSwipe_other
+         * @tc.number UiTest_API16_003
+         * @tc.desc   Swipe Left, Swipe with four point
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_touchPadMultiFingerSwipe_other', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_other start');
             try {
@@ -1880,11 +2057,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_other end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_004
-        * @tc.name: test_touchPadMultiFingerSwipe_fingers_verification_401
-        * @tc.desc: finger params 401 test
-        */
+        /**
+         * @tc.name   test_touchPadMultiFingerSwipe_fingers_verification_401
+         * @tc.number UiTest_API16_004
+         * @tc.desc   finger params 401 test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_touchPadMultiFingerSwipe_fingers_verification_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_fingers_verification_401 start');
             try {
@@ -1925,11 +2105,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_fingers_verification_401 end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_005
-        * @tc.name: test_touchPadMultiFingerSwipe_direction_verification_401
-        * @tc.desc: direction param 401 test
-        */
+        /**
+         * @tc.name   test_touchPadMultiFingerSwipe_direction_verification_401
+         * @tc.number UiTest_API16_005
+         * @tc.desc   direction param 401 test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_touchPadMultiFingerSwipe_direction_verification_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_direction_verification_401 start');
             try {
@@ -1970,11 +2153,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_direction_verification_401 start');
         })
 
-        /*
-        * @tc.number: UiTest_API16_006
-        * @tc.name: test_touchPadMultiFingerSwipe_option_verification_Up
-        * @tc.desc: option param test
-        */
+        /**
+         * @tc.name   test_touchPadMultiFingerSwipe_option_verification_Up
+         * @tc.number UiTest_API16_006
+         * @tc.desc   option param test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_touchPadMultiFingerSwipe_option_verification_Up', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_option_verification_Up start');
             try {
@@ -2104,11 +2290,14 @@ export default function UiTest() {
         })
 
 
-        /*
-        * @tc.number: UiTest_API16_07
-        * @tc.name: test_penClick_function
-        * @tc.desc: penClick function test
-        */
+        /**
+         * @tc.name   test_penClick_function
+         * @tc.number UiTest_API16_07
+         * @tc.desc   penClick function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_penClick_function', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_penClick_function start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -2137,11 +2326,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_penClick_function end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_08
-        * @tc.name: test_penClick_function_401
-        * @tc.desc: penClick param 401 test
-        */
+        /**
+         * @tc.name   test_penClick_function_401
+         * @tc.number UiTest_API16_08
+         * @tc.desc   penClick param 401 test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_penClick_function_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () =>{
             console.log(TestTag, 'test_penClick_function_401 start');
             try {
@@ -2179,11 +2371,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_penClick_function_401 end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_09
-        * @tc.name: test_penLongClick_function
-        * @tc.desc: penLongClick function test
-        */
+        /**
+         * @tc.name   test_penLongClick_function
+         * @tc.number UiTest_API16_09
+         * @tc.desc   penLongClick function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_penLongClick_function', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () =>{
             console.log(TestTag, 'test_penLongClick_function start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -2207,11 +2402,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_penLongClick_function end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_010
-        * @tc.name: test_penLongClick_function_401
-        * @tc.desc: penLongClick param 401 test
-        */
+        /**
+         * @tc.name   test_penLongClick_function_401
+         * @tc.number UiTest_API16_010
+         * @tc.desc   penLongClick param 401 test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_penLongClick_function_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () =>{
             console.log(TestTag, 'test_penLongClick_function_401 start');
             try {
@@ -2249,11 +2447,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_penLongClick_function_401 end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_011
-        * @tc.name: test_penDoubleClick_function
-        * @tc.desc: penDoubleClick function test
-        */
+        /**
+         * @tc.name   test_penDoubleClick_function
+         * @tc.number UiTest_API16_011
+         * @tc.desc   penDoubleClick function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_penDoubleClick_function', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'test_penDoubleClick_function start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -2282,11 +2483,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_penDoubleClick_function end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_012
-        * @tc.name: test_penDoubleClick_function_401
-        * @tc.desc: penLongClick param 401 test
-        */
+        /**
+         * @tc.name   test_penDoubleClick_function_401
+         * @tc.number UiTest_API16_012
+         * @tc.desc   penLongClick param 401 test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_penDoubleClick_function_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () =>{
             console.log(TestTag, 'test_penDoubleClick_function_401 start');
             try {
@@ -2324,11 +2528,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_penDoubleClick_function_401 end ');
         })
 
-        /*
-        * @tc.number: UiTest_API16_013
-        * @tc.name: test_penSwipe_function
-        * @tc.desc: penSwipe function test
-        */
+        /**
+         * @tc.name   test_penSwipe_function
+         * @tc.number UiTest_API16_013
+         * @tc.desc   penSwipe function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_penSwipe_function', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () =>{
             console.log(TestTag, 'test_penSwipe_function start');
             await driver.delayMs(waitUiReadyMs);
@@ -2367,11 +2574,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_penSwipe_function end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_013
-        * @tc.name: test_penSwipe_function_pressure
-        * @tc.desc: penSwipe function test
-        */
+        /**
+         * @tc.name   test_penSwipe_function_pressure
+         * @tc.number UiTest_API16_013
+         * @tc.desc   penSwipe function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_penSwipe_function_pressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () =>{
             console.log(TestTag, 'test_penSwipe_function_pressure start');
             await driver.delayMs(waitUiReadyMs);
@@ -2400,11 +2610,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_penSwipe_function end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_013
-        * @tc.name: test_penSwipe_function_speed
-        * @tc.desc: penSwipe function test
-        */
+        /**
+         * @tc.name   test_penSwipe_function_speed
+         * @tc.number UiTest_API16_013
+         * @tc.desc   penSwipe function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_penSwipe_function_speed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () =>{
             console.log(TestTag, 'test_penSwipe_function_speed start');
             await driver.delayMs(waitUiReadyMs);
@@ -2433,11 +2646,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_penSwipe_function_speed end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_014
-        * @tc.name: test_penSwipe_function_401
-        * @tc.desc: penSwipe param 401  test
-        */
+        /**
+         * @tc.name   test_penSwipe_function_401
+         * @tc.number UiTest_API16_014
+         * @tc.desc   penSwipe param 401  test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_penSwipe_function_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () =>{
             console.log(TestTag, 'test_penSwipe_function_401 start');
             try {
@@ -2495,11 +2711,14 @@ export default function UiTest() {
             console.log(TestTag, 'test_penSwipe_function_401 end');
         })
 
-        /*
-        * @tc.number: UiTest_API16_015
-        * @tc.name: test_injectPenPointAction_function
-        * @tc.desc: injectPenPointAction function test
-        */
+        /**
+         * @tc.name   test_injectPenPointAction_function
+         * @tc.number UiTest_API16_015
+         * @tc.desc   injectPenPointAction function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_injectPenPointAction_function', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, `test_injectPenPointAction_function start`);
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -2543,11 +2762,14 @@ export default function UiTest() {
             console.log(TestTag, `test_injectPenPointAction_function end`);
         })
 
-        /*
-        * @tc.number: UiTest_API16_016
-        * @tc.name: test_injectPenPointAction_function_401
-        * @tc.desc: injectPenPointAction param 401 test
-        */
+        /**
+         * @tc.name   test_injectPenPointAction_function_401
+         * @tc.number UiTest_API16_016
+         * @tc.desc   injectPenPointAction param 401 test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('test_injectPenPointAction_function_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () =>{
             console.log(TestTag, 'test_injectPenPointAction_function_401 start');
             try {
@@ -2634,11 +2856,14 @@ export default function UiTest() {
 
         })
 
-        /*
-        * @tc.number: UiTest_API16_017
-        * @tc.name: testScrollSearchVertical
-        * @tc.desc: scroll vertically on this UiComponent to find matched UiComponent.
-        */
+        /**
+         * @tc.name   testScrollSearchVertical
+         * @tc.number UiTest_API16_017
+         * @tc.desc   scroll vertically on this UiComponent to find matched UiComponent.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testScrollSearchVertical', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testScrollSearchVertical start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -2675,11 +2900,14 @@ export default function UiTest() {
 
 
 
-        /*
-        * @tc.number: UiTest_API16_019
-        * @tc.name: testScrollSearchHorizontal_401
-        * @tc.desc: param 401 test.
-        */
+        /**
+         * @tc.name   testScrollSearchHorizontal_401
+         * @tc.number UiTest_API16_019
+         * @tc.desc   param 401 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testScrollSearchHorizontal_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs);
@@ -2725,11 +2953,14 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts');
         })
 
-        /*
-        * @tc.number: UiTest_API16_020
-        * @tc.name: testMatchPatternIcase
-        * @tc.desc: find button component by Regular Expression ignore icase，and doubleClick button by mouse.
-        */
+        /**
+         * @tc.name   testMatchPatternIcase
+         * @tc.number UiTest_API16_020
+         * @tc.desc   find button component by Regular Expression ignore icase，and doubleClick button by mouse.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMatchPatternIcase', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs);
@@ -2751,11 +2982,14 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts');
         })
 
-        /*
-        * @tc.number: UiTest_API16_021
-        * @tc.name: testMatchPatternRegExp
-        * @tc.desc: find button component by Regular Expression, and longClick button by mouse.
-        */
+        /**
+         * @tc.name   testMatchPatternRegExp
+         * @tc.number UiTest_API16_021
+         * @tc.desc   find button component by Regular Expression, and longClick button by mouse.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMatchPatternRegExp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs);
@@ -2777,11 +3011,14 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts');
         })
 
-        /*
-        * @tc.number: UiTest_API16_022
-        * @tc.name: testGetHint
-        * @tc.desc: find button component by Regular Expression, and get Hint of the component.
-        */
+        /**
+         * @tc.name   testGetHint
+         * @tc.number UiTest_API16_022
+         * @tc.desc   find button component by Regular Expression, and get Hint of the component.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testGetHint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs);
@@ -2806,11 +3043,14 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts');
         })
 
-        /*
-        * @tc.number: UiTest_API16_023
-        * @tc.name: testGetHint1
-        * @tc.desc: find button component by Hint.
-        */
+        /**
+         * @tc.name   testGetHint1
+         * @tc.number UiTest_API16_023
+         * @tc.desc   find button component by Hint.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testGetHint1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs);
@@ -2840,11 +3080,14 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-        * @tc.number: uiTest_11001
-        * @tc.name: testMouseDoubleClick
-        * @tc.desc: doubleClick in the specified location on the screen by mouse.
-        */
+        /**
+         * @tc.name   testMouseDoubleClick
+         * @tc.number uiTest_11001
+         * @tc.desc   doubleClick in the specified location on the screen by mouse.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMouseDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
@@ -2861,11 +3104,14 @@ export default function UiTest() {
             expect(text == 'doubleClick').assertTrue()
         })
 
-        /*
-        * @tc.number: uiTest_11001
-        * @tc.name: testMouseDoubleClick_1
-        * @tc.desc: doubleClick in the specified location on the screen by mouse.
-        */
+        /**
+         * @tc.name   testMouseDoubleClick_1
+         * @tc.number uiTest_11001
+         * @tc.desc   doubleClick in the specified location on the screen by mouse.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMouseDoubleClick_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
@@ -2882,11 +3128,14 @@ export default function UiTest() {
             expect(text == 'doubleClick').assertTrue()
         })
 
-        /*
-        * @tc.number: uiTest_11001
-        * @tc.name: testMouseDoubleClick_1
-        * @tc.desc: doubleClick in the specified location on the screen by mouse.
-        */
+        /**
+         * @tc.name   testMouseDoubleClick_2
+         * @tc.number uiTest_11001
+         * @tc.desc   doubleClick in the specified location on the screen by mouse.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMouseDoubleClick_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
@@ -2903,11 +3152,14 @@ export default function UiTest() {
             expect(text == 'doubleClick').assertTrue()
         })
 
-        /*
-        * @tc.number: uiTest_11002
-        * @tc.name: testMouseLongClick
-        * @tc.desc: longClick in the specified location on the screen by mouse.
-        */
+        /**
+         * @tc.name   testMouseLongClick
+         * @tc.number uiTest_11002
+         * @tc.desc   longClick in the specified location on the screen by mouse.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMouseLongClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
@@ -2920,11 +3172,14 @@ export default function UiTest() {
             expect(text == 'longClick').assertTrue()
         })
 
-        /*
-        * @tc.number: uiTest_11002
-        * @tc.name: testMouseLongClick_1
-        * @tc.desc: longClick in the specified location on the screen by mouse.
-        */
+        /**
+         * @tc.name   testMouseLongClick_1
+         * @tc.number uiTest_11002
+         * @tc.desc   longClick in the specified location on the screen by mouse.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMouseLongClick_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
@@ -2937,11 +3192,14 @@ export default function UiTest() {
             expect(text == 'longClick').assertTrue()
         })
 
-        /*
-        * @tc.number: uiTest_11002
-        * @tc.name: testMouseLongClick_2
-        * @tc.desc: longClick in the specified location on the screen by mouse.
-        */
+        /**
+         * @tc.name   testMouseLongClick_2
+         * @tc.number uiTest_11002
+         * @tc.desc   longClick in the specified location on the screen by mouse.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMouseLongClick_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
@@ -2954,10 +3212,13 @@ export default function UiTest() {
             expect(text == 'longClick').assertTrue()
         })
 
-        /*
-         * @tc.number: uiTest_11004
-         * @tc.name: testMouseMoveWithTrack
-         * @tc.desc: swipe on the screen between the specified points with mouse.
+        /**
+         * @tc.name   testMouseMoveWithTrack
+         * @tc.number uiTest_11004
+         * @tc.desc   swipe on the screen between the specified points with mouse.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testMouseMoveWithTrack', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -2984,10 +3245,13 @@ export default function UiTest() {
         })
 
 
-        /*
-         * @tc.number: uiTest_11005
-         * @tc.name: testDriverInputText
-         * @tc.desc: inject text on the specified location.
+        /**
+         * @tc.name   testDriverInputText
+         * @tc.number uiTest_11005
+         * @tc.desc   inject text on the specified location.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDriverInputText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3021,10 +3285,13 @@ export default function UiTest() {
             expect(text == '123').assertTrue()
         })
 
-        /*
-         * @tc.number: uiTest_11006
-         * @tc.name: testMouseScroll
-         * @tc.desc: scroll the mouse wheel at the specified location to specify the cell.
+        /**
+         * @tc.name   testMouseScroll
+         * @tc.number uiTest_11006
+         * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testMouseScroll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3059,10 +3326,13 @@ export default function UiTest() {
             expect(button1 == null).assertTrue()
         })
 
-        /*
-         * @tc.number: uiTest_11007
-         * @tc.name: testWindowAttr
-         * @tc.desc: find window by WindowFilter and get it's active status.
+        /**
+         * @tc.name   testWindowAttr
+         * @tc.number uiTest_11007
+         * @tc.desc   find window by WindowFilter and get it's active status.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowAttr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3072,16 +3342,16 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             let isActive = await window.isActive()
             expect(isActive == true).assertTrue()
-            let uitestWindow = await driver.findWindow({active: false})
-            let isActive1 = await uitestWindow.isActive()
-            expect(isActive1).assertFalse();
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_11008
-         * @tc.name: testDescription
-         * @tc.desc: find UiComponent by description attribute and get it's description attribute.
+        /**
+         * @tc.name   testDescription
+         * @tc.number uiTest_11008
+         * @tc.desc   find UiComponent by description attribute and get it's description attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDescription', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3109,10 +3379,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_10001
-         * @tc.name: testWithIn
-         * @tc.desc: find UiComponent inside of the given UiComponent.
+        /**
+         * @tc.name   testWithIn
+         * @tc.number uiTest_10001
+         * @tc.desc   find UiComponent inside of the given UiComponent.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWithIn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3129,10 +3402,13 @@ export default function UiTest() {
 
 
 
-        /*
-         * @tc.number: uiTest_10003
-         * @tc.name: testScreenCapture
-         * @tc.desc: capture the specified area of current screen.
+        /**
+         * @tc.name   testScreenCapture
+         * @tc.number uiTest_10003
+         * @tc.desc   capture the specified area of current screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScreenCapture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3143,10 +3419,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_10003
-         * @tc.name: testScreenCapture_default
-         * @tc.desc: capture the specified area of current screen.
+        /**
+         * @tc.name   testScreenCapture_default
+         * @tc.number uiTest_10003
+         * @tc.desc   capture the specified area of current screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScreenCapture_default', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3157,10 +3436,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_10004
-         * @tc.name: testMouseClick
-         * @tc.desc: click in the specified location on the screen by mouse.
+        /**
+         * @tc.name   testMouseClick
+         * @tc.number uiTest_10004
+         * @tc.desc   click in the specified location on the screen by mouse.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testMouseClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3187,10 +3469,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_10005
-         * @tc.name: testMouseMoveTo
-         * @tc.desc: move the mouse cursor to the specified location.
+        /**
+         * @tc.name   testMouseMoveTo
+         * @tc.number uiTest_10005
+         * @tc.desc   move the mouse cursor to the specified location.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testMouseMoveTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3208,10 +3493,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_10006
-         * @tc.name: testMouseScroll
-         * @tc.desc: scroll the mouse wheel at the specified location to specify the cell.
+        /**
+         * @tc.name   testMouseScroll
+         * @tc.number uiTest_10006
+         * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testMouseScroll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3248,10 +3536,13 @@ export default function UiTest() {
             expect(button1 == null).assertTrue()
         })
 
-        /*
-         * @tc.number: uiTest_10007
-         * @tc.name: testInWindow
-         * @tc.desc: scroll the mouse wheel at the specified location to specify the cell.
+        /**
+         * @tc.name   testInWindow
+         * @tc.number uiTest_10007
+         * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testInWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3261,11 +3552,14 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-        * @tc.number: uiTest_10008
-        * @tc.name: testMonitor1
-        * @tc.desc: monitor toast appearance.
-        */
+        /**
+         * @tc.name   testMonitor1
+         * @tc.number uiTest_10008
+         * @tc.desc   monitor toast appearance.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMonitor1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
@@ -3289,12 +3583,15 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-        * @tc.number: uiTest_10009
-        * @tc.name: testMonitor2
-        * @tc.desc: monitor dialog appearance.
-        */
 
+        /**
+         * @tc.name   testMonitor2
+         * @tc.number testMonitor2
+         * @tc.desc   testMonitor2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMonitor2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
@@ -3332,10 +3629,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9001
-         * @tc.name: testInputText
-         * @tc.desc: inject text to the target UiComponent
+        /**
+         * @tc.name   testInputText
+         * @tc.number uiTest_9001
+         * @tc.desc   inject text to the target UiComponent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testInputText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3360,10 +3660,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9002
-         * @tc.name: testClearText
-         * @tc.desc: clear text of the target UiComponent
+        /**
+         * @tc.name   testClearText
+         * @tc.number uiTest_9002
+         * @tc.desc   clear text of the target UiComponent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testClearText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3397,10 +3700,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9003
-         * @tc.name: testCheckable
-         * @tc.desc: find UiComponent by checkable attribute and get it's checkable attribute.
+        /**
+         * @tc.name   testCheckable
+         * @tc.number uiTest_9003
+         * @tc.desc   find UiComponent by checkable attribute and get it's checkable attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testCheckable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3422,10 +3728,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9004
-         * @tc.name: testChecked
-         * @tc.desc: find UiComponent by checked attribute and get it's checked attribute.
+        /**
+         * @tc.name   testChecked
+         * @tc.number uiTest_9004
+         * @tc.desc   find UiComponent by checked attribute and get it's checked attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testChecked', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3447,10 +3756,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9005
-         * @tc.name: testMatchPattern
-         * @tc.desc: specifies the string value match pattern.
+        /**
+         * @tc.name   testMatchPattern
+         * @tc.number uiTest_9005
+         * @tc.desc   specifies the string value match pattern.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testMatchPattern', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3466,10 +3778,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9006
-         * @tc.name: testDriverClick
-         * @tc.desc: click in the specified location on the screen.
+        /**
+         * @tc.name   testDriverClick
+         * @tc.number uiTest_9006
+         * @tc.desc   click in the specified location on the screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDriverClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3485,10 +3800,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9007
-         * @tc.name: testDriverDoubleClick
-         * @tc.desc: doubleClick in the specified location on the screen.
+        /**
+         * @tc.name   testDriverDoubleClick
+         * @tc.number uiTest_9007
+         * @tc.desc   doubleClick in the specified location on the screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDriverDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3508,10 +3826,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9008
-         * @tc.name: testDriverLongClick
-         * @tc.desc: longClick in the specified location on the screen.
+        /**
+         * @tc.name   testDriverLongClick
+         * @tc.number uiTest_9008
+         * @tc.desc   longClick in the specified location on the screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testDriverLongClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3527,10 +3848,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9009
-         * @tc.name: testUiComponentClick
-         * @tc.desc: click this UiComponentClick.
+        /**
+         * @tc.name   testUiComponentClick
+         * @tc.number uiTest_9009
+         * @tc.desc   click this UiComponentClick.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testUiComponentClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3545,10 +3869,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9010
-         * @tc.name: testUiComponentDoubleClick
-         * @tc.desc: doubleClick this UiComponentClick.
+        /**
+         * @tc.name   testUiComponentDoubleClick
+         * @tc.number uiTest_9010
+         * @tc.desc   doubleClick this UiComponentClick.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testUiComponentDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3567,10 +3894,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9011
-         * @tc.name: testUiComponentLongClick
-         * @tc.desc: longClick this UiComponentClick.
+        /**
+         * @tc.name   testUiComponentLongClick
+         * @tc.number uiTest_9011
+         * @tc.desc   longClick this UiComponentClick.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testUiComponentLongClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3585,10 +3915,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9012
-         * @tc.name: testKey
-         * @tc.desc: find UiComponent by key attribute and get it's key attribute.
+        /**
+         * @tc.name   testKey
+         * @tc.number uiTest_9012
+         * @tc.desc   find UiComponent by key attribute and get it's key attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3598,10 +3931,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9013
-         * @tc.name: testType
-         * @tc.desc: find UiComponent by type attribute and get it's type attribute.
+        /**
+         * @tc.name   testType
+         * @tc.number uiTest_9013
+         * @tc.desc   find UiComponent by type attribute and get it's type attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3615,10 +3951,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9014
-         * @tc.name: testClickable
-         * @tc.desc: find UiComponent by clickable attribute and get it's clickable attribute.
+        /**
+         * @tc.name   testClickable
+         * @tc.number uiTest_9014
+         * @tc.desc   find UiComponent by clickable attribute and get it's clickable attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testClickable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3635,10 +3974,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9015
-         * @tc.name: testLongClickable
-         * @tc.desc: find UiComponent by longClickable attribute and get it's longClickable attribute.
+        /**
+         * @tc.name   testLongClickable
+         * @tc.number uiTest_9015
+         * @tc.desc   find UiComponent by longClickable attribute and get it's longClickable attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testLongClickable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3655,10 +3997,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9016
-         * @tc.name: testScrollable
-         * @tc.desc: find UiComponent by scrollable attribute and get it's scrollable attribute.
+        /**
+         * @tc.name   testScrollable
+         * @tc.number uiTest_9016
+         * @tc.desc   find UiComponent by scrollable attribute and get it's scrollable attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScrollable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3675,10 +4020,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9017
-         * @tc.name: testEnabled
-         * @tc.desc: find UiComponent by enabled attribute and get it's enabled attribute.
+        /**
+         * @tc.name   testEnabled
+         * @tc.number uiTest_9017
+         * @tc.desc   find UiComponent by enabled attribute and get it's enabled attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3690,15 +4038,22 @@ export default function UiTest() {
             let enable = await button.isEnabled()
             expect(enable == true).assertTrue()
             let button1 = await driver.findComponent(ON.text('enableFalse').enabled(false))
+            if (button1 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                button1 = await scroll.scrollSearch(ON.text('enableFalse').enabled(false))
+            }
             let enable1 = await button1.isEnabled()
             expect(enable1 == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9018
-         * @tc.name: testFocused
-         * @tc.desc: find UiComponent by focused attribute and get it's focused attribute.
+        /**
+         * @tc.name   testFocused
+         * @tc.number uiTest_9018
+         * @tc.desc   find UiComponent by focused attribute and get it's focused attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testFocused', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3715,10 +4070,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9019
-         * @tc.name: testSelected
-         * @tc.desc: find UiComponent by selected attribute and get it's selected attribute.
+        /**
+         * @tc.name   testSelected
+         * @tc.number uiTest_9019
+         * @tc.desc   find UiComponent by selected attribute and get it's selected attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSelected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3730,15 +4088,22 @@ export default function UiTest() {
             let selected = await button.isSelected()
             expect(selected == false).assertTrue()
             let button1 = await driver.findComponent(ON.id('enableFalse').selected(true))
+            if (button1 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                button1 = await scroll.scrollSearch(ON.id('enableFalse').selected(true))
+            }
             let selected1 = await button1.isSelected()
             expect(selected1).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9020
-         * @tc.name: testPressBack
-         * @tc.desc: Press the BACK key.
+        /**
+         * @tc.name   testPressBack
+         * @tc.number uiTest_9020
+         * @tc.desc   Press the BACK key.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testPressBack', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3753,10 +4118,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9021
-         * @tc.name: testFindComponents
-         * @tc.desc: find all the matched UiComponents on current UI
+        /**
+         * @tc.name   testFindComponents
+         * @tc.number uiTest_9021
+         * @tc.desc   find all the matched UiComponents on current UI
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testFindComponents', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3766,10 +4134,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9022
-         * @tc.name: testTriggerKey
-         * @tc.desc: press the specified key.
+        /**
+         * @tc.name   testTriggerKey
+         * @tc.number uiTest_9022
+         * @tc.desc   press the specified key.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testTriggerKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3787,10 +4158,13 @@ export default function UiTest() {
 
 
 
-        /*
-         * @tc.number: uiTest_9024
-         * @tc.name: testGetUiComponentBounds
-         * @tc.desc: get the bounds of this UiComponent.
+        /**
+         * @tc.name   testGetUiComponentBounds
+         * @tc.number uiTest_9024
+         * @tc.desc   get the bounds of this UiComponent.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetUiComponentBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3804,10 +4178,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9025
-         * @tc.name: testGetUiComponentBoundsCenter
-         * @tc.desc: get the boundsCenter of this @link UiComponent.
+        /**
+         * @tc.name   testGetUiComponentBoundsCenter
+         * @tc.number uiTest_9025
+         * @tc.desc   get the boundsCenter of this @link UiComponent.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetUiComponentBoundsCenter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3818,10 +4195,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9026
-         * @tc.name: testWaitForComponent
-         * @tc.desc: Find the first matched UiComponent on current UI during the time given.
+        /**
+         * @tc.name   testWaitForComponent
+         * @tc.number uiTest_9026
+         * @tc.desc   Find the first matched UiComponent on current UI during the time given.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWaitForComponent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3831,10 +4211,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9027
-         * @tc.name: testScreenCap
-         * @tc.desc: capture current screen.
+        /**
+         * @tc.name   testScreenCap
+         * @tc.number uiTest_9027
+         * @tc.desc   capture current screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScreenCap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3845,10 +4228,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9028
-         * @tc.name: testAssertComponentExist
-         * @tc.desc:  Assert whether the matched UiComponent exists on current UI;.
+        /**
+         * @tc.name   testAssertComponentExist
+         * @tc.number uiTest_9028
+         * @tc.desc   Assert whether the matched UiComponent exists on current UI;.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testAssertComponentExist', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3857,10 +4243,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9029
-         * @tc.name: testIsBefore
-         * @tc.desc: find uiComponent which is before another UiComponent that specified by given.
+        /**
+         * @tc.name   testIsBefore
+         * @tc.number uiTest_9029
+         * @tc.desc   find uiComponent which is before another UiComponent that specified by given.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testIsBefore', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3870,10 +4259,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9030
-         * @tc.name: testIsAfter
-         * @tc.desc: find uiComponent which is after another UiComponent that specified by given.
+        /**
+         * @tc.name   testIsAfter
+         * @tc.number uiTest_9030
+         * @tc.desc   find uiComponent which is after another UiComponent that specified by given.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testIsAfter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3883,10 +4275,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9031
-         * @tc.name: testSwipe
-         * @tc.desc: swipe on the screen between the specified points.
+        /**
+         * @tc.name   testSwipe
+         * @tc.number uiTest_9031
+         * @tc.desc   swipe on the screen between the specified points.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSwipe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3902,10 +4297,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9032
-         * @tc.name: testFling
-         * @tc.desc: inject fling on the device display.
+        /**
+         * @tc.name   testFling
+         * @tc.number uiTest_9032
+         * @tc.desc   inject fling on the device display.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testFling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3921,10 +4319,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9033
-         * @tc.name: testScrollSearch
-         * @tc.desc: scroll on this UiComponent to find matched UiComponent.
+        /**
+         * @tc.name   testScrollSearch
+         * @tc.number uiTest_9033
+         * @tc.desc   scroll on this UiComponent to find matched UiComponent.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScrollSearch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3935,10 +4336,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9034
-         * @tc.name: testScrollToBottom
-         * @tc.desc: scroll on this UiComponent to the bottom.
+        /**
+         * @tc.name   testScrollToBottom
+         * @tc.number uiTest_9034
+         * @tc.desc   scroll on this UiComponent to the bottom.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScrollToBottom', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3952,10 +4356,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9034
-         * @tc.name: testScrollToBottom
-         * @tc.desc: scroll on this UiComponent to the bottom.
+        /**
+         * @tc.name   testScrollToBottom_speed
+         * @tc.number uiTest_9034
+         * @tc.desc   scroll on this UiComponent to the bottom.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScrollToBottom_speed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3969,10 +4376,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9035
-         * @tc.name: testScrollToTop
-         * @tc.desc: scroll on this UiComponent to the top.
+        /**
+         * @tc.name   testScrollToTop
+         * @tc.number uiTest_9035
+         * @tc.desc   scroll on this UiComponent to the top.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScrollToTop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -3988,10 +4398,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9035
-         * @tc.name: testScrollToTop
-         * @tc.desc: scroll on this UiComponent to the top.
+        /**
+         * @tc.name   testScrollToTop_speed
+         * @tc.number uiTest_9035
+         * @tc.desc   scroll on this UiComponent to the top.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScrollToTop_speed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4008,10 +4421,13 @@ export default function UiTest() {
         })
 
 
-        /*
-         * @tc.number: uiTest_9036
-         * @tc.name: testPinch
-         * @tc.desc: pinch enlarge this UiComponent to the target scale.
+        /**
+         * @tc.name   testPinch
+         * @tc.number uiTest_9036
+         * @tc.desc   pinch enlarge this UiComponent to the target scale.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testPinch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4038,10 +4454,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9037
-         * @tc.name: testInjectMultiPointerAction
-         * @tc.desc: inject multi-pointer action on the device display.
+        /**
+         * @tc.name   testInjectMultiPointerAction
+         * @tc.number uiTest_9037
+         * @tc.desc   inject multi-pointer action on the device display.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testInjectMultiPointerAction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4076,10 +4495,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9038
-         * @tc.name: testGetWindowMode
-         * @tc.desc: get the window mode of this UiWindow.
+        /**
+         * @tc.name   testGetWindowMode
+         * @tc.number uiTest_9038
+         * @tc.desc   get the window mode of this UiWindow.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetWindowMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4108,10 +4530,13 @@ export default function UiTest() {
             }
         })
 
-        /*
-         * @tc.number: uiTest_9039
-         * @tc.name: testGetBundleName
-         * @tc.desc: get the bundleName of this UiWindow.
+        /**
+         * @tc.name   testGetBundleName
+         * @tc.number uiTest_9039
+         * @tc.desc   get the bundleName of this UiWindow.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetBundleName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4122,10 +4547,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9040
-         * @tc.name: testGetTitle
-         * @tc.desc: get the title of this UiWindow.
+        /**
+         * @tc.name   testGetTitle
+         * @tc.number uiTest_9040
+         * @tc.desc   get the title of this UiWindow.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetTitle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4136,10 +4564,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9041
-         * @tc.name: testWindowMoveTo
-         * @tc.desc: move this UiWindow to the specified points.
+        /**
+         * @tc.name   testWindowMoveTo
+         * @tc.number uiTest_9041
+         * @tc.desc   move this UiWindow to the specified points.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowMoveTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4169,10 +4600,13 @@ export default function UiTest() {
             }
         })
 
-        /*
-         * @tc.number: uiTest_9042
-         * @tc.name: testWindowResize
-         * @tc.desc: resize this UiWindow to the specified size for the specified direction.
+        /**
+         * @tc.name   testWindowResizeA
+         * @tc.number uiTest_9042
+         * @tc.desc   resize this UiWindow to the specified size for the specified direction.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowResizeA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4220,6 +4654,14 @@ export default function UiTest() {
             }
         })
 
+        /**
+         * @tc.name   testWindowResizeB
+         * @tc.number testWindowResizeB
+         * @tc.desc   testWindowResizeB
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testWindowResizeB', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
@@ -4268,10 +4710,13 @@ export default function UiTest() {
             }
         })
 
-        /*
-         * @tc.number: uiTest_9043
-         * @tc.name: testWindowAttr
-         * @tc.desc: set the focused status of this UiWindow.
+        /**
+         * @tc.name   testWindowAttr
+         * @tc.number uiTest_9043
+         * @tc.desc   set the focused status of this UiWindow.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowAttr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4283,19 +4728,16 @@ export default function UiTest() {
             let isActived = await window.isActived()
             expect(isFocused == true).assertTrue()
             expect(isActived == true).assertTrue()
-            let focusedWindow = await driver.findWindow({focused: false})
-            let falseFocused = await focusedWindow.isFocused()
-            expect(falseFocused).assertFalse()
-            let activedWindow = await driver.findWindow({actived: false})
-            let falseActived = await activedWindow.isActived()
-            expect(falseActived).assertFalse()
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9045
-         * @tc.name: testWindowMinimize
-         * @tc.desc: minimize this UiWindow.
+        /**
+         * @tc.name   testWindowMinimize
+         * @tc.number uiTest_9045
+         * @tc.desc   minimize this UiWindow.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowMinimize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4317,10 +4759,13 @@ export default function UiTest() {
             }
         })
 
-        /*
-         * @tc.number: uiTest_9046
-         * @tc.name: testWindowClose
-         * @tc.desc: close this UiWindow.
+        /**
+         * @tc.name   testWindowClose
+         * @tc.number uiTest_9046
+         * @tc.desc   close this UiWindow.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4341,10 +4786,13 @@ export default function UiTest() {
             }
         })
 
-        /*
-         * @tc.number: uiTest_9047
-         * @tc.name: testGetDisplaySize
-         * @tc.desc: get the size of the device display.
+        /**
+         * @tc.name   testGetDisplaySize
+         * @tc.number uiTest_9047
+         * @tc.desc   get the size of the device display.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetDisplaySize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4355,10 +4803,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9048
-         * @tc.name: testGetDisplayDensity
-         * @tc.desc: get the density of the device display.
+        /**
+         * @tc.name   testGetDisplayDensity
+         * @tc.number uiTest_9048
+         * @tc.desc   get the density of the device display.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetDisplayDensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4369,10 +4820,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9051
-         * @tc.name: testWakeUpDisplay
-         * @tc.desc: wake up the device display.
+        /**
+         * @tc.name   testWakeUpDisplay
+         * @tc.number uiTest_9051
+         * @tc.desc   wake up the device display.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWakeUpDisplay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4383,10 +4837,13 @@ export default function UiTest() {
 
 
 
-        /*
-         * @tc.number: uiTest_9053
-         * @tc.name: testWaitForIdle
-         * @tc.desc: wait for the UI become idle.
+        /**
+         * @tc.name   testWaitForIdle
+         * @tc.number uiTest_9053
+         * @tc.desc   wait for the UI become idle.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWaitForIdle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4397,9 +4854,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   testWaitForIdleFalse
          * @tc.number uiTest_90536
-         * @tc.name testWaitForIdleFalse
-         * @tc.desc wait for the UI become idle.
+         * @tc.desc   wait for the UI become idle.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWaitForIdleFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4409,10 +4869,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9056
-         * @tc.name: testSplit
-         * @tc.desc: change this UiWindow into split screen mode.
+        /**
+         * @tc.name   testSplit
+         * @tc.number uiTest_9056
+         * @tc.desc   change this UiWindow into split screen mode.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSplit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4442,10 +4905,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9057
-         * @tc.name: testWindowMaximize
-         * @tc.desc: maximize this UiWindow.
+        /**
+         * @tc.name   testWindowMaximize
+         * @tc.number uiTest_9057
+         * @tc.desc   maximize this UiWindow.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowMaximize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4487,10 +4953,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8001
-         * @tc.name: testInputText
-         * @tc.desc: inject text to the target UiComponent
+        /**
+         * @tc.name   testInputText
+         * @tc.number uiTest_8001
+         * @tc.desc   inject text to the target UiComponent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testInputText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4515,10 +4984,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8002
-         * @tc.name: testMatchPattern
-         * @tc.desc: specifies the string value match pattern.
+        /**
+         * @tc.name   testMatchPattern
+         * @tc.number uiTest_8002
+         * @tc.desc   specifies the string value match pattern.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testMatchPattern', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4534,10 +5006,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8003
-         * @tc.name: testUiComponentClick
-         * @tc.desc: click this UiComponentClick.
+        /**
+         * @tc.name   testUiComponentClick
+         * @tc.number uiTest_8003
+         * @tc.desc   click this UiComponentClick.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testUiComponentClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4552,10 +5027,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8004
-         * @tc.name: testUiComponentDoubleClick
-         * @tc.desc: doubleClick this UiComponentClick.
+        /**
+         * @tc.name   testUiComponentDoubleClick
+         * @tc.number uiTest_8004
+         * @tc.desc   doubleClick this UiComponentClick.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testUiComponentDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4574,10 +5052,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8005
-         * @tc.name: testUiComponentLongClick
-         * @tc.desc: longClick this UiComponentClick.
+        /**
+         * @tc.name   testUiComponentLongClick
+         * @tc.number uiTest_8005
+         * @tc.desc   longClick this UiComponentClick.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testUiComponentLongClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4592,10 +5073,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8006
-         * @tc.name: testKey
-         * @tc.desc: find UiComponent by key attribute and get it's key attribute.
+        /**
+         * @tc.name   testKey
+         * @tc.number uiTest_8006
+         * @tc.desc   find UiComponent by key attribute and get it's key attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4605,10 +5089,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8007
-         * @tc.name: testId
-         * @tc.desc: find UiComponent by id attribute and get it's id attribute.
+        /**
+         * @tc.name   testId
+         * @tc.number uiTest_8007
+         * @tc.desc   find UiComponent by id attribute and get it's id attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4620,10 +5107,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8008
-         * @tc.name: testType
-         * @tc.desc: find UiComponent by type attribute and get it's type attribute.
+        /**
+         * @tc.name   testType
+         * @tc.number uiTest_8008
+         * @tc.desc   find UiComponent by type attribute and get it's type attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4634,10 +5124,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8009
-         * @tc.name: testClickable
-         * @tc.desc: find UiComponent by clickable attribute and get it's clickable attribute.
+        /**
+         * @tc.name   testClickable
+         * @tc.number uiTest_8009
+         * @tc.desc   find UiComponent by clickable attribute and get it's clickable attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testClickable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4654,10 +5147,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8010
-         * @tc.name: testScrollable
-         * @tc.desc: find UiComponent by scrollable attribute and get it's scrollable attribute.
+        /**
+         * @tc.name   testScrollable
+         * @tc.number uiTest_8010
+         * @tc.desc   find UiComponent by scrollable attribute and get it's scrollable attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScrollable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4674,10 +5170,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8011
-         * @tc.name: testEnabled
-         * @tc.desc: find UiComponent by enabled attribute and get it's enabled attribute.
+        /**
+         * @tc.name   testEnabled
+         * @tc.number uiTest_8011
+         * @tc.desc   find UiComponent by enabled attribute and get it's enabled attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4689,15 +5188,22 @@ export default function UiTest() {
             let enable = await button.isEnabled()
             expect(enable == true).assertTrue()
             let button1 = await driver.findComponent(BY.text('enableFalse').enabled(false))
+            if (button1 == null) {
+                let scroll = await driver.findComponent(BY.type('Scroll'))
+                button1 = await scroll.scrollSearch(BY.text('enableFalse').enabled(false))
+            }
             let enable1 = await button1.isEnabled()
             expect(enable1 == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8012
-         * @tc.name: testFocused
-         * @tc.desc: find UiComponent by focused attribute and get it's focused attribute.
+        /**
+         * @tc.name   testFocused
+         * @tc.number uiTest_8012
+         * @tc.desc   find UiComponent by focused attribute and get it's focused attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testFocused', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4714,10 +5220,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8013
-         * @tc.name: testSelected
-         * @tc.desc: find UiComponent by selected attribute and get it's selected attribute.
+        /**
+         * @tc.name   testSelected
+         * @tc.number uiTest_8013
+         * @tc.desc   find UiComponent by selected attribute and get it's selected attribute.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSelected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4729,15 +5238,22 @@ export default function UiTest() {
             let selected = await button.isSelected()
             expect(selected == false).assertTrue()
             let button1 = await driver.findComponent(BY.key('enableFalse').selected(true))
+            if (button1 == null) {
+                let scroll = await driver.findComponent(BY.type('Scroll'))
+                button1 = await scroll.scrollSearch(BY.key('enableFalse').selected(true))
+            }
             let selected1 = await button1.isSelected()
             expect(selected1).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8014
-         * @tc.name: testPressBack
-         * @tc.desc: Press the BACK key.
+        /**
+         * @tc.name   testPressBack
+         * @tc.number uiTest_8014
+         * @tc.desc   Press the BACK key.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testPressBack', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4752,10 +5268,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8015
-         * @tc.name: testFindComponents
-         * @tc.desc: find all the matched UiComponents on current UI
+        /**
+         * @tc.name   testFindComponents
+         * @tc.number uiTest_8015
+         * @tc.desc   find all the matched UiComponents on current UI
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testFindComponents', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4765,10 +5284,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8016
-         * @tc.name: testTriggerKey
-         * @tc.desc: press the specified key.
+        /**
+         * @tc.name   testTriggerKey
+         * @tc.number uiTest_8016
+         * @tc.desc   press the specified key.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testTriggerKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4784,10 +5306,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8017
-         * @tc.name: testScreenCap
-         * @tc.desc: capture current screen.
+        /**
+         * @tc.name   testScreenCap
+         * @tc.number uiTest_8017
+         * @tc.desc   capture current screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScreenCap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4798,10 +5323,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8018
-         * @tc.name: testAssertComponentExist
-         * @tc.desc:  Assert whether the matched UiComponent exists on current UI;.
+        /**
+         * @tc.name   testAssertComponentExist
+         * @tc.number uiTest_8018
+         * @tc.desc   Assert whether the matched UiComponent exists on current UI;.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testAssertComponentExist', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4810,10 +5338,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8019
-         * @tc.name: testIsBefore
-         * @tc.desc: find uiComponent which is before another UiComponent that specified by given.
+        /**
+         * @tc.name   testIsBefore
+         * @tc.number uiTest_8019
+         * @tc.desc   find uiComponent which is before another UiComponent that specified by given.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testIsBefore', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4823,10 +5354,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8020
-         * @tc.name: testIsAfter
-         * @tc.desc: find uiComponent which is after another UiComponent that specified by given.
+        /**
+         * @tc.name   testIsAfter
+         * @tc.number uiTest_8020
+         * @tc.desc   find uiComponent which is after another UiComponent that specified by given.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testIsAfter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4836,10 +5370,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8021
-         * @tc.name: testSwipe
-         * @tc.desc: swipe on the screen between the specified points.
+        /**
+         * @tc.name   testSwipe
+         * @tc.number uiTest_8021
+         * @tc.desc   swipe on the screen between the specified points.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSwipe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4856,10 +5393,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8022
-         * @tc.name: testScrollSearch
-         * @tc.desc: scroll on this UiComponent to find matched UiComponent.
+        /**
+         * @tc.name   testScrollSearch
+         * @tc.number uiTest_8022
+         * @tc.desc   scroll on this UiComponent to find matched UiComponent.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testScrollSearch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4870,10 +5410,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8023
-         * @tc.name: testUiDriverClick
-         * @tc.desc: click in the specified location on the screen.
+        /**
+         * @tc.name   testUiDriverClick
+         * @tc.number uiTest_8023
+         * @tc.desc   click in the specified location on the screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testUiDriverClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4890,10 +5433,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_8024
-         * @tc.name: testDriverDoubleClick
-         * @tc.desc: doubleClick in the specified location on the screen.
+        /**
+         * @tc.name   testUiDriverDoubleClick
+         * @tc.number uiTest_8024
+         * @tc.desc   doubleClick in the specified location on the screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testUiDriverDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -4914,10 +5460,13 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /*
-         * @tc.number: uiTest_9008
-         * @tc.name: testDriverLongClick
-         * @tc.desc: longClick in the specified location on the screen.
+        /**
+         * @tc.name   testUiDriverLongClick
+         * @tc.number uiTest_9008
+         * @tc.desc   longClick in the specified location on the screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testUiDriverLongClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             const driver1 = Driver.create();

@@ -70,12 +70,12 @@ export default function relationalStoreSetDistributedTablesTest() {
 
 
     /**
-     * @tc.name setDistributedTables with callback
+     * @tc.name   testRdbSetDistributedTables001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_1000
-     * @tc.desc setDistributedTables with callback
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   setDistributedTables with callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbSetDistributedTables001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testRdbSetDistributedTables001 start *************");
@@ -109,12 +109,12 @@ export default function relationalStoreSetDistributedTablesTest() {
       }
     })
     /**
-     * @tc.name setDistributedTables with callback
+     * @tc.name   testRdbSetDistributedTables002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_1100
-     * @tc.desc setDistributedTables with callback
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   setDistributedTables with callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbSetDistributedTables002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testRdbSetDistributedTables002 start *************");

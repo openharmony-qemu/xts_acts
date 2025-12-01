@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Siz
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import * as commonUtils from './utils/common/commonUtils';
 import * as syncSymEncAndDecUtils from './utils/syncSymEncAndDec/syncSymEncAndDecUtils';
+import { decToHexString } from './utils/common/commonUtils';
 
 
 export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
@@ -41,12 +42,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0000
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0002
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -85,12 +86,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0001
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0001
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -129,12 +130,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0002
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0002
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -173,12 +174,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0003
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0003
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -217,12 +218,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0004
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0004
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -261,12 +262,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0005
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0005
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -305,12 +306,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0006
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0006
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -349,12 +350,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0007
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0007
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -396,12 +397,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_008
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_008
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0];
@@ -443,12 +444,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0100
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0100
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -468,12 +469,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0200
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0200
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -499,12 +500,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0300
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0300
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -526,12 +527,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0400
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0400
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -560,12 +561,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0401
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0401
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -594,12 +595,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0402
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0402
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0402", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -628,12 +629,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0403
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0403
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0403", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -662,12 +663,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0404
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0404
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0404", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -696,12 +697,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0405
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0405
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0405", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -730,12 +731,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0406
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0406
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0406", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -764,12 +765,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0407
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0407
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0407", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -798,12 +799,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0408
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0408
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
-     * @tc.desc algorithm is AES128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is AES128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0408", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -832,12 +833,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0500
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0500
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Padding Is Not Expect. Sync style. Process success
-     * @tc.desc algorithm is RSA1024
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is RSA1024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -857,12 +858,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0600
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0600
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Padding Is Not Expect. Sync style. Process success
-     * @tc.desc algorithm is RSA1024
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is RSA1024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -883,12 +884,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0700
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0700
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Padding Is Not Expect. Sync style. Process success
-     * @tc.desc algorithm is RSA1024
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is RSA1024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -907,12 +908,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0800
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0800
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. keyPair Is Not Expect. Sync style. Process success
-     * @tc.desc algorithm is RSA1024
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is RSA1024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -934,12 +935,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0900
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0900
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. keyPair Is Not Expect. Sync style. Process success
-     * @tc.desc algorithm is RSA1024
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is RSA1024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -957,12 +958,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1000
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1000
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. doFinalSync(null). Sync style. Process success
-     * @tc.desc algorithm is RSA1024
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is RSA1024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -981,12 +982,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1100
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1100
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Split Update. Sync style. Process success
-     * @tc.desc algorithm is RSA1024
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is RSA1024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1005,12 +1006,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1200
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1200
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Split Update. Sync style. Process success
-     * @tc.desc algorithm is RSA1024
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is RSA1024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1077,12 +1078,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1300
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1300
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Sync style. Process success
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1133,12 +1134,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1400
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1400
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync Update. Sync style. Process success
-     * @tc.desc algorithm is SM2_256
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM2_256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1163,12 +1164,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1500
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1500
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync Update. Sync style. Process success
-     * @tc.desc algorithm is SM2_256
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM2_256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1242,12 +1243,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1600
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1600
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Sync style. Process success
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1282,12 +1283,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1700
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1700
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1322,12 +1323,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1800
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1800
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1359,12 +1360,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1900
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1900
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1411,12 +1412,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2000
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2000
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1445,12 +1446,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2100
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2100
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1483,12 +1484,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2200
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2200
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1521,12 +1522,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2300
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2300
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1552,12 +1553,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2400
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2400
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1594,12 +1595,12 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2500
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2500
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
-     * @tc.desc algorithm is SM4_128
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM4_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1628,6 +1629,59 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           ret = ret && commonUtils.compareDataBlob(authTag, {data: new Uint8Array(vector.authTag)});
           expect(ret).assertTrue();
         }
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2600
+     * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2600
+     * @tc.desc   algorithm is AES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let algName: string = "AES128";
+        let encAlgName: string = "AES128|GCM|PKCS7"
+        let dataLen: number = 128;
+        let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let dataAad: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0];
+        let dataTag: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0];
+        let specAlgName: string = "GcmParamsSpec";
+        let blockSize: number = 20;
+        let paramSpec: cryptoFramework.GcmParamsSpec = syncSymEncAndDecUtils.genGcmOrCcmParamsSpec(dataIv, dataAad, dataTag, specAlgName);
+        let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
+        let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.createSymKeyPromise(algName);
+        let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+        encCipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
+        let cipherText1: cryptoFramework.DataBlob = encCipher.doFinalSync(data);
+        paramSpec.authTag = {data: cipherText1.data.subarray(cipherText1.data.length - 16 , cipherText1.data.length)};
+        let plainText1 = new Uint8Array();
+        let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+        decCipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
+        for(let dataSize = 0; dataSize < dataLen / blockSize; dataSize++) {
+          let tmp: Uint8Array = new Uint8Array();
+          if (dataSize == 6) {
+            tmp = cipherText1.data.subarray(blockSize * dataSize, 128);
+          } else {
+            tmp = cipherText1.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
+          }
+          let doFinalText: cryptoFramework.DataBlob = { data:tmp };
+          let decryptCipher: cryptoFramework.DataBlob = decCipher.updateSync(doFinalText);
+          let mergeText = new Uint8Array(plainText1.length + decryptCipher.data.length);
+          mergeText.set(plainText1);
+          mergeText.set(decryptCipher.data, plainText1.length);
+          plainText1 = mergeText;
+        }
+        let noData = decCipher.doFinalSync(null);
+        expect(noData).assertNull();
+        let ret = commonUtils.compareDataBlob({data: plainText1}, data)
+        expect(ret).assertTrue();
       } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();

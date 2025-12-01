@@ -104,12 +104,12 @@ export default function mindSporeTest() {
   describe('MindSporeTest', () => {
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTCREATE_0100
-     * @tc.name       : testMindSporeContextCreateOne
-     * @tc.desc       : test the normal condition of OH_AI_ContextCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMindSporeContextCreate001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTCREATE_0100
+     * @tc.desc   test the normal condition of OH_AI_ContextCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextCreate001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextCreateOne();
@@ -119,12 +119,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTDESTROY_0100
-     * @tc.name       : testMindSporeContextDestroyOne
-     * @tc.desc       : test the normal condition of OH_AI_ContextDestroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMindSporeContextDestroy001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTDESTROY_0100
+     * @tc.desc   test the normal condition of OH_AI_ContextDestroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextDestroy001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextDestroyOne();
@@ -134,12 +134,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADNUM_0100
-     * @tc.name       : testMindSporeContextSetThreadNumOne
-     * @tc.desc       : test the normal condition of OH_AI_ContextSetThreadNum
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextSetThreadNum001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADNUM_0100
+     * @tc.desc   test the normal condition of OH_AI_ContextSetThreadNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetThreadNum001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadNumOne(2);
@@ -149,12 +149,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADNUM_0200
-     * @tc.name       : testMindSporeContextSetThreadNumTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_ContextSetThreadNum
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeContextSetThreadNum002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADNUM_0200
+     * @tc.desc   test the abnormal condition of OH_AI_ContextSetThreadNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetThreadNum002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadNumTwo(2);
@@ -164,12 +164,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADNUM_0300
-     * @tc.name       : testMindSporeContextSetThreadNumThree
-     * @tc.desc       : test the normal condition of OH_AI_ContextSetThreadNum
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextSetThreadNum003
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADNUM_0300
+     * @tc.desc   test the normal condition of OH_AI_ContextSetThreadNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetThreadNum003', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadNumOne(666666);
@@ -179,12 +179,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADNUM_0100
-     * @tc.name       : testMindSporeContextGetThreadNumOne
-     * @tc.desc       : test the normal condition of OH_AI_ContextGetThreadNum
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextGetThreadNum001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADNUM_0100
+     * @tc.desc   test the normal condition of OH_AI_ContextGetThreadNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextGetThreadNum001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetThreadNumOne(1);
@@ -194,12 +194,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADNUM_0200
-     * @tc.name       : testMindSporeContextGetThreadNumTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_ContextGetThreadNum
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeContextGetThreadNum002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADNUM_0200
+     * @tc.desc   test the abnormal condition of OH_AI_ContextGetThreadNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextGetThreadNum002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetThreadNumTwo();
@@ -209,12 +209,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYMODE_0100
-     * @tc.name       : testMindSporeContextSetThreadAffinityModeOne
-     * @tc.desc       : test the normal condition of OH_AI_ContextSetThreadAffinityMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextSetThreadAffinityMode001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYMODE_0100
+     * @tc.desc   test the normal condition of OH_AI_ContextSetThreadAffinityMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetThreadAffinityMode001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityModeOne(0);
@@ -224,12 +224,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYMODE_0200
-     * @tc.name       : testMindSporeContextSetThreadAffinityModeTwo
-     * @tc.desc       : test the normal condition of OH_AI_ContextSetThreadAffinityMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextSetThreadAffinityMode002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYMODE_0200
+     * @tc.desc   test the normal condition of OH_AI_ContextSetThreadAffinityMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetThreadAffinityMode002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityModeOne(1);
@@ -239,12 +239,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYMODE_0300
-     * @tc.name       : testMindSporeContextSetThreadAffinityModeThree
-     * @tc.desc       : test the normal condition of OH_AI_ContextSetThreadAffinityMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextSetThreadAffinityMode003
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYMODE_0300
+     * @tc.desc   test the normal condition of OH_AI_ContextSetThreadAffinityMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetThreadAffinityMode003', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityModeOne(2);
@@ -254,12 +254,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYMODE_0400
-     * @tc.name       : testMindSporeContextSetThreadAffinityModeFour
-     * @tc.desc       : test the abnormal condition of OH_AI_ContextSetThreadAffinityMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeContextSetThreadAffinityMode004
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYMODE_0400
+     * @tc.desc   test the abnormal condition of OH_AI_ContextSetThreadAffinityMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetThreadAffinityMode004', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityModeTwo(2);
@@ -269,12 +269,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYMODE_0500
-     * @tc.name       : testMindSporeContextSetThreadAffinityModeFive
-     * @tc.desc       : test the abnormal condition of OH_AI_ContextSetThreadAffinityMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeContextSetThreadAffinityMode005
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYMODE_0500
+     * @tc.desc   test the abnormal condition of OH_AI_ContextSetThreadAffinityMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetThreadAffinityMode005', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityModeOne(6);
@@ -284,12 +284,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADAFFINITYMODE_0100
-     * @tc.name       : testMindSporeContextGetThreadAffinityModeOne
-     * @tc.desc       : test the normal condition of OH_AI_ContextGetThreadAffinityMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextGetThreadAffinityMode001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADAFFINITYMODE_0100
+     * @tc.desc   test the normal condition of OH_AI_ContextGetThreadAffinityMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextGetThreadAffinityMode001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetThreadAffinityModeOne(1);
@@ -299,12 +299,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADAFFINITYMODE_0200
-     * @tc.name       : testMindSporeContextGetThreadAffinityModeTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_ContextGetThreadAffinityMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeContextGetThreadAffinityMode002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADAFFINITYMODE_0200
+     * @tc.desc   test the abnormal condition of OH_AI_ContextGetThreadAffinityMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextGetThreadAffinityMode002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetThreadAffinityModeTwo();
@@ -314,12 +314,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOCREATE_0100
-     * @tc.name       : testMindSporeDeviceInfoCreateOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMindSporeDeviceInfoCreate001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOCREATE_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoCreate001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoCreateOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
@@ -329,12 +329,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICETYPE_0100
-     * @tc.name       : testMindSporeDeviceInfoGetDeviceTypeOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoGetDeviceType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoGetDeviceType001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICETYPE_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoGetDeviceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetDeviceType001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetDeviceTypeOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
@@ -344,12 +344,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICETYPE_0200
-     * @tc.name       : testMindSporeDeviceInfoGetDeviceTypeTwo
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoGetDeviceType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoGetDeviceType002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICETYPE_0200
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoGetDeviceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetDeviceType002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetDeviceTypeTwo(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT);
@@ -359,12 +359,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICETYPE_0300
-     * @tc.name       : testMindSporeDeviceInfoGetDeviceTypeThree
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoGetDeviceType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoGetDeviceType003
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICETYPE_0300
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoGetDeviceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetDeviceType003', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetDeviceTypeThree(OH_AI_DeviceType.OH_AI_DEVICETYPE_INVALID);
@@ -374,13 +374,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICETYPE_0400
-     * @tc.name       : testMindSporeDeviceInfoGetDeviceTypeFour
-     * @tc.desc       : When use function OH_AI_DeviceInfoGetDeviceType (), do not use the OH_AI_DeviceInfoHandle
-     * parameter created by function OH_AI_DeviceInfoCreate(), just input nullptr as parameter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeDeviceInfoGetDeviceType004
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICETYPE_0400
+     * @tc.desc   When use function OH_AI_DeviceInfoGetDeviceType (), do not use the OH_AI_DeviceInfoHandle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetDeviceType004', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetDeviceTypeFour();
@@ -390,12 +389,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFODESTROY_0100
-     * @tc.name       : testMindSporeDeviceInfoDestroyOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoDestroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMindSporeDeviceInfoDestroy001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFODESTROY_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoDestroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoDestroy001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoDestroyOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
@@ -405,12 +404,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDER_0100
-     * @tc.name       : testMindSporeDeviceInfoSetProviderOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetProvider
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetProvider001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDER_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetProvider
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProvider001', Level.LEVEL0, async (done: Function) => {
       let value_data = "CPU";
@@ -421,12 +420,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDER_0200
-     * @tc.name       : testMindSporeDeviceInfoSetProviderTwo
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetProvider
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetProvider002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDER_0200
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetProvider
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProvider002', Level.LEVEL0, async (done: Function) => {
       let value_data = "NNRT";
@@ -437,12 +436,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDER_0300
-     * @tc.name       : testMindSporeDeviceInfoSetProviderThree
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetProvider
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetProvider003
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDER_0300
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetProvider
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProvider003', Level.LEVEL0, async (done: Function) => {
       let value_data = "INVALID";
@@ -453,12 +452,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDER_0400
-     * @tc.name       : testMindSporeDeviceInfoSetProviderFour
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoSetProvider
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeDeviceInfoSetProvider004
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDER_0400
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoSetProvider
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProvider004', Level.LEVEL0, async (done: Function) => {
       let value_data = "INVALID";
@@ -469,12 +468,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPROVIDER_0100
-     * @tc.name       : testMindSporeDeviceInfoGetProviderOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoGetProvider
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoGetProvider001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPROVIDER_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoGetProvider
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetProvider001', Level.LEVEL0, async (done: Function) => {
       let value_data = "CPU";
@@ -485,12 +484,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPROVIDER_0200
-     * @tc.name       : testMindSporeDeviceInfoGetProviderTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoGetProvider
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeDeviceInfoGetProvider002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPROVIDER_0200
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoGetProvider
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetProvider002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetProviderTwo();
@@ -500,12 +499,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDERDEVICE_0100
-     * @tc.name       : testMindSporeDeviceInfoSetProviderDeviceOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetProviderDevice
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetProviderDevice001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDERDEVICE_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetProviderDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProviderDevice001', Level.LEVEL0, async (done: Function) => {
       let value_data = "CPU";
@@ -516,12 +515,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDERDEVICE_0200
-     * @tc.name       : testMindSporeDeviceInfoSetProviderDeviceTwo
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetProviderDevice
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetProviderDevice002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDERDEVICE_0200
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetProviderDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProviderDevice002', Level.LEVEL0, async (done: Function) => {
       let value_data = "NNRT";
@@ -532,12 +531,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDERDEVICE_0300
-     * @tc.name       : testMindSporeDeviceInfoSetProviderDeviceThree
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetProviderDevice
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetProviderDevice003
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPROVIDERDEVICE_0300
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetProviderDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetProviderDevice003', Level.LEVEL0, async (done: Function) => {
       let value_data = "INVALID";
@@ -548,12 +547,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPROVIDERDEVICE_0100
-     * @tc.name       : testMindSporeDeviceInfoGetProviderDeviceOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoGetProviderDevice
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoGetProviderDevice001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPROVIDERDEVICE_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoGetProviderDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetProviderDevice001', Level.LEVEL0, async (done: Function) => {
       let value_data = "CPU";
@@ -564,12 +563,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPROVIDERDEVICE_0200
-     * @tc.name       : testMindSporeDeviceInfoGetProviderDeviceTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoGetProviderDevice
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeDeviceInfoGetProviderDevice002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPROVIDERDEVICE_0200
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoGetProviderDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetProviderDevice002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetProviderDeviceTwo();
@@ -579,12 +578,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETENABLEFP16_0100
-     * @tc.name       : testMindSporeDeviceInfoSetEnableFP16One
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetEnableFP16
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetEnableFP16001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETENABLEFP16_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetEnableFP16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetEnableFP16001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetEnableFP16One(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
@@ -594,12 +593,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETENABLEFP16_0200
-     * @tc.name       : testMindSporeDeviceInfoSetEnableFP16Two
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetEnableFP16
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetEnableFP16002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETENABLEFP16_0200
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetEnableFP16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetEnableFP16002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetEnableFP16Two(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
@@ -609,12 +608,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETENABLEFP16_0300
-     * @tc.name       : testMindSporeDeviceInfoSetEnableFP16Three
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoSetEnableFP16
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeDeviceInfoSetEnableFP16003
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETENABLEFP16_0300
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoSetEnableFP16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetEnableFP16003', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetEnableFP16Three();
@@ -624,12 +623,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETENABLEFP16_0100
-     * @tc.name       : testMindSporeDeviceInfoGetEnableFP16One
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoGetEnableFP16
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoGetEnableFP16001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETENABLEFP16_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoGetEnableFP16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetEnableFP16001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetEnableFP16One(OH_AI_DeviceType.OH_AI_DEVICETYPE_CPU);
@@ -639,12 +638,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETENABLEFP16_0200
-     * @tc.name       : testMindSporeDeviceInfoGetEnableFP16Two
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoGetEnableFP16
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeDeviceInfoGetEnableFP16002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETENABLEFP16_0200
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoGetEnableFP16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetEnableFP16002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetEnableFP16Two();
@@ -654,12 +653,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETDEVICEID_0100
-     * @tc.name       : testMindSporeDeviceInfoSetDeviceIdOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetDeviceId
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetDeviceId001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETDEVICEID_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetDeviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetDeviceId001', Level.LEVEL0, async (done: Function) => {
       let value_data = 111;
@@ -670,12 +669,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETDEVICEID_0200
-     * @tc.name       : testMindSporeDeviceInfoSetDeviceIdTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoSetDeviceId
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeDeviceInfoSetDeviceId002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETDEVICEID_0200
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoSetDeviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetDeviceId002', Level.LEVEL0, async (done: Function) => {
       let value_data = 111;
@@ -686,12 +685,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICEID_0100
-     * @tc.name       : testMindSporeDeviceInfoGetDeviceIdOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoGetDeviceId
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoGetDeviceId001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICEID_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoGetDeviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetDeviceId001', Level.LEVEL0, async (done: Function) => {
       let value_data = 222;
@@ -702,12 +701,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICEID_0200
-     * @tc.name       : testMindSporeDeviceInfoGetDeviceIdTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoGetDeviceId
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeDeviceInfoGetDeviceId002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETDEVICEID_0200
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoGetDeviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetDeviceId002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetDeviceIdTwo();
@@ -717,12 +716,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPERFORMANCEMODE_0100
-     * @tc.name       : testMindSporeDeviceInfoSetPerformanceModeOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetPerformanceMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetPerformanceMode001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPERFORMANCEMODE_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetPerformanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetPerformanceMode001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPerformanceModeOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT,
@@ -733,12 +732,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPERFORMANCEMODE_0200
-     * @tc.name       : testMindSporeDeviceInfoSetPerformanceModeTwo
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetPerformanceMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetPerformanceMode002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPERFORMANCEMODE_0200
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetPerformanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetPerformanceMode002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPerformanceModeTwo(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT,
@@ -749,12 +748,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPERFORMANCEMODE_0300
-     * @tc.name       : testMindSporeDeviceInfoSetPerformanceModeThree
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetPerformanceMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetPerformanceMode003
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPERFORMANCEMODE_0300
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetPerformanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetPerformanceMode003', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPerformanceModeThree(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT,
@@ -765,12 +764,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPERFORMANCEMODE_0400
-     * @tc.name       : testMindSporeDeviceInfoSetPerformanceModeFour
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetPerformanceMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetPerformanceMode004
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPERFORMANCEMODE_0400
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetPerformanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetPerformanceMode004', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPerformanceModeFour(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT,
@@ -781,12 +780,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPERFORMANCEMODE_0500
-     * @tc.name       : testMindSporeDeviceInfoSetPerformanceModeFive
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetPerformanceMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetPerformanceMode005
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPERFORMANCEMODE_0500
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetPerformanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetPerformanceMode005', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPerformanceModeFive(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT,
@@ -797,12 +796,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPERFORMANCEMODE_0100
-     * @tc.name       : testMindSporeDeviceInfoGetPerformanceModeOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoGetPerformanceMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoGetPerformanceMode001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPERFORMANCEMODE_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoGetPerformanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetPerformanceMode001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetPerformanceModeOne(OH_AI_DeviceType.OH_AI_DEVICETYPE_NNRT,
@@ -812,12 +811,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPERFORMANCEMODE_0200
-     * @tc.name       : testMindSporeDeviceInfoGetPerformanceModeTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoGetPerformanceMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeDeviceInfoGetPerformanceMode002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETPERFORMANCEMODE_0200
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoGetPerformanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetPerformanceMode002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoGetPerformanceModeTwo();
@@ -826,12 +825,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYCORELIST_0100
-     * @tc.name       : testMindSporeContextSetThreadAffinityCoreListOne
-     * @tc.desc       : test the normal condition of OH_AI_ContextSetThreadAffinityCoreList
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextSetThreadAffinityCoreList001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYCORELIST_0100
+     * @tc.desc   test the normal condition of OH_AI_ContextSetThreadAffinityCoreList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetThreadAffinityCoreList001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityCoreListOne();
@@ -840,12 +839,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADAFFINITYCORELIST_0100
-     * @tc.name       : testMindSporeContextGetThreadAffinityCoreListOne
-     * @tc.desc       : test the normal condition of OH_AI_ContextGetThreadAffinityCoreList
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextGetThreadAffinityCoreList001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADAFFINITYCORELIST_0100
+     * @tc.desc   test the normal condition of OH_AI_ContextGetThreadAffinityCoreList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextGetThreadAffinityCoreList001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetThreadAffinityCoreListOne();
@@ -854,12 +853,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETENABLEPARALLEL_0100
-     * @tc.name       : testMindSporeContextSetEnableParallelOne
-     * @tc.desc       : test the normal condition of OH_AI_ContextSetEnableParallel
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextSetEnableParallel001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETENABLEPARALLEL_0100
+     * @tc.desc   test the normal condition of OH_AI_ContextSetEnableParallel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetEnableParallel001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetEnableParallelOne();
@@ -868,12 +867,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETENABLEPARALLEL_0200
-     * @tc.name       : testMindSporeContextSetEnableParallelTwo
-     * @tc.desc       : test the normal condition of OH_AI_ContextSetEnableParallel
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextSetEnableParallel002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETENABLEPARALLEL_0200
+     * @tc.desc   test the normal condition of OH_AI_ContextSetEnableParallel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetEnableParallel002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetEnableParallelTwo();
@@ -882,12 +881,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETENABLEPARALLEL_0100
-     * @tc.name       : testMindSporeContextGetEnableParallelOne
-     * @tc.desc       : test the normal condition of OH_AI_ContextGetEnableParallel
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextGetEnableParallel001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETENABLEPARALLEL_0100
+     * @tc.desc   test the normal condition of OH_AI_ContextGetEnableParallel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextGetEnableParallel001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetEnableParallelOne();
@@ -896,12 +895,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETENABLEPARALLEL_0200
-     * @tc.name       : testMindSporeContextGetEnableParallelTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_ContextGetEnableParallel
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMindSporeContextGetEnableParallel002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETENABLEPARALLEL_0200
+     * @tc.desc   test the abnormal condition of OH_AI_ContextGetEnableParallel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextGetEnableParallel002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetEnableParallelTwo();
@@ -910,12 +909,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETFREQUENCY_0100
-     * @tc.name       : testMindSporeDeviceInfoSetFrequencyOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetFrequency
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetFrequency001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETFREQUENCY_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetFrequency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetFrequency001', Level.LEVEL0, async (done: Function) => {
       let value_one = 1;
@@ -925,12 +924,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETFREQUENCY_0100
-     * @tc.name       : testMindSporeDeviceInfoGetFrequencyOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoGetFrequency
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoGetFrequency001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETFREQUENCY_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoGetFrequency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetFrequency001', Level.LEVEL0, async (done: Function) => {
       let value_one = 4;
@@ -940,12 +939,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELCREATE_0100
-     * @tc.name       : testMindSporeModelCreateOne
-     * @tc.desc       : test the normal condition of OH_AI_ModelCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeModelCreate001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELCREATE_0100
+     * @tc.desc   test the normal condition of OH_AI_ModelCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeModelCreate001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIModelCreateOne();
@@ -954,12 +953,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELDESTROY_0100
-     * @tc.name       : testMindSporeModelDestroyOne
-     * @tc.desc       : test the normal condition of OH_AI_ModelDestroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeModelDestroy001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELDESTROY_0100
+     * @tc.desc   test the normal condition of OH_AI_ModelDestroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeModelDestroy001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIModelDestroyOne();
@@ -968,12 +967,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORCREATE_0100
-     * @tc.name       : testMindSporeTensorCreateOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorCreate001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORCREATE_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorCreate001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorCreateOne();
@@ -982,12 +981,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORDESTROY_0100
-     * @tc.name       : testMindSporeTensorDestroyOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorDestroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorDestroy001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORDESTROY_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorDestroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorDestroy001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorDestroyOne();
@@ -996,12 +995,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORCLONE_0100
-     * @tc.name       : testMindSporeTensorCloneOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorClone
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorClone001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORCLONE_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorClone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorClone001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorCloneOne();
@@ -1010,12 +1009,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETNAME_0100
-     * @tc.name       : testMindSporeTensorSetNameOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorSetName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorSetName001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETNAME_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorSetName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetName001', Level.LEVEL0, async (done: Function) => {
       let value_data = "new_data";
@@ -1025,12 +1024,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETNAME_0100
-     * @tc.name       : testMindSporeTensorGetNameOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorGetName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetName001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETNAME_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorGetName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetName001', Level.LEVEL0, async (done: Function) => {
       let value_data = "new_get_data";
@@ -1040,12 +1039,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETDATATYPE_0100
-     * @tc.name       : testMindSporeTensorSetDataTypeOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorSetDataType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorSetDataType001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETDATATYPE_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorSetDataType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetDataType001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorSetDataTypeOne();
@@ -1054,12 +1053,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATATYPE_0100
-     * @tc.name       : testMindSporeTensorGetDataTypeOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorGetDataType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetDataType001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATATYPE_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorGetDataType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetDataType001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetDataTypeOne();
@@ -1068,12 +1067,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETSHAPE_0100
-     * @tc.name       : testMindSporeTensorSetShapeOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorSetShape
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorSetShape001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETSHAPE_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorSetShape
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetShape001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorSetShapeOne();
@@ -1082,12 +1081,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETSHAPE_0100
-     * @tc.name       : testMindSporeTensorGetShapeOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorGetShape
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetShape001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETSHAPE_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorGetShape
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetShape001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetShapeOne();
@@ -1096,12 +1095,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETFORMAT_0100
-     * @tc.name       : testMindSporeTensorSetFormatOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorSetFormat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorSetFormat001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETFORMAT_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorSetFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetFormat001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorSetFormatOne();
@@ -1110,12 +1109,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETFORMAT_0100
-     * @tc.name       : testMindSporeTensorGetFormatOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorGetFormat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetFormat001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETFORMAT_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorGetFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetFormat001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetFormatOne();
@@ -1124,12 +1123,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETDATA_0100
-     * @tc.name       : testMindSporeTensorSetDataOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorSetData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorSetData001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETDATA_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorSetData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetData001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorSetDataOne();
@@ -1138,12 +1137,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATA_0100
-     * @tc.name       : testMindSporeTensorGetDataOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorGetData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetData001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATA_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorGetData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetData001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetDataOne();
@@ -1152,12 +1151,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETMUTABLEDATA_0100
-     * @tc.name       : testMindSporeTensorGetMutableDataOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorGetMutableData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetMutableData001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETMUTABLEDATA_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorGetMutableData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetMutableData001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetMutableDataOne();
@@ -1166,12 +1165,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETELEMENTNUM_0100
-     * @tc.name       : testMindSporeTensorGetElementNumOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorGetElementNum
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetElementNum001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETELEMENTNUM_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorGetElementNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetElementNum001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetElementNumOne();
@@ -1180,12 +1179,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATASIZE_0100
-     * @tc.name       : testMindSporeTensorGetDataSizeOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorGetDataSize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetDataSize001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATASIZE_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorGetDataSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetDataSize001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetDataSizeOne();
@@ -1194,12 +1193,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_GETALLNNRTDEVICEDESCS_0100
-     * @tc.name       : testMindSporeGetAllNNRTDeviceDescsOne
-     * @tc.desc       : test the normal condition of OH_AI_GetAllNNRTDeviceDescs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeGetAllNNRTDeviceDescs001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_GETALLNNRTDEVICEDESCS_0100
+     * @tc.desc   test the normal condition of OH_AI_GetAllNNRTDeviceDescs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeGetAllNNRTDeviceDescs001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIGetAllNNRTDeviceDescsOne();
@@ -1208,12 +1207,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DESTROYALLNNRTDEVICEDESCS_0100
-     * @tc.name       : testMindSporeDestroyAllNNRTDeviceDescsOne
-     * @tc.desc       : test the normal condition of OH_AI_DestroyAllNNRTDeviceDescs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDestroyAllNNRTDeviceDescs001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DESTROYALLNNRTDEVICEDESCS_0100
+     * @tc.desc   test the normal condition of OH_AI_DestroyAllNNRTDeviceDescs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDestroyAllNNRTDeviceDescs001', Level.LEVEL0, async (done: Function) => {
 		let data = mindSpore.oHAIDestroyAllNNRTDeviceDescsOne();
@@ -1222,12 +1221,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_GETDEVICEIDFROMNNRTDEVICEDESC_0100
-     * @tc.name       : testMindSporeGetDeviceIdFromNNRTDeviceDescOne
-     * @tc.desc       : test the normal condition of OH_AI_GetDeviceIdFromNNRTDeviceDesc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeGetDeviceIdFromNNRTDeviceDesc001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_GETDEVICEIDFROMNNRTDEVICEDESC_0100
+     * @tc.desc   test the normal condition of OH_AI_GetDeviceIdFromNNRTDeviceDesc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeGetDeviceIdFromNNRTDeviceDesc001', Level.LEVEL0, async (done: Function) => {
         let data = mindSpore.oHAIGetDeviceIdFromNNRTDeviceDescOne();
@@ -1236,12 +1235,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_GETNAMEFROMNNRTDEVICEDESC_0100
-     * @tc.name       : testMindSporeGetNameFromNNRTDeviceDescOne
-     * @tc.desc       : test the normal condition of OH_AI_GetNameFromNNRTDeviceDesc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeGetNameFromNNRTDeviceDesc001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_GETNAMEFROMNNRTDEVICEDESC_0100
+     * @tc.desc   test the normal condition of OH_AI_GetNameFromNNRTDeviceDesc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeGetNameFromNNRTDeviceDesc001', Level.LEVEL0, async (done: Function) => {
         let data = mindSpore.oHAIGetNameFromNNRTDeviceDescOne();
@@ -1250,12 +1249,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_GETTYPEFROMNNRTDEVICEDESC_0100
-     * @tc.name       : testMindSporeGetTypeFromNNRTDeviceDescOne
-     * @tc.desc       : test the normal condition of OH_AI_GetTypeFromNNRTDeviceDesc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeGetTypeFromNNRTDeviceDesc001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_GETTYPEFROMNNRTDEVICEDESC_0100
+     * @tc.desc   test the normal condition of OH_AI_GetTypeFromNNRTDeviceDesc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeGetTypeFromNNRTDeviceDesc001', Level.LEVEL0, async (done: Function) => {
         let data = mindSpore.oHAIGetTypeFromNNRTDeviceDescOne();
@@ -1264,12 +1263,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CREATENNRTDEVICEINFOBYNAME_0100
-     * @tc.name       : testMindSporeCreateNNRTDeviceInfoByNameOne
-     * @tc.desc       : test the normal condition of OH_AI_CreateNNRTDeviceInfoByName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeCreateNNRTDeviceInfoByName001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CREATENNRTDEVICEINFOBYNAME_0100
+     * @tc.desc   test the normal condition of OH_AI_CreateNNRTDeviceInfoByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeCreateNNRTDeviceInfoByName001', Level.LEVEL0, async (done: Function) => {
         let data = mindSpore.oHAICreateNNRTDeviceInfoByNameOne();
@@ -1278,12 +1277,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CREATENNRTDEVICEINFOBYTYPE_0100
-     * @tc.name       : testMindSporeCreateNNRTDeviceInfoByTypeOne
-     * @tc.desc       : test the normal condition of OH_AI_CreateNNRTDeviceInfoByType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeCreateNNRTDeviceInfoByType001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CREATENNRTDEVICEINFOBYTYPE_0100
+     * @tc.desc   test the normal condition of OH_AI_CreateNNRTDeviceInfoByType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeCreateNNRTDeviceInfoByType001', Level.LEVEL0, async (done: Function) => {
         let data = mindSpore.oHAICreateNNRTDeviceInfoByTypeOne();
@@ -1292,12 +1291,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPRIORITY_0100
-     * @tc.name       : testMindSporeDeviceInfoSetPriorityOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoSetPriority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetPriority001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPRIORITY_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoSetPriority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetPriority001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPriorityOne();
@@ -1306,12 +1305,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_GETELEMENTOFNNRTDEVICEDESCS_0100
-     * @tc.name       : testMindSporeGetElementOfNNRTDeviceDescsOne
-     * @tc.desc       : test the normal condition of OH_AI_GetElementOfNNRTDeviceDescs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeGetElementOfNNRTDeviceDescs001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_GETELEMENTOFNNRTDEVICEDESCS_0100
+     * @tc.desc   test the normal condition of OH_AI_GetElementOfNNRTDeviceDescs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeGetElementOfNNRTDeviceDescs001', Level.LEVEL0, async (done: Function) => {
         let data = mindSpore.oHAIGetElementOfNNRTDeviceDescsOne();
@@ -1321,12 +1320,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOADDEXTENSION_0100
-     * @tc.name       : testMindSporeDeviceInfoAddExtensionOne
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoAddExtension
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoAddExtension001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOADDEXTENSION_0100
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoAddExtension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoAddExtension001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoAddExtensionOne();
@@ -1335,12 +1334,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTADDDEVICEINFO_0100
-     * @tc.name       : testMindSporeContextAddDeviceInfoOne
-     * @tc.desc       : test the normal condition of OH_AI_ContextAddDeviceInfo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextAddDeviceInfo001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTADDDEVICEINFO_0100
+     * @tc.desc   test the normal condition of OH_AI_ContextAddDeviceInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextAddDeviceInfo001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextAddDeviceInfoOne();
@@ -1349,12 +1348,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELBUILDFROMFILE_0100
-     * @tc.name       : testMindSporeModelBuildFromFileOne
-     * @tc.desc       : test the normal condition of OH_AI_ModelBuildFromFile
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeModelBuildFromFile001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELBUILDFROMFILE_0100
+     * @tc.desc   test the normal condition of OH_AI_ModelBuildFromFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeModelBuildFromFile001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIModelBuildFromFileOne();
@@ -1363,12 +1362,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELRESIZE_0100
-     * @tc.name       : testMindSporeModelResizeOne
-     * @tc.desc       : test the normal condition of OH_AI_ModelResize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeModelResize001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELRESIZE_0100
+     * @tc.desc   test the normal condition of OH_AI_ModelResize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeModelResize001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIModelResizeOne();
@@ -1377,12 +1376,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELPREDICT_0100
-     * @tc.name       : testMindSporeModelPredictOne
-     * @tc.desc       : test the normal condition of OH_AI_ModelPredict
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeModelPredict001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELPREDICT_0100
+     * @tc.desc   test the normal condition of OH_AI_ModelPredict
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeModelPredict001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIModelPredictOne();
@@ -1391,12 +1390,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELGETINPUTS_0100
-     * @tc.name       : testMindSporeModelGetInputsOne
-     * @tc.desc       : test the normal condition of OH_AI_ModelGetInputs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeModelGetInputs001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELGETINPUTS_0100
+     * @tc.desc   test the normal condition of OH_AI_ModelGetInputs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeModelGetInputs001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIModelGetInputsOne();
@@ -1405,12 +1404,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELGETOUTPUTS_0100
-     * @tc.name       : testMindSporeModelGetOutputsOne
-     * @tc.desc       : test the normal condition of OH_AI_ModelGetOutputs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeModelGetOutputs001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELGETOUTPUTS_0100
+     * @tc.desc   test the normal condition of OH_AI_ModelGetOutputs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeModelGetOutputs001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIModelGetOutputsOne();
@@ -1419,12 +1418,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELGETINPUTBYTENSORNAME_0100
-     * @tc.name       : testMindSporeModelGetInputByTensorNameOne
-     * @tc.desc       : test the normal condition of OH_AI_ModelGetInputByTensorName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeModelGetInputByTensorName001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELGETINPUTBYTENSORNAME_0100
+     * @tc.desc   test the normal condition of OH_AI_ModelGetInputByTensorName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeModelGetInputByTensorName001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIModelGetInputByTensorNameOne();
@@ -1433,12 +1432,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELGETOUTPUTBYTENSORNAME_0100
-     * @tc.name       : testMindSporeModelGetOutputByTensorNameOne
-     * @tc.desc       : test the normal condition of OH_AI_ModelGetOutputByTensorName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeModelGetOutputByTensorName001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELGETOUTPUTBYTENSORNAME_0100
+     * @tc.desc   test the normal condition of OH_AI_ModelGetOutputByTensorName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeModelGetOutputByTensorName001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIModelGetOutputByTensorNameOne();
@@ -1447,12 +1446,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETUSERDATA_0100
-     * @tc.name       : testMindSporeTensorSetUserDataOne
-     * @tc.desc       : test the normal condition of OH_AI_TensorSetUserData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorSetUserData001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETUSERDATA_0100
+     * @tc.desc   test the normal condition of OH_AI_TensorSetUserData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetUserData001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorSetUserDataOne();
@@ -1461,12 +1460,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOCREATE_0200
-     * @tc.name       : testMindSporeDeviceInfoCreateTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMindSporeDeviceInfoCreate002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOCREATE_0200
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoCreate002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoCreateTwo();
@@ -1476,12 +1475,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYCORELIST_0200
-     * @tc.name       : testMindSporeContextSetThreadAffinityCoreListTwo
-     * @tc.desc       : test the normal condition of OH_AI_ContextSetThreadAffinityCoreList
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextSetThreadAffinityCoreList002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTSETTHREADAFFINITYCORELIST_0200
+     * @tc.desc   test the normal condition of OH_AI_ContextSetThreadAffinityCoreList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextSetThreadAffinityCoreList002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextSetThreadAffinityCoreListTwo();
@@ -1490,12 +1489,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADAFFINITYCORELIST_0200
-     * @tc.name       : testMindSporeContextGetThreadAffinityCoreListTwo
-     * @tc.desc       : test the normal condition of OH_AI_ContextGetThreadAffinityCoreList
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeContextGetThreadAffinityCoreList002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTGETTHREADAFFINITYCORELIST_0200
+     * @tc.desc   test the normal condition of OH_AI_ContextGetThreadAffinityCoreList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeContextGetThreadAffinityCoreList002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIContextGetThreadAffinityCoreListTwo();
@@ -1504,12 +1503,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETFREQUENCY_0200
-     * @tc.name       : testMindSporeDeviceInfoSetFrequencyTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoSetFrequency
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetFrequency002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETFREQUENCY_0200
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoSetFrequency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetFrequency002', Level.LEVEL0, async (done: Function) => {
       let result_value = -1;
@@ -1520,12 +1519,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETFREQUENCY_0200
-     * @tc.name       : testMindSporeDeviceInfoGetFrequencyTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoGetFrequency
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoGetFrequency002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOGETFREQUENCY_0200
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoGetFrequency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoGetFrequency002', Level.LEVEL0, async (done: Function) => {
       let value_one = -1;
@@ -1535,12 +1534,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORCREATE_0200
-     * @tc.name       : testMindSporeTensorCreateTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorCreate002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORCREATE_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorCreate002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorCreateTwo();
@@ -1549,12 +1548,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETNAME_0200
-     * @tc.name       : testMindSporeTensorSetNameTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorSetName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorSetName002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETNAME_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorSetName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetName002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorSetNameTwo();
@@ -1563,12 +1562,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETNAME_0200
-     * @tc.name       : testMindSporeTensorGetNameTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorGetName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetName002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETNAME_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorGetName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetName002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetNameTwo();
@@ -1577,12 +1576,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETDATATYPE_0200
-     * @tc.name       : testMindSporeTensorSetDataTypeTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorSetDataType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorSetDataType002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETDATATYPE_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorSetDataType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetDataType002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorSetDataTypeTwo();
@@ -1591,12 +1590,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATATYPE_0200
-     * @tc.name       : testMindSporeTensorGetDataTypeTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorGetDataType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetDataType002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATATYPE_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorGetDataType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetDataType002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetDataTypeTwo();
@@ -1605,12 +1604,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETSHAPE_0200
-     * @tc.name       : testMindSporeTensorSetShapeTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorSetShape
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorSetShape002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETSHAPE_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorSetShape
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetShape002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorSetShapeTwo();
@@ -1619,12 +1618,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETSHAPE_0200
-     * @tc.name       : testMindSporeTensorGetShapeTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorGetShape
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetShape002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETSHAPE_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorGetShape
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetShape002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetShapeTwo();
@@ -1633,12 +1632,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETFORMAT_0200
-     * @tc.name       : testMindSporeTensorSetFormatTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorSetFormat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorSetFormat002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETFORMAT_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorSetFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetFormat002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorSetFormatTwo();
@@ -1647,12 +1646,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETFORMAT_0200
-     * @tc.name       : testMindSporeTensorGetFormatTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorGetFormat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetFormat002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETFORMAT_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorGetFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetFormat002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetFormatTwo();
@@ -1661,12 +1660,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETDATA_0200
-     * @tc.name       : testMindSporeTensorSetDataTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorSetData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorSetData002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORSETDATA_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorSetData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorSetData002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorSetDataTwo();
@@ -1675,12 +1674,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATA_0200
-     * @tc.name       : testMindSporeTensorGetDataTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorGetData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetData002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATA_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorGetData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetData002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetDataTwo();
@@ -1689,12 +1688,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETMUTABLEDATA_0200
-     * @tc.name       : testMindSporeTensorGetMutableDataTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorGetMutableData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetMutableData002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETMUTABLEDATA_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorGetMutableData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetMutableData002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetMutableDataTwo();
@@ -1703,12 +1702,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETELEMENTNUM_0200
-     * @tc.name       : testMindSporeTensorGetElementNumTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorGetElementNum
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetElementNum002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETELEMENTNUM_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorGetElementNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetElementNum002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetElementNumTwo();
@@ -1717,12 +1716,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATASIZE_0200
-     * @tc.name       : testMindSporeTensorGetDataSizeTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_TensorGetDataSize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorGetDataSize002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORGETDATASIZE_0200
+     * @tc.desc   test the abnormal condition of OH_AI_TensorGetDataSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorGetDataSize002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorGetDataSizeTwo();
@@ -1731,12 +1730,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPRIORITY_0200
-     * @tc.name       : testMindSporeDeviceInfoSetPriorityTwo
-     * @tc.desc       : test the abnormal condition of OH_AI_DeviceInfoSetPriority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoSetPriority002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOSETPRIORITY_0200
+     * @tc.desc   test the abnormal condition of OH_AI_DeviceInfoSetPriority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoSetPriority002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoSetPriorityTwo();
@@ -1745,12 +1744,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORCLONE_0200
-     * @tc.name       : testMindSporeTensorCloneTwo
-     * @tc.desc       : test the normal condition of OH_AI_TensorClone
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeTensorClone002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_TENSORCLONE_0200
+     * @tc.desc   test the normal condition of OH_AI_TensorClone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeTensorClone002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAITensorCloneTwo();
@@ -1759,12 +1758,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOADDEXTENSION_0200
-     * @tc.name       : testMindSporeDeviceInfoAddExtensionTwo
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoAddExtension
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoAddExtension002
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOADDEXTENSION_0200
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoAddExtension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoAddExtension002', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoAddExtensionTwo();
@@ -1773,12 +1772,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOADDEXTENSION_0300
-     * @tc.name       : testMindSporeDeviceInfoAddExtensionThree
-     * @tc.desc       : test the normal condition of OH_AI_DeviceInfoAddExtension
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeDeviceInfoAddExtension003
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_DEVICEINFOADDEXTENSION_0300
+     * @tc.desc   test the normal condition of OH_AI_DeviceInfoAddExtension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeDeviceInfoAddExtension003', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIDeviceInfoAddExtensionThree();
@@ -1787,12 +1786,12 @@ export default function mindSporeTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELBUILD_0100
-     * @tc.name       : testMindSporeModelBuild001
-     * @tc.desc       : test the normal condition of OH_AI_ModelBuild
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMindSporeModelBuild001
+     * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_MODELBUILD_0100
+     * @tc.desc   test the normal condition of OH_AI_ModelBuild
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMindSporeModelBuild001', Level.LEVEL0, async (done: Function) => {
       let data = mindSpore.oHAIModelBuildOne();

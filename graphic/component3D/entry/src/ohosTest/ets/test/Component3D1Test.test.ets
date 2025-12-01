@@ -41,12 +41,12 @@ export default function Component3D1Test() {
       done();
     });
     /**
-     * @tc.number    Component3D1
-     * @tc.name      Component3D1Test_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Component3D1Test_0100
+     * @tc.number Component3D1
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Component3D1Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       console.info('Component3D1Test_0100 START');

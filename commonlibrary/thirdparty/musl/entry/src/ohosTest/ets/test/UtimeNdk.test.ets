@@ -28,12 +28,12 @@ export default function utimeNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UTIME_UTIME_0100
-     * @tc.name       : testMuslUtimeUtime001
-     * @tc.desc       : test utime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUtimeUtime001
+     * @tc.number SUB_THIRDPARTY_MUSL_UTIME_UTIME_0100
+     * @tc.desc   test utime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUtimeUtime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();

@@ -44,12 +44,12 @@ export default function PixelUnitsConversionJsunit() {
       console.info('PixelUnitsConversion after each called');
     });
     /**
+     * @tc.name   PixelUnitsConversionTest_0100
      * @tc.number PixelUnitsConversionTest_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PixelUnitsConversionTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PixelUnitsConversionTest_0100 START');
@@ -63,12 +63,12 @@ export default function PixelUnitsConversionJsunit() {
       done();
     });
     /**
+     * @tc.name   PixelUnitsConversionTest_0200
      * @tc.number PixelUnitsConversionTest_0200
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PixelUnitsConversionTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('PixelUnitsConversionTest_0200 START');
@@ -82,12 +82,12 @@ export default function PixelUnitsConversionJsunit() {
       done();
     });
     /**
+     * @tc.name   PixelUnitsConversionTest_0300
      * @tc.number PixelUnitsConversionTest_0300
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PixelUnitsConversionTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('PixelUnitsConversionTest_0300 START');
@@ -101,12 +101,12 @@ export default function PixelUnitsConversionJsunit() {
       done();
     });
     /**
+     * @tc.name   PixelUnitsConversionTest_0400
      * @tc.number PixelUnitsConversionTest_0400
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PixelUnitsConversionTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('PixelUnitsConversionTest_0400 START');
@@ -120,12 +120,12 @@ export default function PixelUnitsConversionJsunit() {
       done();
     });
     /**
+     * @tc.name   PixelUnitsConversionTest_0500
      * @tc.number PixelUnitsConversionTest_0500
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PixelUnitsConversionTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('PixelUnitsConversionTest_0500 START');
@@ -139,12 +139,12 @@ export default function PixelUnitsConversionJsunit() {
       done();
     });
     /**
+     * @tc.name   PixelUnitsConversionTest_0600
      * @tc.number PixelUnitsConversionTest_0600
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PixelUnitsConversionTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('PixelUnitsConversionTest_0600 START');

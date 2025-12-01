@@ -100,12 +100,12 @@ export default function relationalStoreCloudCursor() {
         })
         console.log(TAG + "*************Unit Test Begin*************");
         /**
-         * @tc.name testRdbQueryWithCursor0001
-         * @tc.number  SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0100
-         * @tc.desc query with cursor, and get all columns.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.name   testRdbQueryWithCursor0001
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0100
+         * @tc.desc   query with cursor, and get all columns.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testRdbQueryWithCursor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.log(TAG + "************* testRdbQueryWithCursor0001 start *************");
@@ -135,12 +135,12 @@ export default function relationalStoreCloudCursor() {
         })
     
         /**
-         * @tc.name testRdbQueryWithCursor0002
+         * @tc.name   testRdbQueryWithCursor0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0200
-         * @tc.desc query with cursor, and specific columns.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.desc   query with cursor, and specific columns.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testRdbQueryWithCursor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.log(TAG + "************* testRdbQueryWithCursor0002 start *************");
@@ -173,12 +173,12 @@ export default function relationalStoreCloudCursor() {
         })
     
         /**
-         * @tc.name testRdbQueryWithCursor0003
+         * @tc.name   testRdbQueryWithCursor0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0300
-         * @tc.desc update data, and query with cursor.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.desc   update data, and query with cursor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testRdbQueryWithCursor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.log(TAG + "************* testRdbQueryWithCursor0003 start *************");
@@ -220,12 +220,12 @@ export default function relationalStoreCloudCursor() {
         })
     
         /**
-         * @tc.name testRdbQueryWithCursor0004
+         * @tc.name   testRdbQueryWithCursor0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0400
-         * @tc.desc delete data, and query with cursor.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.desc   delete data, and query with cursor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testRdbQueryWithCursor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.log(TAG + "************* testRdbQueryWithCursor0004 start *************");
@@ -257,12 +257,12 @@ export default function relationalStoreCloudCursor() {
         })
     
         /**
-         * @tc.name testRdbQueryWithCursor0005
+         * @tc.name   testRdbQueryWithCursor0005
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0500
-         * @tc.desc query with cursor and origin.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.desc   query with cursor and origin.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testRdbQueryWithCursor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.log(TAG + "************* testRdbQueryWithCursor0005 start *************");
@@ -294,14 +294,14 @@ export default function relationalStoreCloudCursor() {
             }
             console.log(TAG + "************* testRdbQueryWithCursor0005 end *************");
         })
-        /**
-         * @tc.name testRdbCleanDirtyData0001
-         * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0600
-         * @tc.desc clean retain data with specified cursor promise.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
-         */
+         /**
+          * @tc.name   testRdbCleanDirtyData0001
+          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0600
+          * @tc.desc   clean retain data with specified cursor promise.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL3
+          */
          it('testRdbCleanDirtyData0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.log(TAG + "************* testRdbCleanDirtyData0001 start *************");
             if (rdbStore == undefined) {
@@ -323,12 +323,12 @@ export default function relationalStoreCloudCursor() {
         })
     
         /**
-         * @tc.name testRdbCleanDirtyData0002
+         * @tc.name   testRdbCleanDirtyData0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0700
-         * @tc.desc clean retain data promise.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.desc   clean retain data promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testRdbCleanDirtyData0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.log(TAG + "************* testRdbCleanDirtyData0002 start *************");
@@ -350,12 +350,12 @@ export default function relationalStoreCloudCursor() {
         })
 
         /**
-         * @tc.name testRdbCleanDirtyData0003
+         * @tc.name   testRdbCleanDirtyData0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0800
-         * @tc.desc clean retain data callback.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.desc   clean retain data callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testRdbCleanDirtyData0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.log(TAG + "************* testRdbCleanDirtyData0003 start *************");
@@ -376,14 +376,14 @@ export default function relationalStoreCloudCursor() {
             console.log(TAG + "************* testRdbCleanDirtyData0003 end *************");
         })
 
-        /**
-         * @tc.name testRdbCleanDirtyData0004
-         * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0900
-         * @tc.desc clean retain data with specified cursor callback.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
-         */
+         /**
+          * @tc.name   testRdbCleanDirtyData0004
+          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0900
+          * @tc.desc   clean retain data with specified cursor callback.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL3
+          */
          it('testRdbCleanDirtyData0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.log(TAG + "************* testRdbCleanDirtyData0004 start *************");
             if (rdbStore == undefined) {
@@ -404,12 +404,12 @@ export default function relationalStoreCloudCursor() {
             console.log(TAG + "************* testRdbCleanDirtyData0004 end *************");
         })
     /**
-     * @tc.name testRdbQueryWithCursor0006
-     * @tc.number  SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_1000
-     * @tc.desc query with cursor and get all columns_OWNER_FIELD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   testRdbQueryWithCursor0006
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_1000
+     * @tc.desc   query with cursor and get all columns_OWNER_FIELD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRdbQueryWithCursor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.log(TAG + "************* testRdbQueryWithCursor0006 start *************");
@@ -441,12 +441,12 @@ export default function relationalStoreCloudCursor() {
         console.log(TAG + "************* testRdbQueryWithCursor0006 end *************");
       })
       /**
-       * @tc.name testRdbQueryWithCursor0007
-       * @tc.number  SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_1100
-       * @tc.desc query with cursor and get all columns_PRIVILEGE_FIELD
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level Level 3
+       * @tc.name   testRdbQueryWithCursor0007
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_1100
+       * @tc.desc   query with cursor and get all columns_PRIVILEGE_FIELD
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('testRdbQueryWithCursor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.log(TAG + "************* testRdbQueryWithCursor0007 start *************");
@@ -478,12 +478,12 @@ export default function relationalStoreCloudCursor() {
         console.log(TAG + "************* testRdbQueryWithCursor0007 end *************");
       })
       /**
-       * @tc.name testRdbQueryWithCursor0008
-       * @tc.number  SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_1200
-       * @tc.desc query with cursor and get all columns_SHARING_RESOURCE_FIELD
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level Level 3
+       * @tc.name   testRdbQueryWithCursor0008
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_1200
+       * @tc.desc   query with cursor and get all columns_SHARING_RESOURCE_FIELD
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('testRdbQueryWithCursor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.log(TAG + "************* testRdbQueryWithCursor0008 start *************");
@@ -516,12 +516,12 @@ export default function relationalStoreCloudCursor() {
       })
 
         /**
-         * @tc.name testRdbQueryWithCursor0009
-         * @tc.number  SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0901
-         * @tc.desc query with cursor, and get all columns，and DATA_STATUS_FIELD
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.name   testRdbQueryWithCursor0009
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0901
+         * @tc.desc   query with cursor, and get all columns，and DATA_STATUS_FIELD
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testRdbQueryWithCursor0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.log(TAG + "************* testRdbQueryWithCursor0009 start *************");

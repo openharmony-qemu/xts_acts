@@ -63,14 +63,14 @@ export default function onSslErrorEventTwoTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_ONSSLERROREVENT_ABORTLOADING_API_0001
-    * @tc.name       : testOnSslErrorEventAbortLoadingFalse
-    * @tc.desc       : test onSslErrorEvent handleCancel abortLoading false
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOnSslErrorEventAbortLoadingFalse
+     * @tc.number SUB_ACE_WEB_ONSSLERROREVENT_ABORTLOADING_API_0001
+     * @tc.desc   test onSslErrorEvent handleCancel abortLoading false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnSslErrorEventAbortLoadingFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnSslErrorEventAbortLoadingFalse', 22);
       Utils.registerBaseEvent('testOnSslErrorEventAbortLoadingFalse', true, 2025081413, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -78,14 +78,14 @@ export default function onSslErrorEventTwoTest() {
       });
       sendEventByKey('OnSslErrorEventTwoButton', 10, '');
     })
-    /*
-   * @tc.number     : SUB_ACE_WEB_ONSSLERROREVENT_ABORTLOADING_API_0002
-   * @tc.name       : testOnSslErrorEventAbortLoadingTrue
-   * @tc.desc       : test onSslErrorEvent handleCancel abortLoading true
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testOnSslErrorEventAbortLoadingTrue
+     * @tc.number SUB_ACE_WEB_ONSSLERROREVENT_ABORTLOADING_API_0002
+     * @tc.desc   test onSslErrorEvent handleCancel abortLoading true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnSslErrorEventAbortLoadingTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnSslErrorEventAbortLoadingTrue', 22);
       Utils.registerBaseEvent('testOnSslErrorEventAbortLoadingTrue', -1, 2025082601, done, (backData: events_emitter.EventData, expected: Object) => {

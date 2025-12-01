@@ -26,37 +26,37 @@ export default function textInputMaxLinesTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MAX_LINES_0001
-     * @tc.name: testTextInputMaxLines001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMaxLines001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MAX_LINES_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMaxLines001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMaxLines001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MAX_LINES_0002
-     * @tc.name: testTextInputMaxLines002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMaxLines002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MAX_LINES_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMaxLines002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMaxLines002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MAX_LINES_0003
-     * @tc.name: testTextInputMaxLines003
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMaxLines003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MAX_LINES_0003
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMaxLines003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMaxLines003()).assertEqual(0)

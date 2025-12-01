@@ -36,12 +36,12 @@ export default function MapTest() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_0100
-     * @tc.name       : testMapPrototypeClear0001
-     * @tc.desc       : Test the function of the interface MapPrototypeClear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMapPrototypeClear0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_0100
+     * @tc.desc   Test the function of the interface MapPrototypeClear.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMapPrototypeClear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testMapPrototypeClear0001";
@@ -59,12 +59,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_0200
-     * @tc.name       : testMapPrototypeClear0002
-     * @tc.desc       : Test the function of the interface MapPrototypeClear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMapPrototypeClear0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_0200
+     * @tc.desc   Test the function of the interface MapPrototypeClear.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMapPrototypeClear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testMapPrototypeClear0002";
@@ -83,12 +83,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_0300
-     * @tc.name       : testMapPrototypeClear0003
-     * @tc.desc       : Test the function of the interface MapPrototypeClear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMapPrototypeClear0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_0300
+     * @tc.desc   Test the function of the interface MapPrototypeClear.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMapPrototypeClear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testMapPrototypeClear0003";
@@ -105,12 +105,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_0400
-     * @tc.name       : testMapPrototypeDelete0001
-     * @tc.desc       : Test the function of the interface MapPrototypeDelete.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeDelete0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_0400
+     * @tc.desc   Test the function of the interface MapPrototypeDelete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeDelete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeDelete0001";
@@ -128,12 +128,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_0500
-     * @tc.name       : testMapPrototypeDelete0002
-     * @tc.desc       : Test the function of the interface MapPrototypeDelete.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeDelete0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_0500
+     * @tc.desc   Test the function of the interface MapPrototypeDelete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeDelete0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeDelete0002";
@@ -150,12 +150,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_0600
-     * @tc.name       : testMapPrototypeDelete0003
-     * @tc.desc       : Test the function of the interface MapPrototypeDelete.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeDelete0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_0600
+     * @tc.desc   Test the function of the interface MapPrototypeDelete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeDelete0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeDelete0003";
@@ -172,12 +172,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_0700
-     * @tc.name       : testMapPrototypeEntries0001
-     * @tc.desc       : Test the function of the interface MapPrototypeEntries.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeEntries0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_0700
+     * @tc.desc   Test the function of the interface MapPrototypeEntries.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeEntries0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeEntries0001";
@@ -196,12 +196,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_0800
-     * @tc.name       : testMapPrototypeForEach0001
-     * @tc.desc       : Test the function of the interface MapPrototypeForEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeForEach0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_0800
+     * @tc.desc   Test the function of the interface MapPrototypeForEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeForEach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeForEach0001";
@@ -233,12 +233,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_0900
-     * @tc.name       : testMapPrototypeGet0001
-     * @tc.desc       : Test the function of the interface MapPrototypeGet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeGet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_0900
+     * @tc.desc   Test the function of the interface MapPrototypeGet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeGet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeGet0001";
@@ -255,12 +255,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_1000
-     * @tc.name       : testMapPrototypeGet0002
-     * @tc.desc       : Test the function of the interface MapPrototypeGet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeGet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_1000
+     * @tc.desc   Test the function of the interface MapPrototypeGet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeGet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeGet0002";
@@ -277,12 +277,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_1100
-     * @tc.name       : testMapPrototypeGet0003
-     * @tc.desc       : Test the function of the interface MapPrototypeGet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeGet0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_1100
+     * @tc.desc   Test the function of the interface MapPrototypeGet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeGet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeGet0003";
@@ -301,12 +301,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_1200
-     * @tc.name       : testMapPrototypeGet0004
-     * @tc.desc       : Test the function of the interface MapPrototypeGet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeGet0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_1200
+     * @tc.desc   Test the function of the interface MapPrototypeGet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeGet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeGet0004";
@@ -325,12 +325,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_1300
-     * @tc.name       : testMapPrototypeHas0001
-     * @tc.desc       : Test the function of the interface MapPrototypeHas.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_1300
+     * @tc.desc   Test the function of the interface MapPrototypeHas.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeHas0001";
@@ -347,12 +347,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_1400
-     * @tc.name       : testMapPrototypeHas0002
-     * @tc.desc       : Test the function of the interface MapPrototypeHas.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeHas0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_1400
+     * @tc.desc   Test the function of the interface MapPrototypeHas.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeHas0002";
@@ -369,12 +369,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_1500
-     * @tc.name       : testMapPrototypeKeys0001
-     * @tc.desc       : Test the function of the interface MapPrototypeKeys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeKeys0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_1500
+     * @tc.desc   Test the function of the interface MapPrototypeKeys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeKeys0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeKeys0001";
@@ -393,12 +393,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_1600
-     * @tc.name       : testMapPrototypeSet0001
-     * @tc.desc       : Test the function of the interface MapPrototypeSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeSet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_1600
+     * @tc.desc   Test the function of the interface MapPrototypeSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeSet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeSet0001";
@@ -415,12 +415,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_1700
-     * @tc.name       : testMapPrototypeSet0002
-     * @tc.desc       : Test the function of the interface MapPrototypeSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeSet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_1700
+     * @tc.desc   Test the function of the interface MapPrototypeSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeSet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeSet0002";
@@ -437,12 +437,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_1800
-     * @tc.name       : testMapPrototypeSet0003
-     * @tc.desc       : Test the function of the interface MapPrototypeSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeSet0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_1800
+     * @tc.desc   Test the function of the interface MapPrototypeSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeSet0003";
@@ -461,12 +461,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_1900
-     * @tc.name       : testMapPrototypeSet0004
-     * @tc.desc       : Test the function of the interface MapPrototypeSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeSet0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_1900
+     * @tc.desc   Test the function of the interface MapPrototypeSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeSet0004";
@@ -485,12 +485,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_2000
-     * @tc.name       : testMapPrototypeSet0005
-     * @tc.desc       : Test the function of the interface MapPrototypeSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeSet0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_2000
+     * @tc.desc   Test the function of the interface MapPrototypeSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeSet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeSet0005";
@@ -509,12 +509,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_2100
-     * @tc.name       : testMapPrototypeSet0006
-     * @tc.desc       : Test the function of the interface MapPrototypeSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeSet0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_2100
+     * @tc.desc   Test the function of the interface MapPrototypeSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeSet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeSet0006";
@@ -531,12 +531,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_2200
-     * @tc.name       : testMapPrototypeSet0007
-     * @tc.desc       : Test the function of the interface MapPrototypeSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeSet0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_2200
+     * @tc.desc   Test the function of the interface MapPrototypeSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeSet0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeSet0007";
@@ -553,12 +553,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_2300
-     * @tc.name       : testMapPrototypeSet0008
-     * @tc.desc       : Test the function of the interface MapPrototypeSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeSet0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_2300
+     * @tc.desc   Test the function of the interface MapPrototypeSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeSet0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeSet0008";
@@ -575,12 +575,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_2400
-     * @tc.name       : testMapPrototypeSet0009
-     * @tc.desc       : Test the function of the interface MapPrototypeSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeSet0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_2400
+     * @tc.desc   Test the function of the interface MapPrototypeSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeSet0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeSet0009";
@@ -597,12 +597,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_2500
-     * @tc.name       : testMapPrototype[Symbol.iterator]0001
-     * @tc.desc       : Test the function of the interface MapPrototype[Symbol.iterator].
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototype[Symbol.iterator]0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_2500
+     * @tc.desc   Test the function of the interface MapPrototype[Symbol.iterator].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototype[Symbol.iterator]0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototype[Symbol.iterator]0001";
@@ -626,12 +626,12 @@ export default function MapTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_MAP_2600
-     * @tc.name       : testMapPrototypeValues0001
-     * @tc.desc       : Test the function of the interface MapPrototypeValues.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMapPrototypeValues0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_2600
+     * @tc.desc   Test the function of the interface MapPrototypeValues.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMapPrototypeValues0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testMapPrototypeValues0001";

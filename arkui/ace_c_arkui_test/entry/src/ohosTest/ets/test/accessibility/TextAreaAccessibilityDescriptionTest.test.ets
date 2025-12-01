@@ -26,26 +26,26 @@ export default function textAreaAccessibilityDescriptionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ACCESSIBILITYDESCRIPTION_0100
-     * @tc.name       : testTextAreaAccessibilityDescription001
-     * @tc.desc       : testing accessibilityDescription for TextArea with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAreaAccessibilityDescription001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ACCESSIBILITYDESCRIPTION_0100
+     * @tc.desc   testing accessibilityDescription for TextArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaAccessibilityDescription001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaAccessibilityDescription001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ACCESSIBILITYDESCRIPTION_0200
-     * @tc.name       : testTextAreaAccessibilityDescription002
-     * @tc.desc       : testing accessibilityDescription for TextArea with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAreaAccessibilityDescription002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ACCESSIBILITYDESCRIPTION_0200
+     * @tc.desc   testing accessibilityDescription for TextArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaAccessibilityDescription002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaAccessibilityDescription002()).assertEqual(0)

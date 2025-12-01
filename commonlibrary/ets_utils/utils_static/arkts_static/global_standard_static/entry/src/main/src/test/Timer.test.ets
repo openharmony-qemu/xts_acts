@@ -65,12 +65,12 @@ export default function TimerTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0100
-     * @tc.name       : testSetTimer001
-     * @tc.desc       : Test the timer and execute the accumulation result after 1 second.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetTimer001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0100
+     * @tc.desc   Test the timer and execute the accumulation result after 1 second.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetTimer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void) => {
       setTimeout(() => {
@@ -82,12 +82,12 @@ export default function TimerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0200
-     * @tc.name       : testSetTimer002
-     * @tc.desc       : Test the timer and execute the accumulation result after 1 second.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetTimer002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0200
+     * @tc.desc   Test the timer and execute the accumulation result after 1 second.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetTimer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       count = 0;
@@ -102,12 +102,12 @@ export default function TimerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0300
-     * @tc.name       : testSetTimer003
-     * @tc.desc       : Test the cumulative results of executing multiple timers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetTimer003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0300
+     * @tc.desc   Test the cumulative results of executing multiple timers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetTimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       count = 0;
@@ -127,12 +127,12 @@ export default function TimerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0400
-     * @tc.name       : testSetTimer004
-     * @tc.desc       : Test the string assignment result of the Settimer execution.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetTimer004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0400
+     * @tc.desc   Test the string assignment result of the Settimer execution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetTimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       flag = 'a';
@@ -145,12 +145,12 @@ export default function TimerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0500
-     * @tc.name       : testSetTimer005
-     * @tc.desc       : Test the results of string assignment executed by multiple timers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetTimer005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0500
+     * @tc.desc   Test the results of string assignment executed by multiple timers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetTimer005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       flag = 'a';
@@ -170,12 +170,12 @@ export default function TimerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CLEAR_TIMER_0100
-     * @tc.name       : testClearTimer001
-     * @tc.desc       : Test ClearTimer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testClearTimer001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CLEAR_TIMER_0100
+     * @tc.desc   Test ClearTimer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testClearTimer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let result1 = setTimeout(() => {
@@ -192,12 +192,12 @@ export default function TimerTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_INTERVAL_0100
-     * @tc.name       : testSetInterval001
-     * @tc.desc       : Test the scenario of accumulating SetInterval once.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetInterval001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_INTERVAL_0100
+     * @tc.desc   Test the scenario of accumulating SetInterval once.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetInterval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       count = 0;
@@ -211,12 +211,12 @@ export default function TimerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_INTERVAL_0200
-     * @tc.name       : testSetInterval002
-     * @tc.desc       : Test scenarios where SetInterval accumulates multiple times.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetInterval002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_INTERVAL_0200
+     * @tc.desc   Test scenarios where SetInterval accumulates multiple times.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetInterval002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       count = 0;
@@ -230,12 +230,12 @@ export default function TimerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_INTERVAL_0300
-     * @tc.name       : testSetInterval003
-     * @tc.desc       : Test scenarios where multiple SetIntervals are accumulated multiple times.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetInterval003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_INTERVAL_0300
+     * @tc.desc   Test scenarios where multiple SetIntervals are accumulated multiple times.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetInterval003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       count = 0;
@@ -257,12 +257,12 @@ export default function TimerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_INTERVAL_0400
-     * @tc.name       : testSetInterval004
-     * @tc.desc       : Scenario for testing SetInterval string assignment.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetInterval004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_INTERVAL_0400
+     * @tc.desc   Scenario for testing SetInterval string assignment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetInterval004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       flag = 'a';
@@ -277,12 +277,12 @@ export default function TimerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_INTERVAL_0500
-     * @tc.name       : testSetInterval005
-     * @tc.desc       : Test scenarios for assigning multiple SetInterval strings.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetInterval005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_INTERVAL_0500
+     * @tc.desc   Test scenarios for assigning multiple SetInterval strings.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetInterval005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       flag = 'a';
@@ -305,12 +305,12 @@ export default function TimerTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CLEAR_INTERVAL_0100
-     * @tc.name       : testClearInterval001
-     * @tc.desc       :  Test ClearInterval.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testClearInterval001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CLEAR_INTERVAL_0100
+     * @tc.desc   Test ClearInterval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testClearInterval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let result1 = setInterval(() => {
@@ -326,12 +326,12 @@ export default function TimerTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0100
-     * @tc.name       : testTimer001
-     * @tc.desc       : Test setTimeout.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimer001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0100
+     * @tc.desc   Test setTimeout.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let result1 = setTimeout(myFunction, 1000, 'Hello', 'World');
@@ -345,12 +345,12 @@ export default function TimerTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0200
-     * @tc.name       : testTimer002
-     * @tc.desc       : Test setInterval.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimer002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0200
+     * @tc.desc   Test setInterval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let result1 = setInterval(myFunction, 1000, 'Hello', 'World');
@@ -370,18 +370,26 @@ export default function TimerTest() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testTimer003
+     * @tc.number testTimer003
+     * @tc.desc   testTimer003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testTimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
     //   clearTimeout();
     //   done();
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0400
-     * @tc.name       : testClearInterval001
-     * @tc.desc       : Test ClearInterval.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimer004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0400
+     * @tc.desc   Test ClearInterval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testTimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
     //   clearInterval();

@@ -85,13 +85,12 @@ export default function timePickerThemeTest() {
       }
     });
     /**
-     * @tc.number    : ActsTimePickerThemeColors_0100
-     * @tc.name      : ActsTimePickerThemeColors_0100
-     * @tc.desc      : check system colors values of the TimePicker component
-     *                 isMilitary = false
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTimePickerThemeColors_0100
+     * @tc.number ActsTimePickerThemeColors_0100
+     * @tc.desc   check system colors values of the TimePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTimePickerThemeColors_0100`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTimePickerThemeColors_0100`;
@@ -104,13 +103,12 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    : ActsTimePickerThemeColors_0200
-     * @tc.name      : ActsTimePickerThemeColors_0200
-     * @tc.desc      : check custom colors values of the TimePicker component
-     *                 isMilitary = false
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTimePickerThemeColors_0200
+     * @tc.number ActsTimePickerThemeColors_0200
+     * @tc.desc   check custom colors values of the TimePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTimePickerThemeColors_0200`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTimePickerThemeColors_0200`;
@@ -124,14 +122,12 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    : ActsTimePickerThemeColors_0300
-     * @tc.name      : ActsTimePickerThemeColors_0300
-     * @tc.desc      : check custom colors values of the TimePicker component
-     *                 after change theme
-     *                 isMilitary = false
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTimePickerThemeColors_0300
+     * @tc.number ActsTimePickerThemeColors_0300
+     * @tc.desc   check custom colors values of the TimePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTimePickerThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTimePickerThemeColors_0300`
@@ -145,14 +141,12 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.number    : ActsTimePickerThemeColors_0400
-     * @tc.name      : ActsTimePickerThemeColors_0400
-     * @tc.desc      : check colors values of the TimePicker component
-     *                 after reset theme
-     *                 isMilitary = false
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTimePickerThemeColors_0400
+     * @tc.number ActsTimePickerThemeColors_0400
+     * @tc.desc   check colors values of the TimePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTimePickerThemeColors_0400`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTimePickerThemeColors_0400`
@@ -166,13 +160,12 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.number    : ActsTimePickerThemeColors_0500
-     * @tc.name      : ActsTimePickerThemeColors_0500
-     * @tc.desc      : check system colors values of the TimePicker component
-     *                 isMilitary = true
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTimePickerThemeColors_0500
+     * @tc.number ActsTimePickerThemeColors_0500
+     * @tc.desc   check system colors values of the TimePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTimePickerThemeColors_0500`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTimePickerThemeColors_0500`
@@ -185,13 +178,12 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.number    : ActsTimePickerThemeColors_0600
-     * @tc.name      : ActsTimePickerThemeColors_0600
-     * @tc.desc      : Check custom colors values of the TimePicker component
-     *                 isMilitary = true
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTimePickerThemeColors_0600
+     * @tc.number ActsTimePickerThemeColors_0600
+     * @tc.desc   Check custom colors values of the TimePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTimePickerThemeColors_0600`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTimePickerThemeColors_0600`
@@ -205,14 +197,12 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.number    : ActsTimePickerThemeColors_0700
-     * @tc.name      : ActsTimePickerThemeColors_0700
-     * @tc.desc      : Check custom colors values of the TimePicker component
-     *                 after change theme
-     *                 isMilitary = true
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTimePickerThemeColors_0700
+     * @tc.number ActsTimePickerThemeColors_0700
+     * @tc.desc   Check custom colors values of the TimePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTimePickerThemeColors_0700`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTimePickerThemeColors_0700`;
@@ -227,14 +217,12 @@ export default function timePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.number    : ActsTimePickerThemeColors_0800
-     * @tc.name      : ActsTimePickerThemeColors_0800
-     * @tc.desc      : Check system colors values of the TimePicker component
-     *                 after reset theme
-     *                 isMilitary = true
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTimePickerThemeColors_0800
+     * @tc.number ActsTimePickerThemeColors_0800
+     * @tc.desc   Check system colors values of the TimePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTimePickerThemeColors_0800`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTimePickerThemeColors_0800`;

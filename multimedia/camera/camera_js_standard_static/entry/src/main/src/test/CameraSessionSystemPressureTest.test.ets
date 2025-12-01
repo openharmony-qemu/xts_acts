@@ -401,7 +401,7 @@ export default function cameraSessionSystemPressureTest() {
                     mCameraSession.addOutput(mPreviewOutput);
                     await mCameraSession.commitConfig();
 
-                    (mCameraSession as cameraObj.PhotoSession).on('systemPressureLevelChange', (error: BusinessError | null, pressureState: cameraObj.SystemPressureLevel | undefined) => {
+                    (mCameraSession as cameraObj.PhotoSession).onSystemPressureLevelChange((error: BusinessError | null, pressureState: cameraObj.SystemPressureLevel | undefined) => {
                         if (error !== undefined && error!.code !== 0) {
                             expect().assertFail();
                         }
@@ -457,7 +457,7 @@ export default function cameraSessionSystemPressureTest() {
                     mCameraSession.addOutput(mPreviewOutput);
                     await mCameraSession.commitConfig();
 
-                    (mCameraSession as cameraObj.PhotoSession).off('systemPressureLevelChange');
+                    (mCameraSession as cameraObj.PhotoSession).offSystemPressureLevelChange();
 
                     await mCameraSession.start();
                     await mCameraSession.stop();
@@ -511,7 +511,7 @@ export default function cameraSessionSystemPressureTest() {
                     }
                     await mCameraSession.commitConfig();
 
-                    (mCameraSession as cameraObj.VideoSession).on('systemPressureLevelChange', (error: BusinessError | null, pressureState: cameraObj.SystemPressureLevel | undefined) => {
+                    (mCameraSession as cameraObj.VideoSession).onSystemPressureLevelChange((error: BusinessError | null, pressureState: cameraObj.SystemPressureLevel | undefined) => {
                         if (error !== undefined && error!.code !== 0) {
                             expect().assertFail();
                         }
@@ -570,7 +570,7 @@ export default function cameraSessionSystemPressureTest() {
                     }
                     await mCameraSession.commitConfig();
 
-                    (mCameraSession as cameraObj.VideoSession).off('systemPressureLevelChange');
+                    (mCameraSession as cameraObj.VideoSession).offSystemPressureLevelChange();
 
                     await mCameraSession.start();
                     await mCameraSession.stop();

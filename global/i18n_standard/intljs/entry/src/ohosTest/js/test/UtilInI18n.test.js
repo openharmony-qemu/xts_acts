@@ -57,11 +57,14 @@ describe('UtilInI18nTest', function () {
         + ' syslocale: ' + I18n.System.getSystemLocale());
     })
 
-    /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_0100
-     * @tc.name    test unitConvert interface from cup to liter unit with long style
-     * @tc.desc    get the unitConvert value
-     */
+     /**
+      * @tc.name   i18n_util_test_0100
+      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0100
+      * @tc.desc   get the unitConvert value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('i18n_util_test_0100', Level.LEVEL0, function () {
         console.log('i18n_util_test_0100 ' + 'start');
         let util = new I18n.Util();
@@ -75,9 +78,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_0200
-     * @tc.name    test unitConvert interface from cup to liter unit with undefined style
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_0200
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0200
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_0200', Level.LEVEL2, function () {
         console.log('i18n_util_test_0200 ' + 'start');
@@ -96,11 +102,14 @@ describe('UtilInI18nTest', function () {
         }
     })
 
-    /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_0300
-     * @tc.name    test unitConvert interface from cup to liter unit with null style
-     * @tc.desc    get the unitConvert value
-     */
+     /**
+      * @tc.name   i18n_util_test_0300
+      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0300
+      * @tc.desc   get the unitConvert value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('i18n_util_test_0300', Level.LEVEL2, function () {
         console.log('i18n_util_test_0300 ' + 'start');
         let util = new I18n.Util();
@@ -119,9 +128,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_0400
-     * @tc.name    test unitConvert interface from cup to liter unit with medium style
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_0400
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0400
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_0400', Level.LEVEL2, function () {
         console.log('i18n_util_test_0400 ' + 'start');
@@ -141,9 +153,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_0500
-     * @tc.name    test unitConvert interface from cup to liter unit with narrow style
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_0500
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0500
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_0500', Level.LEVEL2, function () {
         console.log('i18n_util_test_0500 ' + 'start');
@@ -158,9 +173,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_0600
-     * @tc.name    test unitConvert interface from cup to liter unit with short style
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_0600
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0600
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_0600', Level.LEVEL2, function () {
         console.log('i18n_util_test_0600 ' + 'start');
@@ -175,9 +193,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_0700
-     * @tc.name    test unitConvert interface from meter to mile unit
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_0700
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0700
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_0700', Level.LEVEL2, function () {
         console.log('i18n_util_test_0700 ' + 'start');
@@ -192,9 +213,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_0800
-     * @tc.name    test unitConvert interface from hour to second unit
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_0800
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0800
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_0800', Level.LEVEL2, function () {
         console.log('i18n_util_test_0800 ' + 'start');
@@ -214,9 +238,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_0900
-     * @tc.name    test unitConvert interface from celsius to fahrenheit unit
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_0900
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0900
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_0900', Level.LEVEL2, function () {
         console.log('i18n_util_test_0900 ' + 'start');
@@ -231,9 +258,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_1000
-     * @tc.name    test unitConvert interface from acre to hectare unit
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_1000
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1000
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_1000', Level.LEVEL2, function () {
         console.log('i18n_util_test_1000 ' + 'start');
@@ -248,9 +278,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_1100
-     * @tc.name    test unitConvert interface from acre to square-meter unit
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_1100
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1100
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_1100', Level.LEVEL2, function () {
         console.log('i18n_util_test_1100 ' + 'start');
@@ -265,9 +298,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_1200
-     * @tc.name    test unitConvert interface from kilometer-per-hour to knot unit
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_1200
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1200
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_1200', Level.LEVEL2, function () {
         console.log('i18n_util_test_1200 ' + 'start');
@@ -282,9 +318,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_1300
-     * @tc.name    test unitConvert interface from kilometer-per-hour to meter-per-second unit
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_1300
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1300
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_1300', Level.LEVEL2, function () {
         console.log('i18n_util_test_1300 ' + 'start');
@@ -299,9 +338,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_1400
-     * @tc.name    test unitConvert interface from meter to kilometer unit
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_1400
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1400
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_1400', Level.LEVEL2, function () {
         console.log('i18n_util_test_1400 ' + 'start');
@@ -316,9 +358,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_I18N_UTIL_JS_1500
-     * @tc.name    test unitConvert interface from meter to meter-per-second unit
-     * @tc.desc    get the unitConvert value
+     * @tc.name   i18n_util_test_1500
+     * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1500
+     * @tc.desc   get the unitConvert value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_1500', Level.LEVEL2, function () {
         console.log('i18n_util_test_1500 ' + 'start');
@@ -333,12 +378,12 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @tc.number   : i18n_util_test_1600
-     * @tc.name     : i18n_util_test_1600
-     * @tc.desc     : unitConvert
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   i18n_util_test_1600
+     * @tc.number i18n_util_test_1600
+     * @tc.desc   unitConvert
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_util_test_1600', Level.LEVEL2, function () {
         console.log('i18n_util_test_1600 ' + 'start');

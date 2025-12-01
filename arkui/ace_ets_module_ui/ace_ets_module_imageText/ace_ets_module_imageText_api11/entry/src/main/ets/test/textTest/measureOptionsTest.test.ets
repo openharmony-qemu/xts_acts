@@ -46,13 +46,13 @@ export default function measureOptionsTest() {
       console.info("measureOptionsTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         measureOptionsTest0001
-    * @tc.desic        get  SizeOptions
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   measureOptionsTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   measureOptionsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('measureOptionsTest0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

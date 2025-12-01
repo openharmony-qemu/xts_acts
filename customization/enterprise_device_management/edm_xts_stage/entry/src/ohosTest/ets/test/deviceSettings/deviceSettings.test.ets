@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,12 +30,12 @@ const ITEM_EYE_COMFORT: string = 'eyeComfort';
 export default function deviceSettingsTest() {
   describe('deviceSettings_test', () => {
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0100
-     * @tc.name      : test_device_settings_get_value_0100
-     * @tc.desc      : test deviceSettings getValue without admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_get_value_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0100
+     * @tc.desc   test deviceSettings getValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_get_value_0100", Level.LEVEL2, async (done: Function) => {
       try {
@@ -47,12 +48,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0200
-     * @tc.name      : test_device_settings_get_value_0200
-     * @tc.desc      : test deviceSettings getValue with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_get_value_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0200
+     * @tc.desc   test deviceSettings getValue with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_get_value_0200", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -68,12 +69,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0300
-     * @tc.name      : test_device_settings_get_value_0300
-     * @tc.desc      : test deviceSettings getValue unsupported item
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_get_value_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0300
+     * @tc.desc   test deviceSettings getValue unsupported item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_get_value_0300", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -89,12 +90,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0400
-     * @tc.name      : test_device_settings_get_value_0400
-     * @tc.desc      : test deviceSettings getValue, item = screenOff
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_get_value_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0400
+     * @tc.desc   test deviceSettings getValue, item = screenOff
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_get_value_0400", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -110,12 +111,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0500
-     * @tc.name      : test_device_settings_get_value_0500
-     * @tc.desc      : test deviceSettings getValue, item = powerPolicy
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_get_value_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0500
+     * @tc.desc   test deviceSettings getValue, item = powerPolicy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_get_value_0500", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -131,12 +132,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0600
-     * @tc.name      : test_device_settings_get_value_0600
-     * @tc.desc      : test deviceSettings getValue with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_get_value_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0600
+     * @tc.desc   test deviceSettings getValue with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_get_value_0600", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -151,14 +152,13 @@ export default function deviceSettingsTest() {
       done();
     });
 
-
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0700
-     * @tc.name      : test_device_settings_get_value_0700
-     * @tc.desc      : test deviceSettings getValue without admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_get_value_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0700
+     * @tc.desc   test deviceSettings getValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_get_value_0700", Level.LEVEL2, async (done: Function) => {
       try {
@@ -171,12 +171,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0800
-     * @tc.name      : test_device_settings_get_value_0800
-     * @tc.desc      : test deviceSettings getValue with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_get_value_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0800
+     * @tc.desc   test deviceSettings getValue with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_get_value_0800", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -192,12 +192,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0900
-     * @tc.name      : test_device_settings_get_value_0900
-     * @tc.desc      : test deviceSettings getValue, item = screenOff
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_get_value_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0900
+     * @tc.desc   test deviceSettings getValue, item = eyeComfort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_get_value_0900", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -213,13 +213,13 @@ export default function deviceSettingsTest() {
       done();
     });
 
-     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_1000
-     * @tc.name      : test_device_settings_get_value_1000
-     * @tc.desc      : test deviceSettings getValue with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+    /**
+     * @tc.name   test_device_settings_get_value_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_1000
+     * @tc.desc   test deviceSettings getValue with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_get_value_1000", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -235,12 +235,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0100
-     * @tc.name      : test_device_settings_set_value_0100
-     * @tc.desc      : test deviceSettings setValue without admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0100
+     * @tc.desc   test deviceSettings setValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_0100", Level.LEVEL2, async (done: Function) => {
       try {
@@ -253,12 +253,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0200
-     * @tc.name      : test_device_settings_set_value_0200
-     * @tc.desc      : test deviceSettings setValue with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0200
+     * @tc.desc   test deviceSettings setValue with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_0200", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -274,12 +274,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0300
-     * @tc.name      : test_device_settings_set_value_0300
-     * @tc.desc      : test deviceSettings setValue unsupported item
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0300
+     * @tc.desc   test deviceSettings setValue unsupported item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_0300", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -295,12 +295,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0400
-     * @tc.name      : test_device_settings_set_value_0400
-     * @tc.desc      : test deviceSettings setValue, item = screenOff
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0400
+     * @tc.desc   test deviceSettings setValue, item = screenOff
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_0400", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -316,12 +316,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0500
-     * @tc.name      : test_device_settings_set_value_0500
-     * @tc.desc      : test deviceSettings setValue, item = screenOff, time overflow
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0500
+     * @tc.desc   test deviceSettings setValue, item = screenOff, time overflow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_0500", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -337,12 +337,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0600
-     * @tc.name      : test_device_settings_set_value_0600
-     * @tc.desc      : test deviceSettings setValue, item = dateTime
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0600
+     * @tc.desc   test deviceSettings setValue, item = dateTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_0600", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -358,12 +358,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0700
-     * @tc.name      : test_device_settings_set_value_0700
-     * @tc.desc      : test deviceSettings setValue, item = dateTime, time overflow
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0700
+     * @tc.desc   test deviceSettings setValue, item = dateTime, time overflow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_0700", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -379,12 +379,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0800
-     * @tc.name      : test_device_settings_set_value_0800
-     * @tc.desc      : test deviceSettings setValue, item = powerPolicy
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0800
+     * @tc.desc   test deviceSettings setValue, item = powerPolicy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_0800", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -409,12 +409,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0900
-     * @tc.name      : test_device_settings_set_value_0900
-     * @tc.desc      : test deviceSettings setValue, item = powerPolicy, error powerPolicy undefined
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0900
+     * @tc.desc   test deviceSettings setValue, item = powerPolicy, error powerPolicy undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_0900", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -435,12 +435,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1000
-     * @tc.name      : test_device_settings_set_value_1000
-     * @tc.desc      : test deviceSettings setValue, item = powerPolicy, empty value
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1000
+     * @tc.desc   test deviceSettings setValue, item = powerPolicy, empty value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_1000", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -456,12 +456,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1100
-     * @tc.name      : test_device_settings_set_value_1100
-     * @tc.desc      : test deviceSettings setValue, item = powerPolicy, error value
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1100
+     * @tc.desc   test deviceSettings setValue, item = powerPolicy, error value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_1100", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -480,12 +480,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1200
-     * @tc.name      : test_device_settings_set_value_1200
-     * @tc.desc      : test deviceSettings setValue, item = powerPolicy, lost powerScene
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1200
+     * @tc.desc   test deviceSettings setValue, item = powerPolicy, lost powerScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_1200", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -508,12 +508,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1300
-     * @tc.name      : test_device_settings_set_value_1300
-     * @tc.desc      : test deviceSettings setValue, item = powerPolicy, lost powerPolicy
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1300
+     * @tc.desc   test deviceSettings setValue, item = powerPolicy, lost powerPolicy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_1300", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -533,12 +533,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1400
-     * @tc.name      : test_device_settings_set_value_1400
-     * @tc.desc      : test deviceSettings setValue, item = powerPolicy, error powerScene
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1400
+     * @tc.desc   test deviceSettings setValue, item = powerPolicy, error powerScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_1400", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -557,12 +557,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1500
-     * @tc.name      : test_device_settings_set_value_1500
-     * @tc.desc      : test deviceSettings setValue, item = powerPolicy, error powerPolicy
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1500
+     * @tc.desc   test deviceSettings setValue, item = powerPolicy, error powerPolicy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_1500", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -581,12 +581,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1600
-     * @tc.name      : test_device_settings_set_value_1600
-     * @tc.desc      : test deviceSettings setValue, item = powerPolicy, error powerPolicy and powerScene
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_1600
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1600
+     * @tc.desc   test deviceSettings setValue, item = powerPolicy, error powerPolicy and powerScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_1600", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -606,12 +606,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1700
-     * @tc.name      : test_device_settings_set_value_1700
-     * @tc.desc      : test deviceSettings setValue without admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_1700
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1700
+     * @tc.desc   test deviceSettings setValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_1700", Level.LEVEL2, async (done: Function) => {
       try {
@@ -624,12 +624,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1800
-     * @tc.name      : test_device_settings_set_value_1800
-     * @tc.desc      : test deviceSettings setValue without admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_1800
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1800
+     * @tc.desc   test deviceSettings setValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_1800", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -645,12 +645,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1900
-     * @tc.name      : test_device_settings_set_value_1900
-     * @tc.desc      : test deviceSettings setValue without admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_1900
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1900
+     * @tc.desc   test deviceSettings setValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_1900", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -668,12 +668,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_2000
-     * @tc.name      : test_device_settings_set_value_2000
-     * @tc.desc      : test deviceSettings setValue without admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_value_2000
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_2000
+     * @tc.desc   test deviceSettings setValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_value_2000", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -689,12 +689,12 @@ export default function deviceSettingsTest() {
     });
     
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_HOME_WALL_PAPER_JS_0100
-     * @tc.name      : test_device_settings_set_home_wall_paper_0100
-     * @tc.desc      : test deviceSettings set home wall paper with out admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_home_wall_paper_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_HOME_WALL_PAPER_JS_0100
+     * @tc.desc   test deviceSettings set home wall paper with out admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_home_wall_paper_0100", Level.LEVEL2, async (done: Function) => {
       let filePath: string = getContext().resourceDir + '/wallpaper.png';
@@ -707,12 +707,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_HOME_WALL_PAPER_JS_0200
-     * @tc.name      : test_device_settings_set_home_wall_paper_0200
-     * @tc.desc      : test deviceSettings set home wall paper with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_home_wall_paper_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_HOME_WALL_PAPER_JS_0200
+     * @tc.desc   test deviceSettings set home wall paper with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_home_wall_paper_0200", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -728,12 +728,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_HOME_WALL_PAPER_JS_0300
-     * @tc.name      : test_device_settings_set_home_wall_paper_0300
-     * @tc.desc      : test deviceSettings set home wall paper with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_home_wall_paper_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_HOME_WALL_PAPER_JS_0300
+     * @tc.desc   test deviceSettings set home wall paper with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_home_wall_paper_0300", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -749,12 +749,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_UNLOCK_WALL_PAPER_JS_0100
-     * @tc.name      : test_device_settings_set_unlock_wall_paper_0100
-     * @tc.desc      : test deviceSettings set unlock wall paper with out admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_unlock_wall_paper_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_UNLOCK_WALL_PAPER_JS_0100
+     * @tc.desc   test deviceSettings set unlock wall paper with out admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_unlock_wall_paper_0100", Level.LEVEL2, async (done: Function) => {
       let filePath: string = getContext().resourceDir + '/wallpaper.png';
@@ -767,12 +767,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_UNLOCK_WALL_PAPER_JS_0200
-     * @tc.name      : test_device_settings_set_unlock_wall_paper_0200
-     * @tc.desc      : test deviceSettings set unlock wall paper with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_unlock_wall_paper_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_UNLOCK_WALL_PAPER_JS_0200
+     * @tc.desc   test deviceSettings set unlock wall paper with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_unlock_wall_paper_0200", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
@@ -788,12 +788,12 @@ export default function deviceSettingsTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_UNLOCK_WALL_PAPER_JS_0300
-     * @tc.name      : test_device_settings_set_unlock_wall_paper_0300
-     * @tc.desc      : test deviceSettings set unlock wall paper with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_device_settings_set_unlock_wall_paper_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_UNLOCK_WALL_PAPER_JS_0300
+     * @tc.desc   test deviceSettings set unlock wall paper with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_device_settings_set_unlock_wall_paper_0300", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);

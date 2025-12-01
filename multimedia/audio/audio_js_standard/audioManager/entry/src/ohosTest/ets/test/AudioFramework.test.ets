@@ -4465,6 +4465,13 @@ export default function audioFramework() {
             };
             data.on('stateChange', stateChangeCallback);
             data.off('stateChange', stateChangeCallback);
+            let readDataCallback = (value: ArrayBuffer) => {
+                console.info(`read valus: ${value}`);
+              };
+            data.on('readData', readDataCallback);
+            console.info('Capturer readData on success.');
+            data.off('readData', readDataCallback);
+            console.info('Capturer readData of success.');
             data.release().then(() => {
               console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
               console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
@@ -4479,6 +4486,7 @@ export default function audioFramework() {
           });
           done();
       })
+
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_0100
      * @tc.name      : isActive - Media - Promise
@@ -6081,6 +6089,8 @@ export default function audioFramework() {
       console.info("audio.DeviceType.REMOTE_CAST:" + audio.DeviceType.REMOTE_CAST);
       expect(audio.DeviceType.USB_DEVICE).assertEqual(25);
       console.info("audio.DeviceType.USB_DEVICE:" + audio.DeviceType.USB_DEVICE);
+      expect(audio.DeviceType.ACCESSORY).assertEqual(26);
+      console.info("audio.DeviceType.ACCESSORY:" + audio.DeviceType.ACCESSORY);
       expect(audio.DeviceType.HDMI).assertEqual(27);
       console.info("audio.DeviceType.HDMI:" + audio.DeviceType.HDMI);
       expect(audio.DeviceType.LINE_DIGITAL).assertEqual(28);
@@ -6091,6 +6101,12 @@ export default function audioFramework() {
       console.info("audio.DeviceType.HEARING_AID:" + audio.DeviceType.HEARING_AID);
       expect(audio.DeviceType.NEARLINK).assertEqual(31);
       console.info("audio.DeviceType.NEARLINK:" + audio.DeviceType.NEARLINK);
+      expect(audio.DeviceType.BLUETOOTH_SPP).assertEqual(33);
+      console.info("audio.DeviceType.BLUETOOTH_SPP:" + audio.DeviceType.BLUETOOTH_SPP);
+      expect(audio.DeviceType.NEARLINK_PORT).assertEqual(34);
+      console.info("audio.DeviceType.NEARLINK_PORT:" + audio.DeviceType.NEARLINK_PORT);
+      expect(audio.DeviceType.SYSTEM_PRIVATE).assertEqual(200);
+      console.info("audio.DeviceType.SYSTEM_PRIVATE:" + audio.DeviceType.SYSTEM_PRIVATE);
       expect(audio.DeviceType.DEFAULT).assertEqual(1000);
       console.info("audio.DeviceType.DEFAULT:" + audio.DeviceType.DEFAULT);
       await sleep(50);
@@ -6994,6 +7010,34 @@ export default function audioFramework() {
             let error = err as BusinessError;
             console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
             expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0400
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0400
+    * @tc.desc      : isAcousticEchoCancelerSupported - true
+    * @tc.size      : MEDIUM
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+    (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_LIVE);
+          console.info(`[AEC Support] Source Type: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`)
+          if (isSupportAEC) {
+              console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
+              expect(isSupportAEC).assertEqual(true);
+          } else {
+              console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
+              expect(isSupportAEC).assertEqual(false);
+          } 
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+          expect(false).assertTrue();        
         }
         done();
     })

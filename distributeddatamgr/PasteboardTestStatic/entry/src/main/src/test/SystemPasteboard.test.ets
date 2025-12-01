@@ -45,12 +45,12 @@ export default function systemPasteBoardTest() {
   describe("SystemPasteBoardTest", (): void => {
     console.info("----------SUB_Pasteboard_Local_SystemPasteboard_Static----------");
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0010
-     * @tc.number       Pasteboard_test_001
-     * @tc.desc         set data than check the data type
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0010
+     * @tc.number Pasteboard_test_001
+     * @tc.desc   set data than check the data type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0010----------');
@@ -74,12 +74,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0020
-     * @tc.number       Pasteboard_test_002
-     * @tc.desc         set data than check the data type
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0020
+     * @tc.number Pasteboard_test_002
+     * @tc.desc   set data than check the data type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -104,12 +104,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0030
-     * @tc.number       Pasteboard_test_003
-     * @tc.desc         Test setDataSync in systemPb
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0030
+     * @tc.number Pasteboard_test_003
+     * @tc.desc   Test setDataSync in systemPb
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Pasteboard_Local_SystemPasteboard_Static_0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -132,12 +132,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0040
-     * @tc.number       Pasteboard_test_004
-     * @tc.desc         Test pasteBoard getDataSync
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0040
+     * @tc.number Pasteboard_test_004
+     * @tc.desc   Test pasteBoard getDataSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -159,12 +159,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0050
-     * @tc.number       Pasteboard_test_005
-     * @tc.desc         get the pastedata from system pasteBoard success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0050
+     * @tc.number Pasteboard_test_005
+     * @tc.desc   get the pastedata from system pasteBoard success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -193,12 +193,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0060
-     * @tc.number       Pasteboard_test_006
-     * @tc.desc         Test pasteBoard getDataSource
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0060
+     * @tc.number Pasteboard_test_006
+     * @tc.desc   Test pasteBoard getDataSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -224,12 +224,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0070
-     * @tc.number       Pasteboard_test_007
-     * @tc.desc         Test pasteBoard getDataSource
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0070
+     * @tc.number Pasteboard_test_007
+     * @tc.desc   Test pasteBoard getDataSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '----------SUB_Pasteboard_getDataSource_ErrTest_01000----------');
@@ -250,12 +250,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0080
-     * @tc.number       Pasteboard_test_008
-     * @tc.desc         Test pasteBoard progress single level path and no fileConflictOption
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0080
+     * @tc.number Pasteboard_test_008
+     * @tc.desc   Test pasteBoard progress single level path and no fileConflictOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
     async (done: () => void): Promise<void> => {
@@ -277,12 +277,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0090
-     * @tc.number       Pasteboard_test_009
-     * @tc.desc         Clear the data in the system pasteBoard
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0090
+     * @tc.number Pasteboard_test_009
+     * @tc.desc   Clear the data in the system pasteBoard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
     async (done: () => void): Promise<void> => {
@@ -306,12 +306,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0100
-     * @tc.number       Pasteboard_test_010
-     * @tc.desc         Put pastedata to system pasteBoard success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0100
+     * @tc.number Pasteboard_test_010
+     * @tc.desc   Put pastedata to system pasteBoard success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "----------SUB_Pasteboard_Local_SystemPasteboard_Static_0100----------");
@@ -333,12 +333,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0110
-     * @tc.number       Pasteboard_test_011
-     * @tc.desc         Clear the data in the system pasteBoard by promise
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0110
+     * @tc.number Pasteboard_test_011
+     * @tc.desc   Clear the data in the system pasteBoard by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -361,12 +361,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0120
-     * @tc.number       Pasteboard_test_012
-     * @tc.desc         set data in the system pasteBoard by promise
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0120
+     * @tc.number Pasteboard_test_012
+     * @tc.desc   set data in the system pasteBoard by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     async (done: () => void): Promise<void> => {
@@ -386,12 +386,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0130
-     * @tc.number       Pasteboard_test_013
-     * @tc.desc         set data in the system pasteBoard by promise
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0130
+     * @tc.number Pasteboard_test_013
+     * @tc.desc   set data in the system pasteBoard by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -412,12 +412,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0140
-     * @tc.number       Pasteboard_test_014
-     * @tc.desc         set data in the system pasteBoard by promise
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0140
+     * @tc.number Pasteboard_test_014
+     * @tc.desc   set data in the system pasteBoard by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -440,12 +440,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0150
-     * @tc.number       Pasteboard_test_015
-     * @tc.desc         set data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0150
+     * @tc.number Pasteboard_test_015
+     * @tc.desc   set data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -467,12 +467,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0160
-     * @tc.number       Pasteboard_test_016
-     * @tc.desc         set data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0160
+     * @tc.number Pasteboard_test_016
+     * @tc.desc   set data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -493,12 +493,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0170
-     * @tc.number       Pasteboard_test_017
-     * @tc.desc         set data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0170
+     * @tc.number Pasteboard_test_017
+     * @tc.desc   set data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -519,12 +519,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0180
-     * @tc.number       Pasteboard_test_018
-     * @tc.desc         set data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0180
+     * @tc.number Pasteboard_test_018
+     * @tc.desc   set data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -545,12 +545,12 @@ export default function systemPasteBoardTest() {
       })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0190
-     * @tc.number       Pasteboard_test_019
-     * @tc.desc         set data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0190
+     * @tc.number Pasteboard_test_019
+     * @tc.desc   set data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -571,12 +571,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0200
-     * @tc.number       Pasteboard_test_020
-     * @tc.desc         set data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0200
+     * @tc.number Pasteboard_test_020
+     * @tc.desc   set data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -597,12 +597,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0210
-     * @tc.number       Pasteboard_test_021
-     * @tc.desc         set data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0210
+     * @tc.number Pasteboard_test_021
+     * @tc.desc   set data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -626,12 +626,12 @@ export default function systemPasteBoardTest() {
       })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0220
-     * @tc.number       Pasteboard_test_022
-     * @tc.desc         Clear data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0220
+     * @tc.number Pasteboard_test_022
+     * @tc.desc   Clear data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -654,12 +654,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0230
-     * @tc.number       Pasteboard_test_023
-     * @tc.desc         Clear data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0230
+     * @tc.number Pasteboard_test_023
+     * @tc.desc   Clear data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -682,12 +682,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0240
-     * @tc.number       Pasteboard_test_024
-     * @tc.desc         Clear data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0240
+     * @tc.number Pasteboard_test_024
+     * @tc.desc   Clear data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -710,12 +710,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0250
-     * @tc.number       Pasteboard_test_025
-     * @tc.desc         Clear data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0250
+     * @tc.number Pasteboard_test_025
+     * @tc.desc   Clear data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -738,12 +738,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0260
-     * @tc.number       Pasteboard_test_026
-     * @tc.desc         Clear data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0260
+     * @tc.number Pasteboard_test_026
+     * @tc.desc   Clear data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -766,12 +766,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0270
-     * @tc.number       Pasteboard_test_027
-     * @tc.desc         Clear data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0270
+     * @tc.number Pasteboard_test_027
+     * @tc.desc   Clear data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -795,12 +795,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0280
-     * @tc.number       Pasteboard_test_028
-     * @tc.desc         Clear data in the system pasteBoard by callback
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0280
+     * @tc.number Pasteboard_test_028
+     * @tc.desc   Clear data in the system pasteBoard by callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -826,12 +826,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0290
-     * @tc.number       Pasteboard_test_029
-     * @tc.desc         Clear data in the system pasteBoard by promise
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0290
+     * @tc.number Pasteboard_test_029
+     * @tc.desc   Clear data in the system pasteBoard by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -854,12 +854,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0300
-     * @tc.number       Pasteboard_test_030
-     * @tc.desc         Clear data in the system pasteBoard by promise
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0300
+     * @tc.number Pasteboard_test_030
+     * @tc.desc   Clear data in the system pasteBoard by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -881,12 +881,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0310
-     * @tc.number       Pasteboard_test_031
-     * @tc.desc         Clear data in the system pasteBoard by promise
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0310
+     * @tc.number Pasteboard_test_031
+     * @tc.desc   Clear data in the system pasteBoard by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -908,12 +908,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0320
-     * @tc.number       Pasteboard_test_032
-     * @tc.desc         Clear data in the system pasteBoard by promise
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0320
+     * @tc.number Pasteboard_test_032
+     * @tc.desc   Clear data in the system pasteBoard by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -935,12 +935,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0330
-     * @tc.number       Pasteboard_test_033
-     * @tc.desc         Clear data in the system pasteBoard by promise
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0330
+     * @tc.number Pasteboard_test_033
+     * @tc.desc   Clear data in the system pasteBoard by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -962,12 +962,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0340
-     * @tc.number       Pasteboard_test_034
-     * @tc.desc         Clear data in the system pasteBoard by promise
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0340
+     * @tc.number Pasteboard_test_034
+     * @tc.desc   Clear data in the system pasteBoard by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -989,12 +989,12 @@ export default function systemPasteBoardTest() {
     })
 
     /**
-     * @tc.name         SUB_Pasteboard_Local_SystemPasteboard_Static_0350
-     * @tc.number       Pasteboard_test_035
-     * @tc.desc         Clear data in the system pasteBoard by promise
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 2
+     * @tc.name   SUB_Pasteboard_Local_SystemPasteboard_Static_0350
+     * @tc.number Pasteboard_test_035
+     * @tc.desc   Clear data in the system pasteBoard by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SystemPasteboard_Static_0350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

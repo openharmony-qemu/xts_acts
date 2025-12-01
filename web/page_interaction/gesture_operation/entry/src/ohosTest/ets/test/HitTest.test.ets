@@ -57,13 +57,13 @@ export default function HitTest() {
       done();
     })
 
-    /*
-     * @tc.number     : Acts_setHostIP_0100
-     * @tc.name       : testSetHostIP001
-     * @tc.desc       : test DNSHostIP
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   zoomAccess
+     * @tc.number Acts_setHostIP_0100
+     * @tc.desc   test DNSHostIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('zoomAccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitZoomAccess", EVENT_ID_SET_SUITE_KEY)
@@ -73,10 +73,13 @@ export default function HitTest() {
       await Utils.waitForExist(() => isReturn, "zoomAccess" + '_returnCheck', true, 1000);
       done();
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_012                                                                                                                                                             
-     *tc.name GetHitTestValue                                                                                                                                                                                                               
-     *tc.desic get the type of th clicked component
+    /**
+     * @tc.name   GetHitTestValue
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_012
+     * @tc.desc   GetHitTestValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetHitTestValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetHitTestValue", EVENT_ID_SET_SUITE_KEY)

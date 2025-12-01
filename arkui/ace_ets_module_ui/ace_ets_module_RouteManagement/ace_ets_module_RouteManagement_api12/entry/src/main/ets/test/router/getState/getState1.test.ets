@@ -48,10 +48,12 @@ export default function getState1() {
     });
 
     /**
-     * @tc.number    getState1_0100
-     * @tc.name      getState1_0100
-     * @tc.desc      Test back
-     * @tc.level     Level 2
+     * @tc.name   getState1_0100
+     * @tc.number getState1_0100
+     * @tc.desc   Test back
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getState1_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[getState1_0100] START');

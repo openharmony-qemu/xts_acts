@@ -69,7 +69,7 @@ std::shared_ptr<ColumnComponent> CreategridExample1()
     OH_ArkUI_NodeAdapter_SetTotalNodeCount(adapter, GRID_ITEM_COUNT_80);
     ArkUI_AttributeItem adapterItem{.object = adapter};
     auto grid1Column = std::make_shared<ColumnComponent>();
-    grid1Column->SetId("grid1");
+    grid1Column->SetId("grid1Column");
     auto textMessage1 = std::make_shared<TextComponent>();
     textMessage1->SetTextContent(g_message1);
     textMessage1->SetId("gridBackMessage");

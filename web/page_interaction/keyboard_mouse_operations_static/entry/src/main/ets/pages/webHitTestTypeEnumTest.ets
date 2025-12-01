@@ -16,7 +16,7 @@
 import webView from '@ohos.web.webview';
 import { Utils } from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Callback } from '@ohos.base'
@@ -39,7 +39,7 @@ struct WebHitTestTypeEnumTest {
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;
@@ -56,7 +56,7 @@ struct WebHitTestTypeEnumTest {
             switch (this.str) {
               case 'testWebHitTestTypeEnum001': {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.EditText, 70143)
+                  Utils.emitEvent(webView.WebHitTestType.EDIT_TEXT, 70143)
                 } catch (error: BusinessError) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -64,7 +64,7 @@ struct WebHitTestTypeEnumTest {
               }
               case 'testWebHitTestTypeEnum002': {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.Email, 70144)
+                  Utils.emitEvent(webView.WebHitTestType.EMAIL, 70144)
                 } catch (error: BusinessError) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -72,7 +72,7 @@ struct WebHitTestTypeEnumTest {
               }
               case 'testWebHitTestTypeEnum003': {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.HttpAnchor, 70145)
+                  Utils.emitEvent(webView.WebHitTestType.HTTP_ANCHOR, 70145)
                 } catch (error: BusinessError) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -80,7 +80,7 @@ struct WebHitTestTypeEnumTest {
               }
               case 'testWebHitTestTypeEnum004': {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.HttpAnchorImg, 70146)
+                  Utils.emitEvent(webView.WebHitTestType.HTTP_ANCHOR_IMG, 70146)
                 } catch (error: BusinessError) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -88,7 +88,7 @@ struct WebHitTestTypeEnumTest {
               }
               case 'testWebHitTestTypeEnum005': {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.Img, 70147)
+                  Utils.emitEvent(webView.WebHitTestType.IMG, 70147)
                 } catch (error: BusinessError) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -96,7 +96,7 @@ struct WebHitTestTypeEnumTest {
               }
               case 'testWebHitTestTypeEnum006': {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.Map, 70148)
+                  Utils.emitEvent(webView.WebHitTestType.MAP, 70148)
                 } catch (error: BusinessError) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -104,7 +104,7 @@ struct WebHitTestTypeEnumTest {
               }
               case 'testWebHitTestTypeEnum007': {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.Phone, 70149)
+                  Utils.emitEvent(webView.WebHitTestType.PHONE, 70149)
                 } catch (error: BusinessError) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -112,7 +112,7 @@ struct WebHitTestTypeEnumTest {
               }
               case 'testWebHitTestTypeEnum008': {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.Unknown, 70150)
+                  Utils.emitEvent(webView.WebHitTestType.UNKNOWN, 70150)
                 } catch (error: BusinessError) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }

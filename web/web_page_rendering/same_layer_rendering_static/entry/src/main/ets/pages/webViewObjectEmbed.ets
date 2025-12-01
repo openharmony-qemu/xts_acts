@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement'
 import Utils from '../../src/test/Util.test';
-import { BusinessError } from '@ohos.base'
+import { BusinessError, RecordData } from '@ohos.base'
 import { Driver, ON } from '@ohos.UiTest';
 import hilog from '@ohos.hilog';
 import { Hypium } from '../../../hypium';
@@ -46,8 +46,8 @@ struct webViewObjectEmbed {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , object>)?.['ACTION'] != null) {
-        this.str = '' + (eventData.data as Record<string , object>)?.['ACTION'];
+      if (eventData.data != null && (eventData.data as Record<string , RecordData>)?.['ACTION'] != null) {
+        this.str = '' + (eventData.data as Record<string , RecordData>)?.['ACTION'];
       }
     }
   }

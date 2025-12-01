@@ -45,12 +45,12 @@ export default function nfcControllerTest() {
         })
         
         /**
+         * @tc.name   SUB_COMMUNICATION_NFC_Cont_0100
          * @tc.number SUB_COMMUNICATION_NFC_Cont_0100
-         * @tc.name Test on_off_openNfcapi
-         * @tc.desc Register the NFC switch status event and enable the NFC switch.
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Register the NFC switch status event and enable the NFC switch.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_NFC_Cont_0100', Level.LEVEL0, function () {
             let NFC_STATE_NOTIFY = "nfcStateChange";
@@ -63,12 +63,12 @@ export default function nfcControllerTest() {
         })
     
         /**
+         * @tc.name   SUB_COMMUNICATION_NFC_Cont_0200
          * @tc.number SUB_COMMUNICATION_NFC_Cont_0200
-         * @tc.name Test isNfcAvailableapi
-         * @tc.desc Check whether the NFC function is enabled.
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Check whether the NFC function is enabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_NFC_Cont_0200', Level.LEVEL0, function ()  {
             let nfcisAvailable = controller.isNfcAvailable();
@@ -82,13 +82,13 @@ export default function nfcControllerTest() {
         })
         
         /**
+         * @tc.name   SUB_COMMUNICATION_NFC_Cont_0300
          * @tc.number SUB_COMMUNICATION_NFC_Cont_0300
-         * @tc.name Test isNfcOpenapi
-         * @tc.desc Check whether the NFC function is enabled.
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 0
-        */
+         * @tc.desc   Check whether the NFC function is enabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_COMMUNICATION_NFC_Cont_0300', Level.LEVEL0, function ()  {
             let nfcswitchis = controller.isNfcOpen();
             if (nfcswitchis == true) {
@@ -101,13 +101,13 @@ export default function nfcControllerTest() {
         })
     
         /**
+         * @tc.name   SUB_COMMUNICATION_NFC_Cont_0400
          * @tc.number SUB_COMMUNICATION_NFC_Cont_0400
-         * @tc.name Test isNfcAvailable_isNfcOpenapi
-         * @tc.desc Check whether the NFC function is enabled on the device.
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 0
-        */
+         * @tc.desc   Check whether the NFC function is enabled on the device.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_COMMUNICATION_NFC_Cont_0400', Level.LEVEL0, function ()  {
             let nfcisAvailable1 = controller.isNfcAvailable();
             if (nfcisAvailable1 ==  true) {
@@ -128,12 +128,12 @@ export default function nfcControllerTest() {
         })
     
         /**
+         * @tc.name   SUB_COMMUNICATION_NFC_Cont_0500
          * @tc.number SUB_COMMUNICATION_NFC_Cont_0500
-         * @tc.name Test getNfcStateapi
-         * @tc.desc Querying the Status When NFC Is Enabled
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Querying the Status When NFC Is Enabled
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_COMMUNICATION_NFC_Cont_0500', Level.LEVEL0, function ()  {
             let checkopennfc = controller.getNfcState();

@@ -63,10 +63,12 @@ export default function CapiPostUITask() {
     });
 
     /**
+     * @tc.name   ArkUIPostUITask_001
      * @tc.number ArkUIPostUITask_001
-     * @tc.name ArkUIPostUITask_001
-     * @tc.desc Test ArkUIPostUITask
-     * @tc.level: Level 1
+     * @tc.desc   Test ArkUIPostUITask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIPostUITask_001', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUIPostUITask_001] START'); 

@@ -56,6 +56,14 @@ export default function StorageProp25Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp25Jsunit_0100
+     * @tc.number StorageProp25Jsunit_0100
+     * @tc.desc   StorageProp25Jsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp25Jsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp25Jsunit_0100 START');
@@ -75,6 +83,14 @@ export default function StorageProp25Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp25Jsunit_0200
+     * @tc.number StorageProp25Jsunit_0200
+     * @tc.desc   StorageProp25Jsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp25Jsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp25Jsunit_0200 START');
@@ -94,6 +110,14 @@ export default function StorageProp25Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp25Jsunit_0300
+     * @tc.number StorageProp25Jsunit_0300
+     * @tc.desc   StorageProp25Jsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp25Jsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp25Jsunit_0300 START');
@@ -113,6 +137,14 @@ export default function StorageProp25Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp25Jsunit_0400
+     * @tc.number StorageProp25Jsunit_0400
+     * @tc.desc   StorageProp25Jsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp25Jsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp25Jsunit_0400 START');
@@ -132,6 +164,14 @@ export default function StorageProp25Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp25Jsunit_0500
+     * @tc.number StorageProp25Jsunit_0500
+     * @tc.desc   StorageProp25Jsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp25Jsunit_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp25Jsunit_0500 START');
@@ -155,6 +195,14 @@ export default function StorageProp25Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp25Jsunit_0600
+     * @tc.number StorageProp25Jsunit_0600
+     * @tc.desc   StorageProp25Jsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp25Jsunit_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp25Jsunit_0600 START');
@@ -178,6 +226,14 @@ export default function StorageProp25Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp25Jsunit_0700
+     * @tc.number StorageProp25Jsunit_0700
+     * @tc.desc   StorageProp25Jsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp25Jsunit_0700', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp25Jsunit_0700 START');
@@ -201,6 +257,14 @@ export default function StorageProp25Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp25Jsunit_0800
+     * @tc.number StorageProp25Jsunit_0800
+     * @tc.desc   StorageProp25Jsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp25Jsunit_0800', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp25Jsunit_0800 START');

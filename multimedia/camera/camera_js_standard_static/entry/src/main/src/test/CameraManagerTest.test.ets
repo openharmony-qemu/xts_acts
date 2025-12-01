@@ -36,7 +36,7 @@ let mVideoSurface: string | undefined;
 let surfaceIds: string;
 let AVRecorder: media.AVRecorder | undefined;
 let mCameraNum: number;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 
 let videoProfile: media.AVRecorderProfile = {
   audioBitrate: 48000,
@@ -71,7 +71,7 @@ export default function cameraManagerTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Receiver is ok')
-      surfaceIds = await receiver.getReceivingSurfaceId()
+      surfaceIds = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Received id: ' + JSON.stringify(surfaceIds))
     } else {
       console.log(TAG + 'Receiver is not ok')
@@ -210,7 +210,7 @@ export default function cameraManagerTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')
@@ -920,7 +920,7 @@ export default function cameraManagerTest() {
         expect().assertFail();
       } else {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ON_CAMERASTATUS_STATIC_0100 to operate");
-        mCameraManager.on('cameraStatus', (err: BusinessError<void> | null, data: cameraObj.CameraStatusInfo | undefined) => {
+        mCameraManager.onCameraStatus((err: BusinessError<void> | null, data: cameraObj.CameraStatusInfo | undefined) => {
           if (err!.code == 0) {
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ON_CAMERASTATUS_STATIC_0100 success");
           } else {
@@ -940,7 +940,7 @@ export default function cameraManagerTest() {
           console.info(TAG + "Error in SUB_MULTIMEDIA_CAMERA_ON_CAMERASTATUS_STATIC_0100 err: " + JSON.stringify(err));
           done()
         }
-        mCameraManager.off('cameraStatus')
+        mCameraManager.offCameraStatus()
       }
     })
 
@@ -959,7 +959,7 @@ export default function cameraManagerTest() {
         expect().assertFail();
       } else {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ON_FOLD_STATUS_STATIC_0100 to operate");
-        mCameraManager.on('foldStatusChange', (err: BusinessError<void> | null, data: cameraObj.FoldStatusInfo | undefined) => {
+        mCameraManager.onFoldStatusChange((err: BusinessError<void> | null, data: cameraObj.FoldStatusInfo | undefined) => {
           if (err!.code == 0) {
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ON_FOLD_STATUS_STATIC_0100 success");
           } else {
@@ -967,7 +967,7 @@ export default function cameraManagerTest() {
             expect(false).assertTrue();
           }
         })
-        mCameraManager.off('foldStatusChange');
+        mCameraManager.offFoldStatusChange();
       }
       done();
     })

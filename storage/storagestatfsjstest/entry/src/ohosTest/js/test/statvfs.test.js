@@ -21,14 +21,13 @@ export default function statvfs_test() {
 describe('statvfs_test', function () {
 
   /**
+   * @tc.name   statvfs_test_get_free_size_sync_000
    * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_SYNC_0000
-   * @tc.name statvfs_test_get_free_size_sync_000
-   * @tc.desc Test getFreeSizeSync() interfaces, when the path is a sandbox path, promise way back.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getFreeSizeSync() interfaces, when the path is a sandbox path, promise way back.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_free_size_sync_000', Level.LEVEL0, async function () {
     try {
       let context = featureAbility.getContext();
@@ -43,14 +42,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_free_size_sync_001
    * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_SYNC_0100
-   * @tc.name statvfs_test_get_free_size_sync_001
-   * @tc.desc Test getFreeSizeSync() interfaces, when the path is dev, callback way back.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getFreeSizeSync() interfaces, when the path is dev, callback way back.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_free_size_sync_001', Level.LEVEL0, async function () {
     try {
       let number = statvfs.getFreeSizeSync("/dev");
@@ -63,14 +61,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_free_size_sync_002
    * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_SYNC_0200
-   * @tc.name statvfs_test_get_free_size_sync_002
-   * @tc.desc Test getFreeSizeSync() interfaces, when the parameter type is wrong.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test getFreeSizeSync() interfaces, when the parameter type is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('statvfs_test_get_free_size_sync_002', Level.LEVEL3, async function () {
     try {
       statvfs.getFreeSizeSync(1);
@@ -82,14 +79,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_free_size_sync_003
    * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_SYNC_0300
-   * @tc.name statvfs_test_get_free_size_sync_003
-   * @tc.desc Test getFreeSizeSync() interfaces, when there are no parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test getFreeSizeSync() interfaces, when there are no parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('statvfs_test_get_free_size_sync_003', Level.LEVEL3, async function () {
     try {
       statvfs.getFreeSizeSync();
@@ -101,14 +97,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_free_size_sync_005
    * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_SYNC_0500
-   * @tc.name statvfs_test_get_free_size_sync_005
-   * @tc.desc Test getFreeSizeSync() interfaces, when the path is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test getFreeSizeSync() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('statvfs_test_get_free_size_sync_005', Level.LEVEL3, async function () {
     try {
       statvfs.getFreeSizeSync("");
@@ -120,14 +115,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_total_size_sync_000
    * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_SYNC_0000
-   * @tc.name statvfs_test_get_total_size_sync_000
-   * @tc.desc Test getTotalSizeSync() interfaces, when the path is a sandbox path, promise way back.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getTotalSizeSync() interfaces, when the path is a sandbox path, promise way back.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_total_size_sync_000', Level.LEVEL0, async function () {
     try {
       let context = featureAbility.getContext();
@@ -142,14 +136,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_total_size_sync_001
    * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_SYNC_0100
-   * @tc.name statvfs_test_get_total_size_sync_001
-   * @tc.desc Test getTotalSizeSync() interfaces, when the path is dev, callback way back.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getTotalSizeSync() interfaces, when the path is dev, callback way back.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_total_size_sync_001', Level.LEVEL0, async function () {
     try {
       let number = statvfs.getTotalSizeSync("/dev");
@@ -162,14 +155,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_total_size_sync_002
    * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_SYNC_0200
-   * @tc.name statvfs_test_get_total_size_sync_002
-   * @tc.desc Test getTotalSizeSync() interfaces, when the parameter type is wrong.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test getTotalSizeSync() interfaces, when the parameter type is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('statvfs_test_get_total_size_sync_002', Level.LEVEL3, async function () {
     try {
       statvfs.getTotalSizeSync(1);
@@ -181,14 +173,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_total_size_sync_003
    * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_SYNC_0300
-   * @tc.name statvfs_test_get_total_size_sync_003
-   * @tc.desc Test getTotalSizeSync() interfaces, when there are no parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test getTotalSizeSync() interfaces, when there are no parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('statvfs_test_get_total_size_sync_003', Level.LEVEL3, async function () {
     try {
       statvfs.getTotalSizeSync();
@@ -200,14 +191,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_total_size_sync_004
    * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_SYNC_0400
-   * @tc.name statvfs_test_get_total_size_sync_004
-   * @tc.desc Test getTotalSizeSync() interfaces, when the path is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test getTotalSizeSync() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('statvfs_test_get_total_size_sync_004', Level.LEVEL3, async function () {
     try {
       statvfs.getTotalSizeSync("");
@@ -219,14 +209,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_free_size_async_000
    * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0000
-   * @tc.name statvfs_test_get_free_size_async_000
-   * @tc.desc Test getFreeSize() interfaces, when the path is a sandbox path, promise way back.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getFreeSize() interfaces, when the path is a sandbox path, promise way back.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_free_size_async_000', Level.LEVEL0, async function (done) {
     try {
       let context = featureAbility.getContext();
@@ -242,14 +231,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_free_size_async_001
    * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0100
-   * @tc.name statvfs_test_get_free_size_async_001
-   * @tc.desc Test getFreeSize() interfaces, when the path is dev, callback way back.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getFreeSize() interfaces, when the path is dev, callback way back.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_free_size_async_001', Level.LEVEL0, async function (done) {
     try {
       statvfs.getFreeSize("/dev", (err, number) => {
@@ -268,14 +256,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_free_size_async_002
    * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0200
-   * @tc.name statvfs_test_get_free_size_async_002
-   * @tc.desc Test getFreeSize() interfaces, when the parameter type is wrong.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getFreeSize() interfaces, when the parameter type is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_free_size_async_002', Level.LEVEL0, async function (done) {
     try {
       await statvfs.getFreeSize(1);
@@ -288,14 +275,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_free_size_async_003
    * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0300
-   * @tc.name statvfs_test_get_free_size_async_003
-   * @tc.desc Test getFreeSize() interfaces, when there are no parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getFreeSize() interfaces, when there are no parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_free_size_async_003', Level.LEVEL0, async function (done) {
     try {
       await statvfs.getFreeSize();
@@ -308,14 +294,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_free_size_async_004
    * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0400
-   * @tc.name statvfs_test_get_free_size_async_004
-   * @tc.desc Test getFreeSize() interfaces, when the path is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getFreeSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_free_size_async_004', Level.LEVEL0, async function (done) {
     try {
       await statvfs.getFreeSize("");
@@ -328,14 +313,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_free_size_async_005
    * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0500
-   * @tc.name statvfs_test_get_free_size_async_005
-   * @tc.desc Test getFreeSize() interfaces, when the path is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getFreeSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_free_size_async_005', Level.LEVEL0, async function (done) {
     try {
       statvfs.getFreeSize("", (err) => {
@@ -353,14 +337,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_total_size_async_000
    * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0000
-   * @tc.name statvfs_test_get_total_size_async_000
-   * @tc.desc Test getTotalSize() interfaces, when the path is a sandbox path, promise way back.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getTotalSize() interfaces, when the path is a sandbox path, promise way back.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_total_size_async_000', Level.LEVEL0, async function (done) {
 
     try {
@@ -377,14 +360,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_total_size_async_001
    * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0100
-   * @tc.name statvfs_test_get_total_size_async_001
-   * @tc.desc Test getTotalSize() interfaces, when the path is dev, callback way back.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getTotalSize() interfaces, when the path is dev, callback way back.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_total_size_async_001', Level.LEVEL0, async function (done) {
 
     try {
@@ -404,14 +386,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_total_size_async_002
    * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0200
-   * @tc.name statvfs_test_get_total_size_async_002
-   * @tc.desc Test getTotalSize() interfaces, when the parameter type is wrong.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getTotalSize() interfaces, when the parameter type is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_total_size_async_002', Level.LEVEL0, async function (done) {
 
     try {
@@ -425,14 +406,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_total_size_async_003
    * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0300
-   * @tc.name statvfs_test_get_total_size_async_003
-   * @tc.desc Test getTotalSize() interfaces, when there are no parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getTotalSize() interfaces, when there are no parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_total_size_async_003', Level.LEVEL0, async function (done) {
 
     try {
@@ -446,14 +426,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_total_size_async_004
    * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0400
-   * @tc.name statvfs_test_get_total_size_async_004
-   * @tc.desc Test getTotalSize() interfaces, when the path is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getTotalSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_total_size_async_004', Level.LEVEL0, async function (done) {
 
     try {
@@ -467,14 +446,13 @@ describe('statvfs_test', function () {
   });
 
   /**
+   * @tc.name   statvfs_test_get_total_size_async_005
    * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0500
-   * @tc.name statvfs_test_get_total_size_async_005
-   * @tc.desc Test getTotalSize() interfaces, when the path is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test getTotalSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('statvfs_test_get_total_size_async_005', Level.LEVEL0, async function (done) {
 
     try {

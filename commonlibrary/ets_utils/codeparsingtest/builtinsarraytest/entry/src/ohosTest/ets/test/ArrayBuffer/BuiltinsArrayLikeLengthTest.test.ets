@@ -39,12 +39,12 @@ export default function builtinsArrayLikeLengthTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayLikeLengthTest1001
      * @tc.number SUB_ARRAYLIKE_LENGTH_TEST_0100
-     * @tc.name builtinsArrayLikeLengthTest1001
-     * @tc.desc Verify empty ArrayLike length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Verify empty ArrayLike length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayLikeLengthTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr = new ArrayLikeTest<number>({
@@ -54,12 +54,12 @@ export default function builtinsArrayLikeLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayLikeLengthTest1002
      * @tc.number SUB_ARRAYLIKE_LENGTH_TEST_0200
-     * @tc.name builtinsArrayLikeLengthTest1002
-     * @tc.desc Verify single element ArrayLike
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify single element ArrayLike
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayLikeLengthTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new ArrayLikeTest<string>(['a']);
@@ -67,12 +67,12 @@ export default function builtinsArrayLikeLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayLikeLengthTest1003
      * @tc.number SUB_ARRAYLIKE_LENGTH_TEST_0300
-     * @tc.name builtinsArrayLikeLengthTest1003
-     * @tc.desc Test maximum array index exceed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test maximum array index exceed
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayLikeLengthTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       try {
@@ -85,12 +85,12 @@ export default function builtinsArrayLikeLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayLikeLengthTest1004
      * @tc.number SUB_ARRAYLIKE_LENGTH_TEST_0400
-     * @tc.name builtinsArrayLikeLengthTest1004
-     * @tc.desc Test valid maximum length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test valid maximum length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayLikeLengthTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new ArrayLikeTest<string>({
@@ -100,12 +100,12 @@ export default function builtinsArrayLikeLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayLikeLengthTest1005
      * @tc.number SUB_ARRAYLIKE_LENGTH_TEST_0500
-     * @tc.name builtinsArrayLikeLengthTest1005
-     * @tc.desc Test length assignment
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test length assignment
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayLikeLengthTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new ArrayLikeTest<string>({
@@ -115,12 +115,12 @@ export default function builtinsArrayLikeLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayLikeLengthTest1006
      * @tc.number SUB_ARRAYLIKE_LENGTH_TEST_0600
-     * @tc.name builtinsArrayLikeLengthTest1006
-     * @tc.desc Test negative length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test negative length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayLikeLengthTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       try {
@@ -133,12 +133,12 @@ export default function builtinsArrayLikeLengthTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayLikeLengthTest1007
      * @tc.number SUB_ARRAYLIKE_LENGTH_TEST_0700
-     * @tc.name builtinsArrayLikeLengthTest1007
-     * @tc.desc Test invalid length type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test invalid length type
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayLikeLengthTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       try {

@@ -60,8 +60,10 @@ export default function requestVideoTest() {
             fs.unlinkSync(`${testContext.filesDir}/${files[i]}`);
           }
         }
+		await sleep(2000);
       } catch (error) {
         console.error(`requestVideoTest listFiles failed; error: ${error.code}  ${error.message}`)
+		await sleep(2000);
       }
     });
 
@@ -115,6 +117,7 @@ export default function requestVideoTest() {
 
         const handler = new MediaHandler();
         await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri, handler);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
         expect(false).assertTrue();
@@ -143,6 +146,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
         if (!isSupportHdr) {
@@ -171,6 +175,7 @@ export default function requestVideoTest() {
 
         const handler = new MediaHandler();
         await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri, handler);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
         expect(error.code).assertEqual('401');
@@ -197,6 +202,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
         expect(error.code).assertEqual('401');
@@ -222,6 +228,7 @@ export default function requestVideoTest() {
         };
         const handler = new MediaHandler();
         await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri, handler);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         expect(error.code).assertEqual('401');
@@ -251,6 +258,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         expect(error.code).assertEqual('401');
@@ -281,6 +289,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         expect(error.code).assertEqual('401');
@@ -308,6 +317,7 @@ export default function requestVideoTest() {
         };
         const handler = new MediaHandler();
         await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri, handler);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         expect(error.code).assertEqual(errCode);
@@ -339,6 +349,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         if (!isSupportHdr) {
@@ -375,6 +386,7 @@ export default function requestVideoTest() {
         let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
         expect(flag).assertEqual(0);
+		done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
         if (!isSupportHdr) {
@@ -2034,6 +2046,12 @@ export default function requestVideoTest() {
      */
     it('request_hdr_video_fileUri_imageUri_photoAsset_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_hdr_video_compatible_onprogress';
+      let isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so')
+      if (!isSupportHdr) {
+        console.info('device unsupport hdr');
+        done();
+        return
+      }
       try {
         let fetchOps: photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.DISPLAY_NAME, "test_hdr_1.mp4");
         let fetchResult = await helper.getAssets(fetchOps);

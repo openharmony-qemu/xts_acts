@@ -40,12 +40,12 @@ export default function MultimodalTouchEventTest() {
     }
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEvent_Action_0100
      * @tc.number SUB_MMI_Input_Api_TouchEvent_Action_0100
-     * @tc.name SUB_MMI_Input_Api_TouchEvent_Action_0100
-     * @tc.desc Test TouchEvent Action
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test TouchEvent Action
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_TouchEvent_Action_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -66,12 +66,12 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEvent_ToolType_0100
      * @tc.number SUB_MMI_Input_Api_TouchEvent_ToolType_0100
-     * @tc.name SUB_MMI_Input_Api_TouchEvent_ToolType_0100
-     * @tc.desc Test TouchEvent ToolType
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test TouchEvent ToolType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_TouchEvent_ToolType_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -96,12 +96,12 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEvent_SourceType_0100
      * @tc.number SUB_MMI_Input_Api_TouchEvent_SourceType_0100
-     * @tc.name SUB_MMI_Input_Api_TouchEvent_SourceType_0100
-     * @tc.desc Test TouchEvent SourceType
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test TouchEvent SourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_TouchEvent_SourceType_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -121,12 +121,12 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEvent_FixedMode_0100
      * @tc.number SUB_MMI_Input_Api_TouchEvent_FixedMode_0100
-     * @tc.name SUB_MMI_Input_Api_TouchEvent_FixedMode_0100
-     * @tc.desc Test TouchEvent FixedMode
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test TouchEvent FixedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_TouchEvent_FixedMode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -145,12 +145,12 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEvent_Touch_0100
      * @tc.number SUB_MMI_Input_Api_TouchEvent_Touch_0100
-     * @tc.name SUB_MMI_Input_Api_TouchEvent_Touch_0100
-     * @tc.desc Test TouchEvent Touch
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test TouchEvent Touch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_TouchEvent_Touch_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -209,12 +209,12 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEvent_Touch_0200
      * @tc.number SUB_MMI_Input_Api_TouchEvent_Touch_0200
-     * @tc.name SUB_MMI_Input_Api_TouchEvent_Touch_0200
-     * @tc.desc Test TouchEvent TouchEvent
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test TouchEvent TouchEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_TouchEvent_Touch_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -270,12 +270,12 @@ export default function MultimodalTouchEventTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_InputEvent_0100
      * @tc.number SUB_MMI_Input_Api_InputEvent_0100
-     * @tc.name SUB_MMI_Input_Api_InputEvent_0100
-     * @tc.desc Test InputEvent
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test InputEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InputEvent_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

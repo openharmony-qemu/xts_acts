@@ -35,22 +35,28 @@ export default function webInitTest() {
       console.info("WebInitTest afterEach start");
       done();
     })
-    /*
-     * @tc.number SUB_ACE_BASIC_ETS_API_SETPRINTBACKGROUND_0100
+    /**
      * @tc.name   testSetPrintBackgroundOne
+     * @tc.number SUB_ACE_BASIC_ETS_API_SETPRINTBACKGROUND_0100
      * @tc.desc   Support printing background colors
-   */
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetPrintBackgroundOne',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitSetPrintBackgroundOne", 300530)
       Utils.registerEvent("testSetPrintBackgroundOne",false,300540,done);
       sendEventByKey('WebInitTestButton',10,'');
     })
 
-    /*
+    /**
+     * @tc.name   emitSetPrintBackgroundTwo
      * @tc.number SUB_ACE_BASIC_ETS_API_SETPRINTBACKGROUND_0200
-     * @tc.name   testSetPrintBackgroundOne
      * @tc.desc   Support printing background colors
-    */
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetPrintBackgroundTwo',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitSetPrintBackgroundTwo", 300530)
       Utils.registerEvent("emitSetPrintBackgroundTwo",true,20251025,done);

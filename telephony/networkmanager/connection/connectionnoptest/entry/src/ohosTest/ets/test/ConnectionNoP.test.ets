@@ -40,12 +40,12 @@ export default function Multicastconnection201Test() {
 
 
     /**
+     * @tc.name   testNetworkManagerDNSaddCustomDNSRuleAsync0300
      * @tc.number SUB_NetworkManager_DNS_addCustomDNSRule_Async_0300
-     * @tc.name testNetworkManagerDNSaddCustomDNSRuleAsync0300
-     * @tc.desc Function test
-     * @tc.level Level0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkManagerDNSaddCustomDNSRuleAsync0300", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done:Function)=> {
       const caseName: string = 'testNetworkManagerDNSaddCustomDNSRuleAsync0300';
@@ -72,12 +72,12 @@ export default function Multicastconnection201Test() {
     });
 
     /**
+     * @tc.name   testNetworkManagerDNSaddCustomDNSRulePromise0200
      * @tc.number SUB_NetworkManager_DNS_addCustomDNSRule_Promise_0200
-     * @tc.name testNetworkManagerDNSaddCustomDNSRulePromise0200
-     * @tc.desc Function test
-     * @tc.level Level0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkManagerDNSaddCustomDNSRulePromise0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,async (done:Function)=> {
       const caseName: string = 'testNetworkManagerDNSaddCustomDNSRulePromise0200';
@@ -104,12 +104,12 @@ export default function Multicastconnection201Test() {
     });
 
     /**
+     * @tc.name   testNetworkManageeDNSremoveCustomDNSRulrAsync0300
      * @tc.number SUB_NetworkManagee_DNS_removeCustomDNSRulr_Async_0300
-     * @tc.name testNetworkManageeDNSremoveCustomDNSRulrAsync0300
-     * @tc.desc Test removeCustomDnsRule property
-     * @tc.level Level0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test removeCustomDnsRule property
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkManageeDNSremoveCustomDNSRulrAsync0300", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,async (done:Function)=> {
       const caseName: string = 'testNetworkManageeDNSremoveCustomDNSRulrAsync0300';
@@ -137,12 +137,12 @@ export default function Multicastconnection201Test() {
     });
 
     /**
+     * @tc.name   testNetworkManagerDNSremoveCustomDNSRulePromise0200
      * @tc.number SUB_NetworkManager_DNS_removeCustomDNSRule_Promise_0200
-     * @tc.name testNetworkManagerDNSremoveCustomDNSRulePromise0200
-     * @tc.desc Function test
-     * @tc.level Level0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkManagerDNSremoveCustomDNSRulePromise0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,async (done:Function)=> {
       const caseName: string = 'testNetworkManagerDNSremoveCustomDNSRulePromise0200';
@@ -168,12 +168,12 @@ export default function Multicastconnection201Test() {
     });
 
     /**
+     * @tc.name   testNetworkManagerDNScleraCustomDNSRuleAsync0300
      * @tc.number SUB_NetworkManager_DNS_cleraCustomDNSRule_Async_0300
-     * @tc.name testNetworkManagerDNScleraCustomDNSRuleAsync0300
-     * @tc.desc Test removeCustomDnsRule property
-     * @tc.level Level0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test removeCustomDnsRule property
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkManagerDNScleraCustomDNSRuleAsync0300", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,async (done:Function)=> {
       const caseName: string = 'testNetworkManageeDNSremoveCustomDNSRulrAsync0300';
@@ -199,12 +199,12 @@ export default function Multicastconnection201Test() {
     });
 
     /**
+     * @tc.name   testNetworkManagerDNSclearCustomDNSRulesPromise0200
      * @tc.number SUB_NetworkManager_DNS_clearCustomDNSRules_Promise_0200
-     * @tc.name testNetworkManagerDNSclearCustomDNSRulesPromise0200
-     * @tc.desc Test clearCustomDnsRules property
-     * @tc.level Level0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test clearCustomDnsRules property
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkManagerDNSclearCustomDNSRulesPromise0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done:Function)=> {
       const caseName: string = 'testNetworkManagerDNSclearCustomDNSRulesPromise0200';
@@ -229,14 +229,14 @@ export default function Multicastconnection201Test() {
       }
     });
     
-    /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_NoP_0100
-     * @tc.name testNetworkMgrConnectionSetNetExtAttributeSyncNoP0100
-     * @tc.desc Test setNetExtAttributeSync permission
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+   /**
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttributeSyncNoP0100
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_NoP_0100
+    * @tc.desc   Test setNetExtAttributeSync permission
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionSetNetExtAttributeSyncNoP0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttributeSyncNoP0100";
      console.info(`${caseName}---Start`);
@@ -255,14 +255,14 @@ export default function Multicastconnection201Test() {
      }
    })
  
-     /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_NoP_0100
-     * @tc.name testNetworkMgrConnectionSetNetExtAttributeNoP0100
-     * @tc.desc Test setNetExtAttribute permission
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+   /**
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttributeNoP0100
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_NoP_0100
+    * @tc.desc   Test setNetExtAttribute permission
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionSetNetExtAttributeNoP0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttributeNoP0100";
      console.info(`${caseName}---Start`);
@@ -285,14 +285,14 @@ export default function Multicastconnection201Test() {
      }
    });
 
-    /**
-     * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_NoP_0100
-     * @tc.name testNetworkMgrConnectionGetNetExtAttributeSyncNoP0100
-     * @tc.desc Test getNetExtAttributeSync permission
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+   /**
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttributeSyncNoP0100
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_NoP_0100
+    * @tc.desc   Test getNetExtAttributeSync permission
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionGetNetExtAttributeSyncNoP0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttributeSyncNoP0100";
      console.info(`${caseName}---Start`);
@@ -309,14 +309,14 @@ export default function Multicastconnection201Test() {
      }
    });
 
-    /**
-     * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_NoP_0100
-     * @tc.name testNetworkMgrConnectionGetNetExtAttributeNoP0100
-     * @tc.desc Test getNetExtAttribute permission
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+   /**
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttributeNoP0100
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_NoP_0100
+    * @tc.desc   Test getNetExtAttribute permission
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionGetNetExtAttributeNoP0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttributeNoP0100";
      console.info(`${caseName}---Start`);

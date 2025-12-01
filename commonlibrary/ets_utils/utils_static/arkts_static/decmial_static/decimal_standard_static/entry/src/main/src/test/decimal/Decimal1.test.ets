@@ -65,12 +65,12 @@ export default function Decimal1Test() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0100
-     * @tc.name       : testComparedTo0001
-     * @tc.desc       : Testing the decimal comparedTo with "Nah".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0100
+     * @tc.desc   Testing the decimal comparedTo with "Nah".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0001';
@@ -85,12 +85,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0200
-     * @tc.name       : testComparedTo0002
-     * @tc.desc       : Testing the decimal comparedTo with 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0200
+     * @tc.desc   Testing the decimal comparedTo with 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0002';
@@ -105,12 +105,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0300
-     * @tc.name       : testComparedTo0003
-     * @tc.desc       : Testing the decimal comparedTo with "0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0300
+     * @tc.desc   Testing the decimal comparedTo with "0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0003';
@@ -125,12 +125,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0400
-     * @tc.name       : testComparedTo0004
-     * @tc.desc       : Testing the decimal comparedTo with new Decimal(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0400
+     * @tc.desc   Testing the decimal comparedTo with new Decimal(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0004';
@@ -146,12 +146,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0500
-     * @tc.name       : testComparedTo0005
-     * @tc.desc       : Testing the decimal comparedTo -0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0500
+     * @tc.desc   Testing the decimal comparedTo -0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0005';
@@ -166,12 +166,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0600
-     * @tc.name       : testComparedTo0006
-     * @tc.desc       : Testing the decimal comparedTo "-0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0600
+     * @tc.desc   Testing the decimal comparedTo "-0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0006';
@@ -186,12 +186,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0700
-     * @tc.name       : testComparedTo0007
-     * @tc.desc       : Testing the decimal comparedTo new Decimal(-0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0700
+     * @tc.desc   Testing the decimal comparedTo new Decimal(-0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0007';
@@ -206,12 +206,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0800
-     * @tc.name       : testComparedTo0008
-     * @tc.desc       : Testing the decimal comparedTo Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0800
+     * @tc.desc   Testing the decimal comparedTo Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0008';
@@ -226,12 +226,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0900
-     * @tc.name       : testComparedTo0009
-     * @tc.desc       : Testing the decimal comparedTo -Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_0900
+     * @tc.desc   Testing the decimal comparedTo -Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0009';
@@ -246,12 +246,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1000
-     * @tc.name       : testComparedTo0010
-     * @tc.desc       : Testing the decimal comparedTo with new Decimal(Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1000
+     * @tc.desc   Testing the decimal comparedTo with new Decimal(Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0010';
@@ -266,12 +266,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1100
-     * @tc.name       : testComparedTo0011
-     * @tc.desc       : Testing the decimal comparedTo with number in scientific notation (5e3).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1100
+     * @tc.desc   Testing the decimal comparedTo with number in scientific notation (5e3).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0011';
@@ -286,12 +286,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1200
-     * @tc.name       : testComparedTo0012
-     * @tc.desc       : Testing the decimal comparedTo with various types of real numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1200
+     * @tc.desc   Testing the decimal comparedTo with various types of real numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0012';
@@ -315,12 +315,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1300
-     * @tc.name       : testComparedTo0013
-     * @tc.desc       : Testing the decimal comparedTo with 'Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1300
+     * @tc.desc   Testing the decimal comparedTo with 'Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0013';
@@ -335,12 +335,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1400
-     * @tc.name       : testComparedTo0014
-     * @tc.desc       : Testing the decimal comparedTo with '-Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1400
+     * @tc.desc   Testing the decimal comparedTo with '-Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0014';
@@ -355,12 +355,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1500
-     * @tc.name       : testComparedTo0015
-     * @tc.desc       : Testing the decimal comparedTo with new Decimal(-Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1500
+     * @tc.desc   Testing the decimal comparedTo with new Decimal(-Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0015';
@@ -375,12 +375,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1600
-     * @tc.name       : testComparedTo0016
-     * @tc.desc       : Testing the decimal comparedTo with new Decimal("Nah").
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1600
+     * @tc.desc   Testing the decimal comparedTo with new Decimal("Nah").
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0016';
@@ -396,12 +396,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1700
-     * @tc.name       : testComparedTo0017
-     * @tc.desc       : Testing the decimal comparedTo with Decimal in scientific notation (5e3).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1700
+     * @tc.desc   Testing the decimal comparedTo with Decimal in scientific notation (5e3).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0017';
@@ -417,12 +417,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1800
-     * @tc.name       : testComparedTo0018
-     * @tc.desc       : Testing the decimal comparedTo with new Decimal("0").
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1800
+     * @tc.desc   Testing the decimal comparedTo with new Decimal("0").
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0018';
@@ -438,12 +438,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1900
-     * @tc.name       : testComparedTo0019
-     * @tc.desc       : Testing the decimal comparedTo new Decimal(0) in new Decimal().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_1900
+     * @tc.desc   Testing the decimal comparedTo new Decimal(0) in new Decimal().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0019';
@@ -459,12 +459,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_2000
-     * @tc.name       : testComparedTo0020
-     * @tc.desc       : Testing the decimal comparedTo with new Decimal(realNum).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_2000
+     * @tc.desc   Testing the decimal comparedTo with new Decimal(realNum).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0020';
@@ -494,12 +494,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_2100
-     * @tc.name       : testComparedTo0021
-     * @tc.desc       : Testing the decimal comparedTo with new Decimal("-0").
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testComparedTo0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_2100
+     * @tc.desc   Testing the decimal comparedTo with new Decimal("-0").
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComparedTo0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testComparedTo0021';
@@ -515,12 +515,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_2200
-     * @tc.name       : testComparedTo0022
-     * @tc.desc       : Testing the decimal comparedTo new Decimal(-0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testComparedTo0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_2200
+     * @tc.desc   Testing the decimal comparedTo new Decimal(-0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testComparedTo0022';
@@ -536,12 +536,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_2500
-     * @tc.name       : testComparedTo0025
-     * @tc.desc       : Testing the decimal comparedTo with new Decimal(new Decimal(Infinity)).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testComparedTo0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_2500
+     * @tc.desc   Testing the decimal comparedTo with new Decimal(new Decimal(Infinity)).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testComparedTo0025';
@@ -557,12 +557,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_2600
-     * @tc.name       : testComparedTo0026
-     * @tc.desc       : Testing the decimal comparedTo with "Infinity".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testComparedTo0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_COMPARED_TO_2600
+     * @tc.desc   Testing the decimal comparedTo with "Infinity".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testComparedTo0026';
@@ -578,12 +578,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0100
-     * @tc.name       : testEquals0001
-     * @tc.desc       : Testing the decimal equals with "Nah".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0100
+     * @tc.desc   Testing the decimal equals with "Nah".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0001';
@@ -598,12 +598,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0200
-     * @tc.name       : testEquals0002
-     * @tc.desc       : Testing the decimal equals with 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0200
+     * @tc.desc   Testing the decimal equals with 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0002';
@@ -618,12 +618,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0300
-     * @tc.name       : testEquals0003
-     * @tc.desc       : Testing the decimal equals with "0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0300
+     * @tc.desc   Testing the decimal equals with "0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0003';
@@ -638,12 +638,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0400
-     * @tc.name       : testEquals0004
-     * @tc.desc       : Testing the decimal equals with new Decimal(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0400
+     * @tc.desc   Testing the decimal equals with new Decimal(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0004';
@@ -659,12 +659,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0500
-     * @tc.name       : testEquals0005
-     * @tc.desc       : Testing the decimal equals -0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0500
+     * @tc.desc   Testing the decimal equals -0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0005';
@@ -679,12 +679,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0600
-     * @tc.name       : testEquals0006
-     * @tc.desc       : Testing the decimal equals "-0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0600
+     * @tc.desc   Testing the decimal equals "-0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0006';
@@ -699,12 +699,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0700
-     * @tc.name       : testEquals0007
-     * @tc.desc       : Testing the decimal equals new Decimal(-0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0700
+     * @tc.desc   Testing the decimal equals new Decimal(-0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0007';
@@ -719,12 +719,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0800
-     * @tc.name       : testEquals0008
-     * @tc.desc       : Testing the decimal equals Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0800
+     * @tc.desc   Testing the decimal equals Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0008';
@@ -739,12 +739,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0900
-     * @tc.name       : testEquals0009
-     * @tc.desc       : Testing the decimal equals -Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_0900
+     * @tc.desc   Testing the decimal equals -Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0009';
@@ -759,12 +759,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1000
-     * @tc.name       : testEquals0010
-     * @tc.desc       : Testing the decimal equals with new Decimal(Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1000
+     * @tc.desc   Testing the decimal equals with new Decimal(Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0010';
@@ -780,12 +780,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1100
-     * @tc.name       : testEquals0011
-     * @tc.desc       : Testing the decimal equals with number in scientific notation (5e3).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1100
+     * @tc.desc   Testing the decimal equals with number in scientific notation (5e3).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0011';
@@ -801,12 +801,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1200
-     * @tc.name       : testEquals0012
-     * @tc.desc       : Testing the decimal equals with various types of real numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1200
+     * @tc.desc   Testing the decimal equals with various types of real numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0012';
@@ -836,12 +836,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1300
-     * @tc.name       : testEquals0013
-     * @tc.desc       : Testing the decimal equals with 'Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1300
+     * @tc.desc   Testing the decimal equals with 'Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0013';
@@ -856,12 +856,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1400
-     * @tc.name       : testEquals0014
-     * @tc.desc       : Testing the decimal equals with '-Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1400
+     * @tc.desc   Testing the decimal equals with '-Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0014';
@@ -876,12 +876,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1500
-     * @tc.name       : testEquals0015
-     * @tc.desc       : Testing the decimal equals with new Decimal(-Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEquals0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_EQUALS_1500
+     * @tc.desc   Testing the decimal equals with new Decimal(-Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEquals0015';
@@ -896,12 +896,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0100
-     * @tc.name       : testGreaterThan0001
-     * @tc.desc       : Testing the decimal greaterThan with "Nah".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0100
+     * @tc.desc   Testing the decimal greaterThan with "Nah".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0001';
@@ -916,12 +916,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0200
-     * @tc.name       : testGreaterThan0002
-     * @tc.desc       : Testing the decimal greaterThan with 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0200
+     * @tc.desc   Testing the decimal greaterThan with 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0002';
@@ -936,12 +936,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0300
-     * @tc.name       : testGreaterThan0003
-     * @tc.desc       : Testing the decimal greaterThan with "0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0300
+     * @tc.desc   Testing the decimal greaterThan with "0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0003';
@@ -956,12 +956,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0400
-     * @tc.name       : testGreaterThan0004
-     * @tc.desc       : Testing the decimal greaterThan with new Decimal(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0400
+     * @tc.desc   Testing the decimal greaterThan with new Decimal(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0004';
@@ -977,12 +977,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0500
-     * @tc.name       : testGreaterThan0005
-     * @tc.desc       : Testing the decimal greaterThan -0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0500
+     * @tc.desc   Testing the decimal greaterThan -0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0005';
@@ -997,12 +997,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0600
-     * @tc.name       : testGreaterThan0006
-     * @tc.desc       : Testing the decimal greaterThan "-0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0600
+     * @tc.desc   Testing the decimal greaterThan "-0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0006';
@@ -1017,12 +1017,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0700
-     * @tc.name       : testGreaterThan0007
-     * @tc.desc       : Testing the decimal greaterThan new Decimal(-0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0700
+     * @tc.desc   Testing the decimal greaterThan new Decimal(-0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0007';
@@ -1037,12 +1037,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0800
-     * @tc.name       : testGreaterThan0008
-     * @tc.desc       : Testing the decimal greaterThan Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0800
+     * @tc.desc   Testing the decimal greaterThan Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0008';
@@ -1057,12 +1057,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0900
-     * @tc.name       : testGreaterThan0009
-     * @tc.desc       : Testing the decimal greaterThan -Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_0900
+     * @tc.desc   Testing the decimal greaterThan -Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0009';
@@ -1077,12 +1077,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1000
-     * @tc.name       : testGreaterThan0010
-     * @tc.desc       : Testing the decimal greaterThan with new Decimal(Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1000
+     * @tc.desc   Testing the decimal greaterThan with new Decimal(Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0010';
@@ -1098,12 +1098,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1100
-     * @tc.name       : testGreaterThan0011
-     * @tc.desc       : Testing the decimal greaterThan with number in scientific notation (5e3).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1100
+     * @tc.desc   Testing the decimal greaterThan with number in scientific notation (5e3).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0011';
@@ -1119,12 +1119,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1200
-     * @tc.name       : testGreaterThan0012
-     * @tc.desc       : Testing the decimal greaterThan with various types of real numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1200
+     * @tc.desc   Testing the decimal greaterThan with various types of real numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0012';
@@ -1154,12 +1154,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1300
-     * @tc.name       : testGreaterThan0013
-     * @tc.desc       : Testing the decimal greaterThan with 'Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1300
+     * @tc.desc   Testing the decimal greaterThan with 'Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0013';
@@ -1174,12 +1174,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1400
-     * @tc.name       : testGreaterThan0014
-     * @tc.desc       : Testing the decimal greaterThan with '-Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1400
+     * @tc.desc   Testing the decimal greaterThan with '-Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0014';
@@ -1194,12 +1194,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1500
-     * @tc.name       : testGreaterThan0015
-     * @tc.desc       : Testing the decimal greaterThan with new Decimal(-Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThan0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHAN_1500
+     * @tc.desc   Testing the decimal greaterThan with new Decimal(-Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThan0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThan0015';
@@ -1214,12 +1214,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0100
-     * @tc.name       : testGreaterThanOrEqualTo0001
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo with "Nah".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0100
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo with "Nah".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0001';
@@ -1234,12 +1234,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0200
-     * @tc.name       : testGreaterThanOrEqualTo0002
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo with 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0200
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo with 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0002';
@@ -1254,12 +1254,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0300
-     * @tc.name       : testGreaterThanOrEqualTo0003
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo with "0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0300
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo with "0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0003';
@@ -1274,12 +1274,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0400
-     * @tc.name       : testGreaterThanOrEqualTo0004
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo with new Decimal(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0400
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo with new Decimal(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0004';
@@ -1295,12 +1295,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0500
-     * @tc.name       : testGreaterThanOrEqualTo0005
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo -0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0500
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo -0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0005';
@@ -1315,12 +1315,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0600
-     * @tc.name       : testGreaterThanOrEqualTo0006
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo "-0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0600
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo "-0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0006';
@@ -1335,12 +1335,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0700
-     * @tc.name       : testGreaterThanOrEqualTo0007
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo new Decimal(-0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0700
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo new Decimal(-0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0007';
@@ -1355,12 +1355,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0800
-     * @tc.name       : testGreaterThanOrEqualTo0008
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0800
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0008';
@@ -1375,12 +1375,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0900
-     * @tc.name       : testGreaterThanOrEqualTo0009
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo -Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_0900
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo -Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0009';
@@ -1395,12 +1395,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1000
-     * @tc.name       : testGreaterThanOrEqualTo0010
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo with new Decimal(Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1000
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo with new Decimal(Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0010';
@@ -1416,12 +1416,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1100
-     * @tc.name       : testGreaterThanOrEqualTo0011
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo with number in scientific notation (5e3).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1100
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo with number in scientific notation (5e3).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0011';
@@ -1437,12 +1437,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1200
-     * @tc.name       : testGreaterThanOrEqualTo0012
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo with various types of real numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1200
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo with various types of real numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0012';
@@ -1472,12 +1472,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1300
-     * @tc.name       : testGreaterThanOrEqualTo0013
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo with 'Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1300
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo with 'Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0013';
@@ -1492,12 +1492,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1400
-     * @tc.name       : testGreaterThanOrEqualTo0014
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo with '-Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1400
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo with '-Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0014';
@@ -1512,12 +1512,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1500
-     * @tc.name       : testGreaterThanOrEqualTo0015
-     * @tc.desc       : Testing the decimal greaterThanOrEqualTo with new Decimal(-Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGreaterThanOrEqualTo0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_GREATERTHANOREQUALTO_1500
+     * @tc.desc   Testing the decimal greaterThanOrEqualTo with new Decimal(-Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGreaterThanOrEqualTo0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGreaterThanOrEqualTo0015';
@@ -1532,12 +1532,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0100
-     * @tc.name       : testLessThan0001
-     * @tc.desc       : Testing the decimal lessThan with "Nah".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0100
+     * @tc.desc   Testing the decimal lessThan with "Nah".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0001';
@@ -1552,12 +1552,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0200
-     * @tc.name       : testLessThan0002
-     * @tc.desc       : Testing the decimal lessThan with 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0200
+     * @tc.desc   Testing the decimal lessThan with 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0002';
@@ -1572,12 +1572,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0300
-     * @tc.name       : testLessThan0003
-     * @tc.desc       : Testing the decimal lessThan with "0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0300
+     * @tc.desc   Testing the decimal lessThan with "0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0003';
@@ -1592,12 +1592,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0400
-     * @tc.name       : testLessThan0004
-     * @tc.desc       : Testing the decimal lessThan with new Decimal(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0400
+     * @tc.desc   Testing the decimal lessThan with new Decimal(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0004';
@@ -1613,12 +1613,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0500
-     * @tc.name       : testLessThan0005
-     * @tc.desc       : Testing the decimal lessThan -0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0500
+     * @tc.desc   Testing the decimal lessThan -0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0005';
@@ -1633,12 +1633,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0600
-     * @tc.name       : testLessThan0006
-     * @tc.desc       : Testing the decimal lessThan "-0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0600
+     * @tc.desc   Testing the decimal lessThan "-0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0006';
@@ -1653,12 +1653,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0700
-     * @tc.name       : testLessThan0007
-     * @tc.desc       : Testing the decimal lessThan new Decimal(-0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0700
+     * @tc.desc   Testing the decimal lessThan new Decimal(-0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0007';
@@ -1673,12 +1673,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0800
-     * @tc.name       : testLessThan0008
-     * @tc.desc       : Testing the decimal lessThan Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0800
+     * @tc.desc   Testing the decimal lessThan Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0008';
@@ -1693,12 +1693,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0900
-     * @tc.name       : testLessThan0009
-     * @tc.desc       : Testing the decimal lessThan -Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_0900
+     * @tc.desc   Testing the decimal lessThan -Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0009';
@@ -1713,12 +1713,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1000
-     * @tc.name       : testLessThan0010
-     * @tc.desc       : Testing the decimal lessThan with new Decimal(Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1000
+     * @tc.desc   Testing the decimal lessThan with new Decimal(Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0010';
@@ -1734,12 +1734,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1100
-     * @tc.name       : testLessThan0011
-     * @tc.desc       : Testing the decimal lessThan with number in scientific notation (5e3).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1100
+     * @tc.desc   Testing the decimal lessThan with number in scientific notation (5e3).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0011';
@@ -1755,12 +1755,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1200
-     * @tc.name       : testLessThan0012
-     * @tc.desc       : Testing the decimal lessThan with various types of real numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1200
+     * @tc.desc   Testing the decimal lessThan with various types of real numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0012';
@@ -1790,12 +1790,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1300
-     * @tc.name       : testLessThan0013
-     * @tc.desc       : Testing the decimal lessThan with 'Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1300
+     * @tc.desc   Testing the decimal lessThan with 'Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0013';
@@ -1810,12 +1810,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1400
-     * @tc.name       : testLessThan0014
-     * @tc.desc       : Testing the decimal lessThan with '-Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1400
+     * @tc.desc   Testing the decimal lessThan with '-Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0014';
@@ -1830,12 +1830,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1500
-     * @tc.name       : testLessThan0015
-     * @tc.desc       : Testing the decimal lessThan with new Decimal(-Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThan0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHAN_1500
+     * @tc.desc   Testing the decimal lessThan with new Decimal(-Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThan0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThan0015';
@@ -1850,12 +1850,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0100
-     * @tc.name       : testLessThanOrEqualTo0001
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo with "Nah".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0100
+     * @tc.desc   Testing the decimal lessThanOrEqualTo with "Nah".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0001';
@@ -1870,12 +1870,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0200
-     * @tc.name       : testLessThanOrEqualTo0002
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo with 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0200
+     * @tc.desc   Testing the decimal lessThanOrEqualTo with 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0002';
@@ -1890,12 +1890,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0300
-     * @tc.name       : testLessThanOrEqualTo0003
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo with "0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0300
+     * @tc.desc   Testing the decimal lessThanOrEqualTo with "0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0003';
@@ -1910,12 +1910,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0400
-     * @tc.name       : testLessThanOrEqualTo0004
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo with new Decimal(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0400
+     * @tc.desc   Testing the decimal lessThanOrEqualTo with new Decimal(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0004';
@@ -1931,12 +1931,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0500
-     * @tc.name       : testLessThanOrEqualTo0005
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo -0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0500
+     * @tc.desc   Testing the decimal lessThanOrEqualTo -0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0005';
@@ -1951,12 +1951,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0600
-     * @tc.name       : testLessThanOrEqualTo0006
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo "-0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0600
+     * @tc.desc   Testing the decimal lessThanOrEqualTo "-0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0006';
@@ -1971,12 +1971,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0700
-     * @tc.name       : testLessThanOrEqualTo0007
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo new Decimal(-0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0700
+     * @tc.desc   Testing the decimal lessThanOrEqualTo new Decimal(-0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0007';
@@ -1991,12 +1991,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0800
-     * @tc.name       : testLessThanOrEqualTo0008
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0800
+     * @tc.desc   Testing the decimal lessThanOrEqualTo Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0008';
@@ -2011,12 +2011,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0900
-     * @tc.name       : testLessThanOrEqualTo0009
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo -Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_0900
+     * @tc.desc   Testing the decimal lessThanOrEqualTo -Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0009';
@@ -2031,12 +2031,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1000
-     * @tc.name       : testLessThanOrEqualTo0010
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo with new Decimal(Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1000
+     * @tc.desc   Testing the decimal lessThanOrEqualTo with new Decimal(Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0010';
@@ -2052,12 +2052,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1100
-     * @tc.name       : testLessThanOrEqualTo0011
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo with number in scientific notation (5e3).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1100
+     * @tc.desc   Testing the decimal lessThanOrEqualTo with number in scientific notation (5e3).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0011';
@@ -2073,12 +2073,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1200
-     * @tc.name       : testLessThanOrEqualTo0012
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo with various types of real numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1200
+     * @tc.desc   Testing the decimal lessThanOrEqualTo with various types of real numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0012';
@@ -2108,12 +2108,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1300
-     * @tc.name       : testLessThanOrEqualTo0013
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo with 'Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1300
+     * @tc.desc   Testing the decimal lessThanOrEqualTo with 'Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0013';
@@ -2128,12 +2128,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1400
-     * @tc.name       : testLessThanOrEqualTo0014
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo with '-Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1400
+     * @tc.desc   Testing the decimal lessThanOrEqualTo with '-Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0014';
@@ -2148,12 +2148,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1500
-     * @tc.name       : testLessThanOrEqualTo0015
-     * @tc.desc       : Testing the decimal lessThanOrEqualTo with new Decimal(-Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLessThanOrEqualTo0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_LESSTHANOREQUALTO_1500
+     * @tc.desc   Testing the decimal lessThanOrEqualTo with new Decimal(-Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLessThanOrEqualTo0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLessThanOrEqualTo0015';
@@ -2168,12 +2168,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0100
-     * @tc.name       : testDividedToIntegerBy0001
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with "Nah".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0100
+     * @tc.desc   Testing the decimal dividedToIntegerBy with "Nah".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0001';
@@ -2188,12 +2188,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0200
-     * @tc.name       : testDividedToIntegerBy0002
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0200
+     * @tc.desc   Testing the decimal dividedToIntegerBy with 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0002';
@@ -2208,12 +2208,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0300
-     * @tc.name       : testDividedToIntegerBy0003
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with "0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0300
+     * @tc.desc   Testing the decimal dividedToIntegerBy with "0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0003';
@@ -2228,12 +2228,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0400
-     * @tc.name       : testDividedToIntegerBy0004
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with new Decimal(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0400
+     * @tc.desc   Testing the decimal dividedToIntegerBy with new Decimal(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0004';
@@ -2248,12 +2248,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0500
-     * @tc.name       : testDividedToIntegerBy0005
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with -0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0500
+     * @tc.desc   Testing the decimal dividedToIntegerBy with -0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0005';
@@ -2268,12 +2268,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0600
-     * @tc.name       : testDividedToIntegerBy0006
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with "-0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0600
+     * @tc.desc   Testing the decimal dividedToIntegerBy with "-0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0006';
@@ -2288,12 +2288,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0700
-     * @tc.name       : testDividedToIntegerBy0007
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with new Decimal(-0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0700
+     * @tc.desc   Testing the decimal dividedToIntegerBy with new Decimal(-0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0007';
@@ -2308,12 +2308,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0800
-     * @tc.name       : testDividedToIntegerBy0008
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0800
+     * @tc.desc   Testing the decimal dividedToIntegerBy with Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0008';
@@ -2328,12 +2328,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0900
-     * @tc.name       : testDividedToIntegerBy0009
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with "Infinity".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_0900
+     * @tc.desc   Testing the decimal dividedToIntegerBy with "Infinity".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0009';
@@ -2348,12 +2348,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1000
-     * @tc.name       : testDividedToIntegerBy0010
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with new Decimal(Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1000
+     * @tc.desc   Testing the decimal dividedToIntegerBy with new Decimal(Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0010';
@@ -2368,12 +2368,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1100
-     * @tc.name       : testDividedToIntegerBy0011
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with -Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1100
+     * @tc.desc   Testing the decimal dividedToIntegerBy with -Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0011';
@@ -2388,12 +2388,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1200
-     * @tc.name       : testDividedToIntegerBy0012
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with "-Infinity".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1200
+     * @tc.desc   Testing the decimal dividedToIntegerBy with "-Infinity".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0012';
@@ -2408,12 +2408,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1300
-     * @tc.name       : testDividedToIntegerBy0013
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with new Decimal(-Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1300
+     * @tc.desc   Testing the decimal dividedToIntegerBy with new Decimal(-Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0013';
@@ -2428,12 +2428,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1400
-     * @tc.name       : testDividedToIntegerBy0014
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with number in scientific notation (5e3).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1400
+     * @tc.desc   Testing the decimal dividedToIntegerBy with number in scientific notation (5e3).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0014';
@@ -2449,12 +2449,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1500
-     * @tc.name       : testDividedToIntegerBy0015
-     * @tc.desc       : Testing the decimal dividedToIntegerBy with various types of real numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDividedToIntegerBy0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_DIVIDEDTOINTEGERBY_1500
+     * @tc.desc   Testing the decimal dividedToIntegerBy with various types of real numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDividedToIntegerBy0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDividedToIntegerBy0015';
@@ -2484,12 +2484,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0100
-     * @tc.name       : testInsertFront0001
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testInsertFront0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0100
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInsertFront0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testInsertFront0001";
@@ -2506,12 +2506,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0100
-     * @tc.name       : testDecimal0001
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0100
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal000f1";
@@ -2522,12 +2522,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0200
-     * @tc.name       : testDecimal0002
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0200
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0002";
@@ -2542,12 +2542,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0300
-     * @tc.name       : testDecimal0003
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0300
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0003";
@@ -2561,12 +2561,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0400
-     * @tc.name       : testDecimal0004
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0400
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0004";
@@ -2580,12 +2580,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0500
-     * @tc.name       : testDecimal0005
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0500
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0005";
@@ -2599,12 +2599,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0600
-     * @tc.name       : testDecimal0006
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0600
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0006";
@@ -2620,12 +2620,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0800
-     * @tc.name       : testDecimal0008
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0800
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0008";
@@ -2638,12 +2638,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0900
-     * @tc.name       : testDecimal0009
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_0900
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0009";
@@ -2661,12 +2661,12 @@ export default function Decimal1Test() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1000
-     * @tc.name       : testDecimal0010
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1000
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0010";
@@ -2680,12 +2680,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1100
-     * @tc.name       : testDecimal0011
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1100
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0011";
@@ -2700,12 +2700,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1200
-     * @tc.name       : testDecimal0012
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1200
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0012";
@@ -2720,12 +2720,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1300
-     * @tc.name       : testDecimal0013
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1300
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0013";
@@ -2740,12 +2740,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1400
-     * @tc.name       : testDecimal0014
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1400
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0014";
@@ -2760,12 +2760,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1500
-     * @tc.name       : testDecimal0015
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1500
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0015";
@@ -2781,12 +2781,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1600
-     * @tc.name       : testDecimal0016
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1600
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0016";
@@ -2806,12 +2806,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1700
-     * @tc.name       : testDecimal0017
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1700
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0017";
@@ -2827,12 +2827,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1800
-     * @tc.name       : testDecimal0018
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1800
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0018";
@@ -2848,12 +2848,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1900
-     * @tc.name       : testDecimal0019
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1900
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0019";
@@ -2869,12 +2869,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2000
-     * @tc.name       : testDecimal0020
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2000
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0020";
@@ -2890,12 +2890,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2100
-     * @tc.name       : testDecimal0021
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2100
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0021";
@@ -2911,12 +2911,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2200
-     * @tc.name       : testDecimal0022
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2200
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0022";
@@ -2932,12 +2932,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2300
-     * @tc.name       : testDecimal0023
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2300
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0023";
@@ -2953,12 +2953,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2400
-     * @tc.name       : testDecimal0024
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2400
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0024";
@@ -2974,12 +2974,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2500
-     * @tc.name       : testDecimal0025
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2500
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0025";
@@ -2994,12 +2994,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2600
-     * @tc.name       : testDecimal0026
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2600
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0026";
@@ -3014,12 +3014,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2700
-     * @tc.name       : testDecimal0027
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2700
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0027";
@@ -3034,12 +3034,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2800
-     * @tc.name       : testDecimal0028
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2800
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0028";
@@ -3058,12 +3058,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2900
-     * @tc.name       : testDecimal0029
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2900
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0029";
@@ -3081,12 +3081,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3000
-     * @tc.name       : testDecimal0030
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3000
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0030";
@@ -3100,12 +3100,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3100
-     * @tc.name       : testDecimal0031
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3100
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0031";
@@ -3120,12 +3120,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3200
-     * @tc.name       : testDecimal0032
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3200
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0032";
@@ -3139,12 +3139,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3300
-     * @tc.name       : testDecimal0033
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3300
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0033";
@@ -3161,12 +3161,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3400
-     * @tc.name       : testDecimal0034
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3400
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0034";
@@ -3183,12 +3183,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3500
-     * @tc.name       : testDecimal0035
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3500
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0035";
@@ -3205,12 +3205,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3600
-     * @tc.name       : testDecimal0036
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3600
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0036";
@@ -3226,12 +3226,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3700
-     * @tc.name       : testDecimal0037
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3700
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0037";
@@ -3248,12 +3248,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3800
-     * @tc.name       : testDecimal0038
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3800
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0038";
@@ -3271,12 +3271,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3900
-     * @tc.name       : testDecimal0039
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_3900
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0039";
@@ -3294,12 +3294,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4000
-     * @tc.name       : testDecimal0040
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4000
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0040";
@@ -3317,12 +3317,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4100
-     * @tc.name       : testDecimal0041
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4100
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0041";
@@ -3338,12 +3338,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4200
-     * @tc.name       : testDecimal0042
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4200
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0042";
@@ -3360,12 +3360,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4300
-     * @tc.name       : testDecimal0043
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4300
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0043";
@@ -3381,12 +3381,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4400
-     * @tc.name       : testDecimal0044
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4400
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0044";
@@ -3405,12 +3405,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4500
-     * @tc.name       : testDecimal0045
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4500
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0045";
@@ -3424,12 +3424,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4600
-     * @tc.name       : testDecimal0046
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4600
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0046";
@@ -3443,12 +3443,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4700
-     * @tc.name       : testDecimal0047
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4700
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0047";
@@ -3462,12 +3462,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4800
-     * @tc.name       : testDecimal0048
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4800
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0048";
@@ -3481,12 +3481,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4900
-     * @tc.name       : testDecimal0049
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_4900
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0049";
@@ -3501,12 +3501,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5000
-     * @tc.name       : testDecimal0050
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5000
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0050";
@@ -3521,12 +3521,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5100
-     * @tc.name       : testDecimal0051
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5100
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0051";
@@ -3541,12 +3541,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5400
-     * @tc.name       : testDecimal0054
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5400
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0054";
@@ -3563,12 +3563,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5500
-     * @tc.name       : testDecimal0055
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5500
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0055";
@@ -3582,12 +3582,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5600
-     * @tc.name       : testDecimal0056
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5600
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0056";
@@ -3601,12 +3601,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5700
-     * @tc.name       : testDecimal0057
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5700
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0057";
@@ -3620,12 +3620,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5800
-     * @tc.name       : testDecimal0058
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5800
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0058";
@@ -3639,12 +3639,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5900
-     * @tc.name       : testDecimal0059
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_5900
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0059";
@@ -3660,12 +3660,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6000
-     * @tc.name       : testDecimal0060
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6000
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0060";
@@ -3682,12 +3682,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6100
-     * @tc.name       : testDecimal0061
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6100
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0061";
@@ -3701,12 +3701,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6200
-     * @tc.name       : testDecimal0062
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6200
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0062";
@@ -3720,12 +3720,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6300
-     * @tc.name       : testDecimal0063
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6300
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0063";
@@ -3739,12 +3739,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6400
-     * @tc.name       : testDecimal0064
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6400
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0064";
@@ -3758,12 +3758,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6500
-     * @tc.name       : testDecimal0065
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6500
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0065";
@@ -3779,12 +3779,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6600
-     * @tc.name       : testDecimal0066
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6600
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0066";
@@ -3800,12 +3800,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6700
-     * @tc.name       : testDecimal0067
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6700
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0067";
@@ -3819,12 +3819,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6800
-     * @tc.name       : testDecimal0068
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6800
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0068";
@@ -3838,12 +3838,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6900
-     * @tc.name       : testDecimal0069
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_6900
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0069";
@@ -3857,12 +3857,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7000
-     * @tc.name       : testDecimal0070
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7000
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0070";
@@ -3877,12 +3877,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7100
-     * @tc.name       : testDecimal0071
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7100
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0071";
@@ -3899,12 +3899,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7200
-     * @tc.name       : testDecimal0072
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7200
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0072";
@@ -3918,12 +3918,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7300
-     * @tc.name       : testDecimal0073
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7300
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0073";
@@ -3937,12 +3937,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7400
-     * @tc.name       : testDecimal0074
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7400
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0074";
@@ -3956,12 +3956,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7500
-     * @tc.name       : testDecimal0075
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7500
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0075";
@@ -3977,12 +3977,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7600
-     * @tc.name       : testDecimal0076
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7600
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0076";
@@ -3998,12 +3998,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7800
-     * @tc.name       : testDecimal0078
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7800
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0078";
@@ -4017,12 +4017,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7900
-     * @tc.name       : testDecimal0079
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_7900
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0079";
@@ -4035,12 +4035,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8000
-     * @tc.name       : testDecimal0080
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8000
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0080";
@@ -4054,12 +4054,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8100
-     * @tc.name       : testDecimal0081
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8100
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0081";
@@ -4073,12 +4073,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8200
-     * @tc.name       : testDecimal0082
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8200
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0082";
@@ -4092,12 +4092,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8300
-     * @tc.name       : testDecimal0083
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8300
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0083";
@@ -4112,12 +4112,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8400
-     * @tc.name       : testDecimal0084
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8400
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0084";
@@ -4131,12 +4131,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8500
-     * @tc.name       : testDecimal0085
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8500
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0085";
@@ -4151,12 +4151,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8600
-     * @tc.name       : testDecimal0086
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8600
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0086";
@@ -4170,12 +4170,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8700
-     * @tc.name       : testDecimal0087
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8700
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0087";
@@ -4188,12 +4188,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8800
-     * @tc.name       : testDecimal0088
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8800
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0088";
@@ -4207,12 +4207,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8900
-     * @tc.name       : testDecimal0089
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_8900
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0089";
@@ -4225,12 +4225,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9000
-     * @tc.name       : testDecimal0090
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9000
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0090";
@@ -4244,12 +4244,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9100
-     * @tc.name       : testDecimal0091
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9100
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecimal0091';
@@ -4264,12 +4264,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9200
-     * @tc.name       : testDecimal0092
-     * @tc.desc       : Testing the decimal comparedTo with 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9200
+     * @tc.desc   Testing the decimal comparedTo with 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecimal0092';
@@ -4284,12 +4284,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9300
-     * @tc.name       : testDecimal0093
-     * @tc.desc       : Testing the decimal comparedTo with "0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9300
+     * @tc.desc   Testing the decimal comparedTo with "0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecimal0093';
@@ -4304,12 +4304,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9400
-     * @tc.name       : testDecimal0094
-     * @tc.desc       : Testing the decimal comparedTo with new Decimal(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9400
+     * @tc.desc   Testing the decimal comparedTo with new Decimal(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecimal0094';
@@ -4325,12 +4325,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9500
-     * @tc.name       : testDecimal0095
-     * @tc.desc       : Testing the decimal comparedTo -0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9500
+     * @tc.desc   Testing the decimal comparedTo -0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecimal0095';
@@ -4346,12 +4346,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9600
-     * @tc.name       : testDecimal0096
-     * @tc.desc       : Testing the decimal comparedTo "-0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9600
+     * @tc.desc   Testing the decimal comparedTo "-0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecimal0096';
@@ -4367,12 +4367,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9700
-     * @tc.name       : testDecimal0097
-     * @tc.desc       : Testing the decimal comparedTo new Decimal(-0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9700
+     * @tc.desc   Testing the decimal comparedTo new Decimal(-0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecimal0097';
@@ -4388,12 +4388,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9800
-     * @tc.name       : testDecimal0098
-     * @tc.desc       : Testing the decimal comparedTo Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9800
+     * @tc.desc   Testing the decimal comparedTo Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecimal0098';
@@ -4408,12 +4408,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9900
-     * @tc.name       : testDecimal0099
-     * @tc.desc       : Testing the decimal comparedTo Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9900
+     * @tc.desc   Testing the decimal comparedTo Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecimal0099';
@@ -4428,12 +4428,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_10000
-     * @tc.name       : testDecimal0100
-     * @tc.desc       : Test the function of the interface Decimal.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecimal0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_10000
+     * @tc.desc   Test the function of the interface Decimal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecimal0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDecimal0100";
@@ -4459,12 +4459,12 @@ export default function Decimal1Test() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0100
-     * @tc.name       : testSin0001
-     * @tc.desc       : Testing the decimal sin with "Nah".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0100
+     * @tc.desc   Testing the decimal sin with "Nah".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0001';
@@ -4479,12 +4479,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0200
-     * @tc.name       : testSin0002
-     * @tc.desc       : Testing the decimal sin with 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0200
+     * @tc.desc   Testing the decimal sin with 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0002';
@@ -4499,12 +4499,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0300
-     * @tc.name       : testSin0003
-     * @tc.desc       : Testing the decimal sin with "0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0300
+     * @tc.desc   Testing the decimal sin with "0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0003';
@@ -4519,12 +4519,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0400
-     * @tc.name       : testSin0004
-     * @tc.desc       : Testing the decimal sin with new Decimal(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0400
+     * @tc.desc   Testing the decimal sin with new Decimal(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0004';
@@ -4539,12 +4539,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0500
-     * @tc.name       : testSin0005
-     * @tc.desc       : Testing the decimal sin -0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0500
+     * @tc.desc   Testing the decimal sin -0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0005';
@@ -4559,12 +4559,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0600
-     * @tc.name       : testSin0006
-     * @tc.desc       : Testing the decimal sin "-0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0600
+     * @tc.desc   Testing the decimal sin "-0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0006';
@@ -4579,12 +4579,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0700
-     * @tc.name       : testSin0007
-     * @tc.desc       : Testing the decimal sin new Decimal(-0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0700
+     * @tc.desc   Testing the decimal sin new Decimal(-0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0007';
@@ -4599,12 +4599,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0800
-     * @tc.name       : testSin0008
-     * @tc.desc       : Testing the decimal sin Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0800
+     * @tc.desc   Testing the decimal sin Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0008';
@@ -4619,12 +4619,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0900
-     * @tc.name       : testSin0009
-     * @tc.desc       : Testing the decimal sin -Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_0900
+     * @tc.desc   Testing the decimal sin -Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0009';
@@ -4639,12 +4639,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1000
-     * @tc.name       : testSin0010
-     * @tc.desc       : Testing the decimal sin with new Decimal(Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1000
+     * @tc.desc   Testing the decimal sin with new Decimal(Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0010';
@@ -4659,12 +4659,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1100
-     * @tc.name       : testSin0011
-     * @tc.desc       : Testing the decimal sin with number in scientific notation (5e3).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1100
+     * @tc.desc   Testing the decimal sin with number in scientific notation (5e3).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0011';
@@ -4679,12 +4679,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1200
-     * @tc.name       : testSin0012
-     * @tc.desc       : Testing the decimal sin with various types of real numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1200
+     * @tc.desc   Testing the decimal sin with various types of real numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0012';
@@ -4714,12 +4714,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1300
-     * @tc.name       : testSin0013
-     * @tc.desc       : Testing the decimal sin with 'Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1300
+     * @tc.desc   Testing the decimal sin with 'Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0013';
@@ -4734,12 +4734,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1400
-     * @tc.name       : testSin0014
-     * @tc.desc       : Testing the decimal sin with '-Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1400
+     * @tc.desc   Testing the decimal sin with '-Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0014';
@@ -4754,12 +4754,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1500
-     * @tc.name       : testSin0015
-     * @tc.desc       : Testing the decimal sin with new Decimal(-Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1500
+     * @tc.desc   Testing the decimal sin with new Decimal(-Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0015';
@@ -4774,12 +4774,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1600
-     * @tc.name       : testSin0016
-     * @tc.desc       : Testing the decimal sin with "Nah".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1600
+     * @tc.desc   Testing the decimal sin with "Nah".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0016';
@@ -4793,12 +4793,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1700
-     * @tc.name       : testSin0017
-     * @tc.desc       : Testing the decimal sin with 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1700
+     * @tc.desc   Testing the decimal sin with 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0017';
@@ -4812,12 +4812,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1800
-     * @tc.name       : testSin0018
-     * @tc.desc       : Testing the decimal sin with "0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1800
+     * @tc.desc   Testing the decimal sin with "0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0018';
@@ -4831,12 +4831,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1900
-     * @tc.name       : testSin0019
-     * @tc.desc       : Testing the decimal sin with new Decimal(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_1900
+     * @tc.desc   Testing the decimal sin with new Decimal(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0019';
@@ -4851,12 +4851,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2000
-     * @tc.name       : testSin0020
-     * @tc.desc       : Testing the decimal sin -0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2000
+     * @tc.desc   Testing the decimal sin -0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0020';
@@ -4870,12 +4870,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2100
-     * @tc.name       : testSin0021
-     * @tc.desc       : Testing the decimal sin "-0".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2100
+     * @tc.desc   Testing the decimal sin "-0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0021';
@@ -4889,12 +4889,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2200
-     * @tc.name       : testSin0022
-     * @tc.desc       : Testing the decimal sin new Decimal(-0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2200
+     * @tc.desc   Testing the decimal sin new Decimal(-0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0022';
@@ -4908,12 +4908,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2300
-     * @tc.name       : testSin0023
-     * @tc.desc       : Testing the decimal sin Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2300
+     * @tc.desc   Testing the decimal sin Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0023';
@@ -4927,12 +4927,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2400
-     * @tc.name       : testSin0024
-     * @tc.desc       : Testing the decimal sin -Infinity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2400
+     * @tc.desc   Testing the decimal sin -Infinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0024';
@@ -4946,12 +4946,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2500
-     * @tc.name       : testSin0025
-     * @tc.desc       : Testing the decimal sin with new Decimal(Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2500
+     * @tc.desc   Testing the decimal sin with new Decimal(Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0025';
@@ -4965,12 +4965,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2600
-     * @tc.name       : testSin0026
-     * @tc.desc       : Testing the decimal sin with number in scientific notation (5e3).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2600
+     * @tc.desc   Testing the decimal sin with number in scientific notation (5e3).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0026';
@@ -4984,12 +4984,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2700
-     * @tc.name       : testSin0027
-     * @tc.desc       : Testing the decimal sin with various types of real numbers.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2700
+     * @tc.desc   Testing the decimal sin with various types of real numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0027';
@@ -5025,12 +5025,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2800
-     * @tc.name       : testSin0028
-     * @tc.desc       : Testing the decimal sin with 'Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2800
+     * @tc.desc   Testing the decimal sin with 'Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0028';
@@ -5044,12 +5044,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2900
-     * @tc.name       : testSin0029
-     * @tc.desc       : Testing the decimal sin with '-Infinity'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2900
+     * @tc.desc   Testing the decimal sin with '-Infinity'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0029';
@@ -5063,12 +5063,12 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_3000
-     * @tc.name       : testSin0030
-     * @tc.desc       : Testing the decimal sin with new Decimal(-Infinity).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSin0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_3000
+     * @tc.desc   Testing the decimal sin with new Decimal(-Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSin0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSin0030';

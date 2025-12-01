@@ -24,13 +24,13 @@ export default function TextChangeReasonTest() {
       console.info("TextChangeReasonTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0001
-    * @tc.name         TextChangeReasonTest0001
-    * @tc.desc         test TextChangeReason UNKNOWN
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0001
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0001
+     * @tc.desc   test TextChangeReason UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0001', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0001 START');
@@ -39,13 +39,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0002
-    * @tc.name         TextChangeReasonTest0002
-    * @tc.desc         test TextChangeReason INPUT
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0002
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0002
+     * @tc.desc   test TextChangeReason INPUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0002', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0002 START');
@@ -54,13 +54,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0003
-    * @tc.name         TextChangeReasonTest0003
-    * @tc.desc         test TextChangeReason PASTE
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0003
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0003
+     * @tc.desc   test TextChangeReason PASTE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0003', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0003 START');
@@ -69,13 +69,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0004
-    * @tc.name         TextChangeReasonTest0004
-    * @tc.desc         test TextChangeReason CUT
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0004
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0004
+     * @tc.desc   test TextChangeReason CUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0004', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0004 START');
@@ -84,13 +84,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0005
-    * @tc.name         TextChangeReasonTest0005
-    * @tc.desc         test TextChangeReason DRAG
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0005
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0005
+     * @tc.desc   test TextChangeReason DRAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0005', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0005 START');
@@ -99,13 +99,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0006
-    * @tc.name         TextChangeReasonTest0006
-    * @tc.desc         test TextChangeReason AUTO_FILL
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0006
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0006
+     * @tc.desc   test TextChangeReason AUTO_FILL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0006', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0006 START');
@@ -114,13 +114,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0007
-    * @tc.name         TextChangeReasonTest0007
-    * @tc.desc         test TextChangeReason AI_WRITE
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0007
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0007
+     * @tc.desc   test TextChangeReason AI_WRITE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0007', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0007 START');
@@ -129,13 +129,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0008
-    * @tc.name         TextChangeReasonTest0008
-    * @tc.desc         test TextChangeReason REDO
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0008
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0008
+     * @tc.desc   test TextChangeReason REDO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0008', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0008 START');
@@ -144,13 +144,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0009
-    * @tc.name         TextChangeReasonTest0009
-    * @tc.desc         test TextChangeReason UNDO
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0009
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0009
+     * @tc.desc   test TextChangeReason UNDO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0009', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0009 START');
@@ -159,13 +159,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0010
-    * @tc.name         TextChangeReasonTest0010
-    * @tc.desc         test TextChangeReason CONTROLLER
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0010
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0010
+     * @tc.desc   test TextChangeReason CONTROLLER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0010', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0010 START');
@@ -174,13 +174,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0011
-    * @tc.name         TextChangeReasonTest0011
-    * @tc.desc         test TextChangeReason ACCESSIBILITY
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0011
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0011
+     * @tc.desc   test TextChangeReason ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0011', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0011 START');
@@ -189,13 +189,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0012
-    * @tc.name         TextChangeReasonTest0012
-    * @tc.desc         test TextChangeReason COLLABORATION
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0012
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0012
+     * @tc.desc   test TextChangeReason COLLABORATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0012', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0012 START');
@@ -204,13 +204,13 @@ export default function TextChangeReasonTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0013
-    * @tc.name         TextChangeReasonTest0013
-    * @tc.desc         test TextChangeReason STYLUS
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextChangeReasonTest0013
+     * @tc.number SUB_ACE_BASIC_TEXT_CHANGE_REASON_ETS_API_0013
+     * @tc.desc   test TextChangeReason STYLUS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextChangeReasonTest0013', Level.LEVEL3, async (done: Function) => {
       console.info('TextChangeReasonTest0013 START');

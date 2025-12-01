@@ -46,11 +46,13 @@ export default function SafeAreaPadding1() {
       await CommonFunc.sleep(1000);
       console.info("SafeAreaPadding1 after each called");
     });
-/**
-     * @tc.number    SafeAreaPadding1_0100
-     * @tc.name      SafeAreaPadding1_0100
-     * @tc.desc      Test SafeAreaPadding1
-     * @tc.level     Level 2
+    /**
+     * @tc.name   SafeAreaPadding1_0100
+     * @tc.number SafeAreaPadding1_0100
+     * @tc.desc   Test SafeAreaPadding1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SafeAreaPadding1_0100', Level.LEVEL2, async (done: Function) => {
       console.info('SafeAreaPadding1_0100 START');

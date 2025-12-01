@@ -39,11 +39,19 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanMesh_shaderTestCase
+     * @tc.number TestVulkanMesh_shaderTestCase
+     * @tc.desc   TestVulkanMesh_shaderTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanMeshshaderTest, TestVulkanMesh_shaderTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanMeshshaderTest------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/mesh-shader.txt "
                 "--deqp-log-filename=ActsVulkanMeshshaderTest.qpa");
         }

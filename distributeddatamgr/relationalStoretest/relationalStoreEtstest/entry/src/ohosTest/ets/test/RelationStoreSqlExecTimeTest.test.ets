@@ -85,14 +85,12 @@ export default function SqlExecutionTimeTest() {
 
 
     /**
-     * @tc.name testRdbStoreStatistics0001
+     * @tc.name   testRdbStoreStatistics0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0110
-     * @tc.desc 1. Register callback for statistics
-     *          2. Insert data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   1. Register callback for statistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRdbStoreStatistics0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0001 start *************");
@@ -133,14 +131,12 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @tc.name testRdbStoreStatistics0002
+     * @tc.name   testRdbStoreStatistics0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0120
-     * @tc.desc 1. Register callback for statistics
-     *          2. insertSync data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   1. Register callback for statistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRdbStoreStatistics0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0002 start *************");
@@ -182,14 +178,12 @@ export default function SqlExecutionTimeTest() {
 
 
     /**
-     * @tc.name testRdbStoreStatistics0003
+     * @tc.name   testRdbStoreStatistics0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0130
-     * @tc.desc 1. Register callback for statistics
-     *          2. update data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   1. Register callback for statistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRdbStoreStatistics0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0003 start *************");
@@ -232,14 +226,12 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @tc.name testRdbStoreStatistics0004
+     * @tc.name   testRdbStoreStatistics0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0140
-     * @tc.desc 1. Register callback for statistics
-     *          2. update data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   1. Register callback for statistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRdbStoreStatistics0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0004 start *************");
@@ -282,14 +274,12 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @tc.name testRdbStoreStatistics0005
+     * @tc.name   testRdbStoreStatistics0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0150
-     * @tc.desc 1. Register callback for statistics
-     *          2. query data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   1. Register callback for statistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRdbStoreStatistics0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0005 start *************");
@@ -326,14 +316,12 @@ export default function SqlExecutionTimeTest() {
 
 
     /**
-     * @tc.name testRdbStoreStatistics0006
+     * @tc.name   testRdbStoreStatistics0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0160
-     * @tc.desc 1. Register callback for statistics
-     *          2. query data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   1. Register callback for statistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRdbStoreStatistics0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0006 start *************");
@@ -369,14 +357,12 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @tc.name testRdbStoreStatistics0007
+     * @tc.name   testRdbStoreStatistics0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0170
-     * @tc.desc 1. Register callback for statistics
-     *          2. delete data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   1. Register callback for statistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRdbStoreStatistics0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0007 start *************");
@@ -412,14 +398,12 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @tc.name testRdbStoreStatistics0008
+     * @tc.name   testRdbStoreStatistics0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0180
-     * @tc.desc 1. Register callback for statistics
-     *          2. deleteSync data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   1. Register callback for statistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRdbStoreStatistics0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0008 start *************");
@@ -455,14 +439,12 @@ export default function SqlExecutionTimeTest() {
     })
 
     /**
-     * @tc.name testRdbStoreStatistics0009
+     * @tc.name   testRdbStoreStatistics0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0190
-     * @tc.desc 1. Register callback for statistics
-     *          2. deleteSync data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   1. Register callback for statistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRdbStoreStatistics0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0009 start *************");
@@ -510,14 +492,12 @@ export default function SqlExecutionTimeTest() {
 
 
     /**
-     * @tc.name testRdbStoreStatistics0010
+     * @tc.name   testRdbStoreStatistics0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0200
-     * @tc.desc 1. Register callback for statistics
-     *          2. querySql data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   1. Register callback for statistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRdbStoreStatistics0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0010 start *************");
@@ -545,14 +525,12 @@ export default function SqlExecutionTimeTest() {
 
 
     /**
-     * @tc.name testRdbStoreStatistics0011
+     * @tc.name   testRdbStoreStatistics0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0210
-     * @tc.desc 1. Register callback for statistics
-     *          2. querySql data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   1. Register callback for statistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRdbStoreStatistics0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0011 start *************");
@@ -597,16 +575,14 @@ export default function SqlExecutionTimeTest() {
       console.info(TAG + "************* testRdbStoreStatistics0011 end *************");
     })
 
-    /**
-     * @tc.name testRdbStoreStatistics0012
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0220
-     * @tc.desc 1. Register callback for statistics
-     *          2. querySql data
-     *          3. UnRegister callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
+     /**
+      * @tc.name   testRdbStoreStatistics0012
+      * @tc.number SUB_DistributedData_RelationalStore_SDK_SqlExeInfoJsAPITest_0220
+      * @tc.desc   1. Register callback for statistics
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('testRdbStoreStatistics0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       console.info(TAG + "************* testRdbStoreStatistics0012 start *************");
       if (rdbStore == undefined) {

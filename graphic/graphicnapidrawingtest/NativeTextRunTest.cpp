@@ -139,13 +139,13 @@ void NativeTextRunTest::TearDown()
     }
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_RunTest_001
- * @tc.name  : RunTest001
- * @tc.desc  : Test for get run by index
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   RunTest001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_001
+ * @tc.desc   Test for get run by index
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextRunTest, RunTest001, Function | MediumTest | Level0)
 {
@@ -180,13 +180,13 @@ HWTEST_F(NativeTextRunTest, RunTest001, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_RunTest_002
- * @tc.name  : RunTest002
- * @tc.desc  : Test for get run glyph count
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   RunTest002
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_002
+ * @tc.desc   Test for get run glyph count
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextRunTest, RunTest002, Function | MediumTest | Level0)
 {
@@ -214,13 +214,13 @@ HWTEST_F(NativeTextRunTest, RunTest002, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_RunTest_003
- * @tc.name  : RunTest003
- * @tc.desc  : Test for get glyph index in paragraph
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   RunTest003
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_003
+ * @tc.desc   Test for get glyph index in paragraph
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextRunTest, RunTest003, Function | MediumTest | Level0)
 {
@@ -253,13 +253,13 @@ HWTEST_F(NativeTextRunTest, RunTest003, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_RunTest_004
- * @tc.name  : RunTest004
- * @tc.desc  : Test for get run string range
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   RunTest004
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_004
+ * @tc.desc   Test for get run string range
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextRunTest, RunTest004, Function | MediumTest | Level0)
 {
@@ -292,13 +292,13 @@ HWTEST_F(NativeTextRunTest, RunTest004, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_RunTest_005
- * @tc.name  : RunTest005
- * @tc.desc  : Test for get run typographic bounds
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   RunTest005
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_005
+ * @tc.desc   Test for get run typographic bounds
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextRunTest, RunTest005, Function | MediumTest | Level0)
 {
@@ -336,13 +336,13 @@ HWTEST_F(NativeTextRunTest, RunTest005, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_RunTest_006
- * @tc.name  : RunTest006
- * @tc.desc  : Test for get run glyphs
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   RunTest006
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_006
+ * @tc.desc   Test for get run glyphs
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextRunTest, RunTest006, Function | MediumTest | Level0)
 {
@@ -381,14 +381,14 @@ HWTEST_F(NativeTextRunTest, RunTest006, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_RunTest_007
- * @tc.name  : RunTest007
- * @tc.desc  : Test for get run positions
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
- */
+ /**
+  * @tc.name   RunTest007
+  * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_007
+  * @tc.desc   Test for get run positions
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
  HWTEST_F(NativeTextRunTest, RunTest007, Function | MediumTest | Level0)
  {
     text_ = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
@@ -424,13 +424,13 @@ HWTEST_F(NativeTextRunTest, RunTest006, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_RunTest_008
- * @tc.name  : RunTest008
- * @tc.desc  : Test for special value input parameters testing
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   RunTest008
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_008
+ * @tc.desc   Test for special value input parameters testing
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextRunTest, RunTest008, Function | MediumTest | Level0)
 {
@@ -478,13 +478,13 @@ HWTEST_F(NativeTextRunTest, RunTest008, Function | MediumTest | Level0)
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_RunTest_009
- * @tc.name  : RunTest009
- * @tc.desc  : Test for the run of nullptr pointer testing
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   RunTest009
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_009
+ * @tc.desc   Test for the run of nullptr pointer testing
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeTextRunTest, RunTest009, Function | MediumTest | Level0)
 {

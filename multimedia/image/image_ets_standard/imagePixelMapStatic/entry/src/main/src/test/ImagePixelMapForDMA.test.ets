@@ -3206,9 +3206,12 @@ export default function imagePixelmap() {
             desiredDynamicRange: RANGE_HDR
           };
           let imageSource = image.createImageSource(buffer);
+          expect(imageSource != undefined).assertTrue();
           let pixelMap = await imageSource!.createPixelMapUsingAllocator(decodingOptions, SHARE_MEMORY);
           expect(false).assertTrue();
-          await pixelMap!.release();
+          if(pixelMap != undefined) {
+            await pixelMap!.release();
+          }
           done();
         } catch (error: BusinessError) {
           logger.log("createPixelMapUsingAllocator is error: " + JSON.stringify(error));
@@ -3246,9 +3249,12 @@ export default function imagePixelmap() {
             desiredDynamicRange: RANGE_HDR
           };
           let imageSource = image.createImageSource(buffer);
+          expect(imageSource != undefined).assertTrue();
           let pixelMap = imageSource!.createPixelMapUsingAllocatorSync(decodingOptions, SHARE_MEMORY);
           expect(false).assertTrue();
-          await pixelMap!.release();
+          if(pixelMap != undefined) {
+            await pixelMap.release();
+          }
           done();
         } catch (error: BusinessError) {
           logger.log("createPixelMapUsingAllocator is error: " + JSON.stringify(error));
@@ -3272,6 +3278,7 @@ export default function imagePixelmap() {
       try {
         const buffer = getBuffer("SIZE_0_0.jpg");
         let imageSource = image.createImageSource(buffer);
+        expect(imageSource != undefined).assertTrue();
         let pixelMap = await imageSource!.createPixelMapUsingAllocator();
         expect(false).assertTrue();
         done();
@@ -3296,6 +3303,7 @@ export default function imagePixelmap() {
       try {
         const buffer = getBuffer("SIZE_0_0.jpg");
         let imageSource = image.createImageSource(buffer);
+        expect(imageSource != undefined).assertTrue();
         let pixelMap = imageSource!.createPixelMapUsingAllocatorSync();
         expect(false).assertTrue();
         done();

@@ -58,14 +58,14 @@ export default function ActsAccountAuthenticator() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountCheckAccountLabels_0100
-        * @tc.name      : test Check Account Labels callback form
-        * @tc.desc      : checkAccountLabels
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountCheckAccountLabels_0100
+         * @tc.number ActsAccountCheckAccountLabels_0100
+         * @tc.desc   checkAccountLabels
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountCheckAccountLabels_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountCheckAccountLabels_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -88,14 +88,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCheckAccountLabels_0200
-        * @tc.name      : test Check Account Labels callback form
-        * @tc.desc      : checkAccountLabels
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountCheckAccountLabels_0200
+         * @tc.number ActsAccountCheckAccountLabels_0200
+         * @tc.desc   checkAccountLabels
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCheckAccountLabels_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCheckAccountLabels_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -118,14 +118,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCheckAccountLabels_0300
-        * @tc.name      : test Check Account Labels callback form
-        * @tc.desc      : checkAccountLabels
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountCheckAccountLabels_0300
+         * @tc.number ActsAccountCheckAccountLabels_0300
+         * @tc.desc   checkAccountLabels
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCheckAccountLabels_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCheckAccountLabels_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -148,14 +148,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCheckAccountLabels_0400
-        * @tc.name      : test Check Account Labels promise form
-        * @tc.desc      : checkAccountLabels
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountCheckAccountLabels_0400
+         * @tc.number ActsAccountCheckAccountLabels_0400
+         * @tc.desc   checkAccountLabels
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCheckAccountLabels_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCheckAccountLabels_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -184,14 +184,14 @@ export default function ActsAccountAuthenticator() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountCheckAccountLabels_0500
-        * @tc.name      : test Check Account Labels promise form
-        * @tc.desc      : checkAccountLabels
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountCheckAccountLabels_0500
+         * @tc.number ActsAccountCheckAccountLabels_0500
+         * @tc.desc   checkAccountLabels
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCheckAccountLabels_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCheckAccountLabels_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -221,14 +221,14 @@ export default function ActsAccountAuthenticator() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountCheckAccountLabels_0600
-        * @tc.name      : test Check Account Labels promise form
-        * @tc.desc      : checkAccountLabels
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountCheckAccountLabels_0600
+         * @tc.number ActsAccountCheckAccountLabels_0600
+         * @tc.desc   checkAccountLabels
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCheckAccountLabels_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCheckAccountLabels_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -256,14 +256,14 @@ export default function ActsAccountAuthenticator() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountCheckAppAccess_0100
-        * @tc.name      : test Check App Access callback form
-        * @tc.desc      : checkAppAccess
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountCheckAppAccess_0100
+         * @tc.number ActsAccountCheckAppAccess_0100
+         * @tc.desc   checkAppAccess
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCheckAppAccess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCheckAppAccess_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -306,14 +306,14 @@ export default function ActsAccountAuthenticator() {
             }); 
         }); 
 
-        /*
-        * @tc.number    : ActsAccountCheckAppAccess_0200
-        * @tc.name      : test Check App Access promise form
-        * @tc.desc      : checkAppAccess
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountCheckAppAccess_0200
+         * @tc.number ActsAccountCheckAppAccess_0200
+         * @tc.desc   checkAppAccess
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCheckAppAccess_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCheckAppAccess_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -374,14 +374,14 @@ export default function ActsAccountAuthenticator() {
                 
         });
 
-        /*
-        * @tc.number    : ActsAccountDeleteAccountCredential_0100
-        * @tc.name      : test Delete Account Credential callback form
-        * @tc.desc      : setAccountCredential
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountDeleteAccountCredential_0100
+         * @tc.number ActsAccountDeleteAccountCredential_0100
+         * @tc.desc   setAccountCredential
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountDeleteAccountCredential_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountDeleteAccountCredential_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -416,14 +416,14 @@ export default function ActsAccountAuthenticator() {
             });            
         });
 
-        /*
-        * @tc.number    : ActsAccountDeleteAccountCredential_0200
-        * @tc.name      : test Delete Account Credential promise form
-        * @tc.desc      : setAccountCredential
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountDeleteAccountCredential_0200
+         * @tc.number ActsAccountDeleteAccountCredential_0200
+         * @tc.desc   setAccountCredential
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountDeleteAccountCredential_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountDeleteAccountCredential_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -466,14 +466,14 @@ export default function ActsAccountAuthenticator() {
             })            
         });
 
-        /*
-        * @tc.number    : ActsAccountVerifyCredential_0100
-        * @tc.name      : test Verify Credential callback form, options
-        * @tc.desc      : verifyCredential
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountVerifyCredential_0100
+         * @tc.number ActsAccountVerifyCredential_0100
+         * @tc.desc   verifyCredential
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountVerifyCredential_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountVerifyCredential_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -506,14 +506,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountVerifyCredential_0200
-        * @tc.name      : test Verify Credential callback form
-        * @tc.desc      : verifyCredential
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountVerifyCredential_0200
+         * @tc.number ActsAccountVerifyCredential_0200
+         * @tc.desc   verifyCredential
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountVerifyCredential_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountVerifyCredential_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -545,14 +545,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSetAuthenticatorProperties_0100
-        * @tc.name      : test Verify Credential callback form, options
-        * @tc.desc      : setAuthenticatorProperties
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountSetAuthenticatorProperties_0100
+         * @tc.number ActsAccountSetAuthenticatorProperties_0100
+         * @tc.desc   setAuthenticatorProperties
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetAuthenticatorProperties_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetAuthenticatorProperties_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -583,14 +583,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSetAuthenticatorProperties_0200
-        * @tc.name      : test Verify Credential callback form
-        * @tc.desc      : setAuthenticatorProperties
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountSetAuthenticatorProperties_0200
+         * @tc.number ActsAccountSetAuthenticatorProperties_0200
+         * @tc.desc   setAuthenticatorProperties
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetAuthenticatorProperties_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetAuthenticatorProperties_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -620,14 +620,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSelectAccountByOptions_0100
-        * @tc.name      : test SelectAccountsByOptions Promise Form
-        * @tc.desc      : SelectAccountsByOptions Promise
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountSelectAccountByOptions_0100
+         * @tc.number ActsAccountSelectAccountByOptions_0100
+         * @tc.desc   SelectAccountsByOptions Promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSelectAccountByOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSelectAccountByOptions_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -658,14 +658,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSelectAccountByOptions_0200
-        * @tc.name      : test SelectAccountsByOptions Promise Form
-        * @tc.desc      : SelectAccountsByOptions Promise
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountSelectAccountByOptions_0200
+         * @tc.number ActsAccountSelectAccountByOptions_0200
+         * @tc.desc   SelectAccountsByOptions Promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSelectAccountByOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSelectAccountByOptions_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -696,14 +696,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSelectAccountByOptions_0300
-        * @tc.name      : test SelectAccountsByOptions Promise Form
-        * @tc.desc      : SelectAccountsByOptions Promise
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountSelectAccountByOptions_0300
+         * @tc.number ActsAccountSelectAccountByOptions_0300
+         * @tc.desc   SelectAccountsByOptions Promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSelectAccountByOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSelectAccountByOptions_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -734,14 +734,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSelectAccountByOptions_0400
-        * @tc.name      : test SelectAccountsByOptions Callback Form
-        * @tc.desc      : SelectAccountsByOptions Callback
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountSelectAccountByOptions_0400
+         * @tc.number ActsAccountSelectAccountByOptions_0400
+         * @tc.desc   SelectAccountsByOptions Callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSelectAccountByOptions_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSelectAccountByOptions_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -768,14 +768,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSelectAccountByOptions_0500
-        * @tc.name      : test SelectAccountsByOptions Callback Form
-        * @tc.desc      : SelectAccountsByOptions Callback
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountSelectAccountByOptions_0500
+         * @tc.number ActsAccountSelectAccountByOptions_0500
+         * @tc.desc   SelectAccountsByOptions Callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSelectAccountByOptions_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSelectAccountByOptions_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -802,14 +802,14 @@ export default function ActsAccountAuthenticator() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSelectAccountByOptions_0600
-        * @tc.name      : test SelectAccountsByOptions Callback Form
-        * @tc.desc      : SelectAccountsByOptions Callback
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountSelectAccountByOptions_0600
+         * @tc.number ActsAccountSelectAccountByOptions_0600
+         * @tc.desc   SelectAccountsByOptions Callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSelectAccountByOptions_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSelectAccountByOptions_0600 start====");
             var appAccountManager = account.createAppAccountManager();

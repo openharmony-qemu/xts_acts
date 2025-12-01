@@ -74,12 +74,12 @@ export default function collectionsConcurrentInt8Array() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_4001
-     * @tc.name      : CollectionsConcurrentModifyTest4001
-     * @tc.desc      : ConcatArray copyWithin 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest4001
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_4001
+     * @tc.desc   ConcatArray copyWithin 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -109,12 +109,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_4000
-     * @tc.name      : CollectionsConcurrentModifyTest4000
-     * @tc.desc      : ConcatArray every 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest4000
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_4000
+     * @tc.desc   ConcatArray every 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -144,12 +144,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_4100
-     * @tc.name      : CollectionsConcurrentModifyTest4100
-     * @tc.desc      : ConcatArray filter 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest4100
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_4100
+     * @tc.desc   ConcatArray filter 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -179,12 +179,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_4200
-     * @tc.name      : CollectionsConcurrentModifyTest4200
-     * @tc.desc      : ConcatArray find 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest4200
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_4200
+     * @tc.desc   ConcatArray find 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -214,12 +214,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_4300
-     * @tc.name      : CollectionsConcurrentModifyTest4300
-     * @tc.desc      : ConcatArray findIndex 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest4300
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_4300
+     * @tc.desc   ConcatArray findIndex 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -249,12 +249,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_4400
-     * @tc.name      : CollectionsConcurrentModifyTest4400
-     * @tc.desc      : ConcatArray indexOf 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest4400
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_4400
+     * @tc.desc   ConcatArray indexOf 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -284,12 +284,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_4500
-     * @tc.name      : CollectionsConcurrentModifyTest4500
-     * @tc.desc      : ConcatArray join 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest4500
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_4500
+     * @tc.desc   ConcatArray join 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -319,12 +319,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_4600
-     * @tc.name      : CollectionsConcurrentModifyTest4600
-     * @tc.desc      : ConcatArray map 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest4600
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_4600
+     * @tc.desc   ConcatArray map 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -354,12 +354,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_4700
-     * @tc.name      : CollectionsConcurrentModifyTest4700
-     * @tc.desc      : ConcatArray reduce1 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest4700
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_4700
+     * @tc.desc   ConcatArray reduce1 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -389,12 +389,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_4800
-     * @tc.name      : CollectionsConcurrentModifyTest4800
-     * @tc.desc      : ConcatArray reduce2 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest4800
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_4800
+     * @tc.desc   ConcatArray reduce2 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -424,12 +424,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_4900
-     * @tc.name      : CollectionsConcurrentModifyTest4900
-     * @tc.desc      : ConcatArray reduce3 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest4900
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_4900
+     * @tc.desc   ConcatArray reduce3 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -459,12 +459,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_5000
-     * @tc.name      : CollectionsConcurrentModifyTest5000
-     * @tc.desc      : ConcatArray reverse 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest5000
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_5000
+     * @tc.desc   ConcatArray reverse 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -494,12 +494,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_5100
-     * @tc.name      : CollectionsConcurrentModifyTest5100
-     * @tc.desc      : ConcatArray set 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest5100
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_5100
+     * @tc.desc   ConcatArray set 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -529,12 +529,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_5200
-     * @tc.name      : CollectionsConcurrentModifyTest5200
-     * @tc.desc      : ConcatArray slice 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest5200
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_5200
+     * @tc.desc   ConcatArray slice 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -564,12 +564,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_5300
-     * @tc.name      : CollectionsConcurrentModifyTest5300
-     * @tc.desc      : ConcatArray some 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest5300
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_5300
+     * @tc.desc   ConcatArray some 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -599,12 +599,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_5400
-     * @tc.name      : CollectionsConcurrentModifyTest5400
-     * @tc.desc      : ConcatArray sort 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest5400
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_5400
+     * @tc.desc   ConcatArray sort 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -634,12 +634,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_5500
-     * @tc.name      : CollectionsConcurrentModifyTest5500
-     * @tc.desc      : ConcatArray subarray 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest5500
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_5500
+     * @tc.desc   ConcatArray subarray 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -669,12 +669,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_5600
-     * @tc.name      : CollectionsConcurrentModifyTest5600
-     * @tc.desc      : ConcatArray at 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest5600
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_5600
+     * @tc.desc   ConcatArray at 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -704,12 +704,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_5700
-     * @tc.name      : CollectionsConcurrentModifyTest5700
-     * @tc.desc      : ConcatArray entries 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest5700
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_5700
+     * @tc.desc   ConcatArray entries 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -739,12 +739,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_5800
-     * @tc.name      : CollectionsConcurrentModifyTest5800
-     * @tc.desc      : ConcatArray keys 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest5800
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_5800
+     * @tc.desc   ConcatArray keys 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -774,12 +774,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_5900
-     * @tc.name      : CollectionsConcurrentModifyTest5900
-     * @tc.desc      : ConcatArray values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest5900
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_5900
+     * @tc.desc   ConcatArray values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -809,12 +809,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_6000
-     * @tc.name      : CollectionsConcurrentModifyTest6000
-     * @tc.desc      : ConcatArray includes 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest6000
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_6000
+     * @tc.desc   ConcatArray includes 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -844,12 +844,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_6100
-     * @tc.name      : CollectionsConcurrentModifyTest6100
-     * @tc.desc      : ConcatArray reduceRight1 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest6100
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_6100
+     * @tc.desc   ConcatArray reduceRight1 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -879,12 +879,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_6200
-     * @tc.name      : CollectionsConcurrentModifyTest6200
-     * @tc.desc      : ConcatArray reduceRight2 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest6200
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_6200
+     * @tc.desc   ConcatArray reduceRight2 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -914,12 +914,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_6300
-     * @tc.name      : CollectionsConcurrentModifyTest6300
-     * @tc.desc      : ConcatArray toString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest6300
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_6300
+     * @tc.desc   ConcatArray toString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -949,12 +949,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_6400
-     * @tc.name      : CollectionsConcurrentModifyTest6400
-     * @tc.desc      : ConcatArray toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest6400
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_6400
+     * @tc.desc   ConcatArray toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -984,12 +984,12 @@ export default function collectionsConcurrentInt8Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_CONCURRENT_MODIFY_6500
-     * @tc.name      : CollectionsConcurrentModifyTest6500
-     * @tc.desc      : ConcatArray toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsConcurrentModifyTest6500
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_6500
+     * @tc.desc   ConcatArray toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsConcurrentModifyTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

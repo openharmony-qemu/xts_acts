@@ -40,12 +40,12 @@ export default function Policy_APITest() {
       done();
     });
     /**
-     * @tc.number    Policy
-     * @tc.name      Policy_APITest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Policy_APITest_0100
+     * @tc.number Policy
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Policy_APITest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Policy_APITest_0100 START');

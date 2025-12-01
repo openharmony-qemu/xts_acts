@@ -31,10 +31,13 @@ export default function ActsSubscriberTestUnorder() {
     function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
-    /*
-     * @tc.number    : Sub_Notification_Ans_Subscriber_Subscribe_2700
-     * @tc.name      : check
-     * @tc.desc      : getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_2700
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_2700
+     * @tc.desc   getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_2700', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2700 START`)
@@ -67,10 +70,13 @@ export default function ActsSubscriberTestUnorder() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2700 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Subscriber_Subscribe_2800
-     * @tc.name      : check
-     * @tc.desc      : getSubscribeInfo(): Promise<CommonEventSubscribeInfo>
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_2800
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_2800
+     * @tc.desc   getSubscribeInfo(): Promise<CommonEventSubscribeInfo>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_2800', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2800 START`)
@@ -100,10 +106,13 @@ export default function ActsSubscriberTestUnorder() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2800 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Subscriber_Subscribe_2900
-     * @tc.name      : Check the subscriber can receive event "@#￥#3243adsafdf_" type of the interface
-     * @tc.desc      : getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_2900
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_2900
+     * @tc.desc   getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_2900', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2900 START`)
@@ -137,10 +146,13 @@ export default function ActsSubscriberTestUnorder() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2900 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Subscriber_Subscribe_3000
-     * @tc.name      : Check the subscriber can receive event "@#￥#3243adsafdf_" type of the interface (by Promise)
-     * @tc.desc      : getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_3000
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_3000
+     * @tc.desc   getSubscribeInfo(callback: AsyncCallback<CommonEventSubscribeInfo>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_3000', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_3000 START`)
@@ -171,10 +183,13 @@ export default function ActsSubscriberTestUnorder() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_3000 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_Subscribe_0900
-     * @tc.name      : check
-     * @tc.desc      : isOrderedCommonEvent(callback: AsyncCallback<boolean>): void
+    /**
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_0900
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_0900
+     * @tc.desc   isOrderedCommonEvent(callback: AsyncCallback<boolean>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Subscriber_Subscribe_0900', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_0900 START`)
@@ -244,10 +259,13 @@ export default function ActsSubscriberTestUnorder() {
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_0900 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_CommonEvent_8350
-     * @tc.name      : check
-     * @tc.desc      : isOrderedCommonEvent(): Promise<boolean>
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_8350
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_8350
+     * @tc.desc   isOrderedCommonEvent(): Promise<boolean>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_8350', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_8350 START`)
@@ -317,10 +335,13 @@ export default function ActsSubscriberTestUnorder() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_8350 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_CommonEvent_8250
-     * @tc.name      : check
-     * @tc.desc      : iisStickyCommonEvent(callback: AsyncCallback<boolean>): void
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_8250
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_8250
+     * @tc.desc   iisStickyCommonEvent(callback: AsyncCallback<boolean>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_8250', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_8250 START`)
@@ -390,10 +411,13 @@ export default function ActsSubscriberTestUnorder() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_8250 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_CommonEvent_8300
-     * @tc.name      : check
-     * @tc.desc      : isStickyCommonEvent(): Promise<boolean>
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_8300
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_8300
+     * @tc.desc   isStickyCommonEvent(): Promise<boolean>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_8300', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_8300 START`)
@@ -460,10 +484,13 @@ export default function ActsSubscriberTestUnorder() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_8300 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_Subscribe_0800
-     * @tc.name      : check properties
-     * @tc.desc      : CommonEventPublishData
+    /**
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_0800
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_0800
+     * @tc.desc   CommonEventPublishData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Subscriber_Subscribe_0800', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_0800 START`)

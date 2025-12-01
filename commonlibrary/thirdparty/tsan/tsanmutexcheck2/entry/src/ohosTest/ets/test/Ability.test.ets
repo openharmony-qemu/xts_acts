@@ -21,12 +21,12 @@ export default function abilityTest() {
   describe('ActsThirdPartyTsanMutexCheck2Test', () => {
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_TSAN_MUTEXCHECK_0200
-     * @tc.name       : testTsanMutexCheck002
-     * @tc.desc       : test mutexCheck use of an unlocked mutex
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTsanMutexCheck002
+     * @tc.number SUB_THIRDPARTY_TSAN_MUTEXCHECK_0200
+     * @tc.desc   test mutexCheck use of an unlocked mutex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTsanMutexCheck002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result: number = tsan.doubleUnlockedMutex();

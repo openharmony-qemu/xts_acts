@@ -24,12 +24,6 @@ const unsigned short COMPILABILITY_TEST_I2C_DEVICE_ADDR = 0xFFFF;
 #define DATA_LEN 3
 
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is wifiiot
- * @param        : module name is wifiiotlite
- * @param        : test suit name is UtilsFileFuncTestSuite
- */
 LITE_TEST_SUIT(wifiiot, wifiiotlite, IotI2cTestSuite);
 
 #ifdef CONFIG_I2C_SUPPORT
@@ -59,9 +53,12 @@ void IOT_ResetFunc(void)
 }
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_3100
- * @tc.name      : I2C operation with IoTI2cInit
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotI2C001
+ * @tc.number SUB_UTILS_WIFIIOT_API_3100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotI2cTestSuite, testIotI2C001, Function | MediumTest | Level1)
 {
@@ -70,9 +67,12 @@ LITE_TEST_CASE(IotI2cTestSuite, testIotI2C001, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_3200
- * @tc.name      : I2C operation with IoTI2cWrite
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotI2C002
+ * @tc.number SUB_UTILS_WIFIIOT_API_3200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotI2cTestSuite, testIotI2C002, Function | MediumTest | Level1)
 {
@@ -88,9 +88,12 @@ LITE_TEST_CASE(IotI2cTestSuite, testIotI2C002, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_3300
- * @tc.name      : I2C operation with IoTI2cRead
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotI2C003
+ * @tc.number SUB_UTILS_WIFIIOT_API_3300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotI2cTestSuite, testIotI2C003, Function | MediumTest | Level1)
 {
@@ -104,9 +107,12 @@ LITE_TEST_CASE(IotI2cTestSuite, testIotI2C003, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_3400
- * @tc.name      : I2C operation with IoTI2cSetBaudrate
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotI2C004
+ * @tc.number SUB_UTILS_WIFIIOT_API_3400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotI2cTestSuite, testIotI2C004, Function | MediumTest | Level1)
 {
@@ -115,9 +121,12 @@ LITE_TEST_CASE(IotI2cTestSuite, testIotI2C004, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_3500
- * @tc.name      : I2C operation with IoTI2cDeinit
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotI2C005
+ * @tc.number SUB_UTILS_WIFIIOT_API_3500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotI2cTestSuite, testIotI2C005, Function | MediumTest | Level1)
 {

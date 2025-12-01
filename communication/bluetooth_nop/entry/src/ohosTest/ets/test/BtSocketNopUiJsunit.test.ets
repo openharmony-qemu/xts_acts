@@ -45,12 +45,12 @@ export default function btSocketNopUiJsunit() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: testSppListenNop
-     * @tc.name: testSppListen
-     * @tc.desc: test sppListen without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testSppListenNop
+     * @tc.number testSppListenNop
+     * @tc.desc   test sppListen without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testSppListenNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -78,12 +78,12 @@ export default function btSocketNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testSppSppConnectNop
-     * @tc.name: testSppConnect
-     * @tc.desc: test sppConnect without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testSppSppConnectNop
+     * @tc.number testSppSppConnectNop
+     * @tc.desc   test sppConnect without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testSppSppConnectNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {

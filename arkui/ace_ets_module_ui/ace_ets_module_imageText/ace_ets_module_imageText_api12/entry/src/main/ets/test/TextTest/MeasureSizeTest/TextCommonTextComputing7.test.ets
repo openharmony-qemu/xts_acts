@@ -41,12 +41,12 @@ export default function TextCommonTextComputing7() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0370
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0370
-     * @tc.desc  : Test MeasureTextSize when overflow passes to Text0verflow.Ellipsis, view the return width/size result result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0370
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0370
+     * @tc.desc   Test MeasureTextSize when overflow passes to Text0verflow.Ellipsis, view the return width/size result result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0370',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0370 START');
@@ -74,12 +74,12 @@ export default function TextCommonTextComputing7() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0380
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0380
-     * @tc.desc  : Test MeasureTextSize when overflow passes to Text0verflow.Clip, view the return width/size result result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0380
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0380
+     * @tc.desc   Test MeasureTextSize when overflow passes to Text0verflow.Clip, view the return width/size result result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0380',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0380 START');
@@ -107,12 +107,12 @@ export default function TextCommonTextComputing7() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0390
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0390
-     * @tc.desc  : Test MeasureTextSize when overflow passes to Text0verflow.None, view the return width/size result result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0390
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0390
+     * @tc.desc   Test MeasureTextSize when overflow passes to Text0verflow.None, view the return width/size result result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0390',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0390 START');
@@ -140,12 +140,12 @@ export default function TextCommonTextComputing7() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0400
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0400
-     * @tc.desc  : Test MeasureTextSize when overflow passes to Text0verflow.Marquee, view the return width/size result result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0400
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0400
+     * @tc.desc   Test MeasureTextSize when overflow passes to Text0verflow.Marquee, view the return width/size result result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0400 START');
@@ -173,12 +173,12 @@ export default function TextCommonTextComputing7() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0410
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0410
-     * @tc.desc  : Test MeasureTextSize when textCase passes to TextCase.Normal, view the return width/size result result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0410
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0410
+     * @tc.desc   Test MeasureTextSize when textCase passes to TextCase.Normal, view the return width/size result result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0410',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0410 START');
@@ -206,12 +206,12 @@ export default function TextCommonTextComputing7() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0420
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0420
-     * @tc.desc  : Test MeasureTextSize when textCase passes to TextCase.LowerCase, view the return width/size result result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0420
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0420
+     * @tc.desc   Test MeasureTextSize when textCase passes to TextCase.LowerCase, view the return width/size result result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0420',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0420 START');
@@ -239,12 +239,12 @@ export default function TextCommonTextComputing7() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0430
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0430
-     * @tc.desc  : Test MeasureTextSize when textCase passes to TextCase.UpperCase, view the return width/size result result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0430
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0430
+     * @tc.desc   Test MeasureTextSize when textCase passes to TextCase.UpperCase, view the return width/size result result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0430',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0430 START');

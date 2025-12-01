@@ -49,12 +49,12 @@ export default function scrollSnapAnimationSpeed() {
     });
 
     /**
+     * @tc.name   testListSpeed01
      * @tc.number testListSpeed01
-     * @tc.name   Test the properties of components
      * @tc.desc   input ScrollSnapAnimationSpeed.NORMAL ,return ScrollSnapAnimationSpeed.NORMAL
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpeed01', Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpeed01] START');
@@ -72,12 +72,12 @@ export default function scrollSnapAnimationSpeed() {
     });
 
     /**
+     * @tc.name   testListSpeed02
      * @tc.number testListSpeed02
-     * @tc.name   Test the properties of components
      * @tc.desc   input 1 ,return ScrollSnapAnimationSpeed.SLOW
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpeed02', Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpeed02] START');
@@ -95,12 +95,12 @@ export default function scrollSnapAnimationSpeed() {
     });
 
     /**
+     * @tc.name   testListSpeed03
      * @tc.number testListSpeed03
-     * @tc.name   Test the properties of components
      * @tc.desc   input undefined ,return ScrollSnapAnimationSpeed.NORMAL
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpeed03', Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpeed03] START');
@@ -118,12 +118,12 @@ export default function scrollSnapAnimationSpeed() {
     });
 
     /**
+     * @tc.name   testListSpeed04
      * @tc.number testListSpeed04
-     * @tc.name   Test the properties of components
      * @tc.desc   input -1 ,return ScrollSnapAnimationSpeed.NORMAL
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpeed04', Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpeed04] START');
@@ -141,12 +141,12 @@ export default function scrollSnapAnimationSpeed() {
     });
 
     /**
+     * @tc.name   testListSpeed05
      * @tc.number testListSpeed05
-     * @tc.name   Test the properties of components
      * @tc.desc   input ScrollSnapAnimationSpeed.SLOW ,return ScrollSnapAnimationSpeed.SLOW
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpeed05', Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpeed05] START');

@@ -56,14 +56,14 @@ export default function webResourceHandlerTest() {
       console.info('beforeEach start');
     })
 
-    /*
-        * @tc.number     : SUB_WEB_WEBNAVIGATIONTYPE_0100
-        * @tc.name       : testWebNavigationTypeStatic001
-        * @tc.desc       : test webNavigationType MAIN_FRAME_NEW_ENTRY
-        * @tc.size       : MEDIUM
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
+    /**
+     * @tc.name   testWebNavigationTypeStatic001
+     * @tc.number SUB_WEB_WEBNAVIGATIONTYPE_0100
+     * @tc.desc   test webNavigationType MAIN_FRAME_NEW_ENTRY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebNavigationTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testWebNavigationType001', 10)
       await Utils.msSleep(2000);
@@ -74,14 +74,14 @@ export default function webResourceHandlerTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBNAVIGATIONTYPE_0200
-    * @tc.name       : testWebNavigationTypeStatic002
-    * @tc.desc       : test webNavigationType MAIN_FRAME_EXISTING_ENTRY
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testWebNavigationTypeStatic002
+     * @tc.number SUB_WEB_WEBNAVIGATIONTYPE_0200
+     * @tc.desc   test webNavigationType MAIN_FRAME_EXISTING_ENTRY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebNavigationTypeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testWebNavigationType002', 10)
       await Utils.msSleep(2000);
@@ -92,14 +92,14 @@ export default function webResourceHandlerTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBNAVIGATIONTYPE_0300
-    * @tc.name       : testWebNavigationTypeStatic003
-    * @tc.desc       : test webNavigationType NAVIGATION_TYPE_NEW_SUBFRAME
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testWebNavigationTypeStatic003
+     * @tc.number SUB_WEB_WEBNAVIGATIONTYPE_0300
+     * @tc.desc   test webNavigationType NAVIGATION_TYPE_NEW_SUBFRAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebNavigationTypeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testWebNavigationType003', 10)
       await Utils.msSleep(2000);
@@ -110,6 +110,14 @@ export default function webResourceHandlerTest() {
       done()
     })
 
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SwitchNextPageStatic
+     * @tc.desc   SwitchNextPageStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

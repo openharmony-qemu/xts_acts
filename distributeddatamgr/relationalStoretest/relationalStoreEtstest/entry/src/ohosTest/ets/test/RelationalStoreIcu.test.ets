@@ -56,12 +56,12 @@ export default function RelationalStoreIcu() {
         });
         console.info(TAG + "*************Unit Test Begin*************");
         /**
-         * @tc.name testRdbStoreIcuInsert0100
+         * @tc.name   testRdbStoreIcuInsert0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Insert_0100
-         * @tc.desc RelationalStore icu insert test, query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu insert test, query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuInsert0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuInsert0100 ";
@@ -121,12 +121,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuInsert0200
+         * @tc.name   testRdbStoreIcuInsert0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Insert_0200
-         * @tc.desc RelationalStore icu insert test, query 2
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu insert test, query 2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuInsert0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuInsert0200 ";
@@ -193,12 +193,12 @@ export default function RelationalStoreIcu() {
 
 
         /**
-         * @tc.name testRdbStoreIcuInsert0300
+         * @tc.name   testRdbStoreIcuInsert0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Insert_0300
-         * @tc.desc RelationalStore icu insert test, query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu insert test, query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuInsert0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuInsert0300 ";
@@ -251,12 +251,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuUpdate0100
+         * @tc.name   testRdbStoreIcuUpdate0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Update_0100
-         * @tc.desc RelationalStore icu update data exist, query 2
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu update data exist, query 2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuUpdate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuUpdate0100 ";
@@ -355,12 +355,12 @@ export default function RelationalStoreIcu() {
 
 
         /**
-         * @tc.name testRdbStoreIcuUpdate0200
+         * @tc.name   testRdbStoreIcuUpdate0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Update_0200
-         * @tc.desc RelationalStore icu update not exist, query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu update not exist, query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuUpdate0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuUpdate0200 ";
@@ -442,12 +442,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuDelete0100
+         * @tc.name   testRdbStoreIcuDelete0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Delete_0100
-         * @tc.desc RelationalStore icu Delete not exist, query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu Delete not exist, query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuDelete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuDelete0100 ";
@@ -534,12 +534,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuDelete0200
+         * @tc.name   testRdbStoreIcuDelete0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Delete_0200
-         * @tc.desc RelationalStore icu Delete  exist, query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu Delete  exist, query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuDelete0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuDelete0200 ";
@@ -619,12 +619,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0100
+         * @tc.name   testRdbStoreIcuQuery0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0100
-         * @tc.desc RelationalStore icu  1字， query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu  1字， query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0100 ";
@@ -684,12 +684,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0102
+         * @tc.name   testRdbStoreIcuQuery0102
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0102
-         * @tc.desc RelationalStore icu  1字， query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu  1字， query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0102 ";
@@ -750,12 +750,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0103
+         * @tc.name   testRdbStoreIcuQuery0103
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0103
-         * @tc.desc RelationalStore icu  1字 不存在， query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu  1字 不存在， query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0103 ";
@@ -807,12 +807,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0104
+         * @tc.name   testRdbStoreIcuQuery0104
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0104
-         * @tc.desc RelationalStore icu  1字 存在， query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu  1字 存在， query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0104 ";
@@ -864,12 +864,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0200
+         * @tc.name   testRdbStoreIcuQuery0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0200
-         * @tc.desc RelationalStore icu 2字， query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu 2字， query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0200 ";
@@ -929,12 +929,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0202
+         * @tc.name   testRdbStoreIcuQuery0202
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0202
-         * @tc.desc RelationalStore icu 2字， query 3
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu 2字， query 3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0202 ";
@@ -987,12 +987,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0203
+         * @tc.name   testRdbStoreIcuQuery0203
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0203
-         * @tc.desc RelationalStore icu 2字 不存在， query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu 2字 不存在， query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0203 ";
@@ -1045,12 +1045,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0204
+         * @tc.name   testRdbStoreIcuQuery0204
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0204
-         * @tc.desc RelationalStore icu 2字 存在， query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu 2字 存在， query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0204 ";
@@ -1102,12 +1102,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0300
+         * @tc.name   testRdbStoreIcuQuery0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0300
-         * @tc.desc RelationalStore icu 3字， query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu 3字， query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0300 ";
@@ -1167,12 +1167,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0302
+         * @tc.name   testRdbStoreIcuQuery0302
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0302
-         * @tc.desc RelationalStore icu 3字， query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu 3字， query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0300 ";
@@ -1225,12 +1225,12 @@ export default function RelationalStoreIcu() {
 
 
         /**
-         * @tc.name testRdbStoreIcuQuery0400
+         * @tc.name   testRdbStoreIcuQuery0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0400
-         * @tc.desc RelationalStore icu query 4字
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu query 4字
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0400 ";
@@ -1282,12 +1282,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0500
+         * @tc.name   testRdbStoreIcuQuery0500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0500
-         * @tc.desc RelationalStore icu query n字俗语
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu query n字俗语
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0500 ";
@@ -1339,12 +1339,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0600
+         * @tc.name   testRdbStoreIcuQuery0600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0600
-         * @tc.desc RelationalStore icu query 完整文本
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu query 完整文本
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0600 ";
@@ -1396,12 +1396,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0700
+         * @tc.name   testRdbStoreIcuQuery0700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0700
-         * @tc.desc RelationalStore icu query 位置1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu query 位置1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0700 ";
@@ -1454,12 +1454,12 @@ export default function RelationalStoreIcu() {
 
 
         /**
-         * @tc.name testRdbStoreIcuQuery0800
+         * @tc.name   testRdbStoreIcuQuery0800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0800
-         * @tc.desc RelationalStore icu query 位置1 空格
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu query 位置1 空格
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0800 ";
@@ -1511,12 +1511,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery0900
+         * @tc.name   testRdbStoreIcuQuery0900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_0900
-         * @tc.desc RelationalStore icu query 位置1 标点
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu query 位置1 标点
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery0900 ";
@@ -1568,12 +1568,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery1000
+         * @tc.name   testRdbStoreIcuQuery1000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_1000
-         * @tc.desc RelationalStore icu query 位置1 标点
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu query 位置1 标点
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery1000 ";
@@ -1625,12 +1625,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery1100
+         * @tc.name   testRdbStoreIcuQuery1100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_1100
-         * @tc.desc RelationalStore icu  create table same name  testicu, fail
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu  create table same name  testicu, fail
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery1100 ";
@@ -1672,12 +1672,12 @@ export default function RelationalStoreIcu() {
         });
 
         /**
-         * @tc.name testRdbStoreIcuQuery1200
+         * @tc.name   testRdbStoreIcuQuery1200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_IcuEtsAPITest_Query_1200
-         * @tc.desc RelationalStore icu  create table dif name  testicu
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore icu  create table dif name  testicu
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreIcuQuery1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreIcuQuery1200 ";

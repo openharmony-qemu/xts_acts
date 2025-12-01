@@ -47,12 +47,12 @@ export default function AbilityRuntime_Test() {
       }
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4600
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4600
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4600
-     * @tc.desc Start the EmbeddedUIExtension instance of multiple instances and specify the process name of EmbeddedUIExtension with different capabilities of the same bundle
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start the EmbeddedUIExtension instance of multiple instances and specify the process name of EmbeddedUIExtension with different capabilities of the same bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4600', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_4600';
@@ -114,12 +114,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2700
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2700
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2700
-     * @tc.desc Initiate EmbeddedUIExtension for multiple instances of bundles in UIAbility of the same bundle
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Initiate EmbeddedUIExtension for multiple instances of bundles in UIAbility of the same bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2700', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_2700';
@@ -167,12 +167,12 @@ export default function AbilityRuntime_Test() {
       }
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2900
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2900
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2900
-     * @tc.desc Initiate the EmbeddedUIExtension of multiple instances in UIAbility with the same bundle
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Initiate the EmbeddedUIExtension of multiple instances in UIAbility with the same bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2900', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_2900';
@@ -221,12 +221,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2800
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2800
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2800
-     * @tc.desc Launch a multi-instance embeddedUIExtension in UIAbility with the same bundle
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Launch a multi-instance embeddedUIExtension in UIAbility with the same bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2800', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_2800';
@@ -275,12 +275,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2600
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2600
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2600
-     * @tc.desc Launch the default multi-instance EmbeddedUIExtension in UIAbility with the same bundle
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Launch the default multi-instance EmbeddedUIExtension in UIAbility with the same bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2600', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_2600';
@@ -329,12 +329,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3200
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3200
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3200
-     * @tc.desc Enable the type multi-instance EmbeddedUIExtension in UIAbility of different bundles
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Enable the type multi-instance EmbeddedUIExtension in UIAbility of different bundles
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3200', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_3200';
@@ -383,12 +383,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3000
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3000
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3000
-     * @tc.desc The default multi-instance EmbeddedUIExtension is launched in UIAbility of different bundles
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   The default multi-instance EmbeddedUIExtension is launched in UIAbility of different bundles
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3000', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_3000';
@@ -437,12 +437,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2300
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2300
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2300
-     * @tc.desc Launch the embeddedUIExtension of multiple instances of bundles in UIAbility of the same module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Launch the embeddedUIExtension of multiple instances of bundles in UIAbility of the same module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2300', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_2300';
@@ -491,12 +491,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2500
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2500
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2500
-     * @tc.desc Launch an EmbeddedUIExtension instance for multiple instances in UIAbility of the same module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Launch an EmbeddedUIExtension instance for multiple instances in UIAbility of the same module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2500', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_2500';
@@ -545,12 +545,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2400
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2400
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2400
-     * @tc.desc Launch the EmbeddedUIExtension of type multi-instance in UIAbility of the same module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Launch the EmbeddedUIExtension of type multi-instance in UIAbility of the same module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2400', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_2400';
@@ -599,12 +599,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2200
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2200
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2200
-     * @tc.desc Launch EmbeddedUIExtension without multiple instances in UIAbility of the same module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Launch EmbeddedUIExtension without multiple instances in UIAbility of the same module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2200', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_2200';
@@ -653,12 +653,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3800
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3800
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3800
-     * @tc.desc Start EmbeddedUIExtension for multiple instances of a bundle and set hostInstance to 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start EmbeddedUIExtension for multiple instances of a bundle and set hostInstance to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3800', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_3800';
@@ -718,12 +718,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3600
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3600
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3600
-     * @tc.desc Start EmbeddedUIExtension for multiple instances of a bundle and set hostInstance to false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start EmbeddedUIExtension for multiple instances of a bundle and set hostInstance to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3600', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_3600';
@@ -783,12 +783,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3500
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3500
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3500
-     * @tc.desc Start EmbeddedUIExtension for multiple bundle instances and set hostInstance to true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start EmbeddedUIExtension for multiple bundle instances and set hostInstance to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3500', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_3500';
@@ -849,12 +849,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3900
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3900
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3900
-     * @tc.desc Start EmbeddedUIExtension for a bundle multi-instance instance and specify hostInstance as {}
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start EmbeddedUIExtension for a bundle multi-instance instance and specify hostInstance as {}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3900', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_3900';
@@ -914,12 +914,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3700
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3700
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3700
-     * @tc.desc Start EmbeddedUIExtension for Bundle multi-instance and specify hostInstance as true for the string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start EmbeddedUIExtension for Bundle multi-instance and specify hostInstance as true for the string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3700', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_3700';
@@ -979,12 +979,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4500
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4500
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4500
-     * @tc.desc Start the EmbeddedUIExtension instance of a multi-instance instance and specify the process name of the EmbeddedUIExtension instance of another bundle
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start the EmbeddedUIExtension instance of a multi-instance instance and specify the process name of the EmbeddedUIExtension instance of another bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4500', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_4500';
@@ -1034,12 +1034,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4300
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4300
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4300
-     * @tc.desc Start EmbeddedUIExtension for type multi-instance instance and set hostInstance to 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start EmbeddedUIExtension for type multi-instance instance and set hostInstance to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4300', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_4300';
@@ -1099,12 +1099,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4100
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4100
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4100
-     * @tc.desc Start EmbeddedUIExtension for type multi-instance instance and set hostInstance to false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start EmbeddedUIExtension for type multi-instance instance and set hostInstance to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4100', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_4100';
@@ -1164,12 +1164,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4000
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4000
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4000
-     * @tc.desc Start EmbeddedUIExtension for type multi-instance instance and set hostInstance to true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start EmbeddedUIExtension for type multi-instance instance and set hostInstance to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4000', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_4000';
@@ -1229,12 +1229,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4400
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4400
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4400
-     * @tc.desc Start EmbeddedUIExtension for type multi-instance and specify hostInstance as {}
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start EmbeddedUIExtension for type multi-instance and specify hostInstance as {}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4400', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_4400';
@@ -1292,12 +1292,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4200
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4200
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4200
-     * @tc.desc Start EmbeddedUIExtension for type multi-instance and specify hostInstance as true as the string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Start EmbeddedUIExtension for type multi-instance and specify hostInstance as true as the string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_4200', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME: string = 'UIEXtension_EmbeddedUIExtension_4200';
@@ -1357,12 +1357,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1100
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1100
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1100
-     * @tc.desc Verify that the context call of EmbeddedUIExtension startAbilityForResult has options to start UIAbility of the current application
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that the context call of EmbeddedUIExtension startAbilityForResult has options to start UIAbility of the current application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1100', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_1100'
@@ -1411,12 +1411,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1200
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1200
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1200
-     * @tc.desc Verify that the context of EmbeddedUIExtension calls the startAbilityForResult of the promise has options to start the UIAbility of the current application
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that the context of EmbeddedUIExtension calls the startAbilityForResult of the promise has options to start the UIAbility of the current application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1200', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_1200'
@@ -1465,12 +1465,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1000
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1000
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1000
-     * @tc.desc Verify that the context of EmbeddedUIExtension calls the startAbility of the promise has options to start the UIAbility of the current application
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that the context of EmbeddedUIExtension calls the startAbility of the promise has options to start the UIAbility of the current application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1000', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_1000'
@@ -1518,15 +1518,15 @@ export default function AbilityRuntime_Test() {
       }
     })
 
-    /**
-     * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1300
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1300
-     * @tc.desc Verify that the context call to startAbilityForResult of EmbeddedUIExtension can start UIAbility of the current application
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1300
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1300
+     * @tc.desc   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_1300', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_1300'
       if (info != 'false' && info != 'true') {
@@ -1574,12 +1574,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0800
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0800
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0800
-     * @tc.desc Verify that EmbeddedUIExtension context calls startAbility can start UIAbility for the current application
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that EmbeddedUIExtension context calls startAbility can start UIAbility for the current application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0800', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_0800'
@@ -1628,12 +1628,12 @@ export default function AbilityRuntime_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0900
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0900
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0900
-     * @tc.desc Verify that the EmbeddedUIExtension context call startAbility has options to start UIAbility for the current application
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that the EmbeddedUIExtension context call startAbility has options to start UIAbility for the current application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0900', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_0900'

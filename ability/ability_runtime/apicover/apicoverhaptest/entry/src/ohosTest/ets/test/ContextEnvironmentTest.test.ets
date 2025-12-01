@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,11 +50,13 @@ export default function ContextEnvironmentTest(applicationContext: common.Applic
       }, gSetTimeout);
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Context_EnvironmentTest_0400
-     * @tc.name    Multiple registrations and deregistration.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Context_EnvironmentTest_0400
+     * @tc.number SUB_AA_AMS_Context_EnvironmentTest_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AMS_Context_EnvironmentTest_0400', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_AMS_Context_EnvironmentTest_0400 ==== ';
@@ -76,14 +78,14 @@ export default function ContextEnvironmentTest(applicationContext: common.Applic
         let code: number;
         console.info(TAG + "callbackId = " + callbackId + " callNum = " + callNum);
 
-        await sleep(700)
+        await sleep(300)
         // unregisterEnvironmentCallback
         applicationContext.off('environment', callbackId, (error, data) => {
           console.info(TAG + "unregisterEnvironmentCallback first err is : " + JSON.stringify(error) + ", data is : " + JSON.stringify(data));
           code = error?.code;
         })
 
-        await sleep(700);
+        await sleep(300);
         expect(callbackId).assertEqual(callNum);
         expect(code!).assertEqual(undefined);
         callNum++;
@@ -92,11 +94,13 @@ export default function ContextEnvironmentTest(applicationContext: common.Applic
       console.info(TAG, `end`);
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Context_EnvironmentTest_0500
-     * @tc.name    unregisterEnvironmentCallback interface input parameter is a nonexistent ID.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Context_EnvironmentTest_0500
+     * @tc.number SUB_AA_AMS_Context_EnvironmentTest_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AMS_Context_EnvironmentTest_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_AMS_Context_EnvironmentTest_0500 ==== ';
@@ -114,11 +118,13 @@ export default function ContextEnvironmentTest(applicationContext: common.Applic
       })
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Context_EnvironmentTest_0600
-     * @tc.name    unregisterEnvironmentCallback interface input parameter is negative.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Context_EnvironmentTest_0600
+     * @tc.number SUB_AA_AMS_Context_EnvironmentTest_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AMS_Context_EnvironmentTest_0600', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_AMS_Context_EnvironmentTest_0600 ==== ';

@@ -66,6 +66,12 @@
         "label": "$string:TestAbility_label",
         "description": "$string:TestAbility_desc",
         "type": "form",
+        "metadata": [
+          {
+            "name": "ohos.extension.form",
+            "resource": "$profile:form_config",
+          }
+        ],
         "skills": [
           {
             "actions": [

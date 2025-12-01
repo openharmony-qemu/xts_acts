@@ -36,13 +36,13 @@ function expectFail(info: string = ''): void {
 
 export default function WebSocketCreateTest() {
   describe('webSocketCreateTest', () => {
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_CreateWebSocketCallback_0100
-     * @tc.name  : testNetworkMgrWebSocketCreateWebSocketCallback0100
-     * @tc.desc  : Create a WebSocket
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketCreateWebSocketCallback0100
+     * @tc.number SUB_NetworkMgr_WebSocket_CreateWebSocketCallback_0100
+     * @tc.desc   Create a WebSocket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketCreateWebSocketCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketCreateWebSocketCallback0100';
@@ -61,13 +61,13 @@ export default function WebSocketCreateTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_CreateWebSocketCallback_0200
-     * @tc.name  : testNetworkMgrWebSocketCreateWebSocketCallback0200
-     * @tc.desc  : Create a WebSocket
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketCreateWebSocketCallback0200
+     * @tc.number SUB_NetworkMgr_WebSocket_CreateWebSocketCallback_0200
+     * @tc.desc   Create a WebSocket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketCreateWebSocketCallback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketCreateWebSocketCallback0200';

@@ -40,12 +40,12 @@ export default function MultimodalMouseEventTest() {
     }
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_MouseEvent_Action_0100
      * @tc.number SUB_MMI_Input_Api_MouseEvent_Action_0100
-     * @tc.name SUB_MMI_Input_Api_MouseEvent_Action_0100
-     * @tc.desc Test MouseEvent Action
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test MouseEvent Action
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_MouseEvent_Action_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -71,12 +71,12 @@ export default function MultimodalMouseEventTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_MouseEvent_Button_0100
      * @tc.number SUB_MMI_Input_Api_MouseEvent_Button_0100
-     * @tc.name SUB_MMI_Input_Api_MouseEvent_Button_0100
-     * @tc.desc Test MouseEvent Button
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test MouseEvent Button
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_MouseEvent_Button_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -102,12 +102,12 @@ export default function MultimodalMouseEventTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_MouseEvent_Axis_0100
      * @tc.number SUB_MMI_Input_Api_MouseEvent_Axis_0100
-     * @tc.name SUB_MMI_Input_Api_MouseEvent_Axis_0100
-     * @tc.desc Test MouseEvent Axis
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test MouseEvent Axis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_MouseEvent_Axis_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -127,12 +127,12 @@ export default function MultimodalMouseEventTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_MouseEvent_AxisValue_0100
      * @tc.number SUB_MMI_Input_Api_MouseEvent_AxisValue_0100
-     * @tc.name SUB_MMI_Input_Api_MouseEvent_AxisValue_0100
-     * @tc.desc Test MouseEvent AxisValue
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test MouseEvent AxisValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_MouseEvent_AxisValue_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -155,12 +155,12 @@ export default function MultimodalMouseEventTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_MouseEvent_ToolType_0100
      * @tc.number SUB_MMI_Input_Api_MouseEvent_ToolType_0100
-     * @tc.name SUB_MMI_Input_Api_MouseEvent_ToolType_0100
-     * @tc.desc Test MouseEvent ToolType
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test MouseEvent ToolType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_MouseEvent_ToolType_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -181,12 +181,12 @@ export default function MultimodalMouseEventTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_MouseEvent_ToolType_0200
      * @tc.number SUB_MMI_Input_Api_MouseEvent_ToolType_0200
-     * @tc.name SUB_MMI_Input_Api_MouseEvent_ToolType_0200
-     * @tc.desc Test MouseEvent
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test MouseEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_MouseEvent_ToolType_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

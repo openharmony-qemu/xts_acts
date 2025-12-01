@@ -48,9 +48,12 @@ export default function flexVisibility_StartJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStartSubSetVisibilityNone
      * @tc.number SUB_ACE_FLEXALIGNITEMS_START_1100
-     * @tc.name testFlexItemAlignStartSubSetVisibilityNone
-     * @tc.desc aceFlexAlignItemTest
+     * @tc.desc   aceFlexAlignItemTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStartSubSetVisibilityNone',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStartSubSetVisibilityNone START');
@@ -93,9 +96,12 @@ export default function flexVisibility_StartJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStartSubSetVisibilityHidden
      * @tc.number SUB_ACE_FLEXALIGNITEMS_START_1200
-     * @tc.name testFlexItemAlignStartSubSetVisibilityHidden
-     * @tc.desc aceFlexAlignItemTest
+     * @tc.desc   aceFlexAlignItemTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStartSubSetVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStartSubSetVisibilityHidden START');

@@ -43,12 +43,12 @@ export default function AssetNdkTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number :SUB_Security_DataSecurity_Asset_NDK_Func_0100
-     * @tc.name  :assetAddNormal
-     * @tc.desc  :test error cases
-     * @tc.size  :Medium
-     * @tc.type  :Func
-     * @tc.level  :Level0
+     * @tc.name   SUB_Security_DataSecurity_Asset_NDK_Func_0100
+     * @tc.number SUB_Security_DataSecurity_Asset_NDK_Func_0100
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_DataSecurity_Asset_NDK_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(myAssetNdk.asset_add(aw.aliasLong, aw.secLong))
@@ -68,12 +68,12 @@ export default function AssetNdkTest() {
     })
 
     /**
-     * @tc.number  :SUB_Security_DataSecurity_Asset_NDK_Func_0600
-     * @tc.name  :assetAddError
-     * @tc.desc  :test error cases
-     * @tc.size  :Medium
-     * @tc.type  :Func
-     * @tc.level  :Level3
+     * @tc.name   SUB_Security_DataSecurity_Asset_NDK_Func_0600
+     * @tc.number SUB_Security_DataSecurity_Asset_NDK_Func_0600
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_NDK_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       expect(myAssetNdk.asset_add('', ''))
@@ -92,12 +92,12 @@ export default function AssetNdkTest() {
     })
 
     /**
-     * @tc.number  :SUB_Security_DataSecurity_Asset_NDK_Func_0200
-     * @tc.name  :assetQueryNormal
-     * @tc.desc  :test error cases
-     * @tc.size  :Medium
-     * @tc.type  :Func
-     * @tc.level  :Level3
+     * @tc.name   SUB_Security_DataSecurity_Asset_NDK_Func_0200
+     * @tc.number SUB_Security_DataSecurity_Asset_NDK_Func_0200
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_NDK_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -114,12 +114,12 @@ export default function AssetNdkTest() {
     })
 
     /**
-     * @tc.number  :SUB_Security_DataSecurity_Asset_NDK_Func_0700
-     * @tc.name  :assetQueryError
-     * @tc.desc  :test error cases
-     * @tc.size  :Medium
-     * @tc.type  :Func
-     * @tc.level  :Level3
+     * @tc.name   SUB_Security_DataSecurity_Asset_NDK_Func_0700
+     * @tc.number SUB_Security_DataSecurity_Asset_NDK_Func_0700
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_NDK_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -129,12 +129,12 @@ export default function AssetNdkTest() {
     })
 
     /**
-     * @tc.number  :SUB_Security_DataSecurity_Asset_NDK_Func_0300
-     * @tc.name  :assetUpdateNormal
-     * @tc.desc  :test error cases
-     * @tc.size  :Medium
-     * @tc.type  :Func
-     * @tc.level  :Level3
+     * @tc.name   SUB_Security_DataSecurity_Asset_NDK_Func_0300
+     * @tc.number SUB_Security_DataSecurity_Asset_NDK_Func_0300
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_NDK_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -150,12 +150,12 @@ export default function AssetNdkTest() {
     })
 
     /**
-     * @tc.number  :SUB_Security_DataSecurity_Asset_NDK_Func_0800
-     * @tc.name  :assetUpdateError
-     * @tc.desc  :test error cases
-     * @tc.size  :Medium
-     * @tc.type  :Func
-     * @tc.level  :Level3
+     * @tc.name   SUB_Security_DataSecurity_Asset_NDK_Func_0800
+     * @tc.number SUB_Security_DataSecurity_Asset_NDK_Func_0800
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_NDK_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -173,12 +173,12 @@ export default function AssetNdkTest() {
     })
 
     /**
-     * @tc.number  :SUB_Security_DataSecurity_Asset_NDK_Func_0400
-     * @tc.name  :assetDeleteNormal
-     * @tc.desc  :test error cases
-     * @tc.size  :Medium
-     * @tc.type  :Func
-     * @tc.level  :Level3
+     * @tc.name   SUB_Security_DataSecurity_Asset_NDK_Func_0400
+     * @tc.number SUB_Security_DataSecurity_Asset_NDK_Func_0400
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_NDK_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -193,12 +193,12 @@ export default function AssetNdkTest() {
     })
 
     /**
-     * @tc.number  :SUB_Security_DataSecurity_Asset_NDK_Func_0900
-     * @tc.name  :assetDeleteError
-     * @tc.desc  :test error cases
-     * @tc.size  :Medium
-     * @tc.type  :Func
-     * @tc.level  :Level3
+     * @tc.name   SUB_Security_DataSecurity_Asset_NDK_Func_0900
+     * @tc.number SUB_Security_DataSecurity_Asset_NDK_Func_0900
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_NDK_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -208,12 +208,12 @@ export default function AssetNdkTest() {
     })
 
     /**
-     * @tc.number  :SUB_Security_DataSecurity_Asset_NDK_Func_0500
-     * @tc.name  :assetPreAndPostQueryNormal
-     * @tc.desc  :test error cases
-     * @tc.size  :Medium
-     * @tc.type  :Func
-     * @tc.level  :Level3
+     * @tc.name   SUB_Security_DataSecurity_Asset_NDK_Func_0500
+     * @tc.number SUB_Security_DataSecurity_Asset_NDK_Func_0500
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_NDK_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -224,12 +224,12 @@ export default function AssetNdkTest() {
     })
 
     /**
-     * @tc.number  :SUB_Security_DataSecurity_Asset_NDK_Func_1000
-     * @tc.name  :assetPreAndPostQueryError
-     * @tc.desc  :test error cases
-     * @tc.size  :Medium
-     * @tc.type  :Func
-     * @tc.level  :Level3
+     * @tc.name   SUB_Security_DataSecurity_Asset_NDK_Func_1000
+     * @tc.number SUB_Security_DataSecurity_Asset_NDK_Func_1000
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_NDK_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -239,12 +239,12 @@ export default function AssetNdkTest() {
     })
 
     /**
-     * @tc.number :SUB_Security_DataSecurity_Asset_CE_Func_0200
-     * @tc.name  :assetAddCE
-     * @tc.desc  :test error cases
-     * @tc.size  :Medium
-     * @tc.type  :Func
-     * @tc.level  :Level3
+     * @tc.name   SUB_Security_DataSecurity_Asset_CE_Func_0200
+     * @tc.number SUB_Security_DataSecurity_Asset_CE_Func_0200
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_CE_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       expect(myAssetNdk.asset_addCE(aw.aliasLong, aw.secLong))
@@ -254,12 +254,12 @@ export default function AssetNdkTest() {
     })
 
     /**
-     * @tc.number :SUB_Security_Asset_QuerySyncResult_NDK_Func_0100
-     * @tc.name   :SUB_Security_Asset_QuerySyncResult_NDK_Func_0100
-     * @tc.desc   :test querySyncResult
-     * @tc.size   :Medium
-     * @tc.type   :Func
-     * @tc.level  :Level3
+     * @tc.name   SUB_Security_Asset_QuerySyncResult_NDK_Func_0100
+     * @tc.number SUB_Security_Asset_QuerySyncResult_NDK_Func_0100
+     * @tc.desc   test querySyncResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_Asset_QuerySyncResult_NDK_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let result: number = myAssetNdk.asset_querySyncResult();

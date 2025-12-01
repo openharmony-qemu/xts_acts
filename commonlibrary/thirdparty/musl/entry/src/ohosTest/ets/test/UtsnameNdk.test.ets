@@ -25,12 +25,12 @@ export default function utsnameNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UTSNAME_UNAME_0100
-     * @tc.name       : testMuslUtsnameUname001
-     * @tc.desc       : test uname
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUtsnameUname001
+     * @tc.number SUB_THIRDPARTY_MUSL_UTSNAME_UNAME_0100
+     * @tc.desc   test uname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUtsnameUname001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;

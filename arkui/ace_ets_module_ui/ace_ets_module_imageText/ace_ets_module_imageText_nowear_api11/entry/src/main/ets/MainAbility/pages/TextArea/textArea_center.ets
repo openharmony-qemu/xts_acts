@@ -64,7 +64,7 @@ struct textArea_center {
             .backgroundColor("#7ebfe76e")
             .enableKeyboardOnFocus(false)
             .key('textArea_center_textArea_01')
-            .margin(0)
+            .width('50%')
 
           ForEach(this.arr,(item:number) => {
             Text(item.toString())

@@ -30,10 +30,12 @@ export default function abilityManagerStaticTest() {
   describe('abilityManagerStaticTest', () => {
 
     /**
+     * @tc.name   System_API_Test_Ability_Manager_Static_0400
      * @tc.number System_API_Test_Ability_Manager_Static_0400
-     * @tc.name System_API_Test_Ability_Manager_Static_0400
-     * @tc.desc Test the third-party application without permission call getAbilityRunningInfos only get self info
-     * @tc.level 3
+     * @tc.desc   Test the third-party application without permission call getAbilityRunningInfos only get self info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("System_API_Test_Ability_Manager_Static_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = 'System_API_Test_Ability_Manager_Static_0400';
@@ -60,11 +62,13 @@ export default function abilityManagerStaticTest() {
     })
 
     /**
-      * @tc.number System_API_Test_Ability_Manager_Static_0900
-      * @tc.name System_API_Test_Ability_Manager_Static_0900
-      * @tc.desc cover all value of abilityState
-      * @tc.level 3
-      */
+     * @tc.name   System_API_Test_Ability_Manager_Static_0900
+     * @tc.number System_API_Test_Ability_Manager_Static_0900
+     * @tc.desc   cover all value of abilityState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("System_API_Test_Ability_Manager_Static_0900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = `System_API_Test_Ability_Manager_Static_0900`;
       hilog.info(domain, tag, 'test begin');

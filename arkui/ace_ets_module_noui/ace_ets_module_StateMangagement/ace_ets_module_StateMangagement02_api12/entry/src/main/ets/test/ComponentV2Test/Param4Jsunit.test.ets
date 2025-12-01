@@ -46,12 +46,12 @@ export default function Param4Jsunit() {
     });
 
     /**
-     * @tc.number    Param4Jsunit_001
-     * @tc.name      Param4Jsunit_001
-     * @tc.desc      The parent component modifies the object itself
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   Param4Jsunit_001
+     * @tc.number Param4Jsunit_001
+     * @tc.desc   The parent component modifies the object itself
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Param4Jsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Param4Jsunit_001] START');
@@ -77,12 +77,12 @@ export default function Param4Jsunit() {
     });
 
     /**
-     * @tc.number    Param4Jsunit_002
-     * @tc.name      Param4Jsunit_002
-     * @tc.desc      Modify property values in subcomponent objects
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   Param4Jsunit_002
+     * @tc.number Param4Jsunit_002
+     * @tc.desc   Modify property values in subcomponent objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Param4Jsunit_002', Level.LEVEL0, async (done: Function) => {
       console.info('[Param4Jsunit_002] START');

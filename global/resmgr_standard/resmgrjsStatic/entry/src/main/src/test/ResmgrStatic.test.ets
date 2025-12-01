@@ -61,9 +61,12 @@ export default function ResmgrTest() {
     });
 
     /**
-     * @tc.number  getStringValue_test_static_003
-     * @tc.name    getStringValue_test_static_003
-     * @tc.desc    get the string in callback mode
+     * @tc.name   getStringValue_test_static_003
+     * @tc.number getStringValue_test_static_003
+     * @tc.desc   get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringValue_test_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getStringValue(0x01000000, (err: BusinessError<void> | null, value: string | undefined) => {
@@ -75,10 +78,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  getStringValue_test_static_004
-    * @tc.name    getStringValue_test_static_004
-    * @tc.desc    get the string in promise mode
-    */
+     * @tc.name   getStringValue_test_static_004
+     * @tc.number getStringValue_test_static_004
+     * @tc.desc   get the string in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_static_004', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getStringValue(0x01000000).then((value: string) => {
         expect(value !== null).assertTrue();
@@ -89,10 +95,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number getStringValue_test_static_005
-    * @tc.name getStringValue_test_static_005
-    * @tc.desc get the string in callback mode
-    */
+     * @tc.name   getStringValue_test_static_005
+     * @tc.number getStringValue_test_static_005
+     * @tc.desc   get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_static_005', Level.LEVEL3, async (done: () => void): Promise<void> => {
       // 0x1001 id not exist,throw 9001001 error code
       res?.getStringValue(0x1001, (err: BusinessError<void> | null, value: string | undefined) => {
@@ -111,10 +120,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number SUB_GLOBAL_RESMGR_JS_static_0500
-    * @tc.name getStringValue_test_static_006
-    * @tc.desc  test getString method in callback mode get the string in callback mode
-    */
+     * @tc.name   getStringValue_test_static_006
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_0500
+     * @tc.desc   test getString method in callback mode get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_static_006', Level.LEVEL3, async (done: () => void): Promise<void> => {
       // 0x01000000 id is integer resource,throw 9001002 error code
       res?.getStringValue(0x01000002, (err: BusinessError<void> | null, value: string | undefined) => {
@@ -132,10 +144,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number getStringValue_test_static_007
-    * @tc.name   getStringValue_test_static_007
-    * @tc.desc   test getString method in callback mode get the string in callback mode
-    */
+     * @tc.name   getStringValue_test_static_007
+     * @tc.number getStringValue_test_static_007
+     * @tc.desc   test getString method in callback mode get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_static_007', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getStringValue(0x01000017, (err: BusinessError<void> | null, value: string | undefined) => {
         if (err) {
@@ -152,10 +167,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number getStringValue_test_static_0090
-    * @tc.name getStringValue_test_static_0090
-    * @tc.desc test getString method in promise mode
-    */
+     * @tc.name   getStringValue_test_static_0090
+     * @tc.number getStringValue_test_static_0090
+     * @tc.desc   test getString method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_static_0090', Level.LEVEL3, async (done: () => void): Promise<void> => {
       // 0x1001 id not exist,throw 9001001 error code
       res?.getStringValue(0x1001).then((value: string) => {
@@ -173,10 +191,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number getStringValue_test_static_010
-    * @tc.name getStringValue_test_static_010
-    * @tc.desc test getString method in promise mode
-    */
+     * @tc.name   getStringValue_test_static_010
+     * @tc.number getStringValue_test_static_010
+     * @tc.desc   test getString method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_static_010', Level.LEVEL3, async (done: () => void): Promise<void> => {
       // 0x02000000 id is integer resource,throw 9001002 error code
       hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_010 promise start');
@@ -197,10 +218,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number getStringValue_test_static_011
-    * @tc.name getStringValue_test_static_011
-    * @tc.desc test getString method in promise mode
-    */
+     * @tc.name   getStringValue_test_static_011
+     * @tc.number getStringValue_test_static_011
+     * @tc.desc   test getString method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_static_011', Level.LEVEL3, async (done: () => void): Promise<void> => {
       // 0x01000006 id re-ref,throw 9001006 error code
       res?.getStringValue(0x01000019).then((value: string) => {
@@ -218,10 +242,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_static_0800
-    * @tc.name    getStringArrayValue_test_static_004
-    * @tc.desc    test getStringArray method in promise mode
-    */
+     * @tc.name   getStringArrayValue_test_static_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_0800
+     * @tc.desc   test getStringArray method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringArrayValue_test_static_004', Level.LEVEL0, async (): Promise<void> => {
       res?.getStringArrayValue(0x200000A).then((value: string[]) => {
         expect(value !== null).assertTrue();
@@ -237,10 +264,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_0900
-     * @tc.name    getMediaContent_test_static_003
-     * @tc.desc    test getMedia method in callback mode
-    */
+     * @tc.name   getMediaContent_test_static_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_0900
+     * @tc.desc   test getMedia method in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContent_test_static_003', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaContent(0x01000001, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
         if (value?.length) {
@@ -254,10 +284,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_1000
-     * @tc.name    getMediaContent_test_static_004
-     * @tc.desc    test getMedia method in promise mode
-    */
+     * @tc.name   getMediaContent_test_static_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_1000
+     * @tc.desc   test getMedia method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContent_test_static_004', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaContent(0x200001C).then((value: string): void => {
         console.log('getMediaContent_test_static_004 ' + value.length);
@@ -266,10 +299,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_1100
-     * @tc.name    getMediaContentBase64_test_static_003
-     * @tc.desc    test getMediaBase64 method in callback mode
-    */
+     * @tc.name   getMediaContentBase64_test_static_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_1100
+     * @tc.desc   test getMediaBase64 method in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContentBase64_test_static_003', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaContentBase64(0x01000001, (err: BusinessError<void> | null, value: string | undefined) => {
         if (value?.length) {
@@ -283,10 +319,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_1200
-     * @tc.name    getMediaContentBase64_test_static_004
-     * @tc.desc    test getMediaBase64 method in promise mode
-    */
+     * @tc.name   getMediaContentBase64_test_static_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_1200
+     * @tc.desc   test getMediaBase64 method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContentBase64_test_static_004', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaContentBase64(0x200001C).then((value: string) => {
         expect(value.length > 0).assertTrue();
@@ -295,9 +334,12 @@ export default function ResmgrTest() {
 
 
     /**
-     * @tc.number  getConfiguration_test_static_002
-     * @tc.name    getConfiguration_test_static_002
-     * @tc.desc    test getConfiguration method in promise mode
+     * @tc.name   getConfiguration_test_static_002
+     * @tc.number getConfiguration_test_static_002
+     * @tc.desc   test getConfiguration method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getConfiguration_test_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getConfiguration_test_static_002 0');
@@ -307,10 +349,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_1400
-     * @tc.name  getConfiguration_test_static_003
-     * @tc.desc    test getConfiguration method in promise mode
-   */
+     * @tc.name   getConfiguration_test_static_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_1400
+     * @tc.desc   test getConfiguration method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getConfiguration_test_static_003', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getConfiguration_test_static_003 0');
       expect(resourceManager.Direction.DIRECTION_VERTICAL == 0).assertTrue();
@@ -319,9 +364,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_1300
-     * @tc.name  getConfiguration_test_static_004
-     * @tc.desc    test getConfiguration method in promise mode
+     * @tc.name   getConfiguration_test_static_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_1300
+     * @tc.desc   test getConfiguration method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getConfiguration_test_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getConfiguration().then((cfg: resourceManager.Configuration) => {
@@ -332,10 +380,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_static_1500
-    * @tc.name  getDeviceCapability_test_static_001
-    * @tc.desc    test getDeviceCapability method in callback mode
-    */
+     * @tc.name   getDeviceCapability_test_static_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_1500
+     * @tc.desc   test getDeviceCapability method in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getDeviceCapability_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getDeviceCapability((error, dc) => {
         expect(dc !== null).assertTrue();
@@ -345,10 +396,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getDeviceCapability_test_static_002
-     * @tc.name    getDeviceCapability_test_static_002
-     * @tc.desc    test getDeviceCapability method in promise mode
-    */
+     * @tc.name   getDeviceCapability_test_static_002
+     * @tc.number getDeviceCapability_test_static_002
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getDeviceCapability_test_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log('getDeviceCapability_test_static_002 0');
       expect(resourceManager.DeviceType.DEVICE_TYPE_PHONE == 0).assertTrue();
@@ -357,10 +411,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getDeviceCapability_test_static_003
-     * @tc.name    getDeviceCapability_test_static_003
-     * @tc.desc    test getDeviceCapability method in promise mode
-    */
+     * @tc.name   getDeviceCapability_test_static_003
+     * @tc.number getDeviceCapability_test_static_003
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getDeviceCapability_test_static_003', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getDeviceCapability_test_static_003 0');
       expect(resourceManager.DeviceType.DEVICE_TYPE_TABLET == 1).assertTrue();
@@ -369,10 +426,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getDeviceCapability_test_static_004
-     * @tc.name    getDeviceCapability_test_static_004
-     * @tc.desc    test getDeviceCapability method in promise mode
-    */
+     * @tc.name   getDeviceCapability_test_static_004
+     * @tc.number getDeviceCapability_test_static_004
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getDeviceCapability_test_static_004', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getDeviceCapability_test_static_004 0');
       expect(resourceManager.DeviceType.DEVICE_TYPE_CAR == 2).assertTrue();
@@ -381,10 +441,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getDeviceCapability_test_static_005
-     * @tc.name    getDeviceCapability_test_static_005
-     * @tc.desc    test getDeviceCapability method in promise mode
-    */
+     * @tc.name   getDeviceCapability_test_static_005
+     * @tc.number getDeviceCapability_test_static_005
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getDeviceCapability_test_static_005', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getDeviceCapability_test_static_005 0');
       expect(resourceManager.DeviceType.DEVICE_TYPE_PC == 3).assertTrue();
@@ -393,10 +456,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getDeviceCapability_test_static_006
-     * @tc.name    getDeviceCapability_test_static_006
-     * @tc.desc    test getDeviceCapability method in promise mode
-    */
+     * @tc.name   getDeviceCapability_test_static_006
+     * @tc.number getDeviceCapability_test_static_006
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getDeviceCapability_test_static_006', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getDeviceCapability_test_static_006 0');
       expect(resourceManager.DeviceType.DEVICE_TYPE_TV == 4).assertTrue();
@@ -405,10 +471,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getDeviceCapability_test_static_007
-     * @tc.name    getDeviceCapability_test_static_007
-     * @tc.desc    test getDeviceCapability method in promise mode
-    */
+     * @tc.name   getDeviceCapability_test_static_007
+     * @tc.number getDeviceCapability_test_static_007
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getDeviceCapability_test_static_007', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getDeviceCapability_test_static_007 0');
       expect(resourceManager.DeviceType.DEVICE_TYPE_WEARABLE == 6).assertTrue();
@@ -418,9 +487,12 @@ export default function ResmgrTest() {
 
 
     /**
-     * @tc.number  getDeviceCapability_test_static_017
-     * @tc.name    getDeviceCapability_test_static_017
-     * @tc.desc    test getDeviceCapability method in promise mode
+     * @tc.name   getDeviceCapability_test_static_017
+     * @tc.number getDeviceCapability_test_static_017
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getDeviceCapability_test_static_017', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getDeviceCapability_test_static_017 0');
@@ -430,10 +502,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  getDeviceCapability_test_static_008
-      * @tc.name    getDeviceCapability_test_static_008
-      * @tc.desc    test getDeviceCapability method in callback mode
-      */
+       * @tc.name   getDeviceCapability_test_static_008
+       * @tc.number getDeviceCapability_test_static_008
+       * @tc.desc   test getDeviceCapability method in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getDeviceCapability_test_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
           res.getDeviceCapability().then((dc: resourceManager.DeviceCapability): void => {
@@ -459,10 +534,13 @@ export default function ResmgrTest() {
       })
 
     /**
-        * @tc.number  getScreenDensity_test_static_002
-        * @tc.name    getScreenDensity_test_static_002
-        * @tc.desc    test getDeviceCapability method in promise mode
-       */
+     * @tc.name   getScreenDensity_test_static_002
+     * @tc.number getScreenDensity_test_static_002
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getScreenDensity_test_static_002 0');
       expect(resourceManager.ScreenDensity.SCREEN_SDPI == 120).assertTrue();
@@ -471,10 +549,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getScreenDensity_test_static_003
-     * @tc.name    getScreenDensity_test_static_003
-     * @tc.desc    test getDeviceCapability method in promise mode
-    */
+     * @tc.name   getScreenDensity_test_static_003
+     * @tc.number getScreenDensity_test_static_003
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_static_003', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getScreenDensity_test_static_003 0');
       expect(resourceManager.ScreenDensity.SCREEN_MDPI == 160).assertTrue();
@@ -483,10 +564,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getScreenDensity_test_static_004
-     * @tc.name    getScreenDensity_test_static_004
-     * @tc.desc    test getDeviceCapability method in promise mode
-    */
+     * @tc.name   getScreenDensity_test_static_004
+     * @tc.number getScreenDensity_test_static_004
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_static_004', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getScreenDensity_test_static_004 0');
       expect(resourceManager.ScreenDensity.SCREEN_LDPI == 240).assertTrue();
@@ -495,10 +579,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getScreenDensity_test_static_005
-     * @tc.name    getScreenDensity_test_static_005
-     * @tc.desc    test getDeviceCapability method in promise mode
-    */
+     * @tc.name   getScreenDensity_test_static_005
+     * @tc.number getScreenDensity_test_static_005
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_static_005', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getScreenDensity_test_static_005 0');
       expect(resourceManager.ScreenDensity.SCREEN_XLDPI == 320).assertTrue();
@@ -507,10 +594,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getScreenDensity_test_static_006
-     * @tc.name    getScreenDensity_test_static_006
-     * @tc.desc    test getDeviceCapability method in promise mode
-    */
+     * @tc.name   getScreenDensity_test_static_006
+     * @tc.number getScreenDensity_test_static_006
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_static_006', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getScreenDensity_test_static_006 0');
       expect(resourceManager.ScreenDensity.SCREEN_XXLDPI == 480).assertTrue();
@@ -519,10 +609,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getScreenDensity_test_static_007
-     * @tc.name    getScreenDensity_test_static_007
-     * @tc.desc    test getDeviceCapability method in promise mode
-    */
+     * @tc.name   getScreenDensity_test_static_007
+     * @tc.number getScreenDensity_test_static_007
+     * @tc.desc   test getDeviceCapability method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_static_007', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log('getScreenDensity_test_static_007 0');
       expect(resourceManager.ScreenDensity.SCREEN_XXXLDPI == 640).assertTrue();
@@ -531,10 +624,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_static_1700
-    * @tc.name    getRawFileContent_test_static_001
-    * @tc.desc    test getRawFile method in callback mode
-    */
+     * @tc.name   getRawFileContent_test_static_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_1700
+     * @tc.desc   test getRawFile method in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFileContent_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getRawFileContent('rawfile/rawfiletest.xml',
         (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
@@ -545,10 +641,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_static_1800
-    * @tc.name    getRawFileContent_test_static_002
-    * @tc.desc    test getRawFile method in promise mode
-    */
+     * @tc.name   getRawFileContent_test_static_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_1800
+     * @tc.desc   test getRawFile method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFileContent_test_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getRawFileContent('rawfile/rawfiletest.xml').then((value: Uint8Array) => {
         expect(value !== null).assertTrue();
@@ -558,10 +657,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_Static_2000
-    * @tc.name    getRawFd_test_static_001
-    * @tc.desc    test getRawFileDescriptor method in callback mode
-    */
+     * @tc.name   getRawFd_test_static_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_Static_2000
+     * @tc.desc   test getRawFileDescriptor method in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFd_test_static_001', Level.LEVEL0, async (): Promise<void> => {
       res?.getRawFd('rawfiletest.xml',
         (error: BusinessError<void> | null, rawfile: resourceManager.RawFileDescriptor | undefined) => {
@@ -577,10 +679,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  getRawFd_test_static_002
-    * @tc.name    getRawFd_test_static_002
-    * @tc.desc    test getRawFileDescriptor method in promise mode
-    */
+     * @tc.name   getRawFd_test_static_002
+     * @tc.number getRawFd_test_static_002
+     * @tc.desc   test getRawFileDescriptor method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFd_test_static_002', Level.LEVEL0, async (): Promise<void> => {
       res?.getRawFd('rawfiletest.xml').then((rawfile: resourceManager.RawFileDescriptor): void => {
         rawfile.fd = 2000;
@@ -596,12 +701,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getRawFd_test_static_0100
-     * @tc.name    getRawFd_test_static_0100
-     * @tc.desc    errcode 9001005 in callback mode
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.name   getRawFd_test_static_0100
+     * @tc.number getRawFd_test_static_0100
+     * @tc.desc   errcode 9001005 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFd_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       res.getRawFd('plural_name_loop', (error: BusinessError<void> | null) => {
@@ -611,12 +716,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getRawFd_test_static_0200
-     * @tc.name    getRawFd_test_static_0200
-     * @tc.desc    errcode 9001005 in promise mode
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.name   getRawFd_test_static_0200
+     * @tc.number getRawFd_test_static_0200
+     * @tc.desc   errcode 9001005 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFd_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       res.getRawFd('plural_name_loop').then(() => {
@@ -628,10 +733,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_2200
-     * @tc.name    closeRawFd_test_static_001
-     * @tc.desc    test closeRawFileDescriptor method in callback mode
-    */
+     * @tc.name   closeRawFd_test_static_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_2200
+     * @tc.desc   test closeRawFileDescriptor method in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('closeRawFd_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         res?.closeRawFd('notexist.xml', (error: BusinessError<void> | null) => {
@@ -653,10 +761,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_2300
-     * @tc.name    closeRawFd_test_static_005
-     * @tc.desc    test closeRawFd method in promise mode throw 9001005 error code
-    */
+     * @tc.name   closeRawFd_test_static_005
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_2300
+     * @tc.desc   test closeRawFd method in promise mode throw 9001005 error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('closeRawFd_test_static_005', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         res?.closeRawFd('notexist.xml').then((): void => {
@@ -677,9 +788,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_2400
-     * @tc.name    getStringByName_test_static_001
-     * @tc.desc    test getStringByName method in callback mode
+     * @tc.name   getStringByName_test_static_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_2400
+     * @tc.desc   test getStringByName method in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getStringByName_test_static_001', Level.LEVEL0, async (): Promise<void> => {
       res?.getStringByName('app_name').then((value: string) => {
@@ -690,10 +804,13 @@ export default function ResmgrTest() {
     })
 
     /**
-      * @tc.number  getStringByName_test_static_002
-      * @tc.name    getStringByName_test_static_002
-      * @tc.desc    test getString method in promise mode
-      */
+     * @tc.name   getStringByName_test_static_002
+     * @tc.number getStringByName_test_static_002
+     * @tc.desc   test getString method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringByName_test_static_002', Level.LEVEL0, async (): Promise<void> => {
       res?.getStringByName('app_name').then((value: string) => {
         expect(value !== null).assertTrue();
@@ -703,9 +820,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_2600
-     * @tc.name    getStringArrayByName_test_static_001
-     * @tc.desc    test getStringArrayByName method in callback mode
+     * @tc.name   getStringArrayByName_test_static_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_2600
+     * @tc.desc   test getStringArrayByName method in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getStringArrayByName_test_static_001', Level.LEVEL0, async (): Promise<void> => {
       res?.getStringArrayByName('sizeList', (err: BusinessError<void> | null, value: Array<string> | undefined) => {
@@ -731,10 +851,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_static_2700
-    * @tc.name    getStringArrayByName_test_static_002
-    * @tc.desc    test getStringArrayByName method in promise mode
-    */
+     * @tc.name   getStringArrayByName_test_static_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_2700
+     * @tc.desc   test getStringArrayByName method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringArrayByName_test_static_002', Level.LEVEL0, async (): Promise<void> => {
       res?.getStringArrayByName('sizeList').then((value: string[]) => {
         expect(value !== null).assertTrue();
@@ -750,10 +873,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_static_2800
-    * @tc.name    getMediaByName_test_static_001
-    * @tc.desc    test getMediaByName method in callback mode
-    */
+     * @tc.name   getMediaByName_test_static_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_2800
+     * @tc.desc   test getMediaByName method in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaByName('background', (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
         if (value?.length) {
@@ -768,9 +894,12 @@ export default function ResmgrTest() {
     })
     
     /**
+     * @tc.name   getMediaByName_test_static_0100
      * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_static_0100
-     * @tc.name getMediaByName_test_static_0100
-     * @tc.desc get the media in callback mode, test getMediaByName method in callback mode with density
+     * @tc.desc   get the media in callback mode, test getMediaByName method in callback mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaByName_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaByName('foreground', 0, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
@@ -786,10 +915,13 @@ export default function ResmgrTest() {
       })
     })
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2900
-    * @tc.name    getMediaByName_test_static_002
-    * @tc.desc    get the media in promise mode, test getMediaByName method in promise mode
-    */
+     * @tc.name   getMediaByName_test_static_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2900
+     * @tc.desc   get the media in promise mode, test getMediaByName method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaByName_test_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaByName('startIcon').then((value: Uint8Array) => {
         expect(value.length > 0).assertTrue();
@@ -798,10 +930,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_static_2000
-    * @tc.name    getMediaBase64ByName_test_static_001
-    * @tc.desc    test getMediaBase64ByName method in callback mode
-    */
+     * @tc.name   getMediaBase64ByName_test_static_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_2000
+     * @tc.desc   test getMediaBase64ByName method in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaBase64ByName_test_static_001', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaBase64ByName('background', (err: BusinessError<void> | null, value: string | undefined) => {
         if (value?.length) {
@@ -815,9 +950,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_2100
-     * @tc.name    getMediaBase64ByName_test_static_002
-     * @tc.desc    test getMediaBase64ByName method in promise mode
+     * @tc.name   getMediaBase64ByName_test_static_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_static_2100
+     * @tc.desc   test getMediaBase64ByName method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaBase64ByName_test_static_002', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaBase64ByName('icon').then((value: string): void => {
@@ -827,10 +965,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  getStringSync_test_static_001
-    * @tc.name    getStringSync_test_static_001
-    * @tc.desc    test getStringSync method
-    */
+     * @tc.name   getStringSync_test_static_001
+     * @tc.number getStringSync_test_static_001
+     * @tc.desc   test getStringSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringSync_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let value = res?.getStringSync(0x01000000);
       expect(value !== null).assertTrue();
@@ -840,9 +981,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getStringByNameSync_test_static_001
-     * @tc.name    getStringByNameSync_test_static_001
-     * @tc.desc    test getStringByNameSync method
+     * @tc.name   getStringByNameSync_test_static_001
+     * @tc.number getStringByNameSync_test_static_001
+     * @tc.desc   test getStringByNameSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringByNameSync_test_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -860,10 +1004,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_JS_static_2500
-      * @tc.name    getStringByNameSync_test_static_002
-      * @tc.desc    test getStringByNameSync method
-      */
+       * @tc.name   getStringByNameSync_test_static_002
+       * @tc.number SUB_GLOBAL_RESMGR_JS_static_2500
+       * @tc.desc   test getStringByNameSync method
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getStringByNameSync_test_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = res?.getStringByNameSync('app_name');
         expect(value !== null).assertTrue();
@@ -872,10 +1019,13 @@ export default function ResmgrTest() {
         done();
       })
       /**
-       * @tc.number  SUB_GLOBAL_RESMGR_JS_static_4100
-       * @tc.name    getfloatByName_test_static_001
-       * @tc.desc    test getDoubleByName with float
-      */
+       * @tc.name   getfloatByName_test_static_001
+       * @tc.number SUB_GLOBAL_RESMGR_JS_static_4100
+       * @tc.desc   test getDoubleByName with float
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getfloatByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = res?.getDoubleByName('page_text_font_size');
         console.log('getfloatByName_test_static_001 ' + value);
@@ -890,9 +1040,12 @@ export default function ResmgrTest() {
       })
 
     /**
+     * @tc.name   getRawFileList_test_static_0100
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_static_0100
-     * @tc.name getRawFileList_test_static_0100
-     * @tc.desc getRawFileList with callback method
+     * @tc.desc   getRawFileList with callback method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getRawFileList_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -914,9 +1067,12 @@ export default function ResmgrTest() {
     })
 
     /**
+     * @tc.name   getRawFileList_test_static_0110
      * @tc.number getRawFileList_test_static_0110
-     * @tc.name getRawFileList_test_static_0110
-     * @tc.desc getRawFileList with callback method
+     * @tc.desc   getRawFileList with callback method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getRawFileList_test_static_0110', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -939,9 +1095,12 @@ export default function ResmgrTest() {
     })
 
     /**
+     * @tc.name   getRawFileList_test_static_0210
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_static_0210
-     * @tc.name getRawFileList_test_static_0210
-     * @tc.desc getRawFileList with promise method
+     * @tc.desc   getRawFileList with promise method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFileList_test_static_0210', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -964,10 +1123,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_static_0300
-    * @tc.name    getMediaBase64ByName_test_static_0100
-    * @tc.desc    test getMediaBase64ByName method in callback mode with density
-   */
+     * @tc.name   getMediaBase64ByName_test_static_0100
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_static_0300
+     * @tc.desc   test getMediaBase64ByName method in callback mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaBase64ByName_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaBase64ByName('background', 0, (err: BusinessError<void> | null, value: string | undefined) => {
         if (value?.length) {
@@ -981,10 +1143,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_static_0600
-     * @tc.name    getMediaContent_test_static_0200
-     * @tc.desc    test getMediaContent method in promise mode with density
-    */
+     * @tc.name   getMediaContent_test_static_0200
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_static_0600
+     * @tc.desc   test getMediaContent method in promise mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContent_test_static_0200', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaContent(0x01000001, 0).then((value: string): void => {
         console.log('getMediaContent_test_static_0200 ' + value);
@@ -993,10 +1158,13 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_static_0800
-     * @tc.name    getMediaContentBase64_test_static_0200
-     * @tc.desc    test getMediaContentBase64 method in promise mode with density
-    */
+     * @tc.name   getMediaContentBase64_test_static_0200
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_static_0800
+     * @tc.desc   test getMediaContentBase64 method in promise mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContentBase64_test_static_0200', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaContentBase64(0x01000001, 0).then((value: string): void => {
         console.log('getMediaContentBase64_test_static_0200 ' + value);
@@ -1005,10 +1173,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETSYSRESOURCEMANAGER_JS_static_0100
-      * @tc.name    getSysResourceManager_test_static_0100
-      * @tc.desc    test getSysResourceManager method
-      */
+       * @tc.name   getSysResourceManager_test_static_0100
+       * @tc.number SUB_GLOBAL_RESMGR_GETSYSRESOURCEMANAGER_JS_static_0100
+       * @tc.desc   test getSysResourceManager method
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getSysResourceManager_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = resourceManager.getSysResourceManager();
         hilog.info(0x0000, 'testTag', '%{public}s', 'getSysResourceManager_test_static_0100 ' + value);
@@ -1017,10 +1188,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0100
-      * @tc.name    getColor_test_static_0100
-      * @tc.desc    test getColor method in callback mode get the color in callback mode
-      */
+       * @tc.name   getColor_test_static_0100
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0100
+       * @tc.desc   test getColor method in callback mode get the color in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getColor_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         res?.getColor(0x01000033, (err: BusinessError<void> | null, value: long | undefined) => {
           expect(value !== null).assertTrue();
@@ -1031,10 +1205,13 @@ export default function ResmgrTest() {
     })
    
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0200
-    * @tc.name    getColor_test_static_0200
-    * @tc.desc    get the color in promise mode,test getColor method in promise mode
-    */
+     * @tc.name   getColor_test_static_0200
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0200
+     * @tc.desc   get the color in promise mode,test getColor method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColor_test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getColor(0x01000033).then(value => {
         expect(value !== null).assertTrue();
@@ -1045,9 +1222,12 @@ export default function ResmgrTest() {
     }) 
 
       /**
-       * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0110
-       * @tc.name    getColor_test_static_0110
-       * @tc.desc    test getColor method in callback mode
+       * @tc.name   getColor_test_static_0110
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0110
+       * @tc.desc   test getColor method in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('getColor_test_static_0110', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
@@ -1064,9 +1244,12 @@ export default function ResmgrTest() {
       })
 
       /**
-       * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0120
-       * @tc.name    getColor_test_static_0120
-       * @tc.desc    test getColor method in callback mode
+       * @tc.name   getColor_test_static_0120
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0120
+       * @tc.desc   test getColor method in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('getColor_test_static_0120', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
@@ -1083,10 +1266,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0130
-      * @tc.name    getColor_test_static_0130
-      * @tc.desc    test getColor method in callback mode
-      */
+       * @tc.name   getColor_test_static_0130
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0130
+       * @tc.desc   test getColor method in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColor_test_static_0130', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColor(0x0100000e, (err: BusinessError<void> | null, value: long | undefined) => {
@@ -1102,10 +1288,13 @@ export default function ResmgrTest() {
       })
 
       /**
-     * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0140
-     * @tc.name    getColor_test_static_0140
-     * @tc.desc    test getColor method in callback mode
-     */
+       * @tc.name   getColor_test_static_0140
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0140
+       * @tc.desc   test getColor method in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColor_test_static_0140', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColor(0x01000034, (err: BusinessError<void> | null, value: long | undefined) => {
@@ -1121,10 +1310,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0150
-      * @tc.name    getColor_test_static_0150
-      * @tc.desc    test getColor method in callback mode
-      */
+       * @tc.name   getColor_test_static_0150
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0150
+       * @tc.desc   test getColor method in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColor_test_static_0150', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColor(0x01000034, (err: BusinessError<void> | null, value: long | undefined) => {
@@ -1139,10 +1331,13 @@ export default function ResmgrTest() {
         }
       })
       /**
-  * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0210
-  * @tc.name    getColor_test_static_0210
-  * @tc.desc    test getColor method in promise mode get the color in promise mode
-  */
+       * @tc.name   getColor_test_static_0210
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0210
+       * @tc.desc   test getColor method in promise mode get the color in promise mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColor_test_static_0210', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColor(0x01234567).then((value: long) => {
@@ -1160,10 +1355,13 @@ export default function ResmgrTest() {
     })
 
       /**
-     * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0220
-     * @tc.name    getColor_test_static_0220
-     * @tc.desc    test getColor method in promise mode get the color in promise mode
-     */
+       * @tc.name   getColor_test_static_0220
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0220
+       * @tc.desc   test getColor method in promise mode get the color in promise mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColor_test_static_0220', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColor(0x01000006).then((value: long) => {
@@ -1181,10 +1379,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0230
-      * @tc.name    getColor_test_static_0230
-      * @tc.desc    test getColor method in promise mode get the color in promise mode
-      */
+       * @tc.name   getColor_test_static_0230
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0230
+       * @tc.desc   test getColor method in promise mode get the color in promise mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColor_test_static_0230', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColor(0x01000006).then((value: long) => {
@@ -1202,10 +1403,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0240
-      * @tc.name    getColor_test_static_0240
-      * @tc.desc    test getColor method in promise mode get the color in promise mode
-      */
+       * @tc.name   getColor_test_static_0240
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0240
+       * @tc.desc   test getColor method in promise mode get the color in promise mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColor_test_static_0240', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColor(0x01000034).then((value: long) => {
@@ -1223,10 +1427,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_static_0100
-    * @tc.name    getColorSync_test_static_001
-    * @tc.desc    test getColorSync method
-    */
+     * @tc.name   getColorSync_test_static_001
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_static_0100
+     * @tc.desc   test getColorSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorSync_test_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       let value = res?.getColorSync(0x01000033);
       expect(value !== null).assertTrue();
@@ -1236,10 +1443,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_static_0300
-    * @tc.name    getColorSync_test_static_003
-    * @tc.desc    test getColorSync method
-    */
+     * @tc.name   getColorSync_test_static_003
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_static_0300
+     * @tc.desc   test getColorSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorSync_test_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let value = res?.getColorSync(0x21000014);
@@ -1253,10 +1463,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_static_0400
-    * @tc.name    getColorSync_test_static_004
-    * @tc.desc    test getColorSync method
-    */
+     * @tc.name   getColorSync_test_static_004
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_static_0400
+     * @tc.desc   test getColorSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorSync_test_static_004', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let value = res?.getColorSync(0x01000000);
@@ -1270,10 +1483,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_static_0500
-    * @tc.name    getColorSync_test_static_005
-    * @tc.desc    test getColorSync method
-    */
+     * @tc.name   getColorSync_test_static_005
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_static_0500
+     * @tc.desc   test getColorSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorSync_test_static_005', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let value = res?.getColorSync(0x0100002d);
@@ -1287,10 +1503,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_static_0600
-    * @tc.name    getColorSync_test_static_006
-    * @tc.desc    test getColorSync method
-    */
+     * @tc.name   getColorSync_test_static_006
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_static_0600
+     * @tc.desc   test getColorSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorSync_test_static_006', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let value = res?.getColorSync(0x01000034);
@@ -1304,10 +1523,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0100
-      * @tc.name    getColorByName_test_static_0100
-      * @tc.desc    test getColorByName method in callback mode
-     */
+       * @tc.name   getColorByName_test_static_0100
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0100
+       * @tc.desc   test getColorByName method in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getColorByName_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
         res?.getColorByName('color_test1', (err: BusinessError<void> | null, value: long | undefined) => {
           expect(value !== null).assertTrue();
@@ -1317,9 +1539,12 @@ export default function ResmgrTest() {
       })
 
       /**
-       * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0110
-       * @tc.name    getColorByName_test_static_0110
-       * @tc.desc    test getColorByName method in callback mode
+       * @tc.name   getColorByName_test_static_0110
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0110
+       * @tc.desc   test getColorByName method in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('getColorByName_test_static_0110', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
@@ -1336,9 +1561,12 @@ export default function ResmgrTest() {
       })
 
       /**
-       * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0120
-       * @tc.name    getColorByName_test_static_0120
-       * @tc.desc    test getColorByName method in callback mode
+       * @tc.name   getColorByName_test_static_0120
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0120
+       * @tc.desc   test getColorByName method in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('getColorByName_test_static_0120', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
@@ -1356,10 +1584,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0130
-      * @tc.name    getColorByName_test_static_0130
-      * @tc.desc    test getColorByName method in callback mode get the color by name in callback mode
-      */
+       * @tc.name   getColorByName_test_static_0130
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0130
+       * @tc.desc   test getColorByName method in callback mode get the color by name in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColorByName_test_static_0130', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColorByName('integer_0', (err: BusinessError<void> | null, value: long | undefined) => {
@@ -1375,10 +1606,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0140
-      * @tc.name    getColorByName_test_static_0140
-      * @tc.desc    test getColorByName method in callback mode
-      */
+       * @tc.name   getColorByName_test_static_0140
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0140
+       * @tc.desc   test getColorByName method in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColorByName_test_static_0140', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColorByName('color_test5', (err: BusinessError<void> | null, value: long | undefined) => {
@@ -1395,10 +1629,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0150
-      * @tc.name    getColorByName_test_static_0150
-      * @tc.desc    test getColorByName method in callback mode
-      */
+       * @tc.name   getColorByName_test_static_0150
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0150
+       * @tc.desc   test getColorByName method in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColorByName_test_static_0150', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColorByName('color_test3', (err: BusinessError<void> | null, value: long | undefined) => {
@@ -1415,10 +1652,13 @@ export default function ResmgrTest() {
       })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0100
-    * @tc.name    getColorByNameSync_test_static_001
-    * @tc.desc    get the sync color by name,test getColorByNameSync method
-    */
+     * @tc.name   getColorByNameSync_test_static_001
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0100
+     * @tc.desc   get the sync color by name,test getColorByNameSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorByNameSync_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let value = res?.getColorByNameSync('color_test1');
       expect(value !== null).assertTrue();
@@ -1428,10 +1668,13 @@ export default function ResmgrTest() {
     })
 
       /**
-     * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0200
-     * @tc.name    getColorByNameSync_test_static_003
-     * @tc.desc    test getColorByNameSync method
-     */
+       * @tc.name   getColorByNameSync_test_static_003
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0200
+       * @tc.desc   test getColorByNameSync method
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColorByNameSync_test_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           let value = res?.getColorByNameSync('0x2000010');
@@ -1445,10 +1688,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0400
-      * @tc.name    getColorByNameSync_test_static_004
-      * @tc.desc    get the sync color by name,test getColorByNameSync method
-      */
+       * @tc.name   getColorByNameSync_test_static_004
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0400
+       * @tc.desc   get the sync color by name,test getColorByNameSync method
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getColorByNameSync_test_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
           let value = res?.getColorByNameSync('color_notexist');
@@ -1462,10 +1708,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0200
-      * @tc.name    getColorByName_test_static_0200
-      * @tc.desc    test getColorByName method in promise mode get the color by name in promise mode
-      */
+       * @tc.name   getColorByName_test_static_0200
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0200
+       * @tc.desc   test getColorByName method in promise mode get the color by name in promise mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getColorByName_test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
         res?.getColorByName('color_test1').then((value: long) => {
           expect(value !== null).assertTrue();
@@ -1476,10 +1725,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0210
-      * @tc.name    getColorByName_test_static_0210
-      * @tc.desc    test getColorByName method in promise mode get the color by name in promise mode
-      */
+       * @tc.name   getColorByName_test_static_0210
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0210
+       * @tc.desc   test getColorByName method in promise mode get the color by name in promise mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getColorByName_test_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
           res?.getColorByName('color_notexist').then((value: long) => {
@@ -1497,10 +1749,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0220
-      * @tc.name    getColorByName_test_static_0220
-      * @tc.desc    test getColorByName method in promise mode get the color by name in promise mode
-      */
+       * @tc.name   getColorByName_test_static_0220
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0220
+       * @tc.desc   test getColorByName method in promise mode get the color by name in promise mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColorByName_test_static_0220', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColorByName('integer_0').then((value: long) => {
@@ -1518,10 +1773,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0230
-      * @tc.name    getColorByName_test_static_0230
-      * @tc.desc    test getColorByName method in promise mode get the color by name in promise mode
-      */
+       * @tc.name   getColorByName_test_static_0230
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0230
+       * @tc.desc   test getColorByName method in promise mode get the color by name in promise mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColorByName_test_static_0230', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColorByName('color_test5').then((value: long) => {
@@ -1539,10 +1797,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0240
-      * @tc.name    getColorByName_test_static_0250
-      * @tc.desc    test getColorByName method in promise mode get the color by name in promise mode
-      */
+       * @tc.name   getColorByName_test_static_0250
+       * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0240
+       * @tc.desc   test getColorByName method in promise mode get the color by name in promise mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getColorByName_test_static_0250', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.getColorByName('color_test3').then((value: long) => {
@@ -1560,10 +1821,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0500
-    * @tc.name    getColorByNameSync_test_static_005
-    * @tc.desc    test getColorByNameSync method
-    */
+     * @tc.name   getColorByNameSync_test_static_005
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0500
+     * @tc.desc   test getColorByNameSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByNameSync_test_static_005', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let value = res?.getColorByNameSync('color_test5');
@@ -1577,10 +1841,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0600
-    * @tc.name    getColorByNameSync_test_static_006
-    * @tc.desc    test getColorByNameSync method
-    */
+     * @tc.name   getColorByNameSync_test_static_006
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0600
+     * @tc.desc   test getColorByNameSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByNameSync_test_static_006', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let value = res?.getColorByNameSync('color_test3');
@@ -1594,10 +1861,13 @@ export default function ResmgrTest() {
     })
     
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0700
-    * @tc.name    getColorByNameSync_test_static_007
-    * @tc.desc    get the sync color by name,test getColorByNameSync method
-    */
+     * @tc.name   getColorByNameSync_test_static_007
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0700
+     * @tc.desc   get the sync color by name,test getColorByNameSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorByNameSync_test_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let value = res?.getColorByNameSync('integer_1');
@@ -1611,10 +1881,13 @@ export default function ResmgrTest() {
     })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_ADDRESOURCE_JS_static_0100
-      * @tc.name    addResource_test_static_002
-      * @tc.desc    test addResource method with int param
-      */
+       * @tc.name   addResource_test_static_002
+       * @tc.number SUB_GLOBAL_RESMGR_ADDRESOURCE_JS_static_0100
+       * @tc.desc   test addResource method with int param
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('addResource_test_static_002', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.addResource('123');
@@ -1629,10 +1902,13 @@ export default function ResmgrTest() {
       })
 
       /**
-     * @tc.number  SUB_GLOBAL_RESMGR_REMOVERESOURCE_JS_static_0100
-     * @tc.name    removeResource_test_static_002
-     * @tc.desc    test removeResource method with int param
-     */
+       * @tc.name   removeResource_test_static_002
+       * @tc.number SUB_GLOBAL_RESMGR_REMOVERESOURCE_JS_static_0100
+       * @tc.desc   test removeResource method with int param
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('removeResource_test_static_002', Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           res?.removeResource('123');
@@ -1646,12 +1922,15 @@ export default function ResmgrTest() {
         }
       })
 
-    /**
-     * @tc.number   getIntPluralStringByNameSync_test_static_0100
-     * @tc.name     getIntPluralStringByNameSync_test_static_0100
-     * @tc.desc     test getMediaContent 9error code 9001004 by name
-     */
 
+    /**
+     * @tc.name   getIntPluralStringByNameSync_test_static_0100
+     * @tc.number getIntPluralStringByNameSync_test_static_0100
+     * @tc.desc   getIntPluralStringByNameSync_test_static_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getIntPluralStringByNameSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
         res?.getIntPluralStringByNameSync('string_format8', 1);
@@ -1662,9 +1941,12 @@ export default function ResmgrTest() {
       }
     })
     /**
-     * @tc.number   getDoublePluralStringByNameSync_test_static_0100
-     * @tc.name     getDoublePluralStringByNameSync_test_static_0100
-     * @tc.desc     test getDoublePluralStringByNameSync with error code 9001004
+     * @tc.name   getDoublePluralStringByNameSync_test_static_0100
+     * @tc.number getDoublePluralStringByNameSync_test_static_0100
+     * @tc.desc   test getDoublePluralStringByNameSync with error code 9001004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDoublePluralStringByNameSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -1677,10 +1959,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_static_0500
-    * @tc.name    getMediaContent_test_static_0100
-    * @tc.desc    get the media in callback mode,test getMediaContent method in callback mode with density
-    */
+     * @tc.name   getMediaContent_test_static_0100
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_static_0500
+     * @tc.desc   get the media in callback mode,test getMediaContent method in callback mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContent_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaContent(0x01000001, 0, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
         if (value?.length) {
@@ -1695,9 +1980,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getMediaContent_test_static_0300
-     * @tc.name    getMediaContent_test_static_0300
-     * @tc.desc    test getMediaContent density callback err code 9001002
+     * @tc.name   getMediaContent_test_static_0300
+     * @tc.number getMediaContent_test_static_0300
+     * @tc.desc   test getMediaContent density callback err code 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("getMediaContent_test_static_0300", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContent  density callback err code 9001002 start');
@@ -1718,9 +2006,12 @@ export default function ResmgrTest() {
 
 
     /**
-     * @tc.number  getMediaContent_test_static_0400
-     * @tc.name    getMediaContent_test_static_0400
-     * @tc.desc    test getMediaContent density promise errcode 9001002
+     * @tc.name   getMediaContent_test_static_0400
+     * @tc.number getMediaContent_test_static_0400
+     * @tc.desc   test getMediaContent density promise errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getMediaContent(0x0100000a, 0).then(() => {
@@ -1736,9 +2027,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getMediaContent_test_static_0500
-     * @tc.name    getMediaContent_test_static_0500
-     * @tc.desc    test getMediaContent density promise errcode 9001001
+     * @tc.name   getMediaContent_test_static_0500
+     * @tc.number getMediaContent_test_static_0500
+     * @tc.desc   test getMediaContent density promise errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_test_static_0500', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getMediaContentBase64(0x01234567).then(() => {
@@ -1755,9 +2049,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getMediaContent_test_static_0600
-     * @tc.name    getMediaContent_test_static_0600
-     * @tc.desc    test getMediaContent density promise errcode 9001001
+     * @tc.name   getMediaContent_test_static_0600
+     * @tc.number getMediaContent_test_static_0600
+     * @tc.desc   test getMediaContent density promise errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_test_static_0600', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getMediaContent(0x01234567, 0).then(() => {
@@ -1774,10 +2071,13 @@ export default function ResmgrTest() {
 
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_static_0700
-    * @tc.name    getMediaContentBase64_test_static_0100
-    * @tc.desc    get the media in callback mode,test getMediaContentBase64 method in callback mode with density
-    */
+     * @tc.name   getMediaContentBase64_test_static_0100
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_static_0700
+     * @tc.desc   get the media in callback mode,test getMediaContentBase64 method in callback mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContentBase64_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaContentBase64(0x01000001, 0, (err: BusinessError<void> | null, value: string | undefined) => {
         if (value?.length) {
@@ -1792,9 +2092,12 @@ export default function ResmgrTest() {
     })
     
     /**
-     * @tc.number  getMediaContentBase64_test_static_0300
-     * @tc.name    getMediaContentBase64_test_static_0300
-     * @tc.desc    test getMediaContentBase64 density promise errcode 9001002
+     * @tc.name   getMediaContentBase64_test_static_0300
+     * @tc.number getMediaContentBase64_test_static_0300
+     * @tc.desc   test getMediaContentBase64 density promise errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getMediaContentBase64(0x01000007).then(() => {
@@ -1811,9 +2114,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getMediaContentBase64_test_static_0400
-     * @tc.name    getMediaContentBase64_test_static_0400
-     * @tc.desc    test getMediaContentBase64 density callback errcode 9001001
+     * @tc.name   getMediaContentBase64_test_static_0400
+     * @tc.number getMediaContentBase64_test_static_0400
+     * @tc.desc   test getMediaContentBase64 density callback errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("getMediaContentBase64_test_static_0400", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContentBase64 resId callback err code 201 start');
@@ -1833,9 +2139,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getMediaContentBase64_test_static_0500
-     * @tc.name    getMediaContentBase64_test_static_0500
-     * @tc.desc    test getMediaContentBase64 density callback errcode 9001002
+     * @tc.name   getMediaContentBase64_test_static_0500
+     * @tc.number getMediaContentBase64_test_static_0500
+     * @tc.desc   test getMediaContentBase64 density callback errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("getMediaContentBase64_test_static_0500", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContentBase64 resId callback err code 9001002 start');
@@ -1854,9 +2163,12 @@ export default function ResmgrTest() {
       hilog.info(domain, tag, 'getStringArrayValue callback 9001002 end');
     })
     /**
-     * @tc.number  roundingIncrement_test_static_0100
-     * @tc.name    roundingIncrement_test_static_0100
-     * @tc.desc    test roundingIncrement success
+     * @tc.name   roundingIncrement_test_static_0100
+     * @tc.number roundingIncrement_test_static_0100
+     * @tc.desc   test roundingIncrement success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("roundingIncrement_test_static_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TAG: string = "roundingIncrement";
@@ -1876,9 +2188,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  roundingMode_test_static_0100
-     * @tc.name    roundingMode_test_static_0100
-     * @tc.desc    test roundingIncrement success
+     * @tc.name   roundingMode_test_static_0100
+     * @tc.number roundingMode_test_static_0100
+     * @tc.desc   test roundingIncrement success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("roundingMode_test_static_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TAG: string = "roundingMode";
@@ -1898,9 +2213,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  getConfiguration_test_static_001
-     * @tc.name    getConfiguration_test_static_001
-     * @tc.desc    test getConfiguration method in callback mode
+     * @tc.name   getConfiguration_test_static_001
+     * @tc.number getConfiguration_test_static_001
+     * @tc.desc   test getConfiguration method in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getConfiguration_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log('getConfiguration_test_static_001 0');
@@ -1912,10 +2230,13 @@ export default function ResmgrTest() {
     })
  
     /**
-    * @tc.number getStringArrayByName_test_static_003
-    * @tc.name   getStringArrayByName_test_static_003
-    * @tc.desc   test getStringArrayByName method in callback mode get the string in callback mode
-    */
+     * @tc.name   getStringArrayByName_test_static_003
+     * @tc.number getStringArrayByName_test_static_003
+     * @tc.desc   test getStringArrayByName method in callback mode get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringArrayByName_test_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getStringArrayByName('sizeListThree', (err: BusinessError<void> | null, value: Array<String> | undefined) => {
         if (err) {
@@ -1932,10 +2253,13 @@ export default function ResmgrTest() {
     })
 
     /**
-    * @tc.number getStringArrayByName_test_static_004
-    * @tc.name getStringArrayByName_test_static_004
-    * @tc.desc test getStringArrayByName method in promise mode
-    */
+     * @tc.name   getStringArrayByName_test_static_004
+     * @tc.number getStringArrayByName_test_static_004
+     * @tc.desc   test getStringArrayByName method in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringArrayByName_test_static_004', Level.LEVEL3, async (done: () => void): Promise<void> => {
       // 0x01000006 id re-ref,throw 9001006 error code
       res?.getStringArrayByName('sizeListThree').then((value: string): void => {
@@ -1953,12 +2277,12 @@ export default function ResmgrTest() {
     })
 
     /**
-     * @tc.number  resourceManager_test_getStringByNameSync_static_0270
-     * @tc.name    resourceManager_test_getStringByNameSync_static_0270
-     * @tc.desc    errcode 9001006
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 3
+     * @tc.name   resourceManager_test_getStringByNameSync_static_0270
+     * @tc.number resourceManager_test_getStringByNameSync_static_0270
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringByNameSync_static_0270', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -1972,12 +2296,12 @@ export default function ResmgrTest() {
     })
 
       /**
-       * @tc.number   resourceManager_test_getStringByNameSync_static_0280
-       * @tc.name     resourceManager_test_getStringByNameSync_static_0280
-       * @tc.desc     Parameter out of index
-       * @tc.size     Medium Test
-       * @tc.type     Function
-       * @tc.level    Level 2
+       * @tc.name   resourceManager_test_getStringByNameSync_static_0280
+       * @tc.number resourceManager_test_getStringByNameSync_static_0280
+       * @tc.desc   Parameter out of index
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('resourceManager_test_getStringByNameSync_static_0280', Level.LEVEL0,
         async (done: () => void): Promise<void> => {
@@ -1993,10 +2317,13 @@ export default function ResmgrTest() {
         })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_JS_3600
-      * @tc.name    getBoolean_test_static_001
-      * @tc.desc    get the boolean value, test getBoolean method
-      */
+       * @tc.name   getBoolean_test_static_001
+       * @tc.number SUB_GLOBAL_RESMGR_JS_3600
+       * @tc.desc   get the boolean value, test getBoolean method
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getBoolean_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = res?.getBoolean(0x0100002f);
         console.log('getBoolean_test_static_001 ' + value);
@@ -2005,10 +2332,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_JS_3700
-      * @tc.name    getBooleanByName_test_static_001
-      * @tc.desc    get the boolean value, test getBooleanByName method
-      */
+       * @tc.name   getBooleanByName_test_static_001
+       * @tc.number SUB_GLOBAL_RESMGR_JS_3700
+       * @tc.desc   get the boolean value, test getBooleanByName method
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getBooleanByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = res?.getBooleanByName('boolean_1');
         console.log('getBooleanByName_test_static_001 ' + value);
@@ -2017,10 +2347,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_JS_3800
-      * @tc.name    getinteger_test_static_001
-      * @tc.desc    get the interger value, test getInt method with interger id
-      */
+       * @tc.name   getinteger_test_static_001
+       * @tc.number SUB_GLOBAL_RESMGR_JS_3800
+       * @tc.desc   get the interger value, test getInt method with interger id
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getinteger_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = res?.getInt(0x01000002);
         console.log('getinteger_test_static_001 1');
@@ -2030,10 +2363,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_JS_3900
-      * @tc.name    getintegerByName_test_static_001
-      * @tc.desc    get the interger value, test getIntByName with interger
-      */
+       * @tc.name   getintegerByName_test_static_001
+       * @tc.number SUB_GLOBAL_RESMGR_JS_3900
+       * @tc.desc   get the interger value, test getIntByName with interger
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getintegerByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = res?.getIntByName('integer_1');
         console.log('getintegerByName_test_static_001 ' + value);
@@ -2042,10 +2378,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_JS_4000
-      * @tc.name    getfloat_test_static_001
-      * @tc.desc    get the float value, test getDouble with float id
-      */
+       * @tc.name   getfloat_test_static_001
+       * @tc.number SUB_GLOBAL_RESMGR_JS_4000
+       * @tc.desc   get the float value, test getDouble with float id
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('getfloat_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = res!.getDouble(0x01000040);
         console.log('getfloat_test_static_001 ' + value);
@@ -2054,9 +2393,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_static_0100
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0100
-       * @tc.name getDrawableDescriptor_test_static_0100
-       * @tc.desc test the getDrawableDescriptor method, getDrawableDescriptor with normal pic
+       * @tc.desc   test the getDrawableDescriptor method, getDrawableDescriptor with normal pic
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = res?.getDrawableDescriptor(0x01000001);
@@ -2066,9 +2408,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_static_0200
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0200
-       * @tc.name getDrawableDescriptor_test_static_0200
-       * @tc.desc test the getDrawableDescriptor method, getDrawableDescriptor with normal pic and density
+       * @tc.desc   test the getDrawableDescriptor method, getDrawableDescriptor with normal pic and density
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = res?.getDrawableDescriptor(0x01000001, 120);
@@ -2078,9 +2423,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_static_0300
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0300
-       * @tc.name getDrawableDescriptor_test_static_0300
-       * @tc.desc test the getDrawableDescriptor method, getDrawableDescriptor with json style pic
+       * @tc.desc   test the getDrawableDescriptor method, getDrawableDescriptor with json style pic
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = res?.getDrawableDescriptor(0x01000001);
@@ -2090,9 +2438,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_static_0400
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0400
-       * @tc.name getDrawableDescriptor_test_static_0400
-       * @tc.desc test the getDrawableDescriptor method, getDrawableDescriptor with json style pic and density
+       * @tc.desc   test the getDrawableDescriptor method, getDrawableDescriptor with json style pic and density
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = res?.getDrawableDescriptor(0x01000001, 240);
@@ -2102,9 +2453,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_static_0600
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0600
-       * @tc.name getDrawableDescriptor_test_static_0600
-       * @tc.desc test the getDrawableDescriptor method return 9001001, getDrawableDescriptor with not exist resource id
+       * @tc.desc   test the getDrawableDescriptor method return 9001001, getDrawableDescriptor with not exist resource id
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2120,9 +2474,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_static_0700
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0700
-       * @tc.name getDrawableDescriptor_test_static_0700
-       * @tc.desc test the getDrawableDescriptor method return 9001002, getDrawableDescriptor with string resource id
+       * @tc.desc   test the getDrawableDescriptor method return 9001002, getDrawableDescriptor with string resource id
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2138,9 +2495,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_static_0800
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0800
-       * @tc.name getDrawableDescriptor_test_static_0800
-       * @tc.desc test the getDrawableDescriptor method return 401,getDrawableDescriptor with not exist density
+       * @tc.desc   test the getDrawableDescriptor method return 401,getDrawableDescriptor with not exist density
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2156,9 +2516,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_1000
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1000
-       * @tc.name getDrawableDescriptor_test_1000
-       * @tc.desc test the getDrawableDescriptor method, getDrawableDescriptor with 0 density
+       * @tc.desc   test the getDrawableDescriptor method, getDrawableDescriptor with 0 density
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2173,9 +2536,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_1100
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1100
-       * @tc.name getDrawableDescriptor_test_1100
-       * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with normal pic
+       * @tc.desc   test the getDrawableDescriptorByName method, getDrawableDescriptorByName with normal pic
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2190,9 +2556,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_1120
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1120
-       * @tc.name getDrawableDescriptor_test_1120
-       * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with undefined density
+       * @tc.desc   test the getDrawableDescriptorByName method, getDrawableDescriptorByName with undefined density
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_1120', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2207,9 +2576,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_1140
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1140
-       * @tc.name getDrawableDescriptor_test_1140
-       * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with null density
+       * @tc.desc   test the getDrawableDescriptorByName method, getDrawableDescriptorByName with null density
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_1140', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2224,9 +2596,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_1200
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1200
-       * @tc.name getDrawableDescriptor_test_1200
-       * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with normal pic and density
+       * @tc.desc   test the getDrawableDescriptorByName method, getDrawableDescriptorByName with normal pic and density
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2241,9 +2616,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_1300
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1300
-       * @tc.name getDrawableDescriptor_test_1300
-       * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with json style pic
+       * @tc.desc   test the getDrawableDescriptorByName method, getDrawableDescriptorByName with json style pic
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2258,9 +2636,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_1400
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1400
-       * @tc.name getDrawableDescriptor_test_1400
-       * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with json style pic and density
+       * @tc.desc   test the getDrawableDescriptorByName method, getDrawableDescriptorByName with json style pic and density
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2276,9 +2657,12 @@ export default function ResmgrTest() {
 
 
       /**
+       * @tc.name   getDrawableDescriptor_test_1600
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1600
-       * @tc.name getDrawableDescriptor_test_1600
-       * @tc.desc test the getDrawableDescriptorByName method return 9001003, getDrawableDescriptorByName with not exist pic name
+       * @tc.desc   test the getDrawableDescriptorByName method return 9001003, getDrawableDescriptorByName with not exist pic name
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2294,9 +2678,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_1800
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1800
-       * @tc.name getDrawableDescriptor_test_1800
-       * @tc.desc test the getDrawableDescriptorByName method return 401,getDrawableDescriptorByName with not exist density
+       * @tc.desc   test the getDrawableDescriptorByName method return 401,getDrawableDescriptorByName with not exist density
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2312,9 +2699,12 @@ export default function ResmgrTest() {
       })
 
       /**
+       * @tc.name   getDrawableDescriptor_test_2000
        * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_2000
-       * @tc.name getDrawableDescriptor_test_2000
-       * @tc.desc test the getDrawableDescriptorByName method,getDrawableDescriptorByName with 0 density
+       * @tc.desc   test the getDrawableDescriptorByName method,getDrawableDescriptorByName with 0 density
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('getDrawableDescriptor_test_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
@@ -2329,10 +2719,13 @@ export default function ResmgrTest() {
       })
 
       /**
-      * @tc.number  SUB_GLOBAL_RESMGR_JS_1500
-      * @tc.name    getScreenDensity_test_static_001
-      * @tc.desc    get the device capability in callback mode
-      */
+       * @tc.name   getScreenDensity_test_static_001
+       * @tc.number SUB_GLOBAL_RESMGR_JS_1500
+       * @tc.desc   get the device capability in callback mode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('getScreenDensity_test_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
           res.getDeviceCapability((error: BusinessError | null, dc: resourceManager.DeviceCapability | undefined) => {
             if (error) {

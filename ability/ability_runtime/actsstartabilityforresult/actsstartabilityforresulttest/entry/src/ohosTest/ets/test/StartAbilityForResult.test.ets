@@ -69,13 +69,13 @@ export default function startAbilityForResultTwoTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500
-     * @tc.name   : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500
-     * @tc.desc   : Implicit initiation ability
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500
+     * @tc.desc   Implicit initiation ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500', Level.LEVEL0, (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500"
@@ -194,13 +194,13 @@ export default function startAbilityForResultTwoTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000
-     * @tc.name   : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000
-     * @tc.desc   : For different applications, using startAbilityForResult to launch the ability.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000
+     * @tc.desc   For different applications, using startAbilityForResult to launch the ability.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000', Level.LEVEL0, (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000"

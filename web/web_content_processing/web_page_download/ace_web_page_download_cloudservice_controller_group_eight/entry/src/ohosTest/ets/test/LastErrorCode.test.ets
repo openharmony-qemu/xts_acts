@@ -63,12 +63,12 @@ export default function lastErrorCode() {
     })
 
     /**
+     * @tc.name   testWebViewGetPercentComplete
      * @tc.number HWBrowser_ArkWeb_DOWNLOAD_SDK_0900
-     * @tc.name testWebViewGetPercentComplete
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testWebViewGetPercentComplete", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("FILE_FAILED", 130930);
@@ -80,12 +80,12 @@ export default function lastErrorCode() {
     })
 
     /**
+     * @tc.name   testWebView_getLastErrorCode1001
      * @tc.number SUB_ACE_WEB_getLastErrorCode_1001
-     * @tc.name testWebView_getLastErrorCode1001
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testWebView_getLastErrorCode1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("startDownloadUrlFail", 130930);

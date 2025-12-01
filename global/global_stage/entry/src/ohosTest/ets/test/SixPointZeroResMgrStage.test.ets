@@ -25,12 +25,12 @@ export default function SixPointZeroResMgrStageTest() {
     });
 
     /**
-     * @tc.number   : SUB_GLOBAL_ResourceManager_getSysResourceManager_0100
-     * @tc.name     : resourceManager_test_getSysResourceManager_0100
-     * @tc.desc     : getSysResourceManager
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.name   resourceManager_test_getSysResourceManager_0100
+     * @tc.number SUB_GLOBAL_ResourceManager_getSysResourceManager_0100
+     * @tc.desc   getSysResourceManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('resourceManager_test_getSysResourceManager_0100', Level.LEVEL0, () => {
       let value = resourceManager.getSysResourceManager();

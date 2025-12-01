@@ -50,12 +50,12 @@ export default function subHeaderV2PageTest() {
     })
 
     /**
-     * @tc.number subHeaderV2PageTest
      * @tc.name   subHeaderV2PageTest_0100
+     * @tc.number subHeaderV2PageTest
      * @tc.desc   Test subHeaderV2Page
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('subHeaderV2PageTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderV2PageTest_0100] START');

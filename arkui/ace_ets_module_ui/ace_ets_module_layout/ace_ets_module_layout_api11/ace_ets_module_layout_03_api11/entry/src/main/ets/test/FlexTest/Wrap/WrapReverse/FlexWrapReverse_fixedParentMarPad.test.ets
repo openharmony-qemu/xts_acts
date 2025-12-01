@@ -49,10 +49,12 @@ export default function flexWrapReverse_fixedParentMarPad() {
     });
 
     /**
+     * @tc.name   testWrapReverseParentfixedMarPadChildPadding
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_0900
-     * @tc.name testWrapReverseParentfixedMarPadChildPadding
-     * @tc.desc The parent component layout space is fixed, and the parent component setting padding and margin,
-     *               and sub component setting padding
+     * @tc.desc   The parent component layout space is fixed, and the parent component setting padding and margin,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseParentfixedMarPadChildPadding',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedMarPadChildPadding START');
@@ -96,10 +98,12 @@ export default function flexWrapReverse_fixedParentMarPad() {
     });
 
     /**
+     * @tc.name   testWrapReverseParentfixedMarPadChildMargin
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_1000
-     * @tc.name testWrapReverseParentfixedMarPadChildMargin
-     * @tc.desc The parent component layout space is fixed, and the parent component setting padding and margin,
-     *               and sub component setting margin
+     * @tc.desc   The parent component layout space is fixed, and the parent component setting padding and margin,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseParentfixedMarPadChildMargin',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedMarPadChildMargin START');
@@ -141,10 +145,12 @@ export default function flexWrapReverse_fixedParentMarPad() {
     });
 
     /**
+     * @tc.name   testWrapReverseParentfixedMarPadChildMarginAndPadding
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_1100
-     * @tc.name testWrapReverseParentfixedMarPadChildMarginAndPadding
-     * @tc.desc The parent component layout space is fixed, and the parent component setting padding and margin,
-     *               and sub component setting padding and margin
+     * @tc.desc   The parent component layout space is fixed, and the parent component setting padding and margin,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseParentfixedMarPadChildMarginAndPadding',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedMarPadChildMarginAndPadding START');

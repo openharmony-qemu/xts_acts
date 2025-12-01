@@ -31,6 +31,9 @@
 #include <native_window/external_window.h>
 #include <native_buffer/native_buffer.h>
 
+#define NUMBER_1 1
+#define NUMBER_3 3
+
 class InitNativeWindow {
 private:
     int32_t width_ = 0x100;
@@ -143,6 +146,39 @@ public:
     int32_t ReleaseBuffer()
     {
         return OH_NativeImage_ReleaseNativeWindowBuffer(_image, nativeWindowBuffer, fenceFd);
+    }
+    int32_t RequestBuffer(OHNativeWindowBuffer **WindowBuffer, int32_t cnt)
+    {
+        // 1. RequestBuffer
+        if (cnt < NUMBER_1 || cnt > NUMBER_3) {
+            cnt = NUMBER_3;
+        };
+        int32_t ret = -1;
+        for (int i = 0; i < cnt; i++) {
+            ret = OH_NativeWindow_NativeWindowRequestBuffer(_nativeWindow, &nativeWindowBuffer, &fenceFd);
+            if (ret != 0) {
+                return ret;
+            }
+        };
+        *WindowBuffer = nativeWindowBuffer;
+        return ret;
+    }
+    int32_t FlushBuffer(OHNativeWindowBuffer *WindowBuffer)
+    {
+        Region::Rect rect{
+            .x = 0x50,
+            .y = 0x50,
+            .w = 0x50,
+            .h = 0x50,
+        };
+        Region region{.rects = &rect};
+        // 1. FlushBuffer
+        int32_t ret = OH_NativeWindow_NativeWindowFlushBuffer(_nativeWindow, WindowBuffer, fenceFd, region);
+        if (ret != 0) {
+            return ret;
+        }
+
+        return ret;
     }
 };
 
@@ -268,4 +304,26 @@ napi_value testNativeWindowCleanCacheWhenBufferAcquired(napi_env env, napi_callb
 napi_value testNativeWindowCleanCacheWhenBufferReleased(napi_env env, napi_callback_info info);
 napi_value testNativeWindowCleanCacheLoopWhenBufferRequested(napi_env env, napi_callback_info info);
 napi_value testNativeWindowCleanCacheLoopWhenBufferFlushed(napi_env env, napi_callback_info);
+
+napi_value testNativeWindowPreAllocBufferAbNormalPra(napi_env env, napi_callback_info);
+napi_value testNativeWindowPreAllocBufferAbNormalPra2(napi_env env, napi_callback_info);
+napi_value testNativeWindowPreAllocBufferBufferCnt(napi_env env, napi_callback_info);
+napi_value testNativeWindowPreAllocBufferAbnormal(napi_env env, napi_callback_info);
+napi_value testNativeWindowPreAllocBufferDetachAttach(napi_env env, napi_callback_info);
+napi_value testNativeWindowPreAllocBufferDetachAttach02(napi_env env, napi_callback_info);
+napi_value testNativeWindowPreAllocBufferNormal(napi_env env, napi_callback_info);
+
+napi_value testNativeWindowCleanBufferUsage(napi_env env, napi_callback_info info);
+napi_value testNativeWindowLockBufferNormal(napi_env env, napi_callback_info info);
+napi_value testNativeWindowUnlockAndFlushBufferAbnormal01(napi_env env, napi_callback_info info);
+napi_value testNativeWindowUnlockAndFlushBufferAbnormal02(napi_env env, napi_callback_info info);
+napi_value testNativeWindowUnlockAndFlushBufferAbnormal03(napi_env env, napi_callback_info info);
+napi_value testNativeWindowUnlockAndFlushBufferAbnormal04(napi_env env, napi_callback_info info);
+napi_value testNativeWindowLockBufferNull(napi_env env, napi_callback_info info);
+napi_value testNativeWindowUnLockAndFlushBufferNull(napi_env env, napi_callback_info info);
+napi_value testNativeWindowLockBufferUpdateArea(napi_env env, napi_callback_info info);
+napi_value testNativeWindowLockBufferUpperLimit(napi_env env, napi_callback_info info);
+napi_value testNativeWindowLockBufferMultipleCalls(napi_env env, napi_callback_info info);
+napi_value testNativeWindowUnLockAndFlushBufferMultipleCalls(napi_env env, napi_callback_info info);
+napi_value testNativeWindowLockAndUnLockAndRequest(napi_env env, napi_callback_info info);
 #endif // NATIVEWINDOW_USELESS_H

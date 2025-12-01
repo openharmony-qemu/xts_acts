@@ -47,13 +47,13 @@ export default function StyledStringOnTouchTest() {
       console.info("StyledStringOnTouchTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_STYLED_STRING_ON_TOUCH_ETS_API_0001
-    * @tc.name         StyledStringOnTouchTest0001
-    * @tc.desc         test StyledString OnHover callback
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   StyledStringOnTouchTest0001
+     * @tc.number SUB_ACE_BASIC_STYLED_STRING_ON_TOUCH_ETS_API_0001
+     * @tc.desc   test StyledString OnHover callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('StyledStringOnTouchTest0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

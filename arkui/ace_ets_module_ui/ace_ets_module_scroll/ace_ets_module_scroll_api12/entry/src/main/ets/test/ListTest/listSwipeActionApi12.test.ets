@@ -42,14 +42,14 @@ export default function listSwipeActionApi12Test() {
       done();
     });
     
-    /*
-     * @tc.number : listSwipeActionApi12Test_001
-     * @tc.name : when swipe,then return the init position
-     * @tc.desc : test the onStateChange function parameter state
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
-    */
+    /**
+     * @tc.name   listSwipeActionApi12Test_001
+     * @tc.number listSwipeActionApi12Test_001
+     * @tc.desc   test the onStateChange function parameter state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('listSwipeActionApi12Test_001', Level.LEVEL1, async (done: Function) => {
       console.info('listSwipeActionApi12Test_001 START');
       await CommonFunc.sleep(1000);

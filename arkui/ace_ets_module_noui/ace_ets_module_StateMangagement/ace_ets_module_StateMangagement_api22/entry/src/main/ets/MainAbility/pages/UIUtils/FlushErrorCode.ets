@@ -33,7 +33,7 @@ struct FlushErrorCode {
     try {
       UIUtils.flushUIUpdates()
     } catch (error) {
-      if (error?.code === '140001') {
+      if (error?.code === 140001) {
         this.flag11++;
       }
     }
@@ -45,7 +45,7 @@ struct FlushErrorCode {
     try {
       UIUtils.flushUpdates()
     } catch (error) {
-      if (error?.code === '140001') {
+      if (error?.code === 140001) {
         this.flag21++;
       }
     }
@@ -59,7 +59,7 @@ struct FlushErrorCode {
         this.count++;
       })
     } catch (error) {
-      if (error?.code === '140001') {
+      if (error?.code === 140001) {
         this.flag31++;
       }
     }
@@ -74,7 +74,7 @@ struct FlushErrorCode {
     try {
       UIUtils.flushUIUpdates();
     } catch (error) {
-      if (error?.code === '140002') {
+      if (error?.code === 140002) {
         this.flag12++;
       }
     }
@@ -88,7 +88,7 @@ struct FlushErrorCode {
     try {
       UIUtils.flushUpdates();
     } catch (error) {
-      if (error?.code === '140002') {
+      if (error?.code === 140002) {
         this.flag22++;
       }
     }

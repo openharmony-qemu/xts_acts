@@ -32,12 +32,12 @@ export default function Date1Test() {
     })
 
     /**
+     * @tc.name   Date1Test_001
      * @tc.number SUB_BUILTINS_DATE1_TEST_0100
-     * @tc.name Date1Test_001
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new Date() instanceof Date).assertEqual(true);
@@ -61,12 +61,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_002
      * @tc.number SUB_BUILTINS_DATE1_TEST_0200
-     * @tc.name Date1Test_002
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new Date(0).getUTCFullYear()).assertEqual(1970);
@@ -82,12 +82,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_003
      * @tc.number SUB_BUILTINS_DATE1_TEST_0300
-     * @tc.name Date1Test_003
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new Date("2024-05-20").getUTCDate()).assertEqual(20);
@@ -109,12 +109,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_004
      * @tc.number SUB_BUILTINS_DATE1_TEST_0400
-     * @tc.name Date1Test_004
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const baseDate = new Date(2024, 4, 20, 14, 30, 45, 123);
@@ -123,12 +123,12 @@ export default function Date1Test() {
       expect(new Date(baseDate).getMilliseconds()).assertEqual(baseDate.getMilliseconds());
     });
     /**
+     * @tc.name   Date1Test_005
      * @tc.number SUB_BUILTINS_DATE1_TEST_0500
-     * @tc.name Date1Test_005
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date1 = new Date(1620000000000.5);
@@ -150,12 +150,12 @@ export default function Date1Test() {
 
     });
     /**
+     * @tc.name   Date1Test_006
      * @tc.number SUB_BUILTINS_DATE1_TEST_0600
-     * @tc.name Date1Test_006
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date("20240520");
@@ -164,36 +164,36 @@ export default function Date1Test() {
       expect(isNaN(date.getUTCDate())).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_007
      * @tc.number SUB_BUILTINS_DATE1_TEST_0700
-     * @tc.name Date1Test_007
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date("2024-05-20T14:30+08:30");
       expect(date.getHours()).assertEqual(14);
     });
     /**
+     * @tc.name   Date1Test_008
      * @tc.number SUB_BUILTINS_DATE1_TEST_0800
-     * @tc.name Date1Test_008
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date("2024-05-20T14:30-05:00");
       expect(date.getUTCHours()).assertEqual(19);
     });
     /**
+     * @tc.name   Date1Test_009
      * @tc.number SUB_BUILTINS_DATE1_TEST_0900
-     * @tc.name Date1Test_009
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date("Sun 19 May 2024 12:00:00 GMT");
@@ -201,12 +201,12 @@ export default function Date1Test() {
       expect(date.getUTCHours()).assertEqual(12);
     });
     /**
+     * @tc.name   Date1Test_010
      * @tc.number SUB_BUILTINS_DATE1_TEST_1000
-     * @tc.name Date1Test_010
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date("2024年05月20日");
@@ -214,48 +214,48 @@ export default function Date1Test() {
       expect(isNaN(date.getMonth())).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_011
      * @tc.number SUB_BUILTINS_DATE1_TEST_1100
-     * @tc.name Date1Test_011
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date("2024-05-20T14:30+25:00");
       expect(date.toString()).assertEqual("Invalid Date");
     });
     /**
+     * @tc.name   Date1Test_012
      * @tc.number SUB_BUILTINS_DATE1_TEST_1200
-     * @tc.name Date1Test_012
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date("2024-05-20T23:30+08:00");
       expect(date.getUTCDate()).assertEqual(20);
     });
     /**
+     * @tc.name   Date1Test_013
      * @tc.number SUB_BUILTINS_DATE1_TEST_1300
-     * @tc.name Date1Test_013
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date("null");
       expect(date.toString()).assertEqual("Invalid Date");
     });
     /**
+     * @tc.name   Date1Test_014
      * @tc.number SUB_BUILTINS_DATE1_TEST_1400
-     * @tc.name Date1Test_014
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date(2024, 4, 20, 14, 30, 0, 1500);
@@ -263,12 +263,12 @@ export default function Date1Test() {
       expect(date.getMilliseconds()).assertEqual(500);
     });
     /**
+     * @tc.name   Date1Test_015
      * @tc.number SUB_BUILTINS_DATE1_TEST_1500
-     * @tc.name Date1Test_015
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date(2024, 4, 20, 14, 30, 70);
@@ -276,12 +276,12 @@ export default function Date1Test() {
       expect(date.getSeconds()).assertEqual(10);
     });
     /**
+     * @tc.name   Date1Test_016
      * @tc.number SUB_BUILTINS_DATE1_TEST_1600
-     * @tc.name Date1Test_016
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date(2024, 4, 20, 14, 65);
@@ -289,12 +289,12 @@ export default function Date1Test() {
       expect(date.getMinutes()).assertEqual(5);
     });
     /**
+     * @tc.name   Date1Test_017
      * @tc.number SUB_BUILTINS_DATE1_TEST_1700
-     * @tc.name Date1Test_017
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date(2024, 3, 31);
@@ -302,12 +302,12 @@ export default function Date1Test() {
       expect(date.getDate()).assertEqual(1);
     });
     /**
+     * @tc.name   Date1Test_018
      * @tc.number SUB_BUILTINS_DATE1_TEST_1800
-     * @tc.name Date1Test_018
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date(2024, 11, 31); // 11 代表 12 月
@@ -315,24 +315,24 @@ export default function Date1Test() {
       expect(date.getDate()).assertEqual(31);
     });
     /**
+     * @tc.name   Date1Test_019
      * @tc.number SUB_BUILTINS_DATE1_TEST_1900
-     * @tc.name Date1Test_019
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date(100, 0, 1);
       expect(date.getFullYear()).assertEqual(100);
     });
     /**
+     * @tc.name   Date1Test_020
      * @tc.number SUB_BUILTINS_DATE1_TEST_2000
-     * @tc.name Date1Test_020
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date(-1, 0, 1);
@@ -340,12 +340,12 @@ export default function Date1Test() {
       expect(date.getFullYear()).assertEqual(-1);
     });
     /**
+     * @tc.name   Date1Test_021
      * @tc.number SUB_BUILTINS_DATE1_TEST_2100
-     * @tc.name Date1Test_021
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date(2024, 4);
@@ -353,12 +353,12 @@ export default function Date1Test() {
       expect(date.getHours()).assertEqual(0);
     });
     /**
+     * @tc.name   Date1Test_022
      * @tc.number SUB_BUILTINS_DATE1_TEST_2200
-     * @tc.name Date1Test_022
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date1 = new Date();
@@ -367,12 +367,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_024
      * @tc.number SUB_BUILTINS_DATE1_TEST_2400
-     * @tc.name Date1Test_024
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const obj3 = new Date();
@@ -382,12 +382,12 @@ export default function Date1Test() {
 
     });
     /**
+     * @tc.name   Date1Test_025
      * @tc.number SUB_BUILTINS_DATE1_TEST_2500
-     * @tc.name Date1Test_025
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const timestamp4 = 1622505600000;
@@ -395,24 +395,24 @@ export default function Date1Test() {
       expect(date4.toISOString()).assertEqual('2021-06-01T00:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_026
      * @tc.number SUB_BUILTINS_DATE1_TEST_2600
-     * @tc.name Date1Test_026
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date5 = new Date(0);
       expect(date5.toISOString()).assertEqual('1970-01-01T00:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_027
      * @tc.number SUB_BUILTINS_DATE1_TEST_2700
-     * @tc.name Date1Test_027
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const timestamp6 = -86400000; // 1969-12-31 00:00:00 UTC
@@ -420,12 +420,12 @@ export default function Date1Test() {
       expect(date6.toISOString()).assertEqual('1969-12-31T00:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_028
      * @tc.number SUB_BUILTINS_DATE1_TEST_2800
-     * @tc.name Date1Test_028
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const timestamp7 = 1622505600123.456; // 2021-06-01 00:00:00.123 UTC
@@ -433,12 +433,12 @@ export default function Date1Test() {
       expect(date7.toISOString()).assertEqual('2021-06-01T00:00:00.123Z');
     });
     /**
+     * @tc.name   Date1Test_029
      * @tc.number SUB_BUILTINS_DATE1_TEST_2900
-     * @tc.name Date1Test_029
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const timestamp8 = 8.64e15 + 1;
@@ -446,12 +446,12 @@ export default function Date1Test() {
       expect(date8.toString()).assertEqual('Invalid Date');
     });
     /**
+     * @tc.name   Date1Test_030
      * @tc.number SUB_BUILTINS_DATE1_TEST_3000
-     * @tc.name Date1Test_030
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const timestamp9 = -8.64e15 - 1;
@@ -459,12 +459,12 @@ export default function Date1Test() {
       expect(date9.toString()).assertEqual('Invalid Date');
     });
     /**
+     * @tc.name   Date1Test_031
      * @tc.number SUB_BUILTINS_DATE1_TEST_3100
-     * @tc.name Date1Test_031
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
@@ -475,24 +475,24 @@ export default function Date1Test() {
       }
     });
     /**
+     * @tc.name   Date1Test_032
      * @tc.number SUB_BUILTINS_DATE1_TEST_3200
-     * @tc.name Date1Test_032
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date12 = new Date("2023-10-01");
       expect(date12.toISOString()).assertEqual('2023-10-01T00:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_033
      * @tc.number SUB_BUILTINS_DATE1_TEST_3300
-     * @tc.name Date1Test_033
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const localOffset13 = new Date().getTimezoneOffset() * 60000;
@@ -502,120 +502,120 @@ export default function Date1Test() {
       expect(date13.toISOString()).assertEqual("2023-10-01T04:00:00.000Z");
     });
     /**
+     * @tc.name   Date1Test_034
      * @tc.number SUB_BUILTINS_DATE1_TEST_3400
-     * @tc.name Date1Test_034
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date14 = new Date("2023-10-01T12:00+08:00");
       expect(date14.toISOString()).assertEqual('2023-10-01T04:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_035
      * @tc.number SUB_BUILTINS_DATE1_TEST_3500
-     * @tc.name Date1Test_035
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date15 = new Date("Sun, 01 Oct 2023 12:00:00 GMT");
       expect(date15.toISOString()).assertEqual('2023-10-01T12:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_036
      * @tc.number SUB_BUILTINS_DATE1_TEST_3600
-     * @tc.name Date1Test_036
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date16 = new Date("2023/10/01");
       expect(isNaN(date16.getTime())).assertEqual(false);
     });
     /**
+     * @tc.name   Date1Test_037
      * @tc.number SUB_BUILTINS_DATE1_TEST_3700
-     * @tc.name Date1Test_037
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date17 = new Date("");
       expect(date17.toString()).assertEqual('Invalid Date');
     });
     /**
+     * @tc.name   Date1Test_038
      * @tc.number SUB_BUILTINS_DATE1_TEST_3800
-     * @tc.name Date1Test_038
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date18 = new Date("abc123");
       expect(date18.toString()).assertEqual('Invalid Date');
     });
     /**
+     * @tc.name   Date1Test_039
      * @tc.number SUB_BUILTINS_DATE1_TEST_3900
-     * @tc.name Date1Test_039
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date20 = new Date("2024-02-29");
       expect(date20.toISOString()).assertEqual('2024-02-29T00:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_040
      * @tc.number SUB_BUILTINS_DATE1_TEST_4000
-     * @tc.name Date1Test_040
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date21 = new Date("2023-02-29");
       expect(date21.toString()).assertEqual('Wed Mar 01 2023 08:00:00 GMT+0800');
     });
     /**
+     * @tc.name   Date1Test_041
      * @tc.number SUB_BUILTINS_DATE1_TEST_4100
-     * @tc.name Date1Test_041
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date22 = new Date("2023-9-5");
       expect(date22.toISOString()).assertEqual("2023-09-04T16:00:00.000Z");
     });
     /**
+     * @tc.name   Date1Test_042
      * @tc.number SUB_BUILTINS_DATE1_TEST_4200
-     * @tc.name Date1Test_042
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date23 = new Date("2023-10-01T12:34:56.789");
       expect(date23.toISOString()).assertEqual("2023-10-01T04:34:56.789Z");
     });
     /**
+     * @tc.name   Date1Test_043
      * @tc.number SUB_BUILTINS_DATE1_TEST_4300
-     * @tc.name Date1Test_043
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const original24 = new Date("2023-10-01");
@@ -623,12 +623,12 @@ export default function Date1Test() {
       expect(copy24.getTime()).assertEqual(original24.getTime());
     });
     /**
+     * @tc.name   Date1Test_044
      * @tc.number SUB_BUILTINS_DATE1_TEST_4400
-     * @tc.name Date1Test_044
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const invalid25 = new Date("invalid");
@@ -636,12 +636,12 @@ export default function Date1Test() {
       expect(copy25.toString()).assertEqual('Invalid Date');
     });
     /**
+     * @tc.name   Date1Test_045
      * @tc.number SUB_BUILTINS_DATE1_TEST_4500
-     * @tc.name Date1Test_045
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const now27 = new Date();
@@ -649,12 +649,12 @@ export default function Date1Test() {
       expect(Math.abs(copy27.getTime() - now27.getTime()) < 10).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_046
      * @tc.number SUB_BUILTINS_DATE1_TEST_4600
-     * @tc.name Date1Test_046
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const level128 = new Date("2023-10-01");
@@ -665,12 +665,12 @@ export default function Date1Test() {
 
 
     /**
+     * @tc.name   Date1Test_059
      * @tc.number SUB_BUILTINS_DATE1_TEST_5900
-     * @tc.name Date1Test_059
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date41 = new Date(-1, 9, 1);
@@ -678,12 +678,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_063
      * @tc.number SUB_BUILTINS_DATE1_TEST_6300
-     * @tc.name Date1Test_063
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date46 = new Date(NaN, 9, 1);
@@ -691,12 +691,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_065
      * @tc.number SUB_BUILTINS_DATE1_TEST_6500
-     * @tc.name Date1Test_065
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date52 = new Date("Sun, 01 Oct 2023 12:00:00 +0900");
@@ -704,12 +704,12 @@ export default function Date1Test() {
 
     });
     /**
+     * @tc.name   Date1Test_066
      * @tc.number SUB_BUILTINS_DATE1_TEST_6600
-     * @tc.name Date1Test_066
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date53 = new Date("2023-10-01T12:00:00+05:30");
@@ -717,24 +717,24 @@ export default function Date1Test() {
       expect(date53.getUTCMinutes()).assertEqual(30);
     });
     /**
+     * @tc.name   Date1Test_067
      * @tc.number SUB_BUILTINS_DATE1_TEST_6700
-     * @tc.name Date1Test_067
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str54 = Date();
       expect(str54.includes("GMT+0800") || str54.includes("GMT+08:00")).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_068
      * @tc.number SUB_BUILTINS_DATE1_TEST_6800
-     * @tc.name Date1Test_068
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date55 = new Date("2023-10-01T12:00:00Z");
@@ -742,12 +742,12 @@ export default function Date1Test() {
       expect(date55.getHours()).assertEqual(20);
     });
     /**
+     * @tc.name   Date1Test_069
      * @tc.number SUB_BUILTINS_DATE1_TEST_6900
-     * @tc.name Date1Test_069
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date57 = new Date(" 2023-10-01 ");
@@ -755,12 +755,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_074
      * @tc.number SUB_BUILTINS_DATE1_TEST_7400
-     * @tc.name Date1Test_074
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date66_1 = new Date("9999-12-31");
@@ -770,12 +770,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_077
      * @tc.number SUB_BUILTINS_DATE1_TEST_7700
-     * @tc.name Date1Test_077
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
@@ -786,60 +786,60 @@ export default function Date1Test() {
       }
     });
     /**
+     * @tc.name   Date1Test_078
      * @tc.number SUB_BUILTINS_DATE1_TEST_7800
-     * @tc.name Date1Test_078
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date74 = new Date("2023-10");
       expect(date74.toISOString()).assertEqual('2023-10-01T00:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_079
      * @tc.number SUB_BUILTINS_DATE1_TEST_7900
-     * @tc.name Date1Test_079
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date75 = new Date("2023.10.01");
       expect(isNaN(date75.getTime())).assertEqual(false);
     });
     /**
+     * @tc.name   Date1Test_080
      * @tc.number SUB_BUILTINS_DATE1_TEST_8000
-     * @tc.name Date1Test_080
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date76 = new Date(1000, 9, 1);
       expect(date76.getFullYear()).assertEqual(1000);
     });
     /**
+     * @tc.name   Date1Test_081
      * @tc.number SUB_BUILTINS_DATE1_TEST_8100
-     * @tc.name Date1Test_081
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date77 = new Date(9999, 11, 31);
       expect(date77.getFullYear()).assertEqual(9999)
     });
     /**
+     * @tc.name   Date1Test_082
      * @tc.number SUB_BUILTINS_DATE1_TEST_8200
-     * @tc.name Date1Test_082
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const timestamp78 = 8.64e15;
@@ -847,12 +847,12 @@ export default function Date1Test() {
       expect(!isNaN(date78.getTime())).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_083
      * @tc.number SUB_BUILTINS_DATE1_TEST_8300
-     * @tc.name Date1Test_083
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const timestamp79 = -8.64e15;
@@ -861,36 +861,36 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_088
      * @tc.number SUB_BUILTINS_DATE1_TEST_8800
-     * @tc.name Date1Test_088
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date94 = new Date("2023-10-01T12:34:56");
       expect(date94.toISOString()).assertEqual("2023-10-01T04:34:56.000Z");
     });
     /**
+     * @tc.name   Date1Test_089
      * @tc.number SUB_BUILTINS_DATE1_TEST_8900
-     * @tc.name Date1Test_089
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date95 = new Date("2023-10-01t12:34:56");
       expect(isNaN(date95.getTime())).assertEqual(false);
     });
     /**
+     * @tc.name   Date1Test_090
      * @tc.number SUB_BUILTINS_DATE1_TEST_9000
-     * @tc.name Date1Test_090
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date96 = new Date("2023-10-01T12:34");
@@ -898,12 +898,12 @@ export default function Date1Test() {
       expect(date96.toISOString()).assertEqual("2023-10-01T04:34:00.000Z");
     });
     /**
+     * @tc.name   Date1Test_091
      * @tc.number SUB_BUILTINS_DATE1_TEST_9100
-     * @tc.name Date1Test_091
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date97_1 = new Date("2023-10-01T12:00:00Z");
@@ -911,12 +911,12 @@ export default function Date1Test() {
       expect(date97_1.getTime()).assertEqual(date97_2.getTime());
     });
     /**
+     * @tc.name   Date1Test_092
      * @tc.number SUB_BUILTINS_DATE1_TEST_9200
-     * @tc.name Date1Test_092
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date98 = new Date("2023-10-01T12:00:00-05:30");
@@ -925,12 +925,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_095
      * @tc.number SUB_BUILTINS_DATE1_TEST_9500
-     * @tc.name Date1Test_095
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const timestamp102 = 8.64e15 - 1;
@@ -938,12 +938,12 @@ export default function Date1Test() {
       expect(!isNaN(date102.getTime())).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_096
      * @tc.number SUB_BUILTINS_DATE1_TEST_9600
-     * @tc.name Date1Test_096
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const timestamp102 = 8.64e15 - 1;
@@ -951,12 +951,12 @@ export default function Date1Test() {
       expect(!isNaN(date102.getTime())).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_097
      * @tc.number SUB_BUILTINS_DATE1_TEST_9700
-     * @tc.name Date1Test_097
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const timestamp103 = -8.64e15 + 1;
@@ -964,12 +964,12 @@ export default function Date1Test() {
       expect(!isNaN(date103.getTime())).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_098
      * @tc.number SUB_BUILTINS_DATE1_TEST_9800
-     * @tc.name Date1Test_098
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const pastDate104 = new Date("1970-01-02");
@@ -977,48 +977,48 @@ export default function Date1Test() {
       expect(copy104.toISOString()).assertEqual('1970-01-02T00:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_099
      * @tc.number SUB_BUILTINS_DATE1_TEST_9900
-     * @tc.name Date1Test_099
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date105 = new Date(Infinity, 9, 1);
       expect(date105.toString()).assertEqual('Invalid Date');
     });
     /**
+     * @tc.name   Date1Test_100
      * @tc.number SUB_BUILTINS_DATE1_TEST_10000
-     * @tc.name Date1Test_100
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date106 = new Date(2023, -Infinity, 1);
       expect(date106.toString()).assertEqual('Invalid Date');
     });
     /**
+     * @tc.name   Date1Test_101
      * @tc.number SUB_BUILTINS_DATE1_TEST_10100
-     * @tc.name Date1Test_101
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date107 = new Date("0000-00-00");
       expect(date107.toString()).assertEqual('Invalid Date');
     });
     /**
+     * @tc.name   Date1Test_102
      * @tc.number SUB_BUILTINS_DATE1_TEST_10200
-     * @tc.name Date1Test_102
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date108 = new Date("10000-00-01");
@@ -1026,12 +1026,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_104
      * @tc.number SUB_BUILTINS_DATE1_TEST_10400
-     * @tc.name Date1Test_104
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date111 = new Date("2023-10-01T12:34.567");
@@ -1039,24 +1039,24 @@ export default function Date1Test() {
       expect(isNaN(date111.getUTCMilliseconds())).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_105
      * @tc.number SUB_BUILTINS_DATE1_TEST_10500
-     * @tc.name Date1Test_105
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date112 = new Date("2023-10-01T12:00:00+0800");
       expect(date112.toISOString()).assertEqual('2023-10-01T04:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_106
      * @tc.number SUB_BUILTINS_DATE1_TEST_10600
-     * @tc.name Date1Test_106
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date113 = new Date("1000-10-01");
@@ -1064,36 +1064,36 @@ export default function Date1Test() {
       expect(date113.toISOString()).assertEqual("1000-10-01T00:00:00.000Z");
     });
     /**
+     * @tc.name   Date1Test_107
      * @tc.number SUB_BUILTINS_DATE1_TEST_10700
-     * @tc.name Date1Test_107
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date114 = new Date("2023-10-01T12:00:00z");
       expect(isNaN(date114.getTime())).assertEqual(false);
     });
     /**
+     * @tc.name   Date1Test_108
      * @tc.number SUB_BUILTINS_DATE1_TEST_10800
-     * @tc.name Date1Test_108
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date115 = new Date("2023-1-5");
       expect(date115.toISOString()).assertEqual('2023-01-04T16:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_109
      * @tc.number SUB_BUILTINS_DATE1_TEST_10900
-     * @tc.name Date1Test_109
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
@@ -1104,24 +1104,24 @@ export default function Date1Test() {
       }
     });
     /**
+     * @tc.name   Date1Test_110
      * @tc.number SUB_BUILTINS_DATE1_TEST_11000
-     * @tc.name Date1Test_110
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date122 = new Date(Infinity);
       expect(date122.toString()).assertEqual('Invalid Date');
     });
     /**
+     * @tc.name   Date1Test_111
      * @tc.number SUB_BUILTINS_DATE1_TEST_11100
-     * @tc.name Date1Test_111
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date123 = new Date(-Infinity);
@@ -1129,12 +1129,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_115
      * @tc.number SUB_BUILTINS_DATE1_TEST_11500
-     * @tc.name Date1Test_115
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date127 = new Date("2023-03-12T02:00:00+08:00");
@@ -1142,60 +1142,60 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_117
      * @tc.number SUB_BUILTINS_DATE1_TEST_11700
-     * @tc.name Date1Test_117
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date129 = new Date(2100, 0, 1);
       expect(date129.getFullYear()).assertEqual(2100);
     });
     /**
+     * @tc.name   Date1Test_118
      * @tc.number SUB_BUILTINS_DATE1_TEST_11800
-     * @tc.name Date1Test_118
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date130 = new Date("Oct 1, 2023");
       expect(date130.toISOString()).assertEqual("2023-09-30T16:00:00.000Z");
     });
     /**
+     * @tc.name   Date1Test_119
      * @tc.number SUB_BUILTINS_DATE1_TEST_11900
-     * @tc.name Date1Test_119
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date132 = new Date(9999, 11, 31);
       expect(date132.toISOString()).assertEqual("9999-12-30T16:00:00.000Z");
     });
     /**
+     * @tc.name   Date1Test_120
      * @tc.number SUB_BUILTINS_DATE1_TEST_12000
-     * @tc.name Date1Test_120
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date133 = new Date(-9999, 9, 1);
       expect(date133.getFullYear()).assertEqual(-9999);
     });
     /**
+     * @tc.name   Date1Test_121
      * @tc.number SUB_BUILTINS_DATE1_TEST_12100
-     * @tc.name Date1Test_121
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const invalid134 = new Date("invalid");
@@ -1204,12 +1204,12 @@ export default function Date1Test() {
       expect(copy134.toString()).assertEqual('Sun Jan 01 2023 00:00:00 GMT+0800');
     });
     /**
+     * @tc.name   Date1Test_122
      * @tc.number SUB_BUILTINS_DATE1_TEST_12200
-     * @tc.name Date1Test_122
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const original135 = new Date("2023-10-01");
@@ -1218,12 +1218,12 @@ export default function Date1Test() {
       expect(newDate135.getTime()).assertEqual(original135.getTime());
     });
     /**
+     * @tc.name   Date1Test_123
      * @tc.number SUB_BUILTINS_DATE1_TEST_12300
-     * @tc.name Date1Test_123
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str136 = "2023-10-01T12:34:56.789Z";
@@ -1231,12 +1231,12 @@ export default function Date1Test() {
       expect(date136.toISOString()).assertEqual(str136);
     });
     /**
+     * @tc.name   Date1Test_124
      * @tc.number SUB_BUILTINS_DATE1_TEST_12400
-     * @tc.name Date1Test_124
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const localStr137 = "2023/10/1 12:00:00";
@@ -1244,24 +1244,24 @@ export default function Date1Test() {
       expect(date137.getUTCHours()).assertEqual(4);
     });
     /**
+     * @tc.name   Date1Test_125
      * @tc.number SUB_BUILTINS_DATE1_TEST_12500
-     * @tc.name Date1Test_125
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date138 = new Date(1);
       expect(date138.toISOString()).assertEqual('1970-01-01T00:00:00.001Z');
     });
     /**
+     * @tc.name   Date1Test_126
      * @tc.number SUB_BUILTINS_DATE1_TEST_12600
-     * @tc.name Date1Test_126
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date139 = new Date(-1); // 1969-12-31T23:59:59.999Z
@@ -1269,12 +1269,12 @@ export default function Date1Test() {
 
     });
     /**
+     * @tc.name   Date1Test_127
      * @tc.number SUB_BUILTINS_DATE1_TEST_12700
-     * @tc.name Date1Test_127
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str140 = Date();
@@ -1283,12 +1283,12 @@ export default function Date1Test() {
       expect(Math.abs(date140.getTime() - now140.getTime()) < 1000).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_128
      * @tc.number SUB_BUILTINS_DATE1_TEST_12800
-     * @tc.name Date1Test_128
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date141 = new Date("2023-10-01T12");
@@ -1297,48 +1297,48 @@ export default function Date1Test() {
       expect(isNaN(date141.getUTCMilliseconds())).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_129
      * @tc.number SUB_BUILTINS_DATE1_TEST_12900
-     * @tc.name Date1Test_129
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date142 = new Date("2023-10-01T12:34:56.123456");
       expect(date142.getUTCMilliseconds()).assertEqual(123);
     });
     /**
+     * @tc.name   Date1Test_130
      * @tc.number SUB_BUILTINS_DATE1_TEST_13000
-     * @tc.name Date1Test_130
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date143 = new Date("2023-10-01T12:00:00+14:00");
       expect(date143.toISOString()).assertContain('2023-09-30T22:00:00');
     });
     /**
+     * @tc.name   Date1Test_131
      * @tc.number SUB_BUILTINS_DATE1_TEST_13100
-     * @tc.name Date1Test_131
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date144 = new Date("2023-10-01T12:00:00-12:00");
       expect(date144.toISOString()).assertContain('2023-10-02T00:00:00');
     });
     /**
+     * @tc.name   Date1Test_132
      * @tc.number SUB_BUILTINS_DATE1_TEST_13200
-     * @tc.name Date1Test_132
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date145 = new Date("0001-01-01");
@@ -1346,24 +1346,24 @@ export default function Date1Test() {
       expect(date145.toISOString()).assertContain('0001-01-01T');
     });
     /**
+     * @tc.name   Date1Test_133
      * @tc.number SUB_BUILTINS_DATE1_TEST_13300
-     * @tc.name Date1Test_133
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date146 = new Date("9999-12-32");
       expect(date146.toString()).assertEqual('Invalid Date');
     });
     /**
+     * @tc.name   Date1Test_134
      * @tc.number SUB_BUILTINS_DATE1_TEST_13400
-     * @tc.name Date1Test_134
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
@@ -1374,12 +1374,12 @@ export default function Date1Test() {
       }
     });
     /**
+     * @tc.name   Date1Test_135
      * @tc.number SUB_BUILTINS_DATE1_TEST_13500
-     * @tc.name Date1Test_135
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
@@ -1391,36 +1391,36 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_141
      * @tc.number SUB_BUILTINS_DATE1_TEST_14100
-     * @tc.name Date1Test_141
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date159 = new Date(1970, 0, 1);
       expect(date159.getTime()).assertEqual(-28800000);
     });
     /**
+     * @tc.name   Date1Test_142
      * @tc.number SUB_BUILTINS_DATE1_TEST_14200
-     * @tc.name Date1Test_142
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date161 = new Date(1969, 11, 31);
       expect(date161.getTime() < 0).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_143
      * @tc.number SUB_BUILTINS_DATE1_TEST_14300
-     * @tc.name Date1Test_143
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date162 = new Date(1970, 0, 2); // 1970-01-02，时间戳>0
@@ -1428,12 +1428,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_145
      * @tc.number SUB_BUILTINS_DATE1_TEST_14500
-     * @tc.name Date1Test_145
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const localDate165 = new Date(2023, 9, 1, 12);
@@ -1441,36 +1441,36 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_147
      * @tc.number SUB_BUILTINS_DATE1_TEST_14700
-     * @tc.name Date1Test_147
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date167 = new Date(86400000);
       expect(date167.toISOString()).assertEqual('1970-01-02T00:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_148
      * @tc.number SUB_BUILTINS_DATE1_TEST_14800
-     * @tc.name Date1Test_148
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date168 = new Date(-86400000);
       expect(date168.toISOString()).assertEqual("1969-12-31T00:00:00.000Z");
     });
     /**
+     * @tc.name   Date1Test_149
      * @tc.number SUB_BUILTINS_DATE1_TEST_14900
-     * @tc.name Date1Test_149
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date169_1 = new Date("2023-10-01T12:00:00-00:00");
@@ -1478,12 +1478,12 @@ export default function Date1Test() {
       expect(date169_1.getTime()).assertEqual(date169_2.getTime());
     });
     /**
+     * @tc.name   Date1Test_150
      * @tc.number SUB_BUILTINS_DATE1_TEST_15000
-     * @tc.name Date1Test_150
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str170 = Date();
@@ -1492,36 +1492,36 @@ export default function Date1Test() {
       expect(str170.slice(0, 3)).assertEqual(date170Str.slice(0, 3));
     });
     /**
+     * @tc.name   Date1Test_151
      * @tc.number SUB_BUILTINS_DATE1_TEST_15100
-     * @tc.name Date1Test_151
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date171 = new Date("2023-10-01T12:34:56:");
       expect(date171.toString()).assertEqual('Invalid Date');
     });
     /**
+     * @tc.name   Date1Test_152
      * @tc.number SUB_BUILTINS_DATE1_TEST_15200
-     * @tc.name Date1Test_152
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date172 = new Date("2023.10.01");
       expect(isNaN(date172.getTime())).assertEqual(false);
     });
     /**
+     * @tc.name   Date1Test_153
      * @tc.number SUB_BUILTINS_DATE1_TEST_15300
-     * @tc.name Date1Test_153
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date173_1 = new Date("2023-10-01T12:00:00+00:00");
@@ -1530,24 +1530,24 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_155
      * @tc.number SUB_BUILTINS_DATE1_TEST_15500
-     * @tc.name Date1Test_155
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date175 = new Date("2023-10-01T:34");
       expect(date175.toString()).assertEqual('Invalid Date')
     });
     /**
+     * @tc.name   Date1Test_156
      * @tc.number SUB_BUILTINS_DATE1_TEST_15600
-     * @tc.name Date1Test_156
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date176 = new Date("2023-10-01T12:34:56.789+08:00");
@@ -1555,12 +1555,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_158
      * @tc.number SUB_BUILTINS_DATE1_TEST_15800
-     * @tc.name Date1Test_158
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date183 = new Date(2023, NaN, 1);
@@ -1568,12 +1568,12 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_163
      * @tc.number SUB_BUILTINS_DATE1_TEST_16300
-     * @tc.name Date1Test_163
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date188 = new Date(2023, 9, 1, 12, 34, 56, 999);
@@ -1582,12 +1582,12 @@ export default function Date1Test() {
       expect(date188.getMilliseconds()).assertEqual(1);
     });
     /**
+     * @tc.name   Date1Test_164
      * @tc.number SUB_BUILTINS_DATE1_TEST_16400
-     * @tc.name Date1Test_164
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date189 = new Date(2023, 9, 1);
@@ -1596,24 +1596,24 @@ export default function Date1Test() {
     });
 
     /**
+     * @tc.name   Date1Test_167
      * @tc.number SUB_BUILTINS_DATE1_TEST_16700
-     * @tc.name Date1Test_167
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date194 = new Date(Number.MAX_SAFE_INTEGER);
       expect(isNaN(date194.getTime())).assertEqual(true);
     });
     /**
+     * @tc.name   Date1Test_168
      * @tc.number SUB_BUILTINS_DATE1_TEST_16800
-     * @tc.name Date1Test_168
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const utcTime195 = Date.UTC(2023, 9, 1, 12);
@@ -1621,48 +1621,48 @@ export default function Date1Test() {
       expect(date195.toISOString()).assertEqual('2023-10-01T12:00:00.000Z');
     });
     /**
+     * @tc.name   Date1Test_169
      * @tc.number SUB_BUILTINS_DATE1_TEST_16900
-     * @tc.name Date1Test_169
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const localDate196 = new Date(2023, 9, 1, 12);
       expect(localDate196.getUTCHours()).assertEqual(4);
     });
     /**
+     * @tc.name   Date1Test_170
      * @tc.number SUB_BUILTINS_DATE1_TEST_17000
-     * @tc.name Date1Test_170
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date197 = new Date(31536000000);
       expect(date197.toISOString()).assertContain('1971-01-01T00:00:00');
     });
     /**
+     * @tc.name   Date1Test_171
      * @tc.number SUB_BUILTINS_DATE1_TEST_17100
-     * @tc.name Date1Test_171
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date198 = new Date(-31536000000);
       expect(date198.toISOString()).assertContain("1969-01-01T00:00:00.000Z");
     });
     /**
+     * @tc.name   Date1Test_172
      * @tc.number SUB_BUILTINS_DATE1_TEST_17200
-     * @tc.name Date1Test_172
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const isoStr199 = "2023-10-01T12:34:56.123Z";
@@ -1670,12 +1670,12 @@ export default function Date1Test() {
       expect(date199.toISOString()).assertEqual(isoStr199);
     });
     /**
+     * @tc.name   Date1Test_173
      * @tc.number SUB_BUILTINS_DATE1_TEST_17300
-     * @tc.name Date1Test_173
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Date1Test_173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str200 = Date();

@@ -79,13 +79,13 @@ export default function HasCard1PublicTest() {
       await getPermissions();
       done();
     });
-    /*
-     * @tc.number : SUB_Telephony_CallManager_HasCall_1100
-     * @tc.name   : testTelephonyCallManagerHasCall1100
-     * @tc.desc   : Determine if there is a call.Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerHasCall1100
+     * @tc.number SUB_Telephony_CallManager_HasCall_1100
+     * @tc.desc   Determine if there is a call.Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerHasCall1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerHasCall1100';
@@ -95,8 +95,14 @@ export default function HasCard1PublicTest() {
           console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
           ExpectFail();
         } else {
-          console.info(`${caseName} success, data->${JSON.stringify(data)}`);
-          ExpectTrue(true);
+          if (data) {
+            expect(data == true).assertTrue();
+            console.info(`${caseName} success, has call->${JSON.stringify(data)}`);
+          } else {
+            expect(data == false).assertTrue();
+            console.info(`${caseName} success, does not has call->${JSON.stringify(data)}`);
+          }
+          done();
         }
         console.info(`${caseName} test end `);
         done();
@@ -104,13 +110,13 @@ export default function HasCard1PublicTest() {
     });
 
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_0150
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1640150
-     * @tc.desc   : Format the phone number in E.164 representation. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1640150
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_0150
+     * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1640150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1640150';
@@ -135,13 +141,13 @@ export default function HasCard1PublicTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_0200
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1640200
-     * @tc.desc   : Format the phone number in E.164 representation. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1640200
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_0200
+     * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1640200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1640200';
@@ -166,13 +172,13 @@ export default function HasCard1PublicTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_0300
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1640300
-     * @tc.desc   : Format the phone number in E.164 representation. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1640300
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_0300
+     * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1640300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1640300';
@@ -197,13 +203,13 @@ export default function HasCard1PublicTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_0400
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1640400
-     * @tc.desc   : Format the phone number in E.164 representation. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1640400
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_0400
+     * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1640400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1640400';
@@ -228,13 +234,13 @@ export default function HasCard1PublicTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_0500
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1640500
-     * @tc.desc   : Format the phone number in E.164 representation. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1640500
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_0500
+     * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1640500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1640500';
@@ -259,13 +265,13 @@ export default function HasCard1PublicTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_0600
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1640600
-     * @tc.desc   : Format the phone number in E.164 representation. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1640600
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_0600
+     * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1640600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1640600';
@@ -289,13 +295,13 @@ export default function HasCard1PublicTest() {
         done();
       }
     });
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_0800
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1640800
-     * @tc.desc   :Format the phone number in E.164 representation. Use Promise asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1640800
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_0800
+     * @tc.desc   Format the phone number in E.164 representation. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1640800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1640800';
@@ -320,13 +326,13 @@ export default function HasCard1PublicTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_0900
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1640900
-     * @tc.desc   :Format the phone number in E.164 representation. Use Promise asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1640900
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_0900
+     * @tc.desc   Format the phone number in E.164 representation. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1640900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1640900';
@@ -351,13 +357,13 @@ export default function HasCard1PublicTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_1000
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1641000
-     * @tc.desc   : Format the phone number in E.164 representation. Use Promise asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1641000
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_1000
+     * @tc.desc   Format the phone number in E.164 representation. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1641000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1641000';
@@ -382,13 +388,13 @@ export default function HasCard1PublicTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_1100
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1641100
-     * @tc.desc   : Format the phone number in E.164 representation. Use Promise asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1641100
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_1100
+     * @tc.desc   Format the phone number in E.164 representation. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1641100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1641100';
@@ -413,13 +419,13 @@ export default function HasCard1PublicTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_1150
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1641150
-     * @tc.desc   : Format the phone number in E.164 representation. Use Promise asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1641150
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_1150
+     * @tc.desc   Format the phone number in E.164 representation. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1641150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1641150';
@@ -444,13 +450,13 @@ export default function HasCard1PublicTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_1200
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1641200
-     * @tc.desc   : Format the phone number in E.164 representation. Use Promise asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1641200
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_1200
+     * @tc.desc   Format the phone number in E.164 representation. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1641200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1641200';
@@ -475,13 +481,13 @@ export default function HasCard1PublicTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_1300
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1641300
-     * @tc.desc   : Format the phone number in E.164 representation. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1641300
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_1300
+     * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1641300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1641300';
@@ -505,13 +511,13 @@ export default function HasCard1PublicTest() {
         done();
       }
     });
-    /*
-     * @tc.number : SUB_Telephony_CallManager_FormatPhoneNumberToE164_1400
-     * @tc.name   : testTelephonyCallManagerFormatPhoneNumberToE1641400
-     * @tc.desc   : Format the phone number in E.164 representation. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1641400
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_1400
+     * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerFormatPhoneNumberToE1641400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1641400';

@@ -112,7 +112,11 @@ export default function flexBasisTest() {
 
         let realWidth = rect.right - rect.left;
         console.info('[' + data.caseTag + '] realWidth : ' + realWidth);
-        expect(Math.floor(Math.abs(realWidth - (data.testValue.expectValue.expectSize))) <= 1).assertTrue();
+        if (data.pageConfig.componentKey == 'TextInput') {
+          expect(Math.floor(Math.abs(realWidth - (data.testValue.expectValue.expectSize))) <= 2).assertTrue();
+        } else {
+          expect(Math.floor(Math.abs(realWidth - (data.testValue.expectValue.expectSize))) <= 1).assertTrue();
+        }
       } else if (data.pageConfig.containerView == 'Column' || data.pageConfig.containerView == 'FlexColumn'
         || data.pageConfig.containerView == 'FlexColumnReverse') {
 

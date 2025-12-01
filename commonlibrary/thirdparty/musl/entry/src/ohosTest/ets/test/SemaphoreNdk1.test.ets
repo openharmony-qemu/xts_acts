@@ -27,12 +27,12 @@ export default function semaphoreNdk1Test() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SEMAPHORE_SEMUNLINK_0100
-     * @tc.name       : testMuslSemaphoreSemUnlink001
-     * @tc.desc       : test sem_unlink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSemaphoreSemUnlink001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEMAPHORE_SEMUNLINK_0100
+     * @tc.desc   test sem_unlink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     //it('testMuslSemaphoreSemUnlink001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
     //  expect(semaphore.sem_unlink()).assertEqual(0);

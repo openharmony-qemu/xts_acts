@@ -45,6 +45,14 @@ export default function bindMenuTesttt() {
       console.info("bindMenu after each called");
     });
 
+    /**
+     * @tc.name   bindMenuTest_0100
+     * @tc.number bindMenuTest_0100
+     * @tc.desc   bindMenuTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('bindMenuTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('bindMenuTest_0100 START');
       await CommonFunc.sleep(1000);

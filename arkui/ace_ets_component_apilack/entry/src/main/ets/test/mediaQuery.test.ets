@@ -48,10 +48,13 @@ export default function mediaQueryOffJsunit() {
       await Utils.sleep(1000)
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testmediaQueryOff0001
-     * @tc.desic         acemediaQueryOffEtsTest0001
+    /**
+     * @tc.name   testmediaQueryOff0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testmediaQueryOff0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testmediaQueryOff0001', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0001 START');
@@ -65,10 +68,13 @@ export default function mediaQueryOffJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testmediaQueryOff0002
-     * @tc.desic         acemediaQueryOffEtsTest0002
+    /**
+     * @tc.name   testmediaQueryOff0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testmediaQueryOff0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testmediaQueryOff0002', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0002 START');
@@ -82,10 +88,13 @@ export default function mediaQueryOffJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testmediaQueryOff0003
-     * @tc.desic         acemediaQueryOffEtsTest0003
+    /**
+     * @tc.name   testmediaQueryOff0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   testmediaQueryOff0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testmediaQueryOff0003', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0003 START');
@@ -99,10 +108,13 @@ export default function mediaQueryOffJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testmediaQueryOff0004
-     * @tc.desic         acemediaQueryOffEtsTest0004
+    /**
+     * @tc.name   testmediaQueryOff0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   testmediaQueryOff0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testmediaQueryOff0004', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0004 START');
@@ -116,10 +128,13 @@ export default function mediaQueryOffJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         testmediaQueryOff0005
-     * @tc.desic         acemediaQueryOffEtsTest0005
+    /**
+     * @tc.name   testmediaQueryOff0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   testmediaQueryOff0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testmediaQueryOff0005', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0005 START');
@@ -133,10 +148,13 @@ export default function mediaQueryOffJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         testmediaQueryOff0006
-     * @tc.desic         acemediaQueryOffEtsTest0006
+    /**
+     * @tc.name   testmediaQueryOff0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   testmediaQueryOff0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testmediaQueryOff0006', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0006 START');
@@ -150,10 +168,13 @@ export default function mediaQueryOffJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         testmediaQueryOff0007
-     * @tc.desic         acemediaQueryOffEtsTest0007
+    /**
+     * @tc.name   testmediaQueryOff0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   testmediaQueryOff0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testmediaQueryOff0007', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0007 START');
@@ -167,10 +188,13 @@ export default function mediaQueryOffJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-     * @tc.name         testmediaQueryOff0009
-     * @tc.desic         acemediaQueryOffEtsTest0009
+    /**
+     * @tc.name   testmediaQueryOff0009
+     * @tc.number SUB_ACE_BASIC_ETS_API_0009
+     * @tc.desc   testmediaQueryOff0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testmediaQueryOff0009', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff009 START');
@@ -184,10 +208,13 @@ export default function mediaQueryOffJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         testmediaQueryOff0010
-     * @tc.desic         acemediaQueryOffEtsTest0010
+    /**
+     * @tc.name   testmediaQueryOff0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   testmediaQueryOff0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testmediaQueryOff0010', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0010 START');
@@ -201,10 +228,13 @@ export default function mediaQueryOffJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0011
-     * @tc.name         testmediaQueryOff0011
-     * @tc.desic         acemediaQueryOffEtsTest0011
+    /**
+     * @tc.name   testmediaQueryOff0011
+     * @tc.number SUB_ACE_BASIC_ETS_API_0011
+     * @tc.desc   testmediaQueryOff0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testmediaQueryOff0011', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0011 START');
@@ -227,10 +257,13 @@ export default function mediaQueryOffJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testmatchMediaSync0001
-     * @tc.desic         acetestmatchMediaSyncEtsTest0001
+    /**
+     * @tc.name   testmatchMediaSync0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testmatchMediaSync0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testmatchMediaSync0001', Level.LEVEL0, async () => {
       console.info('matchMediaSync testmatchMediaSync0001 START');

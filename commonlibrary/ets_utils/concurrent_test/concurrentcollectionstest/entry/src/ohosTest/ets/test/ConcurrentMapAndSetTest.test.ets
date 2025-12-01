@@ -110,12 +110,12 @@ export default function MapAndSetTest() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_0100
-     * @tc.name      : test_concurrent_collections_map_001
-     * @tc.desc      : test_concurrent_collections_map_001 - test Map entries method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_map_001
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_0100
+     * @tc.desc   test_concurrent_collections_map_001 - test Map entries method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_map_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -144,12 +144,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_0200
-     * @tc.name      : test_concurrent_collections_map_002
-     * @tc.desc      : test_concurrent_collections_map_002 - test Map keys method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_map_002
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_0200
+     * @tc.desc   test_concurrent_collections_map_002 - test Map keys method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_map_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -178,12 +178,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_0300
-     * @tc.name      : test_concurrent_collections_map_003
-     * @tc.desc      : test_concurrent_collections_map_003 - test Map values method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_map_003
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_0300
+     * @tc.desc   test_concurrent_collections_map_003 - test Map values method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_map_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -212,12 +212,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_0400
-     * @tc.name      : test_concurrent_collections_map_004
-     * @tc.desc      : test_concurrent_collections_map_004 - test Map get method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_map_004
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_0400
+     * @tc.desc   test_concurrent_collections_map_004 - test Map get method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_map_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -246,12 +246,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_0500
-     * @tc.name      : test_concurrent_collections_map_005
-     * @tc.desc      : test_concurrent_collections_map_005 - test Map has method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_map_005
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_0500
+     * @tc.desc   test_concurrent_collections_map_005 - test Map has method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_map_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -280,12 +280,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_0600
-     * @tc.name      : test_concurrent_collections_map_006
-     * @tc.desc      : test_concurrent_collections_map_006 - test Map set method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_map_006
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_0600
+     * @tc.desc   test_concurrent_collections_map_006 - test Map set method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_map_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -314,12 +314,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_0700
-     * @tc.name      : test_concurrent_collections_map_007
-     * @tc.desc      : test_concurrent_collections_map_007 - test Map delete method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_map_007
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_0700
+     * @tc.desc   test_concurrent_collections_map_007 - test Map delete method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_map_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -348,12 +348,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_0800
-     * @tc.name      : test_concurrent_collections_map_008
-     * @tc.desc      : test_concurrent_collections_map_008 - test Map clear method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_map_008
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_0800
+     * @tc.desc   test_concurrent_collections_map_008 - test Map clear method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_map_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -382,12 +382,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_0900
-     * @tc.name      : test_concurrent_collections_map_009
-     * @tc.desc      : test_concurrent_collections_map_009 - test Map forEach method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_map_009
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_0900
+     * @tc.desc   test_concurrent_collections_map_009 - test Map forEach method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_map_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -416,12 +416,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_1000
-     * @tc.name      : test_concurrent_collections_map_010
-     * @tc.desc      : test_concurrent_collections_map_010 - test Map size property
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_map_010
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_1000
+     * @tc.desc   test_concurrent_collections_map_010 - test Map size property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_map_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -450,12 +450,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_1100
-     * @tc.name      : test_concurrent_collections_set_011
-     * @tc.desc      : test_concurrent_collections_set_011 - test Set entries method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_set_011
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_1100
+     * @tc.desc   test_concurrent_collections_set_011 - test Set entries method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_set_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -484,12 +484,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_1200
-     * @tc.name      : test_concurrent_collections_set_012
-     * @tc.desc      : test_concurrent_collections_set_012 - test Set keys method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_set_012
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_1200
+     * @tc.desc   test_concurrent_collections_set_012 - test Set keys method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_set_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -518,12 +518,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_1300
-     * @tc.name      : test_concurrent_collections_set_013
-     * @tc.desc      : test_concurrent_collections_set_013 - test Set values method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_set_013
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_1300
+     * @tc.desc   test_concurrent_collections_set_013 - test Set values method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_set_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -552,12 +552,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_1400
-     * @tc.name      : test_concurrent_collections_set_014
-     * @tc.desc      : test_concurrent_collections_set_014 - test Set has method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_set_014
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_1400
+     * @tc.desc   test_concurrent_collections_set_014 - test Set has method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_set_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -586,12 +586,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_1500
-     * @tc.name      : test_concurrent_collections_set_015
-     * @tc.desc      : test_concurrent_collections_set_015 - test Set add method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_set_015
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_1500
+     * @tc.desc   test_concurrent_collections_set_015 - test Set add method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_set_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -620,12 +620,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_1600
-     * @tc.name      : test_concurrent_collections_set_016
-     * @tc.desc      : test_concurrent_collections_set_016 - test Set delete method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_set_016
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_1600
+     * @tc.desc   test_concurrent_collections_set_016 - test Set delete method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_set_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -654,12 +654,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_1700
-     * @tc.name      : test_concurrent_collections_set_017
-     * @tc.desc      : test_concurrent_collections_set_017 - test Set clear method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_set_017
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_1700
+     * @tc.desc   test_concurrent_collections_set_017 - test Set clear method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_set_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -688,12 +688,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_1800
-     * @tc.name      : test_concurrent_collections_set_018
-     * @tc.desc      : test_concurrent_collections_set_018 - test Set forEach method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_set_018
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_1800
+     * @tc.desc   test_concurrent_collections_set_018 - test Set forEach method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_set_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -722,12 +722,12 @@ export default function MapAndSetTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_MAP_AND_SET_TEST_1900
-     * @tc.name      : test_concurrent_collections_set_019
-     * @tc.desc      : test_concurrent_collections_set_019 - test Set size property
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_set_019
+     * @tc.number SUB_CONCURRENT_MAP_AND_SET_TEST_1900
+     * @tc.desc   test_concurrent_collections_set_019 - test Set size property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_set_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

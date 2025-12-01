@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
-import { Driver } from '@ohos.UiTest'
+import { Driver, ON } from '@ohos.UiTest'
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
@@ -23,6 +23,7 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function abilityTest() {
   const delegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -43,7 +44,7 @@ export default function abilityTest() {
       } catch (err) {
         console.error('push index page error:' + err);
       }
-      await waitForComponent("001");
+      await driver.waitForComponent(ON.id("001"), 10000);
       done()
     })
 
@@ -57,12 +58,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0001
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0001
-     * @tc.name testWebView_registerJavaScriptProxy_0001
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebView_registerJavaScriptProxy_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("Web", 172000);
@@ -70,16 +71,16 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('001', 10, '');
+      await Utils.waitAndClickComponent(driver, '001');
     })
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0002
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0002
-     * @tc.name testWebView_registerJavaScriptProxy_0002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebView_registerJavaScriptProxy_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("name null", 172000);
@@ -87,16 +88,16 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('002', 10, '');
+      await Utils.waitAndClickComponent(driver, '002');
     })
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0003
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0003
-     * @tc.name testWebView_registerJavaScriptProxy_0003
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebView_registerJavaScriptProxy_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("TestObj", 172000);
@@ -104,16 +105,16 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('003', 10, '');
+      await Utils.waitAndClickComponent(driver, '003');
     })
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0004
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0004
-     * @tc.name testWebView_registerJavaScriptProxy_0004
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebView_registerJavaScriptProxy_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("100", 172000);
@@ -121,16 +122,16 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('004', 10, '');
+      await Utils.waitAndClickComponent(driver, '004');
     })
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0005
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0005
-     * @tc.name testWebView_registerJavaScriptProxy_0005
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebView_registerJavaScriptProxy_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("method null", 172000);
@@ -138,16 +139,16 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('005', 10, '');
+      await Utils.waitAndClickComponent(driver, '005');
     })
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0006
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0006
-     * @tc.name testWebView_registerJavaScriptProxy_0006
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebView_registerJavaScriptProxy_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("normal_006", 172000);
@@ -155,16 +156,16 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('006', 10, '');
+      await Utils.waitAndClickComponent(driver, '006');
     })
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0007
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0007
-     * @tc.name testWebView_registerJavaScriptProxy_0007
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebView_registerJavaScriptProxy_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("lost", 172000);
@@ -172,16 +173,16 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('007', 10, '');
+      await Utils.waitAndClickComponent(driver, '007');
     })
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0008
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0008
-     * @tc.name testWebView_registerJavaScriptProxy_0008
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebView_registerJavaScriptProxy_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("methods", 172000);
@@ -189,16 +190,16 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('008', 10, '');
+      await Utils.waitAndClickComponent(driver, '008');
     })
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0009
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0009
-     * @tc.name testWebView_registerJavaScriptProxy_0009
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebView_registerJavaScriptProxy_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("normal_009", 172000);
@@ -206,16 +207,16 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('009', 10, '');
+      await Utils.waitAndClickComponent(driver, '009');
     })
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_00010
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_00010
-     * @tc.name testWebView_registerJavaScriptProxy_00010
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebView_registerJavaScriptProxy_00010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("normal_010", 172000);
@@ -223,16 +224,16 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected)
         });
-      sendEventByKey('0010', 10, '');
+      await Utils.waitAndClickComponent(driver, '0010');
     })
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_00011
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_00011
-     * @tc.name testWebView_registerJavaScriptProxy_00011
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWebView_registerJavaScriptProxy_00011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("method", 172000);
@@ -240,7 +241,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('0011', 10, '');
+      await Utils.waitAndClickComponent(driver, '0011');
     })
   })
 }

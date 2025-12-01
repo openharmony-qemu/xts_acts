@@ -82,13 +82,12 @@ export default function StartAbilityGetStartParameterTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0700
-     * @tc.name      : For different applications, ability1 starts ability2 by startAbility
-     * @tc.desc      : Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
-     *                 and ohos.aafwk.param.callerToken,uid and ohos.aafwk.param.callerUid
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0700
+     * @tc.desc   Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0700", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0700';
@@ -130,16 +129,15 @@ export default function StartAbilityGetStartParameterTest() {
       }
     })
 
-    /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0800
-     * @tc.name      : For different applications, ability1 starts ability by startAbilityForResult
-     * @tc.desc      : Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
-     *                 and ohos.aafwk.param.callerToken,uid and ohos.aafwk.param.callerUid
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     */
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0800
+     * @tc.desc   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0800", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0800';
       try {
@@ -181,13 +179,12 @@ export default function StartAbilityGetStartParameterTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_1500
-     * @tc.name      : Different applications, different users can launch ability2 under ability1
-     * @tc.desc      : Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
-     *                 and ohos.aafwk.param.callerToken,uid and ohos.aafwk.param.callerUid
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_1500
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_1500
+     * @tc.desc   Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_1500", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_1500';
@@ -234,13 +231,12 @@ export default function StartAbilityGetStartParameterTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0500
-     * @tc.name      : Unlike hap, ability1 starts ability2 via startAbility
-     * @tc.desc      : Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
-     *                 and ohos.aafwk.param.callerToken,uid and ohos.aafwk.param.callerUid
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0500
+     * @tc.desc   Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0500", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0500';
@@ -282,13 +278,12 @@ export default function StartAbilityGetStartParameterTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0600
-     * @tc.name      : Unlike hap, ability1 starts ability2 via startAbilityForResult
-     * @tc.desc      : Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
-     *                 and ohos.aafwk.param.callerToken,uid and ohos.aafwk.param.callerUid
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0600
+     * @tc.desc   Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0600", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0600';
@@ -330,13 +325,12 @@ export default function StartAbilityGetStartParameterTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0300
-     * @tc.name      : As with the application, ability1 starts ability2 via startaAbility
-     * @tc.desc      : Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
-     *                 and ohos.aafwk.param.callerToken,uid and ohos.aafwk.param.callerUid
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0300
+     * @tc.desc   Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0300", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0300';
@@ -382,13 +376,12 @@ export default function StartAbilityGetStartParameterTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0400
-     * @tc.name      : As with the application, ability1 starts ability2 via startaAbilityForResult
-     * @tc.desc      : Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
-     *                 and ohos.aafwk.param.callerToken,uid and ohos.aafwk.param.callerUid
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0400
+     * @tc.desc   Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0400", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_0400';
@@ -430,13 +423,12 @@ export default function StartAbilityGetStartParameterTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_1400
-     * @tc.name      : For the same application, different users can launch ability2 under ability1
-     * @tc.desc      : Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
-     *                 and ohos.aafwk.param.callerToken,uid and ohos.aafwk.param.callerUid
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_1400
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_1400
+     * @tc.desc   Compare the parameters of pid and ohos.aafwk.param.callerPid, accessTokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_1400", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_GetStartParameters_1400';

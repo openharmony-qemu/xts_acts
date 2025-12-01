@@ -58,14 +58,14 @@ export default function webResourceError() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETERRORCODE_0100
-    * @tc.name       : testGetErrorCode001
-    * @tc.desc       : test getErrorCode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetErrorCode001
+     * @tc.number SUB_WEB_GETERRORCODE_0100
+     * @tc.desc   test getErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetErrorCode001", 120010)
       Utils.registerEvent("testGetErrorCode001", -200, 120020, done);

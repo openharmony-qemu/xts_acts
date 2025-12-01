@@ -26,78 +26,78 @@ export default function commonAttrsAlignItemsTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0100
-     * @tc.name: testCommonAttrsAlignItems001
-     * @tc.desc: testing alignItems for row with top value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignItems001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0100
+     * @tc.desc   testing alignItems for row with top value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignItems001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignItems001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0200
-     * @tc.name: testCommonAttrsAlignItems002
-     * @tc.desc: testing alignItems for row with center value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignItems002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0200
+     * @tc.desc   testing alignItems for row with center value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignItems002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignItems002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0300
-     * @tc.name: testCommonAttrsAlignItems003
-     * @tc.desc: testing alignItems for row with bottom value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignItems003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0300
+     * @tc.desc   testing alignItems for row with bottom value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignItems003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignItems003()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0400
-     * @tc.name: testCommonAttrsAlignItems004
-     * @tc.desc: testing alignItems for column with start value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignItems004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0400
+     * @tc.desc   testing alignItems for column with start value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignItems004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignItems004()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0500
-     * @tc.name: testCommonAttrsAlignItems005
-     * @tc.desc: testing alignItems for column with center value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignItems005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0500
+     * @tc.desc   testing alignItems for column with center value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignItems005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignItems005()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0600
-     * @tc.name: testCommonAttrsAlignItems006
-     * @tc.desc: testing alignItems for column with end value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignItems006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNITEMS_0600
+     * @tc.desc   testing alignItems for column with end value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignItems006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignItems006()).assertEqual(0)

@@ -35,11 +35,13 @@ const PARAM_ERROR_CODE = 401;
 
 export default function getProfileByAbility() {
   describe('getProfileByAbility', () => {
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_0900
-     * @tc.name: getProfileByAbilityInvalidModulePro
-     * @tc.desc: Check the invalid moduleName (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityInvalidModulePro
+     * @tc.number Sub_Bms_Framework_Query_Profile_0900
+     * @tc.desc   Check the invalid moduleName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidModulePro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       await manager.getProfileByAbility(MODULE_NAME_TEST, ABILITY_NAME, METADATA_NAME).then(data => {
@@ -53,11 +55,13 @@ export default function getProfileByAbility() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_1300
-     * @tc.name: getProfileByAbilityEmptyModulePro
-     * @tc.desc: Check the empty moduleName (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityEmptyModulePro
+     * @tc.number Sub_Bms_Framework_Query_Profile_1300
+     * @tc.desc   Check the empty moduleName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityEmptyModulePro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       await manager.getProfileByAbility('', ABILITY_NAME, METADATA_NAME).then(data => {
@@ -71,11 +75,13 @@ export default function getProfileByAbility() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_1500
-     * @tc.name: getProfileByAbilityInvalidModuleCall
-     * @tc.desc: Check the invalid moduleName (by callback)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityInvalidModuleCall
+     * @tc.number Sub_Bms_Framework_Query_Profile_1500
+     * @tc.desc   Check the invalid moduleName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidModuleCall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       manager.getProfileByAbility(MODULE_NAME_TEST, ABILITY_NAME, METADATA_NAME, (err, data) => {
@@ -85,11 +91,13 @@ export default function getProfileByAbility() {
       });
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_3200
-     * @tc.name: getProfileByAbilityEmptyModuleCall
-     * @tc.desc: Check the empty moduleName (by callback)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityEmptyModuleCall
+     * @tc.number Sub_Bms_Framework_Query_Profile_3200
+     * @tc.desc   Check the empty moduleName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityEmptyModuleCall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       manager.getProfileByAbility('', ABILITY_NAME, METADATA_NAME, (err, data) => {
@@ -99,11 +107,13 @@ export default function getProfileByAbility() {
       });
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_1000
-     * @tc.name: getProfileByAbilityInvalidAbilityPro
-     * @tc.desc: Check the invalid abilityName (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityInvalidAbilityPro
+     * @tc.number Sub_Bms_Framework_Query_Profile_1000
+     * @tc.desc   Check the invalid abilityName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidAbilityPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME_TEST, METADATA_NAME).then(data => {
@@ -117,11 +127,13 @@ export default function getProfileByAbility() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_2700
-     * @tc.name: getProfileByAbilityEmptyAbilityPro
-     * @tc.desc: Check the empty abilityName (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityEmptyAbilityPro
+     * @tc.number Sub_Bms_Framework_Query_Profile_2700
+     * @tc.desc   Check the empty abilityName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityEmptyAbilityPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       await manager.getProfileByAbility(MODULE_NAME, '', METADATA_NAME).then(data => {
@@ -135,11 +147,13 @@ export default function getProfileByAbility() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_2000
-     * @tc.name: getProfileByAbilityInvalidAbilityCall
-     * @tc.desc: Check the invalid abilityName (by callback)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityInvalidAbilityCall
+     * @tc.number Sub_Bms_Framework_Query_Profile_2000
+     * @tc.desc   Check the invalid abilityName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidAbilityCall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME_TEST, METADATA_NAME, (err, data) => {
@@ -149,11 +163,13 @@ export default function getProfileByAbility() {
       });
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_2700
-     * @tc.name: getProfileByAbilityEmptyAbilityCall
-     * @tc.desc: Check the empty abilityName (by callback)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityEmptyAbilityCall
+     * @tc.number Sub_Bms_Framework_Query_Profile_2700
+     * @tc.desc   Check the empty abilityName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityEmptyAbilityCall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       manager.getProfileByAbility(MODULE_NAME, '', METADATA_NAME, (err, data) => {
@@ -163,11 +179,13 @@ export default function getProfileByAbility() {
       });
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_2200
-     * @tc.name: getProfileByAbilityCallback
-     * @tc.desc: Check the valid metadataName (by callback)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityCallback
+     * @tc.number Sub_Bms_Framework_Query_Profile_2200
+     * @tc.desc   Check the valid metadataName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getProfileByAbilityCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME, (err, data) => {
@@ -180,11 +198,13 @@ export default function getProfileByAbility() {
       });
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_2400
-     * @tc.name: getProfileByAbilityInvalidMetaDataCall
-     * @tc.desc: Check the invalid metadataName (by callback)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityInvalidMetaDataCall
+     * @tc.number Sub_Bms_Framework_Query_Profile_2400
+     * @tc.desc   Check the invalid metadataName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidMetaDataCall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME_TEST, (err, data) => {
@@ -194,11 +214,13 @@ export default function getProfileByAbility() {
       });
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_3400
-     * @tc.name: getProfileByAbilityEmptyMetaDataCall
-     * @tc.desc: Check the empty metadataName (by callback)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityEmptyMetaDataCall
+     * @tc.number Sub_Bms_Framework_Query_Profile_3400
+     * @tc.desc   Check the empty metadataName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getProfileByAbilityEmptyMetaDataCall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, '', (err, data) => {
@@ -213,11 +235,13 @@ export default function getProfileByAbility() {
       });
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_0100
-     * @tc.name: getProfileByAbilityPromise
-     * @tc.desc: Check the valid metadataName (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityPromise
+     * @tc.number Sub_Bms_Framework_Query_Profile_0100
+     * @tc.desc   Check the valid metadataName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getProfileByAbilityPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME).then(data => {
@@ -234,11 +258,13 @@ export default function getProfileByAbility() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_0300
-     * @tc.name: getProfileByAbilityInvalidMetaDataPro
-     * @tc.desc: Check the invalid metadataName (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityInvalidMetaDataPro
+     * @tc.number Sub_Bms_Framework_Query_Profile_0300
+     * @tc.desc   Check the invalid metadataName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidMetaDataPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME_TEST).then(data => {
@@ -251,11 +277,13 @@ export default function getProfileByAbility() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_2800
-     * @tc.name: getProfileByAbilityEmptyMetaDataPro
-     * @tc.desc: Check the empty metadataName (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityEmptyMetaDataPro
+     * @tc.number Sub_Bms_Framework_Query_Profile_2800
+     * @tc.desc   Check the empty metadataName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getProfileByAbilityEmptyMetaDataPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
       await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, '').then(data => {
@@ -274,11 +302,13 @@ export default function getProfileByAbility() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_0700
-     * @tc.name: getProfileByAbilityNoMetaDataPro
-     * @tc.desc: without metadataName (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityNoMetaDataPro
+     * @tc.number Sub_Bms_Framework_Query_Profile_0700
+     * @tc.desc   without metadataName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getProfileByAbilityNoMetaDataPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
       await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME).then(data => {
@@ -297,11 +327,13 @@ export default function getProfileByAbility() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_4600
-     * @tc.name: getProfileByAbilityNoProfilePro
-     * @tc.desc: no profile configured under the ability (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityNoProfilePro
+     * @tc.number Sub_Bms_Framework_Query_Profile_4600
+     * @tc.desc   no profile configured under the ability (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityNoProfilePro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME1).then(data => {
@@ -316,11 +348,13 @@ export default function getProfileByAbility() {
     })
 
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_0600
-     * @tc.name: getProfileByAbilityNoJsonPro
-     * @tc.desc: profile is invalid json format (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityNoJsonPro
+     * @tc.number Sub_Bms_Framework_Query_Profile_0600
+     * @tc.desc   profile is invalid json format (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityNoJsonPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME4).then(data => {
@@ -334,11 +368,13 @@ export default function getProfileByAbility() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_4400
-     * @tc.name: getProfileByAbilityNoJsonCall
-     * @tc.desc: profile is invalid json format (by callback)
-     * @tc.level   0
+    /**
+     * @tc.name   getProfileByAbilityNoJsonCall
+     * @tc.number Sub_Bms_Framework_Query_Profile_4400
+     * @tc.desc   profile is invalid json format (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityNoJsonCall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME4, (err, data) => {
@@ -348,11 +384,13 @@ export default function getProfileByAbility() {
       });
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_6200
-     * @tc.name: testGetProfileByAbilitySyncSuccess
-     * @tc.desc: profile is json (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncSuccess
+     * @tc.number Sub_Bms_Framework_Query_Profile_6200
+     * @tc.desc   profile is json (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetProfileByAbilitySyncSuccess', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
       try {
@@ -370,11 +408,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_6300
-     * @tc.name: testGetProfileByAbilitySyncWithoutMetaData
-     * @tc.desc: profile is json (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncWithoutMetaData
+     * @tc.number Sub_Bms_Framework_Query_Profile_6300
+     * @tc.desc   profile is json (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetProfileByAbilitySyncWithoutMetaData', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       try {
@@ -394,11 +434,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_6400
-     * @tc.name: testGetProfileByAbilitySyncByInvalidModuleName
-     * @tc.desc: Check the invalid moduleName (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncByInvalidModuleName
+     * @tc.number Sub_Bms_Framework_Query_Profile_6400
+     * @tc.desc   Check the invalid moduleName (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncByInvalidModuleName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -412,11 +454,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_6500
-     * @tc.name: testGetProfileByAbilitySyncByInvalidAbilityName
-     * @tc.desc: Check the invalid abilityName (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncByInvalidAbilityName
+     * @tc.number Sub_Bms_Framework_Query_Profile_6500
+     * @tc.desc   Check the invalid abilityName (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncByInvalidAbilityName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -430,11 +474,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_6600
-     * @tc.name: testGetProfileByAbilitySyncInvalidMetaData
-     * @tc.desc: Check resource has no prefix (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncInvalidMetaData
+     * @tc.number Sub_Bms_Framework_Query_Profile_6600
+     * @tc.desc   Check resource has no prefix (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncInvalidMetaData', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -448,11 +494,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_6800
-     * @tc.name: testGetProfileByAbilitySyncByEmptyModuleName
-     * @tc.desc: Check the empty moduleName (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncByEmptyModuleName
+     * @tc.number Sub_Bms_Framework_Query_Profile_6800
+     * @tc.desc   Check the empty moduleName (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncByEmptyModuleName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -466,11 +514,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_6900
-     * @tc.name: testGetProfileByAbilitySyncByEmptyAbilityName
-     * @tc.desc: Check the empty abilityName (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncByEmptyAbilityName
+     * @tc.number Sub_Bms_Framework_Query_Profile_6900
+     * @tc.desc   Check the empty abilityName (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncByEmptyAbilityName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -484,11 +534,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_7000
-     * @tc.name: testGetProfileByAbilitySyncSuccessEmptyMetaData
-     * @tc.desc: profile is json (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncSuccessEmptyMetaData
+     * @tc.number Sub_Bms_Framework_Query_Profile_7000
+     * @tc.desc   profile is json (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetProfileByAbilitySyncSuccessEmptyMetaData', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       try {
@@ -508,11 +560,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_7100
-     * @tc.name: testGetProfileByAbilitySyncNullModule
-     * @tc.desc: Check param number is failed (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncNullModule
+     * @tc.number Sub_Bms_Framework_Query_Profile_7100
+     * @tc.desc   Check param number is failed (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncNullModule', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -526,11 +580,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_7200
-     * @tc.name: testGetProfileByAbilitySyncNullAbility
-     * @tc.desc: Check param number is failed (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncNullAbility
+     * @tc.number Sub_Bms_Framework_Query_Profile_7200
+     * @tc.desc   Check param number is failed (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncNullAbility', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -544,11 +600,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_7300
-     * @tc.name: testGetProfileByAbilitySyncSuccessNullMetaData
-     * @tc.desc: profile is json (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncSuccessNullMetaData
+     * @tc.number Sub_Bms_Framework_Query_Profile_7300
+     * @tc.desc   profile is json (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetProfileByAbilitySyncSuccessNullMetaData', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       try {
@@ -568,11 +626,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_7400
-     * @tc.name: testGetProfileByAbilitySyncUndefinedModule
-     * @tc.desc: Check param number is failed (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncUndefinedModule
+     * @tc.number Sub_Bms_Framework_Query_Profile_7400
+     * @tc.desc   Check param number is failed (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncUndefinedModule', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -586,11 +646,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_7500
-     * @tc.name: testGetProfileByAbilitySyncUndefinedAbility
-     * @tc.desc: Check param number is failed (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncUndefinedAbility
+     * @tc.number Sub_Bms_Framework_Query_Profile_7500
+     * @tc.desc   Check param number is failed (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncUndefinedAbility', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -604,11 +666,13 @@ export default function getProfileByAbility() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_7600
-     * @tc.name: testGetProfileByAbilitySyncUndefinedMetaData
-     * @tc.desc: profile is json (by sync)
-     * @tc.level   0
+    /**
+     * @tc.name   testGetProfileByAbilitySyncUndefinedMetaData
+     * @tc.number Sub_Bms_Framework_Query_Profile_7600
+     * @tc.desc   profile is json (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetProfileByAbilitySyncUndefinedMetaData', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       try {

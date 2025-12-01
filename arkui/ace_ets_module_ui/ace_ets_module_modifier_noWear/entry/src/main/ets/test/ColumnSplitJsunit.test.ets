@@ -40,12 +40,12 @@ export default function columnSplitJsunit() {
     });
 
     /**
+     * @tc.name   columnSplitTest_0001
      * @tc.number columnSplitTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc set divider values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set divider values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('columnSplitTest_0001', Level.LEVEL0, async (done: Function) => {
 
@@ -60,12 +60,12 @@ export default function columnSplitJsunit() {
     });
 
     /**
+     * @tc.name   columnSplitTest_0002
      * @tc.number columnSplitTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc set resizeable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set resizeable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('columnSplitTest_0002', Level.LEVEL0, async (done: Function) => {
 
@@ -79,12 +79,12 @@ export default function columnSplitJsunit() {
     });
 
     /**
+     * @tc.name   columnSplitTest_0003
      * @tc.number columnSplitTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Change resizeable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change resizeable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('columnSplitTest_0003', Level.LEVEL0, async (done: Function) => {
 

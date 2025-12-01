@@ -42,12 +42,12 @@ export default function ContainerSpanModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ContainerSpanModifierTest_0010
-     * @tc.name      ContainerSpanModifierTest_0010
-     * @tc.desc      test ContainerSpanModifier: radius
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ContainerSpanModifierTest_0010
+     * @tc.number SUB_ACE_ContainerSpanModifierTest_0010
+     * @tc.desc   test ContainerSpanModifier: radius
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ContainerSpanModifierTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('ContainerSpanModifierTest_0010 START');
@@ -64,12 +64,12 @@ export default function ContainerSpanModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ContainerSpanModifierTest_0020
-     * @tc.name      ContainerSpanModifierTest_0020
-     * @tc.desc      test type of ContainerSpanInstance: undefined
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ContainerSpanModifierTest_0020
+     * @tc.number SUB_ACE_ContainerSpanModifierTest_0020
+     * @tc.desc   test type of ContainerSpanInstance: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ContainerSpanModifierTest_0020', Level.LEVEL1, async (done: Function) => {
       console.info('ContainerSpanModifierTest_0020 START');

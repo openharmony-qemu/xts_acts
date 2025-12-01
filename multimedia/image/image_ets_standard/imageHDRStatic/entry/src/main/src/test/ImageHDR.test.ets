@@ -111,6 +111,11 @@ export default function imageHDR() {
               desiredDynamicRange: image.DecodingDynamicRange.SDR
             };
             let pixelmap = await imageSourceApi.createPixelMap(decodingOption);
+            if (pixelmap == undefined) {
+              console.info('CASE_STATIC_01 createPixelMap failed, pixelMap is undefined');
+              expect(false).assertTrue();
+              return undefined;
+            }
             globalpixelmap = pixelmap;
             let tempPixelmap = pixelmap
             try {
@@ -162,6 +167,11 @@ export default function imageHDR() {
             };
             try {
               let pixelmap = await imageSourceApi.createPixelMap(decodingOption);
+              if (pixelmap == undefined) {
+                console.info('CASE_STATIC_02 createPixelMap failed, pixelMap is undefined');
+                expect(false).assertTrue();
+                return undefined;
+              }
               globalpixelmap = pixelmap;
               let tempPixelmap = pixelmap
               await tempPixelmap.toSdr();

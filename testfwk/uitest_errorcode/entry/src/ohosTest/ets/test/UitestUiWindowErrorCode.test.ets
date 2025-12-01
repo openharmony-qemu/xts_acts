@@ -38,11 +38,14 @@ function sleep(nm: number) {
 export default function uitestUiWindowErrorTest() {
   describe('UitestUiWindowErrorTest', () => {
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_001
-   * @tc.name: test_UiWindow_getBundleName_17000002
-   * @tc.desc: setPoint 17000002 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_getBundleName_17000002
+     * @tc.number uitestUiWindowErrorTest_001
+     * @tc.desc   setPoint 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getBundleName_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_getBundleName_17000002 start`);
       try {
@@ -62,11 +65,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_getBundleName_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_002
-   * @tc.name: test_UiWindow_getBundleName_17000004
-   * @tc.desc: setPoint 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_getBundleName_17000004
+     * @tc.number uitestUiWindowErrorTest_002
+     * @tc.desc   setPoint 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getBundleName_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_getBundleName_17000004 start`);
       try {
@@ -88,11 +94,14 @@ export default function uitestUiWindowErrorTest() {
     })
 
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_003
-    * @tc.name: test_UiWindow_getBundleName_17000002
-    * @tc.desc: getBounds 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_getBounds_17000002
+     * @tc.number uitestUiWindowErrorTest_003
+     * @tc.desc   getBounds 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getBounds_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_getBounds_17000002 start`);
       try {
@@ -112,11 +121,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_getBounds_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_004
-   * @tc.name: test_UiWindow_getBundleName_17000004
-   * @tc.desc: getBounds 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_getBounds_17000004
+     * @tc.number uitestUiWindowErrorTest_004
+     * @tc.desc   getBounds 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getBounds_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_getBounds_17000004 start`);
       try {
@@ -137,11 +149,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_getBounds_17000004 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_005
-    * @tc.name: test_UiWindow_getTitle_17000002
-    * @tc.desc: getTitle 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_getTitle_17000002
+     * @tc.number uitestUiWindowErrorTest_005
+     * @tc.desc   getTitle 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getTitle_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_getTitle_17000002 start`);
       try {
@@ -161,11 +176,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_getTitle_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_006
-   * @tc.name: test_UiWindow_getBundleName_17000004
-   * @tc.desc: getTitle 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_getTitle_17000004
+     * @tc.number uitestUiWindowErrorTest_006
+     * @tc.desc   getTitle 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getTitle_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_getBundleName_17000004 start`);
       try {
@@ -186,11 +204,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_getBundleName_17000004 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_007
-    * @tc.name: test_UiWindow_getWindowMode_17000002
-    * @tc.desc: getWindowMode 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_getWindowMode_17000002
+     * @tc.number uitestUiWindowErrorTest_007
+     * @tc.desc   getWindowMode 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getWindowMode_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_getWindowMode_17000002 start`);
       try {
@@ -210,11 +231,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_getWindowMode_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_008
-   * @tc.name: test_UiWindow_getBundleName_17000004
-   * @tc.desc: getWindowMode 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_getWindowMode_17000004
+     * @tc.number uitestUiWindowErrorTest_008
+     * @tc.desc   getWindowMode 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getWindowMode_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_getWindowMode_17000004 start`);
       try {
@@ -235,11 +259,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_getWindowMode_17000004 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_009
-    * @tc.name: test_UiWindow_isFocused_17000002
-    * @tc.desc: isFocused 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_isFocused_17000002
+     * @tc.number uitestUiWindowErrorTest_009
+     * @tc.desc   isFocused 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_isFocused_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_isFocused_17000002 start`);
       try {
@@ -259,11 +286,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_isFocused_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_010
-   * @tc.name: test_UiWindow_isFocused_17000004
-   * @tc.desc: isFocused 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_isFocused_17000004
+     * @tc.number uitestUiWindowErrorTest_010
+     * @tc.desc   isFocused 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_isFocused_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_isFocused_17000004 start`);
       try {
@@ -284,11 +314,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_isFocused_17000004 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_011
-    * @tc.name: test_UiWindow_isActive_17000002
-    * @tc.desc: isActive 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_isActive_17000002
+     * @tc.number uitestUiWindowErrorTest_011
+     * @tc.desc   isActive 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_isActive_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_isActive_17000002 start`);
       try {
@@ -308,11 +341,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_isActive_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_012
-   * @tc.name: test_UiWindow_isActive_17000004
-   * @tc.desc: isActive 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_isActive_17000004
+     * @tc.number uitestUiWindowErrorTest_012
+     * @tc.desc   isActive 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_isActive_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_isActive_17000004 start`);
       try {
@@ -334,11 +370,14 @@ export default function uitestUiWindowErrorTest() {
     })
 
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_011
-    * @tc.name: test_UiWindow_isActived_17000002
-    * @tc.desc: isActived 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_isActived_17000002
+     * @tc.number uitestUiWindowErrorTest_011
+     * @tc.desc   isActived 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_isActived_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_isActive_17000002 start`);
       try {
@@ -358,11 +397,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_isActive_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_012
-   * @tc.name: test_UiWindow_isActived_17000004
-   * @tc.desc: isActived 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_isActived_17000004
+     * @tc.number uitestUiWindowErrorTest_012
+     * @tc.desc   isActived 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_isActived_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_isActive_17000004 start`);
       try {
@@ -383,11 +425,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_isActive_17000004 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_013
-    * @tc.name: test_UiWindow_isActive_17000002
-    * @tc.desc: focus 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_focus_17000002
+     * @tc.number uitestUiWindowErrorTest_013
+     * @tc.desc   focus 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_focus_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_focus_17000002 start`);
       try {
@@ -407,11 +452,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_focus_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_014
-   * @tc.name: test_UiWindow_isActive_17000004
-   * @tc.desc: focus 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_focus_17000004
+     * @tc.number uitestUiWindowErrorTest_014
+     * @tc.desc   focus 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_focus_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_focus_17000004 start`);
       try {
@@ -432,11 +480,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_focus_17000004 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_015
-    * @tc.name: test_UiWindow_isActive_17000002
-    * @tc.desc: moveTo 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_moveTo_17000002
+     * @tc.number uitestUiWindowErrorTest_015
+     * @tc.desc   moveTo 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_moveTo_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_moveTo_17000002 start`);
       try {
@@ -456,11 +507,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_moveTo_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_016
-   * @tc.name: test_UiWindow_moveTo_17000004
-   * @tc.desc: moveTo 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_moveTo_17000004
+     * @tc.number uitestUiWindowErrorTest_016
+     * @tc.desc   moveTo 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_moveTo_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_moveTo_17000004 start`);
       let isSupport = false;
@@ -497,11 +551,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_moveTo_17000004 end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_018
-  * @tc.name: test_UiWindow_moveTo_17000005
-  * @tc.desc: moveTo 17000005 test.
-  */
+    /**
+     * @tc.name   test_UiWindow_moveTo_17000005
+     * @tc.number uitestUiWindowErrorTest_018
+     * @tc.desc   moveTo 17000005 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_moveTo_17000005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_moveTo_17000005 start`);
       try {
@@ -519,11 +576,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_moveTo_17000005 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_019
-    * @tc.name: test_UiWindow_resize_17000002
-    * @tc.desc: resize 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_resize_17000002
+     * @tc.number uitestUiWindowErrorTest_019
+     * @tc.desc   resize 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_resize_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_resize_17000002 start`);
       try {
@@ -543,11 +603,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_resize_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_020
-   * @tc.name: test_UiWindow_resize_17000004
-   * @tc.desc: resize 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_resize_17000004
+     * @tc.number uitestUiWindowErrorTest_020
+     * @tc.desc   resize 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_resize_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_resize_17000004 start`);
       let isSupportResize = true;
@@ -586,11 +649,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_resize_17000004 end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_022
-  * @tc.name: test_UiWindow_resize_17000005
-  * @tc.desc: resize 17000005 test.
-  */
+    /**
+     * @tc.name   test_UiWindow_resize_17000005
+     * @tc.number uitestUiWindowErrorTest_022
+     * @tc.desc   resize 17000005 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_resize_17000005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_resize_17000005 start`);
       try {
@@ -608,11 +674,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_resize_17000005 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_023
-    * @tc.name: test_UiWindow_resize_17000002
-    * @tc.desc: split 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_split_17000002
+     * @tc.number uitestUiWindowErrorTest_023
+     * @tc.desc   split 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_split_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_split_17000002 start`);
       try {
@@ -632,11 +701,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_split_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_024
-   * @tc.name: test_UiWindow_resize_17000004
-   * @tc.desc: split 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_split_17000004
+     * @tc.number uitestUiWindowErrorTest_024
+     * @tc.desc   split 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_split_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_split_17000004 start`);
       let isSupportSpilt = true;
@@ -675,11 +747,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_split_17000004 end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_025
-  * @tc.name: test_UiWindow_split_17000005
-  * @tc.desc: split 17000005 test.
-  */
+    /**
+     * @tc.name   test_UiWindow_split_17000005
+     * @tc.number uitestUiWindowErrorTest_025
+     * @tc.desc   split 17000005 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_split_17000005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_split_17000005 start`);
       try {
@@ -698,11 +773,14 @@ export default function uitestUiWindowErrorTest() {
     })
 
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_026
-    * @tc.name: test_UiWindow_resize_17000002
-    * @tc.desc: maximize 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_maximize_17000002
+     * @tc.number uitestUiWindowErrorTest_026
+     * @tc.desc   maximize 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_maximize_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_maximize_17000002 start`);
       try {
@@ -722,11 +800,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_maximize_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_027
-   * @tc.name: test_UiWindow_maximize_17000004
-   * @tc.desc: maximize 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_maximize_17000004
+     * @tc.number uitestUiWindowErrorTest_027
+     * @tc.desc   maximize 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_maximize_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_maximize_17000004 start`);
       let isSupportMaximize = true;
@@ -764,11 +845,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_maximize_17000004 end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_028
-  * @tc.name: test_UiWindow_maximize_17000005
-  * @tc.desc: maximize 17000005 test.
-  */
+    /**
+     * @tc.name   test_UiWindow_maximize_17000005
+     * @tc.number uitestUiWindowErrorTest_028
+     * @tc.desc   maximize 17000005 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_maximize_17000005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_maximize_17000005 start`);
       try {
@@ -786,11 +870,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_maximize_17000005 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_029
-    * @tc.name: test_UiWindow_minimize_17000002
-    * @tc.desc: minimize 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_minimize_17000002
+     * @tc.number uitestUiWindowErrorTest_029
+     * @tc.desc   minimize 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_minimize_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_minimize_17000002 start`);
       try {
@@ -810,11 +897,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_minimize_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_030
-   * @tc.name: test_UiWindow_minimize_17000004
-   * @tc.desc: minimize 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_minimize_17000004
+     * @tc.number uitestUiWindowErrorTest_030
+     * @tc.desc   minimize 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_minimize_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_minimize_17000004 start`);
       let isSupportMinimize = false;
@@ -851,11 +941,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_minimize_17000004 end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_031
-  * @tc.name: test_UiWindow_minimize_17000005
-  * @tc.desc: minimize 17000005 test.
-  */
+    /**
+     * @tc.name   test_UiWindow_minimize_17000005
+     * @tc.number uitestUiWindowErrorTest_031
+     * @tc.desc   minimize 17000005 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_minimize_17000005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_minimize_17000005 start`);
       try {
@@ -873,11 +966,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_minimize_17000005 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_032
-    * @tc.name: test_UiWindow_minimize_17000002
-    * @tc.desc: resume 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_resume_17000002
+     * @tc.number uitestUiWindowErrorTest_032
+     * @tc.desc   resume 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_resume_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_resume_17000002 start`);
       try {
@@ -898,11 +994,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_resume_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_033
-   * @tc.name: test_UiWindow_resume_17000004
-   * @tc.desc: resume 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_resume_17000004
+     * @tc.number uitestUiWindowErrorTest_033
+     * @tc.desc   resume 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_resume_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_resume_17000004 start`);
       let isSupportResume = true;
@@ -940,11 +1039,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_resume_17000004 end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_034
-  * @tc.name: test_UiWindow_resume_17000005
-  * @tc.desc: resume 17000005 test.
-  */
+    /**
+     * @tc.name   test_UiWindow_resume_17000005
+     * @tc.number uitestUiWindowErrorTest_034
+     * @tc.desc   resume 17000005 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_resume_17000005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_resume_17000005 start`);
       try {
@@ -962,11 +1064,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_resume_17000005 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_035
-    * @tc.name: test_UiWindow_close_17000002
-    * @tc.desc: close 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_close_17000002
+     * @tc.number uitestUiWindowErrorTest_035
+     * @tc.desc   close 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_close_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_close_17000002 start`);
       try {
@@ -986,11 +1091,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_close_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_036
-   * @tc.name: test_UiWindow_resume_17000004
-   * @tc.desc: close 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_close_17000004
+     * @tc.number uitestUiWindowErrorTest_036
+     * @tc.desc   close 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_close_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_close_17000004 start`);
       let driver:Driver = Driver.create();
@@ -1029,11 +1137,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_close_17000004 end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_037
-  * @tc.name: test_UiWindow_close_17000005
-  * @tc.desc: close 17000005 test.
-  */
+    /**
+     * @tc.name   test_UiWindow_close_17000005
+     * @tc.number uitestUiWindowErrorTest_037
+     * @tc.desc   close 17000005 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_close_17000005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_close_17000005 start`);
       try {
@@ -1052,11 +1163,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_close_17000005 end`);
     })
 
-    /*
-    * @tc.number: uitestUiWindowErrorTest_038
-    * @tc.name: test_UiWindow_getDisplayId_17000002
-    * @tc.desc: getDisplayId 17000002 test.
-    */
+    /**
+     * @tc.name   test_UiWindow_getDisplayId_17000002
+     * @tc.number uitestUiWindowErrorTest_038
+     * @tc.desc   getDisplayId 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getDisplayId_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_getDisplayId_17000002 start`);
       try {
@@ -1076,11 +1190,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_getDisplayId_17000002 end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_039
-   * @tc.name: test_UiWindow_getDisplayId_17000004
-   * @tc.desc: getDisplayId 17000004 test.
-   */
+    /**
+     * @tc.name   test_UiWindow_getDisplayId_17000004
+     * @tc.number uitestUiWindowErrorTest_039
+     * @tc.desc   getDisplayId 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getDisplayId_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_UiWindow_getDisplayId_17000004 start`);
       try {

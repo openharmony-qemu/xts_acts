@@ -46,12 +46,12 @@ export default function inputMethodListJSUnit() {
     })
 
     /**
-     * @tc.number SUB_InputMethod_IME_inputMethodList_001
      * @tc.name   SUB_InputMethod_IME_inputMethodList_001
+     * @tc.number SUB_InputMethod_IME_inputMethodList_001
      * @tc.desc   the list of inputMethod test
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_InputMethod_IME_inputMethodList_001', Level.LEVEL0, async (done: Function) => {
       try {

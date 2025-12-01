@@ -60,10 +60,12 @@ export default function ContextEnvironmentStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_0400
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_0400
-     * @tc.desc    Multiple registrations and deregistration.
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_0400
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_0400
+     * @tc.desc   Multiple registrations and deregistration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -75,14 +77,14 @@ export default function ContextEnvironmentStaticTest() {
           for (let i = 0; i < count; i++) {
             hilog.info(domain, tag, `${itName} on environment`);
             const cb = new CustomEnvironmentCallback();
-            const callbackId = applicationContext.on('environment', cb);
+            const callbackId = applicationContext.onEnvironment(cb);
             hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}, callNum: ${callNum}`);
 
             await Utils.msSleep(700);
 
             let code: int | undefined = undefined;
             hilog.info(domain, tag, `${itName} off environment`);
-            applicationContext.off('environment', callbackId, (err: BusinessError<void> | null): void => {
+            applicationContext.offEnvironment(callbackId, (err: BusinessError<void> | null): void => {
               hilog.info(domain, tag, `${itName} off environment err: code ${err?.code}, message: ${err?.message}`);
               code = err?.code;
             })
@@ -102,10 +104,12 @@ export default function ContextEnvironmentStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_0500
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_0500
-     * @tc.desc    nregisterEnvironmentCallback interface input parameter is a nonexistent.(callback)
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_0500
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_0500
+     * @tc.desc   nregisterEnvironmentCallback interface input parameter is a nonexistent.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -113,7 +117,7 @@ export default function ContextEnvironmentStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off environment`);
-          applicationContext.off('environment', 100, (err: BusinessError<void> | null): void => {
+          applicationContext.offEnvironment(100, (err: BusinessError<void> | null): void => {
             hilog.info(domain, tag, `${itName} off err: code ${err?.code}, message ${err?.message}`);
             expect(`${err?.code}`).assertEqual('401');
             done();
@@ -128,10 +132,12 @@ export default function ContextEnvironmentStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_0600
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_0600
-     * @tc.desc    unregisterEnvironmentCallback interface input parameter is negative.(callback)
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_0600
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_0600
+     * @tc.desc   unregisterEnvironmentCallback interface input parameter is negative.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -139,7 +145,7 @@ export default function ContextEnvironmentStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off environment`);
-          applicationContext.off('environment', -1, (err: BusinessError<void> | null): void => {
+          applicationContext.offEnvironment(-1, (err: BusinessError<void> | null): void => {
             hilog.info(domain, tag, `${itName} off err: code ${err?.code}, message ${err?.message}`);
             expect(`${err?.code}`).assertEqual('401');
             done();
@@ -154,10 +160,12 @@ export default function ContextEnvironmentStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_0800
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_0800
-     * @tc.desc    nregisterEnvironmentCallback interface input parameter is a nonexistent.(promise)
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_0800
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_0800
+     * @tc.desc   nregisterEnvironmentCallback interface input parameter is a nonexistent.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -165,7 +173,7 @@ export default function ContextEnvironmentStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off environment`);
-          applicationContext.off('environment', 100).then(() => {
+          applicationContext.offEnvironment(100).then(() => {
             hilog.info(domain, tag, `${itName} off success`);
             expect().assertFail();
             done();
@@ -186,10 +194,12 @@ export default function ContextEnvironmentStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_0900
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_0900
-     * @tc.desc    unregisterEnvironmentCallback interface input parameter is negative.(promise)
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_0900
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_0900
+     * @tc.desc   unregisterEnvironmentCallback interface input parameter is negative.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -197,7 +207,7 @@ export default function ContextEnvironmentStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off environment`);
-          applicationContext.off('environment', -1).then(() => {
+          applicationContext.offEnvironment(-1).then(() => {
             hilog.info(domain, tag, `${itName} off success`);
             expect().assertFail();
             done();
@@ -218,10 +228,12 @@ export default function ContextEnvironmentStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_1000
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_1000
-     * @tc.desc    EnvironmentCallback triggered normally.
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_1000
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_1000
+     * @tc.desc   EnvironmentCallback triggered normally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'SUB_AA_Context_EnvironmentTest_Static_1000';
@@ -229,7 +241,7 @@ export default function ContextEnvironmentStaticTest() {
       try {
         hilog.info(domain, tag, `${itName} on environment`);
         const cb = new CustomEnvironmentCallback();
-        const callbackId = applicationContext.on('environment', cb);
+        const callbackId = applicationContext.onEnvironment(cb);
         hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}`);
 
         hilog.info(domain, tag, `${itName} set color mode`);
@@ -240,7 +252,7 @@ export default function ContextEnvironmentStaticTest() {
         expect(cb.configurationUpdated).assertTrue();
 
         hilog.info(domain, tag, `${itName} off environment`);
-        await applicationContext.off('environment', callbackId);
+        await applicationContext.offEnvironment(callbackId);
         hilog.info(domain, tag, `${itName} reset color mode`);
         applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
       } catch (err: BusinessError) {
@@ -252,10 +264,12 @@ export default function ContextEnvironmentStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_1100
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_1100
-     * @tc.desc    EnvironmentCallback triggered normally.
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_1100
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_1100
+     * @tc.desc   EnvironmentCallback triggered normally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'SUB_AA_Context_EnvironmentTest_Static_1100';
@@ -263,7 +277,7 @@ export default function ContextEnvironmentStaticTest() {
       try {
         hilog.info(domain, tag, `${itName} on environment`);
         const cb = new CustomEnvironmentCallback();
-        const callbackId = applicationContext.on('environment', cb);
+        const callbackId = applicationContext.onEnvironment(cb);
         hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}`);
 
         hilog.info(domain, tag, `${itName} set color mode`);
@@ -274,7 +288,7 @@ export default function ContextEnvironmentStaticTest() {
         expect(cb.configurationUpdated).assertTrue();
 
         hilog.info(domain, tag, `${itName} off environment`);
-        await applicationContext.off('environment', callbackId);
+        await applicationContext.offEnvironment(callbackId);
         hilog.info(domain, tag, `${itName} reset color mode`);
         applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
       } catch (err: BusinessError) {
@@ -286,10 +300,12 @@ export default function ContextEnvironmentStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_1200
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_1200
-     * @tc.desc    EnvironmentCallback triggered normally.
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_1200
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_1200
+     * @tc.desc   EnvironmentCallback triggered normally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'SUB_AA_Context_EnvironmentTest_Static_1200';
@@ -297,7 +313,7 @@ export default function ContextEnvironmentStaticTest() {
       try {
         hilog.info(domain, tag, `${itName} on environment`);
         const cb = new CustomEnvironmentCallback();
-        const callbackId = applicationContext.on('environment', cb);
+        const callbackId = applicationContext.onEnvironment(cb);
         hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}`);
 
         hilog.info(domain, tag, `${itName} set language`);
@@ -308,7 +324,7 @@ export default function ContextEnvironmentStaticTest() {
         expect(cb.configurationUpdated).assertTrue();
 
         hilog.info(domain, tag, `${itName} off environment`);
-        await applicationContext.off('environment', callbackId);
+        await applicationContext.offEnvironment(callbackId);
       } catch (err: BusinessError) {
         hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
         expect().assertFail();
@@ -318,10 +334,12 @@ export default function ContextEnvironmentStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_1300
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_1300
-     * @tc.desc    unregisterEnvironmentCallback execution is normal.(callback)
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_1300
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_1300
+     * @tc.desc   unregisterEnvironmentCallback execution is normal.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'SUB_AA_Context_EnvironmentTest_Static_1300';
@@ -329,11 +347,11 @@ export default function ContextEnvironmentStaticTest() {
       try {
         hilog.info(domain, tag, `${itName} on environment`);
         const cb = new CustomEnvironmentCallback();
-        const callbackId = applicationContext.on('environment', cb);
+        const callbackId = applicationContext.onEnvironment(cb);
         hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}`);
 
         hilog.info(domain, tag, `${itName} off environment`);
-        applicationContext.off('environment', callbackId, (err: BusinessError<void> | null): void => {
+        applicationContext.offEnvironment(callbackId, (err: BusinessError<void> | null): void => {
           hilog.info(domain, tag, `${itName} off environment err: code ${err?.code}, message: ${err?.message}`);
           expect(`${err?.code}`).assertEqual('0');
 
@@ -359,22 +377,24 @@ export default function ContextEnvironmentStaticTest() {
     })
 
     /**
-    * @tc.number  SUB_AA_Context_EnvironmentTest_Static_1400
-    * @tc.name    SUB_AA_Context_EnvironmentTest_Static_1400
-    * @tc.desc    unregisterEnvironmentCallback execution is normal.(promise)
-    * @tc.level   3
-    */
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_1400
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_1400
+     * @tc.desc   unregisterEnvironmentCallback execution is normal.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_Context_EnvironmentTest_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'SUB_AA_Context_EnvironmentTest_Static_1400';
       hilog.info(domain, tag, `${itName} start`);
       try {
         hilog.info(domain, tag, `${itName} on environment`);
         const cb = new CustomEnvironmentCallback();
-        const callbackId = applicationContext.on('environment', cb);
+        const callbackId = applicationContext.onEnvironment(cb);
         hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}`);
 
         hilog.info(domain, tag, `${itName} off environment`);
-        applicationContext.off('environment', callbackId).then(() => {
+        applicationContext.offEnvironment(callbackId).then(() => {
           hilog.info(domain, tag, `${itName} set color mode`);
           applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT);
           await Utils.msSleep(2000);

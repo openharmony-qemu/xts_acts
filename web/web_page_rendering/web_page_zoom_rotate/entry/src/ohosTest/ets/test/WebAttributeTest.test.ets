@@ -57,14 +57,14 @@ export default function webAttributeTest() {
       done();
     })
 
-      /*
-      * @tc.number      : SUB_WEB_INITIALSCALE_0100
-      * @tc.name        : testInitialScale001
-      * @tc.desc        : test initialScale from 100 to 120
-      * @tc.size        : MediumTest
-      * @tc.type        : Function
-      * @tc.level       : Level 1
-      */
+      /**
+       * @tc.name   testInitialScale001
+       * @tc.number SUB_WEB_INITIALSCALE_0100
+       * @tc.desc   test initialScale from 100 to 120
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('testInitialScale001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         Utils.emitEvent("emitInitialScale001", 153860)
         Utils.registerEvent("testInitialScale001", 'oldScale=100,newScale=120', 153870, done);
@@ -72,14 +72,14 @@ export default function webAttributeTest() {
         await component.click();
       })
 
-      /*
-      * @tc.number      : SUB_WEB_INITIALSCALE_0200
-      * @tc.name        : testInitialScale002
-      * @tc.desc        : test initialScale from 100 to 80
-      * @tc.size        : MediumTest
-      * @tc.type        : Function
-      * @tc.level       : Level 1
-      */
+      /**
+       * @tc.name   testInitialScale002
+       * @tc.number SUB_WEB_INITIALSCALE_0200
+       * @tc.desc   test initialScale from 100 to 80
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('testInitialScale002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         Utils.emitEvent("emitInitialScale002", 153860)
         Utils.registerEvent("testInitialScale002", 'oldScale=100,newScale=90', 153880, done);
@@ -87,24 +87,27 @@ export default function webAttributeTest() {
         await component.click();
       })
 
-      /*
-      * @tc.number      : SUB_WEB_ONSCALECHANGE_0100
-      * @tc.name        : testOnScaleChange001
-      * @tc.desc        : test onScaleChange
-      * @tc.size        : MediumTest
-      * @tc.type        : Function
-      * @tc.level       : Level 1
-      */
+      /**
+       * @tc.name   testOnScaleChange001
+       * @tc.number SUB_WEB_ONSCALECHANGE_0100
+       * @tc.desc   test onScaleChange
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('testOnScaleChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         Utils.emitEvent("emitOnScaleChange", 153860)
         Utils.registerEvent("testOnScaleChange001", 'oldScale=100,newScale=110', 153890, done);
         let component = await driver.findComponent(ON.id("WebAttributeTestButton"));
         await component.click();
       })
-      /*
-       *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_015
-       *tc.name Zoom
-       *tc.desic zoom the current page
+      /**
+       * @tc.name   ZoomTwo
+       * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_015
+       * @tc.desc   ZoomTwo
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('ZoomTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         Utils.emitEvent("emitZoomTwo", 153860)

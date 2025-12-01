@@ -40,12 +40,12 @@ export default function typeNodeDividerTest() {
       done();
     });
     /**
-     * @tc.number    DividerTest_0100
-     * @tc.name      DividerTest_0100
-     * @tc.desc      TypedFrameNode: Divider
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   DividerTest_0100
+     * @tc.number DividerTest_0100
+     * @tc.desc   TypedFrameNode: Divider
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DividerTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('DividerTest_0100 START');

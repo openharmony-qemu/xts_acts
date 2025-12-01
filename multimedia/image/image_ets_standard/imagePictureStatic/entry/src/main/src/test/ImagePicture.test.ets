@@ -148,7 +148,7 @@ export default function imagePicture() {
         imageSourceApi = image.createImageSource(rawFileDescriptor);
       } else if (type === "incremental") {
         const picBuffer = getBuffer(fileName);
-        imageSourceApi = image.CreateIncrementalSource(picBuffer);
+        imageSourceApi = image.createIncrementalSource(picBuffer);
       } else {
         const filePath = filesDir + "/" + fileName;
         const file = fs.openSync(filePath);
@@ -401,7 +401,6 @@ export default function imagePicture() {
       let picture: image.Picture | undefined;
       let result = true;
       picture = await createPicImageSourceWithAuxPics(fileName, type);
-
       if (picture == undefined) {
         logger.log("create Pictrue failed.");
         expect(false).assertTrue();
@@ -496,7 +495,6 @@ export default function imagePicture() {
     ) => {
       let picture: image.Picture | undefined;
       picture = await createPictureImageSourcePic(fileName, type);
-
       if (picture == undefined) {
         logger.log("create Pictrue failed.");
         expect(false).assertTrue();
@@ -923,19 +921,70 @@ export default function imagePicture() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100
-      * @tc.desc    test AuxiliaryPicture API
-      *                 1.create picture object by decode image source
-      *                 2.test get auxiliaryPicture type
-      *                 3.test set auxiliaryPicture info
-      *                 4.test get auxiliaryPicture info
-      *                 5.test auxiliaryPicture read pixels to buffer
-      *                 6.test auxiliaryPicture write pixels from buffer
-      *                 7.test auxiliaryPicture release
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100
+     * @tc.desc        test ImageSource createPicture
+     *                 1.create picture object by decode image source
+     *                 2.test auxiliaryPicture have gain map type
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_JPEG_STATIC_0100");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        expect(!isSupportHdr).assertTrue();
+        done();
+      } else {
+        let typeList = [GAINMAP]; 
+        let undefinedTypeList = [DEPTH_MAP, UNREFOCUS_MAP, LINEAR_MAP, FRAGMENT_MAP];
+        testImageSourceCreatePicture(done, logger, "JPEGISOSingle.jpg", "buffer", typeList, undefinedTypeList);
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100
+     * @tc.desc        test Image createPicture
+     *                 1.create picture object by main pixelMap
+     *                 2.test haven't auxiliaryPicture
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_JPEG_STATIC_0100");
+      let undefinedTypeList = [GAINMAP, DEPTH_MAP, UNREFOCUS_MAP, LINEAR_MAP, FRAGMENT_MAP];
+      let picture = await createPictureOnlyMainPic("testExif.jpg", "fd");
+      if (picture == undefined) {
+        logger.log("createPictureImageSourcePic failed. picture is undefined.");
+        expect(false).assertTrue();
+        done();
+        return undefined;
+      }
+      for (let i = 0; i < undefinedTypeList.length; i++) {
+        let ret = picture.getAuxiliaryPicture(undefinedTypeList[i]) == undefined;
+        logger.log("ret = " + ret)
+        expect(ret).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100
+     * @tc.desc      : test AuxiliaryPicture API
+     *                 1.create picture object by decode image source
+     *                 2.test get auxiliaryPicture type
+     *                 3.test set auxiliaryPicture info
+     *                 4.test get auxiliaryPicture info
+     *                 5.test auxiliaryPicture read pixels to buffer
+     *                 6.test auxiliaryPicture write pixels from buffer
+     *                 7.test auxiliaryPicture release
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0100");
@@ -975,7 +1024,7 @@ export default function imagePicture() {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0200");
       if (!isSupportHEIFDecode) {
         logger.log("device is not support heif decode");
-        
+        expect(!isSupportHEIFDecode).assertTrue();
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
@@ -1009,7 +1058,7 @@ export default function imagePicture() {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_AUXILIARY_PICTURE_READ_AND_WRITE_HEIF_STATIC_0300");
       if (!isSupportHEIFDecode) {
         logger.log("device is not support heif decode");
-        
+        expect(!isSupportHEIFDecode).assertTrue();
         done();
       } else {
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd");
@@ -1335,6 +1384,22 @@ export default function imagePicture() {
       * @tc.size    MediumTest
       * @tc.type    Functional
       * @tc.level   Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_GAIN_PIXELMAP_JPEG_ERROR_STATIC_0100");
+        testPictureApiError(done, logger, "testExif.jpg", "buffer", "gainMapPixelMap");
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100
+     * @tc.desc      : test picture marshalling createPictureFromParcel
+     *                 1.create picture object by decode image source
+     *                 2.test marshalling and create Picture From Parcel
+     *                 3.compare deserialize before and after main pixel map info and metadata
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_MARSHALLING_JPEG_STATIC_0100");
@@ -2907,6 +2972,7 @@ export default function imagePicture() {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_AUXILIARY_PICTURE_INFO_JPEG_STATIC_0200");
       if (!isSupportHdr) {
         logger.log("device is not support hdr");
+        expect(!isSupportHdr).assertTrue();
         done();
       } else {
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd");
@@ -8362,14 +8428,45 @@ export default function imagePicture() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100
-      * @tc.desc    test picture getMainPixelMap
-      *                 1.create picture object by decode image source
-      *                 2.test get main pixelMap info
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100
+     * @tc.desc        test picture release 
+     *                 1.create main pixelMap
+     *                 2.create picture object by main pixelMap
+     *                 3.test release picture 
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_RELEASE_HEIF_STATIC_0100");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        expect(!isSupportHEIFDecode).assertTrue();
+        done();
+      } else {
+        let picture = await createPictureOnlyMainPic("0801_sdr2.heic", "fd");
+        if (picture == undefined) {
+          logger.log("createPictureOnlyMainPic failed. picture is undefined.");
+          expect(false).assertTrue();
+          done();
+          return undefined;
+        }
+        picture.release();
+        expect(picture.getMainPixelmap() == undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100
+     * @tc.desc      : test picture getMainPixelMap
+     *                 1.create picture object by decode image source
+     *                 2.test get main pixelMap info
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_PIXELMAP_FORMAT_HEIF_STATIC_0100");

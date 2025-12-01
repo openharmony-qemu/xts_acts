@@ -15,6 +15,14 @@
 import {describe, it, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('callback', function () {
+    /**
+     * @tc.name   callbackDemo
+     * @tc.number callbackDemo
+     * @tc.desc   callbackDemo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('callbackDemo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         await a()
     })

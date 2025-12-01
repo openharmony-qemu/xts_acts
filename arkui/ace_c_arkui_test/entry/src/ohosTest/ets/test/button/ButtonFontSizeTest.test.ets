@@ -26,52 +26,52 @@ export default function buttonFontSizeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_FONTSIZE_0100
-     * @tc.name       : testButtonFontSize001
-     * @tc.desc       : testing fontSize for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testButtonFontSize001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_FONTSIZE_0100
+     * @tc.desc   testing fontSize for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonFontSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonFontSize001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_FONTSIZE_0200
-     * @tc.name       : testButtonFontSize002
-     * @tc.desc       : testing fontSize for button with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testButtonFontSize002
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_FONTSIZE_0200
+     * @tc.desc   testing fontSize for button with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonFontSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonFontSize002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_FONTSIZE_0300
-     * @tc.name       : testButtonFontSize003
-     * @tc.desc       : testing fontSize for button with small value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testButtonFontSize003
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_FONTSIZE_0300
+     * @tc.desc   testing fontSize for button with small value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonFontSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonFontSize003()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_FONTSIZE_0400
-     * @tc.name       : testButtonFontSize004
-     * @tc.desc       : testing fontSize for button with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level2
+    /**
+     * @tc.name   testButtonFontSize004
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_FONTSIZE_0400
+     * @tc.desc   testing fontSize for button with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonFontSize004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonFontSize004()).assertEqual(0)

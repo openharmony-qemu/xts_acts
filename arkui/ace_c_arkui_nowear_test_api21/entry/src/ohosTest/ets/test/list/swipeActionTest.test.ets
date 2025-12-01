@@ -28,13 +28,12 @@ export default function SwipeActionTest(){
     })
 
     /**
-     * @tc.number    swipeActionTest001
-     * @tc.name      swipeActionTest001
-     * @tc.desc      test ListItemSwipeActionManager is EXPANDED,
-     *               listItem slide out on the left side
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   swipeActionTest001
+     * @tc.number swipeActionTest001
+     * @tc.desc   test ListItemSwipeActionManager is EXPANDED,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swipeActionTest001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'swipeActionTest';
@@ -60,13 +59,12 @@ export default function SwipeActionTest(){
     });
 
     /**
-     * @tc.number    swipeActionTest002
-     * @tc.name      swipeActionTest002
-     * @tc.desc      test ListItemSwipeActionManager is collapse,
-     *               listItem slide to close
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   swipeActionTest002
+     * @tc.number swipeActionTest002
+     * @tc.desc   test ListItemSwipeActionManager is collapse,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swipeActionTest002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'swipeActionTest';
@@ -92,13 +90,12 @@ export default function SwipeActionTest(){
     });
 
     /**
-     * @tc.number    swipeActionTest003
-     * @tc.name      swipeActionTest003
-     * @tc.desc      test ListItemSwipeActionManager is EXPANDED and direction is right,
-     *               listItem slide out on the right side
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   swiperActionTest003
+     * @tc.number swipeActionTest003
+     * @tc.desc   test ListItemSwipeActionManager is EXPANDED and direction is right,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperActionTest003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'swipeActionTest';
@@ -124,13 +121,12 @@ export default function SwipeActionTest(){
     });
 
     /**
-     * @tc.number    swipeActionTest004
-     * @tc.name      swipeActionTest004
-     * @tc.desc      test ListItemSwipeActionManager is collapse,
-     *               listItem slide to close
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   swiperActionTest004
+     * @tc.number swipeActionTest004
+     * @tc.desc   test ListItemSwipeActionManager is collapse,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperActionTest004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'swipeActionTest';
@@ -156,13 +152,12 @@ export default function SwipeActionTest(){
     });
 
     /**
-     * @tc.number    swipeActionTest005
-     * @tc.name      swipeActionTest005
-     * @tc.desc      test ListItemSwipeActionManager node is nullptr,
-     *               return error code is 401
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   swiperActionTest005
+     * @tc.number swipeActionTest005
+     * @tc.desc   test ListItemSwipeActionManager node is nullptr,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperActionTest005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperActionTest005 START');

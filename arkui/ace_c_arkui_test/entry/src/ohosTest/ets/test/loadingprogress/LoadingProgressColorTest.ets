@@ -26,39 +26,39 @@ export default function loadingProgressColorTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LOADINGPROGRESS_COLOR_0100
-     * @tc.name       : testLoadingProgressColor001
-     * @tc.desc       : testing color for LoadingProgress with red value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLoadingProgressColor001
+     * @tc.number SUB_ARKUI_CAPI_LOADINGPROGRESS_COLOR_0100
+     * @tc.desc   testing color for LoadingProgress with red value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadingProgressColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLoadingProgressColor001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LOADINGPROGRESS_COLOR_0200
-     * @tc.name       : testLoadingProgressColor002
-     * @tc.desc       : testing color for LoadingProgress with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLoadingProgressColor002
+     * @tc.number SUB_ARKUI_CAPI_LOADINGPROGRESS_COLOR_0200
+     * @tc.desc   testing color for LoadingProgress with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadingProgressColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLoadingProgressColor002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LOADINGPROGRESS_COLOR_0300
-     * @tc.name       : testLoadingProgressColor003
-     * @tc.desc       : testing color for LoadingProgress with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLoadingProgressColor003
+     * @tc.number SUB_ARKUI_CAPI_LOADINGPROGRESS_COLOR_0300
+     * @tc.desc   testing color for LoadingProgress with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadingProgressColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLoadingProgressColor003()).assertEqual(0)

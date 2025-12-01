@@ -29,14 +29,12 @@ export default function fileIOClose() {
   describe('fileIO_fs_close', (): void => {
 
     /**
+     * @tc.name   fileIO_test_close_sync_static_000
      * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_0000
-     * @tc.name fileIO_test_close_sync_static_000
-     * @tc.desc Test closeSync() interfaces.
-     * Open file and close file by fd.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test closeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_close_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_close_sync_static_000');
@@ -53,14 +51,12 @@ export default function fileIOClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_close_sync_static_001
      * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_0100
-     * @tc.name fileIO_test_close_sync_static_001
-     * @tc.desc Test closeSync() interfaces.
-     * Open file and close file by file object.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test closeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_close_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_close_sync_static_001');
@@ -77,14 +73,12 @@ export default function fileIOClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_close_sync_static_002
      * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_0200
-     * @tc.name fileIO_test_close_sync_static_002
-     * @tc.desc Test closeSync() interfaces.
-     * Test fd has been closed.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test closeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_close_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_close_sync_static_001');
@@ -104,14 +98,12 @@ export default function fileIOClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_close_sync_static_005
      * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_0500
-     * @tc.name fileIO_test_close_sync_static_005
-     * @tc.desc Test closeSync() interfaces.
-     * Illegal type of parameter.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test closeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_close_sync_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
 
@@ -125,14 +117,12 @@ export default function fileIOClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_close_async_static_000
      * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0000
-     * @tc.name fileIO_test_close_async_static_000
-     * @tc.desc Test close() interfaces. Callback.
-     * Open file and close file by fd.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test close() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_close_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_close_async_static_000');
@@ -151,14 +141,12 @@ export default function fileIOClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_close_async_static_001
      * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0100
-     * @tc.name fileIO_test_close_async_static_001
-     * @tc.desc Test close() interfaces. Callback.
-     * Open file and close file by file object.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test close() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_close_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_close_async_static_001');
@@ -177,14 +165,12 @@ export default function fileIOClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_close_async_static_002
      * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0200
-     * @tc.name fileIO_test_close_async_static_002
-     * @tc.desc Test close() interfaces. Promise.
-     * Open file and close file by fd.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test close() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_close_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_close_async_static_002');
@@ -202,14 +188,12 @@ export default function fileIOClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_close_async_static_003
      * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0300
-     * @tc.name fileIO_test_close_async_static_003
-     * @tc.desc Test close() interfaces. Promise.
-     * Open file and close file by file object.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test close() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_close_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_close_async_static_003');
@@ -227,14 +211,12 @@ export default function fileIOClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_close_async_static_004
      * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0400
-     * @tc.name fileIO_test_close_async_static_004
-     * @tc.desc Test close() interfaces. Promise.
-     * Test file has been closed.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test close() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_close_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_close_async_static_004');
@@ -255,14 +237,12 @@ export default function fileIOClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_close_async_static_007
      * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0700
-     * @tc.name fileIO_test_close_async_static_007
-     * @tc.desc Test close() interfaces.
-     * Illegal type of parameter. Promise.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test close() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_close_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
 
@@ -277,14 +257,12 @@ export default function fileIOClose() {
     });
 
     /**
+     * @tc.name   fileIO_test_close_async_static_009
      * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0900
-     * @tc.name fileIO_test_close_async_static_009
-     * @tc.desc Test close() interfaces. Callback.
-     * Bad file descriptor.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test close() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_close_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_close_async_static_006');

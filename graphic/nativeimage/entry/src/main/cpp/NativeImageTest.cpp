@@ -197,12 +197,21 @@ napi_property_descriptor desc[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHNativeImageCreateWithSingleBufferModeTest3", nullptr, OHNativeImageCreateWithSingleBufferModeTest3,
         nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"oHConsumerSurfaceCreateWithSingleBufferModeTest1", nullptr, OHConsumerSurfaceCreateWithSingleBufferModeTest1,
+    {"oHConsumerSurfaceCreateWithSingleBufferModeTest", nullptr, OHConsumerSurfaceCreateWithSingleBufferModeTest,
         nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"oHConsumerSurfaceCreateWithSingleBufferModeTest2", nullptr, OHConsumerSurfaceCreateWithSingleBufferModeTest2,
-        nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"oHConsumerSurfaceCreateWithSingleBufferModeTest3", nullptr, OHConsumerSurfaceCreateWithSingleBufferModeTest3,
-        nullptr, nullptr, nullptr, napi_default, nullptr},
+    
+    {"oHNativeImageAcquireLatestNativeWindowBufferAbNormal", nullptr,
+        OHNativeImageAcquireLatestNativeWindowBufferAbNormal, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeImageAcquireLatestNativeWindowBufferAbNormal01", nullptr,
+        OHNativeImageAcquireLatestNativeWindowBufferAbNormal01, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeImageAcquireLatestNativeWindowBufferAbNormal02", nullptr,
+        OHNativeImageAcquireLatestNativeWindowBufferAbNormal02, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeImageAcquireLatestNativeWindowBufferAbNormal03", nullptr,
+        OHNativeImageAcquireLatestNativeWindowBufferAbNormal03, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeImageAcquireLatestNativeWindowBufferCall", nullptr,
+        OHNativeImageAcquireLatestNativeWindowBufferCall, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeImageCreateWithSingleBufferModeChangeTextureTarget", nullptr,
+        OHNativeImageCreateWithSingleBufferModeChangeTextureTarget, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

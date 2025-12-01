@@ -77,7 +77,7 @@ function createEvent(avPlayer: media.AVPlayer | undefined, config: PreDownConfig
 async function setCallbackEvent(avPlayer: media.AVPlayer | undefined, config: PreDownConfig,
   steps: Array<string>, done: () => void) {
   console.info(`case setAVPlayerCb`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case state: ${state}, reason: ${state}`);
     switch (state) {
       case 'playing':
@@ -88,7 +88,7 @@ async function setCallbackEvent(avPlayer: media.AVPlayer | undefined, config: Pr
         toNextStep(avPlayer, config, steps, done);
     }
   })
-  avPlayer?.on('error', (err) => {
+  avPlayer?.onError((err) => {
     console.info(`case on error: ${err}`);
     expect(steps[0]).assertEqual(ERROR_EVENT);
     steps.shift();
@@ -321,8 +321,9 @@ function toNextStep(avPlayer: media.AVPlayer | undefined, config: PreDownConfig,
 }
 
 function getFd(path: string) {
-  mgr = globalThis.getContext()!!.resourceManager;
-  fileDescriptor = mgr.getRawFdSync(path);
+  mediaTestBase.getFileDescriptorFromFileDir(VIDEO_SOURCE, () => {}).then((res: media.AVFileDescriptor) => {
+    fileDescriptor = { fd: res!.fd } as resourceManager.RawFileDescriptor;
+  });
 }
 
 export default function PreDownLoadTest() {
@@ -347,7 +348,7 @@ export default function PreDownLoadTest() {
     afterEach(() => { })
     afterAll(() => {
       if (fileDescriptor) {
-        mgr.closeRawFdSync(VIDEO_SOURCE);
+        fs.closeSync(fileDescriptor!.fd);
       }
     })
 

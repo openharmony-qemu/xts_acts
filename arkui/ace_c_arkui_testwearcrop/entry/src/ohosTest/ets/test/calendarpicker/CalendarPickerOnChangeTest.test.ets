@@ -27,14 +27,14 @@ export default function calendarPickerOnChangeTest() {
       await Utils.pushPage(`calendarpicker/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CALENDARPICKER_ONCHANGE_0100
-    * @tc.name       : testCalendarPickerOnChange001
-    * @tc.desc       : test onChange event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCalendarPickerOnChange001
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_ONCHANGE_0100
+     * @tc.desc   test onChange event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCalendarPickerOnChange001', Level.LEVEL1, async  (done: Function) => {
       let Rect = Utils.getComponentRect('calendarPickerOnChangeTest')
       await Utils.clickLocation(Math.round(globalThis.winLeft + Rect.right-vp2px(5)) , Math.round( globalThis.winTop + Rect.bottom-vp2px(5)))

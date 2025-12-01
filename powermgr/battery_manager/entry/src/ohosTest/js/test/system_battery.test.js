@@ -42,12 +42,12 @@ export default function SystemBatteryTest() {
     console.log("*************System Battery Unit Test Begin*************");
 
     /**
+     * @tc.name   get_status_success_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0010
-     * @tc.name testget_status_success_test
-     * @tc.desc Battery acquisition kit
-     * @tc.level: Level 1
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_status_success_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
       battery.getStatus({
@@ -65,12 +65,12 @@ export default function SystemBatteryTest() {
     });
 
     /**
+     * @tc.name   get_status_success_null_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0020
-     * @tc.name testget_status_success_null_test
-     * @tc.desc Battery acquisition kit
-     * @tc.level: Level 1
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_status_success_null_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
       battery.getStatus({
@@ -86,12 +86,12 @@ export default function SystemBatteryTest() {
     });
 
     /**
+     * @tc.name   get_status_success_empty_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0030
-     * @tc.name testget_status_success_empty_test
-     * @tc.desc Battery acquisition kit
-     * @tc.level: Level 1
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_status_success_empty_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
       battery.getStatus({
@@ -106,12 +106,12 @@ export default function SystemBatteryTest() {
     });
 
     /**
+     * @tc.name   get_status_fail_null_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0040
-     * @tc.name testget_status_fail_null_test
-     * @tc.desc Battery acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_status_fail_null_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
       battery.getStatus({
@@ -127,12 +127,12 @@ export default function SystemBatteryTest() {
     });
 
     /**
+     * @tc.name   get_status_fail_empty_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0050
-     * @tc.name testget_status_fail_empty_test
-     * @tc.desc Battery acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_status_fail_empty_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
       battery.getStatus({
@@ -147,12 +147,12 @@ export default function SystemBatteryTest() {
     });
 
     /**
+     * @tc.name   get_status_complete_null_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0060
-     * @tc.name testget_status_complete_null_test
-     * @tc.desc Battery acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_status_complete_null_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
       battery.getStatus({
@@ -168,12 +168,12 @@ export default function SystemBatteryTest() {
     });
 
     /**
+     * @tc.name   get_status_complete_empty_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0070
-     * @tc.name testget_status_complete_empty_test
-     * @tc.desc Battery acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_status_complete_empty_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
       battery.getStatus({
@@ -188,12 +188,12 @@ export default function SystemBatteryTest() {
     });
 
     /**
+     * @tc.name   get_status_all_null
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0080
-     * @tc.name testget_status_all_null
-     * @tc.desc Battery acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_status_all_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
       let allNull = false;
@@ -206,12 +206,12 @@ export default function SystemBatteryTest() {
     });
 
     /**
+     * @tc.name   get_status_all_empty
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0090
-     * @tc.name testget_status_all_empty
-     * @tc.desc Battery acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_status_all_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
       let allNull = false;

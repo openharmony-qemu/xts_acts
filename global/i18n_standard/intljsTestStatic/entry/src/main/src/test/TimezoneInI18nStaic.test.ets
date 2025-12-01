@@ -54,11 +54,14 @@ export default function TimezoneInI18nTest() {
       console.info("afterAll case");
     });
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_0100
-    * @tc.name    timezone_test_static_0100
-    * @tc.desc    get the getTimeZone value
-   */
+    /**
+     * @tc.name   timezone_test_static_0100
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_0100
+     * @tc.desc   get the getTimeZone value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_0100 ' + 'start');
       let timezone = i18n.getTimeZone();
@@ -67,11 +70,14 @@ export default function TimezoneInI18nTest() {
       expect(value.length > 0).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_0400
-    * @tc.name    timezone_test_static_0400
-    * @tc.desc    get the getDisplayName value, test getDisplayName method with true param
-    */
+    /**
+     * @tc.name   timezone_test_static_0400
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_0400
+     * @tc.desc   get the getDisplayName value, test getDisplayName method with true param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_0400', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_0400 ' + 'start');
       let timezone = i18n.getTimeZone();
@@ -80,11 +86,14 @@ export default function TimezoneInI18nTest() {
       expect(value.length > 0).assertTrue();
     })
 
-    /* *
-    * @tc.number  timezone_test_static_0600
-    * @tc.name    timezone_test_static_0600
-    * @tc.desc    test getRawOffset method get the getRawOffset value
-    */
+    /**
+     * @tc.name   timezone_test_static_0600
+     * @tc.number timezone_test_static_0600
+     * @tc.desc   test getRawOffset method get the getRawOffset value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_0600', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_0600 ' + 'start');
       let timezone = i18n.getTimeZone();
@@ -93,11 +102,14 @@ export default function TimezoneInI18nTest() {
       expect(value >= 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_0700
-    * @tc.name    timezone_test_static_0700
-    * @tc.desc    get the getOffset value, test getOffset method
-    */
+    /**
+     * @tc.name   timezone_test_static_0700
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_0700
+     * @tc.desc   get the getOffset value, test getOffset method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_0700', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_0700 ' + 'start');
       let timezone = i18n.getTimeZone();
@@ -106,11 +118,14 @@ export default function TimezoneInI18nTest() {
       expect(value >= 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_0800
-    * @tc.name    timezone_test_static_0800
-    * @tc.desc    get the getOffset value, test getOffset method with date param
-    */
+    /**
+     * @tc.name   timezone_test_static_0800
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_0800
+     * @tc.desc   get the getOffset value, test getOffset method with date param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_0800', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_0800 ' + 'start');
       let timezone = i18n.getTimeZone();
@@ -119,11 +134,14 @@ export default function TimezoneInI18nTest() {
       expect(value >= 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_0900
-    * @tc.name    timezone_test_static_0900
-    * @tc.desc    get the getID value, test getID
-    */
+    /**
+     * @tc.name   timezone_test_static_0900
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_0900
+     * @tc.desc   get the getID value, test getID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_0900', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_0900 ' + 'start');
       let timezone = i18n.getTimeZone('ACT');
@@ -132,11 +150,14 @@ export default function TimezoneInI18nTest() {
       expect(value).assertEqual('ACT');
     })
     
-    /* *
-    * @tc.number  timezone_test_static_1000
-    * @tc.name    timezone_test_static_1000
-    * @tc.desc    test getDisplayName with timezone id,get the getID value
-    */
+    /**
+     * @tc.name   timezone_test_static_1000
+     * @tc.number timezone_test_static_1000
+     * @tc.desc   test getDisplayName with timezone id,get the getID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_1000', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_1000 ' + 'start');
       let timezone = i18n.getTimeZone('ACT');
@@ -145,11 +166,14 @@ export default function TimezoneInI18nTest() {
       expect(value).assertEqual('澳大利亚中部标准时间');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_1300
-    * @tc.name    timezone_test_static_1300
-    * @tc.desc    get the getID value, test getDisplayName with en-US and true param
-    */
+    /**
+     * @tc.name   timezone_test_static_1300
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_1300
+     * @tc.desc   get the getID value, test getDisplayName with en-US and true param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_1300', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_1300 ' + 'start');
       let timezone = i18n.getTimeZone('Asia/Shanghai');
@@ -158,11 +182,14 @@ export default function TimezoneInI18nTest() {
       expect(value).assertEqual('China Standard Time');
     })
     
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_1400
-    * @tc.name    timezone_test_static_1400
-    * @tc.desc    get the getID value, test getDisplayName with zh-CN and false param
-    */
+    /**
+     * @tc.name   timezone_test_static_1400
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_1400
+     * @tc.desc   get the getID value, test getDisplayName with zh-CN and false param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_1400', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_1400 ' + 'start');
       let timezone = i18n.getTimeZone('Asia/Shanghai');
@@ -171,11 +198,14 @@ export default function TimezoneInI18nTest() {
       expect(value).assertEqual('中国标准时间');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_1100
-    * @tc.name    timezone_test_static_1100
-    * @tc.desc    get the getID value ,test getDisplayName with locale
-    */
+    /**
+     * @tc.name   timezone_test_static_1100
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1100
+     * @tc.desc   get the getID value ,test getDisplayName with locale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_1100', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_1100 ' + 'start');
       let timezone = i18n.getTimeZone('Asia/Shanghai');
@@ -184,11 +214,14 @@ export default function TimezoneInI18nTest() {
       expect(value).assertEqual('中国标准时间');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_1200
-    * @tc.name    timezone_test_static_1200
-    * @tc.desc    test getDisplayName with locale get the getID value
-    */
+    /**
+     * @tc.name   timezone_test_static_1200
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1200
+     * @tc.desc   test getDisplayName with locale get the getID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_1200', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_1200 ' + 'start');
       let timezone = i18n.getTimeZone('Asia/Shanghai');
@@ -198,11 +231,14 @@ export default function TimezoneInI18nTest() {
     })
 
 
-    /* *
-    * @tc.number  timezone_test_static_1500
-    * @tc.name    timezone_test_static_1500
-    * @tc.desc    test getRawOffset method with timezone id get the getRawOffset value
-    */
+    /**
+     * @tc.name   timezone_test_static_1500
+     * @tc.number timezone_test_static_1500
+     * @tc.desc   test getRawOffset method with timezone id get the getRawOffset value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_1500', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_1500 ' + 'start');
       let timezone = i18n.getTimeZone('ACT');
@@ -211,11 +247,14 @@ export default function TimezoneInI18nTest() {
       expect(value > 0).assertEqual(true);
     })
 
-     /* *
-    * @tc.number  timezone_test_static_1600
-    * @tc.name    timezone_test_static_1600
-    * @tc.desc    test getOffset method with timezone id, get the getOffset value
-    */
+    /**
+     * @tc.name   timezone_test_static_1600
+     * @tc.number timezone_test_static_1600
+     * @tc.desc   test getOffset method with timezone id, get the getOffset value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_1600', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_1600 ' + 'start');
       let timezone = i18n.getTimeZone('ACT');
@@ -224,11 +263,14 @@ export default function TimezoneInI18nTest() {
       expect(value > 0).assertEqual(true);
     })
 
-    /* *
-    * @tc.number  timezone_test_static_1700
-    * @tc.name    timezone_test_static_1700
-    * @tc.desc    test getOffset method with date and timezone id param, get the getOffset value
-    */
+    /**
+     * @tc.name   timezone_test_static_1700
+     * @tc.number timezone_test_static_1700
+     * @tc.desc   test getOffset method with date and timezone id param, get the getOffset value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_1700', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_1700 ' + 'start');
       let timezone = i18n.getTimeZone('ACT');
@@ -238,11 +280,14 @@ export default function TimezoneInI18nTest() {
     })
 
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1800
-    * @tc.name timezone_test_static_1800
-    * @tc.desc test getAvailableIDs method get the getAvailableIDs value
-    */
+    /**
+     * @tc.name   timezone_test_static_1800
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1800
+     * @tc.desc   test getAvailableIDs method get the getAvailableIDs value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_1800', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_1800 ' + 'start');
       let value = i18n.TimeZone.getAvailableIDs();
@@ -250,10 +295,13 @@ export default function TimezoneInI18nTest() {
       expect(value.length > 0).assertEqual(true);
     })
     
-    /* *
-     * @tc.number timezone_test_static_1900
+    /**
      * @tc.name   timezone_test_static_1900
+     * @tc.number timezone_test_static_1900
      * @tc.desc   test getAvailableZoneCityIDs method, get the getAvailableZoneCityIDs value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('timezone_test_static_1900', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_1900 ' + 'start');
@@ -261,11 +309,14 @@ export default function TimezoneInI18nTest() {
       console.log('timezone_test_static_1900 ' + value);
       expect(value.length > 0).assertEqual(true);
     }) 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2040
-    * @tc.name   timezone_test_static_2040
-    * @tc.desc   test getCityDisplayName method with not exist cityid,get the getCityDisplayName value
-    */
+    /**
+     * @tc.name   timezone_test_static_2040
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2040
+     * @tc.desc   test getCityDisplayName method with not exist cityid,get the getCityDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_2040', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_2040 ' + 'start');
       let value = i18n.TimeZone.getCityDisplayName('abcd', 'en');
@@ -273,11 +324,14 @@ export default function TimezoneInI18nTest() {
       expect(value).assertEqual('');
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2060
-    * @tc.name timezone_test_static_2060
-    * @tc.desc test getCityDisplayName method with not exist locale, get the getCityDisplayName value
-    */
+    /**
+     * @tc.name   timezone_test_static_2060
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2060
+     * @tc.desc   test getCityDisplayName method with not exist locale, get the getCityDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_2060', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_2060 ' + 'start');
       let value = i18n.TimeZone.getCityDisplayName('Auckland', 'abc');
@@ -285,11 +339,14 @@ export default function TimezoneInI18nTest() {
       expect(value).assertEqual('Auckland (New Zealand)');
     })
 
-    /* *
-    * @tc.number timezone_test_static_2100
-    * @tc.name   timezone_test_static_2100
-    * @tc.desc  test getTimezoneFromCity method , get the getTimezoneFromCity value
-    */
+    /**
+     * @tc.name   timezone_test_static_2100
+     * @tc.number timezone_test_static_2100
+     * @tc.desc   test getTimezoneFromCity method , get the getTimezoneFromCity value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_2100', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_2100 ' + 'start');
       let value = i18n.TimeZone.getTimezoneFromCity('Auckland');
@@ -297,11 +354,14 @@ export default function TimezoneInI18nTest() {
       expect(value != null).assertTrue();
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2120
-    * @tc.name   timezone_test_static_2120
-    * @tc.desc test getTimezoneFromCity method with not exist cityid, get the getTimezoneFromCity value
-    */
+    /**
+     * @tc.name   timezone_test_static_2120
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2120
+     * @tc.desc   test getTimezoneFromCity method with not exist cityid, get the getTimezoneFromCity value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_2120', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_2120 ' + 'start');
       let value = i18n.TimeZone.getTimezoneFromCity('abc');
@@ -309,11 +369,14 @@ export default function TimezoneInI18nTest() {
       expect(value != null).assertTrue();
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2200
-    * @tc.name timezone_test_static_2200
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @tc.name   timezone_test_static_2200
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2200
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_2200', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_2200 ' + 'start');
       try {
@@ -328,11 +391,14 @@ export default function TimezoneInI18nTest() {
       }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2300
-    * @tc.name timezone_test_static_2300
-    * @tc.desc get the getTimezonesByLocation value
-    */
+    /**
+     * @tc.name   timezone_test_static_2300
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2300
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_static_2300', Level.LEVEL2, async (): Promise<void> => {
       console.log('timezone_test_static_2300 ' + 'start');
       try {
@@ -349,11 +415,14 @@ export default function TimezoneInI18nTest() {
       }
     })
 
-    /* *
+    /**
+     * @tc.name   timezone_test_static_2400
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2400
-     * @tc.name timezone_test_static_2400
-     * @tc.desc get the getTimezonesByLocation value
-    */
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_static_2400', Level.LEVEL2, async (): Promise<void> => {
       console.log('timezone_test_static_2400 ' + 'start');
       try {
@@ -368,11 +437,14 @@ export default function TimezoneInI18nTest() {
       }
     })
 
-    /* *
+    /**
+     * @tc.name   timezone_test_static_2500
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2500
-     * @tc.name timezone_test_static_2500
-     * @tc.desc get the getTimezonesByLocation value
-    */
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_static_2500', Level.LEVEL2, async (): Promise<void> => {
       console.log('timezone_test_static_2500 ' + 'start');
       try {
@@ -387,11 +459,14 @@ export default function TimezoneInI18nTest() {
       }
     })
 
-    /* *
+    /**
+     * @tc.name   timezone_test_static_2600
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2600
-     * @tc.name timezone_test_static_2600
-     * @tc.desc get the getTimezonesByLocation value
-    */
+     * @tc.desc   get the getTimezonesByLocation value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('timezone_test_static_2600', Level.LEVEL2, async (): Promise<void> => {
       console.log('timezone_test_static_2600 ' + 'start');
       try {
@@ -406,11 +481,14 @@ export default function TimezoneInI18nTest() {
       }
     })
     
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2700
-    * @tc.name timezone_test_static_2700
-    * @tc.desc get the getTimezonesByLocation value, test getTimezonesByLocation method
-    */
+    /**
+     * @tc.name   timezone_test_static_2700
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2700
+     * @tc.desc   get the getTimezonesByLocation value, test getTimezonesByLocation method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_2700', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_2700 ' + 'start');
       try{
@@ -425,11 +503,14 @@ export default function TimezoneInI18nTest() {
       }
     })
     
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2800
-    * @tc.name timezone_test_static_2800
-    * @tc.desc get the getTimezonesByLocation value, test getTimezonesByLocation method
-    */
+    /**
+     * @tc.name   timezone_test_static_2800
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2800
+     * @tc.desc   get the getTimezonesByLocation value, test getTimezonesByLocation method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_2800', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_2800 ' + 'start');
       try{
@@ -444,11 +525,14 @@ export default function TimezoneInI18nTest() {
       }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2900
-    * @tc.name timezone_test_static_2900
-    * @tc.desc get the getTimezonesByLocation value,test getTimezonesByLocation method
-    */
+    /**
+     * @tc.name   timezone_test_static_2900
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2900
+     * @tc.desc   get the getTimezonesByLocation value,test getTimezonesByLocation method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_2900', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_2900 ' + 'start');
       try{
@@ -463,11 +547,14 @@ export default function TimezoneInI18nTest() {
       }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3000
-    * @tc.name timezone_test_static_3000
-    * @tc.desc get the getTimezonesByLocation value,test getTimezonesByLocation method
-    */
+    /**
+     * @tc.name   timezone_test_static_3000
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3000
+     * @tc.desc   get the getTimezonesByLocation value,test getTimezonesByLocation method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_3000', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_3000 ' + 'start');
       try{
@@ -482,11 +569,14 @@ export default function TimezoneInI18nTest() {
       }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3100
-    * @tc.name timezone_test_static_3100
-    * @tc.desc get the getTimezonesByLocation value, test getTimezonesByLocation method
-    */
+    /**
+     * @tc.name   timezone_test_static_3100
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3100
+     * @tc.desc   get the getTimezonesByLocation value, test getTimezonesByLocation method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_3100', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_3100 ' + 'start');
       try{
@@ -501,11 +591,14 @@ export default function TimezoneInI18nTest() {
       }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3200
-    * @tc.name timezone_test_static_3200
-    * @tc.desc get the getTimezonesByLocation value, test getTimezonesByLocation method
-    */
+    /**
+     * @tc.name   timezone_test_static_3200
+     * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3200
+     * @tc.desc   get the getTimezonesByLocation value, test getTimezonesByLocation method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timezone_test_static_3200', Level.LEVEL0, async (): Promise<void> => {
       console.log('timezone_test_static_3200 ' + 'start');
       try{

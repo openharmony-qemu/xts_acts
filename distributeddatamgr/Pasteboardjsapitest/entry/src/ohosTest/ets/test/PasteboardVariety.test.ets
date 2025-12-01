@@ -91,12 +91,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0100
-     * @tc.name        CreateData_Plaintext
-     * @tc.desc        Test pasteBoard variety createData plaintext
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0100
+     * @tc.desc   Test pasteBoard variety createData plaintext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0100 start ************')
@@ -114,12 +114,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0200
-     * @tc.name        CreateData_Html
-     * @tc.desc        Test pasteBoard variety createData Html
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0200
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0200
+     * @tc.desc   Test pasteBoard variety createData Html
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0200 start ************')
@@ -137,12 +137,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0300
-     * @tc.name        CreateData_Uri
-     * @tc.desc        Test pasteBoard variety createData Uri
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0300
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0300
+     * @tc.desc   Test pasteBoard variety createData Uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0300 start ************')
@@ -160,12 +160,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0400
-     * @tc.name        CreateData_Want
-     * @tc.desc        Test pasteBoard variety createData Want
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0400
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0400
+     * @tc.desc   Test pasteBoard variety createData Want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0400 start ************')
@@ -183,12 +183,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0500
-     * @tc.name        CreateData_PixelMap
-     * @tc.desc        Test pasteBoard variety createData PixelMap
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0500
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0500
+     * @tc.desc   Test pasteBoard variety createData PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0500 start ************')
@@ -222,12 +222,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0600
-     * @tc.name        CreateData_Arraybuffer
-     * @tc.desc        Test pasteBoard variety createData Arraybuffer
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0600
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0600
+     * @tc.desc   Test pasteBoard variety createData Arraybuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0600 start ************')
@@ -246,12 +246,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0700
-     * @tc.name        CreateData_Variety
-     * @tc.desc        Test pasteBoard variety createData Variety and getData
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0700
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0700
+     * @tc.desc   Test pasteBoard variety createData Variety and getData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0700 start ************')
@@ -306,12 +306,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      SUB_Pasteboard_Local_SDK_PasteboardVariety_0800
-     * @tc.name        CreateData_Variety
-     * @tc.desc        Test pasteBoard variety createData Variety and getValidTypes
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0800
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0800
+     * @tc.desc   Test pasteBoard variety createData Variety and getValidTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0800 start ************')
@@ -350,12 +350,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      PasteboardVariety_0100
-     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_0900
-     * @tc.desc        Test pasteBoard variety createData Variety and getValidTypes
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0900
+     * @tc.number PasteboardVariety_0100
+     * @tc.desc   Test pasteBoard variety createData Variety and getValidTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_0900 start ************')
@@ -375,12 +375,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      PasteboardVariety_0300
-     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1100
-     * @tc.desc        Test pasteBoard variety createData Arraybuffer
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1100
+     * @tc.number PasteboardVariety_0300
+     * @tc.desc   Test pasteBoard variety createData Arraybuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1100 start ************')
@@ -398,12 +398,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      PasteboardVariety_0400
-     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1200
-     * @tc.desc        Test pasteBoard variety createData Arraybuffer
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1200
+     * @tc.number PasteboardVariety_0400
+     * @tc.desc   Test pasteBoard variety createData Arraybuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1200 start ************')
@@ -421,12 +421,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      PasteboardVariety_0500
-     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1300
-     * @tc.desc        Test pasteBoard variety createData Arraybuffer
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1300
+     * @tc.number PasteboardVariety_0500
+     * @tc.desc   Test pasteBoard variety createData Arraybuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1300 start ************')
@@ -444,12 +444,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      PasteboardVariety_0600
-     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1400
-     * @tc.desc        Test pasteBoard variety createData Arraybuffer
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1400
+     * @tc.number PasteboardVariety_0600
+     * @tc.desc   Test pasteBoard variety createData Arraybuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1400 start ************')
@@ -466,12 +466,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      PasteboardVariety_0700
-     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1500
-     * @tc.desc        Test pasteBoard variety createData Arraybuffer
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1500
+     * @tc.number PasteboardVariety_0700
+     * @tc.desc   Test pasteBoard variety createData Arraybuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1500 start ************')
@@ -493,12 +493,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      PasteboardVariety_0800
-     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1600
-     * @tc.desc        Test pasteBoard variety createData Arraybuffer
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1600
+     * @tc.number PasteboardVariety_0800
+     * @tc.desc   Test pasteBoard variety createData Arraybuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1600 start ************')
@@ -518,12 +518,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      PasteboardVariety_0900
-     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1700
-     * @tc.desc        Test pasteBoard variety createData Arraybuffer
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1700
+     * @tc.number PasteboardVariety_0900
+     * @tc.desc   Test pasteBoard variety createData Arraybuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1700 start ************')
@@ -545,12 +545,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number      PasteboardVariety_1000
-     * @tc.name        SUB_Pasteboard_Local_SDK_PasteboardVariety_1800
-     * @tc.desc        Test pasteBoard variety createData Arraybuffer
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1800
+     * @tc.number PasteboardVariety_1000
+     * @tc.desc   Test pasteBoard variety createData Arraybuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1800 start ************')
@@ -570,12 +570,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number     PasteboardVariety_1100
-     * @tc.name       SUB_Pasteboard_Local_SDK_PasteboardVariety_1900
-     * @tc.desc       setUnifiedData Verify the properties of the appRecordData type
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1900
+     * @tc.number PasteboardVariety_1100
+     * @tc.desc   setUnifiedData Verify the properties of the appRecordData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_PasteboardVariety_1900 start-----")
@@ -592,12 +592,12 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @tc.number     PasteboardVariety_1200
-     * @tc.name       SUB_Pasteboard_Local_SDK_PasteboardVariety_2000
-     * @tc.desc       setUnifiedData Verify the properties of the appRecordData type
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_2000
+     * @tc.number PasteboardVariety_1200
+     * @tc.desc   setUnifiedData Verify the properties of the appRecordData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_PasteboardVariety_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_PasteboardVariety_2000 start-----")

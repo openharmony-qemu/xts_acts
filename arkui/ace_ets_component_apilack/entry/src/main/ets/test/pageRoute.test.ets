@@ -46,6 +46,14 @@ export default function pageRouteTest() {
       console.info("pageRouteTest after each called");
     })
 
+    /**
+     * @tc.name   testOnPageHide01
+     * @tc.number testOnPageHide01
+     * @tc.desc   testOnPageHide01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnPageHide01', Level.LEVEL0, async () => {
       console.info('[testOnPageHide01] START');
       let callback = (eventData: events_emitter.EventData) => {

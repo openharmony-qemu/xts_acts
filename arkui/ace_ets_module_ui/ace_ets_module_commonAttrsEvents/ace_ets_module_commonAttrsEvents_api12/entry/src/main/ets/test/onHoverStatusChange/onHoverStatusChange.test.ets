@@ -58,13 +58,15 @@ export default function onHoverStatusChange() {
       console.info("onHoverStatusChange after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_UI_COMPONENT_Common_onHoverStatusChange_001
-     * @tc.desc onHoverStatusChange test
-     * @tc.level Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   onHoverStatusChange_001
+     * @tc.number onHoverStatusChange_001
+     * @tc.desc   onHoverStatusChange_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onHoverStatusChange_001', Level.LEVEL0, async (done: Function) => {
       console.info('[onHoverStatusChange_001] START');
 

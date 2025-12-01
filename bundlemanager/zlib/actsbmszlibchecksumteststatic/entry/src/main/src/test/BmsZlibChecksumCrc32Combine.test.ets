@@ -23,8 +23,8 @@ const Domain: Int = 0x0000;
 
 export default function bmsZlibChecksumCrc32CombineTest() {
   let checksum: zlib.Checksum = zlib.createChecksumSync();
-  let crc1: Double = 0;
-  let crc2: Double = 0;
+  let crc1: long = 0;
+  let crc2: long = 0;
   let buf1: ArrayBuffer = new ArrayBuffer(21);
   let buf2: ArrayBuffer = new ArrayBuffer(19);
   let str1: string = 'hello Crc32Combine1';
@@ -48,19 +48,19 @@ export default function bmsZlibChecksumCrc32CombineTest() {
     })
 
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_static_3400
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_static_3400
-     * @tc.desc: test Crc32Combine(crc1,crc2,123)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_static_3400
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_static_3400
+     * @tc.desc   test Crc32Combine(crc1,crc2,123)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_static_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         try {
           let len2: long = 123;
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_3400 start`);
-          let num: number = await checksum.crc32Combine(crc1, crc2, len2);
+          let num: long = await checksum.crc32Combine(crc1, crc2, len2);
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_3400 Crc32Combine:(${crc1},${crc2},${len2})=>${num}`);
           expect(num).assertEqual(446674705);
           done();

@@ -48,12 +48,12 @@ export default function ActionSheetTrue() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ActionSheetTrue_0100
-     * @tc.name      ActionSheetTrue_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ActionSheetTrue_0100
+     * @tc.number SUB_ACE_ActionSheetTrue_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActionSheetTrue_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ActionSheetTrue_0100 START');

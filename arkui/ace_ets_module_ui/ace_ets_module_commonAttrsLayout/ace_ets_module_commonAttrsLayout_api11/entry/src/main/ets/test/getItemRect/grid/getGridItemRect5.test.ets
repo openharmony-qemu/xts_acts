@@ -63,12 +63,14 @@ export default function getGridItemRect5() {
       console.info("BadgeFocus after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect5_0100
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the layoutDirection of Grid to GridDirection.Row
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect5_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect5_0100
+     * @tc.desc   set index to 0,set the layoutDirection of Grid to GridDirection.Row
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect5_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect5_0100] START');
@@ -123,12 +125,14 @@ export default function getGridItemRect5() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect5_0200
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the layoutDirection of Grid to GridDirection.Column
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect5_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect5_0200
+     * @tc.desc   set index to 0,set the layoutDirection of Grid to GridDirection.Column
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect5_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect5_0200] START');
@@ -183,12 +187,14 @@ export default function getGridItemRect5() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect5_0300
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the layoutDirection of Grid to GridDirection.RowReverse
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect5_0300
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect5_0300
+     * @tc.desc   set index to 0,set the layoutDirection of Grid to GridDirection.RowReverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect5_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect5_0300] START');
@@ -243,12 +249,14 @@ export default function getGridItemRect5() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect5_0400
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the layoutDirection of Grid to GridDirection.RowReverse
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect5_0400
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect5_0400
+     * @tc.desc   set index to 0,set the layoutDirection of Grid to GridDirection.RowReverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect5_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect5_0400] START');

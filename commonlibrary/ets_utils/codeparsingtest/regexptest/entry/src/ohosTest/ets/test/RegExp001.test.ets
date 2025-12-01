@@ -63,12 +63,12 @@ export default function RegExpTest001() {
     })
 
     /**
+     * @tc.name   testRegCtr0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0001
-     * @tc.name testRegCtr0001
-     * @tc.desc Verify RegExp can be created from a string pattern with flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp can be created from a string pattern with flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re: RegExp = new RegExp('abc', 'i');
@@ -79,12 +79,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0002
-     * @tc.name testRegCtr0002
-     * @tc.desc Verify RegExp constructed from another RegExp copies source and flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from another RegExp copies source and flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re1: RegExp = /foo/gi;
@@ -95,12 +95,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0003
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0003
-     * @tc.name testRegCtr0003
-     * @tc.desc Verify new flags override the original flags when reusing RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify new flags override the original flags when reusing RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re1: RegExp = /bar/i;
@@ -110,12 +110,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0004
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0004
-     * @tc.name testRegCtr0004
-     * @tc.desc Verify SyntaxError is thrown when invalid flag is provided
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify SyntaxError is thrown when invalid flag is provided
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let errorCaught: boolean = false;
@@ -128,12 +128,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0005
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0005
-     * @tc.name testRegCtr0005
-     * @tc.desc Verify escape characters in string pattern are correctly interpreted
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify escape characters in string pattern are correctly interpreted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re: RegExp = new RegExp('\\d+');
@@ -143,36 +143,36 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0006
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0006
-     * @tc.name testRegCtr0006
-     * @tc.desc Verify default constructor behavior when called without arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify default constructor behavior when called without arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0006()).assertDeepEquals([true, true, true]);
     });
 
     /**
+     * @tc.name   testRegCtr0007
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0007
-     * @tc.name testRegCtr0007
-     * @tc.desc Verify RegExp constructed with undefined or null as pattern produces empty pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed with undefined or null as pattern produces empty pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0007()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   testRegCtr0008
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0008
-     * @tc.name testRegCtr0008
-     * @tc.desc Verify RegExp constructed from existing RegExp with undefined flag keeps original flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from existing RegExp with undefined flag keeps original flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re1: RegExp = /test/gi;
@@ -183,12 +183,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0012
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0012
-     * @tc.name testRegCtr0012
-     * @tc.desc Verify flags with different order (e.g. 'gi' and 'ig') are treated equivalently
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify flags with different order (e.g. 'gi' and 'ig') are treated equivalently
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re1: RegExp = new RegExp('abc', 'gi');
@@ -200,12 +200,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0013
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0013
-     * @tc.name testRegCtr0013
-     * @tc.desc Verify Unicode flag 'u' enables proper emoji matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Unicode flag 'u' enables proper emoji matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re1: RegExp = new RegExp('.', 'u');
@@ -216,12 +216,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0014
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0014
-     * @tc.name testRegCtr0014
-     * @tc.desc Verify difference between global (g) and sticky (y) flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify difference between global (g) and sticky (y) flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = 'abc abc';
@@ -236,12 +236,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0016
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0016
-     * @tc.name testRegCtr0016
-     * @tc.desc Verify dotAll flag (s) allows dot to match newline characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify dotAll flag (s) allows dot to match newline characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = 'abc\ndef';
@@ -252,12 +252,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0017
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0017
-     * @tc.name testRegCtr0017
-     * @tc.desc Verify multiline flag (m) changes behavior of ^ and $ anchors
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify multiline flag (m) changes behavior of ^ and $ anchors
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = 'first\nsecond';
@@ -268,24 +268,24 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0018
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0018
-     * @tc.name testRegCtr0018
-     * @tc.desc Verify RegExp.prototype as pattern creates an empty pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp.prototype as pattern creates an empty pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0018()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   testRegCtr0019
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0019
-     * @tc.name testRegCtr0019
-     * @tc.desc Verify passing empty string as flags produces valid RegExp with no flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify passing empty string as flags produces valid RegExp with no flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re: RegExp = new RegExp('abc', '');
@@ -295,12 +295,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0020
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0020
-     * @tc.name testRegCtr0020
-     * @tc.desc Verify dynamic RegExp creation using escaped string patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify dynamic RegExp creation using escaped string patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const keyword: string = 'end.';
@@ -311,36 +311,36 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0021
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0021
-     * @tc.name testRegCtr0021
-     * @tc.desc Verify RegExp creation from Proxy object source and handler interception
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp creation from Proxy object source and handler interception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0021()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testRegCtr0023
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0023
-     * @tc.name testRegCtr0023
-     * @tc.desc Verify RegExp constructed from object whose toString returns pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from object whose toString returns pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0023()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testRegCtr0024
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0024
-     * @tc.name testRegCtr0024
-     * @tc.desc Verify RegExp constructed with combined flags 'g' and 'y'
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed with combined flags 'g' and 'y'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('abc', 'gy');
@@ -349,12 +349,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0025
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0025
-     * @tc.name testRegCtr0025
-     * @tc.desc Verify new RegExp created from existing one with modified flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify new RegExp created from existing one with modified flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re1 = /abc/gi;
@@ -364,12 +364,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0028
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0028
-     * @tc.name testRegCtr0028
-     * @tc.desc Verify RegExp constructed from RegExp of another realm (simulated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from RegExp of another realm (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const iframeRe = /foo/;
@@ -378,12 +378,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0029
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0029
-     * @tc.name testRegCtr0029
-     * @tc.desc Verify SyntaxError thrown when RegExp created with invalid flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify SyntaxError thrown when RegExp created with invalid flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let threw = false;
@@ -396,24 +396,24 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0030
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0030
-     * @tc.name testRegCtr0030
-     * @tc.desc Verify RegExp throws when 'source' getter of input object throws
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp throws when 'source' getter of input object throws
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0030()).assertEqual(false);
     });
 
     /**
+     * @tc.name   testRegCtr0031
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0031
-     * @tc.name testRegCtr0031
-     * @tc.desc Verify RegExp supports dotAll flag 's' to match newline characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp supports dotAll flag 's' to match newline characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('a.b', 's');
@@ -421,24 +421,24 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0032
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0032
-     * @tc.name testRegCtr0032
-     * @tc.desc Verify RegExp supports hasIndices flag 'd' and exposes indices
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp supports hasIndices flag 'd' and exposes indices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0032()).assertEqual(0);
     });
 
     /**
+     * @tc.name   testRegCtr0033
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0033
-     * @tc.name testRegCtr0033
-     * @tc.desc Verify RegExp supports Unicode property escapes with \\p{L}
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp supports Unicode property escapes with \\p{L}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('\\p{L}+', 'u');
@@ -447,12 +447,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0034
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0034
-     * @tc.name testRegCtr0034
-     * @tc.desc Verify RegExp constructed with named capture groups works correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed with named capture groups works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('(?<first>\\w+)', 'u');
@@ -461,48 +461,48 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0035
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0035
-     * @tc.name testRegCtr0035
-     * @tc.desc Verify RegExp constructed with empty pattern defaults to match empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed with empty pattern defaults to match empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0035()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   testRegCtr0036
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0036
-     * @tc.name testRegCtr0036
-     * @tc.desc Verify RegExp constructed from undefined behaves as empty pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from undefined behaves as empty pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0036()).assertEqual('(?:)');
     });
 
     /**
+     * @tc.name   testRegCtr0037
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0037
-     * @tc.name testRegCtr0037
-     * @tc.desc Verify RegExp constructed with Symbol input throws TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed with Symbol input throws TypeError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0037()).assertTrue();
     });
 
     /**
+     * @tc.name   testRegCtr0038
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0038
-     * @tc.name testRegCtr0038
-     * @tc.desc Verify RegExp subclass correctly inherits flags and source
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp subclass correctly inherits flags and source
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class MyRegExp extends RegExp {}
@@ -512,24 +512,24 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0039
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0039
-     * @tc.name testRegCtr0039
-     * @tc.desc Verify RegExp constructed from object implementing Symbol.match returns correct source
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from object implementing Symbol.match returns correct source
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0039()).assertEqual('custom');
     });
 
     /**
+     * @tc.name   testRegCtr0040
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0040
-     * @tc.name testRegCtr0040
-     * @tc.desc Verify RegExp constructed from string containing special characters behaves as expected
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from string containing special characters behaves as expected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('\\[abc\\]');
@@ -538,12 +538,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0041
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0041
-     * @tc.name testRegCtr0041
-     * @tc.desc Verify RegExp with sticky flag 'y' correctly respects lastIndex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp with sticky flag 'y' correctly respects lastIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('a', 'y');
@@ -553,12 +553,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0042
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0042
-     * @tc.name testRegCtr0042
-     * @tc.desc Verify RegExp interacts correctly with String.prototype.match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp interacts correctly with String.prototype.match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('\\d+', 'g');
@@ -567,12 +567,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0043
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0043
-     * @tc.name testRegCtr0043
-     * @tc.desc Verify RegExp with replace() handles global flag correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp with replace() handles global flag correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('cat', 'g');
@@ -581,12 +581,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0044
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0044
-     * @tc.name testRegCtr0044
-     * @tc.desc Verify RegExp matches surrogate pairs correctly with Unicode flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp matches surrogate pairs correctly with Unicode flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('\\u{1F600}', 'u'); // 😀
@@ -594,12 +594,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0045
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0045
-     * @tc.name testRegCtr0045
-     * @tc.desc Verify RegExp throws SyntaxError when flags are repeated
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp throws SyntaxError when flags are repeated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let threw = false;
@@ -612,12 +612,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0046
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0046
-     * @tc.name testRegCtr0046
-     * @tc.desc Verify RegExp constructed dynamically from concatenated strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed dynamically from concatenated strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const part1 = 'ab';
@@ -628,12 +628,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0047
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0047
-     * @tc.name testRegCtr0047
-     * @tc.desc Verify RegExp constructed from empty string and replaced globally
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from empty string and replaced globally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('', 'g');
@@ -642,12 +642,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0048
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0048
-     * @tc.name testRegCtr0048
-     * @tc.desc Verify RegExp source with special regex characters are escaped correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp source with special regex characters are escaped correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pattern = '\\^\\$\\.\\*\\+\\?\\(\\)\\[\\]\\{\\}\\|';
@@ -656,12 +656,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0049
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0049
-     * @tc.name testRegCtr0049
-     * @tc.desc Verify RegExp constructed from another RegExp keeps same source if no flags provided
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from another RegExp keeps same source if no flags provided
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re1 = /abc/gi;
@@ -671,12 +671,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0050
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0050
-     * @tc.name testRegCtr0050
-     * @tc.desc Verify RegExp with multiple complex flags behaves as expected
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp with multiple complex flags behaves as expected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('a', 'gimsuyd');
@@ -690,24 +690,24 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0051
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0051
-     * @tc.name testRegCtr0051
-     * @tc.desc Verify RegExp subclass from another realm simulates cross-realm behavior
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp subclass from another realm simulates cross-realm behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0051()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   testRegCtr0052
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0052
-     * @tc.name testRegCtr0052
-     * @tc.desc Verify RegExp with nested named capture groups behaves correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp with nested named capture groups behaves correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('(?<outer>(?<inner>\\d+))', 'u');
@@ -717,12 +717,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0053
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0053
-     * @tc.name testRegCtr0053
-     * @tc.desc Verify RegExp throws SyntaxError for invalid Unicode property escape
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp throws SyntaxError for invalid Unicode property escape
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let threw = false;
@@ -735,12 +735,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0054
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0054
-     * @tc.name testRegCtr0054
-     * @tc.desc Verify RegExp constructed from very large pattern string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from very large pattern string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const longPattern = 'a'.repeat(10000);
@@ -749,12 +749,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0055
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0055
-     * @tc.name testRegCtr0055
-     * @tc.desc Verify RegExp lastIndex updates correctly after multiple exec calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp lastIndex updates correctly after multiple exec calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('\\d', 'g');
@@ -766,36 +766,36 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0056
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0056
-     * @tc.name testRegCtr0056
-     * @tc.desc Verify RegExp source is preserved when constructed from another RegExp with overridden toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp source is preserved when constructed from another RegExp with overridden toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0056()).assertEqual('abc');
     });
 
     /**
+     * @tc.name   testRegCtr0057
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0057
-     * @tc.name testRegCtr0057
-     * @tc.desc Verify RegExp constructed from object with Symbol.match returns correct source
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from object with Symbol.match returns correct source
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0057()).assertEqual('myPattern');
     });
 
     /**
+     * @tc.name   testRegCtr0058
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0058
-     * @tc.name testRegCtr0058
-     * @tc.desc Verify RegExp with sticky flag respects lastIndex after failed match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp with sticky flag respects lastIndex after failed match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('a', 'y');
@@ -806,12 +806,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0059
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0059
-     * @tc.name testRegCtr0059
-     * @tc.desc Verify RegExp constructed from string with special regex characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from string with special regex characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('\\(\\)\\[\\]\\{\\}\\?\\*\\+\\|');
@@ -819,12 +819,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0060
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0060
-     * @tc.name testRegCtr0060
-     * @tc.desc Verify RegExp constructed with multiple flags preserves all properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed with multiple flags preserves all properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('x', 'gimsuyd');
@@ -838,12 +838,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0061
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0061
-     * @tc.name testRegCtr0061
-     * @tc.desc Verify RegExp constructor preserves sticky flag when cloning existing instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructor preserves sticky flag when cloning existing instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re1 = new RegExp('abc', 'y');
@@ -852,12 +852,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0062
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0062
-     * @tc.name testRegCtr0062
-     * @tc.desc Verify RegExp constructed from dynamic template string pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from dynamic template string pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const word = 'hello';
@@ -867,36 +867,36 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0063
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0063
-     * @tc.name testRegCtr0063
-     * @tc.desc Verify RegExp constructed from object with custom Symbol.toPrimitive
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from object with custom Symbol.toPrimitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0063()).assertTrue();
     });
 
     /**
+     * @tc.name   testRegCtr0064
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0064
-     * @tc.name testRegCtr0064
-     * @tc.desc Verify RegExp throws when constructed from object with circular getter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp throws when constructed from object with circular getter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0064()).assertFalse();
     });
 
     /**
+     * @tc.name   testRegCtr0065
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0065
-     * @tc.name testRegCtr0065
-     * @tc.desc Verify RegExp handles special Unicode character escape correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp handles special Unicode character escape correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('\\u{1F600}', 'u');
@@ -904,24 +904,24 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0066
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0066
-     * @tc.name testRegCtr0066
-     * @tc.desc Verify RegExp constructed from object that defines both source and flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from object that defines both source and flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0066()).assertDeepEquals([false, false]);
     });
 
     /**
+     * @tc.name   testRegCtr0067
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0067
-     * @tc.name testRegCtr0067
-     * @tc.desc Verify RegExp with backreference captures the correct repeated group
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp with backreference captures the correct repeated group
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('(\\w+)\\s\\1');
@@ -930,12 +930,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0069
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0069
-     * @tc.name testRegCtr0069
-     * @tc.desc Verify RegExp can match empty string and still maintain stateful flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp can match empty string and still maintain stateful flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('^$', 'g');
@@ -944,12 +944,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0070
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0070
-     * @tc.name testRegCtr0070
-     * @tc.desc Verify RegExp constructed from escaped special characters in template string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from escaped special characters in template string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pattern = String.raw`\d+\.\d+`;
@@ -959,12 +959,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0071
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0071
-     * @tc.name testRegCtr0071
-     * @tc.desc Verify RegExp global flag properly resets lastIndex when lastIndex exceeds input length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp global flag properly resets lastIndex when lastIndex exceeds input length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('\\d', 'g');
@@ -975,12 +975,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0072
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0072
-     * @tc.name testRegCtr0072
-     * @tc.desc Verify RegExp correctly parses escaped backslashes from string pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp correctly parses escaped backslashes from string pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('\\\\d');
@@ -989,12 +989,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0073
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0073
-     * @tc.name testRegCtr0073
-     * @tc.desc Verify RegExp correctly handles lookahead and lookbehind assertions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp correctly handles lookahead and lookbehind assertions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('(?<=\\$)\\d+');
@@ -1003,12 +1003,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0074
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0074
-     * @tc.name testRegCtr0074
-     * @tc.desc Verify RegExp handles complex quantifiers with nested optional groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp handles complex quantifiers with nested optional groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('(ab(c)?)+');
@@ -1017,12 +1017,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0075
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0075
-     * @tc.name testRegCtr0075
-     * @tc.desc Verify RegExp respects unicode flag when matching astral symbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp respects unicode flag when matching astral symbols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re1 = new RegExp('^.$');
@@ -1032,12 +1032,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0076
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0076
-     * @tc.name testRegCtr0076
-     * @tc.desc Verify RegExp constructor correctly handles escaped forward slashes in patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructor correctly handles escaped forward slashes in patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('\\/');
@@ -1046,12 +1046,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0077
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0077
-     * @tc.name testRegCtr0077
-     * @tc.desc Verify RegExp handles nested alternation groups with repetition
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp handles nested alternation groups with repetition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('(foo|bar){2,3}');
@@ -1061,12 +1061,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0078
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0078
-     * @tc.name testRegCtr0078
-     * @tc.desc Verify RegExp constructor throws on unterminated character class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructor throws on unterminated character class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let threw = false;
@@ -1079,12 +1079,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0079
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0079
-     * @tc.name testRegCtr0079
-     * @tc.desc Verify RegExp constructor can handle very large quantifier counts safely
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructor can handle very large quantifier counts safely
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('a{1,10000}');
@@ -1093,24 +1093,24 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0080
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0080
-     * @tc.name testRegCtr0080
-     * @tc.desc Verify RegExp constructed from object with primitive pattern value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from object with primitive pattern value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegCtrJs0080()).assertDeepEquals([true, false]);
     });
 
     /**
+     * @tc.name   testRegCtr0081
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0081
-     * @tc.name testRegCtr0081
-     * @tc.desc Verify RegExp handles non-greedy quantifier correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp handles non-greedy quantifier correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('a.+?b');
@@ -1119,12 +1119,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0082
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0082
-     * @tc.name testRegCtr0082
-     * @tc.desc Verify RegExp correctly applies word boundary and non-word boundary
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp correctly applies word boundary and non-word boundary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg1: RegExp = new RegExp('\\bfoo\\b');
@@ -1134,12 +1134,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0083
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0083
-     * @tc.name testRegCtr0083
-     * @tc.desc Verify RegExp correctly captures and references back-references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp correctly captures and references back-references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('(ha)\\1');
@@ -1148,12 +1148,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0084
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0084
-     * @tc.name testRegCtr0084
-     * @tc.desc Verify RegExp handles escaped brackets and parentheses properly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp handles escaped brackets and parentheses properly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('\\(test\\)');
@@ -1162,12 +1162,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0085
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0085
-     * @tc.name testRegCtr0085
-     * @tc.desc Verify RegExp correctly matches Unicode letters and digits with \\w and \\d
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp correctly matches Unicode letters and digits with \\w and \\d
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('\\w+\\d+');
@@ -1176,12 +1176,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0086
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0086
-     * @tc.name testRegCtr0086
-     * @tc.desc Verify RegExp handles repetition quantifiers with nested groups correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp handles repetition quantifiers with nested groups correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('(ab(c)){2}');
@@ -1190,12 +1190,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0087
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0087
-     * @tc.name testRegCtr0087
-     * @tc.desc Verify RegExp distinguishes between greedy and lazy quantifiers in nested groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp distinguishes between greedy and lazy quantifiers in nested groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const greedy: RegExp = new RegExp('".*"');
@@ -1206,12 +1206,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0088
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0088
-     * @tc.name testRegCtr0088
-     * @tc.desc Verify RegExp correctly escapes special characters in dynamic input
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp correctly escapes special characters in dynamic input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const input: string = '[user](admin)';
@@ -1221,12 +1221,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0089
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0089
-     * @tc.name testRegCtr0089
-     * @tc.desc Verify RegExp with alternation pattern matches any valid option
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp with alternation pattern matches any valid option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('cat|dog|bird');
@@ -1235,12 +1235,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0090
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0090
-     * @tc.name testRegCtr0090
-     * @tc.desc Verify RegExp handles replacement using captured groups with String.replace()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp handles replacement using captured groups with String.replace()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('(\\w+) (\\w+)');
@@ -1250,12 +1250,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0091
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0091
-     * @tc.name testRegCtr0091
-     * @tc.desc Verify RegExp positive lookahead pattern matches correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp positive lookahead pattern matches correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('foo(?=bar)');
@@ -1264,12 +1264,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0092
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0092
-     * @tc.name testRegCtr0092
-     * @tc.desc Verify RegExp negative lookahead pattern matches correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp negative lookahead pattern matches correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('foo(?!bar)');
@@ -1278,12 +1278,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0093
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0093
-     * @tc.name testRegCtr0093
-     * @tc.desc Verify RegExp lastIndex changes correctly after global matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp lastIndex changes correctly after global matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('a', 'g');
@@ -1293,12 +1293,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0094
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0094
-     * @tc.name testRegCtr0094
-     * @tc.desc Verify RegExp global flag allows multiple matches on same input
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp global flag allows multiple matches on same input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('\\d+', 'g');
@@ -1308,12 +1308,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0095
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0095
-     * @tc.name testRegCtr0095
-     * @tc.desc Verify RegExp case-insensitive flag works as expected
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp case-insensitive flag works as expected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('hello', 'i');
@@ -1322,12 +1322,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0096
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0096
-     * @tc.name testRegCtr0096
-     * @tc.desc Verify RegExp can match empty lines using multiline flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp can match empty lines using multiline flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('^$', 'm');
@@ -1337,12 +1337,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0097
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0097
-     * @tc.name testRegCtr0097
-     * @tc.desc Verify RegExp correctly replaces multiple patterns with capture groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp correctly replaces multiple patterns with capture groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('(\\d+)', 'g');
@@ -1352,12 +1352,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0098
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0098
-     * @tc.name testRegCtr0098
-     * @tc.desc Verify RegExp correctly matches special whitespace characters like tabs and newlines
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp correctly matches special whitespace characters like tabs and newlines
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg: RegExp = new RegExp('\\s+');
@@ -1367,12 +1367,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0099
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0099
-     * @tc.name testRegCtr0099
-     * @tc.desc Verify RegExp instance does not share lastIndex across different instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp instance does not share lastIndex across different instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg1: RegExp = new RegExp('a', 'g');
@@ -1382,12 +1382,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_0100
-     * @tc.name testRegCtr0100
-     * @tc.desc Verify RegExp efficiently matches long repetitive input without backtracking issues
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp efficiently matches long repetitive input without backtracking issues
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const input: string = 'a'.repeat(5000) + 'b';
@@ -1397,12 +1397,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0001
-     * @tc.name testRegTest0001
-     * @tc.desc Basic match: check if a pattern exists in the string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Basic match: check if a pattern exists in the string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/;
@@ -1411,12 +1411,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0002
-     * @tc.name testRegTest0002
-     * @tc.desc Global flag: test behavior of test() with /g flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Global flag: test behavior of test() with /g flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/g;
@@ -1428,12 +1428,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0003
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0003
-     * @tc.name testRegTest0003
-     * @tc.desc Sticky flag: test behavior of test() with /y flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Sticky flag: test behavior of test() with /y flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/y;
@@ -1445,12 +1445,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0004
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0004
-     * @tc.name testRegTest0004
-     * @tc.desc No match: test that test() returns false if no match found
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   No match: test that test() returns false if no match found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /bar/;
@@ -1459,12 +1459,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0005
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0005
-     * @tc.name testRegTest0005
-     * @tc.desc Case-insensitive match: test that /i flag ignores case
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Case-insensitive match: test that /i flag ignores case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /FOO/i;
@@ -1473,12 +1473,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0006
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0006
-     * @tc.name testRegTest0006
-     * @tc.desc Empty pattern: test that an empty regex matches any string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Empty pattern: test that an empty regex matches any string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?:)/;
@@ -1487,12 +1487,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0007
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0007
-     * @tc.name testRegTest0007
-     * @tc.desc Match beginning of string using ^ anchor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Match beginning of string using ^ anchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^foo/;
@@ -1503,12 +1503,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0008
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0008
-     * @tc.name testRegTest0008
-     * @tc.desc Match end of string using $ anchor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Match end of string using $ anchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo$/;
@@ -1519,12 +1519,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0009
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0009
-     * @tc.name testRegTest0009
-     * @tc.desc Dot matches any character except newline
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Dot matches any character except newline
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /f.o/;
@@ -1535,12 +1535,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0010
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0010
-     * @tc.name testRegTest0010
-     * @tc.desc Character class matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Character class matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /[abc]/;
@@ -1551,12 +1551,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0011
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0011
-     * @tc.name testRegTest0011
-     * @tc.desc Negated character class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Negated character class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /[^abc]/;
@@ -1567,12 +1567,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0012
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0012
-     * @tc.name testRegTest0012
-     * @tc.desc Optional character with ?
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Optional character with ?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /colou?r/;
@@ -1585,12 +1585,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0013
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0013
-     * @tc.name testRegTest0013
-     * @tc.desc Repetition with + quantifier
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Repetition with + quantifier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /go+/;
@@ -1603,12 +1603,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0014
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0014
-     * @tc.name testRegTest0014
-     * @tc.desc Repetition with * quantifier
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Repetition with * quantifier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /go*/;
@@ -1621,12 +1621,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0015
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0015
-     * @tc.name testRegTest0015
-     * @tc.desc Alternation with | operator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Alternation with | operator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /cat|dog/;
@@ -1639,12 +1639,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0016
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0016
-     * @tc.name testRegTest0016
-     * @tc.desc Global flag repeated match: test consecutive test() calls with /g
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Global flag repeated match: test consecutive test() calls with /g
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /a/g;
@@ -1660,12 +1660,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0017
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0017
-     * @tc.name testRegTest0017
-     * @tc.desc Sticky flag matching at specific index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Sticky flag matching at specific index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/y;
@@ -1679,12 +1679,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0018
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0018
-     * @tc.name testRegTest0018
-     * @tc.desc Test multi-line flag: ^ and $ with /m
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test multi-line flag: ^ and $ with /m
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^foo/m;
@@ -1694,12 +1694,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0019
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0019
-     * @tc.name testRegTest0019
-     * @tc.desc Test Unicode character matching with /u flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Unicode character matching with /u flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u{1F600}/u; // 😀 emoji
@@ -1710,12 +1710,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0020
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0020
-     * @tc.name testRegTest0020
-     * @tc.desc Test optional group matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test optional group matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /I love (cats)?/;
@@ -1728,12 +1728,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0021
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0021
-     * @tc.name testRegTest0021
-     * @tc.desc Test word boundary with \b
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test word boundary with \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\bcat\b/;
@@ -1744,12 +1744,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0022
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0022
-     * @tc.name testRegTest0022
-     * @tc.desc Test digit character class \d
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test digit character class \d
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d/;
@@ -1760,12 +1760,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0023
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0023
-     * @tc.name testRegTest0023
-     * @tc.desc Test non-digit character class \D
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test non-digit character class \D
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\D/;
@@ -1776,12 +1776,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0024
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0024
-     * @tc.name testRegTest0024
-     * @tc.desc Test whitespace character class \s
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test whitespace character class \s
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\s/;
@@ -1792,12 +1792,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0025
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0025
-     * @tc.name testRegTest0025
-     * @tc.desc Test non-whitespace character class \S
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test non-whitespace character class \S
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\S/;
@@ -1808,12 +1808,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0026
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0026
-     * @tc.name testRegTest0026
-     * @tc.desc Positive lookahead assertion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Positive lookahead assertion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo(?=bar)/;
@@ -1824,12 +1824,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0027
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0027
-     * @tc.name testRegTest0027
-     * @tc.desc Negative lookahead assertion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Negative lookahead assertion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo(?!bar)/;
@@ -1840,12 +1840,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0028
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0028
-     * @tc.name testRegTest0028
-     * @tc.desc Test matching tab and newline characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching tab and newline characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\t|\n/;
@@ -1858,12 +1858,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0029
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0029
-     * @tc.name testRegTest0029
-     * @tc.desc Test matching non-word characters \W
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching non-word characters \W
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\W/;
@@ -1874,12 +1874,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0030
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0030
-     * @tc.name testRegTest0030
-     * @tc.desc Test word character class \w
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test word character class \w
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\w/;
@@ -1890,12 +1890,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0031
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0031
-     * @tc.name testRegTest0031
-     * @tc.desc Test matching empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/;
@@ -1904,12 +1904,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0032
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0032
-     * @tc.name testRegTest0032
-     * @tc.desc Test multi-byte Unicode character matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test multi-byte Unicode character matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /你好/;
@@ -1920,12 +1920,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0033
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0033
-     * @tc.name testRegTest0033
-     * @tc.desc Test matching line start with ^ without /m
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching line start with ^ without /m
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^foo/;
@@ -1935,12 +1935,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0034
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0034
-     * @tc.name testRegTest0034
-     * @tc.desc Test matching line end with $ without /m
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching line end with $ without /m
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo$/;
@@ -1950,12 +1950,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0035
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0035
-     * @tc.name testRegTest0035
-     * @tc.desc Test non-greedy quantifier with ?
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test non-greedy quantifier with ?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /<.*?>/;
@@ -1965,12 +1965,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0036
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0036
-     * @tc.name testRegTest0036
-     * @tc.desc Test combination of global, ignoreCase, and multiline flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test combination of global, ignoreCase, and multiline flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^foo/gim;
@@ -1984,12 +1984,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0037
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0037
-     * @tc.name testRegTest0037
-     * @tc.desc Test positive and negative lookahead combined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test positive and negative lookahead combined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo(?=bar)(?!baz)/;
@@ -2000,12 +2000,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0038
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0038
-     * @tc.name testRegTest0038
-     * @tc.desc Test nested quantifiers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test nested quantifiers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(ab+)+/;
@@ -2020,12 +2020,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0039
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0039
-     * @tc.name testRegTest0039
-     * @tc.desc Test escaped special characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test escaped special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\$\^\*\+\?\.\(\)/;
@@ -2036,12 +2036,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0040
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0040
-     * @tc.name testRegTest0040
-     * @tc.desc Test empty string with optional pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test empty string with optional pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /a?/;
@@ -2049,12 +2049,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0041
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0041
-     * @tc.name testRegTest0041
-     * @tc.desc Test very long string with match at the end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test very long string with match at the end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "x".repeat(10000) + "foo";
@@ -2063,12 +2063,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0042
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0042
-     * @tc.name testRegTest0042
-     * @tc.desc Test non-greedy match with nested groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test non-greedy match with nested groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /<.*?>/;
@@ -2077,12 +2077,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0043
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0043
-     * @tc.name testRegTest0043
-     * @tc.desc Test combination of \b word boundary and \d digit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test combination of \b word boundary and \d digit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\b\d+\b/;
@@ -2091,12 +2091,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0044
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0044
-     * @tc.name testRegTest0044
-     * @tc.desc Test consecutive global matches with lastIndex reset
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test consecutive global matches with lastIndex reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/g;
@@ -2108,12 +2108,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0045
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0045
-     * @tc.name testRegTest0045
-     * @tc.desc Test lookbehind assertion (positive)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test lookbehind assertion (positive)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<=foo)bar/;
@@ -2122,12 +2122,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0046
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0046
-     * @tc.name testRegTest0046
-     * @tc.desc Test positive lookbehind with multiple characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test positive lookbehind with multiple characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<=foo)bar/;
@@ -2136,12 +2136,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0047
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0047
-     * @tc.name testRegTest0047
-     * @tc.desc Test negative lookbehind
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test negative lookbehind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<!foo)bar/;
@@ -2150,12 +2150,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0048
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0048
-     * @tc.name testRegTest0048
-     * @tc.desc Test multi-line empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test multi-line empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^$/m;
@@ -2164,12 +2164,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0049
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0049
-     * @tc.name testRegTest0049
-     * @tc.desc Test consecutive spaces matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test consecutive spaces matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = / +/;
@@ -2179,12 +2179,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0050
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0050
-     * @tc.name testRegTest0050
-     * @tc.desc Test high Unicode plane character matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test high Unicode plane character matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u{1F601}/u; // 😁 emoji
@@ -2193,12 +2193,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0051
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0051
-     * @tc.name testRegTest0051
-     * @tc.desc Test zero-width positive lookahead
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test zero-width positive lookahead
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo(?=bar)/;
@@ -2207,12 +2207,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0052
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0052
-     * @tc.name testRegTest0052
-     * @tc.desc Test zero-width negative lookahead
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test zero-width negative lookahead
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo(?!bar)/;
@@ -2221,12 +2221,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0053
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0053
-     * @tc.name testRegTest0053
-     * @tc.desc Test string with only whitespace characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test string with only whitespace characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\S/;
@@ -2235,12 +2235,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0054
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0054
-     * @tc.name testRegTest0054
-     * @tc.desc Test combination of digits, letters and boundaries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test combination of digits, letters and boundaries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\b\d+[a-z]*\b/;
@@ -2249,12 +2249,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0055
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0055
-     * @tc.name testRegTest0055
-     * @tc.desc Test empty string with optional repeated pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test empty string with optional repeated pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a?)*b/;
@@ -2265,12 +2265,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0056
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0056
-     * @tc.name testRegTest0056
-     * @tc.desc Test matching multiple emojis in sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching multiple emojis in sequence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u{1F600}\u{1F603}/u; // 😀😃
@@ -2281,12 +2281,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0057
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0057
-     * @tc.name testRegTest0057
-     * @tc.desc Test matching repeated optional groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching repeated optional groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(ab?)+/;
@@ -2297,12 +2297,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0058
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0058
-     * @tc.name testRegTest0058
-     * @tc.desc Test non-greedy match with nested tags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test non-greedy match with nested tags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /<.*?>/;
@@ -2311,12 +2311,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0059
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0059
-     * @tc.name testRegTest0059
-     * @tc.desc Test multi-line string with anchors and /m flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test multi-line string with anchors and /m flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^foo$/m;
@@ -2325,12 +2325,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0060
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0060
-     * @tc.name testRegTest0060
-     * @tc.desc Test matching escaped special characters multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching escaped special characters multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /[\$\^\*\+\?\.\(\)]+/;
@@ -2343,12 +2343,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0061
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0061
-     * @tc.name testRegTest0061
-     * @tc.desc Test consecutive global matches with reset lastIndex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test consecutive global matches with reset lastIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/g;
@@ -2360,12 +2360,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0062
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0062
-     * @tc.name testRegTest0062
-     * @tc.desc Test matching line start with ^ without /m flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching line start with ^ without /m flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^bar/;
@@ -2374,12 +2374,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0063
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0063
-     * @tc.name testRegTest0063
-     * @tc.desc Test matching line end with $ without /m flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching line end with $ without /m flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo$/;
@@ -2388,12 +2388,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0064
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0064
-     * @tc.name testRegTest0064
-     * @tc.desc Test string with zero-width non-breaking spaces
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test string with zero-width non-breaking spaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u00A0/;
@@ -2404,12 +2404,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0065
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0065
-     * @tc.name testRegTest0065
-     * @tc.desc Test matching multiple consecutive newlines
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching multiple consecutive newlines
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\n{2,}/;
@@ -2422,12 +2422,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0066
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0066
-     * @tc.name testRegTest0066
-     * @tc.desc Test positive lookbehind with multiple characters and /u flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test positive lookbehind with multiple characters and /u flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<=\u{1F600})bar/u; // 😀bar
@@ -2436,12 +2436,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0067
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0067
-     * @tc.name testRegTest0067
-     * @tc.desc Test negative lookbehind with multiple characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test negative lookbehind with multiple characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<!foo)bar/;
@@ -2450,12 +2450,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0068
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0068
-     * @tc.name testRegTest0068
-     * @tc.desc Test multi-line string with multiple empty lines
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test multi-line string with multiple empty lines
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^$/gm;
@@ -2464,12 +2464,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0069
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0069
-     * @tc.name testRegTest0069
-     * @tc.desc Test matching multiple repeated Unicode characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching multiple repeated Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(\u{1F602})+/u; // 😂
@@ -2480,12 +2480,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0070
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0070
-     * @tc.name testRegTest0070
-     * @tc.desc Test zero-width positive lookahead with multiple characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test zero-width positive lookahead with multiple characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo(?=barbaz)/;
@@ -2494,12 +2494,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0071
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0071
-     * @tc.name testRegTest0071
-     * @tc.desc Test zero-width negative lookahead with multiple characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test zero-width negative lookahead with multiple characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo(?!barbaz)/;
@@ -2508,12 +2508,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0072
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0072
-     * @tc.name testRegTest0072
-     * @tc.desc Test matching long string with multiple patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching long string with multiple patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo.*bar/;
@@ -2522,12 +2522,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0073
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0073
-     * @tc.name testRegTest0073
-     * @tc.desc Test matching string with mixed whitespace and non-whitespace characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching string with mixed whitespace and non-whitespace characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\S\s\S/;
@@ -2536,12 +2536,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0074
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0074
-     * @tc.name testRegTest0074
-     * @tc.desc Test matching string containing multiple escaped special characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching string containing multiple escaped special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /[\^\$\*\+\?\.\(\)\[\]\{\}\\]+/;
@@ -2550,12 +2550,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0075
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0075
-     * @tc.name testRegTest0075
-     * @tc.desc Test matching very long empty string repeated patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test matching very long empty string repeated patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a?)*b/;
@@ -2568,12 +2568,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0076
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0076
-     * @tc.name testRegTest0076
-     * @tc.desc Test ASCII lowercase to uppercase matching using /i flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test ASCII lowercase to uppercase matching using /i flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /a/i;
@@ -2583,12 +2583,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0077
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0077
-     * @tc.name testRegTest0077
-     * @tc.desc Test Unicode Latin-1 Supplement characters with different cases
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Unicode Latin-1 Supplement characters with different cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u00C7/i; // Ç
@@ -2598,12 +2598,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0078
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0078
-     * @tc.name testRegTest0078
-     * @tc.desc Test Unicode with combining diacritical marks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Unicode with combining diacritical marks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /e\u0301/i; // e + ´ (é)
@@ -2613,12 +2613,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0079
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0079
-     * @tc.name testRegTest0079
-     * @tc.desc Test full-width ASCII characters uppercase/lowercase matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test full-width ASCII characters uppercase/lowercase matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /Ａ/i; // Full-width A
@@ -2628,12 +2628,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0080
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0080
-     * @tc.name testRegTest0080
-     * @tc.desc Test Unicode Greek uppercase/lowercase matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Unicode Greek uppercase/lowercase matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /σ/i; // Greek small sigma
@@ -2643,12 +2643,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0081
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0081
-     * @tc.name testRegTest0081
-     * @tc.desc Test Cyrillic uppercase/lowercase matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Cyrillic uppercase/lowercase matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /д/i; // Cyrillic small letter de
@@ -2659,12 +2659,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0082
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0082
-     * @tc.name testRegTest0082
-     * @tc.desc Test Latin Extended-A uppercase/lowercase matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Latin Extended-A uppercase/lowercase matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /Ĥ/i; // Latin Extended-A capital H with circumflex
@@ -2674,12 +2674,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0083
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0083
-     * @tc.name testRegTest0083
-     * @tc.desc Test Latin Extended-A small letter with acute accent
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Latin Extended-A small letter with acute accent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /Ō/i; // Latin capital O with macron
@@ -2689,12 +2689,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0084
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0084
-     * @tc.name testRegTest0084
-     * @tc.desc Test Latin Extended-B uppercase/lowercase matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Latin Extended-B uppercase/lowercase matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /Ȳ/i; // Latin capital Y with macron
@@ -2704,12 +2704,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0085
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0085
-     * @tc.name testRegTest0085
-     * @tc.desc Test combination of letter + combining diacritical mark with /i flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test combination of letter + combining diacritical mark with /i flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /a\u030A/i; // a + ring above
@@ -2719,12 +2719,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0091
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0091
-     * @tc.name testRegTest0091
-     * @tc.desc Test RegExp.test()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test RegExp.test()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('^.$', 'u');
@@ -2746,12 +2746,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0092
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_0092
-     * @tc.name testRegTest0092
-     * @tc.desc Test RegExp.test()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test RegExp.test()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const re = new RegExp('^.$', 'um');
@@ -2772,12 +2772,12 @@ export default function RegExpTest001() {
       expect(re.test("\uDFFF")).assertEqual(true);
     });
     /**
+     * @tc.name   testRegExec0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0001
-     * @tc.name testRegExec0001
-     * @tc.desc Verify exec() returns full match, capture groups, index, input and groups properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() returns full match, capture groups, index, input and groups properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(\w+)\s(\w+)/;
@@ -2792,12 +2792,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0002
-     * @tc.name testRegExec0002
-     * @tc.desc Verify exec() returns null and resets lastIndex to 0 when no match is found with global flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() returns null and resets lastIndex to 0 when no match is found with global flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/g;
@@ -2809,12 +2809,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0003
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0003
-     * @tc.name testRegExec0003
-     * @tc.desc Verify exec() iterates through all matches with global flag and updates lastIndex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() iterates through all matches with global flag and updates lastIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/g;
@@ -2832,12 +2832,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0004
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0004
-     * @tc.name testRegExec0004
-     * @tc.desc Verify exec() without global flag always returns the same match and lastIndex remains 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() without global flag always returns the same match and lastIndex remains 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/;
@@ -2851,12 +2851,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0005
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0005
-     * @tc.name testRegExec0005
-     * @tc.desc Verify capture groups return undefined when unmatched, and last group overwrites previous
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify capture groups return undefined when unmatched, and last group overwrites previous
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(ab)|(cd)/;
@@ -2874,12 +2874,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0006
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0006
-     * @tc.name testRegExec0006
-     * @tc.desc Verify exec() returns named capture groups correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() returns named capture groups correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<first>\w+)\s(?<second>\w+)/;
@@ -2892,12 +2892,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0007
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0007
-     * @tc.name testRegExec0007
-     * @tc.desc Verify exec() with sticky flag /y only matches at lastIndex position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() with sticky flag /y only matches at lastIndex position
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/y;
@@ -2912,12 +2912,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0008
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0008
-     * @tc.name testRegExec0008
-     * @tc.desc Verify exec() with Unicode flag /u correctly matches surrogate pairs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() with Unicode flag /u correctly matches surrogate pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u{1F600}/u; // 😀
@@ -2928,12 +2928,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0009
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0009
-     * @tc.name testRegExec0009
-     * @tc.desc Verify exec() returns null after last match when using global flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() returns null after last match when using global flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/g;
@@ -2946,12 +2946,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0010
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0010
-     * @tc.name testRegExec0010
-     * @tc.desc Verify exec() handles zero-width match correctly and advances lastIndex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() handles zero-width match correctly and advances lastIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?=a)/g; // zero-width positive lookahead
@@ -2968,12 +2968,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0011
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0011
-     * @tc.name testRegExec0011
-     * @tc.desc Verify exec() respects multiline flag /m for ^ and $
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() respects multiline flag /m for ^ and $
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^foo/m;
@@ -2984,12 +2984,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0012
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0012
-     * @tc.name testRegExec0012
-     * @tc.desc Verify exec() correctly returns undefined for unmatched optional groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly returns undefined for unmatched optional groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a)?b/;
@@ -3000,12 +3000,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0013
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0013
-     * @tc.name testRegExec0013
-     * @tc.desc Verify exec() updates lastIndex correctly after partial match with /y flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() updates lastIndex correctly after partial match with /y flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /ab/y;
@@ -3020,12 +3020,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0014
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0014
-     * @tc.name testRegExec0014
-     * @tc.desc Verify exec() works with nested capturing groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() works with nested capturing groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a(b(c)))/;
@@ -3037,12 +3037,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0015
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0015
-     * @tc.name testRegExec0015
-     * @tc.desc Verify exec() returns last matched group value when groups repeat with quantifiers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() returns last matched group value when groups repeat with quantifiers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(ab)+/;
@@ -3052,12 +3052,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0016
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0016
-     * @tc.name testRegExec0016
-     * @tc.desc Verify exec() ignores non-capturing groups (?:...) in result indices
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() ignores non-capturing groups (?:...) in result indices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?:foo)(bar)/;
@@ -3068,12 +3068,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0018
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0018
-     * @tc.name testRegExec0018
-     * @tc.desc Verify exec() respects dotAll flag /s so '.' matches newline characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() respects dotAll flag /s so '.' matches newline characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo.bar/s;
@@ -3083,12 +3083,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0019
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0019
-     * @tc.name testRegExec0019
-     * @tc.desc Verify exec() returns correct index when using word boundary \\b
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() returns correct index when using word boundary \\b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\bword\b/;
@@ -3099,12 +3099,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0020
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0020
-     * @tc.name testRegExec0020
-     * @tc.desc Verify exec() returns null for non-word-boundary \\B when no match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() returns null for non-word-boundary \\B when no match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\Bbar/;
@@ -3114,12 +3114,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0021
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0021
-     * @tc.name testRegExec0021
-     * @tc.desc Verify exec() matches multiple times with global flag and resets correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() matches multiple times with global flag and resets correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d+/g;
@@ -3133,12 +3133,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0022
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0022
-     * @tc.name testRegExec0022
-     * @tc.desc Verify exec() handles empty string input correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() handles empty string input correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /a*/;
@@ -3149,12 +3149,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0023
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0023
-     * @tc.name testRegExec0023
-     * @tc.desc Verify exec() with manual lastIndex adjustment can skip matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() with manual lastIndex adjustment can skip matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo/g;
@@ -3166,12 +3166,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0024
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0024
-     * @tc.name testRegExec0024
-     * @tc.desc Verify exec() returns correct match when pattern ends with lookbehind
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() returns correct match when pattern ends with lookbehind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<=foo)bar/;
@@ -3182,12 +3182,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0025
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0025
-     * @tc.name testRegExec0025
-     * @tc.desc Verify exec() handles backreference in pattern correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() handles backreference in pattern correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(ha)\1/;
@@ -3198,12 +3198,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0026
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0026
-     * @tc.name testRegExec0026
-     * @tc.desc Verify exec() correctly matches digits using character class \\d
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly matches digits using character class \\d
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d+/;
@@ -3214,12 +3214,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0027
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0027
-     * @tc.name testRegExec0027
-     * @tc.desc Verify exec() correctly matches whitespace using \\s
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly matches whitespace using \\s
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\s+/;
@@ -3229,12 +3229,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0028
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0028
-     * @tc.name testRegExec0028
-     * @tc.desc Verify exec() correctly handles alternation (|) operator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly handles alternation (|) operator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /cat|dog/;
@@ -3245,12 +3245,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0029
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0029
-     * @tc.name testRegExec0029
-     * @tc.desc Verify exec() works correctly with escaped special characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() works correctly with escaped special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\./;
@@ -3261,12 +3261,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0030
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0030
-     * @tc.name testRegExec0030
-     * @tc.desc Verify exec() correctly returns null for unmatched input
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly returns null for unmatched input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /xyz/;
@@ -3276,12 +3276,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0031
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0031
-     * @tc.name testRegExec0031
-     * @tc.desc Verify exec() works with RegExp constructed dynamically via new RegExp()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() works with RegExp constructed dynamically via new RegExp()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pattern = "foo\\d+";
@@ -3292,12 +3292,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0032
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0032
-     * @tc.name testRegExec0032
-     * @tc.desc Verify exec() correctly matches across multiple lines with multiline flag /m
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly matches across multiple lines with multiline flag /m
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^bar/m;
@@ -3308,12 +3308,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0033
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0033
-     * @tc.name testRegExec0033
-     * @tc.desc Verify exec() handles Unicode characters correctly without /u flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() handles Unicode characters correctly without /u flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /😀/;
@@ -3323,12 +3323,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0034
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0034
-     * @tc.name testRegExec0034
-     * @tc.desc Verify exec() handles Unicode surrogate pair correctly with /u flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() handles Unicode surrogate pair correctly with /u flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u{1F600}/u; // 😀
@@ -3338,12 +3338,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0035
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0035
-     * @tc.name testRegExec0035
-     * @tc.desc Verify exec() handles repeated capture groups correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() handles repeated capture groups correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a(b))+/;
@@ -3354,12 +3354,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0036
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0036
-     * @tc.name testRegExec0036
-     * @tc.desc Verify exec() handles zero-length matches correctly without infinite loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() handles zero-length matches correctly without infinite loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?=a)/g;
@@ -3374,12 +3374,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0037
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0037
-     * @tc.name testRegExec0037
-     * @tc.desc Verify exec() handles nested capture groups and indexes correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() handles nested capture groups and indexes correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /((foo)(bar))/;
@@ -3391,12 +3391,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0038
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0038
-     * @tc.name testRegExec0038
-     * @tc.desc Verify exec() handles alternation with group capturing correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() handles alternation with group capturing correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(foo)|(bar)/;
@@ -3407,12 +3407,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0039
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0039
-     * @tc.name testRegExec0039
-     * @tc.desc Verify exec() handles case-insensitive matching with /i flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() handles case-insensitive matching with /i flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /hello/i;
@@ -3422,12 +3422,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0040
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0040
-     * @tc.name testRegExec0040
-     * @tc.desc Verify exec() correctly handles lookahead assertion (?=)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly handles lookahead assertion (?=)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d(?=px)/;
@@ -3437,12 +3437,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0041
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0041
-     * @tc.name testRegExec0041
-     * @tc.desc Verify exec() correctly handles negative lookahead (?!)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly handles negative lookahead (?!)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo(?!bar)/;
@@ -3453,12 +3453,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0042
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0042
-     * @tc.name testRegExec0042
-     * @tc.desc Verify exec() correctly matches beginning-of-string anchor ^
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly matches beginning-of-string anchor ^
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^foo/;
@@ -3469,12 +3469,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0043
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0043
-     * @tc.name testRegExec0043
-     * @tc.desc Verify exec() correctly matches end-of-string anchor $
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly matches end-of-string anchor $
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /bar$/;
@@ -3484,12 +3484,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0044
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0044
-     * @tc.name testRegExec0044
-     * @tc.desc Verify exec() with global flag preserves state between executions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() with global flag preserves state between executions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\w+/g;
@@ -3501,12 +3501,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0045
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0045
-     * @tc.name testRegExec0045
-     * @tc.desc Verify exec() resets lastIndex to 0 after full global scan
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() resets lastIndex to 0 after full global scan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d/g;
@@ -3516,12 +3516,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0046
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0046
-     * @tc.name testRegExec0046
-     * @tc.desc Verify exec() handles special backslash escape sequences like \\t correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() handles special backslash escape sequences like \\t correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\t/;
@@ -3531,12 +3531,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0047
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0047
-     * @tc.name testRegExec0047
-     * @tc.desc Verify exec() correctly matches non-digit character \\D
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly matches non-digit character \\D
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\D/;
@@ -3546,12 +3546,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0048
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0048
-     * @tc.name testRegExec0048
-     * @tc.desc Verify exec() correctly matches non-word character \\W
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly matches non-word character \\W
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\W/;
@@ -3561,12 +3561,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0049
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0049
-     * @tc.name testRegExec0049
-     * @tc.desc Verify exec() correctly matches multiple groups and maintains order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly matches multiple groups and maintains order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(\d+)-(\w+)/;
@@ -3577,12 +3577,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0050
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0050
-     * @tc.name testRegExec0050
-     * @tc.desc Verify exec() correctly matches string with quantifiers {n,m}
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() correctly matches string with quantifiers {n,m}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /a{2,3}/;
@@ -3592,12 +3592,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0051
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0051
-     * @tc.name testRegExec0051
-     * @tc.desc Test named capturing groups in exec() result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test named capturing groups in exec() result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<area>\d{3})-(?<num>\d{4})/;
@@ -3607,12 +3607,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0052
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0052
-     * @tc.name testRegExec0052
-     * @tc.desc Test non-capturing group (?:...) not stored in result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test non-capturing group (?:...) not stored in result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?:foo)(bar)/;
@@ -3622,12 +3622,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0053
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0053
-     * @tc.name testRegExec0053
-     * @tc.desc Test exec() with backreference \\1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with backreference \\1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(\w+)\s\1/;
@@ -3636,12 +3636,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0054
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0054
-     * @tc.name testRegExec0054
-     * @tc.desc Test zero-width positive lookahead (?=...) pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test zero-width positive lookahead (?=...) pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d(?=\D)/;
@@ -3650,12 +3650,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0055
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0055
-     * @tc.name testRegExec0055
-     * @tc.desc Test zero-width negative lookahead (?!...) pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test zero-width negative lookahead (?!...) pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d(?!\d)/;
@@ -3664,12 +3664,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0056
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0056
-     * @tc.name testRegExec0056
-     * @tc.desc Test exec() with nested capturing groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with nested capturing groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a(b(c)))/;
@@ -3680,12 +3680,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0057
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0057
-     * @tc.name testRegExec0057
-     * @tc.desc Test exec() with multiline flag /m and ^ anchor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with multiline flag /m and ^ anchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^foo/m;
@@ -3694,12 +3694,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0058
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0058
-     * @tc.name testRegExec0058
-     * @tc.desc Test exec() with unicode flag /u matching surrogate pairs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with unicode flag /u matching surrogate pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u{1F600}/u; // 😀 emoji
@@ -3708,12 +3708,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0059
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0059
-     * @tc.name testRegExec0059
-     * @tc.desc Test exec() with hexadecimal escape \\xNN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with hexadecimal escape \\xNN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\x41/; // 'A'
@@ -3722,12 +3722,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0060
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0060
-     * @tc.name testRegExec0060
-     * @tc.desc Test exec() with escaped backslash and digits
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with escaped backslash and digits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\\d/;
@@ -3736,12 +3736,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0061
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0061
-     * @tc.name testRegExec0061
-     * @tc.desc Test exec() with alternation pattern (a|b)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with alternation pattern (a|b)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(cat|dog)/;
@@ -3750,12 +3750,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0062
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0062
-     * @tc.name testRegExec0062
-     * @tc.desc Test exec() with optional group (ab)?
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with optional group (ab)?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(ab)?c/;
@@ -3764,12 +3764,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0063
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0063
-     * @tc.name testRegExec0063
-     * @tc.desc Test exec() with multiple matches under global flag /g
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with multiple matches under global flag /g
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d+/g;
@@ -3781,12 +3781,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0064
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0064
-     * @tc.name testRegExec0064
-     * @tc.desc Test exec() with lastIndex reset after non-match under /g
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with lastIndex reset after non-match under /g
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d+/g;
@@ -3795,12 +3795,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0065
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0065
-     * @tc.name testRegExec0065
-     * @tc.desc Test exec() with sticky flag /y at specific index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with sticky flag /y at specific index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d+/y;
@@ -3810,12 +3810,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0066
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0066
-     * @tc.name testRegExec0066
-     * @tc.desc Test exec() when regex matches at string end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() when regex matches at string end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /end$/;
@@ -3824,12 +3824,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0067
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0067
-     * @tc.name testRegExec0067
-     * @tc.desc Test exec() with \n newline character
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with \n newline character
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /line\nnext/;
@@ -3838,12 +3838,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0068
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0068
-     * @tc.name testRegExec0068
-     * @tc.desc Test exec() returning null for no match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() returning null for no match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /xyz/;
@@ -3852,12 +3852,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0069
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0069
-     * @tc.name testRegExec0069
-     * @tc.desc Test exec() with escaped parentheses \\( and \\)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with escaped parentheses \\( and \\)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\(abc\)/;
@@ -3866,12 +3866,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0070
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0070
-     * @tc.name testRegExec0070
-     * @tc.desc Test exec() with complex nested alternation pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with complex nested alternation pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(foo|bar(baz)?)/;
@@ -3880,12 +3880,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0071
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0071
-     * @tc.name testRegExec0071
-     * @tc.desc Test exec() with very long string input
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with very long string input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const longStr = "a".repeat(10000) + "pattern";
@@ -3895,12 +3895,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0072
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0072
-     * @tc.name testRegExec0072
-     * @tc.desc Test exec() with empty string input
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with empty string input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /.*/;
@@ -3909,12 +3909,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0073
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0073
-     * @tc.name testRegExec0073
-     * @tc.desc Test exec() with RegExp.lastIndex manually set out of range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with RegExp.lastIndex manually set out of range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d+/g;
@@ -3924,12 +3924,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0074
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0074
-     * @tc.name testRegExec0074
-     * @tc.desc Test exec() with multiline + global flags interaction
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with multiline + global flags interaction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^\w+/gm;
@@ -3941,12 +3941,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0076
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0076
-     * @tc.name testRegExec0076
-     * @tc.desc Test exec() with non-string coercible input (boolean)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with non-string coercible input (boolean)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testRegExec0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const regex = /true/;
@@ -3955,12 +3955,12 @@ export default function RegExpTest001() {
     // });
 
     /**
+     * @tc.name   testRegExec0077
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0077
-     * @tc.name testRegExec0077
-     * @tc.desc Test exec() with complex Unicode string (grapheme clusters)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with complex Unicode string (grapheme clusters)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u{1F469}\u{200D}\u{1F467}/u; // 👩‍👧 family emoji
@@ -3969,12 +3969,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0078
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0078
-     * @tc.name testRegExec0078
-     * @tc.desc Test exec() with sticky flag and newline boundary
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with sticky flag and newline boundary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\w+/y;
@@ -3985,12 +3985,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0079
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0079
-     * @tc.name testRegExec0079
-     * @tc.desc Test exec() returning capture groups even if unmatched (undefined)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() returning capture groups even if unmatched (undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(foo)?(bar)/;
@@ -4000,12 +4000,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0080
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0080
-     * @tc.name testRegExec0080
-     * @tc.desc Test exec() with multiple optional capturing groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with multiple optional capturing groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a)?(b)?(c)?/;
@@ -4016,12 +4016,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0081
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0081
-     * @tc.name testRegExec0081
-     * @tc.desc Test exec() with capture group referencing out-of-order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with capture group referencing out-of-order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(foo)(bar)?\1/;
@@ -4030,12 +4030,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0082
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0082
-     * @tc.name testRegExec0082
-     * @tc.desc Test exec() with whitespace and \\s pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with whitespace and \\s pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\s+/;
@@ -4044,12 +4044,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0083
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0083
-     * @tc.name testRegExec0083
-     * @tc.desc Test exec() with multiline and $ anchor at end of each line
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with multiline and $ anchor at end of each line
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /end$/gm;
@@ -4061,12 +4061,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0084
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0084
-     * @tc.name testRegExec0084
-     * @tc.desc Test exec() with alternation and Unicode flag /u
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with alternation and Unicode flag /u
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(\u{41}|A)/u;
@@ -4075,12 +4075,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0085
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0085
-     * @tc.name testRegExec0085
-     * @tc.desc Test exec() with capture group repeating pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with capture group repeating pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(ab)+/;
@@ -4089,12 +4089,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0086
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0086
-     * @tc.name testRegExec0086
-     * @tc.desc Test exec() with escaped special characters \\* and \\+
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with escaped special characters \\* and \\+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\*/;
@@ -4103,12 +4103,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0087
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0087
-     * @tc.name testRegExec0087
-     * @tc.desc Test exec() with invalid UTF-16 surrogate halves still working under /u flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with invalid UTF-16 surrogate halves still working under /u flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\uD800/u;
@@ -4117,12 +4117,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0088
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0088
-     * @tc.name testRegExec0088
-     * @tc.desc Test exec() with regex constructed via RegExp constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with regex constructed via RegExp constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = new RegExp("foo", "g");
@@ -4131,12 +4131,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0090
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0090
-     * @tc.name testRegExec0090
-     * @tc.desc Test exec() with empty capturing group () returning empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with empty capturing group () returning empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /()/;
@@ -4145,12 +4145,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0091
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0091
-     * @tc.name testRegExec0091
-     * @tc.desc Test exec() with multiple backtracking groups (performance edge)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with multiple backtracking groups (performance edge)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a+)+b/;
@@ -4159,12 +4159,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0092
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0092
-     * @tc.name testRegExec0092
-     * @tc.desc Test exec() with sticky flag /y across multiple calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with sticky flag /y across multiple calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\w+/y;
@@ -4177,12 +4177,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0093
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0093
-     * @tc.name testRegExec0093
-     * @tc.desc Test exec() with global + unicode flags and surrogate pairs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with global + unicode flags and surrogate pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u{1F600}/gu; // 😀 emoji
@@ -4194,12 +4194,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0094
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0094
-     * @tc.name testRegExec0094
-     * @tc.desc Test exec() with empty string and global flag /g
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with empty string and global flag /g
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /()/g;
@@ -4208,12 +4208,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0095
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0095
-     * @tc.name testRegExec0095
-     * @tc.desc Test exec() with optional and nested groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with optional and nested groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /((a)b?)?c/;
@@ -4223,12 +4223,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0096
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0096
-     * @tc.name testRegExec0096
-     * @tc.desc Test exec() with repeated empty capturing groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with repeated empty capturing groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /()()()()/;
@@ -4240,12 +4240,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0097
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0097
-     * @tc.name testRegExec0097
-     * @tc.desc Test exec() with zero-width lookbehind (?<=...) pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with zero-width lookbehind (?<=...) pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<=\$)\d+/;
@@ -4254,12 +4254,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0098
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0098
-     * @tc.name testRegExec0098
-     * @tc.desc Test exec() with negative lookbehind (?<!...) pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with negative lookbehind (?<!...) pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<!\$)\d+/;
@@ -4268,12 +4268,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0099
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0099
-     * @tc.name testRegExec0099
-     * @tc.desc Test exec() with alternating optional patterns for edge matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with alternating optional patterns for edge matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(foo)?(bar)?/;
@@ -4283,12 +4283,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0100
-     * @tc.name testRegExec0100
-     * @tc.desc Test exec() with very large number of repeated groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with very large number of repeated groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a?){100}/;
@@ -4297,12 +4297,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0101
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0101
-     * @tc.name testRegExec0101
-     * @tc.desc Test exec() with \b word boundary
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with \b word boundary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\bcat\b/;
@@ -4311,12 +4311,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0102
-     * @tc.name testRegExec0102
-     * @tc.desc Test exec() with zero-width matches at string start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with zero-width matches at string start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^/;
@@ -4325,12 +4325,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0103
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0103
-     * @tc.name testRegExec0103
-     * @tc.desc Test exec() with zero-width matches at string end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with zero-width matches at string end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /$/;
@@ -4339,12 +4339,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0104
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0104
-     * @tc.name testRegExec0104
-     * @tc.desc Test exec() with combination of /g /y flags in sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with combination of /g /y flags in sequence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\w+/gy;
@@ -4357,12 +4357,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0105
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0105
-     * @tc.name testRegExec0105
-     * @tc.desc Test exec() with multiple adjacent zero-width assertions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with multiple adjacent zero-width assertions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?=a)(?<=^)/;
@@ -4371,12 +4371,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0106
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0106
-     * @tc.name testRegExec0106
-     * @tc.desc Test exec() with long Unicode string including surrogate pairs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with long Unicode string including surrogate pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\uD83D\uDE80/; // 🚀 rocket emoji
@@ -4385,12 +4385,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0107
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0107
-     * @tc.name testRegExec0107
-     * @tc.desc Test exec() with capture groups followed by optional match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with capture groups followed by optional match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a)?b/;
@@ -4400,12 +4400,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0108
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0108
-     * @tc.name testRegExec0108
-     * @tc.desc Test exec() with nested alternation and empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with nested alternation and empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(foo|)/;
@@ -4414,12 +4414,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0109
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0109
-     * @tc.name testRegExec0109
-     * @tc.desc Test exec() with overlapping matches and global flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with overlapping matches and global flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?=(\d))/g;
@@ -4432,12 +4432,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0110
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0110
-     * @tc.name testRegExec0110
-     * @tc.desc Test exec() with very long repeated optional groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with very long repeated optional groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(x?){500}/;
@@ -4446,12 +4446,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0111
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0111
-     * @tc.name testRegExec0111
-     * @tc.desc Test exec() with multiline flag /m matching start of each line
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with multiline flag /m matching start of each line
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /^foo/m;
@@ -4461,12 +4461,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0112
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0112
-     * @tc.name testRegExec0112
-     * @tc.desc Test exec() with global flag and persistent lastIndex across calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with global flag and persistent lastIndex across calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d+/g;
@@ -4479,12 +4479,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0113
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0113
-     * @tc.name testRegExec0113
-     * @tc.desc Test exec() with cross-line match using dotAll flag /s
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with cross-line match using dotAll flag /s
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /foo.bar/s;
@@ -4493,12 +4493,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0114
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0114
-     * @tc.name testRegExec0114
-     * @tc.desc Test exec() with unmatched groups returning undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with unmatched groups returning undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a)(b)?(c)/;
@@ -4507,12 +4507,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0115
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0115
-     * @tc.name testRegExec0115
-     * @tc.desc Test exec() with lookahead containing alternation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with lookahead containing alternation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /a(?=b|c)/;
@@ -4521,12 +4521,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0116
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0116
-     * @tc.name testRegExec0116
-     * @tc.desc Test exec() with nested named capture groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with nested named capture groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<outer>(?<inner>a)b)/;
@@ -4536,12 +4536,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0117
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0117
-     * @tc.name testRegExec0117
-     * @tc.desc Test exec() with reference to previous named capture
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with reference to previous named capture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<x>a)\k<x>/;
@@ -4550,12 +4550,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0118
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0118
-     * @tc.name testRegExec0118
-     * @tc.desc Test exec() with nested optional lookahead and lookbehind
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with nested optional lookahead and lookbehind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?<=\d)(?=\d)/;
@@ -4564,12 +4564,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0120
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0120
-     * @tc.name testRegExec0120
-     * @tc.desc Test exec() with complex alternation containing zero-width matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with complex alternation containing zero-width matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(x|(?=y))/;
@@ -4578,12 +4578,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0121
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0121
-     * @tc.name testRegExec0121
-     * @tc.desc Test exec() with string containing combining Unicode marks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with string containing combining Unicode marks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u0065\u0301/; // "é" as composed sequence
@@ -4592,12 +4592,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0122
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0122
-     * @tc.name testRegExec0122
-     * @tc.desc Test exec() with surrogate pairs and /u flag disabled
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with surrogate pairs and /u flag disabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\uD83D/;
@@ -4606,12 +4606,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0124
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0124
-     * @tc.name testRegExec0124
-     * @tc.desc Test exec() with nested repetition and optional patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with nested repetition and optional patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /((a)?b?)+/;
@@ -4620,12 +4620,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0125
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0125
-     * @tc.name testRegExec0125
-     * @tc.desc Test exec() with large input and short match near end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with large input and short match near end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "x".repeat(10000) + "end";
@@ -4635,12 +4635,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0126
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0126
-     * @tc.name testRegExec0126
-     * @tc.desc Test exec() with alternation containing optional empty branches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with alternation containing optional empty branches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(foo| |bar)/;
@@ -4649,12 +4649,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0127
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0127
-     * @tc.name testRegExec0127
-     * @tc.desc Test exec() with overlapping Unicode sequences and /u flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with overlapping Unicode sequences and /u flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\u{1F680}/u; // 🚀
@@ -4663,12 +4663,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0128
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0128
-     * @tc.name testRegExec0128
-     * @tc.desc Test exec() when regex.lastIndex exceeds string length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() when regex.lastIndex exceeds string length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /a/g;
@@ -4678,12 +4678,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0129
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0129
-     * @tc.name testRegExec0129
-     * @tc.desc Test exec() with nested backreferences inside alternation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with nested backreferences inside alternation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a)\1|b/;
@@ -4692,12 +4692,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0130
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0130
-     * @tc.name testRegExec0130
-     * @tc.desc Test exec() with escaped special characters in character class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with escaped special characters in character class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /[.*+?^${}()|[\]\\]/;
@@ -4706,12 +4706,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0131
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0131
-     * @tc.name testRegExec0131
-     * @tc.desc Test exec() with lastIndex reset after no match in global regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with lastIndex reset after no match in global regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d/g;
@@ -4722,36 +4722,36 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0133
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0133
-     * @tc.name testRegExec0133
-     * @tc.desc Test exec() called via call() with non-string input (number)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() called via call() with non-string input (number)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegExecJs0133()).assertEqual("456");
     });
 
     /**
+     * @tc.name   testRegExec0134
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0134
-     * @tc.name testRegExec0134
-     * @tc.desc Test exec() called via call() with boolean input
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() called via call() with boolean input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testRegExecJs0134()).assertEqual("true");
     });
 
     /**
+     * @tc.name   testRegExec0135
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0135
-     * @tc.name testRegExec0135
-     * @tc.desc Test exec() on string with multiple overlapping matches using global flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() on string with multiple overlapping matches using global flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?=(\d))/g;
@@ -4764,12 +4764,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0136
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0136
-     * @tc.name testRegExec0136
-     * @tc.desc Test exec() on empty string with optional groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() on empty string with optional groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a)?(b)?/;
@@ -4779,12 +4779,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0137
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0137
-     * @tc.name testRegExec0137
-     * @tc.desc Test exec() with string containing multiple Unicode combining marks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with string containing multiple Unicode combining marks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /e\u0301/;
@@ -4793,12 +4793,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0138
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0138
-     * @tc.name testRegExec0138
-     * @tc.desc Test exec() on string with extremely long repeated pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() on string with extremely long repeated pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(ab){50}/;
@@ -4808,12 +4808,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0139
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0139
-     * @tc.name testRegExec0139
-     * @tc.desc Test exec() with lastIndex set to middle of match (global regex)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with lastIndex set to middle of match (global regex)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\w+/g;
@@ -4824,12 +4824,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0141
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0141
-     * @tc.name testRegExec0141
-     * @tc.desc Test exec() with nested optional groups followed by mandatory character
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with nested optional groups followed by mandatory character
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /((a)?b)c/;
@@ -4839,12 +4839,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0142
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0142
-     * @tc.name testRegExec0142
-     * @tc.desc Test exec() with string containing only zero-width matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with string containing only zero-width matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?=a)/;
@@ -4853,12 +4853,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0143
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0143
-     * @tc.name testRegExec0143
-     * @tc.desc Test exec() with multiple consecutive empty optional groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with multiple consecutive empty optional groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /()()()/;
@@ -4869,12 +4869,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0144
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0144
-     * @tc.name testRegExec0144
-     * @tc.desc Test exec() with global regex and input string shorter than lastIndex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with global regex and input string shorter than lastIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\w+/g;
@@ -4884,12 +4884,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0145
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0145
-     * @tc.name testRegExec0145
-     * @tc.desc Test exec() with nested alternation including empty branches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with nested alternation including empty branches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(x|y||)/;
@@ -4898,12 +4898,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0146
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0146
-     * @tc.name testRegExec0146
-     * @tc.desc Test exec() with multiple zero-width assertions in sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with multiple zero-width assertions in sequence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(?=a)(?<=^)/;
@@ -4912,12 +4912,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0147
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0147
-     * @tc.name testRegExec0147
-     * @tc.desc Test exec() with long string containing Unicode surrogate pairs at end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with long string containing Unicode surrogate pairs at end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\uD83D\uDE80$/; // 🚀 at string end
@@ -4927,12 +4927,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0148
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0148
-     * @tc.name testRegExec0148
-     * @tc.desc Test exec() with repeated capturing groups followed by optional match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() with repeated capturing groups followed by optional match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /(a?){5}b/;
@@ -4941,12 +4941,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0149
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0149
-     * @tc.name testRegExec0149
-     * @tc.desc Test exec() on string with repeated spaces and optional match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() on string with repeated spaces and optional match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /( )?b/;
@@ -4955,12 +4955,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0150
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0150
-     * @tc.name testRegExec0150
-     * @tc.desc Test exec() consistency with String.prototype.match() for global regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test exec() consistency with String.prototype.match() for global regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = /\d+/g;
@@ -4976,12 +4976,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0151
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0151
-     * @tc.name testRegExec0151
-     * @tc.desc Test RegExp.exec()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test RegExp.exec()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let re = new RegExp("(?:ab|cd)\\d?","g");
@@ -5001,12 +5001,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0152
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0152
-     * @tc.name testRegExec0152
-     * @tc.desc Test RegExp.exec()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test RegExp.exec()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let __the__raven = "	Once upon a midnight dreary, while I pondered weak and weary," +
@@ -5144,12 +5144,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0153
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0153
-     * @tc.name testRegExec0153
-     * @tc.desc Test RegExp.exec()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test RegExp.exec()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let __the__raven = "	Once upon a midnight dreary, while I pondered weak and weary," +
@@ -5288,12 +5288,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0154
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0154
-     * @tc.name testRegExec0154
-     * @tc.desc Test RegExp.exec()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test RegExp.exec()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let __the__raven = "	Once upon a midnight dreary, while I pondered weak and weary," +
@@ -5432,12 +5432,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0155
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0155
-     * @tc.name testRegExec0155
-     * @tc.desc Test RegExp.exec()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test RegExp.exec()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let __re = new RegExp("\\d+", "g");
@@ -5462,12 +5462,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0156
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0156
-     * @tc.name testRegExec0156
-     * @tc.desc Test RegExp.exec()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test RegExp.exec()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let __re = new RegExp("(\\d+)", "g");
@@ -5488,12 +5488,12 @@ export default function RegExpTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0157
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_0157
-     * @tc.name testRegExec0157
-     * @tc.desc Test RegExp.exec()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test RegExp.exec()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let __re = new RegExp("\\d+");

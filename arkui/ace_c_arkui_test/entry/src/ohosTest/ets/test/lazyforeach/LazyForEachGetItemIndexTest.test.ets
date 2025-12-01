@@ -29,13 +29,13 @@ export default function lazyForEachGetItemIndexTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETITEMINDEX_0100
-     * @tc.name       : testLazyForEachGetItemIndex001
-     * @tc.desc       : testing getItemIndex for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetItemIndex001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETITEMINDEX_0100
+     * @tc.desc   testing getItemIndex for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetItemIndex001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`lazyforeach/LazyForEachGetItemIndexTest`);
@@ -44,13 +44,13 @@ export default function lazyForEachGetItemIndexTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETITEMINDEX_0200
-     * @tc.name       : testLazyForEachGetItemIndex002
-     * @tc.desc       : testing getItemIndex for lazyForEach with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetItemIndex002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETITEMINDEX_0200
+     * @tc.desc   testing getItemIndex for lazyForEach with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetItemIndex002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachGetItemIndex002()).assertEqual(0)

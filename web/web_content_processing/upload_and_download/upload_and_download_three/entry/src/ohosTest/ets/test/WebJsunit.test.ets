@@ -65,10 +65,13 @@ export default function webJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_046
-     *tc.name onDownloadStart
-     *tc.desic Triggered when starting to download
+    /**
+     * @tc.name   onDownloadStart
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_046
+     * @tc.desc   onDownloadStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onDownloadStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnDownloadStart", 130390);

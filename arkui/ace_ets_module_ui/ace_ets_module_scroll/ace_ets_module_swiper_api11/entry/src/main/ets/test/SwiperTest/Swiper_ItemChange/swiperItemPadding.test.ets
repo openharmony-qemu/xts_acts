@@ -73,6 +73,14 @@ export default function swiperItemPadding() {
     //     * @tc.name      testSwiperItemSetPadding.
     //     * @tc.desc      Set swiper's  first item's  padding value ' 20 '.
     //     */
+    /**
+     * @tc.name   testSwiperItemSetPadding
+     * @tc.number testSwiperItemSetPadding
+     * @tc.desc   testSwiperItemSetPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //    it('testSwiperItemSetPadding', Level.LEVEL1, async  (done:Function)=> {
     //      console.info('new testSwiperItemSetPadding START');
     //      let strJson = getInspectorByKey('swiperItemPadding');

@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canvas功能完整示例</title>
-    <style>
-        .container {
-          display: flex;
-          justify-content: center; /* 水平居中 */
-          align-items: center;     /* 垂直居中 */
-          height: 100vh;           /* 占满整个视口高度 */
-        }
-    </style>
 </head>
+<style>
+    body {
+      display: flex;
+      justify-content: center; /* 水平居中 */
+      align-items: center;     /* 垂直居中 */
+      min-height: 100vh;      /* 确保页面高度至少为视口高度 */
+      margin: 0;
+}
+</style>
 <body>
-<div class="container">
-    <canvas id="basicCanvas" width="800" height="800"></canvas>
-</div>
-
-
+<canvas id="blankCanvas" width="800" height="800"></canvas>
 <script>
     // 1. 空白Canvas
-    const blankCanvas = document.getElementById('basicCanvas');
+    const blankCanvas = document.getElementById('blankCanvas');
     const blankCtx = blankCanvas.getContext('2d');
     blankCtx.fillStyle = '#f0f0f0';
     blankCtx.fillRect(0, 0, blankCanvas.width, blankCanvas.height);
@@ -30,7 +27,7 @@
     blankCtx.fillText('空白Canvas - 可用作绘图区域', 10, 20);
 
     // 2. 基本形状绘制
-    const basicCanvas = document.getElementById('basicCanvas');
+    const basicCanvas = document.getElementById('blankCanvas');
     const basicCtx = basicCanvas.getContext('2d');
 
     function drawBasicShapes() {
@@ -208,7 +205,7 @@
         const nextIndex = (currentIndex + 1) % colors.length;
         const nextColor = colors[nextIndex];
 
-        drawColor = nextColor.value;
+       drawColor = nextColor.value;
         interactiveCtx.strokeStyle = drawColor;
         colorDisplay.textContent = nextColor.name;
         colorDisplay.style.color = nextColor.value;

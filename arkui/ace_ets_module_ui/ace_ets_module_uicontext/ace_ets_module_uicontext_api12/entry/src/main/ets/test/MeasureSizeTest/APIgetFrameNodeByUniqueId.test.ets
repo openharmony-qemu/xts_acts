@@ -61,12 +61,12 @@ export default function APIgetFrameNodeByUniqueId() {
       console.info("APIgetFrameNodeByUniqueId after each called");
     })
     /**
+     * @tc.name   APIgetFrameNodeByUniqueId_0100
      * @tc.number api
-     * @tc.name APIgetFrameNodeByUniqueId_0100
-     * @tc.desc APIgetFrameNodeByUniqueId_0100
-     * @tc.size APIgetFrameNodeByUniqueId
-     * @tc.type UIContext
-     * @tc.level 2
+     * @tc.desc   APIgetFrameNodeByUniqueId_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIgetFrameNodeByUniqueId_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIgetFrameNodeByUniqueId_0100 START');

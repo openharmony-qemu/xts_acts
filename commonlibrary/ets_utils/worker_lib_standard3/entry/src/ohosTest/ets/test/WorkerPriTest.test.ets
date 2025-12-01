@@ -77,12 +77,12 @@ export default function workerPriTest() {
 
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_001
-     * @tc.name       : testWorkerError10100
-     * @tc.desc       : test worker total amount limited with ThreadWorkerPriority.HIGH
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError10100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_001
+     * @tc.desc   test worker total amount limited with ThreadWorkerPriority.HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError10100';
@@ -117,12 +117,12 @@ export default function workerPriTest() {
     })
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_002
-     * @tc.name       : testWorkerError10200
-     * @tc.desc       : test worker error with type parameter error
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError10200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_002
+     * @tc.desc   test worker error with type parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError10200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError10200';
@@ -145,12 +145,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_003
-     * @tc.name       : testWorkerError10300
-     * @tc.desc       : test worker error with ThreadWorkerPriority parameter undefined
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError10300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_003
+     * @tc.desc   test worker error with ThreadWorkerPriority parameter undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError10300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError10300';
@@ -172,12 +172,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_004
-     * @tc.name       : testWorkerError10400
-     * @tc.desc       : test worker error with ThreadWorkerPriority parameter undefined
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError10400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_004
+     * @tc.desc   test worker error with ThreadWorkerPriority parameter undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError10400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError10400';
@@ -199,12 +199,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_005
-     * @tc.name       : testWorkerError10500
-     * @tc.desc       : test worker error with ThreadWorkerPriority parameter undefined
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError10500
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_005
+     * @tc.desc   test worker error with ThreadWorkerPriority parameter undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError10500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError10500';
@@ -226,12 +226,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_006
-     * @tc.name       : testWorkerError10600
-     * @tc.desc       : test worker error with ThreadWorkerPriority parameter undefined
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError10600
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_006
+     * @tc.desc   test worker error with ThreadWorkerPriority parameter undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError10600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError10600';
@@ -253,12 +253,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_007
-     * @tc.name       : testWorkerError10700
-     * @tc.desc       : test worker error with ThreadWorkerPriority parameter undefined
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError10700
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_007
+     * @tc.desc   test worker error with ThreadWorkerPriority parameter undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError10700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError10700';
@@ -282,12 +282,12 @@ export default function workerPriTest() {
 
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_008
-     * @tc.name       : testWorkerError10800
-     * @tc.desc       : test worker should not have error with random parameter sequence
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError10800
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_008
+     * @tc.desc   test worker should not have error with random parameter sequence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError10800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError10800';
@@ -308,12 +308,12 @@ export default function workerPriTest() {
 
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_009
-     * @tc.name       : testWorkerError10900
-     * @tc.desc       : test worker EC 10200004 with ThreadWorkerPriority HIGH
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError10900
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_009
+     * @tc.desc   test worker EC 10200004 with ThreadWorkerPriority HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError10900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError10900';
@@ -345,12 +345,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_010
-     * @tc.name       : testWorkerError11000
-     * @tc.desc       : test worker EC 10200004 with ThreadWorkerPriority MEDIUM
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError11000
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_010
+     * @tc.desc   test worker EC 10200004 with ThreadWorkerPriority MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError11000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError11000';
@@ -382,12 +382,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_011
-     * @tc.name       : testWorkerError11100
-     * @tc.desc       : test worker EC 10200004 with ThreadWorkerPriority LOW
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError11100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_011
+     * @tc.desc   test worker EC 10200004 with ThreadWorkerPriority LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError11100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError11100';
@@ -419,12 +419,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_012
-     * @tc.name       : testWorkerError11200
-     * @tc.desc       : test worker EC 10200004 with ThreadWorkerPriority IDLE
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError11200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_012
+     * @tc.desc   test worker EC 10200004 with ThreadWorkerPriority IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError11200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError11200';
@@ -456,12 +456,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_013
-     * @tc.name       : testWorkerError11300
-     * @tc.desc       : test worker EC 10200006 with ThreadWorkerPriority HIGH
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError11300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_013
+     * @tc.desc   test worker EC 10200006 with ThreadWorkerPriority HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError11300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError11300';
@@ -498,12 +498,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_014
-     * @tc.name       : testWorkerError11400
-     * @tc.desc       : test worker EC 10200006 with ThreadWorkerPriority MEDIUM
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError11400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_014
+     * @tc.desc   test worker EC 10200006 with ThreadWorkerPriority MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError11400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError11400';
@@ -540,12 +540,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_015
-     * @tc.name       : testWorkerError11500
-     * @tc.desc       : test worker EC 10200006 with ThreadWorkerPriority LOW
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError11500
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_015
+     * @tc.desc   test worker EC 10200006 with ThreadWorkerPriority LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError11500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError11500';
@@ -582,12 +582,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_016
-     * @tc.name       : testWorkerError11600
-     * @tc.desc       : test worker EC 10200006 with ThreadWorkerPriority IDLE
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError11600
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_016
+     * @tc.desc   test worker EC 10200006 with ThreadWorkerPriority IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError11600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError11600';
@@ -624,12 +624,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_017
-     * @tc.name       : testWorkerError11700
-     * @tc.desc       : test worker EC 10200004- on interface with ThreadWorkerPriority HIGH
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError11700
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_017
+     * @tc.desc   test worker EC 10200004- on interface with ThreadWorkerPriority HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError11700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError11700';
@@ -660,12 +660,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_018
-     * @tc.name       : testWorkerError11800
-     * @tc.desc       : test worker EC 10200004- once interface with ThreadWorkerPriority IDLE
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError11800
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_018
+     * @tc.desc   test worker EC 10200004- once interface with ThreadWorkerPriority IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError11800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError11800';
@@ -696,12 +696,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_019
-     * @tc.name       : testWorkerError11900
-     * @tc.desc       : test worker EC 10200004- off interface with ThreadWorkerPriority LOW
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError11900
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_019
+     * @tc.desc   test worker EC 10200004- off interface with ThreadWorkerPriority LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError11900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError11900';
@@ -733,12 +733,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_020
-     * @tc.name       : testWorkerError12000
-     * @tc.desc       : test worker EC 10200004- registerGlobalCallObject interface with ThreadWorkerPriority MEDIUM
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError12000
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_020
+     * @tc.desc   test worker EC 10200004- registerGlobalCallObject interface with ThreadWorkerPriority MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError12000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError12000';
@@ -768,12 +768,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_021
-     * @tc.name       : testWorkerError12100
-     * @tc.desc       : test worker EC 10200004- unregisterGlobalCallObject interface with ThreadWorkerPriority HIGH
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWorkerError12100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_021
+     * @tc.desc   test worker EC 10200004- unregisterGlobalCallObject interface with ThreadWorkerPriority HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerError12100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testWorkerError12100';
@@ -804,12 +804,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_022
-     * @tc.name       : testWorkerError12200
-     * @tc.desc       : test worker EC 10200004- terminate interface with ThreadWorkerPriority HIGH
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError12200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_022
+     * @tc.desc   test worker EC 10200004- terminate interface with ThreadWorkerPriority HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError12200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError12200';
@@ -838,12 +838,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_023
-     * @tc.name       : testWorkerError12300
-     * @tc.desc       : test worker EC 10200004- addEventListener interface with ThreadWorkerPriority MEDIUM
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError12300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_023
+     * @tc.desc   test worker EC 10200004- addEventListener interface with ThreadWorkerPriority MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError12300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError12300';
@@ -874,12 +874,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_024
-     * @tc.name       : testWorkerError12400
-     * @tc.desc       : test worker EC 10200004- removeEventListener interface with ThreadWorkerPriority LOW
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError12400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_024
+     * @tc.desc   test worker EC 10200004- removeEventListener interface with ThreadWorkerPriority LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError12400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError12400';
@@ -911,12 +911,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_025
-     * @tc.name       : testWorkerError12500
-     * @tc.desc       : test worker EC 10200004- dispatchEvent interface with ThreadWorkerPriority IDLE
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError12500
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_025
+     * @tc.desc   test worker EC 10200004- dispatchEvent interface with ThreadWorkerPriority IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError12500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError12500';
@@ -947,12 +947,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_026
-     * @tc.name       : testWorkerError12600
-     * @tc.desc       : test worker EC 10200004- removeAllListener interface with ThreadWorkerPriority HIGH
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError12600
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_026
+     * @tc.desc   test worker EC 10200004- removeAllListener interface with ThreadWorkerPriority HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError12600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError12600';
@@ -987,12 +987,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_027
-     * @tc.name       : testWorkerError12700
-     * @tc.desc       : test worker EC 10200006- onmessage interface with ThreadWorkerPriority HIGH
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError12700
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_027
+     * @tc.desc   test worker EC 10200006- onmessage interface with ThreadWorkerPriority HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError12700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError12700';
@@ -1029,12 +1029,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_028
-     * @tc.name       : testWorkerError12800
-     * @tc.desc       : test worker EC 10200006- onmessage interface with ThreadWorkerPriority MEDIUM
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError12800
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_028
+     * @tc.desc   test worker EC 10200006- onmessage interface with ThreadWorkerPriority MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError12800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError12800';
@@ -1084,12 +1084,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_029
-     * @tc.name       : testWorkerError12900
-     * @tc.desc       : test worker EC 10200019 with ThreadWorkerPriority HIGH
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError12900
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_029
+     * @tc.desc   test worker EC 10200019 with ThreadWorkerPriority HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError12900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError12900';
@@ -1129,12 +1129,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_030
-     * @tc.name       : testWorkerError13000
-     * @tc.desc       : test worker EC 10200020 with ThreadWorkerPriority HIGH
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError13000
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_030
+     * @tc.desc   test worker EC 10200020 with ThreadWorkerPriority HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError13000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError13000';
@@ -1181,12 +1181,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_031
-     * @tc.name       : testWorkerError13100
-     * @tc.desc       : test worker EC 10200021 with ThreadWorkerPriority MEDIUM
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError13100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_031
+     * @tc.desc   test worker EC 10200021 with ThreadWorkerPriority MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError13100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError13100';
@@ -1241,12 +1241,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_032
-     * @tc.name       : testWorkerError13200
-     * @tc.desc       : test threadWorker constructor EC 10200007 with ThreadWorkerPriority HIGH
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError13200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_032
+     * @tc.desc   test threadWorker constructor EC 10200007 with ThreadWorkerPriority HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError13200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError13200';
@@ -1266,12 +1266,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_033
-     * @tc.name       : testWorkerError13300
-     * @tc.desc       : test threadWorker constructor EC 10200007 with ThreadWorkerPriority MEDIUM
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError13300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_033
+     * @tc.desc   test threadWorker constructor EC 10200007 with ThreadWorkerPriority MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError13300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError13300';
@@ -1291,12 +1291,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_034
-     * @tc.name       : testWorkerError13400
-     * @tc.desc       : test threadWorker constructor EC 10200007 with ThreadWorkerPriority LOW
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError13400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_034
+     * @tc.desc   test threadWorker constructor EC 10200007 with ThreadWorkerPriority LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError13400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError13400';
@@ -1316,12 +1316,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_035
-     * @tc.name       : testWorkerError13500
-     * @tc.desc       : test threadWorker constructor EC 10200007 with ThreadWorkerPriority IDLE
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerError13500
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_035
+     * @tc.desc   test threadWorker constructor EC 10200007 with ThreadWorkerPriority IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerError13500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerError13500';
@@ -1341,12 +1341,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_036
-     * @tc.name       : testWorkerConstructor1100
-     * @tc.desc       : test threadWorker constructor MEDIUM + IDLE communication together
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerConstructor1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_036
+     * @tc.desc   test threadWorker constructor MEDIUM + IDLE communication together
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerConstructor1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerConstructor1100';
@@ -1396,12 +1396,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_037
-     * @tc.name       : testWorkerConstructor1200
-     * @tc.desc       : test threadWorker constructor LOW + HIGH communication together
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerConstructor1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_037
+     * @tc.desc   test threadWorker constructor LOW + HIGH communication together
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerConstructor1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerConstructor1200';
@@ -1451,12 +1451,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_038
-     * @tc.name       : testWorkerConstructor1300
-     * @tc.desc       : test threadWorker constructor HIGH + MEDIUM communication together
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerConstructor1300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_038
+     * @tc.desc   test threadWorker constructor HIGH + MEDIUM communication together
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerConstructor1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerConstructor1300';
@@ -1510,12 +1510,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_039
-     * @tc.name       : testWorkerConstructor1400
-     * @tc.desc       : test threadWorker constructor LOW + IDLE communication together
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerConstructor1400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_039
+     * @tc.desc   test threadWorker constructor LOW + IDLE communication together
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerConstructor1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerConstructor1400';
@@ -1569,12 +1569,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_040
-     * @tc.name       : testWorkerPostMessage1100
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_040
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage1100';
@@ -1624,12 +1624,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_041
-     * @tc.name       : testWorkerPostMessage1200
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_041
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage1200';
@@ -1679,12 +1679,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_042
-     * @tc.name       : testWorkerPostMessage1300
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage1300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_042
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage1300';
@@ -1734,12 +1734,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_043
-     * @tc.name       : testWorkerPostMessage1400
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage1400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_043
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage1400';
@@ -1789,12 +1789,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_044
-     * @tc.name       : testWorkerPostMessage1500
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage1500
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_044
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage1500';
@@ -1846,12 +1846,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_045
-     * @tc.name       : testWorkerPostMessage1600
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage1600
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_045
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage1600';
@@ -1903,12 +1903,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_046
-     * @tc.name       : testWorkerPostMessage1700
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage1700
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_046
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage1700';
@@ -1960,12 +1960,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_047
-     * @tc.name       : testWorkerPostMessage1800
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage1800
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_047
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage1800';
@@ -2017,12 +2017,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_048
-     * @tc.name       : testWorkerPostMessage1900
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage1900
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_048
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage1900';
@@ -2074,12 +2074,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_049
-     * @tc.name       : testWorkerPostMessage2000
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage2000
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_049
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage2000';
@@ -2131,12 +2131,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_050
-     * @tc.name       : testWorkerPostMessage2100
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage2100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_050
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage2100';
@@ -2188,12 +2188,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_051
-     * @tc.name       : testWorkerPostMessage2200
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage2200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_051
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage2200';
@@ -2245,12 +2245,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_052
-     * @tc.name       : testWorkerPostMessage2300
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage2300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_052
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage2300';
@@ -2302,12 +2302,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_053
-     * @tc.name       : testWorkerPostMessage02400
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage2400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_053
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage2400';
@@ -2359,12 +2359,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_054
-     * @tc.name       : testWorkerPostMessage2500
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage2500
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_054
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage2500';
@@ -2420,12 +2420,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_055
-     * @tc.name       : testWorkerPostMessage02600
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage2600
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_055
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage2600';
@@ -2481,12 +2481,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_056
-     * @tc.name       : testWorkerPostMessage2700
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage2700
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_056
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage2700';
@@ -2538,12 +2538,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_057
-     * @tc.name       : testWorkerPostMessage2800
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage2800
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_057
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage2800';
@@ -2595,12 +2595,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_058
-     * @tc.name       : testWorkerPostMessage2900
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage2900
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_058
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage2900';
@@ -2652,12 +2652,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_059
-     * @tc.name       : testWorkerPostMessage3000
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage3000
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_059
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage3000';
@@ -2709,12 +2709,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_060
-     * @tc.name       : testWorkerPostMessage3100
-     * @tc.desc       : test host threads send messages to worker threads
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerPostMessage3100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_060
+     * @tc.desc   test host threads send messages to worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerPostMessage3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerPostMessage3100';
@@ -2776,12 +2776,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_061
-     * @tc.name       : testWorkerOn1100
-     * @tc.desc       : test add an event listening to Worker
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOn1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_061
+     * @tc.desc   test add an event listening to Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOn1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOn1100';
@@ -2839,12 +2839,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_062
-     * @tc.name       : testWorkerOn1200
-     * @tc.desc       : test add an event listening to Worker
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOn1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_062
+     * @tc.desc   test add an event listening to Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOn1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOn1200';
@@ -2901,12 +2901,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_063
-     * @tc.name       : testWorkerOnce1100
-     * @tc.desc       : test add an event listener to the Worker, which will be automatically deleted after only executing once.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOnce1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_063
+     * @tc.desc   test add an event listener to the Worker, which will be automatically deleted after only executing once.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOnce1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOnce1100';
@@ -2966,12 +2966,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_064
-     * @tc.name       : testWorkerOnce1200
-     * @tc.desc       : test add an event listener to the Worker, which will be automatically deleted after only executing once.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOnce1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_064
+     * @tc.desc   test add an event listener to the Worker, which will be automatically deleted after only executing once.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOnce1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOnce1200';
@@ -3032,12 +3032,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_065
-     * @tc.name       : testWorkerOff1100
-     * @tc.desc       : test delete event listeners of type
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOff1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_065
+     * @tc.desc   test delete event listeners of type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOff1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOff1100';
@@ -3106,12 +3106,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_066
-     * @tc.name       : testWorkerOff1200
-     * @tc.desc       : test delete event listeners of type
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOff1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_066
+     * @tc.desc   test delete event listeners of type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOff1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOff1200';
@@ -3172,12 +3172,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_067
-     * @tc.name       : testWorkerRegisterGlobalCallObject1100
-     * @tc.desc       : test register an object on the ThreadWorker instance of the host thread, and the methods on this object can be called in the Worker thread
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerRegisterGlobalCallObject1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_067
+     * @tc.desc   test register an object on the ThreadWorker instance of the host thread, and the methods on this object can be called in the Worker thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerRegisterGlobalCallObject1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerRegisterGlobalCallObject1100';
@@ -3231,12 +3231,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_068
-     * @tc.name       : testWorkerRegisterGlobalCallObject1200
-     * @tc.desc       : test register an object on the ThreadWorker instance of the host thread, and the methods on this object can be called in the Worker thread
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerRegisterGlobalCallObject1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_068
+     * @tc.desc   test register an object on the ThreadWorker instance of the host thread, and the methods on this object can be called in the Worker thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerRegisterGlobalCallObject1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerRegisterGlobalCallObject1200';
@@ -3290,12 +3290,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_069
-     * @tc.name       : testWorkerUnregisterGlobalCallObject1100
-     * @tc.desc       : test canceling the object registered on the host thread ThreadWorker instance will release a strong reference to the object that matches the key in the ThreadWorker instance, and there will be no error when there is no matching object.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerUnregisterGlobalCallObject1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_069
+     * @tc.desc   test canceling the object registered on the host thread ThreadWorker instance will release a strong reference to the object that matches the key in the ThreadWorker instance, and there will be no error when there is no matching object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerUnregisterGlobalCallObject1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerUnregisterGlobalCallObject1100';
@@ -3342,12 +3342,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_070
-     * @tc.name       : testWorkerUnregisterGlobalCallObject1200
-     * @tc.desc       : test canceling the object registered on the host thread ThreadWorker instance will release a strong reference to the object that matches the key in the ThreadWorker instance, and there will be no error when there is no matching object.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerUnregisterGlobalCallObject1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_070
+     * @tc.desc   test canceling the object registered on the host thread ThreadWorker instance will release a strong reference to the object that matches the key in the ThreadWorker instance, and there will be no error when there is no matching object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerUnregisterGlobalCallObject1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerUnregisterGlobalCallObject1200';
@@ -3394,12 +3394,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_071
-     * @tc.name       : testWorkerTerminateAndOnexit1100
-     * @tc.desc       : test the event handler that is called when the Worker is destroyed is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerTerminateAndOnexit1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_071
+     * @tc.desc   test the event handler that is called when the Worker is destroyed is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerTerminateAndOnexit1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerTerminateAndOnexit1100';
@@ -3434,12 +3434,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_072
-     * @tc.name       : testWorkerTerminateAndOnexit1200
-     * @tc.desc       : test the event handler that is called when the Worker is destroyed is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerTerminateAndOnexit1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_072
+     * @tc.desc   test the event handler that is called when the Worker is destroyed is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerTerminateAndOnexit1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerTerminateAndOnexit1200';
@@ -3474,12 +3474,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_073
-     * @tc.name       : testWorkerTerminateAndOnexit1300
-     * @tc.desc       : test the event handler that is called when the Worker is destroyed is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerTerminateAndOnexit1300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_073
+     * @tc.desc   test the event handler that is called when the Worker is destroyed is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerTerminateAndOnexit1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerTerminateAndOnexit1300';
@@ -3501,12 +3501,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_074
-     * @tc.name       : testWorkerTerminateAndOnexit1400
-     * @tc.desc       : test the event handler that is called when the Worker is destroyed is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerTerminateAndOnexit1400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_074
+     * @tc.desc   test the event handler that is called when the Worker is destroyed is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerTerminateAndOnexit1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerTerminateAndOnexit1400';
@@ -3531,12 +3531,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_075
-     * @tc.name       : testWorkerOnerror1100
-     * @tc.desc       : test the event handler that is called when a Worker encounters an exception during execution, and the handler is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOnerror1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_075
+     * @tc.desc   test the event handler that is called when a Worker encounters an exception during execution, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOnerror1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOnerror1100';
@@ -3577,12 +3577,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_076
-     * @tc.name       : testWorkerOnerror1200
-     * @tc.desc       : test the event handler that is called when a Worker encounters an exception during execution, and the handler is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOnerror1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_076
+     * @tc.desc   test the event handler that is called when a Worker encounters an exception during execution, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOnerror1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOnerror1200';
@@ -3623,12 +3623,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_077
-     * @tc.name       : testWorkerOnmessage1100
-     * @tc.desc       : test the event handler that is called by the host thread when it receives a message sent by a Worker created by it through the workerPort. postMessage interface, and the handler is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOnmessage1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_077
+     * @tc.desc   test the event handler that is called by the host thread when it receives a message sent by a Worker created by it through the workerPort. postMessage interface, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOnmessage1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOnmessage1100';
@@ -3678,12 +3678,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_078
-     * @tc.name       : testWorkerOnmessage1200
-     * @tc.desc       : test the event handler that is called by the host thread when it receives a message sent by a Worker created by it through the workerPort. postMessage interface, and the handler is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOnmessage1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_078
+     * @tc.desc   test the event handler that is called by the host thread when it receives a message sent by a Worker created by it through the workerPort. postMessage interface, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOnmessage1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOnmessage1200';
@@ -3739,12 +3739,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_079
-     * @tc.name       : testWorkerOnmessage1300
-     * @tc.desc       : test the event handler that is called by the host thread when it receives a message sent by a Worker created by it through the workerPort. postMessage interface, and the handler is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOnmessage1300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_079
+     * @tc.desc   test the event handler that is called by the host thread when it receives a message sent by a Worker created by it through the workerPort. postMessage interface, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOnmessage1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOnmessage1300';
@@ -3800,12 +3800,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_080
-     * @tc.name       : testWorkerOnmessage1400
-     * @tc.desc       : test the event handler that is called by the host thread when it receives a message sent by a Worker created by it through the workerPort. postMessage interface, and the handler is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOnmessage1400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_080
+     * @tc.desc   test the event handler that is called by the host thread when it receives a message sent by a Worker created by it through the workerPort. postMessage interface, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOnmessage1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOnmessage1400';
@@ -3862,12 +3862,12 @@ export default function workerPriTest() {
 
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_081
-     * @tc.name       : testWorkerOnmessageerror1100
-     * @tc.desc       : test the event handler that is called when a Worker object receives a message that cannot be serialized, and the handler is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOnmessageerror1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_081
+     * @tc.desc   test the event handler that is called when a Worker object receives a message that cannot be serialized, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOnmessageerror1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOnmessageerror1100';
@@ -3935,12 +3935,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_082
-     * @tc.name       : testWorkerOnmessageerror1200
-     * @tc.desc       : test the event handler that is called when a Worker object receives a message that cannot be serialized, and the handler is executed in the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerOnmessageerror1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_082
+     * @tc.desc   test the event handler that is called when a Worker object receives a message that cannot be serialized, and the handler is executed in the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerOnmessageerror1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerOnmessageerror1200';
@@ -4008,12 +4008,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_083
-     * @tc.name       : testWorkerAddEventListener1100
-     * @tc.desc       : test add an event listener to the Worker, which has the same functionality as the on interface
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerAddEventListener1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_083
+     * @tc.desc   test add an event listener to the Worker, which has the same functionality as the on interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerAddEventListener1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerAddEventListener1100';
@@ -4071,12 +4071,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_084
-     * @tc.name       : testWorkerAddEventListener1200
-     * @tc.desc       : test add an event listener to the Worker, which has the same functionality as the on interface
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerAddEventListener1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_084
+     * @tc.desc   test add an event listener to the Worker, which has the same functionality as the on interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerAddEventListener1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerAddEventListener1200';
@@ -4133,12 +4133,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_085
-     * @tc.name       : testWorkerRemoveEventListener1100
-     * @tc.desc       : test delete Worker's event listening, this interface has the same functionality as the off interface
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerRemoveEventListener1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_085
+     * @tc.desc   test delete Worker's event listening, this interface has the same functionality as the off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerRemoveEventListener1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerRemoveEventListener1100';
@@ -4207,12 +4207,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_086
-     * @tc.name       : testWorkerRemoveEventListener1200
-     * @tc.desc       : test delete Worker's event listening, this interface has the same functionality as the off interface
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerRemoveEventListener1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_086
+     * @tc.desc   test delete Worker's event listening, this interface has the same functionality as the off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerRemoveEventListener1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerRemoveEventListener1200';
@@ -4276,12 +4276,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_087
-     * @tc.name       : testWorkerDispatchEvent1100
-     * @tc.desc       : test distribute events defined in Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerDispatchEvent1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_087
+     * @tc.desc   test distribute events defined in Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerDispatchEvent1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerDispatchEvent1100';
@@ -4343,12 +4343,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_088
-     * @tc.name       : testWorkerDispatchEvent1200
-     * @tc.desc       : test distribute events defined in Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerDispatchEvent1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_088
+     * @tc.desc   test distribute events defined in Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerDispatchEvent1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerDispatchEvent1200';
@@ -4409,12 +4409,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_089
-     * @tc.name       : testWorkerDispatchEvent1300
-     * @tc.desc       : test distribute events defined in Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerDispatchEvent1300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_089
+     * @tc.desc   test distribute events defined in Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerDispatchEvent1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerDispatchEvent1300';
@@ -4476,12 +4476,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_090
-     * @tc.name       : testWorkerDispatchEvent1400
-     * @tc.desc       : test distribute events defined in Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerDispatchEvent1400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_090
+     * @tc.desc   test distribute events defined in Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerDispatchEvent1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerDispatchEvent1400';
@@ -4542,12 +4542,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_091
-     * @tc.name       : testWorkerRemoveAllListener1100
-     * @tc.desc       : test delete all event listeners for Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerRemoveAllListener1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_091
+     * @tc.desc   test delete all event listeners for Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerRemoveAllListener1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerRemoveAllListener1100';
@@ -4640,12 +4640,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_092
-     * @tc.name       : testWorkerRemoveAllListener1200
-     * @tc.desc       : test delete all event listeners for Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerRemoveAllListener1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_092
+     * @tc.desc   test delete all event listeners for Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerRemoveAllListener1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerRemoveAllListener1200';
@@ -4726,12 +4726,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_093
-     * @tc.name       : testWorkerWorkerEventTargetAddEventListener1100
-     * @tc.desc       : test add an event listener to the Worker, which has the same functionality as the on interface
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerWorkerEventTargetAddEventListener1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_093
+     * @tc.desc   test add an event listener to the Worker, which has the same functionality as the on interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerWorkerEventTargetAddEventListener1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerWorkerEventTargetAddEventListener1100';
@@ -4789,12 +4789,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_094
-     * @tc.name       : testWorkerWorkerEventTargetAddEventListener1200
-     * @tc.desc       : test add an event listener to the Worker, which has the same functionality as the on interface
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerWorkerEventTargetAddEventListener1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_094
+     * @tc.desc   test add an event listener to the Worker, which has the same functionality as the on interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerWorkerEventTargetAddEventListener1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerWorkerEventTargetAddEventListener1200';
@@ -4851,12 +4851,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_095
-     * @tc.name       : testWorkerWorkerEventTargetRemoveEventListener1100
-     * @tc.desc       : test delete Worker's event listening, this interface has the same functionality as the off interface
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerWorkerEventTargetRemoveEventListener1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_095
+     * @tc.desc   test delete Worker's event listening, this interface has the same functionality as the off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerWorkerEventTargetRemoveEventListener1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerWorkerEventTargetRemoveEventListener1100';
@@ -4925,12 +4925,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_096
-     * @tc.name       : testWorkerWorkerEventTargetRemoveEventListener1200
-     * @tc.desc       : test delete Worker's event listening, this interface has the same functionality as the off interface
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerWorkerEventTargetRemoveEventListener1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_096
+     * @tc.desc   test delete Worker's event listening, this interface has the same functionality as the off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerWorkerEventTargetRemoveEventListener1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerWorkerEventTargetRemoveEventListener1200';
@@ -4991,12 +4991,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_097
-     * @tc.name       : testWorkerWorkerEventTargetDispatchEvent1100
-     * @tc.desc       : test distribute events defined in Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerWorkerEventTargetDispatchEvent1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_097
+     * @tc.desc   test distribute events defined in Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerWorkerEventTargetDispatchEvent1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerWorkerEventTargetDispatchEvent1100';
@@ -5058,12 +5058,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_098
-     * @tc.name       : testWorkerWorkerEventTargetDispatchEvent1200
-     * @tc.desc       : test distribute events defined in Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerWorkerEventTargetDispatchEvent1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_098
+     * @tc.desc   test distribute events defined in Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerWorkerEventTargetDispatchEvent1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerWorkerEventTargetDispatchEvent1200';
@@ -5124,12 +5124,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_099
-     * @tc.name       : testWorkerWorkerEventTargetDispatchEvent1300
-     * @tc.desc       : test distribute events defined in Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerWorkerEventTargetDispatchEvent1300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_099
+     * @tc.desc   test distribute events defined in Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerWorkerEventTargetDispatchEvent1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerWorkerEventTargetDispatchEvent1300';
@@ -5191,12 +5191,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_100
-     * @tc.name       : testWorkerWorkerEventTargetDispatchEvent1400
-     * @tc.desc       : test distribute events defined in Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerWorkerEventTargetDispatchEvent1400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_100
+     * @tc.desc   test distribute events defined in Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerWorkerEventTargetDispatchEvent1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerWorkerEventTargetDispatchEvent1400';
@@ -5257,12 +5257,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_101
-     * @tc.name       : testWorkerWorkerEventTargetRemoveAllListener1100
-     * @tc.desc       : test delete all event listeners for Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerWorkerEventTargetRemoveAllListener1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_101
+     * @tc.desc   test delete all event listeners for Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerWorkerEventTargetRemoveAllListener1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerWorkerEventTargetRemoveAllListener1100';
@@ -5355,12 +5355,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_102
-     * @tc.name       : testWorkerWorkerEventTargetRemoveAllListener1200
-     * @tc.desc       : test delete all event listeners for Worker.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerWorkerEventTargetRemoveAllListener1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_102
+     * @tc.desc   test delete all event listeners for Worker.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerWorkerEventTargetRemoveAllListener1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerWorkerEventTargetRemoveAllListener1200';
@@ -5440,12 +5440,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_103
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage1100
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_103
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage1100';
@@ -5495,12 +5495,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_104
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage1200
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_104
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage1200';
@@ -5550,12 +5550,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_105
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage1300
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage1300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_105
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage1300';
@@ -5605,12 +5605,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_106
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage1400
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage1400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_106
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage1400';
@@ -5661,12 +5661,12 @@ export default function workerPriTest() {
 
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_107
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage1500
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage1500
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_107
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage1500';
@@ -5716,12 +5716,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_108
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage1600
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage1600
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_108
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage1600';
@@ -5771,12 +5771,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_109
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage1700
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage1700
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_109
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage1700';
@@ -5826,12 +5826,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_110
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage1800
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage1800
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_110
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage1800';
@@ -5881,12 +5881,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_111
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage1900
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage1900
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_111
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage1900';
@@ -5936,12 +5936,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_112
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage2000
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage2000
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_112
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage2000';
@@ -5991,12 +5991,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_113
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage2100
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage2100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_113
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage2100';
@@ -6046,12 +6046,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_114
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage2200
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage2200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_114
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage2200';
@@ -6101,12 +6101,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_115
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage2300
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage2300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_115
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage2300';
@@ -6156,12 +6156,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_116
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage2400
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage2400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_116
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage2400';
@@ -6211,12 +6211,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_117
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage2500
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage2500
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_117
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage2500';
@@ -6266,12 +6266,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_118
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage2600
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage2600
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_118
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage2600';
@@ -6321,12 +6321,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_119
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage2700
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage2700
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_119
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage2700';
@@ -6376,12 +6376,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_120
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage2800
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage2800
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_120
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage2800';
@@ -6437,12 +6437,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_121
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage2900
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage2900
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_121
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage2900';
@@ -6502,12 +6502,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_122
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage3000
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage3000
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_122
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage3000';
@@ -6561,12 +6561,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_123
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage3100
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage3100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_123
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage3100';
@@ -6620,12 +6620,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_124
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage3200
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage3200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_124
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage3200';
@@ -6679,12 +6679,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_125
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage3300
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage3300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_125
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage3300';
@@ -6738,12 +6738,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_126
-     * @tc.name       : testWorkerThreadWorkerGlobalScopePostMessage3400
-     * @tc.desc       : test the Worker thread sends a message to the host thread.
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopePostMessage3400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_126
+     * @tc.desc   test the Worker thread sends a message to the host thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopePostMessage3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopePostMessage3400';
@@ -6801,12 +6801,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_127
-     * @tc.name       : testWorkerCallGlobalCallObjectMethod1100
-     * @tc.desc       : test worker thread calls a specified method of an object registered on the host thread
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerCallGlobalCallObjectMethod1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_127
+     * @tc.desc   test worker thread calls a specified method of an object registered on the host thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerCallGlobalCallObjectMethod1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerCallGlobalCallObjectMethod1100';
@@ -6864,12 +6864,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_128
-     * @tc.name       : testWorkerCallGlobalCallObjectMethod1200
-     * @tc.desc       : test worker thread calls a specified method of an object registered on the host thread
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerCallGlobalCallObjectMethod1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_128
+     * @tc.desc   test worker thread calls a specified method of an object registered on the host thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerCallGlobalCallObjectMethod1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerCallGlobalCallObjectMethod1200';
@@ -6927,12 +6927,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_129
-     * @tc.name       : testWorkerClose1100
-     * @tc.desc       : test destroy Worker thread and terminate Worker receiving messages
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerClose1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_129
+     * @tc.desc   test destroy Worker thread and terminate Worker receiving messages
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerClose1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerClose1100';
@@ -6971,12 +6971,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_130
-     * @tc.name       : testWorkerClose1200
-     * @tc.desc       : test destroy Worker thread and terminate Worker receiving messages
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerClose1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_130
+     * @tc.desc   test destroy Worker thread and terminate Worker receiving messages
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerClose1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerClose1200';
@@ -7015,12 +7015,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_131
-     * @tc.name       : testWorkerThreadWorkerGlobalScopeOnmessage1100
-     * @tc.desc       : test the event handler called by a Worker thread when it receives a message sent through the postMessage interface from its host thread
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopeOnmessage1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_131
+     * @tc.desc   test the event handler called by a Worker thread when it receives a message sent through the postMessage interface from its host thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopeOnmessage1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopeOnmessage1100';
@@ -7074,12 +7074,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_132
-     * @tc.name       : testWorkerThreadWorkerGlobalScopeOnmessage1200
-     * @tc.desc       : test the event handler called by a Worker thread when it receives a message sent through the postMessage interface from its host thread
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopeOnmessage1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_132
+     * @tc.desc   test the event handler called by a Worker thread when it receives a message sent through the postMessage interface from its host thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopeOnmessage1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopeOnmessage1200';
@@ -7133,12 +7133,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_133
-     * @tc.name       : testWorkerThreadWorkerGlobalScopeOnmessage1300
-     * @tc.desc       : test the event handler called by a Worker thread when it receives a message sent through the postMessage interface from its host thread
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopeOnmessage1300
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_133
+     * @tc.desc   test the event handler called by a Worker thread when it receives a message sent through the postMessage interface from its host thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopeOnmessage1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopeOnmessage1300';
@@ -7198,12 +7198,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_134
-     * @tc.name       : testWorkerThreadWorkerGlobalScopeOnmessage1400
-     * @tc.desc       : test the event handler called by a Worker thread when it receives a message sent through the postMessage interface from its host thread
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopeOnmessage1400
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_134
+     * @tc.desc   test the event handler called by a Worker thread when it receives a message sent through the postMessage interface from its host thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopeOnmessage1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopeOnmessage1400';
@@ -7263,12 +7263,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_135
-     * @tc.name       : testWorkerThreadWorkerGlobalScopeOnmessageerror1100
-     * @tc.desc       : test the event handler that is called when a Worker object receives a message that cannot be deserialized
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopeOnmessageerror1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_135
+     * @tc.desc   test the event handler that is called when a Worker object receives a message that cannot be deserialized
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopeOnmessageerror1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopeOnmessageerror1100';
@@ -7322,12 +7322,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_136
-     * @tc.name       : testWorkerThreadWorkerGlobalScopeOnmessageerror1200
-     * @tc.desc       : test the event handler that is called when a Worker object receives a message that cannot be deserialized
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerThreadWorkerGlobalScopeOnmessageerror1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_136
+     * @tc.desc   test the event handler that is called when a Worker object receives a message that cannot be deserialized
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerThreadWorkerGlobalScopeOnmessageerror1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerThreadWorkerGlobalScopeOnmessageerror1200';
@@ -7381,12 +7381,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_137
-     * @tc.name       : testWorkerGlobalScopeOnerror1100
-     * @tc.desc       : test the oneerror property of GlobalScope represents the event handler that was called when a Worker encountered an exception during execution
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerGlobalScopeOnerror1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_137
+     * @tc.desc   test the oneerror property of GlobalScope represents the event handler that was called when a Worker encountered an exception during execution
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerGlobalScopeOnerror1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerGlobalScopeOnerror1100';
@@ -7437,12 +7437,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_138
-     * @tc.name       : testWorkerGlobalScopeOnerror1200
-     * @tc.desc       : test the oneerror property of GlobalScope represents the event handler that was called when a Worker encountered an exception during execution
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerGlobalScopeOnerror1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_138
+     * @tc.desc   test the oneerror property of GlobalScope represents the event handler that was called when a Worker encountered an exception during execution
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerGlobalScopeOnerror1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerGlobalScopeOnerror1200';
@@ -7493,12 +7493,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_139
-     * @tc.name       : testWorkerGlobalScopeAndErrorEvent1100
-     * @tc.desc       : test the globalScope and errorEvent properties
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerGlobalScopeAndErrorEvent1100
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_139
+     * @tc.desc   test the globalScope and errorEvent properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerGlobalScopeAndErrorEvent1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerGlobalScopeAndErrorEvent1100';
@@ -7546,12 +7546,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_140
-     * @tc.name       : testWorkerGlobalScopeAndErrorEvent1200
-     * @tc.desc       : test the globalScope and errorEvent properties
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWorkerGlobalScopeAndErrorEvent1200
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_140
+     * @tc.desc   test the globalScope and errorEvent properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerGlobalScopeAndErrorEvent1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testWorkerGlobalScopeAndErrorEvent1200';
@@ -7599,12 +7599,12 @@ export default function workerPriTest() {
     });
 
     /**
-     * @tc.number     : SUB_Runtime_Language_Backend_WorkerConcurrency_141
-     * @tc.name       : threadWorker_priority_test
-     * @tc.desc       : worker priority test
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   threadWorker_priority_test
+     * @tc.number SUB_Runtime_Language_Backend_WorkerConcurrency_141
+     * @tc.desc   worker priority test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('threadWorker_priority_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let idleWorkerisTerminate = false;

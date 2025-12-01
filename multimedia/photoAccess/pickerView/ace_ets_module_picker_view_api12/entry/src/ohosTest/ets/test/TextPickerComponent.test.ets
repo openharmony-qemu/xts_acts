@@ -106,6 +106,19 @@ async function clickResultButton(driver: Driver) {
   await CommonFunc.sleep(1000);
 }
 
+async function clickUpdatablePickerButton(driver: Driver) {
+  console.info("testPicker create");
+  let btn = await driver.findComponent(ON.id('updatePickerOptions'));
+  console.info("testPicker findComponent updatePickerOptions succsess");
+  if (btn === null) {
+    console.info('no button');
+    return;
+  }
+  await btn.click();
+  console.info("testPicker btn click finish");
+  await CommonFunc.sleep(1000);
+}
+
 async function clickAlbumButton(driver: Driver) {
   console.info("testpicker create");
   let btn = await driver.findComponent(ON.id('albumButton'));
@@ -137,6 +150,25 @@ async function clickBigPicture(driver: Driver) {
   await btn.click();
   console.info('testPicker btn click finish');
   await CommonFunc.sleep(1000);
+}
+
+function waitForSelectItemInfo(code: number, timeout = 5000): Promise<ItemInfo> {
+  return new Promise((resolve, reject) => {
+    const evt: events_emitter.InnerEvent = { eventId: code, priority: events_emitter.EventPriority.LOW };
+    const t = setTimeout(() => { events_emitter.off(code); reject(new Error('timeout')); }, timeout);
+    events_emitter.on(evt, (ev) => {
+      clearTimeout(t);
+      events_emitter.off(code);
+      resolve(ev?.data?.msg);
+    });
+  });
+}
+
+async function clickExitBrowserButton(driver: Driver) {
+  const exitButton: Component | null = await driver.findComponent(ON.id('exitBrowser'));
+  await exitButton!.click();
+  console.info('testPicker55: clicked exitBrowser, browser closed');
+  await CommonFunc.sleep(800);
 }
 
 async function testCompleteButton(driver: Driver, options: router.RouterOptions, textMode: number) {
@@ -2399,7 +2431,7 @@ export default function TextPicker() {
       } as photoAccessHelper.ContextRecoveryInfo;
       sheetPickerOptions.contextRecoveryInfo = contextRecoveryInfo;
       let options: router.RouterOptions = {
-        url: 'MainAbility/page/BindSheetPicker',
+        url: 'MainAbility/pages/BindSheetPicker',
         params: {
           pickerOptions: sheetPickerOptions,
         }
@@ -2532,6 +2564,199 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
       router.back();
       console.info("testPicker53 finish");
+      done();
+    });
+
+    /**
+     * @tc.number     testPicker54
+     * @tc.name       testPicker54
+     * @tc.desc       Testing setData(SET_SELECTED_INFO)
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPicker54', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let pickerController: PickerController = new PickerController();
+      const preselectedInfos: PreselectedInfo[] = [
+        { uri: 'file://media/Photo/test2.jpg', preselectablePickerIndex: 2 },
+        { uri: 'file://media/Photo/test3.jpg', preselectablePickerIndex: 2 }
+      ];
+      pickerOptions.pickerIndex = 2;
+      pickerOptions.preselectedInfos = preselectedInfos;
+
+      let callback = (event: events_emitter.EventData) => {
+        let result: PhotoPickerResult = event?.data?.msg;
+        console.info('testPicker54 received result: ' + JSON.stringify(result));
+        expect(result.preselectedInfos?.length).assertEqual(2);
+      };
+
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      };
+      events_emitter.on(event, callback);
+
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      };
+
+      await routeToUrl(options);
+
+      // Set DataType.SET_SELECTED_INFO
+      pickerController.setData(DataType.SET_SELECTED_INFO, preselectedInfos);
+
+      await clickResultButton(driver);
+      events_emitter.off(event.eventId);
+
+      await CommonFunc.sleep(2000);
+      router.back();
+      console.info("testPicker54 finish");
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker55
+     * @tc.name      : testPicker55
+     * @tc.desc      : Testing PickerItem movingPhotoBadgeState == 2
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker55', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) { done(); return; }
+
+      const code: number = EventType.SELECT_ITEM_INFO;
+
+      const pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.MOVING_PHOTO_IMAGE_TYPE;
+      pickerOptions.isMovingPhotoBadgeShown = true;
+      pickerOptions.selectMode = SelectMode.MULTI_SELECT;
+      pickerOptions.isSearchSupported = false;
+
+
+      const options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: { eventId: code, pickerOptions }
+      };
+      await routeToUrl(options);
+
+
+      const strJson: string = getInspectorByKey('PhotoPickerComponent');
+
+      expect(JSON.parse(strJson)?.$attrs?.visibility).assertEqual('Visibility.Visible');
+
+
+      await CommonFunc.sleep(600);
+      const images: Array<Component> = await driver.findComponents(ON.type('Image'));
+      expect(images && images.length > 0).assertTrue();
+      if(!images || images.length === 0) {
+        console.log("Any image found! Fail!");
+        router.back();
+        console.info('testPicker55 finish!');
+        done();
+        return;
+      }
+      await images[0].click();
+      console.info('testPicker55: browser mode opened!');
+      await CommonFunc.sleep(500);
+
+
+      let movingBtn: Component | null = await driver.findComponent(ON.text('Moving picture'));
+      if (movingBtn === null) {
+        console.log("Any button found! Fail!");
+        await clickExitBrowserButton(driver);
+      } else {
+        await movingBtn!.click();
+        await CommonFunc.sleep(3000);
+        console.info('testPicker55: clicked "Moving picture" button');
+
+        await clickExitBrowserButton(driver);
+
+        const checkboxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+        expect(checkboxes && checkboxes.length > 0).assertTrue();
+        const itemPromise = waitForSelectItemInfo(code, 5000);
+        await checkboxes[0].click();
+        console.info('testPicker55: Checkbox selected!');
+
+        const selectedItem = await itemPromise;
+
+        console.info('testPicker55: ItemInfo -> ' + JSON.stringify(selectedItem));
+        console.info('testPicker55: movingPhotoBadgeState -> ' + JSON.stringify(selectedItem.movingPhotoBadgeState));
+        expect(selectedItem.movingPhotoBadgeState).assertEqual(2);
+      }
+
+      router.back();
+      console.info('testPicker55 finish');
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker56
+     * @tc.name      : testPicker56
+     * @tc.desc      : Testing UpdatablePickerConfigs
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker56', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let callback = (event: events_emitter.EventData) => {
+        let expectedMaxSelectNumber: number = 10;
+        let expectedMaxSelectPhotoNumber: number = 5;
+        let expectedMaxSelectVideoNumber: number = 5;
+        let expectedCheckBoxColor: String = '#ff38ff00';
+        let expectedCheckBoxTextColor: String = '#ffffdc00';
+        let expectedBackgroundColor: String = '#f00000';
+        let expectedBrowserColorMode: PickerColorMode = PickerColorMode.DARK;
+        let expectedUiComponentColorMode: PickerColorMode = PickerColorMode.DARK;
+
+        let msg: PhotoPickerResult = event?.data?.msg;
+        console.info('testPicker56 result msg ' + JSON.stringify(msg));
+        expect(expectedMaxSelectNumber).assertEqual(msg.maxSelectCount);
+        expect(expectedMaxSelectPhotoNumber).assertEqual(msg.maxPhotoSelectNumber);
+        expect(expectedMaxSelectVideoNumber).assertEqual(msg.maxVideoSelectNumber);
+        expect(expectedCheckBoxColor).assertEqual(msg.checkBoxColor);
+        expect(expectedCheckBoxTextColor).assertEqual(msg.checkboxTextColor);
+        expect(expectedBackgroundColor).assertEqual(msg.backgroundColor);
+        expect(expectedBrowserColorMode).assertEqual(msg.photoBrowserBackgroundColorMode);
+        expect(expectedUiComponentColorMode).assertEqual(msg.uiComponentColorMode);
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker56 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await clickUpdatablePickerButton(driver);
+      router.back();
+      events_emitter.off(event.eventId);
+      console.info("testPicker56 finish");
       done();
     });
   })

@@ -47,22 +47,12 @@ export default function CalcJsunit01() {
       console.info("CalcJsunit01 after each called");
     });
     /**
+     * @tc.name   CalcJsunit01_0100
      * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HTP26_016;SUB_ACE_FUNCTION_JICHU_SR000HTP26_015;SUB_ACE_FUNCTION_JICHU_SR000HTP26_012;
-     * SUB_ACE_FUNCTION_JICHU_SR000HTP26_014;SUB_ACE_FUNCTION_JICHU_SR000HTP26_013;SUB_ACE_FUNCTION_JICHU_SR000HTP26_011;
-     * SUB_ACE_FUNCTION_JICHU_SR000HTP26_008;SUB_ACE_FUNCTION_JICHU_SR000HTP26_010;SUB_ACE_FUNCTION_JICHU_SR000HTP26_018;
-     * @tc.name CalcJsunit01
-     * @tc.desc
-     *
-     * 2-10
-     button set calc(45% + 45%)
-     Text set constraintSize maxHeight calc(15% + 15%)
-     Text set constraintSize maxWidth calc(15% + 15%)
-     Text set constraintSize minHeight calc(15% + 15%)
-     Text set constraintSize minWidth calc(15% + 15%)
-     Text set size width calc(45% + 45%)
-     Text set width calc(calc(90%))
-     Text set width resource
-     Column set height calc(45% + 45%)
+     * @tc.desc   CalcJsunit01_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CalcJsunit01_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[CalcJsunit01_0100] START');

@@ -50,12 +50,12 @@ export default function composeListItemOperateItemArrow() {
     })
 
     /**
-     * @tc.number composeListItemOperateItemArrow
      * @tc.name   composeListItemOperateItemArrow_0100
+     * @tc.number composeListItemOperateItemArrow
      * @tc.desc   Test composeListItemOperateItemArrow
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('composeListItemOperateItemArrow_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

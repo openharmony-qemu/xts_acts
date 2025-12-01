@@ -27,14 +27,14 @@ export default function textAreaOnPasteTest() {
       await Utils.pushPage(`textarea/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ONPASTE_0100
-    * @tc.name       : testTextAreaOnPaste001
-    * @tc.desc       : test onPaste event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextAreaOnPaste001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ONPASTE_0100
+     * @tc.desc   test onPaste event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextAreaOnPaste001', Level.LEVEL1, async  (done: Function) => {
       let driver = Driver.create();
       focusControl.requestFocus('OnPasteTestTextArea')

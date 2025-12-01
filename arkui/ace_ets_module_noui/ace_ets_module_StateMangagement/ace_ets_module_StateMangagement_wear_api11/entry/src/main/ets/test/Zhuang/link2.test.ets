@@ -59,6 +59,14 @@ export default function link2() {
       router.back()
     });
 
+    /**
+     * @tc.name   link2_0100
+     * @tc.number link2_0100
+     * @tc.desc   link2_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('link2_0100 START');
       let driver = await UiDriver.create()
@@ -77,6 +85,14 @@ export default function link2() {
 
     });
 
+    /**
+     * @tc.name   link2_0200
+     * @tc.number link2_0200
+     * @tc.desc   link2_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link2_0200', Level.LEVEL0, async (done: Function) => {
       console.info('link2_0200 START');
       let driver = await UiDriver.create()
@@ -96,6 +112,14 @@ export default function link2() {
     });
 
 
+    /**
+     * @tc.name   link2_0300
+     * @tc.number link2_0300
+     * @tc.desc   link2_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link2_0300', Level.LEVEL0, async (done: Function) => {
       console.info('link2_0300 START');
       let driver = await UiDriver.create()
@@ -112,6 +136,14 @@ export default function link2() {
 
     });
 
+    /**
+     * @tc.name   link2_0400
+     * @tc.number link2_0400
+     * @tc.desc   link2_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link2_0400', Level.LEVEL0, async (done: Function) => {
       console.info('link2_0400 START');
       let driver = await UiDriver.create()
@@ -129,6 +161,14 @@ export default function link2() {
     });
 
 
+    /**
+     * @tc.name   link2_0500
+     * @tc.number link2_0500
+     * @tc.desc   link2_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link2_0500', Level.LEVEL0, async (done: Function) => {
       console.info('link2_0500 START');
       let driver = await UiDriver.create()
@@ -147,6 +187,14 @@ export default function link2() {
 
     });
 
+    /**
+     * @tc.name   link2_0600
+     * @tc.number link2_0600
+     * @tc.desc   link2_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link2_0600', Level.LEVEL0, async (done: Function) => {
       console.info('link2_0600 START');
       let driver = await UiDriver.create()
@@ -168,6 +216,14 @@ export default function link2() {
     });
 
 
+    /**
+     * @tc.name   link2_0700
+     * @tc.number link2_0700
+     * @tc.desc   link2_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link2_0700', Level.LEVEL0, async (done: Function) => {
       console.info('link2_0700 START');
       let driver = await UiDriver.create()
@@ -186,6 +242,14 @@ export default function link2() {
 
     });
 
+    /**
+     * @tc.name   link2_0800
+     * @tc.number link2_0800
+     * @tc.desc   link2_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link2_0800', Level.LEVEL0, async (done: Function) => {
       console.info('link2_0800 START');
       let driver = await UiDriver.create()

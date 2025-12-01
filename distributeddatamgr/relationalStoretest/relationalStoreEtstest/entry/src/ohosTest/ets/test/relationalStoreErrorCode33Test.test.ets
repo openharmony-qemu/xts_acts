@@ -68,12 +68,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -94,12 +94,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -120,12 +120,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest035 start *************");
@@ -146,12 +146,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest036
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest036 start *************");
@@ -172,12 +172,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest037
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.info(TAG + "************* relationalStoreTest037 start *************");
@@ -197,12 +197,12 @@ export default function relationalStoreErrorCode33Test() {
 
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest038
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.info(TAG + "************* relationalStoreTest038 start *************");
@@ -220,12 +220,12 @@ export default function relationalStoreErrorCode33Test() {
       console.info(TAG + "************* relationalStoreTest038 end *************");
     })
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest003 start *************");
@@ -248,12 +248,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest004 start *************");
@@ -274,12 +274,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -302,12 +302,12 @@ export default function relationalStoreErrorCode33Test() {
 
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc update success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   update success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -327,12 +327,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc update success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   update success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -352,12 +352,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc update success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   update success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -378,12 +378,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc update success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   update success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -405,12 +405,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc update success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   update success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -432,12 +432,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -454,12 +454,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -475,12 +475,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -496,12 +496,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc getModifyTime success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getModifyTime success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* relationalStoreTest014 start *************");
@@ -520,12 +520,12 @@ export default function relationalStoreErrorCode33Test() {
 
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc getModifyTime success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getModifyTime success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* relationalStoreTest015 start *************");
@@ -543,12 +543,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest016 start *************");
@@ -566,12 +566,12 @@ export default function relationalStoreErrorCode33Test() {
 
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -589,12 +589,12 @@ export default function relationalStoreErrorCode33Test() {
 
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest018 start *************");
@@ -611,12 +611,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc executeSync success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   executeSync success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -634,12 +634,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -653,12 +653,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest021
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -677,12 +677,12 @@ export default function relationalStoreErrorCode33Test() {
 
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc executeSync success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   executeSync success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -696,12 +696,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest023
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -715,12 +715,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest024
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest024 start *************");
@@ -734,12 +734,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest025
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -753,12 +753,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest026
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -772,12 +772,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest027
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -790,12 +790,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest028
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -809,12 +809,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest029
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -832,12 +832,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -851,12 +851,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest031
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -873,12 +873,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest032
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -891,12 +891,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest033
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -910,12 +910,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest034
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -930,12 +930,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest039
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc cleanDirtyData success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cleanDirtyData success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest039 start *************");
@@ -950,12 +950,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testGetColumnIndex0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetColumnIndex0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -972,12 +972,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testGetColumnName0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetColumnName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -994,12 +994,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgoToFirstRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgoToFirstRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1016,12 +1016,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgoToNextRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgoToNextRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1038,12 +1038,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgoToLastRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgoToLastRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1059,12 +1059,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgoToRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgoToRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1081,12 +1081,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgoTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgoTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1103,12 +1103,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgoToPreviousRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgoToPreviousRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1125,12 +1125,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgetBlob0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetBlob0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1147,12 +1147,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgetString0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1169,12 +1169,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgetLong0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetLong0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1191,12 +1191,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgetDouble0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetDouble0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1213,12 +1213,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgetAsset0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetAsset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1235,12 +1235,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgetAssets0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetAssets0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1257,12 +1257,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgetValue0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1279,12 +1279,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testgetRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1301,12 +1301,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testGetRows0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetRows0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1323,12 +1323,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
-     * @tc.name testGetBlob0001
+     * @tc.name   testGetSendableRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetSendableRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let predicates = new relationalStore.RdbPredicates('employee');
@@ -1345,12 +1345,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreUnLockRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreUnLockRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreLockRow0003 start *************");
@@ -1367,12 +1367,12 @@ export default function relationalStoreErrorCode33Test() {
     });
 
     /**
+     * @tc.name   testRdbStoreLockRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreLockRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreLockRow0003 start *************");
@@ -1389,12 +1389,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreQueryLockedRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreQueryLockedRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreLockRow0003 start *************");
@@ -1410,12 +1410,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreTrans001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreTrans001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreTrans001 start *************");
@@ -1444,12 +1444,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreTrans002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreTrans002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreTrans002 start *************");
@@ -1478,12 +1478,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreTrans003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreTrans003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreTrans003 start *************");
@@ -1514,12 +1514,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreTrans004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreTrans004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreTrans004 start *************");
@@ -1549,12 +1549,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreTrans005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreTrans005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreTrans005 start *************");
@@ -1585,12 +1585,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreTrans006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreTrans006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreTrans006 start *************");
@@ -1621,12 +1621,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreTrans007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreTrans007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreTrans007 start *************");
@@ -1650,12 +1650,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreTrans008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreTrans008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreTrans008 start *************");
@@ -1679,12 +1679,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreTrans009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreTrans009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreTrans009 start *************");
@@ -1707,12 +1707,12 @@ export default function relationalStoreErrorCode33Test() {
     })
 
     /**
+     * @tc.name   testRdbStoreTrans010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreTrans010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreTrans010 start *************");

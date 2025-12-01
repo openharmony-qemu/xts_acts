@@ -27,12 +27,12 @@ export default function unistdNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SETPGID_0100
-     * @tc.name       : testMuslUnistdSetpgid001
-     * @tc.desc       : test setpgid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdSetpgid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SETPGID_0100
+     * @tc.desc   test setpgid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSetpgid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 0
@@ -43,12 +43,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SETPGID_0300
-     * @tc.name       : testMuslUnistdSetpgid003
-     * @tc.desc       : test setpgid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdSetpgid003
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SETPGID_0300
+     * @tc.desc   test setpgid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSetpgid003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 0
@@ -59,12 +59,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SETPGID_0400
-     * @tc.name       : testMuslUnistdSetpgid004
-     * @tc.desc       : test setpgid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdSetpgid004
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SETPGID_0400
+     * @tc.desc   test setpgid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSetpgid004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1
@@ -75,12 +75,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SETPGRP_0100
-     * @tc.name       : testMuslUnistdSetpgrp001
-     * @tc.desc       : test setpgrp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdSetpgrp001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SETPGRP_0100
+     * @tc.desc   test setpgrp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSetpgrp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = -1
@@ -90,12 +90,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SETPGRP_0200
-     * @tc.name       : testMuslUnistdSetpgrp002
-     * @tc.desc       : test setpgrp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdSetpgrp002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SETPGRP_0200
+     * @tc.desc   test setpgrp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSetpgrp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 0;
@@ -105,12 +105,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_READ_0100
-     * @tc.name       : testMuslUnistdRead001
-     * @tc.desc       : test read
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdRead001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_READ_0100
+     * @tc.desc   test read
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -127,12 +127,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_RMDIR_0100
-     * @tc.name       : testMuslUnistdRmdir001
-     * @tc.desc       : test rmdir
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdRmdir001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_RMDIR_0100
+     * @tc.desc   test rmdir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdRmdir001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -143,12 +143,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_RMDIR_0200
-     * @tc.name       : testMuslUnistdRmdir002
-     * @tc.desc       : test rmdir
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdRmdir002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_RMDIR_0200
+     * @tc.desc   test rmdir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdRmdir002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -159,12 +159,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETGROUPS_0100
-     * @tc.name       : testMuslUnistdGetGroups001
-     * @tc.desc       : test getgroups
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetGroups001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETGROUPS_0100
+     * @tc.desc   test getgroups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetGroups001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getGroups(0);
@@ -173,12 +173,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETGROUPS_0200
-     * @tc.name       : testMuslUnistdGetGroups002
-     * @tc.desc       : test getgroups
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetGroups002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETGROUPS_0200
+     * @tc.desc   test getgroups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetGroups002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getGroups(10);
@@ -187,12 +187,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETGROUPS_0300
-     * @tc.name       : testMuslUnistdGetGroups003
-     * @tc.desc       : test getgroups
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetGroups003
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETGROUPS_0300
+     * @tc.desc   test getgroups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetGroups003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getGroups(5);
@@ -201,12 +201,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETPID_0100
-     * @tc.name       : testMuslUnistdGetPid001
-     * @tc.desc       : test getpid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetPid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETPID_0100
+     * @tc.desc   test getpid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetPid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getPid();
@@ -215,12 +215,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETPPID_0100
-     * @tc.name       : testMuslUnistdGetPPid001
-     * @tc.desc       : test getppid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetPPid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETPPID_0100
+     * @tc.desc   test getppid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetPPid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getPPid();
@@ -229,12 +229,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETPGRP_0100
-     * @tc.name       : testMuslUnistdGetPGrp001
-     * @tc.desc       : test getpgrp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetPGrp001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETPGRP_0100
+     * @tc.desc   test getpgrp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetPGrp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getPGrp();
@@ -243,12 +243,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_CRYPT_0100
-     * @tc.name       : testMuslUnistdCrypt001
-     * @tc.desc       : test crypt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdCrypt001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_CRYPT_0100
+     * @tc.desc   test crypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdCrypt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let salt: String = "$1$";
@@ -258,12 +258,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_CRYPT_0200
-     * @tc.name       : testMuslUnistdCrypt002
-     * @tc.desc       : test crypt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdCrypt002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_CRYPT_0200
+     * @tc.desc   test crypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdCrypt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let salt: String = "$2$";
@@ -273,12 +273,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_CRYPT_0300
-     * @tc.name       : testMuslUnistdCrypt003
-     * @tc.desc       : test crypt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdCrypt003
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_CRYPT_0300
+     * @tc.desc   test crypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdCrypt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let salt: String = "$5$";
@@ -288,12 +288,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETPGID_0100
-     * @tc.name       : testMuslUnistdGetPGid001
-     * @tc.desc       : test getpgrd
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetPGid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETPGID_0100
+     * @tc.desc   test getpgrd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetPGid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getPGid();
@@ -302,12 +302,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETSID_0100
-     * @tc.name       : testMuslUnistdGetSid001
-     * @tc.desc       : test getsid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetSid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETSID_0100
+     * @tc.desc   test getsid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetSid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getSid(0);
@@ -316,12 +316,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETUID_0100
-     * @tc.name       : testMuslUnistdGetUid001
-     * @tc.desc       : test getuid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetUid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETUID_0100
+     * @tc.desc   test getuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetUid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getUid();
@@ -330,12 +330,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETOPT_0100
-     * @tc.name       : testMuslUnistdGetOpt001
-     * @tc.desc       : test getopt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetOpt001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETOPT_0100
+     * @tc.desc   test getopt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetOpt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -345,12 +345,12 @@ export default function unistdNdkTest() {
         done();
       });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETOPT_0200
-     * @tc.name       : testMuslUnistdGetOpt002
-     * @tc.desc       : test getopt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetOpt002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETOPT_0200
+     * @tc.desc   test getopt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetOpt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getOpt("-b");
@@ -359,12 +359,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETOPT_0300
-     * @tc.name       : testMuslUnistdGetOpt003
-     * @tc.desc       : test getopt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetOpt003
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETOPT_0300
+     * @tc.desc   test getopt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetOpt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getOpt("-c");
@@ -373,12 +373,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETTID_0100
-     * @tc.name       : testMuslUnistdGetTid001
-     * @tc.desc       : test gettid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetTid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETTID_0100
+     * @tc.desc   test gettid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetTid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getTid();
@@ -387,12 +387,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETEUID_0100
-     * @tc.name       : testMuslUnistdGetEUid001
-     * @tc.desc       : test geteuid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetEUid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETEUID_0100
+     * @tc.desc   test geteuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetEUid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getEUid();
@@ -401,12 +401,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETGID_0100
-     * @tc.name       : testMuslUnistdGetGid001
-     * @tc.desc       : test geteuid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetGid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETGID_0100
+     * @tc.desc   test geteuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetGid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getGid();
@@ -415,12 +415,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETEGID_0100
-     * @tc.name       : testMuslUnistdGetEGid001
-     * @tc.desc       : test getegid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetEGid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETEGID_0100
+     * @tc.desc   test getegid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetEGid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getEGid();
@@ -429,12 +429,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETHOSTNAME_0100
-     * @tc.name       : testMuslUnistdGetHostName001
-     * @tc.desc       : test gethostname
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetHostName001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETHOSTNAME_0100
+     * @tc.desc   test gethostname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetHostName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getHostName();
@@ -443,12 +443,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETPAGESIZE_0100
-     * @tc.name       : testMuslUnistdGetPageSize001
-     * @tc.desc       : test getpagesize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetPageSize001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETPAGESIZE_0100
+     * @tc.desc   test getpagesize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetPageSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getPageSize();
@@ -457,12 +457,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETDTABLESIZE_0100
-     * @tc.name       : testMuslUnistdGetDTableSize001
-     * @tc.desc       : test getdtablesize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetDTableSize001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETDTABLESIZE_0100
+     * @tc.desc   test getdtablesize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetDTableSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getDTableSize();
@@ -471,12 +471,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETRESUID_0100
-     * @tc.name       : testMuslUnistdGtReSuid001
-     * @tc.desc       : test getresuid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGtReSuid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETRESUID_0100
+     * @tc.desc   test getresuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGtReSuid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getReSuid();
@@ -485,12 +485,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETRESGID_0100
-     * @tc.name       : testMuslUnistdGetResGid001
-     * @tc.desc       : test getresgid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdGetResGid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETRESGID_0100
+     * @tc.desc   test getresgid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetResGid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getResGid();
@@ -500,12 +500,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SLEEP_0100
-     * @tc.name       : testMuslUnistdSleep001
-     * @tc.desc       : test sleep
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSleep001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SLEEP_0100
+     * @tc.desc   test sleep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSleep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 1;
@@ -516,12 +516,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SLEEP_0200
-     * @tc.name       : testMuslUnistdSleep002
-     * @tc.desc       : test sleep
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSleep002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SLEEP_0200
+     * @tc.desc   test sleep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSleep002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 2;
@@ -532,12 +532,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_ISATTY_0100
-     * @tc.name       : testMuslUnistdIsatty001
-     * @tc.desc       : test isatty
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdIsatty001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_ISATTY_0100
+     * @tc.desc   test isatty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdIsatty001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = unistd.isatty();
@@ -547,12 +547,12 @@ export default function unistdNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SWAB_0100
-     * @tc.name       : testMuslUnistdSwab001
-     * @tc.desc       : test swab
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSwab001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SWAB_0100
+     * @tc.desc   test swab
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSwab001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 0
@@ -562,12 +562,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SWAB_0200
-     * @tc.name       : testMuslUnistdSwab002
-     * @tc.desc       : test swab
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSwab002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SWAB_0200
+     * @tc.desc   test swab
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSwab002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 1
@@ -577,12 +577,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SYNC_0100
-     * @tc.name       : testMuslUnistdSync001
-     * @tc.desc       : test sync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSync001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SYNC_0100
+     * @tc.desc   test sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = unistd.sync();
@@ -591,12 +591,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SYNCFS_0100
-     * @tc.name       : testMuslUnistdSyncfs001
-     * @tc.desc       : test syncfs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSyncfs001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SYNCFS_0100
+     * @tc.desc   test syncfs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSyncfs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = unistd.syncfs();
@@ -605,12 +605,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SYSCALL_0100
-     * @tc.name       : testMuslUnistdSyscall001
-     * @tc.desc       : test syscall
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSyscall001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SYSCALL_0100
+     * @tc.desc   test syscall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSyscall001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = unistd.syscall();
@@ -619,12 +619,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SYSINFO_0100
-     * @tc.name       : testMuslUnistdSysinfo001
-     * @tc.desc       : test sysinfo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSysinfo001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SYSINFO_0100
+     * @tc.desc   test sysinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSysinfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = unistd.sysinfo(0);
@@ -632,12 +632,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SYSINFO_0200
-     * @tc.name       : testMuslUnistdSysinfo002
-     * @tc.desc       : test sysinfo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSysinfo002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SYSINFO_0200
+     * @tc.desc   test sysinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSysinfo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = unistd.sysinfo(1);
@@ -646,12 +646,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SYNCFILERANGE_0100
-     * @tc.name       : testMuslUnistdSyncFileRange001
-     * @tc.desc       : test sync_file_range
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSyncFileRange001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SYNCFILERANGE_0100
+     * @tc.desc   test sync_file_range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSyncFileRange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = unistd.sync_file_range();
@@ -660,12 +660,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_TCGETPGRP_0100
-     * @tc.name       : testMuslUnistdTcgetpgrp001
-     * @tc.desc       : test tcgetpgrp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdTcgetpgrp001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_TCGETPGRP_0100
+     * @tc.desc   test tcgetpgrp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdTcgetpgrp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = unistd.tcgetpgrp(0);
@@ -674,12 +674,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_TCSETPGRP_0100
-     * @tc.name       : testMuslUnistdTcsetpgrp001
-     * @tc.desc       : test tcsetpgrp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdTcsetpgrp001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_TCSETPGRP_0100
+     * @tc.desc   test tcsetpgrp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdTcsetpgrp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = unistd.tcsetpgrp(0);
@@ -688,12 +688,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_TTYNAME_0200
-     * @tc.name       : testMuslUnistdTtyname002
-     * @tc.desc       : test ttyname
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdTtyname002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_TTYNAME_0200
+     * @tc.desc   test ttyname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdTtyname002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let toCpp = 1;
@@ -704,12 +704,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_TTYNAME_R_0100
-     * @tc.name       : testMuslUnistdTtynameR001
-     * @tc.desc       : test ttyname_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdTtynameR001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_TTYNAME_R_0100
+     * @tc.desc   test ttyname_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdTtynameR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let toCpp = 0;
@@ -721,12 +721,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_UNLINK_0100
-     * @tc.name       : testMuslUnistdUnlink001
-     * @tc.desc       : test unlink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdUnlink001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_UNLINK_0100
+     * @tc.desc   test unlink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdUnlink001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = unistd.unlink(-1);
@@ -735,12 +735,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_UNLINK_0200
-     * @tc.name       : testMuslUnistdUnlink002
-     * @tc.desc       : test unlink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdUnlink002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_UNLINK_0200
+     * @tc.desc   test unlink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdUnlink002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = unistd.unlink(0);
@@ -749,12 +749,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_UNLINKAT_0100
-     * @tc.name       : testMuslUnistdUnlinkat001
-     * @tc.desc       : test unlinkat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdUnlinkat001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_UNLINKAT_0100
+     * @tc.desc   test unlinkat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdUnlinkat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = unistd.unlinkat(-1);
@@ -763,12 +763,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_UNLINKAT_0200
-     * @tc.name       : testMuslUnistdUnlinkat002
-     * @tc.desc       : test unlinkat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdUnlinkat002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_UNLINKAT_0200
+     * @tc.desc   test unlinkat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdUnlinkat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = unistd.unlinkat(0);
@@ -777,12 +777,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_USLEEP_0100
-     * @tc.name       : testMuslUnistdUsleep001
-     * @tc.desc       : test usleep
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdUsleep001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_USLEEP_0100
+     * @tc.desc   test usleep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdUsleep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 2000000;
@@ -794,12 +794,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_ACCESS_0100
-     * @tc.name       : testMuslUnistdAccess001
-     * @tc.desc       : test access
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdAccess001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_ACCESS_0100
+     * @tc.desc   test access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = unistd.access();
@@ -808,12 +808,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_EACCESS_0100
-     * @tc.name       : testMuslUnistdEaccess001
-     * @tc.desc       : test eaccess
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdEaccess001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_EACCESS_0100
+     * @tc.desc   test eaccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdEaccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = unistd.eaccess();
@@ -822,13 +822,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_ALARM_0100
-     * @tc.name       : testMuslUnistdAlarm001
-     * @tc.desc       : test alarm
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslUnistdAlarm001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_ALARM_0100
+     * @tc.desc   test alarm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdAlarm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -839,12 +838,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_OPTARG_0100
-     * @tc.name       : testMuslUnistdOptarg001
-     * @tc.desc       : test optarg
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdOptarg001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_OPTARG_0100
+     * @tc.desc   test optarg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdOptarg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = unistd.optarg();
@@ -852,12 +851,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_OPTERR_0100
-     * @tc.name       : testMuslUnistdOpterr001
-     * @tc.desc       : test opterr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdOpterr001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_OPTERR_0100
+     * @tc.desc   test opterr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdOpterr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = unistd.opterr();
@@ -865,12 +864,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_OPTIND_0100
-     * @tc.name       : testMuslUnistdOptind001
-     * @tc.desc       : test optind
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdOptind001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_OPTIND_0100
+     * @tc.desc   test optind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdOptind001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = unistd.optind();
@@ -878,12 +877,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_OPTOPT_0100
-     * @tc.name       : testMuslUnistdOptopt001
-     * @tc.desc       : test optopt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdOptopt001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_OPTOPT_0100
+     * @tc.desc   test optopt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdOptopt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = unistd.optopt();
@@ -891,12 +890,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_PREAD_0100
-     * @tc.name       : testMuslUnistdPRead001
-     * @tc.desc       : test pread
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdPRead001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_PREAD_0100
+     * @tc.desc   test pread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdPRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = unistd.pRead();
@@ -905,12 +904,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_PIPE_0100
-     * @tc.name       : testMuslUnistdPipe001
-     * @tc.desc       : test pipe
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdPipe001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_PIPE_0100
+     * @tc.desc   test pipe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdPipe001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.pipe();
@@ -921,12 +920,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_PIPE2_0100
-     * @tc.name       : testMuslUnistdPipe2001
-     * @tc.desc       : test pipe2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdPipe2001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_PIPE2_0100
+     * @tc.desc   test pipe2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdPipe2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.pipe2();
@@ -937,12 +936,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_PATHCONF_0100
-     * @tc.name       : testMuslUnistdPathconf001
-     * @tc.desc       : test pathconf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdPathconf001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_PATHCONF_0100
+     * @tc.desc   test pathconf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdPathconf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: string = unistd.pathconf();
@@ -953,12 +952,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_UNISTD_SETRESUID_0100
-     * @tc.name     : testMuslUnistdSetresuid001
-     * @tc.desc     : test setresuid
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslUnistdSetresuid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SETRESUID_0100
+     * @tc.desc   test setresuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSetresuid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = unistd.setresuid();
@@ -967,12 +966,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_UNISTD_TRUNCATE_0100
-     * @tc.name     : testMuslUnistdTruncate001
-     * @tc.desc     : test truncate
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslUnistdTruncate001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_TRUNCATE_0100
+     * @tc.desc   test truncate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdTruncate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = unistd.truncate();
@@ -981,12 +980,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_UNISTD_TRUNCATE64_0100
-     * @tc.name     : testMuslUnistdTruncate64001
-     * @tc.desc     : test truncate64
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslUnistdTruncate64001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_TRUNCATE64_0100
+     * @tc.desc   test truncate64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdTruncate64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = unistd.truncate64();
@@ -995,12 +994,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_NICE_0100
-     * @tc.name       : testMuslUnistdNice001
-     * @tc.desc       : test nice
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdNice001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_NICE_0100
+     * @tc.desc   test nice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdNice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = 10;
@@ -1012,13 +1011,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETENTROPY_0100
-     * @tc.name       : testMuslUnistdGetentropy001
-     * @tc.desc       : test getentropy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslUnistdGetentropy001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETENTROPY_0100
+     * @tc.desc   test getentropy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetentropy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 0;
@@ -1029,13 +1027,12 @@ export default function unistdNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETDOMAINNAME_0100
-     * @tc.name       : testMuslUnistdGetdomainname001
-     * @tc.desc       : test getdomainname
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslUnistdGetdomainname001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETDOMAINNAME_0100
+     * @tc.desc   test getdomainname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetdomainname001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 0;
@@ -1045,13 +1042,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETCWD_0100
-     * @tc.name       : testMuslUnistdGetcwd001
-     * @tc.desc       : test getcwd
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslUnistdGetcwd001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETCWD_0100
+     * @tc.desc   test getcwd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetcwd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 1;
@@ -1061,13 +1057,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_FPATHCONF_0100
-     * @tc.name       : testMuslUnistdFpathconf001
-     * @tc.desc       : test fpathconf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslUnistdFpathconf001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_FPATHCONF_0100
+     * @tc.desc   test fpathconf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdFpathconf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 1;
@@ -1077,13 +1072,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_CHDIR_0100
-     * @tc.name       : testMuslUnistdChdir001
-     * @tc.desc       : test chdir
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslUnistdChdir001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_CHDIR_0100
+     * @tc.desc   test chdir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdChdir001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 0;
@@ -1093,13 +1087,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_CHOWN_0100
-     * @tc.name       : testMuslUnistdChown001
-     * @tc.desc       : test chown
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslUnistdChown001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_CHOWN_0100
+     * @tc.desc   test chown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdChown001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 0;
@@ -1109,13 +1102,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_CHROOT_0100
-     * @tc.name       : testMuslUnistdChroot001
-     * @tc.desc       : test chroot
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslUnistdChroot001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_CHROOT_0100
+     * @tc.desc   test chroot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdChroot001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 0;
@@ -1125,13 +1117,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_FSYNC_0100
-     * @tc.name       : testMuslUnistdFsync001
-     * @tc.desc       : test fsync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslUnistdFsync001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_FSYNC_0100
+     * @tc.desc   test fsync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdFsync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 0;
@@ -1141,13 +1132,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_FTRUNCATE_0100
-     * @tc.name       : testMuslUnistdFtruncate001
-     * @tc.desc       : test ftruncate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslUnistdFtruncate001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_FTRUNCATE_0100
+     * @tc.desc   test ftruncate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdFtruncate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 0;
@@ -1157,13 +1147,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_FTRUNCATE64_0100
-     * @tc.name       : testMuslUnistdFtruncate64001
-     * @tc.desc       : test ftruncate64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslUnistdFtruncate64001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_FTRUNCATE64_0100
+     * @tc.desc   test ftruncate64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdFtruncate64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 0;
@@ -1173,12 +1162,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_TTYNAME_0100
-     * @tc.name       : testMuslUnistdTtyname001
-     * @tc.desc       : test ttyname
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdTtyname001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_TTYNAME_0100
+     * @tc.desc   test ttyname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdTtyname001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let toCpp = 0;
@@ -1189,12 +1178,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_ISSETUGID_0100
-     * @tc.name       : testMuslIssetugid001
-     * @tc.desc       : test issetugid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslIssetugid001
+     * @tc.number SUB_THIRDPARTY_MUSL_ISSETUGID_0100
+     * @tc.desc   test issetugid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIssetugid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = unistd.issetugid();
@@ -1203,12 +1192,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SETEGID_0100
-     * @tc.name       : testMuslUnistdSetegid001
-     * @tc.desc       : test setegid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSetegid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SETEGID_0100
+     * @tc.desc   test setegid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSetegid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = unistd.setegid();
@@ -1217,12 +1206,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETLOGIN_0100
-     * @tc.name       : testMuslUnistdGetLogin001
-     * @tc.desc       : test getlogin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdGetLogin001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETLOGIN_0100
+     * @tc.desc   test getlogin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetLogin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getLogin();
@@ -1232,12 +1221,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_GETLOGIN_R_0100
-     * @tc.name       : testMuslUnistdGetLoginR001
-     * @tc.desc       : test getloginr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdGetLoginR001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_GETLOGIN_R_0100
+     * @tc.desc   test getloginr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdGetLoginR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = unistd.getLoginR();
@@ -1247,12 +1236,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_LINK_0200
-     * @tc.name       : testMuslUnistdLink002
-     * @tc.desc       : test link
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdLink002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_LINK_0200
+     * @tc.desc   test link
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdLink002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "";
@@ -1263,12 +1252,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_LINK_AT_0200
-     * @tc.name       : testMuslUnistdLinkAt002
-     * @tc.desc       : test linkAt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdLinkAt002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_LINK_AT_0200
+     * @tc.desc   test linkAt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdLinkAt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "";
@@ -1279,12 +1268,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_LOCKF_0100
-     * @tc.name       : testMuslUnistdLockF001
-     * @tc.desc       : test lockf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdLockF001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_LOCKF_0100
+     * @tc.desc   test lockf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdLockF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1299,12 +1288,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_LOCKF64_0100
-     * @tc.name       : testMuslUnistdLockF64001
-     * @tc.desc       : test lockF64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdLockF64001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_LOCKF64_0100
+     * @tc.desc   test lockF64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdLockF64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1319,12 +1308,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_CLOSE_0100
-     * @tc.name       : testMuslUnistdClose001
-     * @tc.desc       : test close
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdClose001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_CLOSE_0100
+     * @tc.desc   test close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1340,12 +1329,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_COPY_FILE_RANGE_0100
-     * @tc.name       : testMuslUnistdCopyFileRange001
-     * @tc.desc       : test copy_file_range
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdCopyFileRange001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_COPY_FILE_RANGE_0100
+     * @tc.desc   test copy_file_range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdCopyFileRange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1363,12 +1352,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_CTERMID_0100
-     * @tc.name       : testMuslUnistdCtermid001
-     * @tc.desc       : test ctermid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdCtermid001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_CTERMID_0100
+     * @tc.desc   test ctermid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdCtermid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = "/dev/tty";
@@ -1377,12 +1366,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SYSCONF_0100
-     * @tc.name       : testMuslUnistdSysconf001
-     * @tc.desc       : test sysconf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdSysconf001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SYSCONF_0100
+     * @tc.desc   test sysconf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSysconf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 30;
@@ -1393,12 +1382,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SYSCONF_0200
-     * @tc.name       : testMuslUnistdSysconf002
-     * @tc.desc       : test sysconf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdSysconf002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SYSCONF_0200
+     * @tc.desc   test sysconf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSysconf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -100;
@@ -1409,12 +1398,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_SBRK_0100
-     * @tc.name       : testMuslUnistdSbrk001
-     * @tc.desc       : test sbrk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdSbrk001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_SBRK_0100
+     * @tc.desc   test sbrk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdSbrk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1425,12 +1414,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_WRITE_0100
-     * @tc.name       : testMuslUnistdWrite001
-     * @tc.desc       : test write
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdWrite001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_WRITE_0100
+     * @tc.desc   test write
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdWrite001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 2;
@@ -1447,12 +1436,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_ENVIRON_0100
-     * @tc.name       : testMuslUnistdEnviron001
-     * @tc.desc       : test environ
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdEnviron001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_ENVIRON_0100
+     * @tc.desc   test environ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdEnviron001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1462,12 +1451,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_DUP_0100
-     * @tc.name       : testMuslUnistdDup001
-     * @tc.desc       : test dup
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdDup001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_DUP_0100
+     * @tc.desc   test dup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdDup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1483,12 +1472,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_DUP2_0100
-     * @tc.name       : testMuslUnistdDup2001
-     * @tc.desc       : test dup2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdDup2001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_DUP2_0100
+     * @tc.desc   test dup2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdDup2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1504,12 +1493,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_DUP3_0100
-     * @tc.name       : testMuslUnistdDup3001
-     * @tc.desc       : test dup3
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdDup3001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_DUP3_0100
+     * @tc.desc   test dup3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdDup3001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1525,12 +1514,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_EXECV_0100
-     * @tc.name       : testMuslUnistdExecv001
-     * @tc.desc       : test execv
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdExecv001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_EXECV_0100
+     * @tc.desc   test execv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdExecv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1540,12 +1529,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_EXECVP_0100
-     * @tc.name       : testMuslUnistdExecvp001
-     * @tc.desc       : test execvp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdExecvp001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_EXECVP_0100
+     * @tc.desc   test execvp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdExecvp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1554,12 +1543,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_EXECVPE_0100
-     * @tc.name       : testMuslUnistdExecvpe001
-     * @tc.desc       : test execvpe
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdExecvpe001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_EXECVPE_0100
+     * @tc.desc   test execvpe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdExecvpe001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1569,12 +1558,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_FEXECVE_0100
-     * @tc.name       : testMuslUnistdFexecve001
-     * @tc.desc       : test fexecve
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdFexecve001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_FEXECVE_0100
+     * @tc.desc   test fexecve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdFexecve001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1583,12 +1572,12 @@ export default function unistdNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_EXECVE_0100
-     * @tc.name       : testMuslUnistdExecve001
-     * @tc.desc       : test execve
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdExecve001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_EXECVE_0100
+     * @tc.desc   test execve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdExecve001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1598,12 +1587,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_FACCESSAT_0100
-     * @tc.name       : testMuslUnistdFaccessat001
-     * @tc.desc       : test faccessat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdFaccessat001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_FACCESSAT_0100
+     * @tc.desc   test faccessat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdFaccessat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1620,12 +1609,12 @@ export default function unistdNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_FCHDIR_0100
-     * @tc.name       : testMuslUnistdFchdir001
-     * @tc.desc       : test fchdir
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdFchdir001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_FCHDIR_0100
+     * @tc.desc   test fchdir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdFchdir001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1638,12 +1627,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_FCHOWNAT_0100
-     * @tc.name       : testMuslUnistdFchownat001
-     * @tc.desc       : test fchownat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdFchownat001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_FCHOWNAT_0100
+     * @tc.desc   test fchownat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdFchownat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1659,12 +1648,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_FDATASYNC_0100
-     * @tc.name       : testMuslUnistdFdatasync001
-     * @tc.desc       : test fdatasync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdFdatasync001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_FDATASYNC_0100
+     * @tc.desc   test fdatasync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdFdatasync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1680,12 +1669,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_FCHOWN_0100
-     * @tc.name       : testMuslUnistdFchown001
-     * @tc.desc       : test fchown
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdFchown001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_FCHOWN_0100
+     * @tc.desc   test fchown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdFchown001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -1702,12 +1691,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_DAEMON_0100
-     * @tc.name       : testMuslUnistdDaemon001
-     * @tc.desc       : test daemon
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslUnistdDaemon001
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_DAEMON_0100
+     * @tc.desc   test daemon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdDaemon001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1718,12 +1707,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_WRITE_0200
-     * @tc.name       : testMuslUnistdWrite002
-     * @tc.desc       : test vwarn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdWrite002
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_WRITE_0200
+     * @tc.desc   test vwarn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdWrite002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = -1;
@@ -1733,12 +1722,12 @@ export default function unistdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UNISTD_WRITE_0300
-     * @tc.name       : testMuslUnistdWrite003
-     * @tc.desc       : test vwarnx
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUnistdWrite003
+     * @tc.number SUB_THIRDPARTY_MUSL_UNISTD_WRITE_0300
+     * @tc.desc   test vwarnx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUnistdWrite003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = -1;

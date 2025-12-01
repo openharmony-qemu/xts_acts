@@ -65,12 +65,12 @@ export default function rdbDecryptTest() {
     });
 
     /**
+     * @tc.name   rdbDecryptTest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0100
-     * @tc.name default params
-     * @tc.desc default params
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   default params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest0100 start *************");
@@ -103,12 +103,12 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest0100 end *************");
     })
     /**
+     * @tc.name   rdbDecryptTest0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0200
-     * @tc.name default params getrdbstore,open rdbstore
-     * @tc.desc default params getrdbstore,open rdbstore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   default params getrdbstore,open rdbstore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest0200 start *************");
@@ -160,14 +160,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0300
-     * @tc.name nodefault params1
-     * @tc.desc encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_GCM
-     hmacAlgo is data_relationalStore.HmacAlgo.SHA512
-     kdfAlgo is data_relationalStore.KdfAlgo.KDF_SHA512
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_GCM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest0300 start *************");
@@ -211,14 +209,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0400
-     * @tc.name nodefault params2
-     * @tc.desc encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_CBC
-     hmacAlgo is data_relationalStore.HmacAlgo.SHA1
-     kdfAlgo is data_relationalStore.KdfAlgo.KDF_SHA1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_CBC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest0400 start *************");
@@ -260,12 +256,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0500
-     * @tc.name nodefault params3
-     * @tc.desc iterationCount is 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   iterationCount is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest0500 start *************");
@@ -305,14 +301,12 @@ export default function rdbDecryptTest() {
 
 
     /**
+     * @tc.name   rdbDecryptTest0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0600
-     * @tc.name nodefault params4
-     * @tc.desc encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_GCM
-     hmacAlgo is data_relationalStore.HmacAlgo.SHA256
-     kdfAlgo is data_relationalStore.KdfAlgo.KDF_SHA1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_GCM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest0600 start *************");
@@ -354,12 +348,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0700
-     * @tc.name nodefault params5
-     * @tc.desc encryptionKey is new Uint8Array([])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encryptionKey is new Uint8Array([])
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest0700 start *************");
@@ -401,14 +395,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0800
-     * @tc.name nodefault params6
-     * @tc.desc encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_CBC
-     hmacAlgo is data_relationalStore.HmacAlgo.SHA256
-     kdfAlgo is data_relationalStore.KdfAlgo.KDF_SHA256
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_CBC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest0800 start *************");
@@ -450,12 +442,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_0900
-     * @tc.name nodefault params6
-     * @tc.desc cryptoPageSize is 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cryptoPageSize is 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest0900 start *************");
@@ -498,12 +490,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1000
-     * @tc.name nodefault params7
-     * @tc.desc params is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   params is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest1000 start *************");
@@ -542,12 +534,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1100
-     * @tc.name nodefault params8
-     * @tc.desc encryptionAlgo hmacAlgo kdfAlgo cryptoPageSize is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   encryptionAlgo hmacAlgo kdfAlgo cryptoPageSize is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest1100 start *************");
@@ -587,12 +579,12 @@ export default function rdbDecryptTest() {
 
 
     /**
+     * @tc.name   rdbDecryptTest1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1200
-     * @tc.name nodefault params9
-     * @tc.desc cryptoPageSize is 1024
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cryptoPageSize is 1024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest1200 start *************");
@@ -639,12 +631,12 @@ export default function rdbDecryptTest() {
 
 
     /**
+     * @tc.name   rdbDecryptTest1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1300
-     * @tc.name nodefault params10
-     * @tc.desc cryptoPageSize is 4096
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cryptoPageSize is 4096
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest1300 start *************");
@@ -689,12 +681,12 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest1300 end *************");
     })
     /**
+     * @tc.name   rdbDecryptTest1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1400
-     * @tc.name nodefault params11
-     * @tc.desc cryptoPageSize is 65536
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cryptoPageSize is 65536
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest1400 start *************");
@@ -742,12 +734,12 @@ export default function rdbDecryptTest() {
 
 
     /**
+     * @tc.name   rdbDecryptTest1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1500
-     * @tc.name nodefault params12
-     * @tc.desc cryptoPageSize is 65536.7
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   cryptoPageSize is 65536.7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest1500 start *************");
@@ -794,14 +786,12 @@ export default function rdbDecryptTest() {
 
 
     /**
+     * @tc.name   rdbDecryptTest1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1600
-     * @tc.name invaild params1
-     * @tc.desc  encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_CBC+1
-     hmacAlgo is data_relationalStore.HmacAlgo.SHA256+1
-     kdfAlgo is data_relationalStore.KdfAlgo.KDF_SHA256+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   encryptionAlgo is data_relationalStore.EncryptionAlgo.AES_256_CBC+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest1600 start *************");
@@ -832,12 +822,12 @@ export default function rdbDecryptTest() {
 
 
     /**
+     * @tc.name   rdbDecryptTest1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1700
-     * @tc.name invaild params2
-     * @tc.desc iterationCount is -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   iterationCount is -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest1700 start *************");
@@ -866,12 +856,12 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest1700 end *************");
     })
     /**
+     * @tc.name   rdbDecryptTest1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1800
-     * @tc.name invaild params3
-     * @tc.desc cryptoPageSize is 511
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   cryptoPageSize is 511
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest1800 start *************");
@@ -901,12 +891,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_1900
-     * @tc.name invaild params4
-     * @tc.desc cryptoPageSize is 65537
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   cryptoPageSize is 65537
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest1900 start *************");
@@ -935,12 +925,12 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest1900 end *************");
     })
     /**
+     * @tc.name   rdbDecryptTest2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2000
-     * @tc.name invaild params5
-     * @tc.desc cryptoPageSize is 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   cryptoPageSize is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest2000 start *************");
@@ -970,12 +960,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest2100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2100
-     * @tc.name invaild params6
-     * @tc.desc encryptionAlgo is 4,hmacAlgo is 5,kdfAlgo is 6
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   encryptionAlgo is 4,hmacAlgo is 5,kdfAlgo is 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest2100 start *************");
@@ -1004,12 +994,12 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest2100 end *************");
     })
     /**
+     * @tc.name   rdbDecryptTest2200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2200
-     * @tc.name invaild params7
-     * @tc.desc params is Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   params is Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest2200 start *************");
@@ -1039,12 +1029,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest2300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2300
-     * @tc.name invaild params8
-     * @tc.desc params is NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   params is NaN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest2300 start *************");
@@ -1075,12 +1065,12 @@ export default function rdbDecryptTest() {
 
 
     /**
+     * @tc.name   rdbDecryptTest2400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2400
-     * @tc.name invaild params9
-     * @tc.desc cryptoPageSize is 512
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   cryptoPageSize is 512
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest2400 start *************");
@@ -1112,13 +1102,13 @@ export default function rdbDecryptTest() {
       }
       console.log(TAG + "************* rdbDecryptTest2400 end *************");
     })
-        /**
+    /**
+     * @tc.name   rdbDecryptTest2500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2500
-     * @tc.name no encrpy attach encrpy,cryptoParam is default
-     * @tc.desc no encrpy attach encrpy,cryptoParam is default
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   no encrpy attach encrpy,cryptoParam is default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest2500 start *************");
@@ -1165,12 +1155,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest2600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2600
-     * @tc.name no encrpy attach encrpy,cryptoParam is no default
-     * @tc.desc no encrpy attach encrpy,cryptoParam is no default
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   no encrpy attach encrpy,cryptoParam is no default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest2600 start *************");
@@ -1221,12 +1211,12 @@ export default function rdbDecryptTest() {
       console.log(TAG + "************* rdbDecryptTest2600 end *************");
     })
     /**
+     * @tc.name   rdbDecryptTest2700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2700
-     * @tc.name no encrpy attach encrpy,cryptoParam is invalid params
-     * @tc.desc no encrpy attach encrpy,cryptoParam is invalid params
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   no encrpy attach encrpy,cryptoParam is invalid params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbDecryptTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest2700 start *************");
@@ -1287,12 +1277,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest2800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2800
-     * @tc.name encrpy attach encrpy,cryptoParam is no default
-     * @tc.desc encrpy attach encrpy,cryptoParam is no default
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encrpy attach encrpy,cryptoParam is no default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest2800 start *************");
@@ -1353,12 +1343,12 @@ export default function rdbDecryptTest() {
     })
 
     /**
+     * @tc.name   rdbDecryptTest2900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CryptoParamJsAPITest_2900
-     * @tc.name no encrpy attach encrpy,cryptoParam is no default
-     * @tc.desc no encrpy attach encrpy,insert data from encrpy to noencrpy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   no encrpy attach encrpy,insert data from encrpy to noencrpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbDecryptTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbDecryptTest2900 start *************");

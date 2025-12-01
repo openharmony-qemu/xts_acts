@@ -58,13 +58,15 @@ export default function clickIsSystem() {
       console.info("clickIsSystem after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ACTION_GESTURE_JUDGE_0100_clickIsSystem_001
-     * @tc.desc button click is or not systemGesture test
-     * @tc.level Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   clickIsSystem_001
+     * @tc.number clickIsSystem_001
+     * @tc.desc   clickIsSystem_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('clickIsSystem_001', Level.LEVEL0, async (done: Function) => {
       console.info('[clickIsSystem_001] START');
       await CommonFunc.sleep(200);
