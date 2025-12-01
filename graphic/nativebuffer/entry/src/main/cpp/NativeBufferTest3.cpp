@@ -85,7 +85,7 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 #define NUMBER_50002000 50002000
 #define NUMBER_50007000 50007000
 #define NUMBER_50102000 50102000
-#define NUMBER_0x001 0x001
+#define NUMBER_0X001 0x001
 
 static OH_NativeBuffer *getBuffer()
 {
@@ -350,13 +350,13 @@ napi_value OHNativeBufferMapAndGetConfilgMultipleCalls02(napi_env env, napi_call
     uint32_t TARGET_USAGE = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA;
     for (int i = 0; i < NUMBER_10; i++) {
         int32_t ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer1, &virAddr, &config1);
-        if (ret != 0 || config1.width != NUMBER_0x001 || config1.height != NUMBER_0x001 || config1.format !=
+        if (ret != 0 || config1.width != NUMBER_0X001 || config1.height != NUMBER_0X001 || config1.format !=
             NATIVEBUFFER_PIXEL_FMT_RGBA_8888 || (config1.usage & TARGET_USAGE) != TARGET_USAGE) {
                 napi_create_int32(env, FAIL, &result);
                 return result;
         }
         ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer2, &virAddr, &config2);
-        if (ret != 0 || config2.width != NUMBER_0x001 || config2.height != NUMBER_0x001 || config2.format !=
+        if (ret != 0 || config2.width != NUMBER_0X001 || config2.height != NUMBER_0X001 || config2.format !=
             NATIVEBUFFER_PIXEL_FMT_RGB_888 || (config2.usage & TARGET_USAGE) != TARGET_USAGE) {
                 napi_create_int32(env, FAIL, &result);
                 return result;
