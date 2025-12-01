@@ -254,8 +254,8 @@ napi_value OHNativeBufferMapAndGetConfilgNormal(napi_env env, napi_callback_info
     int32_t ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer, &virAddr, &testConfig);
     if (ret != 0 || testConfig.width != config.width || testConfig.height != config.height || testConfig.format !=
         config.format || testConfig.usage != config.usage) {
-            napi_create_int32(env, FAIL, &result);
-            return result;
+        napi_create_int32(env, FAIL, &result);
+        return result;
     }
     OH_NativeBuffer_Unreference(nativeBuffer);
     napi_create_int32(env, SUCCESS, &result);
@@ -312,8 +312,8 @@ napi_value OHNativeBufferMapAndGetConfilgMultipleCalls01(napi_env env, napi_call
         int32_t ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer, &virAddr, &testConfig);
         if (ret != 0 || testConfig.width != config.width || testConfig.height != config.height || testConfig.format !=
             config.format || testConfig.usage != config.usage) {
-                napi_create_int32(env, FAIL, &result);
-                return result;
+            napi_create_int32(env, FAIL, &result);
+            return result;
         }
     }
     OH_NativeBuffer_Unreference(nativeBuffer);
@@ -352,14 +352,14 @@ napi_value OHNativeBufferMapAndGetConfilgMultipleCalls02(napi_env env, napi_call
         int32_t ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer1, &virAddr, &config1);
         if (ret != 0 || config1.width != NUMBER_0X001 || config1.height != NUMBER_0X001 || config1.format !=
             NATIVEBUFFER_PIXEL_FMT_RGBA_8888 || (config1.usage & TARGET_USAGE) != TARGET_USAGE) {
-                napi_create_int32(env, FAIL, &result);
-                return result;
+            napi_create_int32(env, FAIL, &result);
+            return result;
         }
         ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer2, &virAddr, &config2);
         if (ret != 0 || config2.width != NUMBER_0X001 || config2.height != NUMBER_0X001 || config2.format !=
             NATIVEBUFFER_PIXEL_FMT_RGB_888 || (config2.usage & TARGET_USAGE) != TARGET_USAGE) {
-                napi_create_int32(env, FAIL, &result);
-                return result;
+            napi_create_int32(env, FAIL, &result);
+            return result;
         }
     }
     OH_NativeBuffer_Unreference(nativeBuffer1);
@@ -396,8 +396,8 @@ napi_value OHNativeBufferMapAll(napi_env env, napi_callback_info info)
     ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer, &virAddr, &testConfig);
     if (ret != 0 || testConfig.width != config.width || testConfig.height != config.height ||
         testConfig.format != config.format || testConfig.usage != config.usage) {
-            napi_create_int32(env, FAIL, &result);
-            return result;
+        napi_create_int32(env, FAIL, &result);
+        return result;
     }
     int fenceFd = -1;
     ret = OH_NativeBuffer_MapWaitFence(nativeBuffer, fenceFd, &virAddr);
@@ -521,8 +521,8 @@ napi_value OHNativeBufferReadFromParcelNormal(napi_env env, napi_callback_info i
     OH_NativeBuffer_GetConfig(nativeBuffer2, &config2);
     if (config1.width != config2.width || config1.height != config2.height || config1.format != config2.format ||
         config1.usage != config2.usage || config1.stride != config2.stride) {
-            napi_create_int32(env, FAIL, &result);
-            return result;
+        napi_create_int32(env, FAIL, &result);
+        return result;
     }
     OH_NativeBuffer_Unreference(nativeBuffer1);
     OH_NativeBuffer_Unreference(nativeBuffer2);

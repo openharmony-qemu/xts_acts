@@ -44,10 +44,10 @@ export default function nativeBufferTest() {
      */
     it('testOHNativeBufferReference001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferReference();
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferReference();
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testOHNativeBufferUnreference001
@@ -59,10 +59,10 @@ export default function nativeBufferTest() {
      */
     it('testOHNativeBufferUnreference001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferUnreference();
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferUnreference();
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testOHNativeBufferGetConfig001
@@ -74,10 +74,10 @@ export default function nativeBufferTest() {
      */
     it('testOHNativeBufferGetConfig001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferGetConfig();
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferGetConfig();
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testOHNativeBufferMap001
@@ -117,10 +117,10 @@ export default function nativeBufferTest() {
      */
     it('testOHNativeBufferGetSeqNum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferGetSeqNum();
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferGetSeqNum();
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testOHNativeBufferAlloc002
@@ -146,10 +146,10 @@ export default function nativeBufferTest() {
      */
     it('testOHNativeBufferReference002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferReferenceAbnormal();
-        expect(result).assertEqual(-1);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferReferenceAbnormal();
+      expect(result).assertEqual(-1);
+      done();
+    });
 
     /**
      * @tc.name   testOHNativeBufferUnreference002
@@ -161,10 +161,10 @@ export default function nativeBufferTest() {
      */
     it('testOHNativeBufferUnreference002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferUnreferenceAbnormal();
-        expect(result).assertEqual(-1);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferUnreferenceAbnormal();
+      expect(result).assertEqual(-1);
+      done();
+    });
 
     /**
      * @tc.name   testOHNativeBufferMap002
@@ -204,10 +204,10 @@ export default function nativeBufferTest() {
      */
     it('testOHNativeBufferGetSeqNum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferGetSeqNumAbnormal();
-        expect(result).assertEqual(-1);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferGetSeqNumAbnormal();
+      expect(result).assertEqual(-1);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferAllocNullptr
@@ -283,12 +283,12 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferFromNativeWindowBufferNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: Array<number> = nativebuffer.oHNativeBufferFromNativeWindowBufferNullptr();
-        console.info('testNativeBufferFromNativeWindowBufferNullptr result: ' + result);
-        expect(result[0]).assertEqual(40001000);
-        expect(result[1]).assertEqual(40001000);
-        done();
-      });
+      let result: Array<number> = nativebuffer.oHNativeBufferFromNativeWindowBufferNullptr();
+      console.info('testNativeBufferFromNativeWindowBufferNullptr result: ' + result);
+      expect(result[0]).assertEqual(40001000);
+      expect(result[1]).assertEqual(40001000);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferFromNativeWindowBufferNormal
@@ -300,13 +300,13 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferFromNativeWindowBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: Array<number> = nativebuffer.oHNativeBufferFromNativeWindowBufferNormal();
-        console.info("testNativeBufferFromNativeWindowBufferNormal result: " + result)
-        expect(result[0]).assertEqual(0);
-        expect(result[1]).assertEqual(0);
-        expect(result[2]).assertEqual(0);
-        done();
-      });
+      let result: Array<number> = nativebuffer.oHNativeBufferFromNativeWindowBufferNormal();
+      console.info("testNativeBufferFromNativeWindowBufferNormal result: " + result)
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0);
+      expect(result[2]).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferGetConfigNullptr
@@ -318,11 +318,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferGetConfigNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferGetConfigNullptr();
-        console.info('testNativeBufferGetConfigNullptr result: ' + result);
-        expect(result).assertEqual(-1);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferGetConfigNullptr();
+      console.info('testNativeBufferGetConfigNullptr result: ' + result);
+      expect(result).assertEqual(-1);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferGetConfigNormal
@@ -334,11 +334,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferGetConfigNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferGetConfigNormal();
-        console.info('testNativeBufferGetConfigNormal result: ' + result);
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferGetConfigNormal();
+      console.info('testNativeBufferGetConfigNormal result: ' + result);
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferGetSeqNumNullptr
@@ -350,11 +350,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferGetSeqNumNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferGetSeqNumNullptr();
-        console.info('testNativeBufferGetSeqNumNullptr result: ' + result);
-        expect(result).assertEqual(-1);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferGetSeqNumNullptr();
+      console.info('testNativeBufferGetSeqNumNullptr result: ' + result);
+      expect(result).assertEqual(-1);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferGetSeqNumNormal
@@ -366,11 +366,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferGetSeqNumNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferGetSeqNumNormal();
-        console.info('testNativeBufferGetSeqNumNormal result: ' + result);
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferGetSeqNumNormal();
+      console.info('testNativeBufferGetSeqNumNormal result: ' + result);
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBuffeMapNullptr
@@ -412,12 +412,12 @@ export default function nativeBufferTest() {
      */
     it('testNativeBuffeMapPlanesNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: Array<number> = nativebuffer.oHNativeBuffeMapPlanesNullptr();
-        console.info('testNativeBuffeMapPlanesNullptr result: ' + result);
-        expect(result[0]).assertEqual(40001000);
-        expect(result[1]).assertEqual(40001000);
-        done();
-      });
+      let result: Array<number> = nativebuffer.oHNativeBuffeMapPlanesNullptr();
+      console.info('testNativeBuffeMapPlanesNullptr result: ' + result);
+      expect(result[0]).assertEqual(40001000);
+      expect(result[1]).assertEqual(40001000);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferMapPlanesAbNormal
@@ -429,11 +429,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapPlanesAbNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: Array<number> = nativebuffer.oHNativeBufferMapPlanesAbNormal();
-        console.info('testNativeBufferMapPlanesAbNormal result: ' + result);
-        expect(result).assertEqual(50007000);
-        done();
-      });
+      let result: Array<number> = nativebuffer.oHNativeBufferMapPlanesAbNormal();
+      console.info('testNativeBufferMapPlanesAbNormal result: ' + result);
+      expect(result).assertEqual(50007000);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferMapPlanesNormal
@@ -445,16 +445,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapPlanesNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: Array<number> = nativebuffer.oHNativeBufferMapPlanesNormal();
-          console.info('testNativeBufferMapPlanesNormal result: ' + result);
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: Array<number> = nativebuffer.oHNativeBufferMapPlanesNormal();
+        console.info('testNativeBufferMapPlanesNormal result: ' + result);
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBuffeReferenceNullptr
@@ -466,11 +466,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBuffeReferenceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBuffeReferenceNullptr();
-        console.info('testNativeBuffeReferenceNullptr result: ' + result);
-        expect(result).assertEqual(40001000);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBuffeReferenceNullptr();
+      console.info('testNativeBuffeReferenceNullptr result: ' + result);
+      expect(result).assertEqual(40001000);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBuffeUnreferenceNullptr
@@ -482,11 +482,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBuffeUnreferenceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBuffeUnreferenceNullptr();
-        console.info('testNativeBuffeUnreferenceNullptr result: ' + result);
-        expect(result).assertEqual(40001000);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBuffeUnreferenceNullptr();
+      console.info('testNativeBuffeUnreferenceNullptr result: ' + result);
+      expect(result).assertEqual(40001000);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferReferenceNormal
@@ -498,11 +498,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferReferenceNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferReferenceNormal();
-        console.info('testNativeBufferReferenceNormal result: ' + result);
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferReferenceNormal();
+      console.info('testNativeBufferReferenceNormal result: ' + result);
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferReferenceMax
@@ -529,11 +529,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferUnreferenceNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferUnreferenceNormal();
-        console.info('testNativeBufferUnreferenceNormal result: ' + result);
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferUnreferenceNormal();
+      console.info('testNativeBufferUnreferenceNormal result: ' + result);
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBuffeUnmapNullptr
@@ -575,16 +575,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferGetColorSpaceFirst', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: number = nativebuffer.oHNativeBufferGetColorSpaceFirst();
-          console.info('testNativeBufferGetColorSpaceFirst result: ' + result);
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: number = nativebuffer.oHNativeBufferGetColorSpaceFirst();
+        console.info('testNativeBufferGetColorSpaceFirst result: ' + result);
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferSetColorSpaceNormal
@@ -596,16 +596,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetColorSpaceNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: Array<number> = nativebuffer.oHNativeBufferSetColorSpaceNormal();
-          console.info('testNativeBufferSetColorSpaceNormal result: ' + result);
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: Array<number> = nativebuffer.oHNativeBufferSetColorSpaceNormal();
+        console.info('testNativeBufferSetColorSpaceNormal result: ' + result);
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferSetColorSpaceNullptr
@@ -617,16 +617,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetColorSpaceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: number = nativebuffer.oHNativeBufferSetColorSpaceNullptr();
-          console.info('testNativeBufferSetColorSpaceNullptr result: ' + result);
-          expect(result).assertEqual(40001000);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: number = nativebuffer.oHNativeBufferSetColorSpaceNullptr();
+        console.info('testNativeBufferSetColorSpaceNullptr result: ' + result);
+        expect(result).assertEqual(40001000);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferSetColorSpaceAbnormal
@@ -638,11 +638,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetColorSpaceAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferSetColorSpaceAbnormal();
-        console.info('testNativeBufferSetColorSpaceAbnormal result: ' + result);
-        expect(result).assertEqual(40001000);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferSetColorSpaceAbnormal();
+      console.info('testNativeBufferSetColorSpaceAbnormal result: ' + result);
+      expect(result).assertEqual(40001000);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferGetColorSpaceNullptr
@@ -654,19 +654,19 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferGetColorSpaceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: Array<number> = nativebuffer.oHNativeBufferGetColorSpaceNullptr();
-          console.info('testNativeBufferGetColorSpaceNullptr result: ' + result);
-          expect(result[0]).assertEqual(0);
-          expect(result[1]).assertEqual(40001000);
-          expect(result[2]).assertEqual(40001000);
-          expect(result[3]).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: Array<number> = nativebuffer.oHNativeBufferGetColorSpaceNullptr();
+        console.info('testNativeBufferGetColorSpaceNullptr result: ' + result);
+        expect(result[0]).assertEqual(0);
+        expect(result[1]).assertEqual(40001000);
+        expect(result[2]).assertEqual(40001000);
+        expect(result[3]).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferGetMetadataValueFirst
@@ -678,16 +678,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferGetMetadataValueFirst', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: number = nativebuffer.oHNativeBufferGetMetadataValueFirst();
-          console.info('testNativeBufferGetMetadataValueFirst result: ' + result);
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: number = nativebuffer.oHNativeBufferGetMetadataValueFirst();
+        console.info('testNativeBufferGetMetadataValueFirst result: ' + result);
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferSetDynamicMetadataValue
@@ -699,16 +699,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetDynamicMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: Array<number> = nativebuffer.oHNativeBufferSetDynamicMetadataValue();
-          console.info('testNativeBufferSetDynamicMetadataValue result: ' + result)
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: Array<number> = nativebuffer.oHNativeBufferSetDynamicMetadataValue();
+        console.info('testNativeBufferSetDynamicMetadataValue result: ' + result)
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferSetMetadataValueTimes
@@ -720,16 +720,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetMetadataValueTimes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: number = nativebuffer.oHNativeBufferSetMetadataValueTimes();
-          console.info('testNativeBufferSetMetadataValueTimes result: ' + result);
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: number = nativebuffer.oHNativeBufferSetMetadataValueTimes();
+        console.info('testNativeBufferSetMetadataValueTimes result: ' + result);
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferSetStaticMetadataValue
@@ -741,16 +741,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetStaticMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: Array<number> = nativebuffer.oHNativeBufferSetStaticMetadataValue();
-          console.info('testNativeBufferSetStaticMetadataValue result: ' + result)
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: Array<number> = nativebuffer.oHNativeBufferSetStaticMetadataValue();
+        console.info('testNativeBufferSetStaticMetadataValue result: ' + result)
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferSetMetadataValue
@@ -762,16 +762,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: Array<number> = nativebuffer.oHNativeBufferSetMetadataValue();
-          console.info('testNativeBufferSetMetadataValue result: ' + result)
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: Array<number> = nativebuffer.oHNativeBufferSetMetadataValue();
+        console.info('testNativeBufferSetMetadataValue result: ' + result)
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferSetNullMetadataValue
@@ -783,16 +783,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetNullMetadataValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: number = nativebuffer.oHNativeBufferSetNullMetadataValue();
-          console.info('testNativeBufferSetNullMetadataValue result: ' + result);
-          expect(result).assertEqual(50002000);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: number = nativebuffer.oHNativeBufferSetNullMetadataValue();
+        console.info('testNativeBufferSetNullMetadataValue result: ' + result);
+        expect(result).assertEqual(50002000);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferSetMetadataValueNullptr
@@ -804,17 +804,17 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetMetadataValueNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: Array<number> = nativebuffer.oHNativeBufferSetMetadataValueNullptr();
-          console.info('testNativeBufferSetMetadataValueNullptr result: ' + result);
-          expect(result[0]).assertEqual(40001000);
-          expect(result[1]).assertEqual(40001000);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: Array<number> = nativebuffer.oHNativeBufferSetMetadataValueNullptr();
+        console.info('testNativeBufferSetMetadataValueNullptr result: ' + result);
+        expect(result[0]).assertEqual(40001000);
+        expect(result[1]).assertEqual(40001000);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferGetMetadataValueAbnormal
@@ -826,17 +826,17 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferGetMetadataValueAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: Array<number> = nativebuffer.oHNativeBufferGetMetadataValueAbnormal();
-          console.info('testNativeBufferGetMetadataValueAbnormal result: ' + result);
-          expect(result[0]).assertEqual(40001000);
-          expect(result[1]).assertEqual(40001000);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: Array<number> = nativebuffer.oHNativeBufferGetMetadataValueAbnormal();
+        console.info('testNativeBufferGetMetadataValueAbnormal result: ' + result);
+        expect(result[0]).assertEqual(40001000);
+        expect(result[1]).assertEqual(40001000);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferGetMetadataValueNullptr
@@ -848,16 +848,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferGetMetadataValueNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: Array<number> = nativebuffer.oHNativeBufferGetMetadataValueNullptr();
-          console.info("testNativeBufferGetMetadataValueNullptr result: " + result)
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: Array<number> = nativebuffer.oHNativeBufferGetMetadataValueNullptr();
+        console.info("testNativeBufferGetMetadataValueNullptr result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferY8Y16USAGEandAlloc
@@ -869,16 +869,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferY8Y16USAGEandAlloc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: Array<number> = nativebuffer.oHNativeBufferY8Y16USAGEandAlloc();
-          console.info("testNativeBufferY8Y16USAGEandAlloc result: " + result)
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: Array<number> = nativebuffer.oHNativeBufferY8Y16USAGEandAlloc();
+        console.info("testNativeBufferY8Y16USAGEandAlloc result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferMapWaitFence0ms
@@ -890,11 +890,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapWaitFence0ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferMapWaitFence0ms();
-        console.info("testNativeBufferMapWaitFence0ms result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapWaitFence0ms();
+      console.info("testNativeBufferMapWaitFence0ms result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferMapWaitFence100ms
@@ -906,11 +906,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapWaitFence100ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferMapWaitFence100ms();
-        console.info("testNativeBufferMapWaitFence100ms result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapWaitFence100ms();
+      console.info("testNativeBufferMapWaitFence100ms result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferMapWaitFence5000ms
@@ -922,11 +922,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapWaitFence5000ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferMapWaitFence5000ms();
-        console.info("testNativeBufferMapWaitFence5000ms result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapWaitFence5000ms();
+      console.info("testNativeBufferMapWaitFence5000ms result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferMapWaitFenceNullptr
@@ -938,11 +938,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapWaitFenceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferMapWaitFenceNullptr();
-        console.info("testNativeBufferMapWaitFenceNullptr result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapWaitFenceNullptr();
+      console.info("testNativeBufferMapWaitFenceNullptr result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testNativeBufferMapWaitFenceAbnormal
@@ -954,11 +954,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapWaitFenceAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferMapWaitFenceAbnormal();
-        console.info("testNativeBufferMapWaitFenceAbnormal result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapWaitFenceAbnormal();
+      console.info("testNativeBufferMapWaitFenceAbnormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   testOHNativeBufferMetadataTypeEnumTraversal
@@ -970,16 +970,16 @@ export default function nativeBufferTest() {
      */
     it('testOHNativeBufferMetadataTypeEnumTraversal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: number = nativebuffer.oHNativeBufferSetMetadataValueEnumTraversal();
-          console.info("testOHNativeBufferMetadataType result: " + result)
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: number = nativebuffer.oHNativeBufferSetMetadataValueEnumTraversal();
+        console.info("testOHNativeBufferMetadataType result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNativeBufferSetMetadataValueREGION
@@ -991,16 +991,16 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetMetadataValueREGION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: number = nativebuffer.oHNativeBufferSetMetadataValueREGION();
-          console.info("testNativeBufferSetMetadataValueREGION result: " + result)
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: number = nativebuffer.oHNativeBufferSetMetadataValueREGION();
+        console.info("testNativeBufferSetMetadataValueREGION result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
 
     /**
      * @tc.name       : testNativeBufferIsSupportedNormal
@@ -1012,11 +1012,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferIsSupportedNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-          let result: number = nativebuffer.oHNativeBufferIsSupportedNormal();
-          console.info("testNativeBufferIsSupportedNormal result: " + result)
-          expect(result).assertEqual(0);
-          done();
-      });
+      let result: number = nativebuffer.oHNativeBufferIsSupportedNormal();
+      console.info("testNativeBufferIsSupportedNormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferIsSupportedNull01
@@ -1028,11 +1028,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferIsSupportedNull01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferIsSupportedNull01();
-        console.info("testNativeBufferIsSupportedNull01 result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferIsSupportedNull01();
+      console.info("testNativeBufferIsSupportedNull01 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferIsSupportedNull02
@@ -1044,11 +1044,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferIsSupportedNull02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferIsSupportedNull02();
-        console.info("testNativeBufferIsSupportedNull02 result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferIsSupportedNull02();
+      console.info("testNativeBufferIsSupportedNull02 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferIsSupportedAbnormal01
@@ -1060,11 +1060,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferIsSupportedAbnormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferIsSupportedAbnormal01();
-        console.info("testNativeBufferIsSupportedAbnormal01 result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferIsSupportedAbnormal01();
+      console.info("testNativeBufferIsSupportedAbnormal01 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferIsSupportedAbnormal02
@@ -1076,11 +1076,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferIsSupportedAbnormal02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferIsSupportedAbnormal02();
-        console.info("testNativeBufferIsSupportedAbnormal02 result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferIsSupportedAbnormal02();
+      console.info("testNativeBufferIsSupportedAbnormal02 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferIsSupportedMultipleCalls
@@ -1092,11 +1092,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferIsSupportedMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferIsSupportedMultipleCalls();
-        console.info("testNativeBufferIsSupportedMultipleCalls result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferIsSupportedMultipleCalls();
+      console.info("testNativeBufferIsSupportedMultipleCalls result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferMapAndGetConfilgNormal
@@ -1108,11 +1108,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapAndGetConfilgNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgNormal();
-        console.info("testNativeBufferMapAndGetConfilgNormal result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgNormal();
+      console.info("testNativeBufferMapAndGetConfilgNormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferMapAndGetConfilgNull
@@ -1124,11 +1124,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapAndGetConfilgNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgNull();
-        console.info("testNativeBufferMapAndGetConfilgNull result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgNull();
+      console.info("testNativeBufferMapAndGetConfilgNull result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferMapAndGetConfilgMultipleCalls01
@@ -1140,11 +1140,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapAndGetConfilgMultipleCalls01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgMultipleCalls01();
-        console.info("testNativeBufferMapAndGetConfilgMultipleCalls01 result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgMultipleCalls01();
+      console.info("testNativeBufferMapAndGetConfilgMultipleCalls01 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferMapAndGetConfilgMultipleCalls02
@@ -1156,11 +1156,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapAndGetConfilgMultipleCalls02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgMultipleCalls02();
-        console.info("testNativeBufferMapAndGetConfilgMultipleCalls02 result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgMultipleCalls02();
+      console.info("testNativeBufferMapAndGetConfilgMultipleCalls02 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferMapAll
@@ -1172,11 +1172,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferMapAll();
-        console.info("testNativeBufferMapAll result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapAll();
+      console.info("testNativeBufferMapAll result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferMapAndUnmap
@@ -1188,11 +1188,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapAndUnmap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferMapAndUnmap();
-        console.info("testNativeBufferMapAndUnmap result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapAndUnmap();
+      console.info("testNativeBufferMapAndUnmap result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferWriteToParcelNormal
@@ -1204,11 +1204,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferWriteToParcelNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferWriteToParcelNormal();
-        console.info("testNativeBufferWriteToParcelNormal result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferWriteToParcelNormal();
+      console.info("testNativeBufferWriteToParcelNormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferWriteToParcelNull
@@ -1220,11 +1220,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferWriteToParcelNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferWriteToParcelNull();
-        console.info("testNativeBufferWriteToParcelNull result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferWriteToParcelNull();
+      console.info("testNativeBufferWriteToParcelNull result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferReadFromParcelNormal
@@ -1236,11 +1236,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferReadFromParcelNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferReadFromParcelNormal();
-        console.info("testNativeBufferReadFromParcelNormal result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferReadFromParcelNormal();
+      console.info("testNativeBufferReadFromParcelNormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferReadFromParcelNull
@@ -1252,11 +1252,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferReadFromParcelNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferReadFromParcelNull();
-        console.info("testNativeBufferReadFromParcelNull result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferReadFromParcelNull();
+      console.info("testNativeBufferReadFromParcelNull result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferReadFromParcelAbnormal
@@ -1268,11 +1268,11 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferReadFromParcelAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferReadFromParcelAbnnormal();
-        console.info("testNativeBufferReadFromParcelAbnnormal result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferReadFromParcelAbnnormal();
+      console.info("testNativeBufferReadFromParcelAbnnormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name       : testNativeBufferWriteAndReadParcelMultipleCalls
@@ -1284,10 +1284,10 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferWriteAndReadParcelMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let result: number = nativebuffer.oHNativeBufferWriteAndReadParcelMultipleCalls();
-        console.info("testNativeBufferWriteAndReadParcelMultipleCalls result: " + result)
-        expect(result).assertEqual(0);
-        done();
-      });
+      let result: number = nativebuffer.oHNativeBufferWriteAndReadParcelMultipleCalls();
+      console.info("testNativeBufferWriteAndReadParcelMultipleCalls result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }
