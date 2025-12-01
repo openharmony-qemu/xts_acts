@@ -1668,7 +1668,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test38: Clears the pasteBoard')
-              systemPasteboard.clear();
+              systemPasteboard.clearDataSync();
 
               console.info('f_test38: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -1827,7 +1827,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test41: Clears the pasteBoard');
-              systemPasteboard.clear();
+              systemPasteboard.clearDataSync();
 
               console.info('f_test41: Checks the Property');
               let pasteDataProperty1 = pasteData1.getProperty();
@@ -2300,7 +2300,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test52: Clears the pasteBoard')
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync();
 
               console.info('f_test52: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -2345,7 +2345,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test53: Clears the pasteBoard')
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync();
 
               console.info('f_test53: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -2390,7 +2390,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test54: Clears the pasteBoard')
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync();
 
               console.info('f_test54: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -2436,7 +2436,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test55: Clears the pasteBoard')
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync();
 
               console.info('f_test55: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -2487,7 +2487,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 30).assertTrue();
 
               console.info('f_test56: Clears the pasteBoard')
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync();
 
               console.info('f_test56: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -2547,7 +2547,7 @@ export default function pasteBoardJEtsunitTest() {
             systemPasteboard.getPasteData().then((data) => {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 15).assertTrue();
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync()
               systemPasteboard.getPasteData().then((data) => {
                 let pasteData2 = data;
                 let recordCount = pasteData2.getRecordCount();
@@ -2833,7 +2833,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test65 Clears the pasteBoard')
-              systemPasteboard.clear();
+              systemPasteboard.clearDataSync();
               console.info('f_test65 Writes PasteData to the pasteboard');
               systemPasteboard.setPasteData(pasteData1).then(() => {
                 console.info('f_test65 Checks there is no content in the pasteboard')
