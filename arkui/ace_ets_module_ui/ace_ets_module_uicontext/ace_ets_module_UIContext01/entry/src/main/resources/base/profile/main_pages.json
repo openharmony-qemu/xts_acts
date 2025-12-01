@@ -14,6 +14,7 @@
     "MainAbility/pages/Context/UIContextWithoutWindowTest",
     "MainAbility/pages/Context/UIContextGetOpacityTest",
     "MainAbility/pages/Context/IsAvailableTest",
-    "MainAbility/pages/Context/IsFollowingSystemFontScaleFalseTest"
+    "MainAbility/pages/Context/IsFollowingSystemFontScaleFalseTest",
+    "MainAbility/pages/UIContext/IdTest"
   ]
 }
