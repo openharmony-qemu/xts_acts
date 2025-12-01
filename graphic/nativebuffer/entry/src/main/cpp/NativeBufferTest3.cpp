@@ -84,8 +84,8 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 #define NUMBER_40001000 40001000
 #define NUMBER_50002000 50002000
 #define NUMBER_50007000 50007000
-#define NUMBER_50102000 50102000 
-#define NUMBER_0x100 0x100
+#define NUMBER_50102000 50102000
+#define NUMBER_0x001 0x001
 
 static OH_NativeBuffer *getBuffer()
 {
@@ -103,8 +103,8 @@ napi_value OHNativeBufferIsSupportedNormal(napi_env env, napi_callback_info info
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config config;
-    config.width = 0x001;
-    config.height = 0x001;
+    config.width = 0x100;
+    config.height = 0x100;
     config.format = static_cast<int32_t>(NATIVEBUFFER_PIXEL_FMT_RGBA_8888);
     bool isSupported = false;
     int32_t ret = OH_NativeBuffer_IsSupported(config, &isSupported);
@@ -125,7 +125,7 @@ napi_value OHNativeBufferIsSupportedNull01(napi_env env, napi_callback_info info
     napi_value result = nullptr;
     OH_NativeBuffer_Config config;
     config.width = 0;
-    config.height = 0x001;
+    config.height = 0x100;
     config.format = static_cast<int32_t>(NATIVEBUFFER_PIXEL_FMT_RGBA_8888);
     bool isSupported = false;
     int32_t ret = OH_NativeBuffer_IsSupported(config, &isSupported);
@@ -133,14 +133,14 @@ napi_value OHNativeBufferIsSupportedNull01(napi_env env, napi_callback_info info
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    config.width = 0x001;
+    config.width = 0x100;
     config.height = 0;
     ret = OH_NativeBuffer_IsSupported(config, &isSupported);
     if (ret != 0 || isSupported != false) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    config.height = 0x001;
+    config.height = 0x100;
     config.format = static_cast<int32_t>(0);
     ret = OH_NativeBuffer_IsSupported(config, &isSupported);
     if (ret != 0 || isSupported != true) {
@@ -155,8 +155,8 @@ napi_value OHNativeBufferIsSupportedNull02(napi_env env, napi_callback_info info
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config config;
-    config.width = 0x001;
-    config.height = 0x001;
+    config.width = 0x100;
+    config.height = 0x100;
     config.format = static_cast<int32_t>(NATIVEBUFFER_PIXEL_FMT_RGBA_8888);
     bool isSupported = false;
     int32_t ret = OH_NativeBuffer_IsSupported(config, nullptr);
@@ -173,7 +173,7 @@ napi_value OHNativeBufferIsSupportedAbnormal01(napi_env env, napi_callback_info 
     napi_value result = nullptr;
     OH_NativeBuffer_Config config;
     config.width = -1;
-    config.height = 0x001;
+    config.height = 0x100;
     config.format = static_cast<int32_t>(NATIVEBUFFER_PIXEL_FMT_RGBA_8888);
     bool isSupported = false;
     int32_t ret = OH_NativeBuffer_IsSupported(config, &isSupported);
@@ -181,14 +181,14 @@ napi_value OHNativeBufferIsSupportedAbnormal01(napi_env env, napi_callback_info 
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    config.width = 0x001;
+    config.width = 0x100;
     config.height = -1;
     ret = OH_NativeBuffer_IsSupported(config, &isSupported);
     if (ret != 0 || isSupported != false) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    config.height = 0x001;
+    config.height = 0x100;
     config.format = static_cast<int32_t>(-1);
     ret = OH_NativeBuffer_IsSupported(config, &isSupported);
     if (ret != 0 || isSupported != true) {
@@ -203,9 +203,9 @@ napi_value OHNativeBufferIsSupportedAbnormal02(napi_env env, napi_callback_info 
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config config;
-    config.width = 0x001;
-    config.height = 0x001;
-    config.format = static_cast<int32_t>(100);
+    config.width = 0x100;
+    config.height = 0x100;
+    config.format = static_cast<int32_t>(NUMBER_100);
     bool isSupported = false;
     int32_t ret = OH_NativeBuffer_IsSupported(config, &isSupported);
     if (ret != 0 || isSupported != true) {
@@ -220,8 +220,8 @@ napi_value OHNativeBufferIsSupportedMultipleCalls(napi_env env, napi_callback_in
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config config;
-    config.width = 0x001;
-    config.height = 0x001;
+    config.width = 0x100;
+    config.height = 0x100;
     config.format = static_cast<int32_t>(NATIVEBUFFER_PIXEL_FMT_RGBA_8888);
     bool isSupported = false;
     for (int i = 0; i < NUMBER_10; i++) {
@@ -325,8 +325,8 @@ napi_value OHNativeBufferMapAndGetConfilgMultipleCalls02(napi_env env, napi_call
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config config1 = {
-        .width = 0x100,
-        .height = 0x100,
+        .width = 0x001,
+        .height = 0x001,
         .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
         .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
     };
@@ -336,8 +336,8 @@ napi_value OHNativeBufferMapAndGetConfilgMultipleCalls02(napi_env env, napi_call
         return result;
     }
     OH_NativeBuffer_Config config2 = {
-        .width = 0x100,
-        .height = 0x100,
+        .width = 0x001,
+        .height = 0x001,
         .format = NATIVEBUFFER_PIXEL_FMT_RGB_888,
         .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
     };
@@ -350,13 +350,13 @@ napi_value OHNativeBufferMapAndGetConfilgMultipleCalls02(napi_env env, napi_call
     uint32_t TARGET_USAGE = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA;
     for (int i = 0; i < NUMBER_10; i++) {
         int32_t ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer1, &virAddr, &config1);
-        if (ret != 0 || config1.width != NUMBER_0x100 || config1.height != NUMBER_0x100 || config1.format !=
+        if (ret != 0 || config1.width != NUMBER_0x001 || config1.height != NUMBER_0x001 || config1.format !=
             NATIVEBUFFER_PIXEL_FMT_RGBA_8888 || (config1.usage & TARGET_USAGE) != TARGET_USAGE) {
                 napi_create_int32(env, FAIL, &result);
                 return result;
         }
         ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer2, &virAddr, &config2);
-        if (ret != 0 || config2.width != NUMBER_0x100 || config2.height != NUMBER_0x100 || config2.format !=
+        if (ret != 0 || config2.width != NUMBER_0x001 || config2.height != NUMBER_0x001 || config2.format !=
             NATIVEBUFFER_PIXEL_FMT_RGB_888 || (config2.usage & TARGET_USAGE) != TARGET_USAGE) {
                 napi_create_int32(env, FAIL, &result);
                 return result;
