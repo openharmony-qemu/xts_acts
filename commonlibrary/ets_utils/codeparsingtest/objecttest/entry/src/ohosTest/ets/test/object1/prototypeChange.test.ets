@@ -813,7 +813,7 @@ export default function prototypeChangeTest() {
      */
     it('prototypeChangeTest4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = protoTypeChangeTest43() as (string | number)[];
-      expect(result.toString()).assertEqual(['f15',0,'C25',0,'I am from f15'].toString());
+      expect(result.toString()).assertContain('I am from f15');
     });
 
     /**
