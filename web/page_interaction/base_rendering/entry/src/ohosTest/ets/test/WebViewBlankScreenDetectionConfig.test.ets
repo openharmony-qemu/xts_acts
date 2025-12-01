@@ -61,12 +61,12 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
 
 
     /** 
-    * @tc.number     : SUB_WEB_ONDETECTEDBLANKSCREEN_0100
-    * @tc.name       : testWebViewBlankScreenDetectionConfig
-    * @tc.desc       : DetectedBlankScreenReason
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    * @tc.number     SUB_WEB_ONDETECTEDBLANKSCREEN_0100
+    * @tc.name       testWebViewBlankScreenDetectionConfig
+    * @tc.desc       DetectedBlankScreenReason
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 1
     */
     it('testWebViewBlankScreenDetectionConfig', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewBlankScreenDetectionConfig", EVENT_ID_SET_SUITE_KEY);
@@ -75,12 +75,12 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
     })
 
     /** 
-    * @tc.number     : SUB_WEB_ONDETECTEDBLANKSCREEN_0200
-    * @tc.name       : testDetectedBlankScreenReason01
-    * @tc.desc       : DetectedBlankScreenReason
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    * @tc.number     SUB_WEB_ONDETECTEDBLANKSCREEN_0200
+    * @tc.name       testDetectedBlankScreenReason01
+    * @tc.desc       DetectedBlankScreenReason
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 1
     */
     it('testDetectedBlankScreenReason01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDetectedBlankScreenReason01", EVENT_ID_SET_SUITE_KEY);
@@ -89,12 +89,12 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
     })
 
     /** 
-    * @tc.number     : SUB_WEB_ONDETECTEDBLANKSCREEN_0300
-    * @tc.name       : testDetectedBlankScreenReason02
-    * @tc.desc       : DetectedBlankScreenReason
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    * @tc.number     SUB_WEB_ONDETECTEDBLANKSCREEN_0300
+    * @tc.name       testDetectedBlankScreenReason02
+    * @tc.desc       DetectedBlankScreenReason
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 1
     */
     it('testDetectedBlankScreenReason02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDetectedBlankScreenReason02", EVENT_ID_SET_SUITE_KEY);
