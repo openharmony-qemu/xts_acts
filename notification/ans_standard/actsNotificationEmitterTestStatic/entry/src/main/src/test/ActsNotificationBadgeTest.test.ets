@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from "../../../hypium/index"
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach } from "../../../hypium/index"
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
@@ -42,11 +42,11 @@ export default function ActsNotificationEmitterTest() {
     })
 
     beforeEach(() => {
-      console.info(`${TAG} afterEach START`)
+      console.info(`${TAG} beforeEach START`)
       emitter.off('eventid')
       emitter.off('eventids')
       await Utils.msSleep(500)
-      console.info(`${TAG} afterEach END`)
+      console.info(`${TAG} beforeEach END`)
     })
     afterEach(()=>{
       await Utils.msSleep(500)
