@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.5.0)
 project(LCNXComponent)
 
 set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+add_definitions(-DOHOS_PLATFORM)
 
 if(DEFINED PACKAGE_FIND_FILE)
     include(${PACKAGE_FIND_FILE})
@@ -10,11 +11,14 @@ endif()
 
 include_directories(
     ${NATIVERENDER_ROOT_PATH}
+    ${NATIVERENDER_ROOT_PATH}/include
     ${NATIVERENDER_ROOT_PATH}/render
     ${NATIVERENDER_ROOT_PATH}/XComponent
 )
 
 add_library(nativerender SHARED
+    render/egl_core.cpp
+    render/plugin_render.cpp
     render/EGLRender.cpp
     XComponent/XComponentSurfaceConfigTest.cpp
     napi_render_init.cpp

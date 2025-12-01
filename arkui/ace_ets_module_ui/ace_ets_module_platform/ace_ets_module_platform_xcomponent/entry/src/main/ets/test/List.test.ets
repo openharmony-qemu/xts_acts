@@ -13,8 +13,10 @@
  * limitations under the License.
  */
 
+import SetXComponentSurfaceConfigTest from './XComponent/SetXComponentSurfaceConfigTest.test'
 import NDKXComponentSurfaceConfigTest from './XComponent/NDKXComponentSurfaceConfigTest.test'
 
 export default function testsuite() {
+  SetXComponentSurfaceConfigTest()
   NDKXComponentSurfaceConfigTest()
 }
