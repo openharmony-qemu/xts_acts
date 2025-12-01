@@ -177,7 +177,7 @@ export default function SetMenuOptionsTest() {
       console.info('[SetMenuOptionsTest_0050] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      await Button.click()
       console.info('[SetMenuOptionsTest_0050] END');
       done();
     });
@@ -207,7 +207,7 @@ export default function SetMenuOptionsTest() {
       console.info('[SetMenuOptionsTest_0060] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      await TextInput.click()
       console.info('[SetMenuOptionsTest_0060] END');
       done();
     });
@@ -237,7 +237,7 @@ export default function SetMenuOptionsTest() {
       console.info('[SetMenuOptionsTest_0070] mode: ' + JSON.stringify(mode));
       expect('0, 2, 3').assertContain(mode);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      await TextInput.click()
       console.info('[SetMenuOptionsTest_0070] END');
       done();
     });
@@ -267,7 +267,7 @@ export default function SetMenuOptionsTest() {
       console.info('[SetMenuOptionsTest_0080] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      await TextInput.click()
       console.info('[SetMenuOptionsTest_0080] END');
       done();
     });
@@ -671,7 +671,7 @@ export default function SetMenuOptionsTest() {
       console.info('[SetMenuOptionsTest_0220] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      await TextInput.click()
       console.info('[SetMenuOptionsTest_0220] END');
       done();
     });
