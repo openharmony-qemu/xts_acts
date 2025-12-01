@@ -758,7 +758,7 @@ export default function WindowLayoutTest() {
             await windowClass.moveWindowTo(-50, -50);
             await Utils.msSleep(200);
             try {
-                const maxInt = 2^31 -1;
+                const maxInt = Math.pow(2,31)-1;
                 windowClass.globalDisplayToClient(maxInt, maxInt);
                 await windowClass.destroyWindow()
                 expect(false).assertTrue();
@@ -818,7 +818,7 @@ export default function WindowLayoutTest() {
             windowClass.moveWindowToAsync(50,50);
             await Utils.msSleep(1000);
             try {
-                const maxInt = 2^31 -1;
+                const maxInt = Math.pow(2,31)-1;
                 let position:window.Position = windowClass.clientToGlobalDisplay(maxInt, maxInt);
                 hilog.info(domain, tag,caseName + ' position: ' + JSON.stringify(position));
                 await windowClass.destroyWindow();
