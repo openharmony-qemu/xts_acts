@@ -2050,6 +2050,8 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"testImageDynamicRangeMode004", nullptr, TestImageDynamicRangeMode004, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+         {"testImageDynamicRangeMode004", nullptr, TestImageDynamicRangeMode004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"testImageHdrBrightness001", nullptr, TestImageHdrBrightness001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testImageHdrBrightness002", nullptr, TestImageHdrBrightness002, nullptr, nullptr, nullptr,

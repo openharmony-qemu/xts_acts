@@ -1387,6 +1387,10 @@ export const testImageDynamicRangeMode003: () => number;
 
 export const testImageDynamicRangeMode004: () => number;
 
+export const testImageDynamicRangeMode005: () => number;
+
+export const testImageDynamicRangeMode006: () => number;
+
 export const testImageHdrBrightness001: () => number;
 
 export const testImageHdrBrightness002: () => number;
@@ -1662,6 +1666,8 @@ export const testImageObjectFit016: () => number;
 export const testImageObjectFit017: () => number;
 
 export const testImageObjectFit018: () => number;
+
+export const testImageObjectFit019: () => number;
 
 export const testImageObjectRepeat001: () => number;
 

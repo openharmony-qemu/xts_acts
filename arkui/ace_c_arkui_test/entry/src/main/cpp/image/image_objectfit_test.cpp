@@ -259,4 +259,16 @@ static napi_value TestImageObjectFit018(napi_env env, napi_callback_info info)
     NAPI_END;
 }
 
+static napi_value TestImageObjectFit019(napi_env env, napi_callback_info info)
+{
+    NAPI_START(image, ARKUI_NODE_IMAGE);
+    int32_t objectFitValue = ArkUI_ObjectFit::ARKUI_OBJECT_FIT_NONE_MATRIX;
+    ArkUI_NumberValue value[] = {{.i32 = objectFitValue}};
+    ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
+    auto ret = nodeAPI->setAttribute(image, NODE_IMAGE_OBJECT_FIT, &valueItem);
+    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(nodeAPI->getAttribute(image, NODE_IMAGE_OBJECT_FIT)->value[PARAM_0].i32, objectFitValue);
+    NAPI_END;
+}
+
 } // namespace ArkUICapiTest
