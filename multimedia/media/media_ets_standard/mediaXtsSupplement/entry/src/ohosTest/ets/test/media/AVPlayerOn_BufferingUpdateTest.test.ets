@@ -56,6 +56,7 @@ export default function AVPlayerOn_BufferingUpdateTest() {
         let avPlayer = await media.createAVPlayer();
         avPlayer.on('bufferingUpdate', null as ESObject)
         expect(avPlayer !== undefined).assertTrue()
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);
@@ -78,6 +79,7 @@ export default function AVPlayerOn_BufferingUpdateTest() {
         let avPlayer = await media.createAVPlayer();
         avPlayer.on('bufferingUpdate', undefined as ESObject)
         expect(avPlayer !== undefined).assertTrue()
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);
@@ -100,6 +102,7 @@ export default function AVPlayerOn_BufferingUpdateTest() {
         let avPlayer = await media.createAVPlayer();
         avPlayer.on('bufferingUpdate', [] as ESObject)
         expect(avPlayer !== undefined).assertTrue()
+        await avPlayer.release();
         done();
       } catch (error) {
         console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);

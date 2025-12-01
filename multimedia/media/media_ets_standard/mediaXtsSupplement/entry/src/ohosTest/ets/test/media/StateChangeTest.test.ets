@@ -59,6 +59,7 @@ async function TestAVPlayerStateOffChange(
   } catch (error) {
     console.error(TAG, testName, `off(stateChange)空回调测试失败: ${error}, code: ${(error as BusinessError)?.code}`);
   }
+  await avPlayer.release()
 }
 async function TestAVPlayerOnStateChange(
   testName: string,
@@ -72,6 +73,7 @@ async function TestAVPlayerOnStateChange(
   } catch (error) {
     console.error(TAG, testName, `on(stateChange)空回调测试失败: ${error}, code: ${(error as BusinessError)?.code}`);
   }
+  await avPlayer.release()
 }
 async function TestAVRecorderOnStateChange(
   testName: string,

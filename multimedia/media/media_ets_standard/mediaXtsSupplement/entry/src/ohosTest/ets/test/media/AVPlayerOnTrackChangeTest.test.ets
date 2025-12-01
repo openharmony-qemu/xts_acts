@@ -37,6 +37,7 @@ export default function OnTrackChangeTest() {
 
     afterEach(async () => {
       console.info(TAG, 'afterEach case');
+      await avPlayer?.release();
     });
 
     afterAll(async () => {
