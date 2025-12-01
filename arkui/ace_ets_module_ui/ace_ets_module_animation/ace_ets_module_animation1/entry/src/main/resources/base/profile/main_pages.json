@@ -35,6 +35,8 @@
 		"MainAbility/pages/WorkerUseCurves",
 		"MainAbility/pages/MotionPathExample",
 		"MainAbility/pages/playMode",
-		"MainAbility/pages/stageAnimator"
+		"MainAbility/pages/stageAnimator",
+        "MainAbility/pages/Particle/RippleFields",
+		"MainAbility/pages/Particle/VelocityFields"
     ]
 }
